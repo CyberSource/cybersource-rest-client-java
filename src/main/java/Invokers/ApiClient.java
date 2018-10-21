@@ -54,6 +54,7 @@ import javax.net.ssl.X509TrustManager;
 import org.apache.logging.log4j.Logger;
 
 import com.cybersource.authsdk.core.Authorization;
+import com.cybersource.authsdk.core.ConfigException;
 import com.cybersource.authsdk.core.MerchantConfig;
 import com.cybersource.authsdk.log.Log4j;
 import com.cybersource.authsdk.payloaddigest.PayloadDigest;
@@ -86,12 +87,10 @@ public class ApiClient {
 	public static final double JAVA_VERSION;
 	public static final boolean IS_ANDROID;
 	public static final int ANDROID_SDK_VERSION;
-
-	// divya
-	public static Response response;
-	public static String resp;
-	public static String respmsg;
-
+	
+	//Divya
+	public static String responseCode;
+	public static String status;
 	static {
 		JAVA_VERSION = Double.parseDouble(System.getProperty("java.specification.version"));
 		boolean isAndroid;
@@ -1051,13 +1050,10 @@ public class ApiClient {
 	public <T> ApiResponse<T> execute(Call call, Type returnType) throws ApiException {
 		try {
 			Response response = call.execute();
-			// divya
-			ApiClient.response = response;
-			ApiClient.resp = String.valueOf(response.code());
-			ApiClient.respmsg = response.message();
-			System.out.println(resp);
+			responseCode=String.valueOf(response.code());
+			status=response.message();
+			System.out.println(responseCode);
 			T data = handleResponse(response, returnType);
-			System.out.println(data);
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
 		} catch (IOException e) {
 			throw new ApiException(e);
@@ -1204,48 +1200,48 @@ public class ApiClient {
 		Properties merchantProp;
 		try {
 			merchantProp = PropertiesUtil.getMerchantProperties();
+
 			MerchantConfig merchantConfig = new MerchantConfig(merchantProp);
 			merchantConfig.setRequestType(method);
 			merchantConfig.setRequestTarget(path);
+			
+			Authorization authorization = new Authorization();
+			Logger logger = Log4j.getInstance(merchantConfig);
+			authorization.setLogger(logger);
 
 			Gson gson = new Gson();
 			String requestBody = gson.toJson(body);
 			merchantConfig.setRequestData(requestBody);
+			authorization.setJWTRequestBody(requestBody);
+			merchantConfig.setRequestJsonPath(GlobalLabelParameters.POST_OBJECT_METHOD_REQUEST_PATH);
+			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(logger);
 
-			Authorization authorization = new Authorization();
-			authorization.setJWTRequestBody(Utility.retrieveGetIDFromRequestTarget(path));
-			Logger logger = Log4j.getInstance(merchantConfig);
-			authorization.setLogger(logger);
-			merchantConfig.validateMerchantDetails(logger);
+			if (isMerchantDetails) {
+				String token = authorization.getToken(merchantConfig);
+				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
-			String token = authorization.getToken(merchantConfig, merchantConfig.getMerchantKeyId(),
-					merchantConfig.getMerchantsecretKey(), merchantConfig.getMerchantID(),
-					merchantConfig.getRequestType(), null);
+					addDefaultHeader("Date", PropertiesUtil.date);
+					addDefaultHeader("Host", "apitest.cybersource.com");
+					addDefaultHeader("v-c-merchant-id", "testrest");
+					addDefaultHeader("Signature", token);
+					addDefaultHeader("User-Agent", "Mozilla/5.0");
 
-			if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
+					if (method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT")) {
 
-				addDefaultHeader("Date", PropertiesUtil.date);
-				addDefaultHeader("Host", "apitest.cybersource.com");
-				addDefaultHeader("v-c-merchant-id", "testrest");
-				addDefaultHeader("Signature", token);
-				addDefaultHeader("User-Agent", "Mozilla/5.0");
+						PayloadDigest payloadDigest = new PayloadDigest(merchantConfig);
+						String digest = payloadDigest.getDigest();
+						addDefaultHeader("Digest", digest);
+					}
 
-			} else if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.JWT)) {
-				token = "Bearer " + token;
-				addDefaultHeader("Authorization", token);
+				} else if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.JWT)) {
+					token = "Bearer " + token;
+					addDefaultHeader("Authorization", token);
+				}
 			}
-
-			if (method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT")) {
-
-				PayloadDigest payloadDigest = new PayloadDigest(merchantConfig);
-				String digest = payloadDigest.getDigest();
-				addDefaultHeader("Digest", digest);
-			}
-
 		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
+			e.getMessage();
+		} catch (ConfigException e) {
+			System.out.println(e.getMessage());
 		}
 
 	}
@@ -1306,7 +1302,7 @@ public class ApiClient {
 			}
 		} else {
 			reqBody = serialize(body, contentType);
-			
+
 		}
 
 		Request request = null;
