@@ -5,7 +5,7 @@
     <artifactId>cybersource-rest-client-java</artifactId>
     <packaging>jar</packaging>
     <name>cybersource-rest-client-java</name>
-    <version>1.0.0</version>
+    <version>0.0.1</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
     <description>Swagger Java</description>
     <scm>
@@ -252,7 +252,7 @@
        <dependency>
 			<groupId>com.cybersource</groupId>
 			<artifactId>AuthenticationSdk</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
      
     </dependencies>
