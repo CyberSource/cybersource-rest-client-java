@@ -60,7 +60,6 @@ import com.cybersource.authsdk.log.Log4j;
 import com.cybersource.authsdk.payloaddigest.PayloadDigest;
 import com.cybersource.authsdk.util.GlobalLabelParameters;
 import com.cybersource.authsdk.util.PropertiesUtil;
-import com.cybersource.authsdk.util.Utility;
 import com.google.gson.Gson;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
@@ -87,9 +86,7 @@ public class ApiClient {
 	public static final double JAVA_VERSION;
 	public static final boolean IS_ANDROID;
 	public static final int ANDROID_SDK_VERSION;
-	
-	//Divya
-	public static String responseCode;
+    public static String responseCode;
 	public static String status;
 	static {
 		JAVA_VERSION = Double.parseDouble(System.getProperty("java.specification.version"));
@@ -117,7 +114,7 @@ public class ApiClient {
 	}
 
 	/**
-	 * The datetime format to be used when <code>lenientDatetimeFormat</code> is
+	 * The dateTime format to be used when <code>lenientDatetimeFormat</code> is
 	 * enabled.
 	 */
 	public static final String LENIENT_DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
@@ -181,7 +178,7 @@ public class ApiClient {
 	/**
 	 * Get base path
 	 *
-	 * @return Baes path
+	 * @return Base path
 	 */
 	public String getBasePath() {
 		return basePath;
@@ -213,7 +210,7 @@ public class ApiClient {
 	 *
 	 * @param httpClient
 	 *            An instance of OkHttpClient
-	 * @return Api Client
+	 * @return ApiClient object.
 	 */
 	public ApiClient setHttpClient(OkHttpClient httpClient) {
 		this.httpClient = httpClient;
@@ -298,7 +295,7 @@ public class ApiClient {
 	 *
 	 * @param managers
 	 *            The KeyManagers to use
-	 * @return ApiClient
+	 * @return ApiClient generated.
 	 */
 	public ApiClient setKeyManagers(KeyManager[] managers) {
 		this.keyManagers = managers;
@@ -326,8 +323,8 @@ public class ApiClient {
 	}
 
 	/**
-	 * Whether to allow various ISO 8601 datetime formats when parsing a
-	 * datetime string.
+	 * Whether to allow various ISO 8601 dateTime formats when parsing a
+	 * dateTime string.
 	 * 
 	 * @see #parseDatetime(String)
 	 * @return True if lenientDatetimeFormat flag is set to true
@@ -348,7 +345,7 @@ public class ApiClient {
 	 * 
 	 * @param str
 	 *            String to be parsed
-	 * @return Date
+	 * @return Date generated.
 	 */
 	public Date parseDate(String str) {
 		if (str == null)
@@ -361,8 +358,8 @@ public class ApiClient {
 	}
 
 	/**
-	 * Parse the given datetime string into Date object. When
-	 * lenientDatetimeFormat is enabled, the following ISO 8601 datetime formats
+	 * Parse the given dateTime string into Date object. When
+	 * lenientDatetimeFormat is enabled, the following ISO 8601 dateTime formats
 	 * are supported: 2015-08-16T08:20:05Z 2015-8-16T8:20:05Z
 	 * 2015-08-16T08:20:05+00:00 2015-08-16T08:20:05+0000
 	 * 2015-08-16T08:20:05.376Z 2015-08-16T08:20:05.376+00:00
@@ -410,10 +407,11 @@ public class ApiClient {
 		}
 	}
 
-	/*
+	/**
 	 * Parse date or date time in string format into Date object.
 	 *
-	 * @param str Date time string to be parsed
+	 * @param str
+	 *            Date time string to be parsed
 	 * 
 	 * @return Date representation of the string
 	 */
@@ -438,11 +436,11 @@ public class ApiClient {
 	}
 
 	/**
-	 * Format the given Date object into string (Datetime format).
+	 * Format the given Date object into string (DateTime format).
 	 *
 	 * @param date
 	 *            Date object
-	 * @return Formatted datetime in string representation
+	 * @return Formatted dateTime in string representation
 	 */
 	public String formatDatetime(Date date) {
 		return datetimeFormat.format(date);
@@ -469,10 +467,10 @@ public class ApiClient {
 	}
 
 	/**
-	 * Helper method to set username for the first HTTP basic authentication.
+	 * Helper method to set userName for the first HTTP basic authentication.
 	 *
 	 * @param username
-	 *            Username
+	 *            - userName
 	 */
 	public void setUsername(String username) {
 		for (Authentication auth : authentications.values()) {
@@ -488,7 +486,7 @@ public class ApiClient {
 	 * Helper method to set password for the first HTTP basic authentication.
 	 *
 	 * @param password
-	 *            Password
+	 *            - Password
 	 */
 	public void setPassword(String password) {
 		for (Authentication auth : authentications.values()) {
@@ -504,7 +502,7 @@ public class ApiClient {
 	 * Helper method to set API key value for the first API key authentication.
 	 *
 	 * @param apiKey
-	 *            API key
+	 *            - API key
 	 */
 	public void setApiKey(String apiKey) {
 		for (Authentication auth : authentications.values()) {
@@ -520,7 +518,7 @@ public class ApiClient {
 	 * Helper method to set API key prefix for the first API key authentication.
 	 *
 	 * @param apiKeyPrefix
-	 *            API key prefix
+	 *            - API key prefix
 	 */
 	public void setApiKeyPrefix(String apiKeyPrefix) {
 		for (Authentication auth : authentications.values()) {
@@ -536,7 +534,7 @@ public class ApiClient {
 	 * Helper method to set access token for the first OAuth2 authentication.
 	 *
 	 * @param accessToken
-	 *            Access token
+	 *            - Access token
 	 */
 	public void setAccessToken(String accessToken) {
 		for (Authentication auth : authentications.values()) {
@@ -553,7 +551,7 @@ public class ApiClient {
 	 *
 	 * @param userAgent
 	 *            HTTP request's user agent
-	 * @return ApiClient
+	 * @return ApiClient object.
 	 */
 	public ApiClient setUserAgent(String userAgent) {
 		addDefaultHeader("User-Agent", userAgent);
@@ -567,7 +565,7 @@ public class ApiClient {
 	 *            The header's key
 	 * @param value
 	 *            The header's value
-	 * @return ApiClient
+	 * @return ApiClient object.
 	 */
 	public ApiClient addDefaultHeader(String key, String value) {
 		defaultHeaderMap.put(key, value);
@@ -589,7 +587,7 @@ public class ApiClient {
 	 *
 	 * @param lenient
 	 *            True to enable lenientOnJson
-	 * @return ApiClient
+	 * @return ApiClient object.
 	 */
 	public ApiClient setLenientOnJson(boolean lenient) {
 		this.lenientOnJson = lenient;
@@ -610,7 +608,7 @@ public class ApiClient {
 	 *
 	 * @param debugging
 	 *            To enable (true) or disable (false) debugging
-	 * @return ApiClient
+	 * @return ApiClient object.
 	 */
 	public ApiClient setDebugging(boolean debugging) {
 		if (debugging != this.debugging) {
@@ -645,7 +643,7 @@ public class ApiClient {
 	 *
 	 * @param tempFolderPath
 	 *            Temporary folder path
-	 * @return ApiClient
+	 * @return ApiClient object.
 	 */
 	public ApiClient setTempFolderPath(String tempFolderPath) {
 		this.tempFolderPath = tempFolderPath;
@@ -667,7 +665,7 @@ public class ApiClient {
 	 *
 	 * @param connectionTimeout
 	 *            connection timeout in milliseconds
-	 * @return Api client
+	 * @return ApiClient object.
 	 */
 	public ApiClient setConnectTimeout(int connectionTimeout) {
 		httpClient.setConnectTimeout(connectionTimeout, TimeUnit.MILLISECONDS);
@@ -706,9 +704,9 @@ public class ApiClient {
 	 * @param collectionFormat
 	 *            collection format (e.g. csv, tsv)
 	 * @param name
-	 *            Name
+	 *            - Name
 	 * @param value
-	 *            Value
+	 *            - Value
 	 * @return A list of Pair objects
 	 */
 	public List<Pair> parameterToPairs(String collectionFormat, String name, Object value) {
@@ -770,7 +768,7 @@ public class ApiClient {
 	 * Sanitize filename by removing path. e.g. ../../sun.gif becomes sun.gif
 	 *
 	 * @param filename
-	 *            The filename to be sanitized
+	 *            - The filename to be sanitized
 	 * @return The sanitized filename
 	 */
 	public String sanitizeFilename(String filename) {
@@ -819,9 +817,9 @@ public class ApiClient {
 	 * array.
 	 *
 	 * @param contentTypes
-	 *            The Content-Type array to select from
-	 * @return The Content-Type header to use. If the given array is empty, JSON
-	 *         will be used.
+	 *            The Content - Type array to select from
+	 * @return The Content - Type header to use. If the given array is empty,
+	 *         JSON will be used.
 	 */
 	public String selectHeaderContentType(String[] contentTypes) {
 		if (contentTypes.length == 0) {
@@ -940,9 +938,7 @@ public class ApiClient {
 			} else {
 				content = null;
 			}
-			System.out.println("Content :: " + content);
 			RequestBody rb = RequestBodyChild.create(MediaType.parse(contentType), content);
-			System.out.println("Content Type :: " + rb.contentType());
 			return rb;
 		} else {
 			throw new ApiException("Content type \"" + contentType + "\" is not supported");
@@ -1025,7 +1021,7 @@ public class ApiClient {
 	 *            An instance of the Call object
 	 * @throws ApiException
 	 *             If fail to execute the call
-	 * @return ApiResponse&lt;T&gt;
+	 * @return ApiResponse generated.
 	 */
 	public <T> ApiResponse<T> execute(Call call) throws ApiException {
 		return execute(call, null);
@@ -1050,9 +1046,8 @@ public class ApiClient {
 	public <T> ApiResponse<T> execute(Call call, Type returnType) throws ApiException {
 		try {
 			Response response = call.execute();
-			responseCode=String.valueOf(response.code());
-			status=response.message();
-			System.out.println(responseCode);
+			responseCode = String.valueOf(response.code());
+			status = response.message();
 			T data = handleResponse(response, returnType);
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
 		} catch (IOException e) {
@@ -1122,7 +1117,7 @@ public class ApiClient {
 	 * @throws ApiException
 	 *             If the response has a unsuccessful status code or fail to
 	 *             deserialize the response body
-	 * @return Type
+	 * @return Type generated.
 	 */
 	public <T> T handleResponse(Response response, Type returnType) throws ApiException {
 		if (response.isSuccessful()) {
@@ -1182,7 +1177,6 @@ public class ApiClient {
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		callAuthenticationHeader(method, path, body);
 		headerParams.putAll(defaultHeaderMap);
-		System.out.println(headerParams);
 		Request request = buildRequest(path, method, queryParams, body, headerParams, formParams, authNames,
 				progressRequestListener);
 
@@ -1195,6 +1189,14 @@ public class ApiClient {
 	 *
 	 */
 
+	/**
+	 * @param method
+	 *            - PUT/POST/DELETE
+	 * @param path
+	 *            - request target path.
+	 * @param body
+	 *            - request body.
+	 */
 	public void callAuthenticationHeader(String method, String path, Object body) {
 
 		Properties merchantProp;
@@ -1204,7 +1206,7 @@ public class ApiClient {
 			MerchantConfig merchantConfig = new MerchantConfig(merchantProp);
 			merchantConfig.setRequestType(method);
 			merchantConfig.setRequestTarget(path);
-			
+
 			Authorization authorization = new Authorization();
 			Logger logger = Log4j.getInstance(merchantConfig);
 			authorization.setLogger(logger);
@@ -1355,7 +1357,7 @@ public class ApiClient {
 	 * Set header parameters to the request builder, including default headers.
 	 *
 	 * @param headerParams
-	 *            Header parameters in the ofrm of Map
+	 *            Header parameters in the Map
 	 * @param reqBuilder
 	 *            Reqeust.Builder
 	 */
@@ -1394,7 +1396,7 @@ public class ApiClient {
 	 *
 	 * @param formParams
 	 *            Form parameters in the form of Map
-	 * @return RequestBody
+	 * @return RequestBody generated.
 	 */
 	public RequestBody buildRequestBodyFormEncoding(Map<String, Object> formParams) {
 		FormEncodingBuilder formBuilder = new FormEncodingBuilder();
@@ -1410,7 +1412,7 @@ public class ApiClient {
 	 *
 	 * @param formParams
 	 *            Form parameters in the form of Map
-	 * @return RequestBody
+	 * @return RequestBody generated.
 	 */
 	public RequestBody buildRequestBodyMultipart(Map<String, Object> formParams) {
 		MultipartBuilder mpBuilder = new MultipartBuilder().type(MultipartBuilder.FORM);

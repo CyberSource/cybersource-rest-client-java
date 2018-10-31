@@ -13,6 +13,15 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,24 +30,10 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
 import Model.InlineResponse2005;
 import Model.InlineResponse2013;
-import Model.InlineResponse4003;
-import Model.InlineResponse502;
 import Model.RefundCaptureRequest;
 import Model.RefundPaymentRequest;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class RefundApi {
     private ApiClient apiClient;
@@ -130,7 +125,7 @@ public class RefundApi {
      * Retrieve a Refund
      * Include the refund ID in the GET request to to retrieve the refund details.
      * @param id The refund ID. This ID is returned from a previous refund request. (required)
-     * @return InlineResponse2005
+     * @return InlineResponse2005 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2005 getRefund(String id) throws ApiException {
@@ -142,7 +137,7 @@ public class RefundApi {
      * Retrieve a Refund
      * Include the refund ID in the GET request to to retrieve the refund details.
      * @param id The refund ID. This ID is returned from a previous refund request. (required)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse - InlineResponse2005.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2005> getRefundWithHttpInfo(String id) throws ApiException {
@@ -263,7 +258,7 @@ public class RefundApi {
      * Include the capture ID in the POST request to refund the captured amount. 
      * @param refundCaptureRequest  (required)
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
-     * @return InlineResponse2013
+     * @return InlineResponse2013 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2013 refundCapture(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
@@ -276,7 +271,7 @@ public class RefundApi {
      * Include the capture ID in the POST request to refund the captured amount. 
      * @param refundCaptureRequest  (required)
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
-     * @return ApiResponse&lt;InlineResponse2013&gt;
+     * @return ApiResponse - InlineResponse2013.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2013> refundCaptureWithHttpInfo(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
@@ -398,7 +393,7 @@ public class RefundApi {
      * Include the payment ID in the POST request to refund the payment amount. 
      * @param refundPaymentRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
-     * @return InlineResponse2013
+     * @return InlineResponse2013 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2013 refundPayment(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {
@@ -411,7 +406,7 @@ public class RefundApi {
      * Include the payment ID in the POST request to refund the payment amount. 
      * @param refundPaymentRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
-     * @return ApiResponse&lt;InlineResponse2013&gt;
+     * @return ApiResponse - InlineResponse2013.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2013> refundPaymentWithHttpInfo(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {

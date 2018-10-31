@@ -13,20 +13,16 @@
 
 package Model;
 
+import java.io.IOException;
 import java.util.Objects;
-import Model.InstrumentidentifiersBankAccount;
-import Model.InstrumentidentifiersCard;
-import Model.InstrumentidentifiersLinks;
-import Model.InstrumentidentifiersMetadata;
-import Model.InstrumentidentifiersProcessingInformation;
+
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * Body
@@ -156,7 +152,7 @@ public class Body {
 
    /**
    * Get links
-   * @return links
+   * @return links object.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersLinks getLinks() {
@@ -169,7 +165,7 @@ public class Body {
 
    /**
    * Unique identification number assigned by CyberSource to the submitted request.
-   * @return id
+   * @return id - getId.
   **/
   @ApiModelProperty(example = "1234567890123456800", value = "Unique identification number assigned by CyberSource to the submitted request.")
   public String getId() {
@@ -178,7 +174,7 @@ public class Body {
 
    /**
    * Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.
-   * @return object
+   * @return object generated.
   **/
   @ApiModelProperty(example = "instrumentIdentifier", value = "Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.")
   public ObjectEnum getObject() {
@@ -201,7 +197,7 @@ public class Body {
 
    /**
    * Get card
-   * @return card
+   * @return card object.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersCard getCard() {
@@ -219,7 +215,7 @@ public class Body {
 
    /**
    * Get bankAccount
-   * @return bankAccount
+   * @return bankAccount object.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersBankAccount getBankAccount() {
@@ -237,7 +233,7 @@ public class Body {
 
    /**
    * Get processingInformation
-   * @return processingInformation
+   * @return processingInformation object.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersProcessingInformation getProcessingInformation() {
@@ -255,7 +251,7 @@ public class Body {
 
    /**
    * Get metadata
-   * @return metadata
+   * @return metadata object.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersMetadata getMetadata() {

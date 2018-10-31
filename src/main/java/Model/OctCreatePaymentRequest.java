@@ -14,21 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse201ClientReferenceInformation;
-import Model.V2payoutsMerchantInformation;
-import Model.V2payoutsOrderInformation;
-import Model.V2payoutsPaymentInformation;
-import Model.V2payoutsProcessingInformation;
-import Model.V2payoutsRecipientInformation;
-import Model.V2payoutsSenderInformation;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * OctCreatePaymentRequest

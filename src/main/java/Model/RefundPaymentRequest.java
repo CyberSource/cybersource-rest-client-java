@@ -13,27 +13,13 @@
 
 package Model;
 
-import java.util.Objects;
-import Model.V2paymentsClientReferenceInformation;
-import Model.V2paymentsDeviceInformation;
-import Model.V2paymentsMerchantDefinedInformation;
-import Model.V2paymentsidcapturesAggregatorInformation;
-import Model.V2paymentsidcapturesBuyerInformation;
-import Model.V2paymentsidrefundsMerchantInformation;
-import Model.V2paymentsidrefundsOrderInformation;
-import Model.V2paymentsidrefundsPaymentInformation;
-import Model.V2paymentsidrefundsPointOfSaleInformation;
-import Model.V2paymentsidrefundsProcessingInformation;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * RefundPaymentRequest

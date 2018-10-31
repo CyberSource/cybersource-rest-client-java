@@ -13,16 +13,16 @@
 
 package Model;
 
+import java.io.IOException;
 import java.util.Objects;
-import Model.InlineResponse2008Links;
+
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2008
@@ -102,7 +102,7 @@ public class InlineResponse2008 {
 
    /**
    * Get links
-   * @return links
+   * @return links Links.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2008Links getLinks() {
@@ -124,7 +124,7 @@ public class InlineResponse2008 {
 
    /**
    * The offset parameter supplied in the request.
-   * @return offset
+   * @return offset The offset parameter supplied in the request.
   **/
   @ApiModelProperty(example = "20", value = "The offset parameter supplied in the request.")
   public String getOffset() {
@@ -133,7 +133,7 @@ public class InlineResponse2008 {
 
    /**
    * The limit parameter supplied in the request.
-   * @return limit
+   * @return limit The limit parameter supplied in the request
   **/
   @ApiModelProperty(example = "1", value = "The limit parameter supplied in the request.")
   public String getLimit() {
@@ -142,7 +142,7 @@ public class InlineResponse2008 {
 
    /**
    * The number of Payment Instruments returned in the array.
-   * @return count
+   * @return count The number of Payment Instruments returned in the array.
   **/
   @ApiModelProperty(example = "1", value = "The number of Payment Instruments returned in the array.")
   public String getCount() {
@@ -151,7 +151,7 @@ public class InlineResponse2008 {
 
    /**
    * The total number of Payment Instruments associated with the Instrument Identifier in the zero-based dataset.
-   * @return total
+   * @return total The total number of Payment Instruments associated with the Instrument Identifier in the zero-based dataset.
   **/
   @ApiModelProperty(example = "39", value = "The total number of Payment Instruments associated with the Instrument Identifier in the zero-based dataset.")
   public String getTotal() {
@@ -165,7 +165,7 @@ public class InlineResponse2008 {
 
    /**
    * Array of Payment Instruments returned for the supplied Instrument Identifier.
-   * @return embedded
+   * @return embedded  Array of Payment Instruments returned for the supplied Instrument Identifier.
   **/
   @ApiModelProperty(value = "Array of Payment Instruments returned for the supplied Instrument Identifier.")
   public Object getEmbedded() {

@@ -14,14 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2008LinksLast
@@ -38,7 +34,7 @@ public class InlineResponse2008LinksLast {
 
    /**
    * A link to the last collection containing the remaining objects.
-   * @return href
+   * @return href A link to the last collection containing the remaining objects.
   **/
   @ApiModelProperty(example = "https://api.cybersource.com/tms/v1/instrumentidentifiers/5B32CE6167B09343E05333B9D30A53E1/paymentinstruments?offset=35&limit=5", value = "A link to the last collection containing the remaining objects.")
   public String getHref() {

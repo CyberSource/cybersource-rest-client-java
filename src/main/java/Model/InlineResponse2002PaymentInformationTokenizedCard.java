@@ -14,14 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2002PaymentInformationTokenizedCard
@@ -50,7 +46,7 @@ public class InlineResponse2002PaymentInformationTokenizedCard {
 
    /**
    * First six digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction. 
-   * @return prefix
+   * @return prefix First six digits of token.
   **/
   @ApiModelProperty(value = "First six digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction. ")
   public String getPrefix() {
@@ -68,7 +64,7 @@ public class InlineResponse2002PaymentInformationTokenizedCard {
 
    /**
    * Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction. 
-   * @return suffix
+   * @return suffix Last four digits of token.
   **/
   @ApiModelProperty(value = "Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction. ")
   public String getSuffix() {
@@ -86,7 +82,7 @@ public class InlineResponse2002PaymentInformationTokenizedCard {
 
    /**
    * Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover 
-   * @return type
+   * @return type Type of card to authorize.
   **/
   @ApiModelProperty(value = "Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover ")
   public String getType() {
@@ -103,8 +99,8 @@ public class InlineResponse2002PaymentInformationTokenizedCard {
   }
 
    /**
-   * Two-digit month in which the payment network token expires. &#x60;Format: MM&#x60;. Possible values: 01 through 12. 
-   * @return expirationMonth
+   * Two-digit month in which the payment network token expires. Possible values: 01 through 12. 
+   * @return expirationMonth Two-digit month in which the payment network token expires.
   **/
   @ApiModelProperty(value = "Two-digit month in which the payment network token expires. `Format: MM`. Possible values: 01 through 12. ")
   public String getExpirationMonth() {
@@ -121,8 +117,8 @@ public class InlineResponse2002PaymentInformationTokenizedCard {
   }
 
    /**
-   * Four-digit year in which the payment network token expires. &#x60;Format: YYYY&#x60;. 
-   * @return expirationYear
+   * Four-digit year in which the payment network token expires.  
+   * @return expirationYear Four-digit year in which the payment network token expires.
   **/
   @ApiModelProperty(value = "Four-digit year in which the payment network token expires. `Format: YYYY`. ")
   public String getExpirationYear() {

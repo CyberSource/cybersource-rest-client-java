@@ -13,6 +13,15 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,23 +30,9 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
 import Model.CapturePaymentRequest;
 import Model.InlineResponse2004;
 import Model.InlineResponse2012;
-import Model.InlineResponse4002;
-import Model.InlineResponse502;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class CaptureApi {
     private ApiClient apiClient;
@@ -149,7 +144,7 @@ public class CaptureApi {
      * Include the payment ID in the POST request to capture the payment amount.
      * @param capturePaymentRequest  (required)
      * @param id The payment ID returned from a previous payment request. This ID links the capture to the payment.  (required)
-     * @return ApiResponse&lt;InlineResponse2012&gt;
+     * @return ApiResponse - InlineResponse2012;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2012> capturePaymentWithHttpInfo(CapturePaymentRequest capturePaymentRequest, String id) throws ApiException {
@@ -264,7 +259,7 @@ public class CaptureApi {
      * Retrieve a Capture
      * Include the capture ID in the GET request to retrieve the capture details. 
      * @param id The capture ID returned from a previous capture request.  (required)
-     * @return InlineResponse2004
+     * @return InlineResponse2004 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2004 getCapture(String id) throws ApiException {
@@ -276,7 +271,7 @@ public class CaptureApi {
      * Retrieve a Capture
      * Include the capture ID in the GET request to retrieve the capture details. 
      * @param id The capture ID returned from a previous capture request.  (required)
-     * @return ApiResponse&lt;InlineResponse2004&gt;
+     * @return ApiResponse - InlineResponse2004
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2004> getCaptureWithHttpInfo(String id) throws ApiException {

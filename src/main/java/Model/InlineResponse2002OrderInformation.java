@@ -13,23 +13,13 @@
 
 package Model;
 
-import java.util.Objects;
-import Model.InlineResponse2002OrderInformationAmountDetails;
-import Model.InlineResponse2002OrderInformationBillTo;
-import Model.InlineResponse2002OrderInformationInvoiceDetails;
-import Model.InlineResponse2002OrderInformationLineItems;
-import Model.InlineResponse2002OrderInformationShipTo;
-import Model.V2paymentsOrderInformationShippingDetails;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * InlineResponse2002OrderInformation
@@ -61,7 +51,7 @@ public class InlineResponse2002OrderInformation {
 
    /**
    * Get amountDetails
-   * @return amountDetails
+   * @return amountDetails Get amountDetails.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2002OrderInformationAmountDetails getAmountDetails() {
@@ -79,7 +69,7 @@ public class InlineResponse2002OrderInformation {
 
    /**
    * Get billTo
-   * @return billTo
+   * @return billTo Get billTo.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2002OrderInformationBillTo getBillTo() {
@@ -97,7 +87,7 @@ public class InlineResponse2002OrderInformation {
 
    /**
    * Get shipTo
-   * @return shipTo
+   * @return shipTo Get shipTo.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2002OrderInformationShipTo getShipTo() {
@@ -123,7 +113,7 @@ public class InlineResponse2002OrderInformation {
 
    /**
    * Get lineItems
-   * @return lineItems
+   * @return lineItems Get lineItems.
   **/
   @ApiModelProperty(value = "")
   public List<InlineResponse2002OrderInformationLineItems> getLineItems() {
@@ -141,7 +131,7 @@ public class InlineResponse2002OrderInformation {
 
    /**
    * Get invoiceDetails
-   * @return invoiceDetails
+   * @return invoiceDetails  Get invoiceDetails.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2002OrderInformationInvoiceDetails getInvoiceDetails() {
@@ -159,7 +149,7 @@ public class InlineResponse2002OrderInformation {
 
    /**
    * Get shippingDetails
-   * @return shippingDetails
+   * @return shippingDetails Get shippingDetails.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsOrderInformationShippingDetails getShippingDetails() {

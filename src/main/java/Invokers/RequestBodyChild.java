@@ -9,7 +9,7 @@ import com.squareup.okhttp.internal.Util;
 
 import okio.BufferedSink;
 
-public class RequestBodyChild extends RequestBody{
+public class RequestBodyChild extends RequestBody {
 
 	@Override
 	public MediaType contentType() {
@@ -20,24 +20,30 @@ public class RequestBodyChild extends RequestBody{
 	@Override
 	public void writeTo(BufferedSink sink) throws IOException {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	/**
-	   * Returns a new request body that transmits {@code content}. If {@code
-	   * contentType} is non-null and lacks a charset, this will use UTF-8.
-	   */
-	  public static RequestBody create(MediaType contentType, String content) {
-	    Charset charset = Util.UTF_8;
-	    if (contentType != null) {
-	      charset = contentType.charset();
-	      if (charset == null) {
-	        charset = Util.UTF_8;
-	        contentType = MediaType.parse(contentType.toString());
-	      }
-	    }
-	    byte[] bytes = content.getBytes(charset);
-	    return create(contentType, bytes);
-	  }
+	 * Returns a new request body that transmits {@code content}. If {@code
+	 * contentType} is non-null and lacks a charset, this will use UTF-8.
+	 * 
+	 * @param contentType
+	 *            - content type
+	 * @param content
+	 *            -request body
+	 * @return request body generated.
+	 */
+	public static RequestBody create(MediaType contentType, String content) {
+		Charset charset = Util.UTF_8;
+		if (contentType != null) {
+			charset = contentType.charset();
+			if (charset == null) {
+				charset = Util.UTF_8;
+				contentType = MediaType.parse(contentType.toString());
+			}
+		}
+		byte[] bytes = content.getBytes(charset);
+		return create(contentType, bytes);
+	}
 
 }

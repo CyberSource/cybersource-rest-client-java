@@ -14,16 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse2002ProcessorInformationAvs;
-import Model.InlineResponse2002ProcessorInformationCardVerification;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2002ProcessorInformation
@@ -49,7 +43,7 @@ public class InlineResponse2002ProcessorInformation {
 
    /**
    * Authorization code. Returned only when the processor returns this value. 
-   * @return approvalCode
+   * @return approvalCode Authorization code.
   **/
   @ApiModelProperty(value = "Authorization code. Returned only when the processor returns this value. ")
   public String getApprovalCode() {
@@ -67,7 +61,7 @@ public class InlineResponse2002ProcessorInformation {
 
    /**
    * Get cardVerification
-   * @return cardVerification
+   * @return cardVerification card Verification
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2002ProcessorInformationCardVerification getCardVerification() {
@@ -103,7 +97,7 @@ public class InlineResponse2002ProcessorInformation {
 
    /**
    * Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this  value. 
-   * @return transactionId
+   * @return transactionId Network transaction identifier
   **/
   @ApiModelProperty(value = "Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this  value. ")
   public String getTransactionId() {

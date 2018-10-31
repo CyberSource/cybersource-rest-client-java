@@ -13,23 +13,12 @@
 
 package Model;
 
-import java.util.Objects;
-import Model.InlineResponse201ProcessorInformationAvs;
-import Model.InlineResponse201ProcessorInformationCardVerification;
-import Model.InlineResponse201ProcessorInformationConsumerAuthenticationResponse;
-import Model.InlineResponse201ProcessorInformationCustomer;
-import Model.InlineResponse201ProcessorInformationElectronicVerificationResults;
-import Model.InlineResponse201ProcessorInformationIssuer;
-import Model.InlineResponse201ProcessorInformationMerchantAdvice;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * InlineResponse201ProcessorInformation

@@ -14,14 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2002DeviceInformation
@@ -44,7 +40,7 @@ public class InlineResponse2002DeviceInformation {
 
    /**
    * TBD
-   * @return id
+   * @return id - getID.
   **/
   @ApiModelProperty(value = "TBD")
   public String getId() {
@@ -62,7 +58,7 @@ public class InlineResponse2002DeviceInformation {
 
    /**
    * TBD
-   * @return fingerprintId
+   * @return fingerprintId - ID.
   **/
   @ApiModelProperty(value = "TBD")
   public String getFingerprintId() {
@@ -80,7 +76,7 @@ public class InlineResponse2002DeviceInformation {
 
    /**
    * IP address of the customer.
-   * @return ipAddress
+   * @return ipAddress IP address of the customer.
   **/
   @ApiModelProperty(value = "IP address of the customer.")
   public String getIpAddress() {

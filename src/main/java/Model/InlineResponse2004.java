@@ -13,23 +13,16 @@
 
 package Model;
 
+import java.io.IOException;
 import java.util.Objects;
-import Model.InlineResponse2002MerchantInformation;
-import Model.InlineResponse2004DeviceInformation;
-import Model.InlineResponse2004OrderInformation;
-import Model.InlineResponse2004ProcessingInformation;
-import Model.InlineResponse2012Links;
-import Model.InlineResponse2012ProcessorInformation;
-import Model.InlineResponse201ClientReferenceInformation;
-import Model.V2paymentsidcapturesBuyerInformation;
+
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2004
@@ -130,7 +123,7 @@ public class InlineResponse2004 {
 
    /**
    * Get links
-   * @return links
+   * @return links Get links
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2012Links getLinks() {
@@ -148,7 +141,7 @@ public class InlineResponse2004 {
 
    /**
    * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @return id
+   * @return id unique identification number.
   **/
   @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request.")
   public String getId() {
@@ -165,8 +158,8 @@ public class InlineResponse2004 {
   }
 
    /**
-   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc
+   * Time of request in UTC.  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc Time of request in UTC.
   **/
   @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
   public String getSubmitTimeUtc() {
@@ -184,7 +177,7 @@ public class InlineResponse2004 {
 
    /**
    * The status of the submitted transaction.
-   * @return status
+   * @return status The status of the submitted transaction.
   **/
   @ApiModelProperty(value = "The status of the submitted transaction.")
   public StatusEnum getStatus() {
@@ -202,7 +195,7 @@ public class InlineResponse2004 {
 
    /**
    * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
-   * @return reconciliationId
+   * @return reconciliationId The reconciliation id for the submitted transaction.
   **/
   @ApiModelProperty(value = "The reconciliation id for the submitted transaction. This value is not returned for all processors. ")
   public String getReconciliationId() {
@@ -220,7 +213,7 @@ public class InlineResponse2004 {
 
    /**
    * Get clientReferenceInformation
-   * @return clientReferenceInformation
+   * @return clientReferenceInformation client Reference Information.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse201ClientReferenceInformation getClientReferenceInformation() {
@@ -238,7 +231,7 @@ public class InlineResponse2004 {
 
    /**
    * Get processingInformation
-   * @return processingInformation
+   * @return processingInformation processing Information.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2004ProcessingInformation getProcessingInformation() {
@@ -256,7 +249,7 @@ public class InlineResponse2004 {
 
    /**
    * Get processorInformation
-   * @return processorInformation
+   * @return processorInformation processor Information.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2012ProcessorInformation getProcessorInformation() {
@@ -274,7 +267,7 @@ public class InlineResponse2004 {
 
    /**
    * Get orderInformation
-   * @return orderInformation
+   * @return orderInformation order Information.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2004OrderInformation getOrderInformation() {
@@ -292,7 +285,7 @@ public class InlineResponse2004 {
 
    /**
    * Get buyerInformation
-   * @return buyerInformation
+   * @return buyerInformation buyer Information.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidcapturesBuyerInformation getBuyerInformation() {
@@ -310,7 +303,7 @@ public class InlineResponse2004 {
 
    /**
    * Get merchantInformation
-   * @return merchantInformation
+   * @return merchantInformation merchant Information.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2002MerchantInformation getMerchantInformation() {
@@ -328,7 +321,7 @@ public class InlineResponse2004 {
 
    /**
    * Get deviceInformation
-   * @return deviceInformation
+   * @return deviceInformation device Information
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2004DeviceInformation getDeviceInformation() {

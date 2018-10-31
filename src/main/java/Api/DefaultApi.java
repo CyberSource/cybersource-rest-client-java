@@ -13,6 +13,12 @@
 
 package Api;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,21 +27,7 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
-import Model.InlineResponse4005;
-import Model.InlineResponse502;
 import Model.OctCreatePaymentRequest;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class DefaultApi {
     private ApiClient apiClient;
@@ -136,7 +128,7 @@ public class DefaultApi {
      * Process a Payout
      * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). 
      * @param octCreatePaymentRequest  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse - Void.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> octCreatePaymentWithHttpInfo(OctCreatePaymentRequest octCreatePaymentRequest) throws ApiException {

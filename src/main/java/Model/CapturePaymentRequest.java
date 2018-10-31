@@ -13,27 +13,13 @@
 
 package Model;
 
-import java.util.Objects;
-import Model.V2paymentsClientReferenceInformation;
-import Model.V2paymentsDeviceInformation;
-import Model.V2paymentsMerchantDefinedInformation;
-import Model.V2paymentsidcapturesAggregatorInformation;
-import Model.V2paymentsidcapturesBuyerInformation;
-import Model.V2paymentsidcapturesMerchantInformation;
-import Model.V2paymentsidcapturesOrderInformation;
-import Model.V2paymentsidcapturesPaymentInformation;
-import Model.V2paymentsidcapturesPointOfSaleInformation;
-import Model.V2paymentsidcapturesProcessingInformation;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * CapturePaymentRequest
@@ -77,7 +63,7 @@ public class CapturePaymentRequest {
 
    /**
    * Get clientReferenceInformation
-   * @return clientReferenceInformation
+   * @return clientReferenceInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsClientReferenceInformation getClientReferenceInformation() {
@@ -95,7 +81,7 @@ public class CapturePaymentRequest {
 
    /**
    * Get processingInformation
-   * @return processingInformation
+   * @return processingInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidcapturesProcessingInformation getProcessingInformation() {
@@ -113,7 +99,7 @@ public class CapturePaymentRequest {
 
    /**
    * Get paymentInformation
-   * @return paymentInformation
+   * @return paymentInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidcapturesPaymentInformation getPaymentInformation() {
@@ -131,7 +117,7 @@ public class CapturePaymentRequest {
 
    /**
    * Get orderInformation
-   * @return orderInformation
+   * @return orderInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidcapturesOrderInformation getOrderInformation() {
@@ -149,7 +135,7 @@ public class CapturePaymentRequest {
 
    /**
    * Get buyerInformation
-   * @return buyerInformation
+   * @return buyerInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidcapturesBuyerInformation getBuyerInformation() {
@@ -167,7 +153,7 @@ public class CapturePaymentRequest {
 
    /**
    * Get deviceInformation
-   * @return deviceInformation
+   * @return deviceInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsDeviceInformation getDeviceInformation() {
@@ -185,7 +171,7 @@ public class CapturePaymentRequest {
 
    /**
    * Get merchantInformation
-   * @return merchantInformation
+   * @return merchantInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidcapturesMerchantInformation getMerchantInformation() {
@@ -203,7 +189,7 @@ public class CapturePaymentRequest {
 
    /**
    * Get aggregatorInformation
-   * @return aggregatorInformation
+   * @return aggregatorInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidcapturesAggregatorInformation getAggregatorInformation() {
@@ -221,7 +207,7 @@ public class CapturePaymentRequest {
 
    /**
    * Get pointOfSaleInformation
-   * @return pointOfSaleInformation
+   * @return pointOfSaleInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidcapturesPointOfSaleInformation getPointOfSaleInformation() {
@@ -247,7 +233,7 @@ public class CapturePaymentRequest {
 
    /**
    * TBD
-   * @return merchantDefinedInformation
+   * @return merchantDefinedInformation object.
   **/
   @ApiModelProperty(value = "TBD")
   public List<V2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {

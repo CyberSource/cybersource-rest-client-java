@@ -13,20 +13,16 @@
 
 package Model;
 
+import java.io.IOException;
 import java.util.Objects;
-import Model.InstrumentidentifiersBankAccount;
-import Model.InstrumentidentifiersCard;
-import Model.InstrumentidentifiersLinks;
-import Model.InstrumentidentifiersMetadata;
-import Model.InstrumentidentifiersProcessingInformation;
+
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2007
@@ -156,7 +152,7 @@ public class InlineResponse2007 {
 
    /**
    * Get links
-   * @return links
+   * @return links links.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersLinks getLinks() {
@@ -169,7 +165,7 @@ public class InlineResponse2007 {
 
    /**
    * Unique identification number assigned by CyberSource to the submitted request.
-   * @return id
+   * @return id Unique identification number.
   **/
   @ApiModelProperty(example = "1234567890123456800", value = "Unique identification number assigned by CyberSource to the submitted request.")
   public String getId() {
@@ -178,7 +174,7 @@ public class InlineResponse2007 {
 
    /**
    * Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.
-   * @return object
+   * @return object Describes type of token.
   **/
   @ApiModelProperty(example = "instrumentIdentifier", value = "Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.")
   public ObjectEnum getObject() {
@@ -187,7 +183,7 @@ public class InlineResponse2007 {
 
    /**
    * Current state of the token.
-   * @return state
+   * @return state Current state of the token.
   **/
   @ApiModelProperty(example = "ACTIVE", value = "Current state of the token.")
   public StateEnum getState() {
@@ -201,7 +197,7 @@ public class InlineResponse2007 {
 
    /**
    * Get card
-   * @return card
+   * @return card Card.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersCard getCard() {
@@ -219,7 +215,7 @@ public class InlineResponse2007 {
 
    /**
    * Get bankAccount
-   * @return bankAccount
+   * @return bankAccount bank Account.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersBankAccount getBankAccount() {
@@ -236,7 +232,7 @@ public class InlineResponse2007 {
   }
 
    /**
-   * Get processingInformation
+   * Get processingInformation processing Information.
    * @return processingInformation
   **/
   @ApiModelProperty(value = "")
@@ -255,7 +251,7 @@ public class InlineResponse2007 {
 
    /**
    * Get metadata
-   * @return metadata
+   * @return metadata object.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersMetadata getMetadata() {
