@@ -2,16 +2,17 @@ o<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
-	<groupId>io.swagger</groupId>
+          <groupId>org.sonatype.oss</groupId>
+          <artifactId>oss-parent</artifactId>
+          <version>7</version>
+        </parent>
+	
+	<groupId>com.cybersource</groupId>
 	<artifactId>cybersource-rest-client-java</artifactId>
 	<packaging>jar</packaging>
 	<name>cybersource-rest-client-java</name>
 	<version>0.0.1-SNAPSHOT</version>
-	<url>https://github.com/swagger-api/swagger-codegen</url>
+	<url>http://developer.cybersource.com</url>
 	<description>Cybersource Rest client SDK</description>
 	
 	<scm>
@@ -258,7 +259,7 @@ o<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org
 		<dependency>
 			<groupId>com.cybersource</groupId>
 			<artifactId>AuthenticationSdk</artifactId>
-			<version>0.0.1-Snapshot</version>
+			<version>0.0.1</version>
 		</dependency>
 
 	</dependencies>
