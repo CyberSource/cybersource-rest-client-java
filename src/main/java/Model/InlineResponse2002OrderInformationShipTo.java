@@ -14,14 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2002OrderInformationShipTo
@@ -71,7 +67,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 
-   * @return firstName
+   * @return firstName First name of the recipient.
   **/
   @ApiModelProperty(value = "First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 ")
   public String getFirstName() {
@@ -89,7 +85,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * Last name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 
-   * @return lastName
+   * @return lastName Last name of the recipient.
   **/
   @ApiModelProperty(value = "Last name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 ")
   public String getLastName() {
@@ -107,7 +103,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * TBD
-   * @return company
+   * @return company  TBD
   **/
   @ApiModelProperty(value = "TBD")
   public String getCompany() {
@@ -125,7 +121,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * First line of the shipping address.
-   * @return address1
+   * @return address1 First line of the shipping address.
   **/
   @ApiModelProperty(value = "First line of the shipping address.")
   public String getAddress1() {
@@ -143,7 +139,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * Second line of the shipping address.
-   * @return address2
+   * @return address2 Second line of the shipping address.
   **/
   @ApiModelProperty(value = "Second line of the shipping address.")
   public String getAddress2() {
@@ -161,7 +157,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * City of the shipping address.
-   * @return locality
+   * @return locality City of the shipping address.
   **/
   @ApiModelProperty(value = "City of the shipping address.")
   public String getLocality() {
@@ -179,7 +175,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada. 
-   * @return administrativeArea
+   * @return administrativeArea State or province of the shipping address.
   **/
   @ApiModelProperty(value = "State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada. ")
   public String getAdministrativeArea() {
@@ -197,7 +193,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3 
-   * @return postalCode
+   * @return postalCode Postal code for the shipping address.
   **/
   @ApiModelProperty(value = "Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3 ")
   public String getPostalCode() {
@@ -215,7 +211,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * TBD
-   * @return county
+   * @return county TBD
   **/
   @ApiModelProperty(value = "TBD")
   public String getCounty() {
@@ -233,7 +229,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * Country of the shipping address. Use the two character ISO Standard Country Codes.
-   * @return country
+   * @return country Country of the shipping address.
   **/
   @ApiModelProperty(value = "Country of the shipping address. Use the two character ISO Standard Country Codes.")
   public String getCountry() {
@@ -251,7 +247,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * TBD
-   * @return email
+   * @return email - Email
   **/
   @ApiModelProperty(value = "TBD")
   public String getEmail() {
@@ -269,7 +265,7 @@ public class InlineResponse2002OrderInformationShipTo {
 
    /**
    * Phone number for the shipping address.
-   * @return phoneNumber
+   * @return phoneNumber  Phone number for the shipping address.
   **/
   @ApiModelProperty(value = "Phone number for the shipping address.")
   public String getPhoneNumber() {

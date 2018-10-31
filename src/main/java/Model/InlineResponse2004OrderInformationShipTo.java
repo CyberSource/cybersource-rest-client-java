@@ -14,14 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2004OrderInformationShipTo
@@ -44,7 +40,7 @@ public class InlineResponse2004OrderInformationShipTo {
 
    /**
    * State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada. 
-   * @return administrativeArea
+   * @return administrativeArea State or province of the shipping address.
   **/
   @ApiModelProperty(value = "State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada. ")
   public String getAdministrativeArea() {
@@ -62,7 +58,7 @@ public class InlineResponse2004OrderInformationShipTo {
 
    /**
    * Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3 
-   * @return postalCode
+   * @return postalCode  Postal code for the shipping address.
   **/
   @ApiModelProperty(value = "Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3 ")
   public String getPostalCode() {
@@ -80,7 +76,7 @@ public class InlineResponse2004OrderInformationShipTo {
 
    /**
    * Country of the shipping address. Use the two character ISO Standard Country Codes.
-   * @return country
+   * @return country Country of the shipping address. 
   **/
   @ApiModelProperty(value = "Country of the shipping address. Use the two character ISO Standard Country Codes.")
   public String getCountry() {

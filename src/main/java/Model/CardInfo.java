@@ -14,14 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * CardInfo
@@ -65,7 +61,7 @@ public class CardInfo {
 
    /**
    * Two digit expiration month
-   * @return cardExpirationMonth
+   * @return cardExpirationMonth object.
   **/
   @ApiModelProperty(value = "Two digit expiration month")
   public String getCardExpirationMonth() {
@@ -83,7 +79,7 @@ public class CardInfo {
 
    /**
    * Four digit expiration year
-   * @return cardExpirationYear
+   * @return cardExpirationYear object.
   **/
   @ApiModelProperty(value = "Four digit expiration year")
   public String getCardExpirationYear() {
@@ -101,7 +97,7 @@ public class CardInfo {
 
    /**
    * Card Type. This field is required. Refer to the CyberSource Credit Card Services documentation for supported card types.
-   * @return cardType
+   * @return cardType object.
   **/
   @ApiModelProperty(value = "Card Type. This field is required. Refer to the CyberSource Credit Card Services documentation for supported card types.")
   public String getCardType() {

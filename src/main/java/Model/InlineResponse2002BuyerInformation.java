@@ -13,18 +13,13 @@
 
 package Model;
 
-import java.util.Objects;
-import Model.V2paymentsBuyerInformationPersonalIdentification;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * InlineResponse2002BuyerInformation
@@ -53,7 +48,7 @@ public class InlineResponse2002BuyerInformation {
 
    /**
    * Your identifier for the customer.  For processor-specific information, see the customer_account_id field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
-   * @return merchantCustomerId
+   * @return merchantCustomerId merchant customer id.
   **/
   @ApiModelProperty(value = "Your identifier for the customer.  For processor-specific information, see the customer_account_id field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getMerchantCustomerId() {
@@ -70,10 +65,10 @@ public class InlineResponse2002BuyerInformation {
   }
 
    /**
-   * Recipientâ€™s date of birth. **Format**: &#x60;YYYYMMDD&#x60;.  This field is a pass-through, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
-   * @return dateOfBirth
+   * Recipient's date of birth. **Format**: &#x60;YYYYMMDD&#x60;.  This field is a pass-through, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
+   * @return dateOfBirth recipient date of birth.
   **/
-  @ApiModelProperty(value = "Recipientâ€™s date of birth. **Format**: `YYYYMMDD`.  This field is a pass-through, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. ")
+  @ApiModelProperty(value = "Recipient's date of birth. **Format**: `YYYYMMDD`.  This field is a pass-through, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. ")
   public String getDateOfBirth() {
     return dateOfBirth;
   }
@@ -88,10 +83,10 @@ public class InlineResponse2002BuyerInformation {
   }
 
    /**
-   * Customerâ€™s government-assigned tax identification number.  For processor-specific information, see the purchaser_vat_registration_number field in [Level II and Level III Processing Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html) 
-   * @return vatRegistrationNumber
+   * Customer's government-assigned tax identification number.  For processor-specific information, see the purchaser_vat_registration_number field in [Level II and Level III Processing Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html) 
+   * @return vatRegistrationNumber Customer's government-assigned tax identification number 
   **/
-  @ApiModelProperty(value = "Customerâ€™s government-assigned tax identification number.  For processor-specific information, see the purchaser_vat_registration_number field in [Level II and Level III Processing Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html) ")
+  @ApiModelProperty(value = "Customer's government-assigned tax identification number.  For processor-specific information, see the purchaser_vat_registration_number field in [Level II and Level III Processing Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html) ")
   public String getVatRegistrationNumber() {
     return vatRegistrationNumber;
   }
@@ -115,7 +110,7 @@ public class InlineResponse2002BuyerInformation {
 
    /**
    * Get personalIdentification
-   * @return personalIdentification
+   * @return personalIdentification personal identification number.
   **/
   @ApiModelProperty(value = "")
   public List<V2paymentsBuyerInformationPersonalIdentification> getPersonalIdentification() {
@@ -133,7 +128,7 @@ public class InlineResponse2002BuyerInformation {
 
    /**
    * TBD
-   * @return taxId
+   * @return taxId TBD.
   **/
   @ApiModelProperty(value = "TBD")
   public String getTaxId() {

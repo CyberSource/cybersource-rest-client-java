@@ -13,24 +13,16 @@
 
 package Model;
 
+import java.io.IOException;
 import java.util.Objects;
-import Model.InstrumentidentifiersLinks;
-import Model.InstrumentidentifiersMetadata;
-import Model.PaymentinstrumentsBankAccount;
-import Model.PaymentinstrumentsBillTo;
-import Model.PaymentinstrumentsBuyerInformation;
-import Model.PaymentinstrumentsCard;
-import Model.PaymentinstrumentsInstrumentIdentifier;
-import Model.PaymentinstrumentsMerchantInformation;
-import Model.PaymentinstrumentsProcessingInformation;
+
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2016

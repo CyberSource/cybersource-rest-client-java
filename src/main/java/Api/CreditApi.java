@@ -13,6 +13,15 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,23 +30,9 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
 import Model.CreateCreditRequest;
 import Model.InlineResponse2006;
 import Model.InlineResponse2014;
-import Model.InlineResponse4003;
-import Model.InlineResponse502;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class CreditApi {
     private ApiClient apiClient;
@@ -128,7 +123,7 @@ public class CreditApi {
      * Process a Credit
      * POST to the credit resource to credit funds to a specified credit card.
      * @param createCreditRequest  (required)
-     * @return InlineResponse2014
+     * @return InlineResponse2014 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2014 createCredit(CreateCreditRequest createCreditRequest) throws ApiException {
@@ -140,7 +135,7 @@ public class CreditApi {
      * Process a Credit
      * POST to the credit resource to credit funds to a specified credit card.
      * @param createCreditRequest  (required)
-     * @return ApiResponse&lt;InlineResponse2014&gt;
+     * @return ApiResponse - InlineResponse2014
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2014> createCreditWithHttpInfo(CreateCreditRequest createCreditRequest) throws ApiException {
@@ -254,7 +249,7 @@ public class CreditApi {
      * Retrieve a Credit
      * Include the credit ID in the GET request to return details of the credit.
      * @param id The credit ID returned from a previous stand-alone credit request.  (required)
-     * @return InlineResponse2006
+     * @return InlineResponse2006 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2006 getCredit(String id) throws ApiException {
@@ -266,7 +261,7 @@ public class CreditApi {
      * Retrieve a Credit
      * Include the credit ID in the GET request to return details of the credit.
      * @param id The credit ID returned from a previous stand-alone credit request.  (required)
-     * @return ApiResponse&lt;InlineResponse2006&gt;
+     * @return ApiResponse - InlineResponse2006.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2006> getCreditWithHttpInfo(String id) throws ApiException {

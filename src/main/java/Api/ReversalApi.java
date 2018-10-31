@@ -13,6 +13,15 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,23 +30,9 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
 import Model.AuthReversalRequest;
 import Model.InlineResponse2003;
 import Model.InlineResponse2011;
-import Model.InlineResponse4001;
-import Model.InlineResponse502;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class ReversalApi {
     private ApiClient apiClient;
@@ -136,7 +131,7 @@ public class ReversalApi {
      * Include the payment ID in the POST request to reverse the payment amount.
      * @param id The payment ID returned from a previous payment request. (required)
      * @param authReversalRequest  (required)
-     * @return InlineResponse2011
+     * @return InlineResponse2011 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2011 authReversal(String id, AuthReversalRequest authReversalRequest) throws ApiException {
@@ -149,7 +144,7 @@ public class ReversalApi {
      * Include the payment ID in the POST request to reverse the payment amount.
      * @param id The payment ID returned from a previous payment request. (required)
      * @param authReversalRequest  (required)
-     * @return ApiResponse&lt;InlineResponse2011&gt;
+     * @return ApiResponse - InlineResponse2011.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2011> authReversalWithHttpInfo(String id, AuthReversalRequest authReversalRequest) throws ApiException {
@@ -264,7 +259,7 @@ public class ReversalApi {
      * Retrieve an Authorization Reversal
      * Include the authorization reversal ID in the GET request to retrieve the authorization reversal details. 
      * @param id The authorization reversal ID returned from a previous authorization reversal request. (required)
-     * @return InlineResponse2003
+     * @return InlineResponse2003 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2003 getAuthReversal(String id) throws ApiException {
@@ -276,7 +271,7 @@ public class ReversalApi {
      * Retrieve an Authorization Reversal
      * Include the authorization reversal ID in the GET request to retrieve the authorization reversal details. 
      * @param id The authorization reversal ID returned from a previous authorization reversal request. (required)
-     * @return ApiResponse&lt;InlineResponse2003&gt;
+     * @return ApiResponse - InlineResponse2003.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2003> getAuthReversalWithHttpInfo(String id) throws ApiException {

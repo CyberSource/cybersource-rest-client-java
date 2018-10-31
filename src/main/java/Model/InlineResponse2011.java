@@ -13,21 +13,16 @@
 
 package Model;
 
+import java.io.IOException;
 import java.util.Objects;
-import Model.InlineResponse2011AuthorizationInformation;
-import Model.InlineResponse2011ProcessorInformation;
-import Model.InlineResponse2011ReversalAmountDetails;
-import Model.InlineResponse201ClientReferenceInformation;
-import Model.InlineResponse201EmbeddedCaptureLinks;
-import Model.V2paymentsidreversalsPointOfSaleInformation;
+
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2011
@@ -116,7 +111,7 @@ public class InlineResponse2011 {
 
    /**
    * Get links
-   * @return links
+   * @return links links
   **/
   @ApiModelProperty(value = "")
   public InlineResponse201EmbeddedCaptureLinks getLinks() {
@@ -134,7 +129,7 @@ public class InlineResponse2011 {
 
    /**
    * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @return id
+   * @return id unique identification number
   **/
   @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request.")
   public String getId() {
@@ -151,8 +146,8 @@ public class InlineResponse2011 {
   }
 
    /**
-   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc
+   * Time of request in UTC.Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc Time of request in UTC.
   **/
   @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
   public String getSubmitTimeUtc() {
@@ -170,7 +165,7 @@ public class InlineResponse2011 {
 
    /**
    * The status of the submitted transaction.
-   * @return status
+   * @return status The status of the submitted transaction.
   **/
   @ApiModelProperty(value = "The status of the submitted transaction.")
   public StatusEnum getStatus() {
@@ -188,7 +183,7 @@ public class InlineResponse2011 {
 
    /**
    * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
-   * @return reconciliationId
+   * @return reconciliationId The reconciliation id for the submitted transaction.
   **/
   @ApiModelProperty(value = "The reconciliation id for the submitted transaction. This value is not returned for all processors. ")
   public String getReconciliationId() {
@@ -206,7 +201,7 @@ public class InlineResponse2011 {
 
    /**
    * Get clientReferenceInformation
-   * @return clientReferenceInformation
+   * @return clientReferenceInformation Get clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
   public InlineResponse201ClientReferenceInformation getClientReferenceInformation() {
@@ -224,7 +219,7 @@ public class InlineResponse2011 {
 
    /**
    * Get reversalAmountDetails
-   * @return reversalAmountDetails
+   * @return reversalAmountDetails  Get reversalAmountDetails
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2011ReversalAmountDetails getReversalAmountDetails() {
@@ -242,7 +237,7 @@ public class InlineResponse2011 {
 
    /**
    * Get processorInformation
-   * @return processorInformation
+   * @return processorInformation Get processorInformation
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2011ProcessorInformation getProcessorInformation() {
@@ -259,8 +254,8 @@ public class InlineResponse2011 {
   }
 
    /**
-   * Get authorizationInformation
-   * @return authorizationInformation
+   * Get processorInformation
+   * @return authorizationInformation Get processorInformation
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2011AuthorizationInformation getAuthorizationInformation() {

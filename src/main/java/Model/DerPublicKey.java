@@ -14,14 +14,11 @@
 package Model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * The public key in DER format. Used to validate the response from the Tokenize Card request. Additionally this format is useful for client side encryption in Android and iOS implementations.
@@ -63,7 +60,7 @@ public class DerPublicKey {
 
    /**
    * Algorithm used to encrypt the public key.
-   * @return algorithm
+   * @return algorithm to encrypt.
   **/
   @ApiModelProperty(value = "Algorithm used to encrypt the public key.")
   public String getAlgorithm() {
@@ -81,7 +78,7 @@ public class DerPublicKey {
 
    /**
    * Base64 encoded public key value.
-   * @return publicKey
+   * @return publicKey to encode.
   **/
   @ApiModelProperty(value = "Base64 encoded public key value.")
   public String getPublicKey() {

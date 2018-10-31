@@ -13,23 +13,13 @@
 
 package Model;
 
-import java.util.Objects;
-import Model.V2paymentsOrderInformationAmountDetails;
-import Model.V2paymentsOrderInformationBillTo;
-import Model.V2paymentsOrderInformationInvoiceDetails;
-import Model.V2paymentsOrderInformationLineItems;
-import Model.V2paymentsOrderInformationShipTo;
-import Model.V2paymentsOrderInformationShippingDetails;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * V2paymentsOrderInformation

@@ -13,29 +13,13 @@
 
 package Model;
 
-import java.util.Objects;
-import Model.V2paymentsAggregatorInformation;
-import Model.V2paymentsBuyerInformation;
-import Model.V2paymentsClientReferenceInformation;
-import Model.V2paymentsConsumerAuthenticationInformation;
-import Model.V2paymentsDeviceInformation;
-import Model.V2paymentsMerchantDefinedInformation;
-import Model.V2paymentsMerchantInformation;
-import Model.V2paymentsOrderInformation;
-import Model.V2paymentsPaymentInformation;
-import Model.V2paymentsPointOfSaleInformation;
-import Model.V2paymentsProcessingInformation;
-import Model.V2paymentsRecipientInformation;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * CreatePaymentRequest
@@ -85,7 +69,7 @@ public class CreatePaymentRequest {
 
    /**
    * Get clientReferenceInformation
-   * @return clientReferenceInformation
+   * @return clientReferenceInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsClientReferenceInformation getClientReferenceInformation() {
@@ -103,7 +87,7 @@ public class CreatePaymentRequest {
 
    /**
    * Get processingInformation
-   * @return processingInformation
+   * @return processingInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsProcessingInformation getProcessingInformation() {
@@ -121,7 +105,7 @@ public class CreatePaymentRequest {
 
    /**
    * Get paymentInformation
-   * @return paymentInformation
+   * @return paymentInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsPaymentInformation getPaymentInformation() {
@@ -139,7 +123,7 @@ public class CreatePaymentRequest {
 
    /**
    * Get orderInformation
-   * @return orderInformation
+   * @return orderInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsOrderInformation getOrderInformation() {
@@ -157,7 +141,7 @@ public class CreatePaymentRequest {
 
    /**
    * Get buyerInformation
-   * @return buyerInformation
+   * @return buyerInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsBuyerInformation getBuyerInformation() {
@@ -175,7 +159,7 @@ public class CreatePaymentRequest {
 
    /**
    * Get recipientInformation
-   * @return recipientInformation
+   * @return recipientInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsRecipientInformation getRecipientInformation() {
@@ -193,7 +177,7 @@ public class CreatePaymentRequest {
 
    /**
    * Get deviceInformation
-   * @return deviceInformation
+   * @return deviceInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsDeviceInformation getDeviceInformation() {
@@ -211,7 +195,7 @@ public class CreatePaymentRequest {
 
    /**
    * Get merchantInformation
-   * @return merchantInformation
+   * @return merchantInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsMerchantInformation getMerchantInformation() {
@@ -229,7 +213,7 @@ public class CreatePaymentRequest {
 
    /**
    * Get aggregatorInformation
-   * @return aggregatorInformation
+   * @return aggregatorInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsAggregatorInformation getAggregatorInformation() {
@@ -247,7 +231,7 @@ public class CreatePaymentRequest {
 
    /**
    * Get consumerAuthenticationInformation
-   * @return consumerAuthenticationInformation
+   * @return consumerAuthenticationInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsConsumerAuthenticationInformation getConsumerAuthenticationInformation() {
@@ -265,7 +249,7 @@ public class CreatePaymentRequest {
 
    /**
    * Get pointOfSaleInformation
-   * @return pointOfSaleInformation
+   * @return pointOfSaleInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsPointOfSaleInformation getPointOfSaleInformation() {
@@ -291,7 +275,7 @@ public class CreatePaymentRequest {
 
    /**
    * TBD
-   * @return merchantDefinedInformation
+   * @return merchantDefinedInformation object.
   **/
   @ApiModelProperty(value = "TBD")
   public List<V2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {

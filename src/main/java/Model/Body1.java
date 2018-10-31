@@ -14,15 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import Model.InstrumentidentifiersProcessingInformation;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * Body1
@@ -39,7 +34,7 @@ public class Body1 {
 
    /**
    * Get processingInformation
-   * @return processingInformation
+   * @return processingInformation object.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersProcessingInformation getProcessingInformation() {

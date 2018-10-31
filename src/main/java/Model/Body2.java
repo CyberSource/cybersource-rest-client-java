@@ -13,24 +13,16 @@
 
 package Model;
 
+import java.io.IOException;
 import java.util.Objects;
-import Model.InstrumentidentifiersLinks;
-import Model.InstrumentidentifiersMetadata;
-import Model.PaymentinstrumentsBankAccount;
-import Model.PaymentinstrumentsBillTo;
-import Model.PaymentinstrumentsBuyerInformation;
-import Model.PaymentinstrumentsCard;
-import Model.PaymentinstrumentsInstrumentIdentifier;
-import Model.PaymentinstrumentsMerchantInformation;
-import Model.PaymentinstrumentsProcessingInformation;
+
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * Body2
@@ -172,7 +164,7 @@ public class Body2 {
 
    /**
    * Get links
-   * @return links
+   * @return links object.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersLinks getLinks() {
@@ -185,7 +177,7 @@ public class Body2 {
 
    /**
    * Unique identification number assigned by CyberSource to the submitted request.
-   * @return id
+   * @return id - getId.
   **/
   @ApiModelProperty(example = "1234567890123456800", value = "Unique identification number assigned by CyberSource to the submitted request.")
   public String getId() {
@@ -194,7 +186,7 @@ public class Body2 {
 
    /**
    * Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.
-   * @return object
+   * @return object generated.
   **/
   @ApiModelProperty(example = "instrumentIdentifier", value = "Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.")
   public ObjectEnum getObject() {
@@ -203,7 +195,7 @@ public class Body2 {
 
    /**
    * Current state of the token.
-   * @return state
+   * @return state object.
   **/
   @ApiModelProperty(example = "ACTIVE", value = "Current state of the token.")
   public StateEnum getState() {
@@ -217,7 +209,7 @@ public class Body2 {
 
    /**
    * Get bankAccount
-   * @return bankAccount
+   * @return bankAccount object.
   **/
   @ApiModelProperty(value = "")
   public PaymentinstrumentsBankAccount getBankAccount() {
@@ -235,7 +227,7 @@ public class Body2 {
 
    /**
    * Get card
-   * @return card
+   * @return card object.
   **/
   @ApiModelProperty(value = "")
   public PaymentinstrumentsCard getCard() {
@@ -253,7 +245,7 @@ public class Body2 {
 
    /**
    * Get buyerInformation
-   * @return buyerInformation
+   * @return buyerInformation object.
   **/
   @ApiModelProperty(value = "")
   public PaymentinstrumentsBuyerInformation getBuyerInformation() {
@@ -271,7 +263,7 @@ public class Body2 {
 
    /**
    * Get billTo
-   * @return billTo
+   * @return billTo object.
   **/
   @ApiModelProperty(value = "")
   public PaymentinstrumentsBillTo getBillTo() {
@@ -289,7 +281,7 @@ public class Body2 {
 
    /**
    * Get processingInformation
-   * @return processingInformation
+   * @return processingInformation object.
   **/
   @ApiModelProperty(value = "")
   public PaymentinstrumentsProcessingInformation getProcessingInformation() {
@@ -307,7 +299,7 @@ public class Body2 {
 
    /**
    * Get merchantInformation
-   * @return merchantInformation
+   * @return merchantInformation object.
   **/
   @ApiModelProperty(value = "")
   public PaymentinstrumentsMerchantInformation getMerchantInformation() {
@@ -325,7 +317,7 @@ public class Body2 {
 
    /**
    * Get metaData
-   * @return metaData
+   * @return metaData object.
   **/
   @ApiModelProperty(value = "")
   public InstrumentidentifiersMetadata getMetaData() {
@@ -343,7 +335,7 @@ public class Body2 {
 
    /**
    * Get instrumentIdentifier
-   * @return instrumentIdentifier
+   * @return instrumentIdentifier object.
   **/
   @ApiModelProperty(value = "")
   public PaymentinstrumentsInstrumentIdentifier getInstrumentIdentifier() {

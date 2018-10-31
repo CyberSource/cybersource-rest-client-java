@@ -13,6 +13,15 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,24 +30,10 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
 import Model.Body;
 import Model.Body1;
 import Model.InlineResponse2007;
 import Model.InlineResponse2008;
-import Model.InlineResponse4006;
-import Model.InlineResponse409;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class InstrumentIdentifierApi {
     private ApiClient apiClient;
@@ -133,7 +128,7 @@ public class InstrumentIdentifierApi {
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param body Please specify either a Card or Bank Account. (optional)
-     * @return InlineResponse2007
+     * @return InlineResponse2007 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2007 instrumentidentifiersPost(String profileId, Body body) throws ApiException {
@@ -146,7 +141,7 @@ public class InstrumentIdentifierApi {
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param body Please specify either a Card or Bank Account. (optional)
-     * @return ApiResponse&lt;InlineResponse2007&gt;
+     * @return ApiResponse - InlineResponse2007.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2007> instrumentidentifiersPostWithHttpInfo(String profileId, Body body) throws ApiException {
@@ -281,7 +276,7 @@ public class InstrumentIdentifierApi {
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse - Void.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> instrumentidentifiersTokenIdDeleteWithHttpInfo(String profileId, String tokenId) throws ApiException {
@@ -403,7 +398,7 @@ public class InstrumentIdentifierApi {
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @return InlineResponse2007
+     * @return InlineResponse2007 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2007 instrumentidentifiersTokenIdGet(String profileId, String tokenId) throws ApiException {
@@ -416,7 +411,7 @@ public class InstrumentIdentifierApi {
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @return ApiResponse&lt;InlineResponse2007&gt;
+     * @return ApiResponse - InlineResponse2007.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2007> instrumentidentifiersTokenIdGetWithHttpInfo(String profileId, String tokenId) throws ApiException {
@@ -547,7 +542,7 @@ public class InstrumentIdentifierApi {
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of an Instrument Identifier (required)
      * @param body Please specify the previous transaction Id to update. (required)
-     * @return InlineResponse2007
+     * @return InlineResponse2007 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2007 instrumentidentifiersTokenIdPatch(String profileId, String tokenId, Body1 body) throws ApiException {
@@ -561,7 +556,7 @@ public class InstrumentIdentifierApi {
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of an Instrument Identifier (required)
      * @param body Please specify the previous transaction Id to update. (required)
-     * @return ApiResponse&lt;InlineResponse2007&gt;
+     * @return ApiResponse - InlineResponse2007.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2007> instrumentidentifiersTokenIdPatchWithHttpInfo(String profileId, String tokenId, Body1 body) throws ApiException {
@@ -694,7 +689,7 @@ public class InstrumentIdentifierApi {
      * @param tokenId The TokenId of an Instrument Identifier. (required)
      * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional)
      * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
-     * @return InlineResponse2008
+     * @return InlineResponse2008 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2008 instrumentidentifiersTokenIdPaymentinstrumentsGet(String profileId, String tokenId, String offset, String limit) throws ApiException {
@@ -709,7 +704,7 @@ public class InstrumentIdentifierApi {
      * @param tokenId The TokenId of an Instrument Identifier. (required)
      * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional)
      * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
-     * @return ApiResponse&lt;InlineResponse2008&gt;
+     * @return ApiResponse - InlineResponse2008.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2008> instrumentidentifiersTokenIdPaymentinstrumentsGetWithHttpInfo(String profileId, String tokenId, String offset, String limit) throws ApiException {

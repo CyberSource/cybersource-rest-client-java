@@ -13,6 +13,15 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,25 +30,11 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
 import Model.InlineResponse2015;
-import Model.InlineResponse4004;
-import Model.InlineResponse502;
 import Model.VoidCaptureRequest;
 import Model.VoidCreditRequest;
 import Model.VoidPaymentRequest;
 import Model.VoidRefundRequest;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class VoidApi {
     private ApiClient apiClient;
@@ -131,7 +126,7 @@ public class VoidApi {
      * Retrieve A Void
      * Include the void ID in the GET request to retrieve the void details.
      * @param id The void ID returned from a previous void request. (required)
-     * @return InlineResponse2015
+     * @return InlineResponse2015 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2015 getVoid(String id) throws ApiException {
@@ -143,7 +138,7 @@ public class VoidApi {
      * Retrieve A Void
      * Include the void ID in the GET request to retrieve the void details.
      * @param id The void ID returned from a previous void request. (required)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse - InlineResponse2015.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2015> getVoidWithHttpInfo(String id) throws ApiException {
@@ -264,7 +259,7 @@ public class VoidApi {
      * Include the capture ID in the POST request to cancel the capture.
      * @param voidCaptureRequest  (required)
      * @param id The capture ID returned from a previous capture request. (required)
-     * @return InlineResponse2015
+     * @return InlineResponse2015 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2015 voidCapture(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
@@ -277,7 +272,7 @@ public class VoidApi {
      * Include the capture ID in the POST request to cancel the capture.
      * @param voidCaptureRequest  (required)
      * @param id The capture ID returned from a previous capture request. (required)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse - InlineResponse2015.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2015> voidCaptureWithHttpInfo(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
@@ -399,7 +394,7 @@ public class VoidApi {
      * Include the credit ID in the POST request to cancel the credit.
      * @param voidCreditRequest  (required)
      * @param id The credit ID returned from a previous credit request. (required)
-     * @return InlineResponse2015
+     * @return InlineResponse2015 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2015 voidCredit(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
@@ -412,7 +407,7 @@ public class VoidApi {
      * Include the credit ID in the POST request to cancel the credit.
      * @param voidCreditRequest  (required)
      * @param id The credit ID returned from a previous credit request. (required)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse - InlineResponse2015.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2015> voidCreditWithHttpInfo(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
@@ -534,7 +529,7 @@ public class VoidApi {
      * Include the payment ID in the POST request to cancel the payment.
      * @param voidPaymentRequest  (required)
      * @param id The payment ID returned from a previous payment request. (required)
-     * @return InlineResponse2015
+     * @return InlineResponse2015 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2015 voidPayment(VoidPaymentRequest voidPaymentRequest, String id) throws ApiException {
@@ -547,7 +542,7 @@ public class VoidApi {
      * Include the payment ID in the POST request to cancel the payment.
      * @param voidPaymentRequest  (required)
      * @param id The payment ID returned from a previous payment request. (required)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse - InlineResponse2015.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2015> voidPaymentWithHttpInfo(VoidPaymentRequest voidPaymentRequest, String id) throws ApiException {
@@ -669,7 +664,7 @@ public class VoidApi {
      * Include the refund ID in the POST request to cancel the refund.
      * @param voidRefundRequest  (required)
      * @param id The refund ID returned from a previous refund request. (required)
-     * @return InlineResponse2015
+     * @return InlineResponse2015 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2015 voidRefund(VoidRefundRequest voidRefundRequest, String id) throws ApiException {
@@ -682,7 +677,7 @@ public class VoidApi {
      * Include the refund ID in the POST request to cancel the refund.
      * @param voidRefundRequest  (required)
      * @param id The refund ID returned from a previous refund request. (required)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse - InlineResponse2015.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2015> voidRefundWithHttpInfo(VoidRefundRequest voidRefundRequest, String id) throws ApiException {

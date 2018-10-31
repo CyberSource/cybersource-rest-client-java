@@ -13,6 +13,15 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,23 +30,9 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
 import Model.CreatePaymentRequest;
 import Model.InlineResponse2002;
 import Model.InlineResponse201;
-import Model.InlineResponse400;
-import Model.InlineResponse502;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class PaymentApi {
     private ApiClient apiClient;
@@ -128,7 +123,7 @@ public class PaymentApi {
      * Process a Payment
      * Authorize the payment for the transaction. 
      * @param createPaymentRequest  (required)
-     * @return InlineResponse201
+     * @return InlineResponse201 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse201 createPayment(CreatePaymentRequest createPaymentRequest) throws ApiException {
@@ -140,7 +135,7 @@ public class PaymentApi {
      * Process a Payment
      * Authorize the payment for the transaction. 
      * @param createPaymentRequest  (required)
-     * @return ApiResponse&lt;InlineResponse201&gt;
+     * @return ApiResponse - InlineResponse201.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse201> createPaymentWithHttpInfo(CreatePaymentRequest createPaymentRequest) throws ApiException {
@@ -254,7 +249,7 @@ public class PaymentApi {
      * Retrieve a Payment
      * Include the payment ID in the GET request to retrieve the payment details.
      * @param id The payment ID returned from a previous payment request.  (required)
-     * @return InlineResponse2002
+     * @return InlineResponse2002 generated
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2002 getPayment(String id) throws ApiException {
@@ -266,7 +261,7 @@ public class PaymentApi {
      * Retrieve a Payment
      * Include the payment ID in the GET request to retrieve the payment details.
      * @param id The payment ID returned from a previous payment request.  (required)
-     * @return ApiResponse&lt;InlineResponse2002&gt;
+     * @return ApiResponse - InlineResponse2002.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2002> getPaymentWithHttpInfo(String id) throws ApiException {

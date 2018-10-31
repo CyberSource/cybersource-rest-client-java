@@ -14,16 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse200Der;
-import Model.InlineResponse200Jwk;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse200
@@ -64,7 +58,7 @@ public class InlineResponse200 {
 
    /**
    * Get der
-   * @return der
+   * @return der object.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse200Der getDer() {
@@ -82,7 +76,7 @@ public class InlineResponse200 {
 
    /**
    * Get jwk
-   * @return jwk
+   * @return jwk object.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse200Jwk getJwk() {

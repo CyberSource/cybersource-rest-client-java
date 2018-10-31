@@ -14,19 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse2008LinksFirst;
-import Model.InlineResponse2008LinksLast;
-import Model.InlineResponse2008LinksNext;
-import Model.InlineResponse2008LinksPrev;
-import Model.InlineResponse2008LinksSelf;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2008Links
@@ -55,7 +46,7 @@ public class InlineResponse2008Links {
 
    /**
    * Get self
-   * @return self
+   * @return self Get self.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2008LinksSelf getSelf() {
@@ -73,7 +64,7 @@ public class InlineResponse2008Links {
 
    /**
    * Get first
-   * @return first
+   * @return first Get first.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2008LinksFirst getFirst() {
@@ -91,7 +82,7 @@ public class InlineResponse2008Links {
 
    /**
    * Get prev
-   * @return prev
+   * @return prev previous.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2008LinksPrev getPrev() {
@@ -109,7 +100,7 @@ public class InlineResponse2008Links {
 
    /**
    * Get next
-   * @return next
+   * @return next Next.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2008LinksNext getNext() {
@@ -127,7 +118,7 @@ public class InlineResponse2008Links {
 
    /**
    * Get last
-   * @return last
+   * @return last Last.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2008LinksLast getLast() {

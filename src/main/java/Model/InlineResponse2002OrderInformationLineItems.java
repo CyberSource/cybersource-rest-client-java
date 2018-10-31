@@ -13,19 +13,14 @@
 
 package Model;
 
-import java.util.Objects;
-import Model.V2paymentsOrderInformationAmountDetailsTaxDetails;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * InlineResponse2002OrderInformationLineItems
@@ -90,7 +85,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**.  For a payment, when you set this field to a value other than default or any of the values related to shipping and handling, below fields _quantity_, _productName_, and _productSKU_ are required. 
-   * @return productCode
+   * @return productCode Type of product.
   **/
   @ApiModelProperty(value = "Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**.  For a payment, when you set this field to a value other than default or any of the values related to shipping and handling, below fields _quantity_, _productName_, and _productSKU_ are required. ")
   public String getProductCode() {
@@ -108,7 +103,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and handling. 
-   * @return productName
+   * @return productName Product Name.
   **/
   @ApiModelProperty(value = "For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and handling. ")
   public String getProductName() {
@@ -126,7 +121,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Identification code for the product. For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and/or handling. 
-   * @return productSku
+   * @return productSku Identification code for the product.
   **/
   @ApiModelProperty(value = "Identification code for the product. For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and/or handling. ")
   public String getProductSku() {
@@ -146,7 +141,7 @@ public class InlineResponse2002OrderInformationLineItems {
    * For a payment or capture, this field is required when _productCode_ is not **default** or one of the values related to shipping and handling. 
    * minimum: 1
    * maximum: 9999999999
-   * @return quantity
+   * @return quantity Quantity.
   **/
   @ApiModelProperty(value = "For a payment or capture, this field is required when _productCode_ is not **default** or one of the values related to shipping and handling. ")
   public BigDecimal getQuantity() {
@@ -182,7 +177,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Unit of measure, or unit of measure code, for the item. 
-   * @return unitOfMeasure
+   * @return unitOfMeasure Unit of measure.
   **/
   @ApiModelProperty(value = "Unit of measure, or unit of measure code, for the item. ")
   public String getUnitOfMeasure() {
@@ -200,7 +195,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Total amount for the item. Normally calculated as the unit price x quantity. 
-   * @return totalAmount
+   * @return totalAmount Total amount for the item.
   **/
   @ApiModelProperty(value = "Total amount for the item. Normally calculated as the unit price x quantity. ")
   public String getTotalAmount() {
@@ -218,7 +213,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount&#x3D;10.00, quantity&#x3D;1, and taxAmount&#x3D;0.80  ..- 2nd line item has amount&#x3D;20.00, quantity&#x3D;1, and taxAmount&#x3D;1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  This field is frequently used for Level II and Level III transactions. 
-   * @return taxAmount
+   * @return taxAmount Total tax to apply to the product.
   **/
   @ApiModelProperty(value = "Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount=10.00, quantity=1, and taxAmount=0.80  ..- 2nd line item has amount=20.00, quantity=1, and taxAmount=1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  This field is frequently used for Level II and Level III transactions. ")
   public String getTaxAmount() {
@@ -236,7 +231,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Tax rate applied to the item. See \&quot;Numbered Elements,\&quot; page 14.  Visa: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  Mastercard: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%). 
-   * @return taxRate
+   * @return taxRate Tax rate applied to the item.
   **/
   @ApiModelProperty(value = "Tax rate applied to the item. See \"Numbered Elements,\" page 14.  Visa: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  Mastercard: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%). ")
   public String getTaxRate() {
@@ -254,7 +249,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax  - 0011: goods and services tax  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - Blank: Tax not supported on line item. 
-   * @return taxTypeCode
+   * @return taxTypeCode Type of tax being applied to the item.
   **/
   @ApiModelProperty(value = "Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax  - 0011: goods and services tax  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - Blank: Tax not supported on line item. ")
   public String getTaxTypeCode() {
@@ -272,7 +267,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Flag that indicates whether the tax amount is included in the Line Item Total. 
-   * @return amountIncludesTax
+   * @return amountIncludesTax Flag that indicates whether the tax amount is included in the Line Item Total.
   **/
   @ApiModelProperty(value = "Flag that indicates whether the tax amount is included in the Line Item Total. ")
   public Boolean getAmountIncludesTax() {
@@ -290,7 +285,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Commodity code or International description code used to classify the item. Contact your acquirer for a list of codes. 
-   * @return commodityCode
+   * @return commodityCode Commodity code or International description code used to classify the item. Contact your acquirer for a list of codes. 
   **/
   @ApiModelProperty(value = "Commodity code or International description code used to classify the item. Contact your acquirer for a list of codes. ")
   public String getCommodityCode() {
@@ -308,7 +303,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Discount applied to the item.
-   * @return discountAmount
+   * @return discountAmount Discount applied to the item.
   **/
   @ApiModelProperty(value = "Discount applied to the item.")
   public String getDiscountAmount() {
@@ -326,7 +321,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Flag that indicates whether the amount is discounted.  If you do not provide a value but you set Discount Amount to a value greater than zero, then CyberSource sets this field to **true**. 
-   * @return discountApplied
+   * @return discountApplied Flag that indicates whether the amount is discounted. 
   **/
   @ApiModelProperty(value = "Flag that indicates whether the amount is discounted.  If you do not provide a value but you set Discount Amount to a value greater than zero, then CyberSource sets this field to **true**. ")
   public Boolean getDiscountApplied() {
@@ -344,7 +339,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Rate the item is discounted. Maximum of 2 decimal places.  Example 5.25 (&#x3D;5.25%) 
-   * @return discountRate
+   * @return discountRate Rate the item is discounted.
   **/
   @ApiModelProperty(value = "Rate the item is discounted. Maximum of 2 decimal places.  Example 5.25 (=5.25%) ")
   public String getDiscountRate() {
@@ -362,7 +357,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Field to support an invoice number for a transaction. You must specify the number of line items that will include an invoice number. By default, the first line item will include an invoice number field. The invoice number field can be included for up to 10 line items. 
-   * @return invoiceNumber
+   * @return invoiceNumber Field to support an invoice number for a transaction.
   **/
   @ApiModelProperty(value = "Field to support an invoice number for a transaction. You must specify the number of line items that will include an invoice number. By default, the first line item will include an invoice number field. The invoice number field can be included for up to 10 line items. ")
   public String getInvoiceNumber() {
@@ -388,7 +383,7 @@ public class InlineResponse2002OrderInformationLineItems {
 
    /**
    * Get taxDetails
-   * @return taxDetails
+   * @return taxDetails object.
   **/
   @ApiModelProperty(value = "")
   public List<V2paymentsOrderInformationAmountDetailsTaxDetails> getTaxDetails() {

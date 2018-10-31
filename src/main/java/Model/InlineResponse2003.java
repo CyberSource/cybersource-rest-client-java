@@ -13,19 +13,16 @@
 
 package Model;
 
+import java.io.IOException;
 import java.util.Objects;
-import Model.InlineResponse2011ProcessorInformation;
-import Model.InlineResponse2011ReversalAmountDetails;
-import Model.InlineResponse201ClientReferenceInformation;
-import Model.InlineResponse201EmbeddedCaptureLinks;
+
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2003
@@ -108,7 +105,7 @@ public class InlineResponse2003 {
 
    /**
    * Get links
-   * @return links
+   * @return links Get links.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse201EmbeddedCaptureLinks getLinks() {
@@ -126,7 +123,7 @@ public class InlineResponse2003 {
 
    /**
    * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @return id
+   * @return id unique identification number.
   **/
   @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request.")
   public String getId() {
@@ -143,8 +140,8 @@ public class InlineResponse2003 {
   }
 
    /**
-   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc
+   * Time of request in UTC. Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc Time of request in UTC.
   **/
   @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
   public String getSubmitTimeUtc() {
@@ -162,7 +159,7 @@ public class InlineResponse2003 {
 
    /**
    * The status of the submitted transaction.
-   * @return status
+   * @return status The status of the submitted transaction.
   **/
   @ApiModelProperty(value = "The status of the submitted transaction.")
   public StatusEnum getStatus() {
@@ -180,7 +177,7 @@ public class InlineResponse2003 {
 
    /**
    * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
-   * @return reconciliationId
+   * @return reconciliationId The reconciliation id for the submitted transaction.
   **/
   @ApiModelProperty(value = "The reconciliation id for the submitted transaction. This value is not returned for all processors. ")
   public String getReconciliationId() {
@@ -198,7 +195,7 @@ public class InlineResponse2003 {
 
    /**
    * Get clientReferenceInformation
-   * @return clientReferenceInformation
+   * @return clientReferenceInformation client Reference Information.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse201ClientReferenceInformation getClientReferenceInformation() {
@@ -216,7 +213,7 @@ public class InlineResponse2003 {
 
    /**
    * Get processorInformation
-   * @return processorInformation
+   * @return processorInformation processor Information.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2011ProcessorInformation getProcessorInformation() {
@@ -234,7 +231,7 @@ public class InlineResponse2003 {
 
    /**
    * Get reversalAmountDetails
-   * @return reversalAmountDetails
+   * @return reversalAmountDetails reversal AmountDetails.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2011ReversalAmountDetails getReversalAmountDetails() {

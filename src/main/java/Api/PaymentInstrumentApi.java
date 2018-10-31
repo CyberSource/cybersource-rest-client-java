@@ -13,6 +13,15 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,22 +30,9 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
 import Model.Body2;
 import Model.Body3;
 import Model.InlineResponse2016;
-import Model.InlineResponse4006;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class PaymentInstrumentApi {
     private ApiClient apiClient;
@@ -136,7 +132,7 @@ public class PaymentInstrumentApi {
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param body Please specify the customers payment details for card or bank account. (required)
-     * @return InlineResponse2016
+     * @return InlineResponse2016 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2016 paymentinstrumentsPost(String profileId, Body2 body) throws ApiException {
@@ -149,7 +145,7 @@ public class PaymentInstrumentApi {
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param body Please specify the customers payment details for card or bank account. (required)
-     * @return ApiResponse&lt;InlineResponse2016&gt;
+     * @return ApiResponse - InlineResponse2016.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2016> paymentinstrumentsPostWithHttpInfo(String profileId, Body2 body) throws ApiException {
@@ -284,7 +280,7 @@ public class PaymentInstrumentApi {
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse - Void.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> paymentinstrumentsTokenIdDeleteWithHttpInfo(String profileId, String tokenId) throws ApiException {
@@ -406,7 +402,7 @@ public class PaymentInstrumentApi {
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @return InlineResponse2016
+     * @return InlineResponse2016 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2016 paymentinstrumentsTokenIdGet(String profileId, String tokenId) throws ApiException {
@@ -419,7 +415,7 @@ public class PaymentInstrumentApi {
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @return ApiResponse&lt;InlineResponse2016&gt;
+     * @return ApiResponse - InlineResponse2016.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2016> paymentinstrumentsTokenIdGetWithHttpInfo(String profileId, String tokenId) throws ApiException {
@@ -550,7 +546,7 @@ public class PaymentInstrumentApi {
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
      * @param body Please specify the customers payment details. (required)
-     * @return InlineResponse2016
+     * @return InlineResponse2016 generated.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2016 paymentinstrumentsTokenIdPatch(String profileId, String tokenId, Body3 body) throws ApiException {
@@ -564,7 +560,7 @@ public class PaymentInstrumentApi {
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
      * @param body Please specify the customers payment details. (required)
-     * @return ApiResponse&lt;InlineResponse2016&gt;
+     * @return ApiResponse - InlineResponse2016.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2016> paymentinstrumentsTokenIdPatchWithHttpInfo(String profileId, String tokenId, Body3 body) throws ApiException {

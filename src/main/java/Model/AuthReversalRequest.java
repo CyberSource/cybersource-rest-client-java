@@ -14,19 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import Model.V2paymentsidreversalsClientReferenceInformation;
-import Model.V2paymentsidreversalsOrderInformation;
-import Model.V2paymentsidreversalsPointOfSaleInformation;
-import Model.V2paymentsidreversalsProcessingInformation;
-import Model.V2paymentsidreversalsReversalInformation;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * AuthReversalRequest
@@ -55,7 +46,7 @@ public class AuthReversalRequest {
 
    /**
    * Get clientReferenceInformation
-   * @return clientReferenceInformation
+   * @return clientReferenceInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidreversalsClientReferenceInformation getClientReferenceInformation() {
@@ -73,7 +64,7 @@ public class AuthReversalRequest {
 
    /**
    * Get reversalInformation
-   * @return reversalInformation
+   * @return reversalInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidreversalsReversalInformation getReversalInformation() {
@@ -91,7 +82,7 @@ public class AuthReversalRequest {
 
    /**
    * Get processingInformation
-   * @return processingInformation
+   * @return processingInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidreversalsProcessingInformation getProcessingInformation() {
@@ -109,7 +100,7 @@ public class AuthReversalRequest {
 
    /**
    * Get orderInformation
-   * @return orderInformation
+   * @return orderInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidreversalsOrderInformation getOrderInformation() {
@@ -127,7 +118,7 @@ public class AuthReversalRequest {
 
    /**
    * Get pointOfSaleInformation
-   * @return pointOfSaleInformation
+   * @return pointOfSaleInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidreversalsPointOfSaleInformation getPointOfSaleInformation() {

@@ -14,14 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2002PaymentInformationCard
@@ -46,10 +42,10 @@ public class InlineResponse2002PaymentInformationCard {
   }
 
    /**
-   * Last four digits of the cardholderâ€™s account number. This field is returned only for tokenized transactions. You can use this value on the receipt that you give to the cardholder. 
-   * @return suffix
+   * Last four digits of the cardholder's account number. This field is returned only for tokenized transactions. You can use this value on the receipt that you give to the cardholder. 
+   * @return suffix Last four digits of the cardholder's account number.
   **/
-  @ApiModelProperty(value = "Last four digits of the cardholderâ€™s account number. This field is returned only for tokenized transactions. You can use this value on the receipt that you give to the cardholder. ")
+  @ApiModelProperty(value = "Last four digits of the cardholder's account number. This field is returned only for tokenized transactions. You can use this value on the receipt that you give to the cardholder. ")
   public String getSuffix() {
     return suffix;
   }
@@ -64,8 +60,8 @@ public class InlineResponse2002PaymentInformationCard {
   }
 
    /**
-   * Two-digit month in which the credit card expires. &#x60;Format: MM&#x60;. Possible values: 01 through 12.  **Encoded Account Numbers**  For encoded account numbers (_type_&#x3D;039), if there is no expiration date on the card, use 12.  For processor-specific information, see the customer_cc_expmo field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
-   * @return expirationMonth
+   * Two-digit month in which the credit card expires.Possible values: 01 through 12.  **Encoded Account Numbers**  For encoded account numbers (_type_&#x3D;039), if there is no expiration date on the card, use 12.  For processor-specific information, see the customer_cc_expmo field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * @return expirationMonth Two-digit month in which the credit card expires. 
   **/
   @ApiModelProperty(value = "Two-digit month in which the credit card expires. `Format: MM`. Possible values: 01 through 12.  **Encoded Account Numbers**  For encoded account numbers (_type_=039), if there is no expiration date on the card, use 12.  For processor-specific information, see the customer_cc_expmo field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getExpirationMonth() {
@@ -82,8 +78,8 @@ public class InlineResponse2002PaymentInformationCard {
   }
 
    /**
-   * Four-digit year in which the credit card expires. &#x60;Format: YYYY&#x60;.  **Encoded Account Numbers**  For encoded account numbers (_type_&#x3D;039), if there is no expiration date on the card, use 2021.  For processor-specific information, see the customer_cc_expyr field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
-   * @return expirationYear
+   * Four-digit year in which the credit card expires.  **Encoded Account Numbers**  For encoded account numbers (_type_&#x3D;039), if there is no expiration date on the card, use 2021.  For processor-specific information, see the customer_cc_expyr field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * @return expirationYear Four-digit year in which the credit card expires.
   **/
   @ApiModelProperty(value = "Four-digit year in which the credit card expires. `Format: YYYY`.  **Encoded Account Numbers**  For encoded account numbers (_type_=039), if there is no expiration date on the card, use 2021.  For processor-specific information, see the customer_cc_expyr field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getExpirationYear() {
@@ -101,7 +97,7 @@ public class InlineResponse2002PaymentInformationCard {
 
    /**
    * Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover 
-   * @return type
+   * @return type Type of card to authorize.
   **/
   @ApiModelProperty(value = "Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover ")
   public String getType() {

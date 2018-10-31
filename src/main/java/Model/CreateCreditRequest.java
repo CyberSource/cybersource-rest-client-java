@@ -13,27 +13,13 @@
 
 package Model;
 
-import java.util.Objects;
-import Model.V2creditsPointOfSaleInformation;
-import Model.V2creditsProcessingInformation;
-import Model.V2paymentsClientReferenceInformation;
-import Model.V2paymentsDeviceInformation;
-import Model.V2paymentsMerchantDefinedInformation;
-import Model.V2paymentsidcapturesAggregatorInformation;
-import Model.V2paymentsidcapturesBuyerInformation;
-import Model.V2paymentsidrefundsMerchantInformation;
-import Model.V2paymentsidrefundsOrderInformation;
-import Model.V2paymentsidrefundsPaymentInformation;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * CreateCreditRequest
@@ -77,7 +63,7 @@ public class CreateCreditRequest {
 
    /**
    * Get clientReferenceInformation
-   * @return clientReferenceInformation
+   * @return clientReferenceInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsClientReferenceInformation getClientReferenceInformation() {
@@ -95,7 +81,7 @@ public class CreateCreditRequest {
 
    /**
    * Get processingInformation
-   * @return processingInformation
+   * @return processingInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2creditsProcessingInformation getProcessingInformation() {
@@ -113,7 +99,7 @@ public class CreateCreditRequest {
 
    /**
    * Get paymentInformation
-   * @return paymentInformation
+   * @return paymentInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidrefundsPaymentInformation getPaymentInformation() {
@@ -131,7 +117,7 @@ public class CreateCreditRequest {
 
    /**
    * Get orderInformation
-   * @return orderInformation
+   * @return orderInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidrefundsOrderInformation getOrderInformation() {
@@ -149,7 +135,7 @@ public class CreateCreditRequest {
 
    /**
    * Get buyerInformation
-   * @return buyerInformation
+   * @return buyerInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidcapturesBuyerInformation getBuyerInformation() {
@@ -167,7 +153,7 @@ public class CreateCreditRequest {
 
    /**
    * Get deviceInformation
-   * @return deviceInformation
+   * @return deviceInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsDeviceInformation getDeviceInformation() {
@@ -185,7 +171,7 @@ public class CreateCreditRequest {
 
    /**
    * Get merchantInformation
-   * @return merchantInformation
+   * @return merchantInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidrefundsMerchantInformation getMerchantInformation() {
@@ -203,7 +189,7 @@ public class CreateCreditRequest {
 
    /**
    * Get aggregatorInformation
-   * @return aggregatorInformation
+   * @return aggregatorInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2paymentsidcapturesAggregatorInformation getAggregatorInformation() {
@@ -221,7 +207,7 @@ public class CreateCreditRequest {
 
    /**
    * Get pointOfSaleInformation
-   * @return pointOfSaleInformation
+   * @return pointOfSaleInformation object.
   **/
   @ApiModelProperty(value = "")
   public V2creditsPointOfSaleInformation getPointOfSaleInformation() {
@@ -247,7 +233,7 @@ public class CreateCreditRequest {
 
    /**
    * TBD
-   * @return merchantDefinedInformation
+   * @return merchantDefinedInformation object.
   **/
   @ApiModelProperty(value = "TBD")
   public List<V2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {

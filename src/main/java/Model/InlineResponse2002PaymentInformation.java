@@ -14,16 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse2002PaymentInformationCard;
-import Model.InlineResponse2002PaymentInformationTokenizedCard;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
  * InlineResponse2002PaymentInformation
@@ -43,7 +37,7 @@ public class InlineResponse2002PaymentInformation {
 
    /**
    * Get card
-   * @return card
+   * @return card - Card.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2002PaymentInformationCard getCard() {
@@ -61,7 +55,7 @@ public class InlineResponse2002PaymentInformation {
 
    /**
    * Get tokenizedCard
-   * @return tokenizedCard
+   * @return tokenizedCard Get tokenizedCard.
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2002PaymentInformationTokenizedCard getTokenizedCard() {
