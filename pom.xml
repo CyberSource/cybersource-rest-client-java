@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+o<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -13,7 +13,7 @@
 	<name>cybersource-rest-client-java</name>
 	<version>0.0.1-SNAPSHOT</version>
 	<url>http://developer.cybersource.com</url>
-	<description>Swagger Java</description>
+	<description>Cybersource Rest client SDK</description>
 	
 	<scm>
 		<connection>scm:git:https://github.com/CyberSource/cybersource-rest-client-java.git</connection>
@@ -33,7 +33,7 @@
 		<developer>
 			<name>CyberSource</name>
 			<email>CyberSource Developer</email>
-			<organization>Swagger</organization>
+			<organization>Cybersource</organization>
 			<organizationUrl>developer@cybersource.com</organizationUrl>
 		</developer>
 	</developers>
