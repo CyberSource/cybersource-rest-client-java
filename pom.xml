@@ -32,7 +32,7 @@ o<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org
 		<developer>
 			<name>CyberSource</name>
 			<email>CyberSource Developer</email>
-			<organization>Swagger</organization>
+			<organization>Cybersource</organization>
 			<organizationUrl>developer@cybersource.com</organizationUrl>
 		</developer>
 	</developers>
