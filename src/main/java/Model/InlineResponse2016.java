@@ -13,24 +13,32 @@
 
 package Model;
 
-import java.io.IOException;
 import java.util.Objects;
-
+import Model.Tmsv1instrumentidentifiersLinks;
+import Model.Tmsv1instrumentidentifiersMetadata;
+import Model.Tmsv1paymentinstrumentsBankAccount;
+import Model.Tmsv1paymentinstrumentsBillTo;
+import Model.Tmsv1paymentinstrumentsBuyerInformation;
+import Model.Tmsv1paymentinstrumentsCard;
+import Model.Tmsv1paymentinstrumentsInstrumentIdentifier;
+import Model.Tmsv1paymentinstrumentsMerchantInformation;
+import Model.Tmsv1paymentinstrumentsProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * InlineResponse2016
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse2016 {
   @SerializedName("_links")
-  private InstrumentidentifiersLinks links = null;
+  private Tmsv1instrumentidentifiersLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -134,30 +142,30 @@ public class InlineResponse2016 {
   private StateEnum state = null;
 
   @SerializedName("bankAccount")
-  private PaymentinstrumentsBankAccount bankAccount = null;
+  private Tmsv1paymentinstrumentsBankAccount bankAccount = null;
 
   @SerializedName("card")
-  private PaymentinstrumentsCard card = null;
+  private Tmsv1paymentinstrumentsCard card = null;
 
   @SerializedName("buyerInformation")
-  private PaymentinstrumentsBuyerInformation buyerInformation = null;
+  private Tmsv1paymentinstrumentsBuyerInformation buyerInformation = null;
 
   @SerializedName("billTo")
-  private PaymentinstrumentsBillTo billTo = null;
+  private Tmsv1paymentinstrumentsBillTo billTo = null;
 
   @SerializedName("processingInformation")
-  private PaymentinstrumentsProcessingInformation processingInformation = null;
+  private Tmsv1paymentinstrumentsProcessingInformation processingInformation = null;
 
   @SerializedName("merchantInformation")
-  private PaymentinstrumentsMerchantInformation merchantInformation = null;
+  private Tmsv1paymentinstrumentsMerchantInformation merchantInformation = null;
 
   @SerializedName("metaData")
-  private InstrumentidentifiersMetadata metaData = null;
+  private Tmsv1instrumentidentifiersMetadata metaData = null;
 
   @SerializedName("instrumentIdentifier")
-  private PaymentinstrumentsInstrumentIdentifier instrumentIdentifier = null;
+  private Tmsv1paymentinstrumentsInstrumentIdentifier instrumentIdentifier = null;
 
-  public InlineResponse2016 links(InstrumentidentifiersLinks links) {
+  public InlineResponse2016 links(Tmsv1instrumentidentifiersLinks links) {
     this.links = links;
     return this;
   }
@@ -167,11 +175,11 @@ public class InlineResponse2016 {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public InstrumentidentifiersLinks getLinks() {
+  public Tmsv1instrumentidentifiersLinks getLinks() {
     return links;
   }
 
-  public void setLinks(InstrumentidentifiersLinks links) {
+  public void setLinks(Tmsv1instrumentidentifiersLinks links) {
     this.links = links;
   }
 
@@ -202,7 +210,7 @@ public class InlineResponse2016 {
     return state;
   }
 
-  public InlineResponse2016 bankAccount(PaymentinstrumentsBankAccount bankAccount) {
+  public InlineResponse2016 bankAccount(Tmsv1paymentinstrumentsBankAccount bankAccount) {
     this.bankAccount = bankAccount;
     return this;
   }
@@ -212,15 +220,15 @@ public class InlineResponse2016 {
    * @return bankAccount
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsBankAccount getBankAccount() {
+  public Tmsv1paymentinstrumentsBankAccount getBankAccount() {
     return bankAccount;
   }
 
-  public void setBankAccount(PaymentinstrumentsBankAccount bankAccount) {
+  public void setBankAccount(Tmsv1paymentinstrumentsBankAccount bankAccount) {
     this.bankAccount = bankAccount;
   }
 
-  public InlineResponse2016 card(PaymentinstrumentsCard card) {
+  public InlineResponse2016 card(Tmsv1paymentinstrumentsCard card) {
     this.card = card;
     return this;
   }
@@ -230,15 +238,15 @@ public class InlineResponse2016 {
    * @return card
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsCard getCard() {
+  public Tmsv1paymentinstrumentsCard getCard() {
     return card;
   }
 
-  public void setCard(PaymentinstrumentsCard card) {
+  public void setCard(Tmsv1paymentinstrumentsCard card) {
     this.card = card;
   }
 
-  public InlineResponse2016 buyerInformation(PaymentinstrumentsBuyerInformation buyerInformation) {
+  public InlineResponse2016 buyerInformation(Tmsv1paymentinstrumentsBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
     return this;
   }
@@ -248,15 +256,15 @@ public class InlineResponse2016 {
    * @return buyerInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsBuyerInformation getBuyerInformation() {
+  public Tmsv1paymentinstrumentsBuyerInformation getBuyerInformation() {
     return buyerInformation;
   }
 
-  public void setBuyerInformation(PaymentinstrumentsBuyerInformation buyerInformation) {
+  public void setBuyerInformation(Tmsv1paymentinstrumentsBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
   }
 
-  public InlineResponse2016 billTo(PaymentinstrumentsBillTo billTo) {
+  public InlineResponse2016 billTo(Tmsv1paymentinstrumentsBillTo billTo) {
     this.billTo = billTo;
     return this;
   }
@@ -266,15 +274,15 @@ public class InlineResponse2016 {
    * @return billTo
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsBillTo getBillTo() {
+  public Tmsv1paymentinstrumentsBillTo getBillTo() {
     return billTo;
   }
 
-  public void setBillTo(PaymentinstrumentsBillTo billTo) {
+  public void setBillTo(Tmsv1paymentinstrumentsBillTo billTo) {
     this.billTo = billTo;
   }
 
-  public InlineResponse2016 processingInformation(PaymentinstrumentsProcessingInformation processingInformation) {
+  public InlineResponse2016 processingInformation(Tmsv1paymentinstrumentsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
@@ -284,15 +292,15 @@ public class InlineResponse2016 {
    * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsProcessingInformation getProcessingInformation() {
+  public Tmsv1paymentinstrumentsProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(PaymentinstrumentsProcessingInformation processingInformation) {
+  public void setProcessingInformation(Tmsv1paymentinstrumentsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
   }
 
-  public InlineResponse2016 merchantInformation(PaymentinstrumentsMerchantInformation merchantInformation) {
+  public InlineResponse2016 merchantInformation(Tmsv1paymentinstrumentsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
     return this;
   }
@@ -302,15 +310,15 @@ public class InlineResponse2016 {
    * @return merchantInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsMerchantInformation getMerchantInformation() {
+  public Tmsv1paymentinstrumentsMerchantInformation getMerchantInformation() {
     return merchantInformation;
   }
 
-  public void setMerchantInformation(PaymentinstrumentsMerchantInformation merchantInformation) {
+  public void setMerchantInformation(Tmsv1paymentinstrumentsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
   }
 
-  public InlineResponse2016 metaData(InstrumentidentifiersMetadata metaData) {
+  public InlineResponse2016 metaData(Tmsv1instrumentidentifiersMetadata metaData) {
     this.metaData = metaData;
     return this;
   }
@@ -320,15 +328,15 @@ public class InlineResponse2016 {
    * @return metaData
   **/
   @ApiModelProperty(value = "")
-  public InstrumentidentifiersMetadata getMetaData() {
+  public Tmsv1instrumentidentifiersMetadata getMetaData() {
     return metaData;
   }
 
-  public void setMetaData(InstrumentidentifiersMetadata metaData) {
+  public void setMetaData(Tmsv1instrumentidentifiersMetadata metaData) {
     this.metaData = metaData;
   }
 
-  public InlineResponse2016 instrumentIdentifier(PaymentinstrumentsInstrumentIdentifier instrumentIdentifier) {
+  public InlineResponse2016 instrumentIdentifier(Tmsv1paymentinstrumentsInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
     return this;
   }
@@ -338,11 +346,11 @@ public class InlineResponse2016 {
    * @return instrumentIdentifier
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsInstrumentIdentifier getInstrumentIdentifier() {
+  public Tmsv1paymentinstrumentsInstrumentIdentifier getInstrumentIdentifier() {
     return instrumentIdentifier;
   }
 
-  public void setInstrumentIdentifier(PaymentinstrumentsInstrumentIdentifier instrumentIdentifier) {
+  public void setInstrumentIdentifier(Tmsv1paymentinstrumentsInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
   }
 

@@ -13,47 +13,48 @@
 
 package Model;
 
-import java.io.IOException;
 import java.util.Objects;
-
+import Model.InlineResponse2005Attributes;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse2005
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse2005 {
-  @SerializedName("_links")
-  private InlineResponse2013Links links = null;
+  @SerializedName("type")
+  private String type = null;
 
-  @SerializedName("id")
-  private String id = null;
+  @SerializedName("reportDefinitionId")
+  private Integer reportDefinitionId = null;
 
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("reportDefintionName")
+  private String reportDefintionName = null;
+
+  @SerializedName("attributes")
+  private List<InlineResponse2005Attributes> attributes = null;
 
   /**
-   * The status of the submitted transaction.
+   * Gets or Sets supportedFormats
    */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    PENDING("PENDING"),
+  @JsonAdapter(SupportedFormatsEnum.Adapter.class)
+  public enum SupportedFormatsEnum {
+    APPLICATION_XML("application/xml"),
     
-    TRANSMITTED("TRANSMITTED"),
-    
-    BATCH_ERROR("BATCH_ERROR"),
-    
-    VOIDED("VOIDED");
+    TEXT_CSV("text/csv");
 
     private String value;
 
-    StatusEnum(String value) {
+    SupportedFormatsEnum(String value) {
       this.value = value;
     }
 
@@ -66,8 +67,8 @@ public class InlineResponse2005 {
       return String.valueOf(value);
     }
 
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
+    public static SupportedFormatsEnum fromValue(String text) {
+      for (SupportedFormatsEnum b : SupportedFormatsEnum.values()) {
         if (String.valueOf(b.value).equals(text)) {
           return b;
         }
@@ -75,156 +76,148 @@ public class InlineResponse2005 {
       return null;
     }
 
-    public static class Adapter extends TypeAdapter<StatusEnum> {
+    public static class Adapter extends TypeAdapter<SupportedFormatsEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final SupportedFormatsEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+      public SupportedFormatsEnum read(final JsonReader jsonReader) throws IOException {
         String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
+        return SupportedFormatsEnum.fromValue(String.valueOf(value));
       }
     }
   }
 
-  @SerializedName("status")
-  private StatusEnum status = null;
+  @SerializedName("supportedFormats")
+  private List<SupportedFormatsEnum> supportedFormats = null;
 
-  @SerializedName("reconciliationId")
-  private String reconciliationId = null;
+  @SerializedName("description")
+  private String description = null;
 
-  @SerializedName("clientReferenceInformation")
-  private InlineResponse201ClientReferenceInformation clientReferenceInformation = null;
-
-  @SerializedName("refundAmountDetails")
-  private InlineResponse2013RefundAmountDetails refundAmountDetails = null;
-
-  public InlineResponse2005 links(InlineResponse2013Links links) {
-    this.links = links;
+  public InlineResponse2005 type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Get links
-   * @return links Links.
+   * Get type
+   * @return type
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2013Links getLinks() {
-    return links;
+  public String getType() {
+    return type;
   }
 
-  public void setLinks(InlineResponse2013Links links) {
-    this.links = links;
+  public void setType(String type) {
+    this.type = type;
   }
 
-  public InlineResponse2005 id(String id) {
-    this.id = id;
+  public InlineResponse2005 reportDefinitionId(Integer reportDefinitionId) {
+    this.reportDefinitionId = reportDefinitionId;
     return this;
   }
 
    /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @return id unique identification number.
-  **/
-  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request.")
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public InlineResponse2005 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
-   /**
-   * Time of request in UTC.  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc Time of request in UTC..
-  **/
-  @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
-
-  public InlineResponse2005 status(StatusEnum status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * The status of the submitted transaction.
-   * @return status The status of the submitted transaction.
-  **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
-  public StatusEnum getStatus() {
-    return status;
-  }
-
-  public void setStatus(StatusEnum status) {
-    this.status = status;
-  }
-
-  public InlineResponse2005 reconciliationId(String reconciliationId) {
-    this.reconciliationId = reconciliationId;
-    return this;
-  }
-
-   /**
-   * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
-   * @return reconciliationId The reconciliation id for the submitted transaction.
-  **/
-  @ApiModelProperty(value = "The reconciliation id for the submitted transaction. This value is not returned for all processors. ")
-  public String getReconciliationId() {
-    return reconciliationId;
-  }
-
-  public void setReconciliationId(String reconciliationId) {
-    this.reconciliationId = reconciliationId;
-  }
-
-  public InlineResponse2005 clientReferenceInformation(InlineResponse201ClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
-    return this;
-  }
-
-   /**
-   * Get clientReferenceInformation
-   * @return clientReferenceInformation client Reference Information.
+   * Get reportDefinitionId
+   * @return reportDefinitionId
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse201ClientReferenceInformation getClientReferenceInformation() {
-    return clientReferenceInformation;
+  public Integer getReportDefinitionId() {
+    return reportDefinitionId;
   }
 
-  public void setClientReferenceInformation(InlineResponse201ClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
+  public void setReportDefinitionId(Integer reportDefinitionId) {
+    this.reportDefinitionId = reportDefinitionId;
   }
 
-  public InlineResponse2005 refundAmountDetails(InlineResponse2013RefundAmountDetails refundAmountDetails) {
-    this.refundAmountDetails = refundAmountDetails;
+  public InlineResponse2005 reportDefintionName(String reportDefintionName) {
+    this.reportDefintionName = reportDefintionName;
     return this;
   }
 
    /**
-   * Get refundAmountDetails
-   * @return refundAmountDetails refund Amount Details.
+   * Get reportDefintionName
+   * @return reportDefintionName
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2013RefundAmountDetails getRefundAmountDetails() {
-    return refundAmountDetails;
+  public String getReportDefintionName() {
+    return reportDefintionName;
   }
 
-  public void setRefundAmountDetails(InlineResponse2013RefundAmountDetails refundAmountDetails) {
-    this.refundAmountDetails = refundAmountDetails;
+  public void setReportDefintionName(String reportDefintionName) {
+    this.reportDefintionName = reportDefintionName;
+  }
+
+  public InlineResponse2005 attributes(List<InlineResponse2005Attributes> attributes) {
+    this.attributes = attributes;
+    return this;
+  }
+
+  public InlineResponse2005 addAttributesItem(InlineResponse2005Attributes attributesItem) {
+    if (this.attributes == null) {
+      this.attributes = new ArrayList<InlineResponse2005Attributes>();
+    }
+    this.attributes.add(attributesItem);
+    return this;
+  }
+
+   /**
+   * Get attributes
+   * @return attributes
+  **/
+  @ApiModelProperty(value = "")
+  public List<InlineResponse2005Attributes> getAttributes() {
+    return attributes;
+  }
+
+  public void setAttributes(List<InlineResponse2005Attributes> attributes) {
+    this.attributes = attributes;
+  }
+
+  public InlineResponse2005 supportedFormats(List<SupportedFormatsEnum> supportedFormats) {
+    this.supportedFormats = supportedFormats;
+    return this;
+  }
+
+  public InlineResponse2005 addSupportedFormatsItem(SupportedFormatsEnum supportedFormatsItem) {
+    if (this.supportedFormats == null) {
+      this.supportedFormats = new ArrayList<SupportedFormatsEnum>();
+    }
+    this.supportedFormats.add(supportedFormatsItem);
+    return this;
+  }
+
+   /**
+   * Get supportedFormats
+   * @return supportedFormats
+  **/
+  @ApiModelProperty(value = "")
+  public List<SupportedFormatsEnum> getSupportedFormats() {
+    return supportedFormats;
+  }
+
+  public void setSupportedFormats(List<SupportedFormatsEnum> supportedFormats) {
+    this.supportedFormats = supportedFormats;
+  }
+
+  public InlineResponse2005 description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Get description
+   * @return description
+  **/
+  @ApiModelProperty(value = "")
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 
@@ -237,18 +230,17 @@ public class InlineResponse2005 {
       return false;
     }
     InlineResponse2005 inlineResponse2005 = (InlineResponse2005) o;
-    return Objects.equals(this.links, inlineResponse2005.links) &&
-        Objects.equals(this.id, inlineResponse2005.id) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse2005.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2005.status) &&
-        Objects.equals(this.reconciliationId, inlineResponse2005.reconciliationId) &&
-        Objects.equals(this.clientReferenceInformation, inlineResponse2005.clientReferenceInformation) &&
-        Objects.equals(this.refundAmountDetails, inlineResponse2005.refundAmountDetails);
+    return Objects.equals(this.type, inlineResponse2005.type) &&
+        Objects.equals(this.reportDefinitionId, inlineResponse2005.reportDefinitionId) &&
+        Objects.equals(this.reportDefintionName, inlineResponse2005.reportDefintionName) &&
+        Objects.equals(this.attributes, inlineResponse2005.attributes) &&
+        Objects.equals(this.supportedFormats, inlineResponse2005.supportedFormats) &&
+        Objects.equals(this.description, inlineResponse2005.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, refundAmountDetails);
+    return Objects.hash(type, reportDefinitionId, reportDefintionName, attributes, supportedFormats, description);
   }
 
 
@@ -257,13 +249,12 @@ public class InlineResponse2005 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2005 {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    refundAmountDetails: ").append(toIndentedString(refundAmountDetails)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    reportDefinitionId: ").append(toIndentedString(reportDefinitionId)).append("\n");
+    sb.append("    reportDefintionName: ").append(toIndentedString(reportDefintionName)).append("\n");
+    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+    sb.append("    supportedFormats: ").append(toIndentedString(supportedFormats)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();
   }

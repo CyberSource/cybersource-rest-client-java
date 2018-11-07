@@ -13,18 +13,23 @@
 
 package Model;
 
+import java.util.Objects;
+import Model.InlineResponseDefaultLinksNext;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
-import com.google.gson.annotations.SerializedName;
-
-import io.swagger.annotations.ApiModelProperty;
 
 /**
  * ErrorLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class ErrorLinks {
   @SerializedName("self")
   private InlineResponseDefaultLinksNext self = null;
@@ -42,7 +47,7 @@ public class ErrorLinks {
 
    /**
    * Get self
-   * @return self object.
+   * @return self
   **/
   @ApiModelProperty(value = "")
   public InlineResponseDefaultLinksNext getSelf() {
@@ -68,7 +73,7 @@ public class ErrorLinks {
 
    /**
    * Get documentation
-   * @return documentation object.
+   * @return documentation
   **/
   @ApiModelProperty(value = "")
   public List<InlineResponseDefaultLinksNext> getDocumentation() {
@@ -94,7 +99,7 @@ public class ErrorLinks {
 
    /**
    * Get next
-   * @return next object.
+   * @return next
   **/
   @ApiModelProperty(value = "")
   public List<InlineResponseDefaultLinksNext> getNext() {

@@ -13,35 +13,52 @@
 
 package Model;
 
-import java.io.IOException;
 import java.util.Objects;
-
+import Model.InlineResponse2006ReportPreferences;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.joda.time.DateTime;
 
 /**
- * InlineResponse2008
+ * Report Log
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@ApiModel(description = "Report Log")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse2008 {
-  @SerializedName("_links")
-  private InlineResponse2008Links links = null;
+  @SerializedName("organizationId")
+  private String organizationId = null;
+
+  @SerializedName("reportId")
+  private String reportId = null;
+
+  @SerializedName("reportDefinitionId")
+  private String reportDefinitionId = null;
+
+  @SerializedName("reportName")
+  private String reportName = null;
 
   /**
-   * Shows the response is a collection of objects.
+   * Report Format
    */
-  @JsonAdapter(ObjectEnum.Adapter.class)
-  public enum ObjectEnum {
-    COLLECTION("collection");
+  @JsonAdapter(ReportMimeTypeEnum.Adapter.class)
+  public enum ReportMimeTypeEnum {
+    APPLICATION_XML("application/xml"),
+    
+    TEXT_CSV("text/csv");
 
     private String value;
 
-    ObjectEnum(String value) {
+    ReportMimeTypeEnum(String value) {
       this.value = value;
     }
 
@@ -54,8 +71,8 @@ public class InlineResponse2008 {
       return String.valueOf(value);
     }
 
-    public static ObjectEnum fromValue(String text) {
-      for (ObjectEnum b : ObjectEnum.values()) {
+    public static ReportMimeTypeEnum fromValue(String text) {
+      for (ReportMimeTypeEnum b : ReportMimeTypeEnum.values()) {
         if (String.valueOf(b.value).equals(text)) {
           return b;
         }
@@ -63,117 +80,422 @@ public class InlineResponse2008 {
       return null;
     }
 
-    public static class Adapter extends TypeAdapter<ObjectEnum> {
+    public static class Adapter extends TypeAdapter<ReportMimeTypeEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final ObjectEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final ReportMimeTypeEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public ObjectEnum read(final JsonReader jsonReader) throws IOException {
+      public ReportMimeTypeEnum read(final JsonReader jsonReader) throws IOException {
         String value = jsonReader.nextString();
-        return ObjectEnum.fromValue(String.valueOf(value));
+        return ReportMimeTypeEnum.fromValue(String.valueOf(value));
       }
     }
   }
 
-  @SerializedName("object")
-  private ObjectEnum object = null;
+  @SerializedName("reportMimeType")
+  private ReportMimeTypeEnum reportMimeType = null;
 
-  @SerializedName("offset")
-  private String offset = null;
+  /**
+   * Report Frequency Value
+   */
+  @JsonAdapter(ReportFrequencyEnum.Adapter.class)
+  public enum ReportFrequencyEnum {
+    DAILY("DAILY"),
+    
+    WEEKLY("WEEKLY"),
+    
+    MONTHLY("MONTHLY");
 
-  @SerializedName("limit")
-  private String limit = null;
+    private String value;
 
-  @SerializedName("count")
-  private String count = null;
+    ReportFrequencyEnum(String value) {
+      this.value = value;
+    }
 
-  @SerializedName("total")
-  private String total = null;
+    public String getValue() {
+      return value;
+    }
 
-  @SerializedName("_embedded")
-  private Object embedded = null;
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
 
-  public InlineResponse2008 links(InlineResponse2008Links links) {
-    this.links = links;
+    public static ReportFrequencyEnum fromValue(String text) {
+      for (ReportFrequencyEnum b : ReportFrequencyEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<ReportFrequencyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ReportFrequencyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ReportFrequencyEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ReportFrequencyEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("reportFrequency")
+  private ReportFrequencyEnum reportFrequency = null;
+
+  @SerializedName("reportFields")
+  private List<String> reportFields = null;
+
+  /**
+   * Report Status Value
+   */
+  @JsonAdapter(ReportStatusEnum.Adapter.class)
+  public enum ReportStatusEnum {
+    COMPLETED("COMPLETED"),
+    
+    PENDING("PENDING"),
+    
+    QUEUED("QUEUED"),
+    
+    RUNNING("RUNNING"),
+    
+    ERROR("ERROR"),
+    
+    NO_DATA("NO_DATA"),
+    
+    RERUN("RERUN");
+
+    private String value;
+
+    ReportStatusEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ReportStatusEnum fromValue(String text) {
+      for (ReportStatusEnum b : ReportStatusEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<ReportStatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ReportStatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ReportStatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ReportStatusEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("reportStatus")
+  private ReportStatusEnum reportStatus = null;
+
+  @SerializedName("reportStartTime")
+  private DateTime reportStartTime = null;
+
+  @SerializedName("reportEndTime")
+  private DateTime reportEndTime = null;
+
+  @SerializedName("timezone")
+  private String timezone = null;
+
+  @SerializedName("reportFilters")
+  private Map<String, List<String>> reportFilters = null;
+
+  @SerializedName("reportPreferences")
+  private InlineResponse2006ReportPreferences reportPreferences = null;
+
+  @SerializedName("selectedMerchantGroupName")
+  private String selectedMerchantGroupName = null;
+
+  public InlineResponse2008 organizationId(String organizationId) {
+    this.organizationId = organizationId;
     return this;
   }
 
    /**
-   * Get links
-   * @return links Links.
+   * CyberSource merchant id
+   * @return organizationId
+  **/
+  @ApiModelProperty(example = "myMerchantId", value = "CyberSource merchant id")
+  public String getOrganizationId() {
+    return organizationId;
+  }
+
+  public void setOrganizationId(String organizationId) {
+    this.organizationId = organizationId;
+  }
+
+  public InlineResponse2008 reportId(String reportId) {
+    this.reportId = reportId;
+    return this;
+  }
+
+   /**
+   * Report ID Value
+   * @return reportId
+  **/
+  @ApiModelProperty(example = "6da01922-bb8e-a1fb-e053-7cb8d30ade29", value = "Report ID Value")
+  public String getReportId() {
+    return reportId;
+  }
+
+  public void setReportId(String reportId) {
+    this.reportId = reportId;
+  }
+
+  public InlineResponse2008 reportDefinitionId(String reportDefinitionId) {
+    this.reportDefinitionId = reportDefinitionId;
+    return this;
+  }
+
+   /**
+   * Report definition Id
+   * @return reportDefinitionId
+  **/
+  @ApiModelProperty(example = "210", value = "Report definition Id")
+  public String getReportDefinitionId() {
+    return reportDefinitionId;
+  }
+
+  public void setReportDefinitionId(String reportDefinitionId) {
+    this.reportDefinitionId = reportDefinitionId;
+  }
+
+  public InlineResponse2008 reportName(String reportName) {
+    this.reportName = reportName;
+    return this;
+  }
+
+   /**
+   * Report Name
+   * @return reportName
+  **/
+  @ApiModelProperty(example = "My Transaction Request report", value = "Report Name")
+  public String getReportName() {
+    return reportName;
+  }
+
+  public void setReportName(String reportName) {
+    this.reportName = reportName;
+  }
+
+  public InlineResponse2008 reportMimeType(ReportMimeTypeEnum reportMimeType) {
+    this.reportMimeType = reportMimeType;
+    return this;
+  }
+
+   /**
+   * Report Format
+   * @return reportMimeType
+  **/
+  @ApiModelProperty(example = "application/xml", value = "Report Format")
+  public ReportMimeTypeEnum getReportMimeType() {
+    return reportMimeType;
+  }
+
+  public void setReportMimeType(ReportMimeTypeEnum reportMimeType) {
+    this.reportMimeType = reportMimeType;
+  }
+
+  public InlineResponse2008 reportFrequency(ReportFrequencyEnum reportFrequency) {
+    this.reportFrequency = reportFrequency;
+    return this;
+  }
+
+   /**
+   * Report Frequency Value
+   * @return reportFrequency
+  **/
+  @ApiModelProperty(example = "DAILY", value = "Report Frequency Value")
+  public ReportFrequencyEnum getReportFrequency() {
+    return reportFrequency;
+  }
+
+  public void setReportFrequency(ReportFrequencyEnum reportFrequency) {
+    this.reportFrequency = reportFrequency;
+  }
+
+  public InlineResponse2008 reportFields(List<String> reportFields) {
+    this.reportFields = reportFields;
+    return this;
+  }
+
+  public InlineResponse2008 addReportFieldsItem(String reportFieldsItem) {
+    if (this.reportFields == null) {
+      this.reportFields = new ArrayList<String>();
+    }
+    this.reportFields.add(reportFieldsItem);
+    return this;
+  }
+
+   /**
+   * List of Integer Values
+   * @return reportFields
+  **/
+  @ApiModelProperty(example = "[\"Request.RequestID\",\"Request.TransactionDate\",\"Request.MerchantID\"]", value = "List of Integer Values")
+  public List<String> getReportFields() {
+    return reportFields;
+  }
+
+  public void setReportFields(List<String> reportFields) {
+    this.reportFields = reportFields;
+  }
+
+  public InlineResponse2008 reportStatus(ReportStatusEnum reportStatus) {
+    this.reportStatus = reportStatus;
+    return this;
+  }
+
+   /**
+   * Report Status Value
+   * @return reportStatus
+  **/
+  @ApiModelProperty(value = "Report Status Value")
+  public ReportStatusEnum getReportStatus() {
+    return reportStatus;
+  }
+
+  public void setReportStatus(ReportStatusEnum reportStatus) {
+    this.reportStatus = reportStatus;
+  }
+
+  public InlineResponse2008 reportStartTime(DateTime reportStartTime) {
+    this.reportStartTime = reportStartTime;
+    return this;
+  }
+
+   /**
+   * Report Start Time Value
+   * @return reportStartTime
+  **/
+  @ApiModelProperty(example = "2017-10-01T10:10:10+05:00", value = "Report Start Time Value")
+  public DateTime getReportStartTime() {
+    return reportStartTime;
+  }
+
+  public void setReportStartTime(DateTime reportStartTime) {
+    this.reportStartTime = reportStartTime;
+  }
+
+  public InlineResponse2008 reportEndTime(DateTime reportEndTime) {
+    this.reportEndTime = reportEndTime;
+    return this;
+  }
+
+   /**
+   * Report End Time Value
+   * @return reportEndTime
+  **/
+  @ApiModelProperty(example = "2017-10-02T10:10:10+05:00", value = "Report End Time Value")
+  public DateTime getReportEndTime() {
+    return reportEndTime;
+  }
+
+  public void setReportEndTime(DateTime reportEndTime) {
+    this.reportEndTime = reportEndTime;
+  }
+
+  public InlineResponse2008 timezone(String timezone) {
+    this.timezone = timezone;
+    return this;
+  }
+
+   /**
+   * Time Zone Value
+   * @return timezone
+  **/
+  @ApiModelProperty(example = "America/Chicago", value = "Time Zone Value")
+  public String getTimezone() {
+    return timezone;
+  }
+
+  public void setTimezone(String timezone) {
+    this.timezone = timezone;
+  }
+
+  public InlineResponse2008 reportFilters(Map<String, List<String>> reportFilters) {
+    this.reportFilters = reportFilters;
+    return this;
+  }
+
+  public InlineResponse2008 putReportFiltersItem(String key, List<String> reportFiltersItem) {
+    if (this.reportFilters == null) {
+      this.reportFilters = new HashMap<String, List<String>>();
+    }
+    this.reportFilters.put(key, reportFiltersItem);
+    return this;
+  }
+
+   /**
+   * Report Filters
+   * @return reportFilters
+  **/
+  @ApiModelProperty(value = "Report Filters")
+  public Map<String, List<String>> getReportFilters() {
+    return reportFilters;
+  }
+
+  public void setReportFilters(Map<String, List<String>> reportFilters) {
+    this.reportFilters = reportFilters;
+  }
+
+  public InlineResponse2008 reportPreferences(InlineResponse2006ReportPreferences reportPreferences) {
+    this.reportPreferences = reportPreferences;
+    return this;
+  }
+
+   /**
+   * Get reportPreferences
+   * @return reportPreferences
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2008Links getLinks() {
-    return links;
+  public InlineResponse2006ReportPreferences getReportPreferences() {
+    return reportPreferences;
   }
 
-  public void setLinks(InlineResponse2008Links links) {
-    this.links = links;
+  public void setReportPreferences(InlineResponse2006ReportPreferences reportPreferences) {
+    this.reportPreferences = reportPreferences;
   }
 
-   /**
-   * Shows the response is a collection of objects.
-   * @return object
-  **/
-  @ApiModelProperty(example = "collection", value = "Shows the response is a collection of objects.")
-  public ObjectEnum getObject() {
-    return object;
-  }
-
-   /**
-   * The offset parameter supplied in the request.
-   * @return offset The offset parameter supplied in the request.
-  **/
-  @ApiModelProperty(example = "20", value = "The offset parameter supplied in the request.")
-  public String getOffset() {
-    return offset;
-  }
-
-   /**
-   * The limit parameter supplied in the request.
-   * @return limit The limit parameter supplied in the request
-  **/
-  @ApiModelProperty(example = "1", value = "The limit parameter supplied in the request.")
-  public String getLimit() {
-    return limit;
-  }
-
-   /**
-   * The number of Payment Instruments returned in the array.
-   * @return count The number of Payment Instruments returned in the array.
-  **/
-  @ApiModelProperty(example = "1", value = "The number of Payment Instruments returned in the array.")
-  public String getCount() {
-    return count;
-  }
-
-   /**
-   * The total number of Payment Instruments associated with the Instrument Identifier in the zero-based dataset.
-   * @return total The total number of Payment Instruments associated with the Instrument Identifier in the zero-based dataset.
-  **/
-  @ApiModelProperty(example = "39", value = "The total number of Payment Instruments associated with the Instrument Identifier in the zero-based dataset.")
-  public String getTotal() {
-    return total;
-  }
-
-  public InlineResponse2008 embedded(Object embedded) {
-    this.embedded = embedded;
+  public InlineResponse2008 selectedMerchantGroupName(String selectedMerchantGroupName) {
+    this.selectedMerchantGroupName = selectedMerchantGroupName;
     return this;
   }
 
    /**
-   * Array of Payment Instruments returned for the supplied Instrument Identifier.
-   * @return embedded  Array of Payment Instruments returned for the supplied Instrument Identifier.
+   * Selected Merchant Group name
+   * @return selectedMerchantGroupName
   **/
-  @ApiModelProperty(value = "Array of Payment Instruments returned for the supplied Instrument Identifier.")
-  public Object getEmbedded() {
-    return embedded;
+  @ApiModelProperty(example = "myGroup", value = "Selected Merchant Group name")
+  public String getSelectedMerchantGroupName() {
+    return selectedMerchantGroupName;
   }
 
-  public void setEmbedded(Object embedded) {
-    this.embedded = embedded;
+  public void setSelectedMerchantGroupName(String selectedMerchantGroupName) {
+    this.selectedMerchantGroupName = selectedMerchantGroupName;
   }
 
 
@@ -186,18 +508,25 @@ public class InlineResponse2008 {
       return false;
     }
     InlineResponse2008 inlineResponse2008 = (InlineResponse2008) o;
-    return Objects.equals(this.links, inlineResponse2008.links) &&
-        Objects.equals(this.object, inlineResponse2008.object) &&
-        Objects.equals(this.offset, inlineResponse2008.offset) &&
-        Objects.equals(this.limit, inlineResponse2008.limit) &&
-        Objects.equals(this.count, inlineResponse2008.count) &&
-        Objects.equals(this.total, inlineResponse2008.total) &&
-        Objects.equals(this.embedded, inlineResponse2008.embedded);
+    return Objects.equals(this.organizationId, inlineResponse2008.organizationId) &&
+        Objects.equals(this.reportId, inlineResponse2008.reportId) &&
+        Objects.equals(this.reportDefinitionId, inlineResponse2008.reportDefinitionId) &&
+        Objects.equals(this.reportName, inlineResponse2008.reportName) &&
+        Objects.equals(this.reportMimeType, inlineResponse2008.reportMimeType) &&
+        Objects.equals(this.reportFrequency, inlineResponse2008.reportFrequency) &&
+        Objects.equals(this.reportFields, inlineResponse2008.reportFields) &&
+        Objects.equals(this.reportStatus, inlineResponse2008.reportStatus) &&
+        Objects.equals(this.reportStartTime, inlineResponse2008.reportStartTime) &&
+        Objects.equals(this.reportEndTime, inlineResponse2008.reportEndTime) &&
+        Objects.equals(this.timezone, inlineResponse2008.timezone) &&
+        Objects.equals(this.reportFilters, inlineResponse2008.reportFilters) &&
+        Objects.equals(this.reportPreferences, inlineResponse2008.reportPreferences) &&
+        Objects.equals(this.selectedMerchantGroupName, inlineResponse2008.selectedMerchantGroupName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, object, offset, limit, count, total, embedded);
+    return Objects.hash(organizationId, reportId, reportDefinitionId, reportName, reportMimeType, reportFrequency, reportFields, reportStatus, reportStartTime, reportEndTime, timezone, reportFilters, reportPreferences, selectedMerchantGroupName);
   }
 
 
@@ -206,13 +535,20 @@ public class InlineResponse2008 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2008 {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-    sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
+    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    reportId: ").append(toIndentedString(reportId)).append("\n");
+    sb.append("    reportDefinitionId: ").append(toIndentedString(reportDefinitionId)).append("\n");
+    sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
+    sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");
+    sb.append("    reportFrequency: ").append(toIndentedString(reportFrequency)).append("\n");
+    sb.append("    reportFields: ").append(toIndentedString(reportFields)).append("\n");
+    sb.append("    reportStatus: ").append(toIndentedString(reportStatus)).append("\n");
+    sb.append("    reportStartTime: ").append(toIndentedString(reportStartTime)).append("\n");
+    sb.append("    reportEndTime: ").append(toIndentedString(reportEndTime)).append("\n");
+    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    sb.append("    reportFilters: ").append(toIndentedString(reportFilters)).append("\n");
+    sb.append("    reportPreferences: ").append(toIndentedString(reportPreferences)).append("\n");
+    sb.append("    selectedMerchantGroupName: ").append(toIndentedString(selectedMerchantGroupName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

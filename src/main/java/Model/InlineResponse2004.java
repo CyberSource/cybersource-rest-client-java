@@ -13,323 +13,51 @@
 
 package Model;
 
-import java.io.IOException;
 import java.util.Objects;
-
+import Model.InlineResponse2004ReportDefinitions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse2004
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse2004 {
-  @SerializedName("_links")
-  private InlineResponse2012Links links = null;
+  @SerializedName("reportDefinitions")
+  private List<InlineResponse2004ReportDefinitions> reportDefinitions = null;
 
-  @SerializedName("id")
-  private String id = null;
+  public InlineResponse2004 reportDefinitions(List<InlineResponse2004ReportDefinitions> reportDefinitions) {
+    this.reportDefinitions = reportDefinitions;
+    return this;
+  }
 
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
-
-  /**
-   * The status of the submitted transaction.
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    PENDING("PENDING"),
-    
-    TRANSMITTED("TRANSMITTED"),
-    
-    BATCH_ERROR("BATCH_ERROR"),
-    
-    VOIDED("VOIDED");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
+  public InlineResponse2004 addReportDefinitionsItem(InlineResponse2004ReportDefinitions reportDefinitionsItem) {
+    if (this.reportDefinitions == null) {
+      this.reportDefinitions = new ArrayList<InlineResponse2004ReportDefinitions>();
     }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  @SerializedName("status")
-  private StatusEnum status = null;
-
-  @SerializedName("reconciliationId")
-  private String reconciliationId = null;
-
-  @SerializedName("clientReferenceInformation")
-  private InlineResponse201ClientReferenceInformation clientReferenceInformation = null;
-
-  @SerializedName("processingInformation")
-  private InlineResponse2004ProcessingInformation processingInformation = null;
-
-  @SerializedName("processorInformation")
-  private InlineResponse2012ProcessorInformation processorInformation = null;
-
-  @SerializedName("orderInformation")
-  private InlineResponse2004OrderInformation orderInformation = null;
-
-  @SerializedName("buyerInformation")
-  private V2paymentsidcapturesBuyerInformation buyerInformation = null;
-
-  @SerializedName("merchantInformation")
-  private InlineResponse2002MerchantInformation merchantInformation = null;
-
-  @SerializedName("deviceInformation")
-  private InlineResponse2004DeviceInformation deviceInformation = null;
-
-  public InlineResponse2004 links(InlineResponse2012Links links) {
-    this.links = links;
+    this.reportDefinitions.add(reportDefinitionsItem);
     return this;
   }
 
    /**
-   * Get links
-   * @return links Get links
+   * Get reportDefinitions
+   * @return reportDefinitions
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2012Links getLinks() {
-    return links;
+  public List<InlineResponse2004ReportDefinitions> getReportDefinitions() {
+    return reportDefinitions;
   }
 
-  public void setLinks(InlineResponse2012Links links) {
-    this.links = links;
-  }
-
-  public InlineResponse2004 id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @return id unique identification number.
-  **/
-  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request.")
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public InlineResponse2004 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
-   /**
-   * Time of request in UTC.  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc Time of request in UTC.
-  **/
-  @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
-
-  public InlineResponse2004 status(StatusEnum status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * The status of the submitted transaction.
-   * @return status The status of the submitted transaction.
-  **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
-  public StatusEnum getStatus() {
-    return status;
-  }
-
-  public void setStatus(StatusEnum status) {
-    this.status = status;
-  }
-
-  public InlineResponse2004 reconciliationId(String reconciliationId) {
-    this.reconciliationId = reconciliationId;
-    return this;
-  }
-
-   /**
-   * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
-   * @return reconciliationId The reconciliation id for the submitted transaction.
-  **/
-  @ApiModelProperty(value = "The reconciliation id for the submitted transaction. This value is not returned for all processors. ")
-  public String getReconciliationId() {
-    return reconciliationId;
-  }
-
-  public void setReconciliationId(String reconciliationId) {
-    this.reconciliationId = reconciliationId;
-  }
-
-  public InlineResponse2004 clientReferenceInformation(InlineResponse201ClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
-    return this;
-  }
-
-   /**
-   * Get clientReferenceInformation
-   * @return clientReferenceInformation client Reference Information.
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse201ClientReferenceInformation getClientReferenceInformation() {
-    return clientReferenceInformation;
-  }
-
-  public void setClientReferenceInformation(InlineResponse201ClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
-  }
-
-  public InlineResponse2004 processingInformation(InlineResponse2004ProcessingInformation processingInformation) {
-    this.processingInformation = processingInformation;
-    return this;
-  }
-
-   /**
-   * Get processingInformation
-   * @return processingInformation processing Information.
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2004ProcessingInformation getProcessingInformation() {
-    return processingInformation;
-  }
-
-  public void setProcessingInformation(InlineResponse2004ProcessingInformation processingInformation) {
-    this.processingInformation = processingInformation;
-  }
-
-  public InlineResponse2004 processorInformation(InlineResponse2012ProcessorInformation processorInformation) {
-    this.processorInformation = processorInformation;
-    return this;
-  }
-
-   /**
-   * Get processorInformation
-   * @return processorInformation processor Information.
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2012ProcessorInformation getProcessorInformation() {
-    return processorInformation;
-  }
-
-  public void setProcessorInformation(InlineResponse2012ProcessorInformation processorInformation) {
-    this.processorInformation = processorInformation;
-  }
-
-  public InlineResponse2004 orderInformation(InlineResponse2004OrderInformation orderInformation) {
-    this.orderInformation = orderInformation;
-    return this;
-  }
-
-   /**
-   * Get orderInformation
-   * @return orderInformation order Information.
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2004OrderInformation getOrderInformation() {
-    return orderInformation;
-  }
-
-  public void setOrderInformation(InlineResponse2004OrderInformation orderInformation) {
-    this.orderInformation = orderInformation;
-  }
-
-  public InlineResponse2004 buyerInformation(V2paymentsidcapturesBuyerInformation buyerInformation) {
-    this.buyerInformation = buyerInformation;
-    return this;
-  }
-
-   /**
-   * Get buyerInformation
-   * @return buyerInformation buyer Information.
-  **/
-  @ApiModelProperty(value = "")
-  public V2paymentsidcapturesBuyerInformation getBuyerInformation() {
-    return buyerInformation;
-  }
-
-  public void setBuyerInformation(V2paymentsidcapturesBuyerInformation buyerInformation) {
-    this.buyerInformation = buyerInformation;
-  }
-
-  public InlineResponse2004 merchantInformation(InlineResponse2002MerchantInformation merchantInformation) {
-    this.merchantInformation = merchantInformation;
-    return this;
-  }
-
-   /**
-   * Get merchantInformation
-   * @return merchantInformation merchant Information.
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2002MerchantInformation getMerchantInformation() {
-    return merchantInformation;
-  }
-
-  public void setMerchantInformation(InlineResponse2002MerchantInformation merchantInformation) {
-    this.merchantInformation = merchantInformation;
-  }
-
-  public InlineResponse2004 deviceInformation(InlineResponse2004DeviceInformation deviceInformation) {
-    this.deviceInformation = deviceInformation;
-    return this;
-  }
-
-   /**
-   * Get deviceInformation
-   * @return deviceInformation device Information
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2004DeviceInformation getDeviceInformation() {
-    return deviceInformation;
-  }
-
-  public void setDeviceInformation(InlineResponse2004DeviceInformation deviceInformation) {
-    this.deviceInformation = deviceInformation;
+  public void setReportDefinitions(List<InlineResponse2004ReportDefinitions> reportDefinitions) {
+    this.reportDefinitions = reportDefinitions;
   }
 
 
@@ -342,23 +70,12 @@ public class InlineResponse2004 {
       return false;
     }
     InlineResponse2004 inlineResponse2004 = (InlineResponse2004) o;
-    return Objects.equals(this.links, inlineResponse2004.links) &&
-        Objects.equals(this.id, inlineResponse2004.id) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse2004.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2004.status) &&
-        Objects.equals(this.reconciliationId, inlineResponse2004.reconciliationId) &&
-        Objects.equals(this.clientReferenceInformation, inlineResponse2004.clientReferenceInformation) &&
-        Objects.equals(this.processingInformation, inlineResponse2004.processingInformation) &&
-        Objects.equals(this.processorInformation, inlineResponse2004.processorInformation) &&
-        Objects.equals(this.orderInformation, inlineResponse2004.orderInformation) &&
-        Objects.equals(this.buyerInformation, inlineResponse2004.buyerInformation) &&
-        Objects.equals(this.merchantInformation, inlineResponse2004.merchantInformation) &&
-        Objects.equals(this.deviceInformation, inlineResponse2004.deviceInformation);
+    return Objects.equals(this.reportDefinitions, inlineResponse2004.reportDefinitions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, processingInformation, processorInformation, orderInformation, buyerInformation, merchantInformation, deviceInformation);
+    return Objects.hash(reportDefinitions);
   }
 
 
@@ -367,18 +84,7 @@ public class InlineResponse2004 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2004 {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
-    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
-    sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
+    sb.append("    reportDefinitions: ").append(toIndentedString(reportDefinitions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

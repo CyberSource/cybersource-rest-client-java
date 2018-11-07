@@ -13,17 +13,28 @@
 
 package Model;
 
-import java.math.BigDecimal;
 import java.util.Objects;
-
+import Model.InlineResponse201ProcessorInformationAvs;
+import Model.InlineResponse201ProcessorInformationCardVerification;
+import Model.InlineResponse201ProcessorInformationConsumerAuthenticationResponse;
+import Model.InlineResponse201ProcessorInformationCustomer;
+import Model.InlineResponse201ProcessorInformationElectronicVerificationResults;
+import Model.InlineResponse201ProcessorInformationIssuer;
+import Model.InlineResponse201ProcessorInformationMerchantAdvice;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * InlineResponse201ProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse201ProcessorInformation {
   @SerializedName("approvalCode")
   private String approvalCode = null;
@@ -142,10 +153,10 @@ public class InlineResponse201ProcessorInformation {
   }
 
    /**
-   * TBD
+   * Description of this field is not available.
    * @return networkTransactionId
   **/
-  @ApiModelProperty(value = "TBD")
+  @ApiModelProperty(value = "Description of this field is not available.")
   public String getNetworkTransactionId() {
     return networkTransactionId;
   }
@@ -160,10 +171,10 @@ public class InlineResponse201ProcessorInformation {
   }
 
    /**
-   * TBD
+   * Description of this field is not available.
    * @return providerTransactionId
   **/
-  @ApiModelProperty(value = "TBD")
+  @ApiModelProperty(value = "Description of this field is not available.")
   public String getProviderTransactionId() {
     return providerTransactionId;
   }
@@ -232,10 +243,10 @@ public class InlineResponse201ProcessorInformation {
   }
 
    /**
-   * Processor-defined response category code. The associated detail error code is in the auth_auth_response field or the auth_reversal_auth_ response field depending on which service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latinoâ€”processor transaction ID required for troubleshooting  **Maximum length for processors**:   - Comercio Latino: 32  - All other processors: 3 
+   * Processor-defined response category code. The associated detail error code is in the auth_auth_response field or the auth_reversal_auth_ response field depending on which service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latino—processor transaction ID required for troubleshooting  **Maximum length for processors**:   - Comercio Latino: 32  - All other processors: 3 
    * @return responseCategoryCode
   **/
-  @ApiModelProperty(value = "Processor-defined response category code. The associated detail error code is in the auth_auth_response field or the auth_reversal_auth_ response field depending on which service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latinoâ€”processor transaction ID required for troubleshooting  **Maximum length for processors**:   - Comercio Latino: 32  - All other processors: 3 ")
+  @ApiModelProperty(value = "Processor-defined response category code. The associated detail error code is in the auth_auth_response field or the auth_reversal_auth_ response field depending on which service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latino—processor transaction ID required for troubleshooting  **Maximum length for processors**:   - Comercio Latino: 32  - All other processors: 3 ")
   public String getResponseCategoryCode() {
     return responseCategoryCode;
   }
@@ -394,10 +405,10 @@ public class InlineResponse201ProcessorInformation {
   }
 
    /**
-   * This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  **American Express Direct**  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  **CyberSource through VisaNet**  System trace number that must be printed on the customerâ€™s receipt. 
+   * This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  **American Express Direct**  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  **CyberSource through VisaNet**  System trace number that must be printed on the customer’s receipt. 
    * @return systemTraceAuditNumber
   **/
-  @ApiModelProperty(value = "This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  **American Express Direct**  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  **CyberSource through VisaNet**  System trace number that must be printed on the customerâ€™s receipt. ")
+  @ApiModelProperty(value = "This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  **American Express Direct**  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  **CyberSource through VisaNet**  System trace number that must be printed on the customer’s receipt. ")
   public String getSystemTraceAuditNumber() {
     return systemTraceAuditNumber;
   }
@@ -430,10 +441,10 @@ public class InlineResponse201ProcessorInformation {
   }
 
    /**
-   * Transaction integrity classification provided by Mastercard. This value specifies Mastercardâ€™s evaluation of the transactionâ€™s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - **A1**: EMV or token in a secure, trusted environment  - **B1**: EMV or chip equivalent  - **C1**: Magnetic stripe  - **E1**: Key entered  - **U0**: Unclassified  For card-not-present transactions, possible values:   - **A2**: Digital transactions  - **B2**: Authenticated checkout  - **C2**: Transaction validation  - **D2**: Enhanced data  - **E2**: Generic messaging  - **U0**: Unclassified  For information about these values, contact Mastercard or your acquirer. 
+   * Transaction integrity classification provided by Mastercard. This value specifies Mastercard’s evaluation of the transaction’s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - **A1**: EMV or token in a secure, trusted environment  - **B1**: EMV or chip equivalent  - **C1**: Magnetic stripe  - **E1**: Key entered  - **U0**: Unclassified  For card-not-present transactions, possible values:   - **A2**: Digital transactions  - **B2**: Authenticated checkout  - **C2**: Transaction validation  - **D2**: Enhanced data  - **E2**: Generic messaging  - **U0**: Unclassified  For information about these values, contact Mastercard or your acquirer. 
    * @return transactionIntegrityCode
   **/
-  @ApiModelProperty(value = "Transaction integrity classification provided by Mastercard. This value specifies Mastercardâ€™s evaluation of the transactionâ€™s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - **A1**: EMV or token in a secure, trusted environment  - **B1**: EMV or chip equivalent  - **C1**: Magnetic stripe  - **E1**: Key entered  - **U0**: Unclassified  For card-not-present transactions, possible values:   - **A2**: Digital transactions  - **B2**: Authenticated checkout  - **C2**: Transaction validation  - **D2**: Enhanced data  - **E2**: Generic messaging  - **U0**: Unclassified  For information about these values, contact Mastercard or your acquirer. ")
+  @ApiModelProperty(value = "Transaction integrity classification provided by Mastercard. This value specifies Mastercard’s evaluation of the transaction’s safety and security. This field is returned only for **CyberSource through VisaNet**.  For card-present transactions, possible values:   - **A1**: EMV or token in a secure, trusted environment  - **B1**: EMV or chip equivalent  - **C1**: Magnetic stripe  - **E1**: Key entered  - **U0**: Unclassified  For card-not-present transactions, possible values:   - **A2**: Digital transactions  - **B2**: Authenticated checkout  - **C2**: Transaction validation  - **D2**: Enhanced data  - **E2**: Generic messaging  - **U0**: Unclassified  For information about these values, contact Mastercard or your acquirer. ")
   public String getTransactionIntegrityCode() {
     return transactionIntegrityCode;
   }

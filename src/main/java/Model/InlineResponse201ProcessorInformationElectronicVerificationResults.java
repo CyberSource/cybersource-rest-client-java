@@ -14,15 +14,19 @@
 package Model;
 
 import java.util.Objects;
-
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * InlineResponse201ProcessorInformationElectronicVerificationResults
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse201ProcessorInformationElectronicVerificationResults {
   @SerializedName("code")
   private String code = null;
@@ -66,10 +70,10 @@ public class InlineResponse201ProcessorInformationElectronicVerificationResults 
   }
 
    /**
-   * Mapped Electronic Verification response code for the customerâ€™s name. 
+   * Mapped Electronic Verification response code for the customer’s name. 
    * @return code
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customerâ€™s name. ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s name. ")
   public String getCode() {
     return code;
   }
@@ -84,10 +88,10 @@ public class InlineResponse201ProcessorInformationElectronicVerificationResults 
   }
 
    /**
-   * Raw Electronic Verification response code from the processor for the customerâ€™s last name
+   * Raw Electronic Verification response code from the processor for the customer’s last name
    * @return codeRaw
   **/
-  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customerâ€™s last name")
+  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s last name")
   public String getCodeRaw() {
     return codeRaw;
   }
@@ -102,10 +106,10 @@ public class InlineResponse201ProcessorInformationElectronicVerificationResults 
   }
 
    /**
-   * Mapped Electronic Verification response code for the customerâ€™s email address. 
+   * Mapped Electronic Verification response code for the customer’s email address. 
    * @return email
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customerâ€™s email address. ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s email address. ")
   public String getEmail() {
     return email;
   }
@@ -120,10 +124,10 @@ public class InlineResponse201ProcessorInformationElectronicVerificationResults 
   }
 
    /**
-   * Raw Electronic Verification response code from the processor for the customerâ€™s email address.
+   * Raw Electronic Verification response code from the processor for the customer’s email address.
    * @return emailRaw
   **/
-  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customerâ€™s email address.")
+  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s email address.")
   public String getEmailRaw() {
     return emailRaw;
   }
@@ -138,10 +142,10 @@ public class InlineResponse201ProcessorInformationElectronicVerificationResults 
   }
 
    /**
-   * Mapped Electronic Verification response code for the customerâ€™s phone number. 
+   * Mapped Electronic Verification response code for the customer’s phone number. 
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customerâ€™s phone number. ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s phone number. ")
   public String getPhoneNumber() {
     return phoneNumber;
   }
@@ -156,10 +160,10 @@ public class InlineResponse201ProcessorInformationElectronicVerificationResults 
   }
 
    /**
-   * Raw Electronic Verification response code from the processor for the customerâ€™s phone number.
+   * Raw Electronic Verification response code from the processor for the customer’s phone number.
    * @return phoneNumberRaw
   **/
-  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customerâ€™s phone number.")
+  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s phone number.")
   public String getPhoneNumberRaw() {
     return phoneNumberRaw;
   }
@@ -174,10 +178,10 @@ public class InlineResponse201ProcessorInformationElectronicVerificationResults 
   }
 
    /**
-   * Mapped Electronic Verification response code for the customerâ€™s postal code. 
+   * Mapped Electronic Verification response code for the customer’s postal code. 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customerâ€™s postal code. ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s postal code. ")
   public String getPostalCode() {
     return postalCode;
   }
@@ -192,10 +196,10 @@ public class InlineResponse201ProcessorInformationElectronicVerificationResults 
   }
 
    /**
-   * Raw Electronic Verification response code from the processor for the customerâ€™s postal code.
+   * Raw Electronic Verification response code from the processor for the customer’s postal code.
    * @return postalCodeRaw
   **/
-  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customerâ€™s postal code.")
+  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s postal code.")
   public String getPostalCodeRaw() {
     return postalCodeRaw;
   }
@@ -210,10 +214,10 @@ public class InlineResponse201ProcessorInformationElectronicVerificationResults 
   }
 
    /**
-   * Mapped Electronic Verification response code for the customerâ€™s street address. 
+   * Mapped Electronic Verification response code for the customer’s street address. 
    * @return street
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customerâ€™s street address. ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s street address. ")
   public String getStreet() {
     return street;
   }
@@ -228,10 +232,10 @@ public class InlineResponse201ProcessorInformationElectronicVerificationResults 
   }
 
    /**
-   * Raw Electronic Verification response code from the processor for the customerâ€™s street address.
+   * Raw Electronic Verification response code from the processor for the customer’s street address.
    * @return streetRaw
   **/
-  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customerâ€™s street address.")
+  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s street address.")
   public String getStreetRaw() {
     return streetRaw;
   }

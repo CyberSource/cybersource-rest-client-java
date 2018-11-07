@@ -13,93 +13,45 @@
 
 package Model;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-
+import Model.InlineResponse4005ErrorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * InlineResponse4005
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse4005 {
+  @SerializedName("errorInformation")
+  private InlineResponse4005ErrorInformation errorInformation = null;
+
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
-  @SerializedName("status")
-  private String status = null;
-
-  /**
-   * The reason of the status. 
-   */
-  @JsonAdapter(ReasonEnum.Adapter.class)
-  public enum ReasonEnum {
-    MISSING_FIELD("MISSING_FIELD"),
-    
-    INVALID_DATA("INVALID_DATA"),
-    
-    DUPLICATE_REQUEST("DUPLICATE_REQUEST"),
-    
-    INVALID_MERCHANT_CONFIGURATION("INVALID_MERCHANT_CONFIGURATION"),
-    
-    INVALID_AMOUNT("INVALID_AMOUNT"),
-    
-    DEBIT_CARD_USEAGE_EXCEEDD_LIMIT("DEBIT_CARD_USEAGE_EXCEEDD_LIMIT");
-
-    private String value;
-
-    ReasonEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReasonEnum fromValue(String text) {
-      for (ReasonEnum b : ReasonEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReasonEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReasonEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReasonEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReasonEnum.fromValue(String.valueOf(value));
-      }
-    }
+  public InlineResponse4005 errorInformation(InlineResponse4005ErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
+    return this;
   }
 
-  @SerializedName("reason")
-  private ReasonEnum reason = null;
+   /**
+   * Get errorInformation
+   * @return errorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse4005ErrorInformation getErrorInformation() {
+    return errorInformation;
+  }
 
-  @SerializedName("message")
-  private String message = null;
-
-  @SerializedName("details")
-  private List<InlineResponse201ErrorInformationDetails> details = null;
+  public void setErrorInformation(InlineResponse4005ErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
+  }
 
   public InlineResponse4005 submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -119,86 +71,6 @@ public class InlineResponse4005 {
     this.submitTimeUtc = submitTimeUtc;
   }
 
-  public InlineResponse4005 status(String status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * The status of the submitted transaction.
-   * @return status
-  **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public InlineResponse4005 reason(ReasonEnum reason) {
-    this.reason = reason;
-    return this;
-  }
-
-   /**
-   * The reason of the status. 
-   * @return reason
-  **/
-  @ApiModelProperty(value = "The reason of the status. ")
-  public ReasonEnum getReason() {
-    return reason;
-  }
-
-  public void setReason(ReasonEnum reason) {
-    this.reason = reason;
-  }
-
-  public InlineResponse4005 message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * The detail message related to the status and reason listed above. Possible value is:    - Your aggregator or acquirer is not accepting transactions from you at this time.   - Your aggregator or acquirer is not accepting this transaction.   - CyberSource declined the request because the credit card has expired. You might also receive this value if     the expiration date you provided does not match the date the issuing bank has on file.   - The bank declined the transaction.   - The merchant reference number for this authorization request matches the merchant reference number of     another authorization request that you sent within the past 15 minutes. Resend the request with a unique     merchant reference number.   - The credit card number did not pass CyberSource basic checks.   - Data provided is not consistent with the request. For example, you requested a product with negative cost.   - The request is missing a required field. 
-   * @return message
-  **/
-  @ApiModelProperty(value = "The detail message related to the status and reason listed above. Possible value is:    - Your aggregator or acquirer is not accepting transactions from you at this time.   - Your aggregator or acquirer is not accepting this transaction.   - CyberSource declined the request because the credit card has expired. You might also receive this value if     the expiration date you provided does not match the date the issuing bank has on file.   - The bank declined the transaction.   - The merchant reference number for this authorization request matches the merchant reference number of     another authorization request that you sent within the past 15 minutes. Resend the request with a unique     merchant reference number.   - The credit card number did not pass CyberSource basic checks.   - Data provided is not consistent with the request. For example, you requested a product with negative cost.   - The request is missing a required field. ")
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-  public InlineResponse4005 details(List<InlineResponse201ErrorInformationDetails> details) {
-    this.details = details;
-    return this;
-  }
-
-  public InlineResponse4005 addDetailsItem(InlineResponse201ErrorInformationDetails detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<InlineResponse201ErrorInformationDetails>();
-    }
-    this.details.add(detailsItem);
-    return this;
-  }
-
-   /**
-   * Get details
-   * @return details
-  **/
-  @ApiModelProperty(value = "")
-  public List<InlineResponse201ErrorInformationDetails> getDetails() {
-    return details;
-  }
-
-  public void setDetails(List<InlineResponse201ErrorInformationDetails> details) {
-    this.details = details;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -209,16 +81,13 @@ public class InlineResponse4005 {
       return false;
     }
     InlineResponse4005 inlineResponse4005 = (InlineResponse4005) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse4005.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse4005.status) &&
-        Objects.equals(this.reason, inlineResponse4005.reason) &&
-        Objects.equals(this.message, inlineResponse4005.message) &&
-        Objects.equals(this.details, inlineResponse4005.details);
+    return Objects.equals(this.errorInformation, inlineResponse4005.errorInformation) &&
+        Objects.equals(this.submitTimeUtc, inlineResponse4005.submitTimeUtc);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, reason, message, details);
+    return Objects.hash(errorInformation, submitTimeUtc);
   }
 
 
@@ -227,11 +96,8 @@ public class InlineResponse4005 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4005 {\n");
     
+    sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

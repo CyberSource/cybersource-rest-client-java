@@ -13,18 +13,23 @@
 
 package Model;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
-
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * InlineResponse2001
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse2001 {
   @SerializedName("keyId")
   private String keyId = null;
@@ -57,7 +62,7 @@ public class InlineResponse2001 {
 
    /**
    * The Key ID.
-   * @return keyId The Key ID.
+   * @return keyId
   **/
   @ApiModelProperty(value = "The Key ID.")
   public String getKeyId() {
@@ -75,7 +80,7 @@ public class InlineResponse2001 {
 
    /**
    * The generated token. The token replaces card data and is used as the Subscription ID in the CyberSource Simple Order API or SCMP API.
-   * @return token The generated token.
+   * @return token
   **/
   @ApiModelProperty(value = "The generated token. The token replaces card data and is used as the Subscription ID in the CyberSource Simple Order API or SCMP API.")
   public String getToken() {
@@ -93,7 +98,7 @@ public class InlineResponse2001 {
 
    /**
    * The masked card number displaying the first 6 digits and the last 4 digits.
-   * @return maskedPan The masked card number.
+   * @return maskedPan
   **/
   @ApiModelProperty(value = "The masked card number displaying the first 6 digits and the last 4 digits.")
   public String getMaskedPan() {
@@ -111,7 +116,7 @@ public class InlineResponse2001 {
 
    /**
    * The card type.
-   * @return cardType The card type
+   * @return cardType
   **/
   @ApiModelProperty(value = "The card type.")
   public String getCardType() {
@@ -129,7 +134,7 @@ public class InlineResponse2001 {
 
    /**
    * The UTC date and time in milliseconds at which the signature was generated.
-   * @return timestamp The UTC date and time
+   * @return timestamp
   **/
   @ApiModelProperty(value = "The UTC date and time in milliseconds at which the signature was generated.")
   public Long getTimestamp() {
@@ -147,7 +152,7 @@ public class InlineResponse2001 {
 
    /**
    * Indicates which fields from the response make up the data that is used when verifying the response signature. See the [sample code] (https://github.com/CyberSource/cybersource-flex-samples/blob/master/java/spring-boot/src/main/java/com/cybersource/flex/application/CheckoutController.java) on how to verify the signature.
-   * @return signedFields Signed fields.
+   * @return signedFields
   **/
   @ApiModelProperty(value = "Indicates which fields from the response make up the data that is used when verifying the response signature. See the [sample code] (https://github.com/CyberSource/cybersource-flex-samples/blob/master/java/spring-boot/src/main/java/com/cybersource/flex/application/CheckoutController.java) on how to verify the signature.")
   public String getSignedFields() {
@@ -165,7 +170,7 @@ public class InlineResponse2001 {
 
    /**
    * Flex-generated digital signature. To ensure the values have not been tampered with while passing through the client, verify this server-side using the public key generated from the /keys resource.
-   * @return signature Flex-generated digital signature.
+   * @return signature
   **/
   @ApiModelProperty(value = "Flex-generated digital signature. To ensure the values have not been tampered with while passing through the client, verify this server-side using the public key generated from the /keys resource.")
   public String getSignature() {
@@ -191,7 +196,7 @@ public class InlineResponse2001 {
 
    /**
    * Get discoverableServices
-   * @return discoverableServices object.
+   * @return discoverableServices
   **/
   @ApiModelProperty(value = "")
   public Map<String, Object> getDiscoverableServices() {

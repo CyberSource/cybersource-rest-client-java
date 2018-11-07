@@ -13,27 +13,30 @@
 
 package Model;
 
-import java.io.IOException;
 import java.util.Objects;
-
+import Model.InlineResponse201ClientReferenceInformation;
+import Model.InlineResponse201ErrorInformation;
+import Model.InlineResponse201Links;
+import Model.InlineResponse201OrderInformation;
+import Model.InlineResponse201PaymentInformation;
+import Model.InlineResponse201PointOfSaleInformation;
+import Model.InlineResponse201ProcessorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * InlineResponse201
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse201 {
   @SerializedName("_links")
   private InlineResponse201Links links = null;
-
-  @SerializedName("_embedded")
-  private InlineResponse201Embedded embedded = null;
 
   @SerializedName("id")
   private String id = null;
@@ -132,24 +135,6 @@ public class InlineResponse201 {
 
   public void setLinks(InlineResponse201Links links) {
     this.links = links;
-  }
-
-  public InlineResponse201 embedded(InlineResponse201Embedded embedded) {
-    this.embedded = embedded;
-    return this;
-  }
-
-   /**
-   * Get embedded
-   * @return embedded
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse201Embedded getEmbedded() {
-    return embedded;
-  }
-
-  public void setEmbedded(InlineResponse201Embedded embedded) {
-    this.embedded = embedded;
   }
 
   public InlineResponse201 id(String id) {
@@ -343,7 +328,6 @@ public class InlineResponse201 {
     }
     InlineResponse201 inlineResponse201 = (InlineResponse201) o;
     return Objects.equals(this.links, inlineResponse201.links) &&
-        Objects.equals(this.embedded, inlineResponse201.embedded) &&
         Objects.equals(this.id, inlineResponse201.id) &&
         Objects.equals(this.submitTimeUtc, inlineResponse201.submitTimeUtc) &&
         Objects.equals(this.status, inlineResponse201.status) &&
@@ -358,7 +342,7 @@ public class InlineResponse201 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, embedded, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processorInformation, paymentInformation, orderInformation, pointOfSaleInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processorInformation, paymentInformation, orderInformation, pointOfSaleInformation);
   }
 
 
@@ -368,7 +352,6 @@ public class InlineResponse201 {
     sb.append("class InlineResponse201 {\n");
     
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

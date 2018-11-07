@@ -14,36 +14,47 @@
 package Model;
 
 import java.util.Objects;
-
+import Model.InlineResponse201ClientReferenceInformation;
+import Model.Ptsv2payoutsMerchantInformation;
+import Model.Ptsv2payoutsOrderInformation;
+import Model.Ptsv2payoutsPaymentInformation;
+import Model.Ptsv2payoutsProcessingInformation;
+import Model.Ptsv2payoutsRecipientInformation;
+import Model.Ptsv2payoutsSenderInformation;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * OctCreatePaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class OctCreatePaymentRequest {
   @SerializedName("clientReferenceInformation")
   private InlineResponse201ClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
-  private V2payoutsOrderInformation orderInformation = null;
+  private Ptsv2payoutsOrderInformation orderInformation = null;
 
   @SerializedName("merchantInformation")
-  private V2payoutsMerchantInformation merchantInformation = null;
+  private Ptsv2payoutsMerchantInformation merchantInformation = null;
 
   @SerializedName("recipientInformation")
-  private V2payoutsRecipientInformation recipientInformation = null;
+  private Ptsv2payoutsRecipientInformation recipientInformation = null;
 
   @SerializedName("senderInformation")
-  private V2payoutsSenderInformation senderInformation = null;
+  private Ptsv2payoutsSenderInformation senderInformation = null;
 
   @SerializedName("processingInformation")
-  private V2payoutsProcessingInformation processingInformation = null;
+  private Ptsv2payoutsProcessingInformation processingInformation = null;
 
   @SerializedName("paymentInformation")
-  private V2payoutsPaymentInformation paymentInformation = null;
+  private Ptsv2payoutsPaymentInformation paymentInformation = null;
 
   public OctCreatePaymentRequest clientReferenceInformation(InlineResponse201ClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -63,7 +74,7 @@ public class OctCreatePaymentRequest {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
-  public OctCreatePaymentRequest orderInformation(V2payoutsOrderInformation orderInformation) {
+  public OctCreatePaymentRequest orderInformation(Ptsv2payoutsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
   }
@@ -73,15 +84,15 @@ public class OctCreatePaymentRequest {
    * @return orderInformation
   **/
   @ApiModelProperty(value = "")
-  public V2payoutsOrderInformation getOrderInformation() {
+  public Ptsv2payoutsOrderInformation getOrderInformation() {
     return orderInformation;
   }
 
-  public void setOrderInformation(V2payoutsOrderInformation orderInformation) {
+  public void setOrderInformation(Ptsv2payoutsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
   }
 
-  public OctCreatePaymentRequest merchantInformation(V2payoutsMerchantInformation merchantInformation) {
+  public OctCreatePaymentRequest merchantInformation(Ptsv2payoutsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
     return this;
   }
@@ -91,15 +102,15 @@ public class OctCreatePaymentRequest {
    * @return merchantInformation
   **/
   @ApiModelProperty(value = "")
-  public V2payoutsMerchantInformation getMerchantInformation() {
+  public Ptsv2payoutsMerchantInformation getMerchantInformation() {
     return merchantInformation;
   }
 
-  public void setMerchantInformation(V2payoutsMerchantInformation merchantInformation) {
+  public void setMerchantInformation(Ptsv2payoutsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
   }
 
-  public OctCreatePaymentRequest recipientInformation(V2payoutsRecipientInformation recipientInformation) {
+  public OctCreatePaymentRequest recipientInformation(Ptsv2payoutsRecipientInformation recipientInformation) {
     this.recipientInformation = recipientInformation;
     return this;
   }
@@ -109,15 +120,15 @@ public class OctCreatePaymentRequest {
    * @return recipientInformation
   **/
   @ApiModelProperty(value = "")
-  public V2payoutsRecipientInformation getRecipientInformation() {
+  public Ptsv2payoutsRecipientInformation getRecipientInformation() {
     return recipientInformation;
   }
 
-  public void setRecipientInformation(V2payoutsRecipientInformation recipientInformation) {
+  public void setRecipientInformation(Ptsv2payoutsRecipientInformation recipientInformation) {
     this.recipientInformation = recipientInformation;
   }
 
-  public OctCreatePaymentRequest senderInformation(V2payoutsSenderInformation senderInformation) {
+  public OctCreatePaymentRequest senderInformation(Ptsv2payoutsSenderInformation senderInformation) {
     this.senderInformation = senderInformation;
     return this;
   }
@@ -127,15 +138,15 @@ public class OctCreatePaymentRequest {
    * @return senderInformation
   **/
   @ApiModelProperty(value = "")
-  public V2payoutsSenderInformation getSenderInformation() {
+  public Ptsv2payoutsSenderInformation getSenderInformation() {
     return senderInformation;
   }
 
-  public void setSenderInformation(V2payoutsSenderInformation senderInformation) {
+  public void setSenderInformation(Ptsv2payoutsSenderInformation senderInformation) {
     this.senderInformation = senderInformation;
   }
 
-  public OctCreatePaymentRequest processingInformation(V2payoutsProcessingInformation processingInformation) {
+  public OctCreatePaymentRequest processingInformation(Ptsv2payoutsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
@@ -145,15 +156,15 @@ public class OctCreatePaymentRequest {
    * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public V2payoutsProcessingInformation getProcessingInformation() {
+  public Ptsv2payoutsProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(V2payoutsProcessingInformation processingInformation) {
+  public void setProcessingInformation(Ptsv2payoutsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
   }
 
-  public OctCreatePaymentRequest paymentInformation(V2payoutsPaymentInformation paymentInformation) {
+  public OctCreatePaymentRequest paymentInformation(Ptsv2payoutsPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
   }
@@ -163,11 +174,11 @@ public class OctCreatePaymentRequest {
    * @return paymentInformation
   **/
   @ApiModelProperty(value = "")
-  public V2payoutsPaymentInformation getPaymentInformation() {
+  public Ptsv2payoutsPaymentInformation getPaymentInformation() {
     return paymentInformation;
   }
 
-  public void setPaymentInformation(V2payoutsPaymentInformation paymentInformation) {
+  public void setPaymentInformation(Ptsv2payoutsPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
   }
 

@@ -13,50 +13,64 @@
 
 package Model;
 
+import java.util.Objects;
+import Model.Ptsv2paymentsClientReferenceInformation;
+import Model.Ptsv2paymentsDeviceInformation;
+import Model.Ptsv2paymentsMerchantDefinedInformation;
+import Model.Ptsv2paymentsidcapturesAggregatorInformation;
+import Model.Ptsv2paymentsidcapturesBuyerInformation;
+import Model.Ptsv2paymentsidrefundsMerchantInformation;
+import Model.Ptsv2paymentsidrefundsOrderInformation;
+import Model.Ptsv2paymentsidrefundsPaymentInformation;
+import Model.Ptsv2paymentsidrefundsPointOfSaleInformation;
+import Model.Ptsv2paymentsidrefundsProcessingInformation;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
-import com.google.gson.annotations.SerializedName;
-
-import io.swagger.annotations.ApiModelProperty;
 
 /**
  * RefundPaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class RefundPaymentRequest {
   @SerializedName("clientReferenceInformation")
-  private V2paymentsClientReferenceInformation clientReferenceInformation = null;
+  private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("processingInformation")
-  private V2paymentsidrefundsProcessingInformation processingInformation = null;
+  private Ptsv2paymentsidrefundsProcessingInformation processingInformation = null;
 
   @SerializedName("paymentInformation")
-  private V2paymentsidrefundsPaymentInformation paymentInformation = null;
+  private Ptsv2paymentsidrefundsPaymentInformation paymentInformation = null;
 
   @SerializedName("orderInformation")
-  private V2paymentsidrefundsOrderInformation orderInformation = null;
+  private Ptsv2paymentsidrefundsOrderInformation orderInformation = null;
 
   @SerializedName("buyerInformation")
-  private V2paymentsidcapturesBuyerInformation buyerInformation = null;
+  private Ptsv2paymentsidcapturesBuyerInformation buyerInformation = null;
 
   @SerializedName("deviceInformation")
-  private V2paymentsDeviceInformation deviceInformation = null;
+  private Ptsv2paymentsDeviceInformation deviceInformation = null;
 
   @SerializedName("merchantInformation")
-  private V2paymentsidrefundsMerchantInformation merchantInformation = null;
+  private Ptsv2paymentsidrefundsMerchantInformation merchantInformation = null;
 
   @SerializedName("aggregatorInformation")
-  private V2paymentsidcapturesAggregatorInformation aggregatorInformation = null;
+  private Ptsv2paymentsidcapturesAggregatorInformation aggregatorInformation = null;
 
   @SerializedName("pointOfSaleInformation")
-  private V2paymentsidrefundsPointOfSaleInformation pointOfSaleInformation = null;
+  private Ptsv2paymentsidrefundsPointOfSaleInformation pointOfSaleInformation = null;
 
   @SerializedName("merchantDefinedInformation")
-  private List<V2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
+  private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
 
-  public RefundPaymentRequest clientReferenceInformation(V2paymentsClientReferenceInformation clientReferenceInformation) {
+  public RefundPaymentRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -66,15 +80,15 @@ public class RefundPaymentRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsClientReferenceInformation getClientReferenceInformation() {
+  public Ptsv2paymentsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(V2paymentsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
-  public RefundPaymentRequest processingInformation(V2paymentsidrefundsProcessingInformation processingInformation) {
+  public RefundPaymentRequest processingInformation(Ptsv2paymentsidrefundsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
@@ -84,15 +98,15 @@ public class RefundPaymentRequest {
    * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidrefundsProcessingInformation getProcessingInformation() {
+  public Ptsv2paymentsidrefundsProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(V2paymentsidrefundsProcessingInformation processingInformation) {
+  public void setProcessingInformation(Ptsv2paymentsidrefundsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
   }
 
-  public RefundPaymentRequest paymentInformation(V2paymentsidrefundsPaymentInformation paymentInformation) {
+  public RefundPaymentRequest paymentInformation(Ptsv2paymentsidrefundsPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
   }
@@ -102,15 +116,15 @@ public class RefundPaymentRequest {
    * @return paymentInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidrefundsPaymentInformation getPaymentInformation() {
+  public Ptsv2paymentsidrefundsPaymentInformation getPaymentInformation() {
     return paymentInformation;
   }
 
-  public void setPaymentInformation(V2paymentsidrefundsPaymentInformation paymentInformation) {
+  public void setPaymentInformation(Ptsv2paymentsidrefundsPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
   }
 
-  public RefundPaymentRequest orderInformation(V2paymentsidrefundsOrderInformation orderInformation) {
+  public RefundPaymentRequest orderInformation(Ptsv2paymentsidrefundsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
   }
@@ -120,15 +134,15 @@ public class RefundPaymentRequest {
    * @return orderInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidrefundsOrderInformation getOrderInformation() {
+  public Ptsv2paymentsidrefundsOrderInformation getOrderInformation() {
     return orderInformation;
   }
 
-  public void setOrderInformation(V2paymentsidrefundsOrderInformation orderInformation) {
+  public void setOrderInformation(Ptsv2paymentsidrefundsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
   }
 
-  public RefundPaymentRequest buyerInformation(V2paymentsidcapturesBuyerInformation buyerInformation) {
+  public RefundPaymentRequest buyerInformation(Ptsv2paymentsidcapturesBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
     return this;
   }
@@ -138,15 +152,15 @@ public class RefundPaymentRequest {
    * @return buyerInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidcapturesBuyerInformation getBuyerInformation() {
+  public Ptsv2paymentsidcapturesBuyerInformation getBuyerInformation() {
     return buyerInformation;
   }
 
-  public void setBuyerInformation(V2paymentsidcapturesBuyerInformation buyerInformation) {
+  public void setBuyerInformation(Ptsv2paymentsidcapturesBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
   }
 
-  public RefundPaymentRequest deviceInformation(V2paymentsDeviceInformation deviceInformation) {
+  public RefundPaymentRequest deviceInformation(Ptsv2paymentsDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
     return this;
   }
@@ -156,15 +170,15 @@ public class RefundPaymentRequest {
    * @return deviceInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsDeviceInformation getDeviceInformation() {
+  public Ptsv2paymentsDeviceInformation getDeviceInformation() {
     return deviceInformation;
   }
 
-  public void setDeviceInformation(V2paymentsDeviceInformation deviceInformation) {
+  public void setDeviceInformation(Ptsv2paymentsDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
   }
 
-  public RefundPaymentRequest merchantInformation(V2paymentsidrefundsMerchantInformation merchantInformation) {
+  public RefundPaymentRequest merchantInformation(Ptsv2paymentsidrefundsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
     return this;
   }
@@ -174,15 +188,15 @@ public class RefundPaymentRequest {
    * @return merchantInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidrefundsMerchantInformation getMerchantInformation() {
+  public Ptsv2paymentsidrefundsMerchantInformation getMerchantInformation() {
     return merchantInformation;
   }
 
-  public void setMerchantInformation(V2paymentsidrefundsMerchantInformation merchantInformation) {
+  public void setMerchantInformation(Ptsv2paymentsidrefundsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
   }
 
-  public RefundPaymentRequest aggregatorInformation(V2paymentsidcapturesAggregatorInformation aggregatorInformation) {
+  public RefundPaymentRequest aggregatorInformation(Ptsv2paymentsidcapturesAggregatorInformation aggregatorInformation) {
     this.aggregatorInformation = aggregatorInformation;
     return this;
   }
@@ -192,15 +206,15 @@ public class RefundPaymentRequest {
    * @return aggregatorInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidcapturesAggregatorInformation getAggregatorInformation() {
+  public Ptsv2paymentsidcapturesAggregatorInformation getAggregatorInformation() {
     return aggregatorInformation;
   }
 
-  public void setAggregatorInformation(V2paymentsidcapturesAggregatorInformation aggregatorInformation) {
+  public void setAggregatorInformation(Ptsv2paymentsidcapturesAggregatorInformation aggregatorInformation) {
     this.aggregatorInformation = aggregatorInformation;
   }
 
-  public RefundPaymentRequest pointOfSaleInformation(V2paymentsidrefundsPointOfSaleInformation pointOfSaleInformation) {
+  public RefundPaymentRequest pointOfSaleInformation(Ptsv2paymentsidrefundsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
   }
@@ -210,37 +224,37 @@ public class RefundPaymentRequest {
    * @return pointOfSaleInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidrefundsPointOfSaleInformation getPointOfSaleInformation() {
+  public Ptsv2paymentsidrefundsPointOfSaleInformation getPointOfSaleInformation() {
     return pointOfSaleInformation;
   }
 
-  public void setPointOfSaleInformation(V2paymentsidrefundsPointOfSaleInformation pointOfSaleInformation) {
+  public void setPointOfSaleInformation(Ptsv2paymentsidrefundsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 
-  public RefundPaymentRequest merchantDefinedInformation(List<V2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
+  public RefundPaymentRequest merchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
     return this;
   }
 
-  public RefundPaymentRequest addMerchantDefinedInformationItem(V2paymentsMerchantDefinedInformation merchantDefinedInformationItem) {
+  public RefundPaymentRequest addMerchantDefinedInformationItem(Ptsv2paymentsMerchantDefinedInformation merchantDefinedInformationItem) {
     if (this.merchantDefinedInformation == null) {
-      this.merchantDefinedInformation = new ArrayList<V2paymentsMerchantDefinedInformation>();
+      this.merchantDefinedInformation = new ArrayList<Ptsv2paymentsMerchantDefinedInformation>();
     }
     this.merchantDefinedInformation.add(merchantDefinedInformationItem);
     return this;
   }
 
    /**
-   * TBD
+   * Description of this field is not available.
    * @return merchantDefinedInformation
   **/
-  @ApiModelProperty(value = "TBD")
-  public List<V2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {
+  @ApiModelProperty(value = "Description of this field is not available.")
+  public List<Ptsv2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {
     return merchantDefinedInformation;
   }
 
-  public void setMerchantDefinedInformation(List<V2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
+  public void setMerchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 

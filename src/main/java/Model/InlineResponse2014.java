@@ -1,5 +1,5 @@
 /*
-O * CyberSource Flex API
+ * CyberSource Flex API
  * Simple PAN tokenization service
  *
  * OpenAPI spec version: 0.0.1
@@ -13,21 +13,25 @@ O * CyberSource Flex API
 
 package Model;
 
-import java.io.IOException;
 import java.util.Objects;
-
+import Model.InlineResponse2013Links;
+import Model.InlineResponse2013OrderInformation;
+import Model.InlineResponse2013ProcessorInformation;
+import Model.InlineResponse2014CreditAmountDetails;
+import Model.InlineResponse201ClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * InlineResponse2014
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse2014 {
   @SerializedName("_links")
   private InlineResponse2013Links links = null;

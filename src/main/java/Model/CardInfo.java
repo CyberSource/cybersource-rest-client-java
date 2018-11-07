@@ -14,15 +14,19 @@
 package Model;
 
 import java.util.Objects;
-
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * CardInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class CardInfo {
   @SerializedName("cardNumber")
   private String cardNumber = null;
@@ -61,7 +65,7 @@ public class CardInfo {
 
    /**
    * Two digit expiration month
-   * @return cardExpirationMonth object.
+   * @return cardExpirationMonth
   **/
   @ApiModelProperty(value = "Two digit expiration month")
   public String getCardExpirationMonth() {
@@ -79,7 +83,7 @@ public class CardInfo {
 
    /**
    * Four digit expiration year
-   * @return cardExpirationYear object.
+   * @return cardExpirationYear
   **/
   @ApiModelProperty(value = "Four digit expiration year")
   public String getCardExpirationYear() {
@@ -97,7 +101,7 @@ public class CardInfo {
 
    /**
    * Card Type. This field is required. Refer to the CyberSource Credit Card Services documentation for supported card types.
-   * @return cardType object.
+   * @return cardType
   **/
   @ApiModelProperty(value = "Card Type. This field is required. Refer to the CyberSource Credit Card Services documentation for supported card types.")
   public String getCardType() {

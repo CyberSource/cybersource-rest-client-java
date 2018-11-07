@@ -14,34 +14,39 @@
 package Model;
 
 import java.util.Objects;
-
+import Model.Tmsv1instrumentidentifiersProcessingInformation;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * Body1
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class Body1 {
   @SerializedName("processingInformation")
-  private InstrumentidentifiersProcessingInformation processingInformation = null;
+  private Tmsv1instrumentidentifiersProcessingInformation processingInformation = null;
 
-  public Body1 processingInformation(InstrumentidentifiersProcessingInformation processingInformation) {
+  public Body1 processingInformation(Tmsv1instrumentidentifiersProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
 
    /**
    * Get processingInformation
-   * @return processingInformation object.
+   * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public InstrumentidentifiersProcessingInformation getProcessingInformation() {
+  public Tmsv1instrumentidentifiersProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(InstrumentidentifiersProcessingInformation processingInformation) {
+  public void setProcessingInformation(Tmsv1instrumentidentifiersProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
   }
 

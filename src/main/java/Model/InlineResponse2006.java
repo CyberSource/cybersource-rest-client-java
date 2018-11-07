@@ -13,218 +13,51 @@
 
 package Model;
 
-import java.io.IOException;
 import java.util.Objects;
-
+import Model.InlineResponse2006Subscriptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse2006
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse2006 {
-  @SerializedName("_links")
-  private InlineResponse2013Links links = null;
+  @SerializedName("subscriptions")
+  private List<InlineResponse2006Subscriptions> subscriptions = null;
 
-  @SerializedName("id")
-  private String id = null;
-
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
-
-  /**
-   * The status of the submitted transaction.
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    PENDING("PENDING"),
-    
-    TRANSMITTED("TRANSMITTED"),
-    
-    BATCH_ERROR("BATCH_ERROR"),
-    
-    VOIDED("VOIDED");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
-      }
-    }
+  public InlineResponse2006 subscriptions(List<InlineResponse2006Subscriptions> subscriptions) {
+    this.subscriptions = subscriptions;
+    return this;
   }
 
-  @SerializedName("status")
-  private StatusEnum status = null;
-
-  @SerializedName("reconciliationId")
-  private String reconciliationId = null;
-
-  @SerializedName("clientReferenceInformation")
-  private InlineResponse201ClientReferenceInformation clientReferenceInformation = null;
-
-  @SerializedName("creditAmountDetails")
-  private InlineResponse2014CreditAmountDetails creditAmountDetails = null;
-
-  public InlineResponse2006 links(InlineResponse2013Links links) {
-    this.links = links;
+  public InlineResponse2006 addSubscriptionsItem(InlineResponse2006Subscriptions subscriptionsItem) {
+    if (this.subscriptions == null) {
+      this.subscriptions = new ArrayList<InlineResponse2006Subscriptions>();
+    }
+    this.subscriptions.add(subscriptionsItem);
     return this;
   }
 
    /**
-   * Get links
-   * @return links Links.
+   * Get subscriptions
+   * @return subscriptions
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2013Links getLinks() {
-    return links;
+  public List<InlineResponse2006Subscriptions> getSubscriptions() {
+    return subscriptions;
   }
 
-  public void setLinks(InlineResponse2013Links links) {
-    this.links = links;
-  }
-
-  public InlineResponse2006 id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @return id unique identification number.
-  **/
-  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request.")
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public InlineResponse2006 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
-   /**
-   * Time of request in UTC.  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc Time of request in UTC.
-  **/
-  @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
-
-  public InlineResponse2006 status(StatusEnum status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * The status of the submitted transaction.
-   * @return status  The status of the submitted transaction.
-  **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
-  public StatusEnum getStatus() {
-    return status;
-  }
-
-  public void setStatus(StatusEnum status) {
-    this.status = status;
-  }
-
-  public InlineResponse2006 reconciliationId(String reconciliationId) {
-    this.reconciliationId = reconciliationId;
-    return this;
-  }
-
-   /**
-   * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
-   * @return reconciliationId The reconciliation id for the submitted transaction.
-  **/
-  @ApiModelProperty(value = "The reconciliation id for the submitted transaction. This value is not returned for all processors. ")
-  public String getReconciliationId() {
-    return reconciliationId;
-  }
-
-  public void setReconciliationId(String reconciliationId) {
-    this.reconciliationId = reconciliationId;
-  }
-
-  public InlineResponse2006 clientReferenceInformation(InlineResponse201ClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
-    return this;
-  }
-
-   /**
-   * Get clientReferenceInformation
-   * @return clientReferenceInformation client Reference Information.
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse201ClientReferenceInformation getClientReferenceInformation() {
-    return clientReferenceInformation;
-  }
-
-  public void setClientReferenceInformation(InlineResponse201ClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
-  }
-
-  public InlineResponse2006 creditAmountDetails(InlineResponse2014CreditAmountDetails creditAmountDetails) {
-    this.creditAmountDetails = creditAmountDetails;
-    return this;
-  }
-
-   /**
-   * Get creditAmountDetails
-   * @return creditAmountDetails credit Amount Details.
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2014CreditAmountDetails getCreditAmountDetails() {
-    return creditAmountDetails;
-  }
-
-  public void setCreditAmountDetails(InlineResponse2014CreditAmountDetails creditAmountDetails) {
-    this.creditAmountDetails = creditAmountDetails;
+  public void setSubscriptions(List<InlineResponse2006Subscriptions> subscriptions) {
+    this.subscriptions = subscriptions;
   }
 
 
@@ -237,18 +70,12 @@ public class InlineResponse2006 {
       return false;
     }
     InlineResponse2006 inlineResponse2006 = (InlineResponse2006) o;
-    return Objects.equals(this.links, inlineResponse2006.links) &&
-        Objects.equals(this.id, inlineResponse2006.id) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse2006.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2006.status) &&
-        Objects.equals(this.reconciliationId, inlineResponse2006.reconciliationId) &&
-        Objects.equals(this.clientReferenceInformation, inlineResponse2006.clientReferenceInformation) &&
-        Objects.equals(this.creditAmountDetails, inlineResponse2006.creditAmountDetails);
+    return Objects.equals(this.subscriptions, inlineResponse2006.subscriptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, creditAmountDetails);
+    return Objects.hash(subscriptions);
   }
 
 
@@ -257,13 +84,7 @@ public class InlineResponse2006 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2006 {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    creditAmountDetails: ").append(toIndentedString(creditAmountDetails)).append("\n");
+    sb.append("    subscriptions: ").append(toIndentedString(subscriptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

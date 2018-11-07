@@ -13,24 +13,28 @@
 
 package Model;
 
-import java.io.IOException;
 import java.util.Objects;
-
+import Model.Tmsv1instrumentidentifiersBankAccount;
+import Model.Tmsv1instrumentidentifiersCard;
+import Model.Tmsv1instrumentidentifiersLinks;
+import Model.Tmsv1instrumentidentifiersMetadata;
+import Model.Tmsv1instrumentidentifiersProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * Body
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class Body {
   @SerializedName("_links")
-  private InstrumentidentifiersLinks links = null;
+  private Tmsv1instrumentidentifiersLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -134,38 +138,38 @@ public class Body {
   private StateEnum state = null;
 
   @SerializedName("card")
-  private InstrumentidentifiersCard card = null;
+  private Tmsv1instrumentidentifiersCard card = null;
 
   @SerializedName("bankAccount")
-  private InstrumentidentifiersBankAccount bankAccount = null;
+  private Tmsv1instrumentidentifiersBankAccount bankAccount = null;
 
   @SerializedName("processingInformation")
-  private InstrumentidentifiersProcessingInformation processingInformation = null;
+  private Tmsv1instrumentidentifiersProcessingInformation processingInformation = null;
 
   @SerializedName("metadata")
-  private InstrumentidentifiersMetadata metadata = null;
+  private Tmsv1instrumentidentifiersMetadata metadata = null;
 
-  public Body links(InstrumentidentifiersLinks links) {
+  public Body links(Tmsv1instrumentidentifiersLinks links) {
     this.links = links;
     return this;
   }
 
    /**
    * Get links
-   * @return links object.
+   * @return links
   **/
   @ApiModelProperty(value = "")
-  public InstrumentidentifiersLinks getLinks() {
+  public Tmsv1instrumentidentifiersLinks getLinks() {
     return links;
   }
 
-  public void setLinks(InstrumentidentifiersLinks links) {
+  public void setLinks(Tmsv1instrumentidentifiersLinks links) {
     this.links = links;
   }
 
    /**
    * Unique identification number assigned by CyberSource to the submitted request.
-   * @return id - getId.
+   * @return id
   **/
   @ApiModelProperty(example = "1234567890123456800", value = "Unique identification number assigned by CyberSource to the submitted request.")
   public String getId() {
@@ -174,7 +178,7 @@ public class Body {
 
    /**
    * Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.
-   * @return object generated.
+   * @return object
   **/
   @ApiModelProperty(example = "instrumentIdentifier", value = "Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.")
   public ObjectEnum getObject() {
@@ -190,75 +194,75 @@ public class Body {
     return state;
   }
 
-  public Body card(InstrumentidentifiersCard card) {
+  public Body card(Tmsv1instrumentidentifiersCard card) {
     this.card = card;
     return this;
   }
 
    /**
    * Get card
-   * @return card object.
+   * @return card
   **/
   @ApiModelProperty(value = "")
-  public InstrumentidentifiersCard getCard() {
+  public Tmsv1instrumentidentifiersCard getCard() {
     return card;
   }
 
-  public void setCard(InstrumentidentifiersCard card) {
+  public void setCard(Tmsv1instrumentidentifiersCard card) {
     this.card = card;
   }
 
-  public Body bankAccount(InstrumentidentifiersBankAccount bankAccount) {
+  public Body bankAccount(Tmsv1instrumentidentifiersBankAccount bankAccount) {
     this.bankAccount = bankAccount;
     return this;
   }
 
    /**
    * Get bankAccount
-   * @return bankAccount object.
+   * @return bankAccount
   **/
   @ApiModelProperty(value = "")
-  public InstrumentidentifiersBankAccount getBankAccount() {
+  public Tmsv1instrumentidentifiersBankAccount getBankAccount() {
     return bankAccount;
   }
 
-  public void setBankAccount(InstrumentidentifiersBankAccount bankAccount) {
+  public void setBankAccount(Tmsv1instrumentidentifiersBankAccount bankAccount) {
     this.bankAccount = bankAccount;
   }
 
-  public Body processingInformation(InstrumentidentifiersProcessingInformation processingInformation) {
+  public Body processingInformation(Tmsv1instrumentidentifiersProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
 
    /**
    * Get processingInformation
-   * @return processingInformation object.
+   * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public InstrumentidentifiersProcessingInformation getProcessingInformation() {
+  public Tmsv1instrumentidentifiersProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(InstrumentidentifiersProcessingInformation processingInformation) {
+  public void setProcessingInformation(Tmsv1instrumentidentifiersProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
   }
 
-  public Body metadata(InstrumentidentifiersMetadata metadata) {
+  public Body metadata(Tmsv1instrumentidentifiersMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
 
    /**
    * Get metadata
-   * @return metadata object.
+   * @return metadata
   **/
   @ApiModelProperty(value = "")
-  public InstrumentidentifiersMetadata getMetadata() {
+  public Tmsv1instrumentidentifiersMetadata getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(InstrumentidentifiersMetadata metadata) {
+  public void setMetadata(Tmsv1instrumentidentifiersMetadata metadata) {
     this.metadata = metadata;
   }
 

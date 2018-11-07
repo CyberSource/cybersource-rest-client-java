@@ -13,24 +13,29 @@
 
 package Model;
 
-import java.io.IOException;
 import java.util.Objects;
-
+import Model.InlineResponse2011AuthorizationInformation;
+import Model.InlineResponse2011Links;
+import Model.InlineResponse2011ProcessorInformation;
+import Model.InlineResponse2011ReversalAmountDetails;
+import Model.InlineResponse201ClientReferenceInformation;
+import Model.Ptsv2paymentsidreversalsPointOfSaleInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * InlineResponse2011
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse2011 {
   @SerializedName("_links")
-  private InlineResponse201EmbeddedCaptureLinks links = null;
+  private InlineResponse2011Links links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -102,23 +107,23 @@ public class InlineResponse2011 {
   private InlineResponse2011AuthorizationInformation authorizationInformation = null;
 
   @SerializedName("pointOfSaleInformation")
-  private V2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation = null;
+  private Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation = null;
 
-  public InlineResponse2011 links(InlineResponse201EmbeddedCaptureLinks links) {
+  public InlineResponse2011 links(InlineResponse2011Links links) {
     this.links = links;
     return this;
   }
 
    /**
    * Get links
-   * @return links links
+   * @return links
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse201EmbeddedCaptureLinks getLinks() {
+  public InlineResponse2011Links getLinks() {
     return links;
   }
 
-  public void setLinks(InlineResponse201EmbeddedCaptureLinks links) {
+  public void setLinks(InlineResponse2011Links links) {
     this.links = links;
   }
 
@@ -129,7 +134,7 @@ public class InlineResponse2011 {
 
    /**
    * An unique identification number assigned by CyberSource to identify the submitted request.
-   * @return id unique identification number
+   * @return id
   **/
   @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request.")
   public String getId() {
@@ -146,8 +151,8 @@ public class InlineResponse2011 {
   }
 
    /**
-   * Time of request in UTC.Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc Time of request in UTC.
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc
   **/
   @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
   public String getSubmitTimeUtc() {
@@ -165,7 +170,7 @@ public class InlineResponse2011 {
 
    /**
    * The status of the submitted transaction.
-   * @return status The status of the submitted transaction.
+   * @return status
   **/
   @ApiModelProperty(value = "The status of the submitted transaction.")
   public StatusEnum getStatus() {
@@ -183,7 +188,7 @@ public class InlineResponse2011 {
 
    /**
    * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
-   * @return reconciliationId The reconciliation id for the submitted transaction.
+   * @return reconciliationId
   **/
   @ApiModelProperty(value = "The reconciliation id for the submitted transaction. This value is not returned for all processors. ")
   public String getReconciliationId() {
@@ -201,7 +206,7 @@ public class InlineResponse2011 {
 
    /**
    * Get clientReferenceInformation
-   * @return clientReferenceInformation Get clientReferenceInformation
+   * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
   public InlineResponse201ClientReferenceInformation getClientReferenceInformation() {
@@ -219,7 +224,7 @@ public class InlineResponse2011 {
 
    /**
    * Get reversalAmountDetails
-   * @return reversalAmountDetails  Get reversalAmountDetails
+   * @return reversalAmountDetails
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2011ReversalAmountDetails getReversalAmountDetails() {
@@ -237,7 +242,7 @@ public class InlineResponse2011 {
 
    /**
    * Get processorInformation
-   * @return processorInformation Get processorInformation
+   * @return processorInformation
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2011ProcessorInformation getProcessorInformation() {
@@ -254,8 +259,8 @@ public class InlineResponse2011 {
   }
 
    /**
-   * Get processorInformation
-   * @return authorizationInformation Get processorInformation
+   * Get authorizationInformation
+   * @return authorizationInformation
   **/
   @ApiModelProperty(value = "")
   public InlineResponse2011AuthorizationInformation getAuthorizationInformation() {
@@ -266,7 +271,7 @@ public class InlineResponse2011 {
     this.authorizationInformation = authorizationInformation;
   }
 
-  public InlineResponse2011 pointOfSaleInformation(V2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation) {
+  public InlineResponse2011 pointOfSaleInformation(Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
   }
@@ -276,11 +281,11 @@ public class InlineResponse2011 {
    * @return pointOfSaleInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidreversalsPointOfSaleInformation getPointOfSaleInformation() {
+  public Ptsv2paymentsidreversalsPointOfSaleInformation getPointOfSaleInformation() {
     return pointOfSaleInformation;
   }
 
-  public void setPointOfSaleInformation(V2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation) {
+  public void setPointOfSaleInformation(Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 

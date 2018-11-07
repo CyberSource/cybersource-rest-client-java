@@ -13,24 +13,26 @@
 
 package Model;
 
-import java.io.IOException;
 import java.util.Objects;
-
+import Model.InlineResponse2011Links;
+import Model.InlineResponse2015VoidAmountDetails;
+import Model.InlineResponse201ClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * InlineResponse2015
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse2015 {
   @SerializedName("_links")
-  private InlineResponse201EmbeddedCaptureLinks links = null;
+  private InlineResponse2011Links links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -92,7 +94,7 @@ public class InlineResponse2015 {
   @SerializedName("voidAmountDetails")
   private InlineResponse2015VoidAmountDetails voidAmountDetails = null;
 
-  public InlineResponse2015 links(InlineResponse201EmbeddedCaptureLinks links) {
+  public InlineResponse2015 links(InlineResponse2011Links links) {
     this.links = links;
     return this;
   }
@@ -102,11 +104,11 @@ public class InlineResponse2015 {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse201EmbeddedCaptureLinks getLinks() {
+  public InlineResponse2011Links getLinks() {
     return links;
   }
 
-  public void setLinks(InlineResponse201EmbeddedCaptureLinks links) {
+  public void setLinks(InlineResponse2011Links links) {
     this.links = links;
   }
 

@@ -14,15 +14,21 @@
 package Model;
 
 import java.util.Objects;
-
+import Model.InlineResponse200Der;
+import Model.InlineResponse200Jwk;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * InlineResponse200
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
 public class InlineResponse200 {
   @SerializedName("keyId")
   private String keyId = null;
@@ -58,7 +64,7 @@ public class InlineResponse200 {
 
    /**
    * Get der
-   * @return der object.
+   * @return der
   **/
   @ApiModelProperty(value = "")
   public InlineResponse200Der getDer() {
@@ -76,7 +82,7 @@ public class InlineResponse200 {
 
    /**
    * Get jwk
-   * @return jwk object.
+   * @return jwk
   **/
   @ApiModelProperty(value = "")
   public InlineResponse200Jwk getJwk() {
