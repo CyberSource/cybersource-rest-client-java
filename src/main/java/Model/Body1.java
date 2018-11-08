@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Body1
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class Body1 {
   @SerializedName("processingInformation")
   private Tmsv1instrumentidentifiersProcessingInformation processingInformation = null;

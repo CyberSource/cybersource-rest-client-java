@@ -29,9 +29,9 @@ import java.io.IOException;
 
 
 import Model.CreatePaymentRequest;
-import Model.InlineResponse201;
-import Model.InlineResponse400;
-import Model.InlineResponse502;
+import Model.PtsV2PaymentsPost201Response;
+import Model.PtsV2PaymentsPost400Response;
+import Model.PtsV2PaymentsPost502Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -116,7 +116,7 @@ public class PaymentsApi {
         }
         
         
-        com.squareup.okhttp.Call call = createPaymentCall(createPaymentRequest,merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createPaymentCall(createPaymentRequest, merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -130,11 +130,11 @@ public class PaymentsApi {
      * Authorize the payment for the transaction. 
      * @param createPaymentRequest  (required)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse201
+     * @return PtsV2PaymentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse201 createPayment(CreatePaymentRequest createPaymentRequest,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse201> resp = createPaymentWithHttpInfo(createPaymentRequest,merchantConfig);
+    public PtsV2PaymentsPost201Response createPayment(CreatePaymentRequest createPaymentRequest,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV2PaymentsPost201Response> resp = createPaymentWithHttpInfo(createPaymentRequest, merchantConfig);
         return resp.getData();
     }
 
@@ -143,12 +143,12 @@ public class PaymentsApi {
      * Authorize the payment for the transaction. 
      * @param createPaymentRequest  (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse201&gt;
+     * @return ApiResponse&lt;PtsV2PaymentsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse201> createPaymentWithHttpInfo(CreatePaymentRequest createPaymentRequest,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = createPaymentValidateBeforeCall(createPaymentRequest,merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
+    public ApiResponse<PtsV2PaymentsPost201Response> createPaymentWithHttpInfo(CreatePaymentRequest createPaymentRequest,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = createPaymentValidateBeforeCall(createPaymentRequest, merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -161,7 +161,7 @@ public class PaymentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createPaymentAsync(CreatePaymentRequest createPaymentRequest,MerchantConfig merchantConfig, final ApiCallback<InlineResponse201> callback) throws ApiException {
+    public com.squareup.okhttp.Call createPaymentAsync(CreatePaymentRequest createPaymentRequest,MerchantConfig merchantConfig, final ApiCallback<PtsV2PaymentsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -183,7 +183,7 @@ public class PaymentsApi {
         }
 
         com.squareup.okhttp.Call call = createPaymentValidateBeforeCall(createPaymentRequest, merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

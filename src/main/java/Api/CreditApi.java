@@ -29,9 +29,9 @@ import java.io.IOException;
 
 
 import Model.CreateCreditRequest;
-import Model.InlineResponse2014;
-import Model.InlineResponse4003;
-import Model.InlineResponse502;
+import Model.PtsV2CreditsPost201Response;
+import Model.PtsV2PaymentsPost502Response;
+import Model.PtsV2PaymentsRefundPost400Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -129,12 +129,12 @@ public class CreditApi {
      * Process a Credit
      * POST to the credit resource to credit funds to a specified credit card.
      * @param createCreditRequest  (required)
-     * @param merchantConfig  (merchant details)
-     * @return InlineResponse2014
+     *@param merchantConfig  (merchant details)
+     * @return PtsV2CreditsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2014 createCredit(CreateCreditRequest createCreditRequest,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2014> resp = createCreditWithHttpInfo(createCreditRequest,merchantConfig);
+    public PtsV2CreditsPost201Response createCredit(CreateCreditRequest createCreditRequest,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV2CreditsPost201Response> resp = createCreditWithHttpInfo(createCreditRequest,merchantConfig);
         return resp.getData();
     }
 
@@ -143,12 +143,12 @@ public class CreditApi {
      * POST to the credit resource to credit funds to a specified credit card.
      * @param createCreditRequest  (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2014&gt;
+     * @return ApiResponse&lt;PtsV2CreditsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2014> createCreditWithHttpInfo(CreateCreditRequest createCreditRequest,MerchantConfig merchantConfig) throws ApiException {
+    public ApiResponse<PtsV2CreditsPost201Response> createCreditWithHttpInfo(CreateCreditRequest createCreditRequest,MerchantConfig merchantConfig) throws ApiException {
         com.squareup.okhttp.Call call = createCreditValidateBeforeCall(createCreditRequest,merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -161,7 +161,7 @@ public class CreditApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createCreditAsync(CreateCreditRequest createCreditRequest,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2014> callback) throws ApiException {
+    public com.squareup.okhttp.Call createCreditAsync(CreateCreditRequest createCreditRequest,MerchantConfig merchantConfig, final ApiCallback<PtsV2CreditsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -183,7 +183,7 @@ public class CreditApi {
         }
 
         com.squareup.okhttp.Call call = createCreditValidateBeforeCall(createCreditRequest,merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

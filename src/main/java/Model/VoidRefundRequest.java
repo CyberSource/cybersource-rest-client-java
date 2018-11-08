@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * VoidRefundRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class VoidRefundRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsidreversalsClientReferenceInformation clientReferenceInformation = null;

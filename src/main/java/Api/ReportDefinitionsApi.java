@@ -13,6 +13,16 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.cybersource.authsdk.core.MerchantConfig;
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,22 +31,8 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.cybersource.authsdk.core.MerchantConfig;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
-import Model.InlineResponse2004;
-import Model.InlineResponse2005;
-import Model.InlineResponse4007;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import Model.ReportingV3ReportDefinitionsGet200Response;
+import Model.ReportingV3ReportDefinitionsNameGet200Response;
 
 public class ReportDefinitionsApi {
     private ApiClient apiClient;
@@ -107,7 +103,7 @@ public class ReportDefinitionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -119,7 +115,7 @@ public class ReportDefinitionsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getResourceInfoByReportDefinitionCall(reportDefinitionName, organizationId, merchantConfig,progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getResourceInfoByReportDefinitionCall(reportDefinitionName, organizationId, merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -134,11 +130,11 @@ public class ReportDefinitionsApi {
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2005
+     * @return ReportingV3ReportDefinitionsNameGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2005 getResourceInfoByReportDefinition(String reportDefinitionName, String organizationId,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2005> resp = getResourceInfoByReportDefinitionWithHttpInfo(reportDefinitionName, organizationId,merchantConfig);
+    public ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(String reportDefinitionName, String organizationId,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> resp = getResourceInfoByReportDefinitionWithHttpInfo(reportDefinitionName, organizationId, merchantConfig);
         return resp.getData();
     }
 
@@ -148,12 +144,12 @@ public class ReportDefinitionsApi {
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;ReportingV3ReportDefinitionsNameGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2005> getResourceInfoByReportDefinitionWithHttpInfo(String reportDefinitionName, String organizationId,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, organizationId,merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+    public ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> getResourceInfoByReportDefinitionWithHttpInfo(String reportDefinitionName, String organizationId,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, organizationId, merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsNameGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -167,7 +163,7 @@ public class ReportDefinitionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getResourceInfoByReportDefinitionAsync(String reportDefinitionName, String organizationId,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2005> callback) throws ApiException {
+    public com.squareup.okhttp.Call getResourceInfoByReportDefinitionAsync(String reportDefinitionName, String organizationId,MerchantConfig merchantConfig, final ApiCallback<ReportingV3ReportDefinitionsNameGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -188,8 +184,8 @@ public class ReportDefinitionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, organizationId,merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        com.squareup.okhttp.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, organizationId, merchantConfig, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsNameGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -202,7 +198,7 @@ public class ReportDefinitionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getResourceV2InfoCall(String organizationId,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getResourceV2InfoCall(String organizationId,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener,final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -241,14 +237,14 @@ public class ReportDefinitionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET",  merchantConfig,localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getResourceV2InfoValidateBeforeCall(String organizationId,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = getResourceV2InfoCall(organizationId,merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getResourceV2InfoCall(organizationId, merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -262,11 +258,11 @@ public class ReportDefinitionsApi {
      * 
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2004
+     * @return ReportingV3ReportDefinitionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2004 getResourceV2Info(String organizationId,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2004> resp = getResourceV2InfoWithHttpInfo(organizationId,merchantConfig);
+    public ReportingV3ReportDefinitionsGet200Response getResourceV2Info(String organizationId,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<ReportingV3ReportDefinitionsGet200Response> resp = getResourceV2InfoWithHttpInfo(organizationId, merchantConfig);
         return resp.getData();
     }
 
@@ -275,12 +271,12 @@ public class ReportDefinitionsApi {
      * 
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2004&gt;
+     * @return ApiResponse&lt;ReportingV3ReportDefinitionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2004> getResourceV2InfoWithHttpInfo(String organizationId,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = getResourceV2InfoValidateBeforeCall(organizationId,merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+    public ApiResponse<ReportingV3ReportDefinitionsGet200Response> getResourceV2InfoWithHttpInfo(String organizationId,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = getResourceV2InfoValidateBeforeCall(organizationId, merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -293,7 +289,7 @@ public class ReportDefinitionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getResourceV2InfoAsync(String organizationId,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2004> callback) throws ApiException {
+    public com.squareup.okhttp.Call getResourceV2InfoAsync(String organizationId, MerchantConfig merchantConfig,final ApiCallback<ReportingV3ReportDefinitionsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -314,8 +310,8 @@ public class ReportDefinitionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getResourceV2InfoValidateBeforeCall(organizationId,merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        com.squareup.okhttp.Call call = getResourceV2InfoValidateBeforeCall(organizationId, merchantConfig, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

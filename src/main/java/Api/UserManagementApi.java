@@ -28,8 +28,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import Model.InlineResponse20013;
-import Model.InlineResponse4003;
+import Model.PtsV2PaymentsRefundPost400Response;
+import Model.UmsV1UsersGet200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -68,7 +68,7 @@ public class UserManagementApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getUsersCall(String organizationId,String userName, String permissionId, String roleId, MerchantConfig merchantConfig,  final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getUsersCall(String organizationId, String userName, String permissionId, String roleId,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -113,14 +113,14 @@ public class UserManagementApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",  merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getUsersValidateBeforeCall(String organizationId, String userName, String permissionId, String roleId, MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getUsersValidateBeforeCall(String organizationId, String userName, String permissionId, String roleId,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = getUsersCall(organizationId, userName, permissionId, roleId,  merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getUsersCall(organizationId, userName, permissionId, roleId, merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -137,11 +137,11 @@ public class UserManagementApi {
      * @param permissionId permission that you are trying to search user on. (optional)
      * @param roleId role of the user you are trying to search on. (optional)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse20013
+     * @return UmsV1UsersGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse20013 getUsers(String organizationId, String userName, String permissionId, String roleId, MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse20013> resp = getUsersWithHttpInfo(organizationId, userName, permissionId, roleId,  merchantConfig);
+    public UmsV1UsersGet200Response getUsers(String organizationId, String userName, String permissionId, String roleId,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<UmsV1UsersGet200Response> resp = getUsersWithHttpInfo(organizationId, userName, permissionId, roleId, merchantConfig);
         return resp.getData();
     }
 
@@ -153,12 +153,12 @@ public class UserManagementApi {
      * @param permissionId permission that you are trying to search user on. (optional)
      * @param roleId role of the user you are trying to search on. (optional)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse20013&gt;
+     * @return ApiResponse&lt;UmsV1UsersGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse20013> getUsersWithHttpInfo(String organizationId, String userName, String permissionId, String roleId, MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId,  merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+    public ApiResponse<UmsV1UsersGet200Response> getUsersWithHttpInfo(String organizationId, String userName, String permissionId, String roleId,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId, merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<UmsV1UsersGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -174,7 +174,7 @@ public class UserManagementApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUsersAsync(String organizationId, String userName, String permissionId, String roleId, MerchantConfig merchantConfig,  final ApiCallback<InlineResponse20013> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUsersAsync(String organizationId, String userName, String permissionId, String roleId,MerchantConfig merchantConfig, final ApiCallback<UmsV1UsersGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -195,8 +195,8 @@ public class UserManagementApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId,  merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+        com.squareup.okhttp.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId, merchantConfig, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<UmsV1UsersGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

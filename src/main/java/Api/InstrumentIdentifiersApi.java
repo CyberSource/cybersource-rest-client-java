@@ -31,8 +31,21 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import Model.Body;
-import Model.InlineResponse20010;
+import Model.InlineResponse400;
+import Model.TmsV1InstrumentidentifiersPost200Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class InstrumentIdentifiersApi {
     private ApiClient apiClient;
@@ -134,11 +147,11 @@ public class InstrumentIdentifiersApi {
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param merchantConfig  (merchant details)
      * @param body Please specify either a Card or Bank Account. (required)
-     * @return InlineResponse20010
+     * @return TmsV1InstrumentidentifiersPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse20010 tmsV1InstrumentidentifiersPost(String profileId,MerchantConfig merchantConfig, Body body) throws ApiException {
-        ApiResponse<InlineResponse20010> resp = tmsV1InstrumentidentifiersPostWithHttpInfo(profileId,merchantConfig, body);
+    public TmsV1InstrumentidentifiersPost200Response tmsV1InstrumentidentifiersPost(String profileId,MerchantConfig merchantConfig, Body body) throws ApiException {
+        ApiResponse<TmsV1InstrumentidentifiersPost200Response> resp = tmsV1InstrumentidentifiersPostWithHttpInfo(profileId,merchantConfig, body);
         return resp.getData();
     }
 
@@ -148,12 +161,12 @@ public class InstrumentIdentifiersApi {
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param merchantConfig  (merchant details)
      * @param body Please specify either a Card or Bank Account. (required)
-     * @return ApiResponse&lt;InlineResponse20010&gt;
+     * @return ApiResponse&lt;TmsV1InstrumentidentifiersPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse20010> tmsV1InstrumentidentifiersPostWithHttpInfo(String profileId,MerchantConfig merchantConfig, Body body) throws ApiException {
+    public ApiResponse<TmsV1InstrumentidentifiersPost200Response> tmsV1InstrumentidentifiersPostWithHttpInfo(String profileId,MerchantConfig merchantConfig, Body body) throws ApiException {
         com.squareup.okhttp.Call call = tmsV1InstrumentidentifiersPostValidateBeforeCall(profileId,merchantConfig, body, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20010>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsV1InstrumentidentifiersPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -167,7 +180,7 @@ public class InstrumentIdentifiersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call tmsV1InstrumentidentifiersPostAsync(String profileId,MerchantConfig merchantConfig, Body body, final ApiCallback<InlineResponse20010> callback) throws ApiException {
+    public com.squareup.okhttp.Call tmsV1InstrumentidentifiersPostAsync(String profileId,MerchantConfig merchantConfig, Body body, final ApiCallback<TmsV1InstrumentidentifiersPost200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -189,7 +202,7 @@ public class InstrumentIdentifiersApi {
         }
 
         com.squareup.okhttp.Call call = tmsV1InstrumentidentifiersPostValidateBeforeCall(profileId,merchantConfig, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20010>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsV1InstrumentidentifiersPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

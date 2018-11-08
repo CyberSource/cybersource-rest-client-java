@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
   /**
    * This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction. 

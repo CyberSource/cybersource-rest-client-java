@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsOrderInformationAmountDetailsTaxDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
   /**
    * This is used to determine what type of tax related data should be inclued under _taxDetails_ object. 

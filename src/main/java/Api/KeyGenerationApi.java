@@ -28,8 +28,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+
 import Model.GeneratePublicKeyRequest;
-import Model.InlineResponse200;
+import Model.FlexV1KeysPost200Response;
 import Model.InlineResponseDefault;
 
 import java.lang.reflect.Type;
@@ -124,11 +125,11 @@ public class KeyGenerationApi {
      * Generate a one-time use public key and key ID to encrypt the card number in the follow-on Tokenize Card request. The key used to encrypt the card number on the cardholder’s device or browser is valid for 15 minutes and must be used to verify the signature in the response message. CyberSource recommends creating a new key for each order. Generating a key is an authenticated request initiated from your servers, prior to requesting to tokenize the card data from your customer’s device or browser.
      * @param generatePublicKeyRequest  (optional)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse200
+     * @return FlexV1KeysPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse200 generatePublicKey(GeneratePublicKeyRequest generatePublicKeyRequest,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse200> resp = generatePublicKeyWithHttpInfo(generatePublicKeyRequest,merchantConfig);
+    public FlexV1KeysPost200Response generatePublicKey(GeneratePublicKeyRequest generatePublicKeyRequest,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<FlexV1KeysPost200Response> resp = generatePublicKeyWithHttpInfo(generatePublicKeyRequest,merchantConfig);
         return resp.getData();
     }
 
@@ -137,12 +138,12 @@ public class KeyGenerationApi {
      * Generate a one-time use public key and key ID to encrypt the card number in the follow-on Tokenize Card request. The key used to encrypt the card number on the cardholder’s device or browser is valid for 15 minutes and must be used to verify the signature in the response message. CyberSource recommends creating a new key for each order. Generating a key is an authenticated request initiated from your servers, prior to requesting to tokenize the card data from your customer’s device or browser.
      * @param generatePublicKeyRequest  (optional)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;FlexV1KeysPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse200> generatePublicKeyWithHttpInfo(GeneratePublicKeyRequest generatePublicKeyRequest,MerchantConfig merchantConfig) throws ApiException {
+    public ApiResponse<FlexV1KeysPost200Response> generatePublicKeyWithHttpInfo(GeneratePublicKeyRequest generatePublicKeyRequest,MerchantConfig merchantConfig) throws ApiException {
         com.squareup.okhttp.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest,merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<FlexV1KeysPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -155,7 +156,7 @@ public class KeyGenerationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call generatePublicKeyAsync(GeneratePublicKeyRequest generatePublicKeyRequest,MerchantConfig merchantConfig, final ApiCallback<InlineResponse200> callback) throws ApiException {
+    public com.squareup.okhttp.Call generatePublicKeyAsync(GeneratePublicKeyRequest generatePublicKeyRequest,MerchantConfig merchantConfig, final ApiCallback<FlexV1KeysPost200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,7 +178,7 @@ public class KeyGenerationApi {
         }
 
         com.squareup.okhttp.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest,merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<FlexV1KeysPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

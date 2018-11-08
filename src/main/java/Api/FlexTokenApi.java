@@ -28,7 +28,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import Model.InlineResponse2001;
+import Model.FlexV1TokensPost200Response;
 import Model.InlineResponseDefault;
 import Model.TokenizeRequest;
 
@@ -124,11 +124,11 @@ public class FlexTokenApi {
      * Returns a token representing the supplied card details. The token replaces card data and can be used as the Subscription ID in the CyberSource Simple Order API or SCMP API. This is an unauthenticated call that you should initiate from your customer’s device or browser.
      * @param tokenizeRequest  (optional)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2001
+     * @return FlexV1TokensPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2001 tokenize(TokenizeRequest tokenizeRequest,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2001> resp = tokenizeWithHttpInfo(tokenizeRequest,merchantConfig);
+    public FlexV1TokensPost200Response tokenize(TokenizeRequest tokenizeRequest,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<FlexV1TokensPost200Response> resp = tokenizeWithHttpInfo(tokenizeRequest,merchantConfig);
         return resp.getData();
     }
 
@@ -137,12 +137,12 @@ public class FlexTokenApi {
      * Returns a token representing the supplied card details. The token replaces card data and can be used as the Subscription ID in the CyberSource Simple Order API or SCMP API. This is an unauthenticated call that you should initiate from your customer’s device or browser.
      * @param tokenizeRequest  (optional)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;FlexV1TokensPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2001> tokenizeWithHttpInfo(TokenizeRequest tokenizeRequest,MerchantConfig merchantConfig) throws ApiException {
+    public ApiResponse<FlexV1TokensPost200Response> tokenizeWithHttpInfo(TokenizeRequest tokenizeRequest,MerchantConfig merchantConfig) throws ApiException {
         com.squareup.okhttp.Call call = tokenizeValidateBeforeCall(tokenizeRequest,merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<FlexV1TokensPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -155,7 +155,7 @@ public class FlexTokenApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call tokenizeAsync(TokenizeRequest tokenizeRequest,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2001> callback) throws ApiException {
+    public com.squareup.okhttp.Call tokenizeAsync(TokenizeRequest tokenizeRequest,MerchantConfig merchantConfig, final ApiCallback<FlexV1TokensPost200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,7 +177,7 @@ public class FlexTokenApi {
         }
 
         com.squareup.okhttp.Call call = tokenizeValidateBeforeCall(tokenizeRequest,merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<FlexV1TokensPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

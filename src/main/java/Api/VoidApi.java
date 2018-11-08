@@ -28,9 +28,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import Model.InlineResponse2015;
-import Model.InlineResponse4004;
-import Model.InlineResponse502;
+import Model.PtsV2PaymentsPost502Response;
+import Model.PtsV2PaymentsVoidsPost201Response;
+import Model.PtsV2PaymentsVoidsPost400Response;
 import Model.VoidCaptureRequest;
 import Model.VoidCreditRequest;
 import Model.VoidPaymentRequest;
@@ -141,11 +141,11 @@ public class VoidApi {
      * @param voidCaptureRequest  (required)
      * @param id The capture ID returned from a previous capture request. (required)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2015
+     * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2015 voidCapture(VoidCaptureRequest voidCaptureRequest, String id,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2015> resp = voidCaptureWithHttpInfo(voidCaptureRequest, id, merchantConfig);
+    public PtsV2PaymentsVoidsPost201Response voidCapture(VoidCaptureRequest voidCaptureRequest, String id,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCaptureWithHttpInfo(voidCaptureRequest, id, merchantConfig);
         return resp.getData();
     }
 
@@ -158,9 +158,9 @@ public class VoidApi {
      * @return ApiResponse&lt;InlineResponse2015&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2015> voidCaptureWithHttpInfo(VoidCaptureRequest voidCaptureRequest, String id,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = voidCaptureValidateBeforeCall(voidCaptureRequest, id, merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+    public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidCaptureWithHttpInfo(VoidCaptureRequest voidCaptureRequest, String id,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = voidCaptureValidateBeforeCall(voidCaptureRequest, id,merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -174,7 +174,7 @@ public class VoidApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call voidCaptureAsync(VoidCaptureRequest voidCaptureRequest, String id,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2015> callback) throws ApiException {
+    public com.squareup.okhttp.Call voidCaptureAsync(VoidCaptureRequest voidCaptureRequest, String id,MerchantConfig merchantConfig, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -195,8 +195,8 @@ public class VoidApi {
             };
         }
 
-        com.squareup.okhttp.Call call = voidCaptureValidateBeforeCall(voidCaptureRequest, id, merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+        com.squareup.okhttp.Call call = voidCaptureValidateBeforeCall(voidCaptureRequest, id, merchantConfig,progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -280,11 +280,11 @@ public class VoidApi {
      * @param voidCreditRequest  (required)
      * @param id The credit ID returned from a previous credit request. (required)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2015
+     * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2015 voidCredit(VoidCreditRequest voidCreditRequest, String id,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2015> resp = voidCreditWithHttpInfo(voidCreditRequest, id, merchantConfig);
+    public PtsV2PaymentsVoidsPost201Response voidCredit(VoidCreditRequest voidCreditRequest, String id,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCreditWithHttpInfo(voidCreditRequest, id, merchantConfig);
         return resp.getData();
     }
 
@@ -294,12 +294,12 @@ public class VoidApi {
      * @param voidCreditRequest  (required)
      * @param id The credit ID returned from a previous credit request. (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse&lt;PtsV2PaymentsVoidsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2015> voidCreditWithHttpInfo(VoidCreditRequest voidCreditRequest, String id,MerchantConfig merchantConfig) throws ApiException {
+    public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidCreditWithHttpInfo(VoidCreditRequest voidCreditRequest, String id,MerchantConfig merchantConfig) throws ApiException {
         com.squareup.okhttp.Call call = voidCreditValidateBeforeCall(voidCreditRequest, id, merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -313,7 +313,7 @@ public class VoidApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call voidCreditAsync(VoidCreditRequest voidCreditRequest, String id,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2015> callback) throws ApiException {
+    public com.squareup.okhttp.Call voidCreditAsync(VoidCreditRequest voidCreditRequest, String id,MerchantConfig merchantConfig, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -335,7 +335,7 @@ public class VoidApi {
         }
 
         com.squareup.okhttp.Call call = voidCreditValidateBeforeCall(voidCreditRequest, id, merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -404,7 +404,7 @@ public class VoidApi {
         }
         
         
-        com.squareup.okhttp.Call call = voidPaymentCall(voidPaymentRequest, id, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = voidPaymentCall(voidPaymentRequest, id,merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -419,11 +419,11 @@ public class VoidApi {
      * @param voidPaymentRequest  (required)
      * @param id The payment ID returned from a previous payment request. (required)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2015
+     * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2015 voidPayment(VoidPaymentRequest voidPaymentRequest, String id,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2015> resp = voidPaymentWithHttpInfo(voidPaymentRequest, id, merchantConfig);
+    public PtsV2PaymentsVoidsPost201Response voidPayment(VoidPaymentRequest voidPaymentRequest, String id,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidPaymentWithHttpInfo(voidPaymentRequest, id, merchantConfig);
         return resp.getData();
     }
 
@@ -433,12 +433,12 @@ public class VoidApi {
      * @param voidPaymentRequest  (required)
      * @param id The payment ID returned from a previous payment request. (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse&lt;PtsV2PaymentsVoidsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2015> voidPaymentWithHttpInfo(VoidPaymentRequest voidPaymentRequest, String id,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = voidPaymentValidateBeforeCall(voidPaymentRequest, id, merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+    public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidPaymentWithHttpInfo(VoidPaymentRequest voidPaymentRequest, String id,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = voidPaymentValidateBeforeCall(voidPaymentRequest, id,merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -452,7 +452,7 @@ public class VoidApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call voidPaymentAsync(VoidPaymentRequest voidPaymentRequest, String id,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2015> callback) throws ApiException {
+    public com.squareup.okhttp.Call voidPaymentAsync(VoidPaymentRequest voidPaymentRequest, String id,MerchantConfig merchantConfig, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -473,8 +473,8 @@ public class VoidApi {
             };
         }
 
-        com.squareup.okhttp.Call call = voidPaymentValidateBeforeCall(voidPaymentRequest, id, merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+        com.squareup.okhttp.Call call = voidPaymentValidateBeforeCall(voidPaymentRequest, id,merchantConfig, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -488,7 +488,7 @@ public class VoidApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call voidRefundCall(VoidRefundRequest voidRefundRequest, String id,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call voidRefundCall(VoidRefundRequest voidRefundRequest, String id, MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = voidRefundRequest;
         
         // create path and map variables
@@ -530,7 +530,7 @@ public class VoidApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call voidRefundValidateBeforeCall(VoidRefundRequest voidRefundRequest, String id, MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call voidRefundValidateBeforeCall(VoidRefundRequest voidRefundRequest, String id,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'voidRefundRequest' is set
         if (voidRefundRequest == null) {
@@ -543,7 +543,7 @@ public class VoidApi {
         }
         
         
-        com.squareup.okhttp.Call call = voidRefundCall(voidRefundRequest, id, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = voidRefundCall(voidRefundRequest, id, merchantConfig,progressListener, progressRequestListener);
         return call;
 
         
@@ -558,11 +558,11 @@ public class VoidApi {
      * @param voidRefundRequest  (required)
      * @param id The refund ID returned from a previous refund request. (required)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2015
+     * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2015 voidRefund(VoidRefundRequest voidRefundRequest, String id, MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2015> resp = voidRefundWithHttpInfo(voidRefundRequest, id, merchantConfig);
+    public PtsV2PaymentsVoidsPost201Response voidRefund(VoidRefundRequest voidRefundRequest, String id, MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidRefundWithHttpInfo(voidRefundRequest, id, merchantConfig);
         return resp.getData();
     }
 
@@ -572,12 +572,12 @@ public class VoidApi {
      * @param voidRefundRequest  (required)
      * @param id The refund ID returned from a previous refund request. (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse&lt;PtsV2PaymentsVoidsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2015> voidRefundWithHttpInfo(VoidRefundRequest voidRefundRequest, String id,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = voidRefundValidateBeforeCall(voidRefundRequest, id, merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+    public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidRefundWithHttpInfo(VoidRefundRequest voidRefundRequest, String id,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = voidRefundValidateBeforeCall(voidRefundRequest, id,merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -591,7 +591,7 @@ public class VoidApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call voidRefundAsync(VoidRefundRequest voidRefundRequest, String id, MerchantConfig merchantConfig,final ApiCallback<InlineResponse2015> callback) throws ApiException {
+    public com.squareup.okhttp.Call voidRefundAsync(VoidRefundRequest voidRefundRequest, String id,  MerchantConfig merchantConfig, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -613,7 +613,7 @@ public class VoidApi {
         }
 
         com.squareup.okhttp.Call call = voidRefundValidateBeforeCall(voidRefundRequest, id, merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

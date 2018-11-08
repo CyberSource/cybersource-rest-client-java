@@ -10,10 +10,11 @@
  * Do not edit the class manually.
  */
 
+
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse2006ReportPreferences;
+import Model.ReportingV3ReportSubscriptionsGet200ResponseReportPreferences;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,7 +32,7 @@ import org.joda.time.DateTime;
 /**
  * RequestBody
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class RequestBody {
 	@SerializedName("organizationId")
 	private String organizationId = null;
@@ -53,371 +54,363 @@ public class RequestBody {
 		@SerializedName("text/csv")
 		TEXT_CSV("text/csv");
 
-		private String value;
+    private String value;
 
-		ReportMimeTypeEnum(String value) {
-			this.value = value;
-		}
+    ReportMimeTypeEnum(String value) {
+      this.value = value;
+    }
 
-		public String getValue() {
-			return value;
-		}
+    public String getValue() {
+      return value;
+    }
 
-		@Override
-		public String toString() {
-			return String.valueOf(value);
-		}
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
 
-		public static ReportMimeTypeEnum fromValue(String text) {
-			for (ReportMimeTypeEnum b : ReportMimeTypeEnum.values()) {
-				if (String.valueOf(b.value).equals(text)) {
-					return b;
-				}
-			}
-			return null;
-		}
+    public static ReportMimeTypeEnum fromValue(String text) {
+      for (ReportMimeTypeEnum b : ReportMimeTypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
 
-		public static class Adapter extends TypeAdapter<ReportMimeTypeEnum> {
-			@Override
-			public void write(final JsonWriter jsonWriter, final ReportMimeTypeEnum enumeration) throws IOException {
-				jsonWriter.value(enumeration.getValue());
-			}
+    public static class Adapter extends TypeAdapter<ReportMimeTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ReportMimeTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
 
-			@Override
-			public ReportMimeTypeEnum read(final JsonReader jsonReader) throws IOException {
-				String value = jsonReader.nextString();
-				return ReportMimeTypeEnum.fromValue(String.valueOf(value));
-			}
-		}
-	}
+      @Override
+      public ReportMimeTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ReportMimeTypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
 
-	@SerializedName("reportMimeType")
-	private ReportMimeTypeEnum reportMimeType = null;
+  @SerializedName("reportMimeType")
+  private ReportMimeTypeEnum reportMimeType = null;
 
-	@SerializedName("reportFrequency")
-	private String reportFrequency = null;
+  @SerializedName("reportFrequency")
+  private String reportFrequency = null;
 
-	@SerializedName("reportName")
-	private String reportName = null;
+  @SerializedName("reportName")
+  private String reportName = null;
 
-	@SerializedName("timezone")
-	private String timezone = null;
+  @SerializedName("timezone")
+  private String timezone = null;
 
-	@SerializedName("startTime")
-	private String startTime = null;
+  @SerializedName("startTime")
+  private String startTime = null;
 
-	@SerializedName("startDay")
-	private Integer startDay = null;
+  @SerializedName("startDay")
+  private Integer startDay = null;
 
-	@SerializedName("reportFilters")
-	private Map<String, List<String>> reportFilters = null;
+  @SerializedName("reportFilters")
+  private Map<String, List<String>> reportFilters = null;
 
-	@SerializedName("reportPreferences")
-	private InlineResponse2006ReportPreferences reportPreferences = null;
+  @SerializedName("reportPreferences")
+  private ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences = null;
 
-	@SerializedName("selectedMerchantGroupName")
-	private String selectedMerchantGroupName = null;
+  @SerializedName("selectedMerchantGroupName")
+  private String selectedMerchantGroupName = null;
 
-	public RequestBody organizationId(String organizationId) {
-		this.organizationId = organizationId;
-		return this;
-	}
+  public RequestBody organizationId(String organizationId) {
+    this.organizationId = organizationId;
+    return this;
+  }
 
-	/**
-	 * Get organizationId
-	 * 
-	 * @return organizationId
-	 **/
-	@ApiModelProperty(value = "")
-	public String getOrganizationId() {
-		return organizationId;
-	}
+   /**
+   * Get organizationId
+   * @return organizationId
+  **/
+  @ApiModelProperty(value = "")
+  public String getOrganizationId() {
+    return organizationId;
+  }
 
-	public void setOrganizationId(String organizationId) {
-		this.organizationId = organizationId;
-	}
+  public void setOrganizationId(String organizationId) {
+    this.organizationId = organizationId;
+  }
 
-	public RequestBody reportDefinitionName(String reportDefinitionName) {
-		this.reportDefinitionName = reportDefinitionName;
-		return this;
-	}
+  public RequestBody reportDefinitionName(String reportDefinitionName) {
+    this.reportDefinitionName = reportDefinitionName;
+    return this;
+  }
 
-	/**
-	 * Get reportDefinitionName
-	 * 
-	 * @return reportDefinitionName
-	 **/
-	@ApiModelProperty(required = true, value = "")
-	public String getReportDefinitionName() {
-		return reportDefinitionName;
-	}
+   /**
+   * Get reportDefinitionName
+   * @return reportDefinitionName
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getReportDefinitionName() {
+    return reportDefinitionName;
+  }
 
-	public void setReportDefinitionName(String reportDefinitionName) {
-		this.reportDefinitionName = reportDefinitionName;
-	}
+  public void setReportDefinitionName(String reportDefinitionName) {
+    this.reportDefinitionName = reportDefinitionName;
+  }
 
-	public RequestBody reportFields(List<String> reportFields) {
-		this.reportFields = reportFields;
-		return this;
-	}
+  public RequestBody reportFields(List<String> reportFields) {
+    this.reportFields = reportFields;
+    return this;
+  }
 
-	public RequestBody addReportFieldsItem(String reportFieldsItem) {
-		this.reportFields.add(reportFieldsItem);
-		return this;
-	}
+  public RequestBody addReportFieldsItem(String reportFieldsItem) {
+    this.reportFields.add(reportFieldsItem);
+    return this;
+  }
 
-	/**
-	 * Get reportFields
-	 * 
-	 * @return reportFields
-	 **/
-	@ApiModelProperty(required = true, value = "")
-	public List<String> getReportFields() {
-		return reportFields;
-	}
+   /**
+   * Get reportFields
+   * @return reportFields
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public List<String> getReportFields() {
+    return reportFields;
+  }
 
-	public void setReportFields(List<String> reportFields) {
-		this.reportFields = reportFields;
-	}
+  public void setReportFields(List<String> reportFields) {
+    this.reportFields = reportFields;
+  }
 
-	public RequestBody reportMimeType(ReportMimeTypeEnum reportMimeType) {
-		this.reportMimeType = reportMimeType;
-		return this;
-	}
+  public RequestBody reportMimeType(ReportMimeTypeEnum reportMimeType) {
+    this.reportMimeType = reportMimeType;
+    return this;
+  }
 
-	/**
-	 * Get reportMimeType
-	 * 
-	 * @return reportMimeType
-	 **/
-	@ApiModelProperty(example = "application/xml", value = "")
-	public ReportMimeTypeEnum getReportMimeType() {
-		return reportMimeType;
-	}
+   /**
+   * Get reportMimeType
+   * @return reportMimeType
+  **/
+  @ApiModelProperty(example = "application/xml", value = "")
+  public ReportMimeTypeEnum getReportMimeType() {
+    return reportMimeType;
+  }
 
-	public void setReportMimeType(ReportMimeTypeEnum reportMimeType) {
-		this.reportMimeType = reportMimeType;
-	}
+  public void setReportMimeType(ReportMimeTypeEnum reportMimeType) {
+    this.reportMimeType = reportMimeType;
+  }
 
-	public RequestBody reportFrequency(String reportFrequency) {
-		this.reportFrequency = reportFrequency;
-		return this;
-	}
+  public RequestBody reportFrequency(String reportFrequency) {
+    this.reportFrequency = reportFrequency;
+    return this;
+  }
 
-	/**
-	 * Get reportFrequency
-	 * 
-	 * @return reportFrequency
-	 **/
-	@ApiModelProperty(value = "")
-	public String getReportFrequency() {
-		return reportFrequency;
-	}
+   /**
+   * Get reportFrequency
+   * @return reportFrequency
+  **/
+  @ApiModelProperty(value = "")
+  public String getReportFrequency() {
+    return reportFrequency;
+  }
 
-	public void setReportFrequency(String reportFrequency) {
-		this.reportFrequency = reportFrequency;
-	}
+  public void setReportFrequency(String reportFrequency) {
+    this.reportFrequency = reportFrequency;
+  }
 
-	public RequestBody reportName(String reportName) {
-		this.reportName = reportName;
-		return this;
-	}
+  public RequestBody reportName(String reportName) {
+    this.reportName = reportName;
+    return this;
+  }
 
-	/**
-	 * Get reportName
-	 * 
-	 * @return reportName
-	 **/
-	@ApiModelProperty(required = true, value = "")
-	public String getReportName() {
-		return reportName;
-	}
+   /**
+   * Get reportName
+   * @return reportName
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getReportName() {
+    return reportName;
+  }
 
-	public void setReportName(String reportName) {
-		this.reportName = reportName;
-	}
+  public void setReportName(String reportName) {
+    this.reportName = reportName;
+  }
 
-	public RequestBody timezone(String timezone) {
-		this.timezone = timezone;
-		return this;
-	}
+  public RequestBody timezone(String timezone) {
+    this.timezone = timezone;
+    return this;
+  }
 
-	/**
-	 * Get timezone
-	 * 
-	 * @return timezone
-	 **/
-	@ApiModelProperty(example = "America/Chicago", value = "")
-	public String getTimezone() {
-		return timezone;
-	}
+   /**
+   * Get timezone
+   * @return timezone
+  **/
+  @ApiModelProperty(example = "America/Chicago", value = "")
+  public String getTimezone() {
+    return timezone;
+  }
 
-	public void setTimezone(String timezone) {
-		this.timezone = timezone;
-	}
+  public void setTimezone(String timezone) {
+    this.timezone = timezone;
+  }
 
-	public RequestBody startTime(String startTime) {
-		this.startTime = startTime;
-		return this;
-	}
+  public RequestBody startTime(String startTime) {
+    this.startTime = startTime;
+    return this;
+  }
 
-	/**
-	 * Get startTime
-	 * 
-	 * @return startTime
-	 **/
-	@ApiModelProperty(example = "2017-10-01T10:10:10+05:00", value = "")
-	public String getStartTime() {
-		return startTime;
-	}
+   /**
+   * Get startTime
+   * @return startTime
+  **/
+  @ApiModelProperty(example = "2017-10-01T10:10:10+05:00", value = "")
+  public String getStartTime() {
+    return startTime;
+  }
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
+  public void setStartTime(String startTime) {
+    this.startTime = startTime;
+  }
 
-	public RequestBody startDay(Integer startDay) {
-		this.startDay = startDay;
-		return this;
-	}
+  public RequestBody startDay(Integer startDay) {
+    this.startDay = startDay;
+    return this;
+  }
 
-	/**
-	 * Get startDay minimum: 1 maximum: 7
-	 * 
-	 * @return startDay
-	 **/
-	@ApiModelProperty(value = "")
-	public Integer getStartDay() {
-		return startDay;
-	}
+   /**
+   * Get startDay
+   * minimum: 1
+   * maximum: 7
+   * @return startDay
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getStartDay() {
+    return startDay;
+  }
 
-	public void setStartDay(Integer startDay) {
-		this.startDay = startDay;
-	}
+  public void setStartDay(Integer startDay) {
+    this.startDay = startDay;
+  }
 
-	public RequestBody reportFilters(Map<String, List<String>> reportFilters) {
-		this.reportFilters = reportFilters;
-		return this;
-	}
+  public RequestBody reportFilters(Map<String, List<String>> reportFilters) {
+    this.reportFilters = reportFilters;
+    return this;
+  }
 
-	public RequestBody putReportFiltersItem(String key, List<String> reportFiltersItem) {
-		if (this.reportFilters == null) {
-			this.reportFilters = new HashMap<String, List<String>>();
-		}
-		this.reportFilters.put(key, reportFiltersItem);
-		return this;
-	}
+  public RequestBody putReportFiltersItem(String key, List<String> reportFiltersItem) {
+    if (this.reportFilters == null) {
+      this.reportFilters = new HashMap<String, List<String>>();
+    }
+    this.reportFilters.put(key, reportFiltersItem);
+    return this;
+  }
 
-	/**
-	 * Get reportFilters
-	 * 
-	 * @return reportFilters
-	 **/
-	@ApiModelProperty(value = "")
-	public Map<String, List<String>> getReportFilters() {
-		return reportFilters;
-	}
+   /**
+   * Get reportFilters
+   * @return reportFilters
+  **/
+  @ApiModelProperty(value = "")
+  public Map<String, List<String>> getReportFilters() {
+    return reportFilters;
+  }
 
-	public void setReportFilters(Map<String, List<String>> reportFilters) {
-		this.reportFilters = reportFilters;
-	}
+  public void setReportFilters(Map<String, List<String>> reportFilters) {
+    this.reportFilters = reportFilters;
+  }
 
-	public RequestBody reportPreferences(InlineResponse2006ReportPreferences reportPreferences) {
-		this.reportPreferences = reportPreferences;
-		return this;
-	}
+  public RequestBody reportPreferences(ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences) {
+    this.reportPreferences = reportPreferences;
+    return this;
+  }
 
-	/**
-	 * Get reportPreferences
-	 * 
-	 * @return reportPreferences
-	 **/
-	@ApiModelProperty(value = "")
-	public InlineResponse2006ReportPreferences getReportPreferences() {
-		return reportPreferences;
-	}
+   /**
+   * Get reportPreferences
+   * @return reportPreferences
+  **/
+  @ApiModelProperty(value = "")
+  public ReportingV3ReportSubscriptionsGet200ResponseReportPreferences getReportPreferences() {
+    return reportPreferences;
+  }
 
-	public void setReportPreferences(InlineResponse2006ReportPreferences reportPreferences) {
-		this.reportPreferences = reportPreferences;
-	}
+  public void setReportPreferences(ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences) {
+    this.reportPreferences = reportPreferences;
+  }
 
-	public RequestBody selectedMerchantGroupName(String selectedMerchantGroupName) {
-		this.selectedMerchantGroupName = selectedMerchantGroupName;
-		return this;
-	}
+  public RequestBody selectedMerchantGroupName(String selectedMerchantGroupName) {
+    this.selectedMerchantGroupName = selectedMerchantGroupName;
+    return this;
+  }
 
-	/**
-	 * Get selectedMerchantGroupName
-	 * 
-	 * @return selectedMerchantGroupName
-	 **/
-	@ApiModelProperty(value = "")
-	public String getSelectedMerchantGroupName() {
-		return selectedMerchantGroupName;
-	}
+   /**
+   * Get selectedMerchantGroupName
+   * @return selectedMerchantGroupName
+  **/
+  @ApiModelProperty(value = "")
+  public String getSelectedMerchantGroupName() {
+    return selectedMerchantGroupName;
+  }
 
-	public void setSelectedMerchantGroupName(String selectedMerchantGroupName) {
-		this.selectedMerchantGroupName = selectedMerchantGroupName;
-	}
+  public void setSelectedMerchantGroupName(String selectedMerchantGroupName) {
+    this.selectedMerchantGroupName = selectedMerchantGroupName;
+  }
 
-	@Override
-	public boolean equals(java.lang.Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (o == null || getClass() != o.getClass()) {
-			return false;
-		}
-		RequestBody requestBody = (RequestBody) o;
-		return Objects.equals(this.organizationId, requestBody.organizationId)
-				&& Objects.equals(this.reportDefinitionName, requestBody.reportDefinitionName)
-				&& Objects.equals(this.reportFields, requestBody.reportFields)
-				&& Objects.equals(this.reportMimeType, requestBody.reportMimeType)
-				&& Objects.equals(this.reportFrequency, requestBody.reportFrequency)
-				&& Objects.equals(this.reportName, requestBody.reportName)
-				&& Objects.equals(this.timezone, requestBody.timezone)
-				&& Objects.equals(this.startTime, requestBody.startTime)
-				&& Objects.equals(this.startDay, requestBody.startDay)
-				&& Objects.equals(this.reportFilters, requestBody.reportFilters)
-				&& Objects.equals(this.reportPreferences, requestBody.reportPreferences)
-				&& Objects.equals(this.selectedMerchantGroupName, requestBody.selectedMerchantGroupName);
-	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(organizationId, reportDefinitionName, reportFields, reportMimeType, reportFrequency,
-				reportName, timezone, startTime, startDay, reportFilters, reportPreferences, selectedMerchantGroupName);
-	}
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    RequestBody requestBody = (RequestBody) o;
+    return Objects.equals(this.organizationId, requestBody.organizationId) &&
+        Objects.equals(this.reportDefinitionName, requestBody.reportDefinitionName) &&
+        Objects.equals(this.reportFields, requestBody.reportFields) &&
+        Objects.equals(this.reportMimeType, requestBody.reportMimeType) &&
+        Objects.equals(this.reportFrequency, requestBody.reportFrequency) &&
+        Objects.equals(this.reportName, requestBody.reportName) &&
+        Objects.equals(this.timezone, requestBody.timezone) &&
+        Objects.equals(this.startTime, requestBody.startTime) &&
+        Objects.equals(this.startDay, requestBody.startDay) &&
+        Objects.equals(this.reportFilters, requestBody.reportFilters) &&
+        Objects.equals(this.reportPreferences, requestBody.reportPreferences) &&
+        Objects.equals(this.selectedMerchantGroupName, requestBody.selectedMerchantGroupName);
+  }
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("class RequestBody {\n");
+  @Override
+  public int hashCode() {
+    return Objects.hash(organizationId, reportDefinitionName, reportFields, reportMimeType, reportFrequency, reportName, timezone, startTime, startDay, reportFilters, reportPreferences, selectedMerchantGroupName);
+  }
 
-		sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-		sb.append("    reportDefinitionName: ").append(toIndentedString(reportDefinitionName)).append("\n");
-		sb.append("    reportFields: ").append(toIndentedString(reportFields)).append("\n");
-		sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");
-		sb.append("    reportFrequency: ").append(toIndentedString(reportFrequency)).append("\n");
-		sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
-		sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
-		sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-		sb.append("    startDay: ").append(toIndentedString(startDay)).append("\n");
-		sb.append("    reportFilters: ").append(toIndentedString(reportFilters)).append("\n");
-		sb.append("    reportPreferences: ").append(toIndentedString(reportPreferences)).append("\n");
-		sb.append("    selectedMerchantGroupName: ").append(toIndentedString(selectedMerchantGroupName)).append("\n");
-		sb.append("}");
-		return sb.toString();
-	}
 
-	/**
-	 * Convert the given object to string with each line indented by 4 spaces
-	 * (except the first line).
-	 */
-	private String toIndentedString(java.lang.Object o) {
-		if (o == null) {
-			return "null";
-		}
-		return o.toString().replace("\n", "\n    ");
-	}
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class RequestBody {\n");
+    
+    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    reportDefinitionName: ").append(toIndentedString(reportDefinitionName)).append("\n");
+    sb.append("    reportFields: ").append(toIndentedString(reportFields)).append("\n");
+    sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");
+    sb.append("    reportFrequency: ").append(toIndentedString(reportFrequency)).append("\n");
+    sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
+    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    sb.append("    startDay: ").append(toIndentedString(startDay)).append("\n");
+    sb.append("    reportFilters: ").append(toIndentedString(reportFilters)).append("\n");
+    sb.append("    reportPreferences: ").append(toIndentedString(reportPreferences)).append("\n");
+    sb.append("    selectedMerchantGroupName: ").append(toIndentedString(selectedMerchantGroupName)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
 
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+  
 }
+

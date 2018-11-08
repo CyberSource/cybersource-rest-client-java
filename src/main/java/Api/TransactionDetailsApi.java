@@ -28,7 +28,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import Model.InlineResponse20012;
+import Model.TssV2TransactionsGet200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -64,7 +64,7 @@ public class TransactionDetailsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getTransactionCall(String id, MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionCall(String id,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -102,11 +102,11 @@ public class TransactionDetailsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",  merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTransactionValidateBeforeCall(String id, MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTransactionValidateBeforeCall(String id,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -114,7 +114,7 @@ public class TransactionDetailsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getTransactionCall(id,  merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTransactionCall(id, merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -128,11 +128,11 @@ public class TransactionDetailsApi {
      * Include the Request ID in the GET request to retrieve the transaction details.
      * @param merchantConfig  (merchant details)
      * @param id Request ID.  (required)
-     * @return InlineResponse20012
+     * @return TssV2TransactionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse20012 getTransaction(String id, MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse20012> resp = getTransactionWithHttpInfo(id,  merchantConfig);
+    public TssV2TransactionsGet200Response getTransaction(String id,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<TssV2TransactionsGet200Response> resp = getTransactionWithHttpInfo(id, merchantConfig);
         return resp.getData();
     }
 
@@ -141,12 +141,12 @@ public class TransactionDetailsApi {
      * Include the Request ID in the GET request to retrieve the transaction details.
      * @param id Request ID.  (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse20012&gt;
+     * @return ApiResponse&lt;TssV2TransactionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse20012> getTransactionWithHttpInfo(String id, MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = getTransactionValidateBeforeCall(id,  merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+    public ApiResponse<TssV2TransactionsGet200Response> getTransactionWithHttpInfo(String id,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = getTransactionValidateBeforeCall(id, merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<TssV2TransactionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -159,7 +159,7 @@ public class TransactionDetailsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getTransactionAsync(String id,  MerchantConfig merchantConfig,final ApiCallback<InlineResponse20012> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionAsync(String id,MerchantConfig merchantConfig, final ApiCallback<TssV2TransactionsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -181,7 +181,7 @@ public class TransactionDetailsApi {
         }
 
         com.squareup.okhttp.Call call = getTransactionValidateBeforeCall(id, merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+        Type localVarReturnType = new TypeToken<TssV2TransactionsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

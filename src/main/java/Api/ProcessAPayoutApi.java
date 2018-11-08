@@ -13,14 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.cybersource.authsdk.core.MerchantConfig;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -29,7 +21,22 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-import Model.OctCreatePaymentRequest;
+
+import com.cybersource.authsdk.core.MerchantConfig;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
+import Model.PtsV2PaymentsPost502Response;
+import Model.PtsV2PayoutsPost400Response;
+import Model.PtsV2PayoutsPostResponse;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ProcessAPayoutApi {
     private ApiClient apiClient;
@@ -59,7 +66,7 @@ public class ProcessAPayoutApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call octCreatePaymentCall(OctCreatePaymentRequest octCreatePaymentRequest,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call octCreatePaymentCall(PtsV2PayoutsPostResponse octCreatePaymentRequest, MerchantConfig merchantConfig,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = octCreatePaymentRequest;
         
         // create path and map variables
@@ -100,7 +107,7 @@ public class ProcessAPayoutApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call octCreatePaymentValidateBeforeCall(OctCreatePaymentRequest octCreatePaymentRequest,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call octCreatePaymentValidateBeforeCall(PtsV2PayoutsPostResponse octCreatePaymentRequest,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'octCreatePaymentRequest' is set
         if (octCreatePaymentRequest == null) {
@@ -124,7 +131,7 @@ public class ProcessAPayoutApi {
      * @param merchantConfig  (merchant details)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void octCreatePayment(OctCreatePaymentRequest octCreatePaymentRequest,MerchantConfig merchantConfig) throws ApiException {
+    public void octCreatePayment(PtsV2PayoutsPostResponse octCreatePaymentRequest,MerchantConfig merchantConfig) throws ApiException {
         octCreatePaymentWithHttpInfo(octCreatePaymentRequest, merchantConfig);
     }
 
@@ -136,7 +143,7 @@ public class ProcessAPayoutApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> octCreatePaymentWithHttpInfo(OctCreatePaymentRequest octCreatePaymentRequest,MerchantConfig merchantConfig) throws ApiException {
+    public ApiResponse<Void> octCreatePaymentWithHttpInfo(PtsV2PayoutsPostResponse octCreatePaymentRequest,MerchantConfig merchantConfig) throws ApiException {
         com.squareup.okhttp.Call call = octCreatePaymentValidateBeforeCall(octCreatePaymentRequest, merchantConfig, null, null);
         return apiClient.execute(call);
     }
@@ -150,7 +157,7 @@ public class ProcessAPayoutApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call octCreatePaymentAsync(OctCreatePaymentRequest octCreatePaymentRequest,MerchantConfig merchantConfig, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call octCreatePaymentAsync(PtsV2PayoutsPostResponse octCreatePaymentRequest,MerchantConfig merchantConfig, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

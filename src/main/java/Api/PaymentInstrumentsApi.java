@@ -31,10 +31,23 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import Model.Body2;
 import Model.Body3;
-import Model.InlineResponse20011;
-import Model.InlineResponse2016;
+import Model.InlineResponse400;
+import Model.TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response;
+import Model.TmsV1PaymentinstrumentsPost201Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class PaymentInstrumentsApi {
     private ApiClient apiClient;
@@ -145,11 +158,11 @@ public class PaymentInstrumentsApi {
      * @param merchantConfig  (merchant details)
      * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional)
      * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
-     * @return InlineResponse20011
+     * @return TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse20011 tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet(String profileId, String tokenId,MerchantConfig merchantConfig, String offset, String limit) throws ApiException {
-        ApiResponse<InlineResponse20011> resp = tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGetWithHttpInfo(profileId, tokenId, merchantConfig, offset, limit);
+    public TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet(String profileId, String tokenId,MerchantConfig merchantConfig, String offset, String limit) throws ApiException {
+        ApiResponse<TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response> resp = tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGetWithHttpInfo(profileId, tokenId, merchantConfig,  offset, limit);
         return resp.getData();
     }
 
@@ -161,12 +174,12 @@ public class PaymentInstrumentsApi {
      * @param merchantConfig  (merchant details)
      * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional)
      * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
-     * @return ApiResponse&lt;InlineResponse20011&gt;
+     * @return ApiResponse&lt;TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse20011> tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGetWithHttpInfo(String profileId, String tokenId,MerchantConfig merchantConfig, String offset, String limit) throws ApiException {
-        com.squareup.okhttp.Call call = tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGetValidateBeforeCall(profileId, tokenId, merchantConfig, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+    public ApiResponse<TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response> tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGetWithHttpInfo(String profileId, String tokenId,MerchantConfig merchantConfig, String offset, String limit) throws ApiException {
+        com.squareup.okhttp.Call call = tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGetValidateBeforeCall(profileId, tokenId,merchantConfig, offset, limit, null, null);
+        Type localVarReturnType = new TypeToken<TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -182,7 +195,7 @@ public class PaymentInstrumentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGetAsync(String profileId, String tokenId,MerchantConfig merchantConfig, String offset, String limit, final ApiCallback<InlineResponse20011> callback) throws ApiException {
+    public com.squareup.okhttp.Call tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGetAsync(String profileId, String tokenId,MerchantConfig merchantConfig, String offset, String limit, final ApiCallback<TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -204,7 +217,7 @@ public class PaymentInstrumentsApi {
         }
 
         com.squareup.okhttp.Call call = tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGetValidateBeforeCall(profileId, tokenId, merchantConfig, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -274,7 +287,7 @@ public class PaymentInstrumentsApi {
         }
         
         
-        com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsPostCall(profileId, body, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsPostCall(profileId, body,  merchantConfig,progressListener, progressRequestListener);
         return call;
 
         
@@ -289,11 +302,11 @@ public class PaymentInstrumentsApi {
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param body Please specify the customers payment details for card or bank account. (required)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2016
+     * @return TmsV1PaymentinstrumentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2016 tmsV1PaymentinstrumentsPost(String profileId, Body2 body,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2016> resp = tmsV1PaymentinstrumentsPostWithHttpInfo(profileId, body, merchantConfig);
+    public TmsV1PaymentinstrumentsPost201Response tmsV1PaymentinstrumentsPost(String profileId, Body2 body,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<TmsV1PaymentinstrumentsPost201Response> resp = tmsV1PaymentinstrumentsPostWithHttpInfo(profileId, body, merchantConfig);
         return resp.getData();
     }
 
@@ -306,9 +319,9 @@ public class PaymentInstrumentsApi {
      * @return ApiResponse&lt;InlineResponse2016&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2016> tmsV1PaymentinstrumentsPostWithHttpInfo(String profileId, Body2 body,MerchantConfig merchantConfig) throws ApiException {
+    public ApiResponse<TmsV1PaymentinstrumentsPost201Response> tmsV1PaymentinstrumentsPostWithHttpInfo(String profileId, Body2 body,MerchantConfig merchantConfig) throws ApiException {
         com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsPostValidateBeforeCall(profileId, body, merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -322,7 +335,7 @@ public class PaymentInstrumentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call tmsV1PaymentinstrumentsPostAsync(String profileId, Body2 body,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2016> callback) throws ApiException {
+    public com.squareup.okhttp.Call tmsV1PaymentinstrumentsPostAsync(String profileId, Body2 body,MerchantConfig merchantConfig, final ApiCallback<TmsV1PaymentinstrumentsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -343,8 +356,8 @@ public class PaymentInstrumentsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsPostValidateBeforeCall(profileId, body, merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+        com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsPostValidateBeforeCall(profileId, body,  merchantConfig, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -460,7 +473,7 @@ public class PaymentInstrumentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call tmsV1PaymentinstrumentsTokenIdDeleteAsync(String profileId, String tokenId, MerchantConfig merchantConfig,final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call tmsV1PaymentinstrumentsTokenIdDeleteAsync(String profileId, String tokenId,MerchantConfig merchantConfig, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -570,8 +583,8 @@ public class PaymentInstrumentsApi {
      * @return InlineResponse2016
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2016 tmsV1PaymentinstrumentsTokenIdGet(String profileId, String tokenId,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2016> resp = tmsV1PaymentinstrumentsTokenIdGetWithHttpInfo(profileId, tokenId, merchantConfig);
+    public TmsV1PaymentinstrumentsPost201Response tmsV1PaymentinstrumentsTokenIdGet(String profileId, String tokenId,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<TmsV1PaymentinstrumentsPost201Response> resp = tmsV1PaymentinstrumentsTokenIdGetWithHttpInfo(profileId, tokenId, merchantConfig);
         return resp.getData();
     }
 
@@ -584,9 +597,9 @@ public class PaymentInstrumentsApi {
      * @return ApiResponse&lt;InlineResponse2016&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2016> tmsV1PaymentinstrumentsTokenIdGetWithHttpInfo(String profileId, String tokenId,MerchantConfig merchantConfig) throws ApiException {
+    public ApiResponse<TmsV1PaymentinstrumentsPost201Response> tmsV1PaymentinstrumentsTokenIdGetWithHttpInfo(String profileId, String tokenId,MerchantConfig merchantConfig) throws ApiException {
         com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsTokenIdGetValidateBeforeCall(profileId, tokenId, merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -600,7 +613,7 @@ public class PaymentInstrumentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call tmsV1PaymentinstrumentsTokenIdGetAsync(String profileId, String tokenId,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2016> callback) throws ApiException {
+    public com.squareup.okhttp.Call tmsV1PaymentinstrumentsTokenIdGetAsync(String profileId, String tokenId,MerchantConfig merchantConfig, final ApiCallback<TmsV1PaymentinstrumentsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -622,7 +635,7 @@ public class PaymentInstrumentsApi {
         }
 
         com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsTokenIdGetValidateBeforeCall(profileId, tokenId, merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -699,7 +712,7 @@ public class PaymentInstrumentsApi {
         }
         
         
-        com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsTokenIdPatchCall(profileId, tokenId,  body,merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsTokenIdPatchCall(profileId, tokenId, body, merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -715,11 +728,11 @@ public class PaymentInstrumentsApi {
      * @param tokenId The TokenId of a Payment Instrument. (required)
      * @param body Please specify the customers payment details. (required)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2016
+     * @return TmsV1PaymentinstrumentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2016 tmsV1PaymentinstrumentsTokenIdPatch(String profileId, String tokenId, Body3 body,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2016> resp = tmsV1PaymentinstrumentsTokenIdPatchWithHttpInfo(profileId, tokenId, body, merchantConfig);
+    public TmsV1PaymentinstrumentsPost201Response tmsV1PaymentinstrumentsTokenIdPatch(String profileId, String tokenId, Body3 body,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<TmsV1PaymentinstrumentsPost201Response> resp = tmsV1PaymentinstrumentsTokenIdPatchWithHttpInfo(profileId, tokenId, body, merchantConfig);
         return resp.getData();
     }
 
@@ -730,12 +743,12 @@ public class PaymentInstrumentsApi {
      * @param tokenId The TokenId of a Payment Instrument. (required)
      * @param body Please specify the customers payment details. (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2016&gt;
+     * @return ApiResponse&lt;TmsV1PaymentinstrumentsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2016> tmsV1PaymentinstrumentsTokenIdPatchWithHttpInfo(String profileId, String tokenId, Body3 body,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsTokenIdPatchValidateBeforeCall(profileId, tokenId, body,merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+    public ApiResponse<TmsV1PaymentinstrumentsPost201Response> tmsV1PaymentinstrumentsTokenIdPatchWithHttpInfo(String profileId, String tokenId, Body3 body,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsTokenIdPatchValidateBeforeCall(profileId, tokenId, body, merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -750,7 +763,7 @@ public class PaymentInstrumentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call tmsV1PaymentinstrumentsTokenIdPatchAsync(String profileId, String tokenId, Body3 body,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2016> callback) throws ApiException {
+    public com.squareup.okhttp.Call tmsV1PaymentinstrumentsTokenIdPatchAsync(String profileId, String tokenId, Body3 body,MerchantConfig merchantConfig, final ApiCallback<TmsV1PaymentinstrumentsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -772,7 +785,7 @@ public class PaymentInstrumentsApi {
         }
 
         com.squareup.okhttp.Call call = tmsV1PaymentinstrumentsTokenIdPatchValidateBeforeCall(profileId, tokenId, body, merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2016>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

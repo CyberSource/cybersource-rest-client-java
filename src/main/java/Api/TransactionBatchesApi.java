@@ -29,9 +29,9 @@ import java.io.IOException;
 
 
 import org.joda.time.DateTime;
-import Model.InlineResponse2002;
-import Model.InlineResponse4005;
-import Model.InlineResponse500;
+import Model.PtsV1TransactionBatchesGet200Response;
+import Model.PtsV1TransactionBatchesGet400Response;
+import Model.PtsV1TransactionBatchesGet500Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -68,7 +68,7 @@ public class TransactionBatchesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call ptsV1TransactionBatchesGetCall(DateTime startTime, DateTime endTime, MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call ptsV1TransactionBatchesGetCall(DateTime startTime, DateTime endTime,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -91,8 +91,7 @@ public class TransactionBatchesApi {
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
-       
-       
+
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
@@ -106,11 +105,11 @@ public class TransactionBatchesApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",  merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call ptsV1TransactionBatchesGetValidateBeforeCall(DateTime startTime, DateTime endTime, MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call ptsV1TransactionBatchesGetValidateBeforeCall(DateTime startTime, DateTime endTime,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
@@ -123,7 +122,7 @@ public class TransactionBatchesApi {
         }
         
         
-        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetCall(startTime, endTime,  merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetCall(startTime, endTime, merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -138,11 +137,11 @@ public class TransactionBatchesApi {
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2002
+     * @return PtsV1TransactionBatchesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2002 ptsV1TransactionBatchesGet(DateTime startTime, DateTime endTime, MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2002> resp = ptsV1TransactionBatchesGetWithHttpInfo(startTime, endTime,  merchantConfig);
+    public PtsV1TransactionBatchesGet200Response ptsV1TransactionBatchesGet(DateTime startTime, DateTime endTime,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV1TransactionBatchesGet200Response> resp = ptsV1TransactionBatchesGetWithHttpInfo(startTime, endTime, merchantConfig);
         return resp.getData();
     }
 
@@ -152,12 +151,12 @@ public class TransactionBatchesApi {
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2002&gt;
+     * @return ApiResponse&lt;PtsV1TransactionBatchesGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2002> ptsV1TransactionBatchesGetWithHttpInfo(DateTime startTime, DateTime endTime, MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetValidateBeforeCall(startTime, endTime,  merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesGetWithHttpInfo(DateTime startTime, DateTime endTime,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetValidateBeforeCall(startTime, endTime, merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -171,7 +170,7 @@ public class TransactionBatchesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call ptsV1TransactionBatchesGetAsync(DateTime startTime, DateTime endTime, MerchantConfig merchantConfig, final ApiCallback<InlineResponse2002> callback) throws ApiException {
+    public com.squareup.okhttp.Call ptsV1TransactionBatchesGetAsync(DateTime startTime, DateTime endTime,MerchantConfig merchantConfig, final ApiCallback<PtsV1TransactionBatchesGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -192,8 +191,8 @@ public class TransactionBatchesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetValidateBeforeCall(startTime, endTime,  merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetValidateBeforeCall(startTime, endTime, merchantConfig, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

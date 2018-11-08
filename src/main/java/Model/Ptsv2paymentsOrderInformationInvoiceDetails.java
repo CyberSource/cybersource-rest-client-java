@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationInvoiceDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class Ptsv2paymentsOrderInformationInvoiceDetails {
   @SerializedName("invoiceNumber")
   private String invoiceNumber = null;

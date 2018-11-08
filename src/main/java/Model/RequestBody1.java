@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse2006ReportPreferences;
+import Model.ReportingV3ReportSubscriptionsGet200ResponseReportPreferences;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -33,7 +33,7 @@ import org.joda.time.DateTime;
 /**
  * RequestBody1
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T18:13:53.731+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class RequestBody1 {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -112,7 +112,7 @@ public class RequestBody1 {
   private Map<String, List<String>> reportFilters = null;
 
   @SerializedName("reportPreferences")
-  private InlineResponse2006ReportPreferences reportPreferences = null;
+  private ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences = null;
 
   @SerializedName("selectedMerchantGroupName")
   private String selectedMerchantGroupName = null;
@@ -295,7 +295,7 @@ public class RequestBody1 {
     this.reportFilters = reportFilters;
   }
 
-  public RequestBody1 reportPreferences(InlineResponse2006ReportPreferences reportPreferences) {
+  public RequestBody1 reportPreferences(ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences) {
     this.reportPreferences = reportPreferences;
     return this;
   }
@@ -305,11 +305,11 @@ public class RequestBody1 {
    * @return reportPreferences
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2006ReportPreferences getReportPreferences() {
+  public ReportingV3ReportSubscriptionsGet200ResponseReportPreferences getReportPreferences() {
     return reportPreferences;
   }
 
-  public void setReportPreferences(InlineResponse2006ReportPreferences reportPreferences) {
+  public void setReportPreferences(ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences) {
     this.reportPreferences = reportPreferences;
   }
 

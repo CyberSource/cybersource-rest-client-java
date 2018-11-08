@@ -29,9 +29,9 @@ import java.io.IOException;
 
 
 import Model.CapturePaymentRequest;
-import Model.InlineResponse2012;
-import Model.InlineResponse4002;
-import Model.InlineResponse502;
+import Model.PtsV2PaymentsCapturesPost201Response;
+import Model.PtsV2PaymentsCapturesPost400Response;
+import Model.PtsV2PaymentsPost502Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -138,11 +138,11 @@ public class CaptureApi {
      * @param capturePaymentRequest  (required)
      * @param merchantConfig  (merchant details)
      * @param id The payment ID returned from a previous payment request. This ID links the capture to the payment.  (required)
-     * @return InlineResponse2012
+     * @return PtsV2PaymentsCapturesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2012 capturePayment(CapturePaymentRequest capturePaymentRequest,MerchantConfig merchantConfig, String id) throws ApiException {
-        ApiResponse<InlineResponse2012> resp = capturePaymentWithHttpInfo(capturePaymentRequest,merchantConfig, id);
+    public PtsV2PaymentsCapturesPost201Response capturePayment(CapturePaymentRequest capturePaymentRequest,MerchantConfig merchantConfig, String id) throws ApiException {
+        ApiResponse<PtsV2PaymentsCapturesPost201Response> resp = capturePaymentWithHttpInfo(capturePaymentRequest,merchantConfig, id);
         return resp.getData();
     }
 
@@ -152,12 +152,12 @@ public class CaptureApi {
      * @param capturePaymentRequest  (required)
      * @param merchantConfig  (merchant details)
      * @param id The payment ID returned from a previous payment request. This ID links the capture to the payment.  (required)
-     * @return ApiResponse&lt;InlineResponse2012&gt;
+     * @return ApiResponse&lt;PtsV2PaymentsCapturesPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2012> capturePaymentWithHttpInfo(CapturePaymentRequest capturePaymentRequest,MerchantConfig merchantConfig, String id) throws ApiException {
+    public ApiResponse<PtsV2PaymentsCapturesPost201Response> capturePaymentWithHttpInfo(CapturePaymentRequest capturePaymentRequest,MerchantConfig merchantConfig, String id) throws ApiException {
         com.squareup.okhttp.Call call = capturePaymentValidateBeforeCall(capturePaymentRequest,merchantConfig, id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsCapturesPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -171,7 +171,7 @@ public class CaptureApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call capturePaymentAsync(CapturePaymentRequest capturePaymentRequest,MerchantConfig merchantConfig, String id, final ApiCallback<InlineResponse2012> callback) throws ApiException {
+    public com.squareup.okhttp.Call capturePaymentAsync(CapturePaymentRequest capturePaymentRequest,MerchantConfig merchantConfig, String id, final ApiCallback<PtsV2PaymentsCapturesPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -193,7 +193,7 @@ public class CaptureApi {
         }
 
         com.squareup.okhttp.Call call = capturePaymentValidateBeforeCall(capturePaymentRequest,merchantConfig, id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsCapturesPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -31,7 +31,7 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-import Model.InlineResponse2013;
+import Model.PtsV2PaymentsRefundPost201Response;
 import Model.RefundCaptureRequest;
 import Model.RefundPaymentRequest;
 
@@ -102,7 +102,7 @@ public class RefundApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST",merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -119,7 +119,7 @@ public class RefundApi {
         }
         
         
-        com.squareup.okhttp.Call call = refundCaptureCall(refundCaptureRequest, id,merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = refundCaptureCall(refundCaptureRequest, id, merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -134,11 +134,11 @@ public class RefundApi {
      * @param refundCaptureRequest  (required)
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2013
+     * @return PtsV2PaymentsRefundPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2013 refundCapture(RefundCaptureRequest refundCaptureRequest, String id,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2013> resp = refundCaptureWithHttpInfo(refundCaptureRequest, id,merchantConfig);
+    public PtsV2PaymentsRefundPost201Response refundCapture(RefundCaptureRequest refundCaptureRequest, String id,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundCaptureWithHttpInfo(refundCaptureRequest, id, merchantConfig);
         return resp.getData();
     }
 
@@ -148,12 +148,12 @@ public class RefundApi {
      * @param refundCaptureRequest  (required)
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2013&gt;
+     * @return ApiResponse&lt;PtsV2PaymentsRefundPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2013> refundCaptureWithHttpInfo(RefundCaptureRequest refundCaptureRequest, String id,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id,merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+    public ApiResponse<PtsV2PaymentsRefundPost201Response> refundCaptureWithHttpInfo(RefundCaptureRequest refundCaptureRequest, String id,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id, merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -167,7 +167,7 @@ public class RefundApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call refundCaptureAsync(RefundCaptureRequest refundCaptureRequest, String id,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2013> callback) throws ApiException {
+    public com.squareup.okhttp.Call refundCaptureAsync(RefundCaptureRequest refundCaptureRequest, String id,MerchantConfig merchantConfig, final ApiCallback<PtsV2PaymentsRefundPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -188,8 +188,8 @@ public class RefundApi {
             };
         }
 
-        com.squareup.okhttp.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id,merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+        com.squareup.okhttp.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id, merchantConfig, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -241,7 +241,7 @@ public class RefundApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST",merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -258,7 +258,7 @@ public class RefundApi {
         }
         
         
-        com.squareup.okhttp.Call call = refundPaymentCall(refundPaymentRequest, id,merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = refundPaymentCall(refundPaymentRequest, id, merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -273,11 +273,11 @@ public class RefundApi {
      * @param refundPaymentRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2013
+     * @return PtsV2PaymentsRefundPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2013 refundPayment(RefundPaymentRequest refundPaymentRequest, String id,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2013> resp = refundPaymentWithHttpInfo(refundPaymentRequest, id,merchantConfig);
+    public PtsV2PaymentsRefundPost201Response refundPayment(RefundPaymentRequest refundPaymentRequest, String id,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundPaymentWithHttpInfo(refundPaymentRequest, id, merchantConfig);
         return resp.getData();
     }
 
@@ -287,12 +287,12 @@ public class RefundApi {
      * @param refundPaymentRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2013&gt;
+     * @return ApiResponse&lt;PtsV2PaymentsRefundPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2013> refundPaymentWithHttpInfo(RefundPaymentRequest refundPaymentRequest, String id,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id,merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+    public ApiResponse<PtsV2PaymentsRefundPost201Response> refundPaymentWithHttpInfo(RefundPaymentRequest refundPaymentRequest, String id,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id, merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -306,7 +306,7 @@ public class RefundApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call refundPaymentAsync(RefundPaymentRequest refundPaymentRequest, String id,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2013> callback) throws ApiException {
+    public com.squareup.okhttp.Call refundPaymentAsync(RefundPaymentRequest refundPaymentRequest, String id,MerchantConfig merchantConfig, final ApiCallback<PtsV2PaymentsRefundPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -327,8 +327,8 @@ public class RefundApi {
             };
         }
 
-        com.squareup.okhttp.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id, merchantConfig,progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+        com.squareup.okhttp.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id,  merchantConfig,progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

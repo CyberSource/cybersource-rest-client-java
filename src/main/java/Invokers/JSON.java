@@ -80,7 +80,7 @@ public class JSON {
      * @return String representation of the JSON
      */
     public String serialize(Object obj) {
-    	return gson.toJson(obj);
+        return gson.toJson(obj);
     }
 
     /**

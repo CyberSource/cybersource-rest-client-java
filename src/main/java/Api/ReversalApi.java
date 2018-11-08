@@ -13,16 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.cybersource.authsdk.core.MerchantConfig;
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -31,8 +21,23 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.cybersource.authsdk.core.MerchantConfig;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import Model.AuthReversalRequest;
-import Model.InlineResponse2011;
+import Model.PtsV2PaymentsPost502Response;
+import Model.PtsV2PaymentsReversalsPost201Response;
+import Model.PtsV2PaymentsReversalsPost400Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ReversalApi {
     private ApiClient apiClient;
@@ -101,7 +106,7 @@ public class ReversalApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST",merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -133,11 +138,11 @@ public class ReversalApi {
      * @param id The payment ID returned from a previous payment request. (required)
      * @param authReversalRequest  (required)
      * @param merchantConfig  (merchant details)
-     * @return InlineResponse2011
+     * @return PtsV2PaymentsReversalsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2011 authReversal(String id, AuthReversalRequest authReversalRequest,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<InlineResponse2011> resp = authReversalWithHttpInfo(id, authReversalRequest, merchantConfig);
+    public PtsV2PaymentsReversalsPost201Response authReversal(String id, AuthReversalRequest authReversalRequest,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = authReversalWithHttpInfo(id, authReversalRequest, merchantConfig);
         return resp.getData();
     }
 
@@ -147,12 +152,12 @@ public class ReversalApi {
      * @param id The payment ID returned from a previous payment request. (required)
      * @param authReversalRequest  (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;InlineResponse2011&gt;
+     * @return ApiResponse&lt;PtsV2PaymentsReversalsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2011> authReversalWithHttpInfo(String id, AuthReversalRequest authReversalRequest,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, merchantConfig, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+    public ApiResponse<PtsV2PaymentsReversalsPost201Response> authReversalWithHttpInfo(String id, AuthReversalRequest authReversalRequest,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, merchantConfig,null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsReversalsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -166,7 +171,7 @@ public class ReversalApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call authReversalAsync(String id, AuthReversalRequest authReversalRequest,MerchantConfig merchantConfig, final ApiCallback<InlineResponse2011> callback) throws ApiException {
+    public com.squareup.okhttp.Call authReversalAsync(String id, AuthReversalRequest authReversalRequest,MerchantConfig merchantConfig, final ApiCallback<PtsV2PaymentsReversalsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -187,8 +192,8 @@ public class ReversalApi {
             };
         }
 
-        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, merchantConfig, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, merchantConfig ,progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsReversalsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
