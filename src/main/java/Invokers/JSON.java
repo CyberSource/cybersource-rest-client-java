@@ -58,7 +58,7 @@ public class JSON {
     /**
      * Get Gson.
      *
-     * @return Gson object.
+     * @return Gson
      */
     public Gson getGson() {
         return gson;
@@ -67,7 +67,7 @@ public class JSON {
     /**
      * Set Gson.
      *
-     * @param gson - Gson object.
+     * @param gson Gson
      */
     public void setGson(Gson gson) {
         this.gson = gson;
@@ -151,7 +151,7 @@ class DateAdapter implements JsonSerializer<Date>, JsonDeserializer<Date> {
      * @param json Json element
      * @param date Type
      * @param context Json Serialization Context
-     * @return Date Object.
+     * @return Date
      * @throws JsonParseException if fail to parse
      */
     @Override

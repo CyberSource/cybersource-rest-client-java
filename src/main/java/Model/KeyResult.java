@@ -14,24 +14,30 @@
 package Model;
 
 import java.util.Objects;
-
+import Model.FlexV1KeysPost200ResponseDer;
+import Model.FlexV1KeysPost200ResponseJwk;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * KeyResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class KeyResult {
   @SerializedName("keyId")
   private String keyId = null;
 
   @SerializedName("der")
-  private InlineResponse200Der der = null;
+  private FlexV1KeysPost200ResponseDer der = null;
 
   @SerializedName("jwk")
-  private InlineResponse200Jwk jwk = null;
+  private FlexV1KeysPost200ResponseJwk jwk = null;
 
   public KeyResult keyId(String keyId) {
     this.keyId = keyId;
@@ -51,7 +57,7 @@ public class KeyResult {
     this.keyId = keyId;
   }
 
-  public KeyResult der(InlineResponse200Der der) {
+  public KeyResult der(FlexV1KeysPost200ResponseDer der) {
     this.der = der;
     return this;
   }
@@ -61,15 +67,15 @@ public class KeyResult {
    * @return der
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse200Der getDer() {
+  public FlexV1KeysPost200ResponseDer getDer() {
     return der;
   }
 
-  public void setDer(InlineResponse200Der der) {
+  public void setDer(FlexV1KeysPost200ResponseDer der) {
     this.der = der;
   }
 
-  public KeyResult jwk(InlineResponse200Jwk jwk) {
+  public KeyResult jwk(FlexV1KeysPost200ResponseJwk jwk) {
     this.jwk = jwk;
     return this;
   }
@@ -79,11 +85,11 @@ public class KeyResult {
    * @return jwk
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse200Jwk getJwk() {
+  public FlexV1KeysPost200ResponseJwk getJwk() {
     return jwk;
   }
 
-  public void setJwk(InlineResponse200Jwk jwk) {
+  public void setJwk(FlexV1KeysPost200ResponseJwk jwk) {
     this.jwk = jwk;
   }
 

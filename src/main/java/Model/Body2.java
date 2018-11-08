@@ -13,24 +13,32 @@
 
 package Model;
 
-import java.io.IOException;
 import java.util.Objects;
-
+import Model.Tmsv1instrumentidentifiersLinks;
+import Model.Tmsv1instrumentidentifiersMetadata;
+import Model.Tmsv1paymentinstrumentsBankAccount;
+import Model.Tmsv1paymentinstrumentsBillTo;
+import Model.Tmsv1paymentinstrumentsBuyerInformation;
+import Model.Tmsv1paymentinstrumentsCard;
+import Model.Tmsv1paymentinstrumentsInstrumentIdentifier;
+import Model.Tmsv1paymentinstrumentsMerchantInformation;
+import Model.Tmsv1paymentinstrumentsProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * Body2
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class Body2 {
   @SerializedName("_links")
-  private InstrumentidentifiersLinks links = null;
+  private Tmsv1instrumentidentifiersLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -134,50 +142,50 @@ public class Body2 {
   private StateEnum state = null;
 
   @SerializedName("bankAccount")
-  private PaymentinstrumentsBankAccount bankAccount = null;
+  private Tmsv1paymentinstrumentsBankAccount bankAccount = null;
 
   @SerializedName("card")
-  private PaymentinstrumentsCard card = null;
+  private Tmsv1paymentinstrumentsCard card = null;
 
   @SerializedName("buyerInformation")
-  private PaymentinstrumentsBuyerInformation buyerInformation = null;
+  private Tmsv1paymentinstrumentsBuyerInformation buyerInformation = null;
 
   @SerializedName("billTo")
-  private PaymentinstrumentsBillTo billTo = null;
+  private Tmsv1paymentinstrumentsBillTo billTo = null;
 
   @SerializedName("processingInformation")
-  private PaymentinstrumentsProcessingInformation processingInformation = null;
+  private Tmsv1paymentinstrumentsProcessingInformation processingInformation = null;
 
   @SerializedName("merchantInformation")
-  private PaymentinstrumentsMerchantInformation merchantInformation = null;
+  private Tmsv1paymentinstrumentsMerchantInformation merchantInformation = null;
 
   @SerializedName("metaData")
-  private InstrumentidentifiersMetadata metaData = null;
+  private Tmsv1instrumentidentifiersMetadata metaData = null;
 
   @SerializedName("instrumentIdentifier")
-  private PaymentinstrumentsInstrumentIdentifier instrumentIdentifier = null;
+  private Tmsv1paymentinstrumentsInstrumentIdentifier instrumentIdentifier = null;
 
-  public Body2 links(InstrumentidentifiersLinks links) {
+  public Body2 links(Tmsv1instrumentidentifiersLinks links) {
     this.links = links;
     return this;
   }
 
    /**
    * Get links
-   * @return links object.
+   * @return links
   **/
   @ApiModelProperty(value = "")
-  public InstrumentidentifiersLinks getLinks() {
+  public Tmsv1instrumentidentifiersLinks getLinks() {
     return links;
   }
 
-  public void setLinks(InstrumentidentifiersLinks links) {
+  public void setLinks(Tmsv1instrumentidentifiersLinks links) {
     this.links = links;
   }
 
    /**
    * Unique identification number assigned by CyberSource to the submitted request.
-   * @return id - getId.
+   * @return id
   **/
   @ApiModelProperty(example = "1234567890123456800", value = "Unique identification number assigned by CyberSource to the submitted request.")
   public String getId() {
@@ -186,7 +194,7 @@ public class Body2 {
 
    /**
    * Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.
-   * @return object generated.
+   * @return object
   **/
   @ApiModelProperty(example = "instrumentIdentifier", value = "Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.")
   public ObjectEnum getObject() {
@@ -195,154 +203,154 @@ public class Body2 {
 
    /**
    * Current state of the token.
-   * @return state object.
+   * @return state
   **/
   @ApiModelProperty(example = "ACTIVE", value = "Current state of the token.")
   public StateEnum getState() {
     return state;
   }
 
-  public Body2 bankAccount(PaymentinstrumentsBankAccount bankAccount) {
+  public Body2 bankAccount(Tmsv1paymentinstrumentsBankAccount bankAccount) {
     this.bankAccount = bankAccount;
     return this;
   }
 
    /**
    * Get bankAccount
-   * @return bankAccount object.
+   * @return bankAccount
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsBankAccount getBankAccount() {
+  public Tmsv1paymentinstrumentsBankAccount getBankAccount() {
     return bankAccount;
   }
 
-  public void setBankAccount(PaymentinstrumentsBankAccount bankAccount) {
+  public void setBankAccount(Tmsv1paymentinstrumentsBankAccount bankAccount) {
     this.bankAccount = bankAccount;
   }
 
-  public Body2 card(PaymentinstrumentsCard card) {
+  public Body2 card(Tmsv1paymentinstrumentsCard card) {
     this.card = card;
     return this;
   }
 
    /**
    * Get card
-   * @return card object.
+   * @return card
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsCard getCard() {
+  public Tmsv1paymentinstrumentsCard getCard() {
     return card;
   }
 
-  public void setCard(PaymentinstrumentsCard card) {
+  public void setCard(Tmsv1paymentinstrumentsCard card) {
     this.card = card;
   }
 
-  public Body2 buyerInformation(PaymentinstrumentsBuyerInformation buyerInformation) {
+  public Body2 buyerInformation(Tmsv1paymentinstrumentsBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
     return this;
   }
 
    /**
    * Get buyerInformation
-   * @return buyerInformation object.
+   * @return buyerInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsBuyerInformation getBuyerInformation() {
+  public Tmsv1paymentinstrumentsBuyerInformation getBuyerInformation() {
     return buyerInformation;
   }
 
-  public void setBuyerInformation(PaymentinstrumentsBuyerInformation buyerInformation) {
+  public void setBuyerInformation(Tmsv1paymentinstrumentsBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
   }
 
-  public Body2 billTo(PaymentinstrumentsBillTo billTo) {
+  public Body2 billTo(Tmsv1paymentinstrumentsBillTo billTo) {
     this.billTo = billTo;
     return this;
   }
 
    /**
    * Get billTo
-   * @return billTo object.
+   * @return billTo
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsBillTo getBillTo() {
+  public Tmsv1paymentinstrumentsBillTo getBillTo() {
     return billTo;
   }
 
-  public void setBillTo(PaymentinstrumentsBillTo billTo) {
+  public void setBillTo(Tmsv1paymentinstrumentsBillTo billTo) {
     this.billTo = billTo;
   }
 
-  public Body2 processingInformation(PaymentinstrumentsProcessingInformation processingInformation) {
+  public Body2 processingInformation(Tmsv1paymentinstrumentsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
 
    /**
    * Get processingInformation
-   * @return processingInformation object.
+   * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsProcessingInformation getProcessingInformation() {
+  public Tmsv1paymentinstrumentsProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(PaymentinstrumentsProcessingInformation processingInformation) {
+  public void setProcessingInformation(Tmsv1paymentinstrumentsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
   }
 
-  public Body2 merchantInformation(PaymentinstrumentsMerchantInformation merchantInformation) {
+  public Body2 merchantInformation(Tmsv1paymentinstrumentsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
     return this;
   }
 
    /**
    * Get merchantInformation
-   * @return merchantInformation object.
+   * @return merchantInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsMerchantInformation getMerchantInformation() {
+  public Tmsv1paymentinstrumentsMerchantInformation getMerchantInformation() {
     return merchantInformation;
   }
 
-  public void setMerchantInformation(PaymentinstrumentsMerchantInformation merchantInformation) {
+  public void setMerchantInformation(Tmsv1paymentinstrumentsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
   }
 
-  public Body2 metaData(InstrumentidentifiersMetadata metaData) {
+  public Body2 metaData(Tmsv1instrumentidentifiersMetadata metaData) {
     this.metaData = metaData;
     return this;
   }
 
    /**
    * Get metaData
-   * @return metaData object.
+   * @return metaData
   **/
   @ApiModelProperty(value = "")
-  public InstrumentidentifiersMetadata getMetaData() {
+  public Tmsv1instrumentidentifiersMetadata getMetaData() {
     return metaData;
   }
 
-  public void setMetaData(InstrumentidentifiersMetadata metaData) {
+  public void setMetaData(Tmsv1instrumentidentifiersMetadata metaData) {
     this.metaData = metaData;
   }
 
-  public Body2 instrumentIdentifier(PaymentinstrumentsInstrumentIdentifier instrumentIdentifier) {
+  public Body2 instrumentIdentifier(Tmsv1paymentinstrumentsInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
     return this;
   }
 
    /**
    * Get instrumentIdentifier
-   * @return instrumentIdentifier object.
+   * @return instrumentIdentifier
   **/
   @ApiModelProperty(value = "")
-  public PaymentinstrumentsInstrumentIdentifier getInstrumentIdentifier() {
+  public Tmsv1paymentinstrumentsInstrumentIdentifier getInstrumentIdentifier() {
     return instrumentIdentifier;
   }
 
-  public void setInstrumentIdentifier(PaymentinstrumentsInstrumentIdentifier instrumentIdentifier) {
+  public void setInstrumentIdentifier(Tmsv1paymentinstrumentsInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
   }
 

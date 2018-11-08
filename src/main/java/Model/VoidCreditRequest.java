@@ -14,20 +14,25 @@
 package Model;
 
 import java.util.Objects;
-
+import Model.Ptsv2paymentsidreversalsClientReferenceInformation;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * VoidCreditRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class VoidCreditRequest {
   @SerializedName("clientReferenceInformation")
-  private V2paymentsidreversalsClientReferenceInformation clientReferenceInformation = null;
+  private Ptsv2paymentsidreversalsClientReferenceInformation clientReferenceInformation = null;
 
-  public VoidCreditRequest clientReferenceInformation(V2paymentsidreversalsClientReferenceInformation clientReferenceInformation) {
+  public VoidCreditRequest clientReferenceInformation(Ptsv2paymentsidreversalsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -37,11 +42,11 @@ public class VoidCreditRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidreversalsClientReferenceInformation getClientReferenceInformation() {
+  public Ptsv2paymentsidreversalsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(V2paymentsidreversalsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Ptsv2paymentsidreversalsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

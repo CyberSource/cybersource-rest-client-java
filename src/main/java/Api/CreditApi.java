@@ -13,15 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -30,9 +21,23 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.cybersource.authsdk.core.MerchantConfig;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import Model.CreateCreditRequest;
-import Model.InlineResponse2006;
-import Model.InlineResponse2014;
+import Model.PtsV2CreditsPost201Response;
+import Model.PtsV2PaymentsPost502Response;
+import Model.PtsV2PaymentsRefundPost400Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CreditApi {
     private ApiClient apiClient;
@@ -56,12 +61,13 @@ public class CreditApi {
     /**
      * Build call for createCredit
      * @param createCreditRequest  (required)
+     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createCreditCall(CreateCreditRequest createCreditRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createCreditCall(CreateCreditRequest createCreditRequest,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createCreditRequest;
         
         // create path and map variables
@@ -74,13 +80,13 @@ public class CreditApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/hal+json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -98,11 +104,11 @@ public class CreditApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createCreditValidateBeforeCall(CreateCreditRequest createCreditRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createCreditValidateBeforeCall(CreateCreditRequest createCreditRequest,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createCreditRequest' is set
         if (createCreditRequest == null) {
@@ -110,7 +116,7 @@ public class CreditApi {
         }
         
         
-        com.squareup.okhttp.Call call = createCreditCall(createCreditRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createCreditCall(createCreditRequest,merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -123,11 +129,12 @@ public class CreditApi {
      * Process a Credit
      * POST to the credit resource to credit funds to a specified credit card.
      * @param createCreditRequest  (required)
-     * @return InlineResponse2014 generated.
+     *@param merchantConfig  (merchant details)
+     * @return PtsV2CreditsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2014 createCredit(CreateCreditRequest createCreditRequest) throws ApiException {
-        ApiResponse<InlineResponse2014> resp = createCreditWithHttpInfo(createCreditRequest);
+    public PtsV2CreditsPost201Response createCredit(CreateCreditRequest createCreditRequest,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV2CreditsPost201Response> resp = createCreditWithHttpInfo(createCreditRequest,merchantConfig);
         return resp.getData();
     }
 
@@ -135,12 +142,13 @@ public class CreditApi {
      * Process a Credit
      * POST to the credit resource to credit funds to a specified credit card.
      * @param createCreditRequest  (required)
-     * @return ApiResponse - InlineResponse2014
+     * @param merchantConfig  (merchant details)
+     * @return ApiResponse&lt;PtsV2CreditsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2014> createCreditWithHttpInfo(CreateCreditRequest createCreditRequest) throws ApiException {
-        com.squareup.okhttp.Call call = createCreditValidateBeforeCall(createCreditRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+    public ApiResponse<PtsV2CreditsPost201Response> createCreditWithHttpInfo(CreateCreditRequest createCreditRequest,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = createCreditValidateBeforeCall(createCreditRequest,merchantConfig, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -148,11 +156,12 @@ public class CreditApi {
      * Process a Credit (asynchronously)
      * POST to the credit resource to credit funds to a specified credit card.
      * @param createCreditRequest  (required)
+     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createCreditAsync(CreateCreditRequest createCreditRequest, final ApiCallback<InlineResponse2014> callback) throws ApiException {
+    public com.squareup.okhttp.Call createCreditAsync(CreateCreditRequest createCreditRequest,MerchantConfig merchantConfig, final ApiCallback<PtsV2CreditsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -173,134 +182,8 @@ public class CreditApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createCreditValidateBeforeCall(createCreditRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for getCredit
-     * @param id The credit ID returned from a previous stand-alone credit request.  (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getCreditCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/pts/v2/credits/{id}"
-            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCreditValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling getCredit(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = getCreditCall(id, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Retrieve a Credit
-     * Include the credit ID in the GET request to return details of the credit.
-     * @param id The credit ID returned from a previous stand-alone credit request.  (required)
-     * @return InlineResponse2006 generated.
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public InlineResponse2006 getCredit(String id) throws ApiException {
-        ApiResponse<InlineResponse2006> resp = getCreditWithHttpInfo(id);
-        return resp.getData();
-    }
-
-    /**
-     * Retrieve a Credit
-     * Include the credit ID in the GET request to return details of the credit.
-     * @param id The credit ID returned from a previous stand-alone credit request.  (required)
-     * @return ApiResponse - InlineResponse2006.
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<InlineResponse2006> getCreditWithHttpInfo(String id) throws ApiException {
-        com.squareup.okhttp.Call call = getCreditValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Retrieve a Credit (asynchronously)
-     * Include the credit ID in the GET request to return details of the credit.
-     * @param id The credit ID returned from a previous stand-alone credit request.  (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getCreditAsync(String id, final ApiCallback<InlineResponse2006> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getCreditValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        com.squareup.okhttp.Call call = createCreditValidateBeforeCall(createCreditRequest,merchantConfig, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

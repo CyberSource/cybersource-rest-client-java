@@ -13,15 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -30,9 +21,23 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.cybersource.authsdk.core.MerchantConfig;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import Model.AuthReversalRequest;
-import Model.InlineResponse2003;
-import Model.InlineResponse2011;
+import Model.PtsV2PaymentsPost502Response;
+import Model.PtsV2PaymentsReversalsPost201Response;
+import Model.PtsV2PaymentsReversalsPost400Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ReversalApi {
     private ApiClient apiClient;
@@ -57,12 +62,13 @@ public class ReversalApi {
      * Build call for authReversal
      * @param id The payment ID returned from a previous payment request. (required)
      * @param authReversalRequest  (required)
+     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call authReversalCall(String id, AuthReversalRequest authReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call authReversalCall(String id, AuthReversalRequest authReversalRequest,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = authReversalRequest;
         
         // create path and map variables
@@ -76,13 +82,13 @@ public class ReversalApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/hal+json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-        		
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -100,11 +106,11 @@ public class ReversalApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call authReversalValidateBeforeCall(String id, AuthReversalRequest authReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call authReversalValidateBeforeCall(String id, AuthReversalRequest authReversalRequest,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -117,7 +123,7 @@ public class ReversalApi {
         }
         
         
-        com.squareup.okhttp.Call call = authReversalCall(id, authReversalRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = authReversalCall(id, authReversalRequest, merchantConfig, progressListener, progressRequestListener);
         return call;
 
         
@@ -131,11 +137,12 @@ public class ReversalApi {
      * Include the payment ID in the POST request to reverse the payment amount.
      * @param id The payment ID returned from a previous payment request. (required)
      * @param authReversalRequest  (required)
-     * @return InlineResponse2011 generated.
+     * @param merchantConfig  (merchant details)
+     * @return PtsV2PaymentsReversalsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2011 authReversal(String id, AuthReversalRequest authReversalRequest) throws ApiException {
-        ApiResponse<InlineResponse2011> resp = authReversalWithHttpInfo(id, authReversalRequest);
+    public PtsV2PaymentsReversalsPost201Response authReversal(String id, AuthReversalRequest authReversalRequest,MerchantConfig merchantConfig) throws ApiException {
+        ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = authReversalWithHttpInfo(id, authReversalRequest, merchantConfig);
         return resp.getData();
     }
 
@@ -144,12 +151,13 @@ public class ReversalApi {
      * Include the payment ID in the POST request to reverse the payment amount.
      * @param id The payment ID returned from a previous payment request. (required)
      * @param authReversalRequest  (required)
-     * @return ApiResponse - InlineResponse2011.
+     * @param merchantConfig  (merchant details)
+     * @return ApiResponse&lt;PtsV2PaymentsReversalsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2011> authReversalWithHttpInfo(String id, AuthReversalRequest authReversalRequest) throws ApiException {
-        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+    public ApiResponse<PtsV2PaymentsReversalsPost201Response> authReversalWithHttpInfo(String id, AuthReversalRequest authReversalRequest,MerchantConfig merchantConfig) throws ApiException {
+        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, merchantConfig,null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsReversalsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -158,11 +166,12 @@ public class ReversalApi {
      * Include the payment ID in the POST request to reverse the payment amount.
      * @param id The payment ID returned from a previous payment request. (required)
      * @param authReversalRequest  (required)
+     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call authReversalAsync(String id, AuthReversalRequest authReversalRequest, final ApiCallback<InlineResponse2011> callback) throws ApiException {
+    public com.squareup.okhttp.Call authReversalAsync(String id, AuthReversalRequest authReversalRequest,MerchantConfig merchantConfig, final ApiCallback<PtsV2PaymentsReversalsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -183,134 +192,8 @@ public class ReversalApi {
             };
         }
 
-        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for getAuthReversal
-     * @param id The authorization reversal ID returned from a previous authorization reversal request. (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getAuthReversalCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/pts/v2/reversals/{id}"
-            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAuthReversalValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling getAuthReversal(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = getAuthReversalCall(id, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Retrieve an Authorization Reversal
-     * Include the authorization reversal ID in the GET request to retrieve the authorization reversal details. 
-     * @param id The authorization reversal ID returned from a previous authorization reversal request. (required)
-     * @return InlineResponse2003 generated.
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public InlineResponse2003 getAuthReversal(String id) throws ApiException {
-        ApiResponse<InlineResponse2003> resp = getAuthReversalWithHttpInfo(id);
-        return resp.getData();
-    }
-
-    /**
-     * Retrieve an Authorization Reversal
-     * Include the authorization reversal ID in the GET request to retrieve the authorization reversal details. 
-     * @param id The authorization reversal ID returned from a previous authorization reversal request. (required)
-     * @return ApiResponse - InlineResponse2003.
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<InlineResponse2003> getAuthReversalWithHttpInfo(String id) throws ApiException {
-        com.squareup.okhttp.Call call = getAuthReversalValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Retrieve an Authorization Reversal (asynchronously)
-     * Include the authorization reversal ID in the GET request to retrieve the authorization reversal details. 
-     * @param id The authorization reversal ID returned from a previous authorization reversal request. (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getAuthReversalAsync(String id, final ApiCallback<InlineResponse2003> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getAuthReversalValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
+        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, merchantConfig ,progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsReversalsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

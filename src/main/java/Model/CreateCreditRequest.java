@@ -13,234 +13,248 @@
 
 package Model;
 
+import java.util.Objects;
+import Model.Ptsv2creditsPointOfSaleInformation;
+import Model.Ptsv2creditsProcessingInformation;
+import Model.Ptsv2paymentsClientReferenceInformation;
+import Model.Ptsv2paymentsDeviceInformation;
+import Model.Ptsv2paymentsMerchantDefinedInformation;
+import Model.Ptsv2paymentsidcapturesAggregatorInformation;
+import Model.Ptsv2paymentsidcapturesBuyerInformation;
+import Model.Ptsv2paymentsidrefundsMerchantInformation;
+import Model.Ptsv2paymentsidrefundsOrderInformation;
+import Model.Ptsv2paymentsidrefundsPaymentInformation;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
-import com.google.gson.annotations.SerializedName;
-
-import io.swagger.annotations.ApiModelProperty;
 
 /**
  * CreateCreditRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class CreateCreditRequest {
   @SerializedName("clientReferenceInformation")
-  private V2paymentsClientReferenceInformation clientReferenceInformation = null;
+  private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("processingInformation")
-  private V2creditsProcessingInformation processingInformation = null;
+  private Ptsv2creditsProcessingInformation processingInformation = null;
 
   @SerializedName("paymentInformation")
-  private V2paymentsidrefundsPaymentInformation paymentInformation = null;
+  private Ptsv2paymentsidrefundsPaymentInformation paymentInformation = null;
 
   @SerializedName("orderInformation")
-  private V2paymentsidrefundsOrderInformation orderInformation = null;
+  private Ptsv2paymentsidrefundsOrderInformation orderInformation = null;
 
   @SerializedName("buyerInformation")
-  private V2paymentsidcapturesBuyerInformation buyerInformation = null;
+  private Ptsv2paymentsidcapturesBuyerInformation buyerInformation = null;
 
   @SerializedName("deviceInformation")
-  private V2paymentsDeviceInformation deviceInformation = null;
+  private Ptsv2paymentsDeviceInformation deviceInformation = null;
 
   @SerializedName("merchantInformation")
-  private V2paymentsidrefundsMerchantInformation merchantInformation = null;
+  private Ptsv2paymentsidrefundsMerchantInformation merchantInformation = null;
 
   @SerializedName("aggregatorInformation")
-  private V2paymentsidcapturesAggregatorInformation aggregatorInformation = null;
+  private Ptsv2paymentsidcapturesAggregatorInformation aggregatorInformation = null;
 
   @SerializedName("pointOfSaleInformation")
-  private V2creditsPointOfSaleInformation pointOfSaleInformation = null;
+  private Ptsv2creditsPointOfSaleInformation pointOfSaleInformation = null;
 
   @SerializedName("merchantDefinedInformation")
-  private List<V2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
+  private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
 
-  public CreateCreditRequest clientReferenceInformation(V2paymentsClientReferenceInformation clientReferenceInformation) {
+  public CreateCreditRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
 
    /**
    * Get clientReferenceInformation
-   * @return clientReferenceInformation object.
+   * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsClientReferenceInformation getClientReferenceInformation() {
+  public Ptsv2paymentsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(V2paymentsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
-  public CreateCreditRequest processingInformation(V2creditsProcessingInformation processingInformation) {
+  public CreateCreditRequest processingInformation(Ptsv2creditsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
 
    /**
    * Get processingInformation
-   * @return processingInformation object.
+   * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public V2creditsProcessingInformation getProcessingInformation() {
+  public Ptsv2creditsProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(V2creditsProcessingInformation processingInformation) {
+  public void setProcessingInformation(Ptsv2creditsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
   }
 
-  public CreateCreditRequest paymentInformation(V2paymentsidrefundsPaymentInformation paymentInformation) {
+  public CreateCreditRequest paymentInformation(Ptsv2paymentsidrefundsPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
   }
 
    /**
    * Get paymentInformation
-   * @return paymentInformation object.
+   * @return paymentInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidrefundsPaymentInformation getPaymentInformation() {
+  public Ptsv2paymentsidrefundsPaymentInformation getPaymentInformation() {
     return paymentInformation;
   }
 
-  public void setPaymentInformation(V2paymentsidrefundsPaymentInformation paymentInformation) {
+  public void setPaymentInformation(Ptsv2paymentsidrefundsPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
   }
 
-  public CreateCreditRequest orderInformation(V2paymentsidrefundsOrderInformation orderInformation) {
+  public CreateCreditRequest orderInformation(Ptsv2paymentsidrefundsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
   }
 
    /**
    * Get orderInformation
-   * @return orderInformation object.
+   * @return orderInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidrefundsOrderInformation getOrderInformation() {
+  public Ptsv2paymentsidrefundsOrderInformation getOrderInformation() {
     return orderInformation;
   }
 
-  public void setOrderInformation(V2paymentsidrefundsOrderInformation orderInformation) {
+  public void setOrderInformation(Ptsv2paymentsidrefundsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
   }
 
-  public CreateCreditRequest buyerInformation(V2paymentsidcapturesBuyerInformation buyerInformation) {
+  public CreateCreditRequest buyerInformation(Ptsv2paymentsidcapturesBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
     return this;
   }
 
    /**
    * Get buyerInformation
-   * @return buyerInformation object.
+   * @return buyerInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidcapturesBuyerInformation getBuyerInformation() {
+  public Ptsv2paymentsidcapturesBuyerInformation getBuyerInformation() {
     return buyerInformation;
   }
 
-  public void setBuyerInformation(V2paymentsidcapturesBuyerInformation buyerInformation) {
+  public void setBuyerInformation(Ptsv2paymentsidcapturesBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
   }
 
-  public CreateCreditRequest deviceInformation(V2paymentsDeviceInformation deviceInformation) {
+  public CreateCreditRequest deviceInformation(Ptsv2paymentsDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
     return this;
   }
 
    /**
    * Get deviceInformation
-   * @return deviceInformation object.
+   * @return deviceInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsDeviceInformation getDeviceInformation() {
+  public Ptsv2paymentsDeviceInformation getDeviceInformation() {
     return deviceInformation;
   }
 
-  public void setDeviceInformation(V2paymentsDeviceInformation deviceInformation) {
+  public void setDeviceInformation(Ptsv2paymentsDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
   }
 
-  public CreateCreditRequest merchantInformation(V2paymentsidrefundsMerchantInformation merchantInformation) {
+  public CreateCreditRequest merchantInformation(Ptsv2paymentsidrefundsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
     return this;
   }
 
    /**
    * Get merchantInformation
-   * @return merchantInformation object.
+   * @return merchantInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidrefundsMerchantInformation getMerchantInformation() {
+  public Ptsv2paymentsidrefundsMerchantInformation getMerchantInformation() {
     return merchantInformation;
   }
 
-  public void setMerchantInformation(V2paymentsidrefundsMerchantInformation merchantInformation) {
+  public void setMerchantInformation(Ptsv2paymentsidrefundsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
   }
 
-  public CreateCreditRequest aggregatorInformation(V2paymentsidcapturesAggregatorInformation aggregatorInformation) {
+  public CreateCreditRequest aggregatorInformation(Ptsv2paymentsidcapturesAggregatorInformation aggregatorInformation) {
     this.aggregatorInformation = aggregatorInformation;
     return this;
   }
 
    /**
    * Get aggregatorInformation
-   * @return aggregatorInformation object.
+   * @return aggregatorInformation
   **/
   @ApiModelProperty(value = "")
-  public V2paymentsidcapturesAggregatorInformation getAggregatorInformation() {
+  public Ptsv2paymentsidcapturesAggregatorInformation getAggregatorInformation() {
     return aggregatorInformation;
   }
 
-  public void setAggregatorInformation(V2paymentsidcapturesAggregatorInformation aggregatorInformation) {
+  public void setAggregatorInformation(Ptsv2paymentsidcapturesAggregatorInformation aggregatorInformation) {
     this.aggregatorInformation = aggregatorInformation;
   }
 
-  public CreateCreditRequest pointOfSaleInformation(V2creditsPointOfSaleInformation pointOfSaleInformation) {
+  public CreateCreditRequest pointOfSaleInformation(Ptsv2creditsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
   }
 
    /**
    * Get pointOfSaleInformation
-   * @return pointOfSaleInformation object.
+   * @return pointOfSaleInformation
   **/
   @ApiModelProperty(value = "")
-  public V2creditsPointOfSaleInformation getPointOfSaleInformation() {
+  public Ptsv2creditsPointOfSaleInformation getPointOfSaleInformation() {
     return pointOfSaleInformation;
   }
 
-  public void setPointOfSaleInformation(V2creditsPointOfSaleInformation pointOfSaleInformation) {
+  public void setPointOfSaleInformation(Ptsv2creditsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 
-  public CreateCreditRequest merchantDefinedInformation(List<V2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
+  public CreateCreditRequest merchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
     return this;
   }
 
-  public CreateCreditRequest addMerchantDefinedInformationItem(V2paymentsMerchantDefinedInformation merchantDefinedInformationItem) {
+  public CreateCreditRequest addMerchantDefinedInformationItem(Ptsv2paymentsMerchantDefinedInformation merchantDefinedInformationItem) {
     if (this.merchantDefinedInformation == null) {
-      this.merchantDefinedInformation = new ArrayList<V2paymentsMerchantDefinedInformation>();
+      this.merchantDefinedInformation = new ArrayList<Ptsv2paymentsMerchantDefinedInformation>();
     }
     this.merchantDefinedInformation.add(merchantDefinedInformationItem);
     return this;
   }
 
    /**
-   * TBD
-   * @return merchantDefinedInformation object.
+   * Description of this field is not available.
+   * @return merchantDefinedInformation
   **/
-  @ApiModelProperty(value = "TBD")
-  public List<V2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {
+  @ApiModelProperty(value = "Description of this field is not available.")
+  public List<Ptsv2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {
     return merchantDefinedInformation;
   }
 
-  public void setMerchantDefinedInformation(List<V2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
+  public void setMerchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 

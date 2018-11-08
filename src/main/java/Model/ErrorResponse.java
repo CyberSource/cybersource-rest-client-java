@@ -14,15 +14,21 @@
 package Model;
 
 import java.util.Objects;
-
+import Model.InlineResponseDefaultLinks;
+import Model.InlineResponseDefaultResponseStatus;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * ErrorResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-22T07:56:07.186+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
 public class ErrorResponse {
   @SerializedName("responseStatus")
   private InlineResponseDefaultResponseStatus responseStatus = null;
@@ -37,7 +43,7 @@ public class ErrorResponse {
 
    /**
    * Get responseStatus
-   * @return responseStatus object.
+   * @return responseStatus
   **/
   @ApiModelProperty(value = "")
   public InlineResponseDefaultResponseStatus getResponseStatus() {
@@ -55,7 +61,7 @@ public class ErrorResponse {
 
    /**
    * Get links
-   * @return links object.
+   * @return links
   **/
   @ApiModelProperty(value = "")
   public InlineResponseDefaultLinks getLinks() {
