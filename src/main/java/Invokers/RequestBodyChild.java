@@ -26,6 +26,9 @@ public class RequestBodyChild extends RequestBody{
 	/**
 	   * Returns a new request body that transmits {@code content}. If {@code
 	   * contentType} is non-null and lacks a charset, this will use UTF-8.
+	   * @param contentType (required content-type)
+	   * @param content (required body)
+	   * @return RequestBody generated.
 	   */
 	  public static RequestBody create(MediaType contentType, String content) {
 	    Charset charset = Util.UTF_8;

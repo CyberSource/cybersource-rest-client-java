@@ -1099,6 +1099,7 @@ public class ApiClient {
      *
      * @param path The sub-path of the HTTP URL
      * @param method The request method, one of "GET", "HEAD", "OPTIONS", "POST", "PUT", "PATCH" and "DELETE"
+     * @param merchantConfig  (merchant details)
      * @param queryParams The query parameters
      * @param body The request body object
      * @param headerParams The header parameters

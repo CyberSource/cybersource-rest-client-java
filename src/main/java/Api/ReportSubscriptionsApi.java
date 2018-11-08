@@ -56,7 +56,6 @@ public class ReportSubscriptionsApi {
 
     /**
      * Build call for createSubscription
-     * @param reportName Name of the Report to Create (required)
      * @param requestBody Report subscription request payload (required)
      * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
@@ -131,7 +130,6 @@ public class ReportSubscriptionsApi {
     /**
      * Create Report Subscription for a report name by organization
      * 
-     * @param reportName Name of the Report to Create (required)
      * @param requestBody Report subscription request payload (required)
      * @param merchantConfig  (merchant details)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -155,7 +153,7 @@ public class ReportSubscriptionsApi {
 
     /**
      * Create Report Subscription for a report name by organization (asynchronously)
-     * 
+     *  @param reportName Name(required)
      * @param requestBody Report subscription request payload (required)
      * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
@@ -259,6 +257,7 @@ public class ReportSubscriptionsApi {
      * Delete subscription of a report name by organization
      * 
      * @param reportName Name of the Report to Delete (required)
+     * @param merchantConfig  (merchant details)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteSubscription(String reportName,MerchantConfig merchantConfig) throws ApiException {
@@ -269,6 +268,7 @@ public class ReportSubscriptionsApi {
      * Delete subscription of a report name by organization
      * 
      * @param reportName Name of the Report to Delete (required)
+     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -281,6 +281,7 @@ public class ReportSubscriptionsApi {
      * Delete subscription of a report name by organization (asynchronously)
      * 
      * @param reportName Name of the Report to Delete (required)
+     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -312,6 +313,7 @@ public class ReportSubscriptionsApi {
     }
     /**
      * Build call for getAllSubscriptions
+     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -372,7 +374,7 @@ public class ReportSubscriptionsApi {
 
     /**
      * Retrieve all subscriptions by organization
-     * 
+     * @param merchantConfig  (merchant details)
      * @return ReportingV3ReportSubscriptionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -383,7 +385,7 @@ public class ReportSubscriptionsApi {
 
     /**
      * Retrieve all subscriptions by organization
-     * 
+     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -395,7 +397,7 @@ public class ReportSubscriptionsApi {
 
     /**
      * Retrieve all subscriptions by organization (asynchronously)
-     * 
+     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -429,6 +431,7 @@ public class ReportSubscriptionsApi {
     /**
      * Build call for getSubscription
      * @param reportName Name of the Report to Retrieve (required)
+     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -497,6 +500,7 @@ public class ReportSubscriptionsApi {
      * Retrieve subscription for a report name by organization
      * 
      * @param reportName Name of the Report to Retrieve (required)
+     * @param merchantConfig  (merchant details)
      * @return ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -509,6 +513,7 @@ public class ReportSubscriptionsApi {
      * Retrieve subscription for a report name by organization
      * 
      * @param reportName Name of the Report to Retrieve (required)
+     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200ResponseSubscriptions&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -522,6 +527,7 @@ public class ReportSubscriptionsApi {
      * Retrieve subscription for a report name by organization (asynchronously)
      * 
      * @param reportName Name of the Report to Retrieve (required)
+     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
