@@ -71,7 +71,7 @@ public class SecureFileShareApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v1/files/{fileId}"
+        String localVarPath = "/sfs/v1/files/{fileId}"
             .replaceAll("\\{" + "fileId" + "\\}", apiClient.escapeString(fileId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -89,7 +89,7 @@ public class SecureFileShareApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
+            "application/hal+json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);

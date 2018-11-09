@@ -92,6 +92,8 @@ public class ApiClient {
 	// Divya
 	public static String responseCode;
 	public static String status;
+	public static String responseBody;
+	
 	static {
 		JAVA_VERSION = Double.parseDouble(System.getProperty("java.specification.version"));
 		boolean isAndroid;
@@ -332,6 +334,7 @@ public class ApiClient {
         this.lenientDatetimeFormat = lenientDatetimeFormat;
         return this;
     }
+
 
     /**
      * Parse the given date string into Date object.
@@ -919,7 +922,7 @@ public class ApiClient {
      */
     public File downloadFileFromResponse(Response response) throws ApiException {
         try {
-            File file = prepareDownloadFile(response);
+        	File file = prepareDownloadFile(response);
             BufferedSink sink = Okio.buffer(Okio.sink(file));
             sink.writeAll(response.body().source());
             sink.close();
@@ -998,15 +1001,18 @@ public class ApiClient {
     public <T> ApiResponse<T> execute(Call call, Type returnType) throws ApiException {
         try {
             Response response = call.execute();
-				responseCode = String.valueOf(response.code());
+			responseCode = String.valueOf(response.code());
 			status = response.message();
+			String headerType = response.header("Content-Type");
+			if(headerType.equals("application/xml") || headerType.equals("text/csv") || headerType.equals("application/pdf")){
+				responseBody=response.body().string();			
+				}
 			if (!(responseCode.equals("200"))) {
 				if (!responseCode.equals("201")) {
 					System.out.println(response.body().string());
 				}
 			}
-			System.out.println(responseCode);
-            T data = handleResponse(response, returnType);
+			T data = handleResponse(response, returnType);
             return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
         } catch (IOException e) {
             throw new ApiException(e);
