@@ -514,7 +514,7 @@ public class ReportSubscriptionsApi {
      * 
      * @param reportName Name of the Report to Retrieve (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200ResponseSubscriptions&gt;
+     * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getSubscriptionWithHttpInfo(String reportName,MerchantConfig merchantConfig) throws ApiException {

@@ -128,6 +128,7 @@ public class ReportsApi {
      * Create one time report
      * @param requestBody Report subscription request payload (required)
      * @param merchantConfig  (merchant details)
+     * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportsIdGet200Response> createReport(RequestBody1 requestBody,MerchantConfig merchantConfig) throws ApiException {
@@ -139,7 +140,7 @@ public class ReportsApi {
      * Create one time report
      * @param requestBody Report subscription request payload (required)
      * @param merchantConfig  (merchant details)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportsIdGet200Response> createReportWithHttpInfo(RequestBody1 requestBody,MerchantConfig merchantConfig) throws ApiException {
