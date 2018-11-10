@@ -131,8 +131,8 @@ public class TransactionBatchApi {
      * @param merchantConfig  (merchant details)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void ptsV1TransactionBatchesIdGet(String id,MerchantConfig merchantConfig) throws ApiException {
-        ptsV1TransactionBatchesIdGetWithHttpInfo(id, merchantConfig);
+    public ApiResponse<Void> ptsV1TransactionBatchesIdGet(String id,MerchantConfig merchantConfig) throws ApiException {
+        return ptsV1TransactionBatchesIdGetWithHttpInfo(id, merchantConfig);
     }
 
     /**

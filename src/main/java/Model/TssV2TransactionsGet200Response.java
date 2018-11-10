@@ -91,7 +91,7 @@ public class TssV2TransactionsGet200Response {
   private TssV2TransactionsGet200ResponseFraudMarkingInformation fraudMarkingInformation = null;
 
   @SerializedName("merchantDefinedInformation")
-  private List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> merchantDefinedInformation = null;
+  private TssV2TransactionsGet200ResponseMerchantDefinedInformation merchantDefinedInformation = null;
 
   @SerializedName("merchantInformation")
   private TssV2TransactionsGet200ResponseMerchantInformation merchantInformation = null;
@@ -372,29 +372,22 @@ public class TssV2TransactionsGet200Response {
     this.fraudMarkingInformation = fraudMarkingInformation;
   }
 
-  public TssV2TransactionsGet200Response merchantDefinedInformation(List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> merchantDefinedInformation) {
+  public TssV2TransactionsGet200Response merchantDefinedInformation(TssV2TransactionsGet200ResponseMerchantDefinedInformation merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
     return this;
   }
 
-  public TssV2TransactionsGet200Response addMerchantDefinedInformationItem(TssV2TransactionsGet200ResponseMerchantDefinedInformation merchantDefinedInformationItem) {
-    if (this.merchantDefinedInformation == null) {
-      this.merchantDefinedInformation = new ArrayList<TssV2TransactionsGet200ResponseMerchantDefinedInformation>();
-    }
-    this.merchantDefinedInformation.add(merchantDefinedInformationItem);
-    return this;
-  }
 
    /**
    * The description for this field is not available.
    * @return merchantDefinedInformation
   **/
   @ApiModelProperty(value = "The description for this field is not available.")
-  public List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> getMerchantDefinedInformation() {
+  public TssV2TransactionsGet200ResponseMerchantDefinedInformation getMerchantDefinedInformation() {
     return merchantDefinedInformation;
   }
 
-  public void setMerchantDefinedInformation(List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> merchantDefinedInformation) {
+  public void setMerchantDefinedInformation(TssV2TransactionsGet200ResponseMerchantDefinedInformation merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 
