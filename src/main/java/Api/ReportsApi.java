@@ -130,8 +130,8 @@ public class ReportsApi {
      * @param merchantConfig  (merchant details)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void createReport(RequestBody1 requestBody,MerchantConfig merchantConfig) throws ApiException {
-        createReportWithHttpInfo(requestBody, merchantConfig);
+    public ApiResponse<ReportingV3ReportsIdGet200Response> createReport(RequestBody1 requestBody,MerchantConfig merchantConfig) throws ApiException {
+       return createReportWithHttpInfo(requestBody, merchantConfig);
     }
 
     /**
@@ -142,7 +142,7 @@ public class ReportsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> createReportWithHttpInfo(RequestBody1 requestBody,MerchantConfig merchantConfig) throws ApiException {
+    public ApiResponse<ReportingV3ReportsIdGet200Response> createReportWithHttpInfo(RequestBody1 requestBody,MerchantConfig merchantConfig) throws ApiException {
         com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, merchantConfig, null, null);
         return apiClient.execute(call);
     }

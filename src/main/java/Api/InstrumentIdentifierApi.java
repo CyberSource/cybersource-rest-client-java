@@ -159,6 +159,7 @@ public class InstrumentIdentifierApi {
      * Delete an Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
+     * @param merchantConfig  (merchant details)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body

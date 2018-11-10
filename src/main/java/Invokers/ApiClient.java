@@ -92,6 +92,9 @@ public class ApiClient {
 	// Divya
 	public static String responseCode;
 	public static String status;
+	public static String responseBody;
+	
+
 	static {
 		JAVA_VERSION = Double.parseDouble(System.getProperty("java.specification.version"));
 		boolean isAndroid;
@@ -332,6 +335,7 @@ public class ApiClient {
         this.lenientDatetimeFormat = lenientDatetimeFormat;
         return this;
     }
+
 
     /**
      * Parse the given date string into Date object.
@@ -832,9 +836,16 @@ public class ApiClient {
      */
     @SuppressWarnings("unchecked")
     public <T> T deserialize(Response response, Type returnType) throws ApiException {
-        if (response == null || returnType == null) {
+        if (response == null /*|| returnType == null*/) {
             return null;
         }
+        if(returnType == null && response != null){
+        	try {
+                return (T) response.body().bytes();
+            } catch (IOException e) {
+                throw new ApiException(e);
+            }
+        } else
 
         if ("byte[]".equals(returnType.toString())) {
             // Handle binary response (byte array).
@@ -919,7 +930,7 @@ public class ApiClient {
      */
     public File downloadFileFromResponse(Response response) throws ApiException {
         try {
-            File file = prepareDownloadFile(response);
+        	File file = prepareDownloadFile(response);
             BufferedSink sink = Okio.buffer(Okio.sink(file));
             sink.writeAll(response.body().source());
             sink.close();
@@ -998,15 +1009,23 @@ public class ApiClient {
     public <T> ApiResponse<T> execute(Call call, Type returnType) throws ApiException {
         try {
             Response response = call.execute();
-				responseCode = String.valueOf(response.code());
+			responseCode = String.valueOf(response.code());
 			status = response.message();
+			String headerType = response.header("Content-Type");
+			if(headerType != null)
+			if(headerType.equals("application/xml") || headerType.equals("text/csv") || headerType.equals("application/pdf")){
+				responseBody=response.body().string();			
+				}
 			if (!(responseCode.equals("200"))) {
 				if (!responseCode.equals("201")) {
 					System.out.println(response.body().string());
 				}
 			}
-			System.out.println(responseCode);
-            T data = handleResponse(response, returnType);
+			T data = handleResponse(response, returnType);
+			if(headerType != null)
+				if(!headerType.equals("application/xml") && !headerType.equals("text/csv") && !headerType.equals("application/pdf")){
+					responseBody = response.toString();
+				}
             return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
         } catch (IOException e) {
             throw new ApiException(e);
@@ -1067,7 +1086,7 @@ public class ApiClient {
      */
     public <T> T handleResponse(Response response, Type returnType) throws ApiException {
         if (response.isSuccessful()) {
-            if (returnType == null || response.code() == 204) {
+            if (/*returnType == null ||*/ response.code() == 204) {
                 // returning null if the returnType is not defined,
                 // or the status code is 204 (No Content)
                 if (response.body() != null) {
@@ -1086,6 +1105,7 @@ public class ApiClient {
             if (response.body() != null) {
                 try {
                     respBody = response.body().string();
+                    System.out.println(respBody);
                 } catch (IOException e) {
                     throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
                 }
