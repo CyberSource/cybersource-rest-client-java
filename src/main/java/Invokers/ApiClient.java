@@ -1190,7 +1190,7 @@ public class ApiClient {
 				   if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
 						  addDefaultHeader("Date", PropertiesUtil.date);
-						  addDefaultHeader("Host", "apitest.cybersource.com");
+						  addDefaultHeader("v-c-merchant-id", merchantConfig.getMerchantID());
 						  addDefaultHeader("v-c-merchant-id", "testrest");
 						  addDefaultHeader("Signature", token);
 						  addDefaultHeader("User-Agent", "Mozilla/5.0");
