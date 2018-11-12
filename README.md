@@ -1,6 +1,6 @@
 # Java Client SDK for the CyberSource REST API
 
-The CyberSource Java client provides convenient access to the [CyberSource REST API](https://developer.cybersource.com/api/reference/api-reference.html) from your Node application.
+The CyberSource Java client provides convenient access to the [CyberSource REST API](https://developer.cybersource.com/api/reference/api-reference.html) from your Java application.
 
 ## Requirements
 
