@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
-
+import Model.PtsV1TransactionBatchesGet200Response;
 import Model.PtsV1TransactionBatchesGet400Response;
 import Model.PtsV1TransactionBatchesGet500Response;
 
@@ -131,7 +131,7 @@ public class TransactionBatchApi {
      * @param merchantConfig  (merchant details)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> ptsV1TransactionBatchesIdGet(String id,MerchantConfig merchantConfig) throws ApiException {
+    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesIdGet(String id,MerchantConfig merchantConfig) throws ApiException {
         return ptsV1TransactionBatchesIdGetWithHttpInfo(id, merchantConfig);
     }
 
@@ -143,9 +143,10 @@ public class TransactionBatchApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> ptsV1TransactionBatchesIdGetWithHttpInfo(String id,MerchantConfig merchantConfig) throws ApiException {
+    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesIdGetWithHttpInfo(String id,MerchantConfig merchantConfig) throws ApiException {
         com.squareup.okhttp.Call call = ptsV1TransactionBatchesIdGetValidateBeforeCall(id, merchantConfig, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesGet200Response>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
