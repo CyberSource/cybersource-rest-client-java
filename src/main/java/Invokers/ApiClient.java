@@ -93,6 +93,7 @@ public class ApiClient {
 	public static String responseCode;
 	public static String status;
 	public static String responseBody;
+	public static String respBody;
 	
 
 	static {
@@ -859,7 +860,6 @@ public class ApiClient {
             return (T) downloadFileFromResponse(response);
         }
 
-        String respBody;
         try {
             if (response.body() != null)
                 respBody = response.body().string();
