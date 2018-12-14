@@ -22,6 +22,7 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
@@ -35,11 +36,9 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Properties;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -62,7 +61,6 @@ import com.cybersource.authsdk.log.Log4j;
 import com.cybersource.authsdk.payloaddigest.PayloadDigest;
 import com.cybersource.authsdk.util.GlobalLabelParameters;
 import com.cybersource.authsdk.util.PropertiesUtil;
-import com.google.gson.Gson;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
@@ -94,8 +92,8 @@ public class ApiClient {
 	public static String status;
 	public static String responseBody;
 	public static String respBody;
-	
-
+    public static MerchantConfig merchantConfig;
+    
 	static {
 		JAVA_VERSION = Double.parseDouble(System.getProperty("java.specification.version"));
 		boolean isAndroid;
@@ -127,7 +125,7 @@ public class ApiClient {
 	 */
 	public static final String LENIENT_DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
-	private String basePath = "https://apitest.cybersource.com";
+	private String basePath = "";
 	private boolean lenientOnJson = false;
 	private boolean debugging = false;
 	private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -181,6 +179,11 @@ public class ApiClient {
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
+    
+    public ApiClient(MerchantConfig merchantConfig) {
+    	this.merchantConfig=merchantConfig;
+    	
+    }
 
     /**
      * Get base path
@@ -194,11 +197,11 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://apitest.cybersource.com
+     * @param basePath Base path of the URL (e.g https://apitest.cybersource.com)
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {
-        this.basePath = basePath;
+        this.basePath = this.basePath.concat(merchantConfig.getRequestHost());
         return this;
     }
 
@@ -912,10 +915,7 @@ public class ApiClient {
             } else {
                 content = null;
             }
-			System.out.println("Content :: " + content);
-			RequestBody rb = RequestBodyChild.create(MediaType.parse(contentType), content);
-			System.out.println("Content Type :: " + rb.contentType());
-			return rb;
+			return RequestBody.create(MediaType.parse(contentType), content);
         } else {
             throw new ApiException("Content type \"" + contentType + "\" is not supported");
         }
@@ -1119,7 +1119,6 @@ public class ApiClient {
      *
      * @param path The sub-path of the HTTP URL
      * @param method The request method, one of "GET", "HEAD", "OPTIONS", "POST", "PUT", "PATCH" and "DELETE"
-     * @param merchantConfig  (merchant details)
      * @param queryParams The query parameters
      * @param body The request body object
      * @param headerParams The header parameters
@@ -1129,10 +1128,10 @@ public class ApiClient {
      * @return The HTTP call
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call buildCall(String path, String method, MerchantConfig merchantConfig, List<Pair> queryParams,
+    public Call buildCall(String path, String method, List<Pair> queryParams,
 			Object body, Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-		callAuthenticationHeader(method, path, merchantConfig, body, queryParams);
+		callAuthenticationHeader(method, path, body, queryParams);
 		headerParams.putAll(defaultHeaderMap);
 		Request request = buildRequest(path, method, queryParams, body, headerParams, formParams, authNames,
 				progressRequestListener);
@@ -1145,7 +1144,7 @@ public class ApiClient {
    *
    */
 
-	public void callAuthenticationHeader(String method, String path, MerchantConfig merchantConfig, Object body,
+	public void callAuthenticationHeader(String method, String path, Object body,
 			List<Pair> queryParams) {
 
 		try {
@@ -1156,10 +1155,12 @@ public class ApiClient {
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 					boolean firstQueryParam = true;
 					for (Pair pair : queryParams) {
-
+  
+						
 						String key = pair.getName();
 						String val = pair.getValue();
-
+						val=val.replaceAll(" ", "%20");
+						
 						if (!firstQueryParam) {
 							path = path + "&" + key + "=" + val;
 						} else {
@@ -1167,7 +1168,8 @@ public class ApiClient {
 							firstQueryParam = false;
 						}
 					}
-					merchantConfig.setRequestTarget(path);
+						merchantConfig.setRequestTarget(path);
+					
 				}
 			} else {
 
@@ -1177,7 +1179,6 @@ public class ApiClient {
 			 Authorization authorization = new Authorization();
 			 Logger logger = Log4j.getInstance(merchantConfig);
 			 authorization.setLogger(logger);
-
 		     
 			 String requestBody = json.serialize(body);
 			 merchantConfig.setRequestData(requestBody);
@@ -1190,7 +1191,7 @@ public class ApiClient {
 				   if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
 						  addDefaultHeader("Date", PropertiesUtil.date);
-						  addDefaultHeader("Host", "apitest.cybersource.com");
+						  addDefaultHeader("Host", merchantConfig.getRequestHost());
 						  addDefaultHeader("v-c-merchant-id", merchantConfig.getMerchantID());
 						  addDefaultHeader("Signature", token);
 						  addDefaultHeader("User-Agent", "Mozilla/5.0");
@@ -1210,7 +1211,7 @@ public class ApiClient {
 		
           } catch (ConfigException e) {
 			System.out.println(e.getMessage());
-		}
+		} 
 
 	}
 	
@@ -1285,7 +1286,7 @@ public class ApiClient {
      */
     public String buildUrl(String path, List<Pair> queryParams) {
         final StringBuilder url = new StringBuilder();
-        url.append(basePath).append(path);
+         url.append(GlobalLabelParameters.URL_PREFIX).append(merchantConfig.getRequestHost()).append(path);
 
         if (queryParams != null && !queryParams.isEmpty()) {
             // support (constant) query string in `path`, e.g. "/posts?draft=1"

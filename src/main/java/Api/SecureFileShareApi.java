@@ -13,6 +13,17 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.joda.time.LocalDate;
+
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,22 +32,7 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.cybersource.authsdk.core.MerchantConfig;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
-import org.joda.time.LocalDate;
-import Model.ReportingV3NotificationofChangesGet400Response;
 import Model.V1FileDetailsGet200Response;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class SecureFileShareApi {
     private ApiClient apiClient;
@@ -61,13 +57,12 @@ public class SecureFileShareApi {
      * Build call for getFile
      * @param fileId Unique identifier for each file (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFileCall(String fileId, String organizationId,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getFileCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -107,11 +102,11 @@ public class SecureFileShareApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFileValidateBeforeCall(String fileId, String organizationId,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getFileValidateBeforeCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
@@ -119,7 +114,7 @@ public class SecureFileShareApi {
         }
         
         
-        com.squareup.okhttp.Call call = getFileCall(fileId, organizationId, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getFileCall(fileId, organizationId,  progressListener, progressRequestListener);
         return call;
 
         
@@ -133,11 +128,10 @@ public class SecureFileShareApi {
      * Download a file for the given file identifier
      * @param fileId Unique identifier for each file (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void getFile(String fileId, String organizationId,MerchantConfig merchantConfig) throws ApiException {
-        getFileWithHttpInfo(fileId, organizationId, merchantConfig);
+    public void getFile(String fileId, String organizationId) throws ApiException {
+        getFileWithHttpInfo(fileId, organizationId);
     }
 
     /**
@@ -145,12 +139,11 @@ public class SecureFileShareApi {
      * Download a file for the given file identifier
      * @param fileId Unique identifier for each file (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> getFileWithHttpInfo(String fileId, String organizationId,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId, merchantConfig, null, null);
+    public ApiResponse<Void> getFileWithHttpInfo(String fileId, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId,  null, null);
         return apiClient.execute(call);
     }
 
@@ -159,12 +152,11 @@ public class SecureFileShareApi {
      * Download a file for the given file identifier
      * @param fileId Unique identifier for each file (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getFileAsync(String fileId, String organizationId,MerchantConfig merchantConfig, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call getFileAsync(String fileId, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -185,7 +177,7 @@ public class SecureFileShareApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId,  progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -194,13 +186,12 @@ public class SecureFileShareApi {
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFileDetailsCall(LocalDate startDate, LocalDate endDate, String organizationId,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getFileDetailsCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -243,11 +234,11 @@ public class SecureFileShareApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFileDetailsValidateBeforeCall(LocalDate startDate, LocalDate endDate, String organizationId,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getFileDetailsValidateBeforeCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'startDate' is set
         if (startDate == null) {
@@ -260,7 +251,7 @@ public class SecureFileShareApi {
         }
         
         
-        com.squareup.okhttp.Call call = getFileDetailsCall(startDate, endDate, organizationId, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getFileDetailsCall(startDate, endDate, organizationId,  progressListener, progressRequestListener);
         return call;
 
         
@@ -275,12 +266,11 @@ public class SecureFileShareApi {
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @return V1FileDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public V1FileDetailsGet200Response getFileDetails(LocalDate startDate, LocalDate endDate, String organizationId,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailsWithHttpInfo(startDate, endDate, organizationId, merchantConfig);
+    public V1FileDetailsGet200Response getFileDetails(LocalDate startDate, LocalDate endDate, String organizationId) throws ApiException {
+        ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailsWithHttpInfo(startDate, endDate, organizationId);
         return resp.getData();
     }
 
@@ -290,12 +280,11 @@ public class SecureFileShareApi {
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;V1FileDetailsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<V1FileDetailsGet200Response> getFileDetailsWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = getFileDetailsValidateBeforeCall(startDate, endDate, organizationId, merchantConfig, null, null);
+    public ApiResponse<V1FileDetailsGet200Response> getFileDetailsWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = getFileDetailsValidateBeforeCall(startDate, endDate, organizationId,  null, null);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -306,12 +295,11 @@ public class SecureFileShareApi {
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getFileDetailsAsync(LocalDate startDate, LocalDate endDate, String organizationId,MerchantConfig merchantConfig, final ApiCallback<V1FileDetailsGet200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call getFileDetailsAsync(LocalDate startDate, LocalDate endDate, String organizationId, final ApiCallback<V1FileDetailsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -332,7 +320,7 @@ public class SecureFileShareApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getFileDetailsValidateBeforeCall(startDate, endDate, organizationId, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getFileDetailsValidateBeforeCall(startDate, endDate, organizationId,  progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

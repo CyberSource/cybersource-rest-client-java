@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -57,13 +56,12 @@ public class ReportSubscriptionsApi {
     /**
      * Build call for createSubscription
      * @param requestBody Report subscription request payload (required)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionCall(RequestBody requestBody,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createSubscriptionCall(RequestBody requestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestBody;
         
         // create path and map variables
@@ -101,11 +99,11 @@ public class ReportSubscriptionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PUT", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createSubscriptionValidateBeforeCall(RequestBody requestBody,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createSubscriptionValidateBeforeCall(RequestBody requestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
        /* // verify the required parameter 'reportName' is set
         if (reportName == null) {
@@ -118,7 +116,7 @@ public class ReportSubscriptionsApi {
         }
         
         
-        com.squareup.okhttp.Call call = createSubscriptionCall(requestBody, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSubscriptionCall(requestBody, progressListener, progressRequestListener);
         return call;
 
         
@@ -131,23 +129,21 @@ public class ReportSubscriptionsApi {
      * Create Report Subscription for a report name by organization
      * 
      * @param requestBody Report subscription request payload (required)
-     * @param merchantConfig  (merchant details)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void createSubscription(RequestBody requestBody,MerchantConfig merchantConfig) throws ApiException {
-        createSubscriptionWithHttpInfo(requestBody, merchantConfig);
+    public void createSubscription(RequestBody requestBody) throws ApiException {
+        createSubscriptionWithHttpInfo(requestBody);
     }
 
     /**
      * Create Report Subscription for a report name by organization
      * 
      * @param requestBody Report subscription request payload (required)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> createSubscriptionWithHttpInfo( RequestBody requestBody,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(requestBody, merchantConfig, null, null);
+    public ApiResponse<Void> createSubscriptionWithHttpInfo( RequestBody requestBody) throws ApiException {
+        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(requestBody, null, null);
         return apiClient.execute(call);
     }
 
@@ -155,12 +151,11 @@ public class ReportSubscriptionsApi {
      * Create Report Subscription for a report name by organization (asynchronously)
      *  @param reportName Name(required)
      * @param requestBody Report subscription request payload (required)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionAsync(String reportName, RequestBody requestBody,MerchantConfig merchantConfig, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call createSubscriptionAsync(String reportName, RequestBody requestBody, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -181,20 +176,19 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(requestBody, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(requestBody, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for deleteSubscription
 	  * @param reportName Name of the Report to Delete (required)
-     * @param merchantConfig  (merchant details)
-     * @param progressListener Progress listener
+      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteSubscriptionCall(String reportName,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteSubscriptionCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -232,11 +226,11 @@ public class ReportSubscriptionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteSubscriptionValidateBeforeCall(String reportName,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteSubscriptionValidateBeforeCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
@@ -244,7 +238,7 @@ public class ReportSubscriptionsApi {
         }
         
         
-        com.squareup.okhttp.Call call = deleteSubscriptionCall(reportName, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteSubscriptionCall(reportName, progressListener, progressRequestListener);
         return call;
 
         
@@ -257,23 +251,21 @@ public class ReportSubscriptionsApi {
      * Delete subscription of a report name by organization
      * 
      * @param reportName Name of the Report to Delete (required)
-     * @param merchantConfig  (merchant details)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteSubscription(String reportName,MerchantConfig merchantConfig) throws ApiException {
-        deleteSubscriptionWithHttpInfo(reportName, merchantConfig);
+    public void deleteSubscription(String reportName) throws ApiException {
+        deleteSubscriptionWithHttpInfo(reportName);
     }
 
     /**
      * Delete subscription of a report name by organization
      * 
      * @param reportName Name of the Report to Delete (required)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteSubscriptionWithHttpInfo(String reportName,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(reportName, merchantConfig, null, null);
+    public ApiResponse<Void> deleteSubscriptionWithHttpInfo(String reportName) throws ApiException {
+        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(reportName, null, null);
         return apiClient.execute(call);
     }
 
@@ -281,12 +273,11 @@ public class ReportSubscriptionsApi {
      * Delete subscription of a report name by organization (asynchronously)
      * 
      * @param reportName Name of the Report to Delete (required)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteSubscriptionAsync(String reportName,MerchantConfig merchantConfig, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteSubscriptionAsync(String reportName, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -307,19 +298,19 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(reportName, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(reportName, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for getAllSubscriptions
-     * @param merchantConfig  (merchant details)
+     
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAllSubscriptionsCall(MerchantConfig merchantConfig,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllSubscriptionsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -356,14 +347,14 @@ public class ReportSubscriptionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllSubscriptionsValidateBeforeCall(MerchantConfig merchantConfig,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllSubscriptionsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = getAllSubscriptionsCall( merchantConfig,progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllSubscriptionsCall(progressListener, progressRequestListener);
         return call;
 
         
@@ -374,35 +365,34 @@ public class ReportSubscriptionsApi {
 
     /**
      * Retrieve all subscriptions by organization
-     * @param merchantConfig  (merchant details)
+     
      * @return ReportingV3ReportSubscriptionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions(MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getAllSubscriptionsWithHttpInfo( merchantConfig);
+    public ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions() throws ApiException {
+        ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getAllSubscriptionsWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * Retrieve all subscriptions by organization
-     * @param merchantConfig  (merchant details)
+     
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getAllSubscriptionsWithHttpInfo(MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = getAllSubscriptionsValidateBeforeCall( merchantConfig,null, null);
+    public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getAllSubscriptionsWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getAllSubscriptionsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Retrieve all subscriptions by organization (asynchronously)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllSubscriptionsAsync(MerchantConfig merchantConfig,final ApiCallback<ReportingV3ReportSubscriptionsGet200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllSubscriptionsAsync(final ApiCallback<ReportingV3ReportSubscriptionsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -423,7 +413,7 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllSubscriptionsValidateBeforeCall( merchantConfig,progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllSubscriptionsValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -431,13 +421,12 @@ public class ReportSubscriptionsApi {
     /**
      * Build call for getSubscription
      * @param reportName Name of the Report to Retrieve (required)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionCall(String reportName,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSubscriptionCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -475,11 +464,11 @@ public class ReportSubscriptionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSubscriptionValidateBeforeCall(String reportName,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSubscriptionValidateBeforeCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
@@ -487,7 +476,7 @@ public class ReportSubscriptionsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getSubscriptionCall(reportName, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSubscriptionCall(reportName, progressListener, progressRequestListener);
         return call;
 
         
@@ -500,12 +489,11 @@ public class ReportSubscriptionsApi {
      * Retrieve subscription for a report name by organization
      * 
      * @param reportName Name of the Report to Retrieve (required)
-     * @param merchantConfig  (merchant details)
      * @return ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3ReportSubscriptionsGet200Response getSubscription(String reportName,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getSubscriptionWithHttpInfo(reportName, merchantConfig);
+    public ReportingV3ReportSubscriptionsGet200Response getSubscription(String reportName) throws ApiException {
+        ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getSubscriptionWithHttpInfo(reportName);
         return resp.getData();
     }
 
@@ -513,12 +501,11 @@ public class ReportSubscriptionsApi {
      * Retrieve subscription for a report name by organization
      * 
      * @param reportName Name of the Report to Retrieve (required)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getSubscriptionWithHttpInfo(String reportName,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(reportName, merchantConfig, null, null);
+    public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getSubscriptionWithHttpInfo(String reportName) throws ApiException {
+        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(reportName, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -527,12 +514,11 @@ public class ReportSubscriptionsApi {
      * Retrieve subscription for a report name by organization (asynchronously)
      * 
      * @param reportName Name of the Report to Retrieve (required)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionAsync(String reportName,MerchantConfig merchantConfig, final ApiCallback<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSubscriptionAsync(String reportName, final ApiCallback<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -553,7 +539,7 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(reportName, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(reportName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

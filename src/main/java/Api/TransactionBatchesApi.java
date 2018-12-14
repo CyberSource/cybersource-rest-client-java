@@ -13,6 +13,17 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.joda.time.DateTime;
+
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,23 +32,7 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.cybersource.authsdk.core.MerchantConfig;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
-import org.joda.time.DateTime;
 import Model.PtsV1TransactionBatchesGet200Response;
-import Model.PtsV1TransactionBatchesGet400Response;
-import Model.PtsV1TransactionBatchesGet500Response;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class TransactionBatchesApi {
     private ApiClient apiClient;
@@ -62,13 +57,12 @@ public class TransactionBatchesApi {
      * Build call for ptsV1TransactionBatchesGet
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call ptsV1TransactionBatchesGetCall(DateTime startTime, DateTime endTime,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call ptsV1TransactionBatchesGetCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -105,11 +99,11 @@ public class TransactionBatchesApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call ptsV1TransactionBatchesGetValidateBeforeCall(DateTime startTime, DateTime endTime,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call ptsV1TransactionBatchesGetValidateBeforeCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
@@ -122,7 +116,7 @@ public class TransactionBatchesApi {
         }
         
         
-        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetCall(startTime, endTime, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetCall(startTime, endTime,  progressListener, progressRequestListener);
         return call;
 
         
@@ -136,12 +130,11 @@ public class TransactionBatchesApi {
      * Provide the search range
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
-     * @param merchantConfig  (merchant details)
      * @return PtsV1TransactionBatchesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV1TransactionBatchesGet200Response ptsV1TransactionBatchesGet(DateTime startTime, DateTime endTime,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<PtsV1TransactionBatchesGet200Response> resp = ptsV1TransactionBatchesGetWithHttpInfo(startTime, endTime, merchantConfig);
+    public PtsV1TransactionBatchesGet200Response ptsV1TransactionBatchesGet(DateTime startTime, DateTime endTime) throws ApiException {
+        ApiResponse<PtsV1TransactionBatchesGet200Response> resp = ptsV1TransactionBatchesGetWithHttpInfo(startTime, endTime);
         return resp.getData();
     }
 
@@ -150,12 +143,11 @@ public class TransactionBatchesApi {
      * Provide the search range
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;PtsV1TransactionBatchesGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesGetWithHttpInfo(DateTime startTime, DateTime endTime,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetValidateBeforeCall(startTime, endTime, merchantConfig, null, null);
+    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesGetWithHttpInfo(DateTime startTime, DateTime endTime) throws ApiException {
+        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetValidateBeforeCall(startTime, endTime,  null, null);
         Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -165,12 +157,11 @@ public class TransactionBatchesApi {
      * Provide the search range
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call ptsV1TransactionBatchesGetAsync(DateTime startTime, DateTime endTime,MerchantConfig merchantConfig, final ApiCallback<PtsV1TransactionBatchesGet200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call ptsV1TransactionBatchesGetAsync(DateTime startTime, DateTime endTime, final ApiCallback<PtsV1TransactionBatchesGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -191,7 +182,7 @@ public class TransactionBatchesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetValidateBeforeCall(startTime, endTime, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = ptsV1TransactionBatchesGetValidateBeforeCall(startTime, endTime,  progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

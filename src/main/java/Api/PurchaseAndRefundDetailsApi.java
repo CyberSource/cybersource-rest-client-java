@@ -13,6 +13,14 @@
 
 package Api;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.joda.time.DateTime;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,21 +29,6 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.cybersource.authsdk.core.MerchantConfig;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
-import org.joda.time.DateTime;
-import Model.ReportingV3NotificationofChangesGet400Response;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class PurchaseAndRefundDetailsApi {
     private ApiClient apiClient;
@@ -66,13 +59,12 @@ public class PurchaseAndRefundDetailsApi {
      * @param groupName Valid CyberSource Group Name.User can define groups using CBAPI and Group Management Module in EBC2. Groups are collection of organizationIds (optional)
      * @param offset Offset of the Purchase and Refund Results. (optional)
      * @param limit Results count per page. Range(1-2000) (optional, default to 2000)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getPurchaseAndRefundDetailsCall(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getPurchaseAndRefundDetailsCall(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -125,11 +117,11 @@ public class PurchaseAndRefundDetailsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPurchaseAndRefundDetailsValidateBeforeCall(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getPurchaseAndRefundDetailsValidateBeforeCall(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
@@ -142,7 +134,7 @@ public class PurchaseAndRefundDetailsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getPurchaseAndRefundDetailsCall(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPurchaseAndRefundDetailsCall(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, progressListener, progressRequestListener);
         return call;
 
         
@@ -162,11 +154,10 @@ public class PurchaseAndRefundDetailsApi {
      * @param groupName Valid CyberSource Group Name.User can define groups using CBAPI and Group Management Module in EBC2. Groups are collection of organizationIds (optional)
      * @param offset Offset of the Purchase and Refund Results. (optional)
      * @param limit Results count per page. Range(1-2000) (optional, default to 2000)
-     * @param merchantConfig  (merchant details)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void getPurchaseAndRefundDetails(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit,MerchantConfig merchantConfig) throws ApiException {
-        getPurchaseAndRefundDetailsWithHttpInfo(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, merchantConfig);
+    public void getPurchaseAndRefundDetails(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
+        getPurchaseAndRefundDetailsWithHttpInfo(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
     }
 
     /**
@@ -180,12 +171,11 @@ public class PurchaseAndRefundDetailsApi {
      * @param groupName Valid CyberSource Group Name.User can define groups using CBAPI and Group Management Module in EBC2. Groups are collection of organizationIds (optional)
      * @param offset Offset of the Purchase and Refund Results. (optional)
      * @param limit Results count per page. Range(1-2000) (optional, default to 2000)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> getPurchaseAndRefundDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = getPurchaseAndRefundDetailsValidateBeforeCall(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, merchantConfig, null, null);
+    public ApiResponse<Void> getPurchaseAndRefundDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = getPurchaseAndRefundDetailsValidateBeforeCall(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, null, null);
         return apiClient.execute(call);
     }
 
@@ -200,12 +190,11 @@ public class PurchaseAndRefundDetailsApi {
      * @param groupName Valid CyberSource Group Name.User can define groups using CBAPI and Group Management Module in EBC2. Groups are collection of organizationIds (optional)
      * @param offset Offset of the Purchase and Refund Results. (optional)
      * @param limit Results count per page. Range(1-2000) (optional, default to 2000)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getPurchaseAndRefundDetailsAsync(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit, MerchantConfig merchantConfig,final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call getPurchaseAndRefundDetailsAsync(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit,final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -226,7 +215,7 @@ public class PurchaseAndRefundDetailsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getPurchaseAndRefundDetailsValidateBeforeCall(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPurchaseAndRefundDetailsValidateBeforeCall(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

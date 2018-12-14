@@ -41,6 +41,7 @@ import java.util.Map;
 
 public class PaymentsApi {
     private ApiClient apiClient;
+    public  MerchantConfig merchantConfig;
 
     public PaymentsApi() {
         this(Configuration.getDefaultApiClient());
@@ -49,7 +50,7 @@ public class PaymentsApi {
     public PaymentsApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
-
+    
     public ApiClient getApiClient() {
         return apiClient;
     }
@@ -61,13 +62,12 @@ public class PaymentsApi {
     /**
      * Build call for createPayment
      * @param createPaymentRequest  (required)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createPaymentCall(CreatePaymentRequest createPaymentRequest,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createPaymentCall(CreatePaymentRequest createPaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createPaymentRequest;
         
         // create path and map variables
@@ -104,11 +104,11 @@ public class PaymentsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createPaymentValidateBeforeCall(CreatePaymentRequest createPaymentRequest,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createPaymentValidateBeforeCall(CreatePaymentRequest createPaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createPaymentRequest' is set
         if (createPaymentRequest == null) {
@@ -116,7 +116,7 @@ public class PaymentsApi {
         }
         
         
-        com.squareup.okhttp.Call call = createPaymentCall(createPaymentRequest, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createPaymentCall(createPaymentRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -129,12 +129,11 @@ public class PaymentsApi {
      * Process a Payment
      * Authorize the payment for the transaction. 
      * @param createPaymentRequest  (required)
-     * @param merchantConfig  (merchant details)
      * @return PtsV2PaymentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2PaymentsPost201Response createPayment(CreatePaymentRequest createPaymentRequest,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<PtsV2PaymentsPost201Response> resp = createPaymentWithHttpInfo(createPaymentRequest, merchantConfig);
+    public PtsV2PaymentsPost201Response createPayment(CreatePaymentRequest createPaymentRequest) throws ApiException {
+        ApiResponse<PtsV2PaymentsPost201Response> resp = createPaymentWithHttpInfo(createPaymentRequest);
         return resp.getData();
     }
 
@@ -142,12 +141,11 @@ public class PaymentsApi {
      * Process a Payment
      * Authorize the payment for the transaction. 
      * @param createPaymentRequest  (required)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;PtsV2PaymentsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2PaymentsPost201Response> createPaymentWithHttpInfo(CreatePaymentRequest createPaymentRequest,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = createPaymentValidateBeforeCall(createPaymentRequest, merchantConfig, null, null);
+    public ApiResponse<PtsV2PaymentsPost201Response> createPaymentWithHttpInfo(CreatePaymentRequest createPaymentRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createPaymentValidateBeforeCall(createPaymentRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -156,12 +154,11 @@ public class PaymentsApi {
      * Process a Payment (asynchronously)
      * Authorize the payment for the transaction. 
      * @param createPaymentRequest  (required)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createPaymentAsync(CreatePaymentRequest createPaymentRequest,MerchantConfig merchantConfig, final ApiCallback<PtsV2PaymentsPost201Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call createPaymentAsync(CreatePaymentRequest createPaymentRequest, final ApiCallback<PtsV2PaymentsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -182,7 +179,7 @@ public class PaymentsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createPaymentValidateBeforeCall(createPaymentRequest, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createPaymentValidateBeforeCall(createPaymentRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
