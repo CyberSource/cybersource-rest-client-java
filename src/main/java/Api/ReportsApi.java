@@ -22,7 +22,6 @@ import java.util.Map;
 
 import org.joda.time.DateTime;
 
-import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -59,13 +58,12 @@ public class ReportsApi {
     /**
      * Build call for createReport
      * @param requestBody Report subscription request payload (required)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createReportCall(RequestBody1 requestBody,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createReportCall(RequestBody1 requestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestBody;
         
         // create path and map variables
@@ -102,11 +100,11 @@ public class ReportsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createReportValidateBeforeCall(RequestBody1 requestBody,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createReportValidateBeforeCall(RequestBody1 requestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'requestBody' is set
         if (requestBody == null) {
@@ -114,7 +112,7 @@ public class ReportsApi {
         }
         
         
-        com.squareup.okhttp.Call call = createReportCall(requestBody, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createReportCall(requestBody, progressListener, progressRequestListener);
         return call;
 
         
@@ -127,24 +125,22 @@ public class ReportsApi {
      * Create Adhoc Report
      * Create one time report
      * @param requestBody Report subscription request payload (required)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportsIdGet200Response> createReport(RequestBody1 requestBody,MerchantConfig merchantConfig) throws ApiException {
-       return createReportWithHttpInfo(requestBody, merchantConfig);
+    public ApiResponse<ReportingV3ReportsIdGet200Response> createReport(RequestBody1 requestBody) throws ApiException {
+       return createReportWithHttpInfo(requestBody);
     }
 
     /**
      * Create Adhoc Report
      * Create one time report
      * @param requestBody Report subscription request payload (required)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportsIdGet200Response> createReportWithHttpInfo(RequestBody1 requestBody,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, merchantConfig, null, null);
+    public ApiResponse<ReportingV3ReportsIdGet200Response> createReportWithHttpInfo(RequestBody1 requestBody) throws ApiException {
+        com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, null, null);
         return apiClient.execute(call);
     }
 
@@ -152,12 +148,11 @@ public class ReportsApi {
      * Create Adhoc Report (asynchronously)
      * Create one time report
      * @param requestBody Report subscription request payload (required)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createReportAsync(RequestBody1 requestBody,MerchantConfig merchantConfig, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call createReportAsync(RequestBody1 requestBody, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -178,7 +173,7 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody,  merchantConfig,progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -186,13 +181,12 @@ public class ReportsApi {
      * Build call for getReportByReportId
      * @param reportId Valid Report Id (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getReportByReportIdCall(String reportId, String organizationId,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getReportByReportIdCall(String reportId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -232,11 +226,11 @@ public class ReportsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getReportByReportIdValidateBeforeCall(String reportId, String organizationId,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getReportByReportIdValidateBeforeCall(String reportId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportId' is set
         if (reportId == null) {
@@ -244,7 +238,7 @@ public class ReportsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getReportByReportIdCall(reportId, organizationId, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getReportByReportIdCall(reportId, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -258,12 +252,11 @@ public class ReportsApi {
      * ReportId is mandatory input
      * @param reportId Valid Report Id (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @return ReportingV3ReportsIdGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3ReportsIdGet200Response getReportByReportId(String reportId, String organizationId,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<ReportingV3ReportsIdGet200Response> resp = getReportByReportIdWithHttpInfo(reportId, organizationId,merchantConfig);
+    public ReportingV3ReportsIdGet200Response getReportByReportId(String reportId, String organizationId) throws ApiException {
+        ApiResponse<ReportingV3ReportsIdGet200Response> resp = getReportByReportIdWithHttpInfo(reportId, organizationId);
         return resp.getData();
     }
 
@@ -272,12 +265,11 @@ public class ReportsApi {
      * ReportId is mandatory input
      * @param reportId Valid Report Id (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportsIdGet200Response> getReportByReportIdWithHttpInfo(String reportId, String organizationId,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, merchantConfig, null, null);
+    public ApiResponse<ReportingV3ReportsIdGet200Response> getReportByReportIdWithHttpInfo(String reportId, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsIdGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -287,12 +279,11 @@ public class ReportsApi {
      * ReportId is mandatory input
      * @param reportId Valid Report Id (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getReportByReportIdAsync(String reportId, String organizationId,MerchantConfig merchantConfig, final ApiCallback<ReportingV3ReportsIdGet200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call getReportByReportIdAsync(String reportId, String organizationId, final ApiCallback<ReportingV3ReportsIdGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -313,7 +304,7 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsIdGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -329,13 +320,12 @@ public class ReportsApi {
      * @param reportName Valid Report Name (optional)
      * @param reportDefinitionId Valid Report Definition Id (optional)
      * @param reportStatus Valid Report Status (optional)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call searchReportsCall(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call searchReportsCall(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -373,11 +363,11 @@ public class ReportsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call searchReportsValidateBeforeCall(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call searchReportsValidateBeforeCall(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
@@ -395,7 +385,7 @@ public class ReportsApi {
         }
         
         
-        com.squareup.okhttp.Call call = searchReportsCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus,merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = searchReportsCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, progressListener, progressRequestListener);
         return call;
 
         
@@ -416,12 +406,11 @@ public class ReportsApi {
      * @param reportName Valid Report Name (optional)
      * @param reportDefinitionId Valid Report Definition Id (optional)
      * @param reportStatus Valid Report Status (optional)
-     * @param merchantConfig  (merchant details)
      * @return ReportingV3ReportsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3ReportsGet200Response searchReports(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<ReportingV3ReportsGet200Response> resp = searchReportsWithHttpInfo(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus,merchantConfig);
+    public ReportingV3ReportsGet200Response searchReports(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus) throws ApiException {
+        ApiResponse<ReportingV3ReportsGet200Response> resp = searchReportsWithHttpInfo(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus);
         return resp.getData();
     }
 
@@ -437,12 +426,11 @@ public class ReportsApi {
      * @param reportName Valid Report Name (optional)
      * @param reportDefinitionId Valid Report Definition Id (optional)
      * @param reportStatus Valid Report Status (optional)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;ReportingV3ReportsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportsGet200Response> searchReportsWithHttpInfo(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus,merchantConfig, null, null);
+    public ApiResponse<ReportingV3ReportsGet200Response> searchReportsWithHttpInfo(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus) throws ApiException {
+        com.squareup.okhttp.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -459,12 +447,11 @@ public class ReportsApi {
      * @param reportName Valid Report Name (optional)
      * @param reportDefinitionId Valid Report Definition Id (optional)
      * @param reportStatus Valid Report Status (optional)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchReportsAsync(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus,MerchantConfig merchantConfig, final ApiCallback<ReportingV3ReportsGet200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchReportsAsync(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus, final ApiCallback<ReportingV3ReportsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -485,7 +472,7 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus,merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

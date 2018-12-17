@@ -22,7 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
-import com.cybersource.authsdk.core.MerchantConfig;
+
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -61,14 +61,13 @@ public class CaptureApi {
     /**
      * Build call for capturePayment
      * @param capturePaymentRequest  (required)
-     * @param merchantConfig  (merchant details)
      * @param id The payment ID returned from a previous payment request. This ID links the capture to the payment.  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call capturePaymentCall(CapturePaymentRequest capturePaymentRequest,MerchantConfig merchantConfig, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call capturePaymentCall(CapturePaymentRequest capturePaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = capturePaymentRequest;
         
         // create path and map variables
@@ -88,7 +87,7 @@ public class CaptureApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -106,11 +105,11 @@ public class CaptureApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call capturePaymentValidateBeforeCall(CapturePaymentRequest capturePaymentRequest,MerchantConfig merchantConfig, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call capturePaymentValidateBeforeCall(CapturePaymentRequest capturePaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'capturePaymentRequest' is set
         if (capturePaymentRequest == null) {
@@ -123,7 +122,7 @@ public class CaptureApi {
         }
         
         
-        com.squareup.okhttp.Call call = capturePaymentCall(capturePaymentRequest,merchantConfig, id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = capturePaymentCall(capturePaymentRequest, id, progressListener, progressRequestListener);
         return call;
 
         
@@ -136,13 +135,12 @@ public class CaptureApi {
      * Capture a Payment
      * Include the payment ID in the POST request to capture the payment amount.
      * @param capturePaymentRequest  (required)
-     * @param merchantConfig  (merchant details)
      * @param id The payment ID returned from a previous payment request. This ID links the capture to the payment.  (required)
      * @return PtsV2PaymentsCapturesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PtsV2PaymentsCapturesPost201Response capturePayment(CapturePaymentRequest capturePaymentRequest,MerchantConfig merchantConfig, String id) throws ApiException {
-        ApiResponse<PtsV2PaymentsCapturesPost201Response> resp = capturePaymentWithHttpInfo(capturePaymentRequest,merchantConfig, id);
+    public PtsV2PaymentsCapturesPost201Response capturePayment(CapturePaymentRequest capturePaymentRequest, String id) throws ApiException {
+        ApiResponse<PtsV2PaymentsCapturesPost201Response> resp = capturePaymentWithHttpInfo(capturePaymentRequest, id);
         return resp.getData();
     }
 
@@ -150,13 +148,12 @@ public class CaptureApi {
      * Capture a Payment
      * Include the payment ID in the POST request to capture the payment amount.
      * @param capturePaymentRequest  (required)
-     * @param merchantConfig  (merchant details)
      * @param id The payment ID returned from a previous payment request. This ID links the capture to the payment.  (required)
      * @return ApiResponse&lt;PtsV2PaymentsCapturesPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV2PaymentsCapturesPost201Response> capturePaymentWithHttpInfo(CapturePaymentRequest capturePaymentRequest,MerchantConfig merchantConfig, String id) throws ApiException {
-        com.squareup.okhttp.Call call = capturePaymentValidateBeforeCall(capturePaymentRequest,merchantConfig, id, null, null);
+    public ApiResponse<PtsV2PaymentsCapturesPost201Response> capturePaymentWithHttpInfo(CapturePaymentRequest capturePaymentRequest, String id) throws ApiException {
+        com.squareup.okhttp.Call call = capturePaymentValidateBeforeCall(capturePaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsCapturesPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -165,13 +162,12 @@ public class CaptureApi {
      * Capture a Payment (asynchronously)
      * Include the payment ID in the POST request to capture the payment amount.
      * @param capturePaymentRequest  (required)
-     * @param merchantConfig  (merchant details)
      * @param id The payment ID returned from a previous payment request. This ID links the capture to the payment.  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call capturePaymentAsync(CapturePaymentRequest capturePaymentRequest,MerchantConfig merchantConfig, String id, final ApiCallback<PtsV2PaymentsCapturesPost201Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call capturePaymentAsync(CapturePaymentRequest capturePaymentRequest, String id, final ApiCallback<PtsV2PaymentsCapturesPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -192,7 +188,7 @@ public class CaptureApi {
             };
         }
 
-        com.squareup.okhttp.Call call = capturePaymentValidateBeforeCall(capturePaymentRequest,merchantConfig, id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = capturePaymentValidateBeforeCall(capturePaymentRequest, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsCapturesPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

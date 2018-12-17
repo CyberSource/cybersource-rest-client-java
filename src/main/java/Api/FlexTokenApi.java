@@ -22,7 +22,6 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
-import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -60,13 +59,12 @@ public class FlexTokenApi {
     /**
      * Build call for tokenize
      * @param tokenizeRequest  (optional)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call tokenizeCall(TokenizeRequest tokenizeRequest,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call tokenizeCall(TokenizeRequest tokenizeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = tokenizeRequest;
         
         // create path and map variables
@@ -103,14 +101,14 @@ public class FlexTokenApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST",merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call tokenizeValidateBeforeCall(TokenizeRequest tokenizeRequest,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call tokenizeValidateBeforeCall(TokenizeRequest tokenizeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = tokenizeCall(tokenizeRequest,merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = tokenizeCall(tokenizeRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -123,12 +121,11 @@ public class FlexTokenApi {
      * Flex Tokenize card
      * Returns a token representing the supplied card details. The token replaces card data and can be used as the Subscription ID in the CyberSource Simple Order API or SCMP API. This is an unauthenticated call that you should initiate from your customer’s device or browser.
      * @param tokenizeRequest  (optional)
-     * @param merchantConfig  (merchant details)
      * @return FlexV1TokensPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public FlexV1TokensPost200Response tokenize(TokenizeRequest tokenizeRequest,MerchantConfig merchantConfig) throws ApiException {
-        ApiResponse<FlexV1TokensPost200Response> resp = tokenizeWithHttpInfo(tokenizeRequest,merchantConfig);
+    public FlexV1TokensPost200Response tokenize(TokenizeRequest tokenizeRequest) throws ApiException {
+        ApiResponse<FlexV1TokensPost200Response> resp = tokenizeWithHttpInfo(tokenizeRequest);
         return resp.getData();
     }
 
@@ -136,12 +133,11 @@ public class FlexTokenApi {
      * Flex Tokenize card
      * Returns a token representing the supplied card details. The token replaces card data and can be used as the Subscription ID in the CyberSource Simple Order API or SCMP API. This is an unauthenticated call that you should initiate from your customer’s device or browser.
      * @param tokenizeRequest  (optional)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;FlexV1TokensPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<FlexV1TokensPost200Response> tokenizeWithHttpInfo(TokenizeRequest tokenizeRequest,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = tokenizeValidateBeforeCall(tokenizeRequest,merchantConfig, null, null);
+    public ApiResponse<FlexV1TokensPost200Response> tokenizeWithHttpInfo(TokenizeRequest tokenizeRequest) throws ApiException {
+        com.squareup.okhttp.Call call = tokenizeValidateBeforeCall(tokenizeRequest, null, null);
         Type localVarReturnType = new TypeToken<FlexV1TokensPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -150,12 +146,11 @@ public class FlexTokenApi {
      * Flex Tokenize card (asynchronously)
      * Returns a token representing the supplied card details. The token replaces card data and can be used as the Subscription ID in the CyberSource Simple Order API or SCMP API. This is an unauthenticated call that you should initiate from your customer’s device or browser.
      * @param tokenizeRequest  (optional)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call tokenizeAsync(TokenizeRequest tokenizeRequest,MerchantConfig merchantConfig, final ApiCallback<FlexV1TokensPost200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call tokenizeAsync(TokenizeRequest tokenizeRequest, final ApiCallback<FlexV1TokensPost200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -176,7 +171,7 @@ public class FlexTokenApi {
             };
         }
 
-        com.squareup.okhttp.Call call = tokenizeValidateBeforeCall(tokenizeRequest,merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = tokenizeValidateBeforeCall(tokenizeRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<FlexV1TokensPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -13,6 +13,15 @@
 
 package Api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -21,21 +30,7 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-
-import com.cybersource.authsdk.core.MerchantConfig;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
 import Model.PtsV1TransactionBatchesGet200Response;
-import Model.PtsV1TransactionBatchesGet400Response;
-import Model.PtsV1TransactionBatchesGet500Response;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class TransactionBatchApi {
     private ApiClient apiClient;
@@ -59,13 +54,12 @@ public class TransactionBatchApi {
     /**
      * Build call for ptsV1TransactionBatchesIdGet
      * @param id The batch id assigned for the template. (required)
-     * @param merchantConfig  (merchant details)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call ptsV1TransactionBatchesIdGetCall(String id,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call ptsV1TransactionBatchesIdGetCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -103,11 +97,11 @@ public class TransactionBatchApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", merchantConfig, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call ptsV1TransactionBatchesIdGetValidateBeforeCall(String id,MerchantConfig merchantConfig, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call ptsV1TransactionBatchesIdGetValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -115,7 +109,7 @@ public class TransactionBatchApi {
         }
         
         
-        com.squareup.okhttp.Call call = ptsV1TransactionBatchesIdGetCall(id, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = ptsV1TransactionBatchesIdGetCall(id,  progressListener, progressRequestListener);
         return call;
 
         
@@ -128,23 +122,22 @@ public class TransactionBatchApi {
      * Get an individual batch file Details processed through the Offline Transaction Submission Services
      * Provide the search range
      * @param id The batch id assigned for the template. (required)
-     * @param merchantConfig  (merchant details)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @return ApiResponse&lt;Void&gt;
      */
-    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesIdGet(String id,MerchantConfig merchantConfig) throws ApiException {
-        return ptsV1TransactionBatchesIdGetWithHttpInfo(id, merchantConfig);
+    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesIdGet(String id) throws ApiException {
+        return ptsV1TransactionBatchesIdGetWithHttpInfo(id);
     }
 
     /**
      * Get an individual batch file Details processed through the Offline Transaction Submission Services
      * Provide the search range
      * @param id The batch id assigned for the template. (required)
-     * @param merchantConfig  (merchant details)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesIdGetWithHttpInfo(String id,MerchantConfig merchantConfig) throws ApiException {
-        com.squareup.okhttp.Call call = ptsV1TransactionBatchesIdGetValidateBeforeCall(id, merchantConfig, null, null);
+    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesIdGetWithHttpInfo(String id) throws ApiException {
+        com.squareup.okhttp.Call call = ptsV1TransactionBatchesIdGetValidateBeforeCall(id,  null, null);
         Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -153,12 +146,11 @@ public class TransactionBatchApi {
      * Get an individual batch file Details processed through the Offline Transaction Submission Services (asynchronously)
      * Provide the search range
      * @param id The batch id assigned for the template. (required)
-     * @param merchantConfig  (merchant details)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call ptsV1TransactionBatchesIdGetAsync(String id,MerchantConfig merchantConfig, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call ptsV1TransactionBatchesIdGetAsync(String id, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -179,7 +171,7 @@ public class TransactionBatchApi {
             };
         }
 
-        com.squareup.okhttp.Call call = ptsV1TransactionBatchesIdGetValidateBeforeCall(id, merchantConfig, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = ptsV1TransactionBatchesIdGetValidateBeforeCall(id,  progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
