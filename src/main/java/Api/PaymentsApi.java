@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -37,6 +38,11 @@ public class PaymentsApi {
 
 	public PaymentsApi() {
 		this(Configuration.getDefaultApiClient());
+	}
+	
+	public PaymentsApi(MerchantConfig config) {
+		apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(config);
 	}
 
 	public PaymentsApi(ApiClient apiClient) {

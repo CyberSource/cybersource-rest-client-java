@@ -22,6 +22,7 @@ import java.util.Map;
 
 import org.joda.time.LocalDate;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -39,6 +40,11 @@ public class SecureFileShareApi {
 
     public SecureFileShareApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public SecureFileShareApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public SecureFileShareApi(ApiClient apiClient) {

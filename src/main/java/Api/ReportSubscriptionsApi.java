@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -39,6 +40,11 @@ public class ReportSubscriptionsApi {
 
     public ReportSubscriptionsApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public ReportSubscriptionsApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public ReportSubscriptionsApi(ApiClient apiClient) {
@@ -66,7 +72,7 @@ public class ReportSubscriptionsApi {
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions";
-            /*.replaceAll("\\{" + "reportName" + "\\}", apiClient.escapeString(reportName.toString()));*/
+           /* .replaceAll("\\{" + "reportName" + "\\}", apiClient.escapeString(reportName.toString()));*/
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

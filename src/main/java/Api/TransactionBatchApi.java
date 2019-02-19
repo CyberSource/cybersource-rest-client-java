@@ -14,13 +14,12 @@
 package Api;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.google.gson.reflect.TypeToken;
+import com.cybersource.authsdk.core.MerchantConfig;
 
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
@@ -30,13 +29,17 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
-import Model.PtsV1TransactionBatchesGet200Response;
 
 public class TransactionBatchApi {
     private ApiClient apiClient;
 
     public TransactionBatchApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public TransactionBatchApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public TransactionBatchApi(ApiClient apiClient) {
@@ -125,8 +128,8 @@ public class TransactionBatchApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @return ApiResponse&lt;Void&gt;
      */
-    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesIdGet(String id) throws ApiException {
-        return ptsV1TransactionBatchesIdGetWithHttpInfo(id);
+    public void ptsV1TransactionBatchesIdGet(String id) throws ApiException {
+         ptsV1TransactionBatchesIdGetWithHttpInfo(id);
     }
 
     /**
@@ -136,10 +139,9 @@ public class TransactionBatchApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesIdGetWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<Object> ptsV1TransactionBatchesIdGetWithHttpInfo(String id) throws ApiException {
         com.squareup.okhttp.Call call = ptsV1TransactionBatchesIdGetValidateBeforeCall(id,  null, null);
-        Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesGet200Response>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        return apiClient.execute(call, null);
     }
 
     /**

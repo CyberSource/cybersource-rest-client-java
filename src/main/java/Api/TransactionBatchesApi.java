@@ -22,6 +22,7 @@ import java.util.Map;
 
 import org.joda.time.DateTime;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -39,6 +40,11 @@ public class TransactionBatchesApi {
 
     public TransactionBatchesApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public TransactionBatchesApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public TransactionBatchesApi(ApiClient apiClient) {
@@ -66,10 +72,16 @@ public class TransactionBatchesApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/pts/v1/transaction-batches?startTime="+startTime.toString()+"&endTime="+endTime.toString();
+        String localVarPath = "/pts/v1/transaction-batches";
+        
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
       
+        if (startTime != null)
+            localVarQueryParams.addAll(apiClient.parameterToPairs("", "startTime", startTime));
+            if (endTime != null)
+            localVarQueryParams.addAll(apiClient.parameterToPairs("", "endTime", endTime));
+        
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();

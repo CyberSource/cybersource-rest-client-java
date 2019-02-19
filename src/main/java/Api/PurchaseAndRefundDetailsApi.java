@@ -21,6 +21,8 @@ import java.util.Map;
 
 import org.joda.time.DateTime;
 
+import com.cybersource.authsdk.core.MerchantConfig;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -35,6 +37,11 @@ public class PurchaseAndRefundDetailsApi {
 
     public PurchaseAndRefundDetailsApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public PurchaseAndRefundDetailsApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public PurchaseAndRefundDetailsApi(ApiClient apiClient) {

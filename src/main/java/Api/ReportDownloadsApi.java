@@ -21,6 +21,8 @@ import java.util.Map;
 
 import org.joda.time.LocalDate;
 
+import com.cybersource.authsdk.core.MerchantConfig;
+
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -35,6 +37,11 @@ public class ReportDownloadsApi {
 
     public ReportDownloadsApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public ReportDownloadsApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public ReportDownloadsApi(ApiClient apiClient) {
