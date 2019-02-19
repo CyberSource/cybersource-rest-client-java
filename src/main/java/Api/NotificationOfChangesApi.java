@@ -22,6 +22,7 @@ import java.util.Map;
 
 import org.joda.time.DateTime;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -39,6 +40,11 @@ public class NotificationOfChangesApi {
 
     public NotificationOfChangesApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public NotificationOfChangesApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public NotificationOfChangesApi(ApiClient apiClient) {

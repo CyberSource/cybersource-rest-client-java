@@ -44,6 +44,11 @@ public class ProcessAPayoutApi {
     public ProcessAPayoutApi() {
         this(Configuration.getDefaultApiClient());
     }
+    
+    public ProcessAPayoutApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
+    }
 
     public ProcessAPayoutApi(ApiClient apiClient) {
         this.apiClient = apiClient;
@@ -84,7 +89,7 @@ public class ProcessAPayoutApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);

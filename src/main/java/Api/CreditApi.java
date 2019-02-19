@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -43,6 +44,11 @@ public class CreditApi {
 
     public CreditApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public CreditApi(MerchantConfig  merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public CreditApi(ApiClient apiClient) {

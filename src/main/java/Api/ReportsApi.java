@@ -22,6 +22,7 @@ import java.util.Map;
 
 import org.joda.time.DateTime;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -41,6 +42,11 @@ public class ReportsApi {
 
     public ReportsApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public ReportsApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public ReportsApi(ApiClient apiClient) {
@@ -86,6 +92,9 @@ public class ReportsApi {
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
+        
+        Pair pair=new Pair("orgId", "testrest");
+        localVarQueryParams.add(pair);
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -128,8 +137,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportsIdGet200Response> createReport(RequestBody1 requestBody) throws ApiException {
-       return createReportWithHttpInfo(requestBody);
+    public void createReport(RequestBody1 requestBody) throws ApiException {
+        createReportWithHttpInfo(requestBody);
     }
 
     /**
@@ -139,9 +148,9 @@ public class ReportsApi {
      * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportsIdGet200Response> createReportWithHttpInfo(RequestBody1 requestBody) throws ApiException {
+    public void createReportWithHttpInfo(RequestBody1 requestBody) throws ApiException {
         com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, null, null);
-        return apiClient.execute(call);
+        apiClient.execute(call);
     }
 
     /**
@@ -190,8 +199,7 @@ public class ReportsApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/reporting/v3/reports/{reportId}"
-            .replaceAll("\\{" + "reportId" + "\\}", apiClient.escapeString(reportId.toString()));
+        String localVarPath = "/reporting/v3/reports/{reportId}".replaceAll("\\{" + "reportId" + "\\}", apiClient.escapeString(reportId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (organizationId != null)
@@ -329,7 +337,8 @@ public class ReportsApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/reporting/v3/reports?startTime="+startTime.toString()+"&endTime="+endTime.toString()+"&timeQueryType="+timeQueryType+"&organizationId="+organizationId;
+        String localVarPath = "/reporting/v3/reports";
+        
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
        
@@ -337,6 +346,25 @@ public class ReportsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
+        if (startTime != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "startTime", startTime));
+        if (endTime != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "endTime", endTime));
+        if (timeQueryType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "timeQueryType", timeQueryType));
+        if (reportMimeType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportMimeType", reportMimeType));
+        if (reportFrequency != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportFrequency", reportFrequency));
+        if (reportName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportName", reportName));
+        if (reportDefinitionId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportDefinitionId", reportDefinitionId));
+        if (reportStatus != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportStatus", reportStatus));
 
         final String[] localVarAccepts = {
             "application/hal+json"

@@ -22,7 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
-
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -44,6 +44,11 @@ public class CaptureApi {
 
     public CaptureApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public CaptureApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public CaptureApi(ApiClient apiClient) {
@@ -83,6 +88,7 @@ public class CaptureApi {
         final String[] localVarAccepts = {
             "application/hal+json"
         };
+        
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 

@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -38,6 +39,11 @@ public class InstrumentIdentifierApi {
 
     public InstrumentIdentifierApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public InstrumentIdentifierApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public InstrumentIdentifierApi(ApiClient apiClient) {

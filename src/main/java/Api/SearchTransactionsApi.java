@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -38,6 +39,11 @@ public class SearchTransactionsApi {
 
     public SearchTransactionsApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public SearchTransactionsApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public SearchTransactionsApi(ApiClient apiClient) {
@@ -198,11 +204,11 @@ public class SearchTransactionsApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-       /* final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
+       final String[] localVarAccepts = {
+            ""
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);*/
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
             "application/json"

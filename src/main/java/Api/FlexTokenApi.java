@@ -22,6 +22,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -42,6 +43,11 @@ public class FlexTokenApi {
 
     public FlexTokenApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public FlexTokenApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public FlexTokenApi(ApiClient apiClient) {

@@ -21,7 +21,6 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
-import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
@@ -60,6 +59,7 @@ import com.cybersource.authsdk.log.Log4j;
 import com.cybersource.authsdk.payloaddigest.PayloadDigest;
 import com.cybersource.authsdk.util.GlobalLabelParameters;
 import com.cybersource.authsdk.util.PropertiesUtil;
+import com.cybersource.authsdk.util.Utility;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
@@ -78,6 +78,7 @@ import Invokers.auth.ApiKeyAuth;
 import Invokers.auth.Authentication;
 import Invokers.auth.HttpBasicAuth;
 import Invokers.auth.OAuth;
+import masking.Masking;
 import okio.BufferedSink;
 import okio.Okio;
 
@@ -85,12 +86,14 @@ public class ApiClient {
 	public static final double JAVA_VERSION;
 	public static final boolean IS_ANDROID;
 	public static final int ANDROID_SDK_VERSION;
-	public static String responseCode;
-	public static String status;
-	public static String responseBody;
-	public static String respBody;
-	public static MerchantConfig merchantConfig;
-
+	private  String responseCode;
+	private  String status;
+	private  String responseBody;
+	private  String respBody;
+	private  MerchantConfig merchantConfig;
+	private  String responseHeader;
+	private  String requestHeader;
+	private  String requestBody;
 	static {
 		JAVA_VERSION = Double.parseDouble(System.getProperty("java.specification.version"));
 		boolean isAndroid;
@@ -143,6 +146,8 @@ public class ApiClient {
 	private JSON json;
 
 	private HttpLoggingInterceptor loggingInterceptor;
+	
+	private Logger logger;
 
 	/*
 	 * Constructor for ApiClient
@@ -180,7 +185,6 @@ public class ApiClient {
 
 	public ApiClient(MerchantConfig merchantConfig) {
 		this.merchantConfig = merchantConfig;
-
 	}
 
 	/**
@@ -873,11 +877,13 @@ public class ApiClient {
 	 */
 	@SuppressWarnings("unchecked")
 	public <T> T deserialize(Response response, Type returnType) throws ApiException {
+		
 		if (response == null /* || returnType == null */) {
 			return null;
 		}
 		if (returnType == null && response != null) {
 			try {
+				getRequiredValue(response);
 				return (T) response.body().bytes();
 			} catch (IOException e) {
 				throw new ApiException(e);
@@ -897,10 +903,7 @@ public class ApiClient {
 		}
 
 		try {
-			if (response.body() != null)
-				respBody = response.body().string();
-			else
-				respBody = null;
+			getRequiredValue(response);
 		} catch (IOException e) {
 			throw new ApiException(e);
 		}
@@ -908,7 +911,7 @@ public class ApiClient {
 		if (respBody == null || "".equals(respBody)) {
 			return null;
 		}
-
+		
 		String contentType = response.headers().get("Content-Type");
 		if (contentType == null) {
 			// ensuring a default content type
@@ -1066,19 +1069,28 @@ public class ApiClient {
 						|| headerType.equals("application/pdf")) {
 					responseBody = response.body().string();
 				}
+			
 			if (!(responseCode.equals("200"))) {
 				if (!responseCode.equals("201")) {
-					System.out.println(response.body().string());
+					getRequiredValue(response);
 				}
 			}
-			T data = handleResponse(response, returnType);
+			
 			if (headerType != null)
 				if (!headerType.equals("application/xml") && !headerType.equals("text/csv")
 						&& !headerType.equals("application/pdf")) {
 					responseBody = response.toString();
 				}
+			
+			T data = handleResponse(response, returnType);
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
 		} catch (IOException e) {
+			respBody=null;
+			responseCode=null;
+			requestBody=null;
+			status=null;
+			throw new ApiException(e);
+		}catch(IllegalStateException e){
 			throw new ApiException(e);
 		}
 	}
@@ -1176,7 +1188,8 @@ public class ApiClient {
 			throw new ApiException(response.message(), response.code(), response.headers().toMultimap(), respBody);
 		}
 	}
-
+	
+	
 	/**
 	 * Build HTTP call with the given options.
 	 *
@@ -1222,33 +1235,32 @@ public class ApiClient {
 		try {
 			merchantConfig.setRequestType(method);
 
-			if (!queryParams.isEmpty()) {
-
+			if (queryParams != null && !queryParams.isEmpty()) {
+				StringBuilder url = new StringBuilder();
+				url.append(path);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
-					boolean firstQueryParam = true;
-					for (Pair pair : queryParams) {
-
-						String key = pair.getName();
-						String val = pair.getValue();
-						val = val.replaceAll(" ", "%20");
-
-						if (!firstQueryParam) {
-							path = path + "&" + key + "=" + val;
-						} else {
-							path = path + "?" + key + "=" + val;
-							firstQueryParam = false;
+					// support (constant) query string in `path`, e.g.
+					// "/posts?draft=1"
+					String prefix = path.contains("?") ? "&" : "?";
+					for (Pair param : queryParams) {
+						if (param.getValue() != null) {
+							if (prefix != null) {
+								url.append(prefix);
+								prefix = null;
+							} else {
+								url.append("&");
+							}
+							String value = parameterToString(param.getValue());
+							url.append(escapeString(param.getName())).append("=").append(escapeString(value));
 						}
 					}
-					merchantConfig.setRequestTarget(path);
-
+					merchantConfig.setRequestTarget(url.toString());
 				}
 			} else {
-
 				merchantConfig.setRequestTarget(path);
 			}
-
 			Authorization authorization = new Authorization();
-			Logger logger = Log4j.getInstance(merchantConfig);
+			logger = Log4j.getInstance(merchantConfig);
 			authorization.setLogger(logger);
 
 			String requestBody = json.serialize(body);
@@ -1256,21 +1268,24 @@ public class ApiClient {
 			authorization.setJWTRequestBody(requestBody);
 			merchantConfig.setRequestJsonPath(GlobalLabelParameters.POST_OBJECT_METHOD_REQUEST_PATH);
 			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(logger);
-
+			this.requestBody=requestBody;
+			String digest =null;
 			if (isMerchantDetails) {
 				String token = authorization.getToken(merchantConfig);
+				Utility.log(logger, GlobalLabelParameters.BEGIN_TRANSCATION, "", org.apache.logging.log4j.Level.INFO);
+				Utility.log(logger, GlobalLabelParameters.AUTENTICATION_TYPE, merchantConfig.getAuthenticationType(), org.apache.logging.log4j.Level.INFO);
+				Utility.log(logger, GlobalLabelParameters.REQUEST_TYPE, ": ".concat(method), org.apache.logging.log4j.Level.INFO);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
-
+					defaultHeaderMap.clear();
 					addDefaultHeader("Date", PropertiesUtil.date);
 					addDefaultHeader("Host", merchantConfig.getRequestHost());
 					addDefaultHeader("v-c-merchant-id", merchantConfig.getMerchantID());
 					addDefaultHeader("Signature", token);
-					addDefaultHeader("User-Agent", "Mozilla/5.0");
-
+					addDefaultHeader("User-Agent", GlobalLabelParameters.USER_AGENT_VALUE);
 					if (method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT")
 							|| method.equalsIgnoreCase("PATCH")) {
 						PayloadDigest payloadDigest = new PayloadDigest(merchantConfig);
-						String digest = payloadDigest.getDigest();
+						digest = payloadDigest.getDigest();
 						addDefaultHeader("Digest", digest);
 					}
 
@@ -1278,8 +1293,19 @@ public class ApiClient {
 					token = "Bearer " + token;
 					addDefaultHeader("Authorization", token);
 				}
-			}
-
+				
+				String merchantConfigData="{"+"authenticationType="+ merchantConfig.getAuthenticationType() + ", logDirectory=" + merchantConfig.getLogDirectory() + ",logFilename=" + merchantConfig.getLogFilename() + ",keysDirectory=" + merchantConfig.getKeysDirectory() + ",keyFileName="+merchantConfig.getKeyFilename()+", enableLog=" + merchantConfig.getEnableLog()+ ", runEnvironment=runenviornment, requestHost=" + merchantConfig.getRequestHost() +", requestTarget=" + merchantConfig.getRequestTarget() +", requestType=" + merchantConfig.getRequestType()+"}";
+				Utility.log(logger, GlobalLabelParameters.MERCHANT_CONFIG, ": ".concat(merchantConfigData), org.apache.logging.log4j.Level.INFO);
+				if (digest != null) {
+					Utility.log(logger, GlobalLabelParameters.DIGEST, ": ".concat(digest),
+							org.apache.logging.log4j.Level.INFO);
+				}
+				Utility.log(logger, GlobalLabelParameters.V_C_MERCHANTID, ": ".concat(merchantConfig.getMerchantID()), org.apache.logging.log4j.Level.INFO);
+				Utility.log(logger, GlobalLabelParameters.DATE, ": ".concat(PropertiesUtil.date), org.apache.logging.log4j.Level.INFO);
+				Utility.log(logger, GlobalLabelParameters.HOST, ": ".concat(merchantConfig.getRequestHost()), org.apache.logging.log4j.Level.INFO);
+				Utility.log(logger, GlobalLabelParameters.SIGNATURE, ": ".concat(token), org.apache.logging.log4j.Level.INFO);
+				Utility.log(logger, GlobalLabelParameters.USERAGENT, ": ".concat(GlobalLabelParameters.USER_AGENT_VALUE), org.apache.logging.log4j.Level.INFO);
+				}
 		} catch (ConfigException e) {
 			System.out.println(e.getMessage());
 		}
@@ -1352,7 +1378,6 @@ public class ApiClient {
 		} else {
 			request = reqBuilder.method(method, reqBody).build();
 		}
-
 		return request;
 	}
 
@@ -1369,7 +1394,6 @@ public class ApiClient {
 	public String buildUrl(String path, List<Pair> queryParams) {
 		final StringBuilder url = new StringBuilder();
 		url.append(GlobalLabelParameters.URL_PREFIX).append(merchantConfig.getRequestHost()).append(path);
-
 		if (queryParams != null && !queryParams.isEmpty()) {
 			// support (constant) query string in `path`, e.g. "/posts?draft=1"
 			String prefix = path.contains("?") ? "&" : "?";
@@ -1386,7 +1410,6 @@ public class ApiClient {
 				}
 			}
 		}
-
 		return url.toString();
 	}
 
@@ -1588,4 +1611,110 @@ public class ApiClient {
 			throw new AssertionError(e);
 		}
 	}
+	
+	/**
+	 * Set Response Header,body,requestHeader,Body from Response object to the Apiclient variables.
+	 * do the masking for response body
+	 * @param response
+	 * @throws IOException
+	 */
+	private void getRequiredValue(Response response) throws IOException{
+		String method="";
+		if (response != null) {
+			responseHeader = response.headers().toString();
+			if (response.request() != null) {
+				requestHeader = response.request().headers().toString();
+				method=response.request().method();
+			}
+		}
+		if (response.body() != null)
+			respBody=Masking.prepareMasking(response.body().string(),null);
+		else
+			respBody = null;
+		
+		if(requestBody!=null){
+			requestBody=Masking.prepareMasking(requestBody,null);
+		}
+		Utility.log(logger, GlobalLabelParameters.REQUEST_BODY, ": ".concat(requestBody==null ? "" :requestBody), org.apache.logging.log4j.Level.INFO);
+		
+		if(respBody== null ||  ("null").equalsIgnoreCase(respBody)){
+			Utility.log(logger, GlobalLabelParameters.RESPONSE_MESSAGE, ": ".concat(("DELETE").equals(method) ? "null":responseBody), org.apache.logging.log4j.Level.INFO);
+		}else{
+			Utility.log(logger, GlobalLabelParameters.RESPONSE_MESSAGE, ": ".concat(respBody), org.apache.logging.log4j.Level.INFO);
+		}
+
+		
+		Utility.log(logger, GlobalLabelParameters.RESPONSE_CODE, ": ".concat(responseCode), org.apache.logging.log4j.Level.INFO);
+		Utility.log(logger, GlobalLabelParameters.RESPONSE_HEADER, ": ".concat(responseHeader), org.apache.logging.log4j.Level.INFO);
+		Utility.log(logger, GlobalLabelParameters.END_TRANSCATION, ": ", org.apache.logging.log4j.Level.INFO);
+		
+	}
+
+	public String getResponseCode() {
+		return responseCode;
+	}
+
+	public void setResponseCode(String responseCode) {
+		this.responseCode = responseCode;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getResponseBody() {
+		return responseBody;
+	}
+
+	public void setResponseBody(String responseBody) {
+		this.responseBody = responseBody;
+	}
+
+	public String getRespBody() {
+		return respBody;
+	}
+
+	public void setRespBody(String respBody) {
+		this.respBody = respBody;
+	}
+
+
+	public String getResponseHeader() {
+		return responseHeader;
+	}
+
+	public void setResponseHeader(String responseHeader) {
+		this.responseHeader = responseHeader;
+	}
+
+	public String getRequestHeader() {
+		return requestHeader;
+	}
+
+	public void setRequestHeader(String requestHeader) {
+		this.requestHeader = requestHeader;
+	}
+
+	public String getRequestBody() {
+		return requestBody;
+	}
+
+	public void setRequestBody(String requestBody) {
+		this.requestBody = requestBody;
+	}
+
+	public MerchantConfig getMerchantConfig() {
+		return merchantConfig;
+	}
+
+	public void setMerchantConfig(MerchantConfig merchantConfig) {
+		this.merchantConfig = merchantConfig;
+	}
+	
+	
+	
 }

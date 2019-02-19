@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -38,6 +39,11 @@ public class ReversalApi {
 
     public ReversalApi() {
         this(Configuration.getDefaultApiClient());
+    }
+    
+    public ReversalApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
     }
 
     public ReversalApi(ApiClient apiClient) {

@@ -53,6 +53,11 @@ public class InstrumentIdentifiersApi {
     public InstrumentIdentifiersApi() {
         this(Configuration.getDefaultApiClient());
     }
+    
+    public InstrumentIdentifiersApi(MerchantConfig merchantConfig) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(merchantConfig);
+    }
 
     public InstrumentIdentifiersApi(ApiClient apiClient) {
         this.apiClient = apiClient;

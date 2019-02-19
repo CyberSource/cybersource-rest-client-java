@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import Invokers.ApiCallback;
@@ -40,6 +41,11 @@ public class KeyGenerationApi {
         this(Configuration.getDefaultApiClient());
     }
 
+    public KeyGenerationApi(MerchantConfig config) {
+    	apiClient=Configuration.getDefaultApiClient();
+		apiClient.setMerchantConfig(config);
+    }
+    
     public KeyGenerationApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
