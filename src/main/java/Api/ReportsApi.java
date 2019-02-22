@@ -128,8 +128,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void createReport(RequestBody1 requestBody) throws ApiException {
-        createReportWithHttpInfo(requestBody);
+    public ApiResponse<ReportingV3ReportsIdGet200Response> createReport(RequestBody1 requestBody) throws ApiException {
+        return createReportWithHttpInfo(requestBody);
     }
 
     /**
@@ -139,7 +139,7 @@ public class ReportsApi {
      * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> createReportWithHttpInfo(RequestBody1 requestBody) throws ApiException {
+    public ApiResponse<ReportingV3ReportsIdGet200Response> createReportWithHttpInfo(RequestBody1 requestBody) throws ApiException {
         com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, null, null);
         return apiClient.execute(call);
     }
@@ -329,7 +329,7 @@ public class ReportsApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/reporting/v3/reports";
+        String localVarPath = "/reporting/v3/reports?startTime="+startTime.toString()+"&endTime="+endTime.toString()+"&timeQueryType="+timeQueryType+"&organizationId="+organizationId;";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
        
