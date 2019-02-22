@@ -31,6 +31,7 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 import Model.PtsV1TransactionBatchesGet200Response;
+import Model.PtsV1TransactionBatchesIdGet200Response;
 
 public class TransactionBatchApi {
     private ApiClient apiClient;
@@ -125,8 +126,9 @@ public class TransactionBatchApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @return ApiResponse&lt;Void&gt;
      */
-    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesIdGet(String id) throws ApiException {
-        return ptsV1TransactionBatchesIdGetWithHttpInfo(id);
+    public PtsV1TransactionBatchesIdGet200Response ptsV1TransactionBatchesIdGet(String id) throws ApiException {
+    	ApiResponse<PtsV1TransactionBatchesIdGet200Response> resp = ptsV1TransactionBatchesIdGetWithHttpInfo(id);
+        return resp.getData();
     }
 
     /**
@@ -136,9 +138,9 @@ public class TransactionBatchApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PtsV1TransactionBatchesGet200Response> ptsV1TransactionBatchesIdGetWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<PtsV1TransactionBatchesIdGet200Response> ptsV1TransactionBatchesIdGetWithHttpInfo(String id) throws ApiException {
         com.squareup.okhttp.Call call = ptsV1TransactionBatchesIdGetValidateBeforeCall(id,  null, null);
-        Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesGet200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesIdGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
