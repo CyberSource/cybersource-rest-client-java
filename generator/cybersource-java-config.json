@@ -1,0 +1,5 @@
+{
+   "modelPackage" : "Model",
+   "apiPackage" : "Api",
+   "invokerPackage" : "Invokers"   
+}

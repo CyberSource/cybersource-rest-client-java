@@ -66,7 +66,6 @@ public class ReportSubscriptionsApi {
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions";
-            /*.replaceAll("\\{" + "reportName" + "\\}", apiClient.escapeString(reportName.toString()));*/
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -492,8 +491,8 @@ public class ReportSubscriptionsApi {
      * @return ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3ReportSubscriptionsGet200Response getSubscription(String reportName) throws ApiException {
-        ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getSubscriptionWithHttpInfo(reportName);
+    public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(String reportName) throws ApiException {
+        ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> resp = getSubscriptionWithHttpInfo(reportName);
         return resp.getData();
     }
 
@@ -504,9 +503,9 @@ public class ReportSubscriptionsApi {
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getSubscriptionWithHttpInfo(String reportName) throws ApiException {
+    public ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> getSubscriptionWithHttpInfo(String reportName) throws ApiException {
         com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(reportName, null, null);
-        Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
