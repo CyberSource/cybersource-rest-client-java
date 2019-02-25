@@ -19,7 +19,7 @@ powershell -Command " Set-Content ..\src\main\java\Api\RefundApi.java ((get-cont
 
 powershell -Command " Set-Content ..\src\main\java\Api\UserManagementApi.java ((get-content ..\src\main\java\Api\UserManagementApi.java -raw) -replace '(?m)(.*)^*final String\[\] localVarAccepts = {[\r\n\s]+\"application\/json;charset=utf-8\"[\r\n\s]+};', 'final String[] localVarAccepts = {\"application/hal+json;charset=utf-8\"};') "
 
-powershell -Command " Set-Content ..\src\main\java\Api\VoidApi.java ((get-content ..\src\main\java\Api\VoidApi.java -raw) -replace '(?m)(.*)^*final String\[\] localVarAccepts = {[\r\n\s]+\"application\/json;charset=utf-8\"[\r\n\s]+};', 'final String[] localVarAccepts = {\"application\hal+json;charset=utf-8\"};') "
+powershell -Command " Set-Content ..\src\main\java\Api\VoidApi.java ((get-content ..\src\main\java\Api\VoidApi.java -raw) -replace '(?m)(.*)^*final String\[\] localVarAccepts = {[\r\n\s]+\"application\/json;charset=utf-8\"[\r\n\s]+};', 'final String[] localVarAccepts = {\"application/hal+json;charset=utf-8\"};') "
 
 
 
