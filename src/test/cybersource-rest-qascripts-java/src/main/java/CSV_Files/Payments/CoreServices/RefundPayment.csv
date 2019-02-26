@@ -1,0 +1,4 @@
+testCaseId,paymentId,amount,message
+RPay_01,5510757573906363803002,100.00,Success
+RPay_02,5510757573906363803002,200,Fails due to mismatch amount
+RPay_03,676557657545457,102.21,Fails due to invalid paymentId
