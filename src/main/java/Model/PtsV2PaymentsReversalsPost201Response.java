@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation;
+import Model.PtsV2PaymentsReversalsPost201ResponseIssuerInformation;
 import Model.PtsV2PaymentsReversalsPost201ResponseLinks;
 import Model.PtsV2PaymentsReversalsPost201ResponseProcessorInformation;
 import Model.PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails;
@@ -32,7 +33,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsReversalsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2PaymentsReversalsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsReversalsPost201ResponseLinks links = null;
@@ -44,7 +45,7 @@ public class PtsV2PaymentsReversalsPost201Response {
   private String submitTimeUtc = null;
 
   /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - REVERSED 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
@@ -102,6 +103,9 @@ public class PtsV2PaymentsReversalsPost201Response {
 
   @SerializedName("processorInformation")
   private PtsV2PaymentsReversalsPost201ResponseProcessorInformation processorInformation = null;
+
+  @SerializedName("issuerInformation")
+  private PtsV2PaymentsReversalsPost201ResponseIssuerInformation issuerInformation = null;
 
   @SerializedName("authorizationInformation")
   private PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation authorizationInformation = null;
@@ -169,10 +173,10 @@ public class PtsV2PaymentsReversalsPost201Response {
   }
 
    /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - REVERSED 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - REVERSED ")
   public StatusEnum getStatus() {
     return status;
   }
@@ -253,6 +257,24 @@ public class PtsV2PaymentsReversalsPost201Response {
     this.processorInformation = processorInformation;
   }
 
+  public PtsV2PaymentsReversalsPost201Response issuerInformation(PtsV2PaymentsReversalsPost201ResponseIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+    return this;
+  }
+
+   /**
+   * Get issuerInformation
+   * @return issuerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsReversalsPost201ResponseIssuerInformation getIssuerInformation() {
+    return issuerInformation;
+  }
+
+  public void setIssuerInformation(PtsV2PaymentsReversalsPost201ResponseIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+  }
+
   public PtsV2PaymentsReversalsPost201Response authorizationInformation(PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation authorizationInformation) {
     this.authorizationInformation = authorizationInformation;
     return this;
@@ -307,13 +329,14 @@ public class PtsV2PaymentsReversalsPost201Response {
         Objects.equals(this.clientReferenceInformation, ptsV2PaymentsReversalsPost201Response.clientReferenceInformation) &&
         Objects.equals(this.reversalAmountDetails, ptsV2PaymentsReversalsPost201Response.reversalAmountDetails) &&
         Objects.equals(this.processorInformation, ptsV2PaymentsReversalsPost201Response.processorInformation) &&
+        Objects.equals(this.issuerInformation, ptsV2PaymentsReversalsPost201Response.issuerInformation) &&
         Objects.equals(this.authorizationInformation, ptsV2PaymentsReversalsPost201Response.authorizationInformation) &&
         Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsReversalsPost201Response.pointOfSaleInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, reversalAmountDetails, processorInformation, authorizationInformation, pointOfSaleInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, reversalAmountDetails, processorInformation, issuerInformation, authorizationInformation, pointOfSaleInformation);
   }
 
 
@@ -330,6 +353,7 @@ public class PtsV2PaymentsReversalsPost201Response {
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    reversalAmountDetails: ").append(toIndentedString(reversalAmountDetails)).append("\n");
     sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
     sb.append("    authorizationInformation: ").append(toIndentedString(authorizationInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("}");

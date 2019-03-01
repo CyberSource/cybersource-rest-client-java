@@ -13,17 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.joda.time.DateTime;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -32,7 +21,21 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
+import org.joda.time.DateTime;
 import Model.ReportingV3NotificationofChangesGet200Response;
+import Model.Reportingv3ReportDownloadsGet400Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class NotificationOfChangesApi {
     private ApiClient apiClient;
@@ -131,7 +134,7 @@ public class NotificationOfChangesApi {
 
     /**
      * Get Notification Of Changes
-     * Notification of Change Report
+     * Download the Notification of Change report. This report shows eCheck-related fields updated as a result of a response to an eCheck settlement transaction. 
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
      * @return ReportingV3NotificationofChangesGet200Response
@@ -144,7 +147,7 @@ public class NotificationOfChangesApi {
 
     /**
      * Get Notification Of Changes
-     * Notification of Change Report
+     * Download the Notification of Change report. This report shows eCheck-related fields updated as a result of a response to an eCheck settlement transaction. 
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
      * @return ApiResponse&lt;ReportingV3NotificationofChangesGet200Response&gt;
@@ -158,7 +161,7 @@ public class NotificationOfChangesApi {
 
     /**
      * Get Notification Of Changes (asynchronously)
-     * Notification of Change Report
+     * Download the Notification of Change report. This report shows eCheck-related fields updated as a result of a response to an eCheck settlement transaction. 
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
      * @param callback The callback to be executed when the API call finishes

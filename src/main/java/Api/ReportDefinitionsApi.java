@@ -13,15 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -30,8 +21,21 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import Model.ReportingV3ReportDefinitionsGet200Response;
 import Model.ReportingV3ReportDefinitionsNameGet200Response;
+import Model.Reportingv3ReportDownloadsGet400Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ReportDefinitionsApi {
     private ApiClient apiClient;
@@ -123,8 +127,8 @@ public class ReportDefinitionsApi {
     }
 
     /**
-     * Get a single report definition information
-     * The report definition name must be used as path parameter exclusive of each other
+     * Get report definition
+     * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ReportingV3ReportDefinitionsNameGet200Response
@@ -136,8 +140,8 @@ public class ReportDefinitionsApi {
     }
 
     /**
-     * Get a single report definition information
-     * The report definition name must be used as path parameter exclusive of each other
+     * Get report definition
+     * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportDefinitionsNameGet200Response&gt;
@@ -150,8 +154,8 @@ public class ReportDefinitionsApi {
     }
 
     /**
-     * Get a single report definition information (asynchronously)
-     * The report definition name must be used as path parameter exclusive of each other
+     * Get report definition (asynchronously)
+     * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
@@ -187,13 +191,12 @@ public class ReportDefinitionsApi {
     /**
      * Build call for getResourceV2Info
      * @param organizationId Valid Cybersource Organization Id (optional)
-     
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getResourceV2InfoCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener,final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getResourceV2InfoCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -232,7 +235,7 @@ public class ReportDefinitionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -250,7 +253,7 @@ public class ReportDefinitionsApi {
 
     /**
      * Get reporting resource information
-     * 
+     * View a list of supported reports and their attributes before subscribing to them. 
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ReportingV3ReportDefinitionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -262,7 +265,7 @@ public class ReportDefinitionsApi {
 
     /**
      * Get reporting resource information
-     * 
+     * View a list of supported reports and their attributes before subscribing to them. 
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportDefinitionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -275,13 +278,13 @@ public class ReportDefinitionsApi {
 
     /**
      * Get reporting resource information (asynchronously)
-     * 
+     * View a list of supported reports and their attributes before subscribing to them. 
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getResourceV2InfoAsync(String organizationId,final ApiCallback<ReportingV3ReportDefinitionsGet200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call getResourceV2InfoAsync(String organizationId, final ApiCallback<ReportingV3ReportDefinitionsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -302,7 +305,7 @@ public class ReportDefinitionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getResourceV2InfoValidateBeforeCall(organizationId,progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getResourceV2InfoValidateBeforeCall(organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

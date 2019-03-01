@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsConsumerAuthenticationInformation {
   @SerializedName("cavv")
   private String cavv = null;
@@ -76,10 +76,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Algorithm used to generate the CAVV for Verified by Visa or the UCAF authentication data for Mastercard SecureCode. 
+   * Algorithm used to generate the CAVV for Verified by Visa or the UCAF authentication data for Mastercard Identity Check. 
    * @return cavvAlgorithm
   **/
-  @ApiModelProperty(value = "Algorithm used to generate the CAVV for Verified by Visa or the UCAF authentication data for Mastercard SecureCode. ")
+  @ApiModelProperty(value = "Algorithm used to generate the CAVV for Verified by Visa or the UCAF authentication data for Mastercard Identity Check. ")
   public String getCavvAlgorithm() {
     return cavvAlgorithm;
   }
@@ -94,10 +94,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Raw electronic commerce indicator (ECI).
+   * Raw electronic commerce indicator (ECI). For the description and requirements, see \&quot;Payer Authentication,\&quot; page 180.
    * @return eciRaw
   **/
-  @ApiModelProperty(value = "Raw electronic commerce indicator (ECI).")
+  @ApiModelProperty(value = "Raw electronic commerce indicator (ECI). For the description and requirements, see \"Payer Authentication,\" page 180.")
   public String getEciRaw() {
     return eciRaw;
   }
@@ -112,10 +112,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Payer authentication response status.
+   * Payer authentication response status. For the description and requirements, see \&quot;Payer Authentication,\&quot; page 180. 
    * @return paresStatus
   **/
-  @ApiModelProperty(value = "Payer authentication response status.")
+  @ApiModelProperty(value = "Payer authentication response status. For the description and requirements, see \"Payer Authentication,\" page 180. ")
   public String getParesStatus() {
     return paresStatus;
   }
@@ -130,10 +130,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Verification response enrollment status.
+   * Verification response enrollment status. For the description and requirements, see \&quot;Payer Authentication,\&quot; page 180.
    * @return veresEnrolled
   **/
-  @ApiModelProperty(value = "Verification response enrollment status.")
+  @ApiModelProperty(value = "Verification response enrollment status. For the description and requirements, see \"Payer Authentication,\" page 180.")
   public String getVeresEnrolled() {
     return veresEnrolled;
   }
@@ -148,10 +148,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Transaction identifier.
+   * Transaction identifier. For the description and requirements, see \&quot;Payer Authentication,\&quot; page 180.
    * @return xid
   **/
-  @ApiModelProperty(value = "Transaction identifier.")
+  @ApiModelProperty(value = "Transaction identifier. For the description and requirements, see \"Payer Authentication,\" page 180.")
   public String getXid() {
     return xid;
   }
@@ -166,10 +166,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Universal cardholder authentication field (UCAF) data.
+   * Universal cardholder authentication field (UCAF) data.  For the description and requirements, see \&quot;Payer Authentication,\&quot; page 180. 
    * @return ucafAuthenticationData
   **/
-  @ApiModelProperty(value = "Universal cardholder authentication field (UCAF) data.")
+  @ApiModelProperty(value = "Universal cardholder authentication field (UCAF) data.  For the description and requirements, see \"Payer Authentication,\" page 180. ")
   public String getUcafAuthenticationData() {
     return ucafAuthenticationData;
   }
@@ -184,10 +184,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Universal cardholder authentication field (UCAF) collection indicator.
+   * Universal cardholder authentication field (UCAF) collection indicator.  For the description and requirements, see \&quot;Payer Authentication,\&quot; page 180.  **CyberSource through VisaNet**\\ The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—-UCAF Collection Indicator 
    * @return ucafCollectionIndicator
   **/
-  @ApiModelProperty(value = "Universal cardholder authentication field (UCAF) collection indicator.")
+  @ApiModelProperty(value = "Universal cardholder authentication field (UCAF) collection indicator.  For the description and requirements, see \"Payer Authentication,\" page 180.  **CyberSource through VisaNet**\\ The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—-UCAF Collection Indicator ")
   public String getUcafCollectionIndicator() {
     return ucafCollectionIndicator;
   }

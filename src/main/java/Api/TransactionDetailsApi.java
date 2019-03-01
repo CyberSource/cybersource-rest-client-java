@@ -13,15 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -30,7 +21,19 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import Model.TssV2TransactionsGet200Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class TransactionDetailsApi {
     private ApiClient apiClient;
@@ -72,14 +75,12 @@ public class TransactionDetailsApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-            "application/hal+json"
-        };
+final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -97,7 +98,7 @@ public class TransactionDetailsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -109,7 +110,7 @@ public class TransactionDetailsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getTransactionCall(id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTransactionCall(id, progressListener, progressRequestListener);
         return call;
 
         
@@ -138,7 +139,7 @@ public class TransactionDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2TransactionsGet200Response> getTransactionWithHttpInfo(String id) throws ApiException {
-        com.squareup.okhttp.Call call = getTransactionValidateBeforeCall(id,  null, null);
+        com.squareup.okhttp.Call call = getTransactionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -172,9 +173,10 @@ public class TransactionDetailsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTransactionValidateBeforeCall(id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTransactionValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TssV2TransactionsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }
+

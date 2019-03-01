@@ -15,6 +15,8 @@ package Model;
 
 import java.util.Objects;
 import Model.PtsV2CreditsPost201ResponseCreditAmountDetails;
+import Model.PtsV2CreditsPost201ResponsePaymentInformation;
+import Model.PtsV2CreditsPost201ResponseProcessingInformation;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseLinks;
 import Model.PtsV2PaymentsRefundPost201ResponseOrderInformation;
@@ -31,7 +33,7 @@ import java.io.IOException;
 /**
  * PtsV2CreditsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2CreditsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsRefundPost201ResponseLinks links = null;
@@ -43,7 +45,7 @@ public class PtsV2CreditsPost201Response {
   private String submitTimeUtc = null;
 
   /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - PENDING 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
@@ -99,8 +101,14 @@ public class PtsV2CreditsPost201Response {
   @SerializedName("creditAmountDetails")
   private PtsV2CreditsPost201ResponseCreditAmountDetails creditAmountDetails = null;
 
+  @SerializedName("processingInformation")
+  private PtsV2CreditsPost201ResponseProcessingInformation processingInformation = null;
+
   @SerializedName("processorInformation")
   private PtsV2PaymentsRefundPost201ResponseProcessorInformation processorInformation = null;
+
+  @SerializedName("paymentInformation")
+  private PtsV2CreditsPost201ResponsePaymentInformation paymentInformation = null;
 
   @SerializedName("orderInformation")
   private PtsV2PaymentsRefundPost201ResponseOrderInformation orderInformation = null;
@@ -165,10 +173,10 @@ public class PtsV2CreditsPost201Response {
   }
 
    /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - PENDING 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - PENDING ")
   public StatusEnum getStatus() {
     return status;
   }
@@ -231,6 +239,24 @@ public class PtsV2CreditsPost201Response {
     this.creditAmountDetails = creditAmountDetails;
   }
 
+  public PtsV2CreditsPost201Response processingInformation(PtsV2CreditsPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2CreditsPost201ResponseProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(PtsV2CreditsPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
   public PtsV2CreditsPost201Response processorInformation(PtsV2PaymentsRefundPost201ResponseProcessorInformation processorInformation) {
     this.processorInformation = processorInformation;
     return this;
@@ -247,6 +273,24 @@ public class PtsV2CreditsPost201Response {
 
   public void setProcessorInformation(PtsV2PaymentsRefundPost201ResponseProcessorInformation processorInformation) {
     this.processorInformation = processorInformation;
+  }
+
+  public PtsV2CreditsPost201Response paymentInformation(PtsV2CreditsPost201ResponsePaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+    return this;
+  }
+
+   /**
+   * Get paymentInformation
+   * @return paymentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2CreditsPost201ResponsePaymentInformation getPaymentInformation() {
+    return paymentInformation;
+  }
+
+  public void setPaymentInformation(PtsV2CreditsPost201ResponsePaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
   }
 
   public PtsV2CreditsPost201Response orderInformation(PtsV2PaymentsRefundPost201ResponseOrderInformation orderInformation) {
@@ -284,13 +328,15 @@ public class PtsV2CreditsPost201Response {
         Objects.equals(this.reconciliationId, ptsV2CreditsPost201Response.reconciliationId) &&
         Objects.equals(this.clientReferenceInformation, ptsV2CreditsPost201Response.clientReferenceInformation) &&
         Objects.equals(this.creditAmountDetails, ptsV2CreditsPost201Response.creditAmountDetails) &&
+        Objects.equals(this.processingInformation, ptsV2CreditsPost201Response.processingInformation) &&
         Objects.equals(this.processorInformation, ptsV2CreditsPost201Response.processorInformation) &&
+        Objects.equals(this.paymentInformation, ptsV2CreditsPost201Response.paymentInformation) &&
         Objects.equals(this.orderInformation, ptsV2CreditsPost201Response.orderInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, creditAmountDetails, processorInformation, orderInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, creditAmountDetails, processingInformation, processorInformation, paymentInformation, orderInformation);
   }
 
 
@@ -306,7 +352,9 @@ public class PtsV2CreditsPost201Response {
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    creditAmountDetails: ").append(toIndentedString(creditAmountDetails)).append("\n");
+    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");
     return sb.toString();

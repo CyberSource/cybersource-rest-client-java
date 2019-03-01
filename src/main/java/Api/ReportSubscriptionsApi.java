@@ -13,15 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -30,9 +21,23 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
+import Model.InlineResponse400;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
-import Model.RequestBody;
+import Model.Reportingv3ReportDownloadsGet400Response;
+import Model.RequestBody1;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ReportSubscriptionsApi {
     private ApiClient apiClient;
@@ -56,19 +61,21 @@ public class ReportSubscriptionsApi {
     /**
      * Build call for createSubscription
      * @param requestBody Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionCall(RequestBody requestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createSubscriptionCall(RequestBody1 requestBody, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestBody;
         
         // create path and map variables
-        String localVarPath = "/reporting/v3/report-subscriptions";		
-		/*.replaceAll("\\{" + "reportName" + "\\}", apiClient.escapeString(reportName.toString()));*/
+        String localVarPath = "/reporting/v3/report-subscriptions";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -103,12 +110,7 @@ public class ReportSubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createSubscriptionValidateBeforeCall(RequestBody requestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-       /* // verify the required parameter 'reportName' is set
-        if (reportName == null) {
-            throw new ApiException("Missing the required parameter 'reportName' when calling createSubscription(Async)");
-        }*/
+    private com.squareup.okhttp.Call createSubscriptionValidateBeforeCall(RequestBody1 requestBody, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'requestBody' is set
         if (requestBody == null) {
@@ -116,7 +118,7 @@ public class ReportSubscriptionsApi {
         }
         
         
-        com.squareup.okhttp.Call call = createSubscriptionCall(requestBody, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSubscriptionCall(requestBody, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -127,35 +129,38 @@ public class ReportSubscriptionsApi {
 
     /**
      * Create Report Subscription for a report name by organization
-     * 
+     * Create a report subscription for your organization. The report name must be unique. 
      * @param requestBody Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void createSubscription(RequestBody requestBody) throws ApiException {
-        createSubscriptionWithHttpInfo(requestBody);
+    public void createSubscription(RequestBody1 requestBody, String organizationId) throws ApiException {
+        createSubscriptionWithHttpInfo(requestBody, organizationId);
     }
 
     /**
      * Create Report Subscription for a report name by organization
-     * 
+     * Create a report subscription for your organization. The report name must be unique. 
      * @param requestBody Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> createSubscriptionWithHttpInfo( RequestBody requestBody) throws ApiException {
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(requestBody, null, null);
+    public ApiResponse<Void> createSubscriptionWithHttpInfo(RequestBody1 requestBody, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(requestBody, organizationId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Create Report Subscription for a report name by organization (asynchronously)
-     *  @param reportName Name(required)
+     * Create a report subscription for your organization. The report name must be unique. 
      * @param requestBody Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionAsync(String reportName, RequestBody requestBody, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call createSubscriptionAsync(RequestBody1 requestBody, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -176,14 +181,14 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(requestBody, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(requestBody, organizationId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for deleteSubscription
-	  * @param reportName Name of the Report to Delete (required)
-      * @param progressListener Progress listener
+     * @param reportName Name of the Report to Delete (required)
+     * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -249,7 +254,7 @@ public class ReportSubscriptionsApi {
 
     /**
      * Delete subscription of a report name by organization
-     * 
+     * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -259,7 +264,7 @@ public class ReportSubscriptionsApi {
 
     /**
      * Delete subscription of a report name by organization
-     * 
+     * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -271,7 +276,7 @@ public class ReportSubscriptionsApi {
 
     /**
      * Delete subscription of a report name by organization (asynchronously)
-     * 
+     * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -304,7 +309,6 @@ public class ReportSubscriptionsApi {
     }
     /**
      * Build call for getAllSubscriptions
-     
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -364,8 +368,8 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Retrieve all subscriptions by organization
-     
+     * Get all subscriptions
+     * View a summary of all report subscriptions. 
      * @return ReportingV3ReportSubscriptionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -375,8 +379,8 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Retrieve all subscriptions by organization
-     
+     * Get all subscriptions
+     * View a summary of all report subscriptions. 
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -387,7 +391,8 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Retrieve all subscriptions by organization (asynchronously)
+     * Get all subscriptions (asynchronously)
+     * View a summary of all report subscriptions. 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -486,33 +491,33 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Retrieve subscription for a report name by organization
-     * 
+     * Get subscription for report name
+     * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
-     * @return ReportingV3ReportSubscriptionsGet200Response
+     * @return ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3ReportSubscriptionsGet200Response getSubscription(String reportName) throws ApiException {	    
-        ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getSubscriptionWithHttpInfo(reportName);
+    public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(String reportName) throws ApiException {
+        ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> resp = getSubscriptionWithHttpInfo(reportName);
         return resp.getData();
     }
 
     /**
-     * Retrieve subscription for a report name by organization
-     * 
+     * Get subscription for report name
+     * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
-     * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
+     * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200ResponseSubscriptions&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getSubscriptionWithHttpInfo(String reportName) throws ApiException {
+    public ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> getSubscriptionWithHttpInfo(String reportName) throws ApiException {
         com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(reportName, null, null);
-        Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Retrieve subscription for a report name by organization (asynchronously)
-     * 
+     * Get subscription for report name (asynchronously)
+     * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

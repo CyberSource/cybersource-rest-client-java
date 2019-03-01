@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.ReportingV3ReportSubscriptionsGet200ResponseReportPreferences;
+import Model.ReportingV3ReportsIdGet200ResponseReportPreferences;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,17 +23,15 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.joda.time.DateTime;
 
 /**
  * RequestBody1
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class RequestBody1 {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -42,17 +40,15 @@ public class RequestBody1 {
   private String reportDefinitionName = null;
 
   @SerializedName("reportFields")
-  private List<String> reportFields = null;
+  private List<String> reportFields = new ArrayList<String>();
 
   /**
-   *  Format of the report
+   * Gets or Sets reportMimeType
    */
   @JsonAdapter(ReportMimeTypeEnum.Adapter.class)
   public enum ReportMimeTypeEnum {
-	  @SerializedName("application/xml") 
     APPLICATION_XML("application/xml"),
     
-    @SerializedName("text/csv") 
     TEXT_CSV("text/csv");
 
     private String value;
@@ -96,26 +92,78 @@ public class RequestBody1 {
   @SerializedName("reportMimeType")
   private ReportMimeTypeEnum reportMimeType = null;
 
+  /**
+   * The frequency for which subscription is created.
+   */
+  @JsonAdapter(ReportFrequencyEnum.Adapter.class)
+  public enum ReportFrequencyEnum {
+    DAILY("DAILY"),
+    
+    WEEKLY("WEEKLY"),
+    
+    MONTHLY("MONTHLY");
+
+    private String value;
+
+    ReportFrequencyEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ReportFrequencyEnum fromValue(String text) {
+      for (ReportFrequencyEnum b : ReportFrequencyEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<ReportFrequencyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ReportFrequencyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ReportFrequencyEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ReportFrequencyEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("reportFrequency")
+  private ReportFrequencyEnum reportFrequency = null;
+
   @SerializedName("reportName")
   private String reportName = null;
 
   @SerializedName("timezone")
   private String timezone = null;
 
-  @SerializedName("reportStartTime")
-  private DateTime reportStartTime = null;
+  @SerializedName("startTime")
+  private String startTime = null;
 
-  @SerializedName("reportEndTime")
-  private DateTime reportEndTime = null;
+  @SerializedName("startDay")
+  private Integer startDay = null;
 
   @SerializedName("reportFilters")
   private Map<String, List<String>> reportFilters = null;
 
   @SerializedName("reportPreferences")
-  private ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences = null;
+  private ReportingV3ReportsIdGet200ResponseReportPreferences reportPreferences = null;
 
-  @SerializedName("selectedMerchantGroupName")
-  private String selectedMerchantGroupName = null;
+  @SerializedName("groupName")
+  private String groupName = null;
 
   public RequestBody1 organizationId(String organizationId) {
     this.organizationId = organizationId;
@@ -123,10 +171,10 @@ public class RequestBody1 {
   }
 
    /**
-   * Valid CyberSource Organization Id
+   * Valid CyberSource organizationId
    * @return organizationId
   **/
-  @ApiModelProperty(example = "Test_Merchatnt_id", value = "Valid CyberSource Organization Id")
+  @ApiModelProperty(example = "Merchant 1", value = "Valid CyberSource organizationId")
   public String getOrganizationId() {
     return organizationId;
   }
@@ -141,10 +189,10 @@ public class RequestBody1 {
   }
 
    /**
-   * Get reportDefinitionName
+   * Valid Report Definition Name
    * @return reportDefinitionName
   **/
-  @ApiModelProperty(example = "TransactionRequestClass", value = "")
+  @ApiModelProperty(example = "TransactionDetailReportClass", required = true, value = "Valid Report Definition Name")
   public String getReportDefinitionName() {
     return reportDefinitionName;
   }
@@ -159,18 +207,15 @@ public class RequestBody1 {
   }
 
   public RequestBody1 addReportFieldsItem(String reportFieldsItem) {
-    if (this.reportFields == null) {
-      this.reportFields = new ArrayList<String>();
-    }
     this.reportFields.add(reportFieldsItem);
     return this;
   }
 
    /**
-   * List of fields which needs to get included in a report
+   * Get reportFields
    * @return reportFields
   **/
-  @ApiModelProperty(example = "[\"Request.RequestID\",\"Request.TransactionDate\",\"Request.MerchantID\"]", value = "List of fields which needs to get included in a report")
+  @ApiModelProperty(example = "[\"Request.RequestID\",\"Request.TransactionDate\",\"Request.MerchantID\"]", required = true, value = "")
   public List<String> getReportFields() {
     return reportFields;
   }
@@ -185,10 +230,10 @@ public class RequestBody1 {
   }
 
    /**
-   *  Format of the report
+   * Get reportMimeType
    * @return reportMimeType
   **/
-  @ApiModelProperty(example = "application/xml", value = " Format of the report")
+  @ApiModelProperty(example = "application/xml", required = true, value = "")
   public ReportMimeTypeEnum getReportMimeType() {
     return reportMimeType;
   }
@@ -197,16 +242,34 @@ public class RequestBody1 {
     this.reportMimeType = reportMimeType;
   }
 
+  public RequestBody1 reportFrequency(ReportFrequencyEnum reportFrequency) {
+    this.reportFrequency = reportFrequency;
+    return this;
+  }
+
+   /**
+   * The frequency for which subscription is created.
+   * @return reportFrequency
+  **/
+  @ApiModelProperty(example = "DAILY", required = true, value = "The frequency for which subscription is created.")
+  public ReportFrequencyEnum getReportFrequency() {
+    return reportFrequency;
+  }
+
+  public void setReportFrequency(ReportFrequencyEnum reportFrequency) {
+    this.reportFrequency = reportFrequency;
+  }
+
   public RequestBody1 reportName(String reportName) {
     this.reportName = reportName;
     return this;
   }
 
    /**
-   * Name of the report
+   * Get reportName
    * @return reportName
   **/
-  @ApiModelProperty(example = "My Transaction Request report", value = "Name of the report")
+  @ApiModelProperty(example = "My Daily Subdcription", required = true, value = "")
   public String getReportName() {
     return reportName;
   }
@@ -221,10 +284,10 @@ public class RequestBody1 {
   }
 
    /**
-   * Timezone of the report
+   * Get timezone
    * @return timezone
   **/
-  @ApiModelProperty(example = "America/Chicago", value = "Timezone of the report")
+  @ApiModelProperty(example = "America/Chicago", required = true, value = "")
   public String getTimezone() {
     return timezone;
   }
@@ -233,40 +296,42 @@ public class RequestBody1 {
     this.timezone = timezone;
   }
 
-  public RequestBody1 reportStartTime(DateTime reportStartTime) {
-    this.reportStartTime = reportStartTime;
+  public RequestBody1 startTime(String startTime) {
+    this.startTime = startTime;
     return this;
   }
 
    /**
-   * Start time of the report
-   * @return reportStartTime
+   * The hour at which the report generation should start. It should be in hhmm format.
+   * @return startTime
   **/
-  @ApiModelProperty(example = "2017-10-01T10:10:10+05:00", value = "Start time of the report")
-  public DateTime getReportStartTime() {
-    return reportStartTime;
+  @ApiModelProperty(example = "0900", required = true, value = "The hour at which the report generation should start. It should be in hhmm format.")
+  public String getStartTime() {
+    return startTime;
   }
 
-  public void setReportStartTime(DateTime reportStartTime) {
-    this.reportStartTime = reportStartTime;
+  public void setStartTime(String startTime) {
+    this.startTime = startTime;
   }
 
-  public RequestBody1 reportEndTime(DateTime reportEndTime) {
-    this.reportEndTime = reportEndTime;
+  public RequestBody1 startDay(Integer startDay) {
+    this.startDay = startDay;
     return this;
   }
 
    /**
-   * End time of the report
-   * @return reportEndTime
+   * This is the start day if the frequency is WEEKLY or MONTHLY. The value varies from 1-7 for WEEKLY and 1-31 for MONTHLY. For WEEKLY 1 means Sunday and 7 means Saturday. By default the value is 1.
+   * minimum: 1
+   * maximum: 31
+   * @return startDay
   **/
-  @ApiModelProperty(example = "2017-10-02T10:10:10+05:00", value = "End time of the report")
-  public DateTime getReportEndTime() {
-    return reportEndTime;
+  @ApiModelProperty(value = "This is the start day if the frequency is WEEKLY or MONTHLY. The value varies from 1-7 for WEEKLY and 1-31 for MONTHLY. For WEEKLY 1 means Sunday and 7 means Saturday. By default the value is 1.")
+  public Integer getStartDay() {
+    return startDay;
   }
 
-  public void setReportEndTime(DateTime reportEndTime) {
-    this.reportEndTime = reportEndTime;
+  public void setStartDay(Integer startDay) {
+    this.startDay = startDay;
   }
 
   public RequestBody1 reportFilters(Map<String, List<String>> reportFilters) {
@@ -283,10 +348,10 @@ public class RequestBody1 {
   }
 
    /**
-   * Get reportFilters
+   * List of filters to apply
    * @return reportFilters
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "{\"Application.Name\":[\"ics_auth\",\"ics_bill\"]}", value = "List of filters to apply")
   public Map<String, List<String>> getReportFilters() {
     return reportFilters;
   }
@@ -295,7 +360,7 @@ public class RequestBody1 {
     this.reportFilters = reportFilters;
   }
 
-  public RequestBody1 reportPreferences(ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences) {
+  public RequestBody1 reportPreferences(ReportingV3ReportsIdGet200ResponseReportPreferences reportPreferences) {
     this.reportPreferences = reportPreferences;
     return this;
   }
@@ -305,30 +370,30 @@ public class RequestBody1 {
    * @return reportPreferences
   **/
   @ApiModelProperty(value = "")
-  public ReportingV3ReportSubscriptionsGet200ResponseReportPreferences getReportPreferences() {
+  public ReportingV3ReportsIdGet200ResponseReportPreferences getReportPreferences() {
     return reportPreferences;
   }
 
-  public void setReportPreferences(ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences) {
+  public void setReportPreferences(ReportingV3ReportsIdGet200ResponseReportPreferences reportPreferences) {
     this.reportPreferences = reportPreferences;
   }
 
-  public RequestBody1 selectedMerchantGroupName(String selectedMerchantGroupName) {
-    this.selectedMerchantGroupName = selectedMerchantGroupName;
+  public RequestBody1 groupName(String groupName) {
+    this.groupName = groupName;
     return this;
   }
 
    /**
-   * Specifies the group name
-   * @return selectedMerchantGroupName
+   * Valid GroupName
+   * @return groupName
   **/
-  @ApiModelProperty(example = "myGroup", value = "Specifies the group name")
-  public String getSelectedMerchantGroupName() {
-    return selectedMerchantGroupName;
+  @ApiModelProperty(example = "CEMEA Group", value = "Valid GroupName")
+  public String getGroupName() {
+    return groupName;
   }
 
-  public void setSelectedMerchantGroupName(String selectedMerchantGroupName) {
-    this.selectedMerchantGroupName = selectedMerchantGroupName;
+  public void setGroupName(String groupName) {
+    this.groupName = groupName;
   }
 
 
@@ -345,18 +410,19 @@ public class RequestBody1 {
         Objects.equals(this.reportDefinitionName, requestBody1.reportDefinitionName) &&
         Objects.equals(this.reportFields, requestBody1.reportFields) &&
         Objects.equals(this.reportMimeType, requestBody1.reportMimeType) &&
+        Objects.equals(this.reportFrequency, requestBody1.reportFrequency) &&
         Objects.equals(this.reportName, requestBody1.reportName) &&
         Objects.equals(this.timezone, requestBody1.timezone) &&
-        Objects.equals(this.reportStartTime, requestBody1.reportStartTime) &&
-        Objects.equals(this.reportEndTime, requestBody1.reportEndTime) &&
+        Objects.equals(this.startTime, requestBody1.startTime) &&
+        Objects.equals(this.startDay, requestBody1.startDay) &&
         Objects.equals(this.reportFilters, requestBody1.reportFilters) &&
         Objects.equals(this.reportPreferences, requestBody1.reportPreferences) &&
-        Objects.equals(this.selectedMerchantGroupName, requestBody1.selectedMerchantGroupName);
+        Objects.equals(this.groupName, requestBody1.groupName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(organizationId, reportDefinitionName, reportFields, reportMimeType, reportName, timezone, reportStartTime, reportEndTime, reportFilters, reportPreferences, selectedMerchantGroupName);
+    return Objects.hash(organizationId, reportDefinitionName, reportFields, reportMimeType, reportFrequency, reportName, timezone, startTime, startDay, reportFilters, reportPreferences, groupName);
   }
 
 
@@ -369,13 +435,14 @@ public class RequestBody1 {
     sb.append("    reportDefinitionName: ").append(toIndentedString(reportDefinitionName)).append("\n");
     sb.append("    reportFields: ").append(toIndentedString(reportFields)).append("\n");
     sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");
+    sb.append("    reportFrequency: ").append(toIndentedString(reportFrequency)).append("\n");
     sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
-    sb.append("    reportStartTime: ").append(toIndentedString(reportStartTime)).append("\n");
-    sb.append("    reportEndTime: ").append(toIndentedString(reportEndTime)).append("\n");
+    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    sb.append("    startDay: ").append(toIndentedString(startDay)).append("\n");
     sb.append("    reportFilters: ").append(toIndentedString(reportFilters)).append("\n");
     sb.append("    reportPreferences: ").append(toIndentedString(reportPreferences)).append("\n");
-    sb.append("    selectedMerchantGroupName: ").append(toIndentedString(selectedMerchantGroupName)).append("\n");
+    sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

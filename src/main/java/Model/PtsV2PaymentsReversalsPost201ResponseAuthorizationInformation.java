@@ -26,13 +26,16 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation {
   @SerializedName("approvalCode")
   private String approvalCode = null;
 
   @SerializedName("reasonCode")
   private String reasonCode = null;
+
+  @SerializedName("reversalSubmitted")
+  private String reversalSubmitted = null;
 
   public PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation approvalCode(String approvalCode) {
     this.approvalCode = approvalCode;
@@ -70,6 +73,24 @@ public class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation {
     this.reasonCode = reasonCode;
   }
 
+  public PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation reversalSubmitted(String reversalSubmitted) {
+    this.reversalSubmitted = reversalSubmitted;
+    return this;
+  }
+
+   /**
+   * Flag indicating whether a full authorization reversal was successfully submitted.  Possible values: - Y: The authorization reversal was successfully submitted. - N: The authorization reversal was not successfully submitted. You must send a credit request for a refund.  This field is supported only for **FDC Nashville Global**. 
+   * @return reversalSubmitted
+  **/
+  @ApiModelProperty(value = "Flag indicating whether a full authorization reversal was successfully submitted.  Possible values: - Y: The authorization reversal was successfully submitted. - N: The authorization reversal was not successfully submitted. You must send a credit request for a refund.  This field is supported only for **FDC Nashville Global**. ")
+  public String getReversalSubmitted() {
+    return reversalSubmitted;
+  }
+
+  public void setReversalSubmitted(String reversalSubmitted) {
+    this.reversalSubmitted = reversalSubmitted;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +102,13 @@ public class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation {
     }
     PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation ptsV2PaymentsReversalsPost201ResponseAuthorizationInformation = (PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation) o;
     return Objects.equals(this.approvalCode, ptsV2PaymentsReversalsPost201ResponseAuthorizationInformation.approvalCode) &&
-        Objects.equals(this.reasonCode, ptsV2PaymentsReversalsPost201ResponseAuthorizationInformation.reasonCode);
+        Objects.equals(this.reasonCode, ptsV2PaymentsReversalsPost201ResponseAuthorizationInformation.reasonCode) &&
+        Objects.equals(this.reversalSubmitted, ptsV2PaymentsReversalsPost201ResponseAuthorizationInformation.reversalSubmitted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalCode, reasonCode);
+    return Objects.hash(approvalCode, reasonCode, reversalSubmitted);
   }
 
 
@@ -97,6 +119,7 @@ public class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation {
     
     sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
     sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
+    sb.append("    reversalSubmitted: ").append(toIndentedString(reversalSubmitted)).append("\n");
     sb.append("}");
     return sb.toString();
   }

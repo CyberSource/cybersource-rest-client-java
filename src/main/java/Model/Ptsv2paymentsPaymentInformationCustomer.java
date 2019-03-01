@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationCustomer
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsPaymentInformationCustomer {
   @SerializedName("customerId")
   private String customerId = null;
@@ -37,10 +37,10 @@ public class Ptsv2paymentsPaymentInformationCustomer {
   }
 
    /**
-   * Unique identifier for the customer&#39;s card and billing information.
+   * Unique identifier for the customer&#39;s card and billing information.  When you use Payment Tokenization or Recurring Billing and you include this value in your request, many of the fields that are normally required for an authorization or credit become optional.  **NOTE** When you use Payment Tokenization or Recurring Billing, the value for the Customer ID is actually the Cybersource payment token for a customer. This token stores information such as the consumer’s card number so it can be applied towards bill payments, recurring payments, or one-time payments. By using this token in a payment API request, the merchant doesn&#39;t need to pass in data such as the card number or expiration date in the request itself.  See \&quot;Payment Tokenization,\&quot; page 222, and \&quot;Recurring Billing,\&quot; page 225. 
    * @return customerId
   **/
-  @ApiModelProperty(value = "Unique identifier for the customer's card and billing information.")
+  @ApiModelProperty(value = "Unique identifier for the customer's card and billing information.  When you use Payment Tokenization or Recurring Billing and you include this value in your request, many of the fields that are normally required for an authorization or credit become optional.  **NOTE** When you use Payment Tokenization or Recurring Billing, the value for the Customer ID is actually the Cybersource payment token for a customer. This token stores information such as the consumer’s card number so it can be applied towards bill payments, recurring payments, or one-time payments. By using this token in a payment API request, the merchant doesn't need to pass in data such as the card number or expiration date in the request itself.  See \"Payment Tokenization,\" page 222, and \"Recurring Billing,\" page 225. ")
   public String getCustomerId() {
     return customerId;
   }

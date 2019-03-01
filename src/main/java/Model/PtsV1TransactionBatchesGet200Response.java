@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * PtsV1TransactionBatchesGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV1TransactionBatchesGet200Response {
   @SerializedName("transactionBatches")
   private List<PtsV1TransactionBatchesGet200ResponseTransactionBatches> transactionBatches = null;

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,13 +27,22 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsRefundPost201ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
   @SerializedName("transactionId")
   private String transactionId = null;
 
   @SerializedName("forwardedAcquirerCode")
   private String forwardedAcquirerCode = null;
+
+  @SerializedName("merchantNumber")
+  private String merchantNumber = null;
+
+  @SerializedName("responseCode")
+  private String responseCode = null;
+
+  @SerializedName("achVerification")
+  private PtsV2PaymentsPost201ResponseProcessorInformationAchVerification achVerification = null;
 
   public PtsV2PaymentsRefundPost201ResponseProcessorInformation transactionId(String transactionId) {
     this.transactionId = transactionId;
@@ -70,6 +80,60 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     this.forwardedAcquirerCode = forwardedAcquirerCode;
   }
 
+  public PtsV2PaymentsRefundPost201ResponseProcessorInformation merchantNumber(String merchantNumber) {
+    this.merchantNumber = merchantNumber;
+    return this;
+  }
+
+   /**
+   * Identifier that was assigned to you by your acquirer.  This value must be printed on the receipt.  This field is supported only on **American Express Direct**, **FDC Nashville Global**, and **SIX**. 
+   * @return merchantNumber
+  **/
+  @ApiModelProperty(value = "Identifier that was assigned to you by your acquirer.  This value must be printed on the receipt.  This field is supported only on **American Express Direct**, **FDC Nashville Global**, and **SIX**. ")
+  public String getMerchantNumber() {
+    return merchantNumber;
+  }
+
+  public void setMerchantNumber(String merchantNumber) {
+    this.merchantNumber = merchantNumber;
+  }
+
+  public PtsV2PaymentsRefundPost201ResponseProcessorInformation responseCode(String responseCode) {
+    this.responseCode = responseCode;
+    return this;
+  }
+
+   /**
+   * For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  Important Do not use this field to evaluate the result of the authorization. 
+   * @return responseCode
+  **/
+  @ApiModelProperty(value = "For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  Important Do not use this field to evaluate the result of the authorization. ")
+  public String getResponseCode() {
+    return responseCode;
+  }
+
+  public void setResponseCode(String responseCode) {
+    this.responseCode = responseCode;
+  }
+
+  public PtsV2PaymentsRefundPost201ResponseProcessorInformation achVerification(PtsV2PaymentsPost201ResponseProcessorInformationAchVerification achVerification) {
+    this.achVerification = achVerification;
+    return this;
+  }
+
+   /**
+   * Get achVerification
+   * @return achVerification
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessorInformationAchVerification getAchVerification() {
+    return achVerification;
+  }
+
+  public void setAchVerification(PtsV2PaymentsPost201ResponseProcessorInformationAchVerification achVerification) {
+    this.achVerification = achVerification;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +145,15 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     }
     PtsV2PaymentsRefundPost201ResponseProcessorInformation ptsV2PaymentsRefundPost201ResponseProcessorInformation = (PtsV2PaymentsRefundPost201ResponseProcessorInformation) o;
     return Objects.equals(this.transactionId, ptsV2PaymentsRefundPost201ResponseProcessorInformation.transactionId) &&
-        Objects.equals(this.forwardedAcquirerCode, ptsV2PaymentsRefundPost201ResponseProcessorInformation.forwardedAcquirerCode);
+        Objects.equals(this.forwardedAcquirerCode, ptsV2PaymentsRefundPost201ResponseProcessorInformation.forwardedAcquirerCode) &&
+        Objects.equals(this.merchantNumber, ptsV2PaymentsRefundPost201ResponseProcessorInformation.merchantNumber) &&
+        Objects.equals(this.responseCode, ptsV2PaymentsRefundPost201ResponseProcessorInformation.responseCode) &&
+        Objects.equals(this.achVerification, ptsV2PaymentsRefundPost201ResponseProcessorInformation.achVerification);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, forwardedAcquirerCode);
+    return Objects.hash(transactionId, forwardedAcquirerCode, merchantNumber, responseCode, achVerification);
   }
 
 
@@ -97,6 +164,9 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
+    sb.append("    merchantNumber: ").append(toIndentedString(merchantNumber)).append("\n");
+    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
     sb.append("}");
     return sb.toString();
   }

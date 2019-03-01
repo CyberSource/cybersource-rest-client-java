@@ -13,17 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.joda.time.LocalDate;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -32,7 +21,21 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
+import Model.InlineResponse400;
+import org.joda.time.LocalDate;
 import Model.V1FileDetailsGet200Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SecureFileShareApi {
     private ApiClient apiClient;
@@ -83,9 +86,7 @@ public class SecureFileShareApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/hal+json;charset=utf-8"
-        };
+final String[] localVarContentTypes = {"*/*"};
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
@@ -102,7 +103,7 @@ public class SecureFileShareApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -114,7 +115,7 @@ public class SecureFileShareApi {
         }
         
         
-        com.squareup.okhttp.Call call = getFileCall(fileId, organizationId,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getFileCall(fileId, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -143,7 +144,7 @@ public class SecureFileShareApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> getFileWithHttpInfo(String fileId, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId,  null, null);
+        com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId, null, null);
         return apiClient.execute(call);
     }
 
@@ -177,7 +178,7 @@ public class SecureFileShareApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -215,9 +216,7 @@ public class SecureFileShareApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
+final String[] localVarContentTypes = {"*/*"};
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
@@ -234,7 +233,7 @@ public class SecureFileShareApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -251,7 +250,7 @@ public class SecureFileShareApi {
         }
         
         
-        com.squareup.okhttp.Call call = getFileDetailsCall(startDate, endDate, organizationId,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getFileDetailsCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -284,7 +283,7 @@ public class SecureFileShareApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<V1FileDetailsGet200Response> getFileDetailsWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getFileDetailsValidateBeforeCall(startDate, endDate, organizationId,  null, null);
+        com.squareup.okhttp.Call call = getFileDetailsValidateBeforeCall(startDate, endDate, organizationId, null, null);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -320,9 +319,10 @@ public class SecureFileShareApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getFileDetailsValidateBeforeCall(startDate, endDate, organizationId,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getFileDetailsValidateBeforeCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }
+

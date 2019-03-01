@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**V2paymentsidreversalsClientReferenceInformation**](V2paymentsidreversalsClientReferenceInformation.md) |  |  [optional]
+**clientReferenceInformation** | [**Ptsv2paymentsidreversalsClientReferenceInformation**](Ptsv2paymentsidreversalsClientReferenceInformation.md) |  |  [optional]
 
 
 

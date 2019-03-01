@@ -13,15 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -30,8 +21,22 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import Model.AuthReversalRequest;
+import Model.PtsV2PaymentsPost502Response;
 import Model.PtsV2PaymentsReversalsPost201Response;
+import Model.PtsV2PaymentsReversalsPost400Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ReversalApi {
     private ApiClient apiClient;
@@ -74,14 +79,12 @@ public class ReversalApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-            "application/hal+json"
-        };
+final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -147,7 +150,7 @@ public class ReversalApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsReversalsPost201Response> authReversalWithHttpInfo(String id, AuthReversalRequest authReversalRequest) throws ApiException {
-        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest,null, null);
+        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsReversalsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -182,9 +185,10 @@ public class ReversalApi {
             };
         }
 
-        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest ,progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsReversalsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }
+

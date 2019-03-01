@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
+import Model.PtsV2PayoutsPost201ResponseErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200ResponseErrorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class TssV2TransactionsGet200ResponseErrorInformation {
   @SerializedName("reason")
   private String reason = null;
@@ -38,7 +38,7 @@ public class TssV2TransactionsGet200ResponseErrorInformation {
   private String message = null;
 
   @SerializedName("details")
-  private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
+  private List<PtsV2PayoutsPost201ResponseErrorInformationDetails> details = null;
 
   public TssV2TransactionsGet200ResponseErrorInformation reason(String reason) {
     this.reason = reason;
@@ -76,14 +76,14 @@ public class TssV2TransactionsGet200ResponseErrorInformation {
     this.message = message;
   }
 
-  public TssV2TransactionsGet200ResponseErrorInformation details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+  public TssV2TransactionsGet200ResponseErrorInformation details(List<PtsV2PayoutsPost201ResponseErrorInformationDetails> details) {
     this.details = details;
     return this;
   }
 
-  public TssV2TransactionsGet200ResponseErrorInformation addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
+  public TssV2TransactionsGet200ResponseErrorInformation addDetailsItem(PtsV2PayoutsPost201ResponseErrorInformationDetails detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
+      this.details = new ArrayList<PtsV2PayoutsPost201ResponseErrorInformationDetails>();
     }
     this.details.add(detailsItem);
     return this;
@@ -94,11 +94,11 @@ public class TssV2TransactionsGet200ResponseErrorInformation {
    * @return details
   **/
   @ApiModelProperty(value = "")
-  public List<PtsV2PaymentsPost201ResponseErrorInformationDetails> getDetails() {
+  public List<PtsV2PayoutsPost201ResponseErrorInformationDetails> getDetails() {
     return details;
   }
 
-  public void setDetails(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+  public void setDetails(List<PtsV2PayoutsPost201ResponseErrorInformationDetails> details) {
     this.details = details;
   }
 

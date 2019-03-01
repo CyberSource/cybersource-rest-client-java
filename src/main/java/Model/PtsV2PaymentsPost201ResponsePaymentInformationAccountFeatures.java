@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   @SerializedName("accountType")
   private String accountType = null;
@@ -44,7 +44,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   private String currency = null;
 
   /**
-   * Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values: 
+   * Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **+**  - **-** 
    */
   @JsonAdapter(BalanceSignEnum.Adapter.class)
   public enum BalanceSignEnum {
@@ -222,10 +222,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values: 
+   * Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **+**  - **-** 
    * @return balanceSign
   **/
-  @ApiModelProperty(value = "Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values: ")
+  @ApiModelProperty(value = "Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **+**  - **-** ")
   public BalanceSignEnum getBalanceSign() {
     return balanceSign;
   }

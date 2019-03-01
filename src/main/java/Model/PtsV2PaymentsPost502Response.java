@@ -26,13 +26,13 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost502Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2PaymentsPost502Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
   /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - SERVER_ERROR 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
@@ -80,7 +80,7 @@ public class PtsV2PaymentsPost502Response {
   private StatusEnum status = null;
 
   /**
-   * The reason of the status. 
+   * The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT  - INVALID_OR_MISSING_CONFIG  - PROCESSOR_TIMEOUT 
    */
   @JsonAdapter(ReasonEnum.Adapter.class)
   public enum ReasonEnum {
@@ -160,10 +160,10 @@ public class PtsV2PaymentsPost502Response {
   }
 
    /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - SERVER_ERROR 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - SERVER_ERROR ")
   public StatusEnum getStatus() {
     return status;
   }
@@ -178,10 +178,10 @@ public class PtsV2PaymentsPost502Response {
   }
 
    /**
-   * The reason of the status. 
+   * The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT  - INVALID_OR_MISSING_CONFIG  - PROCESSOR_TIMEOUT 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status. ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT  - INVALID_OR_MISSING_CONFIG  - PROCESSOR_TIMEOUT ")
   public ReasonEnum getReason() {
     return reason;
   }

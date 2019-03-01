@@ -77,9 +77,7 @@ public class CreditApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-            "application/hal+json"
-        };
+final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
@@ -183,3 +181,4 @@ public class CreditApi {
         return call;
     }
 }
+

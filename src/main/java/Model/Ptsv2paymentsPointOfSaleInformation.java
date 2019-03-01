@@ -23,11 +23,13 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ptsv2paymentsPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
@@ -37,9 +39,6 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   @SerializedName("laneNumber")
   private String laneNumber = null;
-
-  @SerializedName("cardPresent")
-  private Boolean cardPresent = null;
 
   @SerializedName("catLevel")
   private Integer catLevel = null;
@@ -65,6 +64,39 @@ public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("trackData")
   private String trackData = null;
 
+  @SerializedName("storeAndForwardIndicator")
+  private String storeAndForwardIndicator = null;
+
+  @SerializedName("cardholderVerificationMethod")
+  private List<String> cardholderVerificationMethod = null;
+
+  @SerializedName("terminalInputCapability")
+  private List<String> terminalInputCapability = null;
+
+  @SerializedName("terminalCardCaptureCapability")
+  private String terminalCardCaptureCapability = null;
+
+  @SerializedName("terminalOutputCapability")
+  private String terminalOutputCapability = null;
+
+  @SerializedName("terminalPinCapability")
+  private Integer terminalPinCapability = null;
+
+  @SerializedName("deviceId")
+  private String deviceId = null;
+
+  @SerializedName("pinBlockEncodingFormat")
+  private Integer pinBlockEncodingFormat = null;
+
+  @SerializedName("encryptedPin")
+  private String encryptedPin = null;
+
+  @SerializedName("encryptedKeySerialNumber")
+  private String encryptedKeySerialNumber = null;
+
+  @SerializedName("partnerSdkVersion")
+  private String partnerSdkVersion = null;
+
   public Ptsv2paymentsPointOfSaleInformation terminalId(String terminalId) {
     this.terminalId = terminalId;
     return this;
@@ -89,10 +121,10 @@ public class Ptsv2paymentsPointOfSaleInformation {
   }
 
    /**
-   * Description of this field is not available.
+   * Terminal serial number assigned by the hardware manufacturer. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX. 
    * @return terminalSerialNumber
   **/
-  @ApiModelProperty(value = "Description of this field is not available.")
+  @ApiModelProperty(value = "Terminal serial number assigned by the hardware manufacturer. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX. ")
   public String getTerminalSerialNumber() {
     return terminalSerialNumber;
   }
@@ -117,24 +149,6 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   public void setLaneNumber(String laneNumber) {
     this.laneNumber = laneNumber;
-  }
-
-  public Ptsv2paymentsPointOfSaleInformation cardPresent(Boolean cardPresent) {
-    this.cardPresent = cardPresent;
-    return this;
-  }
-
-   /**
-   * Indicates whether the card is present at the time of the transaction. Possible values:   - **true**: Card is present.  - **false**: Card is not present. 
-   * @return cardPresent
-  **/
-  @ApiModelProperty(value = "Indicates whether the card is present at the time of the transaction. Possible values:   - **true**: Card is present.  - **false**: Card is not present. ")
-  public Boolean getCardPresent() {
-    return cardPresent;
-  }
-
-  public void setCardPresent(Boolean cardPresent) {
-    this.cardPresent = cardPresent;
   }
 
   public Ptsv2paymentsPointOfSaleInformation catLevel(Integer catLevel) {
@@ -221,10 +235,10 @@ public class Ptsv2paymentsPointOfSaleInformation {
   }
 
    /**
-   * Operating environment. Possible values:   - 0: No terminal used or unknown environment.  - 1: On merchant premises, attended.  - 2: On merchant premises, unattended, or cardholder terminal. Examples: oil, kiosks, self-checkout, home       computer, mobile telephone, personal digital assistant (PDA). Cardholder terminal is supported only for       MasterCard transactions on **CyberSource through VisaNet**.  - 3: Off merchant premises, attended. Examples: portable POS devices at trade shows, at service calls, or in       taxis.  - 4: Off merchant premises, unattended, or cardholder terminal. Examples: vending machines, home computer,       mobile telephone, PDA. Cardholder terminal is supported only for MasterCard transactions on **CyberSource       through VisaNet**.  - 5: On premises of cardholder, unattended.  - 9: Unknown delivery mode.  - S: Electronic delivery of product. Examples: music, software, or eTickets that are downloaded over the       internet.  - T: Physical delivery of product. Examples: music or software that is delivered by mail or by a courier.  This field is supported only for **American Express Direct** and **CyberSource through VisaNet**.  **CyberSource through VisaNet**  For MasterCard transactions, the only valid values are 2 and 4. 
+   * Operating environment. Possible values:   - 0: No terminal used or unknown environment.  - 1: On merchant premises, attended.  - 2: On merchant premises, unattended, or cardholder terminal. Examples: oil, kiosks, self-checkout, home       computer, mobile telephone, personal digital assistant (PDA). Cardholder terminal is supported only for       MasterCard transactions on **CyberSource through VisaNet**.  - 3: Off merchant premises, attended. Examples: portable POS devices at trade shows, at service calls, or in       taxis.  - 4: Off merchant premises, unattended, or cardholder terminal. Examples: vending machines, home computer,       mobile telephone, PDA. Cardholder terminal is supported only for MasterCard transactions on **CyberSource       through VisaNet**.  - 5: On premises of cardholder, unattended.  - 9: Unknown delivery mode.  - S: Electronic delivery of product. Examples: music, software, or eTickets that are downloaded over the       internet.  - T: Physical delivery of product. Examples: music or software that is delivered by mail or by a courier.  This field is supported only for **American Express Direct** and **CyberSource through VisaNet**.  **CyberSource through VisaNet**\\ For MasterCard transactions, the only valid values are 2 and 4. 
    * @return operatingEnvironment
   **/
-  @ApiModelProperty(value = "Operating environment. Possible values:   - 0: No terminal used or unknown environment.  - 1: On merchant premises, attended.  - 2: On merchant premises, unattended, or cardholder terminal. Examples: oil, kiosks, self-checkout, home       computer, mobile telephone, personal digital assistant (PDA). Cardholder terminal is supported only for       MasterCard transactions on **CyberSource through VisaNet**.  - 3: Off merchant premises, attended. Examples: portable POS devices at trade shows, at service calls, or in       taxis.  - 4: Off merchant premises, unattended, or cardholder terminal. Examples: vending machines, home computer,       mobile telephone, PDA. Cardholder terminal is supported only for MasterCard transactions on **CyberSource       through VisaNet**.  - 5: On premises of cardholder, unattended.  - 9: Unknown delivery mode.  - S: Electronic delivery of product. Examples: music, software, or eTickets that are downloaded over the       internet.  - T: Physical delivery of product. Examples: music or software that is delivered by mail or by a courier.  This field is supported only for **American Express Direct** and **CyberSource through VisaNet**.  **CyberSource through VisaNet**  For MasterCard transactions, the only valid values are 2 and 4. ")
+  @ApiModelProperty(value = "Operating environment. Possible values:   - 0: No terminal used or unknown environment.  - 1: On merchant premises, attended.  - 2: On merchant premises, unattended, or cardholder terminal. Examples: oil, kiosks, self-checkout, home       computer, mobile telephone, personal digital assistant (PDA). Cardholder terminal is supported only for       MasterCard transactions on **CyberSource through VisaNet**.  - 3: Off merchant premises, attended. Examples: portable POS devices at trade shows, at service calls, or in       taxis.  - 4: Off merchant premises, unattended, or cardholder terminal. Examples: vending machines, home computer,       mobile telephone, PDA. Cardholder terminal is supported only for MasterCard transactions on **CyberSource       through VisaNet**.  - 5: On premises of cardholder, unattended.  - 9: Unknown delivery mode.  - S: Electronic delivery of product. Examples: music, software, or eTickets that are downloaded over the       internet.  - T: Physical delivery of product. Examples: music or software that is delivered by mail or by a courier.  This field is supported only for **American Express Direct** and **CyberSource through VisaNet**.  **CyberSource through VisaNet**\\ For MasterCard transactions, the only valid values are 2 and 4. ")
   public String getOperatingEnvironment() {
     return operatingEnvironment;
   }
@@ -287,6 +301,221 @@ public class Ptsv2paymentsPointOfSaleInformation {
     this.trackData = trackData;
   }
 
+  public Ptsv2paymentsPointOfSaleInformation storeAndForwardIndicator(String storeAndForwardIndicator) {
+    this.storeAndForwardIndicator = storeAndForwardIndicator;
+    return this;
+  }
+
+   /**
+   * When connectivity is unavailable, the client software that is installed on the POS terminal can store a transaction in its memory and send it for authorization when connectivity is restored. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  Possible values: - Y: Transaction was stored and then forwarded. - N (default): Transaction was not stored and then forwarded.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX. 
+   * @return storeAndForwardIndicator
+  **/
+  @ApiModelProperty(value = "When connectivity is unavailable, the client software that is installed on the POS terminal can store a transaction in its memory and send it for authorization when connectivity is restored. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  Possible values: - Y: Transaction was stored and then forwarded. - N (default): Transaction was not stored and then forwarded.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX. ")
+  public String getStoreAndForwardIndicator() {
+    return storeAndForwardIndicator;
+  }
+
+  public void setStoreAndForwardIndicator(String storeAndForwardIndicator) {
+    this.storeAndForwardIndicator = storeAndForwardIndicator;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation cardholderVerificationMethod(List<String> cardholderVerificationMethod) {
+    this.cardholderVerificationMethod = cardholderVerificationMethod;
+    return this;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation addCardholderVerificationMethodItem(String cardholderVerificationMethodItem) {
+    if (this.cardholderVerificationMethod == null) {
+      this.cardholderVerificationMethod = new ArrayList<String>();
+    }
+    this.cardholderVerificationMethod.add(cardholderVerificationMethodItem);
+    return this;
+  }
+
+   /**
+   * Get cardholderVerificationMethod
+   * @return cardholderVerificationMethod
+  **/
+  @ApiModelProperty(example = "[\"PIN\",\"Signature\"]", value = "")
+  public List<String> getCardholderVerificationMethod() {
+    return cardholderVerificationMethod;
+  }
+
+  public void setCardholderVerificationMethod(List<String> cardholderVerificationMethod) {
+    this.cardholderVerificationMethod = cardholderVerificationMethod;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation terminalInputCapability(List<String> terminalInputCapability) {
+    this.terminalInputCapability = terminalInputCapability;
+    return this;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation addTerminalInputCapabilityItem(String terminalInputCapabilityItem) {
+    if (this.terminalInputCapability == null) {
+      this.terminalInputCapability = new ArrayList<String>();
+    }
+    this.terminalInputCapability.add(terminalInputCapabilityItem);
+    return this;
+  }
+
+   /**
+   * Get terminalInputCapability
+   * @return terminalInputCapability
+  **/
+  @ApiModelProperty(example = "[\"Keyed\",\"Swiped\",\"Contact\",\"QRcode\"]", value = "")
+  public List<String> getTerminalInputCapability() {
+    return terminalInputCapability;
+  }
+
+  public void setTerminalInputCapability(List<String> terminalInputCapability) {
+    this.terminalInputCapability = terminalInputCapability;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation terminalCardCaptureCapability(String terminalCardCaptureCapability) {
+    this.terminalCardCaptureCapability = terminalCardCaptureCapability;
+    return this;
+  }
+
+   /**
+   * Indicates whether the terminal can capture the card.  Possible values: - 1: Terminal can capture card. - 0: Terminal cannot capture card.  This field is supported only on American Express Direct. 
+   * @return terminalCardCaptureCapability
+  **/
+  @ApiModelProperty(value = "Indicates whether the terminal can capture the card.  Possible values: - 1: Terminal can capture card. - 0: Terminal cannot capture card.  This field is supported only on American Express Direct. ")
+  public String getTerminalCardCaptureCapability() {
+    return terminalCardCaptureCapability;
+  }
+
+  public void setTerminalCardCaptureCapability(String terminalCardCaptureCapability) {
+    this.terminalCardCaptureCapability = terminalCardCaptureCapability;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation terminalOutputCapability(String terminalOutputCapability) {
+    this.terminalOutputCapability = terminalOutputCapability;
+    return this;
+  }
+
+   /**
+   * Indicates whether the terminal can print or display messages.  Possible values: - 1: Neither - 2: Print only - 3: Display only - 4: Print and display  This field is supported only on American Express Direct. 
+   * @return terminalOutputCapability
+  **/
+  @ApiModelProperty(value = "Indicates whether the terminal can print or display messages.  Possible values: - 1: Neither - 2: Print only - 3: Display only - 4: Print and display  This field is supported only on American Express Direct. ")
+  public String getTerminalOutputCapability() {
+    return terminalOutputCapability;
+  }
+
+  public void setTerminalOutputCapability(String terminalOutputCapability) {
+    this.terminalOutputCapability = terminalOutputCapability;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation terminalPinCapability(Integer terminalPinCapability) {
+    this.terminalPinCapability = terminalPinCapability;
+    return this;
+  }
+
+   /**
+   * Maximum PIN length that the terminal can capture.  Possible values: -  0: No PIN capture capability -  1: PIN capture capability unknown -  4: Four characters -  5: Five characters -  6: Six characters -  7: Seven characters -  8: Eight characters -  9: Nine characters - 10: Ten characters - 11: Eleven characters - 12: Twelve characters  This field is supported only on American Express Direct and SIX. 
+   * @return terminalPinCapability
+  **/
+  @ApiModelProperty(value = "Maximum PIN length that the terminal can capture.  Possible values: -  0: No PIN capture capability -  1: PIN capture capability unknown -  4: Four characters -  5: Five characters -  6: Six characters -  7: Seven characters -  8: Eight characters -  9: Nine characters - 10: Ten characters - 11: Eleven characters - 12: Twelve characters  This field is supported only on American Express Direct and SIX. ")
+  public Integer getTerminalPinCapability() {
+    return terminalPinCapability;
+  }
+
+  public void setTerminalPinCapability(Integer terminalPinCapability) {
+    this.terminalPinCapability = terminalPinCapability;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation deviceId(String deviceId) {
+    this.deviceId = deviceId;
+    return this;
+  }
+
+   /**
+   * Value created by the client software that uniquely identifies the POS device. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX. 
+   * @return deviceId
+  **/
+  @ApiModelProperty(value = "Value created by the client software that uniquely identifies the POS device. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX. ")
+  public String getDeviceId() {
+    return deviceId;
+  }
+
+  public void setDeviceId(String deviceId) {
+    this.deviceId = deviceId;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation pinBlockEncodingFormat(Integer pinBlockEncodingFormat) {
+    this.pinBlockEncodingFormat = pinBlockEncodingFormat;
+    return this;
+  }
+
+   /**
+   * Format that is used to encode the PIN block. This value is provided by the client software that is installed on the POS terminal.  Possible values: - 0: ISO 9564 format 0 - 1: ISO 9564 format 1 - 2: ISO 9564 format 2 - 3: ISO 9564 format 3  In the Credit Card Guide for the auth service: This field is supported only on American Express Direct, FDC Nashville Global, and SIX. 
+   * maximum: 9
+   * @return pinBlockEncodingFormat
+  **/
+  @ApiModelProperty(value = "Format that is used to encode the PIN block. This value is provided by the client software that is installed on the POS terminal.  Possible values: - 0: ISO 9564 format 0 - 1: ISO 9564 format 1 - 2: ISO 9564 format 2 - 3: ISO 9564 format 3  In the Credit Card Guide for the auth service: This field is supported only on American Express Direct, FDC Nashville Global, and SIX. ")
+  public Integer getPinBlockEncodingFormat() {
+    return pinBlockEncodingFormat;
+  }
+
+  public void setPinBlockEncodingFormat(Integer pinBlockEncodingFormat) {
+    this.pinBlockEncodingFormat = pinBlockEncodingFormat;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation encryptedPin(String encryptedPin) {
+    this.encryptedPin = encryptedPin;
+    return this;
+  }
+
+   /**
+   * Encrypted PIN.  This value is provided by the client software that is installed on the POS terminal.  In the Credit Card Guide for the auth service: This field is supported only on American Express Direct, FDC Nashville Global, and SIX. 
+   * @return encryptedPin
+  **/
+  @ApiModelProperty(value = "Encrypted PIN.  This value is provided by the client software that is installed on the POS terminal.  In the Credit Card Guide for the auth service: This field is supported only on American Express Direct, FDC Nashville Global, and SIX. ")
+  public String getEncryptedPin() {
+    return encryptedPin;
+  }
+
+  public void setEncryptedPin(String encryptedPin) {
+    this.encryptedPin = encryptedPin;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation encryptedKeySerialNumber(String encryptedKeySerialNumber) {
+    this.encryptedKeySerialNumber = encryptedKeySerialNumber;
+    return this;
+  }
+
+   /**
+   * This is a combination of the device&#39;s unique identifier and a transaction counter that is used in the process of decrypting the encrypted PIN.  For all terminals that are using derived unique key per transaction (DUKPT) encryption, this is generated as a single number within the terminal. 
+   * @return encryptedKeySerialNumber
+  **/
+  @ApiModelProperty(value = "This is a combination of the device's unique identifier and a transaction counter that is used in the process of decrypting the encrypted PIN.  For all terminals that are using derived unique key per transaction (DUKPT) encryption, this is generated as a single number within the terminal. ")
+  public String getEncryptedKeySerialNumber() {
+    return encryptedKeySerialNumber;
+  }
+
+  public void setEncryptedKeySerialNumber(String encryptedKeySerialNumber) {
+    this.encryptedKeySerialNumber = encryptedKeySerialNumber;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation partnerSdkVersion(String partnerSdkVersion) {
+    this.partnerSdkVersion = partnerSdkVersion;
+    return this;
+  }
+
+   /**
+   * Version of the software installed on the POS terminal. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX. 
+   * @return partnerSdkVersion
+  **/
+  @ApiModelProperty(value = "Version of the software installed on the POS terminal. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX. ")
+  public String getPartnerSdkVersion() {
+    return partnerSdkVersion;
+  }
+
+  public void setPartnerSdkVersion(String partnerSdkVersion) {
+    this.partnerSdkVersion = partnerSdkVersion;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -300,7 +529,6 @@ public class Ptsv2paymentsPointOfSaleInformation {
     return Objects.equals(this.terminalId, ptsv2paymentsPointOfSaleInformation.terminalId) &&
         Objects.equals(this.terminalSerialNumber, ptsv2paymentsPointOfSaleInformation.terminalSerialNumber) &&
         Objects.equals(this.laneNumber, ptsv2paymentsPointOfSaleInformation.laneNumber) &&
-        Objects.equals(this.cardPresent, ptsv2paymentsPointOfSaleInformation.cardPresent) &&
         Objects.equals(this.catLevel, ptsv2paymentsPointOfSaleInformation.catLevel) &&
         Objects.equals(this.entryMode, ptsv2paymentsPointOfSaleInformation.entryMode) &&
         Objects.equals(this.terminalCapability, ptsv2paymentsPointOfSaleInformation.terminalCapability) &&
@@ -308,12 +536,23 @@ public class Ptsv2paymentsPointOfSaleInformation {
         Objects.equals(this.operatingEnvironment, ptsv2paymentsPointOfSaleInformation.operatingEnvironment) &&
         Objects.equals(this.emv, ptsv2paymentsPointOfSaleInformation.emv) &&
         Objects.equals(this.amexCapnData, ptsv2paymentsPointOfSaleInformation.amexCapnData) &&
-        Objects.equals(this.trackData, ptsv2paymentsPointOfSaleInformation.trackData);
+        Objects.equals(this.trackData, ptsv2paymentsPointOfSaleInformation.trackData) &&
+        Objects.equals(this.storeAndForwardIndicator, ptsv2paymentsPointOfSaleInformation.storeAndForwardIndicator) &&
+        Objects.equals(this.cardholderVerificationMethod, ptsv2paymentsPointOfSaleInformation.cardholderVerificationMethod) &&
+        Objects.equals(this.terminalInputCapability, ptsv2paymentsPointOfSaleInformation.terminalInputCapability) &&
+        Objects.equals(this.terminalCardCaptureCapability, ptsv2paymentsPointOfSaleInformation.terminalCardCaptureCapability) &&
+        Objects.equals(this.terminalOutputCapability, ptsv2paymentsPointOfSaleInformation.terminalOutputCapability) &&
+        Objects.equals(this.terminalPinCapability, ptsv2paymentsPointOfSaleInformation.terminalPinCapability) &&
+        Objects.equals(this.deviceId, ptsv2paymentsPointOfSaleInformation.deviceId) &&
+        Objects.equals(this.pinBlockEncodingFormat, ptsv2paymentsPointOfSaleInformation.pinBlockEncodingFormat) &&
+        Objects.equals(this.encryptedPin, ptsv2paymentsPointOfSaleInformation.encryptedPin) &&
+        Objects.equals(this.encryptedKeySerialNumber, ptsv2paymentsPointOfSaleInformation.encryptedKeySerialNumber) &&
+        Objects.equals(this.partnerSdkVersion, ptsv2paymentsPointOfSaleInformation.partnerSdkVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId, terminalSerialNumber, laneNumber, cardPresent, catLevel, entryMode, terminalCapability, pinEntryCapability, operatingEnvironment, emv, amexCapnData, trackData);
+    return Objects.hash(terminalId, terminalSerialNumber, laneNumber, catLevel, entryMode, terminalCapability, pinEntryCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion);
   }
 
 
@@ -325,7 +564,6 @@ public class Ptsv2paymentsPointOfSaleInformation {
     sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
     sb.append("    terminalSerialNumber: ").append(toIndentedString(terminalSerialNumber)).append("\n");
     sb.append("    laneNumber: ").append(toIndentedString(laneNumber)).append("\n");
-    sb.append("    cardPresent: ").append(toIndentedString(cardPresent)).append("\n");
     sb.append("    catLevel: ").append(toIndentedString(catLevel)).append("\n");
     sb.append("    entryMode: ").append(toIndentedString(entryMode)).append("\n");
     sb.append("    terminalCapability: ").append(toIndentedString(terminalCapability)).append("\n");
@@ -334,6 +572,17 @@ public class Ptsv2paymentsPointOfSaleInformation {
     sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
     sb.append("    amexCapnData: ").append(toIndentedString(amexCapnData)).append("\n");
     sb.append("    trackData: ").append(toIndentedString(trackData)).append("\n");
+    sb.append("    storeAndForwardIndicator: ").append(toIndentedString(storeAndForwardIndicator)).append("\n");
+    sb.append("    cardholderVerificationMethod: ").append(toIndentedString(cardholderVerificationMethod)).append("\n");
+    sb.append("    terminalInputCapability: ").append(toIndentedString(terminalInputCapability)).append("\n");
+    sb.append("    terminalCardCaptureCapability: ").append(toIndentedString(terminalCardCaptureCapability)).append("\n");
+    sb.append("    terminalOutputCapability: ").append(toIndentedString(terminalOutputCapability)).append("\n");
+    sb.append("    terminalPinCapability: ").append(toIndentedString(terminalPinCapability)).append("\n");
+    sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+    sb.append("    pinBlockEncodingFormat: ").append(toIndentedString(pinBlockEncodingFormat)).append("\n");
+    sb.append("    encryptedPin: ").append(toIndentedString(encryptedPin)).append("\n");
+    sb.append("    encryptedKeySerialNumber: ").append(toIndentedString(encryptedKeySerialNumber)).append("\n");
+    sb.append("    partnerSdkVersion: ").append(toIndentedString(partnerSdkVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }

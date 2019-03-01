@@ -4,18 +4,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**V2paymentsClientReferenceInformation**](V2paymentsClientReferenceInformation.md) |  |  [optional]
-**processingInformation** | [**V2paymentsProcessingInformation**](V2paymentsProcessingInformation.md) |  |  [optional]
-**paymentInformation** | [**V2paymentsPaymentInformation**](V2paymentsPaymentInformation.md) |  |  [optional]
-**orderInformation** | [**V2paymentsOrderInformation**](V2paymentsOrderInformation.md) |  |  [optional]
-**buyerInformation** | [**V2paymentsBuyerInformation**](V2paymentsBuyerInformation.md) |  |  [optional]
-**recipientInformation** | [**V2paymentsRecipientInformation**](V2paymentsRecipientInformation.md) |  |  [optional]
-**deviceInformation** | [**V2paymentsDeviceInformation**](V2paymentsDeviceInformation.md) |  |  [optional]
-**merchantInformation** | [**V2paymentsMerchantInformation**](V2paymentsMerchantInformation.md) |  |  [optional]
-**aggregatorInformation** | [**V2paymentsAggregatorInformation**](V2paymentsAggregatorInformation.md) |  |  [optional]
-**consumerAuthenticationInformation** | [**V2paymentsConsumerAuthenticationInformation**](V2paymentsConsumerAuthenticationInformation.md) |  |  [optional]
-**pointOfSaleInformation** | [**V2paymentsPointOfSaleInformation**](V2paymentsPointOfSaleInformation.md) |  |  [optional]
-**merchantDefinedInformation** | [**List&lt;V2paymentsMerchantDefinedInformation&gt;**](V2paymentsMerchantDefinedInformation.md) | TBD |  [optional]
+**clientReferenceInformation** | [**Ptsv2paymentsClientReferenceInformation**](Ptsv2paymentsClientReferenceInformation.md) |  |  [optional]
+**processingInformation** | [**Ptsv2paymentsProcessingInformation**](Ptsv2paymentsProcessingInformation.md) |  |  [optional]
+**issuerInformation** | [**Ptsv2paymentsIssuerInformation**](Ptsv2paymentsIssuerInformation.md) |  |  [optional]
+**paymentInformation** | [**Ptsv2paymentsPaymentInformation**](Ptsv2paymentsPaymentInformation.md) |  |  [optional]
+**orderInformation** | [**Ptsv2paymentsOrderInformation**](Ptsv2paymentsOrderInformation.md) |  |  [optional]
+**buyerInformation** | [**Ptsv2paymentsBuyerInformation**](Ptsv2paymentsBuyerInformation.md) |  |  [optional]
+**recipientInformation** | [**Ptsv2paymentsRecipientInformation**](Ptsv2paymentsRecipientInformation.md) |  |  [optional]
+**deviceInformation** | [**Ptsv2paymentsDeviceInformation**](Ptsv2paymentsDeviceInformation.md) |  |  [optional]
+**merchantInformation** | [**Ptsv2paymentsMerchantInformation**](Ptsv2paymentsMerchantInformation.md) |  |  [optional]
+**aggregatorInformation** | [**Ptsv2paymentsAggregatorInformation**](Ptsv2paymentsAggregatorInformation.md) |  |  [optional]
+**consumerAuthenticationInformation** | [**Ptsv2paymentsConsumerAuthenticationInformation**](Ptsv2paymentsConsumerAuthenticationInformation.md) |  |  [optional]
+**pointOfSaleInformation** | [**Ptsv2paymentsPointOfSaleInformation**](Ptsv2paymentsPointOfSaleInformation.md) |  |  [optional]
+**merchantDefinedInformation** | [**List&lt;Ptsv2paymentsMerchantDefinedInformation&gt;**](Ptsv2paymentsMerchantDefinedInformation.md) | The description for this field is not available. |  [optional]
+**installmentInformation** | [**Ptsv2paymentsInstallmentInformation**](Ptsv2paymentsInstallmentInformation.md) |  |  [optional]
 
 
 

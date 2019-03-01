@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsidreversalsClientReferenceInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidreversalsClientReferenceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsidreversalsClientReferenceInformation {
   @SerializedName("code")
   private String code = null;
@@ -34,16 +35,19 @@ public class Ptsv2paymentsidreversalsClientReferenceInformation {
   @SerializedName("comments")
   private String comments = null;
 
+  @SerializedName("partner")
+  private Ptsv2paymentsidreversalsClientReferenceInformationPartner partner = null;
+
   public Ptsv2paymentsidreversalsClientReferenceInformation code(String code) {
     this.code = code;
     return this;
   }
 
    /**
-   * Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction. 
+   * Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  For information about tracking orders, see Getting Started with CyberSource Advanced for the SCMP API.  **FDC Nashville Global**\\ Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. 
    * @return code
   **/
-  @ApiModelProperty(value = "Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction. ")
+  @ApiModelProperty(value = "Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  For information about tracking orders, see Getting Started with CyberSource Advanced for the SCMP API.  **FDC Nashville Global**\\ Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. ")
   public String getCode() {
     return code;
   }
@@ -70,6 +74,24 @@ public class Ptsv2paymentsidreversalsClientReferenceInformation {
     this.comments = comments;
   }
 
+  public Ptsv2paymentsidreversalsClientReferenceInformation partner(Ptsv2paymentsidreversalsClientReferenceInformationPartner partner) {
+    this.partner = partner;
+    return this;
+  }
+
+   /**
+   * Get partner
+   * @return partner
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidreversalsClientReferenceInformationPartner getPartner() {
+    return partner;
+  }
+
+  public void setPartner(Ptsv2paymentsidreversalsClientReferenceInformationPartner partner) {
+    this.partner = partner;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +103,13 @@ public class Ptsv2paymentsidreversalsClientReferenceInformation {
     }
     Ptsv2paymentsidreversalsClientReferenceInformation ptsv2paymentsidreversalsClientReferenceInformation = (Ptsv2paymentsidreversalsClientReferenceInformation) o;
     return Objects.equals(this.code, ptsv2paymentsidreversalsClientReferenceInformation.code) &&
-        Objects.equals(this.comments, ptsv2paymentsidreversalsClientReferenceInformation.comments);
+        Objects.equals(this.comments, ptsv2paymentsidreversalsClientReferenceInformation.comments) &&
+        Objects.equals(this.partner, ptsv2paymentsidreversalsClientReferenceInformation.partner);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, comments);
+    return Objects.hash(code, comments, partner);
   }
 
 
@@ -97,6 +120,7 @@ public class Ptsv2paymentsidreversalsClientReferenceInformation {
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
     sb.append("}");
     return sb.toString();
   }

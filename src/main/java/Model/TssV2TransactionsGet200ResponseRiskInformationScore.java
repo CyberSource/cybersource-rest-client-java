@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200ResponseRiskInformationScore
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class TssV2TransactionsGet200ResponseRiskInformationScore {
   @SerializedName("factorCodes")
   private List<String> factorCodes = null;

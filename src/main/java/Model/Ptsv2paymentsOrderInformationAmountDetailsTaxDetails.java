@@ -26,10 +26,10 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsOrderInformationAmountDetailsTaxDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
   /**
-   * This is used to determine what type of tax related data should be inclued under _taxDetails_ object. 
+   * This is used to determine what type of tax related data should be inclued under _taxDetails_ object.  Possible values:  - alternate  - local  - national  - vat 
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
@@ -97,16 +97,19 @@ public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
   @SerializedName("applied")
   private Boolean applied = null;
 
+  @SerializedName("exemptionCode")
+  private String exemptionCode = null;
+
   public Ptsv2paymentsOrderInformationAmountDetailsTaxDetails type(TypeEnum type) {
     this.type = type;
     return this;
   }
 
    /**
-   * This is used to determine what type of tax related data should be inclued under _taxDetails_ object. 
+   * This is used to determine what type of tax related data should be inclued under _taxDetails_ object.  Possible values:  - alternate  - local  - national  - vat 
    * @return type
   **/
-  @ApiModelProperty(value = "This is used to determine what type of tax related data should be inclued under _taxDetails_ object. ")
+  @ApiModelProperty(value = "This is used to determine what type of tax related data should be inclued under _taxDetails_ object.  Possible values:  - alternate  - local  - national  - vat ")
   public TypeEnum getType() {
     return type;
   }
@@ -121,10 +124,10 @@ public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
   }
 
    /**
-   * Please see below table for related decription based on above _type_ field.  | type      | amount description | |-----------|--------------------| | alternate | Total amount of alternate tax for the order. | | local     | Sales tax for the order. | | national  | National tax for the order. | | vat       | Total amount of VAT or other tax included in the order. | 
+   * Please see below table for related decription based on above _type_ field.  | type      | type description | |-----------|--------------------| | alternate | Total amount of alternate tax for the order. | | local     | Sales tax for the order. | | national  | National tax for the order. | | vat       | Total amount of VAT or other tax included in the order. | | other     | Other tax. | 
    * @return amount
   **/
-  @ApiModelProperty(value = "Please see below table for related decription based on above _type_ field.  | type      | amount description | |-----------|--------------------| | alternate | Total amount of alternate tax for the order. | | local     | Sales tax for the order. | | national  | National tax for the order. | | vat       | Total amount of VAT or other tax included in the order. | ")
+  @ApiModelProperty(value = "Please see below table for related decription based on above _type_ field.  | type      | type description | |-----------|--------------------| | alternate | Total amount of alternate tax for the order. | | local     | Sales tax for the order. | | national  | National tax for the order. | | vat       | Total amount of VAT or other tax included in the order. | | other     | Other tax. | ")
   public String getAmount() {
     return amount;
   }
@@ -157,10 +160,10 @@ public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
   }
 
    /**
-   * Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax  - 0011: goods and services tax  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - Blank: Tax not supported on line item. 
+   * Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax (VAT)  - 0011: goods and services tax (GST)  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - 0023: city tax  - 0024: county or parish sales tax  - 0025: county tax  - 0026: environment tax  - 0027: state and local sales tax (combined)  - Blank: Tax not supported on line item. 
    * @return code
   **/
-  @ApiModelProperty(value = "Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax  - 0011: goods and services tax  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - Blank: Tax not supported on line item. ")
+  @ApiModelProperty(value = "Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax (VAT)  - 0011: goods and services tax (GST)  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - 0023: city tax  - 0024: county or parish sales tax  - 0025: county tax  - 0026: environment tax  - 0027: state and local sales tax (combined)  - Blank: Tax not supported on line item. ")
   public String getCode() {
     return code;
   }
@@ -205,6 +208,24 @@ public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
     this.applied = applied;
   }
 
+  public Ptsv2paymentsOrderInformationAmountDetailsTaxDetails exemptionCode(String exemptionCode) {
+    this.exemptionCode = exemptionCode;
+    return this;
+  }
+
+   /**
+   * Code for exemption from sales and use tax. This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.  For possible values, see Exemption Status Values. See Numbered Elements.  Important For information about using this field, see Item-Level Tax Fields. 
+   * @return exemptionCode
+  **/
+  @ApiModelProperty(value = "Code for exemption from sales and use tax. This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.  For possible values, see Exemption Status Values. See Numbered Elements.  Important For information about using this field, see Item-Level Tax Fields. ")
+  public String getExemptionCode() {
+    return exemptionCode;
+  }
+
+  public void setExemptionCode(String exemptionCode) {
+    this.exemptionCode = exemptionCode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -220,12 +241,13 @@ public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
         Objects.equals(this.rate, ptsv2paymentsOrderInformationAmountDetailsTaxDetails.rate) &&
         Objects.equals(this.code, ptsv2paymentsOrderInformationAmountDetailsTaxDetails.code) &&
         Objects.equals(this.taxId, ptsv2paymentsOrderInformationAmountDetailsTaxDetails.taxId) &&
-        Objects.equals(this.applied, ptsv2paymentsOrderInformationAmountDetailsTaxDetails.applied);
+        Objects.equals(this.applied, ptsv2paymentsOrderInformationAmountDetailsTaxDetails.applied) &&
+        Objects.equals(this.exemptionCode, ptsv2paymentsOrderInformationAmountDetailsTaxDetails.exemptionCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, amount, rate, code, taxId, applied);
+    return Objects.hash(type, amount, rate, code, taxId, applied, exemptionCode);
   }
 
 
@@ -240,6 +262,7 @@ public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
     sb.append("    applied: ").append(toIndentedString(applied)).append("\n");
+    sb.append("    exemptionCode: ").append(toIndentedString(exemptionCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

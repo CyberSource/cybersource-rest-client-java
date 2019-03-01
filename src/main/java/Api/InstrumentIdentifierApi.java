@@ -13,15 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -30,8 +21,22 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import Model.Body1;
+import Model.InlineResponse4001;
+import Model.TmsV1InstrumentidentifiersDelete409Response;
 import Model.TmsV1InstrumentidentifiersPost200Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class InstrumentIdentifierApi {
     private ApiClient apiClient;
@@ -264,7 +269,6 @@ public class InstrumentIdentifierApi {
      * Retrieve an Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     
      * @param tokenId The TokenId of an Instrument Identifier. (required)
      * @return TmsV1InstrumentidentifiersPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body

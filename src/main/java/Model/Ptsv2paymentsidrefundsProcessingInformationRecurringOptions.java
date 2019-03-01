@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidrefundsProcessingInformationRecurringOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsidrefundsProcessingInformationRecurringOptions {
   @SerializedName("loanPayment")
   private Boolean loanPayment = false;
@@ -37,10 +37,10 @@ public class Ptsv2paymentsidrefundsProcessingInformationRecurringOptions {
   }
 
    /**
-   * Flag that indicates whether this is a payment towards an existing contractual loan. 
+   * Flag that indicates whether this is a payment towards an existing contractual loan.  Possible values: - **true** Loan payment - **false** (default) Not a loan payment  See \&quot;Visa Debt Repayments,\&quot; page 218, for a list of processors that support this feature. 
    * @return loanPayment
   **/
-  @ApiModelProperty(value = "Flag that indicates whether this is a payment towards an existing contractual loan. ")
+  @ApiModelProperty(value = "Flag that indicates whether this is a payment towards an existing contractual loan.  Possible values: - **true** Loan payment - **false** (default) Not a loan payment  See \"Visa Debt Repayments,\" page 218, for a list of processors that support this feature. ")
   public Boolean getLoanPayment() {
     return loanPayment;
   }

@@ -27,10 +27,10 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
   /**
-   * This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction. 
+   * This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant** 
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
@@ -94,10 +94,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
   }
 
    /**
-   * This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction. 
+   * This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant** 
    * @return type
   **/
-  @ApiModelProperty(value = "This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction. ")
+  @ApiModelProperty(value = "This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant** ")
   public TypeEnum getType() {
     return type;
   }
@@ -112,10 +112,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
   }
 
    /**
-   * Flag that indicates whether merchant is intend to use this transaction to store payment credential for follow-up merchant-initiated transactions or not. 
+   * Flag that indicates whether merchant intends to use this transaction to store payment credentials for follow-up merchant-initiated transactions.  Valid values: - &#x60;true&#x60; means merchant will use this transaction to store payment credentials for follow-up merchant-initiated transactions. - &#x60;false&#x60; means merchant will not use this transaction to store payment credentials for follow-up merchant-initiated transactions.  See \&quot;Merchant-Initiated Transactions,\&quot; page 177.  **NOTE:** The value for this field does not correspond to any data in the TC 33 capture file5. This field is supported only for Visa transactions on CyberSource through VisaNet. 
    * @return credentialStoredOnFile
   **/
-  @ApiModelProperty(value = "Flag that indicates whether merchant is intend to use this transaction to store payment credential for follow-up merchant-initiated transactions or not. ")
+  @ApiModelProperty(value = "Flag that indicates whether merchant intends to use this transaction to store payment credentials for follow-up merchant-initiated transactions.  Valid values: - `true` means merchant will use this transaction to store payment credentials for follow-up merchant-initiated transactions. - `false` means merchant will not use this transaction to store payment credentials for follow-up merchant-initiated transactions.  See \"Merchant-Initiated Transactions,\" page 177.  **NOTE:** The value for this field does not correspond to any data in the TC 33 capture file5. This field is supported only for Visa transactions on CyberSource through VisaNet. ")
   public Boolean getCredentialStoredOnFile() {
     return credentialStoredOnFile;
   }
@@ -130,10 +130,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
   }
 
    /**
-   * Flag that indicates whether merchant is intend to use this transaction to store payment credential for follow-up merchant-initiated transactions or not. 
+   * Flag that indicates whether merchant is intend to use this transaction to store payment credential for follow-up merchant-initiated transactions or not.  Possible values: - **true** - **false** 
    * @return storedCredentialUsed
   **/
-  @ApiModelProperty(value = "Flag that indicates whether merchant is intend to use this transaction to store payment credential for follow-up merchant-initiated transactions or not. ")
+  @ApiModelProperty(value = "Flag that indicates whether merchant is intend to use this transaction to store payment credential for follow-up merchant-initiated transactions or not.  Possible values: - **true** - **false** ")
   public Boolean getStoredCredentialUsed() {
     return storedCredentialUsed;
   }

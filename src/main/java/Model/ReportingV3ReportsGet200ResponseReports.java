@@ -28,7 +28,7 @@ import org.joda.time.DateTime;
  * Report Search Result Bean
  */
 @ApiModel(description = "Report Search Result Bean")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class ReportingV3ReportsGet200ResponseReports {
   @SerializedName("reportDefinitionId")
   private String reportDefinitionId = null;
@@ -222,8 +222,11 @@ public class ReportingV3ReportsGet200ResponseReports {
   @SerializedName("reportCompletedTime")
   private DateTime reportCompletedTime = null;
 
-  @SerializedName("selectedMerchantGroupName")
-  private String selectedMerchantGroupName = null;
+  @SerializedName("subscriptionType")
+  private String subscriptionType = null;
+
+  @SerializedName("groupId")
+  private String groupId = null;
 
   public ReportingV3ReportsGet200ResponseReports reportDefinitionId(String reportDefinitionId) {
     this.reportDefinitionId = reportDefinitionId;
@@ -459,22 +462,40 @@ public class ReportingV3ReportsGet200ResponseReports {
     this.reportCompletedTime = reportCompletedTime;
   }
 
-  public ReportingV3ReportsGet200ResponseReports selectedMerchantGroupName(String selectedMerchantGroupName) {
-    this.selectedMerchantGroupName = selectedMerchantGroupName;
+  public ReportingV3ReportsGet200ResponseReports subscriptionType(String subscriptionType) {
+    this.subscriptionType = subscriptionType;
     return this;
   }
 
    /**
-   * Selected name of the group
-   * @return selectedMerchantGroupName
+   * Specifies whether the subscription created is either Custom, Standard or Classic 
+   * @return subscriptionType
   **/
-  @ApiModelProperty(example = "myGroup", value = "Selected name of the group")
-  public String getSelectedMerchantGroupName() {
-    return selectedMerchantGroupName;
+  @ApiModelProperty(example = "CUSTOM", value = "Specifies whether the subscription created is either Custom, Standard or Classic ")
+  public String getSubscriptionType() {
+    return subscriptionType;
   }
 
-  public void setSelectedMerchantGroupName(String selectedMerchantGroupName) {
-    this.selectedMerchantGroupName = selectedMerchantGroupName;
+  public void setSubscriptionType(String subscriptionType) {
+    this.subscriptionType = subscriptionType;
+  }
+
+  public ReportingV3ReportsGet200ResponseReports groupId(String groupId) {
+    this.groupId = groupId;
+    return this;
+  }
+
+   /**
+   * Id for selected group.
+   * @return groupId
+  **/
+  @ApiModelProperty(example = "12345", value = "Id for selected group.")
+  public String getGroupId() {
+    return groupId;
+  }
+
+  public void setGroupId(String groupId) {
+    this.groupId = groupId;
   }
 
 
@@ -500,12 +521,13 @@ public class ReportingV3ReportsGet200ResponseReports {
         Objects.equals(this.queuedTime, reportingV3ReportsGet200ResponseReports.queuedTime) &&
         Objects.equals(this.reportGeneratingTime, reportingV3ReportsGet200ResponseReports.reportGeneratingTime) &&
         Objects.equals(this.reportCompletedTime, reportingV3ReportsGet200ResponseReports.reportCompletedTime) &&
-        Objects.equals(this.selectedMerchantGroupName, reportingV3ReportsGet200ResponseReports.selectedMerchantGroupName);
+        Objects.equals(this.subscriptionType, reportingV3ReportsGet200ResponseReports.subscriptionType) &&
+        Objects.equals(this.groupId, reportingV3ReportsGet200ResponseReports.groupId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reportDefinitionId, reportName, reportMimeType, reportFrequency, status, reportStartTime, reportEndTime, timezone, reportId, organizationId, queuedTime, reportGeneratingTime, reportCompletedTime, selectedMerchantGroupName);
+    return Objects.hash(reportDefinitionId, reportName, reportMimeType, reportFrequency, status, reportStartTime, reportEndTime, timezone, reportId, organizationId, queuedTime, reportGeneratingTime, reportCompletedTime, subscriptionType, groupId);
   }
 
 
@@ -527,7 +549,8 @@ public class ReportingV3ReportsGet200ResponseReports {
     sb.append("    queuedTime: ").append(toIndentedString(queuedTime)).append("\n");
     sb.append("    reportGeneratingTime: ").append(toIndentedString(reportGeneratingTime)).append("\n");
     sb.append("    reportCompletedTime: ").append(toIndentedString(reportCompletedTime)).append("\n");
-    sb.append("    selectedMerchantGroupName: ").append(toIndentedString(selectedMerchantGroupName)).append("\n");
+    sb.append("    subscriptionType: ").append(toIndentedString(subscriptionType)).append("\n");
+    sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

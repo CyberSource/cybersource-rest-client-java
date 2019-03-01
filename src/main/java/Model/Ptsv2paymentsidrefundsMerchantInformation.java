@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidrefundsMerchantInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsidrefundsMerchantInformation {
   @SerializedName("merchantDescriptor")
   private Ptsv2paymentsMerchantInformationMerchantDescriptor merchantDescriptor = null;
@@ -40,6 +40,9 @@ public class Ptsv2paymentsidrefundsMerchantInformation {
 
   @SerializedName("cardAcceptorReferenceNumber")
   private String cardAcceptorReferenceNumber = null;
+
+  @SerializedName("taxId")
+  private String taxId = null;
 
   public Ptsv2paymentsidrefundsMerchantInformation merchantDescriptor(Ptsv2paymentsMerchantInformationMerchantDescriptor merchantDescriptor) {
     this.merchantDescriptor = merchantDescriptor;
@@ -65,11 +68,11 @@ public class Ptsv2paymentsidrefundsMerchantInformation {
   }
 
    /**
-   * Four-digit number that the payment card industry uses to classify merchants into market segments. Visa assigned one or more of these values to your business when you started accepting Visa cards.  If you do not include this field in your request, CyberSource uses the value in your CyberSource account.  For processor-specific information, see the merchant_category_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Four-digit number that the payment card industry uses to classify merchants into market segments. Visa assigned one or more of these values to your business when you started accepting Visa cards.  If you do not include this field in your request, CyberSource uses the value in your CyberSource account.  For processor-specific information, see the merchant_category_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  See \&quot;Aggregator Support,\&quot; page 100.  **CyberSource through VisaNet**\\ The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR4 - Position: 150-153 - Field: Merchant Category Code 
    * maximum: 9999
    * @return categoryCode
   **/
-  @ApiModelProperty(value = "Four-digit number that the payment card industry uses to classify merchants into market segments. Visa assigned one or more of these values to your business when you started accepting Visa cards.  If you do not include this field in your request, CyberSource uses the value in your CyberSource account.  For processor-specific information, see the merchant_category_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Four-digit number that the payment card industry uses to classify merchants into market segments. Visa assigned one or more of these values to your business when you started accepting Visa cards.  If you do not include this field in your request, CyberSource uses the value in your CyberSource account.  For processor-specific information, see the merchant_category_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  See \"Aggregator Support,\" page 100.  **CyberSource through VisaNet**\\ The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR4 - Position: 150-153 - Field: Merchant Category Code ")
   public Integer getCategoryCode() {
     return categoryCode;
   }
@@ -114,6 +117,24 @@ public class Ptsv2paymentsidrefundsMerchantInformation {
     this.cardAcceptorReferenceNumber = cardAcceptorReferenceNumber;
   }
 
+  public Ptsv2paymentsidrefundsMerchantInformation taxId(String taxId) {
+    this.taxId = taxId;
+    return this;
+  }
+
+   /**
+   * Your Cadastro Nacional da Pessoa Jurídica (CNPJ) number.  This field is supported only for BNDES transactions on CyberSource through VisaNet. See BNDES.  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR6 - Position: 40-59 - Field: BNDES Reference Field 1 
+   * @return taxId
+  **/
+  @ApiModelProperty(value = "Your Cadastro Nacional da Pessoa Jurídica (CNPJ) number.  This field is supported only for BNDES transactions on CyberSource through VisaNet. See BNDES.  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR6 - Position: 40-59 - Field: BNDES Reference Field 1 ")
+  public String getTaxId() {
+    return taxId;
+  }
+
+  public void setTaxId(String taxId) {
+    this.taxId = taxId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,12 +148,13 @@ public class Ptsv2paymentsidrefundsMerchantInformation {
     return Objects.equals(this.merchantDescriptor, ptsv2paymentsidrefundsMerchantInformation.merchantDescriptor) &&
         Objects.equals(this.categoryCode, ptsv2paymentsidrefundsMerchantInformation.categoryCode) &&
         Objects.equals(this.vatRegistrationNumber, ptsv2paymentsidrefundsMerchantInformation.vatRegistrationNumber) &&
-        Objects.equals(this.cardAcceptorReferenceNumber, ptsv2paymentsidrefundsMerchantInformation.cardAcceptorReferenceNumber);
+        Objects.equals(this.cardAcceptorReferenceNumber, ptsv2paymentsidrefundsMerchantInformation.cardAcceptorReferenceNumber) &&
+        Objects.equals(this.taxId, ptsv2paymentsidrefundsMerchantInformation.taxId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantDescriptor, categoryCode, vatRegistrationNumber, cardAcceptorReferenceNumber);
+    return Objects.hash(merchantDescriptor, categoryCode, vatRegistrationNumber, cardAcceptorReferenceNumber, taxId);
   }
 
 
@@ -145,6 +167,7 @@ public class Ptsv2paymentsidrefundsMerchantInformation {
     sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
     sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
     sb.append("    cardAcceptorReferenceNumber: ").append(toIndentedString(cardAcceptorReferenceNumber)).append("\n");
+    sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsidreversalsOrderInformationAmountDetails;
 import Model.Ptsv2paymentsidreversalsOrderInformationLineItems;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -29,10 +30,31 @@ import java.util.List;
 /**
  * Ptsv2paymentsidreversalsOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsidreversalsOrderInformation {
+  @SerializedName("amountDetails")
+  private Ptsv2paymentsidreversalsOrderInformationAmountDetails amountDetails = null;
+
   @SerializedName("lineItems")
   private List<Ptsv2paymentsidreversalsOrderInformationLineItems> lineItems = null;
+
+  public Ptsv2paymentsidreversalsOrderInformation amountDetails(Ptsv2paymentsidreversalsOrderInformationAmountDetails amountDetails) {
+    this.amountDetails = amountDetails;
+    return this;
+  }
+
+   /**
+   * Get amountDetails
+   * @return amountDetails
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidreversalsOrderInformationAmountDetails getAmountDetails() {
+    return amountDetails;
+  }
+
+  public void setAmountDetails(Ptsv2paymentsidreversalsOrderInformationAmountDetails amountDetails) {
+    this.amountDetails = amountDetails;
+  }
 
   public Ptsv2paymentsidreversalsOrderInformation lineItems(List<Ptsv2paymentsidreversalsOrderInformationLineItems> lineItems) {
     this.lineItems = lineItems;
@@ -70,12 +92,13 @@ public class Ptsv2paymentsidreversalsOrderInformation {
       return false;
     }
     Ptsv2paymentsidreversalsOrderInformation ptsv2paymentsidreversalsOrderInformation = (Ptsv2paymentsidreversalsOrderInformation) o;
-    return Objects.equals(this.lineItems, ptsv2paymentsidreversalsOrderInformation.lineItems);
+    return Objects.equals(this.amountDetails, ptsv2paymentsidreversalsOrderInformation.amountDetails) &&
+        Objects.equals(this.lineItems, ptsv2paymentsidreversalsOrderInformation.lineItems);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lineItems);
+    return Objects.hash(amountDetails, lineItems);
   }
 
 
@@ -84,6 +107,7 @@ public class Ptsv2paymentsidreversalsOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidreversalsOrderInformation {\n");
     
+    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("}");
     return sb.toString();

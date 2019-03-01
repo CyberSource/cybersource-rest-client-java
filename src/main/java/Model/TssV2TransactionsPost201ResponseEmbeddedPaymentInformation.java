@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.TssV2TransactionsGet200ResponsePaymentInformationCustomer;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod;
 import com.google.gson.TypeAdapter;
@@ -29,13 +29,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
   @SerializedName("paymentMethod")
   private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod paymentMethod = null;
 
   @SerializedName("customer")
-  private Ptsv2paymentsPaymentInformationCustomer customer = null;
+  private TssV2TransactionsGet200ResponsePaymentInformationCustomer customer = null;
 
   @SerializedName("card")
   private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard card = null;
@@ -58,7 +58,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
     this.paymentMethod = paymentMethod;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation customer(TssV2TransactionsGet200ResponsePaymentInformationCustomer customer) {
     this.customer = customer;
     return this;
   }
@@ -68,11 +68,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsPaymentInformationCustomer getCustomer() {
+  public TssV2TransactionsGet200ResponsePaymentInformationCustomer getCustomer() {
     return customer;
   }
 
-  public void setCustomer(Ptsv2paymentsPaymentInformationCustomer customer) {
+  public void setCustomer(TssV2TransactionsGet200ResponsePaymentInformationCustomer customer) {
     this.customer = customer;
   }
 

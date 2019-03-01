@@ -19,6 +19,7 @@ import Model.Ptsv2paymentsDeviceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsidcapturesAggregatorInformation;
 import Model.Ptsv2paymentsidcapturesBuyerInformation;
+import Model.Ptsv2paymentsidcapturesInstallmentInformation;
 import Model.Ptsv2paymentsidcapturesMerchantInformation;
 import Model.Ptsv2paymentsidcapturesOrderInformation;
 import Model.Ptsv2paymentsidcapturesPaymentInformation;
@@ -38,7 +39,7 @@ import java.util.List;
 /**
  * CapturePaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class CapturePaymentRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -69,6 +70,9 @@ public class CapturePaymentRequest {
 
   @SerializedName("merchantDefinedInformation")
   private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
+
+  @SerializedName("installmentInformation")
+  private Ptsv2paymentsidcapturesInstallmentInformation installmentInformation = null;
 
   public CapturePaymentRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -246,16 +250,34 @@ public class CapturePaymentRequest {
   }
 
    /**
-   * Description of this field is not available.
+   * The description for this field is not available.
    * @return merchantDefinedInformation
   **/
-  @ApiModelProperty(value = "Description of this field is not available.")
+  @ApiModelProperty(value = "The description for this field is not available.")
   public List<Ptsv2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {
     return merchantDefinedInformation;
   }
 
   public void setMerchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
+  }
+
+  public CapturePaymentRequest installmentInformation(Ptsv2paymentsidcapturesInstallmentInformation installmentInformation) {
+    this.installmentInformation = installmentInformation;
+    return this;
+  }
+
+   /**
+   * Get installmentInformation
+   * @return installmentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidcapturesInstallmentInformation getInstallmentInformation() {
+    return installmentInformation;
+  }
+
+  public void setInstallmentInformation(Ptsv2paymentsidcapturesInstallmentInformation installmentInformation) {
+    this.installmentInformation = installmentInformation;
   }
 
 
@@ -277,12 +299,13 @@ public class CapturePaymentRequest {
         Objects.equals(this.merchantInformation, capturePaymentRequest.merchantInformation) &&
         Objects.equals(this.aggregatorInformation, capturePaymentRequest.aggregatorInformation) &&
         Objects.equals(this.pointOfSaleInformation, capturePaymentRequest.pointOfSaleInformation) &&
-        Objects.equals(this.merchantDefinedInformation, capturePaymentRequest.merchantDefinedInformation);
+        Objects.equals(this.merchantDefinedInformation, capturePaymentRequest.merchantDefinedInformation) &&
+        Objects.equals(this.installmentInformation, capturePaymentRequest.installmentInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation);
   }
 
 
@@ -301,6 +324,7 @@ public class CapturePaymentRequest {
     sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
+    sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformationRecurringOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsProcessingInformationRecurringOptions {
   @SerializedName("loanPayment")
   private Boolean loanPayment = false;
@@ -40,10 +40,10 @@ public class Ptsv2paymentsProcessingInformationRecurringOptions {
   }
 
    /**
-   * Flag that indicates whether this is a payment towards an existing contractual loan. 
+   * Flag that indicates whether this is a payment towards an existing contractual loan.  Possible values: - **true** Loan payment - **false** (default) Not a loan payment  See \&quot;Visa Debt Repayments,\&quot; page 218, for a list of processors that support this feature. 
    * @return loanPayment
   **/
-  @ApiModelProperty(value = "Flag that indicates whether this is a payment towards an existing contractual loan. ")
+  @ApiModelProperty(value = "Flag that indicates whether this is a payment towards an existing contractual loan.  Possible values: - **true** Loan payment - **false** (default) Not a loan payment  See \"Visa Debt Repayments,\" page 218, for a list of processors that support this feature. ")
   public Boolean getLoanPayment() {
     return loanPayment;
   }
@@ -58,10 +58,10 @@ public class Ptsv2paymentsProcessingInformationRecurringOptions {
   }
 
    /**
-   * Flag that indicates whether this transaction is the first in a series of recurring payments. This field is supported only for **Atos**, **FDC Nashville Global**, and **OmniPay Direct**. 
+   * Flag that indicates whether this transaction is the first in a series of recurring payments.  This field is supported only for **Atos**, **FDC Nashville Global**, and **OmniPay Direct**.  Possible values:  - **true** Indicates this is the first payment in a series of recurring payments  - **false** (default) Indicates this is not the first payment in a series of recurring payments.  For more details, see \&quot;Recurring Payments,\&quot; page 198. 
    * @return firstRecurringPayment
   **/
-  @ApiModelProperty(value = "Flag that indicates whether this transaction is the first in a series of recurring payments. This field is supported only for **Atos**, **FDC Nashville Global**, and **OmniPay Direct**. ")
+  @ApiModelProperty(value = "Flag that indicates whether this transaction is the first in a series of recurring payments.  This field is supported only for **Atos**, **FDC Nashville Global**, and **OmniPay Direct**.  Possible values:  - **true** Indicates this is the first payment in a series of recurring payments  - **false** (default) Indicates this is not the first payment in a series of recurring payments.  For more details, see \"Recurring Payments,\" page 198. ")
   public Boolean getFirstRecurringPayment() {
     return firstRecurringPayment;
   }

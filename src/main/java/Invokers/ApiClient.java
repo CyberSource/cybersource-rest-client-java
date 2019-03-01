@@ -1222,28 +1222,28 @@ public class ApiClient {
 		try {
 			merchantConfig.setRequestType(method);
 
-			if (!queryParams.isEmpty()) {
-
+			if (queryParams != null && !queryParams.isEmpty()) {
+				StringBuilder url = new StringBuilder();
+				url.append(path);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
-					boolean firstQueryParam = true;
-					for (Pair pair : queryParams) {
-
-						String key = pair.getName();
-						String val = pair.getValue();
-						val = val.replaceAll(" ", "%20");
-
-						if (!firstQueryParam) {
-							path = path + "&" + key + "=" + val;
-						} else {
-							path = path + "?" + key + "=" + val;
-							firstQueryParam = false;
+					// support (constant) query string in `path`, e.g.
+					// "/posts?draft=1"
+					String prefix = path.contains("?") ? "&" : "?";
+					for (Pair param : queryParams) {
+						if (param.getValue() != null) {
+							if (prefix != null) {
+								url.append(prefix);
+								prefix = null;
+							} else {
+								url.append("&");
+							}
+							String value = parameterToString(param.getValue());
+							url.append(escapeString(param.getName())).append("=").append(escapeString(value));
 						}
 					}
-					merchantConfig.setRequestTarget(path);
-
+					merchantConfig.setRequestTarget(url.toString());
 				}
 			} else {
-
 				merchantConfig.setRequestTarget(path);
 			}
 

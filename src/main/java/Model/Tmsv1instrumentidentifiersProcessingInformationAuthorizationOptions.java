@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptions {
   @SerializedName("initiator")
   private Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiator initiator = null;

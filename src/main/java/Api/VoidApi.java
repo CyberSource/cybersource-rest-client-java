@@ -13,15 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -30,11 +21,25 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
+import Model.PtsV2PaymentsPost502Response;
 import Model.PtsV2PaymentsVoidsPost201Response;
+import Model.PtsV2PaymentsVoidsPost400Response;
 import Model.VoidCaptureRequest;
 import Model.VoidCreditRequest;
 import Model.VoidPaymentRequest;
 import Model.VoidRefundRequest;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class VoidApi {
     private ApiClient apiClient;
@@ -64,7 +69,7 @@ public class VoidApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call voidCaptureCall(VoidCaptureRequest voidCaptureRequest, String id,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call voidCaptureCall(VoidCaptureRequest voidCaptureRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = voidCaptureRequest;
         
         // create path and map variables
@@ -77,14 +82,12 @@ public class VoidApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-            "application/hal+json"
-        };
+final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -106,7 +109,7 @@ public class VoidApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call voidCaptureValidateBeforeCall(VoidCaptureRequest voidCaptureRequest, String id,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call voidCaptureValidateBeforeCall(VoidCaptureRequest voidCaptureRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'voidCaptureRequest' is set
         if (voidCaptureRequest == null) {
@@ -119,7 +122,7 @@ public class VoidApi {
         }
         
         
-        com.squareup.okhttp.Call call = voidCaptureCall(voidCaptureRequest, id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = voidCaptureCall(voidCaptureRequest, id, progressListener, progressRequestListener);
         return call;
 
         
@@ -146,7 +149,7 @@ public class VoidApi {
      * Include the capture ID in the POST request to cancel the capture.
      * @param voidCaptureRequest  (required)
      * @param id The capture ID returned from a previous capture request. (required)
-     * @return ApiResponse&lt;InlineResponse2015&gt;
+     * @return ApiResponse&lt;PtsV2PaymentsVoidsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidCaptureWithHttpInfo(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
@@ -164,7 +167,7 @@ public class VoidApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call voidCaptureAsync(VoidCaptureRequest voidCaptureRequest, String id,final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call voidCaptureAsync(VoidCaptureRequest voidCaptureRequest, String id, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -212,14 +215,12 @@ public class VoidApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-            "application/hal+json"
-        };
+final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -241,7 +242,7 @@ public class VoidApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call voidCreditValidateBeforeCall(VoidCreditRequest voidCreditRequest,  String id,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call voidCreditValidateBeforeCall(VoidCreditRequest voidCreditRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'voidCreditRequest' is set
         if (voidCreditRequest == null) {
@@ -254,7 +255,7 @@ public class VoidApi {
         }
         
         
-        com.squareup.okhttp.Call call = voidCreditCall(voidCreditRequest, id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = voidCreditCall(voidCreditRequest, id, progressListener, progressRequestListener);
         return call;
 
         
@@ -285,7 +286,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidCreditWithHttpInfo(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
-        com.squareup.okhttp.Call call = voidCreditValidateBeforeCall(voidCreditRequest, id,  null, null);
+        com.squareup.okhttp.Call call = voidCreditValidateBeforeCall(voidCreditRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -299,7 +300,7 @@ public class VoidApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call voidCreditAsync(VoidCreditRequest voidCreditRequest, String id,final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call voidCreditAsync(VoidCreditRequest voidCreditRequest, String id, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -320,7 +321,7 @@ public class VoidApi {
             };
         }
 
-        com.squareup.okhttp.Call call = voidCreditValidateBeforeCall(voidCreditRequest, id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = voidCreditValidateBeforeCall(voidCreditRequest, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -334,7 +335,7 @@ public class VoidApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call voidPaymentCall(VoidPaymentRequest voidPaymentRequest, String id,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call voidPaymentCall(VoidPaymentRequest voidPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = voidPaymentRequest;
         
         // create path and map variables
@@ -347,15 +348,13 @@ public class VoidApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-                "application/hal+json"
-            };
-            final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-            if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-            final String[] localVarContentTypes = {
-                "application/json"
-            };
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
@@ -376,7 +375,7 @@ public class VoidApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call voidPaymentValidateBeforeCall(VoidPaymentRequest voidPaymentRequest, String id,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call voidPaymentValidateBeforeCall(VoidPaymentRequest voidPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'voidPaymentRequest' is set
         if (voidPaymentRequest == null) {
@@ -434,7 +433,7 @@ public class VoidApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call voidPaymentAsync(VoidPaymentRequest voidPaymentRequest, String id,final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call voidPaymentAsync(VoidPaymentRequest voidPaymentRequest, String id, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -482,14 +481,12 @@ public class VoidApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-            "application/hal+json"
-        };
+final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -511,7 +508,7 @@ public class VoidApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call voidRefundValidateBeforeCall(VoidRefundRequest voidRefundRequest, String id,final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call voidRefundValidateBeforeCall(VoidRefundRequest voidRefundRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'voidRefundRequest' is set
         if (voidRefundRequest == null) {
@@ -590,9 +587,10 @@ public class VoidApi {
             };
         }
 
-        com.squareup.okhttp.Call call = voidRefundValidateBeforeCall(voidRefundRequest, id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = voidRefundValidateBeforeCall(voidRefundRequest, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }
+

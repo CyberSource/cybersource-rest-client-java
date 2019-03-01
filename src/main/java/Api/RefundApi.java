@@ -13,15 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -30,9 +21,23 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
+import Model.PtsV2PaymentsPost502Response;
 import Model.PtsV2PaymentsRefundPost201Response;
+import Model.PtsV2PaymentsRefundPost400Response;
 import Model.RefundCaptureRequest;
 import Model.RefundPaymentRequest;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class RefundApi {
     private ApiClient apiClient;
@@ -75,14 +80,12 @@ public class RefundApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-            "application/hal+json"
-        };
+final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -100,7 +103,7 @@ public class RefundApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -117,7 +120,7 @@ public class RefundApi {
         }
         
         
-        com.squareup.okhttp.Call call = refundCaptureCall(refundCaptureRequest, id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = refundCaptureCall(refundCaptureRequest, id, progressListener, progressRequestListener);
         return call;
 
         
@@ -148,7 +151,7 @@ public class RefundApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsRefundPost201Response> refundCaptureWithHttpInfo(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
-        com.squareup.okhttp.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id,  null, null);
+        com.squareup.okhttp.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -183,7 +186,7 @@ public class RefundApi {
             };
         }
 
-        com.squareup.okhttp.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -192,7 +195,6 @@ public class RefundApi {
      * Build call for refundPayment
      * @param refundPaymentRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
-     
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -211,14 +213,12 @@ public class RefundApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-            "application/hal+json"
-        };
+final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -236,7 +236,7 @@ public class RefundApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -253,7 +253,7 @@ public class RefundApi {
         }
         
         
-        com.squareup.okhttp.Call call = refundPaymentCall(refundPaymentRequest, id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = refundPaymentCall(refundPaymentRequest, id, progressListener, progressRequestListener);
         return call;
 
         
@@ -284,7 +284,7 @@ public class RefundApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsRefundPost201Response> refundPaymentWithHttpInfo(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {
-        com.squareup.okhttp.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id,  null, null);
+        com.squareup.okhttp.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -319,9 +319,10 @@ public class RefundApi {
             };
         }
 
-        com.squareup.okhttp.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }
+
