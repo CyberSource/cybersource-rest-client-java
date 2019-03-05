@@ -13,15 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -30,8 +21,22 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
+import Model.PtsV2PayoutsPost502Response;
 import Model.TssV2TransactionsPost201Response;
+import Model.TssV2TransactionsPost400Response;
 import Model.TssV2TransactionsPostResponse;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SearchTransactionsApi {
     private ApiClient apiClient;
@@ -72,14 +77,12 @@ public class SearchTransactionsApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
-        };
+final String[] localVarAccepts ={"*/*"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -97,7 +100,7 @@ public class SearchTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -109,7 +112,7 @@ public class SearchTransactionsApi {
         }
         
         
-        com.squareup.okhttp.Call call = createSearchCall(createSearchRequest,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSearchCall(createSearchRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -138,7 +141,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2TransactionsPost201Response> createSearchWithHttpInfo(TssV2TransactionsPostResponse createSearchRequest) throws ApiException {
-        com.squareup.okhttp.Call call = createSearchValidateBeforeCall(createSearchRequest,  null, null);
+        com.squareup.okhttp.Call call = createSearchValidateBeforeCall(createSearchRequest, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -172,7 +175,7 @@ public class SearchTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createSearchValidateBeforeCall(createSearchRequest,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSearchValidateBeforeCall(createSearchRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -198,14 +201,12 @@ public class SearchTransactionsApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-       /* final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
-        };
+final String[] localVarAccepts ={"*/*"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);*/
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -223,7 +224,7 @@ public class SearchTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -235,7 +236,7 @@ public class SearchTransactionsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getSearchCall(id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSearchCall(id, progressListener, progressRequestListener);
         return call;
 
         
@@ -264,7 +265,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2TransactionsPost201Response> getSearchWithHttpInfo(String id) throws ApiException {
-        com.squareup.okhttp.Call call = getSearchValidateBeforeCall(id,  null, null);
+        com.squareup.okhttp.Call call = getSearchValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -298,9 +299,10 @@ public class SearchTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSearchValidateBeforeCall(id,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSearchValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }
+

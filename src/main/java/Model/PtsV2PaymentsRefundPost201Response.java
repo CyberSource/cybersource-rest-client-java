@@ -31,7 +31,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsRefundPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2PaymentsRefundPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsRefundPost201ResponseLinks links = null;
@@ -43,7 +43,7 @@ public class PtsV2PaymentsRefundPost201Response {
   private String submitTimeUtc = null;
 
   /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - PENDING 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
@@ -165,10 +165,10 @@ public class PtsV2PaymentsRefundPost201Response {
   }
 
    /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - PENDING 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - PENDING ")
   public StatusEnum getStatus() {
     return status;
   }

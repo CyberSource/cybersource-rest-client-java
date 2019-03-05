@@ -4,14 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**InstrumentidentifiersLinks**](InstrumentidentifiersLinks.md) |  |  [optional]
+**links** | [**Tmsv1instrumentidentifiersLinks**](Tmsv1instrumentidentifiersLinks.md) |  |  [optional]
 **id** | **String** | Unique identification number assigned by CyberSource to the submitted request. |  [optional]
 **object** | [**ObjectEnum**](#ObjectEnum) | Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier. |  [optional]
 **state** | [**StateEnum**](#StateEnum) | Current state of the token. |  [optional]
-**card** | [**InstrumentidentifiersCard**](InstrumentidentifiersCard.md) |  |  [optional]
-**bankAccount** | [**InstrumentidentifiersBankAccount**](InstrumentidentifiersBankAccount.md) |  |  [optional]
-**processingInformation** | [**InstrumentidentifiersProcessingInformation**](InstrumentidentifiersProcessingInformation.md) |  |  [optional]
-**metadata** | [**InstrumentidentifiersMetadata**](InstrumentidentifiersMetadata.md) |  |  [optional]
+**card** | [**Tmsv1instrumentidentifiersCard**](Tmsv1instrumentidentifiersCard.md) |  |  [optional]
+**bankAccount** | [**Tmsv1instrumentidentifiersBankAccount**](Tmsv1instrumentidentifiersBankAccount.md) |  |  [optional]
+**processingInformation** | [**Tmsv1instrumentidentifiersProcessingInformation**](Tmsv1instrumentidentifiersProcessingInformation.md) |  |  [optional]
+**metadata** | [**Tmsv1instrumentidentifiersMetadata**](Tmsv1instrumentidentifiersMetadata.md) |  |  [optional]
 
 
 <a name="ObjectEnum"></a>

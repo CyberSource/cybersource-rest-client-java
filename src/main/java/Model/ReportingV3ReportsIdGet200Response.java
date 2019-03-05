@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.ReportingV3ReportSubscriptionsGet200ResponseReportPreferences;
+import Model.ReportingV3ReportsIdGet200ResponseReportPreferences;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -33,7 +33,7 @@ import org.joda.time.DateTime;
  * Report Log
  */
 @ApiModel(description = "Report Log")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class ReportingV3ReportsIdGet200Response {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -106,7 +106,9 @@ public class ReportingV3ReportsIdGet200Response {
     
     WEEKLY("WEEKLY"),
     
-    MONTHLY("MONTHLY");
+    MONTHLY("MONTHLY"),
+    
+    ADHOC("ADHOC");
 
     private String value;
 
@@ -225,10 +227,10 @@ public class ReportingV3ReportsIdGet200Response {
   private Map<String, List<String>> reportFilters = null;
 
   @SerializedName("reportPreferences")
-  private ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences = null;
+  private ReportingV3ReportsIdGet200ResponseReportPreferences reportPreferences = null;
 
-  @SerializedName("selectedMerchantGroupName")
-  private String selectedMerchantGroupName = null;
+  @SerializedName("groupId")
+  private String groupId = null;
 
   public ReportingV3ReportsIdGet200Response organizationId(String organizationId) {
     this.organizationId = organizationId;
@@ -450,10 +452,10 @@ public class ReportingV3ReportsIdGet200Response {
   }
 
    /**
-   * Report Filters
+   * List of filters to apply
    * @return reportFilters
   **/
-  @ApiModelProperty(value = "Report Filters")
+  @ApiModelProperty(example = "{\"Application.Name\":[\"ics_auth\",\"ics_bill\"]}", value = "List of filters to apply")
   public Map<String, List<String>> getReportFilters() {
     return reportFilters;
   }
@@ -462,7 +464,7 @@ public class ReportingV3ReportsIdGet200Response {
     this.reportFilters = reportFilters;
   }
 
-  public ReportingV3ReportsIdGet200Response reportPreferences(ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences) {
+  public ReportingV3ReportsIdGet200Response reportPreferences(ReportingV3ReportsIdGet200ResponseReportPreferences reportPreferences) {
     this.reportPreferences = reportPreferences;
     return this;
   }
@@ -472,30 +474,30 @@ public class ReportingV3ReportsIdGet200Response {
    * @return reportPreferences
   **/
   @ApiModelProperty(value = "")
-  public ReportingV3ReportSubscriptionsGet200ResponseReportPreferences getReportPreferences() {
+  public ReportingV3ReportsIdGet200ResponseReportPreferences getReportPreferences() {
     return reportPreferences;
   }
 
-  public void setReportPreferences(ReportingV3ReportSubscriptionsGet200ResponseReportPreferences reportPreferences) {
+  public void setReportPreferences(ReportingV3ReportsIdGet200ResponseReportPreferences reportPreferences) {
     this.reportPreferences = reportPreferences;
   }
 
-  public ReportingV3ReportsIdGet200Response selectedMerchantGroupName(String selectedMerchantGroupName) {
-    this.selectedMerchantGroupName = selectedMerchantGroupName;
+  public ReportingV3ReportsIdGet200Response groupId(String groupId) {
+    this.groupId = groupId;
     return this;
   }
 
    /**
-   * Selected Merchant Group name
-   * @return selectedMerchantGroupName
+   * Id for selected group.
+   * @return groupId
   **/
-  @ApiModelProperty(example = "myGroup", value = "Selected Merchant Group name")
-  public String getSelectedMerchantGroupName() {
-    return selectedMerchantGroupName;
+  @ApiModelProperty(example = "12345", value = "Id for selected group.")
+  public String getGroupId() {
+    return groupId;
   }
 
-  public void setSelectedMerchantGroupName(String selectedMerchantGroupName) {
-    this.selectedMerchantGroupName = selectedMerchantGroupName;
+  public void setGroupId(String groupId) {
+    this.groupId = groupId;
   }
 
 
@@ -521,12 +523,12 @@ public class ReportingV3ReportsIdGet200Response {
         Objects.equals(this.timezone, reportingV3ReportsIdGet200Response.timezone) &&
         Objects.equals(this.reportFilters, reportingV3ReportsIdGet200Response.reportFilters) &&
         Objects.equals(this.reportPreferences, reportingV3ReportsIdGet200Response.reportPreferences) &&
-        Objects.equals(this.selectedMerchantGroupName, reportingV3ReportsIdGet200Response.selectedMerchantGroupName);
+        Objects.equals(this.groupId, reportingV3ReportsIdGet200Response.groupId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(organizationId, reportId, reportDefinitionId, reportName, reportMimeType, reportFrequency, reportFields, reportStatus, reportStartTime, reportEndTime, timezone, reportFilters, reportPreferences, selectedMerchantGroupName);
+    return Objects.hash(organizationId, reportId, reportDefinitionId, reportName, reportMimeType, reportFrequency, reportFields, reportStatus, reportStartTime, reportEndTime, timezone, reportFilters, reportPreferences, groupId);
   }
 
 
@@ -548,7 +550,7 @@ public class ReportingV3ReportsIdGet200Response {
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    reportFilters: ").append(toIndentedString(reportFilters)).append("\n");
     sb.append("    reportPreferences: ").append(toIndentedString(reportPreferences)).append("\n");
-    sb.append("    selectedMerchantGroupName: ").append(toIndentedString(selectedMerchantGroupName)).append("\n");
+    sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

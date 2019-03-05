@@ -13,14 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.joda.time.LocalDate;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -29,6 +21,20 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
+import org.joda.time.LocalDate;
+import Model.Reportingv3ReportDownloadsGet400Response;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ReportDownloadsApi {
     private ApiClient apiClient;
@@ -78,7 +84,7 @@ public class ReportDownloadsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/xml", "test/csv"
+            "application/xml", "text/csv"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -102,7 +108,7 @@ public class ReportDownloadsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -119,7 +125,7 @@ public class ReportDownloadsApi {
         }
         
         
-        com.squareup.okhttp.Call call = downloadReportCall(reportDate, reportName, organizationId,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = downloadReportCall(reportDate, reportName, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -130,7 +136,7 @@ public class ReportDownloadsApi {
 
     /**
      * Download a report
-     * Download a report for the given report name on the specified date
+     * Download a report using the unique report name and date. 
      * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param reportName Name of the report to download (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -142,7 +148,7 @@ public class ReportDownloadsApi {
 
     /**
      * Download a report
-     * Download a report for the given report name on the specified date
+     * Download a report using the unique report name and date. 
      * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param reportName Name of the report to download (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -150,13 +156,13 @@ public class ReportDownloadsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> downloadReportWithHttpInfo(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = downloadReportValidateBeforeCall(reportDate, reportName, organizationId,  null, null);
+        com.squareup.okhttp.Call call = downloadReportValidateBeforeCall(reportDate, reportName, organizationId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Download a report (asynchronously)
-     * Download a report for the given report name on the specified date
+     * Download a report using the unique report name and date. 
      * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param reportName Name of the report to download (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -185,7 +191,7 @@ public class ReportDownloadsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = downloadReportValidateBeforeCall(reportDate, reportName, organizationId,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = downloadReportValidateBeforeCall(reportDate, reportName, organizationId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

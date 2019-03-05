@@ -26,13 +26,13 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseErrorInformationDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2PaymentsPost201ResponseErrorInformationDetails {
   @SerializedName("field")
   private String field = null;
 
   /**
-   * Possible reasons for the error. 
+   * Possible reasons for the error.  Possible values:  - MISSING_FIELD  - INVALID_DATA 
    */
   @JsonAdapter(ReasonEnum.Adapter.class)
   public enum ReasonEnum {
@@ -105,10 +105,10 @@ public class PtsV2PaymentsPost201ResponseErrorInformationDetails {
   }
 
    /**
-   * Possible reasons for the error. 
+   * Possible reasons for the error.  Possible values:  - MISSING_FIELD  - INVALID_DATA 
    * @return reason
   **/
-  @ApiModelProperty(value = "Possible reasons for the error. ")
+  @ApiModelProperty(value = "Possible reasons for the error.  Possible values:  - MISSING_FIELD  - INVALID_DATA ")
   public ReasonEnum getReason() {
     return reason;
   }

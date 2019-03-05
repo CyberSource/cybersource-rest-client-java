@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsProcessingInformationAuthorizationOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("authType")
   private String authType = null;
@@ -116,16 +116,22 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("initiator")
   private Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator initiator = null;
 
+  @SerializedName("billPayment")
+  private Boolean billPayment = null;
+
+  @SerializedName("billPaymentType")
+  private String billPaymentType = null;
+
   public Ptsv2paymentsProcessingInformationAuthorizationOptions authType(String authType) {
     this.authType = authType;
     return this;
   }
 
    /**
-   * Authorization type. Possible values:   - **AUTOCAPTURE**: automatic capture.  - **STANDARDCAPTURE**: standard capture.  - **VERBAL**: forced capture. Include it in the payment request for a forced capture. Include it in the capture  request for a verbal payment.  For processor-specific information, see the auth_type field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Authorization type.  Possible values:   - **AUTOCAPTURE**: automatic capture.  - **STANDARDCAPTURE**: standard capture.  - **VERBAL**: forced capture. Include it in the payment request for a forced capture. Include it in the capture request for a verbal payment.  **Asia, Middle East, and Africa Gateway; Cielo; Comercio Latino; and CyberSource Latin American Processing**\\ Set this field to _AUTOCAPTURE_ and include it in a bundled request to indicate that you are requesting an automatic capture. If your account is configured to enable automatic captures, set this field to STANDARDCAPTURE and include it in a standard authorization or bundled request to indicate that you are overriding an automatic capture. For more information, see \&quot;Automatic Captures,\&quot; page 33.  **Forced Capture**\\ Set this field to _VERBAL_ and include it in the authorization request to indicate that you are performing a forced capture; therefore, you receive the authorization code outside the CyberSource system. For more information, see \&quot;Forced Captures,\&quot; page 123.  **Verbal Authorization**\\ Set this field to _VERBAL_ and include it in the capture request to indicate that the request is for a verbal authorization. For more information, see \&quot;Verbal Authorizations,\&quot; page 84.  For processor-specific information, see the auth_type field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
    * @return authType
   **/
-  @ApiModelProperty(value = "Authorization type. Possible values:   - **AUTOCAPTURE**: automatic capture.  - **STANDARDCAPTURE**: standard capture.  - **VERBAL**: forced capture. Include it in the payment request for a forced capture. Include it in the capture  request for a verbal payment.  For processor-specific information, see the auth_type field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Authorization type.  Possible values:   - **AUTOCAPTURE**: automatic capture.  - **STANDARDCAPTURE**: standard capture.  - **VERBAL**: forced capture. Include it in the payment request for a forced capture. Include it in the capture request for a verbal payment.  **Asia, Middle East, and Africa Gateway; Cielo; Comercio Latino; and CyberSource Latin American Processing**\\ Set this field to _AUTOCAPTURE_ and include it in a bundled request to indicate that you are requesting an automatic capture. If your account is configured to enable automatic captures, set this field to STANDARDCAPTURE and include it in a standard authorization or bundled request to indicate that you are overriding an automatic capture. For more information, see \"Automatic Captures,\" page 33.  **Forced Capture**\\ Set this field to _VERBAL_ and include it in the authorization request to indicate that you are performing a forced capture; therefore, you receive the authorization code outside the CyberSource system. For more information, see \"Forced Captures,\" page 123.  **Verbal Authorization**\\ Set this field to _VERBAL_ and include it in the capture request to indicate that the request is for a verbal authorization. For more information, see \"Verbal Authorizations,\" page 84.  For processor-specific information, see the auth_type field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getAuthType() {
     return authType;
   }
@@ -140,10 +146,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Authorization code.  **Forced Capture**  Use this field to send the authorization code you received from a payment that you authorized outside the CyberSource system.  **Verbal Authorization**  Use this field in CAPTURE API to send the verbally received authorization code.  For processor-specific information, see the auth_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Authorization code.  **Forced Capture**\\ Use this field to send the authorization code you received from a payment that you authorized outside the CyberSource system.  **Verbal Authorization**\\ Use this field in CAPTURE API to send the verbally received authorization code.  For processor-specific information, see the _auth_code_ field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
    * @return verbalAuthCode
   **/
-  @ApiModelProperty(value = "Authorization code.  **Forced Capture**  Use this field to send the authorization code you received from a payment that you authorized outside the CyberSource system.  **Verbal Authorization**  Use this field in CAPTURE API to send the verbally received authorization code.  For processor-specific information, see the auth_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Authorization code.  **Forced Capture**\\ Use this field to send the authorization code you received from a payment that you authorized outside the CyberSource system.  **Verbal Authorization**\\ Use this field in CAPTURE API to send the verbally received authorization code.  For processor-specific information, see the _auth_code_ field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getVerbalAuthCode() {
     return verbalAuthCode;
   }
@@ -176,10 +182,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  For processor-specific information, see the auth_indicator field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support. See \&quot;Final Authorization Indicator,\&quot; page 119.  Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file5:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file.  For processor-specific information, see the auth_indicator field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
    * @return authIndicator
   **/
-  @ApiModelProperty(value = "Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  For processor-specific information, see the auth_indicator field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support. See \"Final Authorization Indicator,\" page 119.  Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file5:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file.  For processor-specific information, see the auth_indicator field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getAuthIndicator() {
     return authIndicator;
   }
@@ -194,10 +200,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Flag that indicates whether the transaction is enabled for partial authorization or not. When your request includes this field, this value overrides the information in your CyberSource account.  For processor-specific information, see the auth_partial_auth_indicator field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Flag that indicates whether the transaction is enabled for partial authorization or not. When your request includes this field, this value overrides the information in your CyberSource account.  For processor-specific information, see the _auth_partial_auth_indicator_ field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  **CyberSource through VisaNet**\\ To set the default for this field, contact CyberSource Customer Support. The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 164 - Field: Additional Authorization Indicators  Possible values: - **true** Enable the transaction for partial authorization. - **false** Do not enable the transaction for partial authorization. 
    * @return partialAuthIndicator
   **/
-  @ApiModelProperty(value = "Flag that indicates whether the transaction is enabled for partial authorization or not. When your request includes this field, this value overrides the information in your CyberSource account.  For processor-specific information, see the auth_partial_auth_indicator field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Flag that indicates whether the transaction is enabled for partial authorization or not. When your request includes this field, this value overrides the information in your CyberSource account.  For processor-specific information, see the _auth_partial_auth_indicator_ field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  **CyberSource through VisaNet**\\ To set the default for this field, contact CyberSource Customer Support. The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 164 - Field: Additional Authorization Indicators  Possible values: - **true** Enable the transaction for partial authorization. - **false** Do not enable the transaction for partial authorization. ")
   public Boolean getPartialAuthIndicator() {
     return partialAuthIndicator;
   }
@@ -212,10 +218,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Flag that indicates whether to return balance information.
+   * Flag that indicates whether to return balance information.  Possible values: - **true** - **false** 
    * @return balanceInquiry
   **/
-  @ApiModelProperty(value = "Flag that indicates whether to return balance information.")
+  @ApiModelProperty(value = "Flag that indicates whether to return balance information.  Possible values: - **true** - **false** ")
   public Boolean getBalanceInquiry() {
     return balanceInquiry;
   }
@@ -230,10 +236,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Flag that indicates whether to allow the capture service to run even when the payment receives an AVS decline. 
+   * Flag that indicates whether to allow the capture service to run, even when the payment receives an AVS decline.  Possible values: - **true**  Ignore the results of AVS checking and run the capture service. - **false**  (default): If the authorization receives an AVS decline, do not run the capture service. 
    * @return ignoreAvsResult
   **/
-  @ApiModelProperty(value = "Flag that indicates whether to allow the capture service to run even when the payment receives an AVS decline. ")
+  @ApiModelProperty(value = "Flag that indicates whether to allow the capture service to run, even when the payment receives an AVS decline.  Possible values: - **true**  Ignore the results of AVS checking and run the capture service. - **false**  (default): If the authorization receives an AVS decline, do not run the capture service. ")
   public Boolean getIgnoreAvsResult() {
     return ignoreAvsResult;
   }
@@ -256,10 +262,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * An array of AVS flags that cause the reply flag to be returned.  &#x60;Important&#x60; To receive declines for the AVS code N, include the value N in the array. 
+   * An array of AVS flags that cause the reply flag to be returned.  &#x60;Important&#x60; To receive declines for the AVS code N, include the value N in the array.  Possible values: - D - A - V - S - N - O 
    * @return declineAvsFlags
   **/
-  @ApiModelProperty(value = "An array of AVS flags that cause the reply flag to be returned.  `Important` To receive declines for the AVS code N, include the value N in the array. ")
+  @ApiModelProperty(value = "An array of AVS flags that cause the reply flag to be returned.  `Important` To receive declines for the AVS code N, include the value N in the array.  Possible values: - D - A - V - S - N - O ")
   public List<DeclineAvsFlagsEnum> getDeclineAvsFlags() {
     return declineAvsFlags;
   }
@@ -274,10 +280,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Flag that indicates whether to allow the capture service to run even when the payment receives a CVN decline. 
+   * Flag that indicates whether to allow the capture service to run even when the payment receives a CVN decline.  Possible values: - **true**  Ignore the results of CVN checking and run the capture service. - **false**  (default) If the authorization receives a CVN decline, do not run the capture service. 
    * @return ignoreCvResult
   **/
-  @ApiModelProperty(value = "Flag that indicates whether to allow the capture service to run even when the payment receives a CVN decline. ")
+  @ApiModelProperty(value = "Flag that indicates whether to allow the capture service to run even when the payment receives a CVN decline.  Possible values: - **true**  Ignore the results of CVN checking and run the capture service. - **false**  (default) If the authorization receives a CVN decline, do not run the capture service. ")
   public Boolean getIgnoreCvResult() {
     return ignoreCvResult;
   }
@@ -304,6 +310,42 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     this.initiator = initiator;
   }
 
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions billPayment(Boolean billPayment) {
+    this.billPayment = billPayment;
+    return this;
+  }
+
+   /**
+   * Flag that indicates that this is a payment for a bill or for an existing contractual loan. See \&quot;Visa Bill Payments,\&quot; page 220, and \&quot;Visa Debt Repayments,\&quot; page 221, for lists of processors that support these features.  Possible values: - true: Bill payment or loan payment. - false (default): Not a bill payment or loan payment. 
+   * @return billPayment
+  **/
+  @ApiModelProperty(value = "Flag that indicates that this is a payment for a bill or for an existing contractual loan. See \"Visa Bill Payments,\" page 220, and \"Visa Debt Repayments,\" page 221, for lists of processors that support these features.  Possible values: - true: Bill payment or loan payment. - false (default): Not a bill payment or loan payment. ")
+  public Boolean getBillPayment() {
+    return billPayment;
+  }
+
+  public void setBillPayment(Boolean billPayment) {
+    this.billPayment = billPayment;
+  }
+
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions billPaymentType(String billPaymentType) {
+    this.billPaymentType = billPaymentType;
+    return this;
+  }
+
+   /**
+   * Reason for the payment.  Possible values: - 001: Utility payment - 002: Government services - 003: Mobile phone top-up - 004: Coupon payment  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  This field is supported only for bill payments in Brazil with Mastercard on CyberSource through VisaNet. See Mastercard Bill Payments.  Note For information about bill payments with Visa, see Visa Bill Payments. 
+   * @return billPaymentType
+  **/
+  @ApiModelProperty(value = "Reason for the payment.  Possible values: - 001: Utility payment - 002: Government services - 003: Mobile phone top-up - 004: Coupon payment  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  This field is supported only for bill payments in Brazil with Mastercard on CyberSource through VisaNet. See Mastercard Bill Payments.  Note For information about bill payments with Visa, see Visa Bill Payments. ")
+  public String getBillPaymentType() {
+    return billPaymentType;
+  }
+
+  public void setBillPaymentType(String billPaymentType) {
+    this.billPaymentType = billPaymentType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -323,12 +365,14 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
         Objects.equals(this.ignoreAvsResult, ptsv2paymentsProcessingInformationAuthorizationOptions.ignoreAvsResult) &&
         Objects.equals(this.declineAvsFlags, ptsv2paymentsProcessingInformationAuthorizationOptions.declineAvsFlags) &&
         Objects.equals(this.ignoreCvResult, ptsv2paymentsProcessingInformationAuthorizationOptions.ignoreCvResult) &&
-        Objects.equals(this.initiator, ptsv2paymentsProcessingInformationAuthorizationOptions.initiator);
+        Objects.equals(this.initiator, ptsv2paymentsProcessingInformationAuthorizationOptions.initiator) &&
+        Objects.equals(this.billPayment, ptsv2paymentsProcessingInformationAuthorizationOptions.billPayment) &&
+        Objects.equals(this.billPaymentType, ptsv2paymentsProcessingInformationAuthorizationOptions.billPaymentType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator);
+    return Objects.hash(authType, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType);
   }
 
 
@@ -347,6 +391,8 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     sb.append("    declineAvsFlags: ").append(toIndentedString(declineAvsFlags)).append("\n");
     sb.append("    ignoreCvResult: ").append(toIndentedString(ignoreCvResult)).append("\n");
     sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
+    sb.append("    billPayment: ").append(toIndentedString(billPayment)).append("\n");
+    sb.append("    billPaymentType: ").append(toIndentedString(billPaymentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

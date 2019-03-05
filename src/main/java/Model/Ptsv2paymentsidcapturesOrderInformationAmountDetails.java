@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsidcapturesOrderInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;
@@ -80,16 +80,22 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
   @SerializedName("taxDetails")
   private List<Ptsv2paymentsOrderInformationAmountDetailsTaxDetails> taxDetails = null;
 
+  @SerializedName("serviceFeeAmount")
+  private String serviceFeeAmount = null;
+
+  @SerializedName("originalCurrency")
+  private String originalCurrency = null;
+
   public Ptsv2paymentsidcapturesOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
     return this;
   }
 
    /**
-   * Grand total for the order. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  * CTV, FDCCompass, Paymentech (&lt;&#x3D; 12)  For processor-specific information, see the grand_total_amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. This information is covered in:  Table 15, \&quot;Authorization Information for Specific Processors,\&quot; on page 43  Table 19, \&quot;Capture Information for Specific Processors,\&quot; on page 58  Table 23, \&quot;Credit Information for Specific Processors,\&quot; on page 75 If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \&quot;Zero Amount Authorizations,\&quot; page 247.  **DCC with a Third-Party Provider**\\ Set this field to the converted amount that was returned by the DCC provider. You must include either this field or offer0 and the offerlevel field amount in your request. For details, see \&quot;Dynamic Currency Conversion with a Third Party Provider,\&quot; page 125.  **FDMS South**\\ If you accept IDR or CLP currencies, see the entry for FDMS South in Table 15, \&quot;Authorization Information for Specific Processors,\&quot; on page 43.  **DCC for First Data**\\ Not used. 
    * @return totalAmount
   **/
-  @ApiModelProperty(value = "Grand total for the order. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  * CTV, FDCCompass, Paymentech (<= 12)  For processor-specific information, see the grand_total_amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. This information is covered in:  Table 15, \"Authorization Information for Specific Processors,\" on page 43  Table 19, \"Capture Information for Specific Processors,\" on page 58  Table 23, \"Credit Information for Specific Processors,\" on page 75 If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \"Zero Amount Authorizations,\" page 247.  **DCC with a Third-Party Provider**\\ Set this field to the converted amount that was returned by the DCC provider. You must include either this field or offer0 and the offerlevel field amount in your request. For details, see \"Dynamic Currency Conversion with a Third Party Provider,\" page 125.  **FDMS South**\\ If you accept IDR or CLP currencies, see the entry for FDMS South in Table 15, \"Authorization Information for Specific Processors,\" on page 43.  **DCC for First Data**\\ Not used. ")
   public String getTotalAmount() {
     return totalAmount;
   }
@@ -104,10 +110,10 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
   }
 
    /**
-   * Currency used for the order. Use the three-character ISO Standard Currency Codes.  For an authorization reversal or a capture, you must use the same currency that you used in your request for Payment API. 
+   * Currency used for the order. Use the three-character ISO Standard Currency Codes.  For an authorization reversal (&#x60;reversalInformation&#x60;) or a capture (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60;), you must use the same currency that you used in your request for Payment API.  **DCC for First Data**\\ Your local currency. For details, see \&quot;Dynamic Currency Conversion for First Data,\&quot; page 113. 
    * @return currency
   **/
-  @ApiModelProperty(value = "Currency used for the order. Use the three-character ISO Standard Currency Codes.  For an authorization reversal or a capture, you must use the same currency that you used in your request for Payment API. ")
+  @ApiModelProperty(value = "Currency used for the order. Use the three-character ISO Standard Currency Codes.  For an authorization reversal (`reversalInformation`) or a capture (`processingOptions.capture` is set to `true`), you must use the same currency that you used in your request for Payment API.  **DCC for First Data**\\ Your local currency. For details, see \"Dynamic Currency Conversion for First Data,\" page 113. ")
   public String getCurrency() {
     return currency;
   }
@@ -266,10 +272,10 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
   }
 
    /**
-   * Converted amount returned by the DCC service.  For processor-specific information, see the foreign_amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Set this field to the converted amount that was returned by the DCC provider. See \&quot;Dynamic Currency Conversion with a Third Party Provider,\&quot; page 125.  For processor-specific information, see the foreign_amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
    * @return foreignAmount
   **/
-  @ApiModelProperty(value = "Converted amount returned by the DCC service.  For processor-specific information, see the foreign_amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Set this field to the converted amount that was returned by the DCC provider. See \"Dynamic Currency Conversion with a Third Party Provider,\" page 125.  For processor-specific information, see the foreign_amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getForeignAmount() {
     return foreignAmount;
   }
@@ -284,10 +290,10 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
   }
 
    /**
-   * Billing currency returned by the DCC service.  For processor-specific information, see the foreign_currency field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Your customer’s billing currency. See \&quot;Dynamic Currency Conversion with a Third Party Provider,\&quot; page 125.  For processor-specific information, see the foreign_currency field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
    * @return foreignCurrency
   **/
-  @ApiModelProperty(value = "Billing currency returned by the DCC service.  For processor-specific information, see the foreign_currency field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Your customer’s billing currency. See \"Dynamic Currency Conversion with a Third Party Provider,\" page 125.  For processor-specific information, see the foreign_currency field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getForeignCurrency() {
     return foreignCurrency;
   }
@@ -302,10 +308,10 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
   }
 
    /**
-   * Exchange rate returned by the DCC service. Includes a decimal point and a maximum of 4 decimal places.  For processor-specific information, see the exchange_rate field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Exchange rate returned by the DCC service. Includes a decimal point and a maximum of 4 decimal places.  For details, see \&quot;Dynamic Currency Conversion for First Data,\&quot; page 113.  For processor-specific information, see the exchange_rate field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
    * @return exchangeRate
   **/
-  @ApiModelProperty(value = "Exchange rate returned by the DCC service. Includes a decimal point and a maximum of 4 decimal places.  For processor-specific information, see the exchange_rate field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Exchange rate returned by the DCC service. Includes a decimal point and a maximum of 4 decimal places.  For details, see \"Dynamic Currency Conversion for First Data,\" page 113.  For processor-specific information, see the exchange_rate field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getExchangeRate() {
     return exchangeRate;
   }
@@ -384,6 +390,42 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
     this.taxDetails = taxDetails;
   }
 
+  public Ptsv2paymentsidcapturesOrderInformationAmountDetails serviceFeeAmount(String serviceFeeAmount) {
+    this.serviceFeeAmount = serviceFeeAmount;
+    return this;
+  }
+
+   /**
+   * Service fee. Required for service fee transactions. 
+   * @return serviceFeeAmount
+  **/
+  @ApiModelProperty(value = "Service fee. Required for service fee transactions. ")
+  public String getServiceFeeAmount() {
+    return serviceFeeAmount;
+  }
+
+  public void setServiceFeeAmount(String serviceFeeAmount) {
+    this.serviceFeeAmount = serviceFeeAmount;
+  }
+
+  public Ptsv2paymentsidcapturesOrderInformationAmountDetails originalCurrency(String originalCurrency) {
+    this.originalCurrency = originalCurrency;
+    return this;
+  }
+
+   /**
+   * Your local pricing currency code.  For the possible values, see the ISO Standard Currency Codes.  For details, see Dynamic Currency Conversion with a Third Party Provider. 
+   * @return originalCurrency
+  **/
+  @ApiModelProperty(value = "Your local pricing currency code.  For the possible values, see the ISO Standard Currency Codes.  For details, see Dynamic Currency Conversion with a Third Party Provider. ")
+  public String getOriginalCurrency() {
+    return originalCurrency;
+  }
+
+  public void setOriginalCurrency(String originalCurrency) {
+    this.originalCurrency = originalCurrency;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -409,12 +451,14 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
         Objects.equals(this.exchangeRate, ptsv2paymentsidcapturesOrderInformationAmountDetails.exchangeRate) &&
         Objects.equals(this.exchangeRateTimeStamp, ptsv2paymentsidcapturesOrderInformationAmountDetails.exchangeRateTimeStamp) &&
         Objects.equals(this.amexAdditionalAmounts, ptsv2paymentsidcapturesOrderInformationAmountDetails.amexAdditionalAmounts) &&
-        Objects.equals(this.taxDetails, ptsv2paymentsidcapturesOrderInformationAmountDetails.taxDetails);
+        Objects.equals(this.taxDetails, ptsv2paymentsidcapturesOrderInformationAmountDetails.taxDetails) &&
+        Objects.equals(this.serviceFeeAmount, ptsv2paymentsidcapturesOrderInformationAmountDetails.serviceFeeAmount) &&
+        Objects.equals(this.originalCurrency, ptsv2paymentsidcapturesOrderInformationAmountDetails.originalCurrency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency, discountAmount, dutyAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, amexAdditionalAmounts, taxDetails);
+    return Objects.hash(totalAmount, currency, discountAmount, dutyAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalCurrency);
   }
 
 
@@ -439,6 +483,8 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
     sb.append("    exchangeRateTimeStamp: ").append(toIndentedString(exchangeRateTimeStamp)).append("\n");
     sb.append("    amexAdditionalAmounts: ").append(toIndentedString(amexAdditionalAmounts)).append("\n");
     sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
+    sb.append("    serviceFeeAmount: ").append(toIndentedString(serviceFeeAmount)).append("\n");
+    sb.append("    originalCurrency: ").append(toIndentedString(originalCurrency)).append("\n");
     sb.append("}");
     return sb.toString();
   }

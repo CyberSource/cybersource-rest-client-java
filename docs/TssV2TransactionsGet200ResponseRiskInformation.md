@@ -1,0 +1,15 @@
+
+# TssV2TransactionsGet200ResponseRiskInformation
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**profile** | [**TssV2TransactionsGet200ResponseRiskInformationProfile**](TssV2TransactionsGet200ResponseRiskInformationProfile.md) |  |  [optional]
+**rules** | [**List&lt;TssV2TransactionsGet200ResponseRiskInformationProfile&gt;**](TssV2TransactionsGet200ResponseRiskInformationProfile.md) |  |  [optional]
+**passiveProfile** | [**TssV2TransactionsGet200ResponseRiskInformationProfile**](TssV2TransactionsGet200ResponseRiskInformationProfile.md) |  |  [optional]
+**passiveRules** | [**List&lt;TssV2TransactionsGet200ResponseRiskInformationProfile&gt;**](TssV2TransactionsGet200ResponseRiskInformationProfile.md) |  |  [optional]
+**score** | [**TssV2TransactionsGet200ResponseRiskInformationScore**](TssV2TransactionsGet200ResponseRiskInformationScore.md) |  |  [optional]
+**localTime** | **String** | Time that the transaction was submitted in local time.. |  [optional]
+
+
+

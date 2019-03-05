@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults {
   @SerializedName("code")
   private String code = null;
@@ -250,10 +250,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
   }
 
    /**
-   * TODO 
+   * The description for this field is not available. 
    * @return name
   **/
-  @ApiModelProperty(value = "TODO ")
+  @ApiModelProperty(value = "The description for this field is not available. ")
   public String getName() {
     return name;
   }
@@ -268,10 +268,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
   }
 
    /**
-   * TODO
+   * The description for this field is not available.
    * @return nameRaw
   **/
-  @ApiModelProperty(value = "TODO")
+  @ApiModelProperty(value = "The description for this field is not available.")
   public String getNameRaw() {
     return nameRaw;
   }

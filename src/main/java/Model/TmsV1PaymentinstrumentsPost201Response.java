@@ -14,12 +14,12 @@
 package Model;
 
 import java.util.Objects;
+import Model.TmsV1PaymentinstrumentsPost201ResponseCard;
 import Model.Tmsv1instrumentidentifiersLinks;
 import Model.Tmsv1instrumentidentifiersMetadata;
 import Model.Tmsv1paymentinstrumentsBankAccount;
 import Model.Tmsv1paymentinstrumentsBillTo;
 import Model.Tmsv1paymentinstrumentsBuyerInformation;
-import Model.Tmsv1paymentinstrumentsCard;
 import Model.Tmsv1paymentinstrumentsInstrumentIdentifier;
 import Model.Tmsv1paymentinstrumentsMerchantInformation;
 import Model.Tmsv1paymentinstrumentsProcessingInformation;
@@ -35,7 +35,7 @@ import java.io.IOException;
 /**
  * TmsV1PaymentinstrumentsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class TmsV1PaymentinstrumentsPost201Response {
   @SerializedName("_links")
   private Tmsv1instrumentidentifiersLinks links = null;
@@ -145,7 +145,7 @@ public class TmsV1PaymentinstrumentsPost201Response {
   private Tmsv1paymentinstrumentsBankAccount bankAccount = null;
 
   @SerializedName("card")
-  private Tmsv1paymentinstrumentsCard card = null;
+  private TmsV1PaymentinstrumentsPost201ResponseCard card = null;
 
   @SerializedName("buyerInformation")
   private Tmsv1paymentinstrumentsBuyerInformation buyerInformation = null;
@@ -228,7 +228,7 @@ public class TmsV1PaymentinstrumentsPost201Response {
     this.bankAccount = bankAccount;
   }
 
-  public TmsV1PaymentinstrumentsPost201Response card(Tmsv1paymentinstrumentsCard card) {
+  public TmsV1PaymentinstrumentsPost201Response card(TmsV1PaymentinstrumentsPost201ResponseCard card) {
     this.card = card;
     return this;
   }
@@ -238,11 +238,11 @@ public class TmsV1PaymentinstrumentsPost201Response {
    * @return card
   **/
   @ApiModelProperty(value = "")
-  public Tmsv1paymentinstrumentsCard getCard() {
+  public TmsV1PaymentinstrumentsPost201ResponseCard getCard() {
     return card;
   }
 
-  public void setCard(Tmsv1paymentinstrumentsCard card) {
+  public void setCard(TmsV1PaymentinstrumentsPost201ResponseCard card) {
     this.card = card;
   }
 

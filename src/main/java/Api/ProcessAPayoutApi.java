@@ -22,14 +22,14 @@ import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
 
-import com.cybersource.authsdk.core.MerchantConfig;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
-import Model.PtsV2PaymentsPost201Response;
-import Model.PtsV2PaymentsPost502Response;
+
+import Model.PtsV2PayoutsPost201Response;
 import Model.PtsV2PayoutsPost400Response;
+import Model.PtsV2PayoutsPost502Response;
 import Model.PtsV2PayoutsPostResponse;
 
 import java.lang.reflect.Type;
@@ -77,14 +77,12 @@ public class ProcessAPayoutApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-            "application/hal+json"
-        };
+final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/json;charset=utf-8"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -102,11 +100,11 @@ public class ProcessAPayoutApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST",  localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call octCreatePaymentValidateBeforeCall(PtsV2PayoutsPostResponse octCreatePaymentRequest,  final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call octCreatePaymentValidateBeforeCall(PtsV2PayoutsPostResponse octCreatePaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'octCreatePaymentRequest' is set
         if (octCreatePaymentRequest == null) {
@@ -114,7 +112,7 @@ public class ProcessAPayoutApi {
         }
         
         
-        com.squareup.okhttp.Call call = octCreatePaymentCall(octCreatePaymentRequest,  progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = octCreatePaymentCall(octCreatePaymentRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -127,23 +125,25 @@ public class ProcessAPayoutApi {
      * Process a Payout
      * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). 
      * @param octCreatePaymentRequest  (required)
+     * @return PtsV2PayoutsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void octCreatePayment(PtsV2PayoutsPostResponse octCreatePaymentRequest) throws ApiException {
-        octCreatePaymentWithHttpInfo(octCreatePaymentRequest);
+    public PtsV2PayoutsPost201Response octCreatePayment(PtsV2PayoutsPostResponse octCreatePaymentRequest) throws ApiException {
+        ApiResponse<PtsV2PayoutsPost201Response> resp = octCreatePaymentWithHttpInfo(octCreatePaymentRequest);
+        return resp.getData();
     }
 
     /**
      * Process a Payout
      * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). 
      * @param octCreatePaymentRequest  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;PtsV2PayoutsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<String> octCreatePaymentWithHttpInfo(PtsV2PayoutsPostResponse octCreatePaymentRequest) throws ApiException {
-        com.squareup.okhttp.Call call = octCreatePaymentValidateBeforeCall(octCreatePaymentRequest,  null, null);
-        Type localVarReturnType = new TypeToken<String>(){}.getType();
-        return apiClient.execute(call,localVarReturnType);
+    public ApiResponse<PtsV2PayoutsPost201Response> octCreatePaymentWithHttpInfo(PtsV2PayoutsPostResponse octCreatePaymentRequest) throws ApiException {
+        com.squareup.okhttp.Call call = octCreatePaymentValidateBeforeCall(octCreatePaymentRequest, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PayoutsPost201Response>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -154,7 +154,7 @@ public class ProcessAPayoutApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call octCreatePaymentAsync(PtsV2PayoutsPostResponse octCreatePaymentRequest,  final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call octCreatePaymentAsync(PtsV2PayoutsPostResponse octCreatePaymentRequest, final ApiCallback<PtsV2PayoutsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -175,8 +175,10 @@ public class ProcessAPayoutApi {
             };
         }
 
-        com.squareup.okhttp.Call call = octCreatePaymentValidateBeforeCall(octCreatePaymentRequest,  progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        com.squareup.okhttp.Call call = octCreatePaymentValidateBeforeCall(octCreatePaymentRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2PayoutsPost201Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }
+

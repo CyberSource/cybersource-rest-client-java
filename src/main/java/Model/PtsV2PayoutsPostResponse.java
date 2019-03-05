@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
+import Model.Ptsv2payoutsClientReferenceInformation;
 import Model.Ptsv2payoutsMerchantInformation;
 import Model.Ptsv2payoutsOrderInformation;
 import Model.Ptsv2payoutsPaymentInformation;
@@ -33,10 +33,10 @@ import java.io.IOException;
 /**
  * PtsV2PayoutsPostResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2PayoutsPostResponse {
   @SerializedName("clientReferenceInformation")
-  private PtsV2PaymentsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
+  private Ptsv2payoutsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Ptsv2payoutsOrderInformation orderInformation = null;
@@ -56,7 +56,7 @@ public class PtsV2PayoutsPostResponse {
   @SerializedName("paymentInformation")
   private Ptsv2payoutsPaymentInformation paymentInformation = null;
 
-  public PtsV2PayoutsPostResponse clientReferenceInformation(PtsV2PaymentsPost201ResponseClientReferenceInformation clientReferenceInformation) {
+  public PtsV2PayoutsPostResponse clientReferenceInformation(Ptsv2payoutsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -66,11 +66,11 @@ public class PtsV2PayoutsPostResponse {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseClientReferenceInformation getClientReferenceInformation() {
+  public Ptsv2payoutsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(PtsV2PaymentsPost201ResponseClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Ptsv2payoutsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

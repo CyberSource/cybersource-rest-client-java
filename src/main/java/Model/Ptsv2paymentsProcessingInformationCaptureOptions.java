@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * Ptsv2paymentsProcessingInformationCaptureOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsProcessingInformationCaptureOptions {
   @SerializedName("captureSequenceNumber")
   private BigDecimal captureSequenceNumber = null;
@@ -84,10 +84,10 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
   }
 
    /**
-   * Date on which you want the capture to occur. This field is supported only for **CyberSource through VisaNet**. &#x60;Format: MMDD&#x60; 
+   * Date on which you want the capture to occur. This field is supported only for CyberSource through VisaNet.\\ &#x60;Format: MMDD&#x60; 
    * @return dateToCapture
   **/
-  @ApiModelProperty(value = "Date on which you want the capture to occur. This field is supported only for **CyberSource through VisaNet**. `Format: MMDD` ")
+  @ApiModelProperty(value = "Date on which you want the capture to occur. This field is supported only for CyberSource through VisaNet.\\ `Format: MMDD` ")
   public String getDateToCapture() {
     return dateToCapture;
   }

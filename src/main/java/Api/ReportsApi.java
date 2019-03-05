@@ -13,17 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.joda.time.DateTime;
-
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -32,9 +21,23 @@ import Invokers.Configuration;
 import Invokers.Pair;
 import Invokers.ProgressRequestBody;
 import Invokers.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
+import org.joda.time.DateTime;
 import Model.ReportingV3ReportsGet200Response;
 import Model.ReportingV3ReportsIdGet200Response;
-import Model.RequestBody1;
+import Model.Reportingv3ReportDownloadsGet400Response;
+import Model.RequestBody;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ReportsApi {
     private ApiClient apiClient;
@@ -58,18 +61,21 @@ public class ReportsApi {
     /**
      * Build call for createReport
      * @param requestBody Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createReportCall(RequestBody1 requestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createReportCall(RequestBody requestBody, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestBody;
         
         // create path and map variables
         String localVarPath = "/reporting/v3/reports";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -104,7 +110,7 @@ public class ReportsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createReportValidateBeforeCall(RequestBody1 requestBody, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createReportValidateBeforeCall(RequestBody requestBody, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'requestBody' is set
         if (requestBody == null) {
@@ -112,7 +118,7 @@ public class ReportsApi {
         }
         
         
-        com.squareup.okhttp.Call call = createReportCall(requestBody, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createReportCall(requestBody, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -123,36 +129,38 @@ public class ReportsApi {
 
     /**
      * Create Adhoc Report
-     * Create one time report
+     * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
      * @param requestBody Report subscription request payload (required)
-     * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
+     * @param organizationId Valid Cybersource Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportsIdGet200Response> createReport(RequestBody1 requestBody) throws ApiException {
-        return createReportWithHttpInfo(requestBody);
+    public void createReport(RequestBody requestBody, String organizationId) throws ApiException {
+        createReportWithHttpInfo(requestBody, organizationId);
     }
 
     /**
      * Create Adhoc Report
-     * Create one time report
+     * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
      * @param requestBody Report subscription request payload (required)
-     * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
+     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportsIdGet200Response> createReportWithHttpInfo(RequestBody1 requestBody) throws ApiException {
-        com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, null, null);
+    public ApiResponse<Void> createReportWithHttpInfo(RequestBody requestBody, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, organizationId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Create Adhoc Report (asynchronously)
-     * Create one time report
+     * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
      * @param requestBody Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createReportAsync(RequestBody1 requestBody, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call createReportAsync(RequestBody requestBody, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -173,7 +181,7 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, organizationId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -249,7 +257,7 @@ public class ReportsApi {
 
     /**
      * Get Report based on reportId
-     * ReportId is mandatory input
+     * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
      * @param reportId Valid Report Id (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ReportingV3ReportsIdGet200Response
@@ -262,7 +270,7 @@ public class ReportsApi {
 
     /**
      * Get Report based on reportId
-     * ReportId is mandatory input
+     * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
      * @param reportId Valid Report Id (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
@@ -276,7 +284,7 @@ public class ReportsApi {
 
     /**
      * Get Report based on reportId (asynchronously)
-     * ReportId is mandatory input
+     * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
      * @param reportId Valid Report Id (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
@@ -313,7 +321,7 @@ public class ReportsApi {
      * Build call for searchReports
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
-     * @param timeQueryType Specify time you woud like to search (required)
+     * @param timeQueryType Specify time you would like to search (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param reportMimeType Valid Report Format (optional)
      * @param reportFrequency Valid Report Frequency (optional)
@@ -329,10 +337,27 @@ public class ReportsApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/reporting/v3/reports?startTime="+startTime.toString()+"&endTime="+endTime.toString()+"&timeQueryType="+timeQueryType+"&organizationId="+organizationId;";
+        String localVarPath = "/reporting/v3/reports";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-       
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
+        if (startTime != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "startTime", startTime));
+        if (endTime != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "endTime", endTime));
+        if (timeQueryType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "timeQueryType", timeQueryType));
+        if (reportMimeType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportMimeType", reportMimeType));
+        if (reportFrequency != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportFrequency", reportFrequency));
+        if (reportName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportName", reportName));
+        if (reportDefinitionId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportDefinitionId", reportDefinitionId));
+        if (reportStatus != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportStatus", reportStatus));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -396,10 +421,10 @@ public class ReportsApi {
 
     /**
      * Retrieve available reports
-     * Retrieve list of available reports
+     * Retrieve a list of the available reports to which you are subscribed. This will also give you the reportId value, which you can also use to download a report. 
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
-     * @param timeQueryType Specify time you woud like to search (required)
+     * @param timeQueryType Specify time you would like to search (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param reportMimeType Valid Report Format (optional)
      * @param reportFrequency Valid Report Frequency (optional)
@@ -416,10 +441,10 @@ public class ReportsApi {
 
     /**
      * Retrieve available reports
-     * Retrieve list of available reports
+     * Retrieve a list of the available reports to which you are subscribed. This will also give you the reportId value, which you can also use to download a report. 
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
-     * @param timeQueryType Specify time you woud like to search (required)
+     * @param timeQueryType Specify time you would like to search (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param reportMimeType Valid Report Format (optional)
      * @param reportFrequency Valid Report Frequency (optional)
@@ -437,10 +462,10 @@ public class ReportsApi {
 
     /**
      * Retrieve available reports (asynchronously)
-     * Retrieve list of available reports
+     * Retrieve a list of the available reports to which you are subscribed. This will also give you the reportId value, which you can also use to download a report. 
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
-     * @param timeQueryType Specify time you woud like to search (required)
+     * @param timeQueryType Specify time you would like to search (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param reportMimeType Valid Report Format (optional)
      * @param reportFrequency Valid Report Frequency (optional)

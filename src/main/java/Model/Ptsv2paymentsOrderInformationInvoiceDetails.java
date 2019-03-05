@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationInvoiceDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsOrderInformationInvoiceDetails {
   @SerializedName("invoiceNumber")
   private String invoiceNumber = null;
@@ -64,6 +64,12 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
 
   @SerializedName("transactionAdviceAddendum")
   private List<Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum> transactionAdviceAddendum = null;
+
+  @SerializedName("referenceDataCode")
+  private String referenceDataCode = null;
+
+  @SerializedName("referenceDataNumber")
+  private String referenceDataNumber = null;
 
   public Ptsv2paymentsOrderInformationInvoiceDetails invoiceNumber(String invoiceNumber) {
     this.invoiceNumber = invoiceNumber;
@@ -179,10 +185,10 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
   }
 
    /**
-   * Flag that indicates whether an order is taxable. This value must be true if the sum of all _lineItems[].taxAmount_ values &gt; 0.  If you do not include any _lineItems[].taxAmount_ values in your request, CyberSource does not include _invoiceDetails.taxable_ in the data it sends to the processor.  For processor-specific information, see the tax_indicator field in [Level II and Level III Processing Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html) 
+   * Flag that indicates whether an order is taxable. This value must be true if the sum of all _lineItems[].taxAmount_ values &gt; 0.  If you do not include any _lineItems[].taxAmount_ values in your request, CyberSource does not include _invoiceDetails.taxable_ in the data it sends to the processor.  For processor-specific information, see the tax_indicator field in [Level II and Level III Processing Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html)  Possible values:  - **true**  - **false** 
    * @return taxable
   **/
-  @ApiModelProperty(value = "Flag that indicates whether an order is taxable. This value must be true if the sum of all _lineItems[].taxAmount_ values > 0.  If you do not include any _lineItems[].taxAmount_ values in your request, CyberSource does not include _invoiceDetails.taxable_ in the data it sends to the processor.  For processor-specific information, see the tax_indicator field in [Level II and Level III Processing Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html) ")
+  @ApiModelProperty(value = "Flag that indicates whether an order is taxable. This value must be true if the sum of all _lineItems[].taxAmount_ values > 0.  If you do not include any _lineItems[].taxAmount_ values in your request, CyberSource does not include _invoiceDetails.taxable_ in the data it sends to the processor.  For processor-specific information, see the tax_indicator field in [Level II and Level III Processing Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html)  Possible values:  - **true**  - **false** ")
   public Boolean getTaxable() {
     return taxable;
   }
@@ -271,6 +277,42 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     this.transactionAdviceAddendum = transactionAdviceAddendum;
   }
 
+  public Ptsv2paymentsOrderInformationInvoiceDetails referenceDataCode(String referenceDataCode) {
+    this.referenceDataCode = referenceDataCode;
+    return this;
+  }
+
+   /**
+   * Code that identifies the value of the reference_data_number field. For the possible values, see Reference Data Codes.  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. 
+   * @return referenceDataCode
+  **/
+  @ApiModelProperty(value = "Code that identifies the value of the reference_data_number field. For the possible values, see Reference Data Codes.  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. ")
+  public String getReferenceDataCode() {
+    return referenceDataCode;
+  }
+
+  public void setReferenceDataCode(String referenceDataCode) {
+    this.referenceDataCode = referenceDataCode;
+  }
+
+  public Ptsv2paymentsOrderInformationInvoiceDetails referenceDataNumber(String referenceDataNumber) {
+    this.referenceDataNumber = referenceDataNumber;
+    return this;
+  }
+
+   /**
+   * Reference number. The meaning of this value is identified by the value of the referenceDataCode field.  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. 
+   * @return referenceDataNumber
+  **/
+  @ApiModelProperty(value = "Reference number. The meaning of this value is identified by the value of the referenceDataCode field.  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. ")
+  public String getReferenceDataNumber() {
+    return referenceDataNumber;
+  }
+
+  public void setReferenceDataNumber(String referenceDataNumber) {
+    this.referenceDataNumber = referenceDataNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -291,12 +333,14 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
         Objects.equals(this.vatInvoiceReferenceNumber, ptsv2paymentsOrderInformationInvoiceDetails.vatInvoiceReferenceNumber) &&
         Objects.equals(this.commodityCode, ptsv2paymentsOrderInformationInvoiceDetails.commodityCode) &&
         Objects.equals(this.merchandiseCode, ptsv2paymentsOrderInformationInvoiceDetails.merchandiseCode) &&
-        Objects.equals(this.transactionAdviceAddendum, ptsv2paymentsOrderInformationInvoiceDetails.transactionAdviceAddendum);
+        Objects.equals(this.transactionAdviceAddendum, ptsv2paymentsOrderInformationInvoiceDetails.transactionAdviceAddendum) &&
+        Objects.equals(this.referenceDataCode, ptsv2paymentsOrderInformationInvoiceDetails.referenceDataCode) &&
+        Objects.equals(this.referenceDataNumber, ptsv2paymentsOrderInformationInvoiceDetails.referenceDataNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum);
+    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum, referenceDataCode, referenceDataNumber);
   }
 
 
@@ -316,6 +360,8 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     sb.append("    commodityCode: ").append(toIndentedString(commodityCode)).append("\n");
     sb.append("    merchandiseCode: ").append(toIndentedString(merchandiseCode)).append("\n");
     sb.append("    transactionAdviceAddendum: ").append(toIndentedString(transactionAdviceAddendum)).append("\n");
+    sb.append("    referenceDataCode: ").append(toIndentedString(referenceDataCode)).append("\n");
+    sb.append("    referenceDataNumber: ").append(toIndentedString(referenceDataNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

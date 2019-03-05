@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2creditsProcessingInformationBankTransferOptions;
 import Model.Ptsv2paymentsidrefundsProcessingInformationRecurringOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -27,7 +28,7 @@ import java.io.IOException;
 /**
  * Ptsv2creditsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2creditsProcessingInformation {
   @SerializedName("commerceIndicator")
   private String commerceIndicator = null;
@@ -56,6 +57,9 @@ public class Ptsv2creditsProcessingInformation {
   @SerializedName("recurringOptions")
   private Ptsv2paymentsidrefundsProcessingInformationRecurringOptions recurringOptions = null;
 
+  @SerializedName("bankTransferOptions")
+  private Ptsv2creditsProcessingInformationBankTransferOptions bankTransferOptions = null;
+
   public Ptsv2creditsProcessingInformation commerceIndicator(String commerceIndicator) {
     this.commerceIndicator = commerceIndicator;
     return this;
@@ -80,10 +84,10 @@ public class Ptsv2creditsProcessingInformation {
   }
 
    /**
-   * Value that identifies the processor/acquirer to use for the transaction. This value is supported only for **CyberSource through VisaNet**. 
+   * Value that identifies the processor/acquirer to use for the transaction. This value is supported only for **CyberSource through VisaNet**.  Contact CyberSource Customer Support to get the value for this field. 
    * @return processorId
   **/
-  @ApiModelProperty(value = "Value that identifies the processor/acquirer to use for the transaction. This value is supported only for **CyberSource through VisaNet**. ")
+  @ApiModelProperty(value = "Value that identifies the processor/acquirer to use for the transaction. This value is supported only for **CyberSource through VisaNet**.  Contact CyberSource Customer Support to get the value for this field. ")
   public String getProcessorId() {
     return processorId;
   }
@@ -98,10 +102,10 @@ public class Ptsv2creditsProcessingInformation {
   }
 
    /**
-   * Type of digital payment solution that is being used for the transaction. Possible Values:   - **visacheckout**: Visa Checkout.  - **001**: Apple Pay.  - **005**: Masterpass. Required for Masterpass transactions on OmniPay Direct.  - **006**: Android Pay.  - **008**: Samsung Pay. 
+   * Type of digital payment solution for the transaction. Possible Values:   - **visacheckout**: Visa Checkout. This value is required for Visa Checkout transactions. See Visa Checkout Using the SCMP API.  - **005**: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. See \&quot;Masterpass,\&quot; page 153. 
    * @return paymentSolution
   **/
-  @ApiModelProperty(value = "Type of digital payment solution that is being used for the transaction. Possible Values:   - **visacheckout**: Visa Checkout.  - **001**: Apple Pay.  - **005**: Masterpass. Required for Masterpass transactions on OmniPay Direct.  - **006**: Android Pay.  - **008**: Samsung Pay. ")
+  @ApiModelProperty(value = "Type of digital payment solution for the transaction. Possible Values:   - **visacheckout**: Visa Checkout. This value is required for Visa Checkout transactions. See Visa Checkout Using the SCMP API.  - **005**: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. See \"Masterpass,\" page 153. ")
   public String getPaymentSolution() {
     return paymentSolution;
   }
@@ -134,10 +138,10 @@ public class Ptsv2creditsProcessingInformation {
   }
 
    /**
-   * Value that links the current payment request to the original request. Set this value to the ID that was returned in the reply message from the original payment request.  This value is used for:   - Partial authorizations.  - Split shipments. 
+   * Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:   - Partial authorizations: See \&quot;Partial Authorizations,\&quot; page 88.  - Split shipments: See \&quot;Split Shipments,\&quot; page 210. 
    * @return linkId
   **/
-  @ApiModelProperty(value = "Value that links the current payment request to the original request. Set this value to the ID that was returned in the reply message from the original payment request.  This value is used for:   - Partial authorizations.  - Split shipments. ")
+  @ApiModelProperty(value = "Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:   - Partial authorizations: See \"Partial Authorizations,\" page 88.  - Split shipments: See \"Split Shipments,\" page 210. ")
   public String getLinkId() {
     return linkId;
   }
@@ -152,10 +156,10 @@ public class Ptsv2creditsProcessingInformation {
   }
 
    /**
-   * Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Litle**. 
+   * Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Worldpay VAP**.  See \&quot;Report Groups,\&quot; page 234. 
    * @return reportGroup
   **/
-  @ApiModelProperty(value = "Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Litle**. ")
+  @ApiModelProperty(value = "Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Worldpay VAP**.  See \"Report Groups,\" page 234. ")
   public String getReportGroup() {
     return reportGroup;
   }
@@ -170,10 +174,10 @@ public class Ptsv2creditsProcessingInformation {
   }
 
    /**
-   * Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field. 
+   * Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.  For more details, see Visa Checkout Using the SCMP API. 
    * @return visaCheckoutId
   **/
-  @ApiModelProperty(value = "Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field. ")
+  @ApiModelProperty(value = "Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.  For more details, see Visa Checkout Using the SCMP API. ")
   public String getVisaCheckoutId() {
     return visaCheckoutId;
   }
@@ -218,6 +222,24 @@ public class Ptsv2creditsProcessingInformation {
     this.recurringOptions = recurringOptions;
   }
 
+  public Ptsv2creditsProcessingInformation bankTransferOptions(Ptsv2creditsProcessingInformationBankTransferOptions bankTransferOptions) {
+    this.bankTransferOptions = bankTransferOptions;
+    return this;
+  }
+
+   /**
+   * Get bankTransferOptions
+   * @return bankTransferOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2creditsProcessingInformationBankTransferOptions getBankTransferOptions() {
+    return bankTransferOptions;
+  }
+
+  public void setBankTransferOptions(Ptsv2creditsProcessingInformationBankTransferOptions bankTransferOptions) {
+    this.bankTransferOptions = bankTransferOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,12 +258,13 @@ public class Ptsv2creditsProcessingInformation {
         Objects.equals(this.reportGroup, ptsv2creditsProcessingInformation.reportGroup) &&
         Objects.equals(this.visaCheckoutId, ptsv2creditsProcessingInformation.visaCheckoutId) &&
         Objects.equals(this.purchaseLevel, ptsv2creditsProcessingInformation.purchaseLevel) &&
-        Objects.equals(this.recurringOptions, ptsv2creditsProcessingInformation.recurringOptions);
+        Objects.equals(this.recurringOptions, ptsv2creditsProcessingInformation.recurringOptions) &&
+        Objects.equals(this.bankTransferOptions, ptsv2creditsProcessingInformation.bankTransferOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(commerceIndicator, processorId, paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, recurringOptions);
+    return Objects.hash(commerceIndicator, processorId, paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, recurringOptions, bankTransferOptions);
   }
 
 
@@ -259,6 +282,7 @@ public class Ptsv2creditsProcessingInformation {
     sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
     sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
     sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
+    sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

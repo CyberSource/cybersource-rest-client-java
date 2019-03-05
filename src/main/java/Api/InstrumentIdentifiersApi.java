@@ -13,16 +13,6 @@
 
 package Api;
 
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.cybersource.authsdk.core.MerchantConfig;
-import com.google.gson.reflect.TypeToken;
-
 import Invokers.ApiCallback;
 import Invokers.ApiClient;
 import Invokers.ApiException;
@@ -38,7 +28,7 @@ import java.io.IOException;
 
 
 import Model.Body;
-import Model.InlineResponse400;
+import Model.InlineResponse4001;
 import Model.TmsV1InstrumentidentifiersPost200Response;
 
 import java.lang.reflect.Type;

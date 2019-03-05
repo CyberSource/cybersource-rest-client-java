@@ -38,7 +38,7 @@ import java.util.List;
 /**
  * RefundCaptureRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class RefundCaptureRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -246,10 +246,10 @@ public class RefundCaptureRequest {
   }
 
    /**
-   * Description of this field is not available.
+   * The description for this field is not available.
    * @return merchantDefinedInformation
   **/
-  @ApiModelProperty(value = "Description of this field is not available.")
+  @ApiModelProperty(value = "The description for this field is not available.")
   public List<Ptsv2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {
     return merchantDefinedInformation;
   }

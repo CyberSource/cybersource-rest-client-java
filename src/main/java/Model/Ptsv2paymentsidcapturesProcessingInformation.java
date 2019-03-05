@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsProcessingInformationIssuer;
+import Model.Ptsv2paymentsIssuerInformation;
 import Model.Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions;
 import Model.Ptsv2paymentsidcapturesProcessingInformationCaptureOptions;
 import com.google.gson.TypeAdapter;
@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidcapturesProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Ptsv2paymentsidcapturesProcessingInformation {
   @SerializedName("paymentSolution")
   private String paymentSolution = null;
@@ -50,7 +50,7 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
   private String purchaseLevel = null;
 
   @SerializedName("issuer")
-  private Ptsv2paymentsProcessingInformationIssuer issuer = null;
+  private Ptsv2paymentsIssuerInformation issuer = null;
 
   @SerializedName("authorizationOptions")
   private Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions authorizationOptions = null;
@@ -64,10 +64,10 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
   }
 
    /**
-   * Type of digital payment solution that is being used for the transaction. Possible Values:   - **visacheckout**: Visa Checkout.  - **001**: Apple Pay.  - **005**: Masterpass. Required for Masterpass transactions on OmniPay Direct.  - **006**: Android Pay.  - **008**: Samsung Pay. 
+   * Type of digital payment solution for the transaction. Possible Values:   - **visacheckout**: Visa Checkout. This value is required for Visa Checkout transactions. See Visa Checkout Using the SCMP API.  - **005**: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. See \&quot;Masterpass,\&quot; page 153. 
    * @return paymentSolution
   **/
-  @ApiModelProperty(value = "Type of digital payment solution that is being used for the transaction. Possible Values:   - **visacheckout**: Visa Checkout.  - **001**: Apple Pay.  - **005**: Masterpass. Required for Masterpass transactions on OmniPay Direct.  - **006**: Android Pay.  - **008**: Samsung Pay. ")
+  @ApiModelProperty(value = "Type of digital payment solution for the transaction. Possible Values:   - **visacheckout**: Visa Checkout. This value is required for Visa Checkout transactions. See Visa Checkout Using the SCMP API.  - **005**: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. See \"Masterpass,\" page 153. ")
   public String getPaymentSolution() {
     return paymentSolution;
   }
@@ -100,10 +100,10 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
   }
 
    /**
-   * Value that links the current payment request to the original request. Set this value to the ID that was returned in the reply message from the original payment request.  This value is used for:   - Partial authorizations.  - Split shipments. 
+   * Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:   - Partial authorizations: See \&quot;Partial Authorizations,\&quot; page 88.  - Split shipments: See \&quot;Split Shipments,\&quot; page 210. 
    * @return linkId
   **/
-  @ApiModelProperty(value = "Value that links the current payment request to the original request. Set this value to the ID that was returned in the reply message from the original payment request.  This value is used for:   - Partial authorizations.  - Split shipments. ")
+  @ApiModelProperty(value = "Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:   - Partial authorizations: See \"Partial Authorizations,\" page 88.  - Split shipments: See \"Split Shipments,\" page 210. ")
   public String getLinkId() {
     return linkId;
   }
@@ -118,10 +118,10 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
   }
 
    /**
-   * Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Litle**. 
+   * Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Worldpay VAP**.  See \&quot;Report Groups,\&quot; page 234. 
    * @return reportGroup
   **/
-  @ApiModelProperty(value = "Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Litle**. ")
+  @ApiModelProperty(value = "Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Worldpay VAP**.  See \"Report Groups,\" page 234. ")
   public String getReportGroup() {
     return reportGroup;
   }
@@ -136,10 +136,10 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
   }
 
    /**
-   * Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field. 
+   * Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.  For more details, see Visa Checkout Using the SCMP API. 
    * @return visaCheckoutId
   **/
-  @ApiModelProperty(value = "Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field. ")
+  @ApiModelProperty(value = "Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.  For more details, see Visa Checkout Using the SCMP API. ")
   public String getVisaCheckoutId() {
     return visaCheckoutId;
   }
@@ -166,7 +166,7 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     this.purchaseLevel = purchaseLevel;
   }
 
-  public Ptsv2paymentsidcapturesProcessingInformation issuer(Ptsv2paymentsProcessingInformationIssuer issuer) {
+  public Ptsv2paymentsidcapturesProcessingInformation issuer(Ptsv2paymentsIssuerInformation issuer) {
     this.issuer = issuer;
     return this;
   }
@@ -176,11 +176,11 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
    * @return issuer
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsProcessingInformationIssuer getIssuer() {
+  public Ptsv2paymentsIssuerInformation getIssuer() {
     return issuer;
   }
 
-  public void setIssuer(Ptsv2paymentsProcessingInformationIssuer issuer) {
+  public void setIssuer(Ptsv2paymentsIssuerInformation issuer) {
     this.issuer = issuer;
   }
 

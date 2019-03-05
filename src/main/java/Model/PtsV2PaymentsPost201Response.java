@@ -16,10 +16,13 @@ package Model;
 import java.util.Objects;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsPost201ResponseErrorInformation;
+import Model.PtsV2PaymentsPost201ResponseInstallmentInformation;
+import Model.PtsV2PaymentsPost201ResponseIssuerInformation;
 import Model.PtsV2PaymentsPost201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseOrderInformation;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformation;
 import Model.PtsV2PaymentsPost201ResponsePointOfSaleInformation;
+import Model.PtsV2PaymentsPost201ResponseProcessingInformation;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -33,7 +36,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2PaymentsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsPost201ResponseLinks links = null;
@@ -45,7 +48,7 @@ public class PtsV2PaymentsPost201Response {
   private String submitTimeUtc = null;
 
   /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - AUTHORIZED  - PARTIAL_AUTHORIZED  - AUTHORIZED_PENDING_REVIEW  - DECLINED  - INVALID_REQUEST 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
@@ -55,7 +58,11 @@ public class PtsV2PaymentsPost201Response {
     
     AUTHORIZED_PENDING_REVIEW("AUTHORIZED_PENDING_REVIEW"),
     
-    DECLINED("DECLINED");
+    DECLINED("DECLINED"),
+    
+    INVALID_REQUEST("INVALID_REQUEST"),
+    
+    PENDING("PENDING");
 
     private String value;
 
@@ -107,8 +114,14 @@ public class PtsV2PaymentsPost201Response {
   @SerializedName("clientReferenceInformation")
   private PtsV2PaymentsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
 
+  @SerializedName("processingInformation")
+  private PtsV2PaymentsPost201ResponseProcessingInformation processingInformation = null;
+
   @SerializedName("processorInformation")
   private PtsV2PaymentsPost201ResponseProcessorInformation processorInformation = null;
+
+  @SerializedName("issuerInformation")
+  private PtsV2PaymentsPost201ResponseIssuerInformation issuerInformation = null;
 
   @SerializedName("paymentInformation")
   private PtsV2PaymentsPost201ResponsePaymentInformation paymentInformation = null;
@@ -118,6 +131,9 @@ public class PtsV2PaymentsPost201Response {
 
   @SerializedName("pointOfSaleInformation")
   private PtsV2PaymentsPost201ResponsePointOfSaleInformation pointOfSaleInformation = null;
+
+  @SerializedName("installmentInformation")
+  private PtsV2PaymentsPost201ResponseInstallmentInformation installmentInformation = null;
 
   public PtsV2PaymentsPost201Response links(PtsV2PaymentsPost201ResponseLinks links) {
     this.links = links;
@@ -179,10 +195,10 @@ public class PtsV2PaymentsPost201Response {
   }
 
    /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - AUTHORIZED  - PARTIAL_AUTHORIZED  - AUTHORIZED_PENDING_REVIEW  - DECLINED  - INVALID_REQUEST 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - AUTHORIZED  - PARTIAL_AUTHORIZED  - AUTHORIZED_PENDING_REVIEW  - DECLINED  - INVALID_REQUEST ")
   public StatusEnum getStatus() {
     return status;
   }
@@ -245,6 +261,24 @@ public class PtsV2PaymentsPost201Response {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
+  public PtsV2PaymentsPost201Response processingInformation(PtsV2PaymentsPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(PtsV2PaymentsPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
   public PtsV2PaymentsPost201Response processorInformation(PtsV2PaymentsPost201ResponseProcessorInformation processorInformation) {
     this.processorInformation = processorInformation;
     return this;
@@ -261,6 +295,24 @@ public class PtsV2PaymentsPost201Response {
 
   public void setProcessorInformation(PtsV2PaymentsPost201ResponseProcessorInformation processorInformation) {
     this.processorInformation = processorInformation;
+  }
+
+  public PtsV2PaymentsPost201Response issuerInformation(PtsV2PaymentsPost201ResponseIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+    return this;
+  }
+
+   /**
+   * Get issuerInformation
+   * @return issuerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseIssuerInformation getIssuerInformation() {
+    return issuerInformation;
+  }
+
+  public void setIssuerInformation(PtsV2PaymentsPost201ResponseIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
   }
 
   public PtsV2PaymentsPost201Response paymentInformation(PtsV2PaymentsPost201ResponsePaymentInformation paymentInformation) {
@@ -317,6 +369,24 @@ public class PtsV2PaymentsPost201Response {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 
+  public PtsV2PaymentsPost201Response installmentInformation(PtsV2PaymentsPost201ResponseInstallmentInformation installmentInformation) {
+    this.installmentInformation = installmentInformation;
+    return this;
+  }
+
+   /**
+   * Get installmentInformation
+   * @return installmentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseInstallmentInformation getInstallmentInformation() {
+    return installmentInformation;
+  }
+
+  public void setInstallmentInformation(PtsV2PaymentsPost201ResponseInstallmentInformation installmentInformation) {
+    this.installmentInformation = installmentInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -334,15 +404,18 @@ public class PtsV2PaymentsPost201Response {
         Objects.equals(this.reconciliationId, ptsV2PaymentsPost201Response.reconciliationId) &&
         Objects.equals(this.errorInformation, ptsV2PaymentsPost201Response.errorInformation) &&
         Objects.equals(this.clientReferenceInformation, ptsV2PaymentsPost201Response.clientReferenceInformation) &&
+        Objects.equals(this.processingInformation, ptsV2PaymentsPost201Response.processingInformation) &&
         Objects.equals(this.processorInformation, ptsV2PaymentsPost201Response.processorInformation) &&
+        Objects.equals(this.issuerInformation, ptsV2PaymentsPost201Response.issuerInformation) &&
         Objects.equals(this.paymentInformation, ptsV2PaymentsPost201Response.paymentInformation) &&
         Objects.equals(this.orderInformation, ptsV2PaymentsPost201Response.orderInformation) &&
-        Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsPost201Response.pointOfSaleInformation);
+        Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsPost201Response.pointOfSaleInformation) &&
+        Objects.equals(this.installmentInformation, ptsV2PaymentsPost201Response.installmentInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processorInformation, paymentInformation, orderInformation, pointOfSaleInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentInformation, orderInformation, pointOfSaleInformation, installmentInformation);
   }
 
 
@@ -358,10 +431,13 @@ public class PtsV2PaymentsPost201Response {
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
+    sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

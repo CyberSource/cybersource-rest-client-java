@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * ReportingV3ReportDefinitionsNameGet200ResponseAttributes
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {
   @SerializedName("id")
   private String id = null;
@@ -109,10 +109,10 @@ public class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {
   }
 
    /**
-   * Get filterType
+   * Attribute Filter Type.
    * @return filterType
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "MULTI", value = "Attribute Filter Type.")
   public String getFilterType() {
     return filterType;
   }
@@ -163,10 +163,10 @@ public class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {
   }
 
    /**
-   * Get supportedType
+   * Valid values for the filter.
    * @return supportedType
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "", value = "Valid values for the filter.")
   public String getSupportedType() {
     return supportedType;
   }

@@ -14,13 +14,14 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAvs;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationCardVerification;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationCustomer;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults;
-import Model.PtsV2PaymentsPost201ResponseProcessorInformationIssuer;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice;
+import Model.PtsV2PaymentsPost201ResponseProcessorInformationRouting;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,8 +35,11 @@ import java.math.BigDecimal;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class PtsV2PaymentsPost201ResponseProcessorInformation {
+  @SerializedName("authIndicator")
+  private String authIndicator = null;
+
   @SerializedName("approvalCode")
   private String approvalCode = null;
 
@@ -75,14 +79,14 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("electronicVerificationResults")
   private PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults electronicVerificationResults = null;
 
+  @SerializedName("achVerification")
+  private PtsV2PaymentsPost201ResponseProcessorInformationAchVerification achVerification = null;
+
   @SerializedName("customer")
   private PtsV2PaymentsPost201ResponseProcessorInformationCustomer customer = null;
 
   @SerializedName("consumerAuthenticationResponse")
   private PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse consumerAuthenticationResponse = null;
-
-  @SerializedName("issuer")
-  private PtsV2PaymentsPost201ResponseProcessorInformationIssuer issuer = null;
 
   @SerializedName("systemTraceAuditNumber")
   private String systemTraceAuditNumber = null;
@@ -111,6 +115,30 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("name")
   private String name = null;
 
+  @SerializedName("routing")
+  private PtsV2PaymentsPost201ResponseProcessorInformationRouting routing = null;
+
+  @SerializedName("merchantNumber")
+  private String merchantNumber = null;
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
+    this.authIndicator = authIndicator;
+    return this;
+  }
+
+   /**
+   * Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  For processor-specific information, see the auth_indicator field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * @return authIndicator
+  **/
+  @ApiModelProperty(value = "Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  For processor-specific information, see the auth_indicator field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  public String getAuthIndicator() {
+    return authIndicator;
+  }
+
+  public void setAuthIndicator(String authIndicator) {
+    this.authIndicator = authIndicator;
+  }
+
   public PtsV2PaymentsPost201ResponseProcessorInformation approvalCode(String approvalCode) {
     this.approvalCode = approvalCode;
     return this;
@@ -135,10 +163,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   }
 
    /**
-   * Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this  value. 
+   * Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this value. 
    * @return transactionId
   **/
-  @ApiModelProperty(value = "Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this  value. ")
+  @ApiModelProperty(value = "Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this value. ")
   public String getTransactionId() {
     return transactionId;
   }
@@ -153,10 +181,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   }
 
    /**
-   * Description of this field is not available.
+   * The description for this field is not available.
    * @return networkTransactionId
   **/
-  @ApiModelProperty(value = "Description of this field is not available.")
+  @ApiModelProperty(value = "The description for this field is not available.")
   public String getNetworkTransactionId() {
     return networkTransactionId;
   }
@@ -171,10 +199,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   }
 
    /**
-   * Description of this field is not available.
+   * The description for this field is not available.
    * @return providerTransactionId
   **/
-  @ApiModelProperty(value = "Description of this field is not available.")
+  @ApiModelProperty(value = "The description for this field is not available.")
   public String getProviderTransactionId() {
     return providerTransactionId;
   }
@@ -345,6 +373,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.electronicVerificationResults = electronicVerificationResults;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation achVerification(PtsV2PaymentsPost201ResponseProcessorInformationAchVerification achVerification) {
+    this.achVerification = achVerification;
+    return this;
+  }
+
+   /**
+   * Get achVerification
+   * @return achVerification
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessorInformationAchVerification getAchVerification() {
+    return achVerification;
+  }
+
+  public void setAchVerification(PtsV2PaymentsPost201ResponseProcessorInformationAchVerification achVerification) {
+    this.achVerification = achVerification;
+  }
+
   public PtsV2PaymentsPost201ResponseProcessorInformation customer(PtsV2PaymentsPost201ResponseProcessorInformationCustomer customer) {
     this.customer = customer;
     return this;
@@ -379,24 +425,6 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   public void setConsumerAuthenticationResponse(PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse consumerAuthenticationResponse) {
     this.consumerAuthenticationResponse = consumerAuthenticationResponse;
-  }
-
-  public PtsV2PaymentsPost201ResponseProcessorInformation issuer(PtsV2PaymentsPost201ResponseProcessorInformationIssuer issuer) {
-    this.issuer = issuer;
-    return this;
-  }
-
-   /**
-   * Get issuer
-   * @return issuer
-  **/
-  @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseProcessorInformationIssuer getIssuer() {
-    return issuer;
-  }
-
-  public void setIssuer(PtsV2PaymentsPost201ResponseProcessorInformationIssuer issuer) {
-    this.issuer = issuer;
   }
 
   public PtsV2PaymentsPost201ResponseProcessorInformation systemTraceAuditNumber(String systemTraceAuditNumber) {
@@ -562,6 +590,42 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.name = name;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation routing(PtsV2PaymentsPost201ResponseProcessorInformationRouting routing) {
+    this.routing = routing;
+    return this;
+  }
+
+   /**
+   * Get routing
+   * @return routing
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessorInformationRouting getRouting() {
+    return routing;
+  }
+
+  public void setRouting(PtsV2PaymentsPost201ResponseProcessorInformationRouting routing) {
+    this.routing = routing;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation merchantNumber(String merchantNumber) {
+    this.merchantNumber = merchantNumber;
+    return this;
+  }
+
+   /**
+   * Identifier that was assigned to you by your acquirer.  This value must be printed on the receipt.  This field is supported only on **American Express Direct**, **FDC Nashville Global**, and **SIX**. 
+   * @return merchantNumber
+  **/
+  @ApiModelProperty(value = "Identifier that was assigned to you by your acquirer.  This value must be printed on the receipt.  This field is supported only on **American Express Direct**, **FDC Nashville Global**, and **SIX**. ")
+  public String getMerchantNumber() {
+    return merchantNumber;
+  }
+
+  public void setMerchantNumber(String merchantNumber) {
+    this.merchantNumber = merchantNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -572,7 +636,8 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
       return false;
     }
     PtsV2PaymentsPost201ResponseProcessorInformation ptsV2PaymentsPost201ResponseProcessorInformation = (PtsV2PaymentsPost201ResponseProcessorInformation) o;
-    return Objects.equals(this.approvalCode, ptsV2PaymentsPost201ResponseProcessorInformation.approvalCode) &&
+    return Objects.equals(this.authIndicator, ptsV2PaymentsPost201ResponseProcessorInformation.authIndicator) &&
+        Objects.equals(this.approvalCode, ptsV2PaymentsPost201ResponseProcessorInformation.approvalCode) &&
         Objects.equals(this.transactionId, ptsV2PaymentsPost201ResponseProcessorInformation.transactionId) &&
         Objects.equals(this.networkTransactionId, ptsV2PaymentsPost201ResponseProcessorInformation.networkTransactionId) &&
         Objects.equals(this.providerTransactionId, ptsV2PaymentsPost201ResponseProcessorInformation.providerTransactionId) &&
@@ -585,9 +650,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.cardVerification, ptsV2PaymentsPost201ResponseProcessorInformation.cardVerification) &&
         Objects.equals(this.merchantAdvice, ptsV2PaymentsPost201ResponseProcessorInformation.merchantAdvice) &&
         Objects.equals(this.electronicVerificationResults, ptsV2PaymentsPost201ResponseProcessorInformation.electronicVerificationResults) &&
+        Objects.equals(this.achVerification, ptsV2PaymentsPost201ResponseProcessorInformation.achVerification) &&
         Objects.equals(this.customer, ptsV2PaymentsPost201ResponseProcessorInformation.customer) &&
         Objects.equals(this.consumerAuthenticationResponse, ptsV2PaymentsPost201ResponseProcessorInformation.consumerAuthenticationResponse) &&
-        Objects.equals(this.issuer, ptsV2PaymentsPost201ResponseProcessorInformation.issuer) &&
         Objects.equals(this.systemTraceAuditNumber, ptsV2PaymentsPost201ResponseProcessorInformation.systemTraceAuditNumber) &&
         Objects.equals(this.paymentAccountReferenceNumber, ptsV2PaymentsPost201ResponseProcessorInformation.paymentAccountReferenceNumber) &&
         Objects.equals(this.transactionIntegrityCode, ptsV2PaymentsPost201ResponseProcessorInformation.transactionIntegrityCode) &&
@@ -596,12 +661,14 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.masterCardServiceCode, ptsV2PaymentsPost201ResponseProcessorInformation.masterCardServiceCode) &&
         Objects.equals(this.masterCardServiceReplyCode, ptsV2PaymentsPost201ResponseProcessorInformation.masterCardServiceReplyCode) &&
         Objects.equals(this.masterCardAuthenticationType, ptsV2PaymentsPost201ResponseProcessorInformation.masterCardAuthenticationType) &&
-        Objects.equals(this.name, ptsV2PaymentsPost201ResponseProcessorInformation.name);
+        Objects.equals(this.name, ptsV2PaymentsPost201ResponseProcessorInformation.name) &&
+        Objects.equals(this.routing, ptsV2PaymentsPost201ResponseProcessorInformation.routing) &&
+        Objects.equals(this.merchantNumber, ptsV2PaymentsPost201ResponseProcessorInformation.merchantNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalCode, transactionId, networkTransactionId, providerTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, customer, consumerAuthenticationResponse, issuer, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, salesSlipNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name);
+    return Objects.hash(authIndicator, approvalCode, transactionId, networkTransactionId, providerTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, salesSlipNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber);
   }
 
 
@@ -610,6 +677,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseProcessorInformation {\n");
     
+    sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
     sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
@@ -623,9 +691,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
     sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");
     sb.append("    electronicVerificationResults: ").append(toIndentedString(electronicVerificationResults)).append("\n");
+    sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    consumerAuthenticationResponse: ").append(toIndentedString(consumerAuthenticationResponse)).append("\n");
-    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
     sb.append("    paymentAccountReferenceNumber: ").append(toIndentedString(paymentAccountReferenceNumber)).append("\n");
     sb.append("    transactionIntegrityCode: ").append(toIndentedString(transactionIntegrityCode)).append("\n");
@@ -635,6 +703,8 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    masterCardServiceReplyCode: ").append(toIndentedString(masterCardServiceReplyCode)).append("\n");
     sb.append("    masterCardAuthenticationType: ").append(toIndentedString(masterCardAuthenticationType)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
+    sb.append("    merchantNumber: ").append(toIndentedString(merchantNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,129 +26,126 @@ import java.io.IOException;
 /**
  * Tmsv1paymentinstrumentsCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class Tmsv1paymentinstrumentsCard {
-	@SerializedName("expirationMonth")
-	private String expirationMonth = null;
+  @SerializedName("expirationMonth")
+  private String expirationMonth = null;
 
-	@SerializedName("expirationYear")
-	private String expirationYear = null;
+  @SerializedName("expirationYear")
+  private String expirationYear = null;
 
-	/**
-	 * Credit card brand.
-	 */
-	@JsonAdapter(TypeEnum.Adapter.class)
-	public enum TypeEnum {
-		@SerializedName("visa")
-		VISA("visa"),
-
-		@SerializedName("mastercard")
-		MASTERCARD("mastercard"),
-
-        @SerializedName("american express")
-		AMERICAN_EXPRESS("american express"),
-
-		DISCOVER("discover"),
-
-		DINERS_CLUB("diners club"),
-
-		CARTE_BLANCHE("carte blanche"),
-
-		JCB("jcb"),
-
-		OPTIMA("optima"),
-
-		TWINPAY_CREDIT("twinpay credit"),
-
-		TWINPAY_DEBIT("twinpay debit"),
-
-		WALMART("walmart"),
-
-		ENROUTE("enroute"),
-
-		LOWES_CONSUMER("lowes consumer"),
-
-		HOME_DEPOT_CONSUMER("home depot consumer"),
-
-		MBNA("mbna"),
-
-		DICKS_SPORTSWEAR("dicks sportswear"),
-
-		CASUAL_CORNER("casual corner"),
-
-		SEARS("sears"),
-
-		JAL("jal"),
-
-		DISNEY("disney"),
-
-		MAESTRO_UK_DOMESTIC("maestro uk domestic"),
-
-		SAMS_CLUB_CONSUMER("sams club consumer"),
-
-		SAMS_CLUB_BUSINESS("sams club business"),
-
-		NICOS("nicos"),
-
-		BILL_ME_LATER("bill me later"),
-
-		BEBE("bebe"),
-
-		RESTORATION_HARDWARE("restoration hardware"),
-
-		DELTA_ONLINE("delta online"),
-
-		SOLO("solo"),
-
-		VISA_ELECTRON("visa electron"),
-
-		DANKORT("dankort"),
-
-		LASER("laser"),
-
-		CARTE_BLEUE("carte bleue"),
-
-		CARTA_SI("carta si"),
-
-		PINLESS_DEBIT("pinless debit"),
-
-		ENCODED_ACCOUNT("encoded account"),
-
-		UATP("uatp"),
-
-		HOUSEHOLD("household"),
-
-		MAESTRO_INTERNATIONAL("maestro international"),
-
-		GE_MONEY_UK("ge money uk"),
-
-		KOREAN_CARDS("korean cards"),
-
-		STYLE("style"),
-
-		JCREW("jcrew"),
-
-		PAYEASE_CHINA_PROCESSING_EWALLET("payease china processing ewallet"),
-
-		PAYEASE_CHINA_PROCESSING_BANK_TRANSFER("payease china processing bank transfer"),
-
-		MEIJER_PRIVATE_LABEL("meijer private label"),
-
-		HIPERCARD("hipercard"),
-
-		AURA("aura"),
-
-		REDECARD("redecard"),
-
-		ORICO("orico"),
-
-		ELO("elo"),
-
-		CAPITAL_ONE_PRIVATE_LABEL("capital one private label"),
-
-		SYNCHRONY_PRIVATE_LABEL("synchrony private label"),
-
-		CHINA_UNION_PAY("china union pay");
+  /**
+   * Credit card brand.
+   */
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
+    VISA("visa"),
+    
+    MASTERCARD("mastercard"),
+    
+    AMERICAN_EXPRESS("american express"),
+    
+    DISCOVER("discover"),
+    
+    DINERS_CLUB("diners club"),
+    
+    CARTE_BLANCHE("carte blanche"),
+    
+    JCB("jcb"),
+    
+    OPTIMA("optima"),
+    
+    TWINPAY_CREDIT("twinpay credit"),
+    
+    TWINPAY_DEBIT("twinpay debit"),
+    
+    WALMART("walmart"),
+    
+    ENROUTE("enroute"),
+    
+    LOWES_CONSUMER("lowes consumer"),
+    
+    HOME_DEPOT_CONSUMER("home depot consumer"),
+    
+    MBNA("mbna"),
+    
+    DICKS_SPORTSWEAR("dicks sportswear"),
+    
+    CASUAL_CORNER("casual corner"),
+    
+    SEARS("sears"),
+    
+    JAL("jal"),
+    
+    DISNEY("disney"),
+    
+    MAESTRO_UK_DOMESTIC("maestro uk domestic"),
+    
+    SAMS_CLUB_CONSUMER("sams club consumer"),
+    
+    SAMS_CLUB_BUSINESS("sams club business"),
+    
+    NICOS("nicos"),
+    
+    BILL_ME_LATER("bill me later"),
+    
+    BEBE("bebe"),
+    
+    RESTORATION_HARDWARE("restoration hardware"),
+    
+    DELTA_ONLINE("delta online"),
+    
+    SOLO("solo"),
+    
+    VISA_ELECTRON("visa electron"),
+    
+    DANKORT("dankort"),
+    
+    LASER("laser"),
+    
+    CARTE_BLEUE("carte bleue"),
+    
+    CARTA_SI("carta si"),
+    
+    PINLESS_DEBIT("pinless debit"),
+    
+    ENCODED_ACCOUNT("encoded account"),
+    
+    UATP("uatp"),
+    
+    HOUSEHOLD("household"),
+    
+    MAESTRO_INTERNATIONAL("maestro international"),
+    
+    GE_MONEY_UK("ge money uk"),
+    
+    KOREAN_CARDS("korean cards"),
+    
+    STYLE("style"),
+    
+    JCREW("jcrew"),
+    
+    PAYEASE_CHINA_PROCESSING_EWALLET("payease china processing ewallet"),
+    
+    PAYEASE_CHINA_PROCESSING_BANK_TRANSFER("payease china processing bank transfer"),
+    
+    MEIJER_PRIVATE_LABEL("meijer private label"),
+    
+    HIPERCARD("hipercard"),
+    
+    AURA("aura"),
+    
+    REDECARD("redecard"),
+    
+    ORICO("orico"),
+    
+    ELO("elo"),
+    
+    CAPITAL_ONE_PRIVATE_LABEL("capital one private label"),
+    
+    SYNCHRONY_PRIVATE_LABEL("synchrony private label"),
+    
+    CHINA_UNION_PAY("china union pay");
 
     private String value;
 

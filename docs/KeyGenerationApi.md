@@ -1,15 +1,15 @@
 # KeyGenerationApi
 
-All URIs are relative to *https://api.cybersource.com*
+All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generatePublicKey**](KeyGenerationApi.md#generatePublicKey) | **POST** /payments/flex/v1/keys/ | Generate Key
+[**generatePublicKey**](KeyGenerationApi.md#generatePublicKey) | **POST** /flex/v1/keys/ | Generate Key
 
 
 <a name="generatePublicKey"></a>
 # **generatePublicKey**
-> InlineResponse200 generatePublicKey(generatePublicKeyRequest)
+> FlexV1KeysPost200Response generatePublicKey(generatePublicKeyRequest)
 
 Generate Key
 
@@ -25,7 +25,7 @@ Generate a one-time use public key and key ID to encrypt the card number in the 
 KeyGenerationApi apiInstance = new KeyGenerationApi();
 GeneratePublicKeyRequest generatePublicKeyRequest = new GeneratePublicKeyRequest(); // GeneratePublicKeyRequest | 
 try {
-    InlineResponse200 result = apiInstance.generatePublicKey(generatePublicKeyRequest);
+    FlexV1KeysPost200Response result = apiInstance.generatePublicKey(generatePublicKeyRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KeyGenerationApi#generatePublicKey");
@@ -37,11 +37,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generatePublicKeyRequest** | [**GeneratePublicKeyRequest**](GeneratePublicKeyRequest.md)|  |
+ **generatePublicKeyRequest** | [**GeneratePublicKeyRequest**](GeneratePublicKeyRequest.md)|  | [optional]
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**FlexV1KeysPost200Response**](FlexV1KeysPost200Response.md)
 
 ### Authorization
 
@@ -49,6 +49,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json
 

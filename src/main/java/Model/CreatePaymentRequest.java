@@ -19,6 +19,8 @@ import Model.Ptsv2paymentsBuyerInformation;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsConsumerAuthenticationInformation;
 import Model.Ptsv2paymentsDeviceInformation;
+import Model.Ptsv2paymentsInstallmentInformation;
+import Model.Ptsv2paymentsIssuerInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsMerchantInformation;
 import Model.Ptsv2paymentsOrderInformation;
@@ -40,13 +42,16 @@ import java.util.List;
 /**
  * CreatePaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-08T03:47:28.632+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
 public class CreatePaymentRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("processingInformation")
   private Ptsv2paymentsProcessingInformation processingInformation = null;
+
+  @SerializedName("issuerInformation")
+  private Ptsv2paymentsIssuerInformation issuerInformation = null;
 
   @SerializedName("paymentInformation")
   private Ptsv2paymentsPaymentInformation paymentInformation = null;
@@ -77,6 +82,9 @@ public class CreatePaymentRequest {
 
   @SerializedName("merchantDefinedInformation")
   private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
+
+  @SerializedName("installmentInformation")
+  private Ptsv2paymentsInstallmentInformation installmentInformation = null;
 
   public CreatePaymentRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -112,6 +120,24 @@ public class CreatePaymentRequest {
 
   public void setProcessingInformation(Ptsv2paymentsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
+  }
+
+  public CreatePaymentRequest issuerInformation(Ptsv2paymentsIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+    return this;
+  }
+
+   /**
+   * Get issuerInformation
+   * @return issuerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsIssuerInformation getIssuerInformation() {
+    return issuerInformation;
+  }
+
+  public void setIssuerInformation(Ptsv2paymentsIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
   }
 
   public CreatePaymentRequest paymentInformation(Ptsv2paymentsPaymentInformation paymentInformation) {
@@ -290,16 +316,34 @@ public class CreatePaymentRequest {
   }
 
    /**
-   * Description of this field is not available.
+   * The description for this field is not available.
    * @return merchantDefinedInformation
   **/
-  @ApiModelProperty(value = "Description of this field is not available.")
+  @ApiModelProperty(value = "The description for this field is not available.")
   public List<Ptsv2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {
     return merchantDefinedInformation;
   }
 
   public void setMerchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
+  }
+
+  public CreatePaymentRequest installmentInformation(Ptsv2paymentsInstallmentInformation installmentInformation) {
+    this.installmentInformation = installmentInformation;
+    return this;
+  }
+
+   /**
+   * Get installmentInformation
+   * @return installmentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsInstallmentInformation getInstallmentInformation() {
+    return installmentInformation;
+  }
+
+  public void setInstallmentInformation(Ptsv2paymentsInstallmentInformation installmentInformation) {
+    this.installmentInformation = installmentInformation;
   }
 
 
@@ -314,6 +358,7 @@ public class CreatePaymentRequest {
     CreatePaymentRequest createPaymentRequest = (CreatePaymentRequest) o;
     return Objects.equals(this.clientReferenceInformation, createPaymentRequest.clientReferenceInformation) &&
         Objects.equals(this.processingInformation, createPaymentRequest.processingInformation) &&
+        Objects.equals(this.issuerInformation, createPaymentRequest.issuerInformation) &&
         Objects.equals(this.paymentInformation, createPaymentRequest.paymentInformation) &&
         Objects.equals(this.orderInformation, createPaymentRequest.orderInformation) &&
         Objects.equals(this.buyerInformation, createPaymentRequest.buyerInformation) &&
@@ -323,12 +368,13 @@ public class CreatePaymentRequest {
         Objects.equals(this.aggregatorInformation, createPaymentRequest.aggregatorInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, createPaymentRequest.consumerAuthenticationInformation) &&
         Objects.equals(this.pointOfSaleInformation, createPaymentRequest.pointOfSaleInformation) &&
-        Objects.equals(this.merchantDefinedInformation, createPaymentRequest.merchantDefinedInformation);
+        Objects.equals(this.merchantDefinedInformation, createPaymentRequest.merchantDefinedInformation) &&
+        Objects.equals(this.installmentInformation, createPaymentRequest.installmentInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation);
   }
 
 
@@ -339,6 +385,7 @@ public class CreatePaymentRequest {
     
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
@@ -349,6 +396,7 @@ public class CreatePaymentRequest {
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
+    sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
