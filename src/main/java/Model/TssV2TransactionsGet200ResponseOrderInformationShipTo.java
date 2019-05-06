@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseOrderInformationShipTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
 public class TssV2TransactionsGet200ResponseOrderInformationShipTo {
   @SerializedName("firstName")
   private String firstName = null;
@@ -82,10 +82,10 @@ public class TssV2TransactionsGet200ResponseOrderInformationShipTo {
   }
 
    /**
-   * Last name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 
+   * Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60 
    * @return lastName
   **/
-  @ApiModelProperty(value = "Last name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 ")
+  @ApiModelProperty(value = "Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60 ")
   public String getLastName() {
     return lastName;
   }
@@ -154,10 +154,10 @@ public class TssV2TransactionsGet200ResponseOrderInformationShipTo {
   }
 
    /**
-   * State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada. 
+   * State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada.  For Payouts: This field may be sent only for FDC Compass.  **CyberSource through VisaNet** Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  ccAuthService (Required when the billing country is the U.S. or Canada; otherwise, optional.) This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See \&quot;Relaxed Requirements for Address Data and Expiration Date,\&quot; page 75. Important It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the bill_state field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada. ")
+  @ApiModelProperty(value = "State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada.  For Payouts: This field may be sent only for FDC Compass.  **CyberSource through VisaNet** Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  ccAuthService (Required when the billing country is the U.S. or Canada; otherwise, optional.) This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See \"Relaxed Requirements for Address Data and Expiration Date,\" page 75. Important It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the bill_state field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -172,10 +172,10 @@ public class TssV2TransactionsGet200ResponseOrderInformationShipTo {
   }
 
    /**
-   * Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3 
+   * Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  **American Express Direct**\\ Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side. 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3 ")
+  @ApiModelProperty(value = "Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  **American Express Direct**\\ Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side. ")
   public String getPostalCode() {
     return postalCode;
   }
@@ -208,10 +208,10 @@ public class TssV2TransactionsGet200ResponseOrderInformationShipTo {
   }
 
    /**
-   * Country of the shipping address. Use the two character ISO Standard Country Codes.
+   * Country of the shipping address. Use the two-character ISO Standard Country Codes.
    * @return country
   **/
-  @ApiModelProperty(value = "Country of the shipping address. Use the two character ISO Standard Country Codes.")
+  @ApiModelProperty(value = "Country of the shipping address. Use the two-character ISO Standard Country Codes.")
   public String getCountry() {
     return country;
   }
@@ -226,10 +226,10 @@ public class TssV2TransactionsGet200ResponseOrderInformationShipTo {
   }
 
    /**
-   * Phone number for the shipping address.
+   * Phone number associated with the shipping address.
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Phone number for the shipping address.")
+  @ApiModelProperty(value = "Phone number associated with the shipping address.")
   public String getPhoneNumber() {
     return phoneNumber;
   }

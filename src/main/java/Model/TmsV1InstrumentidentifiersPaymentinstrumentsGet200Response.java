@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,7 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks;
+import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks;
+import Model.TmsV1PaymentinstrumentsPatch200Response;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,14 +24,16 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response
+ * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
-public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
+public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response {
   @SerializedName("_links")
-  private TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks links = null;
+  private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks links = null;
 
   /**
    * Shows the response is a collection of objects.
@@ -93,9 +96,9 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response {
   private String total = null;
 
   @SerializedName("_embedded")
-  private Object embedded = null;
+  private List<TmsV1PaymentinstrumentsPatch200Response> embedded = null;
 
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response links(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks links) {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response links(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -105,11 +108,11 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks getLinks() {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks links) {
+  public void setLinks(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks links) {
     this.links = links;
   }
 
@@ -158,8 +161,16 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response {
     return total;
   }
 
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response embedded(Object embedded) {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response embedded(List<TmsV1PaymentinstrumentsPatch200Response> embedded) {
     this.embedded = embedded;
+    return this;
+  }
+
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response addEmbeddedItem(TmsV1PaymentinstrumentsPatch200Response embeddedItem) {
+    if (this.embedded == null) {
+      this.embedded = new ArrayList<TmsV1PaymentinstrumentsPatch200Response>();
+    }
+    this.embedded.add(embeddedItem);
     return this;
   }
 
@@ -168,11 +179,11 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response {
    * @return embedded
   **/
   @ApiModelProperty(value = "Array of Payment Instruments returned for the supplied Instrument Identifier.")
-  public Object getEmbedded() {
+  public List<TmsV1PaymentinstrumentsPatch200Response> getEmbedded() {
     return embedded;
   }
 
-  public void setEmbedded(Object embedded) {
+  public void setEmbedded(List<TmsV1PaymentinstrumentsPatch200Response> embedded) {
     this.embedded = embedded;
   }
 
@@ -185,14 +196,14 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response tmsV1InstrumentidentifiersPaymentinstrumentsGet200Response = (TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response) o;
-    return Objects.equals(this.links, tmsV1InstrumentidentifiersPaymentinstrumentsGet200Response.links) &&
-        Objects.equals(this.object, tmsV1InstrumentidentifiersPaymentinstrumentsGet200Response.object) &&
-        Objects.equals(this.offset, tmsV1InstrumentidentifiersPaymentinstrumentsGet200Response.offset) &&
-        Objects.equals(this.limit, tmsV1InstrumentidentifiersPaymentinstrumentsGet200Response.limit) &&
-        Objects.equals(this.count, tmsV1InstrumentidentifiersPaymentinstrumentsGet200Response.count) &&
-        Objects.equals(this.total, tmsV1InstrumentidentifiersPaymentinstrumentsGet200Response.total) &&
-        Objects.equals(this.embedded, tmsV1InstrumentidentifiersPaymentinstrumentsGet200Response.embedded);
+    TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response tmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response = (TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response) o;
+    return Objects.equals(this.links, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response.links) &&
+        Objects.equals(this.object, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response.object) &&
+        Objects.equals(this.offset, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response.offset) &&
+        Objects.equals(this.limit, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response.limit) &&
+        Objects.equals(this.count, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response.count) &&
+        Objects.equals(this.total, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response.total) &&
+        Objects.equals(this.embedded, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response.embedded);
   }
 
   @Override
@@ -204,7 +215,7 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response {\n");
+    sb.append("class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response {\n");
     
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    object: ").append(toIndentedString(object)).append("\n");

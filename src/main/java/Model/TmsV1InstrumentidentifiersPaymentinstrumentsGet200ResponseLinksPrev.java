@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -27,12 +27,12 @@ import java.io.IOException;
  * A link to the previous collection starting at the supplied offset minus the supplied limit.
  */
 @ApiModel(description = "A link to the previous collection starting at the supplied offset minus the supplied limit.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
-public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
+public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev {
   @SerializedName("href")
   private String href = null;
 
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev href(String href) {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev href(String href) {
     this.href = href;
     return this;
   }
@@ -59,8 +59,8 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev tmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev = (TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev) o;
-    return Objects.equals(this.href, tmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev.href);
+    TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev = (TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev) o;
+    return Objects.equals(this.href, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev.href);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev {\n");
+    sb.append("class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev {\n");
     
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("}");

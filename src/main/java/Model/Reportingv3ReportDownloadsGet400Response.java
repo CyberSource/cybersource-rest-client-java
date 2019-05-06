@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -25,15 +25,16 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.joda.time.DateTime;
 
 /**
  * HTTP status code for client application
  */
 @ApiModel(description = "HTTP status code for client application")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
 public class Reportingv3ReportDownloadsGet400Response {
   @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  private DateTime submitTimeUtc = null;
 
   @SerializedName("reason")
   private String reason = null;
@@ -44,21 +45,21 @@ public class Reportingv3ReportDownloadsGet400Response {
   @SerializedName("details")
   private List<Reportingv3ReportDownloadsGet400ResponseDetails> details = new ArrayList<Reportingv3ReportDownloadsGet400ResponseDetails>();
 
-  public Reportingv3ReportDownloadsGet400Response submitTimeUtc(String submitTimeUtc) {
+  public Reportingv3ReportDownloadsGet400Response submitTimeUtc(DateTime submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
     return this;
   }
 
    /**
-   * Time of request in UTC 
+   * Time of request in UTC.  
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(example = "1549650141000", required = true, value = "Time of request in UTC ")
-  public String getSubmitTimeUtc() {
+  @ApiModelProperty(example = "2016-08-11T22:47:57Z", required = true, value = "Time of request in UTC.  ")
+  public DateTime getSubmitTimeUtc() {
     return submitTimeUtc;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
+  public void setSubmitTimeUtc(DateTime submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
   }
 

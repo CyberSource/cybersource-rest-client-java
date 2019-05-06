@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,10 +14,10 @@
 package Api;
 
 import Invokers.ApiException;
-import Model.PtsV2PayoutsPost502Response;
+import Model.CreateSearchRequest;
+import Model.PtsV2PaymentsPost502Response;
 import Model.TssV2TransactionsPost201Response;
 import Model.TssV2TransactionsPost400Response;
-import Model.TssV2TransactionsPostResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -45,7 +45,7 @@ public class SearchTransactionsApiTest {
      */
     @Test
     public void createSearchTest() throws ApiException {
-        TssV2TransactionsPostResponse createSearchRequest = null;
+        CreateSearchRequest createSearchRequest = null;
         TssV2TransactionsPost201Response response = api.createSearch(createSearchRequest);
 
         // TODO: test validations
@@ -54,15 +54,15 @@ public class SearchTransactionsApiTest {
     /**
      * Get Search results
      *
-     * Include the Search ID in the GET request to retrieve the search results.
+     * Include the Search ID in the GET request to retrieve the search results. 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void getSearchTest() throws ApiException {
-        String id = null;
-        TssV2TransactionsPost201Response response = api.getSearch(id);
+        String searchId = null;
+        TssV2TransactionsPost201Response response = api.getSearch(searchId);
 
         // TODO: test validations
     }

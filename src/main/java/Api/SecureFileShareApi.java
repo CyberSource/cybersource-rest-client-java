@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -183,7 +183,7 @@ final String[] localVarContentTypes = {"*/*"};
         return call;
     }
     /**
-     * Build call for getFileDetails
+     * Build call for getFileDetail
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -192,7 +192,7 @@ final String[] localVarContentTypes = {"*/*"};
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFileDetailsCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getFileDetailCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -237,20 +237,20 @@ final String[] localVarContentTypes = {"*/*"};
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFileDetailsValidateBeforeCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getFileDetailValidateBeforeCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'startDate' is set
         if (startDate == null) {
-            throw new ApiException("Missing the required parameter 'startDate' when calling getFileDetails(Async)");
+            throw new ApiException("Missing the required parameter 'startDate' when calling getFileDetail(Async)");
         }
         
         // verify the required parameter 'endDate' is set
         if (endDate == null) {
-            throw new ApiException("Missing the required parameter 'endDate' when calling getFileDetails(Async)");
+            throw new ApiException("Missing the required parameter 'endDate' when calling getFileDetail(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = getFileDetailsCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getFileDetailCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -268,8 +268,8 @@ final String[] localVarContentTypes = {"*/*"};
      * @return V1FileDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public V1FileDetailsGet200Response getFileDetails(LocalDate startDate, LocalDate endDate, String organizationId) throws ApiException {
-        ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailsWithHttpInfo(startDate, endDate, organizationId);
+    public V1FileDetailsGet200Response getFileDetail(LocalDate startDate, LocalDate endDate, String organizationId) throws ApiException {
+        ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailWithHttpInfo(startDate, endDate, organizationId);
         return resp.getData();
     }
 
@@ -282,8 +282,8 @@ final String[] localVarContentTypes = {"*/*"};
      * @return ApiResponse&lt;V1FileDetailsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<V1FileDetailsGet200Response> getFileDetailsWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getFileDetailsValidateBeforeCall(startDate, endDate, organizationId, null, null);
+    public ApiResponse<V1FileDetailsGet200Response> getFileDetailWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, null, null);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -298,7 +298,7 @@ final String[] localVarContentTypes = {"*/*"};
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getFileDetailsAsync(LocalDate startDate, LocalDate endDate, String organizationId, final ApiCallback<V1FileDetailsGet200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call getFileDetailAsync(LocalDate startDate, LocalDate endDate, String organizationId, final ApiCallback<V1FileDetailsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -319,7 +319,7 @@ final String[] localVarContentTypes = {"*/*"};
             };
         }
 
-        com.squareup.okhttp.Call call = getFileDetailsValidateBeforeCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

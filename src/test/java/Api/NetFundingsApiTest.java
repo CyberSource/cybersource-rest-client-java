@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -43,12 +43,12 @@ public class NetFundingsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getNetFundingInfoTest() throws ApiException {
+    public void getNetFundingDetailsTest() throws ApiException {
         DateTime startTime = null;
         DateTime endTime = null;
         String organizationId = null;
         String groupName = null;
-        ReportingV3NetFundingsGet200Response response = api.getNetFundingInfo(startTime, endTime, organizationId, groupName);
+        ReportingV3NetFundingsGet200Response response = api.getNetFundingDetails(startTime, endTime, organizationId, groupName);
 
         // TODO: test validations
     }

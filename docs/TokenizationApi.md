@@ -1,15 +1,15 @@
 # TokenizationApi
 
-All URIs are relative to *https://api.cybersource.com*
+All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**tokenize**](TokenizationApi.md#tokenize) | **POST** /payments/flex/v1/tokens/ | Tokenize card
+[**tokenize**](TokenizationApi.md#tokenize) | **POST** /flex/v1/tokens | Tokenize card
 
 
 <a name="tokenize"></a>
 # **tokenize**
-> InlineResponse2001 tokenize(tokenizeRequest)
+> FlexV1TokensPost200Response tokenize(tokenizeRequest)
 
 Tokenize card
 
@@ -25,7 +25,7 @@ Returns a token representing the supplied card details. The token replaces card 
 TokenizationApi apiInstance = new TokenizationApi();
 TokenizeRequest tokenizeRequest = new TokenizeRequest(); // TokenizeRequest | 
 try {
-    InlineResponse2001 result = apiInstance.tokenize(tokenizeRequest);
+    FlexV1TokensPost200Response result = apiInstance.tokenize(tokenizeRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TokenizationApi#tokenize");
@@ -37,11 +37,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tokenizeRequest** | [**TokenizeRequest**](TokenizeRequest.md)|  | [optional]
+ **tokenizeRequest** | [**TokenizeRequest**](TokenizeRequest.md)|  |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**FlexV1TokensPost200Response**](FlexV1TokensPost200Response.md)
 
 ### Authorization
 
@@ -49,6 +49,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json
 

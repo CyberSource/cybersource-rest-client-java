@@ -1,5 +1,5 @@
 
-# TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast
+# TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksLast
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.TmsV1InstrumentidentifiersDelete409ResponseLinks;
+import Model.TmsV1InstrumentIdentifiersDelete409ResponseLinks;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,14 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TmsV1InstrumentidentifiersDelete409Response
+ * TmsV1InstrumentIdentifiersDelete409Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
-public class TmsV1InstrumentidentifiersDelete409Response {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
+public class TmsV1InstrumentIdentifiersDelete409Response {
   @SerializedName("_links")
-  private TmsV1InstrumentidentifiersDelete409ResponseLinks links = null;
+  private TmsV1InstrumentIdentifiersDelete409ResponseLinks links = null;
 
-  public TmsV1InstrumentidentifiersDelete409Response links(TmsV1InstrumentidentifiersDelete409ResponseLinks links) {
+  public TmsV1InstrumentIdentifiersDelete409Response links(TmsV1InstrumentIdentifiersDelete409ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -42,11 +42,11 @@ public class TmsV1InstrumentidentifiersDelete409Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentidentifiersDelete409ResponseLinks getLinks() {
+  public TmsV1InstrumentIdentifiersDelete409ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(TmsV1InstrumentidentifiersDelete409ResponseLinks links) {
+  public void setLinks(TmsV1InstrumentIdentifiersDelete409ResponseLinks links) {
     this.links = links;
   }
 
@@ -59,8 +59,8 @@ public class TmsV1InstrumentidentifiersDelete409Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TmsV1InstrumentidentifiersDelete409Response tmsV1InstrumentidentifiersDelete409Response = (TmsV1InstrumentidentifiersDelete409Response) o;
-    return Objects.equals(this.links, tmsV1InstrumentidentifiersDelete409Response.links);
+    TmsV1InstrumentIdentifiersDelete409Response tmsV1InstrumentIdentifiersDelete409Response = (TmsV1InstrumentIdentifiersDelete409Response) o;
+    return Objects.equals(this.links, tmsV1InstrumentIdentifiersDelete409Response.links);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class TmsV1InstrumentidentifiersDelete409Response {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TmsV1InstrumentidentifiersDelete409Response {\n");
+    sb.append("class TmsV1InstrumentIdentifiersDelete409Response {\n");
     
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");

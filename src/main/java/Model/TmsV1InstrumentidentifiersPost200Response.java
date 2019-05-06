@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,11 +14,11 @@
 package Model;
 
 import java.util.Objects;
-import Model.Tmsv1instrumentidentifiersBankAccount;
-import Model.Tmsv1instrumentidentifiersCard;
-import Model.Tmsv1instrumentidentifiersLinks;
-import Model.Tmsv1instrumentidentifiersMetadata;
-import Model.Tmsv1instrumentidentifiersProcessingInformation;
+import Model.TmsV1InstrumentIdentifiersPost200ResponseBankAccount;
+import Model.TmsV1InstrumentIdentifiersPost200ResponseCard;
+import Model.TmsV1InstrumentIdentifiersPost200ResponseLinks;
+import Model.TmsV1InstrumentIdentifiersPost200ResponseMetadata;
+import Model.TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,18 +29,18 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TmsV1InstrumentidentifiersPost200Response
+ * TmsV1InstrumentIdentifiersPost200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
-public class TmsV1InstrumentidentifiersPost200Response {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
+public class TmsV1InstrumentIdentifiersPost200Response {
   @SerializedName("_links")
-  private Tmsv1instrumentidentifiersLinks links = null;
+  private TmsV1InstrumentIdentifiersPost200ResponseLinks links = null;
 
   @SerializedName("id")
   private String id = null;
 
   /**
-   * Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.
+   * Describes type of token.
    */
   @JsonAdapter(ObjectEnum.Adapter.class)
   public enum ObjectEnum {
@@ -138,18 +138,18 @@ public class TmsV1InstrumentidentifiersPost200Response {
   private StateEnum state = null;
 
   @SerializedName("card")
-  private Tmsv1instrumentidentifiersCard card = null;
+  private TmsV1InstrumentIdentifiersPost200ResponseCard card = null;
 
   @SerializedName("bankAccount")
-  private Tmsv1instrumentidentifiersBankAccount bankAccount = null;
+  private TmsV1InstrumentIdentifiersPost200ResponseBankAccount bankAccount = null;
 
   @SerializedName("processingInformation")
-  private Tmsv1instrumentidentifiersProcessingInformation processingInformation = null;
+  private TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation processingInformation = null;
 
   @SerializedName("metadata")
-  private Tmsv1instrumentidentifiersMetadata metadata = null;
+  private TmsV1InstrumentIdentifiersPost200ResponseMetadata metadata = null;
 
-  public TmsV1InstrumentidentifiersPost200Response links(Tmsv1instrumentidentifiersLinks links) {
+  public TmsV1InstrumentIdentifiersPost200Response links(TmsV1InstrumentIdentifiersPost200ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -159,11 +159,11 @@ public class TmsV1InstrumentidentifiersPost200Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public Tmsv1instrumentidentifiersLinks getLinks() {
+  public TmsV1InstrumentIdentifiersPost200ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(Tmsv1instrumentidentifiersLinks links) {
+  public void setLinks(TmsV1InstrumentIdentifiersPost200ResponseLinks links) {
     this.links = links;
   }
 
@@ -177,10 +177,10 @@ public class TmsV1InstrumentidentifiersPost200Response {
   }
 
    /**
-   * Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.
+   * Describes type of token.
    * @return object
   **/
-  @ApiModelProperty(example = "instrumentIdentifier", value = "Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.")
+  @ApiModelProperty(example = "instrumentIdentifier", value = "Describes type of token.")
   public ObjectEnum getObject() {
     return object;
   }
@@ -194,7 +194,7 @@ public class TmsV1InstrumentidentifiersPost200Response {
     return state;
   }
 
-  public TmsV1InstrumentidentifiersPost200Response card(Tmsv1instrumentidentifiersCard card) {
+  public TmsV1InstrumentIdentifiersPost200Response card(TmsV1InstrumentIdentifiersPost200ResponseCard card) {
     this.card = card;
     return this;
   }
@@ -204,15 +204,15 @@ public class TmsV1InstrumentidentifiersPost200Response {
    * @return card
   **/
   @ApiModelProperty(value = "")
-  public Tmsv1instrumentidentifiersCard getCard() {
+  public TmsV1InstrumentIdentifiersPost200ResponseCard getCard() {
     return card;
   }
 
-  public void setCard(Tmsv1instrumentidentifiersCard card) {
+  public void setCard(TmsV1InstrumentIdentifiersPost200ResponseCard card) {
     this.card = card;
   }
 
-  public TmsV1InstrumentidentifiersPost200Response bankAccount(Tmsv1instrumentidentifiersBankAccount bankAccount) {
+  public TmsV1InstrumentIdentifiersPost200Response bankAccount(TmsV1InstrumentIdentifiersPost200ResponseBankAccount bankAccount) {
     this.bankAccount = bankAccount;
     return this;
   }
@@ -222,15 +222,15 @@ public class TmsV1InstrumentidentifiersPost200Response {
    * @return bankAccount
   **/
   @ApiModelProperty(value = "")
-  public Tmsv1instrumentidentifiersBankAccount getBankAccount() {
+  public TmsV1InstrumentIdentifiersPost200ResponseBankAccount getBankAccount() {
     return bankAccount;
   }
 
-  public void setBankAccount(Tmsv1instrumentidentifiersBankAccount bankAccount) {
+  public void setBankAccount(TmsV1InstrumentIdentifiersPost200ResponseBankAccount bankAccount) {
     this.bankAccount = bankAccount;
   }
 
-  public TmsV1InstrumentidentifiersPost200Response processingInformation(Tmsv1instrumentidentifiersProcessingInformation processingInformation) {
+  public TmsV1InstrumentIdentifiersPost200Response processingInformation(TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
@@ -240,15 +240,15 @@ public class TmsV1InstrumentidentifiersPost200Response {
    * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv1instrumentidentifiersProcessingInformation getProcessingInformation() {
+  public TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(Tmsv1instrumentidentifiersProcessingInformation processingInformation) {
+  public void setProcessingInformation(TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
   }
 
-  public TmsV1InstrumentidentifiersPost200Response metadata(Tmsv1instrumentidentifiersMetadata metadata) {
+  public TmsV1InstrumentIdentifiersPost200Response metadata(TmsV1InstrumentIdentifiersPost200ResponseMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -258,11 +258,11 @@ public class TmsV1InstrumentidentifiersPost200Response {
    * @return metadata
   **/
   @ApiModelProperty(value = "")
-  public Tmsv1instrumentidentifiersMetadata getMetadata() {
+  public TmsV1InstrumentIdentifiersPost200ResponseMetadata getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(Tmsv1instrumentidentifiersMetadata metadata) {
+  public void setMetadata(TmsV1InstrumentIdentifiersPost200ResponseMetadata metadata) {
     this.metadata = metadata;
   }
 
@@ -275,15 +275,15 @@ public class TmsV1InstrumentidentifiersPost200Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TmsV1InstrumentidentifiersPost200Response tmsV1InstrumentidentifiersPost200Response = (TmsV1InstrumentidentifiersPost200Response) o;
-    return Objects.equals(this.links, tmsV1InstrumentidentifiersPost200Response.links) &&
-        Objects.equals(this.id, tmsV1InstrumentidentifiersPost200Response.id) &&
-        Objects.equals(this.object, tmsV1InstrumentidentifiersPost200Response.object) &&
-        Objects.equals(this.state, tmsV1InstrumentidentifiersPost200Response.state) &&
-        Objects.equals(this.card, tmsV1InstrumentidentifiersPost200Response.card) &&
-        Objects.equals(this.bankAccount, tmsV1InstrumentidentifiersPost200Response.bankAccount) &&
-        Objects.equals(this.processingInformation, tmsV1InstrumentidentifiersPost200Response.processingInformation) &&
-        Objects.equals(this.metadata, tmsV1InstrumentidentifiersPost200Response.metadata);
+    TmsV1InstrumentIdentifiersPost200Response tmsV1InstrumentIdentifiersPost200Response = (TmsV1InstrumentIdentifiersPost200Response) o;
+    return Objects.equals(this.links, tmsV1InstrumentIdentifiersPost200Response.links) &&
+        Objects.equals(this.id, tmsV1InstrumentIdentifiersPost200Response.id) &&
+        Objects.equals(this.object, tmsV1InstrumentIdentifiersPost200Response.object) &&
+        Objects.equals(this.state, tmsV1InstrumentIdentifiersPost200Response.state) &&
+        Objects.equals(this.card, tmsV1InstrumentIdentifiersPost200Response.card) &&
+        Objects.equals(this.bankAccount, tmsV1InstrumentIdentifiersPost200Response.bankAccount) &&
+        Objects.equals(this.processingInformation, tmsV1InstrumentIdentifiersPost200Response.processingInformation) &&
+        Objects.equals(this.metadata, tmsV1InstrumentIdentifiersPost200Response.metadata);
   }
 
   @Override
@@ -295,7 +295,7 @@ public class TmsV1InstrumentidentifiersPost200Response {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TmsV1InstrumentidentifiersPost200Response {\n");
+    sb.append("class TmsV1InstrumentIdentifiersPost200Response {\n");
     
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");

@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseLinksSelf
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
 public class PtsV2PaymentsPost201ResponseLinksSelf {
   @SerializedName("href")
   private String href = null;
@@ -40,10 +40,10 @@ public class PtsV2PaymentsPost201ResponseLinksSelf {
   }
 
    /**
-   * URL
+   * This is the endpoint of the resource that was created by the successful request.
    * @return href
   **/
-  @ApiModelProperty(value = "URL")
+  @ApiModelProperty(value = "This is the endpoint of the resource that was created by the successful request.")
   public String getHref() {
     return href;
   }
@@ -58,10 +58,10 @@ public class PtsV2PaymentsPost201ResponseLinksSelf {
   }
 
    /**
-   * HTTP method applied to above URL
+   * &#x60;method&#x60; refers to the HTTP method that you can send to the &#x60;self&#x60; endpoint to retrieve details of the resource.
    * @return method
   **/
-  @ApiModelProperty(value = "HTTP method applied to above URL")
+  @ApiModelProperty(value = "`method` refers to the HTTP method that you can send to the `self` endpoint to retrieve details of the resource.")
   public String getMethod() {
     return method;
   }

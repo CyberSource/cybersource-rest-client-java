@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails;
+import Model.Ptsv2paymentsidreversalsReversalInformationAmountDetails;
 import Model.TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo;
 import Model.TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo;
 import com.google.gson.TypeAdapter;
@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedOrderInformation {
   @SerializedName("billTo")
   private TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo billTo = null;
@@ -38,7 +38,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformation {
   private TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo shipTo = null;
 
   @SerializedName("amountDetails")
-  private TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails amountDetails = null;
+  private Ptsv2paymentsidreversalsReversalInformationAmountDetails amountDetails = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedOrderInformation billTo(TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo billTo) {
     this.billTo = billTo;
@@ -76,7 +76,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformation {
     this.shipTo = shipTo;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedOrderInformation amountDetails(TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails amountDetails) {
+  public TssV2TransactionsPost201ResponseEmbeddedOrderInformation amountDetails(Ptsv2paymentsidreversalsReversalInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
     return this;
   }
@@ -86,11 +86,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformation {
    * @return amountDetails
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails getAmountDetails() {
+  public Ptsv2paymentsidreversalsReversalInformationAmountDetails getAmountDetails() {
     return amountDetails;
   }
 
-  public void setAmountDetails(TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails amountDetails) {
+  public void setAmountDetails(Ptsv2paymentsidreversalsReversalInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
   }
 

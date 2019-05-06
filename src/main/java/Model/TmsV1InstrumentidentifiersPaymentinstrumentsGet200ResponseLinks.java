@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,11 +14,11 @@
 package Model;
 
 import java.util.Objects;
-import Model.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst;
-import Model.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast;
-import Model.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext;
-import Model.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev;
-import Model.TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf;
+import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksFirst;
+import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksLast;
+import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksNext;
+import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev;
+import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,26 +29,26 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks
+ * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
-public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
+public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks {
   @SerializedName("self")
-  private TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf self = null;
+  private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf self = null;
 
   @SerializedName("first")
-  private TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst first = null;
+  private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksFirst first = null;
 
   @SerializedName("prev")
-  private TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev prev = null;
+  private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev prev = null;
 
   @SerializedName("next")
-  private TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext next = null;
+  private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksNext next = null;
 
   @SerializedName("last")
-  private TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast last = null;
+  private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksLast last = null;
 
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks self(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf self) {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks self(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf self) {
     this.self = self;
     return this;
   }
@@ -58,15 +58,15 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks {
    * @return self
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf getSelf() {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf getSelf() {
     return self;
   }
 
-  public void setSelf(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf self) {
+  public void setSelf(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf self) {
     this.self = self;
   }
 
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks first(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst first) {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks first(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksFirst first) {
     this.first = first;
     return this;
   }
@@ -76,15 +76,15 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks {
    * @return first
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst getFirst() {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksFirst getFirst() {
     return first;
   }
 
-  public void setFirst(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst first) {
+  public void setFirst(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksFirst first) {
     this.first = first;
   }
 
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks prev(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev prev) {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks prev(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev prev) {
     this.prev = prev;
     return this;
   }
@@ -94,15 +94,15 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks {
    * @return prev
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev getPrev() {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev getPrev() {
     return prev;
   }
 
-  public void setPrev(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev prev) {
+  public void setPrev(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev prev) {
     this.prev = prev;
   }
 
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks next(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext next) {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks next(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksNext next) {
     this.next = next;
     return this;
   }
@@ -112,15 +112,15 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks {
    * @return next
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext getNext() {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksNext getNext() {
     return next;
   }
 
-  public void setNext(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext next) {
+  public void setNext(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksNext next) {
     this.next = next;
   }
 
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks last(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast last) {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks last(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksLast last) {
     this.last = last;
     return this;
   }
@@ -130,11 +130,11 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks {
    * @return last
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast getLast() {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksLast getLast() {
     return last;
   }
 
-  public void setLast(TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast last) {
+  public void setLast(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksLast last) {
     this.last = last;
   }
 
@@ -147,12 +147,12 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks tmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks = (TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks) o;
-    return Objects.equals(this.self, tmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks.self) &&
-        Objects.equals(this.first, tmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks.first) &&
-        Objects.equals(this.prev, tmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks.prev) &&
-        Objects.equals(this.next, tmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks.next) &&
-        Objects.equals(this.last, tmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks.last);
+    TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks = (TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks) o;
+    return Objects.equals(this.self, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks.self) &&
+        Objects.equals(this.first, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks.first) &&
+        Objects.equals(this.prev, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks.prev) &&
+        Objects.equals(this.next, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks.next) &&
+        Objects.equals(this.last, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks.last);
   }
 
   @Override
@@ -164,7 +164,7 @@ public class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks {\n");
+    sb.append("class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks {\n");
     
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("    first: ").append(toIndentedString(first)).append("\n");

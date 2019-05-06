@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.ReportingV3ReportsIdGet200ResponseReportPreferences;
+import Model.Reportingv3reportsReportPreferences;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -33,7 +33,7 @@ import org.joda.time.DateTime;
  * Subscription Details
  */
 @ApiModel(description = "Subscription Details")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
 public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -103,7 +103,9 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
     
     WEEKLY("WEEKLY"),
     
-    MONTHLY("MONTHLY");
+    MONTHLY("MONTHLY"),
+    
+    ADHOC("ADHOC");
 
     private String value;
 
@@ -165,7 +167,7 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
   private Map<String, List<String>> reportFilters = null;
 
   @SerializedName("reportPreferences")
-  private ReportingV3ReportsIdGet200ResponseReportPreferences reportPreferences = null;
+  private Reportingv3reportsReportPreferences reportPreferences = null;
 
   @SerializedName("groupId")
   private String groupId = null;
@@ -384,7 +386,7 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
     this.reportFilters = reportFilters;
   }
 
-  public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions reportPreferences(ReportingV3ReportsIdGet200ResponseReportPreferences reportPreferences) {
+  public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions reportPreferences(Reportingv3reportsReportPreferences reportPreferences) {
     this.reportPreferences = reportPreferences;
     return this;
   }
@@ -394,11 +396,11 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
    * @return reportPreferences
   **/
   @ApiModelProperty(value = "")
-  public ReportingV3ReportsIdGet200ResponseReportPreferences getReportPreferences() {
+  public Reportingv3reportsReportPreferences getReportPreferences() {
     return reportPreferences;
   }
 
-  public void setReportPreferences(ReportingV3ReportsIdGet200ResponseReportPreferences reportPreferences) {
+  public void setReportPreferences(Reportingv3reportsReportPreferences reportPreferences) {
     this.reportPreferences = reportPreferences;
   }
 

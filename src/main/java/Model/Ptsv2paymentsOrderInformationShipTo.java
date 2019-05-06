@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsOrderInformationShipTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
 public class Ptsv2paymentsOrderInformationShipTo {
   @SerializedName("firstName")
   private String firstName = null;
@@ -196,10 +196,10 @@ public class Ptsv2paymentsOrderInformationShipTo {
   }
 
    /**
-   * Country of the shipping address. Use the two character ISO Standard Country Codes.
+   * Country of the shipping address. Use the two-character ISO Standard Country Codes.
    * @return country
   **/
-  @ApiModelProperty(value = "Country of the shipping address. Use the two character ISO Standard Country Codes.")
+  @ApiModelProperty(value = "Country of the shipping address. Use the two-character ISO Standard Country Codes.")
   public String getCountry() {
     return country;
   }
@@ -250,10 +250,10 @@ public class Ptsv2paymentsOrderInformationShipTo {
   }
 
    /**
-   * Phone number for the shipping address.
+   * Phone number associated with the shipping address.
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Phone number for the shipping address.")
+  @ApiModelProperty(value = "Phone number associated with the shipping address.")
   public String getPhoneNumber() {
     return phoneNumber;
   }

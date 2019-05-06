@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -26,29 +26,29 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseOrderInformationShippingDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
 public class TssV2TransactionsGet200ResponseOrderInformationShippingDetails {
   @SerializedName("giftWrap")
-  private Boolean giftWrap = null;
+  private String giftWrap = null;
 
   @SerializedName("shippingMethod")
   private String shippingMethod = null;
 
-  public TssV2TransactionsGet200ResponseOrderInformationShippingDetails giftWrap(Boolean giftWrap) {
+  public TssV2TransactionsGet200ResponseOrderInformationShippingDetails giftWrap(String giftWrap) {
     this.giftWrap = giftWrap;
     return this;
   }
 
    /**
-   * The description for this field is not available.
+   * Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - &#x60;yes&#x60;: The customer requested gift wrapping. - &#x60;no&#x60;: The customer did not request gift wrapping. 
    * @return giftWrap
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
-  public Boolean getGiftWrap() {
+  @ApiModelProperty(value = "Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - `yes`: The customer requested gift wrapping. - `no`: The customer did not request gift wrapping. ")
+  public String getGiftWrap() {
     return giftWrap;
   }
 
-  public void setGiftWrap(Boolean giftWrap) {
+  public void setGiftWrap(String giftWrap) {
     this.giftWrap = giftWrap;
   }
 
@@ -58,10 +58,10 @@ public class TssV2TransactionsGet200ResponseOrderInformationShippingDetails {
   }
 
    /**
-   * Shipping method for the product. Possible values:   - lowcost: Lowest-cost service  - sameday: Courier or same-day service  - oneday: Next-day or overnight service  - twoday: Two-day service  - threeday: Three-day service  - pickup: Store pick-up  - other: Other shipping method  - none: No shipping method because product is a service or subscription 
+   * Shipping method for the product. Possible values:   - &#x60;lowcost&#x60;: Lowest-cost service  - &#x60;sameday&#x60;: Courier or same-day service  - &#x60;oneday&#x60;: Next-day or overnight service  - &#x60;twoday&#x60;: Two-day service  - &#x60;threeday&#x60;: Three-day service  - &#x60;pickup&#x60;: Store pick-up  - &#x60;other&#x60;: Other shipping method  - &#x60;none&#x60;: No shipping method because product is a service or subscription 
    * @return shippingMethod
   **/
-  @ApiModelProperty(value = "Shipping method for the product. Possible values:   - lowcost: Lowest-cost service  - sameday: Courier or same-day service  - oneday: Next-day or overnight service  - twoday: Two-day service  - threeday: Three-day service  - pickup: Store pick-up  - other: Other shipping method  - none: No shipping method because product is a service or subscription ")
+  @ApiModelProperty(value = "Shipping method for the product. Possible values:   - `lowcost`: Lowest-cost service  - `sameday`: Courier or same-day service  - `oneday`: Next-day or overnight service  - `twoday`: Two-day service  - `threeday`: Three-day service  - `pickup`: Store pick-up  - `other`: Other shipping method  - `none`: No shipping method because product is a service or subscription ")
   public String getShippingMethod() {
     return shippingMethod;
   }

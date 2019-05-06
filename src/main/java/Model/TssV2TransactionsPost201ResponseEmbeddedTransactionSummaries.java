@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,9 +14,9 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.TssV2TransactionsGet200ResponseApplicationInformation;
 import Model.TssV2TransactionsGet200ResponseFraudMarkingInformation;
-import Model.TssV2TransactionsGet200ResponseMerchantDefinedInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation;
@@ -43,7 +43,7 @@ import java.util.List;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-06T11:51:37.745+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
   @SerializedName("id")
   private String id = null;
@@ -73,7 +73,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
   private TssV2TransactionsGet200ResponseFraudMarkingInformation fraudMarkingInformation = null;
 
   @SerializedName("merchantDefinedInformation")
-  private List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> merchantDefinedInformation = null;
+  private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
 
   @SerializedName("merchantInformation")
   private TssV2TransactionsPost201ResponseEmbeddedMerchantInformation merchantInformation = null;
@@ -105,10 +105,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
   }
 
    /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
+   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
    * @return id
   **/
-  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request.")
+  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.")
   public String getId() {
     return id;
   }
@@ -123,10 +123,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
   }
 
    /**
-   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
   public String getSubmitTimeUtc() {
     return submitTimeUtc;
   }
@@ -261,14 +261,14 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
     this.fraudMarkingInformation = fraudMarkingInformation;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries merchantDefinedInformation(List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> merchantDefinedInformation) {
+  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries merchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
     return this;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries addMerchantDefinedInformationItem(TssV2TransactionsGet200ResponseMerchantDefinedInformation merchantDefinedInformationItem) {
+  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries addMerchantDefinedInformationItem(Ptsv2paymentsMerchantDefinedInformation merchantDefinedInformationItem) {
     if (this.merchantDefinedInformation == null) {
-      this.merchantDefinedInformation = new ArrayList<TssV2TransactionsGet200ResponseMerchantDefinedInformation>();
+      this.merchantDefinedInformation = new ArrayList<Ptsv2paymentsMerchantDefinedInformation>();
     }
     this.merchantDefinedInformation.add(merchantDefinedInformationItem);
     return this;
@@ -279,11 +279,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
    * @return merchantDefinedInformation
   **/
   @ApiModelProperty(value = "The description for this field is not available.")
-  public List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> getMerchantDefinedInformation() {
+  public List<Ptsv2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {
     return merchantDefinedInformation;
   }
 
-  public void setMerchantDefinedInformation(List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> merchantDefinedInformation) {
+  public void setMerchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 
