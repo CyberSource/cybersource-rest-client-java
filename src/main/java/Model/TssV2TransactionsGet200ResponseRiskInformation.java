@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.TssV2TransactionsGet200ResponseRiskInformationProfile;
+import Model.TssV2TransactionsGet200ResponseRiskInformationRules;
 import Model.TssV2TransactionsGet200ResponseRiskInformationScore;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -30,19 +31,19 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200ResponseRiskInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-07T15:32:29.568+05:30")
 public class TssV2TransactionsGet200ResponseRiskInformation {
   @SerializedName("profile")
   private TssV2TransactionsGet200ResponseRiskInformationProfile profile = null;
 
   @SerializedName("rules")
-  private List<TssV2TransactionsGet200ResponseRiskInformationProfile> rules = null;
+  private List<TssV2TransactionsGet200ResponseRiskInformationRules> rules = null;
 
   @SerializedName("passiveProfile")
   private TssV2TransactionsGet200ResponseRiskInformationProfile passiveProfile = null;
 
   @SerializedName("passiveRules")
-  private List<TssV2TransactionsGet200ResponseRiskInformationProfile> passiveRules = null;
+  private List<TssV2TransactionsGet200ResponseRiskInformationRules> passiveRules = null;
 
   @SerializedName("score")
   private TssV2TransactionsGet200ResponseRiskInformationScore score = null;
@@ -68,14 +69,14 @@ public class TssV2TransactionsGet200ResponseRiskInformation {
     this.profile = profile;
   }
 
-  public TssV2TransactionsGet200ResponseRiskInformation rules(List<TssV2TransactionsGet200ResponseRiskInformationProfile> rules) {
+  public TssV2TransactionsGet200ResponseRiskInformation rules(List<TssV2TransactionsGet200ResponseRiskInformationRules> rules) {
     this.rules = rules;
     return this;
   }
 
-  public TssV2TransactionsGet200ResponseRiskInformation addRulesItem(TssV2TransactionsGet200ResponseRiskInformationProfile rulesItem) {
+  public TssV2TransactionsGet200ResponseRiskInformation addRulesItem(TssV2TransactionsGet200ResponseRiskInformationRules rulesItem) {
     if (this.rules == null) {
-      this.rules = new ArrayList<TssV2TransactionsGet200ResponseRiskInformationProfile>();
+      this.rules = new ArrayList<TssV2TransactionsGet200ResponseRiskInformationRules>();
     }
     this.rules.add(rulesItem);
     return this;
@@ -86,11 +87,11 @@ public class TssV2TransactionsGet200ResponseRiskInformation {
    * @return rules
   **/
   @ApiModelProperty(value = "")
-  public List<TssV2TransactionsGet200ResponseRiskInformationProfile> getRules() {
+  public List<TssV2TransactionsGet200ResponseRiskInformationRules> getRules() {
     return rules;
   }
 
-  public void setRules(List<TssV2TransactionsGet200ResponseRiskInformationProfile> rules) {
+  public void setRules(List<TssV2TransactionsGet200ResponseRiskInformationRules> rules) {
     this.rules = rules;
   }
 
@@ -112,14 +113,14 @@ public class TssV2TransactionsGet200ResponseRiskInformation {
     this.passiveProfile = passiveProfile;
   }
 
-  public TssV2TransactionsGet200ResponseRiskInformation passiveRules(List<TssV2TransactionsGet200ResponseRiskInformationProfile> passiveRules) {
+  public TssV2TransactionsGet200ResponseRiskInformation passiveRules(List<TssV2TransactionsGet200ResponseRiskInformationRules> passiveRules) {
     this.passiveRules = passiveRules;
     return this;
   }
 
-  public TssV2TransactionsGet200ResponseRiskInformation addPassiveRulesItem(TssV2TransactionsGet200ResponseRiskInformationProfile passiveRulesItem) {
+  public TssV2TransactionsGet200ResponseRiskInformation addPassiveRulesItem(TssV2TransactionsGet200ResponseRiskInformationRules passiveRulesItem) {
     if (this.passiveRules == null) {
-      this.passiveRules = new ArrayList<TssV2TransactionsGet200ResponseRiskInformationProfile>();
+      this.passiveRules = new ArrayList<TssV2TransactionsGet200ResponseRiskInformationRules>();
     }
     this.passiveRules.add(passiveRulesItem);
     return this;
@@ -130,11 +131,11 @@ public class TssV2TransactionsGet200ResponseRiskInformation {
    * @return passiveRules
   **/
   @ApiModelProperty(value = "")
-  public List<TssV2TransactionsGet200ResponseRiskInformationProfile> getPassiveRules() {
+  public List<TssV2TransactionsGet200ResponseRiskInformationRules> getPassiveRules() {
     return passiveRules;
   }
 
-  public void setPassiveRules(List<TssV2TransactionsGet200ResponseRiskInformationProfile> passiveRules) {
+  public void setPassiveRules(List<TssV2TransactionsGet200ResponseRiskInformationRules> passiveRules) {
     this.passiveRules = passiveRules;
   }
 
@@ -162,10 +163,10 @@ public class TssV2TransactionsGet200ResponseRiskInformation {
   }
 
    /**
-   * Time that the transaction was submitted in local time..
+   * Time that the transaction was submitted in local time.
    * @return localTime
   **/
-  @ApiModelProperty(value = "Time that the transaction was submitted in local time..")
+  @ApiModelProperty(value = "Time that the transaction was submitted in local time.")
   public String getLocalTime() {
     return localTime;
   }

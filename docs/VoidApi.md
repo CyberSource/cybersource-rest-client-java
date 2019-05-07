@@ -4,11 +4,57 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**mitVoid**](VoidApi.md#mitVoid) | **POST** /pts/v2/voids/ | Merchant Initiated Void
 [**voidCapture**](VoidApi.md#voidCapture) | **POST** /pts/v2/captures/{id}/voids | Void a Capture
 [**voidCredit**](VoidApi.md#voidCredit) | **POST** /pts/v2/credits/{id}/voids | Void a Credit
 [**voidPayment**](VoidApi.md#voidPayment) | **POST** /pts/v2/payments/{id}/voids | Void a Payment
 [**voidRefund**](VoidApi.md#voidRefund) | **POST** /pts/v2/refunds/{id}/voids | Void a Refund
 
+
+<a name="mitVoid"></a>
+# **mitVoid**
+> PtsV2PaymentsVoidsPost201Response mitVoid(mitVoidRequest)
+
+Merchant Initiated Void
+
+This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply.
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.VoidApi;
+
+
+VoidApi apiInstance = new VoidApi();
+MitVoidRequest mitVoidRequest = new MitVoidRequest(); // MitVoidRequest | 
+try {
+    PtsV2PaymentsVoidsPost201Response result = apiInstance.mitVoid(mitVoidRequest);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoidApi#mitVoid");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mitVoidRequest** | [**MitVoidRequest**](MitVoidRequest.md)|  |
+
+### Return type
+
+[**PtsV2PaymentsVoidsPost201Response**](PtsV2PaymentsVoidsPost201Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="voidCapture"></a>
 # **voidCapture**

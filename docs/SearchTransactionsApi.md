@@ -5,7 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createSearch**](SearchTransactionsApi.md#createSearch) | **POST** /tss/v2/searches | Create a search request
-[**getSearch**](SearchTransactionsApi.md#getSearch) | **GET** /tss/v2/searches/{id} | Get Search results
+[**getSearch**](SearchTransactionsApi.md#getSearch) | **GET** /tss/v2/searches/{searchId} | Get Search results
 
 
 <a name="createSearch"></a>
@@ -24,7 +24,7 @@ Create a search request.
 
 
 SearchTransactionsApi apiInstance = new SearchTransactionsApi();
-TssV2TransactionsPostResponse createSearchRequest = new TssV2TransactionsPostResponse(); // TssV2TransactionsPostResponse | 
+CreateSearchRequest createSearchRequest = new CreateSearchRequest(); // CreateSearchRequest | 
 try {
     TssV2TransactionsPost201Response result = apiInstance.createSearch(createSearchRequest);
     System.out.println(result);
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createSearchRequest** | [**TssV2TransactionsPostResponse**](TssV2TransactionsPostResponse.md)|  |
+ **createSearchRequest** | [**CreateSearchRequest**](CreateSearchRequest.md)|  |
 
 ### Return type
 
@@ -55,11 +55,11 @@ No authorization required
 
 <a name="getSearch"></a>
 # **getSearch**
-> TssV2TransactionsPost201Response getSearch(id)
+> TssV2TransactionsPost201Response getSearch(searchId)
 
 Get Search results
 
-Include the Search ID in the GET request to retrieve the search results.
+Include the Search ID in the GET request to retrieve the search results. 
 
 ### Example
 ```java
@@ -69,9 +69,9 @@ Include the Search ID in the GET request to retrieve the search results.
 
 
 SearchTransactionsApi apiInstance = new SearchTransactionsApi();
-String id = "id_example"; // String | Search ID.
+String searchId = "searchId_example"; // String | Search ID.
 try {
-    TssV2TransactionsPost201Response result = apiInstance.getSearch(id);
+    TssV2TransactionsPost201Response result = apiInstance.getSearch(searchId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SearchTransactionsApi#getSearch");
@@ -83,7 +83,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Search ID. |
+ **searchId** | **String**| Search ID. |
 
 ### Return type
 

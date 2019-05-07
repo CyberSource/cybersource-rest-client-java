@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -60,11 +60,11 @@ public class SecureFileShareApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getFileDetailsTest() throws ApiException {
+    public void getFileDetailTest() throws ApiException {
         LocalDate startDate = null;
         LocalDate endDate = null;
         String organizationId = null;
-        V1FileDetailsGet200Response response = api.getFileDetails(startDate, endDate, organizationId);
+        V1FileDetailsGet200Response response = api.getFileDetail(startDate, endDate, organizationId);
 
         // TODO: test validations
     }

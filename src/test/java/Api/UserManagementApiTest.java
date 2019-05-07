@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,8 +14,8 @@
 package Api;
 
 import Invokers.ApiException;
+import Model.PtsV2PaymentsRefundPost400Response;
 import Model.UmsV1UsersGet200Response;
-import Model.UmsV1UsersGet400Response;
 import org.junit.Test;
 import org.junit.Ignore;
 

@@ -5,7 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getFile**](SecureFileShareApi.md#getFile) | **GET** /sfs/v1/files/{fileId} | Download a file with file identifier
-[**getFileDetails**](SecureFileShareApi.md#getFileDetails) | **GET** /sfs/v1/file-details | Get list of files
+[**getFileDetail**](SecureFileShareApi.md#getFileDetail) | **GET** /sfs/v1/file-details | Get list of files
 
 
 <a name="getFile"></a>
@@ -54,9 +54,9 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/xml, text/csv, application/pdf
 
-<a name="getFileDetails"></a>
-# **getFileDetails**
-> V1FileDetailsGet200Response getFileDetails(startDate, endDate, organizationId)
+<a name="getFileDetail"></a>
+# **getFileDetail**
+> V1FileDetailsGet200Response getFileDetail(startDate, endDate, organizationId)
 
 Get list of files
 
@@ -74,10 +74,10 @@ LocalDate startDate = new LocalDate(); // LocalDate | Valid start date in **ISO 
 LocalDate endDate = new LocalDate(); // LocalDate | Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd 
 String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
 try {
-    V1FileDetailsGet200Response result = apiInstance.getFileDetails(startDate, endDate, organizationId);
+    V1FileDetailsGet200Response result = apiInstance.getFileDetail(startDate, endDate, organizationId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling SecureFileShareApi#getFileDetails");
+    System.err.println("Exception when calling SecureFileShareApi#getFileDetail");
     e.printStackTrace();
 }
 ```

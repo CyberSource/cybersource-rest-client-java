@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-07T15:32:29.568+05:30")
 public class TssV2TransactionsGet200ResponseDeviceInformation {
   @SerializedName("ipAddress")
   private String ipAddress = null;
@@ -43,10 +43,10 @@ public class TssV2TransactionsGet200ResponseDeviceInformation {
   }
 
    /**
-   * IP address of the customer.
+   * Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. 
    * @return ipAddress
   **/
-  @ApiModelProperty(value = "IP address of the customer.")
+  @ApiModelProperty(value = "Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. ")
   public String getIpAddress() {
     return ipAddress;
   }
@@ -61,10 +61,10 @@ public class TssV2TransactionsGet200ResponseDeviceInformation {
   }
 
    /**
-   * DNS resolved hostname from above _ipAddress_.
+   * Host name reported by the customer’s browser to your Web server identified via the HTTP header.
    * @return hostName
   **/
-  @ApiModelProperty(value = "DNS resolved hostname from above _ipAddress_.")
+  @ApiModelProperty(value = "Host name reported by the customer’s browser to your Web server identified via the HTTP header.")
   public String getHostName() {
     return hostName;
   }
@@ -79,10 +79,10 @@ public class TssV2TransactionsGet200ResponseDeviceInformation {
   }
 
    /**
-   * The description for this field is not available.
+   * Boolean that indicates whether the customer’s browser accepts cookies. This field can contain one of the following values:   - &#x60;yes&#x60;: The customer’s browser accepts cookies.   - &#x60;no&#x60;: The customer’s browser does not accept cookies. 
    * @return cookiesAccepted
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Boolean that indicates whether the customer’s browser accepts cookies. This field can contain one of the following values:   - `yes`: The customer’s browser accepts cookies.   - `no`: The customer’s browser does not accept cookies. ")
   public String getCookiesAccepted() {
     return cookiesAccepted;
   }

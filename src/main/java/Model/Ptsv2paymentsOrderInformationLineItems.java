@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-07T15:32:29.568+05:30")
 public class Ptsv2paymentsOrderInformationLineItems {
   @SerializedName("productCode")
   private String productCode = null;
@@ -116,10 +116,10 @@ public class Ptsv2paymentsOrderInformationLineItems {
   }
 
    /**
-   * Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**.  If you are performing an authorization transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;false&#x60;), and you set this field to a value other than default or any of the values related to shipping and handling, then the fields &#x60;quantity&#x60;, &#x60;productName&#x60;, and &#x60;productSku&#x60; are required.  See Appendix O, \&quot;Product Codes,\&quot; on page 373 for a list of valid values. 
+   * Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**. If you are performing an authorization transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;false&#x60;), and you set this field to a value other than default or any of the values related to shipping and handling, then the fields &#x60;quantity&#x60;, &#x60;productName&#x60;, and &#x60;productSku&#x60; are required. It can also have a value of \&quot;gift_card\&quot;.  See Appendix O, \&quot;Product Codes,\&quot; on page 373 for a list of valid values. For a payment, when you set this field to a value other than default or any of the values related to shipping and handling, below fields _quantity_, _productName_, and _productSKU_ are required. 
    * @return productCode
   **/
-  @ApiModelProperty(value = "Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**.  If you are performing an authorization transaction (`processingOptions.capture` is set to `false`), and you set this field to a value other than default or any of the values related to shipping and handling, then the fields `quantity`, `productName`, and `productSku` are required.  See Appendix O, \"Product Codes,\" on page 373 for a list of valid values. ")
+  @ApiModelProperty(value = "Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**. If you are performing an authorization transaction (`processingOptions.capture` is set to `false`), and you set this field to a value other than default or any of the values related to shipping and handling, then the fields `quantity`, `productName`, and `productSku` are required. It can also have a value of \"gift_card\".  See Appendix O, \"Product Codes,\" on page 373 for a list of valid values. For a payment, when you set this field to a value other than default or any of the values related to shipping and handling, below fields _quantity_, _productName_, and _productSKU_ are required. ")
   public String getProductCode() {
     return productCode;
   }
@@ -134,10 +134,10 @@ public class Ptsv2paymentsOrderInformationLineItems {
   }
 
    /**
-   * For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60; respectively), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling. 
+   * For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60;), this field is required when &#x60;orderInformation.lineItems[].productCode&#x60; is not set to &#x60;default&#x60; or one of the other values that are related to shipping and/or handling. 
    * @return productName
   **/
-  @ApiModelProperty(value = "For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false` respectively), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling. ")
+  @ApiModelProperty(value = "For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when `orderInformation.lineItems[].productCode` is not set to `default` or one of the other values that are related to shipping and/or handling. ")
   public String getProductName() {
     return productName;
   }
@@ -152,10 +152,10 @@ public class Ptsv2paymentsOrderInformationLineItems {
   }
 
    /**
-   * Identification code for the product.  For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60;), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling. 
+   * Stock Keeping Unit (SKU) code for the product.  For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60;), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling. 
    * @return productSku
   **/
-  @ApiModelProperty(value = "Identification code for the product.  For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling. ")
+  @ApiModelProperty(value = "Stock Keeping Unit (SKU) code for the product.  For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling. ")
   public String getProductSku() {
     return productSku;
   }
@@ -170,12 +170,12 @@ public class Ptsv2paymentsOrderInformationLineItems {
   }
 
    /**
-   * For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60;), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling. 
+   * Number of units for this order. For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60;), this field is required when &#x60;orderInformation.lineItems[].productCode&#x60; is not set to &#x60;default&#x60; or one of the other values that are related to shipping and/or handling. When &#x60;orderInformation.lineItems[].productCode&#x60; is &#x60;gift_card&#x60;, this is the total count of individual prepaid gift cards purchased. 
    * minimum: 1
    * maximum: 9999999999
    * @return quantity
   **/
-  @ApiModelProperty(value = "For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling. ")
+  @ApiModelProperty(value = "Number of units for this order. For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when `orderInformation.lineItems[].productCode` is not set to `default` or one of the other values that are related to shipping and/or handling. When `orderInformation.lineItems[].productCode` is `gift_card`, this is the total count of individual prepaid gift cards purchased. ")
   public BigDecimal getQuantity() {
     return quantity;
   }
@@ -226,10 +226,10 @@ public class Ptsv2paymentsOrderInformationLineItems {
   }
 
    /**
-   * Total amount for the item. Normally calculated as the unit price x quantity. 
+   * Total amount for the item. Normally calculated as the unit price x quantity.  When orderInformation.lineItems[].productCode is \&quot;gift_card\&quot;, this is the purchase amount total for prepaid gift cards in major units. Example: 123.45 USD&#x3D; 123 
    * @return totalAmount
   **/
-  @ApiModelProperty(value = "Total amount for the item. Normally calculated as the unit price x quantity. ")
+  @ApiModelProperty(value = "Total amount for the item. Normally calculated as the unit price x quantity.  When orderInformation.lineItems[].productCode is \"gift_card\", this is the purchase amount total for prepaid gift cards in major units. Example: 123.45 USD= 123 ")
   public String getTotalAmount() {
     return totalAmount;
   }

@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -57,9 +57,9 @@ public class NetFundingsApi {
     }
 
     /**
-     * Build call for getNetFundingInfo
-     * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
-     * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
+     * Build call for getNetFundingDetails
+     * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
+     * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param groupName Valid CyberSource Group Name. (optional)
      * @param progressListener Progress listener
@@ -67,7 +67,7 @@ public class NetFundingsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getNetFundingInfoCall(DateTime startTime, DateTime endTime, String organizationId, String groupName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getNetFundingDetailsCall(DateTime startTime, DateTime endTime, String organizationId, String groupName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -116,20 +116,20 @@ public class NetFundingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getNetFundingInfoValidateBeforeCall(DateTime startTime, DateTime endTime, String organizationId, String groupName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getNetFundingDetailsValidateBeforeCall(DateTime startTime, DateTime endTime, String organizationId, String groupName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
-            throw new ApiException("Missing the required parameter 'startTime' when calling getNetFundingInfo(Async)");
+            throw new ApiException("Missing the required parameter 'startTime' when calling getNetFundingDetails(Async)");
         }
         
         // verify the required parameter 'endTime' is set
         if (endTime == null) {
-            throw new ApiException("Missing the required parameter 'endTime' when calling getNetFundingInfo(Async)");
+            throw new ApiException("Missing the required parameter 'endTime' when calling getNetFundingDetails(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = getNetFundingInfoCall(startTime, endTime, organizationId, groupName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getNetFundingDetailsCall(startTime, endTime, organizationId, groupName, progressListener, progressRequestListener);
         return call;
 
         
@@ -141,30 +141,30 @@ public class NetFundingsApi {
     /**
      * Get Netfunding information for an account or a merchant
      * Get Netfunding information for an account or a merchant.
-     * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
-     * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
+     * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
+     * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param groupName Valid CyberSource Group Name. (optional)
      * @return ReportingV3NetFundingsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3NetFundingsGet200Response getNetFundingInfo(DateTime startTime, DateTime endTime, String organizationId, String groupName) throws ApiException {
-        ApiResponse<ReportingV3NetFundingsGet200Response> resp = getNetFundingInfoWithHttpInfo(startTime, endTime, organizationId, groupName);
+    public ReportingV3NetFundingsGet200Response getNetFundingDetails(DateTime startTime, DateTime endTime, String organizationId, String groupName) throws ApiException {
+        ApiResponse<ReportingV3NetFundingsGet200Response> resp = getNetFundingDetailsWithHttpInfo(startTime, endTime, organizationId, groupName);
         return resp.getData();
     }
 
     /**
      * Get Netfunding information for an account or a merchant
      * Get Netfunding information for an account or a merchant.
-     * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
-     * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
+     * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
+     * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param groupName Valid CyberSource Group Name. (optional)
      * @return ApiResponse&lt;ReportingV3NetFundingsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3NetFundingsGet200Response> getNetFundingInfoWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String groupName) throws ApiException {
-        com.squareup.okhttp.Call call = getNetFundingInfoValidateBeforeCall(startTime, endTime, organizationId, groupName, null, null);
+    public ApiResponse<ReportingV3NetFundingsGet200Response> getNetFundingDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String groupName) throws ApiException {
+        com.squareup.okhttp.Call call = getNetFundingDetailsValidateBeforeCall(startTime, endTime, organizationId, groupName, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3NetFundingsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -172,15 +172,15 @@ public class NetFundingsApi {
     /**
      * Get Netfunding information for an account or a merchant (asynchronously)
      * Get Netfunding information for an account or a merchant.
-     * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
-     * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX  (required)
+     * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
+     * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param groupName Valid CyberSource Group Name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getNetFundingInfoAsync(DateTime startTime, DateTime endTime, String organizationId, String groupName, final ApiCallback<ReportingV3NetFundingsGet200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call getNetFundingDetailsAsync(DateTime startTime, DateTime endTime, String organizationId, String groupName, final ApiCallback<ReportingV3NetFundingsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -201,7 +201,7 @@ public class NetFundingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getNetFundingInfoValidateBeforeCall(startTime, endTime, organizationId, groupName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getNetFundingDetailsValidateBeforeCall(startTime, endTime, organizationId, groupName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3NetFundingsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

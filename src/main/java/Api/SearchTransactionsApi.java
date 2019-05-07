@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -27,10 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import Model.PtsV2PayoutsPost502Response;
+import Model.CreateSearchRequest;
+import Model.PtsV2PaymentsPost502Response;
 import Model.TssV2TransactionsPost201Response;
 import Model.TssV2TransactionsPost400Response;
-import Model.TssV2TransactionsPostResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -65,7 +65,7 @@ public class SearchTransactionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createSearchCall(TssV2TransactionsPostResponse createSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createSearchCall(CreateSearchRequest createSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createSearchRequest;
         
         // create path and map variables
@@ -104,7 +104,7 @@ final String[] localVarAccepts ={"*/*"};
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createSearchValidateBeforeCall(TssV2TransactionsPostResponse createSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createSearchValidateBeforeCall(CreateSearchRequest createSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createSearchRequest' is set
         if (createSearchRequest == null) {
@@ -128,7 +128,7 @@ final String[] localVarAccepts ={"*/*"};
      * @return TssV2TransactionsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TssV2TransactionsPost201Response createSearch(TssV2TransactionsPostResponse createSearchRequest) throws ApiException {
+    public TssV2TransactionsPost201Response createSearch(CreateSearchRequest createSearchRequest) throws ApiException {
         ApiResponse<TssV2TransactionsPost201Response> resp = createSearchWithHttpInfo(createSearchRequest);
         return resp.getData();
     }
@@ -140,7 +140,7 @@ final String[] localVarAccepts ={"*/*"};
      * @return ApiResponse&lt;TssV2TransactionsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TssV2TransactionsPost201Response> createSearchWithHttpInfo(TssV2TransactionsPostResponse createSearchRequest) throws ApiException {
+    public ApiResponse<TssV2TransactionsPost201Response> createSearchWithHttpInfo(CreateSearchRequest createSearchRequest) throws ApiException {
         com.squareup.okhttp.Call call = createSearchValidateBeforeCall(createSearchRequest, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -154,7 +154,7 @@ final String[] localVarAccepts ={"*/*"};
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createSearchAsync(TssV2TransactionsPostResponse createSearchRequest, final ApiCallback<TssV2TransactionsPost201Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call createSearchAsync(CreateSearchRequest createSearchRequest, final ApiCallback<TssV2TransactionsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -182,18 +182,18 @@ final String[] localVarAccepts ={"*/*"};
     }
     /**
      * Build call for getSearch
-     * @param id Search ID. (required)
+     * @param searchId Search ID. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSearchCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSearchCall(String searchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/tss/v2/searches/{id}"
-            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+        String localVarPath = "/tss/v2/searches/{searchId}"
+            .replaceAll("\\{" + "searchId" + "\\}", apiClient.escapeString(searchId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -228,15 +228,15 @@ final String[] localVarAccepts ={"*/*"};
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSearchValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSearchValidateBeforeCall(String searchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling getSearch(Async)");
+        // verify the required parameter 'searchId' is set
+        if (searchId == null) {
+            throw new ApiException("Missing the required parameter 'searchId' when calling getSearch(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = getSearchCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSearchCall(searchId, progressListener, progressRequestListener);
         return call;
 
         
@@ -247,38 +247,38 @@ final String[] localVarAccepts ={"*/*"};
 
     /**
      * Get Search results
-     * Include the Search ID in the GET request to retrieve the search results.
-     * @param id Search ID. (required)
+     * Include the Search ID in the GET request to retrieve the search results. 
+     * @param searchId Search ID. (required)
      * @return TssV2TransactionsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TssV2TransactionsPost201Response getSearch(String id) throws ApiException {
-        ApiResponse<TssV2TransactionsPost201Response> resp = getSearchWithHttpInfo(id);
+    public TssV2TransactionsPost201Response getSearch(String searchId) throws ApiException {
+        ApiResponse<TssV2TransactionsPost201Response> resp = getSearchWithHttpInfo(searchId);
         return resp.getData();
     }
 
     /**
      * Get Search results
-     * Include the Search ID in the GET request to retrieve the search results.
-     * @param id Search ID. (required)
+     * Include the Search ID in the GET request to retrieve the search results. 
+     * @param searchId Search ID. (required)
      * @return ApiResponse&lt;TssV2TransactionsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TssV2TransactionsPost201Response> getSearchWithHttpInfo(String id) throws ApiException {
-        com.squareup.okhttp.Call call = getSearchValidateBeforeCall(id, null, null);
+    public ApiResponse<TssV2TransactionsPost201Response> getSearchWithHttpInfo(String searchId) throws ApiException {
+        com.squareup.okhttp.Call call = getSearchValidateBeforeCall(searchId, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Get Search results (asynchronously)
-     * Include the Search ID in the GET request to retrieve the search results.
-     * @param id Search ID. (required)
+     * Include the Search ID in the GET request to retrieve the search results. 
+     * @param searchId Search ID. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSearchAsync(String id, final ApiCallback<TssV2TransactionsPost201Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSearchAsync(String searchId, final ApiCallback<TssV2TransactionsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -299,7 +299,7 @@ final String[] localVarAccepts ={"*/*"};
             };
         }
 
-        com.squareup.okhttp.Call call = getSearchValidateBeforeCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSearchValidateBeforeCall(searchId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
