@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseBuyerInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-07T15:32:29.568+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-08T17:29:15.150+05:30")
 public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseBuyerInformation {
   @SerializedName("companyTaxID")
   private String companyTaxID = null;

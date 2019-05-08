@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createPaymentInstrument"></a>
 # **createPaymentInstrument**
-> TmsV1PaymentinstrumentsPatch200Response createPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, createPaymentInstrumentRequest, clientApplication)
+> TmsV1PaymentinstrumentsPatch200Response createPaymentInstrument(profileId, createPaymentInstrumentRequest)
 
 Create a Payment Instrument
 
@@ -25,12 +25,9 @@ Create a Payment Instrument
 
 PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
 String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-String vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-String vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
 CreatePaymentInstrumentRequest createPaymentInstrumentRequest = new CreatePaymentInstrumentRequest(); // CreatePaymentInstrumentRequest | Specify the customer's payment details for card or bank account.
-String clientApplication = "clientApplication_example"; // String | Client application name
 try {
-    TmsV1PaymentinstrumentsPatch200Response result = apiInstance.createPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, createPaymentInstrumentRequest, clientApplication);
+    TmsV1PaymentinstrumentsPatch200Response result = apiInstance.createPaymentInstrument(profileId, createPaymentInstrumentRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#createPaymentInstrument");
@@ -43,10 +40,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **vCMerchantId** | **String**| CyberSource merchant id. |
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. |
  **createPaymentInstrumentRequest** | [**CreatePaymentInstrumentRequest**](CreatePaymentInstrumentRequest.md)| Specify the customer&#39;s payment details for card or bank account. |
- **clientApplication** | **String**| Client application name | [optional]
 
 ### Return type
 
@@ -63,7 +57,7 @@ No authorization required
 
 <a name="deletePaymentInstrument"></a>
 # **deletePaymentInstrument**
-> deletePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication)
+> deletePaymentInstrument(profileId, tokenId)
 
 Delete a Payment Instrument
 
@@ -76,12 +70,9 @@ Delete a Payment Instrument
 
 PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
 String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-String vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-String vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
 String tokenId = "tokenId_example"; // String | The TokenId of a Payment Instrument.
-String clientApplication = "clientApplication_example"; // String | Client application name
 try {
-    apiInstance.deletePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication);
+    apiInstance.deletePaymentInstrument(profileId, tokenId);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#deletePaymentInstrument");
     e.printStackTrace();
@@ -93,10 +84,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **vCMerchantId** | **String**| CyberSource merchant id. |
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. |
  **tokenId** | **String**| The TokenId of a Payment Instrument. |
- **clientApplication** | **String**| Client application name | [optional]
 
 ### Return type
 
@@ -113,7 +101,7 @@ No authorization required
 
 <a name="getPaymentInstrument"></a>
 # **getPaymentInstrument**
-> TmsV1PaymentinstrumentsPatch200Response getPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication)
+> TmsV1PaymentinstrumentsPatch200Response getPaymentInstrument(profileId, tokenId)
 
 Retrieve a Payment Instrument
 
@@ -126,12 +114,9 @@ Retrieve a Payment Instrument
 
 PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
 String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-String vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-String vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
 String tokenId = "tokenId_example"; // String | The TokenId of a Payment Instrument.
-String clientApplication = "clientApplication_example"; // String | Client application name
 try {
-    TmsV1PaymentinstrumentsPatch200Response result = apiInstance.getPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication);
+    TmsV1PaymentinstrumentsPatch200Response result = apiInstance.getPaymentInstrument(profileId, tokenId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#getPaymentInstrument");
@@ -144,10 +129,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **vCMerchantId** | **String**| CyberSource merchant id. |
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. |
  **tokenId** | **String**| The TokenId of a Payment Instrument. |
- **clientApplication** | **String**| Client application name | [optional]
 
 ### Return type
 
@@ -164,7 +146,7 @@ No authorization required
 
 <a name="updatePaymentInstrument"></a>
 # **updatePaymentInstrument**
-> TmsV1PaymentinstrumentsPatch200Response updatePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, updatePaymentInstrumentRequest, clientApplication)
+> TmsV1PaymentinstrumentsPatch200Response updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest)
 
 Update a Payment Instrument
 
@@ -177,13 +159,10 @@ Update a Payment Instrument
 
 PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
 String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-String vCMerchantId = "vCMerchantId_example"; // String | CyberSource merchant id.
-String vCCorrelationId = "vCCorrelationId_example"; // String | The mandatory correlation id passed by upstream (calling) system.
 String tokenId = "tokenId_example"; // String | The TokenId of a Payment Instrument.
 UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest = new UpdatePaymentInstrumentRequest(); // UpdatePaymentInstrumentRequest | Specify the customer's payment details.
-String clientApplication = "clientApplication_example"; // String | Client application name
 try {
-    TmsV1PaymentinstrumentsPatch200Response result = apiInstance.updatePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, updatePaymentInstrumentRequest, clientApplication);
+    TmsV1PaymentinstrumentsPatch200Response result = apiInstance.updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#updatePaymentInstrument");
@@ -196,11 +175,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **vCMerchantId** | **String**| CyberSource merchant id. |
- **vCCorrelationId** | **String**| The mandatory correlation id passed by upstream (calling) system. |
  **tokenId** | **String**| The TokenId of a Payment Instrument. |
  **updatePaymentInstrumentRequest** | [**UpdatePaymentInstrumentRequest**](UpdatePaymentInstrumentRequest.md)| Specify the customer&#39;s payment details. |
- **clientApplication** | **String**| Client application name | [optional]
 
 ### Return type
 

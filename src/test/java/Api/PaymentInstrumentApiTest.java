@@ -46,11 +46,8 @@ public class PaymentInstrumentApiTest {
     @Test
     public void createPaymentInstrumentTest() throws ApiException {
         String profileId = null;
-        String vCMerchantId = null;
-        String vCCorrelationId = null;
         CreatePaymentInstrumentRequest createPaymentInstrumentRequest = null;
-        String clientApplication = null;
-        TmsV1PaymentinstrumentsPatch200Response response = api.createPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, createPaymentInstrumentRequest, clientApplication);
+        TmsV1PaymentinstrumentsPatch200Response response = api.createPaymentInstrument(profileId, createPaymentInstrumentRequest);
 
         // TODO: test validations
     }
@@ -66,11 +63,8 @@ public class PaymentInstrumentApiTest {
     @Test
     public void deletePaymentInstrumentTest() throws ApiException {
         String profileId = null;
-        String vCMerchantId = null;
-        String vCCorrelationId = null;
         String tokenId = null;
-        String clientApplication = null;
-        api.deletePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication);
+        api.deletePaymentInstrument(profileId, tokenId);
 
         // TODO: test validations
     }
@@ -86,11 +80,8 @@ public class PaymentInstrumentApiTest {
     @Test
     public void getPaymentInstrumentTest() throws ApiException {
         String profileId = null;
-        String vCMerchantId = null;
-        String vCCorrelationId = null;
         String tokenId = null;
-        String clientApplication = null;
-        TmsV1PaymentinstrumentsPatch200Response response = api.getPaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication);
+        TmsV1PaymentinstrumentsPatch200Response response = api.getPaymentInstrument(profileId, tokenId);
 
         // TODO: test validations
     }
@@ -106,12 +97,9 @@ public class PaymentInstrumentApiTest {
     @Test
     public void updatePaymentInstrumentTest() throws ApiException {
         String profileId = null;
-        String vCMerchantId = null;
-        String vCCorrelationId = null;
         String tokenId = null;
         UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest = null;
-        String clientApplication = null;
-        TmsV1PaymentinstrumentsPatch200Response response = api.updatePaymentInstrument(profileId, vCMerchantId, vCCorrelationId, tokenId, updatePaymentInstrumentRequest, clientApplication);
+        TmsV1PaymentinstrumentsPatch200Response response = api.updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest);
 
         // TODO: test validations
     }

@@ -62,16 +62,13 @@ public class InstrumentIdentifierApi {
     /**
      * Build call for createInstrumentIdentifier
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
-     * @param clientApplication Client application name (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createInstrumentIdentifierCall(String profileId, String vCMerchantId, String vCCorrelationId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createInstrumentIdentifierCall(String profileId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createInstrumentIdentifierRequest;
         
         // create path and map variables
@@ -82,12 +79,6 @@ public class InstrumentIdentifierApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
         localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-        if (vCMerchantId != null)
-        localVarHeaderParams.put("v-c-merchant-id", apiClient.parameterToString(vCMerchantId));
-        if (vCCorrelationId != null)
-        localVarHeaderParams.put("v-c-correlation-id", apiClient.parameterToString(vCCorrelationId));
-        if (clientApplication != null)
-        localVarHeaderParams.put("Client-Application", apiClient.parameterToString(clientApplication));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -120,21 +111,11 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createInstrumentIdentifierValidateBeforeCall(String profileId, String vCMerchantId, String vCCorrelationId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createInstrumentIdentifierValidateBeforeCall(String profileId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
             throw new ApiException("Missing the required parameter 'profileId' when calling createInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'vCMerchantId' is set
-        if (vCMerchantId == null) {
-            throw new ApiException("Missing the required parameter 'vCMerchantId' when calling createInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'vCCorrelationId' is set
-        if (vCCorrelationId == null) {
-            throw new ApiException("Missing the required parameter 'vCCorrelationId' when calling createInstrumentIdentifier(Async)");
         }
         
         // verify the required parameter 'createInstrumentIdentifierRequest' is set
@@ -143,7 +124,7 @@ public class InstrumentIdentifierApi {
         }
         
         
-        com.squareup.okhttp.Call call = createInstrumentIdentifierCall(profileId, vCMerchantId, vCCorrelationId, createInstrumentIdentifierRequest, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createInstrumentIdentifierCall(profileId, createInstrumentIdentifierRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -156,15 +137,12 @@ public class InstrumentIdentifierApi {
      * Create an Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
-     * @param clientApplication Client application name (optional)
      * @return TmsV1InstrumentIdentifiersPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV1InstrumentIdentifiersPost200Response createInstrumentIdentifier(String profileId, String vCMerchantId, String vCCorrelationId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest, String clientApplication) throws ApiException {
-        ApiResponse<TmsV1InstrumentIdentifiersPost200Response> resp = createInstrumentIdentifierWithHttpInfo(profileId, vCMerchantId, vCCorrelationId, createInstrumentIdentifierRequest, clientApplication);
+    public TmsV1InstrumentIdentifiersPost200Response createInstrumentIdentifier(String profileId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest) throws ApiException {
+        ApiResponse<TmsV1InstrumentIdentifiersPost200Response> resp = createInstrumentIdentifierWithHttpInfo(profileId, createInstrumentIdentifierRequest);
         return resp.getData();
     }
 
@@ -172,15 +150,12 @@ public class InstrumentIdentifierApi {
      * Create an Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
-     * @param clientApplication Client application name (optional)
      * @return ApiResponse&lt;TmsV1InstrumentIdentifiersPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> createInstrumentIdentifierWithHttpInfo(String profileId, String vCMerchantId, String vCCorrelationId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest, String clientApplication) throws ApiException {
-        com.squareup.okhttp.Call call = createInstrumentIdentifierValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, createInstrumentIdentifierRequest, clientApplication, null, null);
+    public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> createInstrumentIdentifierWithHttpInfo(String profileId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createInstrumentIdentifierValidateBeforeCall(profileId, createInstrumentIdentifierRequest, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -189,15 +164,12 @@ public class InstrumentIdentifierApi {
      * Create an Instrument Identifier (asynchronously)
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
-     * @param clientApplication Client application name (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createInstrumentIdentifierAsync(String profileId, String vCMerchantId, String vCCorrelationId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest, String clientApplication, final ApiCallback<TmsV1InstrumentIdentifiersPost200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call createInstrumentIdentifierAsync(String profileId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest, final ApiCallback<TmsV1InstrumentIdentifiersPost200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -218,7 +190,7 @@ public class InstrumentIdentifierApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createInstrumentIdentifierValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, createInstrumentIdentifierRequest, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createInstrumentIdentifierValidateBeforeCall(profileId, createInstrumentIdentifierRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -226,16 +198,13 @@ public class InstrumentIdentifierApi {
     /**
      * Build call for deleteInstrumentIdentifier
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteInstrumentIdentifierCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteInstrumentIdentifierCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -247,12 +216,6 @@ public class InstrumentIdentifierApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
         localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-        if (vCMerchantId != null)
-        localVarHeaderParams.put("v-c-merchant-id", apiClient.parameterToString(vCMerchantId));
-        if (vCCorrelationId != null)
-        localVarHeaderParams.put("v-c-correlation-id", apiClient.parameterToString(vCCorrelationId));
-        if (clientApplication != null)
-        localVarHeaderParams.put("Client-Application", apiClient.parameterToString(clientApplication));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -285,21 +248,11 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteInstrumentIdentifierValidateBeforeCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteInstrumentIdentifierValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
             throw new ApiException("Missing the required parameter 'profileId' when calling deleteInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'vCMerchantId' is set
-        if (vCMerchantId == null) {
-            throw new ApiException("Missing the required parameter 'vCMerchantId' when calling deleteInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'vCCorrelationId' is set
-        if (vCCorrelationId == null) {
-            throw new ApiException("Missing the required parameter 'vCCorrelationId' when calling deleteInstrumentIdentifier(Async)");
         }
         
         // verify the required parameter 'tokenId' is set
@@ -308,7 +261,7 @@ public class InstrumentIdentifierApi {
         }
         
         
-        com.squareup.okhttp.Call call = deleteInstrumentIdentifierCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteInstrumentIdentifierCall(profileId, tokenId, progressListener, progressRequestListener);
         return call;
 
         
@@ -321,29 +274,23 @@ public class InstrumentIdentifierApi {
      * Delete an Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteInstrumentIdentifier(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication) throws ApiException {
-        deleteInstrumentIdentifierWithHttpInfo(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication);
+    public void deleteInstrumentIdentifier(String profileId, String tokenId) throws ApiException {
+        deleteInstrumentIdentifierWithHttpInfo(profileId, tokenId);
     }
 
     /**
      * Delete an Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteInstrumentIdentifierWithHttpInfo(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication) throws ApiException {
-        com.squareup.okhttp.Call call = deleteInstrumentIdentifierValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, null, null);
+    public ApiResponse<Void> deleteInstrumentIdentifierWithHttpInfo(String profileId, String tokenId) throws ApiException {
+        com.squareup.okhttp.Call call = deleteInstrumentIdentifierValidateBeforeCall(profileId, tokenId, null, null);
         return apiClient.execute(call);
     }
 
@@ -351,15 +298,12 @@ public class InstrumentIdentifierApi {
      * Delete an Instrument Identifier (asynchronously)
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteInstrumentIdentifierAsync(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteInstrumentIdentifierAsync(String profileId, String tokenId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -380,17 +324,14 @@ public class InstrumentIdentifierApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteInstrumentIdentifierValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteInstrumentIdentifierValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for getAllPaymentInstruments
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @param progressListener Progress listener
@@ -398,7 +339,7 @@ public class InstrumentIdentifierApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAllPaymentInstrumentsCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllPaymentInstrumentsCall(String profileId, String tokenId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -414,12 +355,6 @@ public class InstrumentIdentifierApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
         localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-        if (vCMerchantId != null)
-        localVarHeaderParams.put("v-c-merchant-id", apiClient.parameterToString(vCMerchantId));
-        if (vCCorrelationId != null)
-        localVarHeaderParams.put("v-c-correlation-id", apiClient.parameterToString(vCCorrelationId));
-        if (clientApplication != null)
-        localVarHeaderParams.put("Client-Application", apiClient.parameterToString(clientApplication));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -452,21 +387,11 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllPaymentInstrumentsValidateBeforeCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllPaymentInstrumentsValidateBeforeCall(String profileId, String tokenId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
             throw new ApiException("Missing the required parameter 'profileId' when calling getAllPaymentInstruments(Async)");
-        }
-        
-        // verify the required parameter 'vCMerchantId' is set
-        if (vCMerchantId == null) {
-            throw new ApiException("Missing the required parameter 'vCMerchantId' when calling getAllPaymentInstruments(Async)");
-        }
-        
-        // verify the required parameter 'vCCorrelationId' is set
-        if (vCCorrelationId == null) {
-            throw new ApiException("Missing the required parameter 'vCCorrelationId' when calling getAllPaymentInstruments(Async)");
         }
         
         // verify the required parameter 'tokenId' is set
@@ -475,7 +400,7 @@ public class InstrumentIdentifierApi {
         }
         
         
-        com.squareup.okhttp.Call call = getAllPaymentInstrumentsCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllPaymentInstrumentsCall(profileId, tokenId, offset, limit, progressListener, progressRequestListener);
         return call;
 
         
@@ -488,17 +413,14 @@ public class InstrumentIdentifierApi {
      * Retrieve all Payment Instruments associated with an Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @return TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response getAllPaymentInstruments(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, Long offset, Long limit) throws ApiException {
-        ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response> resp = getAllPaymentInstrumentsWithHttpInfo(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, offset, limit);
+    public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response getAllPaymentInstruments(String profileId, String tokenId, Long offset, Long limit) throws ApiException {
+        ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response> resp = getAllPaymentInstrumentsWithHttpInfo(profileId, tokenId, offset, limit);
         return resp.getData();
     }
 
@@ -506,17 +428,14 @@ public class InstrumentIdentifierApi {
      * Retrieve all Payment Instruments associated with an Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @return ApiResponse&lt;TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response> getAllPaymentInstrumentsWithHttpInfo(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, Long offset, Long limit) throws ApiException {
-        com.squareup.okhttp.Call call = getAllPaymentInstrumentsValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, offset, limit, null, null);
+    public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response> getAllPaymentInstrumentsWithHttpInfo(String profileId, String tokenId, Long offset, Long limit) throws ApiException {
+        com.squareup.okhttp.Call call = getAllPaymentInstrumentsValidateBeforeCall(profileId, tokenId, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -525,17 +444,14 @@ public class InstrumentIdentifierApi {
      * Retrieve all Payment Instruments associated with an Instrument Identifier (asynchronously)
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllPaymentInstrumentsAsync(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, Long offset, Long limit, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllPaymentInstrumentsAsync(String profileId, String tokenId, Long offset, Long limit, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -556,7 +472,7 @@ public class InstrumentIdentifierApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllPaymentInstrumentsValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllPaymentInstrumentsValidateBeforeCall(profileId, tokenId, offset, limit, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -564,16 +480,13 @@ public class InstrumentIdentifierApi {
     /**
      * Build call for getInstrumentIdentifier
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getInstrumentIdentifierCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getInstrumentIdentifierCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -585,12 +498,6 @@ public class InstrumentIdentifierApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
         localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-        if (vCMerchantId != null)
-        localVarHeaderParams.put("v-c-merchant-id", apiClient.parameterToString(vCMerchantId));
-        if (vCCorrelationId != null)
-        localVarHeaderParams.put("v-c-correlation-id", apiClient.parameterToString(vCCorrelationId));
-        if (clientApplication != null)
-        localVarHeaderParams.put("Client-Application", apiClient.parameterToString(clientApplication));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -623,21 +530,11 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getInstrumentIdentifierValidateBeforeCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getInstrumentIdentifierValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
             throw new ApiException("Missing the required parameter 'profileId' when calling getInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'vCMerchantId' is set
-        if (vCMerchantId == null) {
-            throw new ApiException("Missing the required parameter 'vCMerchantId' when calling getInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'vCCorrelationId' is set
-        if (vCCorrelationId == null) {
-            throw new ApiException("Missing the required parameter 'vCCorrelationId' when calling getInstrumentIdentifier(Async)");
         }
         
         // verify the required parameter 'tokenId' is set
@@ -646,7 +543,7 @@ public class InstrumentIdentifierApi {
         }
         
         
-        com.squareup.okhttp.Call call = getInstrumentIdentifierCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getInstrumentIdentifierCall(profileId, tokenId, progressListener, progressRequestListener);
         return call;
 
         
@@ -659,15 +556,12 @@ public class InstrumentIdentifierApi {
      * Retrieve an Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @return TmsV1InstrumentIdentifiersPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV1InstrumentIdentifiersPost200Response getInstrumentIdentifier(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication) throws ApiException {
-        ApiResponse<TmsV1InstrumentIdentifiersPost200Response> resp = getInstrumentIdentifierWithHttpInfo(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication);
+    public TmsV1InstrumentIdentifiersPost200Response getInstrumentIdentifier(String profileId, String tokenId) throws ApiException {
+        ApiResponse<TmsV1InstrumentIdentifiersPost200Response> resp = getInstrumentIdentifierWithHttpInfo(profileId, tokenId);
         return resp.getData();
     }
 
@@ -675,15 +569,12 @@ public class InstrumentIdentifierApi {
      * Retrieve an Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @return ApiResponse&lt;TmsV1InstrumentIdentifiersPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> getInstrumentIdentifierWithHttpInfo(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication) throws ApiException {
-        com.squareup.okhttp.Call call = getInstrumentIdentifierValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, null, null);
+    public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> getInstrumentIdentifierWithHttpInfo(String profileId, String tokenId) throws ApiException {
+        com.squareup.okhttp.Call call = getInstrumentIdentifierValidateBeforeCall(profileId, tokenId, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -692,15 +583,12 @@ public class InstrumentIdentifierApi {
      * Retrieve an Instrument Identifier (asynchronously)
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param clientApplication Client application name (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getInstrumentIdentifierAsync(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ApiCallback<TmsV1InstrumentIdentifiersPost200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call getInstrumentIdentifierAsync(String profileId, String tokenId, final ApiCallback<TmsV1InstrumentIdentifiersPost200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -721,7 +609,7 @@ public class InstrumentIdentifierApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getInstrumentIdentifierValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getInstrumentIdentifierValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -729,17 +617,14 @@ public class InstrumentIdentifierApi {
     /**
      * Build call for updateInstrumentIdentifier
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
      * @param updateInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
-     * @param clientApplication Client application name (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateInstrumentIdentifierCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateInstrumentIdentifierCall(String profileId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateInstrumentIdentifierRequest;
         
         // create path and map variables
@@ -751,12 +636,6 @@ public class InstrumentIdentifierApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
         localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-        if (vCMerchantId != null)
-        localVarHeaderParams.put("v-c-merchant-id", apiClient.parameterToString(vCMerchantId));
-        if (vCCorrelationId != null)
-        localVarHeaderParams.put("v-c-correlation-id", apiClient.parameterToString(vCCorrelationId));
-        if (clientApplication != null)
-        localVarHeaderParams.put("Client-Application", apiClient.parameterToString(clientApplication));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -789,21 +668,11 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateInstrumentIdentifierValidateBeforeCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateInstrumentIdentifierValidateBeforeCall(String profileId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
             throw new ApiException("Missing the required parameter 'profileId' when calling updateInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'vCMerchantId' is set
-        if (vCMerchantId == null) {
-            throw new ApiException("Missing the required parameter 'vCMerchantId' when calling updateInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'vCCorrelationId' is set
-        if (vCCorrelationId == null) {
-            throw new ApiException("Missing the required parameter 'vCCorrelationId' when calling updateInstrumentIdentifier(Async)");
         }
         
         // verify the required parameter 'tokenId' is set
@@ -817,7 +686,7 @@ public class InstrumentIdentifierApi {
         }
         
         
-        com.squareup.okhttp.Call call = updateInstrumentIdentifierCall(profileId, vCMerchantId, vCCorrelationId, tokenId, updateInstrumentIdentifierRequest, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateInstrumentIdentifierCall(profileId, tokenId, updateInstrumentIdentifierRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -830,16 +699,13 @@ public class InstrumentIdentifierApi {
      * Update a Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
      * @param updateInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
-     * @param clientApplication Client application name (optional)
      * @return TmsV1InstrumentIdentifiersPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV1InstrumentIdentifiersPost200Response updateInstrumentIdentifier(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, String clientApplication) throws ApiException {
-        ApiResponse<TmsV1InstrumentIdentifiersPost200Response> resp = updateInstrumentIdentifierWithHttpInfo(profileId, vCMerchantId, vCCorrelationId, tokenId, updateInstrumentIdentifierRequest, clientApplication);
+    public TmsV1InstrumentIdentifiersPost200Response updateInstrumentIdentifier(String profileId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest) throws ApiException {
+        ApiResponse<TmsV1InstrumentIdentifiersPost200Response> resp = updateInstrumentIdentifierWithHttpInfo(profileId, tokenId, updateInstrumentIdentifierRequest);
         return resp.getData();
     }
 
@@ -847,16 +713,13 @@ public class InstrumentIdentifierApi {
      * Update a Instrument Identifier
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
      * @param updateInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
-     * @param clientApplication Client application name (optional)
      * @return ApiResponse&lt;TmsV1InstrumentIdentifiersPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> updateInstrumentIdentifierWithHttpInfo(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, String clientApplication) throws ApiException {
-        com.squareup.okhttp.Call call = updateInstrumentIdentifierValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, updateInstrumentIdentifierRequest, clientApplication, null, null);
+    public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> updateInstrumentIdentifierWithHttpInfo(String profileId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest) throws ApiException {
+        com.squareup.okhttp.Call call = updateInstrumentIdentifierValidateBeforeCall(profileId, tokenId, updateInstrumentIdentifierRequest, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -865,16 +728,13 @@ public class InstrumentIdentifierApi {
      * Update a Instrument Identifier (asynchronously)
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
      * @param updateInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
-     * @param clientApplication Client application name (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateInstrumentIdentifierAsync(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, String clientApplication, final ApiCallback<TmsV1InstrumentIdentifiersPost200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateInstrumentIdentifierAsync(String profileId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, final ApiCallback<TmsV1InstrumentIdentifiersPost200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -895,7 +755,7 @@ public class InstrumentIdentifierApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateInstrumentIdentifierValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, updateInstrumentIdentifierRequest, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateInstrumentIdentifierValidateBeforeCall(profileId, tokenId, updateInstrumentIdentifierRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

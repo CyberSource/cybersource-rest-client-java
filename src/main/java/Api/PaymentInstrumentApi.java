@@ -60,16 +60,13 @@ public class PaymentInstrumentApi {
     /**
      * Build call for createPaymentInstrument
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account. (required)
-     * @param clientApplication Client application name (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createPaymentInstrumentCall(String profileId, String vCMerchantId, String vCCorrelationId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createPaymentInstrumentCall(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createPaymentInstrumentRequest;
         
         // create path and map variables
@@ -80,12 +77,6 @@ public class PaymentInstrumentApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
         localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-        if (vCMerchantId != null)
-        localVarHeaderParams.put("v-c-merchant-id", apiClient.parameterToString(vCMerchantId));
-        if (vCCorrelationId != null)
-        localVarHeaderParams.put("v-c-correlation-id", apiClient.parameterToString(vCCorrelationId));
-        if (clientApplication != null)
-        localVarHeaderParams.put("Client-Application", apiClient.parameterToString(clientApplication));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -118,21 +109,11 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createPaymentInstrumentValidateBeforeCall(String profileId, String vCMerchantId, String vCCorrelationId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createPaymentInstrumentValidateBeforeCall(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
             throw new ApiException("Missing the required parameter 'profileId' when calling createPaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'vCMerchantId' is set
-        if (vCMerchantId == null) {
-            throw new ApiException("Missing the required parameter 'vCMerchantId' when calling createPaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'vCCorrelationId' is set
-        if (vCCorrelationId == null) {
-            throw new ApiException("Missing the required parameter 'vCCorrelationId' when calling createPaymentInstrument(Async)");
         }
         
         // verify the required parameter 'createPaymentInstrumentRequest' is set
@@ -141,7 +122,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        com.squareup.okhttp.Call call = createPaymentInstrumentCall(profileId, vCMerchantId, vCCorrelationId, createPaymentInstrumentRequest, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createPaymentInstrumentCall(profileId, createPaymentInstrumentRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -154,15 +135,12 @@ public class PaymentInstrumentApi {
      * Create a Payment Instrument
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account. (required)
-     * @param clientApplication Client application name (optional)
      * @return TmsV1PaymentinstrumentsPatch200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV1PaymentinstrumentsPatch200Response createPaymentInstrument(String profileId, String vCMerchantId, String vCCorrelationId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, String clientApplication) throws ApiException {
-        ApiResponse<TmsV1PaymentinstrumentsPatch200Response> resp = createPaymentInstrumentWithHttpInfo(profileId, vCMerchantId, vCCorrelationId, createPaymentInstrumentRequest, clientApplication);
+    public TmsV1PaymentinstrumentsPatch200Response createPaymentInstrument(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest) throws ApiException {
+        ApiResponse<TmsV1PaymentinstrumentsPatch200Response> resp = createPaymentInstrumentWithHttpInfo(profileId, createPaymentInstrumentRequest);
         return resp.getData();
     }
 
@@ -170,15 +148,12 @@ public class PaymentInstrumentApi {
      * Create a Payment Instrument
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account. (required)
-     * @param clientApplication Client application name (optional)
      * @return ApiResponse&lt;TmsV1PaymentinstrumentsPatch200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV1PaymentinstrumentsPatch200Response> createPaymentInstrumentWithHttpInfo(String profileId, String vCMerchantId, String vCCorrelationId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, String clientApplication) throws ApiException {
-        com.squareup.okhttp.Call call = createPaymentInstrumentValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, createPaymentInstrumentRequest, clientApplication, null, null);
+    public ApiResponse<TmsV1PaymentinstrumentsPatch200Response> createPaymentInstrumentWithHttpInfo(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createPaymentInstrumentValidateBeforeCall(profileId, createPaymentInstrumentRequest, null, null);
         Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPatch200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -187,15 +162,12 @@ public class PaymentInstrumentApi {
      * Create a Payment Instrument (asynchronously)
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account. (required)
-     * @param clientApplication Client application name (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createPaymentInstrumentAsync(String profileId, String vCMerchantId, String vCCorrelationId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, String clientApplication, final ApiCallback<TmsV1PaymentinstrumentsPatch200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call createPaymentInstrumentAsync(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ApiCallback<TmsV1PaymentinstrumentsPatch200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -216,7 +188,7 @@ public class PaymentInstrumentApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createPaymentInstrumentValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, createPaymentInstrumentRequest, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createPaymentInstrumentValidateBeforeCall(profileId, createPaymentInstrumentRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPatch200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -224,16 +196,13 @@ public class PaymentInstrumentApi {
     /**
      * Build call for deletePaymentInstrument
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param clientApplication Client application name (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deletePaymentInstrumentCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deletePaymentInstrumentCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -245,12 +214,6 @@ public class PaymentInstrumentApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
         localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-        if (vCMerchantId != null)
-        localVarHeaderParams.put("v-c-merchant-id", apiClient.parameterToString(vCMerchantId));
-        if (vCCorrelationId != null)
-        localVarHeaderParams.put("v-c-correlation-id", apiClient.parameterToString(vCCorrelationId));
-        if (clientApplication != null)
-        localVarHeaderParams.put("Client-Application", apiClient.parameterToString(clientApplication));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -283,21 +246,11 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deletePaymentInstrumentValidateBeforeCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deletePaymentInstrumentValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
             throw new ApiException("Missing the required parameter 'profileId' when calling deletePaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'vCMerchantId' is set
-        if (vCMerchantId == null) {
-            throw new ApiException("Missing the required parameter 'vCMerchantId' when calling deletePaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'vCCorrelationId' is set
-        if (vCCorrelationId == null) {
-            throw new ApiException("Missing the required parameter 'vCCorrelationId' when calling deletePaymentInstrument(Async)");
         }
         
         // verify the required parameter 'tokenId' is set
@@ -306,7 +259,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        com.squareup.okhttp.Call call = deletePaymentInstrumentCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deletePaymentInstrumentCall(profileId, tokenId, progressListener, progressRequestListener);
         return call;
 
         
@@ -319,29 +272,23 @@ public class PaymentInstrumentApi {
      * Delete a Payment Instrument
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param clientApplication Client application name (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deletePaymentInstrument(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication) throws ApiException {
-        deletePaymentInstrumentWithHttpInfo(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication);
+    public void deletePaymentInstrument(String profileId, String tokenId) throws ApiException {
+        deletePaymentInstrumentWithHttpInfo(profileId, tokenId);
     }
 
     /**
      * Delete a Payment Instrument
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param clientApplication Client application name (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication) throws ApiException {
-        com.squareup.okhttp.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, null, null);
+    public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String profileId, String tokenId) throws ApiException {
+        com.squareup.okhttp.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
         return apiClient.execute(call);
     }
 
@@ -349,15 +296,12 @@ public class PaymentInstrumentApi {
      * Delete a Payment Instrument (asynchronously)
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param clientApplication Client application name (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deletePaymentInstrumentAsync(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deletePaymentInstrumentAsync(String profileId, String tokenId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -378,23 +322,20 @@ public class PaymentInstrumentApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for getPaymentInstrument
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param clientApplication Client application name (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getPaymentInstrumentCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getPaymentInstrumentCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -406,12 +347,6 @@ public class PaymentInstrumentApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
         localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-        if (vCMerchantId != null)
-        localVarHeaderParams.put("v-c-merchant-id", apiClient.parameterToString(vCMerchantId));
-        if (vCCorrelationId != null)
-        localVarHeaderParams.put("v-c-correlation-id", apiClient.parameterToString(vCCorrelationId));
-        if (clientApplication != null)
-        localVarHeaderParams.put("Client-Application", apiClient.parameterToString(clientApplication));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -444,21 +379,11 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPaymentInstrumentValidateBeforeCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getPaymentInstrumentValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
             throw new ApiException("Missing the required parameter 'profileId' when calling getPaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'vCMerchantId' is set
-        if (vCMerchantId == null) {
-            throw new ApiException("Missing the required parameter 'vCMerchantId' when calling getPaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'vCCorrelationId' is set
-        if (vCCorrelationId == null) {
-            throw new ApiException("Missing the required parameter 'vCCorrelationId' when calling getPaymentInstrument(Async)");
         }
         
         // verify the required parameter 'tokenId' is set
@@ -467,7 +392,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        com.squareup.okhttp.Call call = getPaymentInstrumentCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPaymentInstrumentCall(profileId, tokenId, progressListener, progressRequestListener);
         return call;
 
         
@@ -480,15 +405,12 @@ public class PaymentInstrumentApi {
      * Retrieve a Payment Instrument
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param clientApplication Client application name (optional)
      * @return TmsV1PaymentinstrumentsPatch200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV1PaymentinstrumentsPatch200Response getPaymentInstrument(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication) throws ApiException {
-        ApiResponse<TmsV1PaymentinstrumentsPatch200Response> resp = getPaymentInstrumentWithHttpInfo(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication);
+    public TmsV1PaymentinstrumentsPatch200Response getPaymentInstrument(String profileId, String tokenId) throws ApiException {
+        ApiResponse<TmsV1PaymentinstrumentsPatch200Response> resp = getPaymentInstrumentWithHttpInfo(profileId, tokenId);
         return resp.getData();
     }
 
@@ -496,15 +418,12 @@ public class PaymentInstrumentApi {
      * Retrieve a Payment Instrument
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param clientApplication Client application name (optional)
      * @return ApiResponse&lt;TmsV1PaymentinstrumentsPatch200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV1PaymentinstrumentsPatch200Response> getPaymentInstrumentWithHttpInfo(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication) throws ApiException {
-        com.squareup.okhttp.Call call = getPaymentInstrumentValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, null, null);
+    public ApiResponse<TmsV1PaymentinstrumentsPatch200Response> getPaymentInstrumentWithHttpInfo(String profileId, String tokenId) throws ApiException {
+        com.squareup.okhttp.Call call = getPaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
         Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPatch200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -513,15 +432,12 @@ public class PaymentInstrumentApi {
      * Retrieve a Payment Instrument (asynchronously)
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param clientApplication Client application name (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getPaymentInstrumentAsync(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, String clientApplication, final ApiCallback<TmsV1PaymentinstrumentsPatch200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call getPaymentInstrumentAsync(String profileId, String tokenId, final ApiCallback<TmsV1PaymentinstrumentsPatch200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -542,7 +458,7 @@ public class PaymentInstrumentApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getPaymentInstrumentValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPaymentInstrumentValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPatch200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -550,17 +466,14 @@ public class PaymentInstrumentApi {
     /**
      * Build call for updatePaymentInstrument
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
      * @param updatePaymentInstrumentRequest Specify the customer&#39;s payment details. (required)
-     * @param clientApplication Client application name (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updatePaymentInstrumentCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updatePaymentInstrumentCall(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updatePaymentInstrumentRequest;
         
         // create path and map variables
@@ -572,12 +485,6 @@ public class PaymentInstrumentApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
         localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-        if (vCMerchantId != null)
-        localVarHeaderParams.put("v-c-merchant-id", apiClient.parameterToString(vCMerchantId));
-        if (vCCorrelationId != null)
-        localVarHeaderParams.put("v-c-correlation-id", apiClient.parameterToString(vCCorrelationId));
-        if (clientApplication != null)
-        localVarHeaderParams.put("Client-Application", apiClient.parameterToString(clientApplication));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -610,21 +517,11 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updatePaymentInstrumentValidateBeforeCall(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, String clientApplication, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updatePaymentInstrumentValidateBeforeCall(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
             throw new ApiException("Missing the required parameter 'profileId' when calling updatePaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'vCMerchantId' is set
-        if (vCMerchantId == null) {
-            throw new ApiException("Missing the required parameter 'vCMerchantId' when calling updatePaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'vCCorrelationId' is set
-        if (vCCorrelationId == null) {
-            throw new ApiException("Missing the required parameter 'vCCorrelationId' when calling updatePaymentInstrument(Async)");
         }
         
         // verify the required parameter 'tokenId' is set
@@ -638,7 +535,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        com.squareup.okhttp.Call call = updatePaymentInstrumentCall(profileId, vCMerchantId, vCCorrelationId, tokenId, updatePaymentInstrumentRequest, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updatePaymentInstrumentCall(profileId, tokenId, updatePaymentInstrumentRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -651,16 +548,13 @@ public class PaymentInstrumentApi {
      * Update a Payment Instrument
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
      * @param updatePaymentInstrumentRequest Specify the customer&#39;s payment details. (required)
-     * @param clientApplication Client application name (optional)
      * @return TmsV1PaymentinstrumentsPatch200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV1PaymentinstrumentsPatch200Response updatePaymentInstrument(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, String clientApplication) throws ApiException {
-        ApiResponse<TmsV1PaymentinstrumentsPatch200Response> resp = updatePaymentInstrumentWithHttpInfo(profileId, vCMerchantId, vCCorrelationId, tokenId, updatePaymentInstrumentRequest, clientApplication);
+    public TmsV1PaymentinstrumentsPatch200Response updatePaymentInstrument(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest) throws ApiException {
+        ApiResponse<TmsV1PaymentinstrumentsPatch200Response> resp = updatePaymentInstrumentWithHttpInfo(profileId, tokenId, updatePaymentInstrumentRequest);
         return resp.getData();
     }
 
@@ -668,16 +562,13 @@ public class PaymentInstrumentApi {
      * Update a Payment Instrument
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
      * @param updatePaymentInstrumentRequest Specify the customer&#39;s payment details. (required)
-     * @param clientApplication Client application name (optional)
      * @return ApiResponse&lt;TmsV1PaymentinstrumentsPatch200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV1PaymentinstrumentsPatch200Response> updatePaymentInstrumentWithHttpInfo(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, String clientApplication) throws ApiException {
-        com.squareup.okhttp.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, updatePaymentInstrumentRequest, clientApplication, null, null);
+    public ApiResponse<TmsV1PaymentinstrumentsPatch200Response> updatePaymentInstrumentWithHttpInfo(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest) throws ApiException {
+        com.squareup.okhttp.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, tokenId, updatePaymentInstrumentRequest, null, null);
         Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPatch200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -686,16 +577,13 @@ public class PaymentInstrumentApi {
      * Update a Payment Instrument (asynchronously)
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param vCMerchantId CyberSource merchant id. (required)
-     * @param vCCorrelationId The mandatory correlation id passed by upstream (calling) system. (required)
      * @param tokenId The TokenId of a Payment Instrument. (required)
      * @param updatePaymentInstrumentRequest Specify the customer&#39;s payment details. (required)
-     * @param clientApplication Client application name (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updatePaymentInstrumentAsync(String profileId, String vCMerchantId, String vCCorrelationId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, String clientApplication, final ApiCallback<TmsV1PaymentinstrumentsPatch200Response> callback) throws ApiException {
+    public com.squareup.okhttp.Call updatePaymentInstrumentAsync(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ApiCallback<TmsV1PaymentinstrumentsPatch200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -716,7 +604,7 @@ public class PaymentInstrumentApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, vCMerchantId, vCCorrelationId, tokenId, updatePaymentInstrumentRequest, clientApplication, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, tokenId, updatePaymentInstrumentRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV1PaymentinstrumentsPatch200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

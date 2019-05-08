@@ -48,11 +48,8 @@ public class InstrumentIdentifierApiTest {
     @Test
     public void createInstrumentIdentifierTest() throws ApiException {
         String profileId = null;
-        String vCMerchantId = null;
-        String vCCorrelationId = null;
         CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest = null;
-        String clientApplication = null;
-        TmsV1InstrumentIdentifiersPost200Response response = api.createInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, createInstrumentIdentifierRequest, clientApplication);
+        TmsV1InstrumentIdentifiersPost200Response response = api.createInstrumentIdentifier(profileId, createInstrumentIdentifierRequest);
 
         // TODO: test validations
     }
@@ -68,11 +65,8 @@ public class InstrumentIdentifierApiTest {
     @Test
     public void deleteInstrumentIdentifierTest() throws ApiException {
         String profileId = null;
-        String vCMerchantId = null;
-        String vCCorrelationId = null;
         String tokenId = null;
-        String clientApplication = null;
-        api.deleteInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication);
+        api.deleteInstrumentIdentifier(profileId, tokenId);
 
         // TODO: test validations
     }
@@ -88,13 +82,10 @@ public class InstrumentIdentifierApiTest {
     @Test
     public void getAllPaymentInstrumentsTest() throws ApiException {
         String profileId = null;
-        String vCMerchantId = null;
-        String vCCorrelationId = null;
         String tokenId = null;
-        String clientApplication = null;
         Long offset = null;
         Long limit = null;
-        TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response response = api.getAllPaymentInstruments(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication, offset, limit);
+        TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response response = api.getAllPaymentInstruments(profileId, tokenId, offset, limit);
 
         // TODO: test validations
     }
@@ -110,11 +101,8 @@ public class InstrumentIdentifierApiTest {
     @Test
     public void getInstrumentIdentifierTest() throws ApiException {
         String profileId = null;
-        String vCMerchantId = null;
-        String vCCorrelationId = null;
         String tokenId = null;
-        String clientApplication = null;
-        TmsV1InstrumentIdentifiersPost200Response response = api.getInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, tokenId, clientApplication);
+        TmsV1InstrumentIdentifiersPost200Response response = api.getInstrumentIdentifier(profileId, tokenId);
 
         // TODO: test validations
     }
@@ -130,12 +118,9 @@ public class InstrumentIdentifierApiTest {
     @Test
     public void updateInstrumentIdentifierTest() throws ApiException {
         String profileId = null;
-        String vCMerchantId = null;
-        String vCCorrelationId = null;
         String tokenId = null;
         UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest = null;
-        String clientApplication = null;
-        TmsV1InstrumentIdentifiersPost200Response response = api.updateInstrumentIdentifier(profileId, vCMerchantId, vCCorrelationId, tokenId, updateInstrumentIdentifierRequest, clientApplication);
+        TmsV1InstrumentIdentifiersPost200Response response = api.updateInstrumentIdentifier(profileId, tokenId, updateInstrumentIdentifierRequest);
 
         // TODO: test validations
     }

@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * Ptsv2paymentsidreversalsOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-07T15:32:29.568+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-08T17:29:15.150+05:30")
 public class Ptsv2paymentsidreversalsOrderInformationLineItems {
   @SerializedName("quantity")
   private BigDecimal quantity = null;
