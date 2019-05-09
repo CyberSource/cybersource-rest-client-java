@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getPurchaseAndRefundDetails"></a>
 # **getPurchaseAndRefundDetails**
-> getPurchaseAndRefundDetails(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit)
+> ReportingV3PurchaseRefundDetailsGet200Response getPurchaseAndRefundDetails(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit)
 
 Get Purchase and Refund details
 
@@ -32,7 +32,8 @@ String groupName = "groupName_example"; // String | Valid CyberSource Group Name
 Integer offset = 56; // Integer | Offset of the Purchase and Refund Results.
 Integer limit = 2000; // Integer | Results count per page. Range(1-2000)
 try {
-    apiInstance.getPurchaseAndRefundDetails(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
+    ReportingV3PurchaseRefundDetailsGet200Response result = apiInstance.getPurchaseAndRefundDetails(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PurchaseAndRefundDetailsApi#getPurchaseAndRefundDetails");
     e.printStackTrace();
@@ -54,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**ReportingV3PurchaseRefundDetailsGet200Response**](ReportingV3PurchaseRefundDetailsGet200Response.md)
 
 ### Authorization
 

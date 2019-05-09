@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="octCreatePayment"></a>
 # **octCreatePayment**
-> octCreatePayment(octCreatePaymentRequest)
+> PtsV2PayoutsPost201Response octCreatePayment(octCreatePaymentRequest)
 
 Process a Payout
 
@@ -25,7 +25,8 @@ Send funds from a selected funding source to a designated credit/debit card acco
 PayoutsApi apiInstance = new PayoutsApi();
 OctCreatePaymentRequest octCreatePaymentRequest = new OctCreatePaymentRequest(); // OctCreatePaymentRequest | 
 try {
-    apiInstance.octCreatePayment(octCreatePaymentRequest);
+    PtsV2PayoutsPost201Response result = apiInstance.octCreatePayment(octCreatePaymentRequest);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PayoutsApi#octCreatePayment");
     e.printStackTrace();
@@ -40,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**PtsV2PayoutsPost201Response**](PtsV2PayoutsPost201Response.md)
 
 ### Authorization
 

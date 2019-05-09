@@ -16,6 +16,7 @@ package Api;
 import Invokers.ApiException;
 import Model.OctCreatePaymentRequest;
 import Model.PtsV2PaymentsPost502Response;
+import Model.PtsV2PayoutsPost201Response;
 import Model.PtsV2PayoutsPost400Response;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -45,7 +46,7 @@ public class PayoutsApiTest {
     @Test
     public void octCreatePaymentTest() throws ApiException {
         OctCreatePaymentRequest octCreatePaymentRequest = null;
-        api.octCreatePayment(octCreatePaymentRequest);
+        PtsV2PayoutsPost201Response response = api.octCreatePayment(octCreatePaymentRequest);
 
         // TODO: test validations
     }

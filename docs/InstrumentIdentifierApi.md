@@ -53,8 +53,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/hal+json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="deleteInstrumentIdentifier"></a>
 # **deleteInstrumentIdentifier**
@@ -97,8 +97,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="getAllPaymentInstruments"></a>
 # **getAllPaymentInstruments**
@@ -146,8 +146,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="getInstrumentIdentifier"></a>
 # **getInstrumentIdentifier**
@@ -191,8 +191,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="updateInstrumentIdentifier"></a>
 # **updateInstrumentIdentifier**
@@ -238,6 +238,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 

@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
+import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks;
-import Model.TmsV1PaymentinstrumentsPatch200Response;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,13 +24,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-08T17:29:15.150+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response {
   @SerializedName("_links")
   private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks links = null;
@@ -96,7 +94,7 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response {
   private String total = null;
 
   @SerializedName("_embedded")
-  private List<TmsV1PaymentinstrumentsPatch200Response> embedded = null;
+  private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded embedded = null;
 
   public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response links(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks links) {
     this.links = links;
@@ -161,29 +159,21 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response {
     return total;
   }
 
-  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response embedded(List<TmsV1PaymentinstrumentsPatch200Response> embedded) {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response embedded(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded embedded) {
     this.embedded = embedded;
     return this;
   }
 
-  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response addEmbeddedItem(TmsV1PaymentinstrumentsPatch200Response embeddedItem) {
-    if (this.embedded == null) {
-      this.embedded = new ArrayList<TmsV1PaymentinstrumentsPatch200Response>();
-    }
-    this.embedded.add(embeddedItem);
-    return this;
-  }
-
    /**
-   * Array of Payment Instruments returned for the supplied Instrument Identifier.
+   * Get embedded
    * @return embedded
   **/
-  @ApiModelProperty(value = "Array of Payment Instruments returned for the supplied Instrument Identifier.")
-  public List<TmsV1PaymentinstrumentsPatch200Response> getEmbedded() {
+  @ApiModelProperty(value = "")
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded getEmbedded() {
     return embedded;
   }
 
-  public void setEmbedded(List<TmsV1PaymentinstrumentsPatch200Response> embedded) {
+  public void setEmbedded(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded embedded) {
     this.embedded = embedded;
   }
 

@@ -59,7 +59,7 @@ No authorization required
 
 <a name="getTransactionBatchId"></a>
 # **getTransactionBatchId**
-> getTransactionBatchId(id)
+> PtsV1TransactionBatchesIdGet200Response getTransactionBatchId(id)
 
 Get individual batch file
 
@@ -75,7 +75,8 @@ Provide the search range
 TransactionBatchesApi apiInstance = new TransactionBatchesApi();
 String id = "id_example"; // String | The batch id assigned for the template.
 try {
-    apiInstance.getTransactionBatchId(id);
+    PtsV1TransactionBatchesIdGet200Response result = apiInstance.getTransactionBatchId(id);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TransactionBatchesApi#getTransactionBatchId");
     e.printStackTrace();
@@ -90,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**PtsV1TransactionBatchesIdGet200Response**](PtsV1TransactionBatchesIdGet200Response.md)
 
 ### Authorization
 

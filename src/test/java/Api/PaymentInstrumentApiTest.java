@@ -16,7 +16,7 @@ package Api;
 import Invokers.ApiException;
 import Model.CreatePaymentInstrumentRequest;
 import Model.InlineResponse4001;
-import Model.TmsV1PaymentinstrumentsPatch200Response;
+import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments;
 import Model.UpdatePaymentInstrumentRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -47,7 +47,7 @@ public class PaymentInstrumentApiTest {
     public void createPaymentInstrumentTest() throws ApiException {
         String profileId = null;
         CreatePaymentInstrumentRequest createPaymentInstrumentRequest = null;
-        TmsV1PaymentinstrumentsPatch200Response response = api.createPaymentInstrument(profileId, createPaymentInstrumentRequest);
+        TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments response = api.createPaymentInstrument(profileId, createPaymentInstrumentRequest);
 
         // TODO: test validations
     }
@@ -81,7 +81,7 @@ public class PaymentInstrumentApiTest {
     public void getPaymentInstrumentTest() throws ApiException {
         String profileId = null;
         String tokenId = null;
-        TmsV1PaymentinstrumentsPatch200Response response = api.getPaymentInstrument(profileId, tokenId);
+        TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments response = api.getPaymentInstrument(profileId, tokenId);
 
         // TODO: test validations
     }
@@ -99,7 +99,7 @@ public class PaymentInstrumentApiTest {
         String profileId = null;
         String tokenId = null;
         UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest = null;
-        TmsV1PaymentinstrumentsPatch200Response response = api.updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest);
+        TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments response = api.updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest);
 
         // TODO: test validations
     }

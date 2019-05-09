@@ -19,6 +19,7 @@ import org.joda.time.LocalDate;
 import Model.PtsV1TransactionBatchesGet200Response;
 import Model.PtsV1TransactionBatchesGet400Response;
 import Model.PtsV1TransactionBatchesGet500Response;
+import Model.PtsV1TransactionBatchesIdGet200Response;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -65,7 +66,7 @@ public class TransactionBatchesApiTest {
     @Test
     public void getTransactionBatchIdTest() throws ApiException {
         String id = null;
-        api.getTransactionBatchId(id);
+        PtsV1TransactionBatchesIdGet200Response response = api.getTransactionBatchId(id);
 
         // TODO: test validations
     }

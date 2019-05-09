@@ -32,6 +32,7 @@ import org.joda.time.LocalDate;
 import Model.PtsV1TransactionBatchesGet200Response;
 import Model.PtsV1TransactionBatchesGet400Response;
 import Model.PtsV1TransactionBatchesGet500Response;
+import Model.PtsV1TransactionBatchesIdGet200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -264,22 +265,25 @@ public class TransactionBatchesApi {
      * Get individual batch file
      * Provide the search range
      * @param id The batch id assigned for the template. (required)
+     * @return PtsV1TransactionBatchesIdGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void getTransactionBatchId(String id) throws ApiException {
-        getTransactionBatchIdWithHttpInfo(id);
+    public PtsV1TransactionBatchesIdGet200Response getTransactionBatchId(String id) throws ApiException {
+        ApiResponse<PtsV1TransactionBatchesIdGet200Response> resp = getTransactionBatchIdWithHttpInfo(id);
+        return resp.getData();
     }
 
     /**
      * Get individual batch file
      * Provide the search range
      * @param id The batch id assigned for the template. (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;PtsV1TransactionBatchesIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> getTransactionBatchIdWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<PtsV1TransactionBatchesIdGet200Response> getTransactionBatchIdWithHttpInfo(String id) throws ApiException {
         com.squareup.okhttp.Call call = getTransactionBatchIdValidateBeforeCall(id, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesIdGet200Response>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -290,7 +294,7 @@ public class TransactionBatchesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getTransactionBatchIdAsync(String id, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionBatchIdAsync(String id, final ApiCallback<PtsV1TransactionBatchesIdGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -312,7 +316,8 @@ public class TransactionBatchesApi {
         }
 
         com.squareup.okhttp.Call call = getTransactionBatchIdValidateBeforeCall(id, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesIdGet200Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**

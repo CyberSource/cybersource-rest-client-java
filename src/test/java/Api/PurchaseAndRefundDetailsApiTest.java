@@ -15,6 +15,7 @@ package Api;
 
 import Invokers.ApiException;
 import org.joda.time.DateTime;
+import Model.ReportingV3PurchaseRefundDetailsGet200Response;
 import Model.Reportingv3ReportDownloadsGet400Response;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -51,7 +52,7 @@ public class PurchaseAndRefundDetailsApiTest {
         String groupName = null;
         Integer offset = null;
         Integer limit = null;
-        api.getPurchaseAndRefundDetails(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
+        ReportingV3PurchaseRefundDetailsGet200Response response = api.getPurchaseAndRefundDetails(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
 
         // TODO: test validations
     }

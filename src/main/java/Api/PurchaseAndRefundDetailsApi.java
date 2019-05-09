@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import org.joda.time.DateTime;
+import Model.ReportingV3PurchaseRefundDetailsGet200Response;
 import Model.Reportingv3ReportDownloadsGet400Response;
 
 import java.lang.reflect.Type;
@@ -160,10 +161,12 @@ public class PurchaseAndRefundDetailsApi {
      * @param groupName Valid CyberSource Group Name.User can define groups using CBAPI and Group Management Module in EBC2. Groups are collection of organizationIds (optional)
      * @param offset Offset of the Purchase and Refund Results. (optional)
      * @param limit Results count per page. Range(1-2000) (optional, default to 2000)
+     * @return ReportingV3PurchaseRefundDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void getPurchaseAndRefundDetails(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
-        getPurchaseAndRefundDetailsWithHttpInfo(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
+    public ReportingV3PurchaseRefundDetailsGet200Response getPurchaseAndRefundDetails(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<ReportingV3PurchaseRefundDetailsGet200Response> resp = getPurchaseAndRefundDetailsWithHttpInfo(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
+        return resp.getData();
     }
 
     /**
@@ -177,12 +180,13 @@ public class PurchaseAndRefundDetailsApi {
      * @param groupName Valid CyberSource Group Name.User can define groups using CBAPI and Group Management Module in EBC2. Groups are collection of organizationIds (optional)
      * @param offset Offset of the Purchase and Refund Results. (optional)
      * @param limit Results count per page. Range(1-2000) (optional, default to 2000)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;ReportingV3PurchaseRefundDetailsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> getPurchaseAndRefundDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<ReportingV3PurchaseRefundDetailsGet200Response> getPurchaseAndRefundDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getPurchaseAndRefundDetailsValidateBeforeCall(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<ReportingV3PurchaseRefundDetailsGet200Response>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -200,7 +204,7 @@ public class PurchaseAndRefundDetailsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getPurchaseAndRefundDetailsAsync(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call getPurchaseAndRefundDetailsAsync(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit, final ApiCallback<ReportingV3PurchaseRefundDetailsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -222,7 +226,8 @@ public class PurchaseAndRefundDetailsApi {
         }
 
         com.squareup.okhttp.Call call = getPurchaseAndRefundDetailsValidateBeforeCall(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<ReportingV3PurchaseRefundDetailsGet200Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }
