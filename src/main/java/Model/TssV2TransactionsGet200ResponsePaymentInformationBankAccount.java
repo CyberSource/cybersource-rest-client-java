@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePaymentInformationBankAccount
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
   @SerializedName("suffix")
   private String suffix = null;
@@ -91,10 +91,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
   }
 
    /**
-   * The description for this field is not available.
+   * Check number.  Chase Paymentech Solutions - Optional. CyberSource ACH Service - Not used. RBS WorldPay Atlanta - Optional on debits. Required on credits. TeleCheck - Strongly recommended on debit requests. Optional on credits. 
    * @return checkNumber
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Check number.  Chase Paymentech Solutions - Optional. CyberSource ACH Service - Not used. RBS WorldPay Atlanta - Optional on debits. Required on credits. TeleCheck - Strongly recommended on debit requests. Optional on credits. ")
   public String getCheckNumber() {
     return checkNumber;
   }
@@ -109,10 +109,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
   }
 
    /**
-   * The description for this field is not available.
+   * Account type.  Possible values:  - **C**: Checking.  - **G**: General ledger. This value is supported only on Wells Fargo ACH.  - **S**: Savings (U.S. dollars only).  - **X**: Corporate checking (U.S. dollars only). 
    * @return type
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Account type.  Possible values:  - **C**: Checking.  - **G**: General ledger. This value is supported only on Wells Fargo ACH.  - **S**: Savings (U.S. dollars only).  - **X**: Corporate checking (U.S. dollars only). ")
   public String getType() {
     return type;
   }
@@ -163,10 +163,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
   }
 
    /**
-   * The description for this field is not available.
+   * Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor. See \&quot;Encoded Account Numbers,\&quot; page 39. 
    * @return encoderId
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor. See \"Encoded Account Numbers,\" page 39. ")
   public String getEncoderId() {
     return encoderId;
   }

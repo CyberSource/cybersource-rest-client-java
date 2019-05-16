@@ -4,9 +4,58 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getTransactionBatchDetails**](TransactionBatchesApi.md#getTransactionBatchDetails) | **GET** /pts/v1/transaction-batch-details | Filters batch response. 
 [**getTransactionBatchId**](TransactionBatchesApi.md#getTransactionBatchId) | **GET** /pts/v1/transaction-batches/{id} | Get individual batch file
 [**getTransactionBatches**](TransactionBatchesApi.md#getTransactionBatches) | **GET** /pts/v1/transaction-batches | Get a list of batch files
 
+
+<a name="getTransactionBatchDetails"></a>
+# **getTransactionBatchDetails**
+> getTransactionBatchDetails(transactionBatchId, uploadDate, status)
+
+Filters batch response. 
+
+Filters batch response. 
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.TransactionBatchesApi;
+
+
+TransactionBatchesApi apiInstance = new TransactionBatchesApi();
+String transactionBatchId = "transactionBatchId_example"; // String | Transaction Batch Id, this is unique.
+LocalDate uploadDate = new LocalDate(); // LocalDate | Date in which the original batch file was uploaded. Date must be in ISO-8601 format.
+String status = "status_example"; // String | Allows you to filter by rejected response. 
+try {
+    apiInstance.getTransactionBatchDetails(transactionBatchId, uploadDate, status);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TransactionBatchesApi#getTransactionBatchDetails");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transactionBatchId** | **String**| Transaction Batch Id, this is unique. |
+ **uploadDate** | **LocalDate**| Date in which the original batch file was uploaded. Date must be in ISO-8601 format. | [optional]
+ **status** | **String**| Allows you to filter by rejected response.  | [optional] [enum: Rejected]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: text/vnd.cybersource.map-csv
 
 <a name="getTransactionBatchId"></a>
 # **getTransactionBatchId**

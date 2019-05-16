@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -58,7 +58,7 @@ public class KeyGenerationApi {
 
     /**
      * Build call for generatePublicKey
-     * @param generatePublicKeyRequest  (optional)
+     * @param generatePublicKeyRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -68,7 +68,7 @@ public class KeyGenerationApi {
         Object localVarPostBody = generatePublicKeyRequest;
         
         // create path and map variables
-        String localVarPath = "/flex/v1/keys/";
+        String localVarPath = "/flex/v1/keys";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -107,6 +107,11 @@ public class KeyGenerationApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call generatePublicKeyValidateBeforeCall(GeneratePublicKeyRequest generatePublicKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
+        // verify the required parameter 'generatePublicKeyRequest' is set
+        if (generatePublicKeyRequest == null) {
+            throw new ApiException("Missing the required parameter 'generatePublicKeyRequest' when calling generatePublicKey(Async)");
+        }
+        
         
         com.squareup.okhttp.Call call = generatePublicKeyCall(generatePublicKeyRequest, progressListener, progressRequestListener);
         return call;
@@ -120,7 +125,7 @@ public class KeyGenerationApi {
     /**
      * Generate Key
      * Generate a one-time use public key and key ID to encrypt the card number in the follow-on Tokenize Card request. The key used to encrypt the card number on the cardholder’s device or browser is valid for 15 minutes and must be used to verify the signature in the response message. CyberSource recommends creating a new key for each order. Generating a key is an authenticated request initiated from your servers, prior to requesting to tokenize the card data from your customer’s device or browser.
-     * @param generatePublicKeyRequest  (optional)
+     * @param generatePublicKeyRequest  (required)
      * @return FlexV1KeysPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -132,7 +137,7 @@ public class KeyGenerationApi {
     /**
      * Generate Key
      * Generate a one-time use public key and key ID to encrypt the card number in the follow-on Tokenize Card request. The key used to encrypt the card number on the cardholder’s device or browser is valid for 15 minutes and must be used to verify the signature in the response message. CyberSource recommends creating a new key for each order. Generating a key is an authenticated request initiated from your servers, prior to requesting to tokenize the card data from your customer’s device or browser.
-     * @param generatePublicKeyRequest  (optional)
+     * @param generatePublicKeyRequest  (required)
      * @return ApiResponse&lt;FlexV1KeysPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -145,7 +150,7 @@ public class KeyGenerationApi {
     /**
      * Generate Key (asynchronously)
      * Generate a one-time use public key and key ID to encrypt the card number in the follow-on Tokenize Card request. The key used to encrypt the card number on the cardholder’s device or browser is valid for 15 minutes and must be used to verify the signature in the response message. CyberSource recommends creating a new key for each order. Generating a key is an authenticated request initiated from your servers, prior to requesting to tokenize the card data from your customer’s device or browser.
-     * @param generatePublicKeyRequest  (optional)
+     * @param generatePublicKeyRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

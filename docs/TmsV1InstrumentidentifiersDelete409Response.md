@@ -1,10 +1,10 @@
 
-# TmsV1InstrumentidentifiersDelete409Response
+# TmsV1InstrumentIdentifiersDelete409Response
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**TmsV1InstrumentidentifiersDelete409ResponseLinks**](TmsV1InstrumentidentifiersDelete409ResponseLinks.md) |  |  [optional]
+**links** | [**TmsV1InstrumentIdentifiersDelete409ResponseLinks**](TmsV1InstrumentIdentifiersDelete409ResponseLinks.md) |  |  [optional]
 
 
 

@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,9 +14,9 @@
 package Model;
 
 import java.util.Objects;
-import Model.TssV2TransactionsGet200ResponsePaymentInformationCustomer;
+import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard;
-import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod;
+import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,36 +29,36 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
-  @SerializedName("paymentMethod")
-  private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod paymentMethod = null;
+  @SerializedName("paymentType")
+  private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType paymentType = null;
 
   @SerializedName("customer")
-  private TssV2TransactionsGet200ResponsePaymentInformationCustomer customer = null;
+  private Ptsv2paymentsPaymentInformationCustomer customer = null;
 
   @SerializedName("card")
   private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard card = null;
 
-  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation paymentMethod(TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod paymentMethod) {
-    this.paymentMethod = paymentMethod;
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation paymentType(TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
     return this;
   }
 
    /**
-   * Get paymentMethod
-   * @return paymentMethod
+   * Get paymentType
+   * @return paymentType
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod getPaymentMethod() {
-    return paymentMethod;
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType getPaymentType() {
+    return paymentType;
   }
 
-  public void setPaymentMethod(TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod paymentMethod) {
-    this.paymentMethod = paymentMethod;
+  public void setPaymentType(TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation customer(TssV2TransactionsGet200ResponsePaymentInformationCustomer customer) {
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
     this.customer = customer;
     return this;
   }
@@ -68,11 +68,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsGet200ResponsePaymentInformationCustomer getCustomer() {
+  public Ptsv2paymentsPaymentInformationCustomer getCustomer() {
     return customer;
   }
 
-  public void setCustomer(TssV2TransactionsGet200ResponsePaymentInformationCustomer customer) {
+  public void setCustomer(Ptsv2paymentsPaymentInformationCustomer customer) {
     this.customer = customer;
   }
 
@@ -104,14 +104,14 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
       return false;
     }
     TssV2TransactionsPost201ResponseEmbeddedPaymentInformation tssV2TransactionsPost201ResponseEmbeddedPaymentInformation = (TssV2TransactionsPost201ResponseEmbeddedPaymentInformation) o;
-    return Objects.equals(this.paymentMethod, tssV2TransactionsPost201ResponseEmbeddedPaymentInformation.paymentMethod) &&
+    return Objects.equals(this.paymentType, tssV2TransactionsPost201ResponseEmbeddedPaymentInformation.paymentType) &&
         Objects.equals(this.customer, tssV2TransactionsPost201ResponseEmbeddedPaymentInformation.customer) &&
         Objects.equals(this.card, tssV2TransactionsPost201ResponseEmbeddedPaymentInformation.card);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentMethod, customer, card);
+    return Objects.hash(paymentType, customer, card);
   }
 
 
@@ -120,7 +120,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {\n");
     
-    sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
+    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("}");

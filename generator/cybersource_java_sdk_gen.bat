@@ -12,7 +12,7 @@ powershell -Command " Set-Content ..\src\main\java\Api\CreditApi.java ((get-cont
 powershell -Command " Set-Content ..\src\main\java\Api\PaymentsApi.java ((get-content ..\src\main\java\Api\PaymentsApi.java -raw) -replace '(?m)(.*)^*final String\[\] localVarAccepts = {[\r\n\s]+\"application\/json;charset=utf-8\"[\r\n\s]+};', 'final String[] localVarAccepts = {\"application/hal+json;charset=utf-8\"};') "
 
 
-powershell -Command " Set-Content ..\src\main\java\Api\ProcessAPayoutApi.java ((get-content ..\src\main\java\Api\ProcessAPayoutApi.java -raw) -replace '(?m)(.*)^*final String\[\] localVarAccepts = {[\r\n\s]+\"application\/json;charset=utf-8\"[\r\n\s]+};', 'final String[] localVarAccepts = {\"application/hal+json;charset=utf-8\"};') "
+powershell -Command " Set-Content ..\src\main\java\Api\PayoutsApi.java ((get-content ..\src\main\java\Api\PayoutsApi.java -raw) -replace '(?m)(.*)^*final String\[\] localVarAccepts = {[\r\n\s]+\"application\/json;charset=utf-8\"[\r\n\s]+};', 'final String[] localVarAccepts = {\"application/hal+json;charset=utf-8\"};') "
 
 
 powershell -Command " Set-Content ..\src\main\java\Api\RefundApi.java ((get-content ..\src\main\java\Api\RefundApi.java -raw) -replace '(?m)(.*)^*final String\[\] localVarAccepts = {[\r\n\s]+\"application\/json;charset=utf-8\"[\r\n\s]+};', 'final String[] localVarAccepts = {\"application/hal+json;charset=utf-8\"};') "

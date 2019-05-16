@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,10 +14,12 @@
 package Api;
 
 import Invokers.ApiException;
-import Model.Body1;
+import Model.CreateInstrumentIdentifierRequest;
 import Model.InlineResponse4001;
-import Model.TmsV1InstrumentidentifiersDelete409Response;
-import Model.TmsV1InstrumentidentifiersPost200Response;
+import Model.TmsV1InstrumentIdentifiersDelete409Response;
+import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response;
+import Model.TmsV1InstrumentIdentifiersPost200Response;
+import Model.UpdateInstrumentIdentifierRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -36,6 +38,23 @@ public class InstrumentIdentifierApiTest {
 
     
     /**
+     * Create an Instrument Identifier
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createInstrumentIdentifierTest() throws ApiException {
+        String profileId = null;
+        CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest = null;
+        TmsV1InstrumentIdentifiersPost200Response response = api.createInstrumentIdentifier(profileId, createInstrumentIdentifierRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Delete an Instrument Identifier
      *
      * 
@@ -44,10 +63,29 @@ public class InstrumentIdentifierApiTest {
      *          if the Api call fails
      */
     @Test
-    public void tmsV1InstrumentidentifiersTokenIdDeleteTest() throws ApiException {
+    public void deleteInstrumentIdentifierTest() throws ApiException {
         String profileId = null;
         String tokenId = null;
-        api.tmsV1InstrumentidentifiersTokenIdDelete(profileId, tokenId);
+        api.deleteInstrumentIdentifier(profileId, tokenId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve all Payment Instruments associated with an Instrument Identifier
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAllPaymentInstrumentsTest() throws ApiException {
+        String profileId = null;
+        String tokenId = null;
+        Long offset = null;
+        Long limit = null;
+        TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response response = api.getAllPaymentInstruments(profileId, tokenId, offset, limit);
 
         // TODO: test validations
     }
@@ -61,10 +99,10 @@ public class InstrumentIdentifierApiTest {
      *          if the Api call fails
      */
     @Test
-    public void tmsV1InstrumentidentifiersTokenIdGetTest() throws ApiException {
+    public void getInstrumentIdentifierTest() throws ApiException {
         String profileId = null;
         String tokenId = null;
-        TmsV1InstrumentidentifiersPost200Response response = api.tmsV1InstrumentidentifiersTokenIdGet(profileId, tokenId);
+        TmsV1InstrumentIdentifiersPost200Response response = api.getInstrumentIdentifier(profileId, tokenId);
 
         // TODO: test validations
     }
@@ -78,11 +116,11 @@ public class InstrumentIdentifierApiTest {
      *          if the Api call fails
      */
     @Test
-    public void tmsV1InstrumentidentifiersTokenIdPatchTest() throws ApiException {
+    public void updateInstrumentIdentifierTest() throws ApiException {
         String profileId = null;
         String tokenId = null;
-        Body1 body = null;
-        TmsV1InstrumentidentifiersPost200Response response = api.tmsV1InstrumentidentifiersTokenIdPatch(profileId, tokenId, body);
+        UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest = null;
+        TmsV1InstrumentIdentifiersPost200Response response = api.updateInstrumentIdentifier(profileId, tokenId, updateInstrumentIdentifierRequest);
 
         // TODO: test validations
     }

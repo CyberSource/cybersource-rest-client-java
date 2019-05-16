@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **startTime** | **String** | The hour at which the report generation should start. It should be in hhmm format. | 
 **startDay** | **Integer** | This is the start day if the frequency is WEEKLY or MONTHLY. The value varies from 1-7 for WEEKLY and 1-31 for MONTHLY. For WEEKLY 1 means Sunday and 7 means Saturday. By default the value is 1. |  [optional]
 **reportFilters** | [**Map&lt;String, List&lt;String&gt;&gt;**](List.md) | List of filters to apply |  [optional]
-**reportPreferences** | [**ReportingV3ReportsIdGet200ResponseReportPreferences**](ReportingV3ReportsIdGet200ResponseReportPreferences.md) |  |  [optional]
+**reportPreferences** | [**Reportingv3reportsReportPreferences**](Reportingv3reportsReportPreferences.md) |  |  [optional]
 **groupName** | **String** | Valid GroupName |  [optional]
 
 
@@ -33,6 +33,7 @@ Name | Value
 DAILY | &quot;DAILY&quot;
 WEEKLY | &quot;WEEKLY&quot;
 MONTHLY | &quot;MONTHLY&quot;
+ADHOC | &quot;ADHOC&quot;
 
 
 

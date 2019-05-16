@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner;
+import Model.Ptsv2paymentsClientReferenceInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
@@ -39,7 +39,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
   private String deviceId = null;
 
   @SerializedName("partner")
-  private TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner partner = null;
+  private Ptsv2paymentsClientReferenceInformationPartner partner = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation terminalId(String terminalId) {
     this.terminalId = terminalId;
@@ -65,10 +65,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
   }
 
    /**
-   * The description for this field is not available.
+   * Terminal serial number assigned by the hardware manufacturer. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX. 
    * @return terminalSerialNumber
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Terminal serial number assigned by the hardware manufacturer. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX. ")
   public String getTerminalSerialNumber() {
     return terminalSerialNumber;
   }
@@ -95,7 +95,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
     this.deviceId = deviceId;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation partner(TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner partner) {
+  public TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation partner(Ptsv2paymentsClientReferenceInformationPartner partner) {
     this.partner = partner;
     return this;
   }
@@ -105,11 +105,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
    * @return partner
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner getPartner() {
+  public Ptsv2paymentsClientReferenceInformationPartner getPartner() {
     return partner;
   }
 
-  public void setPartner(TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner partner) {
+  public void setPartner(Ptsv2paymentsClientReferenceInformationPartner partner) {
     this.partner = partner;
   }
 

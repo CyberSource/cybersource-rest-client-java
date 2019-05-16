@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2payoutsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class Ptsv2payoutsProcessingInformation {
   @SerializedName("businessApplicationId")
   private String businessApplicationId = null;
@@ -86,10 +86,10 @@ public class Ptsv2payoutsProcessingInformation {
   }
 
    /**
-   * Type of transaction. Possible value for Fast Payments transactions:   - internet 
+   * Type of transaction.  Some payment card companies use this information when determining discount rates. When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value listed here.  Possible value for Fast Payments transactions:  - internet  **Ingenico ePayments**\\ Ingenico ePayments was previously called _Global Collect_.  **Payer Authentication Transactions**\\ For the possible values and requirements, see \&quot;Payer Authentication,\&quot; page 180.  **Other Types of Transactions**\\ See Appendix G, \&quot;Commerce Indicators,\&quot; on page 353. 
    * @return commerceIndicator
   **/
-  @ApiModelProperty(value = "Type of transaction. Possible value for Fast Payments transactions:   - internet ")
+  @ApiModelProperty(value = "Type of transaction.  Some payment card companies use this information when determining discount rates. When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value listed here.  Possible value for Fast Payments transactions:  - internet  **Ingenico ePayments**\\ Ingenico ePayments was previously called _Global Collect_.  **Payer Authentication Transactions**\\ For the possible values and requirements, see \"Payer Authentication,\" page 180.  **Other Types of Transactions**\\ See Appendix G, \"Commerce Indicators,\" on page 353. ")
   public String getCommerceIndicator() {
     return commerceIndicator;
   }

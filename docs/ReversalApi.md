@@ -5,6 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**authReversal**](ReversalApi.md#authReversal) | **POST** /pts/v2/payments/{id}/reversals | Process an Authorization Reversal
+[**mitReversal**](ReversalApi.md#mitReversal) | **POST** /pts/v2/reversals/ | Merchant Initiated Reversal
 
 
 <a name="authReversal"></a>
@@ -40,6 +41,51 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The payment ID returned from a previous payment request. |
  **authReversalRequest** | [**AuthReversalRequest**](AuthReversalRequest.md)|  |
+
+### Return type
+
+[**PtsV2PaymentsReversalsPost201Response**](PtsV2PaymentsReversalsPost201Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a name="mitReversal"></a>
+# **mitReversal**
+> PtsV2PaymentsReversalsPost201Response mitReversal(mitReversalRequest)
+
+Merchant Initiated Reversal
+
+This is to reverse a previous payment that merchant does not receive a reply.
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.ReversalApi;
+
+
+ReversalApi apiInstance = new ReversalApi();
+MitReversalRequest mitReversalRequest = new MitReversalRequest(); // MitReversalRequest | 
+try {
+    PtsV2PaymentsReversalsPost201Response result = apiInstance.mitReversal(mitReversalRequest);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ReversalApi#mitReversal");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mitReversalRequest** | [**MitReversalRequest**](MitReversalRequest.md)|  |
 
 ### Return type
 

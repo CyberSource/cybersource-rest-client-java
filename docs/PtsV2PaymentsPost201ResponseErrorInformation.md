@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reason** | [**ReasonEnum**](#ReasonEnum) | The reason of the status.  Possible values:  - AVS_FAILED  - CONTACT_PROCESSOR  - EXPIRED_CARD  - PROCESSOR_DECLINED  - INSUFFICIENT_FUND  - STOLEN_LOST_CARD  - ISSUER_UNAVAILABLE  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - EXCEEDS_CREDIT_LIMIT  - INVALID_CVN  - DECLINED_CHECK  - BLACKLISTED_CUSTOMER  - SUSPENDED_ACCOUNT  - PAYMENT_REFUSED  - CV_FAILED  - INVALID_ACCOUNT  - GENERAL_DECLINE  - INVALID_MERCHANT_CONFIGURATION  |  [optional]
+**reason** | [**ReasonEnum**](#ReasonEnum) | The reason of the status.  Possible values:  - AVS_FAILED  - CONTACT_PROCESSOR  - EXPIRED_CARD  - PROCESSOR_DECLINED  - INSUFFICIENT_FUND  - STOLEN_LOST_CARD  - ISSUER_UNAVAILABLE  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - EXCEEDS_CREDIT_LIMIT  - INVALID_CVN  - DECLINED_CHECK  - BLACKLISTED_CUSTOMER  - SUSPENDED_ACCOUNT  - PAYMENT_REFUSED  - CV_FAILED  - INVALID_ACCOUNT  - GENERAL_DECLINE  - INVALID_MERCHANT_CONFIGURATION  - DECISION_PROFILE_REJECT  - SCORE_EXCEEDS_THRESHOLD  |  [optional]
 **message** | **String** | The detail message related to the status and reason listed above. |  [optional]
 **details** | [**List&lt;PtsV2PaymentsPost201ResponseErrorInformationDetails&gt;**](PtsV2PaymentsPost201ResponseErrorInformationDetails.md) |  |  [optional]
 
@@ -28,6 +28,8 @@ INVALID_CVN | &quot;INVALID_CVN&quot;
 PAYMENT_REFUSED | &quot;PAYMENT_REFUSED&quot;
 INVALID_ACCOUNT | &quot;INVALID_ACCOUNT&quot;
 GENERAL_DECLINE | &quot;GENERAL_DECLINE&quot;
+DECISION_PROFILE_REJECT | &quot;DECISION_PROFILE_REJECT&quot;
+SCORE_EXCEEDS_THRESHOLD | &quot;SCORE_EXCEEDS_THRESHOLD&quot;
 
 
 

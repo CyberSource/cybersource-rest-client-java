@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keyId** | **String** | Unique identifier for the generated token. Used in the subsequent Tokenize Card request from your customer’s device or browser. |  [optional]
-**der** | [**InlineResponse200Der**](InlineResponse200Der.md) |  |  [optional]
-**jwk** | [**InlineResponse200Jwk**](InlineResponse200Jwk.md) |  |  [optional]
+**startTime** | [**DateTime**](DateTime.md) |  |  [optional]
+**endTime** | [**DateTime**](DateTime.md) |  |  [optional]
+**paymentBatchSummaries** | [**List&lt;InlineResponse200PaymentBatchSummaries&gt;**](InlineResponse200PaymentBatchSummaries.md) |  |  [optional]
 
 
 

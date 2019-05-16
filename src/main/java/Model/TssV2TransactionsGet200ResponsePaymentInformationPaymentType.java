@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -26,16 +26,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePaymentInformationPaymentType
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
   @SerializedName("name")
   private String name = null;
 
   @SerializedName("type")
   private String type = null;
-
-  @SerializedName("subType")
-  private String subType = null;
 
   @SerializedName("method")
   private String method = null;
@@ -55,10 +52,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
   }
 
    /**
-   * The description for this field is not available.
+   * The name of a payment method. This is required for non-credit card payment.  Examples: &#x60;SEARS&#x60;, &#x60;JCREW&#x60;, &#x60;PAYPAL&#x60;, &#x60;IDEAL&#x60;, &#x60;EPS&#x60; ...etc.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. 
    * @return name
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "The name of a payment method. This is required for non-credit card payment.  Examples: `SEARS`, `JCREW`, `PAYPAL`, `IDEAL`, `EPS` ...etc.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. ")
   public String getName() {
     return name;
   }
@@ -73,10 +70,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
   }
 
    /**
-   * The description for this field is not available.
+   * The type of payment method. This is required for non-credit card payment.  Possible values:  - BANK_TRANSFER  - CARD (Default)  - EWALLET  - DIGITAL  - DIRECT_DEBIT  - INVOICE  - PUSH_PAYMENT  - CARRIER_BILLING  - CASH  - CHECK  - CRYPTOGRAPHIC  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. 
    * @return type
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "The type of payment method. This is required for non-credit card payment.  Possible values:  - BANK_TRANSFER  - CARD (Default)  - EWALLET  - DIGITAL  - DIRECT_DEBIT  - INVOICE  - PUSH_PAYMENT  - CARRIER_BILLING  - CASH  - CHECK  - CRYPTOGRAPHIC  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. ")
   public String getType() {
     return type;
   }
@@ -85,34 +82,16 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
     this.type = type;
   }
 
-  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType subType(String subType) {
-    this.subType = subType;
-    return this;
-  }
-
-   /**
-   * The description for this field is not available.
-   * @return subType
-  **/
-  @ApiModelProperty(value = "The description for this field is not available.")
-  public String getSubType() {
-    return subType;
-  }
-
-  public void setSubType(String subType) {
-    this.subType = subType;
-  }
-
   public TssV2TransactionsGet200ResponsePaymentInformationPaymentType method(String method) {
     this.method = method;
     return this;
   }
 
    /**
-   * The description for this field is not available.
+   * This is an optional field.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. 
    * @return method
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "This is an optional field.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. ")
   public String getMethod() {
     return method;
   }
@@ -187,7 +166,6 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
     TssV2TransactionsGet200ResponsePaymentInformationPaymentType tssV2TransactionsGet200ResponsePaymentInformationPaymentType = (TssV2TransactionsGet200ResponsePaymentInformationPaymentType) o;
     return Objects.equals(this.name, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.name) &&
         Objects.equals(this.type, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.type) &&
-        Objects.equals(this.subType, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.subType) &&
         Objects.equals(this.method, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.method) &&
         Objects.equals(this.fundingSource, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.fundingSource) &&
         Objects.equals(this.fundingSourceAffiliation, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.fundingSourceAffiliation) &&
@@ -196,7 +174,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, subType, method, fundingSource, fundingSourceAffiliation, credential);
+    return Objects.hash(name, type, method, fundingSource, fundingSourceAffiliation, credential);
   }
 
 
@@ -207,7 +185,6 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    subType: ").append(toIndentedString(subType)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    fundingSource: ").append(toIndentedString(fundingSource)).append("\n");
     sb.append("    fundingSourceAffiliation: ").append(toIndentedString(fundingSourceAffiliation)).append("\n");

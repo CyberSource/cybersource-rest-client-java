@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,9 +14,9 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAvs;
-import Model.TssV2TransactionsGet200ResponseProcessorInformationAchVerification;
-import Model.TssV2TransactionsGet200ResponseProcessorInformationCardVerification;
+import Model.Riskv1decisionsCardVerification;
 import Model.TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults;
 import Model.TssV2TransactionsGet200ResponseProcessorInformationProcessor;
 import com.google.gson.TypeAdapter;
@@ -31,7 +31,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class TssV2TransactionsGet200ResponseProcessorInformation {
   @SerializedName("processor")
   private TssV2TransactionsGet200ResponseProcessorInformationProcessor processor = null;
@@ -58,13 +58,19 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
   private PtsV2PaymentsPost201ResponseProcessorInformationAvs avs = null;
 
   @SerializedName("cardVerification")
-  private TssV2TransactionsGet200ResponseProcessorInformationCardVerification cardVerification = null;
+  private Riskv1decisionsCardVerification cardVerification = null;
 
   @SerializedName("achVerification")
-  private TssV2TransactionsGet200ResponseProcessorInformationAchVerification achVerification = null;
+  private PtsV2PaymentsPost201ResponseProcessorInformationAchVerification achVerification = null;
 
   @SerializedName("electronicVerificationResults")
   private TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults electronicVerificationResults = null;
+
+  @SerializedName("systemTraceAuditNumber")
+  private String systemTraceAuditNumber = null;
+
+  @SerializedName("responseCodeSource")
+  private String responseCodeSource = null;
 
   public TssV2TransactionsGet200ResponseProcessorInformation processor(TssV2TransactionsGet200ResponseProcessorInformationProcessor processor) {
     this.processor = processor;
@@ -90,10 +96,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
   }
 
    /**
-   * Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this  value. 
+   * Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this value. 
    * @return transactionId
   **/
-  @ApiModelProperty(value = "Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this  value. ")
+  @ApiModelProperty(value = "Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this value. ")
   public String getTransactionId() {
     return transactionId;
   }
@@ -210,7 +216,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     this.avs = avs;
   }
 
-  public TssV2TransactionsGet200ResponseProcessorInformation cardVerification(TssV2TransactionsGet200ResponseProcessorInformationCardVerification cardVerification) {
+  public TssV2TransactionsGet200ResponseProcessorInformation cardVerification(Riskv1decisionsCardVerification cardVerification) {
     this.cardVerification = cardVerification;
     return this;
   }
@@ -220,15 +226,15 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
    * @return cardVerification
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsGet200ResponseProcessorInformationCardVerification getCardVerification() {
+  public Riskv1decisionsCardVerification getCardVerification() {
     return cardVerification;
   }
 
-  public void setCardVerification(TssV2TransactionsGet200ResponseProcessorInformationCardVerification cardVerification) {
+  public void setCardVerification(Riskv1decisionsCardVerification cardVerification) {
     this.cardVerification = cardVerification;
   }
 
-  public TssV2TransactionsGet200ResponseProcessorInformation achVerification(TssV2TransactionsGet200ResponseProcessorInformationAchVerification achVerification) {
+  public TssV2TransactionsGet200ResponseProcessorInformation achVerification(PtsV2PaymentsPost201ResponseProcessorInformationAchVerification achVerification) {
     this.achVerification = achVerification;
     return this;
   }
@@ -238,11 +244,11 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
    * @return achVerification
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsGet200ResponseProcessorInformationAchVerification getAchVerification() {
+  public PtsV2PaymentsPost201ResponseProcessorInformationAchVerification getAchVerification() {
     return achVerification;
   }
 
-  public void setAchVerification(TssV2TransactionsGet200ResponseProcessorInformationAchVerification achVerification) {
+  public void setAchVerification(PtsV2PaymentsPost201ResponseProcessorInformationAchVerification achVerification) {
     this.achVerification = achVerification;
   }
 
@@ -262,6 +268,42 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   public void setElectronicVerificationResults(TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults electronicVerificationResults) {
     this.electronicVerificationResults = electronicVerificationResults;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessorInformation systemTraceAuditNumber(String systemTraceAuditNumber) {
+    this.systemTraceAuditNumber = systemTraceAuditNumber;
+    return this;
+  }
+
+   /**
+   * This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  **American Express Direct**  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  **CyberSource through VisaNet**  System trace number that must be printed on the customer’s receipt. 
+   * @return systemTraceAuditNumber
+  **/
+  @ApiModelProperty(value = "This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  **American Express Direct**  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  **CyberSource through VisaNet**  System trace number that must be printed on the customer’s receipt. ")
+  public String getSystemTraceAuditNumber() {
+    return systemTraceAuditNumber;
+  }
+
+  public void setSystemTraceAuditNumber(String systemTraceAuditNumber) {
+    this.systemTraceAuditNumber = systemTraceAuditNumber;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessorInformation responseCodeSource(String responseCodeSource) {
+    this.responseCodeSource = responseCodeSource;
+    return this;
+  }
+
+   /**
+   * Used by Visa only and contains the response source/reason code that identifies the source of the response decision. 
+   * @return responseCodeSource
+  **/
+  @ApiModelProperty(value = "Used by Visa only and contains the response source/reason code that identifies the source of the response decision. ")
+  public String getResponseCodeSource() {
+    return responseCodeSource;
+  }
+
+  public void setResponseCodeSource(String responseCodeSource) {
+    this.responseCodeSource = responseCodeSource;
   }
 
 
@@ -284,12 +326,14 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
         Objects.equals(this.avs, tssV2TransactionsGet200ResponseProcessorInformation.avs) &&
         Objects.equals(this.cardVerification, tssV2TransactionsGet200ResponseProcessorInformation.cardVerification) &&
         Objects.equals(this.achVerification, tssV2TransactionsGet200ResponseProcessorInformation.achVerification) &&
-        Objects.equals(this.electronicVerificationResults, tssV2TransactionsGet200ResponseProcessorInformation.electronicVerificationResults);
+        Objects.equals(this.electronicVerificationResults, tssV2TransactionsGet200ResponseProcessorInformation.electronicVerificationResults) &&
+        Objects.equals(this.systemTraceAuditNumber, tssV2TransactionsGet200ResponseProcessorInformation.systemTraceAuditNumber) &&
+        Objects.equals(this.responseCodeSource, tssV2TransactionsGet200ResponseProcessorInformation.responseCodeSource);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processor, transactionId, networkTransactionId, responseId, providerTransactionId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults);
+    return Objects.hash(processor, transactionId, networkTransactionId, responseId, providerTransactionId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, systemTraceAuditNumber, responseCodeSource);
   }
 
 
@@ -309,6 +353,8 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
     sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
     sb.append("    electronicVerificationResults: ").append(toIndentedString(electronicVerificationResults)).append("\n");
+    sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
+    sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
     sb.append("}");
     return sb.toString();
   }

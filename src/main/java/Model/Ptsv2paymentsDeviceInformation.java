@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class Ptsv2paymentsDeviceInformation {
   @SerializedName("hostName")
   private String hostName = null;
@@ -43,10 +43,10 @@ public class Ptsv2paymentsDeviceInformation {
   }
 
    /**
-   * DNS resolved hostname from above _ipAddress_.
+   * Host name reported by the customer’s browser to your Web server identified via the HTTP header.
    * @return hostName
   **/
-  @ApiModelProperty(value = "DNS resolved hostname from above _ipAddress_.")
+  @ApiModelProperty(value = "Host name reported by the customer’s browser to your Web server identified via the HTTP header.")
   public String getHostName() {
     return hostName;
   }
@@ -61,10 +61,10 @@ public class Ptsv2paymentsDeviceInformation {
   }
 
    /**
-   * IP address of the customer.
+   * Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. 
    * @return ipAddress
   **/
-  @ApiModelProperty(value = "IP address of the customer.")
+  @ApiModelProperty(value = "Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. ")
   public String getIpAddress() {
     return ipAddress;
   }

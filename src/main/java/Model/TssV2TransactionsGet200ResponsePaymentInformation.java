@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,10 +14,10 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationBank;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationCard;
-import Model.TssV2TransactionsGet200ResponsePaymentInformationCustomer;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationInvoice;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
@@ -32,13 +32,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class TssV2TransactionsGet200ResponsePaymentInformation {
   @SerializedName("paymentType")
   private TssV2TransactionsGet200ResponsePaymentInformationPaymentType paymentType = null;
 
   @SerializedName("customer")
-  private TssV2TransactionsGet200ResponsePaymentInformationCustomer customer = null;
+  private Ptsv2paymentsPaymentInformationCustomer customer = null;
 
   @SerializedName("card")
   private TssV2TransactionsGet200ResponsePaymentInformationCard card = null;
@@ -70,7 +70,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     this.paymentType = paymentType;
   }
 
-  public TssV2TransactionsGet200ResponsePaymentInformation customer(TssV2TransactionsGet200ResponsePaymentInformationCustomer customer) {
+  public TssV2TransactionsGet200ResponsePaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
     this.customer = customer;
     return this;
   }
@@ -80,11 +80,11 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsGet200ResponsePaymentInformationCustomer getCustomer() {
+  public Ptsv2paymentsPaymentInformationCustomer getCustomer() {
     return customer;
   }
 
-  public void setCustomer(TssV2TransactionsGet200ResponsePaymentInformationCustomer customer) {
+  public void setCustomer(Ptsv2paymentsPaymentInformationCustomer customer) {
     this.customer = customer;
   }
 

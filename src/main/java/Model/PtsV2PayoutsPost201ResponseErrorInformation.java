@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2PayoutsPost201ResponseErrorInformationDetails;
+import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,10 +29,10 @@ import java.util.List;
 /**
  * PtsV2PayoutsPost201ResponseErrorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class PtsV2PayoutsPost201ResponseErrorInformation {
   /**
-   * The reason of the status. 
+   * The reason of the status.  Possible values:  - EXPIRED_CARD  - PROCESSOR_DECLINED  - STOLEN_LOST_CARD  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - INVALID_CVN  - BLACKLISTED_CUSTOMER  - INVALID_ACCOUNT  - GENERAL_DECLINE  - RISK_CONTROL_DECLINE  - PROCESSOR_RISK_CONTROL_DECLINE 
    */
   @JsonAdapter(ReasonEnum.Adapter.class)
   public enum ReasonEnum {
@@ -103,7 +103,7 @@ public class PtsV2PayoutsPost201ResponseErrorInformation {
   private String message = null;
 
   @SerializedName("details")
-  private List<PtsV2PayoutsPost201ResponseErrorInformationDetails> details = null;
+  private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
 
   public PtsV2PayoutsPost201ResponseErrorInformation reason(ReasonEnum reason) {
     this.reason = reason;
@@ -111,10 +111,10 @@ public class PtsV2PayoutsPost201ResponseErrorInformation {
   }
 
    /**
-   * The reason of the status. 
+   * The reason of the status.  Possible values:  - EXPIRED_CARD  - PROCESSOR_DECLINED  - STOLEN_LOST_CARD  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - INVALID_CVN  - BLACKLISTED_CUSTOMER  - INVALID_ACCOUNT  - GENERAL_DECLINE  - RISK_CONTROL_DECLINE  - PROCESSOR_RISK_CONTROL_DECLINE 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status. ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values:  - EXPIRED_CARD  - PROCESSOR_DECLINED  - STOLEN_LOST_CARD  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - INVALID_CVN  - BLACKLISTED_CUSTOMER  - INVALID_ACCOUNT  - GENERAL_DECLINE  - RISK_CONTROL_DECLINE  - PROCESSOR_RISK_CONTROL_DECLINE ")
   public ReasonEnum getReason() {
     return reason;
   }
@@ -141,14 +141,14 @@ public class PtsV2PayoutsPost201ResponseErrorInformation {
     this.message = message;
   }
 
-  public PtsV2PayoutsPost201ResponseErrorInformation details(List<PtsV2PayoutsPost201ResponseErrorInformationDetails> details) {
+  public PtsV2PayoutsPost201ResponseErrorInformation details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
     this.details = details;
     return this;
   }
 
-  public PtsV2PayoutsPost201ResponseErrorInformation addDetailsItem(PtsV2PayoutsPost201ResponseErrorInformationDetails detailsItem) {
+  public PtsV2PayoutsPost201ResponseErrorInformation addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<PtsV2PayoutsPost201ResponseErrorInformationDetails>();
+      this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
     }
     this.details.add(detailsItem);
     return this;
@@ -159,11 +159,11 @@ public class PtsV2PayoutsPost201ResponseErrorInformation {
    * @return details
   **/
   @ApiModelProperty(value = "")
-  public List<PtsV2PayoutsPost201ResponseErrorInformationDetails> getDetails() {
+  public List<PtsV2PaymentsPost201ResponseErrorInformationDetails> getDetails() {
     return details;
   }
 
-  public void setDetails(List<PtsV2PayoutsPost201ResponseErrorInformationDetails> details) {
+  public void setDetails(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
     this.details = details;
   }
 

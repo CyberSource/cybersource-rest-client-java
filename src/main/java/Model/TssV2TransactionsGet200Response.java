@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2PaymentsReversalsPost201ResponseLinks;
+import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.TssV2TransactionsGet200ResponseApplicationInformation;
 import Model.TssV2TransactionsGet200ResponseBuyerInformation;
 import Model.TssV2TransactionsGet200ResponseClientReferenceInformation;
@@ -23,7 +23,7 @@ import Model.TssV2TransactionsGet200ResponseDeviceInformation;
 import Model.TssV2TransactionsGet200ResponseErrorInformation;
 import Model.TssV2TransactionsGet200ResponseFraudMarkingInformation;
 import Model.TssV2TransactionsGet200ResponseInstallmentInformation;
-import Model.TssV2TransactionsGet200ResponseMerchantDefinedInformation;
+import Model.TssV2TransactionsGet200ResponseLinks;
 import Model.TssV2TransactionsGet200ResponseMerchantInformation;
 import Model.TssV2TransactionsGet200ResponseOrderInformation;
 import Model.TssV2TransactionsGet200ResponsePaymentInformation;
@@ -46,7 +46,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class TssV2TransactionsGet200Response {
   @SerializedName("id")
   private String id = null;
@@ -63,8 +63,8 @@ public class TssV2TransactionsGet200Response {
   @SerializedName("status")
   private String status = null;
 
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("submitTimeUTC")
+  private String submitTimeUTC = null;
 
   @SerializedName("applicationInformation")
   private TssV2TransactionsGet200ResponseApplicationInformation applicationInformation = null;
@@ -91,7 +91,7 @@ public class TssV2TransactionsGet200Response {
   private TssV2TransactionsGet200ResponseFraudMarkingInformation fraudMarkingInformation = null;
 
   @SerializedName("merchantDefinedInformation")
-  private List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> merchantDefinedInformation = null;
+  private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
 
   @SerializedName("merchantInformation")
   private TssV2TransactionsGet200ResponseMerchantInformation merchantInformation = null;
@@ -118,7 +118,7 @@ public class TssV2TransactionsGet200Response {
   private TssV2TransactionsGet200ResponseSenderInformation senderInformation = null;
 
   @SerializedName("_links")
-  private PtsV2PaymentsReversalsPost201ResponseLinks links = null;
+  private TssV2TransactionsGet200ResponseLinks links = null;
 
   public TssV2TransactionsGet200Response id(String id) {
     this.id = id;
@@ -126,10 +126,10 @@ public class TssV2TransactionsGet200Response {
   }
 
    /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
+   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
    * @return id
   **/
-  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request.")
+  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.")
   public String getId() {
     return id;
   }
@@ -210,22 +210,22 @@ public class TssV2TransactionsGet200Response {
     this.status = status;
   }
 
-  public TssV2TransactionsGet200Response submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public TssV2TransactionsGet200Response submitTimeUTC(String submitTimeUTC) {
+    this.submitTimeUTC = submitTimeUTC;
     return this;
   }
 
    /**
-   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
+   * @return submitTimeUTC
   **/
-  @ApiModelProperty(value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
+  public String getSubmitTimeUTC() {
+    return submitTimeUTC;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public void setSubmitTimeUTC(String submitTimeUTC) {
+    this.submitTimeUTC = submitTimeUTC;
   }
 
   public TssV2TransactionsGet200Response applicationInformation(TssV2TransactionsGet200ResponseApplicationInformation applicationInformation) {
@@ -372,14 +372,14 @@ public class TssV2TransactionsGet200Response {
     this.fraudMarkingInformation = fraudMarkingInformation;
   }
 
-  public TssV2TransactionsGet200Response merchantDefinedInformation(List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> merchantDefinedInformation) {
+  public TssV2TransactionsGet200Response merchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
     return this;
   }
 
-  public TssV2TransactionsGet200Response addMerchantDefinedInformationItem(TssV2TransactionsGet200ResponseMerchantDefinedInformation merchantDefinedInformationItem) {
+  public TssV2TransactionsGet200Response addMerchantDefinedInformationItem(Ptsv2paymentsMerchantDefinedInformation merchantDefinedInformationItem) {
     if (this.merchantDefinedInformation == null) {
-      this.merchantDefinedInformation = new ArrayList<TssV2TransactionsGet200ResponseMerchantDefinedInformation>();
+      this.merchantDefinedInformation = new ArrayList<Ptsv2paymentsMerchantDefinedInformation>();
     }
     this.merchantDefinedInformation.add(merchantDefinedInformationItem);
     return this;
@@ -390,11 +390,11 @@ public class TssV2TransactionsGet200Response {
    * @return merchantDefinedInformation
   **/
   @ApiModelProperty(value = "The description for this field is not available.")
-  public List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> getMerchantDefinedInformation() {
+  public List<Ptsv2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {
     return merchantDefinedInformation;
   }
 
-  public void setMerchantDefinedInformation(List<TssV2TransactionsGet200ResponseMerchantDefinedInformation> merchantDefinedInformation) {
+  public void setMerchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 
@@ -542,7 +542,7 @@ public class TssV2TransactionsGet200Response {
     this.senderInformation = senderInformation;
   }
 
-  public TssV2TransactionsGet200Response links(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public TssV2TransactionsGet200Response links(TssV2TransactionsGet200ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -552,11 +552,11 @@ public class TssV2TransactionsGet200Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsReversalsPost201ResponseLinks getLinks() {
+  public TssV2TransactionsGet200ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public void setLinks(TssV2TransactionsGet200ResponseLinks links) {
     this.links = links;
   }
 
@@ -575,7 +575,7 @@ public class TssV2TransactionsGet200Response {
         Objects.equals(this.reconciliationId, tssV2TransactionsGet200Response.reconciliationId) &&
         Objects.equals(this.merchantId, tssV2TransactionsGet200Response.merchantId) &&
         Objects.equals(this.status, tssV2TransactionsGet200Response.status) &&
-        Objects.equals(this.submitTimeUtc, tssV2TransactionsGet200Response.submitTimeUtc) &&
+        Objects.equals(this.submitTimeUTC, tssV2TransactionsGet200Response.submitTimeUTC) &&
         Objects.equals(this.applicationInformation, tssV2TransactionsGet200Response.applicationInformation) &&
         Objects.equals(this.buyerInformation, tssV2TransactionsGet200Response.buyerInformation) &&
         Objects.equals(this.clientReferenceInformation, tssV2TransactionsGet200Response.clientReferenceInformation) &&
@@ -598,7 +598,7 @@ public class TssV2TransactionsGet200Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, rootId, reconciliationId, merchantId, status, submitTimeUtc, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, senderInformation, links);
+    return Objects.hash(id, rootId, reconciliationId, merchantId, status, submitTimeUTC, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, senderInformation, links);
   }
 
 
@@ -612,7 +612,7 @@ public class TssV2TransactionsGet200Response {
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    sb.append("    submitTimeUTC: ").append(toIndentedString(submitTimeUTC)).append("\n");
     sb.append("    applicationInformation: ").append(toIndentedString(applicationInformation)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");

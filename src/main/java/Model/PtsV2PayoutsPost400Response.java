@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2PayoutsPost201ResponseErrorInformationDetails;
+import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PtsV2PayoutsPost400Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class PtsV2PayoutsPost400Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -38,7 +38,7 @@ public class PtsV2PayoutsPost400Response {
   private String status = null;
 
   /**
-   * The reason of the status. 
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - INVALID_MERCHANT_CONFIGURATION  - INVALID_AMOUNT  - DEBIT_CARD_USEAGE_EXCEEDD_LIMIT 
    */
   @JsonAdapter(ReasonEnum.Adapter.class)
   public enum ReasonEnum {
@@ -47,6 +47,8 @@ public class PtsV2PayoutsPost400Response {
     INVALID_DATA("INVALID_DATA"),
     
     DUPLICATE_REQUEST("DUPLICATE_REQUEST"),
+    
+    INVALID_CARD("INVALID_CARD"),
     
     INVALID_MERCHANT_CONFIGURATION("INVALID_MERCHANT_CONFIGURATION"),
     
@@ -99,7 +101,7 @@ public class PtsV2PayoutsPost400Response {
   private String message = null;
 
   @SerializedName("details")
-  private List<PtsV2PayoutsPost201ResponseErrorInformationDetails> details = null;
+  private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
 
   public PtsV2PayoutsPost400Response submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -143,10 +145,10 @@ public class PtsV2PayoutsPost400Response {
   }
 
    /**
-   * The reason of the status. 
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - INVALID_MERCHANT_CONFIGURATION  - INVALID_AMOUNT  - DEBIT_CARD_USEAGE_EXCEEDD_LIMIT 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status. ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - INVALID_MERCHANT_CONFIGURATION  - INVALID_AMOUNT  - DEBIT_CARD_USEAGE_EXCEEDD_LIMIT ")
   public ReasonEnum getReason() {
     return reason;
   }
@@ -161,10 +163,10 @@ public class PtsV2PayoutsPost400Response {
   }
 
    /**
-   * The detail message related to the status and reason listed above. Possible value is:    - Your aggregator or acquirer is not accepting transactions from you at this time.   - Your aggregator or acquirer is not accepting this transaction.   - CyberSource declined the request because the credit card has expired. You might also receive this value if     the expiration date you provided does not match the date the issuing bank has on file.   - The bank declined the transaction.   - The merchant reference number for this authorization request matches the merchant reference number of     another authorization request that you sent within the past 15 minutes. Resend the request with a unique     merchant reference number.   - The credit card number did not pass CyberSource basic checks.   - Data provided is not consistent with the request. For example, you requested a product with negative cost.   - The request is missing a required field. 
+   * The detail message related to the status and reason listed above.
    * @return message
   **/
-  @ApiModelProperty(value = "The detail message related to the status and reason listed above. Possible value is:    - Your aggregator or acquirer is not accepting transactions from you at this time.   - Your aggregator or acquirer is not accepting this transaction.   - CyberSource declined the request because the credit card has expired. You might also receive this value if     the expiration date you provided does not match the date the issuing bank has on file.   - The bank declined the transaction.   - The merchant reference number for this authorization request matches the merchant reference number of     another authorization request that you sent within the past 15 minutes. Resend the request with a unique     merchant reference number.   - The credit card number did not pass CyberSource basic checks.   - Data provided is not consistent with the request. For example, you requested a product with negative cost.   - The request is missing a required field. ")
+  @ApiModelProperty(value = "The detail message related to the status and reason listed above.")
   public String getMessage() {
     return message;
   }
@@ -173,14 +175,14 @@ public class PtsV2PayoutsPost400Response {
     this.message = message;
   }
 
-  public PtsV2PayoutsPost400Response details(List<PtsV2PayoutsPost201ResponseErrorInformationDetails> details) {
+  public PtsV2PayoutsPost400Response details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
     this.details = details;
     return this;
   }
 
-  public PtsV2PayoutsPost400Response addDetailsItem(PtsV2PayoutsPost201ResponseErrorInformationDetails detailsItem) {
+  public PtsV2PayoutsPost400Response addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<PtsV2PayoutsPost201ResponseErrorInformationDetails>();
+      this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
     }
     this.details.add(detailsItem);
     return this;
@@ -191,11 +193,11 @@ public class PtsV2PayoutsPost400Response {
    * @return details
   **/
   @ApiModelProperty(value = "")
-  public List<PtsV2PayoutsPost201ResponseErrorInformationDetails> getDetails() {
+  public List<PtsV2PaymentsPost201ResponseErrorInformationDetails> getDetails() {
     return details;
   }
 
-  public void setDetails(List<PtsV2PayoutsPost201ResponseErrorInformationDetails> details) {
+  public void setDetails(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
     this.details = details;
   }
 

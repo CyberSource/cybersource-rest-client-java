@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard {
   @SerializedName("suffix")
   private String suffix = null;
@@ -79,10 +79,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard {
   }
 
    /**
-   * Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover 
+   * Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover - 005: Diners Club - 007: JCB - 024: Maestro (UK Domestic) - 039 Encoded account number - 042: Maestro (International) 
    * @return type
   **/
-  @ApiModelProperty(value = "Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover ")
+  @ApiModelProperty(value = "Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover - 005: Diners Club - 007: JCB - 024: Maestro (UK Domestic) - 039 Encoded account number - 042: Maestro (International) ")
   public String getType() {
     return type;
   }

@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -24,12 +24,13 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Ptsv2paymentsOrderInformationShippingDetails
+ * Contains shipping information not related to address.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@ApiModel(description = "Contains shipping information not related to address.")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class Ptsv2paymentsOrderInformationShippingDetails {
   @SerializedName("giftWrap")
-  private Boolean giftWrap = null;
+  private String giftWrap = null;
 
   @SerializedName("shippingMethod")
   private String shippingMethod = null;
@@ -37,21 +38,21 @@ public class Ptsv2paymentsOrderInformationShippingDetails {
   @SerializedName("shipFromPostalCode")
   private String shipFromPostalCode = null;
 
-  public Ptsv2paymentsOrderInformationShippingDetails giftWrap(Boolean giftWrap) {
+  public Ptsv2paymentsOrderInformationShippingDetails giftWrap(String giftWrap) {
     this.giftWrap = giftWrap;
     return this;
   }
 
    /**
-   * The description for this field is not available.
+   * Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - &#x60;yes&#x60;: The customer requested gift wrapping. - &#x60;no&#x60;: The customer did not request gift wrapping. 
    * @return giftWrap
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
-  public Boolean getGiftWrap() {
+  @ApiModelProperty(value = "Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - `yes`: The customer requested gift wrapping. - `no`: The customer did not request gift wrapping. ")
+  public String getGiftWrap() {
     return giftWrap;
   }
 
-  public void setGiftWrap(Boolean giftWrap) {
+  public void setGiftWrap(String giftWrap) {
     this.giftWrap = giftWrap;
   }
 

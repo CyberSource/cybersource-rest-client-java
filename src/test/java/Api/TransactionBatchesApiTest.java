@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -15,6 +15,7 @@ package Api;
 
 import Invokers.ApiException;
 import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
 import Model.PtsV1TransactionBatchesGet200Response;
 import Model.PtsV1TransactionBatchesGet400Response;
 import Model.PtsV1TransactionBatchesGet500Response;
@@ -35,6 +36,24 @@ public class TransactionBatchesApiTest {
 
     private final TransactionBatchesApi api = new TransactionBatchesApi();
 
+    
+    /**
+     * Filters batch response. 
+     *
+     * Filters batch response. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTransactionBatchDetailsTest() throws ApiException {
+        String transactionBatchId = null;
+        LocalDate uploadDate = null;
+        String status = null;
+        api.getTransactionBatchDetails(transactionBatchId, uploadDate, status);
+
+        // TODO: test validations
+    }
     
     /**
      * Get individual batch file

@@ -1,6 +1,6 @@
 /*
- * CyberSource Flex API
- * Simple PAN tokenization service
+ * CyberSource Merged Spec
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -14,14 +14,13 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsReversalsPost201ResponseLinks;
 import Model.PtsV2PayoutsPost201ResponseErrorInformation;
 import Model.PtsV2PayoutsPost201ResponseMerchantInformation;
 import Model.PtsV2PayoutsPost201ResponseOrderInformation;
 import Model.PtsV2PayoutsPost201ResponseProcessorInformation;
 import Model.PtsV2PayoutsPost201ResponseRecipientInformation;
-import Model.PtsV2PayoutsPost201ResponseStatusInformation;
-import Model.Ptsv2payoutsClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +33,7 @@ import java.io.IOException;
 /**
  * PtsV2PayoutsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-02-27T12:49:40.999Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
 public class PtsV2PayoutsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsReversalsPost201ResponseLinks links = null;
@@ -46,13 +45,15 @@ public class PtsV2PayoutsPost201Response {
   private String submitTimeUtc = null;
 
   /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - ACCEPTED  - DECLINED  - INVALID_REQUEST 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
     ACCEPTED("ACCEPTED"),
     
-    DECLINED("DECLINED");
+    DECLINED("DECLINED"),
+    
+    INVALID_REQUEST("INVALID_REQUEST");
 
     private String value;
 
@@ -98,14 +99,11 @@ public class PtsV2PayoutsPost201Response {
   @SerializedName("reconciliationId")
   private String reconciliationId = null;
 
-  @SerializedName("statusInformation")
-  private PtsV2PayoutsPost201ResponseStatusInformation statusInformation = null;
-
   @SerializedName("errorInformation")
   private PtsV2PayoutsPost201ResponseErrorInformation errorInformation = null;
 
   @SerializedName("clientReferenceInformation")
-  private Ptsv2payoutsClientReferenceInformation clientReferenceInformation = null;
+  private PtsV2PaymentsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("merchantInformation")
   private PtsV2PayoutsPost201ResponseMerchantInformation merchantInformation = null;
@@ -143,10 +141,10 @@ public class PtsV2PayoutsPost201Response {
   }
 
    /**
-   * An unique identification number assigned by CyberSource to identify the submitted request.
+   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
    * @return id
   **/
-  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request.")
+  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.")
   public String getId() {
     return id;
   }
@@ -179,10 +177,10 @@ public class PtsV2PayoutsPost201Response {
   }
 
    /**
-   * The status of the submitted transaction.
+   * The status of the submitted transaction.  Possible values:  - ACCEPTED  - DECLINED  - INVALID_REQUEST 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - ACCEPTED  - DECLINED  - INVALID_REQUEST ")
   public StatusEnum getStatus() {
     return status;
   }
@@ -209,24 +207,6 @@ public class PtsV2PayoutsPost201Response {
     this.reconciliationId = reconciliationId;
   }
 
-  public PtsV2PayoutsPost201Response statusInformation(PtsV2PayoutsPost201ResponseStatusInformation statusInformation) {
-    this.statusInformation = statusInformation;
-    return this;
-  }
-
-   /**
-   * Get statusInformation
-   * @return statusInformation
-  **/
-  @ApiModelProperty(value = "")
-  public PtsV2PayoutsPost201ResponseStatusInformation getStatusInformation() {
-    return statusInformation;
-  }
-
-  public void setStatusInformation(PtsV2PayoutsPost201ResponseStatusInformation statusInformation) {
-    this.statusInformation = statusInformation;
-  }
-
   public PtsV2PayoutsPost201Response errorInformation(PtsV2PayoutsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
     return this;
@@ -245,7 +225,7 @@ public class PtsV2PayoutsPost201Response {
     this.errorInformation = errorInformation;
   }
 
-  public PtsV2PayoutsPost201Response clientReferenceInformation(Ptsv2payoutsClientReferenceInformation clientReferenceInformation) {
+  public PtsV2PayoutsPost201Response clientReferenceInformation(PtsV2PaymentsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -255,11 +235,11 @@ public class PtsV2PayoutsPost201Response {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2payoutsClientReferenceInformation getClientReferenceInformation() {
+  public PtsV2PaymentsPost201ResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Ptsv2payoutsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(PtsV2PaymentsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
@@ -350,7 +330,6 @@ public class PtsV2PayoutsPost201Response {
         Objects.equals(this.submitTimeUtc, ptsV2PayoutsPost201Response.submitTimeUtc) &&
         Objects.equals(this.status, ptsV2PayoutsPost201Response.status) &&
         Objects.equals(this.reconciliationId, ptsV2PayoutsPost201Response.reconciliationId) &&
-        Objects.equals(this.statusInformation, ptsV2PayoutsPost201Response.statusInformation) &&
         Objects.equals(this.errorInformation, ptsV2PayoutsPost201Response.errorInformation) &&
         Objects.equals(this.clientReferenceInformation, ptsV2PayoutsPost201Response.clientReferenceInformation) &&
         Objects.equals(this.merchantInformation, ptsV2PayoutsPost201Response.merchantInformation) &&
@@ -361,7 +340,7 @@ public class PtsV2PayoutsPost201Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, statusInformation, errorInformation, clientReferenceInformation, merchantInformation, orderInformation, processorInformation, recipientInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, merchantInformation, orderInformation, processorInformation, recipientInformation);
   }
 
 
@@ -375,7 +354,6 @@ public class PtsV2PayoutsPost201Response {
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    statusInformation: ").append(toIndentedString(statusInformation)).append("\n");
     sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
