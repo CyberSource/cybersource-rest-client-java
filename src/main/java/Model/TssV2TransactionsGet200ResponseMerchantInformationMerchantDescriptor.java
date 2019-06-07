@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor {
   @SerializedName("name")
   private String name = null;
@@ -37,10 +37,10 @@ public class TssV2TransactionsGet200ResponseMerchantInformationMerchantDescripto
   }
 
    /**
-   * For the descriptions, used-by information, data types, and lengths for these fields, see Merchant Descriptors in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  For Payouts: * Paymentech (22) 
+   * Merchant&#39;s name.  For more details about the merchant-related fields, see the &#x60;merchant_descriptor&#x60; field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  **Note** For Paymentech processor using Cybersource Payouts, the maximum data length is 22. 
    * @return name
   **/
-  @ApiModelProperty(value = "For the descriptions, used-by information, data types, and lengths for these fields, see Merchant Descriptors in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  For Payouts: * Paymentech (22) ")
+  @ApiModelProperty(value = "Merchant's name.  For more details about the merchant-related fields, see the `merchant_descriptor` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  **Note** For Paymentech processor using Cybersource Payouts, the maximum data length is 22. ")
   public String getName() {
     return name;
   }

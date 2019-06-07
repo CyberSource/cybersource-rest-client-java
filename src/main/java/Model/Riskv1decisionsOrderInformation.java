@@ -34,7 +34,7 @@ import java.util.List;
  * Contains detailed order-level information.
  */
 @ApiModel(description = "Contains detailed order-level information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class Riskv1decisionsOrderInformation {
   @SerializedName("amountDetails")
   private Riskv1decisionsOrderInformationAmountDetails amountDetails = null;
@@ -46,7 +46,7 @@ public class Riskv1decisionsOrderInformation {
   private Riskv1decisionsOrderInformationShipTo shipTo = null;
 
   @SerializedName("returnsAccepted")
-  private String returnsAccepted = null;
+  private Boolean returnsAccepted = null;
 
   @SerializedName("lineItems")
   private List<Riskv1decisionsOrderInformationLineItems> lineItems = null;
@@ -108,21 +108,21 @@ public class Riskv1decisionsOrderInformation {
     this.shipTo = shipTo;
   }
 
-  public Riskv1decisionsOrderInformation returnsAccepted(String returnsAccepted) {
+  public Riskv1decisionsOrderInformation returnsAccepted(Boolean returnsAccepted) {
     this.returnsAccepted = returnsAccepted;
     return this;
   }
 
    /**
-   * Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - &#x60;yes&#x60;: Returns are accepted for this order. - &#x60;no&#x60;: Returns are not accepted for this order. 
+   * Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order. 
    * @return returnsAccepted
   **/
-  @ApiModelProperty(value = "Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - `yes`: Returns are accepted for this order. - `no`: Returns are not accepted for this order. ")
-  public String getReturnsAccepted() {
+  @ApiModelProperty(value = "Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order. ")
+  public Boolean getReturnsAccepted() {
     return returnsAccepted;
   }
 
-  public void setReturnsAccepted(String returnsAccepted) {
+  public void setReturnsAccepted(Boolean returnsAccepted) {
     this.returnsAccepted = returnsAccepted;
   }
 

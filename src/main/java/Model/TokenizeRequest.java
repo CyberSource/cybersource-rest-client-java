@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TokenizeRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class TokenizeRequest {
   @SerializedName("keyId")
   private String keyId = null;
@@ -41,10 +41,10 @@ public class TokenizeRequest {
   }
 
    /**
-   * Unique identifier for the generated token. This is obtained from the Generate Key request. See the [Java Script and Java examples] (http://apps.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Flex/Key/html) on how to import the key and encrypt using the imported key.
+   * Unique identifier for the generated token. This is obtained from the Generate Key request. See the [Java Script and Java examples](http://apps.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Flex/Key/html) on how to import the key and encrypt using the imported key.
    * @return keyId
   **/
-  @ApiModelProperty(required = true, value = "Unique identifier for the generated token. This is obtained from the Generate Key request. See the [Java Script and Java examples] (http://apps.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Flex/Key/html) on how to import the key and encrypt using the imported key.")
+  @ApiModelProperty(required = true, value = "Unique identifier for the generated token. This is obtained from the Generate Key request. See the [Java Script and Java examples](http://apps.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Flex/Key/html) on how to import the key and encrypt using the imported key.")
   public String getKeyId() {
     return keyId;
   }

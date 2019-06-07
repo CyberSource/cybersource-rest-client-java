@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * RiskV1DecisionsPost201ResponseRiskInformationVelocity
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class RiskV1DecisionsPost201ResponseRiskInformationVelocity {
   @SerializedName("morphing")
   private List<RiskV1DecisionsPost201ResponseRiskInformationVelocityMorphing> morphing = null;
@@ -51,10 +51,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationVelocity {
   }
 
    /**
-   * Get morphing
+   * List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.  For all possible values, see the &#x60;decision_velocity_info&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return morphing
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.  For all possible values, see the `decision_velocity_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public List<RiskV1DecisionsPost201ResponseRiskInformationVelocityMorphing> getMorphing() {
     return morphing;
   }

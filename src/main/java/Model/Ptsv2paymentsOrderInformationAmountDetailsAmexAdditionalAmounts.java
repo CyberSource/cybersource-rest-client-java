@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts {
   @SerializedName("code")
   private String code = null;
@@ -40,10 +40,10 @@ public class Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts {
   }
 
    /**
-   * Additional amount type. This field is supported only for **American Express Direct**.  For processor-specific information, see the additional_amount_type field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Additional amount type. This field is supported only for **American Express Direct**.  For processor-specific information, see the &#x60;additional_amount_type&#x60; field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
    * @return code
   **/
-  @ApiModelProperty(value = "Additional amount type. This field is supported only for **American Express Direct**.  For processor-specific information, see the additional_amount_type field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Additional amount type. This field is supported only for **American Express Direct**.  For processor-specific information, see the `additional_amount_type` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getCode() {
     return code;
   }

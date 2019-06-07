@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount {
   /**
    * Checking account type. Possible values:   * C: checking   * S: savings (USD only)   * X: corporate checking (USD only)   * G: general ledger 

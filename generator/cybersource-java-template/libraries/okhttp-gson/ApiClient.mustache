@@ -85,11 +85,11 @@ public class ApiClient {
 	public static final double JAVA_VERSION;
 	public static final boolean IS_ANDROID;
 	public static final int ANDROID_SDK_VERSION;
-	public static String responseCode;
-	public static String status;
-	public static String responseBody;
-	public static String respBody;
-	public static MerchantConfig merchantConfig;
+	public String responseCode;
+	public String status;
+	public String responseBody;
+	public String respBody;
+	public MerchantConfig merchantConfig;
 
 	static {
 		JAVA_VERSION = Double.parseDouble(System.getProperty("java.specification.version"));

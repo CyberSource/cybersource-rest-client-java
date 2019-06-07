@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * RiskV1DecisionsPost201ResponseRiskInformationInfoCodes
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes {
   @SerializedName("velocity")
   private List<String> velocity = null;
@@ -68,10 +68,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules. 
+   * List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.  For all possible values, see the &#x60;decision_velocity_info&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return velocity
   **/
-  @ApiModelProperty(value = "List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules. ")
+  @ApiModelProperty(value = "List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.  For all possible values, see the `decision_velocity_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public List<String> getVelocity() {
     return velocity;
   }
@@ -94,10 +94,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates a mismatch between the customer’s billing and shipping addresses.
+   * Indicates a mismatch between the customer’s billing and shipping addresses.  For all possible values, see the &#x60;score_address_info&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return address
   **/
-  @ApiModelProperty(value = "Indicates a mismatch between the customer’s billing and shipping addresses.")
+  @ApiModelProperty(value = "Indicates a mismatch between the customer’s billing and shipping addresses.  For all possible values, see the `score_address_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public List<String> getAddress() {
     return address;
   }
@@ -120,10 +120,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates that customer information is associated with transactions that are either on the negative or the positive list. 
+   * Indicates that customer information is associated with transactions that are either on the negative or the positive list.  For all possible values, see the &#x60;score_hotlist_info&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return customerList
   **/
-  @ApiModelProperty(value = "Indicates that customer information is associated with transactions that are either on the negative or the positive list. ")
+  @ApiModelProperty(value = "Indicates that customer information is associated with transactions that are either on the negative or the positive list.  For all possible values, see the `score_hotlist_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public List<String> getCustomerList() {
     return customerList;
   }
@@ -146,10 +146,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^). 
+   * Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^).  For all possible values, see the &#x60;score_identity_info&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return identityChange
   **/
-  @ApiModelProperty(value = "Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^). ")
+  @ApiModelProperty(value = "Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^).  For all possible values, see the `score_identity_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public List<String> getIdentityChange() {
     return identityChange;
   }
@@ -172,10 +172,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates a problem with the customer’s email address, IP address, or billing address.
+   * Indicates a problem with the customer’s email address, IP address, or billing address.  For all possible values, see the &#x60;score_internet_info&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return internet
   **/
-  @ApiModelProperty(value = "Indicates a problem with the customer’s email address, IP address, or billing address.")
+  @ApiModelProperty(value = "Indicates a problem with the customer’s email address, IP address, or billing address.  For all possible values, see the `score_internet_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public List<String> getInternet() {
     return internet;
   }
@@ -198,10 +198,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates a problem with the customer’s phone number.
+   * Indicates a problem with the customer’s phone number.  For all possible values, see the &#x60;score_phone_info&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return phone
   **/
-  @ApiModelProperty(value = "Indicates a problem with the customer’s phone number.")
+  @ApiModelProperty(value = "Indicates a problem with the customer’s phone number.  For all possible values, see the `score_phone_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public List<String> getPhone() {
     return phone;
   }
@@ -224,10 +224,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates that the customer provided potentially suspicious information.
+   * Indicates that the customer provided potentially suspicious information.  For all possible values, see the &#x60;score_suspicious_info&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return suspicious
   **/
-  @ApiModelProperty(value = "Indicates that the customer provided potentially suspicious information.")
+  @ApiModelProperty(value = "Indicates that the customer provided potentially suspicious information.  For all possible values, see the `score_suspicious_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public List<String> getSuspicious() {
     return suspicious;
   }
@@ -250,10 +250,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates that the customer has a high purchase frequency.
+   * Indicates that the customer has a high purchase frequency.  For all possible values, see the &#x60;score_velocity_info&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return globalVelocity
   **/
-  @ApiModelProperty(value = "Indicates that the customer has a high purchase frequency.")
+  @ApiModelProperty(value = "Indicates that the customer has a high purchase frequency.  For all possible values, see the `score_velocity_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public List<String> getGlobalVelocity() {
     return globalVelocity;
   }

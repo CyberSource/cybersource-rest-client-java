@@ -34,7 +34,7 @@ public class UserManagementApiTest {
 
     
     /**
-     * Get user based on organization Id, username, permission and role
+     * Get user information
      *
      * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      *

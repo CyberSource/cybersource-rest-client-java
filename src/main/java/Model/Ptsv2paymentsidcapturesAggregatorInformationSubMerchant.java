@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidcapturesAggregatorInformationSubMerchant
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
   @SerializedName("name")
   private String name = null;
@@ -76,10 +76,10 @@ public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
   }
 
    /**
-   * First line of the sub-merchant’s street address.  See \&quot;Aggregator Support,\&quot; page 100.  **CyberSource through VisaNet**\\ The value for this field does not map to the TC 33 capture file5.  **FDC Compass**\\ This value must consist of uppercase characters. 
+   * First line of the sub-merchant’s street address.  For processor-specific details, see &#x60;submerchant_street&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
    * @return address1
   **/
-  @ApiModelProperty(value = "First line of the sub-merchant’s street address.  See \"Aggregator Support,\" page 100.  **CyberSource through VisaNet**\\ The value for this field does not map to the TC 33 capture file5.  **FDC Compass**\\ This value must consist of uppercase characters. ")
+  @ApiModelProperty(value = "First line of the sub-merchant’s street address.  For processor-specific details, see `submerchant_street` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
   public String getAddress1() {
     return address1;
   }
@@ -94,10 +94,10 @@ public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
   }
 
    /**
-   * Sub-merchant’s city.  **CyberSource through VisaNet**\\ The value for this field does not map to the TC 33 capture file.  **FDC Compass**\\ This value must consist of uppercase characters.  For details, see \&quot;Aggregator Support,\&quot; page 100. 
+   * Sub-merchant’s city.  For processor-specific details, see &#x60;submerchant_city&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
    * @return locality
   **/
-  @ApiModelProperty(value = "Sub-merchant’s city.  **CyberSource through VisaNet**\\ The value for this field does not map to the TC 33 capture file.  **FDC Compass**\\ This value must consist of uppercase characters.  For details, see \"Aggregator Support,\" page 100. ")
+  @ApiModelProperty(value = "Sub-merchant’s city.  For processor-specific details, see `submerchant_city` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
   public String getLocality() {
     return locality;
   }

@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.PtsV2PaymentsPost201ResponseErrorInformation;
 import Model.PtsV2PaymentsPost201ResponseLinks;
+import Model.RiskV1DecisionsPost201ResponsePaymentInformation;
 import Model.RiskV1DecisionsPost201ResponseRiskInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -29,7 +30,7 @@ import java.io.IOException;
 /**
  * RiskV1DecisionsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class RiskV1DecisionsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsPost201ResponseLinks links = null;
@@ -48,6 +49,9 @@ public class RiskV1DecisionsPost201Response {
 
   @SerializedName("riskInformation")
   private RiskV1DecisionsPost201ResponseRiskInformation riskInformation = null;
+
+  @SerializedName("paymentInformation")
+  private RiskV1DecisionsPost201ResponsePaymentInformation paymentInformation = null;
 
   @SerializedName("errorInformation")
   private PtsV2PaymentsPost201ResponseErrorInformation errorInformation = null;
@@ -160,6 +164,24 @@ public class RiskV1DecisionsPost201Response {
     this.riskInformation = riskInformation;
   }
 
+  public RiskV1DecisionsPost201Response paymentInformation(RiskV1DecisionsPost201ResponsePaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+    return this;
+  }
+
+   /**
+   * Get paymentInformation
+   * @return paymentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public RiskV1DecisionsPost201ResponsePaymentInformation getPaymentInformation() {
+    return paymentInformation;
+  }
+
+  public void setPaymentInformation(RiskV1DecisionsPost201ResponsePaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+  }
+
   public RiskV1DecisionsPost201Response errorInformation(PtsV2PaymentsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
     return this;
@@ -194,12 +216,13 @@ public class RiskV1DecisionsPost201Response {
         Objects.equals(this.submitTimeLocal, riskV1DecisionsPost201Response.submitTimeLocal) &&
         Objects.equals(this.status, riskV1DecisionsPost201Response.status) &&
         Objects.equals(this.riskInformation, riskV1DecisionsPost201Response.riskInformation) &&
+        Objects.equals(this.paymentInformation, riskV1DecisionsPost201Response.paymentInformation) &&
         Objects.equals(this.errorInformation, riskV1DecisionsPost201Response.errorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, riskInformation, errorInformation);
+    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, riskInformation, paymentInformation, errorInformation);
   }
 
 
@@ -214,6 +237,7 @@ public class RiskV1DecisionsPost201Response {
     sb.append("    submitTimeLocal: ").append(toIndentedString(submitTimeLocal)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
+    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("}");
     return sb.toString();

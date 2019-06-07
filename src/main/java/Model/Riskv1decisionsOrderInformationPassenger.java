@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains travel-related passenger details.
  */
 @ApiModel(description = "Contains travel-related passenger details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class Riskv1decisionsOrderInformationPassenger {
   @SerializedName("type")
   private String type = null;
@@ -49,6 +49,9 @@ public class Riskv1decisionsOrderInformationPassenger {
 
   @SerializedName("email")
   private String email = null;
+
+  @SerializedName("nationality")
+  private String nationality = null;
 
   public Riskv1decisionsOrderInformationPassenger type(String type) {
     this.type = type;
@@ -92,10 +95,10 @@ public class Riskv1decisionsOrderInformationPassenger {
   }
 
    /**
-   * Passenger&#39;s phone number. If the order is from outside the U.S., CyberSource recommends that you include the country code. 
+   * Passenger&#39;s phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf) 
    * @return phone
   **/
-  @ApiModelProperty(value = "Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the country code. ")
+  @ApiModelProperty(value = "Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf) ")
   public String getPhone() {
     return phone;
   }
@@ -176,6 +179,24 @@ public class Riskv1decisionsOrderInformationPassenger {
     this.email = email;
   }
 
+  public Riskv1decisionsOrderInformationPassenger nationality(String nationality) {
+    this.nationality = nationality;
+    return this;
+  }
+
+   /**
+   * Passenger&#39;s nationality country. Use the two character ISO Standard Country Codes.
+   * @return nationality
+  **/
+  @ApiModelProperty(value = "Passenger's nationality country. Use the two character ISO Standard Country Codes.")
+  public String getNationality() {
+    return nationality;
+  }
+
+  public void setNationality(String nationality) {
+    this.nationality = nationality;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -192,12 +213,13 @@ public class Riskv1decisionsOrderInformationPassenger {
         Objects.equals(this.firstName, riskv1decisionsOrderInformationPassenger.firstName) &&
         Objects.equals(this.lastName, riskv1decisionsOrderInformationPassenger.lastName) &&
         Objects.equals(this.id, riskv1decisionsOrderInformationPassenger.id) &&
-        Objects.equals(this.email, riskv1decisionsOrderInformationPassenger.email);
+        Objects.equals(this.email, riskv1decisionsOrderInformationPassenger.email) &&
+        Objects.equals(this.nationality, riskv1decisionsOrderInformationPassenger.nationality);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, status, phone, firstName, lastName, id, email);
+    return Objects.hash(type, status, phone, firstName, lastName, id, email, nationality);
   }
 
 
@@ -213,6 +235,7 @@ public class Riskv1decisionsOrderInformationPassenger {
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    nationality: ").append(toIndentedString(nationality)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationFluidData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class Ptsv2paymentsPaymentInformationFluidData {
   @SerializedName("key")
   private String key = null;
@@ -46,10 +46,10 @@ public class Ptsv2paymentsPaymentInformationFluidData {
   }
 
    /**
-   * The name of the merchant-defined data field. The range of this field starts at 1 and terminiates at 100.
+   * The encoded or encrypted value that a payment solution returns for an authorization request. For details about the valid values for a key, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html) 
    * @return key
   **/
-  @ApiModelProperty(value = "The name of the merchant-defined data field. The range of this field starts at 1 and terminiates at 100.")
+  @ApiModelProperty(value = "The encoded or encrypted value that a payment solution returns for an authorization request. For details about the valid values for a key, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html) ")
   public String getKey() {
     return key;
   }
@@ -64,10 +64,10 @@ public class Ptsv2paymentsPaymentInformationFluidData {
   }
 
    /**
-   * The specific string for identifying the payment solution that is sending the encrypted payment data to CyberSource. Valid values: - &#x60;Apple Pay&#x60; - &#x60;Samsung Pay&#x60; **NOTE**: For other payment solutions, the value may be specific to the customer&#39;s mobile device. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor. Merchant needs to pass in this value. 
+   * The identifier for a payment solution, which is sending the encrypted payment data to CyberSource for decryption. Valid values: - Samsung Pay: &#x60;RklEPUNPTU1PTi5TQU1TVU5HLklOQVBQLlBBWU1FTlQ&#x3D;&#x60; **NOTE**: For other payment solutions, the value may be specific to the customer&#39;s mobile device. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor.  For details about the list of payment solution identifiers, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html).  For details about the encrypted payment data, see the &#x60;encrypted_payment_descriptor&#x60; field description in the [Card-Present Processing Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). 
    * @return descriptor
   **/
-  @ApiModelProperty(value = "The specific string for identifying the payment solution that is sending the encrypted payment data to CyberSource. Valid values: - `Apple Pay` - `Samsung Pay` **NOTE**: For other payment solutions, the value may be specific to the customer's mobile device. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor. Merchant needs to pass in this value. ")
+  @ApiModelProperty(value = "The identifier for a payment solution, which is sending the encrypted payment data to CyberSource for decryption. Valid values: - Samsung Pay: `RklEPUNPTU1PTi5TQU1TVU5HLklOQVBQLlBBWU1FTlQ=` **NOTE**: For other payment solutions, the value may be specific to the customer's mobile device. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor.  For details about the list of payment solution identifiers, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html).  For details about the encrypted payment data, see the `encrypted_payment_descriptor` field description in the [Card-Present Processing Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). ")
   public String getDescriptor() {
     return descriptor;
   }
@@ -82,10 +82,10 @@ public class Ptsv2paymentsPaymentInformationFluidData {
   }
 
    /**
-   * Represents the encrypted payment data BLOB. The entry for this field is dependent on the payment solution a merchant uses.  Valid values: - Apple Pay: &#x60;RklEPUNPTU1PTi5BUFBMRS5JTkFQUC5QQVlNRU5U&#x60; - Samsung Pay: &#x60;RklEPUNPTU1PTi5TQU1TVU5HLklOQVBQLlBBWU1FTlQ&#x3D;&#x60; **NOTE**: For other payment solutions, the value of the descriptor may be specific to the customer&#39;s mobile device. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor. Merchant needs to pass in this value. 
+   * Represents the encrypted payment data BLOB. The entry for this field is dependent on the payment solution a merchant uses.  For details, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html) for the specific payment- solution entry. 
    * @return value
   **/
-  @ApiModelProperty(value = "Represents the encrypted payment data BLOB. The entry for this field is dependent on the payment solution a merchant uses.  Valid values: - Apple Pay: `RklEPUNPTU1PTi5BUFBMRS5JTkFQUC5QQVlNRU5U` - Samsung Pay: `RklEPUNPTU1PTi5TQU1TVU5HLklOQVBQLlBBWU1FTlQ=` **NOTE**: For other payment solutions, the value of the descriptor may be specific to the customer's mobile device. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor. Merchant needs to pass in this value. ")
+  @ApiModelProperty(value = "Represents the encrypted payment data BLOB. The entry for this field is dependent on the payment solution a merchant uses.  For details, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html) for the specific payment- solution entry. ")
   public String getValue() {
     return value;
   }

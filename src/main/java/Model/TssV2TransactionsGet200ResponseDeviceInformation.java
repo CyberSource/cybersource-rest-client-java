@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class TssV2TransactionsGet200ResponseDeviceInformation {
   @SerializedName("ipAddress")
   private String ipAddress = null;
@@ -43,10 +43,10 @@ public class TssV2TransactionsGet200ResponseDeviceInformation {
   }
 
    /**
-   * Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. 
+   * IP address of the customer. 
    * @return ipAddress
   **/
-  @ApiModelProperty(value = "Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. ")
+  @ApiModelProperty(value = "IP address of the customer. ")
   public String getIpAddress() {
     return ipAddress;
   }
@@ -61,10 +61,10 @@ public class TssV2TransactionsGet200ResponseDeviceInformation {
   }
 
    /**
-   * Host name reported by the customer’s browser to your Web server identified via the HTTP header.
+   * DNS resolved hostname from &#x60;ipAddress&#x60;.
    * @return hostName
   **/
-  @ApiModelProperty(value = "Host name reported by the customer’s browser to your Web server identified via the HTTP header.")
+  @ApiModelProperty(value = "DNS resolved hostname from `ipAddress`.")
   public String getHostName() {
     return hostName;
   }
@@ -79,10 +79,10 @@ public class TssV2TransactionsGet200ResponseDeviceInformation {
   }
 
    /**
-   * Boolean that indicates whether the customer’s browser accepts cookies. This field can contain one of the following values:   - &#x60;yes&#x60;: The customer’s browser accepts cookies.   - &#x60;no&#x60;: The customer’s browser does not accept cookies. 
+   * Whether the customer’s browser accepts cookies. This field can contain one of the following values: - &#x60;yes&#x60;: The customer’s browser accepts cookies. - &#x60;no&#x60;: The customer’s browser does not accept cookies. 
    * @return cookiesAccepted
   **/
-  @ApiModelProperty(value = "Boolean that indicates whether the customer’s browser accepts cookies. This field can contain one of the following values:   - `yes`: The customer’s browser accepts cookies.   - `no`: The customer’s browser does not accept cookies. ")
+  @ApiModelProperty(value = "Whether the customer’s browser accepts cookies. This field can contain one of the following values: - `yes`: The customer’s browser accepts cookies. - `no`: The customer’s browser does not accept cookies. ")
   public String getCookiesAccepted() {
     return cookiesAccepted;
   }

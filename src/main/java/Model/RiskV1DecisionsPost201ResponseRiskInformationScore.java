@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * RiskV1DecisionsPost201ResponseRiskInformationScore
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class RiskV1DecisionsPost201ResponseRiskInformationScore {
   @SerializedName("factorCodes")
   private List<String> factorCodes = null;
@@ -71,10 +71,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationScore {
   }
 
    /**
-   * Name of the score model used for the transaction. If you did not include a custom model in your request, this field contains the name of CyberSource’s default model. 
+   * Name of the score model used for the transaction. If you did not include a custom model in your request, this field contains the name of CyberSource’s default model.  For all possible values, see the &#x60;score_model_used&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return modelUsed
   **/
-  @ApiModelProperty(value = "Name of the score model used for the transaction. If you did not include a custom model in your request, this field contains the name of CyberSource’s default model. ")
+  @ApiModelProperty(value = "Name of the score model used for the transaction. If you did not include a custom model in your request, this field contains the name of CyberSource’s default model.  For all possible values, see the `score_model_used` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public String getModelUsed() {
     return modelUsed;
   }
@@ -89,10 +89,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationScore {
   }
 
    /**
-   * Total score calculated for this order. The value cannot be negative. 
+   * Total score calculated for this order. The value cannot be negative.  For all possible values, see the &#x60;score_score_result&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return result
   **/
-  @ApiModelProperty(value = "Total score calculated for this order. The value cannot be negative. ")
+  @ApiModelProperty(value = "Total score calculated for this order. The value cannot be negative.  For all possible values, see the `score_score_result` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public String getResult() {
     return result;
   }

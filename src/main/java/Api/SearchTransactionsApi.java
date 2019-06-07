@@ -247,7 +247,7 @@ final String[] localVarAccepts ={"*/*"};
 
     /**
      * Get Search results
-     * Include the Search ID in the GET request to retrieve the search results. 
+     * Include the Search ID in the GET request to retrieve the search results.
      * @param searchId Search ID. (required)
      * @return TssV2TransactionsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -259,7 +259,7 @@ final String[] localVarAccepts ={"*/*"};
 
     /**
      * Get Search results
-     * Include the Search ID in the GET request to retrieve the search results. 
+     * Include the Search ID in the GET request to retrieve the search results.
      * @param searchId Search ID. (required)
      * @return ApiResponse&lt;TssV2TransactionsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -272,7 +272,7 @@ final String[] localVarAccepts ={"*/*"};
 
     /**
      * Get Search results (asynchronously)
-     * Include the Search ID in the GET request to retrieve the search results. 
+     * Include the Search ID in the GET request to retrieve the search results.
      * @param searchId Search ID. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

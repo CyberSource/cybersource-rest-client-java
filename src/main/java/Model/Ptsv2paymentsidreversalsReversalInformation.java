@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidreversalsReversalInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class Ptsv2paymentsidreversalsReversalInformation {
   @SerializedName("amountDetails")
   private Ptsv2paymentsidreversalsReversalInformationAmountDetails amountDetails = null;
@@ -59,10 +59,10 @@ public class Ptsv2paymentsidreversalsReversalInformation {
   }
 
    /**
-   * Reason for the authorization reversal. Possible value:   - 34: Suspected fraud  CyberSource ignores this field for processors that do not support this value. 
+   * Reason for the authorization reversal. Possible value:   - &#x60;34&#x60;: Suspected fraud  CyberSource ignores this field for processors that do not support this value.  For details, see &#x60;auth_reversal_reason&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return reason
   **/
-  @ApiModelProperty(value = "Reason for the authorization reversal. Possible value:   - 34: Suspected fraud  CyberSource ignores this field for processors that do not support this value. ")
+  @ApiModelProperty(value = "Reason for the authorization reversal. Possible value:   - `34`: Suspected fraud  CyberSource ignores this field for processors that do not support this value.  For details, see `auth_reversal_reason` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getReason() {
     return reason;
   }

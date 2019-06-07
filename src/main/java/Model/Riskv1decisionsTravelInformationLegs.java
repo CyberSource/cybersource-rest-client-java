@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1decisionsTravelInformationLegs
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class Riskv1decisionsTravelInformationLegs {
   @SerializedName("origination")
   private String origination = null;
@@ -34,16 +34,19 @@ public class Riskv1decisionsTravelInformationLegs {
   @SerializedName("destination")
   private String destination = null;
 
+  @SerializedName("departureDateTime")
+  private String departureDateTime = null;
+
   public Riskv1decisionsTravelInformationLegs origination(String origination) {
     this.origination = origination;
     return this;
   }
 
    /**
-   * Use to specify the airport code for the origin of the leg of the trip, which is designated by the pound (#) symbol in the field name. This code is usually three digits long, for example: SFO &#x3D; San Francisco. Do not use the colon (:) or the dash (-). For airport codes, see the IATA Airline and Airport Code Search. The leg number can be a positive integer from 0 to N. For example: decision_manager_travel_leg0_orig&#x3D;SFO decision_manager_travel_leg1_orig&#x3D;SFO Note In your request, send either the complete route or the individual legs (_leg#_orig and _leg#_dest). If you send all the fields, the complete route takes precedence over the individual legs. 
+   * Use to specify the airport code for the origin of the leg of the trip, which is designated by the pound (#) symbol in the field name. This code is usually three digits long, for example: SFO &#x3D; San Francisco. Do not use the colon (:) or the dash (-). For airport codes, see the IATA Airline and Airport Code Search. The leg number can be a positive integer from 0 to N. For example: &#x60;travelInformation.legs.0.origination&#x3D;SFO&#x60; &#x60;travelInformation.legs.1.origination&#x3D;SFO&#x60;  **Note** In your request, send either the complete route or the individual legs (&#x60;legs.0.origination&#x60; and &#x60;legs.n.destination&#x60;). If you send all the fields, the complete route takes precedence over the individual legs.  For details, see the &#x60;decision_manager_travel_leg#_orig&#x60; field description in [Decision Manager Using the SCMP API Developer Guide.](https://www.cybersource.com/developers/documentation/fraud_management/) 
    * @return origination
   **/
-  @ApiModelProperty(value = "Use to specify the airport code for the origin of the leg of the trip, which is designated by the pound (#) symbol in the field name. This code is usually three digits long, for example: SFO = San Francisco. Do not use the colon (:) or the dash (-). For airport codes, see the IATA Airline and Airport Code Search. The leg number can be a positive integer from 0 to N. For example: decision_manager_travel_leg0_orig=SFO decision_manager_travel_leg1_orig=SFO Note In your request, send either the complete route or the individual legs (_leg#_orig and _leg#_dest). If you send all the fields, the complete route takes precedence over the individual legs. ")
+  @ApiModelProperty(value = "Use to specify the airport code for the origin of the leg of the trip, which is designated by the pound (#) symbol in the field name. This code is usually three digits long, for example: SFO = San Francisco. Do not use the colon (:) or the dash (-). For airport codes, see the IATA Airline and Airport Code Search. The leg number can be a positive integer from 0 to N. For example: `travelInformation.legs.0.origination=SFO` `travelInformation.legs.1.origination=SFO`  **Note** In your request, send either the complete route or the individual legs (`legs.0.origination` and `legs.n.destination`). If you send all the fields, the complete route takes precedence over the individual legs.  For details, see the `decision_manager_travel_leg#_orig` field description in [Decision Manager Using the SCMP API Developer Guide.](https://www.cybersource.com/developers/documentation/fraud_management/) ")
   public String getOrigination() {
     return origination;
   }
@@ -58,16 +61,34 @@ public class Riskv1decisionsTravelInformationLegs {
   }
 
    /**
-   * Use to specify the airport code for the destination of the leg of the trip, which is designated by the pound (#) symbol in the field name. This code is usually three digits long, for example: SFO &#x3D; San Francisco. Do not use the colon (:) or the dash (-). For airport codes, see the IATA Airline and Airport Code Search. The leg number can be a positive integer from 0 to N. For example: decision_manager_travel_leg0_dest&#x3D;SFO decision_manager_travel_leg1_dest&#x3D;SFO Note In your request, send either the complete route or the individual legs (_leg#_orig and _leg#_dest). If you send all the fields, the complete route takes precedence over the individual legs. 
+   * Use to specify the airport code for the destination of the leg of the trip, which is designated by the pound (#) symbol in the field name. This code is usually three digits long, for example: SFO &#x3D; San Francisco. Do not use the colon (:) or the dash (-). For airport codes, see [IATA Airline and Airport Code Search](https://www.iata.org/publications/Pages/code-search.aspx). The leg number can be a positive integer from 0 to N. For example:  &#x60;travelInformation.legs.0.destination&#x3D;SFO&#x60; &#x60;travelInformation.legs.1.destination&#x3D;SFO&#x60;  **Note** In your request, send either the complete route or the individual legs (&#x60;legs.0.origination&#x60; and &#x60;legs.n.destination&#x60;). If you send all the fields, the complete route takes precedence over the individual legs.  For details, see the &#x60;decision_manager_travel_leg#_dest&#x60; field description in [Decision Manager Using the SCMP API Developer Guide.](https://www.cybersource.com/developers/documentation/fraud_management/) 
    * @return destination
   **/
-  @ApiModelProperty(value = "Use to specify the airport code for the destination of the leg of the trip, which is designated by the pound (#) symbol in the field name. This code is usually three digits long, for example: SFO = San Francisco. Do not use the colon (:) or the dash (-). For airport codes, see the IATA Airline and Airport Code Search. The leg number can be a positive integer from 0 to N. For example: decision_manager_travel_leg0_dest=SFO decision_manager_travel_leg1_dest=SFO Note In your request, send either the complete route or the individual legs (_leg#_orig and _leg#_dest). If you send all the fields, the complete route takes precedence over the individual legs. ")
+  @ApiModelProperty(value = "Use to specify the airport code for the destination of the leg of the trip, which is designated by the pound (#) symbol in the field name. This code is usually three digits long, for example: SFO = San Francisco. Do not use the colon (:) or the dash (-). For airport codes, see [IATA Airline and Airport Code Search](https://www.iata.org/publications/Pages/code-search.aspx). The leg number can be a positive integer from 0 to N. For example:  `travelInformation.legs.0.destination=SFO` `travelInformation.legs.1.destination=SFO`  **Note** In your request, send either the complete route or the individual legs (`legs.0.origination` and `legs.n.destination`). If you send all the fields, the complete route takes precedence over the individual legs.  For details, see the `decision_manager_travel_leg#_dest` field description in [Decision Manager Using the SCMP API Developer Guide.](https://www.cybersource.com/developers/documentation/fraud_management/) ")
   public String getDestination() {
     return destination;
   }
 
   public void setDestination(String destination) {
     this.destination = destination;
+  }
+
+  public Riskv1decisionsTravelInformationLegs departureDateTime(String departureDateTime) {
+    this.departureDateTime = departureDateTime;
+    return this;
+  }
+
+   /**
+   * Departure date and time for the nth leg of the trip. Use one of the following formats:   - yyyy-MM-dd HH:mm z   - yyyy-MM-dd hh:mm a z   - yyyy-MM-dd hh:mma z   &#x60;HH&#x60; &#x3D; hour in 24-hour format   &#x60;hh&#x60; &#x3D; hour in 12-hour format   &#x60;a&#x60; &#x3D; am or pm (case insensitive)   &#x60;z&#x60; &#x3D; time zone of the departing flight, for example: If the   airline is based in city A, but the flight departs from city   B, z is the time zone of city B at the time of departure. **Important** For travel information, use GMT instead of UTC, or use the local time zone. #### Examples 2011-03-20 11:30 PM PDT 2011-03-20 11:30pm GMT 2011-03-20 11:30pm GMT-05:00 Eastern Standard Time: GMT-05:00 or EST **Note** When specifying an offset from GMT, the format must be exactly as specified in the example. Insert no spaces between the time zone and the offset. 
+   * @return departureDateTime
+  **/
+  @ApiModelProperty(value = "Departure date and time for the nth leg of the trip. Use one of the following formats:   - yyyy-MM-dd HH:mm z   - yyyy-MM-dd hh:mm a z   - yyyy-MM-dd hh:mma z   `HH` = hour in 24-hour format   `hh` = hour in 12-hour format   `a` = am or pm (case insensitive)   `z` = time zone of the departing flight, for example: If the   airline is based in city A, but the flight departs from city   B, z is the time zone of city B at the time of departure. **Important** For travel information, use GMT instead of UTC, or use the local time zone. #### Examples 2011-03-20 11:30 PM PDT 2011-03-20 11:30pm GMT 2011-03-20 11:30pm GMT-05:00 Eastern Standard Time: GMT-05:00 or EST **Note** When specifying an offset from GMT, the format must be exactly as specified in the example. Insert no spaces between the time zone and the offset. ")
+  public String getDepartureDateTime() {
+    return departureDateTime;
+  }
+
+  public void setDepartureDateTime(String departureDateTime) {
+    this.departureDateTime = departureDateTime;
   }
 
 
@@ -81,12 +102,13 @@ public class Riskv1decisionsTravelInformationLegs {
     }
     Riskv1decisionsTravelInformationLegs riskv1decisionsTravelInformationLegs = (Riskv1decisionsTravelInformationLegs) o;
     return Objects.equals(this.origination, riskv1decisionsTravelInformationLegs.origination) &&
-        Objects.equals(this.destination, riskv1decisionsTravelInformationLegs.destination);
+        Objects.equals(this.destination, riskv1decisionsTravelInformationLegs.destination) &&
+        Objects.equals(this.departureDateTime, riskv1decisionsTravelInformationLegs.departureDateTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(origination, destination);
+    return Objects.hash(origination, destination, departureDateTime);
   }
 
 
@@ -97,6 +119,7 @@ public class Riskv1decisionsTravelInformationLegs {
     
     sb.append("    origination: ").append(toIndentedString(origination)).append("\n");
     sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
+    sb.append("    departureDateTime: ").append(toIndentedString(departureDateTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
