@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class Ptsv2paymentsDeviceInformation {
   @SerializedName("hostName")
   private String hostName = null;
@@ -43,10 +43,10 @@ public class Ptsv2paymentsDeviceInformation {
   }
 
    /**
-   * Host name reported by the customer’s browser to your Web server identified via the HTTP header.
+   * DNS resolved hostname from &#x60;ipAddress&#x60;.
    * @return hostName
   **/
-  @ApiModelProperty(value = "Host name reported by the customer’s browser to your Web server identified via the HTTP header.")
+  @ApiModelProperty(value = "DNS resolved hostname from `ipAddress`.")
   public String getHostName() {
     return hostName;
   }
@@ -61,10 +61,10 @@ public class Ptsv2paymentsDeviceInformation {
   }
 
    /**
-   * Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. 
+   * IP address of the customer. 
    * @return ipAddress
   **/
-  @ApiModelProperty(value = "Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. ")
+  @ApiModelProperty(value = "IP address of the customer. ")
   public String getIpAddress() {
     return ipAddress;
   }
@@ -79,10 +79,10 @@ public class Ptsv2paymentsDeviceInformation {
   }
 
    /**
-   * Customer’s browser as identified from the HTTP header data. For example, Mozilla is the value that identifies the Netscape browser. 
+   * Customer’s browser as identified from the HTTP header data. For example, &#x60;Mozilla&#x60; is the value that identifies the Netscape browser. 
    * @return userAgent
   **/
-  @ApiModelProperty(value = "Customer’s browser as identified from the HTTP header data. For example, Mozilla is the value that identifies the Netscape browser. ")
+  @ApiModelProperty(value = "Customer’s browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser. ")
   public String getUserAgent() {
     return userAgent;
   }

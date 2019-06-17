@@ -15,7 +15,6 @@ package Api;
 
 import Invokers.ApiException;
 import Model.AuthReversalRequest;
-import Model.MitReversalRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.PtsV2PaymentsReversalsPost201Response;
 import Model.PtsV2PaymentsReversalsPost400Response;
@@ -49,22 +48,6 @@ public class ReversalApiTest {
         String id = null;
         AuthReversalRequest authReversalRequest = null;
         PtsV2PaymentsReversalsPost201Response response = api.authReversal(id, authReversalRequest);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Merchant Initiated Reversal
-     *
-     * This is to reverse a previous payment that merchant does not receive a reply.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void mitReversalTest() throws ApiException {
-        MitReversalRequest mitReversalRequest = null;
-        PtsV2PaymentsReversalsPost201Response response = api.mitReversal(mitReversalRequest);
 
         // TODO: test validations
     }

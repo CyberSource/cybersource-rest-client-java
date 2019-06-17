@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2payoutsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class Ptsv2payoutsProcessingInformation {
   @SerializedName("businessApplicationId")
   private String businessApplicationId = null;
@@ -86,10 +86,10 @@ public class Ptsv2payoutsProcessingInformation {
   }
 
    /**
-   * Type of transaction.  Some payment card companies use this information when determining discount rates. When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value listed here.  Possible value for Fast Payments transactions:  - internet  **Ingenico ePayments**\\ Ingenico ePayments was previously called _Global Collect_.  **Payer Authentication Transactions**\\ For the possible values and requirements, see \&quot;Payer Authentication,\&quot; page 180.  **Other Types of Transactions**\\ See Appendix G, \&quot;Commerce Indicators,\&quot; on page 353. 
+   * Type of transaction.  Some payment card companies use this information when determining discount rates. When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value listed here.  For details, see the &#x60;e_commerce_indicator&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Possible value for Payouts: - internet  #### Ingenico ePayments Ingenico ePayments was previously called _Global Collect_.  #### Payer Authentication Transactions For the possible values and requirements, see \&quot;Payer Authentication\&quot; in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### Other Types of Transactions For details, see \&quot;Commerce Indicators\&quot; in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return commerceIndicator
   **/
-  @ApiModelProperty(value = "Type of transaction.  Some payment card companies use this information when determining discount rates. When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value listed here.  Possible value for Fast Payments transactions:  - internet  **Ingenico ePayments**\\ Ingenico ePayments was previously called _Global Collect_.  **Payer Authentication Transactions**\\ For the possible values and requirements, see \"Payer Authentication,\" page 180.  **Other Types of Transactions**\\ See Appendix G, \"Commerce Indicators,\" on page 353. ")
+  @ApiModelProperty(value = "Type of transaction.  Some payment card companies use this information when determining discount rates. When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value listed here.  For details, see the `e_commerce_indicator` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Possible value for Payouts: - internet  #### Ingenico ePayments Ingenico ePayments was previously called _Global Collect_.  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### Other Types of Transactions For details, see \"Commerce Indicators\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getCommerceIndicator() {
     return commerceIndicator;
   }

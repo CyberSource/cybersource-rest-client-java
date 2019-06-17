@@ -26,29 +26,29 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseOrderInformationShippingDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class TssV2TransactionsGet200ResponseOrderInformationShippingDetails {
   @SerializedName("giftWrap")
-  private String giftWrap = null;
+  private Boolean giftWrap = null;
 
   @SerializedName("shippingMethod")
   private String shippingMethod = null;
 
-  public TssV2TransactionsGet200ResponseOrderInformationShippingDetails giftWrap(String giftWrap) {
+  public TssV2TransactionsGet200ResponseOrderInformationShippingDetails giftWrap(Boolean giftWrap) {
     this.giftWrap = giftWrap;
     return this;
   }
 
    /**
-   * Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - &#x60;yes&#x60;: The customer requested gift wrapping. - &#x60;no&#x60;: The customer did not request gift wrapping. 
+   * Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values: - true: The customer requested gift wrapping. - false: The customer did not request gift wrapping. 
    * @return giftWrap
   **/
-  @ApiModelProperty(value = "Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - `yes`: The customer requested gift wrapping. - `no`: The customer did not request gift wrapping. ")
-  public String getGiftWrap() {
+  @ApiModelProperty(value = "Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values: - true: The customer requested gift wrapping. - false: The customer did not request gift wrapping. ")
+  public Boolean getGiftWrap() {
     return giftWrap;
   }
 
-  public void setGiftWrap(String giftWrap) {
+  public void setGiftWrap(Boolean giftWrap) {
     this.giftWrap = giftWrap;
   }
 

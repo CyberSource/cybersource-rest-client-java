@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseApplicationInformationApplications
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
   @SerializedName("name")
   private String name = null;
@@ -58,10 +58,10 @@ public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
   }
 
    /**
-   * The description for this field is not available.
+   * The CyberSource payment application processed for the transaction. 
    * @return name
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "The CyberSource payment application processed for the transaction. ")
   public String getName() {
     return name;
   }
@@ -94,10 +94,10 @@ public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
   }
 
    /**
-   * The description for this field is not available.
+   * 3-digit reason code that indicates why the customer profile payment succeeded or failed.
    * @return reasonCode
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "3-digit reason code that indicates why the customer profile payment succeeded or failed.")
   public String getReasonCode() {
     return reasonCode;
   }
@@ -112,10 +112,10 @@ public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
   }
 
    /**
-   * The description for this field is not available.
+   * Indicates whether the service request was successful. Possible values:  - &#x60;-1&#x60;: An error occurred. - &#x60;0&#x60;: The request was declined. - &#x60;1&#x60;: The request was successful. 
    * @return rCode
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful. ")
   public String getRCode() {
     return rCode;
   }
@@ -130,10 +130,10 @@ public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
   }
 
    /**
-   * The description for this field is not available.
+   * One-word description of the result of the application. 
    * @return rFlag
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "One-word description of the result of the application. ")
   public String getRFlag() {
     return rFlag;
   }
@@ -148,10 +148,10 @@ public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
   }
 
    /**
-   * The description for this field is not available.
+   * Reference number that you use to reconcile your CyberSource reports with your processor reports. 
    * @return reconciliationId
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Reference number that you use to reconcile your CyberSource reports with your processor reports. ")
   public String getReconciliationId() {
     return reconciliationId;
   }
@@ -166,10 +166,10 @@ public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
   }
 
    /**
-   * The description for this field is not available.
+   * Message that explains the reply flag for the application. 
    * @return rMessage
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Message that explains the reply flag for the application. ")
   public String getRMessage() {
     return rMessage;
   }

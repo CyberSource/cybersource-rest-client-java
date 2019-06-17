@@ -72,7 +72,7 @@ public class InstrumentIdentifierApiTest {
     }
     
     /**
-     * Retrieve all Payment Instruments associated with an Instrument Identifier
+     * Retrieve all Payment Instruments
      *
      * 
      *

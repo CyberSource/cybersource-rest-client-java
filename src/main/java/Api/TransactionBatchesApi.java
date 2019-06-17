@@ -28,7 +28,6 @@ import java.io.IOException;
 
 
 import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
 import Model.PtsV1TransactionBatchesGet200Response;
 import Model.PtsV1TransactionBatchesGet400Response;
 import Model.PtsV1TransactionBatchesGet500Response;
@@ -59,141 +58,6 @@ public class TransactionBatchesApi {
         this.apiClient = apiClient;
     }
 
-    /**
-     * Build call for getTransactionBatchDetails
-     * @param transactionBatchId Transaction Batch Id, this is unique. (required)
-     * @param uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. (optional)
-     * @param status Allows you to filter by rejected response.  (optional)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getTransactionBatchDetailsCall(String transactionBatchId, LocalDate uploadDate, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/pts/v1/transaction-batch-details";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (transactionBatchId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "transactionBatchId", transactionBatchId));
-        if (uploadDate != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "uploadDate", uploadDate));
-        if (status != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "status", status));
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "text/vnd.cybersource.map-csv"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTransactionBatchDetailsValidateBeforeCall(String transactionBatchId, LocalDate uploadDate, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'transactionBatchId' is set
-        if (transactionBatchId == null) {
-            throw new ApiException("Missing the required parameter 'transactionBatchId' when calling getTransactionBatchDetails(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = getTransactionBatchDetailsCall(transactionBatchId, uploadDate, status, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Filters batch response. 
-     * Filters batch response. 
-     * @param transactionBatchId Transaction Batch Id, this is unique. (required)
-     * @param uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. (optional)
-     * @param status Allows you to filter by rejected response.  (optional)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public void getTransactionBatchDetails(String transactionBatchId, LocalDate uploadDate, String status) throws ApiException {
-        getTransactionBatchDetailsWithHttpInfo(transactionBatchId, uploadDate, status);
-    }
-
-    /**
-     * Filters batch response. 
-     * Filters batch response. 
-     * @param transactionBatchId Transaction Batch Id, this is unique. (required)
-     * @param uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. (optional)
-     * @param status Allows you to filter by rejected response.  (optional)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<Void> getTransactionBatchDetailsWithHttpInfo(String transactionBatchId, LocalDate uploadDate, String status) throws ApiException {
-        com.squareup.okhttp.Call call = getTransactionBatchDetailsValidateBeforeCall(transactionBatchId, uploadDate, status, null, null);
-        return apiClient.execute(call);
-    }
-
-    /**
-     * Filters batch response.  (asynchronously)
-     * Filters batch response. 
-     * @param transactionBatchId Transaction Batch Id, this is unique. (required)
-     * @param uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. (optional)
-     * @param status Allows you to filter by rejected response.  (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getTransactionBatchDetailsAsync(String transactionBatchId, LocalDate uploadDate, String status, final ApiCallback<Void> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getTransactionBatchDetailsValidateBeforeCall(transactionBatchId, uploadDate, status, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
-        return call;
-    }
     /**
      * Build call for getTransactionBatchId
      * @param id The batch id assigned for the template. (required)
@@ -397,7 +261,7 @@ public class TransactionBatchesApi {
     }
 
     /**
-     * Get a list of batch files
+     * Gets a list of batch files
      * Provide the search range
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
@@ -410,7 +274,7 @@ public class TransactionBatchesApi {
     }
 
     /**
-     * Get a list of batch files
+     * Gets a list of batch files
      * Provide the search range
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
@@ -424,7 +288,7 @@ public class TransactionBatchesApi {
     }
 
     /**
-     * Get a list of batch files (asynchronously)
+     * Gets a list of batch files (asynchronously)
      * Provide the search range
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation {
   @SerializedName("ipAddress")
   private String ipAddress = null;
@@ -37,10 +37,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation {
   }
 
    /**
-   * Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. 
+   * IP address of the customer. 
    * @return ipAddress
   **/
-  @ApiModelProperty(value = "Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information. ")
+  @ApiModelProperty(value = "IP address of the customer. ")
   public String getIpAddress() {
     return ipAddress;
   }

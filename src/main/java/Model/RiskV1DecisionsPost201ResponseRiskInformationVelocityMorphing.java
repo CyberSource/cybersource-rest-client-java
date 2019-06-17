@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * RiskV1DecisionsPost201ResponseRiskInformationVelocityMorphing
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class RiskV1DecisionsPost201ResponseRiskInformationVelocityMorphing {
   @SerializedName("count")
   private Integer count = null;
@@ -43,10 +43,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationVelocityMorphing {
   }
 
    /**
-   * Morphing count. Note The count is not returned for the initial transaction.
+   * Morphing count specified by the number #.  **Note** The count is not returned for the initial transaction.  For all possible values, see the &#x60;decision_velocity_morphing_#_count&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return count
   **/
-  @ApiModelProperty(value = "Morphing count. Note The count is not returned for the initial transaction.")
+  @ApiModelProperty(value = "Morphing count specified by the number #.  **Note** The count is not returned for the initial transaction.  For all possible values, see the `decision_velocity_morphing_#_count` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public Integer getCount() {
     return count;
   }
@@ -61,10 +61,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationVelocityMorphing {
   }
 
    /**
-   * Field name of the morphing element. specified by the setting that you chose in the Velocity Editor. For all possible values, Please refer to Simple Order API Developer Guide  on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/) - Look for &#39;Reply Fields&#39;: \&quot;decisionReply_morphingElement_#_fieldName\&quot;. 
+   * Field name of the morphing element. specified by the setting that you chose in the Velocity Editor.  For all possible values, see the &#x60;decisionReply_morphingElement_#_fieldName&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return fieldName
   **/
-  @ApiModelProperty(value = "Field name of the morphing element. specified by the setting that you chose in the Velocity Editor. For all possible values, Please refer to Simple Order API Developer Guide  on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/) - Look for 'Reply Fields': \"decisionReply_morphingElement_#_fieldName\". ")
+  @ApiModelProperty(value = "Field name of the morphing element. specified by the setting that you chose in the Velocity Editor.  For all possible values, see the `decisionReply_morphingElement_#_fieldName` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public String getFieldName() {
     return fieldName;
   }
@@ -79,10 +79,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationVelocityMorphing {
   }
 
    /**
-   * Identifier that CYBS assigned to the velocity rule specified by the number.
+   * Identifier that CyberSource assigned to the velocity rule specified by the number #.  For all possible values, see the &#x60;decision_velocity_morphing_#_info_code&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return informationCode
   **/
-  @ApiModelProperty(value = "Identifier that CYBS assigned to the velocity rule specified by the number.")
+  @ApiModelProperty(value = "Identifier that CyberSource assigned to the velocity rule specified by the number #.  For all possible values, see the `decision_velocity_morphing_#_info_code` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public String getInformationCode() {
     return informationCode;
   }

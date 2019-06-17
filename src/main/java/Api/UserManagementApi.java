@@ -126,7 +126,7 @@ final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
     }
 
     /**
-     * Get user based on organization Id, username, permission and role
+     * Get user information
      * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      * @param organizationId This is the orgId of the organization which the user belongs to. (optional)
      * @param userName User ID of the user you want to get details on. (optional)
@@ -141,7 +141,7 @@ final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
     }
 
     /**
-     * Get user based on organization Id, username, permission and role
+     * Get user information
      * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      * @param organizationId This is the orgId of the organization which the user belongs to. (optional)
      * @param userName User ID of the user you want to get details on. (optional)
@@ -157,7 +157,7 @@ final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
     }
 
     /**
-     * Get user based on organization Id, username, permission and role (asynchronously)
+     * Get user information (asynchronously)
      * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      * @param organizationId This is the orgId of the organization which the user belongs to. (optional)
      * @param userName User ID of the user you want to get details on. (optional)

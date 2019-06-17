@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults {
   @SerializedName("code")
   private String code = null;
@@ -70,10 +70,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer’s name. 
+   * Mapped Electronic Verification response code for the customer’s name.  For details, see &#x60;auth_ev_name&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return code
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s name. ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s name.  For details, see `auth_ev_name` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getCode() {
     return code;
   }
@@ -106,10 +106,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer’s email address. 
+   * Mapped Electronic Verification response code for the customer’s email address.  For details, see &#x60;auth_ev_email&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return email
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s email address. ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s email address.  For details, see `auth_ev_email` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getEmail() {
     return email;
   }
@@ -142,10 +142,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer’s phone number. 
+   * Mapped Electronic Verification response code for the customer’s phone number.  For details, see &#x60;auth_ev_phone_number&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s phone number. ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s phone number.  For details, see `auth_ev_phone_number` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getPhoneNumber() {
     return phoneNumber;
   }
@@ -178,10 +178,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer’s postal code. 
+   * Mapped Electronic Verification response code for the customer’s postal code.  For details, see &#x60;auth_ev_postal_code&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s postal code. ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s postal code.  For details, see `auth_ev_postal_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getPostalCode() {
     return postalCode;
   }
@@ -214,10 +214,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer’s street address. 
+   * Mapped Electronic Verification response code for the customer’s street address.  For details, see &#x60;auth_ev_street&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return street
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s street address. ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s street address.  For details, see `auth_ev_street` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getStreet() {
     return street;
   }

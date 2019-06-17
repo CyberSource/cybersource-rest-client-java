@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePaymentInformationBankAccount
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class PtsV2PaymentsPost201ResponsePaymentInformationBankAccount {
   @SerializedName("correctedAccountNumber")
   private String correctedAccountNumber = null;
@@ -37,10 +37,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationBankAccount {
   }
 
    /**
-   * Corrected account number from the ACH verification service, which is described in \&quot;ACH Verification,\&quot; page 25. 
+   * Corrected account number from the ACH verification service.  For details, see &#x60;ecp_debit_corrected_account_number&#x60; or &#x60;ecp_credit_corrected_account_number&#x60; field descriptions in [Electronic Check Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return correctedAccountNumber
   **/
-  @ApiModelProperty(value = "Corrected account number from the ACH verification service, which is described in \"ACH Verification,\" page 25. ")
+  @ApiModelProperty(value = "Corrected account number from the ACH verification service.  For details, see `ecp_debit_corrected_account_number` or `ecp_credit_corrected_account_number` field descriptions in [Electronic Check Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getCorrectedAccountNumber() {
     return correctedAccountNumber;
   }

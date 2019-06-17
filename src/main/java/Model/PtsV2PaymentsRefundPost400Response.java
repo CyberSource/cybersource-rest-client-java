@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PtsV2PaymentsRefundPost400Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class PtsV2PaymentsRefundPost400Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -96,6 +96,8 @@ public class PtsV2PaymentsRefundPost400Response {
     INVALID_CARD("INVALID_CARD"),
     
     INVALID_MERCHANT_CONFIGURATION("INVALID_MERCHANT_CONFIGURATION"),
+    
+    INVALID_AMOUNT("INVALID_AMOUNT"),
     
     CAPTURE_ALREADY_VOIDED("CAPTURE_ALREADY_VOIDED"),
     

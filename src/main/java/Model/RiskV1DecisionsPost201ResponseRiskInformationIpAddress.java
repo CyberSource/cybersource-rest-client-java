@@ -27,19 +27,19 @@ import java.io.IOException;
  * Contains detailed response information about the customer&#39;s IP address.
  */
 @ApiModel(description = "Contains detailed response information about the customer's IP address.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
   @SerializedName("anonymizerStatus")
   private String anonymizerStatus = null;
 
-  @SerializedName("city")
-  private String city = null;
+  @SerializedName("locality")
+  private String locality = null;
 
   @SerializedName("country")
   private String country = null;
 
-  @SerializedName("state")
-  private String state = null;
+  @SerializedName("administrativeArea")
+  private String administrativeArea = null;
 
   @SerializedName("routingMethod")
   private String routingMethod = null;
@@ -50,10 +50,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
   }
 
    /**
-   * Indicates whether the transaction IP address is associated with a known anonymous proxy. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/)- Look for &#39;Reply Fields&#39;: \&quot;afsReply_ipAnonymizerStatus\&quot;. 
+   * Indicates whether the transaction IP address is associated with a known anonymous proxy.  For all possible values, see the &#x60;score_ip_anonymizer_status&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return anonymizerStatus
   **/
-  @ApiModelProperty(value = "Indicates whether the transaction IP address is associated with a known anonymous proxy. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/)- Look for 'Reply Fields': \"afsReply_ipAnonymizerStatus\". ")
+  @ApiModelProperty(value = "Indicates whether the transaction IP address is associated with a known anonymous proxy.  For all possible values, see the `score_ip_anonymizer_status` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public String getAnonymizerStatus() {
     return anonymizerStatus;
   }
@@ -62,22 +62,22 @@ public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
     this.anonymizerStatus = anonymizerStatus;
   }
 
-  public RiskV1DecisionsPost201ResponseRiskInformationIpAddress city(String city) {
-    this.city = city;
+  public RiskV1DecisionsPost201ResponseRiskInformationIpAddress locality(String locality) {
+    this.locality = locality;
     return this;
   }
 
    /**
-   * Name of the city decoded from the IP address used directly or indirectly by the customer to send the order. 
-   * @return city
+   * Name of the city decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the &#x60;score_ip_city&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @return locality
   **/
-  @ApiModelProperty(value = "Name of the city decoded from the IP address used directly or indirectly by the customer to send the order. ")
-  public String getCity() {
-    return city;
+  @ApiModelProperty(value = "Name of the city decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_city` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  public String getLocality() {
+    return locality;
   }
 
-  public void setCity(String city) {
-    this.city = city;
+  public void setLocality(String locality) {
+    this.locality = locality;
   }
 
   public RiskV1DecisionsPost201ResponseRiskInformationIpAddress country(String country) {
@@ -86,10 +86,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
   }
 
    /**
-   * Name of the country decoded from the IP address used directly or indirectly by the customer to send the order. 
+   * Name of the country decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the &#x60;score_ip_country&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return country
   **/
-  @ApiModelProperty(value = "Name of the country decoded from the IP address used directly or indirectly by the customer to send the order. ")
+  @ApiModelProperty(value = "Name of the country decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_country` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public String getCountry() {
     return country;
   }
@@ -98,22 +98,22 @@ public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
     this.country = country;
   }
 
-  public RiskV1DecisionsPost201ResponseRiskInformationIpAddress state(String state) {
-    this.state = state;
+  public RiskV1DecisionsPost201ResponseRiskInformationIpAddress administrativeArea(String administrativeArea) {
+    this.administrativeArea = administrativeArea;
     return this;
   }
 
    /**
-   * Name of the state decoded from the IP address used directly or indirectly by the customer to send the order. 
-   * @return state
+   * Name of the country decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the &#x60;score_ip_country&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @return administrativeArea
   **/
-  @ApiModelProperty(value = "Name of the state decoded from the IP address used directly or indirectly by the customer to send the order. ")
-  public String getState() {
-    return state;
+  @ApiModelProperty(value = "Name of the country decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_country` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  public String getAdministrativeArea() {
+    return administrativeArea;
   }
 
-  public void setState(String state) {
-    this.state = state;
+  public void setAdministrativeArea(String administrativeArea) {
+    this.administrativeArea = administrativeArea;
   }
 
   public RiskV1DecisionsPost201ResponseRiskInformationIpAddress routingMethod(String routingMethod) {
@@ -122,10 +122,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
   }
 
    /**
-   * Routing method decoded from the IP address used directly or indirectly by the customer to send the order. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/)- Look for &#39;Reply Fields&#39;: \&quot;afsService_ipRoutingMethod \&quot;. 
+   * Routing method decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the &#x60;score_ip_routing_method&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return routingMethod
   **/
-  @ApiModelProperty(value = "Routing method decoded from the IP address used directly or indirectly by the customer to send the order. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/)- Look for 'Reply Fields': \"afsService_ipRoutingMethod \". ")
+  @ApiModelProperty(value = "Routing method decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_routing_method` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public String getRoutingMethod() {
     return routingMethod;
   }
@@ -145,15 +145,15 @@ public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
     }
     RiskV1DecisionsPost201ResponseRiskInformationIpAddress riskV1DecisionsPost201ResponseRiskInformationIpAddress = (RiskV1DecisionsPost201ResponseRiskInformationIpAddress) o;
     return Objects.equals(this.anonymizerStatus, riskV1DecisionsPost201ResponseRiskInformationIpAddress.anonymizerStatus) &&
-        Objects.equals(this.city, riskV1DecisionsPost201ResponseRiskInformationIpAddress.city) &&
+        Objects.equals(this.locality, riskV1DecisionsPost201ResponseRiskInformationIpAddress.locality) &&
         Objects.equals(this.country, riskV1DecisionsPost201ResponseRiskInformationIpAddress.country) &&
-        Objects.equals(this.state, riskV1DecisionsPost201ResponseRiskInformationIpAddress.state) &&
+        Objects.equals(this.administrativeArea, riskV1DecisionsPost201ResponseRiskInformationIpAddress.administrativeArea) &&
         Objects.equals(this.routingMethod, riskV1DecisionsPost201ResponseRiskInformationIpAddress.routingMethod);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(anonymizerStatus, city, country, state, routingMethod);
+    return Objects.hash(anonymizerStatus, locality, country, administrativeArea, routingMethod);
   }
 
 
@@ -163,9 +163,9 @@ public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
     sb.append("class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {\n");
     
     sb.append("    anonymizerStatus: ").append(toIndentedString(anonymizerStatus)).append("\n");
-    sb.append("    city: ").append(toIndentedString(city)).append("\n");
+    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    routingMethod: ").append(toIndentedString(routingMethod)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * RiskV1DecisionsPost201ResponseRiskInformationProfile
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class RiskV1DecisionsPost201ResponseRiskInformationProfile {
   @SerializedName("name")
   private String name = null;
@@ -43,10 +43,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformationProfile {
   }
 
    /**
-   * Name of the active profile chosen by the profile selector. If no profile selector exists, the default active profile is chosen. 
+   * Name of the active profile chosen by the profile selector. If no profile selector exists, the default active profile is chosen.  **Note** By default, your default profile is the active profile, or the Profile Selector chooses the active profile. Use this field only if you want to specify the name of a different profile. The passed-in profile will then become the active profile. 
    * @return name
   **/
-  @ApiModelProperty(value = "Name of the active profile chosen by the profile selector. If no profile selector exists, the default active profile is chosen. ")
+  @ApiModelProperty(value = "Name of the active profile chosen by the profile selector. If no profile selector exists, the default active profile is chosen.  **Note** By default, your default profile is the active profile, or the Profile Selector chooses the active profile. Use this field only if you want to specify the name of a different profile. The passed-in profile will then become the active profile. ")
   public String getName() {
     return name;
   }

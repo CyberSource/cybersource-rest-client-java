@@ -16,11 +16,11 @@ package Model;
 import java.util.Objects;
 import Model.RiskV1DecisionsPost201ResponseRiskInformationInfoCodes;
 import Model.RiskV1DecisionsPost201ResponseRiskInformationIpAddress;
-import Model.RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation;
 import Model.RiskV1DecisionsPost201ResponseRiskInformationProfile;
 import Model.RiskV1DecisionsPost201ResponseRiskInformationProviders;
 import Model.RiskV1DecisionsPost201ResponseRiskInformationRules;
 import Model.RiskV1DecisionsPost201ResponseRiskInformationScore;
+import Model.RiskV1DecisionsPost201ResponseRiskInformationTravel;
 import Model.RiskV1DecisionsPost201ResponseRiskInformationVelocity;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -37,7 +37,7 @@ import java.util.List;
  * Contains the result of risk assessment.
  */
 @ApiModel(description = "Contains the result of risk assessment.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class RiskV1DecisionsPost201ResponseRiskInformation {
   @SerializedName("profile")
   private RiskV1DecisionsPost201ResponseRiskInformationProfile profile = null;
@@ -57,9 +57,6 @@ public class RiskV1DecisionsPost201ResponseRiskInformation {
   @SerializedName("localTime")
   private String localTime = null;
 
-  @SerializedName("paymentInformation")
-  private RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation paymentInformation = null;
-
   @SerializedName("score")
   private RiskV1DecisionsPost201ResponseRiskInformationScore score = null;
 
@@ -68,6 +65,9 @@ public class RiskV1DecisionsPost201ResponseRiskInformation {
 
   @SerializedName("providers")
   private RiskV1DecisionsPost201ResponseRiskInformationProviders providers = null;
+
+  @SerializedName("travel")
+  private RiskV1DecisionsPost201ResponseRiskInformationTravel travel = null;
 
   public RiskV1DecisionsPost201ResponseRiskInformation profile(RiskV1DecisionsPost201ResponseRiskInformationProfile profile) {
     this.profile = profile;
@@ -155,10 +155,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformation {
   }
 
    /**
-   * You receive this field only if you subscribe to the Enhanced Case Management service. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/) - Look for &#39;Reply Fields&#39;: \&quot;decisionReply_casePriority\&quot;. 
+   * You receive this field only if you subscribe to the Enhanced Case Management service. The priority level ranges from 1 (highest) to 5 (lowest); the default value is 3. If you do not assign a priority to your rules or to your profiles, the default value is given to the order.  For all possible values, see the &#x60;decision_case_priority&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return casePriority
   **/
-  @ApiModelProperty(value = "You receive this field only if you subscribe to the Enhanced Case Management service. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/) - Look for 'Reply Fields': \"decisionReply_casePriority\". ")
+  @ApiModelProperty(value = "You receive this field only if you subscribe to the Enhanced Case Management service. The priority level ranges from 1 (highest) to 5 (lowest); the default value is 3. If you do not assign a priority to your rules or to your profiles, the default value is given to the order.  For all possible values, see the `decision_case_priority` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public Integer getCasePriority() {
     return casePriority;
   }
@@ -173,34 +173,16 @@ public class RiskV1DecisionsPost201ResponseRiskInformation {
   }
 
    /**
-   * The customer&#39;s local time (hh:mm:ss), which is calculated from the transaction request time and the customer&#39;s billing address. 
+   * The customer&#39;s local time (&#x60;hh:mm:ss&#x60;), which is calculated from the transaction request time and the customer&#39;s billing address.  For details, see the &#x60;score_time_local&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) 
    * @return localTime
   **/
-  @ApiModelProperty(value = "The customer's local time (hh:mm:ss), which is calculated from the transaction request time and the customer's billing address. ")
+  @ApiModelProperty(value = "The customer's local time (`hh:mm:ss`), which is calculated from the transaction request time and the customer's billing address.  For details, see the `score_time_local` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) ")
   public String getLocalTime() {
     return localTime;
   }
 
   public void setLocalTime(String localTime) {
     this.localTime = localTime;
-  }
-
-  public RiskV1DecisionsPost201ResponseRiskInformation paymentInformation(RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation paymentInformation) {
-    this.paymentInformation = paymentInformation;
-    return this;
-  }
-
-   /**
-   * Get paymentInformation
-   * @return paymentInformation
-  **/
-  @ApiModelProperty(value = "")
-  public RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation getPaymentInformation() {
-    return paymentInformation;
-  }
-
-  public void setPaymentInformation(RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation paymentInformation) {
-    this.paymentInformation = paymentInformation;
   }
 
   public RiskV1DecisionsPost201ResponseRiskInformation score(RiskV1DecisionsPost201ResponseRiskInformationScore score) {
@@ -257,6 +239,24 @@ public class RiskV1DecisionsPost201ResponseRiskInformation {
     this.providers = providers;
   }
 
+  public RiskV1DecisionsPost201ResponseRiskInformation travel(RiskV1DecisionsPost201ResponseRiskInformationTravel travel) {
+    this.travel = travel;
+    return this;
+  }
+
+   /**
+   * Get travel
+   * @return travel
+  **/
+  @ApiModelProperty(value = "")
+  public RiskV1DecisionsPost201ResponseRiskInformationTravel getTravel() {
+    return travel;
+  }
+
+  public void setTravel(RiskV1DecisionsPost201ResponseRiskInformationTravel travel) {
+    this.travel = travel;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -273,15 +273,15 @@ public class RiskV1DecisionsPost201ResponseRiskInformation {
         Objects.equals(this.velocity, riskV1DecisionsPost201ResponseRiskInformation.velocity) &&
         Objects.equals(this.casePriority, riskV1DecisionsPost201ResponseRiskInformation.casePriority) &&
         Objects.equals(this.localTime, riskV1DecisionsPost201ResponseRiskInformation.localTime) &&
-        Objects.equals(this.paymentInformation, riskV1DecisionsPost201ResponseRiskInformation.paymentInformation) &&
         Objects.equals(this.score, riskV1DecisionsPost201ResponseRiskInformation.score) &&
         Objects.equals(this.ipAddress, riskV1DecisionsPost201ResponseRiskInformation.ipAddress) &&
-        Objects.equals(this.providers, riskV1DecisionsPost201ResponseRiskInformation.providers);
+        Objects.equals(this.providers, riskV1DecisionsPost201ResponseRiskInformation.providers) &&
+        Objects.equals(this.travel, riskV1DecisionsPost201ResponseRiskInformation.travel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile, rules, infoCodes, velocity, casePriority, localTime, paymentInformation, score, ipAddress, providers);
+    return Objects.hash(profile, rules, infoCodes, velocity, casePriority, localTime, score, ipAddress, providers, travel);
   }
 
 
@@ -296,10 +296,10 @@ public class RiskV1DecisionsPost201ResponseRiskInformation {
     sb.append("    velocity: ").append(toIndentedString(velocity)).append("\n");
     sb.append("    casePriority: ").append(toIndentedString(casePriority)).append("\n");
     sb.append("    localTime: ").append(toIndentedString(localTime)).append("\n");
-    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
+    sb.append("    travel: ").append(toIndentedString(travel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformationCustomer
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformationCustomer {
   @SerializedName("personalIdResult")
   private String personalIdResult = null;
@@ -37,10 +37,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationCustomer {
   }
 
    /**
-   * Personal identifier result. This field is supported only for Redecard in Brazil for CyberSource Latin American Processing. If you included _buyerInformation.personalIdentification[].ID_ in the request, this value indicates whether or not _buyerInformation.personalIdentification[].ID_ matched a value in a record on file. Returned only when the personal ID result is returned by the processor.  Possible values:   - **Y**: Match  - **N**: No match  - **K**: Not supported  - **U**: Unknown  - **Z**: No response returned 
+   * Personal identifier result. This field is supported only for Redecard in Brazil for CyberSource Latin American Processing. If you included &#x60;buyerInformation.personalIdentification[].ID&#x60; in the request, this value indicates whether or not &#x60;buyerInformation.personalIdentification[].ID&#x60; matched a value in a record on file. Returned only when the personal ID result is returned by the processor.  Possible values:   - **Y**: Match  - **N**: No match  - **K**: Not supported  - **U**: Unknown  - **Z**: No response returned **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America.The information in this field description is for the specific processing connection called CyberSource Latin American Processing. It is not for any other Latin American processors that CyberSource supports. 
    * @return personalIdResult
   **/
-  @ApiModelProperty(value = "Personal identifier result. This field is supported only for Redecard in Brazil for CyberSource Latin American Processing. If you included _buyerInformation.personalIdentification[].ID_ in the request, this value indicates whether or not _buyerInformation.personalIdentification[].ID_ matched a value in a record on file. Returned only when the personal ID result is returned by the processor.  Possible values:   - **Y**: Match  - **N**: No match  - **K**: Not supported  - **U**: Unknown  - **Z**: No response returned ")
+  @ApiModelProperty(value = "Personal identifier result. This field is supported only for Redecard in Brazil for CyberSource Latin American Processing. If you included `buyerInformation.personalIdentification[].ID` in the request, this value indicates whether or not `buyerInformation.personalIdentification[].ID` matched a value in a record on file. Returned only when the personal ID result is returned by the processor.  Possible values:   - **Y**: Match  - **N**: No match  - **K**: Not supported  - **U**: Unknown  - **Z**: No response returned **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America.The information in this field description is for the specific processing connection called CyberSource Latin American Processing. It is not for any other Latin American processors that CyberSource supports. ")
   public String getPersonalIdResult() {
     return personalIdResult;
   }

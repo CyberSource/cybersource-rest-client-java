@@ -27,10 +27,13 @@ import java.io.IOException;
 /**
  * Riskv1decisionsRiskInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class Riskv1decisionsRiskInformation {
   @SerializedName("profile")
   private Riskv1decisionsRiskInformationProfile profile = null;
+
+  @SerializedName("eventType")
+  private String eventType = null;
 
   public Riskv1decisionsRiskInformation profile(Riskv1decisionsRiskInformationProfile profile) {
     this.profile = profile;
@@ -50,6 +53,24 @@ public class Riskv1decisionsRiskInformation {
     this.profile = profile;
   }
 
+  public Riskv1decisionsRiskInformation eventType(String eventType) {
+    this.eventType = eventType;
+    return this;
+  }
+
+   /**
+   * Specifies one of the following types of events: - login - account_creation - account_update For regular payment transactions, do not send this field. 
+   * @return eventType
+  **/
+  @ApiModelProperty(value = "Specifies one of the following types of events: - login - account_creation - account_update For regular payment transactions, do not send this field. ")
+  public String getEventType() {
+    return eventType;
+  }
+
+  public void setEventType(String eventType) {
+    this.eventType = eventType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +81,13 @@ public class Riskv1decisionsRiskInformation {
       return false;
     }
     Riskv1decisionsRiskInformation riskv1decisionsRiskInformation = (Riskv1decisionsRiskInformation) o;
-    return Objects.equals(this.profile, riskv1decisionsRiskInformation.profile);
+    return Objects.equals(this.profile, riskv1decisionsRiskInformation.profile) &&
+        Objects.equals(this.eventType, riskv1decisionsRiskInformation.eventType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile);
+    return Objects.hash(profile, eventType);
   }
 
 
@@ -75,6 +97,7 @@ public class Riskv1decisionsRiskInformation {
     sb.append("class Riskv1decisionsRiskInformation {\n");
     
     sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
+    sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

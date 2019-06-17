@@ -410,7 +410,7 @@ public class InstrumentIdentifierApi {
     }
 
     /**
-     * Retrieve all Payment Instruments associated with an Instrument Identifier
+     * Retrieve all Payment Instruments
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
@@ -425,7 +425,7 @@ public class InstrumentIdentifierApi {
     }
 
     /**
-     * Retrieve all Payment Instruments associated with an Instrument Identifier
+     * Retrieve all Payment Instruments
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)
@@ -441,7 +441,7 @@ public class InstrumentIdentifierApi {
     }
 
     /**
-     * Retrieve all Payment Instruments associated with an Instrument Identifier (asynchronously)
+     * Retrieve all Payment Instruments (asynchronously)
      * 
      * @param profileId The id of a profile containing user specific TMS configuration. (required)
      * @param tokenId The TokenId of an Instrument Identifier. (required)

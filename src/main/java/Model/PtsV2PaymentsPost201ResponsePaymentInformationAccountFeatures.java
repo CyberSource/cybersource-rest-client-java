@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   @SerializedName("accountType")
   private String accountType = null;
@@ -132,10 +132,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Type of account. This value is returned only if you requested a balance inquiry. Possible values:   - **00**: Not applicable or not specified  - **10**: Savings account  - **20**: Checking account  - **30**: Credit card account  - **40**: Universal account 
+   * Type of account. This value is returned only if you requested a balance inquiry. Possible values:   - &#x60;00&#x60;: Not applicable or not specified  - &#x60;10&#x60;: Savings account  - &#x60;20&#x60;: Checking account  - &#x60;30&#x60;: Credit card account  - &#x60;40&#x60;: Universal account 
    * @return accountType
   **/
-  @ApiModelProperty(value = "Type of account. This value is returned only if you requested a balance inquiry. Possible values:   - **00**: Not applicable or not specified  - **10**: Savings account  - **20**: Checking account  - **30**: Credit card account  - **40**: Universal account ")
+  @ApiModelProperty(value = "Type of account. This value is returned only if you requested a balance inquiry. Possible values:   - `00`: Not applicable or not specified  - `10`: Savings account  - `20`: Checking account  - `30`: Credit card account  - `40`: Universal account ")
   public String getAccountType() {
     return accountType;
   }
@@ -150,10 +150,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Possible values:   - **N**: Nonregulated  - **R**: Regulated  &#x60;Note&#x60; This field is returned only for CyberSource through VisaNet. 
+   * Possible values:   - &#x60;N&#x60;: Nonregulated  - &#x60;R&#x60;: Regulated  **Note** This field is returned only for CyberSource through VisaNet. 
    * @return accountStatus
   **/
-  @ApiModelProperty(value = "Possible values:   - **N**: Nonregulated  - **R**: Regulated  `Note` This field is returned only for CyberSource through VisaNet. ")
+  @ApiModelProperty(value = "Possible values:   - `N`: Nonregulated  - `R`: Regulated  **Note** This field is returned only for CyberSource through VisaNet. ")
   public String getAccountStatus() {
     return accountStatus;
   }
@@ -186,10 +186,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Type of amount. This value is returned only if you requested a balance inquiry. The issuer determines the value that is returned. Possible values for deposit accounts:   - **01**: Current ledger (posted) balance.  - **02**: Current available balance, which is typically the ledger balance less outstanding authorizations.  Some depository institutions also include pending deposits and the credit or overdraft line associated with the account. Possible values for credit card accounts:   - **01**: Credit amount remaining for customer (open to buy).  - **02**: Credit limit. 
+   * Type of amount. This value is returned only if you requested a balance inquiry. The issuer determines the value that is returned. Possible values for deposit accounts:   - &#x60;01&#x60;: Current ledger (posted) balance.  - &#x60;02&#x60;: Current available balance, which is typically the ledger balance less outstanding authorizations.  Some depository institutions also include pending deposits and the credit or overdraft line associated with the account. Possible values for credit card accounts:   - &#x60;01&#x60;: Credit amount remaining for customer (open to buy).  - &#x60;02&#x60;: Credit limit. 
    * @return balanceAmountType
   **/
-  @ApiModelProperty(value = "Type of amount. This value is returned only if you requested a balance inquiry. The issuer determines the value that is returned. Possible values for deposit accounts:   - **01**: Current ledger (posted) balance.  - **02**: Current available balance, which is typically the ledger balance less outstanding authorizations.  Some depository institutions also include pending deposits and the credit or overdraft line associated with the account. Possible values for credit card accounts:   - **01**: Credit amount remaining for customer (open to buy).  - **02**: Credit limit. ")
+  @ApiModelProperty(value = "Type of amount. This value is returned only if you requested a balance inquiry. The issuer determines the value that is returned. Possible values for deposit accounts:   - `01`: Current ledger (posted) balance.  - `02`: Current available balance, which is typically the ledger balance less outstanding authorizations.  Some depository institutions also include pending deposits and the credit or overdraft line associated with the account. Possible values for credit card accounts:   - `01`: Credit amount remaining for customer (open to buy).  - `02`: Credit limit. ")
   public String getBalanceAmountType() {
     return balanceAmountType;
   }
@@ -204,10 +204,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Currency of the remaining balance on the account. For the possible values, see the ISO Standard Currency Codes. 
+   * Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  For details, see &#x60;auth_account_balance_currency&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return currency
   **/
-  @ApiModelProperty(value = "Currency of the remaining balance on the account. For the possible values, see the ISO Standard Currency Codes. ")
+  @ApiModelProperty(value = "Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  For details, see `auth_account_balance_currency` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getCurrency() {
     return currency;
   }
@@ -258,10 +258,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * **CyberSource through VisaNet**  Visa product ID.  **GPN**  Visa or Mastercard product ID.  **Litle**  Type of card used in the transaction. The only possible value is:   - PREPAID: Prepaid Card  **RBS WorldPay Atlanta**  Type of card used in the transaction. Possible values:   - **B**: Business Card  - **O**: Noncommercial Card  - **R**: Corporate Card  - **S**: Purchase Card  - **Blank**: Purchase card not supported  **Maximum length for processors**:   - CyberSource through VisaNet: 3  - GPN: 3  - Litle: 7  - RBS WorldPay Atlanta: 1 
+   * #### CyberSource through VisaNet Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, see the Product ID table on the [Visa Request &amp; Response Codes web page.](https://developer.visa.com/guides/request_response_codes)  Data Length: String (3)  #### GPN Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, seepag the Product ID table on the Visa Request &amp; Response Codes web page at https://developer.visa.com/guides/request_response_codes. For descriptions of the Mastercard product IDs, see \&quot;Product IDs\&quot; in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Data Length: String (3)  #### Worldpay VAP **Important** Before using this field on Worldpay VAP, you must contact CyberSource Customer Support to have your account configured for this feature.  Type of card used in the transaction. The only possible value is: - &#x60;PREPAID&#x60;: Prepaid Card  Data Length: String (7)  #### RBS WorldPay Atlanta Type of card used in the transaction. Possible values: - &#x60;B&#x60;: Business Card - &#x60;O&#x60;: Noncommercial Card - &#x60;R&#x60;: Corporate Card - &#x60;S&#x60;: Purchase Card - &#x60;Blank&#x60;: Purchase card not supported  Data Length: String (1) 
    * @return category
   **/
-  @ApiModelProperty(value = "**CyberSource through VisaNet**  Visa product ID.  **GPN**  Visa or Mastercard product ID.  **Litle**  Type of card used in the transaction. The only possible value is:   - PREPAID: Prepaid Card  **RBS WorldPay Atlanta**  Type of card used in the transaction. Possible values:   - **B**: Business Card  - **O**: Noncommercial Card  - **R**: Corporate Card  - **S**: Purchase Card  - **Blank**: Purchase card not supported  **Maximum length for processors**:   - CyberSource through VisaNet: 3  - GPN: 3  - Litle: 7  - RBS WorldPay Atlanta: 1 ")
+  @ApiModelProperty(value = "#### CyberSource through VisaNet Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, see the Product ID table on the [Visa Request & Response Codes web page.](https://developer.visa.com/guides/request_response_codes)  Data Length: String (3)  #### GPN Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, seepag the Product ID table on the Visa Request & Response Codes web page at https://developer.visa.com/guides/request_response_codes. For descriptions of the Mastercard product IDs, see \"Product IDs\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Data Length: String (3)  #### Worldpay VAP **Important** Before using this field on Worldpay VAP, you must contact CyberSource Customer Support to have your account configured for this feature.  Type of card used in the transaction. The only possible value is: - `PREPAID`: Prepaid Card  Data Length: String (7)  #### RBS WorldPay Atlanta Type of card used in the transaction. Possible values: - `B`: Business Card - `O`: Noncommercial Card - `R`: Corporate Card - `S`: Purchase Card - `Blank`: Purchase card not supported  Data Length: String (1) ")
   public String getCategory() {
     return category;
   }
@@ -276,10 +276,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Indicates whether the card is a commercial card, which enables you to include Level II data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown 
+   * Indicates whether the card is a commercial card, which enables you to include Level II data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown  For details, see &#x60;auth_card_commercial&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return commercial
   **/
-  @ApiModelProperty(value = "Indicates whether the card is a commercial card, which enables you to include Level II data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown ")
+  @ApiModelProperty(value = "Indicates whether the card is a commercial card, which enables you to include Level II data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown  For details, see `auth_card_commercial` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getCommercial() {
     return commercial;
   }
@@ -312,10 +312,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Indicates whether the card is a healthcare card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown 
+   * Indicates whether the card is a healthcare card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - &#x60;Y&#x60;: Yes  - &#x60;N&#x60;: No  - &#x60;X&#x60;: Not applicable / Unknown  For details, see &#x60;auth_card_healthcare&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return healthCare
   **/
-  @ApiModelProperty(value = "Indicates whether the card is a healthcare card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown ")
+  @ApiModelProperty(value = "Indicates whether the card is a healthcare card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_healthcare` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getHealthCare() {
     return healthCare;
   }
@@ -330,10 +330,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Indicates whether the card is a payroll card. This field is supported for Visa, Discover, Diners Club, and JCB on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown 
+   * Indicates whether the card is a payroll card. This field is supported for Visa, Discover, Diners Club, and JCB on **Chase Paymentech Solutions**. Possible values:   - &#x60;Y&#x60;: Yes  - &#x60;N&#x60;: No  - &#x60;X&#x60;: Not applicable / Unknown  For details, see &#x60;auth_card_payroll&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return payroll
   **/
-  @ApiModelProperty(value = "Indicates whether the card is a payroll card. This field is supported for Visa, Discover, Diners Club, and JCB on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown ")
+  @ApiModelProperty(value = "Indicates whether the card is a payroll card. This field is supported for Visa, Discover, Diners Club, and JCB on **Chase Paymentech Solutions**. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_payroll` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getPayroll() {
     return payroll;
   }
@@ -348,10 +348,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Indicates whether the card is eligible for Level III interchange fees, which enables you to include Level III data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown 
+   * Indicates whether the card is eligible for Level III interchange fees, which enables you to include Level III data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - &#x60;Y&#x60;: Yes  - &#x60;N&#x60;: No  - &#x60;X&#x60;: Not applicable / Unknown  For details, see &#x60;auth_card_level_3_eligible&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return level3Eligible
   **/
-  @ApiModelProperty(value = "Indicates whether the card is eligible for Level III interchange fees, which enables you to include Level III data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown ")
+  @ApiModelProperty(value = "Indicates whether the card is eligible for Level III interchange fees, which enables you to include Level III data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_level_3_eligible` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getLevel3Eligible() {
     return level3Eligible;
   }
@@ -366,10 +366,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Indicates whether the card is a PINless debit card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown 
+   * Indicates whether the card is a PINless debit card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - &#x60;Y&#x60;: Yes  - &#x60;N&#x60;: No  - &#x60;X&#x60;: Not applicable / Unknown  For details, see &#x60;auth_card_pinless_debit&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return pinlessDebit
   **/
-  @ApiModelProperty(value = "Indicates whether the card is a PINless debit card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown ")
+  @ApiModelProperty(value = "Indicates whether the card is a PINless debit card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_pinless_debit` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getPinlessDebit() {
     return pinlessDebit;
   }
@@ -384,10 +384,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Indicates whether the card is a signature debit card. This information enables you to alter the way an order is processed. For example, you might not want to reauthorize a transaction for a signature debit card, or you might want to perform reversals promptly for a signature debit card. This field is supported for Visa, Mastercard, and Maestro (International) on Chase Paymentech Solutions. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown 
+   * Indicates whether the card is a signature debit card.  This information enables you to alter the way an order is processed. For example, you might not want to reauthorize a transaction for a signature debit card, or you might want to perform reversals promptly for a signature debit card. This field is supported for Visa, Mastercard, and Maestro (International) on Chase Paymentech Solutions. Possible values:   - &#x60;Y&#x60;: Yes  - &#x60;N&#x60;: No  - &#x60;X&#x60;: Not applicable / Unknown  For details, see &#x60;auth_card_signature_debit&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return signatureDebit
   **/
-  @ApiModelProperty(value = "Indicates whether the card is a signature debit card. This information enables you to alter the way an order is processed. For example, you might not want to reauthorize a transaction for a signature debit card, or you might want to perform reversals promptly for a signature debit card. This field is supported for Visa, Mastercard, and Maestro (International) on Chase Paymentech Solutions. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown ")
+  @ApiModelProperty(value = "Indicates whether the card is a signature debit card.  This information enables you to alter the way an order is processed. For example, you might not want to reauthorize a transaction for a signature debit card, or you might want to perform reversals promptly for a signature debit card. This field is supported for Visa, Mastercard, and Maestro (International) on Chase Paymentech Solutions. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_signature_debit` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getSignatureDebit() {
     return signatureDebit;
   }
@@ -402,10 +402,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Indicates whether the card is a prepaid card. This information enables you to determine when a gift card or prepaid card is presented for use when establishing a new recurring, installment, or deferred billing relationship.  This field is supported for Visa, Mastercard, Discover, Diners Club, and JCB on Chase Paymentech Solutions. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown 
+   * Indicates whether the card is a prepaid card. This information enables you to determine when a gift card or prepaid card is presented for use when establishing a new recurring, installment, or deferred billing relationship.  This field is supported for Visa, Mastercard, Discover, Diners Club, and JCB on Chase Paymentech Solutions. Possible values:   - &#x60;Y&#x60;: Yes  - &#x60;N&#x60;: No  - &#x60;X&#x60;: Not applicable / Unknown  For details, see the &#x60;auth_card_prepaid&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return prepaid
   **/
-  @ApiModelProperty(value = "Indicates whether the card is a prepaid card. This information enables you to determine when a gift card or prepaid card is presented for use when establishing a new recurring, installment, or deferred billing relationship.  This field is supported for Visa, Mastercard, Discover, Diners Club, and JCB on Chase Paymentech Solutions. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown ")
+  @ApiModelProperty(value = "Indicates whether the card is a prepaid card. This information enables you to determine when a gift card or prepaid card is presented for use when establishing a new recurring, installment, or deferred billing relationship.  This field is supported for Visa, Mastercard, Discover, Diners Club, and JCB on Chase Paymentech Solutions. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see the `auth_card_prepaid` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getPrepaid() {
     return prepaid;
   }
@@ -420,10 +420,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Indicates whether the card is regulated according to the Durbin Amendment. If the card is regulated, the card issuer is subject to price caps and interchange rules. This field is supported for Visa, Mastercard, Discover, Diners Club, and JCB on Chase Paymentech Solutions. Possible values:   - **Y**: Yes (assets greater than 10B USD)  - **N**: No (assets less than 10B USD)  - **X**: Not applicable / Unknown 
+   * Indicates whether the card is regulated according to the Durbin Amendment. If the card is regulated, the card issuer is subject to price caps and interchange rules. This field is supported for Visa, Mastercard, Discover, Diners Club, and JCB on Chase Paymentech Solutions. Possible values:   - &#x60;Y&#x60;: Yes  - &#x60;N&#x60;: No  - &#x60;X&#x60;: Not applicable / Unknown  For details, see &#x60;auth_card_regulated&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return regulated
   **/
-  @ApiModelProperty(value = "Indicates whether the card is regulated according to the Durbin Amendment. If the card is regulated, the card issuer is subject to price caps and interchange rules. This field is supported for Visa, Mastercard, Discover, Diners Club, and JCB on Chase Paymentech Solutions. Possible values:   - **Y**: Yes (assets greater than 10B USD)  - **N**: No (assets less than 10B USD)  - **X**: Not applicable / Unknown ")
+  @ApiModelProperty(value = "Indicates whether the card is regulated according to the Durbin Amendment. If the card is regulated, the card issuer is subject to price caps and interchange rules. This field is supported for Visa, Mastercard, Discover, Diners Club, and JCB on Chase Paymentech Solutions. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_regulated` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getRegulated() {
     return regulated;
   }

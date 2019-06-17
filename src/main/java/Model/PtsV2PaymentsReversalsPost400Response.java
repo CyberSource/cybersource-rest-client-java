@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PtsV2PaymentsReversalsPost400Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class PtsV2PaymentsReversalsPost400Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -95,7 +95,13 @@ public class PtsV2PaymentsReversalsPost400Response {
     
     INVALID_MERCHANT_CONFIGURATION("INVALID_MERCHANT_CONFIGURATION"),
     
+    PROCESSOR_UNAVAILABLE("PROCESSOR_UNAVAILABLE"),
+    
     AUTH_ALREADY_REVERSED("AUTH_ALREADY_REVERSED"),
+    
+    TRANSACTION_ALREADY_SETTLED("TRANSACTION_ALREADY_SETTLED"),
+    
+    INVALID_AMOUNT("INVALID_AMOUNT"),
     
     MISSING_AUTH("MISSING_AUTH"),
     

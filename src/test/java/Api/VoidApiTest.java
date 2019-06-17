@@ -14,7 +14,6 @@
 package Api;
 
 import Invokers.ApiException;
-import Model.MitVoidRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.PtsV2PaymentsVoidsPost201Response;
 import Model.PtsV2PaymentsVoidsPost400Response;
@@ -38,22 +37,6 @@ public class VoidApiTest {
 
     private final VoidApi api = new VoidApi();
 
-    
-    /**
-     * Merchant Initiated Void
-     *
-     * This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void mitVoidTest() throws ApiException {
-        MitVoidRequest mitVoidRequest = null;
-        PtsV2PaymentsVoidsPost201Response response = api.mitVoid(mitVoidRequest);
-
-        // TODO: test validations
-    }
     
     /**
      * Void a Capture

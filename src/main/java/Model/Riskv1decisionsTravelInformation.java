@@ -29,8 +29,11 @@ import java.util.List;
 /**
  * Riskv1decisionsTravelInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-09T16:47:53.059+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
 public class Riskv1decisionsTravelInformation {
+  @SerializedName("actualFinalDestination")
+  private String actualFinalDestination = null;
+
   @SerializedName("completeRoute")
   private String completeRoute = null;
 
@@ -42,6 +45,24 @@ public class Riskv1decisionsTravelInformation {
 
   @SerializedName("legs")
   private List<Riskv1decisionsTravelInformationLegs> legs = null;
+
+  public Riskv1decisionsTravelInformation actualFinalDestination(String actualFinalDestination) {
+    this.actualFinalDestination = actualFinalDestination;
+    return this;
+  }
+
+   /**
+   * IATA Code for the actual final destination that the customer intends to travel to. It should be a destination on the completeRoute. 
+   * @return actualFinalDestination
+  **/
+  @ApiModelProperty(value = "IATA Code for the actual final destination that the customer intends to travel to. It should be a destination on the completeRoute. ")
+  public String getActualFinalDestination() {
+    return actualFinalDestination;
+  }
+
+  public void setActualFinalDestination(String actualFinalDestination) {
+    this.actualFinalDestination = actualFinalDestination;
+  }
 
   public Riskv1decisionsTravelInformation completeRoute(String completeRoute) {
     this.completeRoute = completeRoute;
@@ -133,7 +154,8 @@ public class Riskv1decisionsTravelInformation {
       return false;
     }
     Riskv1decisionsTravelInformation riskv1decisionsTravelInformation = (Riskv1decisionsTravelInformation) o;
-    return Objects.equals(this.completeRoute, riskv1decisionsTravelInformation.completeRoute) &&
+    return Objects.equals(this.actualFinalDestination, riskv1decisionsTravelInformation.actualFinalDestination) &&
+        Objects.equals(this.completeRoute, riskv1decisionsTravelInformation.completeRoute) &&
         Objects.equals(this.departureTime, riskv1decisionsTravelInformation.departureTime) &&
         Objects.equals(this.journeyType, riskv1decisionsTravelInformation.journeyType) &&
         Objects.equals(this.legs, riskv1decisionsTravelInformation.legs);
@@ -141,7 +163,7 @@ public class Riskv1decisionsTravelInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(completeRoute, departureTime, journeyType, legs);
+    return Objects.hash(actualFinalDestination, completeRoute, departureTime, journeyType, legs);
   }
 
 
@@ -150,6 +172,7 @@ public class Riskv1decisionsTravelInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsTravelInformation {\n");
     
+    sb.append("    actualFinalDestination: ").append(toIndentedString(actualFinalDestination)).append("\n");
     sb.append("    completeRoute: ").append(toIndentedString(completeRoute)).append("\n");
     sb.append("    departureTime: ").append(toIndentedString(departureTime)).append("\n");
     sb.append("    journeyType: ").append(toIndentedString(journeyType)).append("\n");
