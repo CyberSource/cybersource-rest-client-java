@@ -26,61 +26,10 @@ import java.io.IOException;
 /**
  * ReportingV3NetFundingsGet200ResponseNetFundingSummaries
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class ReportingV3NetFundingsGet200ResponseNetFundingSummaries {
-  /**
-   * Gets or Sets type
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    PURCHASES("PURCHASES"),
-    
-    REFUNDS("REFUNDS"),
-    
-    FEES("FEES"),
-    
-    CHARGEBACKS("CHARGEBACKS");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String text) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return TypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("type")
-  private TypeEnum type = null;
+  private String type = null;
 
   @SerializedName("paymentSubType")
   private String paymentSubType = null;
@@ -103,21 +52,21 @@ public class ReportingV3NetFundingsGet200ResponseNetFundingSummaries {
   @SerializedName("currencyCode")
   private String currencyCode = null;
 
-  public ReportingV3NetFundingsGet200ResponseNetFundingSummaries type(TypeEnum type) {
+  public ReportingV3NetFundingsGet200ResponseNetFundingSummaries type(String type) {
     this.type = type;
     return this;
   }
 
    /**
-   * Get type
+   * Valid values: - PURCHASES - REFUNDS - FEES - CHARGEBACKS 
    * @return type
   **/
-  @ApiModelProperty(example = "PURCHASES", value = "")
-  public TypeEnum getType() {
+  @ApiModelProperty(example = "PURCHASES", value = "Valid values: - PURCHASES - REFUNDS - FEES - CHARGEBACKS ")
+  public String getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(String type) {
     this.type = type;
   }
 

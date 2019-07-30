@@ -42,7 +42,7 @@ powershell -Command " Set-Content ..\src\main\java\Api\SecureFileShareApi.java (
 
 powershell -Command " Set-Content ..\src\main\java\Api\SearchTransactionsApi.java ((get-content ..\src\main\java\Api\SearchTransactionsApi.java -raw) -replace '(?m)(.*)^*final String\[\] localVarAccepts = {[\r\n\s]+\"application\/json;charset=utf-8\"[\r\n\s]+};', 'final String[] localVarAccepts ={\"*/*\"};') "
 
-powershell -Command " Set-Content ..\src\main\java\Api\PayerAuthenticationApi.java ((get-content ..\src\main\java\Api\PayerAuthenticationApi.java -raw) -replace '(?m)(.*)^*final String\[\] localVarAccepts = {[\r\n\s]+\"application\/json;charset=utf-8\"[\r\n\s]+};', 'final String[] localVarAccepts = {\"application/hal+json;charset=utf-8\"};') "
+REM powershell -Command " Set-Content ..\src\main\java\Api\PayerAuthenticationApi.java ((get-content ..\src\main\java\Api\PayerAuthenticationApi.java -raw) -replace '(?m)(.*)^*final String\[\] localVarAccepts = {[\r\n\s]+\"application\/json;charset=utf-8\"[\r\n\s]+};', 'final String[] localVarAccepts = {\"application/hal+json;charset=utf-8\"};') "
 
 git checkout ..\pom.xml
 git checkout ..\README.md

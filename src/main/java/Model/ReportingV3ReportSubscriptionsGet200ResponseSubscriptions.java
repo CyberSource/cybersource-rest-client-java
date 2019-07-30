@@ -33,7 +33,7 @@ import org.joda.time.DateTime;
  * Subscription Details
  */
 @ApiModel(description = "Subscription Details")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -44,109 +44,11 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
   @SerializedName("reportDefinitionName")
   private String reportDefinitionName = null;
 
-  /**
-   * Report Format
-   */
-  @JsonAdapter(ReportMimeTypeEnum.Adapter.class)
-  public enum ReportMimeTypeEnum {
-    APPLICATION_XML("application/xml"),
-    
-    TEXT_CSV("text/csv");
-
-    private String value;
-
-    ReportMimeTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReportMimeTypeEnum fromValue(String text) {
-      for (ReportMimeTypeEnum b : ReportMimeTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReportMimeTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReportMimeTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReportMimeTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReportMimeTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("reportMimeType")
-  private ReportMimeTypeEnum reportMimeType = null;
-
-  /**
-   * Report Frequency
-   */
-  @JsonAdapter(ReportFrequencyEnum.Adapter.class)
-  public enum ReportFrequencyEnum {
-    DAILY("DAILY"),
-    
-    WEEKLY("WEEKLY"),
-    
-    MONTHLY("MONTHLY"),
-    
-    ADHOC("ADHOC");
-
-    private String value;
-
-    ReportFrequencyEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReportFrequencyEnum fromValue(String text) {
-      for (ReportFrequencyEnum b : ReportFrequencyEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReportFrequencyEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReportFrequencyEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReportFrequencyEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReportFrequencyEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
+  private String reportMimeType = null;
 
   @SerializedName("reportFrequency")
-  private ReportFrequencyEnum reportFrequency = null;
+  private String reportFrequency = null;
 
   @SerializedName("reportName")
   private String reportName = null;
@@ -226,39 +128,39 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
     this.reportDefinitionName = reportDefinitionName;
   }
 
-  public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions reportMimeType(ReportMimeTypeEnum reportMimeType) {
+  public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions reportMimeType(String reportMimeType) {
     this.reportMimeType = reportMimeType;
     return this;
   }
 
    /**
-   * Report Format
+   * Report Format                          Valid values: - application/xml - text/csv 
    * @return reportMimeType
   **/
-  @ApiModelProperty(example = "application/xml", value = "Report Format")
-  public ReportMimeTypeEnum getReportMimeType() {
+  @ApiModelProperty(example = "application/xml", value = "Report Format                          Valid values: - application/xml - text/csv ")
+  public String getReportMimeType() {
     return reportMimeType;
   }
 
-  public void setReportMimeType(ReportMimeTypeEnum reportMimeType) {
+  public void setReportMimeType(String reportMimeType) {
     this.reportMimeType = reportMimeType;
   }
 
-  public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions reportFrequency(ReportFrequencyEnum reportFrequency) {
+  public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions reportFrequency(String reportFrequency) {
     this.reportFrequency = reportFrequency;
     return this;
   }
 
    /**
-   * Report Frequency
+   * &#39;Report Frequency&#39;  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
    * @return reportFrequency
   **/
-  @ApiModelProperty(example = "DAILY", value = "Report Frequency")
-  public ReportFrequencyEnum getReportFrequency() {
+  @ApiModelProperty(example = "DAILY", value = "'Report Frequency'  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC ")
+  public String getReportFrequency() {
     return reportFrequency;
   }
 
-  public void setReportFrequency(ReportFrequencyEnum reportFrequency) {
+  public void setReportFrequency(String reportFrequency) {
     this.reportFrequency = reportFrequency;
   }
 

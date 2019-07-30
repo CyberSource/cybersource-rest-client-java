@@ -23,7 +23,7 @@ Download a report using the unique report name and date.
 
 
 ReportDownloadsApi apiInstance = new ReportDownloadsApi();
-LocalDate reportDate = new LocalDate(); // LocalDate | Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd 
+LocalDate reportDate = new LocalDate(); // LocalDate | Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd 
 String reportName = "reportName_example"; // String | Name of the report to download
 String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
 try {
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reportDate** | **LocalDate**| Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd  |
+ **reportDate** | **LocalDate**| Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd  |
  **reportName** | **String**| Name of the report to download |
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
 

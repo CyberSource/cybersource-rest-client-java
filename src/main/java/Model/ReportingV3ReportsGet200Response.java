@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.ReportingV3ReportsGet200ResponseReports;
+import Model.ReportingV3ReportsGet200ResponseReportSearchResults;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,35 +29,35 @@ import java.util.List;
 /**
  * ReportingV3ReportsGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class ReportingV3ReportsGet200Response {
-  @SerializedName("reports")
-  private List<ReportingV3ReportsGet200ResponseReports> reports = null;
+  @SerializedName("reportSearchResults")
+  private List<ReportingV3ReportsGet200ResponseReportSearchResults> reportSearchResults = null;
 
-  public ReportingV3ReportsGet200Response reports(List<ReportingV3ReportsGet200ResponseReports> reports) {
-    this.reports = reports;
+  public ReportingV3ReportsGet200Response reportSearchResults(List<ReportingV3ReportsGet200ResponseReportSearchResults> reportSearchResults) {
+    this.reportSearchResults = reportSearchResults;
     return this;
   }
 
-  public ReportingV3ReportsGet200Response addReportsItem(ReportingV3ReportsGet200ResponseReports reportsItem) {
-    if (this.reports == null) {
-      this.reports = new ArrayList<ReportingV3ReportsGet200ResponseReports>();
+  public ReportingV3ReportsGet200Response addReportSearchResultsItem(ReportingV3ReportsGet200ResponseReportSearchResults reportSearchResultsItem) {
+    if (this.reportSearchResults == null) {
+      this.reportSearchResults = new ArrayList<ReportingV3ReportsGet200ResponseReportSearchResults>();
     }
-    this.reports.add(reportsItem);
+    this.reportSearchResults.add(reportSearchResultsItem);
     return this;
   }
 
    /**
-   * Get reports
-   * @return reports
+   * Get reportSearchResults
+   * @return reportSearchResults
   **/
   @ApiModelProperty(value = "")
-  public List<ReportingV3ReportsGet200ResponseReports> getReports() {
-    return reports;
+  public List<ReportingV3ReportsGet200ResponseReportSearchResults> getReportSearchResults() {
+    return reportSearchResults;
   }
 
-  public void setReports(List<ReportingV3ReportsGet200ResponseReports> reports) {
-    this.reports = reports;
+  public void setReportSearchResults(List<ReportingV3ReportsGet200ResponseReportSearchResults> reportSearchResults) {
+    this.reportSearchResults = reportSearchResults;
   }
 
 
@@ -70,12 +70,12 @@ public class ReportingV3ReportsGet200Response {
       return false;
     }
     ReportingV3ReportsGet200Response reportingV3ReportsGet200Response = (ReportingV3ReportsGet200Response) o;
-    return Objects.equals(this.reports, reportingV3ReportsGet200Response.reports);
+    return Objects.equals(this.reportSearchResults, reportingV3ReportsGet200Response.reportSearchResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reports);
+    return Objects.hash(reportSearchResults);
   }
 
 
@@ -84,7 +84,7 @@ public class ReportingV3ReportsGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ReportsGet200Response {\n");
     
-    sb.append("    reports: ").append(toIndentedString(reports)).append("\n");
+    sb.append("    reportSearchResults: ").append(toIndentedString(reportSearchResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }

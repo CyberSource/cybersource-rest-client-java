@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1decisionsTravelInformationLegs
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class Riskv1decisionsTravelInformationLegs {
   @SerializedName("origination")
   private String origination = null;
@@ -79,10 +79,10 @@ public class Riskv1decisionsTravelInformationLegs {
   }
 
    /**
-   * Departure date and time for the nth leg of the trip. Use one of the following formats:   - yyyy-MM-dd HH:mm z   - yyyy-MM-dd hh:mm a z   - yyyy-MM-dd hh:mma z   &#x60;HH&#x60; &#x3D; hour in 24-hour format   &#x60;hh&#x60; &#x3D; hour in 12-hour format   &#x60;a&#x60; &#x3D; am or pm (case insensitive)   &#x60;z&#x60; &#x3D; time zone of the departing flight, for example: If the   airline is based in city A, but the flight departs from city   B, z is the time zone of city B at the time of departure. **Important** For travel information, use GMT instead of UTC, or use the local time zone. #### Examples 2011-03-20 11:30 PM PDT 2011-03-20 11:30pm GMT 2011-03-20 11:30pm GMT-05:00 Eastern Standard Time: GMT-05:00 or EST **Note** When specifying an offset from GMT, the format must be exactly as specified in the example. Insert no spaces between the time zone and the offset. 
+   * Departure date and time for the each leg of the trip. Use one of the following formats: - &#x60;yyyy-MM-dd HH:mm z&#x60; - &#x60;yyyy-MM-dd hh:mm a z&#x60; - &#x60;yyyy-MM-dd hh:mma z&#x60;  Where:\\ &#x60;HH&#x60; &#x3D; hour in 24-hour format\\ &#x60;hh&#x60; &#x3D; hour in 12-hour format\\ &#x60;a&#x60; &#x3D; am or pm (case insensitive)\\ &#x60;z&#x60; &#x3D; time zone of the departing flight. For example, if the airline is based in city A, but the flight departs from city B, &#x60;z&#x60; is the time zone of city B at the time of departure.\\ **Important** For travel information, use GMT instead of UTC, or use the local time zone.  #### Examples  2011-03-20 11:30 PM PDT\\ 2011-03-20 11:30pm GMT\\ 2011-03-20 11:30pm GMT-05:00\\ Eastern Standard Time: GMT-05:00 or EST\\  **Note** When specifying an offset from GMT, the format must be exactly as specified in the example. Insert no spaces between the time zone and the offset. 
    * @return departureDateTime
   **/
-  @ApiModelProperty(value = "Departure date and time for the nth leg of the trip. Use one of the following formats:   - yyyy-MM-dd HH:mm z   - yyyy-MM-dd hh:mm a z   - yyyy-MM-dd hh:mma z   `HH` = hour in 24-hour format   `hh` = hour in 12-hour format   `a` = am or pm (case insensitive)   `z` = time zone of the departing flight, for example: If the   airline is based in city A, but the flight departs from city   B, z is the time zone of city B at the time of departure. **Important** For travel information, use GMT instead of UTC, or use the local time zone. #### Examples 2011-03-20 11:30 PM PDT 2011-03-20 11:30pm GMT 2011-03-20 11:30pm GMT-05:00 Eastern Standard Time: GMT-05:00 or EST **Note** When specifying an offset from GMT, the format must be exactly as specified in the example. Insert no spaces between the time zone and the offset. ")
+  @ApiModelProperty(value = "Departure date and time for the each leg of the trip. Use one of the following formats: - `yyyy-MM-dd HH:mm z` - `yyyy-MM-dd hh:mm a z` - `yyyy-MM-dd hh:mma z`  Where:\\ `HH` = hour in 24-hour format\\ `hh` = hour in 12-hour format\\ `a` = am or pm (case insensitive)\\ `z` = time zone of the departing flight. For example, if the airline is based in city A, but the flight departs from city B, `z` is the time zone of city B at the time of departure.\\ **Important** For travel information, use GMT instead of UTC, or use the local time zone.  #### Examples  2011-03-20 11:30 PM PDT\\ 2011-03-20 11:30pm GMT\\ 2011-03-20 11:30pm GMT-05:00\\ Eastern Standard Time: GMT-05:00 or EST\\  **Note** When specifying an offset from GMT, the format must be exactly as specified in the example. Insert no spaces between the time zone and the offset. ")
   public String getDepartureDateTime() {
     return departureDateTime;
   }

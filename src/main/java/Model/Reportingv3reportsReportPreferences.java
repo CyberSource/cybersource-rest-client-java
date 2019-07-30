@@ -27,60 +27,13 @@ import java.io.IOException;
  * Report Preferences
  */
 @ApiModel(description = "Report Preferences")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class Reportingv3reportsReportPreferences {
   @SerializedName("signedAmounts")
   private Boolean signedAmounts = null;
 
-  /**
-   * Specify the field naming convention to be followed in reports (applicable to only csv report formats
-   */
-  @JsonAdapter(FieldNameConventionEnum.Adapter.class)
-  public enum FieldNameConventionEnum {
-    SOAPI("SOAPI"),
-    
-    SCMP("SCMP");
-
-    private String value;
-
-    FieldNameConventionEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static FieldNameConventionEnum fromValue(String text) {
-      for (FieldNameConventionEnum b : FieldNameConventionEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<FieldNameConventionEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final FieldNameConventionEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public FieldNameConventionEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return FieldNameConventionEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("fieldNameConvention")
-  private FieldNameConventionEnum fieldNameConvention = null;
+  private String fieldNameConvention = null;
 
   public Reportingv3reportsReportPreferences signedAmounts(Boolean signedAmounts) {
     this.signedAmounts = signedAmounts;
@@ -100,21 +53,21 @@ public class Reportingv3reportsReportPreferences {
     this.signedAmounts = signedAmounts;
   }
 
-  public Reportingv3reportsReportPreferences fieldNameConvention(FieldNameConventionEnum fieldNameConvention) {
+  public Reportingv3reportsReportPreferences fieldNameConvention(String fieldNameConvention) {
     this.fieldNameConvention = fieldNameConvention;
     return this;
   }
 
    /**
-   * Specify the field naming convention to be followed in reports (applicable to only csv report formats
+   * Specify the field naming convention to be followed in reports (applicable to only csv report formats)  Valid values: - SOAPI - SCMP 
    * @return fieldNameConvention
   **/
-  @ApiModelProperty(value = "Specify the field naming convention to be followed in reports (applicable to only csv report formats")
-  public FieldNameConventionEnum getFieldNameConvention() {
+  @ApiModelProperty(value = "Specify the field naming convention to be followed in reports (applicable to only csv report formats)  Valid values: - SOAPI - SCMP ")
+  public String getFieldNameConvention() {
     return fieldNameConvention;
   }
 
-  public void setFieldNameConvention(FieldNameConventionEnum fieldNameConvention) {
+  public void setFieldNameConvention(String fieldNameConvention) {
     this.fieldNameConvention = fieldNameConvention;
   }
 

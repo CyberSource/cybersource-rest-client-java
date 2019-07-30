@@ -179,6 +179,7 @@ public class ApiClient {
 	}
 
 	public ApiClient(MerchantConfig merchantConfig) {
+		this();
 		this.merchantConfig = merchantConfig;
 
 	}
@@ -1072,6 +1073,9 @@ public class ApiClient {
 				}
 			}
 			T data = handleResponse(response, returnType);
+			
+			response.body().close();
+			
 			if (headerType != null)
 				if (!headerType.equals("application/xml") && !headerType.equals("text/csv")
 						&& !headerType.equals("application/pdf")) {

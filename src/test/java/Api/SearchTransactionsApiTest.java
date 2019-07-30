@@ -17,6 +17,7 @@ import Invokers.ApiException;
 import Model.CreateSearchRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.TssV2TransactionsPost201Response;
+import Model.TssV2TransactionsPost201Response1;
 import Model.TssV2TransactionsPost400Response;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -62,7 +63,7 @@ public class SearchTransactionsApiTest {
     @Test
     public void getSearchTest() throws ApiException {
         String searchId = null;
-        TssV2TransactionsPost201Response response = api.getSearch(searchId);
+        TssV2TransactionsPost201Response1 response = api.getSearch(searchId);
 
         // TODO: test validations
     }

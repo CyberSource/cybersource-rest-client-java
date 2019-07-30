@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * BillTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class BillTo {
   @SerializedName("firstName")
   private String firstName = null;

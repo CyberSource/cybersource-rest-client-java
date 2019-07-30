@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePaymentInformationBankAccount
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
   @SerializedName("suffix")
   private String suffix = null;
@@ -55,10 +55,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
   }
 
    /**
-   * The description for this field is not available.
+   * Last four digits of the customer’s payment account number. 
    * @return suffix
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Last four digits of the customer’s payment account number. ")
   public String getSuffix() {
     return suffix;
   }
@@ -73,10 +73,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
   }
 
    /**
-   * The description for this field is not available.
+   * Bank Identification Number (BIN). This is the initial four to six numbers on a credit card account number. 
    * @return prefix
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Bank Identification Number (BIN). This is the initial four to six numbers on a credit card account number. ")
   public String getPrefix() {
     return prefix;
   }
@@ -127,10 +127,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
   }
 
    /**
-   * The description for this field is not available.
+   * Name used on the bank account. You can use this field only when scoring a direct debit transaction 
    * @return name
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Name used on the bank account. You can use this field only when scoring a direct debit transaction ")
   public String getName() {
     return name;
   }
@@ -145,10 +145,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
   }
 
    /**
-   * The description for this field is not available.
+   * Code used to validate the customer’s account number. Required for some countries if you do not or are not allowed to provide the IBAN instead. You may use this field only when scoring a direct debit transaction.  For all possible values, see the &#x60;bank_check_digit&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
    * @return checkDigit
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Code used to validate the customer’s account number. Required for some countries if you do not or are not allowed to provide the IBAN instead. You may use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_check_digit` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
   public String getCheckDigit() {
     return checkDigit;
   }
@@ -163,10 +163,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
   }
 
    /**
-   * Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor. See \&quot;Encoded Account Numbers,\&quot; page 39. 
+   * Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor.  For details, see &#x60;account_encoder_id&#x60; request-level field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return encoderId
   **/
-  @ApiModelProperty(value = "Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor. See \"Encoded Account Numbers,\" page 39. ")
+  @ApiModelProperty(value = "Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor.  For details, see `account_encoder_id` request-level field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getEncoderId() {
     return encoderId;
   }

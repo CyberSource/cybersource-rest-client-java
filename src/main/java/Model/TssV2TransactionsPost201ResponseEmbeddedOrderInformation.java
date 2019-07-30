@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedOrderInformation {
   @SerializedName("billTo")
   private TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo billTo = null;

@@ -26,60 +26,13 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseErrorInformationDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class PtsV2PaymentsPost201ResponseErrorInformationDetails {
   @SerializedName("field")
   private String field = null;
 
-  /**
-   * Possible reasons for the error.  Possible values:  - MISSING_FIELD  - INVALID_DATA 
-   */
-  @JsonAdapter(ReasonEnum.Adapter.class)
-  public enum ReasonEnum {
-    MISSING_FIELD("MISSING_FIELD"),
-    
-    INVALID_DATA("INVALID_DATA");
-
-    private String value;
-
-    ReasonEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReasonEnum fromValue(String text) {
-      for (ReasonEnum b : ReasonEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReasonEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReasonEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReasonEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReasonEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("reason")
-  private ReasonEnum reason = null;
+  private String reason = null;
 
   public PtsV2PaymentsPost201ResponseErrorInformationDetails field(String field) {
     this.field = field;
@@ -99,7 +52,7 @@ public class PtsV2PaymentsPost201ResponseErrorInformationDetails {
     this.field = field;
   }
 
-  public PtsV2PaymentsPost201ResponseErrorInformationDetails reason(ReasonEnum reason) {
+  public PtsV2PaymentsPost201ResponseErrorInformationDetails reason(String reason) {
     this.reason = reason;
     return this;
   }
@@ -109,11 +62,11 @@ public class PtsV2PaymentsPost201ResponseErrorInformationDetails {
    * @return reason
   **/
   @ApiModelProperty(value = "Possible reasons for the error.  Possible values:  - MISSING_FIELD  - INVALID_DATA ")
-  public ReasonEnum getReason() {
+  public String getReason() {
     return reason;
   }
 
-  public void setReason(ReasonEnum reason) {
+  public void setReason(String reason) {
     this.reason = reason;
   }
 

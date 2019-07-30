@@ -53,7 +53,7 @@ public class TransactionBatchesApiTest {
     }
     
     /**
-     * Gets a list of batch files
+     * Get a list of batch files
      *
      * Provide the search range
      *

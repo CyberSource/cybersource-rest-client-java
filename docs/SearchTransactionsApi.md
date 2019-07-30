@@ -55,7 +55,7 @@ No authorization required
 
 <a name="getSearch"></a>
 # **getSearch**
-> TssV2TransactionsPost201Response getSearch(searchId)
+> TssV2TransactionsPost201Response1 getSearch(searchId)
 
 Get Search results
 
@@ -71,7 +71,7 @@ Include the Search ID in the GET request to retrieve the search results.
 SearchTransactionsApi apiInstance = new SearchTransactionsApi();
 String searchId = "searchId_example"; // String | Search ID.
 try {
-    TssV2TransactionsPost201Response result = apiInstance.getSearch(searchId);
+    TssV2TransactionsPost201Response1 result = apiInstance.getSearch(searchId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SearchTransactionsApi#getSearch");
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TssV2TransactionsPost201Response**](TssV2TransactionsPost201Response.md)
+[**TssV2TransactionsPost201Response1**](TssV2TransactionsPost201Response1.md)
 
 ### Authorization
 

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reports** | [**List&lt;ReportingV3ReportsGet200ResponseReports&gt;**](ReportingV3ReportsGet200ResponseReports.md) |  |  [optional]
+**reportSearchResults** | [**List&lt;ReportingV3ReportsGet200ResponseReportSearchResults&gt;**](ReportingV3ReportsGet200ResponseReportSearchResults.md) |  |  [optional]
 
 
 

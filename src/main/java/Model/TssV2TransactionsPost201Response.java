@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class TssV2TransactionsPost201Response {
   @SerializedName("searchId")
   private String searchId = null;
@@ -59,6 +59,9 @@ public class TssV2TransactionsPost201Response {
 
   @SerializedName("totalCount")
   private Integer totalCount = null;
+
+  @SerializedName("status")
+  private String status = null;
 
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -129,10 +132,10 @@ public class TssV2TransactionsPost201Response {
   }
 
    /**
-   * Time Zone.
+   * Time Zone in ISO format.
    * @return timezone
   **/
-  @ApiModelProperty(value = "Time Zone.")
+  @ApiModelProperty(value = "Time Zone in ISO format.")
   public String getTimezone() {
     return timezone;
   }
@@ -183,10 +186,10 @@ public class TssV2TransactionsPost201Response {
   }
 
    /**
-   * limit on number of results.
+   * Limit on number of results.
    * @return limit
   **/
-  @ApiModelProperty(value = "limit on number of results.")
+  @ApiModelProperty(value = "Limit on number of results.")
   public Integer getLimit() {
     return limit;
   }
@@ -237,16 +240,34 @@ public class TssV2TransactionsPost201Response {
   }
 
    /**
-   * total number of results.
+   * Total number of results.
    * @return totalCount
   **/
-  @ApiModelProperty(value = "total number of results.")
+  @ApiModelProperty(value = "Total number of results.")
   public Integer getTotalCount() {
     return totalCount;
   }
 
   public void setTotalCount(Integer totalCount) {
     this.totalCount = totalCount;
+  }
+
+  public TssV2TransactionsPost201Response status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * The status of the submitted transaction.
+   * @return status
+  **/
+  @ApiModelProperty(value = "The status of the submitted transaction.")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   public TssV2TransactionsPost201Response submitTimeUtc(String submitTimeUtc) {
@@ -323,6 +344,7 @@ public class TssV2TransactionsPost201Response {
         Objects.equals(this.sort, tssV2TransactionsPost201Response.sort) &&
         Objects.equals(this.count, tssV2TransactionsPost201Response.count) &&
         Objects.equals(this.totalCount, tssV2TransactionsPost201Response.totalCount) &&
+        Objects.equals(this.status, tssV2TransactionsPost201Response.status) &&
         Objects.equals(this.submitTimeUtc, tssV2TransactionsPost201Response.submitTimeUtc) &&
         Objects.equals(this.embedded, tssV2TransactionsPost201Response.embedded) &&
         Objects.equals(this.links, tssV2TransactionsPost201Response.links);
@@ -330,7 +352,7 @@ public class TssV2TransactionsPost201Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(searchId, save, name, timezone, query, offset, limit, sort, count, totalCount, submitTimeUtc, embedded, links);
+    return Objects.hash(searchId, save, name, timezone, query, offset, limit, sort, count, totalCount, status, submitTimeUtc, embedded, links);
   }
 
 
@@ -349,6 +371,7 @@ public class TssV2TransactionsPost201Response {
     sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");

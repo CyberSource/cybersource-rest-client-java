@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * ReportingV3ReportDefinitionsGet200ResponseReportDefinitions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions {
   @SerializedName("type")
   private String type = null;
@@ -39,55 +39,8 @@ public class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions {
   @SerializedName("reportDefintionName")
   private String reportDefintionName = null;
 
-  /**
-   * Gets or Sets supportedFormats
-   */
-  @JsonAdapter(SupportedFormatsEnum.Adapter.class)
-  public enum SupportedFormatsEnum {
-    APPLICATION_XML("application/xml"),
-    
-    TEXT_CSV("text/csv");
-
-    private String value;
-
-    SupportedFormatsEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static SupportedFormatsEnum fromValue(String text) {
-      for (SupportedFormatsEnum b : SupportedFormatsEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<SupportedFormatsEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final SupportedFormatsEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public SupportedFormatsEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return SupportedFormatsEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("supportedFormats")
-  private List<SupportedFormatsEnum> supportedFormats = null;
+  private List<String> supportedFormats = null;
 
   @SerializedName("description")
   private String description = null;
@@ -146,14 +99,14 @@ public class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions {
     this.reportDefintionName = reportDefintionName;
   }
 
-  public ReportingV3ReportDefinitionsGet200ResponseReportDefinitions supportedFormats(List<SupportedFormatsEnum> supportedFormats) {
+  public ReportingV3ReportDefinitionsGet200ResponseReportDefinitions supportedFormats(List<String> supportedFormats) {
     this.supportedFormats = supportedFormats;
     return this;
   }
 
-  public ReportingV3ReportDefinitionsGet200ResponseReportDefinitions addSupportedFormatsItem(SupportedFormatsEnum supportedFormatsItem) {
+  public ReportingV3ReportDefinitionsGet200ResponseReportDefinitions addSupportedFormatsItem(String supportedFormatsItem) {
     if (this.supportedFormats == null) {
-      this.supportedFormats = new ArrayList<SupportedFormatsEnum>();
+      this.supportedFormats = new ArrayList<String>();
     }
     this.supportedFormats.add(supportedFormatsItem);
     return this;
@@ -164,11 +117,11 @@ public class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions {
    * @return supportedFormats
   **/
   @ApiModelProperty(value = "")
-  public List<SupportedFormatsEnum> getSupportedFormats() {
+  public List<String> getSupportedFormats() {
     return supportedFormats;
   }
 
-  public void setSupportedFormats(List<SupportedFormatsEnum> supportedFormats) {
+  public void setSupportedFormats(List<String> supportedFormats) {
     this.supportedFormats = supportedFormats;
   }
 

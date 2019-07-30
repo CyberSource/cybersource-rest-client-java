@@ -38,7 +38,7 @@ import java.util.List;
 /**
  * CreateCreditRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class CreateCreditRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -246,10 +246,10 @@ public class CreateCreditRequest {
   }
 
    /**
-   * The description for this field is not available.
+   * The object containing the custom data that the merchant defines. 
    * @return merchantDefinedInformation
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "The object containing the custom data that the merchant defines. ")
   public List<Ptsv2paymentsMerchantDefinedInformation> getMerchantDefinedInformation() {
     return merchantDefinedInformation;
   }

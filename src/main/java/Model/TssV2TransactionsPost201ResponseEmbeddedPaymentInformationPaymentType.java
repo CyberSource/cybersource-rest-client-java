@@ -26,30 +26,30 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType {
-  @SerializedName("type")
-  private String type = null;
+  @SerializedName("name")
+  private String name = null;
 
   @SerializedName("method")
   private String method = null;
 
-  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType type(String type) {
-    this.type = type;
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * The type of payment method. This is required for non-credit card payment.  Possible values:  - BANK_TRANSFER  - CARD (Default)  - EWALLET  - DIGITAL  - DIRECT_DEBIT  - INVOICE  - PUSH_PAYMENT  - CARRIER_BILLING  - CASH  - CHECK  - CRYPTOGRAPHIC  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. 
-   * @return type
+   * A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. 
+   * @return name
   **/
-  @ApiModelProperty(value = "The type of payment method. This is required for non-credit card payment.  Possible values:  - BANK_TRANSFER  - CARD (Default)  - EWALLET  - DIGITAL  - DIRECT_DEBIT  - INVOICE  - PUSH_PAYMENT  - CARRIER_BILLING  - CASH  - CHECK  - CRYPTOGRAPHIC  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. ")
-  public String getType() {
-    return type;
+  @ApiModelProperty(value = "A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. ")
+  public String getName() {
+    return name;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType method(String method) {
@@ -58,10 +58,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentTy
   }
 
    /**
-   * This is an optional field.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. 
+   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal
    * @return method
   **/
-  @ApiModelProperty(value = "This is an optional field.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. ")
+  @ApiModelProperty(value = "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal")
   public String getMethod() {
     return method;
   }
@@ -80,13 +80,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentTy
       return false;
     }
     TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType tssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType = (TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType) o;
-    return Objects.equals(this.type, tssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType.type) &&
+    return Objects.equals(this.name, tssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType.name) &&
         Objects.equals(this.method, tssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType.method);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, method);
+    return Objects.hash(name, method);
   }
 
 
@@ -95,7 +95,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentTy
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();

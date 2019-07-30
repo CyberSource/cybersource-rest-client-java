@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200ResponseErrorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class TssV2TransactionsGet200ResponseErrorInformation {
   @SerializedName("reason")
   private String reason = null;
@@ -46,10 +46,10 @@ public class TssV2TransactionsGet200ResponseErrorInformation {
   }
 
    /**
-   * The description for this field is not available.
+   * 1-word description of why a request succeeded or failed. 
    * @return reason
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "1-word description of why a request succeeded or failed. ")
   public String getReason() {
     return reason;
   }
@@ -64,10 +64,10 @@ public class TssV2TransactionsGet200ResponseErrorInformation {
   }
 
    /**
-   * The description for this field is not available.
+   * The user-facing description for why a request succeeded or failed. 
    * @return message
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "The user-facing description for why a request succeeded or failed. ")
   public String getMessage() {
     return message;
   }

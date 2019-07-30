@@ -29,7 +29,7 @@ import org.joda.time.DateTime;
 /**
  * UmsV1UsersGet200ResponseAccountInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class UmsV1UsersGet200ResponseAccountInformation {
   @SerializedName("userName")
   private String userName = null;
@@ -40,63 +40,8 @@ public class UmsV1UsersGet200ResponseAccountInformation {
   @SerializedName("permissions")
   private List<String> permissions = null;
 
-  /**
-   * Gets or Sets status
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    ACTIVE("active"),
-    
-    INACTIVE("inactive"),
-    
-    LOCKED("locked"),
-    
-    DISABLED("disabled"),
-    
-    FORGOTPASSWORD("forgotpassword"),
-    
-    DELETED("deleted");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("status")
-  private StatusEnum status = null;
+  private String status = null;
 
   @SerializedName("createdTime")
   private DateTime createdTime = null;
@@ -172,21 +117,21 @@ public class UmsV1UsersGet200ResponseAccountInformation {
     this.permissions = permissions;
   }
 
-  public UmsV1UsersGet200ResponseAccountInformation status(StatusEnum status) {
+  public UmsV1UsersGet200ResponseAccountInformation status(String status) {
     this.status = status;
     return this;
   }
 
    /**
-   * Get status
+   * Valid values: - active - inactive - locked - disabled - forgotpassword - deleted 
    * @return status
   **/
-  @ApiModelProperty(value = "")
-  public StatusEnum getStatus() {
+  @ApiModelProperty(value = "Valid values: - active - inactive - locked - disabled - forgotpassword - deleted ")
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 

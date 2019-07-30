@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation {
   @SerializedName("eciRaw")
   private String eciRaw = null;
@@ -46,10 +46,10 @@ public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation {
   }
 
    /**
-   * Raw electronic commerce indicator (ECI). For the description and requirements, see \&quot;Payer Authentication,\&quot; page 180.
+   * Raw electronic commerce indicator (ECI).  For details, see &#x60;eci_raw&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return eciRaw
   **/
-  @ApiModelProperty(value = "Raw electronic commerce indicator (ECI). For the description and requirements, see \"Payer Authentication,\" page 180.")
+  @ApiModelProperty(value = "Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getEciRaw() {
     return eciRaw;
   }
@@ -82,10 +82,10 @@ public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation {
   }
 
    /**
-   * Transaction identifier. For the description and requirements, see \&quot;Payer Authentication,\&quot; page 180.
+   * Transaction identifier.  For details, see &#x60;xid&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return xid
   **/
-  @ApiModelProperty(value = "Transaction identifier. For the description and requirements, see \"Payer Authentication,\" page 180.")
+  @ApiModelProperty(value = "Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getXid() {
     return xid;
   }

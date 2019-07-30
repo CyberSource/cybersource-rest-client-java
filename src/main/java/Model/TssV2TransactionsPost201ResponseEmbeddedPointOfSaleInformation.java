@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsClientReferenceInformationPartner;
+import Model.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
@@ -39,7 +39,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
   private String deviceId = null;
 
   @SerializedName("partner")
-  private Ptsv2paymentsClientReferenceInformationPartner partner = null;
+  private TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner partner = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation terminalId(String terminalId) {
     this.terminalId = terminalId;
@@ -83,10 +83,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
   }
 
    /**
-   * The description for this field is not available.
+   * Value created by the client software that uniquely identifies the POS device. CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only for specific CyberSource integrations. For details, see the &#x60;pos_device_id&#x60; field description in the [Card-Present Processing Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return deviceId
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Value created by the client software that uniquely identifies the POS device. CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only for specific CyberSource integrations. For details, see the `pos_device_id` field description in the [Card-Present Processing Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getDeviceId() {
     return deviceId;
   }
@@ -95,7 +95,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
     this.deviceId = deviceId;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation partner(Ptsv2paymentsClientReferenceInformationPartner partner) {
+  public TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation partner(TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner partner) {
     this.partner = partner;
     return this;
   }
@@ -105,11 +105,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
    * @return partner
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsClientReferenceInformationPartner getPartner() {
+  public TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner getPartner() {
     return partner;
   }
 
-  public void setPartner(Ptsv2paymentsClientReferenceInformationPartner partner) {
+  public void setPartner(TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner partner) {
     this.partner = partner;
   }
 

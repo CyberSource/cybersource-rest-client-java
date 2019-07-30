@@ -27,58 +27,13 @@ import java.io.IOException;
 /**
  * PersonalIdentification
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class PersonalIdentification {
   @SerializedName("id")
   private String id = null;
 
-  /**
-   * Type of personal identification.  **Important**: Contact your TeleCheck representative to learn whether this field is required or optional. 
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    LICENSE("driver license");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String text) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return TypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("type")
-  private TypeEnum type = null;
+  private String type = null;
 
   @SerializedName("issuedBy")
   private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformationIssuedBy issuedBy = null;
@@ -101,21 +56,21 @@ public class PersonalIdentification {
     this.id = id;
   }
 
-  public PersonalIdentification type(TypeEnum type) {
+  public PersonalIdentification type(String type) {
     this.type = type;
     return this;
   }
 
    /**
-   * Type of personal identification.  **Important**: Contact your TeleCheck representative to learn whether this field is required or optional. 
+   * Type of personal identification. **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license 
    * @return type
   **/
-  @ApiModelProperty(example = "driver license", value = "Type of personal identification.  **Important**: Contact your TeleCheck representative to learn whether this field is required or optional. ")
-  public TypeEnum getType() {
+  @ApiModelProperty(example = "driver license", value = "Type of personal identification. **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license ")
+  public String getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(String type) {
     this.type = type;
   }
 

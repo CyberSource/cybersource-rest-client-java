@@ -9,18 +9,8 @@ Name | Type | Description | Notes
 **createdTime** | [**DateTime**](DateTime.md) | Date and time for the file in PST |  [optional]
 **lastModifiedTime** | [**DateTime**](DateTime.md) | Date and time for the file in PST |  [optional]
 **date** | [**LocalDate**](LocalDate.md) | Date and time for the file in PST |  [optional]
-**mimeType** | [**MimeTypeEnum**](#MimeTypeEnum) | File extension |  [optional]
+**mimeType** | **String** | &#39;File extension&#39;  Valid values: - &#39;application/xml&#39; - &#39;text/csv&#39; - &#39;application/pdf&#39; - &#39;application/octet-stream&#39;  |  [optional]
 **size** | **Integer** | Size of the file in bytes |  [optional]
-
-
-<a name="MimeTypeEnum"></a>
-## Enum: MimeTypeEnum
-Name | Value
----- | -----
-APPLICATION_XML | &quot;application/xml&quot;
-TEXT_CSV | &quot;text/csv&quot;
-APPLICATION_PDF | &quot;application/pdf&quot;
-APPLICATION_OCTET_STREAM | &quot;application/octet-stream&quot;
 
 
 
