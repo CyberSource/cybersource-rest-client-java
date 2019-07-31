@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **organizationId** | **String** | Valid CyberSource organizationId |  [optional]
 **reportDefinitionName** | **String** | Valid Report Definition Name | 
 **reportFields** | **List&lt;String&gt;** |  | 
-**reportMimeType** | [**ReportMimeTypeEnum**](#ReportMimeTypeEnum) |  | 
-**reportFrequency** | [**ReportFrequencyEnum**](#ReportFrequencyEnum) | The frequency for which subscription is created. | 
+**reportMimeType** | **String** | Valid values: - application/xml - text/csv  | 
+**reportFrequency** | **String** | &#39;The frequency for which subscription is created.&#39;  Valid values: - &#39;DAILY&#39; - &#39;WEEKLY&#39; - &#39;MONTHLY&#39; - &#39;ADHOC&#39;  | 
 **reportName** | **String** |  | 
 **timezone** | **String** |  | 
 **startTime** | **String** | The hour at which the report generation should start. It should be in hhmm format. | 
@@ -16,24 +16,6 @@ Name | Type | Description | Notes
 **reportFilters** | [**Map&lt;String, List&lt;String&gt;&gt;**](List.md) | List of filters to apply |  [optional]
 **reportPreferences** | [**Reportingv3reportsReportPreferences**](Reportingv3reportsReportPreferences.md) |  |  [optional]
 **groupName** | **String** | Valid GroupName |  [optional]
-
-
-<a name="ReportMimeTypeEnum"></a>
-## Enum: ReportMimeTypeEnum
-Name | Value
----- | -----
-APPLICATION_XML | &quot;application/xml&quot;
-TEXT_CSV | &quot;text/csv&quot;
-
-
-<a name="ReportFrequencyEnum"></a>
-## Enum: ReportFrequencyEnum
-Name | Value
----- | -----
-DAILY | &quot;DAILY&quot;
-WEEKLY | &quot;WEEKLY&quot;
-MONTHLY | &quot;MONTHLY&quot;
-ADHOC | &quot;ADHOC&quot;
 
 
 

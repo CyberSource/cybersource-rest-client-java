@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PaymentInstrumentCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class PaymentInstrumentCard {
   @SerializedName("expirationMonth")
   private String expirationMonth = null;
@@ -34,165 +34,8 @@ public class PaymentInstrumentCard {
   @SerializedName("expirationYear")
   private String expirationYear = null;
 
-  /**
-   * Type of credit card. Possible values:   * Visa (001)   * Mastercard (002) - Eurocard—European regional brand of Mastercard   * American Express (003)   * Discover (004)   * Diners Club (005)   * Carte Blanche (006)   * JCB (007)   * Optima (008)   * Twinpay Credit (011)   * Twinpay Debit (012)   * Walmart (013)   * EnRoute (014)   * Lowes consumer (015)   * Home Depot consumer (016)   * MBNA (017)   * Dicks Sportswear (018)   * Casual Corner (019)   * Sears (020)   * JAL (021)   * Disney (023)   * Maestro (024) - UK Domestic   * Sams Club consumer (025)   * Sams Club business (026)   * Nicos (027)   * Bill me later (028)   * Bebe (029)   * Restoration Hardware (030)   * Delta (031) — use this value only for Ingenico ePayments. For other processors, use 001 for all Visa card types.   * Solo (032)   * Visa Electron (033)   * Dankort (034)   * Laser (035)   * Carte Bleue (036) — formerly Cartes Bancaires   * Cartes Bancaires (036)   * Carta Si (037)   * pinless debit (038)   * encoded account (039)   * UATP (040)   * Household (041)   * Maestro (042) - International   * GE Money UK (043)   * Korean cards (044)   * Style (045)   * JCrew (046)   * PayEase China processing eWallet (047)   * PayEase China processing bank transfer (048)   * Meijer Private Label (049)   * Hipercard (050) — supported only by the Comercio Latino processor.   * Aura (051) — supported only by the Comercio Latino processor.   * Redecard (052)   * ORICO (053)   * Elo (054) — supported only by the Comercio Latino processor.   * Capital One Private Label (055)   * Synchrony Private Label (056)   * Costco Private Label (057)   * mada (060)   * China Union Pay (062)   * Falabella private label (063) 
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    VISA("visa"),
-    
-    MASTERCARD("mastercard"),
-    
-    AMERICAN_EXPRESS("american express"),
-    
-    DISCOVER("discover"),
-    
-    DINERS_CLUB("diners club"),
-    
-    CARTE_BLANCHE("carte blanche"),
-    
-    JCB("jcb"),
-    
-    OPTIMA("optima"),
-    
-    TWINPAY_CREDIT("twinpay credit"),
-    
-    TWINPAY_DEBIT("twinpay debit"),
-    
-    WALMART("walmart"),
-    
-    ENROUTE("enroute"),
-    
-    LOWES_CONSUMER("lowes consumer"),
-    
-    HOME_DEPOT_CONSUMER("home depot consumer"),
-    
-    MBNA("mbna"),
-    
-    DICKS_SPORTSWEAR("dicks sportswear"),
-    
-    CASUAL_CORNER("casual corner"),
-    
-    SEARS("sears"),
-    
-    JAL("jal"),
-    
-    DISNEY("disney"),
-    
-    MAESTRO_UK_DOMESTIC("maestro uk domestic"),
-    
-    SAMS_CLUB_CONSUMER("sams club consumer"),
-    
-    SAMS_CLUB_BUSINESS("sams club business"),
-    
-    NICOS("nicos"),
-    
-    BILL_ME_LATER("bill me later"),
-    
-    BEBE("bebe"),
-    
-    RESTORATION_HARDWARE("restoration hardware"),
-    
-    DELTA_ONLINE("delta online"),
-    
-    SOLO("solo"),
-    
-    VISA_ELECTRON("visa electron"),
-    
-    DANKORT("dankort"),
-    
-    LASER("laser"),
-    
-    CARTE_BLEUE("carte bleue"),
-    
-    CARTA_SI("carta si"),
-    
-    PINLESS_DEBIT("pinless debit"),
-    
-    ENCODED_ACCOUNT("encoded account"),
-    
-    UATP("uatp"),
-    
-    HOUSEHOLD("household"),
-    
-    MAESTRO_INTERNATIONAL("maestro international"),
-    
-    GE_MONEY_UK("ge money uk"),
-    
-    KOREAN_CARDS("korean cards"),
-    
-    STYLE("style"),
-    
-    JCREW("jcrew"),
-    
-    PAYEASE_CHINA_PROCESSING_EWALLET("payease china processing ewallet"),
-    
-    PAYEASE_CHINA_PROCESSING_BANK_TRANSFER("payease china processing bank transfer"),
-    
-    MEIJER_PRIVATE_LABEL("meijer private label"),
-    
-    HIPERCARD("hipercard"),
-    
-    AURA("aura"),
-    
-    REDECARD("redecard"),
-    
-    ORICO("orico"),
-    
-    ELO("elo"),
-    
-    CAPITAL_ONE_PRIVATE_LABEL("capital one private label"),
-    
-    SYNCHRONY_PRIVATE_LABEL("synchrony private label"),
-    
-    CHINA_UNION_PAY("china union pay"),
-    
-    COSTCO_PRIVATE_LABEL("costco private label"),
-    
-    MADA("mada"),
-    
-    FALABELLA_PRIVATE_LABEL("falabella private label");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String text) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return TypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("type")
-  private TypeEnum type = null;
+  private String type = null;
 
   @SerializedName("issueNumber")
   private String issueNumber = null;
@@ -230,10 +73,10 @@ public class PaymentInstrumentCard {
   }
 
    /**
-   * Four-digit year in which the credit card expires. Format: &#x60;YYYY&#x60;. Possible values: &#x60;1900&#x60; through &#x60;2099&#x60;.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See Relaxed Requirements for Address Data and Expiration Date page.  Important: It is your responsibility to determine whether a field is required for the transaction you are requesting.&#39; 
+   * Four-digit year in which the credit card expires. Format: &#x60;YYYY&#x60;. Possible values: &#x60;1900&#x60; through &#x60;2099&#x60;.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For details, see [Relaxed Requirements for Address Data and Expiration Date.](https://www.cybersource.com/developers/integration_methods/relax_avs/).  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.&#39; 
    * @return expirationYear
   **/
-  @ApiModelProperty(example = "2022", value = "Four-digit year in which the credit card expires. Format: `YYYY`. Possible values: `1900` through `2099`.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See Relaxed Requirements for Address Data and Expiration Date page.  Important: It is your responsibility to determine whether a field is required for the transaction you are requesting.' ")
+  @ApiModelProperty(example = "2022", value = "Four-digit year in which the credit card expires. Format: `YYYY`. Possible values: `1900` through `2099`.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For details, see [Relaxed Requirements for Address Data and Expiration Date.](https://www.cybersource.com/developers/integration_methods/relax_avs/).  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.' ")
   public String getExpirationYear() {
     return expirationYear;
   }
@@ -242,21 +85,21 @@ public class PaymentInstrumentCard {
     this.expirationYear = expirationYear;
   }
 
-  public PaymentInstrumentCard type(TypeEnum type) {
+  public PaymentInstrumentCard type(String type) {
     this.type = type;
     return this;
   }
 
    /**
-   * Type of credit card. Possible values:   * Visa (001)   * Mastercard (002) - Eurocard—European regional brand of Mastercard   * American Express (003)   * Discover (004)   * Diners Club (005)   * Carte Blanche (006)   * JCB (007)   * Optima (008)   * Twinpay Credit (011)   * Twinpay Debit (012)   * Walmart (013)   * EnRoute (014)   * Lowes consumer (015)   * Home Depot consumer (016)   * MBNA (017)   * Dicks Sportswear (018)   * Casual Corner (019)   * Sears (020)   * JAL (021)   * Disney (023)   * Maestro (024) - UK Domestic   * Sams Club consumer (025)   * Sams Club business (026)   * Nicos (027)   * Bill me later (028)   * Bebe (029)   * Restoration Hardware (030)   * Delta (031) — use this value only for Ingenico ePayments. For other processors, use 001 for all Visa card types.   * Solo (032)   * Visa Electron (033)   * Dankort (034)   * Laser (035)   * Carte Bleue (036) — formerly Cartes Bancaires   * Cartes Bancaires (036)   * Carta Si (037)   * pinless debit (038)   * encoded account (039)   * UATP (040)   * Household (041)   * Maestro (042) - International   * GE Money UK (043)   * Korean cards (044)   * Style (045)   * JCrew (046)   * PayEase China processing eWallet (047)   * PayEase China processing bank transfer (048)   * Meijer Private Label (049)   * Hipercard (050) — supported only by the Comercio Latino processor.   * Aura (051) — supported only by the Comercio Latino processor.   * Redecard (052)   * ORICO (053)   * Elo (054) — supported only by the Comercio Latino processor.   * Capital One Private Label (055)   * Synchrony Private Label (056)   * Costco Private Label (057)   * mada (060)   * China Union Pay (062)   * Falabella private label (063) 
+   * Type of credit card. Possible values:   * **visa** -- Visa (001)   * **mastercard** -- Mastercard (002) - Eurocard—European regional brand of Mastercard   * **american express** -- American Express (003)   * **discover** -- Discover (004)   * **diners club** -- Diners Club (005)   * **carte blanche** -- Carte Blanche (006)   * **jcb** -- JCB (007)   * **optima** -- Optima (008)   * **twinpay credit** -- Twinpay Credit (011)   * **twinpay debit** -- Twinpay Debit (012)   * **walmart** -- Walmart (013)   * **enroute** -- EnRoute (014)   * **lowes consumer** -- Lowes consumer (015)   * **home depot consumer** -- Home Depot consumer (016)   * **mbna** -- MBNA (017)   * **dicks sportswear** -- Dicks Sportswear (018)   * **casual corner** -- Casual Corner (019)   * **sears** -- Sears (020)   * **jal** -- JAL (021)   * **disney** -- Disney (023)   * **maestro uk domestic** -- Maestro (024) - UK Domestic   * **sams club consumer** -- Sams Club consumer (025)   * **sams club business** -- Sams Club business (026)   * **bill me later** -- Bill me later (028)   * **bebe** -- Bebe (029)   * **restoration hardware** -- Restoration Hardware (030)   * **delta online** -- Delta (031) — use this value only for Ingenico ePayments. For other processors, use 001 for all Visa card types.   * **solo** -- Solo (032)   * **visa electron** -- Visa Electron (033)   * **dankort** -- Dankort (034)   * **laser** -- Laser (035)   * **carte bleue** -- Carte Bleue (036) — formerly Cartes Bancaires   * **carta si** -- Carta Si (037)   * **pinless debit** -- pinless debit (038)   * **encoded account** -- encoded account (039)   * **uatp** -- UATP (040)   * **household** -- Household (041)   * **maestro international** -- Maestro (042) - International   * **ge money uk** -- GE Money UK (043)   * **korean cards** -- Korean cards (044)   * **style** -- Style (045)   * **jcrew** -- JCrew (046)   * **payease china processing ewallet** -- PayEase China processing eWallet (047)   * **payease china processing bank transfer** -- PayEase China processing bank transfer (048)   * **meijer private label** -- Meijer Private Label (049)   * **hipercard** -- Hipercard (050) — supported only by the Comercio Latino processor.   * **aura** -- Aura (051) — supported only by the Comercio Latino processor.   * **redecard** -- Redecard (052)   * **elo** -- Elo (054) — supported only by the Comercio Latino processor.   * **capital one private label** -- Capital One Private Label (055)   * **synchrony private label** -- Synchrony Private Label (056)   * **costco private label** -- Costco Private Label (057)   * **mada** -- mada (060)   * **china union pay** -- China Union Pay (062)   * **falabella private label** -- Falabella private label (063) 
    * @return type
   **/
-  @ApiModelProperty(required = true, value = "Type of credit card. Possible values:   * Visa (001)   * Mastercard (002) - Eurocard—European regional brand of Mastercard   * American Express (003)   * Discover (004)   * Diners Club (005)   * Carte Blanche (006)   * JCB (007)   * Optima (008)   * Twinpay Credit (011)   * Twinpay Debit (012)   * Walmart (013)   * EnRoute (014)   * Lowes consumer (015)   * Home Depot consumer (016)   * MBNA (017)   * Dicks Sportswear (018)   * Casual Corner (019)   * Sears (020)   * JAL (021)   * Disney (023)   * Maestro (024) - UK Domestic   * Sams Club consumer (025)   * Sams Club business (026)   * Nicos (027)   * Bill me later (028)   * Bebe (029)   * Restoration Hardware (030)   * Delta (031) — use this value only for Ingenico ePayments. For other processors, use 001 for all Visa card types.   * Solo (032)   * Visa Electron (033)   * Dankort (034)   * Laser (035)   * Carte Bleue (036) — formerly Cartes Bancaires   * Cartes Bancaires (036)   * Carta Si (037)   * pinless debit (038)   * encoded account (039)   * UATP (040)   * Household (041)   * Maestro (042) - International   * GE Money UK (043)   * Korean cards (044)   * Style (045)   * JCrew (046)   * PayEase China processing eWallet (047)   * PayEase China processing bank transfer (048)   * Meijer Private Label (049)   * Hipercard (050) — supported only by the Comercio Latino processor.   * Aura (051) — supported only by the Comercio Latino processor.   * Redecard (052)   * ORICO (053)   * Elo (054) — supported only by the Comercio Latino processor.   * Capital One Private Label (055)   * Synchrony Private Label (056)   * Costco Private Label (057)   * mada (060)   * China Union Pay (062)   * Falabella private label (063) ")
-  public TypeEnum getType() {
+  @ApiModelProperty(required = true, value = "Type of credit card. Possible values:   * **visa** -- Visa (001)   * **mastercard** -- Mastercard (002) - Eurocard—European regional brand of Mastercard   * **american express** -- American Express (003)   * **discover** -- Discover (004)   * **diners club** -- Diners Club (005)   * **carte blanche** -- Carte Blanche (006)   * **jcb** -- JCB (007)   * **optima** -- Optima (008)   * **twinpay credit** -- Twinpay Credit (011)   * **twinpay debit** -- Twinpay Debit (012)   * **walmart** -- Walmart (013)   * **enroute** -- EnRoute (014)   * **lowes consumer** -- Lowes consumer (015)   * **home depot consumer** -- Home Depot consumer (016)   * **mbna** -- MBNA (017)   * **dicks sportswear** -- Dicks Sportswear (018)   * **casual corner** -- Casual Corner (019)   * **sears** -- Sears (020)   * **jal** -- JAL (021)   * **disney** -- Disney (023)   * **maestro uk domestic** -- Maestro (024) - UK Domestic   * **sams club consumer** -- Sams Club consumer (025)   * **sams club business** -- Sams Club business (026)   * **bill me later** -- Bill me later (028)   * **bebe** -- Bebe (029)   * **restoration hardware** -- Restoration Hardware (030)   * **delta online** -- Delta (031) — use this value only for Ingenico ePayments. For other processors, use 001 for all Visa card types.   * **solo** -- Solo (032)   * **visa electron** -- Visa Electron (033)   * **dankort** -- Dankort (034)   * **laser** -- Laser (035)   * **carte bleue** -- Carte Bleue (036) — formerly Cartes Bancaires   * **carta si** -- Carta Si (037)   * **pinless debit** -- pinless debit (038)   * **encoded account** -- encoded account (039)   * **uatp** -- UATP (040)   * **household** -- Household (041)   * **maestro international** -- Maestro (042) - International   * **ge money uk** -- GE Money UK (043)   * **korean cards** -- Korean cards (044)   * **style** -- Style (045)   * **jcrew** -- JCrew (046)   * **payease china processing ewallet** -- PayEase China processing eWallet (047)   * **payease china processing bank transfer** -- PayEase China processing bank transfer (048)   * **meijer private label** -- Meijer Private Label (049)   * **hipercard** -- Hipercard (050) — supported only by the Comercio Latino processor.   * **aura** -- Aura (051) — supported only by the Comercio Latino processor.   * **redecard** -- Redecard (052)   * **elo** -- Elo (054) — supported only by the Comercio Latino processor.   * **capital one private label** -- Capital One Private Label (055)   * **synchrony private label** -- Synchrony Private Label (056)   * **costco private label** -- Costco Private Label (057)   * **mada** -- mada (060)   * **china union pay** -- China Union Pay (062)   * **falabella private label** -- Falabella private label (063) ")
+  public String getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(String type) {
     this.type = type;
   }
 

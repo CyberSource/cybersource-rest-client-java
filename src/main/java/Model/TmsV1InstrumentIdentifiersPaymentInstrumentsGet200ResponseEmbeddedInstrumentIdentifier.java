@@ -31,108 +31,16 @@ import java.io.IOException;
 /**
  * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier {
   @SerializedName("_links")
   private TmsV1InstrumentIdentifiersPost200ResponseLinks links = null;
 
-  /**
-   * Describes type of token.
-   */
-  @JsonAdapter(ObjectEnum.Adapter.class)
-  public enum ObjectEnum {
-    INSTRUMENTIDENTIFIER("instrumentIdentifier");
-
-    private String value;
-
-    ObjectEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ObjectEnum fromValue(String text) {
-      for (ObjectEnum b : ObjectEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ObjectEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ObjectEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ObjectEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ObjectEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("object")
-  private ObjectEnum object = null;
-
-  /**
-   * Current state of the token.
-   */
-  @JsonAdapter(StateEnum.Adapter.class)
-  public enum StateEnum {
-    ACTIVE("ACTIVE"),
-    
-    CLOSED("CLOSED");
-
-    private String value;
-
-    StateEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StateEnum fromValue(String text) {
-      for (StateEnum b : StateEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<StateEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StateEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StateEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StateEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
+  private String object = null;
 
   @SerializedName("state")
-  private StateEnum state = null;
+  private String state = null;
 
   @SerializedName("id")
   private String id = null;
@@ -168,20 +76,20 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedI
   }
 
    /**
-   * Describes type of token.
+   * &#39;Describes type of token.&#39;  Valid values: - instrumentIdentifier 
    * @return object
   **/
-  @ApiModelProperty(example = "instrumentIdentifier", value = "Describes type of token.")
-  public ObjectEnum getObject() {
+  @ApiModelProperty(example = "instrumentIdentifier", value = "'Describes type of token.'  Valid values: - instrumentIdentifier ")
+  public String getObject() {
     return object;
   }
 
    /**
-   * Current state of the token.
+   * &#39;Current state of the token.&#39;              Valid values: - ACTIVE - CLOSED 
    * @return state
   **/
-  @ApiModelProperty(example = "ACTIVE", value = "Current state of the token.")
-  public StateEnum getState() {
+  @ApiModelProperty(example = "ACTIVE", value = "'Current state of the token.'              Valid values: - ACTIVE - CLOSED ")
+  public String getState() {
     return state;
   }
 

@@ -33,7 +33,7 @@ import org.joda.time.DateTime;
  * Report Log
  */
 @ApiModel(description = "Report Log")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class ReportingV3ReportsIdGet200Response {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -47,172 +47,17 @@ public class ReportingV3ReportsIdGet200Response {
   @SerializedName("reportName")
   private String reportName = null;
 
-  /**
-   * Report Format
-   */
-  @JsonAdapter(ReportMimeTypeEnum.Adapter.class)
-  public enum ReportMimeTypeEnum {
-    APPLICATION_XML("application/xml"),
-    
-    TEXT_CSV("text/csv");
-
-    private String value;
-
-    ReportMimeTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReportMimeTypeEnum fromValue(String text) {
-      for (ReportMimeTypeEnum b : ReportMimeTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReportMimeTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReportMimeTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReportMimeTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReportMimeTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("reportMimeType")
-  private ReportMimeTypeEnum reportMimeType = null;
-
-  /**
-   * Report Frequency Value
-   */
-  @JsonAdapter(ReportFrequencyEnum.Adapter.class)
-  public enum ReportFrequencyEnum {
-    DAILY("DAILY"),
-    
-    WEEKLY("WEEKLY"),
-    
-    MONTHLY("MONTHLY"),
-    
-    ADHOC("ADHOC");
-
-    private String value;
-
-    ReportFrequencyEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReportFrequencyEnum fromValue(String text) {
-      for (ReportFrequencyEnum b : ReportFrequencyEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReportFrequencyEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReportFrequencyEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReportFrequencyEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReportFrequencyEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
+  private String reportMimeType = null;
 
   @SerializedName("reportFrequency")
-  private ReportFrequencyEnum reportFrequency = null;
+  private String reportFrequency = null;
 
   @SerializedName("reportFields")
   private List<String> reportFields = null;
 
-  /**
-   * Report Status Value
-   */
-  @JsonAdapter(ReportStatusEnum.Adapter.class)
-  public enum ReportStatusEnum {
-    COMPLETED("COMPLETED"),
-    
-    PENDING("PENDING"),
-    
-    QUEUED("QUEUED"),
-    
-    RUNNING("RUNNING"),
-    
-    ERROR("ERROR"),
-    
-    NO_DATA("NO_DATA"),
-    
-    RERUN("RERUN");
-
-    private String value;
-
-    ReportStatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReportStatusEnum fromValue(String text) {
-      for (ReportStatusEnum b : ReportStatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReportStatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReportStatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReportStatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReportStatusEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("reportStatus")
-  private ReportStatusEnum reportStatus = null;
+  private String reportStatus = null;
 
   @SerializedName("reportStartTime")
   private DateTime reportStartTime = null;
@@ -304,39 +149,39 @@ public class ReportingV3ReportsIdGet200Response {
     this.reportName = reportName;
   }
 
-  public ReportingV3ReportsIdGet200Response reportMimeType(ReportMimeTypeEnum reportMimeType) {
+  public ReportingV3ReportsIdGet200Response reportMimeType(String reportMimeType) {
     this.reportMimeType = reportMimeType;
     return this;
   }
 
    /**
-   * Report Format
+   * Report Format  Valid values: - application/xml - text/csv 
    * @return reportMimeType
   **/
-  @ApiModelProperty(example = "application/xml", value = "Report Format")
-  public ReportMimeTypeEnum getReportMimeType() {
+  @ApiModelProperty(example = "application/xml", value = "Report Format  Valid values: - application/xml - text/csv ")
+  public String getReportMimeType() {
     return reportMimeType;
   }
 
-  public void setReportMimeType(ReportMimeTypeEnum reportMimeType) {
+  public void setReportMimeType(String reportMimeType) {
     this.reportMimeType = reportMimeType;
   }
 
-  public ReportingV3ReportsIdGet200Response reportFrequency(ReportFrequencyEnum reportFrequency) {
+  public ReportingV3ReportsIdGet200Response reportFrequency(String reportFrequency) {
     this.reportFrequency = reportFrequency;
     return this;
   }
 
    /**
-   * Report Frequency Value
+   * Report Frequency Value  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
    * @return reportFrequency
   **/
-  @ApiModelProperty(example = "DAILY", value = "Report Frequency Value")
-  public ReportFrequencyEnum getReportFrequency() {
+  @ApiModelProperty(example = "DAILY", value = "Report Frequency Value  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC ")
+  public String getReportFrequency() {
     return reportFrequency;
   }
 
-  public void setReportFrequency(ReportFrequencyEnum reportFrequency) {
+  public void setReportFrequency(String reportFrequency) {
     this.reportFrequency = reportFrequency;
   }
 
@@ -366,21 +211,21 @@ public class ReportingV3ReportsIdGet200Response {
     this.reportFields = reportFields;
   }
 
-  public ReportingV3ReportsIdGet200Response reportStatus(ReportStatusEnum reportStatus) {
+  public ReportingV3ReportsIdGet200Response reportStatus(String reportStatus) {
     this.reportStatus = reportStatus;
     return this;
   }
 
    /**
-   * Report Status Value
+   * Report Status Value  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA - RERUN 
    * @return reportStatus
   **/
-  @ApiModelProperty(value = "Report Status Value")
-  public ReportStatusEnum getReportStatus() {
+  @ApiModelProperty(value = "Report Status Value  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA - RERUN ")
+  public String getReportStatus() {
     return reportStatus;
   }
 
-  public void setReportStatus(ReportStatusEnum reportStatus) {
+  public void setReportStatus(String reportStatus) {
     this.reportStatus = reportStatus;
   }
 

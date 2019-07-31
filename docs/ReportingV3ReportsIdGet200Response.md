@@ -8,47 +8,16 @@ Name | Type | Description | Notes
 **reportId** | **String** | Report ID Value |  [optional]
 **reportDefinitionId** | **String** | Report definition Id |  [optional]
 **reportName** | **String** | Report Name |  [optional]
-**reportMimeType** | [**ReportMimeTypeEnum**](#ReportMimeTypeEnum) | Report Format |  [optional]
-**reportFrequency** | [**ReportFrequencyEnum**](#ReportFrequencyEnum) | Report Frequency Value |  [optional]
+**reportMimeType** | **String** | Report Format  Valid values: - application/xml - text/csv  |  [optional]
+**reportFrequency** | **String** | Report Frequency Value  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC  |  [optional]
 **reportFields** | **List&lt;String&gt;** | List of Integer Values |  [optional]
-**reportStatus** | [**ReportStatusEnum**](#ReportStatusEnum) | Report Status Value |  [optional]
+**reportStatus** | **String** | Report Status Value  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA - RERUN  |  [optional]
 **reportStartTime** | [**DateTime**](DateTime.md) | Report Start Time Value |  [optional]
 **reportEndTime** | [**DateTime**](DateTime.md) | Report End Time Value |  [optional]
 **timezone** | **String** | Time Zone Value |  [optional]
 **reportFilters** | [**Map&lt;String, List&lt;String&gt;&gt;**](List.md) | List of filters to apply |  [optional]
 **reportPreferences** | [**Reportingv3reportsReportPreferences**](Reportingv3reportsReportPreferences.md) |  |  [optional]
 **groupId** | **String** | Id for selected group. |  [optional]
-
-
-<a name="ReportMimeTypeEnum"></a>
-## Enum: ReportMimeTypeEnum
-Name | Value
----- | -----
-APPLICATION_XML | &quot;application/xml&quot;
-TEXT_CSV | &quot;text/csv&quot;
-
-
-<a name="ReportFrequencyEnum"></a>
-## Enum: ReportFrequencyEnum
-Name | Value
----- | -----
-DAILY | &quot;DAILY&quot;
-WEEKLY | &quot;WEEKLY&quot;
-MONTHLY | &quot;MONTHLY&quot;
-ADHOC | &quot;ADHOC&quot;
-
-
-<a name="ReportStatusEnum"></a>
-## Enum: ReportStatusEnum
-Name | Value
----- | -----
-COMPLETED | &quot;COMPLETED&quot;
-PENDING | &quot;PENDING&quot;
-QUEUED | &quot;QUEUED&quot;
-RUNNING | &quot;RUNNING&quot;
-ERROR | &quot;ERROR&quot;
-NO_DATA | &quot;NO_DATA&quot;
-RERUN | &quot;RERUN&quot;
 
 
 

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationBank
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class Ptsv2paymentsPaymentInformationBank {
   @SerializedName("account")
   private Ptsv2paymentsPaymentInformationBankAccount account = null;
@@ -59,10 +59,10 @@ public class Ptsv2paymentsPaymentInformationBank {
   }
 
    /**
-   * Bank routing number.  This is also called the transit number. 
+   * Bank routing number. This is also called the _transit number_.  For details, see &#x60;ecp_rdfi&#x60; request field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return routingNumber
   **/
-  @ApiModelProperty(value = "Bank routing number.  This is also called the transit number. ")
+  @ApiModelProperty(value = "Bank routing number. This is also called the _transit number_.  For details, see `ecp_rdfi` request field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getRoutingNumber() {
     return routingNumber;
   }

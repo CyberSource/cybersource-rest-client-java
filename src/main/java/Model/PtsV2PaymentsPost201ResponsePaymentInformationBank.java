@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePaymentInformationBank
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class PtsV2PaymentsPost201ResponsePaymentInformationBank {
   @SerializedName("account")
   private PtsV2PaymentsPost201ResponsePaymentInformationBankAccount account = null;
@@ -59,10 +59,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationBank {
   }
 
    /**
-   * The description for this field is not available.
+   * Corrected account number from the ACH verification service.  For details, see &#x60;ecp_debit_corrected_routing_number&#x60; or &#x60;ecp_credit_corrected_routing_number&#x60; reply field descriptions in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return correctedRoutingNumber
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Corrected account number from the ACH verification service.  For details, see `ecp_debit_corrected_routing_number` or `ecp_credit_corrected_routing_number` reply field descriptions in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getCorrectedRoutingNumber() {
     return correctedRoutingNumber;
   }

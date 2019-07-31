@@ -124,7 +124,7 @@ public class DecisionManagerApi {
     }
 
     /**
-     * Create Decision Manager case
+     * Create Decision Manager Case
      * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values. 
      * @param createDecisionManagerCaseRequest  (required)
      * @return RiskV1DecisionsPost201Response
@@ -136,7 +136,7 @@ public class DecisionManagerApi {
     }
 
     /**
-     * Create Decision Manager case
+     * Create Decision Manager Case
      * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values. 
      * @param createDecisionManagerCaseRequest  (required)
      * @return ApiResponse&lt;RiskV1DecisionsPost201Response&gt;
@@ -149,7 +149,7 @@ public class DecisionManagerApi {
     }
 
     /**
-     * Create Decision Manager case (asynchronously)
+     * Create Decision Manager Case (asynchronously)
      * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values. 
      * @param createDecisionManagerCaseRequest  (required)
      * @param callback The callback to be executed when the API call finishes

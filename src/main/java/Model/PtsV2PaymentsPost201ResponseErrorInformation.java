@@ -29,97 +29,10 @@ import java.util.List;
 /**
  * PtsV2PaymentsPost201ResponseErrorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class PtsV2PaymentsPost201ResponseErrorInformation {
-  /**
-   * The reason of the status.  Possible values:  - AVS_FAILED  - CONTACT_PROCESSOR  - EXPIRED_CARD  - PROCESSOR_DECLINED  - INSUFFICIENT_FUND  - STOLEN_LOST_CARD  - ISSUER_UNAVAILABLE  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - EXCEEDS_CREDIT_LIMIT  - INVALID_CVN  - DECLINED_CHECK  - BLACKLISTED_CUSTOMER  - SUSPENDED_ACCOUNT  - PAYMENT_REFUSED  - CV_FAILED  - INVALID_ACCOUNT  - GENERAL_DECLINE  - INVALID_MERCHANT_CONFIGURATION  - DECISION_PROFILE_REJECT  - SCORE_EXCEEDS_THRESHOLD  - PENDING_AUTHENTICATION 
-   */
-  @JsonAdapter(ReasonEnum.Adapter.class)
-  public enum ReasonEnum {
-    AVS_FAILED("AVS_FAILED"),
-    
-    CONTACT_PROCESSOR("CONTACT_PROCESSOR"),
-    
-    EXPIRED_CARD("EXPIRED_CARD"),
-    
-    PROCESSOR_DECLINED("PROCESSOR_DECLINED"),
-    
-    INSUFFICIENT_FUND("INSUFFICIENT_FUND"),
-    
-    STOLEN_LOST_CARD("STOLEN_LOST_CARD"),
-    
-    ISSUER_UNAVAILABLE("ISSUER_UNAVAILABLE"),
-    
-    UNAUTHORIZED_CARD("UNAUTHORIZED_CARD"),
-    
-    CVN_NOT_MATCH("CVN_NOT_MATCH"),
-    
-    EXCEEDS_CREDIT_LIMIT("EXCEEDS_CREDIT_LIMIT"),
-    
-    INVALID_CVN("INVALID_CVN"),
-    
-    DECLINED_CHECK("DECLINED_CHECK"),
-    
-    BLACKLISTED_CUSTOMER("BLACKLISTED_CUSTOMER"),
-    
-    SUSPENDED_ACCOUNT("SUSPENDED_ACCOUNT"),
-    
-    PAYMENT_REFUSED("PAYMENT_REFUSED"),
-    
-    CV_FAILED("CV_FAILED"),
-    
-    INVALID_ACCOUNT("INVALID_ACCOUNT"),
-    
-    GENERAL_DECLINE("GENERAL_DECLINE"),
-    
-    INVALID_MERCHANT_CONFIGURATION("INVALID_MERCHANT_CONFIGURATION"),
-    
-    DECISION_PROFILE_REJECT("DECISION_PROFILE_REJECT"),
-    
-    SCORE_EXCEEDS_THRESHOLD("SCORE_EXCEEDS_THRESHOLD"),
-    
-    PENDING_AUTHENTICATION("PENDING_AUTHENTICATION");
-
-    private String value;
-
-    ReasonEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReasonEnum fromValue(String text) {
-      for (ReasonEnum b : ReasonEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReasonEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReasonEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReasonEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReasonEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("reason")
-  private ReasonEnum reason = null;
+  private String reason = null;
 
   @SerializedName("message")
   private String message = null;
@@ -127,7 +40,7 @@ public class PtsV2PaymentsPost201ResponseErrorInformation {
   @SerializedName("details")
   private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
 
-  public PtsV2PaymentsPost201ResponseErrorInformation reason(ReasonEnum reason) {
+  public PtsV2PaymentsPost201ResponseErrorInformation reason(String reason) {
     this.reason = reason;
     return this;
   }
@@ -137,11 +50,11 @@ public class PtsV2PaymentsPost201ResponseErrorInformation {
    * @return reason
   **/
   @ApiModelProperty(value = "The reason of the status.  Possible values:  - AVS_FAILED  - CONTACT_PROCESSOR  - EXPIRED_CARD  - PROCESSOR_DECLINED  - INSUFFICIENT_FUND  - STOLEN_LOST_CARD  - ISSUER_UNAVAILABLE  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - EXCEEDS_CREDIT_LIMIT  - INVALID_CVN  - DECLINED_CHECK  - BLACKLISTED_CUSTOMER  - SUSPENDED_ACCOUNT  - PAYMENT_REFUSED  - CV_FAILED  - INVALID_ACCOUNT  - GENERAL_DECLINE  - INVALID_MERCHANT_CONFIGURATION  - DECISION_PROFILE_REJECT  - SCORE_EXCEEDS_THRESHOLD  - PENDING_AUTHENTICATION ")
-  public ReasonEnum getReason() {
+  public String getReason() {
     return reason;
   }
 
-  public void setReason(ReasonEnum reason) {
+  public void setReason(String reason) {
     this.reason = reason;
   }
 

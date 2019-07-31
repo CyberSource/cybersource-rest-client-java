@@ -29,122 +29,16 @@ import java.util.List;
 /**
  * PtsV2PaymentsCapturesPost400Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class PtsV2PaymentsCapturesPost400Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
-  /**
-   * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    REQUEST("INVALID_REQUEST");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("status")
-  private StatusEnum status = null;
-
-  /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - EXCEEDS_AUTH_AMOUNT  - AUTH_ALREADY_REVERSED  - TRANSACTION_ALREADY_SETTLED  - INVALID_AMOUNT  - MISSING_AUTH  - TRANSACTION_ALREADY_REVERSED_OR_SETTLED 
-   */
-  @JsonAdapter(ReasonEnum.Adapter.class)
-  public enum ReasonEnum {
-    MISSING_FIELD("MISSING_FIELD"),
-    
-    INVALID_DATA("INVALID_DATA"),
-    
-    DUPLICATE_REQUEST("DUPLICATE_REQUEST"),
-    
-    INVALID_MERCHANT_CONFIGURATION("INVALID_MERCHANT_CONFIGURATION"),
-    
-    EXCEEDS_AUTH_AMOUNT("EXCEEDS_AUTH_AMOUNT"),
-    
-    AUTH_ALREADY_REVERSED("AUTH_ALREADY_REVERSED"),
-    
-    TRANSACTION_ALREADY_SETTLED("TRANSACTION_ALREADY_SETTLED"),
-    
-    MISSING_AUTH("MISSING_AUTH"),
-    
-    TRANSACTION_ALREADY_REVERSED_OR_SETTLED("TRANSACTION_ALREADY_REVERSED_OR_SETTLED");
-
-    private String value;
-
-    ReasonEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReasonEnum fromValue(String text) {
-      for (ReasonEnum b : ReasonEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReasonEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReasonEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReasonEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReasonEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
+  private String status = null;
 
   @SerializedName("reason")
-  private ReasonEnum reason = null;
+  private String reason = null;
 
   @SerializedName("message")
   private String message = null;
@@ -170,7 +64,7 @@ public class PtsV2PaymentsCapturesPost400Response {
     this.submitTimeUtc = submitTimeUtc;
   }
 
-  public PtsV2PaymentsCapturesPost400Response status(StatusEnum status) {
+  public PtsV2PaymentsCapturesPost400Response status(String status) {
     this.status = status;
     return this;
   }
@@ -180,15 +74,15 @@ public class PtsV2PaymentsCapturesPost400Response {
    * @return status
   **/
   @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - INVALID_REQUEST ")
-  public StatusEnum getStatus() {
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 
-  public PtsV2PaymentsCapturesPost400Response reason(ReasonEnum reason) {
+  public PtsV2PaymentsCapturesPost400Response reason(String reason) {
     this.reason = reason;
     return this;
   }
@@ -198,11 +92,11 @@ public class PtsV2PaymentsCapturesPost400Response {
    * @return reason
   **/
   @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - EXCEEDS_AUTH_AMOUNT  - AUTH_ALREADY_REVERSED  - TRANSACTION_ALREADY_SETTLED  - INVALID_AMOUNT  - MISSING_AUTH  - TRANSACTION_ALREADY_REVERSED_OR_SETTLED ")
-  public ReasonEnum getReason() {
+  public String getReason() {
     return reason;
   }
 
-  public void setReason(ReasonEnum reason) {
+  public void setReason(String reason) {
     this.reason = reason;
   }
 

@@ -28,7 +28,7 @@ import org.joda.time.LocalDate;
 /**
  * V1FileDetailsGet200ResponseFileDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class V1FileDetailsGet200ResponseFileDetails {
   @SerializedName("fileId")
   private String fileId = null;
@@ -45,59 +45,8 @@ public class V1FileDetailsGet200ResponseFileDetails {
   @SerializedName("date")
   private LocalDate date = null;
 
-  /**
-   * File extension
-   */
-  @JsonAdapter(MimeTypeEnum.Adapter.class)
-  public enum MimeTypeEnum {
-    APPLICATION_XML("application/xml"),
-    
-    TEXT_CSV("text/csv"),
-    
-    APPLICATION_PDF("application/pdf"),
-    
-    APPLICATION_OCTET_STREAM("application/octet-stream");
-
-    private String value;
-
-    MimeTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static MimeTypeEnum fromValue(String text) {
-      for (MimeTypeEnum b : MimeTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<MimeTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MimeTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MimeTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return MimeTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("mimeType")
-  private MimeTypeEnum mimeType = null;
+  private String mimeType = null;
 
   @SerializedName("size")
   private Integer size = null;
@@ -192,21 +141,21 @@ public class V1FileDetailsGet200ResponseFileDetails {
     this.date = date;
   }
 
-  public V1FileDetailsGet200ResponseFileDetails mimeType(MimeTypeEnum mimeType) {
+  public V1FileDetailsGet200ResponseFileDetails mimeType(String mimeType) {
     this.mimeType = mimeType;
     return this;
   }
 
    /**
-   * File extension
+   * &#39;File extension&#39;  Valid values: - &#39;application/xml&#39; - &#39;text/csv&#39; - &#39;application/pdf&#39; - &#39;application/octet-stream&#39; 
    * @return mimeType
   **/
-  @ApiModelProperty(example = "application/xml", value = "File extension")
-  public MimeTypeEnum getMimeType() {
+  @ApiModelProperty(example = "application/xml", value = "'File extension'  Valid values: - 'application/xml' - 'text/csv' - 'application/pdf' - 'application/octet-stream' ")
+  public String getMimeType() {
     return mimeType;
   }
 
-  public void setMimeType(MimeTypeEnum mimeType) {
+  public void setMimeType(String mimeType) {
     this.mimeType = mimeType;
   }
 

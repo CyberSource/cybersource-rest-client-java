@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsVoidsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class PtsV2PaymentsVoidsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsReversalsPost201ResponseLinks links = null;
@@ -40,53 +40,8 @@ public class PtsV2PaymentsVoidsPost201Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
-  /**
-   * The status of the submitted transaction.  Possible values:  - VOIDED 
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    VOIDED("VOIDED");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("status")
-  private StatusEnum status = null;
+  private String status = null;
 
   @SerializedName("clientReferenceInformation")
   private PtsV2PaymentsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
@@ -148,7 +103,7 @@ public class PtsV2PaymentsVoidsPost201Response {
     this.submitTimeUtc = submitTimeUtc;
   }
 
-  public PtsV2PaymentsVoidsPost201Response status(StatusEnum status) {
+  public PtsV2PaymentsVoidsPost201Response status(String status) {
     this.status = status;
     return this;
   }
@@ -158,11 +113,11 @@ public class PtsV2PaymentsVoidsPost201Response {
    * @return status
   **/
   @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - VOIDED ")
-  public StatusEnum getStatus() {
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 

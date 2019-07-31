@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,25 +27,22 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePaymentInformationPaymentType
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("type")
-  private String type = null;
+  @SerializedName("subTypeName")
+  private String subTypeName = null;
+
+  @SerializedName("fundingSource")
+  private TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource fundingSource = null;
 
   @SerializedName("method")
   private String method = null;
 
-  @SerializedName("fundingSource")
-  private String fundingSource = null;
-
-  @SerializedName("fundingSourceAffiliation")
-  private String fundingSourceAffiliation = null;
-
-  @SerializedName("credential")
-  private String credential = null;
+  @SerializedName("authenticationMethod")
+  private String authenticationMethod = null;
 
   public TssV2TransactionsGet200ResponsePaymentInformationPaymentType name(String name) {
     this.name = name;
@@ -52,10 +50,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
   }
 
    /**
-   * The name of a payment method. This is required for non-credit card payment.  Examples: &#x60;SEARS&#x60;, &#x60;JCREW&#x60;, &#x60;PAYPAL&#x60;, &#x60;IDEAL&#x60;, &#x60;EPS&#x60; ...etc.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. 
+   * A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. 
    * @return name
   **/
-  @ApiModelProperty(value = "The name of a payment method. This is required for non-credit card payment.  Examples: `SEARS`, `JCREW`, `PAYPAL`, `IDEAL`, `EPS` ...etc.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. ")
+  @ApiModelProperty(value = "A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. ")
   public String getName() {
     return name;
   }
@@ -64,22 +62,40 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
     this.name = name;
   }
 
-  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType type(String type) {
-    this.type = type;
+  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType subTypeName(String subTypeName) {
+    this.subTypeName = subTypeName;
     return this;
   }
 
    /**
-   * The type of payment method. This is required for non-credit card payment.  Possible values:  - BANK_TRANSFER  - CARD (Default)  - EWALLET  - DIGITAL  - DIRECT_DEBIT  - INVOICE  - PUSH_PAYMENT  - CARRIER_BILLING  - CASH  - CHECK  - CRYPTOGRAPHIC  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. 
-   * @return type
+   * SubType Name is detail information about Payment Type. Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. 
+   * @return subTypeName
   **/
-  @ApiModelProperty(value = "The type of payment method. This is required for non-credit card payment.  Possible values:  - BANK_TRANSFER  - CARD (Default)  - EWALLET  - DIGITAL  - DIRECT_DEBIT  - INVOICE  - PUSH_PAYMENT  - CARRIER_BILLING  - CASH  - CHECK  - CRYPTOGRAPHIC  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. ")
-  public String getType() {
-    return type;
+  @ApiModelProperty(value = "SubType Name is detail information about Payment Type. Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. ")
+  public String getSubTypeName() {
+    return subTypeName;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public void setSubTypeName(String subTypeName) {
+    this.subTypeName = subTypeName;
+  }
+
+  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType fundingSource(TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource fundingSource) {
+    this.fundingSource = fundingSource;
+    return this;
+  }
+
+   /**
+   * Get fundingSource
+   * @return fundingSource
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource getFundingSource() {
+    return fundingSource;
+  }
+
+  public void setFundingSource(TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource fundingSource) {
+    this.fundingSource = fundingSource;
   }
 
   public TssV2TransactionsGet200ResponsePaymentInformationPaymentType method(String method) {
@@ -88,10 +104,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
   }
 
    /**
-   * This is an optional field.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. 
+   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal
    * @return method
   **/
-  @ApiModelProperty(value = "This is an optional field.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field. ")
+  @ApiModelProperty(value = "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal")
   public String getMethod() {
     return method;
   }
@@ -100,58 +116,22 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
     this.method = method;
   }
 
-  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType fundingSource(String fundingSource) {
-    this.fundingSource = fundingSource;
+  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType authenticationMethod(String authenticationMethod) {
+    this.authenticationMethod = authenticationMethod;
     return this;
   }
 
    /**
-   * The description for this field is not available.
-   * @return fundingSource
+   * A Payment Type Authentication Method is the means used to verify that the presenter of the Payment Type credential is an authorized user of the Payment Instrument. Examples: 3DSecure – Verified by Visa, 3DSecure – MasteCard Secure Code 
+   * @return authenticationMethod
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
-  public String getFundingSource() {
-    return fundingSource;
+  @ApiModelProperty(value = "A Payment Type Authentication Method is the means used to verify that the presenter of the Payment Type credential is an authorized user of the Payment Instrument. Examples: 3DSecure – Verified by Visa, 3DSecure – MasteCard Secure Code ")
+  public String getAuthenticationMethod() {
+    return authenticationMethod;
   }
 
-  public void setFundingSource(String fundingSource) {
-    this.fundingSource = fundingSource;
-  }
-
-  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType fundingSourceAffiliation(String fundingSourceAffiliation) {
-    this.fundingSourceAffiliation = fundingSourceAffiliation;
-    return this;
-  }
-
-   /**
-   * The description for this field is not available.
-   * @return fundingSourceAffiliation
-  **/
-  @ApiModelProperty(value = "The description for this field is not available.")
-  public String getFundingSourceAffiliation() {
-    return fundingSourceAffiliation;
-  }
-
-  public void setFundingSourceAffiliation(String fundingSourceAffiliation) {
-    this.fundingSourceAffiliation = fundingSourceAffiliation;
-  }
-
-  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType credential(String credential) {
-    this.credential = credential;
-    return this;
-  }
-
-   /**
-   * The description for this field is not available.
-   * @return credential
-  **/
-  @ApiModelProperty(value = "The description for this field is not available.")
-  public String getCredential() {
-    return credential;
-  }
-
-  public void setCredential(String credential) {
-    this.credential = credential;
+  public void setAuthenticationMethod(String authenticationMethod) {
+    this.authenticationMethod = authenticationMethod;
   }
 
 
@@ -165,16 +145,15 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
     }
     TssV2TransactionsGet200ResponsePaymentInformationPaymentType tssV2TransactionsGet200ResponsePaymentInformationPaymentType = (TssV2TransactionsGet200ResponsePaymentInformationPaymentType) o;
     return Objects.equals(this.name, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.name) &&
-        Objects.equals(this.type, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.type) &&
-        Objects.equals(this.method, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.method) &&
+        Objects.equals(this.subTypeName, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.subTypeName) &&
         Objects.equals(this.fundingSource, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.fundingSource) &&
-        Objects.equals(this.fundingSourceAffiliation, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.fundingSourceAffiliation) &&
-        Objects.equals(this.credential, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.credential);
+        Objects.equals(this.method, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.method) &&
+        Objects.equals(this.authenticationMethod, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.authenticationMethod);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, method, fundingSource, fundingSourceAffiliation, credential);
+    return Objects.hash(name, subTypeName, fundingSource, method, authenticationMethod);
   }
 
 
@@ -184,11 +163,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    sb.append("    subTypeName: ").append(toIndentedString(subTypeName)).append("\n");
     sb.append("    fundingSource: ").append(toIndentedString(fundingSource)).append("\n");
-    sb.append("    fundingSourceAffiliation: ").append(toIndentedString(fundingSourceAffiliation)).append("\n");
-    sb.append("    credential: ").append(toIndentedString(credential)).append("\n");
+    sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    sb.append("    authenticationMethod: ").append(toIndentedString(authenticationMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

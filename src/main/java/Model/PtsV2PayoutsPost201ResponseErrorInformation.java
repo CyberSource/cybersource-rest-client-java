@@ -29,75 +29,10 @@ import java.util.List;
 /**
  * PtsV2PayoutsPost201ResponseErrorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class PtsV2PayoutsPost201ResponseErrorInformation {
-  /**
-   * The reason of the status.  Possible values:  - EXPIRED_CARD  - PROCESSOR_DECLINED  - STOLEN_LOST_CARD  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - INVALID_CVN  - BLACKLISTED_CUSTOMER  - INVALID_ACCOUNT  - GENERAL_DECLINE  - RISK_CONTROL_DECLINE  - PROCESSOR_RISK_CONTROL_DECLINE 
-   */
-  @JsonAdapter(ReasonEnum.Adapter.class)
-  public enum ReasonEnum {
-    EXPIRED_CARD("EXPIRED_CARD"),
-    
-    PROCESSOR_DECLINED("PROCESSOR_DECLINED"),
-    
-    STOLEN_LOST_CARD("STOLEN_LOST_CARD"),
-    
-    UNAUTHORIZED_CARD("UNAUTHORIZED_CARD"),
-    
-    CVN_NOT_MATCH("CVN_NOT_MATCH"),
-    
-    INVALID_CVN("INVALID_CVN"),
-    
-    BLACKLISTED_CUSTOMER("BLACKLISTED_CUSTOMER"),
-    
-    INVALID_ACCOUNT("INVALID_ACCOUNT"),
-    
-    GENERAL_DECLINE("GENERAL_DECLINE"),
-    
-    RISK_CONTROL_DECLINE("RISK_CONTROL_DECLINE"),
-    
-    PROCESSOR_RISK_CONTROL_DECLINE("PROCESSOR_RISK_CONTROL_DECLINE");
-
-    private String value;
-
-    ReasonEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReasonEnum fromValue(String text) {
-      for (ReasonEnum b : ReasonEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReasonEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReasonEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReasonEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReasonEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("reason")
-  private ReasonEnum reason = null;
+  private String reason = null;
 
   @SerializedName("message")
   private String message = null;
@@ -105,7 +40,7 @@ public class PtsV2PayoutsPost201ResponseErrorInformation {
   @SerializedName("details")
   private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
 
-  public PtsV2PayoutsPost201ResponseErrorInformation reason(ReasonEnum reason) {
+  public PtsV2PayoutsPost201ResponseErrorInformation reason(String reason) {
     this.reason = reason;
     return this;
   }
@@ -115,11 +50,11 @@ public class PtsV2PayoutsPost201ResponseErrorInformation {
    * @return reason
   **/
   @ApiModelProperty(value = "The reason of the status.  Possible values:  - EXPIRED_CARD  - PROCESSOR_DECLINED  - STOLEN_LOST_CARD  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - INVALID_CVN  - BLACKLISTED_CUSTOMER  - INVALID_ACCOUNT  - GENERAL_DECLINE  - RISK_CONTROL_DECLINE  - PROCESSOR_RISK_CONTROL_DECLINE ")
-  public ReasonEnum getReason() {
+  public String getReason() {
     return reason;
   }
 
-  public void setReason(ReasonEnum reason) {
+  public void setReason(String reason) {
     this.reason = reason;
   }
 

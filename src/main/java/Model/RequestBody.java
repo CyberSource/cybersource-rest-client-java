@@ -32,7 +32,7 @@ import org.joda.time.DateTime;
 /**
  * RequestBody
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class RequestBody {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -43,55 +43,8 @@ public class RequestBody {
   @SerializedName("reportFields")
   private List<String> reportFields = null;
 
-  /**
-   *  Format of the report
-   */
-  @JsonAdapter(ReportMimeTypeEnum.Adapter.class)
-  public enum ReportMimeTypeEnum {
-    APPLICATION_XML("application/xml"),
-    
-    TEXT_CSV("text/csv");
-
-    private String value;
-
-    ReportMimeTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReportMimeTypeEnum fromValue(String text) {
-      for (ReportMimeTypeEnum b : ReportMimeTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReportMimeTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReportMimeTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReportMimeTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReportMimeTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("reportMimeType")
-  private ReportMimeTypeEnum reportMimeType = null;
+  private String reportMimeType = null;
 
   @SerializedName("reportName")
   private String reportName = null;
@@ -176,21 +129,21 @@ public class RequestBody {
     this.reportFields = reportFields;
   }
 
-  public RequestBody reportMimeType(ReportMimeTypeEnum reportMimeType) {
+  public RequestBody reportMimeType(String reportMimeType) {
     this.reportMimeType = reportMimeType;
     return this;
   }
 
    /**
-   *  Format of the report
+   * &#39;Format of the report&#39;                  Valid values: - application/xml - text/csv 
    * @return reportMimeType
   **/
-  @ApiModelProperty(example = "application/xml", value = " Format of the report")
-  public ReportMimeTypeEnum getReportMimeType() {
+  @ApiModelProperty(example = "application/xml", value = "'Format of the report'                  Valid values: - application/xml - text/csv ")
+  public String getReportMimeType() {
     return reportMimeType;
   }
 
-  public void setReportMimeType(ReportMimeTypeEnum reportMimeType) {
+  public void setReportMimeType(String reportMimeType) {
     this.reportMimeType = reportMimeType;
   }
 

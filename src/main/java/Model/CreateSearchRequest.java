@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * CreateSearchRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T16:51:14.356+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
 public class CreateSearchRequest {
   @SerializedName("save")
   private Boolean save = null;
@@ -91,10 +91,10 @@ public class CreateSearchRequest {
   }
 
    /**
-   * Time Zone.
+   * Time Zone in ISO format.
    * @return timezone
   **/
-  @ApiModelProperty(value = "Time Zone.")
+  @ApiModelProperty(value = "Time Zone in ISO format.")
   public String getTimezone() {
     return timezone;
   }
@@ -145,10 +145,10 @@ public class CreateSearchRequest {
   }
 
    /**
-   * limit on number of results.
+   * Limit on number of results.
    * @return limit
   **/
-  @ApiModelProperty(value = "limit on number of results.")
+  @ApiModelProperty(value = "Limit on number of results.")
   public Integer getLimit() {
     return limit;
   }

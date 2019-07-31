@@ -118,15 +118,15 @@ Retrieve a list of the available reports to which you are subscribed. This will 
 
 
 ReportsApi apiInstance = new ReportsApi();
-DateTime startTime = new DateTime(); // DateTime | Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
-DateTime endTime = new DateTime(); // DateTime | Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
-String timeQueryType = "timeQueryType_example"; // String | Specify time you would like to search
+DateTime startTime = new DateTime(); // DateTime | Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
+DateTime endTime = new DateTime(); // DateTime | Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
+String timeQueryType = "timeQueryType_example"; // String | Specify time you would like to search  Valid values: - reportTimeFrame - executedTime 
 String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
-String reportMimeType = "reportMimeType_example"; // String | Valid Report Format
-String reportFrequency = "reportFrequency_example"; // String | Valid Report Frequency
+String reportMimeType = "reportMimeType_example"; // String | Valid Report Format  Valid values: - application/xml - text/csv 
+String reportFrequency = "reportFrequency_example"; // String | Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
 String reportName = "reportName_example"; // String | Valid Report Name
 Integer reportDefinitionId = 56; // Integer | Valid Report Definition Id
-String reportStatus = "reportStatus_example"; // String | Valid Report Status
+String reportStatus = "reportStatus_example"; // String | Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA 
 try {
     ReportingV3ReportsGet200Response result = apiInstance.searchReports(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus);
     System.out.println(result);
@@ -140,15 +140,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startTime** | **DateTime**| Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  |
- **endTime** | **DateTime**| Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  |
- **timeQueryType** | **String**| Specify time you would like to search | [enum: reportTimeFrame, executedTime]
+ **startTime** | **DateTime**| Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  |
+ **endTime** | **DateTime**| Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  |
+ **timeQueryType** | **String**| Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  |
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
- **reportMimeType** | **String**| Valid Report Format | [optional] [enum: application/xml, text/csv]
- **reportFrequency** | **String**| Valid Report Frequency | [optional] [enum: DAILY, WEEKLY, MONTHLY, ADHOC]
+ **reportMimeType** | **String**| Valid Report Format  Valid values: - application/xml - text/csv  | [optional]
+ **reportFrequency** | **String**| Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC  | [optional]
  **reportName** | **String**| Valid Report Name | [optional]
  **reportDefinitionId** | **Integer**| Valid Report Definition Id | [optional]
- **reportStatus** | **String**| Valid Report Status | [optional] [enum: COMPLETED, PENDING, QUEUED, RUNNING, ERROR, NO_DATA]
+ **reportStatus** | **String**| Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA  | [optional]
 
 ### Return type
 
