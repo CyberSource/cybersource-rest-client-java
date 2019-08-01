@@ -30,7 +30,6 @@ import java.io.IOException;
 import Model.CreateSearchRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.TssV2TransactionsPost201Response;
-import Model.TssV2TransactionsPost201Response1;
 import Model.TssV2TransactionsPost400Response;
 
 import java.lang.reflect.Type;
@@ -250,11 +249,11 @@ final String[] localVarAccepts ={"*/*"};
      * Get Search results
      * Include the Search ID in the GET request to retrieve the search results.
      * @param searchId Search ID. (required)
-     * @return TssV2TransactionsPost201Response1
+     * @return TssV2TransactionsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TssV2TransactionsPost201Response1 getSearch(String searchId) throws ApiException {
-        ApiResponse<TssV2TransactionsPost201Response1> resp = getSearchWithHttpInfo(searchId);
+    public TssV2TransactionsPost201Response getSearch(String searchId) throws ApiException {
+        ApiResponse<TssV2TransactionsPost201Response> resp = getSearchWithHttpInfo(searchId);
         return resp.getData();
     }
 
@@ -262,12 +261,12 @@ final String[] localVarAccepts ={"*/*"};
      * Get Search results
      * Include the Search ID in the GET request to retrieve the search results.
      * @param searchId Search ID. (required)
-     * @return ApiResponse&lt;TssV2TransactionsPost201Response1&gt;
+     * @return ApiResponse&lt;TssV2TransactionsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TssV2TransactionsPost201Response1> getSearchWithHttpInfo(String searchId) throws ApiException {
+    public ApiResponse<TssV2TransactionsPost201Response> getSearchWithHttpInfo(String searchId) throws ApiException {
         com.squareup.okhttp.Call call = getSearchValidateBeforeCall(searchId, null, null);
-        Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response1>(){}.getType();
+        Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -279,7 +278,7 @@ final String[] localVarAccepts ={"*/*"};
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSearchAsync(String searchId, final ApiCallback<TssV2TransactionsPost201Response1> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSearchAsync(String searchId, final ApiCallback<TssV2TransactionsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -301,7 +300,7 @@ final String[] localVarAccepts ={"*/*"};
         }
 
         com.squareup.okhttp.Call call = getSearchValidateBeforeCall(searchId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response1>(){}.getType();
+        Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

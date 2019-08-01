@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * RiskV1DecisionsPost201ResponseRiskInformationScore
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-30T13:25:59.510+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
 public class RiskV1DecisionsPost201ResponseRiskInformationScore {
   @SerializedName("factorCodes")
   private List<String> factorCodes = null;
