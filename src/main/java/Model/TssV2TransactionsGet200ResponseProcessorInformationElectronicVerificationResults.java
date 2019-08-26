@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults {
   @SerializedName("email")
   private String email = null;
@@ -100,10 +100,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * The description for this field is not available. 
+   * Mapped Electronic Verification response code for the customer’s name. 
    * @return name
   **/
-  @ApiModelProperty(value = "The description for this field is not available. ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s name. ")
   public String getName() {
     return name;
   }
@@ -118,10 +118,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * The description for this field is not available.
+   * Raw Electronic Verification response code from the processor for the customer’s name. 
    * @return nameRaw
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s name. ")
   public String getNameRaw() {
     return nameRaw;
   }

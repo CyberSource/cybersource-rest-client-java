@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import Model.InlineResponse400;
+import Model.InlineResponse4001;
 import org.joda.time.LocalDate;
 import Model.V1FileDetailsGet200Response;
 

@@ -26,10 +26,16 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv {
   @SerializedName("tags")
   private String tags = null;
+
+  @SerializedName("chipValidationType")
+  private String chipValidationType = null;
+
+  @SerializedName("chipValidationResult")
+  private String chipValidationResult = null;
 
   public PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv tags(String tags) {
     this.tags = tags;
@@ -49,6 +55,42 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv {
     this.tags = tags;
   }
 
+  public PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv chipValidationType(String chipValidationType) {
+    this.chipValidationType = chipValidationType;
+    return this;
+  }
+
+   /**
+   * Entity or service that provided the validation results returned in **chipValidationResult**.  Possible values:  - **02**: MasterCard on-behalf pre-validation service (The MasterCard authorization platform validated the M/Chip cryptogram before the authorization request reached the issuer.)  - **03**: MasterCard on-behalf stand-in service (The MasterCard authorization platform validated the M/Chip cryptogram because the issuer was not available.)  - **50**: Issuer  - **90**: Chip fall-back transaction downgrade process (The chip could not be read.)  This field is returned only for NFC payment network tokenization transactions with MasterCard.  **Note** No CyberSource through VisaNet acquirers support EMV at this time. 
+   * @return chipValidationType
+  **/
+  @ApiModelProperty(value = "Entity or service that provided the validation results returned in **chipValidationResult**.  Possible values:  - **02**: MasterCard on-behalf pre-validation service (The MasterCard authorization platform validated the M/Chip cryptogram before the authorization request reached the issuer.)  - **03**: MasterCard on-behalf stand-in service (The MasterCard authorization platform validated the M/Chip cryptogram because the issuer was not available.)  - **50**: Issuer  - **90**: Chip fall-back transaction downgrade process (The chip could not be read.)  This field is returned only for NFC payment network tokenization transactions with MasterCard.  **Note** No CyberSource through VisaNet acquirers support EMV at this time. ")
+  public String getChipValidationType() {
+    return chipValidationType;
+  }
+
+  public void setChipValidationType(String chipValidationType) {
+    this.chipValidationType = chipValidationType;
+  }
+
+  public PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv chipValidationResult(String chipValidationResult) {
+    this.chipValidationResult = chipValidationResult;
+    return this;
+  }
+
+   /**
+   * Cryptogram validation results returned by the entity or service specified in **chipValidationType**.  Possible values: - **A**: Application cryptogram is valid, but the application transaction counter (ATC) is outside allowed range. (A large jump in ATC values may indicate data copying or other fraud.) - **C**: Chip validation was completed successfully. - **E**: Application cryptogram is valid but the ATC indicates possible replay fraud. - **F**: Format error in the chip data. - **G**: Application cryptogram is valid but is not a valid authorization request cryptogram (ARQC). - **I**: Application cryptogram is invalid. - **T**: Application cryptogram is valid but terminal verification results (TVR) or card verification results (CVR) are invalid. - **U**: Application cryptogram could not be validated because of a technical error.  This field is returned only for NFC payment network tokenization transactions with MasterCard.  **Note** No CyberSource through VisaNet acquirers support EMV at this time. 
+   * @return chipValidationResult
+  **/
+  @ApiModelProperty(value = "Cryptogram validation results returned by the entity or service specified in **chipValidationType**.  Possible values: - **A**: Application cryptogram is valid, but the application transaction counter (ATC) is outside allowed range. (A large jump in ATC values may indicate data copying or other fraud.) - **C**: Chip validation was completed successfully. - **E**: Application cryptogram is valid but the ATC indicates possible replay fraud. - **F**: Format error in the chip data. - **G**: Application cryptogram is valid but is not a valid authorization request cryptogram (ARQC). - **I**: Application cryptogram is invalid. - **T**: Application cryptogram is valid but terminal verification results (TVR) or card verification results (CVR) are invalid. - **U**: Application cryptogram could not be validated because of a technical error.  This field is returned only for NFC payment network tokenization transactions with MasterCard.  **Note** No CyberSource through VisaNet acquirers support EMV at this time. ")
+  public String getChipValidationResult() {
+    return chipValidationResult;
+  }
+
+  public void setChipValidationResult(String chipValidationResult) {
+    this.chipValidationResult = chipValidationResult;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +101,14 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv {
       return false;
     }
     PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv ptsV2PaymentsPost201ResponsePointOfSaleInformationEmv = (PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv) o;
-    return Objects.equals(this.tags, ptsV2PaymentsPost201ResponsePointOfSaleInformationEmv.tags);
+    return Objects.equals(this.tags, ptsV2PaymentsPost201ResponsePointOfSaleInformationEmv.tags) &&
+        Objects.equals(this.chipValidationType, ptsV2PaymentsPost201ResponsePointOfSaleInformationEmv.chipValidationType) &&
+        Objects.equals(this.chipValidationResult, ptsV2PaymentsPost201ResponsePointOfSaleInformationEmv.chipValidationResult);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tags);
+    return Objects.hash(tags, chipValidationType, chipValidationResult);
   }
 
 
@@ -74,6 +118,8 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv {
     sb.append("class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv {\n");
     
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    chipValidationType: ").append(toIndentedString(chipValidationType)).append("\n");
+    sb.append("    chipValidationResult: ").append(toIndentedString(chipValidationResult)).append("\n");
     sb.append("}");
     return sb.toString();
   }

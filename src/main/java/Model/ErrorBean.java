@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse400Fields;
+import Model.InlineResponse4001Fields;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,7 +30,7 @@ import java.util.List;
  * Error Bean
  */
 @ApiModel(description = "Error Bean")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class ErrorBean {
   @SerializedName("code")
   private String code = null;
@@ -48,7 +48,7 @@ public class ErrorBean {
   private String detail = null;
 
   @SerializedName("fields")
-  private List<InlineResponse400Fields> fields = null;
+  private List<InlineResponse4001Fields> fields = null;
 
   public ErrorBean code(String code) {
     this.code = code;
@@ -140,14 +140,14 @@ public class ErrorBean {
     this.detail = detail;
   }
 
-  public ErrorBean fields(List<InlineResponse400Fields> fields) {
+  public ErrorBean fields(List<InlineResponse4001Fields> fields) {
     this.fields = fields;
     return this;
   }
 
-  public ErrorBean addFieldsItem(InlineResponse400Fields fieldsItem) {
+  public ErrorBean addFieldsItem(InlineResponse4001Fields fieldsItem) {
     if (this.fields == null) {
-      this.fields = new ArrayList<InlineResponse400Fields>();
+      this.fields = new ArrayList<InlineResponse4001Fields>();
     }
     this.fields.add(fieldsItem);
     return this;
@@ -158,11 +158,11 @@ public class ErrorBean {
    * @return fields
   **/
   @ApiModelProperty(value = "Error fields List")
-  public List<InlineResponse400Fields> getFields() {
+  public List<InlineResponse4001Fields> getFields() {
     return fields;
   }
 
-  public void setFields(List<InlineResponse400Fields> fields) {
+  public void setFields(List<InlineResponse4001Fields> fields) {
     this.fields = fields;
   }
 

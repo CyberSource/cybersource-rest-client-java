@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import Model.CreateInstrumentIdentifierRequest;
-import Model.InlineResponse4001;
+import Model.InlineResponse400;
 import Model.TmsV1InstrumentIdentifiersDelete409Response;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response;
 import Model.TmsV1InstrumentIdentifiersPost200Response;

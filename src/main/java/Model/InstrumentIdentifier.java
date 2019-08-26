@@ -14,11 +14,11 @@
 package Model;
 
 import java.util.Objects;
-import Model.TmsV1InstrumentIdentifiersPost200ResponseBankAccount;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseCard;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseLinks;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseMetadata;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation;
+import Model.Tmsv1instrumentidentifiersBankAccount;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,7 +31,7 @@ import java.io.IOException;
 /**
  * InstrumentIdentifier
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class InstrumentIdentifier {
   @SerializedName("_links")
   private TmsV1InstrumentIdentifiersPost200ResponseLinks links = null;
@@ -49,7 +49,7 @@ public class InstrumentIdentifier {
   private TmsV1InstrumentIdentifiersPost200ResponseCard card = null;
 
   @SerializedName("bankAccount")
-  private TmsV1InstrumentIdentifiersPost200ResponseBankAccount bankAccount = null;
+  private Tmsv1instrumentidentifiersBankAccount bankAccount = null;
 
   @SerializedName("processingInformation")
   private TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation processingInformation = null;
@@ -120,7 +120,7 @@ public class InstrumentIdentifier {
     this.card = card;
   }
 
-  public InstrumentIdentifier bankAccount(TmsV1InstrumentIdentifiersPost200ResponseBankAccount bankAccount) {
+  public InstrumentIdentifier bankAccount(Tmsv1instrumentidentifiersBankAccount bankAccount) {
     this.bankAccount = bankAccount;
     return this;
   }
@@ -130,11 +130,11 @@ public class InstrumentIdentifier {
    * @return bankAccount
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentIdentifiersPost200ResponseBankAccount getBankAccount() {
+  public Tmsv1instrumentidentifiersBankAccount getBankAccount() {
     return bankAccount;
   }
 
-  public void setBankAccount(TmsV1InstrumentIdentifiersPost200ResponseBankAccount bankAccount) {
+  public void setBankAccount(Tmsv1instrumentidentifiersBankAccount bankAccount) {
     this.bankAccount = bankAccount;
   }
 

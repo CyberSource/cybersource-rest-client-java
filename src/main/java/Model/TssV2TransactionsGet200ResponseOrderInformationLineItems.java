@@ -22,12 +22,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * TssV2TransactionsGet200ResponseOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class TssV2TransactionsGet200ResponseOrderInformationLineItems {
   @SerializedName("productCode")
   private String productCode = null;
@@ -42,7 +41,7 @@ public class TssV2TransactionsGet200ResponseOrderInformationLineItems {
   private String taxAmount = null;
 
   @SerializedName("quantity")
-  private BigDecimal quantity = null;
+  private Integer quantity = null;
 
   @SerializedName("unitPrice")
   private String unitPrice = null;
@@ -122,7 +121,7 @@ public class TssV2TransactionsGet200ResponseOrderInformationLineItems {
     this.taxAmount = taxAmount;
   }
 
-  public TssV2TransactionsGet200ResponseOrderInformationLineItems quantity(BigDecimal quantity) {
+  public TssV2TransactionsGet200ResponseOrderInformationLineItems quantity(Integer quantity) {
     this.quantity = quantity;
     return this;
   }
@@ -130,15 +129,15 @@ public class TssV2TransactionsGet200ResponseOrderInformationLineItems {
    /**
    * For a payment or capture, this field is required when _productCode_ is not **default** or one of the values related to shipping and handling. 
    * minimum: 1
-   * maximum: 9999999999
+   * maximum: 999999999
    * @return quantity
   **/
   @ApiModelProperty(value = "For a payment or capture, this field is required when _productCode_ is not **default** or one of the values related to shipping and handling. ")
-  public BigDecimal getQuantity() {
+  public Integer getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(BigDecimal quantity) {
+  public void setQuantity(Integer quantity) {
     this.quantity = quantity;
   }
 

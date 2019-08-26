@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**self** | [**TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  |  [optional]
-**ancestor** | [**TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  |  [optional]
-**successor** | [**TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  |  [optional]
+**self** | [**InlineResponseDefaultLinksNext**](InlineResponseDefaultLinksNext.md) |  |  [optional]
+**documentation** | [**List&lt;InlineResponseDefaultLinksNext&gt;**](InlineResponseDefaultLinksNext.md) |  |  [optional]
+**next** | [**List&lt;InlineResponseDefaultLinksNext&gt;**](InlineResponseDefaultLinksNext.md) |  |  [optional]
 
 
 

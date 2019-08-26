@@ -14,7 +14,7 @@
 package Api;
 
 import Invokers.ApiException;
-import Model.InlineResponse400;
+import Model.InlineResponse4001;
 import org.joda.time.LocalDate;
 import Model.V1FileDetailsGet200Response;
 import org.junit.Test;

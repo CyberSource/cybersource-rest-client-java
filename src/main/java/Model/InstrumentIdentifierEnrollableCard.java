@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Tmsv1instrumentidentifiersBankAccount;
 import Model.Tmsv1instrumentidentifiersBillTo;
 import Model.Tmsv1instrumentidentifiersCard;
 import com.google.gson.TypeAdapter;
@@ -28,13 +29,16 @@ import java.io.IOException;
 /**
  * InstrumentIdentifierEnrollableCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class InstrumentIdentifierEnrollableCard {
   @SerializedName("type")
   private String type = null;
 
   @SerializedName("card")
   private Tmsv1instrumentidentifiersCard card = null;
+
+  @SerializedName("BankAccount")
+  private Tmsv1instrumentidentifiersBankAccount bankAccount = null;
 
   @SerializedName("billTo")
   private Tmsv1instrumentidentifiersBillTo billTo = null;
@@ -75,6 +79,24 @@ public class InstrumentIdentifierEnrollableCard {
     this.card = card;
   }
 
+  public InstrumentIdentifierEnrollableCard bankAccount(Tmsv1instrumentidentifiersBankAccount bankAccount) {
+    this.bankAccount = bankAccount;
+    return this;
+  }
+
+   /**
+   * Get bankAccount
+   * @return bankAccount
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv1instrumentidentifiersBankAccount getBankAccount() {
+    return bankAccount;
+  }
+
+  public void setBankAccount(Tmsv1instrumentidentifiersBankAccount bankAccount) {
+    this.bankAccount = bankAccount;
+  }
+
   public InstrumentIdentifierEnrollableCard billTo(Tmsv1instrumentidentifiersBillTo billTo) {
     this.billTo = billTo;
     return this;
@@ -105,12 +127,13 @@ public class InstrumentIdentifierEnrollableCard {
     InstrumentIdentifierEnrollableCard instrumentIdentifierEnrollableCard = (InstrumentIdentifierEnrollableCard) o;
     return Objects.equals(this.type, instrumentIdentifierEnrollableCard.type) &&
         Objects.equals(this.card, instrumentIdentifierEnrollableCard.card) &&
+        Objects.equals(this.bankAccount, instrumentIdentifierEnrollableCard.bankAccount) &&
         Objects.equals(this.billTo, instrumentIdentifierEnrollableCard.billTo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, card, billTo);
+    return Objects.hash(type, card, bankAccount, billTo);
   }
 
 
@@ -121,6 +144,7 @@ public class InstrumentIdentifierEnrollableCard {
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
     sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
     sb.append("}");
     return sb.toString();

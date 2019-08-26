@@ -1,5 +1,5 @@
 
-# TmsV1InstrumentIdentifiersPost200ResponseBankAccount
+# Tmsv1instrumentidentifiersBankAccount
 
 ## Properties
 Name | Type | Description | Notes

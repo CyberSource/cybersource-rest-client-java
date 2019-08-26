@@ -26,10 +26,10 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationFluidData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class Ptsv2paymentsPaymentInformationFluidData {
-  @SerializedName("key")
-  private String key = null;
+  @SerializedName("keySerialNumber")
+  private String keySerialNumber = null;
 
   @SerializedName("descriptor")
   private String descriptor = null;
@@ -40,22 +40,22 @@ public class Ptsv2paymentsPaymentInformationFluidData {
   @SerializedName("encoding")
   private String encoding = null;
 
-  public Ptsv2paymentsPaymentInformationFluidData key(String key) {
-    this.key = key;
+  public Ptsv2paymentsPaymentInformationFluidData keySerialNumber(String keySerialNumber) {
+    this.keySerialNumber = keySerialNumber;
     return this;
   }
 
    /**
    * The encoded or encrypted value that a payment solution returns for an authorization request. For details about the valid values for a key, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html) 
-   * @return key
+   * @return keySerialNumber
   **/
   @ApiModelProperty(value = "The encoded or encrypted value that a payment solution returns for an authorization request. For details about the valid values for a key, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html) ")
-  public String getKey() {
-    return key;
+  public String getKeySerialNumber() {
+    return keySerialNumber;
   }
 
-  public void setKey(String key) {
-    this.key = key;
+  public void setKeySerialNumber(String keySerialNumber) {
+    this.keySerialNumber = keySerialNumber;
   }
 
   public Ptsv2paymentsPaymentInformationFluidData descriptor(String descriptor) {
@@ -122,7 +122,7 @@ public class Ptsv2paymentsPaymentInformationFluidData {
       return false;
     }
     Ptsv2paymentsPaymentInformationFluidData ptsv2paymentsPaymentInformationFluidData = (Ptsv2paymentsPaymentInformationFluidData) o;
-    return Objects.equals(this.key, ptsv2paymentsPaymentInformationFluidData.key) &&
+    return Objects.equals(this.keySerialNumber, ptsv2paymentsPaymentInformationFluidData.keySerialNumber) &&
         Objects.equals(this.descriptor, ptsv2paymentsPaymentInformationFluidData.descriptor) &&
         Objects.equals(this.value, ptsv2paymentsPaymentInformationFluidData.value) &&
         Objects.equals(this.encoding, ptsv2paymentsPaymentInformationFluidData.encoding);
@@ -130,7 +130,7 @@ public class Ptsv2paymentsPaymentInformationFluidData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, descriptor, value, encoding);
+    return Objects.hash(keySerialNumber, descriptor, value, encoding);
   }
 
 
@@ -139,7 +139,7 @@ public class Ptsv2paymentsPaymentInformationFluidData {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPaymentInformationFluidData {\n");
     
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    keySerialNumber: ").append(toIndentedString(keySerialNumber)).append("\n");
     sb.append("    descriptor: ").append(toIndentedString(descriptor)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    encoding: ").append(toIndentedString(encoding)).append("\n");

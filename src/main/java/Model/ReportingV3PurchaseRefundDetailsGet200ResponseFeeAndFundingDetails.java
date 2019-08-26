@@ -27,13 +27,22 @@ import java.io.IOException;
  * Fee Funding Section
  */
 @ApiModel(description = "Fee Funding Section")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails {
   @SerializedName("requestId")
   private String requestId = null;
 
   @SerializedName("interchangePerItemFee")
   private String interchangePerItemFee = null;
+
+  @SerializedName("interchangeDescription")
+  private String interchangeDescription = null;
+
+  @SerializedName("interchangePercentage")
+  private String interchangePercentage = null;
+
+  @SerializedName("interchangePercentageAmount")
+  private String interchangePercentageAmount = null;
 
   @SerializedName("discountPercentage")
   private String discountPercentage = null;
@@ -93,6 +102,60 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails 
 
   public void setInterchangePerItemFee(String interchangePerItemFee) {
     this.interchangePerItemFee = interchangePerItemFee;
+  }
+
+  public ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails interchangeDescription(String interchangeDescription) {
+    this.interchangeDescription = interchangeDescription;
+    return this;
+  }
+
+   /**
+   * interchange Description
+   * @return interchangeDescription
+  **/
+  @ApiModelProperty(example = "Visa International Assessments (Enhanced)", value = "interchange Description")
+  public String getInterchangeDescription() {
+    return interchangeDescription;
+  }
+
+  public void setInterchangeDescription(String interchangeDescription) {
+    this.interchangeDescription = interchangeDescription;
+  }
+
+  public ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails interchangePercentage(String interchangePercentage) {
+    this.interchangePercentage = interchangePercentage;
+    return this;
+  }
+
+   /**
+   * interchange Percentage
+   * @return interchangePercentage
+  **/
+  @ApiModelProperty(example = "0.25", value = "interchange Percentage")
+  public String getInterchangePercentage() {
+    return interchangePercentage;
+  }
+
+  public void setInterchangePercentage(String interchangePercentage) {
+    this.interchangePercentage = interchangePercentage;
+  }
+
+  public ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails interchangePercentageAmount(String interchangePercentageAmount) {
+    this.interchangePercentageAmount = interchangePercentageAmount;
+    return this;
+  }
+
+   /**
+   * interchange Percentage Amount
+   * @return interchangePercentageAmount
+  **/
+  @ApiModelProperty(example = "-3.7500", value = "interchange Percentage Amount")
+  public String getInterchangePercentageAmount() {
+    return interchangePercentageAmount;
+  }
+
+  public void setInterchangePercentageAmount(String interchangePercentageAmount) {
+    this.interchangePercentageAmount = interchangePercentageAmount;
   }
 
   public ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails discountPercentage(String discountPercentage) {
@@ -251,6 +314,9 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails 
     ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails reportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails = (ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails) o;
     return Objects.equals(this.requestId, reportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails.requestId) &&
         Objects.equals(this.interchangePerItemFee, reportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails.interchangePerItemFee) &&
+        Objects.equals(this.interchangeDescription, reportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails.interchangeDescription) &&
+        Objects.equals(this.interchangePercentage, reportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails.interchangePercentage) &&
+        Objects.equals(this.interchangePercentageAmount, reportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails.interchangePercentageAmount) &&
         Objects.equals(this.discountPercentage, reportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails.discountPercentage) &&
         Objects.equals(this.discountAmount, reportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails.discountAmount) &&
         Objects.equals(this.discountPerItemFee, reportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails.discountPerItemFee) &&
@@ -263,7 +329,7 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails 
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestId, interchangePerItemFee, discountPercentage, discountAmount, discountPerItemFee, totalFee, feeCurrency, duesAssessments, fundingAmount, fundingCurrency);
+    return Objects.hash(requestId, interchangePerItemFee, interchangeDescription, interchangePercentage, interchangePercentageAmount, discountPercentage, discountAmount, discountPerItemFee, totalFee, feeCurrency, duesAssessments, fundingAmount, fundingCurrency);
   }
 
 
@@ -274,6 +340,9 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails 
     
     sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
     sb.append("    interchangePerItemFee: ").append(toIndentedString(interchangePerItemFee)).append("\n");
+    sb.append("    interchangeDescription: ").append(toIndentedString(interchangeDescription)).append("\n");
+    sb.append("    interchangePercentage: ").append(toIndentedString(interchangePercentage)).append("\n");
+    sb.append("    interchangePercentageAmount: ").append(toIndentedString(interchangePercentageAmount)).append("\n");
     sb.append("    discountPercentage: ").append(toIndentedString(discountPercentage)).append("\n");
     sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
     sb.append("    discountPerItemFee: ").append(toIndentedString(discountPerItemFee)).append("\n");
