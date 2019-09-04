@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
   @SerializedName("emv")
   private PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv emv = null;

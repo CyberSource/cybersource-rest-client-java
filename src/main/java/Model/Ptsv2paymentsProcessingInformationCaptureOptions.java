@@ -22,23 +22,22 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * Ptsv2paymentsProcessingInformationCaptureOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class Ptsv2paymentsProcessingInformationCaptureOptions {
   @SerializedName("captureSequenceNumber")
-  private BigDecimal captureSequenceNumber = null;
+  private Integer captureSequenceNumber = null;
 
   @SerializedName("totalCaptureCount")
-  private BigDecimal totalCaptureCount = null;
+  private Integer totalCaptureCount = null;
 
   @SerializedName("dateToCapture")
   private String dateToCapture = null;
 
-  public Ptsv2paymentsProcessingInformationCaptureOptions captureSequenceNumber(BigDecimal captureSequenceNumber) {
+  public Ptsv2paymentsProcessingInformationCaptureOptions captureSequenceNumber(Integer captureSequenceNumber) {
     this.captureSequenceNumber = captureSequenceNumber;
     return this;
   }
@@ -50,15 +49,15 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
    * @return captureSequenceNumber
   **/
   @ApiModelProperty(value = "Capture number when requesting multiple partial captures for one authorization. Used along with `totalCaptureCount` to track which capture is being processed.  For example, the second of five captures would be passed to CyberSource as:   - `captureSequenceNumber_ = 2`, and   - `totalCaptureCount = 5` ")
-  public BigDecimal getCaptureSequenceNumber() {
+  public Integer getCaptureSequenceNumber() {
     return captureSequenceNumber;
   }
 
-  public void setCaptureSequenceNumber(BigDecimal captureSequenceNumber) {
+  public void setCaptureSequenceNumber(Integer captureSequenceNumber) {
     this.captureSequenceNumber = captureSequenceNumber;
   }
 
-  public Ptsv2paymentsProcessingInformationCaptureOptions totalCaptureCount(BigDecimal totalCaptureCount) {
+  public Ptsv2paymentsProcessingInformationCaptureOptions totalCaptureCount(Integer totalCaptureCount) {
     this.totalCaptureCount = totalCaptureCount;
     return this;
   }
@@ -70,11 +69,11 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
    * @return totalCaptureCount
   **/
   @ApiModelProperty(value = "Total number of captures when requesting multiple partial captures for one payment. Used along with `captureSequenceNumber` field to track which capture is being processed.  For example, the second of five captures would be passed to CyberSource as:   - `captureSequenceNumber = 2`, and   - `totalCaptureCount = 5` ")
-  public BigDecimal getTotalCaptureCount() {
+  public Integer getTotalCaptureCount() {
     return totalCaptureCount;
   }
 
-  public void setTotalCaptureCount(BigDecimal totalCaptureCount) {
+  public void setTotalCaptureCount(Integer totalCaptureCount) {
     this.totalCaptureCount = totalCaptureCount;
   }
 
@@ -84,10 +83,10 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
   }
 
    /**
-   * Date on which you want the capture to occur. This field is supported only for Visa Platform Connect.\\ &#x60;Format: MMDD&#x60; 
+   * Date on which you want the capture to occur. This field is supported only for CyberSource through VisaNet.\\ &#x60;Format: MMDD&#x60; 
    * @return dateToCapture
   **/
-  @ApiModelProperty(value = "Date on which you want the capture to occur. This field is supported only for Visa Platform Connect.\\ `Format: MMDD` ")
+  @ApiModelProperty(value = "Date on which you want the capture to occur. This field is supported only for CyberSource through VisaNet.\\ `Format: MMDD` ")
   public String getDateToCapture() {
     return dateToCapture;
   }

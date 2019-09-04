@@ -24,17 +24,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TmsV1InstrumentIdentifiersPost200ResponseBankAccount
+ * Tmsv1instrumentidentifiersBankAccount
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
-public class TmsV1InstrumentIdentifiersPost200ResponseBankAccount {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+public class Tmsv1instrumentidentifiersBankAccount {
   @SerializedName("number")
   private String number = null;
 
   @SerializedName("routingNumber")
   private String routingNumber = null;
 
-  public TmsV1InstrumentIdentifiersPost200ResponseBankAccount number(String number) {
+  public Tmsv1instrumentidentifiersBankAccount number(String number) {
     this.number = number;
     return this;
   }
@@ -52,7 +52,7 @@ public class TmsV1InstrumentIdentifiersPost200ResponseBankAccount {
     this.number = number;
   }
 
-  public TmsV1InstrumentIdentifiersPost200ResponseBankAccount routingNumber(String routingNumber) {
+  public Tmsv1instrumentidentifiersBankAccount routingNumber(String routingNumber) {
     this.routingNumber = routingNumber;
     return this;
   }
@@ -79,9 +79,9 @@ public class TmsV1InstrumentIdentifiersPost200ResponseBankAccount {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TmsV1InstrumentIdentifiersPost200ResponseBankAccount tmsV1InstrumentIdentifiersPost200ResponseBankAccount = (TmsV1InstrumentIdentifiersPost200ResponseBankAccount) o;
-    return Objects.equals(this.number, tmsV1InstrumentIdentifiersPost200ResponseBankAccount.number) &&
-        Objects.equals(this.routingNumber, tmsV1InstrumentIdentifiersPost200ResponseBankAccount.routingNumber);
+    Tmsv1instrumentidentifiersBankAccount tmsv1instrumentidentifiersBankAccount = (Tmsv1instrumentidentifiersBankAccount) o;
+    return Objects.equals(this.number, tmsv1instrumentidentifiersBankAccount.number) &&
+        Objects.equals(this.routingNumber, tmsv1instrumentidentifiersBankAccount.routingNumber);
   }
 
   @Override
@@ -93,7 +93,7 @@ public class TmsV1InstrumentIdentifiersPost200ResponseBankAccount {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TmsV1InstrumentIdentifiersPost200ResponseBankAccount {\n");
+    sb.append("class Tmsv1instrumentidentifiersBankAccount {\n");
     
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");

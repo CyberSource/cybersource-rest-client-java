@@ -258,7 +258,7 @@
 		<dependency>
 			<groupId>com.cybersource</groupId>
 			<artifactId>AuthenticationSdk</artifactId>
-			<version>0.0.5</version>
+			<version>0.0.6</version>
 		</dependency>
         
         <!-- Added dependencies -->
@@ -286,7 +286,7 @@
 		<maven-plugin-version>1.0.0</maven-plugin-version>
 		<junit-version>4.12</junit-version>
         <flex-version>0.3.1</flex-version>
-        <jackson-version>2.9.9.1</jackson-version>
+        <jackson-version>2.9.9.3</jackson-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 </project>

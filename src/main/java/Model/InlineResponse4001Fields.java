@@ -27,8 +27,8 @@ import java.io.IOException;
  * Provide validation failed input field details
  */
 @ApiModel(description = "Provide validation failed input field details")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
-public class InlineResponse400Fields {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+public class InlineResponse4001Fields {
   @SerializedName("path")
   private String path = null;
 
@@ -38,7 +38,7 @@ public class InlineResponse400Fields {
   @SerializedName("localizationKey")
   private String localizationKey = null;
 
-  public InlineResponse400Fields path(String path) {
+  public InlineResponse4001Fields path(String path) {
     this.path = path;
     return this;
   }
@@ -56,7 +56,7 @@ public class InlineResponse400Fields {
     this.path = path;
   }
 
-  public InlineResponse400Fields message(String message) {
+  public InlineResponse4001Fields message(String message) {
     this.message = message;
     return this;
   }
@@ -74,7 +74,7 @@ public class InlineResponse400Fields {
     this.message = message;
   }
 
-  public InlineResponse400Fields localizationKey(String localizationKey) {
+  public InlineResponse4001Fields localizationKey(String localizationKey) {
     this.localizationKey = localizationKey;
     return this;
   }
@@ -101,10 +101,10 @@ public class InlineResponse400Fields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse400Fields inlineResponse400Fields = (InlineResponse400Fields) o;
-    return Objects.equals(this.path, inlineResponse400Fields.path) &&
-        Objects.equals(this.message, inlineResponse400Fields.message) &&
-        Objects.equals(this.localizationKey, inlineResponse400Fields.localizationKey);
+    InlineResponse4001Fields inlineResponse4001Fields = (InlineResponse4001Fields) o;
+    return Objects.equals(this.path, inlineResponse4001Fields.path) &&
+        Objects.equals(this.message, inlineResponse4001Fields.message) &&
+        Objects.equals(this.localizationKey, inlineResponse4001Fields.localizationKey);
   }
 
   @Override
@@ -116,7 +116,7 @@ public class InlineResponse400Fields {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse400Fields {\n");
+    sb.append("class InlineResponse4001Fields {\n");
     
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

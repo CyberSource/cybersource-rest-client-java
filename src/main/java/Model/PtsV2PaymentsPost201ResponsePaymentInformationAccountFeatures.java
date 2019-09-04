@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   @SerializedName("accountType")
   private String accountType = null;
@@ -103,10 +103,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Possible values:   - &#x60;N&#x60;: Nonregulated  - &#x60;R&#x60;: Regulated  **Note** This field is returned only for Visa Platform Connect. 
+   * Possible values:   - &#x60;N&#x60;: Nonregulated  - &#x60;R&#x60;: Regulated  **Note** This field is returned only for CyberSource through VisaNet. 
    * @return accountStatus
   **/
-  @ApiModelProperty(value = "Possible values:   - `N`: Nonregulated  - `R`: Regulated  **Note** This field is returned only for Visa Platform Connect. ")
+  @ApiModelProperty(value = "Possible values:   - `N`: Nonregulated  - `R`: Regulated  **Note** This field is returned only for CyberSource through VisaNet. ")
   public String getAccountStatus() {
     return accountStatus;
   }
@@ -247,10 +247,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Type of commercial card. This field is supported only for Visa Platform Connect. Possible values:   - **B**: Business card  - **R**: Corporate card  - **S**: Purchasing card  - **0**: Noncommercial card 
+   * Type of commercial card. This field is supported only for CyberSource through VisaNet. Possible values:   - **B**: Business card  - **R**: Corporate card  - **S**: Purchasing card  - **0**: Noncommercial card 
    * @return group
   **/
-  @ApiModelProperty(value = "Type of commercial card. This field is supported only for Visa Platform Connect. Possible values:   - **B**: Business card  - **R**: Corporate card  - **S**: Purchasing card  - **0**: Noncommercial card ")
+  @ApiModelProperty(value = "Type of commercial card. This field is supported only for CyberSource through VisaNet. Possible values:   - **B**: Business card  - **R**: Corporate card  - **S**: Purchasing card  - **0**: Noncommercial card ")
   public String getGroup() {
     return group;
   }

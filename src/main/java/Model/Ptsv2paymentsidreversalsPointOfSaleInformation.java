@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv;
+import Model.Ptsv2paymentsidreversalsPointOfSaleInformationEmv;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,12 +27,12 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidreversalsPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class Ptsv2paymentsidreversalsPointOfSaleInformation {
   @SerializedName("emv")
-  private PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv emv = null;
+  private Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv = null;
 
-  public Ptsv2paymentsidreversalsPointOfSaleInformation emv(PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv emv) {
+  public Ptsv2paymentsidreversalsPointOfSaleInformation emv(Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv) {
     this.emv = emv;
     return this;
   }
@@ -42,11 +42,11 @@ public class Ptsv2paymentsidreversalsPointOfSaleInformation {
    * @return emv
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv getEmv() {
+  public Ptsv2paymentsidreversalsPointOfSaleInformationEmv getEmv() {
     return emv;
   }
 
-  public void setEmv(PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv emv) {
+  public void setEmv(Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv) {
     this.emv = emv;
   }
 

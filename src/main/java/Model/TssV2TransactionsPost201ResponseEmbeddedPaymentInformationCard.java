@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard {
   @SerializedName("suffix")
   private String suffix = null;
@@ -61,10 +61,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard {
   }
 
    /**
-   * The description for this field is not available.
+   * Bank Identification Number (BIN). This is the initial four to six numbers on a credit card account number. 
    * @return prefix
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Bank Identification Number (BIN). This is the initial four to six numbers on a credit card account number. ")
   public String getPrefix() {
     return prefix;
   }

@@ -22,18 +22,17 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * Ptsv2paymentsPointOfSaleInformationEmv
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class Ptsv2paymentsPointOfSaleInformationEmv {
   @SerializedName("tags")
   private String tags = null;
 
   @SerializedName("cardholderVerificationMethodUsed")
-  private BigDecimal cardholderVerificationMethodUsed = null;
+  private Integer cardholderVerificationMethodUsed = null;
 
   @SerializedName("cardSequenceNumber")
   private String cardSequenceNumber = null;
@@ -42,7 +41,7 @@ public class Ptsv2paymentsPointOfSaleInformationEmv {
   private Boolean fallback = false;
 
   @SerializedName("fallbackCondition")
-  private BigDecimal fallbackCondition = null;
+  private Integer fallbackCondition = null;
 
   public Ptsv2paymentsPointOfSaleInformationEmv tags(String tags) {
     this.tags = tags;
@@ -62,7 +61,7 @@ public class Ptsv2paymentsPointOfSaleInformationEmv {
     this.tags = tags;
   }
 
-  public Ptsv2paymentsPointOfSaleInformationEmv cardholderVerificationMethodUsed(BigDecimal cardholderVerificationMethodUsed) {
+  public Ptsv2paymentsPointOfSaleInformationEmv cardholderVerificationMethodUsed(Integer cardholderVerificationMethodUsed) {
     this.cardholderVerificationMethodUsed = cardholderVerificationMethodUsed;
     return this;
   }
@@ -72,11 +71,11 @@ public class Ptsv2paymentsPointOfSaleInformationEmv {
    * @return cardholderVerificationMethodUsed
   **/
   @ApiModelProperty(value = "Method that was used to verify the cardholder's identity.  Possible values:  - **0**: No verification  - **1**: Signature  This field is supported only on **American Express Direct**. ")
-  public BigDecimal getCardholderVerificationMethodUsed() {
+  public Integer getCardholderVerificationMethodUsed() {
     return cardholderVerificationMethodUsed;
   }
 
-  public void setCardholderVerificationMethodUsed(BigDecimal cardholderVerificationMethodUsed) {
+  public void setCardholderVerificationMethodUsed(Integer cardholderVerificationMethodUsed) {
     this.cardholderVerificationMethodUsed = cardholderVerificationMethodUsed;
   }
 
@@ -116,7 +115,7 @@ public class Ptsv2paymentsPointOfSaleInformationEmv {
     this.fallback = fallback;
   }
 
-  public Ptsv2paymentsPointOfSaleInformationEmv fallbackCondition(BigDecimal fallbackCondition) {
+  public Ptsv2paymentsPointOfSaleInformationEmv fallbackCondition(Integer fallbackCondition) {
     this.fallbackCondition = fallbackCondition;
     return this;
   }
@@ -126,11 +125,11 @@ public class Ptsv2paymentsPointOfSaleInformationEmv {
    * @return fallbackCondition
   **/
   @ApiModelProperty(value = "Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - **1**: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal either used information from a successful chip read or it was not a chip transaction.  - **2**: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN**.  **NOTE**: This field is required when an EMV transaction fails for a technical reason. Do not include this field when the EMV terminal does not have any applications in common with the EMV card.  For details, see the `emv_request_fallback_condition` field description in the [Card-Present Processing Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
-  public BigDecimal getFallbackCondition() {
+  public Integer getFallbackCondition() {
     return fallbackCondition;
   }
 
-  public void setFallbackCondition(BigDecimal fallbackCondition) {
+  public void setFallbackCondition(Integer fallbackCondition) {
     this.fallbackCondition = fallbackCondition;
   }
 

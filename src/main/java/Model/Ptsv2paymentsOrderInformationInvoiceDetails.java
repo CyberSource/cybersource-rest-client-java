@@ -23,14 +23,13 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Ptsv2paymentsOrderInformationInvoiceDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class Ptsv2paymentsOrderInformationInvoiceDetails {
   @SerializedName("invoiceNumber")
   private String invoiceNumber = null;
@@ -60,7 +59,7 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
   private String commodityCode = null;
 
   @SerializedName("merchandiseCode")
-  private BigDecimal merchandiseCode = null;
+  private Integer merchandiseCode = null;
 
   @SerializedName("transactionAdviceAddendum")
   private List<Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum> transactionAdviceAddendum = null;
@@ -233,7 +232,7 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     this.commodityCode = commodityCode;
   }
 
-  public Ptsv2paymentsOrderInformationInvoiceDetails merchandiseCode(BigDecimal merchandiseCode) {
+  public Ptsv2paymentsOrderInformationInvoiceDetails merchandiseCode(Integer merchandiseCode) {
     this.merchandiseCode = merchandiseCode;
     return this;
   }
@@ -243,11 +242,11 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
    * @return merchandiseCode
   **/
   @ApiModelProperty(value = "Identifier for the merchandise. Possible value:   - 1000: Gift card  This field is supported only for **American Express Direct**. ")
-  public BigDecimal getMerchandiseCode() {
+  public Integer getMerchandiseCode() {
     return merchandiseCode;
   }
 
-  public void setMerchandiseCode(BigDecimal merchandiseCode) {
+  public void setMerchandiseCode(Integer merchandiseCode) {
     this.merchandiseCode = merchandiseCode;
   }
 

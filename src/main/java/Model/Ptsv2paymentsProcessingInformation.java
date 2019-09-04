@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-01T12:55:52.826+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
 public class Ptsv2paymentsProcessingInformation {
   @SerializedName("capture")
   private Boolean capture = false;
@@ -61,6 +61,9 @@ public class Ptsv2paymentsProcessingInformation {
 
   @SerializedName("visaCheckoutId")
   private String visaCheckoutId = null;
+
+  @SerializedName("industryDataType")
+  private String industryDataType = null;
 
   @SerializedName("authorizationOptions")
   private Ptsv2paymentsProcessingInformationAuthorizationOptions authorizationOptions = null;
@@ -254,6 +257,24 @@ public class Ptsv2paymentsProcessingInformation {
     this.visaCheckoutId = visaCheckoutId;
   }
 
+  public Ptsv2paymentsProcessingInformation industryDataType(String industryDataType) {
+    this.industryDataType = industryDataType;
+    return this;
+  }
+
+   /**
+   * Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to &#x60;airline&#x60; in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to &#x60;restaurant&#x60; in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - **airline** - **restaurant** 
+   * @return industryDataType
+  **/
+  @ApiModelProperty(value = "Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to `airline` in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - **airline** - **restaurant** ")
+  public String getIndustryDataType() {
+    return industryDataType;
+  }
+
+  public void setIndustryDataType(String industryDataType) {
+    this.industryDataType = industryDataType;
+  }
+
   public Ptsv2paymentsProcessingInformation authorizationOptions(Ptsv2paymentsProcessingInformationAuthorizationOptions authorizationOptions) {
     this.authorizationOptions = authorizationOptions;
     return this;
@@ -346,6 +367,7 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.purchaseLevel, ptsv2paymentsProcessingInformation.purchaseLevel) &&
         Objects.equals(this.reportGroup, ptsv2paymentsProcessingInformation.reportGroup) &&
         Objects.equals(this.visaCheckoutId, ptsv2paymentsProcessingInformation.visaCheckoutId) &&
+        Objects.equals(this.industryDataType, ptsv2paymentsProcessingInformation.industryDataType) &&
         Objects.equals(this.authorizationOptions, ptsv2paymentsProcessingInformation.authorizationOptions) &&
         Objects.equals(this.captureOptions, ptsv2paymentsProcessingInformation.captureOptions) &&
         Objects.equals(this.recurringOptions, ptsv2paymentsProcessingInformation.recurringOptions) &&
@@ -354,7 +376,7 @@ public class Ptsv2paymentsProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(capture, processorId, businessApplicationId, commerceIndicator, paymentSolution, reconciliationId, linkId, purchaseLevel, reportGroup, visaCheckoutId, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions);
+    return Objects.hash(capture, processorId, businessApplicationId, commerceIndicator, paymentSolution, reconciliationId, linkId, purchaseLevel, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions);
   }
 
 
@@ -373,6 +395,7 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
     sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
     sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
+    sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
     sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
     sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");

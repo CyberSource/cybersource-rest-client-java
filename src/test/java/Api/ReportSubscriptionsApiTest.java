@@ -14,7 +14,7 @@
 package Api;
 
 import Invokers.ApiException;
-import Model.InlineResponse400;
+import Model.InlineResponse4001;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
 import Model.Reportingv3ReportDownloadsGet400Response;
