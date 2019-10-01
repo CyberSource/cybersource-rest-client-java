@@ -1067,11 +1067,7 @@ public class ApiClient {
 						|| headerType.equals("application/pdf")) {
 					responseBody = response.body().string();
 				}
-			if (!(responseCode.equals("200"))) {
-				if (!responseCode.equals("201")) {
-					System.out.println(response.body().string());
-				}
-			}
+
 			T data = handleResponse(response, returnType);
 			
 			response.body().close();
