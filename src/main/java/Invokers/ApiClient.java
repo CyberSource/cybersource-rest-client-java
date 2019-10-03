@@ -1062,11 +1062,12 @@ public class ApiClient {
 			responseCode = String.valueOf(response.code());
 			status = response.message();
 			String headerType = response.header("Content-Type");
-			if (headerType != null)
+			if (headerType != null) {
 				if (headerType.equals("application/xml") || headerType.equals("text/csv")
 						|| headerType.equals("application/pdf")) {
-					responseBody = response.body().string();
+					responseBody = response.toString();
 				}
+			}
 
 			T data = handleResponse(response, returnType);
 			
