@@ -14,11 +14,11 @@
 package Api;
 
 import Invokers.ApiException;
-import Model.InlineResponse4001;
+import Model.CreateReportSubscriptionRequest;
+import Model.InlineResponse400;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
 import Model.Reportingv3ReportDownloadsGet400Response;
-import Model.RequestBody1;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -46,9 +46,9 @@ public class ReportSubscriptionsApiTest {
      */
     @Test
     public void createSubscriptionTest() throws ApiException {
-        RequestBody1 requestBody = null;
+        CreateReportSubscriptionRequest createReportSubscriptionRequest = null;
         String organizationId = null;
-        api.createSubscription(requestBody, organizationId);
+        api.createSubscription(createReportSubscriptionRequest, organizationId);
 
         // TODO: test validations
     }

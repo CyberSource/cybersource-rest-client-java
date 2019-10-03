@@ -18,6 +18,7 @@ import Model.Ptsv2paymentsPaymentInformationBank;
 import Model.Ptsv2paymentsPaymentInformationCard;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Ptsv2paymentsPaymentInformationFluidData;
+import Model.Ptsv2paymentsPaymentInformationPaymentType;
 import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -31,7 +32,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class Ptsv2paymentsPaymentInformation {
   @SerializedName("card")
   private Ptsv2paymentsPaymentInformationCard card = null;
@@ -47,6 +48,9 @@ public class Ptsv2paymentsPaymentInformation {
 
   @SerializedName("bank")
   private Ptsv2paymentsPaymentInformationBank bank = null;
+
+  @SerializedName("paymentType")
+  private Ptsv2paymentsPaymentInformationPaymentType paymentType = null;
 
   public Ptsv2paymentsPaymentInformation card(Ptsv2paymentsPaymentInformationCard card) {
     this.card = card;
@@ -138,6 +142,24 @@ public class Ptsv2paymentsPaymentInformation {
     this.bank = bank;
   }
 
+  public Ptsv2paymentsPaymentInformation paymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
+    return this;
+  }
+
+   /**
+   * Get paymentType
+   * @return paymentType
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationPaymentType getPaymentType() {
+    return paymentType;
+  }
+
+  public void setPaymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +174,13 @@ public class Ptsv2paymentsPaymentInformation {
         Objects.equals(this.tokenizedCard, ptsv2paymentsPaymentInformation.tokenizedCard) &&
         Objects.equals(this.fluidData, ptsv2paymentsPaymentInformation.fluidData) &&
         Objects.equals(this.customer, ptsv2paymentsPaymentInformation.customer) &&
-        Objects.equals(this.bank, ptsv2paymentsPaymentInformation.bank);
+        Objects.equals(this.bank, ptsv2paymentsPaymentInformation.bank) &&
+        Objects.equals(this.paymentType, ptsv2paymentsPaymentInformation.paymentType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, fluidData, customer, bank);
+    return Objects.hash(card, tokenizedCard, fluidData, customer, bank, paymentType);
   }
 
 
@@ -171,6 +194,7 @@ public class Ptsv2paymentsPaymentInformation {
     sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

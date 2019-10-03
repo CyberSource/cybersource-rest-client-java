@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.Ptsv2paymentsPaymentInformationBank;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.Ptsv2paymentsPaymentInformationPaymentType;
 import Model.Ptsv2paymentsidrefundsPaymentInformationCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -29,7 +30,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidrefundsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class Ptsv2paymentsidrefundsPaymentInformation {
   @SerializedName("card")
   private Ptsv2paymentsidrefundsPaymentInformationCard card = null;
@@ -39,6 +40,9 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
 
   @SerializedName("customer")
   private Ptsv2paymentsPaymentInformationCustomer customer = null;
+
+  @SerializedName("paymentType")
+  private Ptsv2paymentsPaymentInformationPaymentType paymentType = null;
 
   public Ptsv2paymentsidrefundsPaymentInformation card(Ptsv2paymentsidrefundsPaymentInformationCard card) {
     this.card = card;
@@ -94,6 +98,24 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     this.customer = customer;
   }
 
+  public Ptsv2paymentsidrefundsPaymentInformation paymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
+    return this;
+  }
+
+   /**
+   * Get paymentType
+   * @return paymentType
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationPaymentType getPaymentType() {
+    return paymentType;
+  }
+
+  public void setPaymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,12 +128,13 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     Ptsv2paymentsidrefundsPaymentInformation ptsv2paymentsidrefundsPaymentInformation = (Ptsv2paymentsidrefundsPaymentInformation) o;
     return Objects.equals(this.card, ptsv2paymentsidrefundsPaymentInformation.card) &&
         Objects.equals(this.bank, ptsv2paymentsidrefundsPaymentInformation.bank) &&
-        Objects.equals(this.customer, ptsv2paymentsidrefundsPaymentInformation.customer);
+        Objects.equals(this.customer, ptsv2paymentsidrefundsPaymentInformation.customer) &&
+        Objects.equals(this.paymentType, ptsv2paymentsidrefundsPaymentInformation.paymentType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, bank, customer);
+    return Objects.hash(card, bank, customer, paymentType);
   }
 
 
@@ -123,6 +146,7 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -29,10 +29,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * RequestBody1
+ * CreateReportSubscriptionRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
-public class RequestBody1 {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
+public class CreateReportSubscriptionRequest {
   @SerializedName("organizationId")
   private String organizationId = null;
 
@@ -69,7 +69,7 @@ public class RequestBody1 {
   @SerializedName("groupName")
   private String groupName = null;
 
-  public RequestBody1 organizationId(String organizationId) {
+  public CreateReportSubscriptionRequest organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -87,7 +87,7 @@ public class RequestBody1 {
     this.organizationId = organizationId;
   }
 
-  public RequestBody1 reportDefinitionName(String reportDefinitionName) {
+  public CreateReportSubscriptionRequest reportDefinitionName(String reportDefinitionName) {
     this.reportDefinitionName = reportDefinitionName;
     return this;
   }
@@ -105,12 +105,12 @@ public class RequestBody1 {
     this.reportDefinitionName = reportDefinitionName;
   }
 
-  public RequestBody1 reportFields(List<String> reportFields) {
+  public CreateReportSubscriptionRequest reportFields(List<String> reportFields) {
     this.reportFields = reportFields;
     return this;
   }
 
-  public RequestBody1 addReportFieldsItem(String reportFieldsItem) {
+  public CreateReportSubscriptionRequest addReportFieldsItem(String reportFieldsItem) {
     this.reportFields.add(reportFieldsItem);
     return this;
   }
@@ -128,7 +128,7 @@ public class RequestBody1 {
     this.reportFields = reportFields;
   }
 
-  public RequestBody1 reportMimeType(String reportMimeType) {
+  public CreateReportSubscriptionRequest reportMimeType(String reportMimeType) {
     this.reportMimeType = reportMimeType;
     return this;
   }
@@ -146,7 +146,7 @@ public class RequestBody1 {
     this.reportMimeType = reportMimeType;
   }
 
-  public RequestBody1 reportFrequency(String reportFrequency) {
+  public CreateReportSubscriptionRequest reportFrequency(String reportFrequency) {
     this.reportFrequency = reportFrequency;
     return this;
   }
@@ -164,7 +164,7 @@ public class RequestBody1 {
     this.reportFrequency = reportFrequency;
   }
 
-  public RequestBody1 reportName(String reportName) {
+  public CreateReportSubscriptionRequest reportName(String reportName) {
     this.reportName = reportName;
     return this;
   }
@@ -182,7 +182,7 @@ public class RequestBody1 {
     this.reportName = reportName;
   }
 
-  public RequestBody1 timezone(String timezone) {
+  public CreateReportSubscriptionRequest timezone(String timezone) {
     this.timezone = timezone;
     return this;
   }
@@ -200,7 +200,7 @@ public class RequestBody1 {
     this.timezone = timezone;
   }
 
-  public RequestBody1 startTime(String startTime) {
+  public CreateReportSubscriptionRequest startTime(String startTime) {
     this.startTime = startTime;
     return this;
   }
@@ -218,7 +218,7 @@ public class RequestBody1 {
     this.startTime = startTime;
   }
 
-  public RequestBody1 startDay(Integer startDay) {
+  public CreateReportSubscriptionRequest startDay(Integer startDay) {
     this.startDay = startDay;
     return this;
   }
@@ -238,12 +238,12 @@ public class RequestBody1 {
     this.startDay = startDay;
   }
 
-  public RequestBody1 reportFilters(Map<String, List<String>> reportFilters) {
+  public CreateReportSubscriptionRequest reportFilters(Map<String, List<String>> reportFilters) {
     this.reportFilters = reportFilters;
     return this;
   }
 
-  public RequestBody1 putReportFiltersItem(String key, List<String> reportFiltersItem) {
+  public CreateReportSubscriptionRequest putReportFiltersItem(String key, List<String> reportFiltersItem) {
     if (this.reportFilters == null) {
       this.reportFilters = new HashMap<String, List<String>>();
     }
@@ -264,7 +264,7 @@ public class RequestBody1 {
     this.reportFilters = reportFilters;
   }
 
-  public RequestBody1 reportPreferences(Reportingv3reportsReportPreferences reportPreferences) {
+  public CreateReportSubscriptionRequest reportPreferences(Reportingv3reportsReportPreferences reportPreferences) {
     this.reportPreferences = reportPreferences;
     return this;
   }
@@ -282,7 +282,7 @@ public class RequestBody1 {
     this.reportPreferences = reportPreferences;
   }
 
-  public RequestBody1 groupName(String groupName) {
+  public CreateReportSubscriptionRequest groupName(String groupName) {
     this.groupName = groupName;
     return this;
   }
@@ -309,19 +309,19 @@ public class RequestBody1 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RequestBody1 requestBody1 = (RequestBody1) o;
-    return Objects.equals(this.organizationId, requestBody1.organizationId) &&
-        Objects.equals(this.reportDefinitionName, requestBody1.reportDefinitionName) &&
-        Objects.equals(this.reportFields, requestBody1.reportFields) &&
-        Objects.equals(this.reportMimeType, requestBody1.reportMimeType) &&
-        Objects.equals(this.reportFrequency, requestBody1.reportFrequency) &&
-        Objects.equals(this.reportName, requestBody1.reportName) &&
-        Objects.equals(this.timezone, requestBody1.timezone) &&
-        Objects.equals(this.startTime, requestBody1.startTime) &&
-        Objects.equals(this.startDay, requestBody1.startDay) &&
-        Objects.equals(this.reportFilters, requestBody1.reportFilters) &&
-        Objects.equals(this.reportPreferences, requestBody1.reportPreferences) &&
-        Objects.equals(this.groupName, requestBody1.groupName);
+    CreateReportSubscriptionRequest createReportSubscriptionRequest = (CreateReportSubscriptionRequest) o;
+    return Objects.equals(this.organizationId, createReportSubscriptionRequest.organizationId) &&
+        Objects.equals(this.reportDefinitionName, createReportSubscriptionRequest.reportDefinitionName) &&
+        Objects.equals(this.reportFields, createReportSubscriptionRequest.reportFields) &&
+        Objects.equals(this.reportMimeType, createReportSubscriptionRequest.reportMimeType) &&
+        Objects.equals(this.reportFrequency, createReportSubscriptionRequest.reportFrequency) &&
+        Objects.equals(this.reportName, createReportSubscriptionRequest.reportName) &&
+        Objects.equals(this.timezone, createReportSubscriptionRequest.timezone) &&
+        Objects.equals(this.startTime, createReportSubscriptionRequest.startTime) &&
+        Objects.equals(this.startDay, createReportSubscriptionRequest.startDay) &&
+        Objects.equals(this.reportFilters, createReportSubscriptionRequest.reportFilters) &&
+        Objects.equals(this.reportPreferences, createReportSubscriptionRequest.reportPreferences) &&
+        Objects.equals(this.groupName, createReportSubscriptionRequest.groupName);
   }
 
   @Override
@@ -333,7 +333,7 @@ public class RequestBody1 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RequestBody1 {\n");
+    sb.append("class CreateReportSubscriptionRequest {\n");
     
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    reportDefinitionName: ").append(toIndentedString(reportDefinitionName)).append("\n");

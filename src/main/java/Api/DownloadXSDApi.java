@@ -121,8 +121,8 @@ public class DownloadXSDApi {
     }
 
     /**
-     * Used to download XSDs for reports
-     * Downloads XSDs for reports on no-auth.
+     * Download XSD for report
+     * Used to download XSDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -131,8 +131,8 @@ public class DownloadXSDApi {
     }
 
     /**
-     * Used to download XSDs for reports
-     * Downloads XSDs for reports on no-auth.
+     * Download XSD for report
+     * Used to download XSDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -143,8 +143,8 @@ public class DownloadXSDApi {
     }
 
     /**
-     * Used to download XSDs for reports (asynchronously)
-     * Downloads XSDs for reports on no-auth.
+     * Download XSD for report (asynchronously)
+     * Used to download XSDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

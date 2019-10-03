@@ -121,8 +121,8 @@ public class DownloadDTDApi {
     }
 
     /**
-     * Used to download DTDs for reports
-     * Downloads DTDs for reports on no-auth.
+     * Download DTD for report
+     * Used to download DTDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of DTD file to download. Some DTDs only have one version. In that case version name is not needed. Some example values are ctdr-1.0, tdr, pbdr-1.1 (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -131,8 +131,8 @@ public class DownloadDTDApi {
     }
 
     /**
-     * Used to download DTDs for reports
-     * Downloads DTDs for reports on no-auth.
+     * Download DTD for report
+     * Used to download DTDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of DTD file to download. Some DTDs only have one version. In that case version name is not needed. Some example values are ctdr-1.0, tdr, pbdr-1.1 (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -143,8 +143,8 @@ public class DownloadDTDApi {
     }
 
     /**
-     * Used to download DTDs for reports (asynchronously)
-     * Downloads DTDs for reports on no-auth.
+     * Download DTD for report (asynchronously)
+     * Used to download DTDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of DTD file to download. Some DTDs only have one version. In that case version name is not needed. Some example values are ctdr-1.0, tdr, pbdr-1.1 (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

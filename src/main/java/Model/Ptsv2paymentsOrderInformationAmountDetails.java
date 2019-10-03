@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class Ptsv2paymentsOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;
@@ -101,6 +101,9 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
 
   @SerializedName("originalCurrency")
   private String originalCurrency = null;
+
+  @SerializedName("cashbackAmount")
+  private String cashbackAmount = null;
 
   public Ptsv2paymentsOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
@@ -532,6 +535,24 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     this.originalCurrency = originalCurrency;
   }
 
+  public Ptsv2paymentsOrderInformationAmountDetails cashbackAmount(String cashbackAmount) {
+    this.cashbackAmount = cashbackAmount;
+    return this;
+  }
+
+   /**
+   * Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the orderInformation.amountDetails.totalAmount value. 
+   * @return cashbackAmount
+  **/
+  @ApiModelProperty(value = "Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the orderInformation.amountDetails.totalAmount value. ")
+  public String getCashbackAmount() {
+    return cashbackAmount;
+  }
+
+  public void setCashbackAmount(String cashbackAmount) {
+    this.cashbackAmount = cashbackAmount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -564,12 +585,13 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
         Objects.equals(this.taxDetails, ptsv2paymentsOrderInformationAmountDetails.taxDetails) &&
         Objects.equals(this.serviceFeeAmount, ptsv2paymentsOrderInformationAmountDetails.serviceFeeAmount) &&
         Objects.equals(this.originalAmount, ptsv2paymentsOrderInformationAmountDetails.originalAmount) &&
-        Objects.equals(this.originalCurrency, ptsv2paymentsOrderInformationAmountDetails.originalCurrency);
+        Objects.equals(this.originalCurrency, ptsv2paymentsOrderInformationAmountDetails.originalCurrency) &&
+        Objects.equals(this.cashbackAmount, ptsv2paymentsOrderInformationAmountDetails.cashbackAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency);
+    return Objects.hash(totalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount);
   }
 
 
@@ -601,6 +623,7 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     sb.append("    serviceFeeAmount: ").append(toIndentedString(serviceFeeAmount)).append("\n");
     sb.append("    originalAmount: ").append(toIndentedString(originalAmount)).append("\n");
     sb.append("    originalCurrency: ").append(toIndentedString(originalCurrency)).append("\n");
+    sb.append("    cashbackAmount: ").append(toIndentedString(cashbackAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

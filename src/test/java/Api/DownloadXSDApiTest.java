@@ -32,9 +32,9 @@ public class DownloadXSDApiTest {
 
     
     /**
-     * Used to download XSDs for reports
+     * Download XSD for report
      *
-     * Downloads XSDs for reports on no-auth.
+     * Used to download XSDs for reports on no-auth.
      *
      * @throws ApiException
      *          if the Api call fails

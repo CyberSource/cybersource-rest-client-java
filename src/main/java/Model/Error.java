@@ -14,8 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.ErrorLinks;
-import Model.InlineResponseDefaultResponseStatus;
+import Model.Tmsv1instrumentidentifiersDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,48 +27,69 @@ import java.io.IOException;
 /**
  * Error
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class Error {
-  @SerializedName("responseStatus")
-  private InlineResponseDefaultResponseStatus responseStatus = null;
+  @SerializedName("type")
+  private String type = null;
 
-  @SerializedName("_links")
-  private ErrorLinks links = null;
+  @SerializedName("message")
+  private String message = null;
 
-  public Error responseStatus(InlineResponseDefaultResponseStatus responseStatus) {
-    this.responseStatus = responseStatus;
+  @SerializedName("details")
+  private Tmsv1instrumentidentifiersDetails details = null;
+
+  public Error type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Get responseStatus
-   * @return responseStatus
+   * Get type
+   * @return type
   **/
   @ApiModelProperty(value = "")
-  public InlineResponseDefaultResponseStatus getResponseStatus() {
-    return responseStatus;
+  public String getType() {
+    return type;
   }
 
-  public void setResponseStatus(InlineResponseDefaultResponseStatus responseStatus) {
-    this.responseStatus = responseStatus;
+  public void setType(String type) {
+    this.type = type;
   }
 
-  public Error links(ErrorLinks links) {
-    this.links = links;
+  public Error message(String message) {
+    this.message = message;
     return this;
   }
 
    /**
-   * Get links
-   * @return links
+   * The detailed message related to the type stated above.
+   * @return message
   **/
-  @ApiModelProperty(value = "")
-  public ErrorLinks getLinks() {
-    return links;
+  @ApiModelProperty(value = "The detailed message related to the type stated above.")
+  public String getMessage() {
+    return message;
   }
 
-  public void setLinks(ErrorLinks links) {
-    this.links = links;
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
+  public Error details(Tmsv1instrumentidentifiersDetails details) {
+    this.details = details;
+    return this;
+  }
+
+   /**
+   * Get details
+   * @return details
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv1instrumentidentifiersDetails getDetails() {
+    return details;
+  }
+
+  public void setDetails(Tmsv1instrumentidentifiersDetails details) {
+    this.details = details;
   }
 
 
@@ -82,13 +102,14 @@ public class Error {
       return false;
     }
     Error error = (Error) o;
-    return Objects.equals(this.responseStatus, error.responseStatus) &&
-        Objects.equals(this.links, error.links);
+    return Objects.equals(this.type, error.type) &&
+        Objects.equals(this.message, error.message) &&
+        Objects.equals(this.details, error.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseStatus, links);
+    return Objects.hash(type, message, details);
   }
 
 
@@ -97,8 +118,9 @@ public class Error {
     StringBuilder sb = new StringBuilder();
     sb.append("class Error {\n");
     
-    sb.append("    responseStatus: ").append(toIndentedString(responseStatus)).append("\n");
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

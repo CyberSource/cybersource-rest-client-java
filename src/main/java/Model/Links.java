@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponseDefaultLinksNext;
+import Model.TmsV1InstrumentIdentifiersPost200ResponseLinksSelf;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,24 +23,22 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Links
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class Links {
   @SerializedName("self")
-  private InlineResponseDefaultLinksNext self = null;
+  private TmsV1InstrumentIdentifiersPost200ResponseLinksSelf self = null;
 
-  @SerializedName("documentation")
-  private List<InlineResponseDefaultLinksNext> documentation = null;
+  @SerializedName("ancestor")
+  private TmsV1InstrumentIdentifiersPost200ResponseLinksSelf ancestor = null;
 
-  @SerializedName("next")
-  private List<InlineResponseDefaultLinksNext> next = null;
+  @SerializedName("successor")
+  private TmsV1InstrumentIdentifiersPost200ResponseLinksSelf successor = null;
 
-  public Links self(InlineResponseDefaultLinksNext self) {
+  public Links self(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf self) {
     this.self = self;
     return this;
   }
@@ -50,64 +48,48 @@ public class Links {
    * @return self
   **/
   @ApiModelProperty(value = "")
-  public InlineResponseDefaultLinksNext getSelf() {
+  public TmsV1InstrumentIdentifiersPost200ResponseLinksSelf getSelf() {
     return self;
   }
 
-  public void setSelf(InlineResponseDefaultLinksNext self) {
+  public void setSelf(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf self) {
     this.self = self;
   }
 
-  public Links documentation(List<InlineResponseDefaultLinksNext> documentation) {
-    this.documentation = documentation;
-    return this;
-  }
-
-  public Links addDocumentationItem(InlineResponseDefaultLinksNext documentationItem) {
-    if (this.documentation == null) {
-      this.documentation = new ArrayList<InlineResponseDefaultLinksNext>();
-    }
-    this.documentation.add(documentationItem);
+  public Links ancestor(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf ancestor) {
+    this.ancestor = ancestor;
     return this;
   }
 
    /**
-   * Get documentation
-   * @return documentation
+   * Get ancestor
+   * @return ancestor
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponseDefaultLinksNext> getDocumentation() {
-    return documentation;
+  public TmsV1InstrumentIdentifiersPost200ResponseLinksSelf getAncestor() {
+    return ancestor;
   }
 
-  public void setDocumentation(List<InlineResponseDefaultLinksNext> documentation) {
-    this.documentation = documentation;
+  public void setAncestor(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf ancestor) {
+    this.ancestor = ancestor;
   }
 
-  public Links next(List<InlineResponseDefaultLinksNext> next) {
-    this.next = next;
-    return this;
-  }
-
-  public Links addNextItem(InlineResponseDefaultLinksNext nextItem) {
-    if (this.next == null) {
-      this.next = new ArrayList<InlineResponseDefaultLinksNext>();
-    }
-    this.next.add(nextItem);
+  public Links successor(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf successor) {
+    this.successor = successor;
     return this;
   }
 
    /**
-   * Get next
-   * @return next
+   * Get successor
+   * @return successor
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponseDefaultLinksNext> getNext() {
-    return next;
+  public TmsV1InstrumentIdentifiersPost200ResponseLinksSelf getSuccessor() {
+    return successor;
   }
 
-  public void setNext(List<InlineResponseDefaultLinksNext> next) {
-    this.next = next;
+  public void setSuccessor(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf successor) {
+    this.successor = successor;
   }
 
 
@@ -121,13 +103,13 @@ public class Links {
     }
     Links links = (Links) o;
     return Objects.equals(this.self, links.self) &&
-        Objects.equals(this.documentation, links.documentation) &&
-        Objects.equals(this.next, links.next);
+        Objects.equals(this.ancestor, links.ancestor) &&
+        Objects.equals(this.successor, links.successor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self, documentation, next);
+    return Objects.hash(self, ancestor, successor);
   }
 
 
@@ -137,8 +119,8 @@ public class Links {
     sb.append("class Links {\n");
     
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    documentation: ").append(toIndentedString(documentation)).append("\n");
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    sb.append("    ancestor: ").append(toIndentedString(ancestor)).append("\n");
+    sb.append("    successor: ").append(toIndentedString(successor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

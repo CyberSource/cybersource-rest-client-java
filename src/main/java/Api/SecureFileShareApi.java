@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import Model.InlineResponse4001;
+import Model.InlineResponse400;
 import org.joda.time.LocalDate;
 import Model.V1FileDetailsGet200Response;
 
@@ -86,7 +86,9 @@ public class SecureFileShareApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-final String[] localVarContentTypes = {"*/*"};
+        final String[] localVarContentTypes = {
+            "*/*"
+        };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
@@ -216,7 +218,9 @@ final String[] localVarContentTypes = {"*/*"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-final String[] localVarContentTypes = {"*/*"};
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
@@ -325,4 +329,3 @@ final String[] localVarContentTypes = {"*/*"};
         return call;
     }
 }
-

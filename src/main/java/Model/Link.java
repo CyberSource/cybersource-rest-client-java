@@ -26,16 +26,10 @@ import java.io.IOException;
 /**
  * Link
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class Link {
   @SerializedName("href")
   private String href = null;
-
-  @SerializedName("title")
-  private String title = null;
-
-  @SerializedName("method")
-  private String method = null;
 
   public Link href(String href) {
     this.href = href;
@@ -43,52 +37,16 @@ public class Link {
   }
 
    /**
-   * URI of the linked resource.
+   * Get href
    * @return href
   **/
-  @ApiModelProperty(value = "URI of the linked resource.")
+  @ApiModelProperty(example = "https://api.cybersource.com/tms/v1/instrumentidentifiers/1234567890123456789", value = "")
   public String getHref() {
     return href;
   }
 
   public void setHref(String href) {
     this.href = href;
-  }
-
-  public Link title(String title) {
-    this.title = title;
-    return this;
-  }
-
-   /**
-   * Label of the linked resource.
-   * @return title
-  **/
-  @ApiModelProperty(value = "Label of the linked resource.")
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public Link method(String method) {
-    this.method = method;
-    return this;
-  }
-
-   /**
-   * HTTP method of the linked resource.
-   * @return method
-  **/
-  @ApiModelProperty(value = "HTTP method of the linked resource.")
-  public String getMethod() {
-    return method;
-  }
-
-  public void setMethod(String method) {
-    this.method = method;
   }
 
 
@@ -101,14 +59,12 @@ public class Link {
       return false;
     }
     Link link = (Link) o;
-    return Objects.equals(this.href, link.href) &&
-        Objects.equals(this.title, link.title) &&
-        Objects.equals(this.method, link.method);
+    return Objects.equals(this.href, link.href);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(href, title, method);
+    return Objects.hash(href);
   }
 
 
@@ -118,8 +74,6 @@ public class Link {
     sb.append("class Link {\n");
     
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();
   }

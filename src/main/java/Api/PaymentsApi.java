@@ -69,7 +69,7 @@ public class PaymentsApi {
         Object localVarPostBody = createPaymentRequest;
         
         // create path and map variables
-        String localVarPath = "/pts/v2/payments/";
+        String localVarPath = "/pts/v2/payments";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -77,7 +77,9 @@ public class PaymentsApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
@@ -181,4 +183,3 @@ final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
         return call;
     }
 }
-

@@ -23,7 +23,7 @@ import java.util.List;
  * Array of Payment Instruments returned for the supplied Instrument Identifier.
  */
 @ApiModel(description = "Array of Payment Instruments returned for the supplied Instrument Identifier.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class PaymentInstrumentsArray extends ArrayList<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> {
 
   @Override

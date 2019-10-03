@@ -77,7 +77,9 @@ public class SearchTransactionsApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-final String[] localVarAccepts ={"*/*"};
+        final String[] localVarAccepts = {
+            "application/json;charset=utf-8"
+        };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
@@ -201,7 +203,9 @@ final String[] localVarAccepts ={"*/*"};
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-final String[] localVarAccepts ={"*/*"};
+        final String[] localVarAccepts = {
+            "*/*"
+        };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
@@ -305,4 +309,3 @@ final String[] localVarAccepts ={"*/*"};
         return call;
     }
 }
-

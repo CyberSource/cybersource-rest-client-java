@@ -32,9 +32,9 @@ public class DownloadDTDApiTest {
 
     
     /**
-     * Used to download DTDs for reports
+     * Download DTD for report
      *
-     * Downloads DTDs for reports on no-auth.
+     * Used to download DTDs for reports on no-auth.
      *
      * @throws ApiException
      *          if the Api call fails
