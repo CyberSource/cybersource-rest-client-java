@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse4001Fields;
+import Model.Tmsv1instrumentidentifiersDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,49 +23,37 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Error Bean
+ * InlineResponse4001
  */
-@ApiModel(description = "Error Bean")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class InlineResponse4001 {
-  @SerializedName("code")
-  private String code = null;
+  @SerializedName("type")
+  private String type = null;
 
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("localizationKey")
-  private String localizationKey = null;
+  @SerializedName("details")
+  private Tmsv1instrumentidentifiersDetails details = null;
 
-  @SerializedName("correlationId")
-  private String correlationId = null;
-
-  @SerializedName("detail")
-  private String detail = null;
-
-  @SerializedName("fields")
-  private List<InlineResponse4001Fields> fields = null;
-
-  public InlineResponse4001 code(String code) {
-    this.code = code;
+  public InlineResponse4001 type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Error code
-   * @return code
+   * Get type
+   * @return type
   **/
-  @ApiModelProperty(required = true, value = "Error code")
-  public String getCode() {
-    return code;
+  @ApiModelProperty(value = "")
+  public String getType() {
+    return type;
   }
 
-  public void setCode(String code) {
-    this.code = code;
+  public void setType(String type) {
+    this.type = type;
   }
 
   public InlineResponse4001 message(String message) {
@@ -74,10 +62,10 @@ public class InlineResponse4001 {
   }
 
    /**
-   * Error message
+   * The detailed message related to the type stated above.
    * @return message
   **/
-  @ApiModelProperty(required = true, value = "Error message")
+  @ApiModelProperty(value = "The detailed message related to the type stated above.")
   public String getMessage() {
     return message;
   }
@@ -86,84 +74,22 @@ public class InlineResponse4001 {
     this.message = message;
   }
 
-  public InlineResponse4001 localizationKey(String localizationKey) {
-    this.localizationKey = localizationKey;
+  public InlineResponse4001 details(Tmsv1instrumentidentifiersDetails details) {
+    this.details = details;
     return this;
   }
 
    /**
-   * Localization Key Name
-   * @return localizationKey
+   * Get details
+   * @return details
   **/
-  @ApiModelProperty(value = "Localization Key Name")
-  public String getLocalizationKey() {
-    return localizationKey;
+  @ApiModelProperty(value = "")
+  public Tmsv1instrumentidentifiersDetails getDetails() {
+    return details;
   }
 
-  public void setLocalizationKey(String localizationKey) {
-    this.localizationKey = localizationKey;
-  }
-
-  public InlineResponse4001 correlationId(String correlationId) {
-    this.correlationId = correlationId;
-    return this;
-  }
-
-   /**
-   * Correlation Id
-   * @return correlationId
-  **/
-  @ApiModelProperty(value = "Correlation Id")
-  public String getCorrelationId() {
-    return correlationId;
-  }
-
-  public void setCorrelationId(String correlationId) {
-    this.correlationId = correlationId;
-  }
-
-  public InlineResponse4001 detail(String detail) {
-    this.detail = detail;
-    return this;
-  }
-
-   /**
-   * Error Detail
-   * @return detail
-  **/
-  @ApiModelProperty(value = "Error Detail")
-  public String getDetail() {
-    return detail;
-  }
-
-  public void setDetail(String detail) {
-    this.detail = detail;
-  }
-
-  public InlineResponse4001 fields(List<InlineResponse4001Fields> fields) {
-    this.fields = fields;
-    return this;
-  }
-
-  public InlineResponse4001 addFieldsItem(InlineResponse4001Fields fieldsItem) {
-    if (this.fields == null) {
-      this.fields = new ArrayList<InlineResponse4001Fields>();
-    }
-    this.fields.add(fieldsItem);
-    return this;
-  }
-
-   /**
-   * Error fields List
-   * @return fields
-  **/
-  @ApiModelProperty(value = "Error fields List")
-  public List<InlineResponse4001Fields> getFields() {
-    return fields;
-  }
-
-  public void setFields(List<InlineResponse4001Fields> fields) {
-    this.fields = fields;
+  public void setDetails(Tmsv1instrumentidentifiersDetails details) {
+    this.details = details;
   }
 
 
@@ -176,17 +102,14 @@ public class InlineResponse4001 {
       return false;
     }
     InlineResponse4001 inlineResponse4001 = (InlineResponse4001) o;
-    return Objects.equals(this.code, inlineResponse4001.code) &&
+    return Objects.equals(this.type, inlineResponse4001.type) &&
         Objects.equals(this.message, inlineResponse4001.message) &&
-        Objects.equals(this.localizationKey, inlineResponse4001.localizationKey) &&
-        Objects.equals(this.correlationId, inlineResponse4001.correlationId) &&
-        Objects.equals(this.detail, inlineResponse4001.detail) &&
-        Objects.equals(this.fields, inlineResponse4001.fields);
+        Objects.equals(this.details, inlineResponse4001.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, message, localizationKey, correlationId, detail, fields);
+    return Objects.hash(type, message, details);
   }
 
 
@@ -195,12 +118,9 @@ public class InlineResponse4001 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4001 {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    localizationKey: ").append(toIndentedString(localizationKey)).append("\n");
-    sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
-    sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -14,11 +14,11 @@
 package Api;
 
 import Invokers.ApiException;
+import Model.CreateAdhocReportRequest;
 import org.joda.time.DateTime;
 import Model.ReportingV3ReportsGet200Response;
 import Model.ReportingV3ReportsIdGet200Response;
 import Model.Reportingv3ReportDownloadsGet400Response;
-import Model.RequestBody;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -46,9 +46,9 @@ public class ReportsApiTest {
      */
     @Test
     public void createReportTest() throws ApiException {
-        RequestBody requestBody = null;
+        CreateAdhocReportRequest createAdhocReportRequest = null;
         String organizationId = null;
-        api.createReport(requestBody, organizationId);
+        api.createReport(createAdhocReportRequest, organizationId);
 
         // TODO: test validations
     }

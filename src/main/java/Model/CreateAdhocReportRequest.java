@@ -30,10 +30,10 @@ import java.util.Map;
 import org.joda.time.DateTime;
 
 /**
- * RequestBody
+ * CreateAdhocReportRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
-public class RequestBody {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
+public class CreateAdhocReportRequest {
   @SerializedName("organizationId")
   private String organizationId = null;
 
@@ -67,7 +67,7 @@ public class RequestBody {
   @SerializedName("groupName")
   private String groupName = null;
 
-  public RequestBody organizationId(String organizationId) {
+  public CreateAdhocReportRequest organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -85,7 +85,7 @@ public class RequestBody {
     this.organizationId = organizationId;
   }
 
-  public RequestBody reportDefinitionName(String reportDefinitionName) {
+  public CreateAdhocReportRequest reportDefinitionName(String reportDefinitionName) {
     this.reportDefinitionName = reportDefinitionName;
     return this;
   }
@@ -103,12 +103,12 @@ public class RequestBody {
     this.reportDefinitionName = reportDefinitionName;
   }
 
-  public RequestBody reportFields(List<String> reportFields) {
+  public CreateAdhocReportRequest reportFields(List<String> reportFields) {
     this.reportFields = reportFields;
     return this;
   }
 
-  public RequestBody addReportFieldsItem(String reportFieldsItem) {
+  public CreateAdhocReportRequest addReportFieldsItem(String reportFieldsItem) {
     if (this.reportFields == null) {
       this.reportFields = new ArrayList<String>();
     }
@@ -129,7 +129,7 @@ public class RequestBody {
     this.reportFields = reportFields;
   }
 
-  public RequestBody reportMimeType(String reportMimeType) {
+  public CreateAdhocReportRequest reportMimeType(String reportMimeType) {
     this.reportMimeType = reportMimeType;
     return this;
   }
@@ -147,7 +147,7 @@ public class RequestBody {
     this.reportMimeType = reportMimeType;
   }
 
-  public RequestBody reportName(String reportName) {
+  public CreateAdhocReportRequest reportName(String reportName) {
     this.reportName = reportName;
     return this;
   }
@@ -165,7 +165,7 @@ public class RequestBody {
     this.reportName = reportName;
   }
 
-  public RequestBody timezone(String timezone) {
+  public CreateAdhocReportRequest timezone(String timezone) {
     this.timezone = timezone;
     return this;
   }
@@ -183,7 +183,7 @@ public class RequestBody {
     this.timezone = timezone;
   }
 
-  public RequestBody reportStartTime(DateTime reportStartTime) {
+  public CreateAdhocReportRequest reportStartTime(DateTime reportStartTime) {
     this.reportStartTime = reportStartTime;
     return this;
   }
@@ -201,7 +201,7 @@ public class RequestBody {
     this.reportStartTime = reportStartTime;
   }
 
-  public RequestBody reportEndTime(DateTime reportEndTime) {
+  public CreateAdhocReportRequest reportEndTime(DateTime reportEndTime) {
     this.reportEndTime = reportEndTime;
     return this;
   }
@@ -219,12 +219,12 @@ public class RequestBody {
     this.reportEndTime = reportEndTime;
   }
 
-  public RequestBody reportFilters(Map<String, List<String>> reportFilters) {
+  public CreateAdhocReportRequest reportFilters(Map<String, List<String>> reportFilters) {
     this.reportFilters = reportFilters;
     return this;
   }
 
-  public RequestBody putReportFiltersItem(String key, List<String> reportFiltersItem) {
+  public CreateAdhocReportRequest putReportFiltersItem(String key, List<String> reportFiltersItem) {
     if (this.reportFilters == null) {
       this.reportFilters = new HashMap<String, List<String>>();
     }
@@ -245,7 +245,7 @@ public class RequestBody {
     this.reportFilters = reportFilters;
   }
 
-  public RequestBody reportPreferences(Reportingv3reportsReportPreferences reportPreferences) {
+  public CreateAdhocReportRequest reportPreferences(Reportingv3reportsReportPreferences reportPreferences) {
     this.reportPreferences = reportPreferences;
     return this;
   }
@@ -263,7 +263,7 @@ public class RequestBody {
     this.reportPreferences = reportPreferences;
   }
 
-  public RequestBody groupName(String groupName) {
+  public CreateAdhocReportRequest groupName(String groupName) {
     this.groupName = groupName;
     return this;
   }
@@ -290,18 +290,18 @@ public class RequestBody {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RequestBody requestBody = (RequestBody) o;
-    return Objects.equals(this.organizationId, requestBody.organizationId) &&
-        Objects.equals(this.reportDefinitionName, requestBody.reportDefinitionName) &&
-        Objects.equals(this.reportFields, requestBody.reportFields) &&
-        Objects.equals(this.reportMimeType, requestBody.reportMimeType) &&
-        Objects.equals(this.reportName, requestBody.reportName) &&
-        Objects.equals(this.timezone, requestBody.timezone) &&
-        Objects.equals(this.reportStartTime, requestBody.reportStartTime) &&
-        Objects.equals(this.reportEndTime, requestBody.reportEndTime) &&
-        Objects.equals(this.reportFilters, requestBody.reportFilters) &&
-        Objects.equals(this.reportPreferences, requestBody.reportPreferences) &&
-        Objects.equals(this.groupName, requestBody.groupName);
+    CreateAdhocReportRequest createAdhocReportRequest = (CreateAdhocReportRequest) o;
+    return Objects.equals(this.organizationId, createAdhocReportRequest.organizationId) &&
+        Objects.equals(this.reportDefinitionName, createAdhocReportRequest.reportDefinitionName) &&
+        Objects.equals(this.reportFields, createAdhocReportRequest.reportFields) &&
+        Objects.equals(this.reportMimeType, createAdhocReportRequest.reportMimeType) &&
+        Objects.equals(this.reportName, createAdhocReportRequest.reportName) &&
+        Objects.equals(this.timezone, createAdhocReportRequest.timezone) &&
+        Objects.equals(this.reportStartTime, createAdhocReportRequest.reportStartTime) &&
+        Objects.equals(this.reportEndTime, createAdhocReportRequest.reportEndTime) &&
+        Objects.equals(this.reportFilters, createAdhocReportRequest.reportFilters) &&
+        Objects.equals(this.reportPreferences, createAdhocReportRequest.reportPreferences) &&
+        Objects.equals(this.groupName, createAdhocReportRequest.groupName);
   }
 
   @Override
@@ -313,7 +313,7 @@ public class RequestBody {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RequestBody {\n");
+    sb.append("class CreateAdhocReportRequest {\n");
     
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    reportDefinitionName: ").append(toIndentedString(reportDefinitionName)).append("\n");

@@ -17,6 +17,8 @@ import java.util.Objects;
 import Model.Ptsv2paymentsProcessingInformationAuthorizationOptions;
 import Model.Ptsv2paymentsProcessingInformationBankTransferOptions;
 import Model.Ptsv2paymentsProcessingInformationCaptureOptions;
+import Model.Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer;
+import Model.Ptsv2paymentsProcessingInformationPurchaseOptions;
 import Model.Ptsv2paymentsProcessingInformationRecurringOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -30,7 +32,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class Ptsv2paymentsProcessingInformation {
   @SerializedName("capture")
   private Boolean capture = false;
@@ -76,6 +78,12 @@ public class Ptsv2paymentsProcessingInformation {
 
   @SerializedName("bankTransferOptions")
   private Ptsv2paymentsProcessingInformationBankTransferOptions bankTransferOptions = null;
+
+  @SerializedName("purchaseOptions")
+  private Ptsv2paymentsProcessingInformationPurchaseOptions purchaseOptions = null;
+
+  @SerializedName("electronicBenefitsTransfer")
+  private Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer electronicBenefitsTransfer = null;
 
   public Ptsv2paymentsProcessingInformation capture(Boolean capture) {
     this.capture = capture;
@@ -347,6 +355,42 @@ public class Ptsv2paymentsProcessingInformation {
     this.bankTransferOptions = bankTransferOptions;
   }
 
+  public Ptsv2paymentsProcessingInformation purchaseOptions(Ptsv2paymentsProcessingInformationPurchaseOptions purchaseOptions) {
+    this.purchaseOptions = purchaseOptions;
+    return this;
+  }
+
+   /**
+   * Get purchaseOptions
+   * @return purchaseOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessingInformationPurchaseOptions getPurchaseOptions() {
+    return purchaseOptions;
+  }
+
+  public void setPurchaseOptions(Ptsv2paymentsProcessingInformationPurchaseOptions purchaseOptions) {
+    this.purchaseOptions = purchaseOptions;
+  }
+
+  public Ptsv2paymentsProcessingInformation electronicBenefitsTransfer(Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer electronicBenefitsTransfer) {
+    this.electronicBenefitsTransfer = electronicBenefitsTransfer;
+    return this;
+  }
+
+   /**
+   * Get electronicBenefitsTransfer
+   * @return electronicBenefitsTransfer
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer getElectronicBenefitsTransfer() {
+    return electronicBenefitsTransfer;
+  }
+
+  public void setElectronicBenefitsTransfer(Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer electronicBenefitsTransfer) {
+    this.electronicBenefitsTransfer = electronicBenefitsTransfer;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -371,12 +415,14 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.authorizationOptions, ptsv2paymentsProcessingInformation.authorizationOptions) &&
         Objects.equals(this.captureOptions, ptsv2paymentsProcessingInformation.captureOptions) &&
         Objects.equals(this.recurringOptions, ptsv2paymentsProcessingInformation.recurringOptions) &&
-        Objects.equals(this.bankTransferOptions, ptsv2paymentsProcessingInformation.bankTransferOptions);
+        Objects.equals(this.bankTransferOptions, ptsv2paymentsProcessingInformation.bankTransferOptions) &&
+        Objects.equals(this.purchaseOptions, ptsv2paymentsProcessingInformation.purchaseOptions) &&
+        Objects.equals(this.electronicBenefitsTransfer, ptsv2paymentsProcessingInformation.electronicBenefitsTransfer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(capture, processorId, businessApplicationId, commerceIndicator, paymentSolution, reconciliationId, linkId, purchaseLevel, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions);
+    return Objects.hash(capture, processorId, businessApplicationId, commerceIndicator, paymentSolution, reconciliationId, linkId, purchaseLevel, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer);
   }
 
 
@@ -400,6 +446,8 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
     sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
     sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
+    sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
+    sb.append("    electronicBenefitsTransfer: ").append(toIndentedString(electronicBenefitsTransfer)).append("\n");
     sb.append("}");
     return sb.toString();
   }

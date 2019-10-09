@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsidreversalsClientReferenceInformation;
+import Model.Ptsv2paymentsidvoidsPaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,10 +28,13 @@ import java.io.IOException;
 /**
  * VoidCaptureRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class VoidCaptureRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsidreversalsClientReferenceInformation clientReferenceInformation = null;
+
+  @SerializedName("paymentInformation")
+  private Ptsv2paymentsidvoidsPaymentInformation paymentInformation = null;
 
   public VoidCaptureRequest clientReferenceInformation(Ptsv2paymentsidreversalsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -50,6 +54,24 @@ public class VoidCaptureRequest {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
+  public VoidCaptureRequest paymentInformation(Ptsv2paymentsidvoidsPaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+    return this;
+  }
+
+   /**
+   * Get paymentInformation
+   * @return paymentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidvoidsPaymentInformation getPaymentInformation() {
+    return paymentInformation;
+  }
+
+  public void setPaymentInformation(Ptsv2paymentsidvoidsPaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +82,13 @@ public class VoidCaptureRequest {
       return false;
     }
     VoidCaptureRequest voidCaptureRequest = (VoidCaptureRequest) o;
-    return Objects.equals(this.clientReferenceInformation, voidCaptureRequest.clientReferenceInformation);
+    return Objects.equals(this.clientReferenceInformation, voidCaptureRequest.clientReferenceInformation) &&
+        Objects.equals(this.paymentInformation, voidCaptureRequest.paymentInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation);
+    return Objects.hash(clientReferenceInformation, paymentInformation);
   }
 
 
@@ -75,6 +98,7 @@ public class VoidCaptureRequest {
     sb.append("class VoidCaptureRequest {\n");
     
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

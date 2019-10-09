@@ -27,11 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import Model.CreateAdhocReportRequest;
 import org.joda.time.DateTime;
 import Model.ReportingV3ReportsGet200Response;
 import Model.ReportingV3ReportsIdGet200Response;
 import Model.Reportingv3ReportDownloadsGet400Response;
-import Model.RequestBody;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -60,15 +60,15 @@ public class ReportsApi {
 
     /**
      * Build call for createReport
-     * @param requestBody Report subscription request payload (required)
+     * @param createAdhocReportRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createReportCall(RequestBody requestBody, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = requestBody;
+    public com.squareup.okhttp.Call createReportCall(CreateAdhocReportRequest createAdhocReportRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createAdhocReportRequest;
         
         // create path and map variables
         String localVarPath = "/reporting/v3/reports";
@@ -110,15 +110,15 @@ public class ReportsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createReportValidateBeforeCall(RequestBody requestBody, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createReportValidateBeforeCall(CreateAdhocReportRequest createAdhocReportRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'requestBody' is set
-        if (requestBody == null) {
-            throw new ApiException("Missing the required parameter 'requestBody' when calling createReport(Async)");
+        // verify the required parameter 'createAdhocReportRequest' is set
+        if (createAdhocReportRequest == null) {
+            throw new ApiException("Missing the required parameter 'createAdhocReportRequest' when calling createReport(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = createReportCall(requestBody, organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createReportCall(createAdhocReportRequest, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -130,37 +130,37 @@ public class ReportsApi {
     /**
      * Create Adhoc Report
      * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
-     * @param requestBody Report subscription request payload (required)
+     * @param createAdhocReportRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void createReport(RequestBody requestBody, String organizationId) throws ApiException {
-        createReportWithHttpInfo(requestBody, organizationId);
+    public void createReport(CreateAdhocReportRequest createAdhocReportRequest, String organizationId) throws ApiException {
+        createReportWithHttpInfo(createAdhocReportRequest, organizationId);
     }
 
     /**
      * Create Adhoc Report
      * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
-     * @param requestBody Report subscription request payload (required)
+     * @param createAdhocReportRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> createReportWithHttpInfo(RequestBody requestBody, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, organizationId, null, null);
+    public ApiResponse<Void> createReportWithHttpInfo(CreateAdhocReportRequest createAdhocReportRequest, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = createReportValidateBeforeCall(createAdhocReportRequest, organizationId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Create Adhoc Report (asynchronously)
      * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
-     * @param requestBody Report subscription request payload (required)
+     * @param createAdhocReportRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createReportAsync(RequestBody requestBody, String organizationId, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call createReportAsync(CreateAdhocReportRequest createAdhocReportRequest, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -181,7 +181,7 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createReportValidateBeforeCall(requestBody, organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createReportValidateBeforeCall(createAdhocReportRequest, organizationId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

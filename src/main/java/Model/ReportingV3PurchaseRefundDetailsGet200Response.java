@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * ReportingV3PurchaseRefundDetailsGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class ReportingV3PurchaseRefundDetailsGet200Response {
   @SerializedName("offset")
   private Integer offset = null;

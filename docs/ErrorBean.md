@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **localizationKey** | **String** | Localization Key Name |  [optional]
 **correlationId** | **String** | Correlation Id |  [optional]
 **detail** | **String** | Error Detail |  [optional]
-**fields** | [**List&lt;InlineResponse4001Fields&gt;**](InlineResponse4001Fields.md) | Error fields List |  [optional]
+**fields** | [**List&lt;InlineResponse400Fields&gt;**](InlineResponse400Fields.md) | Error fields List |  [optional]
 
 
 

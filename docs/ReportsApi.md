@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createReport"></a>
 # **createReport**
-> createReport(requestBody, organizationId)
+> createReport(createAdhocReportRequest, organizationId)
 
 Create Adhoc Report
 
@@ -25,10 +25,10 @@ Create a one-time report. You must specify the type of report in reportDefinitio
 
 
 ReportsApi apiInstance = new ReportsApi();
-RequestBody requestBody = new RequestBody(); // RequestBody | Report subscription request payload
+CreateAdhocReportRequest createAdhocReportRequest = new CreateAdhocReportRequest(); // CreateAdhocReportRequest | Report subscription request payload
 String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
 try {
-    apiInstance.createReport(requestBody, organizationId);
+    apiInstance.createReport(createAdhocReportRequest, organizationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportsApi#createReport");
     e.printStackTrace();
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | [**RequestBody**](RequestBody.md)| Report subscription request payload |
+ **createAdhocReportRequest** | [**CreateAdhocReportRequest**](CreateAdhocReportRequest.md)| Report subscription request payload |
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
 
 ### Return type

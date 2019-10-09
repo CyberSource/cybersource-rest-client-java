@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import Model.CreatePaymentInstrumentRequest;
-import Model.InlineResponse400;
+import Model.InlineResponse4001;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments;
 import Model.UpdatePaymentInstrumentRequest;
 

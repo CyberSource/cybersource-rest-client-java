@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createSubscription"></a>
 # **createSubscription**
-> createSubscription(requestBody, organizationId)
+> createSubscription(createReportSubscriptionRequest, organizationId)
 
 Create Report Subscription for a report name by organization
 
@@ -26,10 +26,10 @@ Create a report subscription for your organization. The report name must be uniq
 
 
 ReportSubscriptionsApi apiInstance = new ReportSubscriptionsApi();
-RequestBody1 requestBody = new RequestBody1(); // RequestBody1 | Report subscription request payload
+CreateReportSubscriptionRequest createReportSubscriptionRequest = new CreateReportSubscriptionRequest(); // CreateReportSubscriptionRequest | Report subscription request payload
 String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
 try {
-    apiInstance.createSubscription(requestBody, organizationId);
+    apiInstance.createSubscription(createReportSubscriptionRequest, organizationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportSubscriptionsApi#createSubscription");
     e.printStackTrace();
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | [**RequestBody1**](RequestBody1.md)| Report subscription request payload |
+ **createReportSubscriptionRequest** | [**CreateReportSubscriptionRequest**](CreateReportSubscriptionRequest.md)| Report subscription request payload |
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
 
 ### Return type

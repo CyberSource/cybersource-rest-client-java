@@ -14,64 +14,15 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponseDefaultLinks;
-import Model.InlineResponseDefaultResponseStatus;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import Model.InlineResponse4001;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ErrorResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
-public class ErrorResponse {
-  @SerializedName("responseStatus")
-  private InlineResponseDefaultResponseStatus responseStatus = null;
-
-  @SerializedName("_links")
-  private InlineResponseDefaultLinks links = null;
-
-  public ErrorResponse responseStatus(InlineResponseDefaultResponseStatus responseStatus) {
-    this.responseStatus = responseStatus;
-    return this;
-  }
-
-   /**
-   * Get responseStatus
-   * @return responseStatus
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponseDefaultResponseStatus getResponseStatus() {
-    return responseStatus;
-  }
-
-  public void setResponseStatus(InlineResponseDefaultResponseStatus responseStatus) {
-    this.responseStatus = responseStatus;
-  }
-
-  public ErrorResponse links(InlineResponseDefaultLinks links) {
-    this.links = links;
-    return this;
-  }
-
-   /**
-   * Get links
-   * @return links
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponseDefaultLinks getLinks() {
-    return links;
-  }
-
-  public void setLinks(InlineResponseDefaultLinks links) {
-    this.links = links;
-  }
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
+public class ErrorResponse extends ArrayList<InlineResponse4001> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,14 +32,12 @@ public class ErrorResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorResponse errorResponse = (ErrorResponse) o;
-    return Objects.equals(this.responseStatus, errorResponse.responseStatus) &&
-        Objects.equals(this.links, errorResponse.links);
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseStatus, links);
+    return Objects.hash(super.hashCode());
   }
 
 
@@ -96,9 +45,7 @@ public class ErrorResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ErrorResponse {\n");
-    
-    sb.append("    responseStatus: ").append(toIndentedString(responseStatus)).append("\n");
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
   }

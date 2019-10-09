@@ -23,18 +23,17 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * Riskv1decisionsOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-26T18:32:32.437+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
 public class Riskv1decisionsOrderInformationLineItems {
   @SerializedName("unitPrice")
   private String unitPrice = null;
 
   @SerializedName("quantity")
-  private BigDecimal quantity = null;
+  private Integer quantity = null;
 
   @SerializedName("productSKU")
   private String productSKU = null;
@@ -75,7 +74,7 @@ public class Riskv1decisionsOrderInformationLineItems {
     this.unitPrice = unitPrice;
   }
 
-  public Riskv1decisionsOrderInformationLineItems quantity(BigDecimal quantity) {
+  public Riskv1decisionsOrderInformationLineItems quantity(Integer quantity) {
     this.quantity = quantity;
     return this;
   }
@@ -83,15 +82,15 @@ public class Riskv1decisionsOrderInformationLineItems {
    /**
    * Number of units for this order.  The default is &#x60;1&#x60;. For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60;), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.  When orderInformation.lineItems[].productCode is \&quot;gift_card\&quot;, this is the total count of individual prepaid gift cards purchased. 
    * minimum: 1
-   * maximum: 9999999999
+   * maximum: 999999999
    * @return quantity
   **/
   @ApiModelProperty(value = "Number of units for this order.  The default is `1`. For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.  When orderInformation.lineItems[].productCode is \"gift_card\", this is the total count of individual prepaid gift cards purchased. ")
-  public BigDecimal getQuantity() {
+  public Integer getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(BigDecimal quantity) {
+  public void setQuantity(Integer quantity) {
     this.quantity = quantity;
   }
 

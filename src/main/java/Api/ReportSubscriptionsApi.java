@@ -27,11 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import Model.InlineResponse4001;
+import Model.CreateReportSubscriptionRequest;
+import Model.InlineResponse400;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
 import Model.Reportingv3ReportDownloadsGet400Response;
-import Model.RequestBody1;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -60,15 +60,15 @@ public class ReportSubscriptionsApi {
 
     /**
      * Build call for createSubscription
-     * @param requestBody Report subscription request payload (required)
+     * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionCall(RequestBody1 requestBody, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = requestBody;
+    public com.squareup.okhttp.Call createSubscriptionCall(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createReportSubscriptionRequest;
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions";
@@ -110,15 +110,15 @@ public class ReportSubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createSubscriptionValidateBeforeCall(RequestBody1 requestBody, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createSubscriptionValidateBeforeCall(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'requestBody' is set
-        if (requestBody == null) {
-            throw new ApiException("Missing the required parameter 'requestBody' when calling createSubscription(Async)");
+        // verify the required parameter 'createReportSubscriptionRequest' is set
+        if (createReportSubscriptionRequest == null) {
+            throw new ApiException("Missing the required parameter 'createReportSubscriptionRequest' when calling createSubscription(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = createSubscriptionCall(requestBody, organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSubscriptionCall(createReportSubscriptionRequest, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -130,37 +130,37 @@ public class ReportSubscriptionsApi {
     /**
      * Create Report Subscription for a report name by organization
      * Create a report subscription for your organization. The report name must be unique. 
-     * @param requestBody Report subscription request payload (required)
+     * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void createSubscription(RequestBody1 requestBody, String organizationId) throws ApiException {
-        createSubscriptionWithHttpInfo(requestBody, organizationId);
+    public void createSubscription(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException {
+        createSubscriptionWithHttpInfo(createReportSubscriptionRequest, organizationId);
     }
 
     /**
      * Create Report Subscription for a report name by organization
      * Create a report subscription for your organization. The report name must be unique. 
-     * @param requestBody Report subscription request payload (required)
+     * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> createSubscriptionWithHttpInfo(RequestBody1 requestBody, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(requestBody, organizationId, null, null);
+    public ApiResponse<Void> createSubscriptionWithHttpInfo(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(createReportSubscriptionRequest, organizationId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Create Report Subscription for a report name by organization (asynchronously)
      * Create a report subscription for your organization. The report name must be unique. 
-     * @param requestBody Report subscription request payload (required)
+     * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionAsync(RequestBody1 requestBody, String organizationId, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call createSubscriptionAsync(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -181,7 +181,7 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(requestBody, organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(createReportSubscriptionRequest, organizationId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

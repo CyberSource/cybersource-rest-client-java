@@ -79,7 +79,9 @@ public class CaptureApi {
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
@@ -191,4 +193,3 @@ final String[] localVarAccepts = {"application/hal+json;charset=utf-8"};
         return call;
     }
 }
-
