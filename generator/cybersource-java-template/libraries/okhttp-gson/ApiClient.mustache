@@ -38,6 +38,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Properties;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -141,6 +142,7 @@ public class ApiClient {
 
 	private OkHttpClient httpClient;
 	private JSON json;
+	private String versionInfo;
 
 	private HttpLoggingInterceptor loggingInterceptor;
 
@@ -149,6 +151,8 @@ public class ApiClient {
 	 */
 	public ApiClient() {
 		httpClient = new OkHttpClient();
+		
+		versionInfo = getClientID();
 
 		verifyingSsl = true;
 
@@ -176,6 +180,19 @@ public class ApiClient {
 		authentications = new HashMap<String, Authentication>();
 		// Prevent the authentications from being modified.
 		authentications = Collections.unmodifiableMap(authentications);
+	}
+
+	private String getClientID() {
+		String propertyVersionInfo = null; 
+		final Properties properties = new Properties();
+		try {
+			properties.load(this.getClass().getClassLoader().getResourceAsStream("cybersource-rest-client-java.properties"));			
+			propertyVersionInfo = properties.getProperty("sdk.version");
+		} catch (IOException e) {
+			
+		}
+
+		return propertyVersionInfo;
 	}
 
 	public ApiClient(MerchantConfig merchantConfig) {
@@ -1282,6 +1299,14 @@ public class ApiClient {
 					token = "Bearer " + token;
 					addDefaultHeader("Authorization", token);
 				}
+				
+				if (merchantConfig.getSolutionId() != null && !merchantConfig.getSolutionId().isEmpty()) {
+					addDefaultHeader("v-c-solution-id", merchantConfig.getSolutionId());
+				}
+			}
+			
+			if (versionInfo != null && !versionInfo.isEmpty()) {
+				addDefaultHeader("v-c-client-id", versionInfo);
 			}
 
 		} catch (ConfigException e) {
