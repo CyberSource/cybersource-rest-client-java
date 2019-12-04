@@ -1306,7 +1306,7 @@ public class ApiClient {
 			}
 			
 			if (versionInfo != null && !versionInfo.isEmpty()) {
-				addDefaultHeader("v-c-client-id", versionInfo);
+				addDefaultHeader("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			}
 
 		} catch (ConfigException e) {
