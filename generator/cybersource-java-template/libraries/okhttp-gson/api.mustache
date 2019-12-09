@@ -17,6 +17,7 @@ import {{invokerPackage}}.BeanValidationException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 {{#useBeanValidation}}
 import javax.validation.constraints.*;
@@ -183,8 +184,8 @@ public class {{classname}} {
      * @return ApiResponse&lt;{{#returnType}}{{returnType}}{{/returnType}}{{^returnType}}Void{{/returnType}}&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Void{{/returnType}}> {{operationId}}WithHttpInfo({{#allParams}}{{#useBeanValidation}}{{>beanValidationQueryParams}}{{/useBeanValidation}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
-        com.squareup.okhttp.Call {{localVariablePrefix}}call = {{operationId}}ValidateBeforeCall({{#allParams}}{{paramName}}, {{/allParams}}null, null);
+    public ApiResponse<{{#vendorExtensions.x-streaming}}InputStream{{/vendorExtensions.x-streaming}}{{^vendorExtensions.x-streaming}}{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Void{{/returnType}}{{/vendorExtensions.x-streaming}}> {{operationId}}WithHttpInfo({{#allParams}}{{#useBeanValidation}}{{>beanValidationQueryParams}}{{/useBeanValidation}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
+	    com.squareup.okhttp.Call {{localVariablePrefix}}call = {{operationId}}ValidateBeforeCall({{#allParams}}{{paramName}}, {{/allParams}}null, null);
         {{#returnType}}Type {{localVariablePrefix}}localVarReturnType = new TypeToken<{{{returnType}}}>(){}.getType();
         return {{localVariablePrefix}}apiClient.execute({{localVariablePrefix}}call, {{localVariablePrefix}}localVarReturnType);{{/returnType}}{{^returnType}}return {{localVariablePrefix}}apiClient.execute({{localVariablePrefix}}call);{{/returnType}}
     }
