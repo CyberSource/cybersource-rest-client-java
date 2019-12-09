@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.CreateAdhocReportRequest;
@@ -147,7 +148,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> createReportWithHttpInfo(CreateAdhocReportRequest createAdhocReportRequest, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = createReportValidateBeforeCall(createAdhocReportRequest, organizationId, null, null);
+	    com.squareup.okhttp.Call call = createReportValidateBeforeCall(createAdhocReportRequest, organizationId, null, null);
         return apiClient.execute(call);
     }
 
@@ -277,7 +278,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportsIdGet200Response> getReportByReportIdWithHttpInfo(String reportId, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, null, null);
+	    com.squareup.okhttp.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsIdGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -455,7 +456,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportsGet200Response> searchReportsWithHttpInfo(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus) throws ApiException {
-        com.squareup.okhttp.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, null, null);
+	    com.squareup.okhttp.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

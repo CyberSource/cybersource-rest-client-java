@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.CreatePaymentInstrumentRequest;
@@ -153,7 +154,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> createPaymentInstrumentWithHttpInfo(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest) throws ApiException {
-        com.squareup.okhttp.Call call = createPaymentInstrumentValidateBeforeCall(profileId, createPaymentInstrumentRequest, null, null);
+	    com.squareup.okhttp.Call call = createPaymentInstrumentValidateBeforeCall(profileId, createPaymentInstrumentRequest, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -288,7 +289,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String profileId, String tokenId) throws ApiException {
-        com.squareup.okhttp.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
+	    com.squareup.okhttp.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
         return apiClient.execute(call);
     }
 
@@ -423,7 +424,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> getPaymentInstrumentWithHttpInfo(String profileId, String tokenId) throws ApiException {
-        com.squareup.okhttp.Call call = getPaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
+	    com.squareup.okhttp.Call call = getPaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -568,7 +569,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> updatePaymentInstrumentWithHttpInfo(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest) throws ApiException {
-        com.squareup.okhttp.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, tokenId, updatePaymentInstrumentRequest, null, null);
+	    com.squareup.okhttp.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, tokenId, updatePaymentInstrumentRequest, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

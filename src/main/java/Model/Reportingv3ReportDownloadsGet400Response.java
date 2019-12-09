@@ -31,7 +31,7 @@ import org.joda.time.DateTime;
  * HTTP status code for client application
  */
 @ApiModel(description = "HTTP status code for client application")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T12:23:03.938+05:30")
 public class Reportingv3ReportDownloadsGet400Response {
   @SerializedName("submitTimeUtc")
   private DateTime submitTimeUtc = null;

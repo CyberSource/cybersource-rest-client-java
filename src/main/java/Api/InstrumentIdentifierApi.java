@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.CreateInstrumentIdentifierRequest;
@@ -155,7 +156,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> createInstrumentIdentifierWithHttpInfo(String profileId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest) throws ApiException {
-        com.squareup.okhttp.Call call = createInstrumentIdentifierValidateBeforeCall(profileId, createInstrumentIdentifierRequest, null, null);
+	    com.squareup.okhttp.Call call = createInstrumentIdentifierValidateBeforeCall(profileId, createInstrumentIdentifierRequest, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -290,7 +291,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deleteInstrumentIdentifierWithHttpInfo(String profileId, String tokenId) throws ApiException {
-        com.squareup.okhttp.Call call = deleteInstrumentIdentifierValidateBeforeCall(profileId, tokenId, null, null);
+	    com.squareup.okhttp.Call call = deleteInstrumentIdentifierValidateBeforeCall(profileId, tokenId, null, null);
         return apiClient.execute(call);
     }
 
@@ -435,7 +436,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response> getAllPaymentInstrumentsWithHttpInfo(String profileId, String tokenId, Long offset, Long limit) throws ApiException {
-        com.squareup.okhttp.Call call = getAllPaymentInstrumentsValidateBeforeCall(profileId, tokenId, offset, limit, null, null);
+	    com.squareup.okhttp.Call call = getAllPaymentInstrumentsValidateBeforeCall(profileId, tokenId, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -574,7 +575,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> getInstrumentIdentifierWithHttpInfo(String profileId, String tokenId) throws ApiException {
-        com.squareup.okhttp.Call call = getInstrumentIdentifierValidateBeforeCall(profileId, tokenId, null, null);
+	    com.squareup.okhttp.Call call = getInstrumentIdentifierValidateBeforeCall(profileId, tokenId, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -719,7 +720,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> updateInstrumentIdentifierWithHttpInfo(String profileId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest) throws ApiException {
-        com.squareup.okhttp.Call call = updateInstrumentIdentifierValidateBeforeCall(profileId, tokenId, updateInstrumentIdentifierRequest, null, null);
+	    com.squareup.okhttp.Call call = updateInstrumentIdentifierValidateBeforeCall(profileId, tokenId, updateInstrumentIdentifierRequest, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

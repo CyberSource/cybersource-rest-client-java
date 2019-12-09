@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.CreateSearchRequest;
@@ -143,7 +144,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2TransactionsPost201Response> createSearchWithHttpInfo(CreateSearchRequest createSearchRequest) throws ApiException {
-        com.squareup.okhttp.Call call = createSearchValidateBeforeCall(createSearchRequest, null, null);
+	    com.squareup.okhttp.Call call = createSearchValidateBeforeCall(createSearchRequest, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -269,7 +270,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2TransactionsPost201Response> getSearchWithHttpInfo(String searchId) throws ApiException {
-        com.squareup.okhttp.Call call = getSearchValidateBeforeCall(searchId, null, null);
+	    com.squareup.okhttp.Call call = getSearchValidateBeforeCall(searchId, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

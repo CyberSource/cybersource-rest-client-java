@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import org.joda.time.DateTime;
@@ -143,7 +144,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> getTransactionBatchDetailsWithHttpInfo(String id) throws ApiException {
-        com.squareup.okhttp.Call call = getTransactionBatchDetailsValidateBeforeCall(id, null, null);
+	    com.squareup.okhttp.Call call = getTransactionBatchDetailsValidateBeforeCall(id, null, null);
         return apiClient.execute(call);
     }
 
@@ -267,7 +268,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV1TransactionBatchesIdGet200Response> getTransactionBatchIdWithHttpInfo(String id) throws ApiException {
-        com.squareup.okhttp.Call call = getTransactionBatchIdValidateBeforeCall(id, null, null);
+	    com.squareup.okhttp.Call call = getTransactionBatchIdValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesIdGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -404,7 +405,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV1TransactionBatchesGet200Response> getTransactionBatchesWithHttpInfo(DateTime startTime, DateTime endTime) throws ApiException {
-        com.squareup.okhttp.Call call = getTransactionBatchesValidateBeforeCall(startTime, endTime, null, null);
+	    com.squareup.okhttp.Call call = getTransactionBatchesValidateBeforeCall(startTime, endTime, null, null);
         Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
