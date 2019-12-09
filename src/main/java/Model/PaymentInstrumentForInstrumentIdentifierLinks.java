@@ -31,7 +31,7 @@ import java.io.IOException;
 /**
  * PaymentInstrumentForInstrumentIdentifierLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T12:23:03.938+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
 public class PaymentInstrumentForInstrumentIdentifierLinks {
   @SerializedName("self")
   private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf self = null;

@@ -144,7 +144,7 @@ final String[] localVarContentTypes = {"*/*"};
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> getFileWithHttpInfo(String fileId, String organizationId) throws ApiException {
+    public ApiResponse<InputStream> getFileWithHttpInfo(String fileId, String organizationId) throws ApiException {
 	    com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId, null, null);
         return apiClient.execute(call);
     }

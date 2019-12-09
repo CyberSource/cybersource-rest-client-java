@@ -143,7 +143,7 @@ public class TransactionBatchesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> getTransactionBatchDetailsWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<InputStream> getTransactionBatchDetailsWithHttpInfo(String id) throws ApiException {
 	    com.squareup.okhttp.Call call = getTransactionBatchDetailsValidateBeforeCall(id, null, null);
         return apiClient.execute(call);
     }

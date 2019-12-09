@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * RiskV1DecisionsPost201ResponseRiskInformationTravel
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T12:23:03.938+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
 public class RiskV1DecisionsPost201ResponseRiskInformationTravel {
   @SerializedName("actualFinalDestination")
   private RiskV1DecisionsPost201ResponseRiskInformationTravelActualFinalDestination actualFinalDestination = null;

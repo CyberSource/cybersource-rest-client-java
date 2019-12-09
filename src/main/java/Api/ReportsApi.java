@@ -13,27 +13,14 @@
 
 package Api;
 
-import Invokers.ApiCallback;
-import Invokers.ApiClient;
-import Invokers.ApiException;
-import Invokers.ApiResponse;
-import Invokers.Configuration;
-import Invokers.Pair;
-import Invokers.ProgressRequestBody;
-import Invokers.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-import java.io.InputStream;
-
-
+import Invokers.*;
 import Model.CreateAdhocReportRequest;
-import org.joda.time.DateTime;
 import Model.ReportingV3ReportsGet200Response;
 import Model.ReportingV3ReportsIdGet200Response;
-import Model.Reportingv3ReportDownloadsGet400Response;
+import com.google.gson.reflect.TypeToken;
+import org.joda.time.DateTime;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
