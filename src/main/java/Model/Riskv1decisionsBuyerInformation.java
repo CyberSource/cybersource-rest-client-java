@@ -30,7 +30,7 @@ import java.util.List;
  * Contains information about the buyer.
  */
 @ApiModel(description = "Contains information about the buyer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T12:23:03.938+05:30")
 public class Riskv1decisionsBuyerInformation {
   @SerializedName("username")
   private String username = null;

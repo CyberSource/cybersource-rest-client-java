@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.CreateCreditRequest;
@@ -143,7 +144,7 @@ public class CreditApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2CreditsPost201Response> createCreditWithHttpInfo(CreateCreditRequest createCreditRequest) throws ApiException {
-        com.squareup.okhttp.Call call = createCreditValidateBeforeCall(createCreditRequest, null, null);
+	    com.squareup.okhttp.Call call = createCreditValidateBeforeCall(createCreditRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

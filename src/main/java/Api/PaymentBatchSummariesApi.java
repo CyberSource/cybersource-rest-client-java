@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import org.joda.time.DateTime;
@@ -174,7 +175,7 @@ public class PaymentBatchSummariesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3PaymentBatchSummariesGet200Response> getPaymentBatchSummaryWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String rollUp, String breakdown, Integer startDayOfWeek) throws ApiException {
-        com.squareup.okhttp.Call call = getPaymentBatchSummaryValidateBeforeCall(startTime, endTime, organizationId, rollUp, breakdown, startDayOfWeek, null, null);
+	    com.squareup.okhttp.Call call = getPaymentBatchSummaryValidateBeforeCall(startTime, endTime, organizationId, rollUp, breakdown, startDayOfWeek, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3PaymentBatchSummariesGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

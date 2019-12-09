@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import org.joda.time.DateTime;
@@ -184,7 +185,7 @@ public class PurchaseAndRefundDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3PurchaseRefundDetailsGet200Response> getPurchaseAndRefundDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = getPurchaseAndRefundDetailsValidateBeforeCall(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, null, null);
+	    com.squareup.okhttp.Call call = getPurchaseAndRefundDetailsValidateBeforeCall(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3PurchaseRefundDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
