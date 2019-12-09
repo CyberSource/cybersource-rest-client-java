@@ -11185,6 +11185,7 @@
                 "summary": "Get transaction details for a given batch id",
                 "description": "Provides real-time detailed status information about the transactions \nthat you previously uploaded in the Business Center or processed with \nthe Offline Transaction File Submission service.\n",
                 "operationId": "getTransactionBatchDetails",
+				"x-streaming": true,
                 "x-devcenter-metaData": {
                     "categoryTag": "Transaction_Batches",
                     "isClientSideApi": true
@@ -12304,6 +12305,7 @@
                 "summary": "Download a report",
                 "description": "Download a report using the unique report name and date.\n",
                 "operationId": "downloadReport",
+				"x-streaming": true,
                 "x-devcenter-metaData": {
                     "categoryTag": "Reporting"
                 },
@@ -19229,6 +19231,7 @@
                 "summary": "Download a file with file identifier",
                 "description": "Download a file for the given file identifier",
                 "operationId": "getFile",
+				"x-streaming": true,
                 "x-devcenter-metaData": {
                     "categoryTag": "Secure_File_Share"
                 },

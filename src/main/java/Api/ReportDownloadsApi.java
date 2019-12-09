@@ -156,7 +156,7 @@ public class ReportDownloadsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> downloadReportWithHttpInfo(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
+    public ApiResponse<InputStream> downloadReportWithHttpInfo(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
 	    com.squareup.okhttp.Call call = downloadReportValidateBeforeCall(reportDate, reportName, organizationId, null, null);
         return apiClient.execute(call);
     }
