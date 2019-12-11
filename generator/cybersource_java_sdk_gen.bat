@@ -1,6 +1,9 @@
 @echo off
 
-rd /s /q ..\src
+rd /s /q ..\src\main\java\Api
+rd /s /q ..\src\main\java\Invokers
+rd /s /q ..\src\main\java\Model
+rd /s /q ..\src\test
 rd /s /q ..\target
 rd /s /q ..\docs
 
