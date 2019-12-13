@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.InlineResponse400;
@@ -86,9 +87,7 @@ public class SecureFileShareApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "*/*"
-        };
+final String[] localVarContentTypes = {"*/*"};
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
@@ -145,8 +144,8 @@ public class SecureFileShareApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> getFileWithHttpInfo(String fileId, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId, null, null);
+    public ApiResponse<InputStream> getFileWithHttpInfo(String fileId, String organizationId) throws ApiException {
+	    com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId, null, null);
         return apiClient.execute(call);
     }
 
@@ -218,9 +217,7 @@ public class SecureFileShareApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
+final String[] localVarContentTypes = {"*/*"};
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
@@ -287,7 +284,7 @@ public class SecureFileShareApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<V1FileDetailsGet200Response> getFileDetailWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, null, null);
+	    com.squareup.okhttp.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, null, null);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -329,3 +326,4 @@ public class SecureFileShareApi {
         return call;
     }
 }
+

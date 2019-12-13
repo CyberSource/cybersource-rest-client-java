@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.PtsV2PaymentsPost502Response;
@@ -155,7 +156,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidCaptureWithHttpInfo(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
-        com.squareup.okhttp.Call call = voidCaptureValidateBeforeCall(voidCaptureRequest, id, null, null);
+	    com.squareup.okhttp.Call call = voidCaptureValidateBeforeCall(voidCaptureRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -290,7 +291,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidCreditWithHttpInfo(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
-        com.squareup.okhttp.Call call = voidCreditValidateBeforeCall(voidCreditRequest, id, null, null);
+	    com.squareup.okhttp.Call call = voidCreditValidateBeforeCall(voidCreditRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -425,7 +426,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidPaymentWithHttpInfo(VoidPaymentRequest voidPaymentRequest, String id) throws ApiException {
-        com.squareup.okhttp.Call call = voidPaymentValidateBeforeCall(voidPaymentRequest, id, null, null);
+	    com.squareup.okhttp.Call call = voidPaymentValidateBeforeCall(voidPaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -560,7 +561,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidRefundWithHttpInfo(VoidRefundRequest voidRefundRequest, String id) throws ApiException {
-        com.squareup.okhttp.Call call = voidRefundValidateBeforeCall(voidRefundRequest, id, null, null);
+	    com.squareup.okhttp.Call call = voidRefundValidateBeforeCall(voidRefundRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

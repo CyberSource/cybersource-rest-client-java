@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.PtsV2PaymentsRefundPost400Response;
@@ -153,7 +154,7 @@ public class UserManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UmsV1UsersGet200Response> getUsersWithHttpInfo(String organizationId, String userName, String permissionId, String roleId) throws ApiException {
-        com.squareup.okhttp.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId, null, null);
+	    com.squareup.okhttp.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId, null, null);
         Type localVarReturnType = new TypeToken<UmsV1UsersGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

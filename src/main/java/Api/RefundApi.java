@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.PtsV2PaymentsPost502Response;
@@ -153,7 +154,7 @@ public class RefundApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsRefundPost201Response> refundCaptureWithHttpInfo(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
-        com.squareup.okhttp.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id, null, null);
+	    com.squareup.okhttp.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -288,7 +289,7 @@ public class RefundApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsRefundPost201Response> refundPaymentWithHttpInfo(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {
-        com.squareup.okhttp.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id, null, null);
+	    com.squareup.okhttp.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

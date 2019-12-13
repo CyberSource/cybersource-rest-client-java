@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains response information about the payment.
  */
 @ApiModel(description = "Contains response information about the payment.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-01T12:15:30.989+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
 public class RiskV1DecisionsPost201ResponsePaymentInformation {
   @SerializedName("binCountry")
   private String binCountry = null;

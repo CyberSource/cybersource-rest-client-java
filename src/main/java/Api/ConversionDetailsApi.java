@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import org.joda.time.DateTime;
@@ -159,7 +160,7 @@ public class ConversionDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ConversionDetailsGet200Response> getConversionDetailWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getConversionDetailValidateBeforeCall(startTime, endTime, organizationId, null, null);
+	    com.squareup.okhttp.Call call = getConversionDetailValidateBeforeCall(startTime, endTime, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ConversionDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
