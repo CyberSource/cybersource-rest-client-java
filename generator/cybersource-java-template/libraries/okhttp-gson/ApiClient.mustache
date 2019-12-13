@@ -25,6 +25,21 @@ import java.security.KeyStore;
 import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Properties;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -127,6 +142,7 @@ public class ApiClient {
 
 	private OkHttpClient httpClient;
 	private JSON json;
+	private String versionInfo;
 
 	private HttpLoggingInterceptor loggingInterceptor;
 
@@ -136,6 +152,8 @@ public class ApiClient {
 	public ApiClient() {
 		httpClient = new OkHttpClient();
 		
+		versionInfo = getClientID();
+
 		httpClient = new OkHttpClient.Builder()
 			    .connectTimeout(1, TimeUnit.SECONDS)
 			    .writeTimeout(60, TimeUnit.SECONDS)
@@ -168,6 +186,19 @@ public class ApiClient {
 		authentications = new HashMap<String, Authentication>();
 		// Prevent the authentications from being modified.
 		authentications = Collections.unmodifiableMap(authentications);
+	}
+
+	private String getClientID() {
+		String propertyVersionInfo = null; 
+		final Properties properties = new Properties();
+		try {
+			properties.load(this.getClass().getClassLoader().getResourceAsStream("cybersource-rest-client-java.properties"));			
+			propertyVersionInfo = properties.getProperty("sdk.version");
+		} catch (IOException e) {
+			
+		}
+
+		return propertyVersionInfo;
 	}
 
 	public ApiClient(MerchantConfig merchantConfig) {
@@ -921,7 +952,7 @@ public class ApiClient {
 		if ((returnType == null && response != null) || ("byte[]".equals(returnType.toString()))) {
 			try {
 				T respBody =  (T) response.body().byteStream();
-				
+
 				return respBody;
 			} catch (IOException e) {
 				throw new ApiException(e);
@@ -1173,7 +1204,7 @@ public class ApiClient {
 		if (response.isSuccessful()) {
 			if (response.code() == 204) {
 				if (response.body() != null) {
-					response.body().close();					
+					response.body().close();
 				}
 				return null;
 			} else {
@@ -1294,6 +1325,14 @@ public class ApiClient {
 					token = "Bearer " + token;
 					addDefaultHeader("Authorization", token);
 				}
+				
+				if (merchantConfig.getSolutionId() != null && !merchantConfig.getSolutionId().isEmpty()) {
+					addDefaultHeader("v-c-solution-id", merchantConfig.getSolutionId());
+				}
+			}
+			
+			if (versionInfo != null && !versionInfo.isEmpty()) {
+				addDefaultHeader("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			}
 
 		} catch (ConfigException e) {
