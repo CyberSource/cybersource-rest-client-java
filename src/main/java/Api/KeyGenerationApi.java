@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.FlexV1KeysPost200Response;
@@ -142,7 +143,7 @@ public class KeyGenerationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<FlexV1KeysPost200Response> generatePublicKeyWithHttpInfo(GeneratePublicKeyRequest generatePublicKeyRequest) throws ApiException {
-        com.squareup.okhttp.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest, null, null);
+	    com.squareup.okhttp.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest, null, null);
         Type localVarReturnType = new TypeToken<FlexV1KeysPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

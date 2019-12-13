@@ -13,26 +13,14 @@
 
 package Api;
 
-import Invokers.ApiCallback;
-import Invokers.ApiClient;
-import Invokers.ApiException;
-import Invokers.ApiResponse;
-import Invokers.Configuration;
-import Invokers.Pair;
-import Invokers.ProgressRequestBody;
-import Invokers.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
+import Invokers.*;
 import Model.CreateAdhocReportRequest;
-import org.joda.time.DateTime;
 import Model.ReportingV3ReportsGet200Response;
 import Model.ReportingV3ReportsIdGet200Response;
-import Model.Reportingv3ReportDownloadsGet400Response;
+import com.google.gson.reflect.TypeToken;
+import org.joda.time.DateTime;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -147,7 +135,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> createReportWithHttpInfo(CreateAdhocReportRequest createAdhocReportRequest, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = createReportValidateBeforeCall(createAdhocReportRequest, organizationId, null, null);
+	    com.squareup.okhttp.Call call = createReportValidateBeforeCall(createAdhocReportRequest, organizationId, null, null);
         return apiClient.execute(call);
     }
 
@@ -277,7 +265,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportsIdGet200Response> getReportByReportIdWithHttpInfo(String reportId, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, null, null);
+	    com.squareup.okhttp.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsIdGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -455,7 +443,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportsGet200Response> searchReportsWithHttpInfo(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus) throws ApiException {
-        com.squareup.okhttp.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, null, null);
+	    com.squareup.okhttp.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

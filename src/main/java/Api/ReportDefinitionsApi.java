@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.ReportingV3ReportDefinitionsGet200Response;
@@ -148,7 +149,7 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> getResourceInfoByReportDefinitionWithHttpInfo(String reportDefinitionName, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, organizationId, null, null);
+	    com.squareup.okhttp.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsNameGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -271,7 +272,7 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportDefinitionsGet200Response> getResourceV2InfoWithHttpInfo(String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getResourceV2InfoValidateBeforeCall(organizationId, null, null);
+	    com.squareup.okhttp.Call call = getResourceV2InfoValidateBeforeCall(organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

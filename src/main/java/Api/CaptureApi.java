@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.CapturePaymentRequest;
@@ -152,7 +153,7 @@ public class CaptureApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsCapturesPost201Response> capturePaymentWithHttpInfo(CapturePaymentRequest capturePaymentRequest, String id) throws ApiException {
-        com.squareup.okhttp.Call call = capturePaymentValidateBeforeCall(capturePaymentRequest, id, null, null);
+	    com.squareup.okhttp.Call call = capturePaymentValidateBeforeCall(capturePaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsCapturesPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

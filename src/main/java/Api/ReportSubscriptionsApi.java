@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.CreateReportSubscriptionRequest;
@@ -147,7 +148,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> createSubscriptionWithHttpInfo(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(createReportSubscriptionRequest, organizationId, null, null);
+	    com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(createReportSubscriptionRequest, organizationId, null, null);
         return apiClient.execute(call);
     }
 
@@ -270,7 +271,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deleteSubscriptionWithHttpInfo(String reportName) throws ApiException {
-        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(reportName, null, null);
+	    com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(reportName, null, null);
         return apiClient.execute(call);
     }
 
@@ -385,7 +386,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getAllSubscriptionsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getAllSubscriptionsValidateBeforeCall(null, null);
+	    com.squareup.okhttp.Call call = getAllSubscriptionsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -510,7 +511,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> getSubscriptionWithHttpInfo(String reportName) throws ApiException {
-        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(reportName, null, null);
+	    com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(reportName, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

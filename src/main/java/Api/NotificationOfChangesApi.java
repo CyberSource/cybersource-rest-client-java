@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import org.joda.time.DateTime;
@@ -154,7 +155,7 @@ public class NotificationOfChangesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3NotificationofChangesGet200Response> getNotificationOfChangeReportWithHttpInfo(DateTime startTime, DateTime endTime) throws ApiException {
-        com.squareup.okhttp.Call call = getNotificationOfChangeReportValidateBeforeCall(startTime, endTime, null, null);
+	    com.squareup.okhttp.Call call = getNotificationOfChangeReportValidateBeforeCall(startTime, endTime, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3NotificationofChangesGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

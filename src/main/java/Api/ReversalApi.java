@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.AuthReversalRequest;
@@ -152,7 +153,7 @@ public class ReversalApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsReversalsPost201Response> authReversalWithHttpInfo(String id, AuthReversalRequest authReversalRequest) throws ApiException {
-        com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, null, null);
+	    com.squareup.okhttp.Call call = authReversalValidateBeforeCall(id, authReversalRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsReversalsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

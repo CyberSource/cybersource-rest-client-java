@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 import Model.TssV2TransactionsGet200Response;
@@ -141,7 +142,7 @@ public class TransactionDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2TransactionsGet200Response> getTransactionWithHttpInfo(String id) throws ApiException {
-        com.squareup.okhttp.Call call = getTransactionValidateBeforeCall(id, null, null);
+	    com.squareup.okhttp.Call call = getTransactionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }

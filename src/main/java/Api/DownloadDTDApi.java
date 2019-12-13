@@ -25,6 +25,7 @@ import Invokers.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 
 
@@ -138,7 +139,7 @@ public class DownloadDTDApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> getDTDV2WithHttpInfo(String reportDefinitionNameVersion) throws ApiException {
-        com.squareup.okhttp.Call call = getDTDV2ValidateBeforeCall(reportDefinitionNameVersion, null, null);
+	    com.squareup.okhttp.Call call = getDTDV2ValidateBeforeCall(reportDefinitionNameVersion, null, null);
         return apiClient.execute(call);
     }
 
