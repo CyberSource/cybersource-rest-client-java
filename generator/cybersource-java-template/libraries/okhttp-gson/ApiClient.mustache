@@ -1204,8 +1204,8 @@ public class ApiClient {
 		if (response.isSuccessful()) {
 			if (response.code() == 204) {
 				if (response.body() != null) {
-						response.body().close();
-					}
+					response.body().close();
+				}
 				return null;
 			} else {
 				return deserialize(response, returnType);
