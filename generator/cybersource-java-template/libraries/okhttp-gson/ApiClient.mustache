@@ -73,7 +73,7 @@ public class ApiClient {
 	public static final int ANDROID_SDK_VERSION;
 	public String responseCode;
 	public String status;
-	public String responseBody;
+	public InputStream responseBody;
 	public String respBody;
 	public MerchantConfig merchantConfig;
 
@@ -914,21 +914,15 @@ public class ApiClient {
 	 */
 	@SuppressWarnings("unchecked")
 	public <T> T deserialize(Response response, Type returnType) throws ApiException {
-		if (response == null /* || returnType == null */) {
+		if (response == null) {
 			return null;
 		}
-		if (returnType == null && response != null) {
+		
+		if ((returnType == null && response != null) || ("byte[]".equals(returnType.toString()))) {
 			try {
-				return (T) response.body().bytes();
-			} catch (IOException e) {
-				throw new ApiException(e);
-			}
-		} else
-
-		if ("byte[]".equals(returnType.toString())) {
-			// Handle binary response (byte array).
-			try {
-				return (T) response.body().bytes();
+				T respBody =  (T) response.body().byteStream();
+				
+				return respBody;
 			} catch (IOException e) {
 				throw new ApiException(e);
 			}
@@ -1102,25 +1096,9 @@ public class ApiClient {
 			responseCode = String.valueOf(response.code());
 			status = response.message();
 			String headerType = response.header("Content-Type");
-			if (headerType != null)
-				if (headerType.equals("application/xml") || headerType.equals("text/csv")
-						|| headerType.equals("application/pdf")) {
-					responseBody = response.body().string();
-				}
-			if (!(responseCode.equals("200"))) {
-				if (!responseCode.equals("201")) {
-					System.out.println(response.body().string());
-				}
-			}
+						
 			T data = handleResponse(response, returnType);
 			
-			response.body().close();
-			
-			if (headerType != null)
-				if (!headerType.equals("application/xml") && !headerType.equals("text/csv")
-						&& !headerType.equals("application/pdf")) {
-					responseBody = response.toString();
-				}
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
 		} catch (IOException e) {
 			throw new ApiException(e);
@@ -1193,9 +1171,7 @@ public class ApiClient {
 	 */
 	public <T> T handleResponse(Response response, Type returnType) throws ApiException {
 		if (response.isSuccessful()) {
-			if (/* returnType == null || */ response.code() == 204) {
-				// returning null if the returnType is not defined,
-				// or the status code is 204 (No Content)
+			if (response.code() == 204) {
 				if (response.body() != null) {
 					response.body().close();					
 				}
