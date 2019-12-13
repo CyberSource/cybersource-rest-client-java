@@ -1326,9 +1326,9 @@ public class ApiClient {
 					addDefaultHeader("Authorization", token);
 				}
 				
-				if (merchantConfig.getSolutionId() != null && !merchantConfig.getSolutionId().isEmpty()) {
-					addDefaultHeader("v-c-solution-id", merchantConfig.getSolutionId());
-				}
+				// if (merchantConfig.getSolutionId() != null && !merchantConfig.getSolutionId().isEmpty()) {
+					// addDefaultHeader("v-c-solution-id", merchantConfig.getSolutionId());
+				// }
 			}
 			
 			if (versionInfo != null && !versionInfo.isEmpty()) {
