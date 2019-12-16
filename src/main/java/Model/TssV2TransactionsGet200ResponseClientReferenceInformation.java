@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseClientReferenceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class TssV2TransactionsGet200ResponseClientReferenceInformation {
   @SerializedName("code")
   private String code = null;
@@ -67,10 +67,10 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformation {
   }
 
    /**
-   * The description for this field is not available.
+   * Version of the CyberSource application or integration used for a transaction. 
    * @return applicationVersion
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Version of the CyberSource application or integration used for a transaction. ")
   public String getApplicationVersion() {
     return applicationVersion;
   }
@@ -85,10 +85,10 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformation {
   }
 
    /**
-   * The application name of client which is used to submit the request.
+   * The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource. 
    * @return applicationName
   **/
-  @ApiModelProperty(value = "The application name of client which is used to submit the request.")
+  @ApiModelProperty(value = "The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource. ")
   public String getApplicationName() {
     return applicationName;
   }
@@ -103,10 +103,10 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformation {
   }
 
    /**
-   * The description for this field is not available.
+   * The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method. 
    * @return applicationUser
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method. ")
   public String getApplicationUser() {
     return applicationUser;
   }

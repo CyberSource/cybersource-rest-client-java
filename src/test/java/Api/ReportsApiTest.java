@@ -15,11 +15,17 @@ package Api;
 
 import Invokers.ApiException;
 import Model.CreateAdhocReportRequest;
+import org.joda.time.DateTime;
 import Model.ReportingV3ReportsGet200Response;
 import Model.ReportingV3ReportsIdGet200Response;
-import org.joda.time.DateTime;
-import org.junit.Ignore;
+import Model.Reportingv3ReportDownloadsGet400Response;
 import org.junit.Test;
+import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for ReportsApi

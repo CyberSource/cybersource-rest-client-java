@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf {
   @SerializedName("href")
   private String href = null;
@@ -40,7 +40,7 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf
    * A link to the current requested collection.
    * @return href
   **/
-  @ApiModelProperty(example = "https://api.cybersource.com/tms/v1/instrumentidentifiers/5B32CE6167B09343E05333B9D30A53E1/paymentinstruments?offset=20&limit=5\"", value = "A link to the current requested collection.")
+  @ApiModelProperty(example = "https://api.cybersource.com/tms/v1/instrumentidentifiers/5B32CE6167B09343E05333B9D30A53E1/paymentinstruments?offset=20&limit=5", value = "A link to the current requested collection.")
   public String getHref() {
     return href;
   }

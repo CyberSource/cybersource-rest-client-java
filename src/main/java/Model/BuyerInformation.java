@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * BuyerInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class BuyerInformation {
   @SerializedName("companyTaxID")
   private String companyTaxID = null;
@@ -37,8 +37,8 @@ public class BuyerInformation {
   @SerializedName("currency")
   private String currency = null;
 
-  @SerializedName("dateOBirth")
-  private String dateOBirth = null;
+  @SerializedName("dateOfBirth")
+  private String dateOfBirth = null;
 
   @SerializedName("personalIdentification")
   private List<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformationPersonalIdentification> personalIdentification = null;
@@ -79,22 +79,22 @@ public class BuyerInformation {
     this.currency = currency;
   }
 
-  public BuyerInformation dateOBirth(String dateOBirth) {
-    this.dateOBirth = dateOBirth;
+  public BuyerInformation dateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
     return this;
   }
 
    /**
    * Date of birth of the customer.  Format: &#x60;YYYY-MM-DD&#x60; or &#x60;YYYYMMDD&#x60; 
-   * @return dateOBirth
+   * @return dateOfBirth
   **/
   @ApiModelProperty(example = "1960-12-30", value = "Date of birth of the customer.  Format: `YYYY-MM-DD` or `YYYYMMDD` ")
-  public String getDateOBirth() {
-    return dateOBirth;
+  public String getDateOfBirth() {
+    return dateOfBirth;
   }
 
-  public void setDateOBirth(String dateOBirth) {
-    this.dateOBirth = dateOBirth;
+  public void setDateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
   }
 
   public BuyerInformation personalIdentification(List<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformationPersonalIdentification> personalIdentification) {
@@ -135,13 +135,13 @@ public class BuyerInformation {
     BuyerInformation buyerInformation = (BuyerInformation) o;
     return Objects.equals(this.companyTaxID, buyerInformation.companyTaxID) &&
         Objects.equals(this.currency, buyerInformation.currency) &&
-        Objects.equals(this.dateOBirth, buyerInformation.dateOBirth) &&
+        Objects.equals(this.dateOfBirth, buyerInformation.dateOfBirth) &&
         Objects.equals(this.personalIdentification, buyerInformation.personalIdentification);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(companyTaxID, currency, dateOBirth, personalIdentification);
+    return Objects.hash(companyTaxID, currency, dateOfBirth, personalIdentification);
   }
 
 
@@ -152,7 +152,7 @@ public class BuyerInformation {
     
     sb.append("    companyTaxID: ").append(toIndentedString(companyTaxID)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    dateOBirth: ").append(toIndentedString(dateOBirth)).append("\n");
+    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     sb.append("}");
     return sb.toString();

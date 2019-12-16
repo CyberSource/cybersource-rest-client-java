@@ -30,6 +30,7 @@ import java.io.InputStream;
 
 import Model.CreateReportSubscriptionRequest;
 import Model.InlineResponse400;
+import Model.PredefinedSubscriptionRequestBean;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
 import Model.Reportingv3ReportDownloadsGet400Response;
@@ -68,7 +69,7 @@ public class ReportSubscriptionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionCall(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createSubscriptionCall(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createReportSubscriptionRequest;
         
         // create path and map variables
@@ -95,10 +96,10 @@ public class ReportSubscriptionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -111,7 +112,7 @@ public class ReportSubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createSubscriptionValidateBeforeCall(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createSubscriptionValidateBeforeCall(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createReportSubscriptionRequest' is set
         if (createReportSubscriptionRequest == null) {
@@ -119,7 +120,7 @@ public class ReportSubscriptionsApi {
         }
         
         
-        com.squareup.okhttp.Call call = createSubscriptionCall(createReportSubscriptionRequest, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = createSubscriptionCall(createReportSubscriptionRequest, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -148,7 +149,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> createSubscriptionWithHttpInfo(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException {
-	    com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(createReportSubscriptionRequest, organizationId, null, null);
+        okhttp3.Call call = createSubscriptionValidateBeforeCall(createReportSubscriptionRequest, organizationId, null, null);
         return apiClient.execute(call);
     }
 
@@ -161,7 +162,7 @@ public class ReportSubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionAsync(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call createSubscriptionAsync(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -182,7 +183,7 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(createReportSubscriptionRequest, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = createSubscriptionValidateBeforeCall(createReportSubscriptionRequest, organizationId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -194,7 +195,7 @@ public class ReportSubscriptionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteSubscriptionCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteSubscriptionCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -220,10 +221,10 @@ public class ReportSubscriptionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -236,7 +237,7 @@ public class ReportSubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteSubscriptionValidateBeforeCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteSubscriptionValidateBeforeCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
@@ -244,7 +245,7 @@ public class ReportSubscriptionsApi {
         }
         
         
-        com.squareup.okhttp.Call call = deleteSubscriptionCall(reportName, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteSubscriptionCall(reportName, progressListener, progressRequestListener);
         return call;
 
         
@@ -271,7 +272,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deleteSubscriptionWithHttpInfo(String reportName) throws ApiException {
-	    com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(reportName, null, null);
+        okhttp3.Call call = deleteSubscriptionValidateBeforeCall(reportName, null, null);
         return apiClient.execute(call);
     }
 
@@ -283,7 +284,7 @@ public class ReportSubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteSubscriptionAsync(String reportName, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteSubscriptionAsync(String reportName, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -304,7 +305,7 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(reportName, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteSubscriptionValidateBeforeCall(reportName, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -315,7 +316,7 @@ public class ReportSubscriptionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAllSubscriptionsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getAllSubscriptionsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -340,10 +341,10 @@ public class ReportSubscriptionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -356,10 +357,10 @@ public class ReportSubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllSubscriptionsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getAllSubscriptionsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = getAllSubscriptionsCall(progressListener, progressRequestListener);
+        okhttp3.Call call = getAllSubscriptionsCall(progressListener, progressRequestListener);
         return call;
 
         
@@ -386,7 +387,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getAllSubscriptionsWithHttpInfo() throws ApiException {
-	    com.squareup.okhttp.Call call = getAllSubscriptionsValidateBeforeCall(null, null);
+        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -398,7 +399,7 @@ public class ReportSubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllSubscriptionsAsync(final ApiCallback<ReportingV3ReportSubscriptionsGet200Response> callback) throws ApiException {
+    public okhttp3.Call getAllSubscriptionsAsync(final ApiCallback<ReportingV3ReportSubscriptionsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -419,7 +420,7 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllSubscriptionsValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -432,7 +433,7 @@ public class ReportSubscriptionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getSubscriptionCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -458,10 +459,10 @@ public class ReportSubscriptionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -474,7 +475,7 @@ public class ReportSubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSubscriptionValidateBeforeCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getSubscriptionValidateBeforeCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
@@ -482,7 +483,7 @@ public class ReportSubscriptionsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getSubscriptionCall(reportName, progressListener, progressRequestListener);
+        okhttp3.Call call = getSubscriptionCall(reportName, progressListener, progressRequestListener);
         return call;
 
         
@@ -511,7 +512,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> getSubscriptionWithHttpInfo(String reportName) throws ApiException {
-	    com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(reportName, null, null);
+        okhttp3.Call call = getSubscriptionValidateBeforeCall(reportName, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -524,7 +525,7 @@ public class ReportSubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionAsync(String reportName, final ApiCallback<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> callback) throws ApiException {
+    public okhttp3.Call getSubscriptionAsync(String reportName, final ApiCallback<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -545,9 +546,136 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(reportName, progressListener, progressRequestListener);
+        okhttp3.Call call = getSubscriptionValidateBeforeCall(reportName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for reportingV3PredefinedReportSubscriptionsPut
+     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call reportingV3PredefinedReportSubscriptionsPutCall(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = predefinedSubscriptionRequestBean;
+        
+        // create path and map variables
+        String localVarPath = "/reporting/v3/predefined-report-subscriptions";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call reportingV3PredefinedReportSubscriptionsPutValidateBeforeCall(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'predefinedSubscriptionRequestBean' is set
+        if (predefinedSubscriptionRequestBean == null) {
+            throw new ApiException("Missing the required parameter 'predefinedSubscriptionRequestBean' when calling reportingV3PredefinedReportSubscriptionsPut(Async)");
+        }
+        
+        
+        okhttp3.Call call = reportingV3PredefinedReportSubscriptionsPutCall(predefinedSubscriptionRequestBean, organizationId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Create a Standard or Classic subscription
+     * Create or update an already existing classic or standard subscription. 
+     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void reportingV3PredefinedReportSubscriptionsPut(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
+        reportingV3PredefinedReportSubscriptionsPutWithHttpInfo(predefinedSubscriptionRequestBean, organizationId);
+    }
+
+    /**
+     * Create a Standard or Classic subscription
+     * Create or update an already existing classic or standard subscription. 
+     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> reportingV3PredefinedReportSubscriptionsPutWithHttpInfo(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
+        okhttp3.Call call = reportingV3PredefinedReportSubscriptionsPutValidateBeforeCall(predefinedSubscriptionRequestBean, organizationId, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Create a Standard or Classic subscription (asynchronously)
+     * Create or update an already existing classic or standard subscription. 
+     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call reportingV3PredefinedReportSubscriptionsPutAsync(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = reportingV3PredefinedReportSubscriptionsPutValidateBeforeCall(predefinedSubscriptionRequestBean, organizationId, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
         return call;
     }
 }

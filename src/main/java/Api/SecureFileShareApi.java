@@ -66,7 +66,7 @@ public class SecureFileShareApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFileCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getFileCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -92,10 +92,10 @@ final String[] localVarContentTypes = {"*/*"};
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -108,7 +108,7 @@ final String[] localVarContentTypes = {"*/*"};
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFileValidateBeforeCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getFileValidateBeforeCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
@@ -116,7 +116,7 @@ final String[] localVarContentTypes = {"*/*"};
         }
         
         
-        com.squareup.okhttp.Call call = getFileCall(fileId, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getFileCall(fileId, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -145,7 +145,7 @@ final String[] localVarContentTypes = {"*/*"};
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InputStream> getFileWithHttpInfo(String fileId, String organizationId) throws ApiException {
-	    com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId, null, null);
+        okhttp3.Call call = getFileValidateBeforeCall(fileId, organizationId, null, null);
         return apiClient.execute(call);
     }
 
@@ -158,7 +158,7 @@ final String[] localVarContentTypes = {"*/*"};
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getFileAsync(String fileId, String organizationId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call getFileAsync(String fileId, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -179,7 +179,7 @@ final String[] localVarContentTypes = {"*/*"};
             };
         }
 
-        com.squareup.okhttp.Call call = getFileValidateBeforeCall(fileId, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getFileValidateBeforeCall(fileId, organizationId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -193,7 +193,7 @@ final String[] localVarContentTypes = {"*/*"};
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getFileDetailCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getFileDetailCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -222,10 +222,10 @@ final String[] localVarContentTypes = {"*/*"};
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -238,7 +238,7 @@ final String[] localVarContentTypes = {"*/*"};
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getFileDetailValidateBeforeCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getFileDetailValidateBeforeCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'startDate' is set
         if (startDate == null) {
@@ -251,7 +251,7 @@ final String[] localVarContentTypes = {"*/*"};
         }
         
         
-        com.squareup.okhttp.Call call = getFileDetailCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getFileDetailCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -284,7 +284,7 @@ final String[] localVarContentTypes = {"*/*"};
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<V1FileDetailsGet200Response> getFileDetailWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId) throws ApiException {
-	    com.squareup.okhttp.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, null, null);
+        okhttp3.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, null, null);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -299,7 +299,7 @@ final String[] localVarContentTypes = {"*/*"};
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getFileDetailAsync(LocalDate startDate, LocalDate endDate, String organizationId, final ApiCallback<V1FileDetailsGet200Response> callback) throws ApiException {
+    public okhttp3.Call getFileDetailAsync(LocalDate startDate, LocalDate endDate, String organizationId, final ApiCallback<V1FileDetailsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -320,7 +320,7 @@ final String[] localVarContentTypes = {"*/*"};
             };
         }
 
-        com.squareup.okhttp.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.ReportingV3ReportDefinitionsNameGet200ResponseAttributes;
+import Model.ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +30,7 @@ import java.util.List;
 /**
  * ReportingV3ReportDefinitionsNameGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class ReportingV3ReportDefinitionsNameGet200Response {
   @SerializedName("type")
   private String type = null;
@@ -48,6 +49,12 @@ public class ReportingV3ReportDefinitionsNameGet200Response {
 
   @SerializedName("description")
   private String description = null;
+
+  @SerializedName("defaultSettings")
+  private ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings defaultSettings = null;
+
+  @SerializedName("subscriptionType")
+  private String subscriptionType = null;
 
   public ReportingV3ReportDefinitionsNameGet200Response type(String type) {
     this.type = type;
@@ -173,6 +180,42 @@ public class ReportingV3ReportDefinitionsNameGet200Response {
     this.description = description;
   }
 
+  public ReportingV3ReportDefinitionsNameGet200Response defaultSettings(ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings defaultSettings) {
+    this.defaultSettings = defaultSettings;
+    return this;
+  }
+
+   /**
+   * Get defaultSettings
+   * @return defaultSettings
+  **/
+  @ApiModelProperty(value = "")
+  public ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings getDefaultSettings() {
+    return defaultSettings;
+  }
+
+  public void setDefaultSettings(ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings defaultSettings) {
+    this.defaultSettings = defaultSettings;
+  }
+
+  public ReportingV3ReportDefinitionsNameGet200Response subscriptionType(String subscriptionType) {
+    this.subscriptionType = subscriptionType;
+    return this;
+  }
+
+   /**
+   * &#39;The subscription type for which report definition is required. By default the type will be CUSTOM.&#39; Valid Values: - &#39;CLASSIC&#39; - &#39;CUSTOM&#39; - &#39;STANDARD&#39; 
+   * @return subscriptionType
+  **/
+  @ApiModelProperty(example = "CLASSIC", value = "'The subscription type for which report definition is required. By default the type will be CUSTOM.' Valid Values: - 'CLASSIC' - 'CUSTOM' - 'STANDARD' ")
+  public String getSubscriptionType() {
+    return subscriptionType;
+  }
+
+  public void setSubscriptionType(String subscriptionType) {
+    this.subscriptionType = subscriptionType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -188,12 +231,14 @@ public class ReportingV3ReportDefinitionsNameGet200Response {
         Objects.equals(this.reportDefintionName, reportingV3ReportDefinitionsNameGet200Response.reportDefintionName) &&
         Objects.equals(this.attributes, reportingV3ReportDefinitionsNameGet200Response.attributes) &&
         Objects.equals(this.supportedFormats, reportingV3ReportDefinitionsNameGet200Response.supportedFormats) &&
-        Objects.equals(this.description, reportingV3ReportDefinitionsNameGet200Response.description);
+        Objects.equals(this.description, reportingV3ReportDefinitionsNameGet200Response.description) &&
+        Objects.equals(this.defaultSettings, reportingV3ReportDefinitionsNameGet200Response.defaultSettings) &&
+        Objects.equals(this.subscriptionType, reportingV3ReportDefinitionsNameGet200Response.subscriptionType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, reportDefinitionId, reportDefintionName, attributes, supportedFormats, description);
+    return Objects.hash(type, reportDefinitionId, reportDefintionName, attributes, supportedFormats, description, defaultSettings, subscriptionType);
   }
 
 
@@ -208,6 +253,8 @@ public class ReportingV3ReportDefinitionsNameGet200Response {
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    supportedFormats: ").append(toIndentedString(supportedFormats)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    defaultSettings: ").append(toIndentedString(defaultSettings)).append("\n");
+    sb.append("    subscriptionType: ").append(toIndentedString(subscriptionType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -950,13 +950,9 @@ public class ApiClient {
 		}
 		
 		if ((returnType == null && response != null) || ("byte[]".equals(returnType.toString()))) {
-			try {
-				T respBody =  (T) response.body().byteStream();
+			T respBody =  (T) response.body().byteStream();
 
-				return respBody;
-			} catch (IOException e) {
-				throw new ApiException(e);
-			}
+			return respBody;
 		} else if (returnType.equals(File.class)) {
 			// Handle file downloading.
 			return (T) downloadFileFromResponse(response);
@@ -1172,7 +1168,7 @@ public class ApiClient {
 			}
 
 			@Override
-			public void onResponse(Call call0) throws IOException {
+			public void onResponse(Call call0, Response response) throws IOException {
 				T result;
 				try {
 					result = (T) handleResponse(response, returnType);

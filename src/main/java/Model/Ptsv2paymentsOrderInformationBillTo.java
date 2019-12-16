@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsOrderInformationBillTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class Ptsv2paymentsOrderInformationBillTo {
   @SerializedName("firstName")
   private String firstName = null;
@@ -78,6 +78,9 @@ public class Ptsv2paymentsOrderInformationBillTo {
 
   @SerializedName("email")
   private String email = null;
+
+  @SerializedName("emailDomain")
+  private String emailDomain = null;
 
   @SerializedName("phoneNumber")
   private String phoneNumber = null;
@@ -391,6 +394,24 @@ public class Ptsv2paymentsOrderInformationBillTo {
     this.email = email;
   }
 
+  public Ptsv2paymentsOrderInformationBillTo emailDomain(String emailDomain) {
+    this.emailDomain = emailDomain;
+    return this;
+  }
+
+   /**
+   * Email domain of the customer. The domain of the email address comprises all characters that follow the @ symbol, such as mail.example.com. For the Risk Update service, if the email address and the domain are sent in the request, the domain supersedes the email address. 
+   * @return emailDomain
+  **/
+  @ApiModelProperty(value = "Email domain of the customer. The domain of the email address comprises all characters that follow the @ symbol, such as mail.example.com. For the Risk Update service, if the email address and the domain are sent in the request, the domain supersedes the email address. ")
+  public String getEmailDomain() {
+    return emailDomain;
+  }
+
+  public void setEmailDomain(String emailDomain) {
+    this.emailDomain = emailDomain;
+  }
+
   public Ptsv2paymentsOrderInformationBillTo phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
@@ -454,13 +475,14 @@ public class Ptsv2paymentsOrderInformationBillTo {
         Objects.equals(this.district, ptsv2paymentsOrderInformationBillTo.district) &&
         Objects.equals(this.buildingNumber, ptsv2paymentsOrderInformationBillTo.buildingNumber) &&
         Objects.equals(this.email, ptsv2paymentsOrderInformationBillTo.email) &&
+        Objects.equals(this.emailDomain, ptsv2paymentsOrderInformationBillTo.emailDomain) &&
         Objects.equals(this.phoneNumber, ptsv2paymentsOrderInformationBillTo.phoneNumber) &&
         Objects.equals(this.phoneType, ptsv2paymentsOrderInformationBillTo.phoneType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, middleName, nameSuffix, title, company, address1, address2, address3, address4, locality, administrativeArea, postalCode, country, district, buildingNumber, email, phoneNumber, phoneType);
+    return Objects.hash(firstName, lastName, middleName, nameSuffix, title, company, address1, address2, address3, address4, locality, administrativeArea, postalCode, country, district, buildingNumber, email, emailDomain, phoneNumber, phoneType);
   }
 
 
@@ -486,6 +508,7 @@ public class Ptsv2paymentsOrderInformationBillTo {
     sb.append("    district: ").append(toIndentedString(district)).append("\n");
     sb.append("    buildingNumber: ").append(toIndentedString(buildingNumber)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    emailDomain: ").append(toIndentedString(emailDomain)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
     sb.append("}");

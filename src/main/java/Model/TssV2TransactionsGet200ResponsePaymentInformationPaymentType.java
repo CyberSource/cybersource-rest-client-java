@@ -14,7 +14,6 @@
 package Model;
 
 import java.util.Objects;
-import Model.TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,22 +26,16 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePaymentInformationPaymentType
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("subTypeName")
-  private String subTypeName = null;
-
-  @SerializedName("fundingSource")
-  private TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource fundingSource = null;
+  @SerializedName("type")
+  private String type = null;
 
   @SerializedName("method")
   private String method = null;
-
-  @SerializedName("authenticationMethod")
-  private String authenticationMethod = null;
 
   public TssV2TransactionsGet200ResponsePaymentInformationPaymentType name(String name) {
     this.name = name;
@@ -62,40 +55,22 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
     this.name = name;
   }
 
-  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType subTypeName(String subTypeName) {
-    this.subTypeName = subTypeName;
+  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * SubType Name is detail information about Payment Type. Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. - &#x60;DEBIT&#x60; (use this for a PIN debit transaction) 
-   * @return subTypeName
+   * Indicates the payment type used in this payment transaction. Example: credit card, check
+   * @return type
   **/
-  @ApiModelProperty(value = "SubType Name is detail information about Payment Type. Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. - `DEBIT` (use this for a PIN debit transaction) ")
-  public String getSubTypeName() {
-    return subTypeName;
+  @ApiModelProperty(value = "Indicates the payment type used in this payment transaction. Example: credit card, check")
+  public String getType() {
+    return type;
   }
 
-  public void setSubTypeName(String subTypeName) {
-    this.subTypeName = subTypeName;
-  }
-
-  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType fundingSource(TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource fundingSource) {
-    this.fundingSource = fundingSource;
-    return this;
-  }
-
-   /**
-   * Get fundingSource
-   * @return fundingSource
-  **/
-  @ApiModelProperty(value = "")
-  public TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource getFundingSource() {
-    return fundingSource;
-  }
-
-  public void setFundingSource(TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource fundingSource) {
-    this.fundingSource = fundingSource;
+  public void setType(String type) {
+    this.type = type;
   }
 
   public TssV2TransactionsGet200ResponsePaymentInformationPaymentType method(String method) {
@@ -104,34 +79,16 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
   }
 
    /**
-   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal
+   * Indicates the payment method used in this payment transaction.
    * @return method
   **/
-  @ApiModelProperty(value = "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal")
+  @ApiModelProperty(value = "Indicates the payment method used in this payment transaction.")
   public String getMethod() {
     return method;
   }
 
   public void setMethod(String method) {
     this.method = method;
-  }
-
-  public TssV2TransactionsGet200ResponsePaymentInformationPaymentType authenticationMethod(String authenticationMethod) {
-    this.authenticationMethod = authenticationMethod;
-    return this;
-  }
-
-   /**
-   * A Payment Type Authentication Method is the means used to verify that the presenter of the Payment Type credential is an authorized user of the Payment Instrument. Examples: 3DSecure – Verified by Visa, 3DSecure – MasteCard Secure Code 
-   * @return authenticationMethod
-  **/
-  @ApiModelProperty(value = "A Payment Type Authentication Method is the means used to verify that the presenter of the Payment Type credential is an authorized user of the Payment Instrument. Examples: 3DSecure – Verified by Visa, 3DSecure – MasteCard Secure Code ")
-  public String getAuthenticationMethod() {
-    return authenticationMethod;
-  }
-
-  public void setAuthenticationMethod(String authenticationMethod) {
-    this.authenticationMethod = authenticationMethod;
   }
 
 
@@ -145,15 +102,13 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
     }
     TssV2TransactionsGet200ResponsePaymentInformationPaymentType tssV2TransactionsGet200ResponsePaymentInformationPaymentType = (TssV2TransactionsGet200ResponsePaymentInformationPaymentType) o;
     return Objects.equals(this.name, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.name) &&
-        Objects.equals(this.subTypeName, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.subTypeName) &&
-        Objects.equals(this.fundingSource, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.fundingSource) &&
-        Objects.equals(this.method, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.method) &&
-        Objects.equals(this.authenticationMethod, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.authenticationMethod);
+        Objects.equals(this.type, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.type) &&
+        Objects.equals(this.method, tssV2TransactionsGet200ResponsePaymentInformationPaymentType.method);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, subTypeName, fundingSource, method, authenticationMethod);
+    return Objects.hash(name, type, method);
   }
 
 
@@ -163,10 +118,8 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    subTypeName: ").append(toIndentedString(subTypeName)).append("\n");
-    sb.append("    fundingSource: ").append(toIndentedString(fundingSource)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
-    sb.append("    authenticationMethod: ").append(toIndentedString(authenticationMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

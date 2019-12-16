@@ -26,13 +26,16 @@ import java.io.IOException;
 /**
  * Riskv1decisionsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class Riskv1decisionsDeviceInformation {
   @SerializedName("cookiesAccepted")
   private String cookiesAccepted = null;
 
   @SerializedName("ipAddress")
   private String ipAddress = null;
+
+  @SerializedName("networkIpAddress")
+  private String networkIpAddress = null;
 
   @SerializedName("hostName")
   private String hostName = null;
@@ -80,6 +83,24 @@ public class Riskv1decisionsDeviceInformation {
 
   public void setIpAddress(String ipAddress) {
     this.ipAddress = ipAddress;
+  }
+
+  public Riskv1decisionsDeviceInformation networkIpAddress(String networkIpAddress) {
+    this.networkIpAddress = networkIpAddress;
+    return this;
+  }
+
+   /**
+   * Network IP address of the customer (for example, 10.1.27). A network IP address includes up to 256 IP addresses. 
+   * @return networkIpAddress
+  **/
+  @ApiModelProperty(value = "Network IP address of the customer (for example, 10.1.27). A network IP address includes up to 256 IP addresses. ")
+  public String getNetworkIpAddress() {
+    return networkIpAddress;
+  }
+
+  public void setNetworkIpAddress(String networkIpAddress) {
+    this.networkIpAddress = networkIpAddress;
   }
 
   public Riskv1decisionsDeviceInformation hostName(String hostName) {
@@ -166,6 +187,7 @@ public class Riskv1decisionsDeviceInformation {
     Riskv1decisionsDeviceInformation riskv1decisionsDeviceInformation = (Riskv1decisionsDeviceInformation) o;
     return Objects.equals(this.cookiesAccepted, riskv1decisionsDeviceInformation.cookiesAccepted) &&
         Objects.equals(this.ipAddress, riskv1decisionsDeviceInformation.ipAddress) &&
+        Objects.equals(this.networkIpAddress, riskv1decisionsDeviceInformation.networkIpAddress) &&
         Objects.equals(this.hostName, riskv1decisionsDeviceInformation.hostName) &&
         Objects.equals(this.fingerprintSessionId, riskv1decisionsDeviceInformation.fingerprintSessionId) &&
         Objects.equals(this.httpBrowserEmail, riskv1decisionsDeviceInformation.httpBrowserEmail) &&
@@ -174,7 +196,7 @@ public class Riskv1decisionsDeviceInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cookiesAccepted, ipAddress, hostName, fingerprintSessionId, httpBrowserEmail, userAgent);
+    return Objects.hash(cookiesAccepted, ipAddress, networkIpAddress, hostName, fingerprintSessionId, httpBrowserEmail, userAgent);
   }
 
 
@@ -185,6 +207,7 @@ public class Riskv1decisionsDeviceInformation {
     
     sb.append("    cookiesAccepted: ").append(toIndentedString(cookiesAccepted)).append("\n");
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+    sb.append("    networkIpAddress: ").append(toIndentedString(networkIpAddress)).append("\n");
     sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
     sb.append("    fingerprintSessionId: ").append(toIndentedString(fingerprintSessionId)).append("\n");
     sb.append("    httpBrowserEmail: ").append(toIndentedString(httpBrowserEmail)).append("\n");

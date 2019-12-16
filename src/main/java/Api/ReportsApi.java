@@ -13,14 +13,27 @@
 
 package Api;
 
-import Invokers.*;
-import Model.CreateAdhocReportRequest;
-import Model.ReportingV3ReportsGet200Response;
-import Model.ReportingV3ReportsIdGet200Response;
+import Invokers.ApiCallback;
+import Invokers.ApiClient;
+import Invokers.ApiException;
+import Invokers.ApiResponse;
+import Invokers.Configuration;
+import Invokers.Pair;
+import Invokers.ProgressRequestBody;
+import Invokers.ProgressResponseBody;
+
 import com.google.gson.reflect.TypeToken;
-import org.joda.time.DateTime;
 
 import java.io.IOException;
+import java.io.InputStream;
+
+
+import Model.CreateAdhocReportRequest;
+import org.joda.time.DateTime;
+import Model.ReportingV3ReportsGet200Response;
+import Model.ReportingV3ReportsIdGet200Response;
+import Model.Reportingv3ReportDownloadsGet400Response;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,7 +68,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createReportCall(CreateAdhocReportRequest createAdhocReportRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createReportCall(CreateAdhocReportRequest createAdhocReportRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createAdhocReportRequest;
         
         // create path and map variables
@@ -82,10 +95,10 @@ public class ReportsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -98,7 +111,7 @@ public class ReportsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createReportValidateBeforeCall(CreateAdhocReportRequest createAdhocReportRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createReportValidateBeforeCall(CreateAdhocReportRequest createAdhocReportRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createAdhocReportRequest' is set
         if (createAdhocReportRequest == null) {
@@ -106,7 +119,7 @@ public class ReportsApi {
         }
         
         
-        com.squareup.okhttp.Call call = createReportCall(createAdhocReportRequest, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = createReportCall(createAdhocReportRequest, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -135,7 +148,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> createReportWithHttpInfo(CreateAdhocReportRequest createAdhocReportRequest, String organizationId) throws ApiException {
-	    com.squareup.okhttp.Call call = createReportValidateBeforeCall(createAdhocReportRequest, organizationId, null, null);
+        okhttp3.Call call = createReportValidateBeforeCall(createAdhocReportRequest, organizationId, null, null);
         return apiClient.execute(call);
     }
 
@@ -148,7 +161,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createReportAsync(CreateAdhocReportRequest createAdhocReportRequest, String organizationId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call createReportAsync(CreateAdhocReportRequest createAdhocReportRequest, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -169,7 +182,7 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createReportValidateBeforeCall(createAdhocReportRequest, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = createReportValidateBeforeCall(createAdhocReportRequest, organizationId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -182,7 +195,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getReportByReportIdCall(String reportId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getReportByReportIdCall(String reportId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -210,10 +223,10 @@ public class ReportsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -226,7 +239,7 @@ public class ReportsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getReportByReportIdValidateBeforeCall(String reportId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getReportByReportIdValidateBeforeCall(String reportId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportId' is set
         if (reportId == null) {
@@ -234,7 +247,7 @@ public class ReportsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getReportByReportIdCall(reportId, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getReportByReportIdCall(reportId, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -265,7 +278,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportsIdGet200Response> getReportByReportIdWithHttpInfo(String reportId, String organizationId) throws ApiException {
-	    com.squareup.okhttp.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, null, null);
+        okhttp3.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsIdGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -279,7 +292,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getReportByReportIdAsync(String reportId, String organizationId, final ApiCallback<ReportingV3ReportsIdGet200Response> callback) throws ApiException {
+    public okhttp3.Call getReportByReportIdAsync(String reportId, String organizationId, final ApiCallback<ReportingV3ReportsIdGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -300,7 +313,7 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsIdGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -312,7 +325,7 @@ public class ReportsApi {
      * @param timeQueryType Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param reportMimeType Valid Report Format  Valid values: - application/xml - text/csv  (optional)
-     * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC  (optional)
+     * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC  (optional)
      * @param reportName Valid Report Name (optional)
      * @param reportDefinitionId Valid Report Definition Id (optional)
      * @param reportStatus Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA  (optional)
@@ -321,7 +334,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call searchReportsCall(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call searchReportsCall(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -364,10 +377,10 @@ public class ReportsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -380,7 +393,7 @@ public class ReportsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call searchReportsValidateBeforeCall(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call searchReportsValidateBeforeCall(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
@@ -398,7 +411,7 @@ public class ReportsApi {
         }
         
         
-        com.squareup.okhttp.Call call = searchReportsCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, progressListener, progressRequestListener);
+        okhttp3.Call call = searchReportsCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, progressListener, progressRequestListener);
         return call;
 
         
@@ -415,7 +428,7 @@ public class ReportsApi {
      * @param timeQueryType Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param reportMimeType Valid Report Format  Valid values: - application/xml - text/csv  (optional)
-     * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC  (optional)
+     * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC  (optional)
      * @param reportName Valid Report Name (optional)
      * @param reportDefinitionId Valid Report Definition Id (optional)
      * @param reportStatus Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA  (optional)
@@ -435,7 +448,7 @@ public class ReportsApi {
      * @param timeQueryType Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param reportMimeType Valid Report Format  Valid values: - application/xml - text/csv  (optional)
-     * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC  (optional)
+     * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC  (optional)
      * @param reportName Valid Report Name (optional)
      * @param reportDefinitionId Valid Report Definition Id (optional)
      * @param reportStatus Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA  (optional)
@@ -443,7 +456,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportsGet200Response> searchReportsWithHttpInfo(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus) throws ApiException {
-	    com.squareup.okhttp.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, null, null);
+        okhttp3.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -456,7 +469,7 @@ public class ReportsApi {
      * @param timeQueryType Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param reportMimeType Valid Report Format  Valid values: - application/xml - text/csv  (optional)
-     * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC  (optional)
+     * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC  (optional)
      * @param reportName Valid Report Name (optional)
      * @param reportDefinitionId Valid Report Definition Id (optional)
      * @param reportStatus Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA  (optional)
@@ -464,7 +477,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchReportsAsync(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus, final ApiCallback<ReportingV3ReportsGet200Response> callback) throws ApiException {
+    public okhttp3.Call searchReportsAsync(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus, final ApiCallback<ReportingV3ReportsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -485,7 +498,7 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, progressListener, progressRequestListener);
+        okhttp3.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

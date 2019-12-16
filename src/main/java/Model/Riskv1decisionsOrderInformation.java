@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Riskv1decisionsOrderInformationAddress;
 import Model.Riskv1decisionsOrderInformationAmountDetails;
 import Model.Riskv1decisionsOrderInformationBillTo;
 import Model.Riskv1decisionsOrderInformationLineItems;
@@ -34,7 +35,7 @@ import java.util.List;
  * Contains detailed order-level information.
  */
 @ApiModel(description = "Contains detailed order-level information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class Riskv1decisionsOrderInformation {
   @SerializedName("amountDetails")
   private Riskv1decisionsOrderInformationAmountDetails amountDetails = null;
@@ -53,6 +54,9 @@ public class Riskv1decisionsOrderInformation {
 
   @SerializedName("billTo")
   private Riskv1decisionsOrderInformationBillTo billTo = null;
+
+  @SerializedName("address")
+  private Riskv1decisionsOrderInformationAddress address = null;
 
   public Riskv1decisionsOrderInformation amountDetails(Riskv1decisionsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -170,6 +174,24 @@ public class Riskv1decisionsOrderInformation {
     this.billTo = billTo;
   }
 
+  public Riskv1decisionsOrderInformation address(Riskv1decisionsOrderInformationAddress address) {
+    this.address = address;
+    return this;
+  }
+
+   /**
+   * Get address
+   * @return address
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsOrderInformationAddress getAddress() {
+    return address;
+  }
+
+  public void setAddress(Riskv1decisionsOrderInformationAddress address) {
+    this.address = address;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -185,12 +207,13 @@ public class Riskv1decisionsOrderInformation {
         Objects.equals(this.shipTo, riskv1decisionsOrderInformation.shipTo) &&
         Objects.equals(this.returnsAccepted, riskv1decisionsOrderInformation.returnsAccepted) &&
         Objects.equals(this.lineItems, riskv1decisionsOrderInformation.lineItems) &&
-        Objects.equals(this.billTo, riskv1decisionsOrderInformation.billTo);
+        Objects.equals(this.billTo, riskv1decisionsOrderInformation.billTo) &&
+        Objects.equals(this.address, riskv1decisionsOrderInformation.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, shippingDetails, shipTo, returnsAccepted, lineItems, billTo);
+    return Objects.hash(amountDetails, shippingDetails, shipTo, returnsAccepted, lineItems, billTo, address);
   }
 
 
@@ -205,6 +228,7 @@ public class Riskv1decisionsOrderInformation {
     sb.append("    returnsAccepted: ").append(toIndentedString(returnsAccepted)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
   }

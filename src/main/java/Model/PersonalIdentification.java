@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PersonalIdentification
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class PersonalIdentification {
   @SerializedName("id")
   private String id = null;
@@ -62,10 +62,10 @@ public class PersonalIdentification {
   }
 
    /**
-   * Type of personal identification. **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license 
+   * Type of personal identification.  **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license 
    * @return type
   **/
-  @ApiModelProperty(example = "driver license", value = "Type of personal identification. **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license ")
+  @ApiModelProperty(example = "driver license", value = "Type of personal identification.  **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license ")
   public String getType() {
     return type;
   }

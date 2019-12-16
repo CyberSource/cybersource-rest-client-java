@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsMerchantInformationMerchantDescriptor
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
   @SerializedName("name")
   private String name = null;
@@ -51,6 +51,9 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
 
   @SerializedName("administrativeArea")
   private String administrativeArea = null;
+
+  @SerializedName("url")
+  private String url = null;
 
   public Ptsv2paymentsMerchantInformationMerchantDescriptor name(String name) {
     this.name = name;
@@ -196,6 +199,24 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
     this.administrativeArea = administrativeArea;
   }
 
+  public Ptsv2paymentsMerchantInformationMerchantDescriptor url(String url) {
+    this.url = url;
+    return this;
+  }
+
+   /**
+   * Address of company&#39;s website provided by merchant 
+   * @return url
+  **/
+  @ApiModelProperty(value = "Address of company's website provided by merchant ")
+  public String getUrl() {
+    return url;
+  }
+
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -213,12 +234,13 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
         Objects.equals(this.locality, ptsv2paymentsMerchantInformationMerchantDescriptor.locality) &&
         Objects.equals(this.country, ptsv2paymentsMerchantInformationMerchantDescriptor.country) &&
         Objects.equals(this.postalCode, ptsv2paymentsMerchantInformationMerchantDescriptor.postalCode) &&
-        Objects.equals(this.administrativeArea, ptsv2paymentsMerchantInformationMerchantDescriptor.administrativeArea);
+        Objects.equals(this.administrativeArea, ptsv2paymentsMerchantInformationMerchantDescriptor.administrativeArea) &&
+        Objects.equals(this.url, ptsv2paymentsMerchantInformationMerchantDescriptor.url);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, alternateName, contact, address1, locality, country, postalCode, administrativeArea);
+    return Objects.hash(name, alternateName, contact, address1, locality, country, postalCode, administrativeArea, url);
   }
 
 
@@ -235,6 +257,7 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
   }

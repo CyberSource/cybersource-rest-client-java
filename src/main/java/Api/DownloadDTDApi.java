@@ -62,7 +62,7 @@ public class DownloadDTDApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getDTDV2Call(String reportDefinitionNameVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getDTDV2Call(String reportDefinitionNameVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -88,10 +88,10 @@ public class DownloadDTDApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -104,7 +104,7 @@ public class DownloadDTDApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getDTDV2ValidateBeforeCall(String reportDefinitionNameVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getDTDV2ValidateBeforeCall(String reportDefinitionNameVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportDefinitionNameVersion' is set
         if (reportDefinitionNameVersion == null) {
@@ -112,7 +112,7 @@ public class DownloadDTDApi {
         }
         
         
-        com.squareup.okhttp.Call call = getDTDV2Call(reportDefinitionNameVersion, progressListener, progressRequestListener);
+        okhttp3.Call call = getDTDV2Call(reportDefinitionNameVersion, progressListener, progressRequestListener);
         return call;
 
         
@@ -139,7 +139,7 @@ public class DownloadDTDApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> getDTDV2WithHttpInfo(String reportDefinitionNameVersion) throws ApiException {
-	    com.squareup.okhttp.Call call = getDTDV2ValidateBeforeCall(reportDefinitionNameVersion, null, null);
+        okhttp3.Call call = getDTDV2ValidateBeforeCall(reportDefinitionNameVersion, null, null);
         return apiClient.execute(call);
     }
 
@@ -151,7 +151,7 @@ public class DownloadDTDApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getDTDV2Async(String reportDefinitionNameVersion, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call getDTDV2Async(String reportDefinitionNameVersion, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -172,7 +172,7 @@ public class DownloadDTDApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getDTDV2ValidateBeforeCall(reportDefinitionNameVersion, progressListener, progressRequestListener);
+        okhttp3.Call call = getDTDV2ValidateBeforeCall(reportDefinitionNameVersion, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

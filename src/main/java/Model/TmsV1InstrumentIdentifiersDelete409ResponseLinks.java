@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments;
+import Model.TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,12 +27,12 @@ import java.io.IOException;
 /**
  * TmsV1InstrumentIdentifiersDelete409ResponseLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class TmsV1InstrumentIdentifiersDelete409ResponseLinks {
   @SerializedName("paymentInstruments")
-  private TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments paymentInstruments = null;
+  private TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments paymentInstruments = null;
 
-  public TmsV1InstrumentIdentifiersDelete409ResponseLinks paymentInstruments(TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments paymentInstruments) {
+  public TmsV1InstrumentIdentifiersDelete409ResponseLinks paymentInstruments(TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments paymentInstruments) {
     this.paymentInstruments = paymentInstruments;
     return this;
   }
@@ -42,11 +42,11 @@ public class TmsV1InstrumentIdentifiersDelete409ResponseLinks {
    * @return paymentInstruments
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments getPaymentInstruments() {
+  public TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments getPaymentInstruments() {
     return paymentInstruments;
   }
 
-  public void setPaymentInstruments(TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments paymentInstruments) {
+  public void setPaymentInstruments(TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments paymentInstruments) {
     this.paymentInstruments = paymentInstruments;
   }
 

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseApplicationInformationApplications
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
   @SerializedName("name")
   private String name = null;
@@ -58,10 +58,10 @@ public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
   }
 
    /**
-   * The CyberSource payment application processed for the transaction. 
+   * The name of the CyberSource transaction type (such as CC settlement or CC authorization) that the merchant wants to process in a transaction request. More than one transaction type can included in a transaction request. Each transaction type separately returns their own status, reasonCode, rCode, and rFlag messages. 
    * @return name
   **/
-  @ApiModelProperty(value = "The CyberSource payment application processed for the transaction. ")
+  @ApiModelProperty(value = "The name of the CyberSource transaction type (such as CC settlement or CC authorization) that the merchant wants to process in a transaction request. More than one transaction type can included in a transaction request. Each transaction type separately returns their own status, reasonCode, rCode, and rFlag messages. ")
   public String getName() {
     return name;
   }

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deleteSubscription**](ReportSubscriptionsApi.md#deleteSubscription) | **DELETE** /reporting/v3/report-subscriptions/{reportName} | Delete subscription of a report name by organization
 [**getAllSubscriptions**](ReportSubscriptionsApi.md#getAllSubscriptions) | **GET** /reporting/v3/report-subscriptions | Get all subscriptions
 [**getSubscription**](ReportSubscriptionsApi.md#getSubscription) | **GET** /reporting/v3/report-subscriptions/{reportName} | Get subscription for report name
+[**reportingV3PredefinedReportSubscriptionsPut**](ReportSubscriptionsApi.md#reportingV3PredefinedReportSubscriptionsPut) | **PUT** /reporting/v3/predefined-report-subscriptions | Create a Standard or Classic subscription
 
 
 <a name="createSubscription"></a>
@@ -176,6 +177,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ReportingV3ReportSubscriptionsGet200ResponseSubscriptions**](ReportingV3ReportSubscriptionsGet200ResponseSubscriptions.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json
+
+<a name="reportingV3PredefinedReportSubscriptionsPut"></a>
+# **reportingV3PredefinedReportSubscriptionsPut**
+> reportingV3PredefinedReportSubscriptionsPut(predefinedSubscriptionRequestBean, organizationId)
+
+Create a Standard or Classic subscription
+
+Create or update an already existing classic or standard subscription. 
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.ReportSubscriptionsApi;
+
+
+ReportSubscriptionsApi apiInstance = new ReportSubscriptionsApi();
+PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean = new PredefinedSubscriptionRequestBean(); // PredefinedSubscriptionRequestBean | Report subscription request payload
+String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
+try {
+    apiInstance.reportingV3PredefinedReportSubscriptionsPut(predefinedSubscriptionRequestBean, organizationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ReportSubscriptionsApi#reportingV3PredefinedReportSubscriptionsPut");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **predefinedSubscriptionRequestBean** | [**PredefinedSubscriptionRequestBean**](PredefinedSubscriptionRequestBean.md)| Report subscription request payload |
+ **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

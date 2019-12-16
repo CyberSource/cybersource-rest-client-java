@@ -18,10 +18,10 @@ import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedB
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard;
-import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier;
+import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded;
+import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation;
-import Model.TmsV1InstrumentIdentifiersPost200ResponseLinks;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseMetadata;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -35,10 +35,10 @@ import java.io.IOException;
 /**
  * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments {
   @SerializedName("_links")
-  private TmsV1InstrumentIdentifiersPost200ResponseLinks links = null;
+  private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -70,10 +70,10 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedP
   @SerializedName("metaData")
   private TmsV1InstrumentIdentifiersPost200ResponseMetadata metaData = null;
 
-  @SerializedName("instrumentIdentifier")
-  private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier instrumentIdentifier = null;
+  @SerializedName("_embedded")
+  private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded embedded = null;
 
-  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments links(TmsV1InstrumentIdentifiersPost200ResponseLinks links) {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments links(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks links) {
     this.links = links;
     return this;
   }
@@ -83,11 +83,11 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedP
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentIdentifiersPost200ResponseLinks getLinks() {
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks getLinks() {
     return links;
   }
 
-  public void setLinks(TmsV1InstrumentIdentifiersPost200ResponseLinks links) {
+  public void setLinks(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks links) {
     this.links = links;
   }
 
@@ -101,10 +101,10 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedP
   }
 
    /**
-   * &#39;Describes type of token.&#39;  Valid values: - paymentInstrument 
+   * &#39;Describes type of token.&#39;  Valid values: - instrumentIdentifier 
    * @return object
   **/
-  @ApiModelProperty(example = "instrumentIdentifier", value = "'Describes type of token.'  Valid values: - paymentInstrument ")
+  @ApiModelProperty(example = "instrumentIdentifier", value = "'Describes type of token.'  Valid values: - instrumentIdentifier ")
   public String getObject() {
     return object;
   }
@@ -244,22 +244,22 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedP
     this.metaData = metaData;
   }
 
-  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments instrumentIdentifier(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier instrumentIdentifier) {
-    this.instrumentIdentifier = instrumentIdentifier;
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments embedded(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded embedded) {
+    this.embedded = embedded;
     return this;
   }
 
    /**
-   * Get instrumentIdentifier
-   * @return instrumentIdentifier
+   * Get embedded
+   * @return embedded
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier getInstrumentIdentifier() {
-    return instrumentIdentifier;
+  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded getEmbedded() {
+    return embedded;
   }
 
-  public void setInstrumentIdentifier(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier instrumentIdentifier) {
-    this.instrumentIdentifier = instrumentIdentifier;
+  public void setEmbedded(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded embedded) {
+    this.embedded = embedded;
   }
 
 
@@ -283,12 +283,12 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedP
         Objects.equals(this.processingInformation, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.processingInformation) &&
         Objects.equals(this.merchantInformation, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.merchantInformation) &&
         Objects.equals(this.metaData, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.metaData) &&
-        Objects.equals(this.instrumentIdentifier, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.instrumentIdentifier);
+        Objects.equals(this.embedded, tmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.embedded);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, object, state, bankAccount, card, buyerInformation, billTo, processingInformation, merchantInformation, metaData, instrumentIdentifier);
+    return Objects.hash(links, id, object, state, bankAccount, card, buyerInformation, billTo, processingInformation, merchantInformation, metaData, embedded);
   }
 
 
@@ -308,7 +308,7 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedP
     sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
-    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("}");
     return sb.toString();
   }

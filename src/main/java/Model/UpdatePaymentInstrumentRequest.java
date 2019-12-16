@@ -18,11 +18,10 @@ import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedB
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard;
-import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation;
-import Model.TmsV1InstrumentIdentifiersPost200ResponseLinks;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseMetadata;
+import Model.Tmsv1paymentinstrumentsInstrumentIdentifier;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,20 +34,8 @@ import java.io.IOException;
 /**
  * UpdatePaymentInstrumentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class UpdatePaymentInstrumentRequest {
-  @SerializedName("_links")
-  private TmsV1InstrumentIdentifiersPost200ResponseLinks links = null;
-
-  @SerializedName("id")
-  private String id = null;
-
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("state")
-  private String state = null;
-
   @SerializedName("bankAccount")
   private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount bankAccount = null;
 
@@ -71,52 +58,7 @@ public class UpdatePaymentInstrumentRequest {
   private TmsV1InstrumentIdentifiersPost200ResponseMetadata metaData = null;
 
   @SerializedName("instrumentIdentifier")
-  private TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier instrumentIdentifier = null;
-
-  public UpdatePaymentInstrumentRequest links(TmsV1InstrumentIdentifiersPost200ResponseLinks links) {
-    this.links = links;
-    return this;
-  }
-
-   /**
-   * Get links
-   * @return links
-  **/
-  @ApiModelProperty(value = "")
-  public TmsV1InstrumentIdentifiersPost200ResponseLinks getLinks() {
-    return links;
-  }
-
-  public void setLinks(TmsV1InstrumentIdentifiersPost200ResponseLinks links) {
-    this.links = links;
-  }
-
-   /**
-   * Unique identification number assigned by CyberSource to the submitted request.
-   * @return id
-  **/
-  @ApiModelProperty(example = "1234567890123456800", value = "Unique identification number assigned by CyberSource to the submitted request.")
-  public String getId() {
-    return id;
-  }
-
-   /**
-   * &#39;Describes type of token.&#39;  Valid values: - paymentInstrument 
-   * @return object
-  **/
-  @ApiModelProperty(example = "instrumentIdentifier", value = "'Describes type of token.'  Valid values: - paymentInstrument ")
-  public String getObject() {
-    return object;
-  }
-
-   /**
-   * &#39;Current state of the token.&#39;  Valid values: - ACTIVE - CLOSED 
-   * @return state
-  **/
-  @ApiModelProperty(example = "ACTIVE", value = "'Current state of the token.'  Valid values: - ACTIVE - CLOSED ")
-  public String getState() {
-    return state;
-  }
+  private Tmsv1paymentinstrumentsInstrumentIdentifier instrumentIdentifier = null;
 
   public UpdatePaymentInstrumentRequest bankAccount(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount bankAccount) {
     this.bankAccount = bankAccount;
@@ -244,7 +186,7 @@ public class UpdatePaymentInstrumentRequest {
     this.metaData = metaData;
   }
 
-  public UpdatePaymentInstrumentRequest instrumentIdentifier(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier instrumentIdentifier) {
+  public UpdatePaymentInstrumentRequest instrumentIdentifier(Tmsv1paymentinstrumentsInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
     return this;
   }
@@ -254,11 +196,11 @@ public class UpdatePaymentInstrumentRequest {
    * @return instrumentIdentifier
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier getInstrumentIdentifier() {
+  public Tmsv1paymentinstrumentsInstrumentIdentifier getInstrumentIdentifier() {
     return instrumentIdentifier;
   }
 
-  public void setInstrumentIdentifier(TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier instrumentIdentifier) {
+  public void setInstrumentIdentifier(Tmsv1paymentinstrumentsInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
   }
 
@@ -272,11 +214,7 @@ public class UpdatePaymentInstrumentRequest {
       return false;
     }
     UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest = (UpdatePaymentInstrumentRequest) o;
-    return Objects.equals(this.links, updatePaymentInstrumentRequest.links) &&
-        Objects.equals(this.id, updatePaymentInstrumentRequest.id) &&
-        Objects.equals(this.object, updatePaymentInstrumentRequest.object) &&
-        Objects.equals(this.state, updatePaymentInstrumentRequest.state) &&
-        Objects.equals(this.bankAccount, updatePaymentInstrumentRequest.bankAccount) &&
+    return Objects.equals(this.bankAccount, updatePaymentInstrumentRequest.bankAccount) &&
         Objects.equals(this.card, updatePaymentInstrumentRequest.card) &&
         Objects.equals(this.buyerInformation, updatePaymentInstrumentRequest.buyerInformation) &&
         Objects.equals(this.billTo, updatePaymentInstrumentRequest.billTo) &&
@@ -288,7 +226,7 @@ public class UpdatePaymentInstrumentRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, object, state, bankAccount, card, buyerInformation, billTo, processingInformation, merchantInformation, metaData, instrumentIdentifier);
+    return Objects.hash(bankAccount, card, buyerInformation, billTo, processingInformation, merchantInformation, metaData, instrumentIdentifier);
   }
 
 
@@ -297,10 +235,6 @@ public class UpdatePaymentInstrumentRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdatePaymentInstrumentRequest {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");

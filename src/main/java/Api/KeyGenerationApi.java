@@ -65,7 +65,7 @@ public class KeyGenerationApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call generatePublicKeyCall(GeneratePublicKeyRequest generatePublicKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call generatePublicKeyCall(GeneratePublicKeyRequest generatePublicKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = generatePublicKeyRequest;
         
         // create path and map variables
@@ -90,10 +90,10 @@ public class KeyGenerationApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -106,7 +106,7 @@ public class KeyGenerationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call generatePublicKeyValidateBeforeCall(GeneratePublicKeyRequest generatePublicKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call generatePublicKeyValidateBeforeCall(GeneratePublicKeyRequest generatePublicKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'generatePublicKeyRequest' is set
         if (generatePublicKeyRequest == null) {
@@ -114,7 +114,7 @@ public class KeyGenerationApi {
         }
         
         
-        com.squareup.okhttp.Call call = generatePublicKeyCall(generatePublicKeyRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = generatePublicKeyCall(generatePublicKeyRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -143,7 +143,7 @@ public class KeyGenerationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<FlexV1KeysPost200Response> generatePublicKeyWithHttpInfo(GeneratePublicKeyRequest generatePublicKeyRequest) throws ApiException {
-	    com.squareup.okhttp.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest, null, null);
+        okhttp3.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest, null, null);
         Type localVarReturnType = new TypeToken<FlexV1KeysPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -156,7 +156,7 @@ public class KeyGenerationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call generatePublicKeyAsync(GeneratePublicKeyRequest generatePublicKeyRequest, final ApiCallback<FlexV1KeysPost200Response> callback) throws ApiException {
+    public okhttp3.Call generatePublicKeyAsync(GeneratePublicKeyRequest generatePublicKeyRequest, final ApiCallback<FlexV1KeysPost200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,7 +177,7 @@ public class KeyGenerationApi {
             };
         }
 
-        com.squareup.okhttp.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<FlexV1KeysPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
