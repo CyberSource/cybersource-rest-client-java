@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-          <groupId>org.sonatype.oss</groupId>
-          <artifactId>oss-parent</artifactId>
-          <version>7</version>
-        </parent>
+		  <groupId>org.sonatype.oss</groupId>
+		  <artifactId>oss-parent</artifactId>
+		  <version>7</version>
+		</parent>
 	
 	<groupId>com.cybersource</groupId>
 	<artifactId>cybersource-rest-client-java</artifactId>
@@ -266,11 +266,11 @@
 			<artifactId>AuthenticationSdk</artifactId>
 			<version>0.0.8</version>
 		</dependency>
-        	<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-databind</artifactId>
-		    <version>${jackson-version}</version>
-        	</dependency>
+			<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-version}</version>
+			</dependency>
 	</dependencies>
 
 	<properties>
@@ -284,7 +284,7 @@
 		<jodatime-version>2.9.9</jodatime-version>
 		<maven-plugin-version>1.0.0</maven-plugin-version>
 		<junit-version>4.12</junit-version>
-        	<jackson-version>2.9.10.1</jackson-version>
+		<jackson-version>2.9.10.1</jackson-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 </project>
