@@ -82,10 +82,10 @@ public class Riskv1authenticationsAcquirerInformation {
   }
 
    /**
-   * Registered password for the Visa directory server. For Mastercard, this value is always 12345678. 
+   * Registered password for the Visa directory server. 
    * @return password
   **/
-  @ApiModelProperty(value = "Registered password for the Visa directory server. For Mastercard, this value is always 12345678. ")
+  @ApiModelProperty(value = "Registered password for the Visa directory server. ")
   public String getPassword() {
     return password;
   }
