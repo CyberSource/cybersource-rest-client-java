@@ -67,7 +67,7 @@ public class PaymentInstrumentApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createPaymentInstrumentCall(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createPaymentInstrumentCall(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createPaymentInstrumentRequest;
         
         // create path and map variables
@@ -94,10 +94,10 @@ public class PaymentInstrumentApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -110,7 +110,7 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createPaymentInstrumentValidateBeforeCall(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createPaymentInstrumentValidateBeforeCall(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
@@ -123,7 +123,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        com.squareup.okhttp.Call call = createPaymentInstrumentCall(profileId, createPaymentInstrumentRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = createPaymentInstrumentCall(profileId, createPaymentInstrumentRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -154,7 +154,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> createPaymentInstrumentWithHttpInfo(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest) throws ApiException {
-	    com.squareup.okhttp.Call call = createPaymentInstrumentValidateBeforeCall(profileId, createPaymentInstrumentRequest, null, null);
+        okhttp3.Call call = createPaymentInstrumentValidateBeforeCall(profileId, createPaymentInstrumentRequest, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -168,7 +168,7 @@ public class PaymentInstrumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createPaymentInstrumentAsync(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> callback) throws ApiException {
+    public okhttp3.Call createPaymentInstrumentAsync(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -189,7 +189,7 @@ public class PaymentInstrumentApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createPaymentInstrumentValidateBeforeCall(profileId, createPaymentInstrumentRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = createPaymentInstrumentValidateBeforeCall(profileId, createPaymentInstrumentRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -203,7 +203,7 @@ public class PaymentInstrumentApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deletePaymentInstrumentCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deletePaymentInstrumentCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -231,10 +231,10 @@ public class PaymentInstrumentApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -247,7 +247,7 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deletePaymentInstrumentValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deletePaymentInstrumentValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
@@ -260,7 +260,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        com.squareup.okhttp.Call call = deletePaymentInstrumentCall(profileId, tokenId, progressListener, progressRequestListener);
+        okhttp3.Call call = deletePaymentInstrumentCall(profileId, tokenId, progressListener, progressRequestListener);
         return call;
 
         
@@ -289,7 +289,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String profileId, String tokenId) throws ApiException {
-	    com.squareup.okhttp.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
+        okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
         return apiClient.execute(call);
     }
 
@@ -302,7 +302,7 @@ public class PaymentInstrumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deletePaymentInstrumentAsync(String profileId, String tokenId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deletePaymentInstrumentAsync(String profileId, String tokenId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -323,7 +323,7 @@ public class PaymentInstrumentApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
+        okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -336,7 +336,7 @@ public class PaymentInstrumentApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getPaymentInstrumentCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getPaymentInstrumentCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -364,10 +364,10 @@ public class PaymentInstrumentApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -380,7 +380,7 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPaymentInstrumentValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getPaymentInstrumentValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
@@ -393,7 +393,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        com.squareup.okhttp.Call call = getPaymentInstrumentCall(profileId, tokenId, progressListener, progressRequestListener);
+        okhttp3.Call call = getPaymentInstrumentCall(profileId, tokenId, progressListener, progressRequestListener);
         return call;
 
         
@@ -424,7 +424,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> getPaymentInstrumentWithHttpInfo(String profileId, String tokenId) throws ApiException {
-	    com.squareup.okhttp.Call call = getPaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
+        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -438,7 +438,7 @@ public class PaymentInstrumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getPaymentInstrumentAsync(String profileId, String tokenId, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> callback) throws ApiException {
+    public okhttp3.Call getPaymentInstrumentAsync(String profileId, String tokenId, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -459,7 +459,7 @@ public class PaymentInstrumentApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getPaymentInstrumentValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
+        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -474,7 +474,7 @@ public class PaymentInstrumentApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updatePaymentInstrumentCall(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call updatePaymentInstrumentCall(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updatePaymentInstrumentRequest;
         
         // create path and map variables
@@ -502,10 +502,10 @@ public class PaymentInstrumentApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -518,7 +518,7 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updatePaymentInstrumentValidateBeforeCall(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call updatePaymentInstrumentValidateBeforeCall(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'profileId' is set
         if (profileId == null) {
@@ -536,7 +536,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        com.squareup.okhttp.Call call = updatePaymentInstrumentCall(profileId, tokenId, updatePaymentInstrumentRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = updatePaymentInstrumentCall(profileId, tokenId, updatePaymentInstrumentRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -569,7 +569,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> updatePaymentInstrumentWithHttpInfo(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest) throws ApiException {
-	    com.squareup.okhttp.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, tokenId, updatePaymentInstrumentRequest, null, null);
+        okhttp3.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, tokenId, updatePaymentInstrumentRequest, null, null);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -584,7 +584,7 @@ public class PaymentInstrumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updatePaymentInstrumentAsync(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> callback) throws ApiException {
+    public okhttp3.Call updatePaymentInstrumentAsync(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -605,7 +605,7 @@ public class PaymentInstrumentApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, tokenId, updatePaymentInstrumentRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, tokenId, updatePaymentInstrumentRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

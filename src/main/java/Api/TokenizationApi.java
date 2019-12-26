@@ -65,7 +65,7 @@ public class TokenizationApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call tokenizeCall(TokenizeRequest tokenizeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call tokenizeCall(TokenizeRequest tokenizeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = tokenizeRequest;
         
         // create path and map variables
@@ -90,10 +90,10 @@ public class TokenizationApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -106,7 +106,7 @@ public class TokenizationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call tokenizeValidateBeforeCall(TokenizeRequest tokenizeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call tokenizeValidateBeforeCall(TokenizeRequest tokenizeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'tokenizeRequest' is set
         if (tokenizeRequest == null) {
@@ -114,7 +114,7 @@ public class TokenizationApi {
         }
         
         
-        com.squareup.okhttp.Call call = tokenizeCall(tokenizeRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = tokenizeCall(tokenizeRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -143,7 +143,7 @@ public class TokenizationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<FlexV1TokensPost200Response> tokenizeWithHttpInfo(TokenizeRequest tokenizeRequest) throws ApiException {
-	    com.squareup.okhttp.Call call = tokenizeValidateBeforeCall(tokenizeRequest, null, null);
+        okhttp3.Call call = tokenizeValidateBeforeCall(tokenizeRequest, null, null);
         Type localVarReturnType = new TypeToken<FlexV1TokensPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -156,7 +156,7 @@ public class TokenizationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call tokenizeAsync(TokenizeRequest tokenizeRequest, final ApiCallback<FlexV1TokensPost200Response> callback) throws ApiException {
+    public okhttp3.Call tokenizeAsync(TokenizeRequest tokenizeRequest, final ApiCallback<FlexV1TokensPost200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,7 +177,7 @@ public class TokenizationApi {
             };
         }
 
-        com.squareup.okhttp.Call call = tokenizeValidateBeforeCall(tokenizeRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = tokenizeValidateBeforeCall(tokenizeRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<FlexV1TokensPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

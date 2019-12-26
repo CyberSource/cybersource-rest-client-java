@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard {
   @SerializedName("expirationMonth")
   private String expirationMonth = null;
@@ -73,10 +73,10 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedC
   }
 
    /**
-   * Four-digit year in which the credit card expires. Format: &#x60;YYYY&#x60;. Possible values: &#x60;1900&#x60; through &#x60;2099&#x60;.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For details, see [Relaxed Requirements for Address Data and Expiration Date.](https://www.cybersource.com/developers/integration_methods/relax_avs/).  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.&#39; 
+   * Four-digit year in which the credit card expires. Format: &#x60;YYYY&#x60;. Possible values: &#x60;1900&#x60; through &#x60;2099&#x60;.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For details, see [Relaxed Requirements for Address Data and Expiration Date.](https://www.cybersource.com/developers/integration_methods/relax_avs/). **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.&#39; 
    * @return expirationYear
   **/
-  @ApiModelProperty(example = "2022", value = "Four-digit year in which the credit card expires. Format: `YYYY`. Possible values: `1900` through `2099`.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For details, see [Relaxed Requirements for Address Data and Expiration Date.](https://www.cybersource.com/developers/integration_methods/relax_avs/).  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.' ")
+  @ApiModelProperty(example = "2022", value = "Four-digit year in which the credit card expires. Format: `YYYY`. Possible values: `1900` through `2099`.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For details, see [Relaxed Requirements for Address Data and Expiration Date.](https://www.cybersource.com/developers/integration_methods/relax_avs/). **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.' ")
   public String getExpirationYear() {
     return expirationYear;
   }
@@ -127,10 +127,10 @@ public class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedC
   }
 
    /**
-   * Month of the start of the Maestro (UK Domestic) card validity period.  Format: &#x60;MM&#x60;. Possible values: &#x60;01&#x60; through &#x60;12&#x60;. 
+   * Month of the start of the Maestro (UK Domestic) card validity period. Format: &#x60;MM&#x60;. Possible values: &#x60;01&#x60; through &#x60;12&#x60;. 
    * @return startMonth
   **/
-  @ApiModelProperty(example = "12", value = "Month of the start of the Maestro (UK Domestic) card validity period.  Format: `MM`. Possible values: `01` through `12`. ")
+  @ApiModelProperty(example = "12", value = "Month of the start of the Maestro (UK Domestic) card validity period. Format: `MM`. Possible values: `01` through `12`. ")
   public String getStartMonth() {
     return startMonth;
   }

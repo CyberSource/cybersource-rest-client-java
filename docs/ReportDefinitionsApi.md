@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getResourceInfoByReportDefinition"></a>
 # **getResourceInfoByReportDefinition**
-> ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(reportDefinitionName, organizationId)
+> ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(reportDefinitionName, subscriptionType, reportMimeType, organizationId)
 
 Get report definition
 
@@ -25,9 +25,11 @@ View the attributes of an individual report type. For a list of values for repor
 
 ReportDefinitionsApi apiInstance = new ReportDefinitionsApi();
 String reportDefinitionName = "reportDefinitionName_example"; // String | Name of the Report definition to retrieve
+String subscriptionType = "subscriptionType_example"; // String | The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD 
+String reportMimeType = "reportMimeType_example"; // String | The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv 
 String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
 try {
-    ReportingV3ReportDefinitionsNameGet200Response result = apiInstance.getResourceInfoByReportDefinition(reportDefinitionName, organizationId);
+    ReportingV3ReportDefinitionsNameGet200Response result = apiInstance.getResourceInfoByReportDefinition(reportDefinitionName, subscriptionType, reportMimeType, organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportDefinitionsApi#getResourceInfoByReportDefinition");
@@ -40,6 +42,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportDefinitionName** | **String**| Name of the Report definition to retrieve |
+ **subscriptionType** | **String**| The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  | [optional]
+ **reportMimeType** | **String**| The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv  | [optional]
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
 
 ### Return type
@@ -57,7 +61,7 @@ No authorization required
 
 <a name="getResourceV2Info"></a>
 # **getResourceV2Info**
-> ReportingV3ReportDefinitionsGet200Response getResourceV2Info(organizationId)
+> ReportingV3ReportDefinitionsGet200Response getResourceV2Info(subscriptionType, organizationId)
 
 Get reporting resource information
 
@@ -71,9 +75,10 @@ View a list of supported reports and their attributes before subscribing to them
 
 
 ReportDefinitionsApi apiInstance = new ReportDefinitionsApi();
+String subscriptionType = "subscriptionType_example"; // String | Valid Values: - CLASSIC - CUSTOM - STANDARD 
 String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
 try {
-    ReportingV3ReportDefinitionsGet200Response result = apiInstance.getResourceV2Info(organizationId);
+    ReportingV3ReportDefinitionsGet200Response result = apiInstance.getResourceV2Info(subscriptionType, organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportDefinitionsApi#getResourceV2Info");
@@ -85,6 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **subscriptionType** | **String**| Valid Values: - CLASSIC - CUSTOM - STANDARD  | [optional]
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
 
 ### Return type

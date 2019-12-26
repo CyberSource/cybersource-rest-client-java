@@ -17,11 +17,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.net.HttpRetryException;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
-import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
@@ -38,11 +40,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Properties;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLContext;
@@ -50,9 +52,7 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
-
 import org.apache.logging.log4j.Logger;
-
 import com.cybersource.authsdk.core.Authorization;
 import com.cybersource.authsdk.core.ConfigException;
 import com.cybersource.authsdk.core.MerchantConfig;
@@ -60,24 +60,26 @@ import com.cybersource.authsdk.log.Log4j;
 import com.cybersource.authsdk.payloaddigest.PayloadDigest;
 import com.cybersource.authsdk.util.GlobalLabelParameters;
 import com.cybersource.authsdk.util.PropertiesUtil;
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.Headers;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.MultipartBuilder;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
-import com.squareup.okhttp.internal.http.HttpMethod;
-import com.squareup.okhttp.logging.HttpLoggingInterceptor;
-import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
-
 import Invokers.auth.ApiKeyAuth;
 import Invokers.auth.Authentication;
 import Invokers.auth.HttpBasicAuth;
 import Invokers.auth.OAuth;
+import okhttp3.Authenticator;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Credentials;
+import okhttp3.FormBody;
+import okhttp3.Headers;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import okhttp3.Route;
+import okhttp3.internal.http.HttpMethod;
+import okhttp3.logging.HttpLoggingInterceptor;
+import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
 
@@ -141,6 +143,7 @@ public class ApiClient {
 
 	private OkHttpClient httpClient;
 	private JSON json;
+	private String versionInfo;
 
 	private HttpLoggingInterceptor loggingInterceptor;
 
@@ -149,6 +152,14 @@ public class ApiClient {
 	 */
 	public ApiClient() {
 		httpClient = new OkHttpClient();
+		
+		versionInfo = getClientID();
+
+		httpClient = new OkHttpClient.Builder()
+			    .connectTimeout(1, TimeUnit.SECONDS)
+			    .writeTimeout(60, TimeUnit.SECONDS)
+			    .readTimeout(60, TimeUnit.SECONDS)
+			    .build();
 
 		verifyingSsl = true;
 
@@ -178,8 +189,69 @@ public class ApiClient {
 		authentications = Collections.unmodifiableMap(authentications);
 	}
 
+	private String getClientID() {
+		String propertyVersionInfo = null; 
+		final Properties properties = new Properties();
+		try {
+			properties.load(this.getClass().getClassLoader().getResourceAsStream("cybersource-rest-client-java.properties"));			
+			propertyVersionInfo = properties.getProperty("sdk.version");
+		} catch (IOException e) {
+			
+		}
+
+		return propertyVersionInfo;
+	}
+
 	public ApiClient(MerchantConfig merchantConfig) {
 		this();
+		final boolean useProxy = merchantConfig.isUseProxyEnabled();
+		final String username = merchantConfig.getProxyUser();
+		final String password = merchantConfig.getProxyPassword();
+		int proxyPort = merchantConfig.getProxyPort();
+		String proxyHost = merchantConfig.getProxyAddress();
+
+		Authenticator proxyAuthenticator;
+
+		if (useProxy && (proxyHost != null && !proxyHost.isEmpty())) {
+			if ((username != null && !username.isEmpty()) &&
+				(password != null && !password.isEmpty())) {
+				proxyAuthenticator = new Authenticator() {
+					private int proxyCounter = 0;
+
+					@Override
+					public Request authenticate(Route route, Response response) throws IOException {
+						if (proxyCounter++ > 0) {
+							if (response.code() == 407) {
+								throw new HttpRetryException("Proxy Authentication Missing or Incorrect.", 407);
+							} else {							
+								throw new IOException(response.message());
+							}
+						}
+
+						String credential = Credentials.basic(username, password);
+						return response.request().newBuilder().header("Proxy-Authorization", credential).build();
+					}
+				};
+			} else {
+				proxyAuthenticator = new Authenticator() {
+					@Override
+					public Request authenticate(Route route, Response response) throws IOException {
+						return response.request().newBuilder().build();
+					}
+				};
+			}
+
+			httpClient = new OkHttpClient.Builder()
+					.connectTimeout(1, TimeUnit.SECONDS)
+					.writeTimeout(60, TimeUnit.SECONDS)
+					.readTimeout(60, TimeUnit.SECONDS)
+					.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
+					.proxyAuthenticator(proxyAuthenticator)
+					.build();
+
+			this.setHttpClient(httpClient);			
+		}
+
 		this.merchantConfig = merchantConfig;
 
 	}
@@ -664,7 +736,7 @@ public class ApiClient {
 	 * @return Timeout in milliseconds
 	 */
 	public int getConnectTimeout() {
-		return httpClient.getConnectTimeout();
+		return httpClient.connectTimeoutMillis();
 	}
 
 	/**
@@ -676,7 +748,7 @@ public class ApiClient {
 	 * @return Api client
 	 */
 	public ApiClient setConnectTimeout(int connectionTimeout) {
-		httpClient.setConnectTimeout(connectionTimeout, TimeUnit.MILLISECONDS);
+		this.httpClient = this.httpClient.newBuilder().connectTimeout(connectionTimeout, TimeUnit.MILLISECONDS).build();
 		return this;
 	}
 
@@ -879,13 +951,9 @@ public class ApiClient {
 		}
 		
 		if ((returnType == null && response != null) || ("byte[]".equals(returnType.toString()))) {
-			try {
-				T respBody =  (T) response.body().byteStream();
-				
-				return respBody;
-			} catch (IOException e) {
-				throw new ApiException(e);
-			}
+			T respBody =  (T) response.body().byteStream();
+
+			return respBody;
 		} else if (returnType.equals(File.class)) {
 			// Handle file downloading.
 			return (T) downloadFileFromResponse(response);
@@ -1096,12 +1164,12 @@ public class ApiClient {
 	public <T> void executeAsync(Call call, final Type returnType, final ApiCallback<T> callback) {
 		call.enqueue(new Callback() {
 			@Override
-			public void onFailure(Request request, IOException e) {
+			public void onFailure(Call call0, IOException e) {
 				callback.onFailure(new ApiException(e), 0, null);
 			}
 
 			@Override
-			public void onResponse(Response response) throws IOException {
+			public void onResponse(Call call0, Response response) throws IOException {
 				T result;
 				try {
 					result = (T) handleResponse(response, returnType);
@@ -1133,11 +1201,7 @@ public class ApiClient {
 		if (response.isSuccessful()) {
 			if (response.code() == 204) {
 				if (response.body() != null) {
-					try {
-						response.body().close();
-					} catch (IOException e) {
-						throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
-					}
+					response.body().close();
 				}
 				return null;
 			} else {
@@ -1258,6 +1322,14 @@ public class ApiClient {
 					token = "Bearer " + token;
 					addDefaultHeader("Authorization", token);
 				}
+				
+				// if (merchantConfig.getSolutionId() != null && !merchantConfig.getSolutionId().isEmpty()) {
+					// addDefaultHeader("v-c-solution-id", merchantConfig.getSolutionId());
+				// }
+			}
+			
+			if (versionInfo != null && !versionInfo.isEmpty()) {
+				addDefaultHeader("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			}
 
 		} catch (ConfigException e) {
@@ -1387,6 +1459,8 @@ public class ApiClient {
 				reqBuilder.header(header.getKey(), parameterToString(header.getValue()));
 			}
 		}
+		
+		reqBuilder.header("Connection", "close");
 	}
 
 	/**
@@ -1416,7 +1490,7 @@ public class ApiClient {
 	 * @return RequestBody
 	 */
 	public RequestBody buildRequestBodyFormEncoding(Map<String, Object> formParams) {
-		FormEncodingBuilder formBuilder = new FormEncodingBuilder();
+		FormBody.Builder formBuilder = new FormBody.Builder();
 		for (Entry<String, Object> param : formParams.entrySet()) {
 			formBuilder.add(param.getKey(), parameterToString(param.getValue()));
 		}
@@ -1432,7 +1506,7 @@ public class ApiClient {
 	 * @return RequestBody
 	 */
 	public RequestBody buildRequestBodyMultipart(Map<String, Object> formParams) {
-		MultipartBuilder mpBuilder = new MultipartBuilder().type(MultipartBuilder.FORM);
+		MultipartBody.Builder mpBuilder = new MultipartBody.Builder().setType(MultipartBody.FORM);
 		for (Entry<String, Object> param : formParams.entrySet()) {
 			if (param.getValue() instanceof File) {
 				File file = (File) param.getValue();
@@ -1549,11 +1623,11 @@ public class ApiClient {
 			if (keyManagers != null || trustManagers != null) {
 				SSLContext sslContext = SSLContext.getInstance("TLS");
 				sslContext.init(keyManagers, trustManagers, new SecureRandom());
-				httpClient.setSslSocketFactory(sslContext.getSocketFactory());
+				httpClient = httpClient.newBuilder().sslSocketFactory(sslContext.getSocketFactory()).build();
 			} else {
-				httpClient.setSslSocketFactory(null);
+				httpClient = httpClient.newBuilder().sslSocketFactory(null).build();
 			}
-			httpClient.setHostnameVerifier(hostnameVerifier);
+			httpClient = httpClient.newBuilder().hostnameVerifier(hostnameVerifier).build();
 		} catch (GeneralSecurityException e) {
 			throw new RuntimeException(e);
 		}

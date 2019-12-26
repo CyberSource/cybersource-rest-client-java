@@ -67,7 +67,7 @@ public class UserManagementApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getUsersCall(String organizationId, String userName, String permissionId, String roleId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getUsersCall(String organizationId, String userName, String permissionId, String roleId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -100,10 +100,10 @@ public class UserManagementApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -116,10 +116,10 @@ public class UserManagementApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getUsersValidateBeforeCall(String organizationId, String userName, String permissionId, String roleId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getUsersValidateBeforeCall(String organizationId, String userName, String permissionId, String roleId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = getUsersCall(organizationId, userName, permissionId, roleId, progressListener, progressRequestListener);
+        okhttp3.Call call = getUsersCall(organizationId, userName, permissionId, roleId, progressListener, progressRequestListener);
         return call;
 
         
@@ -154,7 +154,7 @@ public class UserManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UmsV1UsersGet200Response> getUsersWithHttpInfo(String organizationId, String userName, String permissionId, String roleId) throws ApiException {
-	    com.squareup.okhttp.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId, null, null);
+        okhttp3.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId, null, null);
         Type localVarReturnType = new TypeToken<UmsV1UsersGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -170,7 +170,7 @@ public class UserManagementApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUsersAsync(String organizationId, String userName, String permissionId, String roleId, final ApiCallback<UmsV1UsersGet200Response> callback) throws ApiException {
+    public okhttp3.Call getUsersAsync(String organizationId, String userName, String permissionId, String roleId, final ApiCallback<UmsV1UsersGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -191,7 +191,7 @@ public class UserManagementApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId, progressListener, progressRequestListener);
+        okhttp3.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<UmsV1UsersGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseCard;
+import Model.TmsV1InstrumentIdentifiersPost200ResponseIssuer;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseLinks;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseMetadata;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation;
@@ -31,7 +32,7 @@ import java.io.IOException;
 /**
  * TmsV1InstrumentIdentifiersPost200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class TmsV1InstrumentIdentifiersPost200Response {
   @SerializedName("_links")
   private TmsV1InstrumentIdentifiersPost200ResponseLinks links = null;
@@ -47,6 +48,9 @@ public class TmsV1InstrumentIdentifiersPost200Response {
 
   @SerializedName("card")
   private TmsV1InstrumentIdentifiersPost200ResponseCard card = null;
+
+  @SerializedName("issuer")
+  private TmsV1InstrumentIdentifiersPost200ResponseIssuer issuer = null;
 
   @SerializedName("bankAccount")
   private Tmsv1instrumentidentifiersBankAccount bankAccount = null;
@@ -120,6 +124,24 @@ public class TmsV1InstrumentIdentifiersPost200Response {
     this.card = card;
   }
 
+  public TmsV1InstrumentIdentifiersPost200Response issuer(TmsV1InstrumentIdentifiersPost200ResponseIssuer issuer) {
+    this.issuer = issuer;
+    return this;
+  }
+
+   /**
+   * Get issuer
+   * @return issuer
+  **/
+  @ApiModelProperty(value = "")
+  public TmsV1InstrumentIdentifiersPost200ResponseIssuer getIssuer() {
+    return issuer;
+  }
+
+  public void setIssuer(TmsV1InstrumentIdentifiersPost200ResponseIssuer issuer) {
+    this.issuer = issuer;
+  }
+
   public TmsV1InstrumentIdentifiersPost200Response bankAccount(Tmsv1instrumentidentifiersBankAccount bankAccount) {
     this.bankAccount = bankAccount;
     return this;
@@ -189,6 +211,7 @@ public class TmsV1InstrumentIdentifiersPost200Response {
         Objects.equals(this.object, tmsV1InstrumentIdentifiersPost200Response.object) &&
         Objects.equals(this.state, tmsV1InstrumentIdentifiersPost200Response.state) &&
         Objects.equals(this.card, tmsV1InstrumentIdentifiersPost200Response.card) &&
+        Objects.equals(this.issuer, tmsV1InstrumentIdentifiersPost200Response.issuer) &&
         Objects.equals(this.bankAccount, tmsV1InstrumentIdentifiersPost200Response.bankAccount) &&
         Objects.equals(this.processingInformation, tmsV1InstrumentIdentifiersPost200Response.processingInformation) &&
         Objects.equals(this.metadata, tmsV1InstrumentIdentifiersPost200Response.metadata);
@@ -196,7 +219,7 @@ public class TmsV1InstrumentIdentifiersPost200Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, object, state, card, bankAccount, processingInformation, metadata);
+    return Objects.hash(links, id, object, state, card, issuer, bankAccount, processingInformation, metadata);
   }
 
 
@@ -210,6 +233,7 @@ public class TmsV1InstrumentIdentifiersPost200Response {
     sb.append("    object: ").append(toIndentedString(object)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
     sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");

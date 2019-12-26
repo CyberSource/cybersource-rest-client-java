@@ -123,7 +123,7 @@ DateTime endTime = new DateTime(); // DateTime | Valid report End Time in **ISO 
 String timeQueryType = "timeQueryType_example"; // String | Specify time you would like to search  Valid values: - reportTimeFrame - executedTime 
 String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
 String reportMimeType = "reportMimeType_example"; // String | Valid Report Format  Valid values: - application/xml - text/csv 
-String reportFrequency = "reportFrequency_example"; // String | Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
+String reportFrequency = "reportFrequency_example"; // String | Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC 
 String reportName = "reportName_example"; // String | Valid Report Name
 Integer reportDefinitionId = 56; // Integer | Valid Report Definition Id
 String reportStatus = "reportStatus_example"; // String | Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
  **timeQueryType** | **String**| Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  |
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
  **reportMimeType** | **String**| Valid Report Format  Valid values: - application/xml - text/csv  | [optional]
- **reportFrequency** | **String**| Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC  | [optional]
+ **reportFrequency** | **String**| Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC  | [optional]
  **reportName** | **String**| Valid Report Name | [optional]
  **reportDefinitionId** | **Integer**| Valid Report Definition Id | [optional]
  **reportStatus** | **String**| Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA  | [optional]

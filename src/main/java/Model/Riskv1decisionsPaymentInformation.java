@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Riskv1decisionsPaymentInformationBank;
 import Model.Riskv1decisionsPaymentInformationCard;
 import Model.Riskv1decisionsPaymentInformationTokenizedCard;
 import com.google.gson.TypeAdapter;
@@ -29,13 +30,16 @@ import java.io.IOException;
  * Contains the payment data for this transaction.
  */
 @ApiModel(description = "Contains the payment data for this transaction.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class Riskv1decisionsPaymentInformation {
   @SerializedName("card")
   private Riskv1decisionsPaymentInformationCard card = null;
 
   @SerializedName("tokenizedCard")
   private Riskv1decisionsPaymentInformationTokenizedCard tokenizedCard = null;
+
+  @SerializedName("bank")
+  private Riskv1decisionsPaymentInformationBank bank = null;
 
   public Riskv1decisionsPaymentInformation card(Riskv1decisionsPaymentInformationCard card) {
     this.card = card;
@@ -73,6 +77,24 @@ public class Riskv1decisionsPaymentInformation {
     this.tokenizedCard = tokenizedCard;
   }
 
+  public Riskv1decisionsPaymentInformation bank(Riskv1decisionsPaymentInformationBank bank) {
+    this.bank = bank;
+    return this;
+  }
+
+   /**
+   * Get bank
+   * @return bank
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsPaymentInformationBank getBank() {
+    return bank;
+  }
+
+  public void setBank(Riskv1decisionsPaymentInformationBank bank) {
+    this.bank = bank;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,12 +106,13 @@ public class Riskv1decisionsPaymentInformation {
     }
     Riskv1decisionsPaymentInformation riskv1decisionsPaymentInformation = (Riskv1decisionsPaymentInformation) o;
     return Objects.equals(this.card, riskv1decisionsPaymentInformation.card) &&
-        Objects.equals(this.tokenizedCard, riskv1decisionsPaymentInformation.tokenizedCard);
+        Objects.equals(this.tokenizedCard, riskv1decisionsPaymentInformation.tokenizedCard) &&
+        Objects.equals(this.bank, riskv1decisionsPaymentInformation.bank);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard);
+    return Objects.hash(card, tokenizedCard, bank);
   }
 
 
@@ -100,6 +123,7 @@ public class Riskv1decisionsPaymentInformation {
     
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("}");
     return sb.toString();
   }

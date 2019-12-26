@@ -15,12 +15,10 @@ package Invokers.auth;
 
 import Invokers.Pair;
 
-import com.squareup.okhttp.Credentials;
+import okhttp3.Credentials;
 
 import java.util.Map;
 import java.util.List;
-
-import java.io.UnsupportedEncodingException;
 
 public class HttpBasicAuth implements Authentication {
     private String username;

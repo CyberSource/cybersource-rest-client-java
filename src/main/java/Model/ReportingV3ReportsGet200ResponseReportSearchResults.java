@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.ReportingV3ReportsGet200ResponseLink;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,8 +29,11 @@ import org.joda.time.DateTime;
  * Report Search Result Bean
  */
 @ApiModel(description = "Report Search Result Bean")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class ReportingV3ReportsGet200ResponseReportSearchResults {
+  @SerializedName("_link")
+  private ReportingV3ReportsGet200ResponseLink link = null;
+
   @SerializedName("reportDefinitionId")
   private String reportDefinitionId = null;
 
@@ -75,6 +79,24 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
   @SerializedName("groupId")
   private String groupId = null;
 
+  public ReportingV3ReportsGet200ResponseReportSearchResults link(ReportingV3ReportsGet200ResponseLink link) {
+    this.link = link;
+    return this;
+  }
+
+   /**
+   * Get link
+   * @return link
+  **/
+  @ApiModelProperty(value = "")
+  public ReportingV3ReportsGet200ResponseLink getLink() {
+    return link;
+  }
+
+  public void setLink(ReportingV3ReportsGet200ResponseLink link) {
+    this.link = link;
+  }
+
   public ReportingV3ReportsGet200ResponseReportSearchResults reportDefinitionId(String reportDefinitionId) {
     this.reportDefinitionId = reportDefinitionId;
     return this;
@@ -102,7 +124,7 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
    * Name of the report specified by merchant while creating the report
    * @return reportName
   **/
-  @ApiModelProperty(example = "My Transaction Request Detail Report", value = "Name of the report specified by merchant while creating the report")
+  @ApiModelProperty(example = "MyTransactionRequestDetailReport", value = "Name of the report specified by merchant while creating the report")
   public String getReportName() {
     return reportName;
   }
@@ -117,10 +139,10 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
   }
 
    /**
-   * Format of the report to get generated  Valid values: - application/xml - text/csv 
+   * Format of the report to get generated Valid Values: - application/xml - text/csv 
    * @return reportMimeType
   **/
-  @ApiModelProperty(example = "application/xml", value = "Format of the report to get generated  Valid values: - application/xml - text/csv ")
+  @ApiModelProperty(example = "application/xml", value = "Format of the report to get generated Valid Values: - application/xml - text/csv ")
   public String getReportMimeType() {
     return reportMimeType;
   }
@@ -135,10 +157,10 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
   }
 
    /**
-   * Frequency of the report to get generated  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
+   * Frequency of the report to get generated Valid Values: - DAILY - WEEKLY - MONTHLY - ADHOC 
    * @return reportFrequency
   **/
-  @ApiModelProperty(example = "DAILY", value = "Frequency of the report to get generated  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC ")
+  @ApiModelProperty(example = "DAILY", value = "Frequency of the report to get generated Valid Values: - DAILY - WEEKLY - MONTHLY - ADHOC ")
   public String getReportFrequency() {
     return reportFrequency;
   }
@@ -153,10 +175,10 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
   }
 
    /**
-   * Status of the report  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA 
+   * Status of the report Valid Values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA 
    * @return status
   **/
-  @ApiModelProperty(value = "Status of the report  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA ")
+  @ApiModelProperty(value = "Status of the report Valid Values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA ")
   public String getStatus() {
     return status;
   }
@@ -174,7 +196,7 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
    * Specifies the report start time in ISO 8601 format
    * @return reportStartTime
   **/
-  @ApiModelProperty(example = "2017-10-01T10:10:10+05:00", value = "Specifies the report start time in ISO 8601 format")
+  @ApiModelProperty(example = "2017-10-01T10:00:00+05:00", value = "Specifies the report start time in ISO 8601 format")
   public DateTime getReportStartTime() {
     return reportStartTime;
   }
@@ -192,7 +214,7 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
    * Specifies the report end time in ISO 8601 format
    * @return reportEndTime
   **/
-  @ApiModelProperty(example = "2017-10-02T10:10:10+05:00", value = "Specifies the report end time in ISO 8601 format")
+  @ApiModelProperty(example = "2017-10-02T10:00:00+05:00", value = "Specifies the report end time in ISO 8601 format")
   public DateTime getReportEndTime() {
     return reportEndTime;
   }
@@ -264,7 +286,7 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
    * Specifies the time of the report in queued  in ISO 8601 format
    * @return queuedTime
   **/
-  @ApiModelProperty(example = "2017-10-03T10:10:10+05:00", value = "Specifies the time of the report in queued  in ISO 8601 format")
+  @ApiModelProperty(example = "2017-10-03T10:00:00+05:00", value = "Specifies the time of the report in queued  in ISO 8601 format")
   public DateTime getQueuedTime() {
     return queuedTime;
   }
@@ -282,7 +304,7 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
    * Specifies the time of the report started to generate  in ISO 8601 format
    * @return reportGeneratingTime
   **/
-  @ApiModelProperty(example = "2017-10-03T10:10:10+05:00", value = "Specifies the time of the report started to generate  in ISO 8601 format")
+  @ApiModelProperty(example = "2017-10-03T10:00:00+05:00", value = "Specifies the time of the report started to generate  in ISO 8601 format")
   public DateTime getReportGeneratingTime() {
     return reportGeneratingTime;
   }
@@ -300,7 +322,7 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
    * Specifies the time of the report completed the generation  in ISO 8601 format
    * @return reportCompletedTime
   **/
-  @ApiModelProperty(example = "2017-10-03T10:10:10+05:00", value = "Specifies the time of the report completed the generation  in ISO 8601 format")
+  @ApiModelProperty(example = "2017-10-03T10:10:00+05:00", value = "Specifies the time of the report completed the generation  in ISO 8601 format")
   public DateTime getReportCompletedTime() {
     return reportCompletedTime;
   }
@@ -355,7 +377,8 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
       return false;
     }
     ReportingV3ReportsGet200ResponseReportSearchResults reportingV3ReportsGet200ResponseReportSearchResults = (ReportingV3ReportsGet200ResponseReportSearchResults) o;
-    return Objects.equals(this.reportDefinitionId, reportingV3ReportsGet200ResponseReportSearchResults.reportDefinitionId) &&
+    return Objects.equals(this.link, reportingV3ReportsGet200ResponseReportSearchResults.link) &&
+        Objects.equals(this.reportDefinitionId, reportingV3ReportsGet200ResponseReportSearchResults.reportDefinitionId) &&
         Objects.equals(this.reportName, reportingV3ReportsGet200ResponseReportSearchResults.reportName) &&
         Objects.equals(this.reportMimeType, reportingV3ReportsGet200ResponseReportSearchResults.reportMimeType) &&
         Objects.equals(this.reportFrequency, reportingV3ReportsGet200ResponseReportSearchResults.reportFrequency) &&
@@ -374,7 +397,7 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
 
   @Override
   public int hashCode() {
-    return Objects.hash(reportDefinitionId, reportName, reportMimeType, reportFrequency, status, reportStartTime, reportEndTime, timezone, reportId, organizationId, queuedTime, reportGeneratingTime, reportCompletedTime, subscriptionType, groupId);
+    return Objects.hash(link, reportDefinitionId, reportName, reportMimeType, reportFrequency, status, reportStartTime, reportEndTime, timezone, reportId, organizationId, queuedTime, reportGeneratingTime, reportCompletedTime, subscriptionType, groupId);
   }
 
 
@@ -383,6 +406,7 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ReportsGet200ResponseReportSearchResults {\n");
     
+    sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    reportDefinitionId: ").append(toIndentedString(reportDefinitionId)).append("\n");
     sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
     sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");

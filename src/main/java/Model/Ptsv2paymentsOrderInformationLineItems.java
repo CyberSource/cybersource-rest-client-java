@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class Ptsv2paymentsOrderInformationLineItems {
   @SerializedName("productCode")
   private String productCode = null;
@@ -503,10 +503,10 @@ public class Ptsv2paymentsOrderInformationLineItems {
   }
 
    /**
-   * Weight of the item. See Numbered Elements.
+   * Weight of the item.  For details, see &#x60;weight_amount&#x60; field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return weight
   **/
-  @ApiModelProperty(value = "Weight of the item. See Numbered Elements.")
+  @ApiModelProperty(value = "Weight of the item.  For details, see `weight_amount` field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getWeight() {
     return weight;
   }
@@ -521,10 +521,10 @@ public class Ptsv2paymentsOrderInformationLineItems {
   }
 
    /**
-   * Type of weight. See Numbered Elements.  Possible values: - B: Billed weight - N: Actual net weight 
+   * Type of weight.  Possible values: - B: Billed weight - N: Actual net weight  For details, see &#x60;weight_identifier&#x60; offer-level field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return weightIdentifier
   **/
-  @ApiModelProperty(value = "Type of weight. See Numbered Elements.  Possible values: - B: Billed weight - N: Actual net weight ")
+  @ApiModelProperty(value = "Type of weight.  Possible values: - B: Billed weight - N: Actual net weight  For details, see `weight_identifier` offer-level field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getWeightIdentifier() {
     return weightIdentifier;
   }
@@ -539,10 +539,10 @@ public class Ptsv2paymentsOrderInformationLineItems {
   }
 
    /**
-   * Code that specifies the unit of measurement for the weight amount. For example, OZ specifies ounce and LB specifies pound. The possible values are defined by the ANSI Accredited Standards Committee (ASC).  See Numbered Elements. 
+   * Code that specifies the unit of measurement for the weight amount. For example, &#x60;OZ&#x60; specifies ounce and &#x60;LB&#x60; specifies pound. The possible values are defined by the ANSI Accredited Standards Committee (ASC).  For details, see &#x60;weight_unit_measurement&#x60; offer-level field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return weightUnit
   **/
-  @ApiModelProperty(value = "Code that specifies the unit of measurement for the weight amount. For example, OZ specifies ounce and LB specifies pound. The possible values are defined by the ANSI Accredited Standards Committee (ASC).  See Numbered Elements. ")
+  @ApiModelProperty(value = "Code that specifies the unit of measurement for the weight amount. For example, `OZ` specifies ounce and `LB` specifies pound. The possible values are defined by the ANSI Accredited Standards Committee (ASC).  For details, see `weight_unit_measurement` offer-level field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getWeightUnit() {
     return weightUnit;
   }
@@ -557,10 +557,10 @@ public class Ptsv2paymentsOrderInformationLineItems {
   }
 
    /**
-   * Code that identifies the value of the corresponding item_#_referenceData_#_number field. See Numbered Elements.  Possible values: - AN: Client-defined asset code - MG: Manufacturer&#39;s part number - PO: Purchase order number - SK: Supplier stock keeping unit number - UP: Universal product code - VC: Supplier catalog number - VP: Vendor part number  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. 
+   * Code that identifies the value of the corresponding &#x60;orderInformation.lineItems[].referenceDataNumber&#x60; field.  Possible values: - AN: Client-defined asset code - MG: Manufacturer&#39;s part number - PO: Purchase order number - SK: Supplier stock keeping unit number - UP: Universal product code - VC: Supplier catalog number - VP: Vendor part number  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.  For details, see &#x60;reference_data_#_code&#x60; field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
    * @return referenceDataCode
   **/
-  @ApiModelProperty(value = "Code that identifies the value of the corresponding item_#_referenceData_#_number field. See Numbered Elements.  Possible values: - AN: Client-defined asset code - MG: Manufacturer's part number - PO: Purchase order number - SK: Supplier stock keeping unit number - UP: Universal product code - VC: Supplier catalog number - VP: Vendor part number  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. ")
+  @ApiModelProperty(value = "Code that identifies the value of the corresponding `orderInformation.lineItems[].referenceDataNumber` field.  Possible values: - AN: Client-defined asset code - MG: Manufacturer's part number - PO: Purchase order number - SK: Supplier stock keeping unit number - UP: Universal product code - VC: Supplier catalog number - VP: Vendor part number  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.  For details, see `reference_data_#_code` field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
   public String getReferenceDataCode() {
     return referenceDataCode;
   }

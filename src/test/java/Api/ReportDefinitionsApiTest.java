@@ -45,8 +45,10 @@ public class ReportDefinitionsApiTest {
     @Test
     public void getResourceInfoByReportDefinitionTest() throws ApiException {
         String reportDefinitionName = null;
+        String subscriptionType = null;
+        String reportMimeType = null;
         String organizationId = null;
-        ReportingV3ReportDefinitionsNameGet200Response response = api.getResourceInfoByReportDefinition(reportDefinitionName, organizationId);
+        ReportingV3ReportDefinitionsNameGet200Response response = api.getResourceInfoByReportDefinition(reportDefinitionName, subscriptionType, reportMimeType, organizationId);
 
         // TODO: test validations
     }
@@ -61,8 +63,9 @@ public class ReportDefinitionsApiTest {
      */
     @Test
     public void getResourceV2InfoTest() throws ApiException {
+        String subscriptionType = null;
         String organizationId = null;
-        ReportingV3ReportDefinitionsGet200Response response = api.getResourceV2Info(organizationId);
+        ReportingV3ReportDefinitionsGet200Response response = api.getResourceV2Info(subscriptionType, organizationId);
 
         // TODO: test validations
     }

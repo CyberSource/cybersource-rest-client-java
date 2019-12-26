@@ -33,7 +33,7 @@ import org.joda.time.DateTime;
  * Subscription Details
  */
 @ApiModel(description = "Subscription Details")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -49,6 +49,9 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
 
   @SerializedName("reportFrequency")
   private String reportFrequency = null;
+
+  @SerializedName("reportInterval")
+  private String reportInterval = null;
 
   @SerializedName("reportName")
   private String reportName = null;
@@ -152,16 +155,34 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
   }
 
    /**
-   * &#39;Report Frequency&#39;  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC 
+   * &#39;Report Frequency&#39;   Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED 
    * @return reportFrequency
   **/
-  @ApiModelProperty(example = "DAILY", value = "'Report Frequency'  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC ")
+  @ApiModelProperty(example = "DAILY", value = "'Report Frequency'   Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED ")
   public String getReportFrequency() {
     return reportFrequency;
   }
 
   public void setReportFrequency(String reportFrequency) {
     this.reportFrequency = reportFrequency;
+  }
+
+  public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions reportInterval(String reportInterval) {
+    this.reportInterval = reportInterval;
+    return this;
+  }
+
+   /**
+   * If the reportFrequency is User-defined, reportInterval should be in **ISO 8601 time format** Please refer the following link to know more about ISO 8601 format.[Rfc Time Format](https://en.wikipedia.org/wiki/ISO_8601#Durations)  **Example time format for 2 hours and 30 Mins:**   - PT2H30M **NOTE: Do not document reportInterval field in developer center** 
+   * @return reportInterval
+  **/
+  @ApiModelProperty(value = "If the reportFrequency is User-defined, reportInterval should be in **ISO 8601 time format** Please refer the following link to know more about ISO 8601 format.[Rfc Time Format](https://en.wikipedia.org/wiki/ISO_8601#Durations)  **Example time format for 2 hours and 30 Mins:**   - PT2H30M **NOTE: Do not document reportInterval field in developer center** ")
+  public String getReportInterval() {
+    return reportInterval;
+  }
+
+  public void setReportInterval(String reportInterval) {
+    this.reportInterval = reportInterval;
   }
 
   public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions reportName(String reportName) {
@@ -339,6 +360,7 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
         Objects.equals(this.reportDefinitionName, reportingV3ReportSubscriptionsGet200ResponseSubscriptions.reportDefinitionName) &&
         Objects.equals(this.reportMimeType, reportingV3ReportSubscriptionsGet200ResponseSubscriptions.reportMimeType) &&
         Objects.equals(this.reportFrequency, reportingV3ReportSubscriptionsGet200ResponseSubscriptions.reportFrequency) &&
+        Objects.equals(this.reportInterval, reportingV3ReportSubscriptionsGet200ResponseSubscriptions.reportInterval) &&
         Objects.equals(this.reportName, reportingV3ReportSubscriptionsGet200ResponseSubscriptions.reportName) &&
         Objects.equals(this.timezone, reportingV3ReportSubscriptionsGet200ResponseSubscriptions.timezone) &&
         Objects.equals(this.startTime, reportingV3ReportSubscriptionsGet200ResponseSubscriptions.startTime) &&
@@ -351,7 +373,7 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(organizationId, reportDefinitionId, reportDefinitionName, reportMimeType, reportFrequency, reportName, timezone, startTime, startDay, reportFields, reportFilters, reportPreferences, groupId);
+    return Objects.hash(organizationId, reportDefinitionId, reportDefinitionName, reportMimeType, reportFrequency, reportInterval, reportName, timezone, startTime, startDay, reportFields, reportFilters, reportPreferences, groupId);
   }
 
 
@@ -365,6 +387,7 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
     sb.append("    reportDefinitionName: ").append(toIndentedString(reportDefinitionName)).append("\n");
     sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");
     sb.append("    reportFrequency: ").append(toIndentedString(reportFrequency)).append("\n");
+    sb.append("    reportInterval: ").append(toIndentedString(reportInterval)).append("\n");
     sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

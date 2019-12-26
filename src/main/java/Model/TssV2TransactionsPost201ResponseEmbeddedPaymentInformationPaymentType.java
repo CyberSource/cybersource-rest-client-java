@@ -26,30 +26,30 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType {
-  @SerializedName("name")
-  private String name = null;
+  @SerializedName("type")
+  private String type = null;
 
   @SerializedName("method")
   private String method = null;
 
-  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType name(String name) {
-    this.name = name;
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. Possible values: - &#x60;CARD&#x60; (use this for a PIN debit transaction) 
-   * @return name
+   * Indicates the payment type used in this payment transaction. Example: credit card, check
+   * @return type
   **/
-  @ApiModelProperty(value = "A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. Possible values: - `CARD` (use this for a PIN debit transaction) ")
-  public String getName() {
-    return name;
+  @ApiModelProperty(value = "Indicates the payment type used in this payment transaction. Example: credit card, check")
+  public String getType() {
+    return type;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setType(String type) {
+    this.type = type;
   }
 
   public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType method(String method) {
@@ -58,10 +58,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentTy
   }
 
    /**
-   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal
+   * Indicates the payment method used in this payment transaction.
    * @return method
   **/
-  @ApiModelProperty(value = "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal")
+  @ApiModelProperty(value = "Indicates the payment method used in this payment transaction.")
   public String getMethod() {
     return method;
   }
@@ -80,13 +80,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentTy
       return false;
     }
     TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType tssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType = (TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType) o;
-    return Objects.equals(this.name, tssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType.name) &&
+    return Objects.equals(this.type, tssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType.type) &&
         Objects.equals(this.method, tssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType.method);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, method);
+    return Objects.hash(type, method);
   }
 
 
@@ -95,7 +95,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentTy
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();

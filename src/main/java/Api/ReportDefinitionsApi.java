@@ -60,13 +60,15 @@ public class ReportDefinitionsApi {
     /**
      * Build call for getResourceInfoByReportDefinition
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
+     * @param subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
+     * @param reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv  (optional)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getResourceInfoByReportDefinitionCall(String reportDefinitionName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getResourceInfoByReportDefinitionCall(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -74,6 +76,10 @@ public class ReportDefinitionsApi {
             .replaceAll("\\{" + "reportDefinitionName" + "\\}", apiClient.escapeString(reportDefinitionName.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (subscriptionType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "subscriptionType", subscriptionType));
+        if (reportMimeType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportMimeType", reportMimeType));
         if (organizationId != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
 
@@ -94,10 +100,10 @@ public class ReportDefinitionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -110,7 +116,7 @@ public class ReportDefinitionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getResourceInfoByReportDefinitionValidateBeforeCall(String reportDefinitionName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getResourceInfoByReportDefinitionValidateBeforeCall(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportDefinitionName' is set
         if (reportDefinitionName == null) {
@@ -118,7 +124,7 @@ public class ReportDefinitionsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getResourceInfoByReportDefinitionCall(reportDefinitionName, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getResourceInfoByReportDefinitionCall(reportDefinitionName, subscriptionType, reportMimeType, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -131,12 +137,14 @@ public class ReportDefinitionsApi {
      * Get report definition
      * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
+     * @param subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
+     * @param reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv  (optional)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ReportingV3ReportDefinitionsNameGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(String reportDefinitionName, String organizationId) throws ApiException {
-        ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> resp = getResourceInfoByReportDefinitionWithHttpInfo(reportDefinitionName, organizationId);
+    public ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException {
+        ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> resp = getResourceInfoByReportDefinitionWithHttpInfo(reportDefinitionName, subscriptionType, reportMimeType, organizationId);
         return resp.getData();
     }
 
@@ -144,12 +152,14 @@ public class ReportDefinitionsApi {
      * Get report definition
      * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
+     * @param subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
+     * @param reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv  (optional)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportDefinitionsNameGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> getResourceInfoByReportDefinitionWithHttpInfo(String reportDefinitionName, String organizationId) throws ApiException {
-	    com.squareup.okhttp.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, organizationId, null, null);
+    public ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> getResourceInfoByReportDefinitionWithHttpInfo(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException {
+        okhttp3.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, subscriptionType, reportMimeType, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsNameGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -158,12 +168,14 @@ public class ReportDefinitionsApi {
      * Get report definition (asynchronously)
      * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
+     * @param subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
+     * @param reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv  (optional)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getResourceInfoByReportDefinitionAsync(String reportDefinitionName, String organizationId, final ApiCallback<ReportingV3ReportDefinitionsNameGet200Response> callback) throws ApiException {
+    public okhttp3.Call getResourceInfoByReportDefinitionAsync(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ApiCallback<ReportingV3ReportDefinitionsNameGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -184,26 +196,29 @@ public class ReportDefinitionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getResourceInfoByReportDefinitionValidateBeforeCall(reportDefinitionName, subscriptionType, reportMimeType, organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsNameGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for getResourceV2Info
+     * @param subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getResourceV2InfoCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getResourceV2InfoCall(String subscriptionType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-definitions";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (subscriptionType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "subscriptionType", subscriptionType));
         if (organizationId != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
 
@@ -224,10 +239,10 @@ public class ReportDefinitionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -240,10 +255,10 @@ public class ReportDefinitionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getResourceV2InfoValidateBeforeCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getResourceV2InfoValidateBeforeCall(String subscriptionType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = getResourceV2InfoCall(organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getResourceV2InfoCall(subscriptionType, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -255,24 +270,26 @@ public class ReportDefinitionsApi {
     /**
      * Get reporting resource information
      * View a list of supported reports and their attributes before subscribing to them. 
+     * @param subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ReportingV3ReportDefinitionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3ReportDefinitionsGet200Response getResourceV2Info(String organizationId) throws ApiException {
-        ApiResponse<ReportingV3ReportDefinitionsGet200Response> resp = getResourceV2InfoWithHttpInfo(organizationId);
+    public ReportingV3ReportDefinitionsGet200Response getResourceV2Info(String subscriptionType, String organizationId) throws ApiException {
+        ApiResponse<ReportingV3ReportDefinitionsGet200Response> resp = getResourceV2InfoWithHttpInfo(subscriptionType, organizationId);
         return resp.getData();
     }
 
     /**
      * Get reporting resource information
      * View a list of supported reports and their attributes before subscribing to them. 
+     * @param subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportDefinitionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportDefinitionsGet200Response> getResourceV2InfoWithHttpInfo(String organizationId) throws ApiException {
-	    com.squareup.okhttp.Call call = getResourceV2InfoValidateBeforeCall(organizationId, null, null);
+    public ApiResponse<ReportingV3ReportDefinitionsGet200Response> getResourceV2InfoWithHttpInfo(String subscriptionType, String organizationId) throws ApiException {
+        okhttp3.Call call = getResourceV2InfoValidateBeforeCall(subscriptionType, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -280,12 +297,13 @@ public class ReportDefinitionsApi {
     /**
      * Get reporting resource information (asynchronously)
      * View a list of supported reports and their attributes before subscribing to them. 
+     * @param subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getResourceV2InfoAsync(String organizationId, final ApiCallback<ReportingV3ReportDefinitionsGet200Response> callback) throws ApiException {
+    public okhttp3.Call getResourceV2InfoAsync(String subscriptionType, String organizationId, final ApiCallback<ReportingV3ReportDefinitionsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -306,7 +324,7 @@ public class ReportDefinitionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getResourceV2InfoValidateBeforeCall(organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getResourceV2InfoValidateBeforeCall(subscriptionType, organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportDefinitionsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

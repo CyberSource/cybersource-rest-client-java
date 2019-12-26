@@ -16,6 +16,7 @@ package Api;
 import Invokers.ApiException;
 import Model.CreateReportSubscriptionRequest;
 import Model.InlineResponse400;
+import Model.PredefinedSubscriptionRequestBean;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
 import Model.Reportingv3ReportDownloadsGet400Response;
@@ -96,6 +97,23 @@ public class ReportSubscriptionsApiTest {
     public void getSubscriptionTest() throws ApiException {
         String reportName = null;
         ReportingV3ReportSubscriptionsGet200ResponseSubscriptions response = api.getSubscription(reportName);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a Standard or Classic subscription
+     *
+     * Create or update an already existing classic or standard subscription. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void reportingV3PredefinedReportSubscriptionsPutTest() throws ApiException {
+        PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean = null;
+        String organizationId = null;
+        api.reportingV3PredefinedReportSubscriptionsPut(predefinedSubscriptionRequestBean, organizationId);
 
         // TODO: test validations
     }

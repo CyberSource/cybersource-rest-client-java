@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseLinksSelf;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -27,10 +28,13 @@ import java.io.IOException;
 /**
  * TmsV1InstrumentIdentifiersPost200ResponseLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class TmsV1InstrumentIdentifiersPost200ResponseLinks {
   @SerializedName("self")
   private TmsV1InstrumentIdentifiersPost200ResponseLinksSelf self = null;
+
+  @SerializedName("paymentInstruments")
+  private TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments paymentInstruments = null;
 
   @SerializedName("ancestor")
   private TmsV1InstrumentIdentifiersPost200ResponseLinksSelf ancestor = null;
@@ -54,6 +58,24 @@ public class TmsV1InstrumentIdentifiersPost200ResponseLinks {
 
   public void setSelf(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf self) {
     this.self = self;
+  }
+
+  public TmsV1InstrumentIdentifiersPost200ResponseLinks paymentInstruments(TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments paymentInstruments) {
+    this.paymentInstruments = paymentInstruments;
+    return this;
+  }
+
+   /**
+   * Get paymentInstruments
+   * @return paymentInstruments
+  **/
+  @ApiModelProperty(value = "")
+  public TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments getPaymentInstruments() {
+    return paymentInstruments;
+  }
+
+  public void setPaymentInstruments(TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments paymentInstruments) {
+    this.paymentInstruments = paymentInstruments;
   }
 
   public TmsV1InstrumentIdentifiersPost200ResponseLinks ancestor(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf ancestor) {
@@ -103,13 +125,14 @@ public class TmsV1InstrumentIdentifiersPost200ResponseLinks {
     }
     TmsV1InstrumentIdentifiersPost200ResponseLinks tmsV1InstrumentIdentifiersPost200ResponseLinks = (TmsV1InstrumentIdentifiersPost200ResponseLinks) o;
     return Objects.equals(this.self, tmsV1InstrumentIdentifiersPost200ResponseLinks.self) &&
+        Objects.equals(this.paymentInstruments, tmsV1InstrumentIdentifiersPost200ResponseLinks.paymentInstruments) &&
         Objects.equals(this.ancestor, tmsV1InstrumentIdentifiersPost200ResponseLinks.ancestor) &&
         Objects.equals(this.successor, tmsV1InstrumentIdentifiersPost200ResponseLinks.successor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self, ancestor, successor);
+    return Objects.hash(self, paymentInstruments, ancestor, successor);
   }
 
 
@@ -119,6 +142,7 @@ public class TmsV1InstrumentIdentifiersPost200ResponseLinks {
     sb.append("class TmsV1InstrumentIdentifiersPost200ResponseLinks {\n");
     
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    sb.append("    paymentInstruments: ").append(toIndentedString(paymentInstruments)).append("\n");
     sb.append("    ancestor: ").append(toIndentedString(ancestor)).append("\n");
     sb.append("    successor: ").append(toIndentedString(successor)).append("\n");
     sb.append("}");

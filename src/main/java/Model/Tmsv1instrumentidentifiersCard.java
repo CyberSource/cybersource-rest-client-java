@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Tmsv1instrumentidentifiersCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-09T15:49:19.042+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
 public class Tmsv1instrumentidentifiersCard {
   @SerializedName("number")
   private String number = null;
@@ -82,10 +82,10 @@ public class Tmsv1instrumentidentifiersCard {
   }
 
    /**
-   * Card expiration year.  Format: &#x60;YYYY&#x60;. Possible values: &#x60;1900&#x60; through &#x60;2099&#x60;. 
+   * Card expiration year. Format: &#x60;YYYY&#x60;. Possible values: &#x60;1900&#x60; through &#x60;2099&#x60;. 
    * @return expirationYear
   **/
-  @ApiModelProperty(example = "2022", value = "Card expiration year.  Format: `YYYY`. Possible values: `1900` through `2099`. ")
+  @ApiModelProperty(example = "2022", value = "Card expiration year. Format: `YYYY`. Possible values: `1900` through `2099`. ")
   public String getExpirationYear() {
     return expirationYear;
   }
