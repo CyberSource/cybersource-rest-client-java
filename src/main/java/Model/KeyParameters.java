@@ -26,10 +26,13 @@ import java.io.IOException;
 /**
  * KeyParameters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class KeyParameters {
   @SerializedName("encryptionType")
   private String encryptionType = null;
+
+  @SerializedName("targetOrigin")
+  private String targetOrigin = null;
 
   public KeyParameters encryptionType(String encryptionType) {
     this.encryptionType = encryptionType;
@@ -49,6 +52,24 @@ public class KeyParameters {
     this.encryptionType = encryptionType;
   }
 
+  public KeyParameters targetOrigin(String targetOrigin) {
+    this.targetOrigin = targetOrigin;
+    return this;
+  }
+
+   /**
+   * The merchant origin (e.g. https://example.com) used to integrate with Flex API. Required to comply with CORS and CSP standards.
+   * @return targetOrigin
+  **/
+  @ApiModelProperty(value = "The merchant origin (e.g. https://example.com) used to integrate with Flex API. Required to comply with CORS and CSP standards.")
+  public String getTargetOrigin() {
+    return targetOrigin;
+  }
+
+  public void setTargetOrigin(String targetOrigin) {
+    this.targetOrigin = targetOrigin;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +80,13 @@ public class KeyParameters {
       return false;
     }
     KeyParameters keyParameters = (KeyParameters) o;
-    return Objects.equals(this.encryptionType, keyParameters.encryptionType);
+    return Objects.equals(this.encryptionType, keyParameters.encryptionType) &&
+        Objects.equals(this.targetOrigin, keyParameters.targetOrigin);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(encryptionType);
+    return Objects.hash(encryptionType, targetOrigin);
   }
 
 
@@ -74,6 +96,7 @@ public class KeyParameters {
     sb.append("class KeyParameters {\n");
     
     sb.append("    encryptionType: ").append(toIndentedString(encryptionType)).append("\n");
+    sb.append("    targetOrigin: ").append(toIndentedString(targetOrigin)).append("\n");
     sb.append("}");
     return sb.toString();
   }

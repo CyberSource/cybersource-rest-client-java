@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.Ptsv2paymentsidcapturesPaymentInformationCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,10 +28,13 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidcapturesPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsidcapturesPaymentInformation {
   @SerializedName("customer")
   private Ptsv2paymentsPaymentInformationCustomer customer = null;
+
+  @SerializedName("card")
+  private Ptsv2paymentsidcapturesPaymentInformationCard card = null;
 
   public Ptsv2paymentsidcapturesPaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
     this.customer = customer;
@@ -50,6 +54,24 @@ public class Ptsv2paymentsidcapturesPaymentInformation {
     this.customer = customer;
   }
 
+  public Ptsv2paymentsidcapturesPaymentInformation card(Ptsv2paymentsidcapturesPaymentInformationCard card) {
+    this.card = card;
+    return this;
+  }
+
+   /**
+   * Get card
+   * @return card
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidcapturesPaymentInformationCard getCard() {
+    return card;
+  }
+
+  public void setCard(Ptsv2paymentsidcapturesPaymentInformationCard card) {
+    this.card = card;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +82,13 @@ public class Ptsv2paymentsidcapturesPaymentInformation {
       return false;
     }
     Ptsv2paymentsidcapturesPaymentInformation ptsv2paymentsidcapturesPaymentInformation = (Ptsv2paymentsidcapturesPaymentInformation) o;
-    return Objects.equals(this.customer, ptsv2paymentsidcapturesPaymentInformation.customer);
+    return Objects.equals(this.customer, ptsv2paymentsidcapturesPaymentInformation.customer) &&
+        Objects.equals(this.card, ptsv2paymentsidcapturesPaymentInformation.card);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customer);
+    return Objects.hash(customer, card);
   }
 
 
@@ -75,6 +98,7 @@ public class Ptsv2paymentsidcapturesPaymentInformation {
     sb.append("class Ptsv2paymentsidcapturesPaymentInformation {\n");
     
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("}");
     return sb.toString();
   }

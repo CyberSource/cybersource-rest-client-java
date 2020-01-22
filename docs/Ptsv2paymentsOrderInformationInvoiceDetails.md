@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **transactionAdviceAddendum** | [**List&lt;Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum&gt;**](Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum.md) |  |  [optional]
 **referenceDataCode** | **String** | Code that identifies the value of the &#x60;referenceDataNumber&#x60; field.  For the possible values, see \&quot;Reference Data Codes\&quot; in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.  |  [optional]
 **referenceDataNumber** | **String** | Reference number. The meaning of this value is identified by the value of the &#x60;referenceDataCode&#x60; field.  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.  |  [optional]
+**salesSlipNumber** | **Integer** | Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway.  |  [optional]
 
 
 

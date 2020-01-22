@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts;
+import Model.Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsSurcharge;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsTaxDetails;
 import com.google.gson.TypeAdapter;
@@ -31,7 +32,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;
@@ -104,6 +105,9 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
 
   @SerializedName("cashbackAmount")
   private String cashbackAmount = null;
+
+  @SerializedName("currencyConversion")
+  private Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion currencyConversion = null;
 
   public Ptsv2paymentsOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
@@ -183,10 +187,10 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
   }
 
    /**
-   * Gratuity or tip amount for restaurants when the card is present. Allowed only when &#x60;industryDatatype&#x3D;restaurant&#x60;. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For details about partial authorizations, see \&quot;Partial Authorizations\&quot; in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Restaurant data is supported only on CyberSource through VisaNet. 
+   * Gratuity or tip amount for restaurants when the card is present. Allowed only when &#x60;industryDatatype&#x3D;restaurant&#x60;. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For information about partial authorizations, see Credit Card Services Using the SCMP API.  Restaurant data is supported only on CyberSource through VisaNet. 
    * @return gratuityAmount
   **/
-  @ApiModelProperty(value = "Gratuity or tip amount for restaurants when the card is present. Allowed only when `industryDatatype=restaurant`. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For details about partial authorizations, see \"Partial Authorizations\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Restaurant data is supported only on CyberSource through VisaNet. ")
+  @ApiModelProperty(value = "Gratuity or tip amount for restaurants when the card is present. Allowed only when `industryDatatype=restaurant`. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For information about partial authorizations, see Credit Card Services Using the SCMP API.  Restaurant data is supported only on CyberSource through VisaNet. ")
   public String getGratuityAmount() {
     return gratuityAmount;
   }
@@ -541,16 +545,34 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
   }
 
    /**
-   * Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the &#x60;orderInformation.amountDetails.totalAmount&#x60; value. 
+   * Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the orderInformation.amountDetails.totalAmount value. 
    * @return cashbackAmount
   **/
-  @ApiModelProperty(value = "Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the `orderInformation.amountDetails.totalAmount` value. ")
+  @ApiModelProperty(value = "Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the orderInformation.amountDetails.totalAmount value. ")
   public String getCashbackAmount() {
     return cashbackAmount;
   }
 
   public void setCashbackAmount(String cashbackAmount) {
     this.cashbackAmount = cashbackAmount;
+  }
+
+  public Ptsv2paymentsOrderInformationAmountDetails currencyConversion(Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion currencyConversion) {
+    this.currencyConversion = currencyConversion;
+    return this;
+  }
+
+   /**
+   * Get currencyConversion
+   * @return currencyConversion
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion getCurrencyConversion() {
+    return currencyConversion;
+  }
+
+  public void setCurrencyConversion(Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion currencyConversion) {
+    this.currencyConversion = currencyConversion;
   }
 
 
@@ -586,12 +608,13 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
         Objects.equals(this.serviceFeeAmount, ptsv2paymentsOrderInformationAmountDetails.serviceFeeAmount) &&
         Objects.equals(this.originalAmount, ptsv2paymentsOrderInformationAmountDetails.originalAmount) &&
         Objects.equals(this.originalCurrency, ptsv2paymentsOrderInformationAmountDetails.originalCurrency) &&
-        Objects.equals(this.cashbackAmount, ptsv2paymentsOrderInformationAmountDetails.cashbackAmount);
+        Objects.equals(this.cashbackAmount, ptsv2paymentsOrderInformationAmountDetails.cashbackAmount) &&
+        Objects.equals(this.currencyConversion, ptsv2paymentsOrderInformationAmountDetails.currencyConversion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount);
+    return Objects.hash(totalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount, currencyConversion);
   }
 
 
@@ -624,6 +647,7 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     sb.append("    originalAmount: ").append(toIndentedString(originalAmount)).append("\n");
     sb.append("    originalCurrency: ").append(toIndentedString(originalCurrency)).append("\n");
     sb.append("    cashbackAmount: ").append(toIndentedString(cashbackAmount)).append("\n");
+    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
     sb.append("}");
     return sb.toString();
   }

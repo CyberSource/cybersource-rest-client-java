@@ -27,7 +27,9 @@ import Model.Ptsv2paymentsOrderInformation;
 import Model.Ptsv2paymentsPaymentInformation;
 import Model.Ptsv2paymentsPointOfSaleInformation;
 import Model.Ptsv2paymentsProcessingInformation;
+import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsRecipientInformation;
+import Model.Ptsv2paymentsTravelInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,7 +44,7 @@ import java.util.List;
 /**
  * CreatePaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class CreatePaymentRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -85,6 +87,12 @@ public class CreatePaymentRequest {
 
   @SerializedName("installmentInformation")
   private Ptsv2paymentsInstallmentInformation installmentInformation = null;
+
+  @SerializedName("travelInformation")
+  private Ptsv2paymentsTravelInformation travelInformation = null;
+
+  @SerializedName("promotionInformation")
+  private Ptsv2paymentsPromotionInformation promotionInformation = null;
 
   public CreatePaymentRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -346,6 +354,42 @@ public class CreatePaymentRequest {
     this.installmentInformation = installmentInformation;
   }
 
+  public CreatePaymentRequest travelInformation(Ptsv2paymentsTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+    return this;
+  }
+
+   /**
+   * Get travelInformation
+   * @return travelInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsTravelInformation getTravelInformation() {
+    return travelInformation;
+  }
+
+  public void setTravelInformation(Ptsv2paymentsTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+  }
+
+  public CreatePaymentRequest promotionInformation(Ptsv2paymentsPromotionInformation promotionInformation) {
+    this.promotionInformation = promotionInformation;
+    return this;
+  }
+
+   /**
+   * Get promotionInformation
+   * @return promotionInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPromotionInformation getPromotionInformation() {
+    return promotionInformation;
+  }
+
+  public void setPromotionInformation(Ptsv2paymentsPromotionInformation promotionInformation) {
+    this.promotionInformation = promotionInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -369,12 +413,14 @@ public class CreatePaymentRequest {
         Objects.equals(this.consumerAuthenticationInformation, createPaymentRequest.consumerAuthenticationInformation) &&
         Objects.equals(this.pointOfSaleInformation, createPaymentRequest.pointOfSaleInformation) &&
         Objects.equals(this.merchantDefinedInformation, createPaymentRequest.merchantDefinedInformation) &&
-        Objects.equals(this.installmentInformation, createPaymentRequest.installmentInformation);
+        Objects.equals(this.installmentInformation, createPaymentRequest.installmentInformation) &&
+        Objects.equals(this.travelInformation, createPaymentRequest.travelInformation) &&
+        Objects.equals(this.promotionInformation, createPaymentRequest.promotionInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation, travelInformation, promotionInformation);
   }
 
 
@@ -397,6 +443,8 @@ public class CreatePaymentRequest {
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
+    sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
+    sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

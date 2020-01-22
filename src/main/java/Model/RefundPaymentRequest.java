@@ -17,8 +17,10 @@ import java.util.Objects;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsDeviceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
+import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsidcapturesAggregatorInformation;
 import Model.Ptsv2paymentsidcapturesBuyerInformation;
+import Model.Ptsv2paymentsidcapturesTravelInformation;
 import Model.Ptsv2paymentsidrefundsMerchantInformation;
 import Model.Ptsv2paymentsidrefundsOrderInformation;
 import Model.Ptsv2paymentsidrefundsPaymentInformation;
@@ -38,7 +40,7 @@ import java.util.List;
 /**
  * RefundPaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class RefundPaymentRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -69,6 +71,12 @@ public class RefundPaymentRequest {
 
   @SerializedName("merchantDefinedInformation")
   private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
+
+  @SerializedName("travelInformation")
+  private Ptsv2paymentsidcapturesTravelInformation travelInformation = null;
+
+  @SerializedName("promotionInformation")
+  private Ptsv2paymentsPromotionInformation promotionInformation = null;
 
   public RefundPaymentRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -258,6 +266,42 @@ public class RefundPaymentRequest {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 
+  public RefundPaymentRequest travelInformation(Ptsv2paymentsidcapturesTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+    return this;
+  }
+
+   /**
+   * Get travelInformation
+   * @return travelInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidcapturesTravelInformation getTravelInformation() {
+    return travelInformation;
+  }
+
+  public void setTravelInformation(Ptsv2paymentsidcapturesTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+  }
+
+  public RefundPaymentRequest promotionInformation(Ptsv2paymentsPromotionInformation promotionInformation) {
+    this.promotionInformation = promotionInformation;
+    return this;
+  }
+
+   /**
+   * Get promotionInformation
+   * @return promotionInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPromotionInformation getPromotionInformation() {
+    return promotionInformation;
+  }
+
+  public void setPromotionInformation(Ptsv2paymentsPromotionInformation promotionInformation) {
+    this.promotionInformation = promotionInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -277,12 +321,14 @@ public class RefundPaymentRequest {
         Objects.equals(this.merchantInformation, refundPaymentRequest.merchantInformation) &&
         Objects.equals(this.aggregatorInformation, refundPaymentRequest.aggregatorInformation) &&
         Objects.equals(this.pointOfSaleInformation, refundPaymentRequest.pointOfSaleInformation) &&
-        Objects.equals(this.merchantDefinedInformation, refundPaymentRequest.merchantDefinedInformation);
+        Objects.equals(this.merchantDefinedInformation, refundPaymentRequest.merchantDefinedInformation) &&
+        Objects.equals(this.travelInformation, refundPaymentRequest.travelInformation) &&
+        Objects.equals(this.promotionInformation, refundPaymentRequest.promotionInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation, travelInformation, promotionInformation);
   }
 
 
@@ -301,6 +347,8 @@ public class RefundPaymentRequest {
     sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
+    sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
+    sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

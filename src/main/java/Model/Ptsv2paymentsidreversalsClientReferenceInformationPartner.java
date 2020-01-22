@@ -26,13 +26,16 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidreversalsClientReferenceInformationPartner
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsidreversalsClientReferenceInformationPartner {
   @SerializedName("developerId")
   private String developerId = null;
 
   @SerializedName("solutionId")
   private String solutionId = null;
+
+  @SerializedName("thirdPartyCertificationNumber")
+  private String thirdPartyCertificationNumber = null;
 
   public Ptsv2paymentsidreversalsClientReferenceInformationPartner developerId(String developerId) {
     this.developerId = developerId;
@@ -70,6 +73,24 @@ public class Ptsv2paymentsidreversalsClientReferenceInformationPartner {
     this.solutionId = solutionId;
   }
 
+  public Ptsv2paymentsidreversalsClientReferenceInformationPartner thirdPartyCertificationNumber(String thirdPartyCertificationNumber) {
+    this.thirdPartyCertificationNumber = thirdPartyCertificationNumber;
+    return this;
+  }
+
+   /**
+   * Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet. 
+   * @return thirdPartyCertificationNumber
+  **/
+  @ApiModelProperty(value = "Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet. ")
+  public String getThirdPartyCertificationNumber() {
+    return thirdPartyCertificationNumber;
+  }
+
+  public void setThirdPartyCertificationNumber(String thirdPartyCertificationNumber) {
+    this.thirdPartyCertificationNumber = thirdPartyCertificationNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +102,13 @@ public class Ptsv2paymentsidreversalsClientReferenceInformationPartner {
     }
     Ptsv2paymentsidreversalsClientReferenceInformationPartner ptsv2paymentsidreversalsClientReferenceInformationPartner = (Ptsv2paymentsidreversalsClientReferenceInformationPartner) o;
     return Objects.equals(this.developerId, ptsv2paymentsidreversalsClientReferenceInformationPartner.developerId) &&
-        Objects.equals(this.solutionId, ptsv2paymentsidreversalsClientReferenceInformationPartner.solutionId);
+        Objects.equals(this.solutionId, ptsv2paymentsidreversalsClientReferenceInformationPartner.solutionId) &&
+        Objects.equals(this.thirdPartyCertificationNumber, ptsv2paymentsidreversalsClientReferenceInformationPartner.thirdPartyCertificationNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(developerId, solutionId);
+    return Objects.hash(developerId, solutionId, thirdPartyCertificationNumber);
   }
 
 
@@ -97,6 +119,7 @@ public class Ptsv2paymentsidreversalsClientReferenceInformationPartner {
     
     sb.append("    developerId: ").append(toIndentedString(developerId)).append("\n");
     sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
+    sb.append("    thirdPartyCertificationNumber: ").append(toIndentedString(thirdPartyCertificationNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

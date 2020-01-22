@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsidcapturesOrderInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;
@@ -170,10 +170,10 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
   }
 
    /**
-   * Gratuity or tip amount for restaurants when the card is present. Allowed only when &#x60;industryDatatype&#x3D;restaurant&#x60;. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For details about partial authorizations, see \&quot;Partial Authorizations\&quot; in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Restaurant data is supported only on CyberSource through VisaNet. 
+   * Gratuity or tip amount for restaurants when the card is present. Allowed only when &#x60;industryDatatype&#x3D;restaurant&#x60;. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For information about partial authorizations, see Credit Card Services Using the SCMP API.  Restaurant data is supported only on CyberSource through VisaNet. 
    * @return gratuityAmount
   **/
-  @ApiModelProperty(value = "Gratuity or tip amount for restaurants when the card is present. Allowed only when `industryDatatype=restaurant`. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For details about partial authorizations, see \"Partial Authorizations\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Restaurant data is supported only on CyberSource through VisaNet. ")
+  @ApiModelProperty(value = "Gratuity or tip amount for restaurants when the card is present. Allowed only when `industryDatatype=restaurant`. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For information about partial authorizations, see Credit Card Services Using the SCMP API.  Restaurant data is supported only on CyberSource through VisaNet. ")
   public String getGratuityAmount() {
     return gratuityAmount;
   }
@@ -456,10 +456,10 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
   }
 
    /**
-   * Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the &#x60;orderInformation.amountDetails.totalAmount&#x60; value. 
+   * Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the orderInformation.amountDetails.totalAmount value. 
    * @return cashbackAmount
   **/
-  @ApiModelProperty(value = "Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the `orderInformation.amountDetails.totalAmount` value. ")
+  @ApiModelProperty(value = "Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the orderInformation.amountDetails.totalAmount value. ")
   public String getCashbackAmount() {
     return cashbackAmount;
   }

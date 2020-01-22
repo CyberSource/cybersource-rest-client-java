@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidcapturesAggregatorInformationSubMerchant
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
   @SerializedName("name")
   private String name = null;
@@ -51,6 +51,9 @@ public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
 
   @SerializedName("phoneNumber")
   private String phoneNumber = null;
+
+  @SerializedName("id")
+  private String id = null;
 
   public Ptsv2paymentsidcapturesAggregatorInformationSubMerchant name(String name) {
     this.name = name;
@@ -196,6 +199,24 @@ public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
     this.phoneNumber = phoneNumber;
   }
 
+  public Ptsv2paymentsidcapturesAggregatorInformationSubMerchant id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * The ID you assigned to your sub-merchant. CyberSource through VisaNet: For American Express transaction, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCRB - Position: 65-84 - Field: American Express Seller ID For  Mastercard transactions, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 117-131 - Field: Mastercard Sub-Merchant ID FDC Compass: This value must consist of uppercase characters.  American Express Direct: String (20) CyberSource through VisaNet with American Express: String (20) CyberSource through VisaNet with Mastercard: String (15) FDC Compass: String (20) FDC Nashville Global: String (14) 
+   * @return id
+  **/
+  @ApiModelProperty(value = "The ID you assigned to your sub-merchant. CyberSource through VisaNet: For American Express transaction, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCRB - Position: 65-84 - Field: American Express Seller ID For  Mastercard transactions, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 117-131 - Field: Mastercard Sub-Merchant ID FDC Compass: This value must consist of uppercase characters.  American Express Direct: String (20) CyberSource through VisaNet with American Express: String (20) CyberSource through VisaNet with Mastercard: String (15) FDC Compass: String (20) FDC Nashville Global: String (14) ")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -213,12 +234,13 @@ public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
         Objects.equals(this.postalCode, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.postalCode) &&
         Objects.equals(this.country, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.country) &&
         Objects.equals(this.email, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.email) &&
-        Objects.equals(this.phoneNumber, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.phoneNumber);
+        Objects.equals(this.phoneNumber, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.phoneNumber) &&
+        Objects.equals(this.id, ptsv2paymentsidcapturesAggregatorInformationSubMerchant.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, address1, locality, administrativeArea, postalCode, country, email, phoneNumber);
+    return Objects.hash(name, address1, locality, administrativeArea, postalCode, country, email, phoneNumber, id);
   }
 
 
@@ -235,6 +257,7 @@ public class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant {
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

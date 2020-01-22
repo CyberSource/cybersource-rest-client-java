@@ -16,7 +16,9 @@ package Model;
 import java.util.Objects;
 import Model.Ptsv2paymentsPaymentInformationBank;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.Ptsv2paymentsPaymentInformationFluidData;
 import Model.Ptsv2paymentsPaymentInformationPaymentType;
+import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
 import Model.Ptsv2paymentsidrefundsPaymentInformationCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -30,13 +32,19 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidrefundsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsidrefundsPaymentInformation {
   @SerializedName("card")
   private Ptsv2paymentsidrefundsPaymentInformationCard card = null;
 
   @SerializedName("bank")
   private Ptsv2paymentsPaymentInformationBank bank = null;
+
+  @SerializedName("tokenizedCard")
+  private Ptsv2paymentsPaymentInformationTokenizedCard tokenizedCard = null;
+
+  @SerializedName("fluidData")
+  private Ptsv2paymentsPaymentInformationFluidData fluidData = null;
 
   @SerializedName("customer")
   private Ptsv2paymentsPaymentInformationCustomer customer = null;
@@ -78,6 +86,42 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
 
   public void setBank(Ptsv2paymentsPaymentInformationBank bank) {
     this.bank = bank;
+  }
+
+  public Ptsv2paymentsidrefundsPaymentInformation tokenizedCard(Ptsv2paymentsPaymentInformationTokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
+    return this;
+  }
+
+   /**
+   * Get tokenizedCard
+   * @return tokenizedCard
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationTokenizedCard getTokenizedCard() {
+    return tokenizedCard;
+  }
+
+  public void setTokenizedCard(Ptsv2paymentsPaymentInformationTokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
+  }
+
+  public Ptsv2paymentsidrefundsPaymentInformation fluidData(Ptsv2paymentsPaymentInformationFluidData fluidData) {
+    this.fluidData = fluidData;
+    return this;
+  }
+
+   /**
+   * Get fluidData
+   * @return fluidData
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationFluidData getFluidData() {
+    return fluidData;
+  }
+
+  public void setFluidData(Ptsv2paymentsPaymentInformationFluidData fluidData) {
+    this.fluidData = fluidData;
   }
 
   public Ptsv2paymentsidrefundsPaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
@@ -128,13 +172,15 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     Ptsv2paymentsidrefundsPaymentInformation ptsv2paymentsidrefundsPaymentInformation = (Ptsv2paymentsidrefundsPaymentInformation) o;
     return Objects.equals(this.card, ptsv2paymentsidrefundsPaymentInformation.card) &&
         Objects.equals(this.bank, ptsv2paymentsidrefundsPaymentInformation.bank) &&
+        Objects.equals(this.tokenizedCard, ptsv2paymentsidrefundsPaymentInformation.tokenizedCard) &&
+        Objects.equals(this.fluidData, ptsv2paymentsidrefundsPaymentInformation.fluidData) &&
         Objects.equals(this.customer, ptsv2paymentsidrefundsPaymentInformation.customer) &&
         Objects.equals(this.paymentType, ptsv2paymentsidrefundsPaymentInformation.paymentType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, bank, customer, paymentType);
+    return Objects.hash(card, bank, tokenizedCard, fluidData, customer, paymentType);
   }
 
 
@@ -145,6 +191,8 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("}");

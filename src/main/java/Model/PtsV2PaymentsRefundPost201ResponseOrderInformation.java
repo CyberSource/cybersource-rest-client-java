@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails;
+import Model.PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,12 +27,12 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsRefundPost201ResponseOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class PtsV2PaymentsRefundPost201ResponseOrderInformation {
   @SerializedName("invoiceDetails")
-  private PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails invoiceDetails = null;
+  private PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails invoiceDetails = null;
 
-  public PtsV2PaymentsRefundPost201ResponseOrderInformation invoiceDetails(PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails invoiceDetails) {
+  public PtsV2PaymentsRefundPost201ResponseOrderInformation invoiceDetails(PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails invoiceDetails) {
     this.invoiceDetails = invoiceDetails;
     return this;
   }
@@ -42,11 +42,11 @@ public class PtsV2PaymentsRefundPost201ResponseOrderInformation {
    * @return invoiceDetails
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails getInvoiceDetails() {
+  public PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails getInvoiceDetails() {
     return invoiceDetails;
   }
 
-  public void setInvoiceDetails(PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails invoiceDetails) {
+  public void setInvoiceDetails(PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails invoiceDetails) {
     this.invoiceDetails = invoiceDetails;
   }
 

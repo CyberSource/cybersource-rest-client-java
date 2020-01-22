@@ -32,7 +32,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsPaymentInformation {
   @SerializedName("card")
   private Ptsv2paymentsPaymentInformationCard card = null;
@@ -51,6 +51,9 @@ public class Ptsv2paymentsPaymentInformation {
 
   @SerializedName("paymentType")
   private Ptsv2paymentsPaymentInformationPaymentType paymentType = null;
+
+  @SerializedName("initiationChannel")
+  private String initiationChannel = null;
 
   public Ptsv2paymentsPaymentInformation card(Ptsv2paymentsPaymentInformationCard card) {
     this.card = card;
@@ -160,6 +163,24 @@ public class Ptsv2paymentsPaymentInformation {
     this.paymentType = paymentType;
   }
 
+  public Ptsv2paymentsPaymentInformation initiationChannel(String initiationChannel) {
+    this.initiationChannel = initiationChannel;
+    return this;
+  }
+
+   /**
+   * \&quot;This tag contains a MesterCard defined code that provides information about the type of device used to initiate a non-card transaction. Valid values for this tag are: - 00 Card (default) - 01 Mobile network operator (MNO) controlled removal secure element (SIM or UICC) personalized for use with a mobile phone or smartphone&gt; - 02 Key fob - 03  Watch - 04  Mobile tag - 05  Wristband - 06  Mobile phone case or sleeve - 07  Mobile phone or smartphone with a fixed, (non-removable), secure element controlled by the MNO, for example, code division multiple access (CDMA) - 08  Removable secure element not controlled by the MNO, for example, memory card personalized for use with a mobile phone or smartphone - 09 Mobile phonen or smartphone with a fixed, (non-removable), secure element not controlled by the MNO - 10 MNO controlled removable secure element (SIM or UICC) personalized for use with a tablet or e-book - 11 Tablet or e-book with a fixed, (non-removable), secure element controlled by the MNO - 12 Removable secure element not controlled by the MNO, for example, memory card personalized for use with a tablet or e-book - 13 Table or e-book with fixed, (non-removable) secure element not controlled by the MNO - 14 - 99 &#x3D; (Reserved for future use) 
+   * @return initiationChannel
+  **/
+  @ApiModelProperty(value = "\"This tag contains a MesterCard defined code that provides information about the type of device used to initiate a non-card transaction. Valid values for this tag are: - 00 Card (default) - 01 Mobile network operator (MNO) controlled removal secure element (SIM or UICC) personalized for use with a mobile phone or smartphone> - 02 Key fob - 03  Watch - 04  Mobile tag - 05  Wristband - 06  Mobile phone case or sleeve - 07  Mobile phone or smartphone with a fixed, (non-removable), secure element controlled by the MNO, for example, code division multiple access (CDMA) - 08  Removable secure element not controlled by the MNO, for example, memory card personalized for use with a mobile phone or smartphone - 09 Mobile phonen or smartphone with a fixed, (non-removable), secure element not controlled by the MNO - 10 MNO controlled removable secure element (SIM or UICC) personalized for use with a tablet or e-book - 11 Tablet or e-book with a fixed, (non-removable), secure element controlled by the MNO - 12 Removable secure element not controlled by the MNO, for example, memory card personalized for use with a tablet or e-book - 13 Table or e-book with fixed, (non-removable) secure element not controlled by the MNO - 14 - 99 = (Reserved for future use) ")
+  public String getInitiationChannel() {
+    return initiationChannel;
+  }
+
+  public void setInitiationChannel(String initiationChannel) {
+    this.initiationChannel = initiationChannel;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -175,12 +196,13 @@ public class Ptsv2paymentsPaymentInformation {
         Objects.equals(this.fluidData, ptsv2paymentsPaymentInformation.fluidData) &&
         Objects.equals(this.customer, ptsv2paymentsPaymentInformation.customer) &&
         Objects.equals(this.bank, ptsv2paymentsPaymentInformation.bank) &&
-        Objects.equals(this.paymentType, ptsv2paymentsPaymentInformation.paymentType);
+        Objects.equals(this.paymentType, ptsv2paymentsPaymentInformation.paymentType) &&
+        Objects.equals(this.initiationChannel, ptsv2paymentsPaymentInformation.initiationChannel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, fluidData, customer, bank, paymentType);
+    return Objects.hash(card, tokenizedCard, fluidData, customer, bank, paymentType, initiationChannel);
   }
 
 
@@ -195,6 +217,7 @@ public class Ptsv2paymentsPaymentInformation {
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    sb.append("    initiationChannel: ").append(toIndentedString(initiationChannel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

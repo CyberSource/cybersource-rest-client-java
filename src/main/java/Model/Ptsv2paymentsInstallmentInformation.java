@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsInstallmentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsInstallmentInformation {
   @SerializedName("amount")
   private String amount = null;
@@ -57,6 +57,15 @@ public class Ptsv2paymentsInstallmentInformation {
 
   @SerializedName("eligibilityInquiry")
   private String eligibilityInquiry = null;
+
+  @SerializedName("gracePeriodDuration")
+  private String gracePeriodDuration = null;
+
+  @SerializedName("gracePeriodDurationType")
+  private String gracePeriodDurationType = null;
+
+  @SerializedName("firstInstallmentAmount")
+  private String firstInstallmentAmount = null;
 
   public Ptsv2paymentsInstallmentInformation amount(String amount) {
     this.amount = amount;
@@ -174,10 +183,10 @@ public class Ptsv2paymentsInstallmentInformation {
   }
 
    /**
-   * Date of the first installment payment. Format: YYMMDD. When you do not include this field, CyberSource sends a string of six zeros (000000) to the processor. For details, see \&quot;Installment Payments on CyberSource through VisaNet\&quot; in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on CyberSource through VisaNet.  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR9 - Position: 42-47 - Field: Date of First Installment 
+   * Date of the first installment payment. Format: YYMMDD. When you do not include this field, CyberSource sends a string of six zeros (000000) to the processor. For details, see \&quot;Installment Payments on CyberSource through VisaNet\&quot; in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on CyberSource through VisaNet.  The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR9 - Position: 42-47 - Field: Date of First Installment 
    * @return firstInstallmentDate
   **/
-  @ApiModelProperty(value = "Date of the first installment payment. Format: YYMMDD. When you do not include this field, CyberSource sends a string of six zeros (000000) to the processor. For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on CyberSource through VisaNet.  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR9 - Position: 42-47 - Field: Date of First Installment ")
+  @ApiModelProperty(value = "Date of the first installment payment. Format: YYMMDD. When you do not include this field, CyberSource sends a string of six zeros (000000) to the processor. For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on CyberSource through VisaNet.  The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR9 - Position: 42-47 - Field: Date of First Installment ")
   public String getFirstInstallmentDate() {
     return firstInstallmentDate;
   }
@@ -240,6 +249,60 @@ public class Ptsv2paymentsInstallmentInformation {
     this.eligibilityInquiry = eligibilityInquiry;
   }
 
+  public Ptsv2paymentsInstallmentInformation gracePeriodDuration(String gracePeriodDuration) {
+    this.gracePeriodDuration = gracePeriodDuration;
+    return this;
+  }
+
+   /**
+   * Grace period requested by the customer before the first installment payment is due.  When you include this field in a request, you must also include the grace period duration type field.  The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR5, Position: 100-101, Field: Mastercard Grace Period Details.  This field is supported only for Mastercard installment payments in Brazil and Greece. 
+   * @return gracePeriodDuration
+  **/
+  @ApiModelProperty(value = "Grace period requested by the customer before the first installment payment is due.  When you include this field in a request, you must also include the grace period duration type field.  The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR5, Position: 100-101, Field: Mastercard Grace Period Details.  This field is supported only for Mastercard installment payments in Brazil and Greece. ")
+  public String getGracePeriodDuration() {
+    return gracePeriodDuration;
+  }
+
+  public void setGracePeriodDuration(String gracePeriodDuration) {
+    this.gracePeriodDuration = gracePeriodDuration;
+  }
+
+  public Ptsv2paymentsInstallmentInformation gracePeriodDurationType(String gracePeriodDurationType) {
+    this.gracePeriodDurationType = gracePeriodDurationType;
+    return this;
+  }
+
+   /**
+   * Unit for the requested grace period duration.  Possible values: - &#x60;D&#x60;: Days - &#x60;W&#x60;: Weeks - &#x60;M&#x60;: Months  The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR5, Position: 99, Field: Mastercard Grace Period Details  This field is supported only for Mastercard installment payments in Brazil and Greece on CyberSource through VisaNet. 
+   * @return gracePeriodDurationType
+  **/
+  @ApiModelProperty(value = "Unit for the requested grace period duration.  Possible values: - `D`: Days - `W`: Weeks - `M`: Months  The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR5, Position: 99, Field: Mastercard Grace Period Details  This field is supported only for Mastercard installment payments in Brazil and Greece on CyberSource through VisaNet. ")
+  public String getGracePeriodDurationType() {
+    return gracePeriodDurationType;
+  }
+
+  public void setGracePeriodDurationType(String gracePeriodDurationType) {
+    this.gracePeriodDurationType = gracePeriodDurationType;
+  }
+
+  public Ptsv2paymentsInstallmentInformation firstInstallmentAmount(String firstInstallmentAmount) {
+    this.firstInstallmentAmount = firstInstallmentAmount;
+    return this;
+  }
+
+   /**
+   * Amount of the first installment payment. The issuer provides this value when the first installment payment is successful. This field is supported for Mastercard installment payments on CyberSource through VisaNet in all countries except Brazil,Croatia, Georgia, and Greece. The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 23-34 - Field: Amount of Each Installment 
+   * @return firstInstallmentAmount
+  **/
+  @ApiModelProperty(value = "Amount of the first installment payment. The issuer provides this value when the first installment payment is successful. This field is supported for Mastercard installment payments on CyberSource through VisaNet in all countries except Brazil,Croatia, Georgia, and Greece. The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 23-34 - Field: Amount of Each Installment ")
+  public String getFirstInstallmentAmount() {
+    return firstInstallmentAmount;
+  }
+
+  public void setFirstInstallmentAmount(String firstInstallmentAmount) {
+    this.firstInstallmentAmount = firstInstallmentAmount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -259,12 +322,15 @@ public class Ptsv2paymentsInstallmentInformation {
         Objects.equals(this.firstInstallmentDate, ptsv2paymentsInstallmentInformation.firstInstallmentDate) &&
         Objects.equals(this.invoiceData, ptsv2paymentsInstallmentInformation.invoiceData) &&
         Objects.equals(this.paymentType, ptsv2paymentsInstallmentInformation.paymentType) &&
-        Objects.equals(this.eligibilityInquiry, ptsv2paymentsInstallmentInformation.eligibilityInquiry);
+        Objects.equals(this.eligibilityInquiry, ptsv2paymentsInstallmentInformation.eligibilityInquiry) &&
+        Objects.equals(this.gracePeriodDuration, ptsv2paymentsInstallmentInformation.gracePeriodDuration) &&
+        Objects.equals(this.gracePeriodDurationType, ptsv2paymentsInstallmentInformation.gracePeriodDurationType) &&
+        Objects.equals(this.firstInstallmentAmount, ptsv2paymentsInstallmentInformation.firstInstallmentAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, frequency, planType, sequence, totalAmount, totalCount, firstInstallmentDate, invoiceData, paymentType, eligibilityInquiry);
+    return Objects.hash(amount, frequency, planType, sequence, totalAmount, totalCount, firstInstallmentDate, invoiceData, paymentType, eligibilityInquiry, gracePeriodDuration, gracePeriodDurationType, firstInstallmentAmount);
   }
 
 
@@ -283,6 +349,9 @@ public class Ptsv2paymentsInstallmentInformation {
     sb.append("    invoiceData: ").append(toIndentedString(invoiceData)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("    eligibilityInquiry: ").append(toIndentedString(eligibilityInquiry)).append("\n");
+    sb.append("    gracePeriodDuration: ").append(toIndentedString(gracePeriodDuration)).append("\n");
+    sb.append("    gracePeriodDurationType: ").append(toIndentedString(gracePeriodDurationType)).append("\n");
+    sb.append("    firstInstallmentAmount: ").append(toIndentedString(firstInstallmentAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

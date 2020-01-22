@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
@@ -96,6 +96,15 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   @SerializedName("partnerSdkVersion")
   private String partnerSdkVersion = null;
+
+  @SerializedName("emvApplicationIdentifierAndDedicatedFileName")
+  private String emvApplicationIdentifierAndDedicatedFileName = null;
+
+  @SerializedName("terminalCompliance")
+  private String terminalCompliance = null;
+
+  @SerializedName("isDedicatedHardwareTerminal")
+  private String isDedicatedHardwareTerminal = null;
 
   public Ptsv2paymentsPointOfSaleInformation terminalId(String terminalId) {
     this.terminalId = terminalId;
@@ -516,6 +525,60 @@ public class Ptsv2paymentsPointOfSaleInformation {
     this.partnerSdkVersion = partnerSdkVersion;
   }
 
+  public Ptsv2paymentsPointOfSaleInformation emvApplicationIdentifierAndDedicatedFileName(String emvApplicationIdentifierAndDedicatedFileName) {
+    this.emvApplicationIdentifierAndDedicatedFileName = emvApplicationIdentifierAndDedicatedFileName;
+    return this;
+  }
+
+   /**
+   * This 32 byte length-maximum EBCDIC-K value is used to identify which chip application was performed between the terminal and the chip product. The included values are the Application Identifier (AID) and the Dedicated File (DF) name. It is available to early- or full-option VSDC issuers. Only single byte Katakana characters that can map to the EBCDIC-K table expected in the name. 
+   * @return emvApplicationIdentifierAndDedicatedFileName
+  **/
+  @ApiModelProperty(value = "This 32 byte length-maximum EBCDIC-K value is used to identify which chip application was performed between the terminal and the chip product. The included values are the Application Identifier (AID) and the Dedicated File (DF) name. It is available to early- or full-option VSDC issuers. Only single byte Katakana characters that can map to the EBCDIC-K table expected in the name. ")
+  public String getEmvApplicationIdentifierAndDedicatedFileName() {
+    return emvApplicationIdentifierAndDedicatedFileName;
+  }
+
+  public void setEmvApplicationIdentifierAndDedicatedFileName(String emvApplicationIdentifierAndDedicatedFileName) {
+    this.emvApplicationIdentifierAndDedicatedFileName = emvApplicationIdentifierAndDedicatedFileName;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation terminalCompliance(String terminalCompliance) {
+    this.terminalCompliance = terminalCompliance;
+    return this;
+  }
+
+   /**
+   * This tag contains indicators to determine if the terminal used for the transaction is compliant with new standards mandated by the Reserve Bank of India. The new standards are applicable to card-present domestic transactions for the country of India. This tag contains one of the following data values:  First byte (Position 1) : Terminal supports TLE - &#x60;1&#x60; (Not certified) - &#x60;2&#x60; (Certified)  Second byte (Position 2) : Terminal supports UKPT/DUKPT - &#x60;1&#x60; (Not certified) - &#x60;2&#x60; (Certified) 
+   * @return terminalCompliance
+  **/
+  @ApiModelProperty(value = "This tag contains indicators to determine if the terminal used for the transaction is compliant with new standards mandated by the Reserve Bank of India. The new standards are applicable to card-present domestic transactions for the country of India. This tag contains one of the following data values:  First byte (Position 1) : Terminal supports TLE - `1` (Not certified) - `2` (Certified)  Second byte (Position 2) : Terminal supports UKPT/DUKPT - `1` (Not certified) - `2` (Certified) ")
+  public String getTerminalCompliance() {
+    return terminalCompliance;
+  }
+
+  public void setTerminalCompliance(String terminalCompliance) {
+    this.terminalCompliance = terminalCompliance;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation isDedicatedHardwareTerminal(String isDedicatedHardwareTerminal) {
+    this.isDedicatedHardwareTerminal = isDedicatedHardwareTerminal;
+    return this;
+  }
+
+   /**
+   * This API will indicate mPOS device capability with one  of the following values. - 0: Dongle - 1: Phone or tablet 
+   * @return isDedicatedHardwareTerminal
+  **/
+  @ApiModelProperty(value = "This API will indicate mPOS device capability with one  of the following values. - 0: Dongle - 1: Phone or tablet ")
+  public String getIsDedicatedHardwareTerminal() {
+    return isDedicatedHardwareTerminal;
+  }
+
+  public void setIsDedicatedHardwareTerminal(String isDedicatedHardwareTerminal) {
+    this.isDedicatedHardwareTerminal = isDedicatedHardwareTerminal;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -547,12 +610,15 @@ public class Ptsv2paymentsPointOfSaleInformation {
         Objects.equals(this.pinBlockEncodingFormat, ptsv2paymentsPointOfSaleInformation.pinBlockEncodingFormat) &&
         Objects.equals(this.encryptedPin, ptsv2paymentsPointOfSaleInformation.encryptedPin) &&
         Objects.equals(this.encryptedKeySerialNumber, ptsv2paymentsPointOfSaleInformation.encryptedKeySerialNumber) &&
-        Objects.equals(this.partnerSdkVersion, ptsv2paymentsPointOfSaleInformation.partnerSdkVersion);
+        Objects.equals(this.partnerSdkVersion, ptsv2paymentsPointOfSaleInformation.partnerSdkVersion) &&
+        Objects.equals(this.emvApplicationIdentifierAndDedicatedFileName, ptsv2paymentsPointOfSaleInformation.emvApplicationIdentifierAndDedicatedFileName) &&
+        Objects.equals(this.terminalCompliance, ptsv2paymentsPointOfSaleInformation.terminalCompliance) &&
+        Objects.equals(this.isDedicatedHardwareTerminal, ptsv2paymentsPointOfSaleInformation.isDedicatedHardwareTerminal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId, terminalSerialNumber, laneNumber, catLevel, entryMode, terminalCapability, pinEntryCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion);
+    return Objects.hash(terminalId, terminalSerialNumber, laneNumber, catLevel, entryMode, terminalCapability, pinEntryCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal);
   }
 
 
@@ -583,6 +649,9 @@ public class Ptsv2paymentsPointOfSaleInformation {
     sb.append("    encryptedPin: ").append(toIndentedString(encryptedPin)).append("\n");
     sb.append("    encryptedKeySerialNumber: ").append(toIndentedString(encryptedKeySerialNumber)).append("\n");
     sb.append("    partnerSdkVersion: ").append(toIndentedString(partnerSdkVersion)).append("\n");
+    sb.append("    emvApplicationIdentifierAndDedicatedFileName: ").append(toIndentedString(emvApplicationIdentifierAndDedicatedFileName)).append("\n");
+    sb.append("    terminalCompliance: ").append(toIndentedString(terminalCompliance)).append("\n");
+    sb.append("    isDedicatedHardwareTerminal: ").append(toIndentedString(isDedicatedHardwareTerminal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

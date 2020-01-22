@@ -29,7 +29,7 @@ import org.joda.time.DateTime;
 /**
  * UmsV1UsersGet200ResponseAccountInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class UmsV1UsersGet200ResponseAccountInformation {
   @SerializedName("userName")
   private String userName = null;

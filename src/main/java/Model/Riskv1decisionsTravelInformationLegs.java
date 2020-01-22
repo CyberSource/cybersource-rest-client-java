@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1decisionsTravelInformationLegs
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Riskv1decisionsTravelInformationLegs {
   @SerializedName("origination")
   private String origination = null;

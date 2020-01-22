@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**invoiceDetails** | [**PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails**](PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails.md) |  |  [optional]
+**invoiceDetails** | [**PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails**](PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails.md) |  |  [optional]
 
 
 

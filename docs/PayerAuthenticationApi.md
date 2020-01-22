@@ -55,7 +55,7 @@ No authorization required
 
 <a name="validateAuthenticationResults"></a>
 # **validateAuthenticationResults**
-> RiskV1AuthenticationResultsPost201Response validateAuthenticationResults(request)
+> RiskV1AuthenticationResultsPost201Response validateAuthenticationResults(validateRequest)
 
 Validate authentication results
 
@@ -69,9 +69,9 @@ This call retrieves and validates the authentication results from issuer and all
 
 
 PayerAuthenticationApi apiInstance = new PayerAuthenticationApi();
-Request request = new Request(); // Request | 
+ValidateRequest validateRequest = new ValidateRequest(); // ValidateRequest | 
 try {
-    RiskV1AuthenticationResultsPost201Response result = apiInstance.validateAuthenticationResults(request);
+    RiskV1AuthenticationResultsPost201Response result = apiInstance.validateAuthenticationResults(validateRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PayerAuthenticationApi#validateAuthenticationResults");
@@ -83,7 +83,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**Request**](Request.md)|  |
+ **validateRequest** | [**ValidateRequest**](ValidateRequest.md)|  |
 
 ### Return type
 

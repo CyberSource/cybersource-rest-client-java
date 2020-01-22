@@ -26,10 +26,13 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsAggregatorInformationSubMerchant
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsAggregatorInformationSubMerchant {
   @SerializedName("cardAcceptorId")
   private String cardAcceptorId = null;
+
+  @SerializedName("id")
+  private String id = null;
 
   @SerializedName("name")
   private String name = null;
@@ -74,6 +77,24 @@ public class Ptsv2paymentsAggregatorInformationSubMerchant {
 
   public void setCardAcceptorId(String cardAcceptorId) {
     this.cardAcceptorId = cardAcceptorId;
+  }
+
+  public Ptsv2paymentsAggregatorInformationSubMerchant id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * The ID you assigned to your sub-merchant. CyberSource through VisaNet: For American Express transaction, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCRB - Position: 65-84 - Field: American Express Seller ID For  Mastercard transactions, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 117-131 - Field: Mastercard Sub-Merchant ID FDC Compass: This value must consist of uppercase characters.  American Express Direct: String (20) CyberSource through VisaNet with American Express: String (20) CyberSource through VisaNet with Mastercard: String (15) FDC Compass: String (20) FDC Nashville Global: String (14) 
+   * @return id
+  **/
+  @ApiModelProperty(value = "The ID you assigned to your sub-merchant. CyberSource through VisaNet: For American Express transaction, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCRB - Position: 65-84 - Field: American Express Seller ID For  Mastercard transactions, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 117-131 - Field: Mastercard Sub-Merchant ID FDC Compass: This value must consist of uppercase characters.  American Express Direct: String (20) CyberSource through VisaNet with American Express: String (20) CyberSource through VisaNet with Mastercard: String (15) FDC Compass: String (20) FDC Nashville Global: String (14) ")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
   }
 
   public Ptsv2paymentsAggregatorInformationSubMerchant name(String name) {
@@ -249,6 +270,7 @@ public class Ptsv2paymentsAggregatorInformationSubMerchant {
     }
     Ptsv2paymentsAggregatorInformationSubMerchant ptsv2paymentsAggregatorInformationSubMerchant = (Ptsv2paymentsAggregatorInformationSubMerchant) o;
     return Objects.equals(this.cardAcceptorId, ptsv2paymentsAggregatorInformationSubMerchant.cardAcceptorId) &&
+        Objects.equals(this.id, ptsv2paymentsAggregatorInformationSubMerchant.id) &&
         Objects.equals(this.name, ptsv2paymentsAggregatorInformationSubMerchant.name) &&
         Objects.equals(this.address1, ptsv2paymentsAggregatorInformationSubMerchant.address1) &&
         Objects.equals(this.locality, ptsv2paymentsAggregatorInformationSubMerchant.locality) &&
@@ -262,7 +284,7 @@ public class Ptsv2paymentsAggregatorInformationSubMerchant {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardAcceptorId, name, address1, locality, administrativeArea, region, postalCode, country, email, phoneNumber);
+    return Objects.hash(cardAcceptorId, id, name, address1, locality, administrativeArea, region, postalCode, country, email, phoneNumber);
   }
 
 
@@ -272,6 +294,7 @@ public class Ptsv2paymentsAggregatorInformationSubMerchant {
     sb.append("class Ptsv2paymentsAggregatorInformationSubMerchant {\n");
     
     sb.append("    cardAcceptorId: ").append(toIndentedString(cardAcceptorId)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("    locality: ").append(toIndentedString(locality)).append("\n");

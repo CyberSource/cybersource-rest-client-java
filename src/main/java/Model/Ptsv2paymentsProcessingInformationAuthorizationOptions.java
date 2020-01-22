@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsProcessingInformationAuthorizationOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("authType")
   private String authType = null;
@@ -66,6 +66,9 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
 
   @SerializedName("billPaymentType")
   private String billPaymentType = null;
+
+  @SerializedName("redemptionInquiry")
+  private Boolean redemptionInquiry = null;
 
   public Ptsv2paymentsProcessingInformationAuthorizationOptions authType(String authType) {
     this.authType = authType;
@@ -291,6 +294,24 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     this.billPaymentType = billPaymentType;
   }
 
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions redemptionInquiry(Boolean redemptionInquiry) {
+    this.redemptionInquiry = redemptionInquiry;
+    return this;
+  }
+
+   /**
+   * Flag that indicates the payment request is a redemption inquiry.  Possible values:   - &#x60;true&#x60;   - &#x60;false&#x60; 
+   * @return redemptionInquiry
+  **/
+  @ApiModelProperty(value = "Flag that indicates the payment request is a redemption inquiry.  Possible values:   - `true`   - `false` ")
+  public Boolean getRedemptionInquiry() {
+    return redemptionInquiry;
+  }
+
+  public void setRedemptionInquiry(Boolean redemptionInquiry) {
+    this.redemptionInquiry = redemptionInquiry;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -312,12 +333,13 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
         Objects.equals(this.ignoreCvResult, ptsv2paymentsProcessingInformationAuthorizationOptions.ignoreCvResult) &&
         Objects.equals(this.initiator, ptsv2paymentsProcessingInformationAuthorizationOptions.initiator) &&
         Objects.equals(this.billPayment, ptsv2paymentsProcessingInformationAuthorizationOptions.billPayment) &&
-        Objects.equals(this.billPaymentType, ptsv2paymentsProcessingInformationAuthorizationOptions.billPaymentType);
+        Objects.equals(this.billPaymentType, ptsv2paymentsProcessingInformationAuthorizationOptions.billPaymentType) &&
+        Objects.equals(this.redemptionInquiry, ptsv2paymentsProcessingInformationAuthorizationOptions.redemptionInquiry);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType);
+    return Objects.hash(authType, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry);
   }
 
 
@@ -338,6 +360,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
     sb.append("    billPayment: ").append(toIndentedString(billPayment)).append("\n");
     sb.append("    billPaymentType: ").append(toIndentedString(billPaymentType)).append("\n");
+    sb.append("    redemptionInquiry: ").append(toIndentedString(redemptionInquiry)).append("\n");
     sb.append("}");
     return sb.toString();
   }

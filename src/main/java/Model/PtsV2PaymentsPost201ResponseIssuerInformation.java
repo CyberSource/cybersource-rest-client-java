@@ -26,13 +26,16 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseIssuerInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class PtsV2PaymentsPost201ResponseIssuerInformation {
   @SerializedName("country")
   private String country = null;
 
   @SerializedName("discretionaryData")
   private String discretionaryData = null;
+
+  @SerializedName("countrySpecificDiscretionaryData")
+  private String countrySpecificDiscretionaryData = null;
 
   @SerializedName("responseCode")
   private String responseCode = null;
@@ -73,6 +76,24 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
     this.discretionaryData = discretionaryData;
   }
 
+  public PtsV2PaymentsPost201ResponseIssuerInformation countrySpecificDiscretionaryData(String countrySpecificDiscretionaryData) {
+    this.countrySpecificDiscretionaryData = countrySpecificDiscretionaryData;
+    return this;
+  }
+
+   /**
+   * Data defined by the issuer.  This national use field contains two subfields for information unique to the processing of Visa transactions by members in Japan. This subfield contains the Katakana text to be printed on the receipt. For details, see &#x60;jpo_issuer_message&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * @return countrySpecificDiscretionaryData
+  **/
+  @ApiModelProperty(value = "Data defined by the issuer.  This national use field contains two subfields for information unique to the processing of Visa transactions by members in Japan. This subfield contains the Katakana text to be printed on the receipt. For details, see `jpo_issuer_message` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  public String getCountrySpecificDiscretionaryData() {
+    return countrySpecificDiscretionaryData;
+  }
+
+  public void setCountrySpecificDiscretionaryData(String countrySpecificDiscretionaryData) {
+    this.countrySpecificDiscretionaryData = countrySpecificDiscretionaryData;
+  }
+
   public PtsV2PaymentsPost201ResponseIssuerInformation responseCode(String responseCode) {
     this.responseCode = responseCode;
     return this;
@@ -103,12 +124,13 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
     PtsV2PaymentsPost201ResponseIssuerInformation ptsV2PaymentsPost201ResponseIssuerInformation = (PtsV2PaymentsPost201ResponseIssuerInformation) o;
     return Objects.equals(this.country, ptsV2PaymentsPost201ResponseIssuerInformation.country) &&
         Objects.equals(this.discretionaryData, ptsV2PaymentsPost201ResponseIssuerInformation.discretionaryData) &&
+        Objects.equals(this.countrySpecificDiscretionaryData, ptsV2PaymentsPost201ResponseIssuerInformation.countrySpecificDiscretionaryData) &&
         Objects.equals(this.responseCode, ptsV2PaymentsPost201ResponseIssuerInformation.responseCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(country, discretionaryData, responseCode);
+    return Objects.hash(country, discretionaryData, countrySpecificDiscretionaryData, responseCode);
   }
 
 
@@ -119,6 +141,7 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
     
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    discretionaryData: ").append(toIndentedString(discretionaryData)).append("\n");
+    sb.append("    countrySpecificDiscretionaryData: ").append(toIndentedString(countrySpecificDiscretionaryData)).append("\n");
     sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
     sb.append("}");
     return sb.toString();

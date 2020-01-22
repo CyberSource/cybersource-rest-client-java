@@ -69,6 +69,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Credentials;
 import okhttp3.FormBody;
+import okhttp3.FormBody.Builder;
 import okhttp3.Headers;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;

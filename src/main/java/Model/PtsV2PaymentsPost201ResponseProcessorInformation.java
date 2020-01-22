@@ -34,7 +34,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("authIndicator")
   private String authIndicator = null;
@@ -98,9 +98,6 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @SerializedName("amexVerbalAuthReferenceNumber")
   private String amexVerbalAuthReferenceNumber = null;
-
-  @SerializedName("salesSlipNumber")
-  private Integer salesSlipNumber = null;
 
   @SerializedName("masterCardServiceCode")
   private String masterCardServiceCode = null;
@@ -498,25 +495,6 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.amexVerbalAuthReferenceNumber = amexVerbalAuthReferenceNumber;
   }
 
-  public PtsV2PaymentsPost201ResponseProcessorInformation salesSlipNumber(Integer salesSlipNumber) {
-    this.salesSlipNumber = salesSlipNumber;
-    return this;
-  }
-
-   /**
-   * Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt.  This field is supported only for **JCN Gateway**. 
-   * maximum: 99999
-   * @return salesSlipNumber
-  **/
-  @ApiModelProperty(value = "Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt.  This field is supported only for **JCN Gateway**. ")
-  public Integer getSalesSlipNumber() {
-    return salesSlipNumber;
-  }
-
-  public void setSalesSlipNumber(Integer salesSlipNumber) {
-    this.salesSlipNumber = salesSlipNumber;
-  }
-
   public PtsV2PaymentsPost201ResponseProcessorInformation masterCardServiceCode(String masterCardServiceCode) {
     this.masterCardServiceCode = masterCardServiceCode;
     return this;
@@ -656,7 +634,6 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.paymentAccountReferenceNumber, ptsV2PaymentsPost201ResponseProcessorInformation.paymentAccountReferenceNumber) &&
         Objects.equals(this.transactionIntegrityCode, ptsV2PaymentsPost201ResponseProcessorInformation.transactionIntegrityCode) &&
         Objects.equals(this.amexVerbalAuthReferenceNumber, ptsV2PaymentsPost201ResponseProcessorInformation.amexVerbalAuthReferenceNumber) &&
-        Objects.equals(this.salesSlipNumber, ptsV2PaymentsPost201ResponseProcessorInformation.salesSlipNumber) &&
         Objects.equals(this.masterCardServiceCode, ptsV2PaymentsPost201ResponseProcessorInformation.masterCardServiceCode) &&
         Objects.equals(this.masterCardServiceReplyCode, ptsV2PaymentsPost201ResponseProcessorInformation.masterCardServiceReplyCode) &&
         Objects.equals(this.masterCardAuthenticationType, ptsV2PaymentsPost201ResponseProcessorInformation.masterCardAuthenticationType) &&
@@ -667,7 +644,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, transactionId, networkTransactionId, providerTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, salesSlipNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber);
+    return Objects.hash(authIndicator, approvalCode, transactionId, networkTransactionId, providerTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber);
   }
 
 
@@ -697,7 +674,6 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    paymentAccountReferenceNumber: ").append(toIndentedString(paymentAccountReferenceNumber)).append("\n");
     sb.append("    transactionIntegrityCode: ").append(toIndentedString(transactionIntegrityCode)).append("\n");
     sb.append("    amexVerbalAuthReferenceNumber: ").append(toIndentedString(amexVerbalAuthReferenceNumber)).append("\n");
-    sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
     sb.append("    masterCardServiceCode: ").append(toIndentedString(masterCardServiceCode)).append("\n");
     sb.append("    masterCardServiceReplyCode: ").append(toIndentedString(masterCardServiceReplyCode)).append("\n");
     sb.append("    masterCardAuthenticationType: ").append(toIndentedString(masterCardAuthenticationType)).append("\n");

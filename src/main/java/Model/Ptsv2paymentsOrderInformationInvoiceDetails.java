@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationInvoiceDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsOrderInformationInvoiceDetails {
   @SerializedName("invoiceNumber")
   private String invoiceNumber = null;
@@ -69,6 +69,9 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
 
   @SerializedName("referenceDataNumber")
   private String referenceDataNumber = null;
+
+  @SerializedName("salesSlipNumber")
+  private Integer salesSlipNumber = null;
 
   public Ptsv2paymentsOrderInformationInvoiceDetails invoiceNumber(String invoiceNumber) {
     this.invoiceNumber = invoiceNumber;
@@ -312,6 +315,25 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     this.referenceDataNumber = referenceDataNumber;
   }
 
+  public Ptsv2paymentsOrderInformationInvoiceDetails salesSlipNumber(Integer salesSlipNumber) {
+    this.salesSlipNumber = salesSlipNumber;
+    return this;
+  }
+
+   /**
+   * Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway. 
+   * maximum: 99999
+   * @return salesSlipNumber
+  **/
+  @ApiModelProperty(value = "Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway. ")
+  public Integer getSalesSlipNumber() {
+    return salesSlipNumber;
+  }
+
+  public void setSalesSlipNumber(Integer salesSlipNumber) {
+    this.salesSlipNumber = salesSlipNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -334,12 +356,13 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
         Objects.equals(this.merchandiseCode, ptsv2paymentsOrderInformationInvoiceDetails.merchandiseCode) &&
         Objects.equals(this.transactionAdviceAddendum, ptsv2paymentsOrderInformationInvoiceDetails.transactionAdviceAddendum) &&
         Objects.equals(this.referenceDataCode, ptsv2paymentsOrderInformationInvoiceDetails.referenceDataCode) &&
-        Objects.equals(this.referenceDataNumber, ptsv2paymentsOrderInformationInvoiceDetails.referenceDataNumber);
+        Objects.equals(this.referenceDataNumber, ptsv2paymentsOrderInformationInvoiceDetails.referenceDataNumber) &&
+        Objects.equals(this.salesSlipNumber, ptsv2paymentsOrderInformationInvoiceDetails.salesSlipNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum, referenceDataCode, referenceDataNumber);
+    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum, referenceDataCode, referenceDataNumber, salesSlipNumber);
   }
 
 
@@ -361,6 +384,7 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     sb.append("    transactionAdviceAddendum: ").append(toIndentedString(transactionAdviceAddendum)).append("\n");
     sb.append("    referenceDataCode: ").append(toIndentedString(referenceDataCode)).append("\n");
     sb.append("    referenceDataNumber: ").append(toIndentedString(referenceDataNumber)).append("\n");
+    sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

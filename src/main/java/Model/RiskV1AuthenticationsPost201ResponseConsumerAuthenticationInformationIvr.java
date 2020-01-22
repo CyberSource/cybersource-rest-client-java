@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Riskv1authenticationsConsumerAuthenticationInformationIvr
+ * RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
-public class Riskv1authenticationsConsumerAuthenticationInformationIvr {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr {
   @SerializedName("enabledMessage")
   private Boolean enabledMessage = null;
 
@@ -49,7 +49,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformationIvr {
   @SerializedName("statusMessage")
   private String statusMessage = null;
 
-  public Riskv1authenticationsConsumerAuthenticationInformationIvr enabledMessage(Boolean enabledMessage) {
+  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr enabledMessage(Boolean enabledMessage) {
     this.enabledMessage = enabledMessage;
     return this;
   }
@@ -67,7 +67,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformationIvr {
     this.enabledMessage = enabledMessage;
   }
 
-  public Riskv1authenticationsConsumerAuthenticationInformationIvr encryptionKey(String encryptionKey) {
+  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr encryptionKey(String encryptionKey) {
     this.encryptionKey = encryptionKey;
     return this;
   }
@@ -85,7 +85,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformationIvr {
     this.encryptionKey = encryptionKey;
   }
 
-  public Riskv1authenticationsConsumerAuthenticationInformationIvr encryptionMandatory(Boolean encryptionMandatory) {
+  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr encryptionMandatory(Boolean encryptionMandatory) {
     this.encryptionMandatory = encryptionMandatory;
     return this;
   }
@@ -103,7 +103,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformationIvr {
     this.encryptionMandatory = encryptionMandatory;
   }
 
-  public Riskv1authenticationsConsumerAuthenticationInformationIvr encryptionType(String encryptionType) {
+  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr encryptionType(String encryptionType) {
     this.encryptionType = encryptionType;
     return this;
   }
@@ -121,7 +121,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformationIvr {
     this.encryptionType = encryptionType;
   }
 
-  public Riskv1authenticationsConsumerAuthenticationInformationIvr label(String label) {
+  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr label(String label) {
     this.label = label;
     return this;
   }
@@ -139,7 +139,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformationIvr {
     this.label = label;
   }
 
-  public Riskv1authenticationsConsumerAuthenticationInformationIvr prompt(String prompt) {
+  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr prompt(String prompt) {
     this.prompt = prompt;
     return this;
   }
@@ -157,7 +157,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformationIvr {
     this.prompt = prompt;
   }
 
-  public Riskv1authenticationsConsumerAuthenticationInformationIvr statusMessage(String statusMessage) {
+  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr statusMessage(String statusMessage) {
     this.statusMessage = statusMessage;
     return this;
   }
@@ -184,14 +184,14 @@ public class Riskv1authenticationsConsumerAuthenticationInformationIvr {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Riskv1authenticationsConsumerAuthenticationInformationIvr riskv1authenticationsConsumerAuthenticationInformationIvr = (Riskv1authenticationsConsumerAuthenticationInformationIvr) o;
-    return Objects.equals(this.enabledMessage, riskv1authenticationsConsumerAuthenticationInformationIvr.enabledMessage) &&
-        Objects.equals(this.encryptionKey, riskv1authenticationsConsumerAuthenticationInformationIvr.encryptionKey) &&
-        Objects.equals(this.encryptionMandatory, riskv1authenticationsConsumerAuthenticationInformationIvr.encryptionMandatory) &&
-        Objects.equals(this.encryptionType, riskv1authenticationsConsumerAuthenticationInformationIvr.encryptionType) &&
-        Objects.equals(this.label, riskv1authenticationsConsumerAuthenticationInformationIvr.label) &&
-        Objects.equals(this.prompt, riskv1authenticationsConsumerAuthenticationInformationIvr.prompt) &&
-        Objects.equals(this.statusMessage, riskv1authenticationsConsumerAuthenticationInformationIvr.statusMessage);
+    RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr = (RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr) o;
+    return Objects.equals(this.enabledMessage, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr.enabledMessage) &&
+        Objects.equals(this.encryptionKey, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr.encryptionKey) &&
+        Objects.equals(this.encryptionMandatory, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr.encryptionMandatory) &&
+        Objects.equals(this.encryptionType, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr.encryptionType) &&
+        Objects.equals(this.label, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr.label) &&
+        Objects.equals(this.prompt, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr.prompt) &&
+        Objects.equals(this.statusMessage, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr.statusMessage);
   }
 
   @Override
@@ -203,7 +203,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformationIvr {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Riskv1authenticationsConsumerAuthenticationInformationIvr {\n");
+    sb.append("class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr {\n");
     
     sb.append("    enabledMessage: ").append(toIndentedString(enabledMessage)).append("\n");
     sb.append("    encryptionKey: ").append(toIndentedString(encryptionKey)).append("\n");

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * RiskV1AuthenticationsPost201ResponseOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class RiskV1AuthenticationsPost201ResponseOrderInformation {
   @SerializedName("amountDetails")
   private RiskV1AuthenticationsPost201ResponseOrderInformationAmountDetails amountDetails = null;

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation {
   @SerializedName("authorizationOptions")
   private TmsV1InstrumentIdentifiersPost200ResponseProcessingInformationAuthorizationOptions authorizationOptions = null;

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsIssuerInformation;
+import Model.Ptsv2paymentsProcessingInformationLoanOptions;
 import Model.Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions;
 import Model.Ptsv2paymentsidcapturesProcessingInformationCaptureOptions;
 import com.google.gson.TypeAdapter;
@@ -29,7 +30,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidcapturesProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsidcapturesProcessingInformation {
   @SerializedName("paymentSolution")
   private String paymentSolution = null;
@@ -60,6 +61,9 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
 
   @SerializedName("captureOptions")
   private Ptsv2paymentsidcapturesProcessingInformationCaptureOptions captureOptions = null;
+
+  @SerializedName("loanOptions")
+  private Ptsv2paymentsProcessingInformationLoanOptions loanOptions = null;
 
   public Ptsv2paymentsidcapturesProcessingInformation paymentSolution(String paymentSolution) {
     this.paymentSolution = paymentSolution;
@@ -175,10 +179,10 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
   }
 
    /**
-   * Flag that indicates whether the transaction includes airline or restaurant data.  To send the data in a transaction request to the processor, you must set this field to &#x60;airline&#x60; or &#x60;restaurant&#x60;.  **Note** If you do not set this field to one of the possible values, CyberSource does not send any data to the processor.  Possible Values: - &#x60;airline&#x60; - &#x60;restaurant&#x60; 
+   * Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to &#x60;airline&#x60; in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to &#x60;restaurant&#x60; in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - &#x60;airline&#x60; - &#x60;restaurant&#x60; - &#x60;lodging&#x60; - &#x60;auto_rental&#x60; - &#x60;transit&#x60; - &#x60;healthcare_medical&#x60; - &#x60;healthcare_transit&#x60; 
    * @return industryDataType
   **/
-  @ApiModelProperty(value = "Flag that indicates whether the transaction includes airline or restaurant data.  To send the data in a transaction request to the processor, you must set this field to `airline` or `restaurant`.  **Note** If you do not set this field to one of the possible values, CyberSource does not send any data to the processor.  Possible Values: - `airline` - `restaurant` ")
+  @ApiModelProperty(value = "Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to `airline` in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - `airline` - `restaurant` - `lodging` - `auto_rental` - `transit` - `healthcare_medical` - `healthcare_transit` ")
   public String getIndustryDataType() {
     return industryDataType;
   }
@@ -241,6 +245,24 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     this.captureOptions = captureOptions;
   }
 
+  public Ptsv2paymentsidcapturesProcessingInformation loanOptions(Ptsv2paymentsProcessingInformationLoanOptions loanOptions) {
+    this.loanOptions = loanOptions;
+    return this;
+  }
+
+   /**
+   * Get loanOptions
+   * @return loanOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessingInformationLoanOptions getLoanOptions() {
+    return loanOptions;
+  }
+
+  public void setLoanOptions(Ptsv2paymentsProcessingInformationLoanOptions loanOptions) {
+    this.loanOptions = loanOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -260,12 +282,13 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
         Objects.equals(this.industryDataType, ptsv2paymentsidcapturesProcessingInformation.industryDataType) &&
         Objects.equals(this.issuer, ptsv2paymentsidcapturesProcessingInformation.issuer) &&
         Objects.equals(this.authorizationOptions, ptsv2paymentsidcapturesProcessingInformation.authorizationOptions) &&
-        Objects.equals(this.captureOptions, ptsv2paymentsidcapturesProcessingInformation.captureOptions);
+        Objects.equals(this.captureOptions, ptsv2paymentsidcapturesProcessingInformation.captureOptions) &&
+        Objects.equals(this.loanOptions, ptsv2paymentsidcapturesProcessingInformation.loanOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, issuer, authorizationOptions, captureOptions);
+    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, issuer, authorizationOptions, captureOptions, loanOptions);
   }
 
 
@@ -284,6 +307,7 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
+    sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

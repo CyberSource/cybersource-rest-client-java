@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedMerchantInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedMerchantInformation {
   @SerializedName("resellerId")
   private String resellerId = null;
@@ -37,10 +37,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedMerchantInformation {
   }
 
    /**
-   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
+   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. 
    * @return resellerId
   **/
-  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.")
+  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. ")
   public String getResellerId() {
     return resellerId;
   }

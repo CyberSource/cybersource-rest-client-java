@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.PtsV2PaymentsCapturesPost201ResponseLinks;
 import Model.PtsV2PaymentsCapturesPost201ResponseOrderInformation;
+import Model.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation;
 import Model.PtsV2PaymentsCapturesPost201ResponseProcessorInformation;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import com.google.gson.TypeAdapter;
@@ -30,7 +31,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsCapturesPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class PtsV2PaymentsCapturesPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsCapturesPost201ResponseLinks links = null;
@@ -56,6 +57,9 @@ public class PtsV2PaymentsCapturesPost201Response {
   @SerializedName("orderInformation")
   private PtsV2PaymentsCapturesPost201ResponseOrderInformation orderInformation = null;
 
+  @SerializedName("pointOfSaleInformation")
+  private PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation = null;
+
   public PtsV2PaymentsCapturesPost201Response links(PtsV2PaymentsCapturesPost201ResponseLinks links) {
     this.links = links;
     return this;
@@ -80,10 +84,10 @@ public class PtsV2PaymentsCapturesPost201Response {
   }
 
    /**
-   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
+   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. 
    * @return id
   **/
-  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.")
+  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. ")
   public String getId() {
     return id;
   }
@@ -200,6 +204,24 @@ public class PtsV2PaymentsCapturesPost201Response {
     this.orderInformation = orderInformation;
   }
 
+  public PtsV2PaymentsCapturesPost201Response pointOfSaleInformation(PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation) {
+    this.pointOfSaleInformation = pointOfSaleInformation;
+    return this;
+  }
+
+   /**
+   * Get pointOfSaleInformation
+   * @return pointOfSaleInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation getPointOfSaleInformation() {
+    return pointOfSaleInformation;
+  }
+
+  public void setPointOfSaleInformation(PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation) {
+    this.pointOfSaleInformation = pointOfSaleInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,12 +239,13 @@ public class PtsV2PaymentsCapturesPost201Response {
         Objects.equals(this.reconciliationId, ptsV2PaymentsCapturesPost201Response.reconciliationId) &&
         Objects.equals(this.clientReferenceInformation, ptsV2PaymentsCapturesPost201Response.clientReferenceInformation) &&
         Objects.equals(this.processorInformation, ptsV2PaymentsCapturesPost201Response.processorInformation) &&
-        Objects.equals(this.orderInformation, ptsV2PaymentsCapturesPost201Response.orderInformation);
+        Objects.equals(this.orderInformation, ptsV2PaymentsCapturesPost201Response.orderInformation) &&
+        Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsCapturesPost201Response.pointOfSaleInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, processorInformation, orderInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, processorInformation, orderInformation, pointOfSaleInformation);
   }
 
 
@@ -239,6 +262,7 @@ public class PtsV2PaymentsCapturesPost201Response {
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

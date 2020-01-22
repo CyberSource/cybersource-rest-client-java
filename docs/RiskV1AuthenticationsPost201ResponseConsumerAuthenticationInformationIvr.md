@@ -1,5 +1,5 @@
 
-# Riskv1authenticationsConsumerAuthenticationInformationIvr
+# RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr
 
 ## Properties
 Name | Type | Description | Notes

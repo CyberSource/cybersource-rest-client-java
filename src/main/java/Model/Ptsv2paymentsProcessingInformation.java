@@ -18,6 +18,8 @@ import Model.Ptsv2paymentsProcessingInformationAuthorizationOptions;
 import Model.Ptsv2paymentsProcessingInformationBankTransferOptions;
 import Model.Ptsv2paymentsProcessingInformationCaptureOptions;
 import Model.Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer;
+import Model.Ptsv2paymentsProcessingInformationJapanPaymentOptions;
+import Model.Ptsv2paymentsProcessingInformationLoanOptions;
 import Model.Ptsv2paymentsProcessingInformationPurchaseOptions;
 import Model.Ptsv2paymentsProcessingInformationRecurringOptions;
 import com.google.gson.TypeAdapter;
@@ -32,7 +34,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsProcessingInformation {
   @SerializedName("capture")
   private Boolean capture = false;
@@ -84,6 +86,27 @@ public class Ptsv2paymentsProcessingInformation {
 
   @SerializedName("electronicBenefitsTransfer")
   private Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer electronicBenefitsTransfer = null;
+
+  @SerializedName("loanOptions")
+  private Ptsv2paymentsProcessingInformationLoanOptions loanOptions = null;
+
+  @SerializedName("walletType")
+  private String walletType = null;
+
+  @SerializedName("nationalNetDomesticData")
+  private String nationalNetDomesticData = null;
+
+  @SerializedName("japanPaymentOptions")
+  private Ptsv2paymentsProcessingInformationJapanPaymentOptions japanPaymentOptions = null;
+
+  @SerializedName("mobileRemotePaymentType")
+  private String mobileRemotePaymentType = null;
+
+  @SerializedName("extendedCreditTotalCount")
+  private String extendedCreditTotalCount = null;
+
+  @SerializedName("networkRoutingOrder")
+  private String networkRoutingOrder = null;
 
   public Ptsv2paymentsProcessingInformation capture(Boolean capture) {
     this.capture = capture;
@@ -271,10 +294,10 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   * Flag that indicates whether the transaction includes airline or restaurant data.  To send the data in a transaction request to the processor, you must set this field to &#x60;airline&#x60; or &#x60;restaurant&#x60;.  **Note** If you do not set this field to one of the possible values, CyberSource does not send any data to the processor.  Possible Values: - &#x60;airline&#x60; - &#x60;restaurant&#x60; 
+   * Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to &#x60;airline&#x60; in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to &#x60;restaurant&#x60; in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - &#x60;airline&#x60; - &#x60;restaurant&#x60; - &#x60;lodging&#x60; - &#x60;auto_rental&#x60; - &#x60;transit&#x60; - &#x60;healthcare_medical&#x60; - &#x60;healthcare_transit&#x60; 
    * @return industryDataType
   **/
-  @ApiModelProperty(value = "Flag that indicates whether the transaction includes airline or restaurant data.  To send the data in a transaction request to the processor, you must set this field to `airline` or `restaurant`.  **Note** If you do not set this field to one of the possible values, CyberSource does not send any data to the processor.  Possible Values: - `airline` - `restaurant` ")
+  @ApiModelProperty(value = "Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to `airline` in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - `airline` - `restaurant` - `lodging` - `auto_rental` - `transit` - `healthcare_medical` - `healthcare_transit` ")
   public String getIndustryDataType() {
     return industryDataType;
   }
@@ -391,6 +414,132 @@ public class Ptsv2paymentsProcessingInformation {
     this.electronicBenefitsTransfer = electronicBenefitsTransfer;
   }
 
+  public Ptsv2paymentsProcessingInformation loanOptions(Ptsv2paymentsProcessingInformationLoanOptions loanOptions) {
+    this.loanOptions = loanOptions;
+    return this;
+  }
+
+   /**
+   * Get loanOptions
+   * @return loanOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessingInformationLoanOptions getLoanOptions() {
+    return loanOptions;
+  }
+
+  public void setLoanOptions(Ptsv2paymentsProcessingInformationLoanOptions loanOptions) {
+    this.loanOptions = loanOptions;
+  }
+
+  public Ptsv2paymentsProcessingInformation walletType(String walletType) {
+    this.walletType = walletType;
+    return this;
+  }
+
+   /**
+   * This field carries the wallet type in authorization requests and credit requests. Possible value are: - &#x60;101&#x60;: Masterpass remote payment. The customer created the wallet by manually interacting with a customer-controlled device such as a computer, tablet, or phone. This value is supported only for Masterpass transactions on Chase Paymentech Solutions and CyberSource through VisaNet. - &#x60;102&#x60;: Masterpass remote near field communication (NFC) payment. The customer created the wallet by tapping a PayPass card or customer-controlled device at a contactless card reader. This value is supported only for card-present Masterpass transactions on CyberSource through VisaNet. - &#x60;103&#x60;: Masterpass Apple Pay payment. The payment was made with a combination of Masterpass and Apple Pay. This value is supported only for Masterpass Apple Pay transactions on CyberSource through VisaNet. - &#x60;216&#x60;: Masterpass Google Pay payment. The payment was made with a combination of Masterpass and Google Pay. This value is supported only for Masterpass Google Pay transactions on CyberSource through VisaNet. - &#x60;217&#x60;: Masterpass Samsung Pay payment. The payment was made with a combination of Masterpass and Samsung Pay. This value is supported only for Masterpass Samsung Pay transactions on CyberSource through VisaNet. - &#x60;SDW&#x60;: Staged digital wallet. An issuer or operator created the wallet. This value is supported only for Masterpass transactions on Chase Paymentech Solutions. - &#x60;VCIND&#x60;: Visa Checkout payment. This value is supported only on CyberSource through VisaNet, FDC Compass, FDC Nashville Global, FDI Australia, and TSYS Acquiring Solutions. See Getting Started with Visa Checkout. For Visa Checkout transactions, the way CyberSource processes the value for this field depends on the processor. See the Visa Checkout section below. For all other values, this field is a passthrough; therefore, CyberSource does not verify the value or modify it in any way before sending it to the processor. Masterpass (101, 102, 103, 216, and 217): The Masterpass platform generates the wallet type value and passes it to you along with the customer’s checkout information.  Visa Checkout: This field is optional for Visa Checkout authorizations on FDI Australia. For all other processors, this field is required for Visa Checkout authorizations. For Visa Checkout transactions on the following processors, CyberSource sends the value that the processor expects for this field:FDC Compass,FDC Nashville Global,FDI Australia,TSYS Acquiring Solutions For all other processors, this field is a passthrough; therefore, CyberSource does not verify the value or modify it in any way before sending it to the processor. For incremental authorizations, this field is supported only for Mastercard and the supported values are 101 and 102. Payment card companies can introduce new values without notice. Your order management system should be able to process new values without problems.  CyberSource through VisaNet When the value for this field is 101, 102, 103, 216, or 217, it corresponds to the following data in the TC 33 capture file5: Record: CP01 TCR6, Position: 88-90,  Field: Mastercard Wallet Identifier. When the value for this field is VCIND, it corresponds to the following data in the TC 33 capture file5: Record: CP01 TCR8, Position: 72-76, Field: Agent Unique ID. 
+   * @return walletType
+  **/
+  @ApiModelProperty(value = "This field carries the wallet type in authorization requests and credit requests. Possible value are: - `101`: Masterpass remote payment. The customer created the wallet by manually interacting with a customer-controlled device such as a computer, tablet, or phone. This value is supported only for Masterpass transactions on Chase Paymentech Solutions and CyberSource through VisaNet. - `102`: Masterpass remote near field communication (NFC) payment. The customer created the wallet by tapping a PayPass card or customer-controlled device at a contactless card reader. This value is supported only for card-present Masterpass transactions on CyberSource through VisaNet. - `103`: Masterpass Apple Pay payment. The payment was made with a combination of Masterpass and Apple Pay. This value is supported only for Masterpass Apple Pay transactions on CyberSource through VisaNet. - `216`: Masterpass Google Pay payment. The payment was made with a combination of Masterpass and Google Pay. This value is supported only for Masterpass Google Pay transactions on CyberSource through VisaNet. - `217`: Masterpass Samsung Pay payment. The payment was made with a combination of Masterpass and Samsung Pay. This value is supported only for Masterpass Samsung Pay transactions on CyberSource through VisaNet. - `SDW`: Staged digital wallet. An issuer or operator created the wallet. This value is supported only for Masterpass transactions on Chase Paymentech Solutions. - `VCIND`: Visa Checkout payment. This value is supported only on CyberSource through VisaNet, FDC Compass, FDC Nashville Global, FDI Australia, and TSYS Acquiring Solutions. See Getting Started with Visa Checkout. For Visa Checkout transactions, the way CyberSource processes the value for this field depends on the processor. See the Visa Checkout section below. For all other values, this field is a passthrough; therefore, CyberSource does not verify the value or modify it in any way before sending it to the processor. Masterpass (101, 102, 103, 216, and 217): The Masterpass platform generates the wallet type value and passes it to you along with the customer’s checkout information.  Visa Checkout: This field is optional for Visa Checkout authorizations on FDI Australia. For all other processors, this field is required for Visa Checkout authorizations. For Visa Checkout transactions on the following processors, CyberSource sends the value that the processor expects for this field:FDC Compass,FDC Nashville Global,FDI Australia,TSYS Acquiring Solutions For all other processors, this field is a passthrough; therefore, CyberSource does not verify the value or modify it in any way before sending it to the processor. For incremental authorizations, this field is supported only for Mastercard and the supported values are 101 and 102. Payment card companies can introduce new values without notice. Your order management system should be able to process new values without problems.  CyberSource through VisaNet When the value for this field is 101, 102, 103, 216, or 217, it corresponds to the following data in the TC 33 capture file5: Record: CP01 TCR6, Position: 88-90,  Field: Mastercard Wallet Identifier. When the value for this field is VCIND, it corresponds to the following data in the TC 33 capture file5: Record: CP01 TCR8, Position: 72-76, Field: Agent Unique ID. ")
+  public String getWalletType() {
+    return walletType;
+  }
+
+  public void setWalletType(String walletType) {
+    this.walletType = walletType;
+  }
+
+  public Ptsv2paymentsProcessingInformation nationalNetDomesticData(String nationalNetDomesticData) {
+    this.nationalNetDomesticData = nationalNetDomesticData;
+    return this;
+  }
+
+   /**
+   * Supplementary domestic transaction information provided by the acquirer for National Net Settlement Service (NNSS) transactions. NNSS is a settlement service that Visa provides. For transactions on CyberSource through VisaNet in countries that subscribe to NNSS: VisaNet clears transactions; VisaNet transfers funds to the acquirer after deducting processing fees and interchange fees. VisaNet settles transactions in the local pricing currency through a local financial institution. This field is supported only on CyberSource through VisaNet for domestic data in Colombia 
+   * @return nationalNetDomesticData
+  **/
+  @ApiModelProperty(value = "Supplementary domestic transaction information provided by the acquirer for National Net Settlement Service (NNSS) transactions. NNSS is a settlement service that Visa provides. For transactions on CyberSource through VisaNet in countries that subscribe to NNSS: VisaNet clears transactions; VisaNet transfers funds to the acquirer after deducting processing fees and interchange fees. VisaNet settles transactions in the local pricing currency through a local financial institution. This field is supported only on CyberSource through VisaNet for domestic data in Colombia ")
+  public String getNationalNetDomesticData() {
+    return nationalNetDomesticData;
+  }
+
+  public void setNationalNetDomesticData(String nationalNetDomesticData) {
+    this.nationalNetDomesticData = nationalNetDomesticData;
+  }
+
+  public Ptsv2paymentsProcessingInformation japanPaymentOptions(Ptsv2paymentsProcessingInformationJapanPaymentOptions japanPaymentOptions) {
+    this.japanPaymentOptions = japanPaymentOptions;
+    return this;
+  }
+
+   /**
+   * Get japanPaymentOptions
+   * @return japanPaymentOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessingInformationJapanPaymentOptions getJapanPaymentOptions() {
+    return japanPaymentOptions;
+  }
+
+  public void setJapanPaymentOptions(Ptsv2paymentsProcessingInformationJapanPaymentOptions japanPaymentOptions) {
+    this.japanPaymentOptions = japanPaymentOptions;
+  }
+
+  public Ptsv2paymentsProcessingInformation mobileRemotePaymentType(String mobileRemotePaymentType) {
+    this.mobileRemotePaymentType = mobileRemotePaymentType;
+    return this;
+  }
+
+   /**
+   * This tag contains one of the following values: - &#x60;1&#x60; :  Remote purchase (Consumer initiated) face-to-face - &#x60;2&#x60; :  Remote purchase (Consumer initiated) ecommerce - &#x60;3&#x60; :  Remote purchase (Consumer initiated) MOTO - &#x60;4&#x60; :  Bill Pay (Consumer initiated) - &#x60;5&#x60; :  Top-up (Consumer initiated) - &#x60;6&#x60; :  Cash-out (Consumer initiated) - &#x60;7&#x60; :  Case-out (ATM/Agent triggered) - &#x60;8&#x60; :  Remote purchase (Merchant triggered) face-to-face - &#x60;9&#x60; :  Remote purchase (Merchant triggered) ecommerce 
+   * @return mobileRemotePaymentType
+  **/
+  @ApiModelProperty(value = "This tag contains one of the following values: - `1` :  Remote purchase (Consumer initiated) face-to-face - `2` :  Remote purchase (Consumer initiated) ecommerce - `3` :  Remote purchase (Consumer initiated) MOTO - `4` :  Bill Pay (Consumer initiated) - `5` :  Top-up (Consumer initiated) - `6` :  Cash-out (Consumer initiated) - `7` :  Case-out (ATM/Agent triggered) - `8` :  Remote purchase (Merchant triggered) face-to-face - `9` :  Remote purchase (Merchant triggered) ecommerce ")
+  public String getMobileRemotePaymentType() {
+    return mobileRemotePaymentType;
+  }
+
+  public void setMobileRemotePaymentType(String mobileRemotePaymentType) {
+    this.mobileRemotePaymentType = mobileRemotePaymentType;
+  }
+
+  public Ptsv2paymentsProcessingInformation extendedCreditTotalCount(String extendedCreditTotalCount) {
+    this.extendedCreditTotalCount = extendedCreditTotalCount;
+    return this;
+  }
+
+   /**
+   * A private national-use field submitted by acquirers and issuers in South Africa for South Africa-domestic (intra-country) authorizations and financial requests. Values for this field are 00 through 99. 
+   * @return extendedCreditTotalCount
+  **/
+  @ApiModelProperty(value = "A private national-use field submitted by acquirers and issuers in South Africa for South Africa-domestic (intra-country) authorizations and financial requests. Values for this field are 00 through 99. ")
+  public String getExtendedCreditTotalCount() {
+    return extendedCreditTotalCount;
+  }
+
+  public void setExtendedCreditTotalCount(String extendedCreditTotalCount) {
+    this.extendedCreditTotalCount = extendedCreditTotalCount;
+  }
+
+  public Ptsv2paymentsProcessingInformation networkRoutingOrder(String networkRoutingOrder) {
+    this.networkRoutingOrder = networkRoutingOrder;
+    return this;
+  }
+
+   /**
+   * On PIN Debit Gateways: This U.S.-only field is optionally used by  participants (merchants and acquirers) to specify the network access priority. VisaNet checks to determine if there are issuer routing preferences for any of the networks specified by the sharing group code. If an issuer preference exists for one of the specified debit networks, VisaNet makes a routing selection based on the issuer’s preference. If an issuer preference exists for more than one of the specified debit networks, or if no issuer preference exists, VisaNet makes a selection based on the acquirer’s routing priorities. 
+   * @return networkRoutingOrder
+  **/
+  @ApiModelProperty(value = "On PIN Debit Gateways: This U.S.-only field is optionally used by  participants (merchants and acquirers) to specify the network access priority. VisaNet checks to determine if there are issuer routing preferences for any of the networks specified by the sharing group code. If an issuer preference exists for one of the specified debit networks, VisaNet makes a routing selection based on the issuer’s preference. If an issuer preference exists for more than one of the specified debit networks, or if no issuer preference exists, VisaNet makes a selection based on the acquirer’s routing priorities. ")
+  public String getNetworkRoutingOrder() {
+    return networkRoutingOrder;
+  }
+
+  public void setNetworkRoutingOrder(String networkRoutingOrder) {
+    this.networkRoutingOrder = networkRoutingOrder;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -417,12 +566,19 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.recurringOptions, ptsv2paymentsProcessingInformation.recurringOptions) &&
         Objects.equals(this.bankTransferOptions, ptsv2paymentsProcessingInformation.bankTransferOptions) &&
         Objects.equals(this.purchaseOptions, ptsv2paymentsProcessingInformation.purchaseOptions) &&
-        Objects.equals(this.electronicBenefitsTransfer, ptsv2paymentsProcessingInformation.electronicBenefitsTransfer);
+        Objects.equals(this.electronicBenefitsTransfer, ptsv2paymentsProcessingInformation.electronicBenefitsTransfer) &&
+        Objects.equals(this.loanOptions, ptsv2paymentsProcessingInformation.loanOptions) &&
+        Objects.equals(this.walletType, ptsv2paymentsProcessingInformation.walletType) &&
+        Objects.equals(this.nationalNetDomesticData, ptsv2paymentsProcessingInformation.nationalNetDomesticData) &&
+        Objects.equals(this.japanPaymentOptions, ptsv2paymentsProcessingInformation.japanPaymentOptions) &&
+        Objects.equals(this.mobileRemotePaymentType, ptsv2paymentsProcessingInformation.mobileRemotePaymentType) &&
+        Objects.equals(this.extendedCreditTotalCount, ptsv2paymentsProcessingInformation.extendedCreditTotalCount) &&
+        Objects.equals(this.networkRoutingOrder, ptsv2paymentsProcessingInformation.networkRoutingOrder);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(capture, processorId, businessApplicationId, commerceIndicator, paymentSolution, reconciliationId, linkId, purchaseLevel, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer);
+    return Objects.hash(capture, processorId, businessApplicationId, commerceIndicator, paymentSolution, reconciliationId, linkId, purchaseLevel, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder);
   }
 
 
@@ -448,6 +604,13 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
     sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
     sb.append("    electronicBenefitsTransfer: ").append(toIndentedString(electronicBenefitsTransfer)).append("\n");
+    sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
+    sb.append("    walletType: ").append(toIndentedString(walletType)).append("\n");
+    sb.append("    nationalNetDomesticData: ").append(toIndentedString(nationalNetDomesticData)).append("\n");
+    sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
+    sb.append("    mobileRemotePaymentType: ").append(toIndentedString(mobileRemotePaymentType)).append("\n");
+    sb.append("    extendedCreditTotalCount: ").append(toIndentedString(extendedCreditTotalCount)).append("\n");
+    sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
     sb.append("}");
     return sb.toString();
   }

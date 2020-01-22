@@ -27,13 +27,22 @@ import java.math.BigDecimal;
 /**
  * RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation {
+  @SerializedName("acsRenderingType")
+  private String acsRenderingType = null;
+
+  @SerializedName("acsTransactionId")
+  private String acsTransactionId = null;
+
   @SerializedName("authenticationResult")
   private String authenticationResult = null;
 
   @SerializedName("authenticationStatusMsg")
   private String authenticationStatusMsg = null;
+
+  @SerializedName("authorizationPayload")
+  private String authorizationPayload = null;
 
   @SerializedName("cavv")
   private String cavv = null;
@@ -41,8 +50,17 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
   @SerializedName("cavvAlgorithm")
   private String cavvAlgorithm = null;
 
+  @SerializedName("directoryServerErrorCode")
+  private String directoryServerErrorCode = null;
+
+  @SerializedName("directoryServerErrorDescription")
+  private String directoryServerErrorDescription = null;
+
   @SerializedName("indicator")
   private String indicator = null;
+
+  @SerializedName("interactionCounter")
+  private String interactionCounter = null;
 
   @SerializedName("eci")
   private String eci = null;
@@ -53,8 +71,14 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
   @SerializedName("paresStatus")
   private String paresStatus = null;
 
+  @SerializedName("sdkTransactionId")
+  private String sdkTransactionId = null;
+
   @SerializedName("specificationVersion")
   private String specificationVersion = null;
+
+  @SerializedName("threeDSServerTransactionId")
+  private String threeDSServerTransactionId = null;
 
   @SerializedName("ucafAuthenticationData")
   private String ucafAuthenticationData = null;
@@ -62,8 +86,50 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
   @SerializedName("ucafCollectionIndicator")
   private BigDecimal ucafCollectionIndicator = null;
 
+  @SerializedName("whiteListStatus")
+  private String whiteListStatus = null;
+
+  @SerializedName("whiteListStatusSource")
+  private String whiteListStatusSource = null;
+
   @SerializedName("xid")
   private String xid = null;
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation acsRenderingType(String acsRenderingType) {
+    this.acsRenderingType = acsRenderingType;
+    return this;
+  }
+
+   /**
+   * Identifies the UI Type the ACS will use to complete the challenge. **NOTE**: Only available for App transactions using the Cardinal Mobile SDK. 
+   * @return acsRenderingType
+  **/
+  @ApiModelProperty(value = "Identifies the UI Type the ACS will use to complete the challenge. **NOTE**: Only available for App transactions using the Cardinal Mobile SDK. ")
+  public String getAcsRenderingType() {
+    return acsRenderingType;
+  }
+
+  public void setAcsRenderingType(String acsRenderingType) {
+    this.acsRenderingType = acsRenderingType;
+  }
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation acsTransactionId(String acsTransactionId) {
+    this.acsTransactionId = acsTransactionId;
+    return this;
+  }
+
+   /**
+   * Unique transaction identifier assigned by the ACS to identify a single transaction. 
+   * @return acsTransactionId
+  **/
+  @ApiModelProperty(value = "Unique transaction identifier assigned by the ACS to identify a single transaction. ")
+  public String getAcsTransactionId() {
+    return acsTransactionId;
+  }
+
+  public void setAcsTransactionId(String acsTransactionId) {
+    this.acsTransactionId = acsTransactionId;
+  }
 
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation authenticationResult(String authenticationResult) {
     this.authenticationResult = authenticationResult;
@@ -99,6 +165,24 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
 
   public void setAuthenticationStatusMsg(String authenticationStatusMsg) {
     this.authenticationStatusMsg = authenticationStatusMsg;
+  }
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation authorizationPayload(String authorizationPayload) {
+    this.authorizationPayload = authorizationPayload;
+    return this;
+  }
+
+   /**
+   * The Base64 encoded JSON Payload of CB specific Authorization Values returned in the challenge Flow 
+   * @return authorizationPayload
+  **/
+  @ApiModelProperty(value = "The Base64 encoded JSON Payload of CB specific Authorization Values returned in the challenge Flow ")
+  public String getAuthorizationPayload() {
+    return authorizationPayload;
+  }
+
+  public void setAuthorizationPayload(String authorizationPayload) {
+    this.authorizationPayload = authorizationPayload;
   }
 
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation cavv(String cavv) {
@@ -137,6 +221,42 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     this.cavvAlgorithm = cavvAlgorithm;
   }
 
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation directoryServerErrorCode(String directoryServerErrorCode) {
+    this.directoryServerErrorCode = directoryServerErrorCode;
+    return this;
+  }
+
+   /**
+   * The directory server error code indicating a problem with this transaction. 
+   * @return directoryServerErrorCode
+  **/
+  @ApiModelProperty(value = "The directory server error code indicating a problem with this transaction. ")
+  public String getDirectoryServerErrorCode() {
+    return directoryServerErrorCode;
+  }
+
+  public void setDirectoryServerErrorCode(String directoryServerErrorCode) {
+    this.directoryServerErrorCode = directoryServerErrorCode;
+  }
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation directoryServerErrorDescription(String directoryServerErrorDescription) {
+    this.directoryServerErrorDescription = directoryServerErrorDescription;
+    return this;
+  }
+
+   /**
+   * Directory server text and additional detail about the error for this transaction. 
+   * @return directoryServerErrorDescription
+  **/
+  @ApiModelProperty(value = "Directory server text and additional detail about the error for this transaction. ")
+  public String getDirectoryServerErrorDescription() {
+    return directoryServerErrorDescription;
+  }
+
+  public void setDirectoryServerErrorDescription(String directoryServerErrorDescription) {
+    this.directoryServerErrorDescription = directoryServerErrorDescription;
+  }
+
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation indicator(String indicator) {
     this.indicator = indicator;
     return this;
@@ -153,6 +273,24 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
 
   public void setIndicator(String indicator) {
     this.indicator = indicator;
+  }
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation interactionCounter(String interactionCounter) {
+    this.interactionCounter = interactionCounter;
+    return this;
+  }
+
+   /**
+   * Indicates the number of authentication cycles attempted by the cardholder and is tracked by the Issuing Banks ACS.Example: if customer gets the challenge window and enter in their one time password and hit submit then that interaction counter should just be 1. When customer gets the challenge window and the bank asks if they want to have the one time password  sent to their phone or their email and they have to choose before going to the next screen to enter in their one time password then this interaction count would be 2. One for the selection of how they want the one time password delivered and another with them actually entering in the one time password and hitting the submit button. 
+   * @return interactionCounter
+  **/
+  @ApiModelProperty(value = "Indicates the number of authentication cycles attempted by the cardholder and is tracked by the Issuing Banks ACS.Example: if customer gets the challenge window and enter in their one time password and hit submit then that interaction counter should just be 1. When customer gets the challenge window and the bank asks if they want to have the one time password  sent to their phone or their email and they have to choose before going to the next screen to enter in their one time password then this interaction count would be 2. One for the selection of how they want the one time password delivered and another with them actually entering in the one time password and hitting the submit button. ")
+  public String getInteractionCounter() {
+    return interactionCounter;
+  }
+
+  public void setInteractionCounter(String interactionCounter) {
+    this.interactionCounter = interactionCounter;
   }
 
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation eci(String eci) {
@@ -209,6 +347,24 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     this.paresStatus = paresStatus;
   }
 
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation sdkTransactionId(String sdkTransactionId) {
+    this.sdkTransactionId = sdkTransactionId;
+    return this;
+  }
+
+   /**
+   * SDK unique transaction identifier that is generated on each new transaction. 
+   * @return sdkTransactionId
+  **/
+  @ApiModelProperty(value = "SDK unique transaction identifier that is generated on each new transaction. ")
+  public String getSdkTransactionId() {
+    return sdkTransactionId;
+  }
+
+  public void setSdkTransactionId(String sdkTransactionId) {
+    this.sdkTransactionId = sdkTransactionId;
+  }
+
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation specificationVersion(String specificationVersion) {
     this.specificationVersion = specificationVersion;
     return this;
@@ -225,6 +381,24 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
 
   public void setSpecificationVersion(String specificationVersion) {
     this.specificationVersion = specificationVersion;
+  }
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation threeDSServerTransactionId(String threeDSServerTransactionId) {
+    this.threeDSServerTransactionId = threeDSServerTransactionId;
+    return this;
+  }
+
+   /**
+   * Unique transaction identifier assigned by the 3DS Server to identify a single transaction. 
+   * @return threeDSServerTransactionId
+  **/
+  @ApiModelProperty(value = "Unique transaction identifier assigned by the 3DS Server to identify a single transaction. ")
+  public String getThreeDSServerTransactionId() {
+    return threeDSServerTransactionId;
+  }
+
+  public void setThreeDSServerTransactionId(String threeDSServerTransactionId) {
+    this.threeDSServerTransactionId = threeDSServerTransactionId;
   }
 
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation ucafAuthenticationData(String ucafAuthenticationData) {
@@ -263,6 +437,42 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     this.ucafCollectionIndicator = ucafCollectionIndicator;
   }
 
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation whiteListStatus(String whiteListStatus) {
+    this.whiteListStatus = whiteListStatus;
+    return this;
+  }
+
+   /**
+   * Enables the communication of trusted beneficiary/whitelist status between the ACS, the DS and the 3DS Requestor.  Possible Values:  Y - 3DS Requestor is whitelisted by cardholder  N - 3DS Requestor is not whitelisted by cardholder 
+   * @return whiteListStatus
+  **/
+  @ApiModelProperty(value = "Enables the communication of trusted beneficiary/whitelist status between the ACS, the DS and the 3DS Requestor.  Possible Values:  Y - 3DS Requestor is whitelisted by cardholder  N - 3DS Requestor is not whitelisted by cardholder ")
+  public String getWhiteListStatus() {
+    return whiteListStatus;
+  }
+
+  public void setWhiteListStatus(String whiteListStatus) {
+    this.whiteListStatus = whiteListStatus;
+  }
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation whiteListStatusSource(String whiteListStatusSource) {
+    this.whiteListStatusSource = whiteListStatusSource;
+    return this;
+  }
+
+   /**
+   * This data element will be populated by the system setting Whitelist Status. Possible Values: 01 - 3DS/ Server/ 02 – DS/03 - ACS 
+   * @return whiteListStatusSource
+  **/
+  @ApiModelProperty(value = "This data element will be populated by the system setting Whitelist Status. Possible Values: 01 - 3DS/ Server/ 02 – DS/03 - ACS ")
+  public String getWhiteListStatusSource() {
+    return whiteListStatusSource;
+  }
+
+  public void setWhiteListStatusSource(String whiteListStatusSource) {
+    this.whiteListStatusSource = whiteListStatusSource;
+  }
+
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation xid(String xid) {
     this.xid = xid;
     return this;
@@ -291,23 +501,33 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
       return false;
     }
     RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation = (RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation) o;
-    return Objects.equals(this.authenticationResult, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationResult) &&
+    return Objects.equals(this.acsRenderingType, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.acsRenderingType) &&
+        Objects.equals(this.acsTransactionId, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.acsTransactionId) &&
+        Objects.equals(this.authenticationResult, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationResult) &&
         Objects.equals(this.authenticationStatusMsg, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationStatusMsg) &&
+        Objects.equals(this.authorizationPayload, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authorizationPayload) &&
         Objects.equals(this.cavv, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.cavv) &&
         Objects.equals(this.cavvAlgorithm, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.cavvAlgorithm) &&
+        Objects.equals(this.directoryServerErrorCode, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.directoryServerErrorCode) &&
+        Objects.equals(this.directoryServerErrorDescription, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.directoryServerErrorDescription) &&
         Objects.equals(this.indicator, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.indicator) &&
+        Objects.equals(this.interactionCounter, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.interactionCounter) &&
         Objects.equals(this.eci, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.eci) &&
         Objects.equals(this.eciRaw, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.eciRaw) &&
         Objects.equals(this.paresStatus, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.paresStatus) &&
+        Objects.equals(this.sdkTransactionId, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.sdkTransactionId) &&
         Objects.equals(this.specificationVersion, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.specificationVersion) &&
+        Objects.equals(this.threeDSServerTransactionId, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.threeDSServerTransactionId) &&
         Objects.equals(this.ucafAuthenticationData, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.ucafAuthenticationData) &&
         Objects.equals(this.ucafCollectionIndicator, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.ucafCollectionIndicator) &&
+        Objects.equals(this.whiteListStatus, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.whiteListStatus) &&
+        Objects.equals(this.whiteListStatusSource, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.whiteListStatusSource) &&
         Objects.equals(this.xid, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.xid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authenticationResult, authenticationStatusMsg, cavv, cavvAlgorithm, indicator, eci, eciRaw, paresStatus, specificationVersion, ucafAuthenticationData, ucafCollectionIndicator, xid);
+    return Objects.hash(acsRenderingType, acsTransactionId, authenticationResult, authenticationStatusMsg, authorizationPayload, cavv, cavvAlgorithm, directoryServerErrorCode, directoryServerErrorDescription, indicator, interactionCounter, eci, eciRaw, paresStatus, sdkTransactionId, specificationVersion, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, whiteListStatus, whiteListStatusSource, xid);
   }
 
 
@@ -316,17 +536,27 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation {\n");
     
+    sb.append("    acsRenderingType: ").append(toIndentedString(acsRenderingType)).append("\n");
+    sb.append("    acsTransactionId: ").append(toIndentedString(acsTransactionId)).append("\n");
     sb.append("    authenticationResult: ").append(toIndentedString(authenticationResult)).append("\n");
     sb.append("    authenticationStatusMsg: ").append(toIndentedString(authenticationStatusMsg)).append("\n");
+    sb.append("    authorizationPayload: ").append(toIndentedString(authorizationPayload)).append("\n");
     sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
     sb.append("    cavvAlgorithm: ").append(toIndentedString(cavvAlgorithm)).append("\n");
+    sb.append("    directoryServerErrorCode: ").append(toIndentedString(directoryServerErrorCode)).append("\n");
+    sb.append("    directoryServerErrorDescription: ").append(toIndentedString(directoryServerErrorDescription)).append("\n");
     sb.append("    indicator: ").append(toIndentedString(indicator)).append("\n");
+    sb.append("    interactionCounter: ").append(toIndentedString(interactionCounter)).append("\n");
     sb.append("    eci: ").append(toIndentedString(eci)).append("\n");
     sb.append("    eciRaw: ").append(toIndentedString(eciRaw)).append("\n");
     sb.append("    paresStatus: ").append(toIndentedString(paresStatus)).append("\n");
+    sb.append("    sdkTransactionId: ").append(toIndentedString(sdkTransactionId)).append("\n");
     sb.append("    specificationVersion: ").append(toIndentedString(specificationVersion)).append("\n");
+    sb.append("    threeDSServerTransactionId: ").append(toIndentedString(threeDSServerTransactionId)).append("\n");
     sb.append("    ucafAuthenticationData: ").append(toIndentedString(ucafAuthenticationData)).append("\n");
     sb.append("    ucafCollectionIndicator: ").append(toIndentedString(ucafCollectionIndicator)).append("\n");
+    sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
+    sb.append("    whiteListStatusSource: ").append(toIndentedString(whiteListStatusSource)).append("\n");
     sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * V1FileDetailsGet200ResponseLinksFiles
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class V1FileDetailsGet200ResponseLinksFiles {
   @SerializedName("fileId")
   private String fileId = null;

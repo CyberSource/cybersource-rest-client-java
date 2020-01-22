@@ -14,13 +14,16 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2creditsPointOfSaleInformation;
+import Model.Ptsv2creditsInstallmentInformation;
 import Model.Ptsv2creditsProcessingInformation;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsDeviceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
+import Model.Ptsv2paymentsPointOfSaleInformation;
+import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsidcapturesAggregatorInformation;
 import Model.Ptsv2paymentsidcapturesBuyerInformation;
+import Model.Ptsv2paymentsidcapturesTravelInformation;
 import Model.Ptsv2paymentsidrefundsMerchantInformation;
 import Model.Ptsv2paymentsidrefundsOrderInformation;
 import Model.Ptsv2paymentsidrefundsPaymentInformation;
@@ -38,7 +41,7 @@ import java.util.List;
 /**
  * CreateCreditRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class CreateCreditRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -65,10 +68,19 @@ public class CreateCreditRequest {
   private Ptsv2paymentsidcapturesAggregatorInformation aggregatorInformation = null;
 
   @SerializedName("pointOfSaleInformation")
-  private Ptsv2creditsPointOfSaleInformation pointOfSaleInformation = null;
+  private Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation = null;
 
   @SerializedName("merchantDefinedInformation")
   private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
+
+  @SerializedName("installmentInformation")
+  private Ptsv2creditsInstallmentInformation installmentInformation = null;
+
+  @SerializedName("travelInformation")
+  private Ptsv2paymentsidcapturesTravelInformation travelInformation = null;
+
+  @SerializedName("promotionInformation")
+  private Ptsv2paymentsPromotionInformation promotionInformation = null;
 
   public CreateCreditRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -214,7 +226,7 @@ public class CreateCreditRequest {
     this.aggregatorInformation = aggregatorInformation;
   }
 
-  public CreateCreditRequest pointOfSaleInformation(Ptsv2creditsPointOfSaleInformation pointOfSaleInformation) {
+  public CreateCreditRequest pointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
   }
@@ -224,11 +236,11 @@ public class CreateCreditRequest {
    * @return pointOfSaleInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2creditsPointOfSaleInformation getPointOfSaleInformation() {
+  public Ptsv2paymentsPointOfSaleInformation getPointOfSaleInformation() {
     return pointOfSaleInformation;
   }
 
-  public void setPointOfSaleInformation(Ptsv2creditsPointOfSaleInformation pointOfSaleInformation) {
+  public void setPointOfSaleInformation(Ptsv2paymentsPointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
   }
 
@@ -258,6 +270,60 @@ public class CreateCreditRequest {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 
+  public CreateCreditRequest installmentInformation(Ptsv2creditsInstallmentInformation installmentInformation) {
+    this.installmentInformation = installmentInformation;
+    return this;
+  }
+
+   /**
+   * Get installmentInformation
+   * @return installmentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2creditsInstallmentInformation getInstallmentInformation() {
+    return installmentInformation;
+  }
+
+  public void setInstallmentInformation(Ptsv2creditsInstallmentInformation installmentInformation) {
+    this.installmentInformation = installmentInformation;
+  }
+
+  public CreateCreditRequest travelInformation(Ptsv2paymentsidcapturesTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+    return this;
+  }
+
+   /**
+   * Get travelInformation
+   * @return travelInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidcapturesTravelInformation getTravelInformation() {
+    return travelInformation;
+  }
+
+  public void setTravelInformation(Ptsv2paymentsidcapturesTravelInformation travelInformation) {
+    this.travelInformation = travelInformation;
+  }
+
+  public CreateCreditRequest promotionInformation(Ptsv2paymentsPromotionInformation promotionInformation) {
+    this.promotionInformation = promotionInformation;
+    return this;
+  }
+
+   /**
+   * Get promotionInformation
+   * @return promotionInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPromotionInformation getPromotionInformation() {
+    return promotionInformation;
+  }
+
+  public void setPromotionInformation(Ptsv2paymentsPromotionInformation promotionInformation) {
+    this.promotionInformation = promotionInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -277,12 +343,15 @@ public class CreateCreditRequest {
         Objects.equals(this.merchantInformation, createCreditRequest.merchantInformation) &&
         Objects.equals(this.aggregatorInformation, createCreditRequest.aggregatorInformation) &&
         Objects.equals(this.pointOfSaleInformation, createCreditRequest.pointOfSaleInformation) &&
-        Objects.equals(this.merchantDefinedInformation, createCreditRequest.merchantDefinedInformation);
+        Objects.equals(this.merchantDefinedInformation, createCreditRequest.merchantDefinedInformation) &&
+        Objects.equals(this.installmentInformation, createCreditRequest.installmentInformation) &&
+        Objects.equals(this.travelInformation, createCreditRequest.travelInformation) &&
+        Objects.equals(this.promotionInformation, createCreditRequest.promotionInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation, travelInformation, promotionInformation);
   }
 
 
@@ -301,6 +370,9 @@ public class CreateCreditRequest {
     sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
+    sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
+    sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
+    sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

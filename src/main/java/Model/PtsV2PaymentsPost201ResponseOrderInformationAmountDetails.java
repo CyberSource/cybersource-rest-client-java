@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseOrderInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;
@@ -43,10 +43,10 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
   }
 
    /**
-   * Amount you requested for the payment or capture.  This value is returned for partial authorizations. 
+   * Amount you requested for the payment or capture.  This value is returned for partial authorizations. This field is also returned on incremental authorizations will contain the aggregated amount from the original authorizations and all the incremental authorizations. 
    * @return totalAmount
   **/
-  @ApiModelProperty(value = "Amount you requested for the payment or capture.  This value is returned for partial authorizations. ")
+  @ApiModelProperty(value = "Amount you requested for the payment or capture.  This value is returned for partial authorizations. This field is also returned on incremental authorizations will contain the aggregated amount from the original authorizations and all the incremental authorizations. ")
   public String getTotalAmount() {
     return totalAmount;
   }

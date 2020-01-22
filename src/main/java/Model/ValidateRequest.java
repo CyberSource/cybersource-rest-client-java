@@ -28,10 +28,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Request
+ * ValidateRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
-public class Request {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+public class ValidateRequest {
   @SerializedName("clientReferenceInformation")
   private Riskv1authenticationsClientReferenceInformation clientReferenceInformation = null;
 
@@ -44,7 +44,7 @@ public class Request {
   @SerializedName("consumerAuthenticationInformation")
   private Riskv1authenticationresultsConsumerAuthenticationInformation consumerAuthenticationInformation = null;
 
-  public Request clientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
+  public ValidateRequest clientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -62,7 +62,7 @@ public class Request {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
-  public Request orderInformation(Riskv1authenticationresultsOrderInformation orderInformation) {
+  public ValidateRequest orderInformation(Riskv1authenticationresultsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
   }
@@ -80,7 +80,7 @@ public class Request {
     this.orderInformation = orderInformation;
   }
 
-  public Request paymentInformation(Riskv1authenticationresultsPaymentInformation paymentInformation) {
+  public ValidateRequest paymentInformation(Riskv1authenticationresultsPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
   }
@@ -98,7 +98,7 @@ public class Request {
     this.paymentInformation = paymentInformation;
   }
 
-  public Request consumerAuthenticationInformation(Riskv1authenticationresultsConsumerAuthenticationInformation consumerAuthenticationInformation) {
+  public ValidateRequest consumerAuthenticationInformation(Riskv1authenticationresultsConsumerAuthenticationInformation consumerAuthenticationInformation) {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
     return this;
   }
@@ -125,11 +125,11 @@ public class Request {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Request request = (Request) o;
-    return Objects.equals(this.clientReferenceInformation, request.clientReferenceInformation) &&
-        Objects.equals(this.orderInformation, request.orderInformation) &&
-        Objects.equals(this.paymentInformation, request.paymentInformation) &&
-        Objects.equals(this.consumerAuthenticationInformation, request.consumerAuthenticationInformation);
+    ValidateRequest validateRequest = (ValidateRequest) o;
+    return Objects.equals(this.clientReferenceInformation, validateRequest.clientReferenceInformation) &&
+        Objects.equals(this.orderInformation, validateRequest.orderInformation) &&
+        Objects.equals(this.paymentInformation, validateRequest.paymentInformation) &&
+        Objects.equals(this.consumerAuthenticationInformation, validateRequest.consumerAuthenticationInformation);
   }
 
   @Override
@@ -141,7 +141,7 @@ public class Request {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Request {\n");
+    sb.append("class ValidateRequest {\n");
     
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");

@@ -26,10 +26,13 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails {
   @SerializedName("level3TransmissionStatus")
   private Boolean level3TransmissionStatus = null;
+
+  @SerializedName("salesSlipNumber")
+  private Integer salesSlipNumber = null;
 
   public PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails level3TransmissionStatus(Boolean level3TransmissionStatus) {
     this.level3TransmissionStatus = level3TransmissionStatus;
@@ -49,6 +52,25 @@ public class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails {
     this.level3TransmissionStatus = level3TransmissionStatus;
   }
 
+  public PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails salesSlipNumber(Integer salesSlipNumber) {
+    this.salesSlipNumber = salesSlipNumber;
+    return this;
+  }
+
+   /**
+   * Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway. 
+   * maximum: 99999
+   * @return salesSlipNumber
+  **/
+  @ApiModelProperty(value = "Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway. ")
+  public Integer getSalesSlipNumber() {
+    return salesSlipNumber;
+  }
+
+  public void setSalesSlipNumber(Integer salesSlipNumber) {
+    this.salesSlipNumber = salesSlipNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +81,13 @@ public class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails {
       return false;
     }
     PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails ptsV2PaymentsPost201ResponseOrderInformationInvoiceDetails = (PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails) o;
-    return Objects.equals(this.level3TransmissionStatus, ptsV2PaymentsPost201ResponseOrderInformationInvoiceDetails.level3TransmissionStatus);
+    return Objects.equals(this.level3TransmissionStatus, ptsV2PaymentsPost201ResponseOrderInformationInvoiceDetails.level3TransmissionStatus) &&
+        Objects.equals(this.salesSlipNumber, ptsV2PaymentsPost201ResponseOrderInformationInvoiceDetails.salesSlipNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(level3TransmissionStatus);
+    return Objects.hash(level3TransmissionStatus, salesSlipNumber);
   }
 
 
@@ -74,6 +97,7 @@ public class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails {
     sb.append("class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails {\n");
     
     sb.append("    level3TransmissionStatus: ").append(toIndentedString(level3TransmissionStatus)).append("\n");
+    sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

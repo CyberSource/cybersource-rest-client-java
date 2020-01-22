@@ -16,10 +16,10 @@ package Api;
 import Invokers.ApiException;
 import Model.CheckPayerAuthEnrollmentRequest;
 import Model.PtsV2PaymentsPost502Response;
-import Model.Request;
 import Model.RiskV1AuthenticationExcemptionsPost400Response;
 import Model.RiskV1AuthenticationResultsPost201Response;
 import Model.RiskV1AuthenticationsPost201Response;
+import Model.ValidateRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -63,8 +63,8 @@ public class PayerAuthenticationApiTest {
      */
     @Test
     public void validateAuthenticationResultsTest() throws ApiException {
-        Request request = null;
-        RiskV1AuthenticationResultsPost201Response response = api.validateAuthenticationResults(request);
+        ValidateRequest validateRequest = null;
+        RiskV1AuthenticationResultsPost201Response response = api.validateAuthenticationResults(validateRequest);
 
         // TODO: test validations
     }

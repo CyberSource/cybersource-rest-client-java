@@ -27,13 +27,16 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
   @SerializedName("emv")
   private PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv emv = null;
 
   @SerializedName("amexCapnData")
   private String amexCapnData = null;
+
+  @SerializedName("terminalId")
+  private String terminalId = null;
 
   public PtsV2PaymentsPost201ResponsePointOfSaleInformation emv(PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv emv) {
     this.emv = emv;
@@ -71,6 +74,24 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
     this.amexCapnData = amexCapnData;
   }
 
+  public PtsV2PaymentsPost201ResponsePointOfSaleInformation terminalId(String terminalId) {
+    this.terminalId = terminalId;
+    return this;
+  }
+
+   /**
+   * Identifier for the terminal at your retail location. You can define this value yourself, but consult the processor for requirements.  #### FDC Nashville Global To have your account configured to support this field, contact CyberSource Customer Support. This value must be a value that FDC Nashville Global issued to you.  For details, see the &#x60;terminal_id&#x60; field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  **For Payouts**: This field is applicable for CtV. 
+   * @return terminalId
+  **/
+  @ApiModelProperty(value = "Identifier for the terminal at your retail location. You can define this value yourself, but consult the processor for requirements.  #### FDC Nashville Global To have your account configured to support this field, contact CyberSource Customer Support. This value must be a value that FDC Nashville Global issued to you.  For details, see the `terminal_id` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  **For Payouts**: This field is applicable for CtV. ")
+  public String getTerminalId() {
+    return terminalId;
+  }
+
+  public void setTerminalId(String terminalId) {
+    this.terminalId = terminalId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,12 +103,13 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
     }
     PtsV2PaymentsPost201ResponsePointOfSaleInformation ptsV2PaymentsPost201ResponsePointOfSaleInformation = (PtsV2PaymentsPost201ResponsePointOfSaleInformation) o;
     return Objects.equals(this.emv, ptsV2PaymentsPost201ResponsePointOfSaleInformation.emv) &&
-        Objects.equals(this.amexCapnData, ptsV2PaymentsPost201ResponsePointOfSaleInformation.amexCapnData);
+        Objects.equals(this.amexCapnData, ptsV2PaymentsPost201ResponsePointOfSaleInformation.amexCapnData) &&
+        Objects.equals(this.terminalId, ptsV2PaymentsPost201ResponsePointOfSaleInformation.terminalId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(emv, amexCapnData);
+    return Objects.hash(emv, amexCapnData, terminalId);
   }
 
 
@@ -98,6 +120,7 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
     
     sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
     sb.append("    amexCapnData: ").append(toIndentedString(amexCapnData)).append("\n");
+    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,13 +26,16 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseInstallmentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class PtsV2PaymentsPost201ResponseInstallmentInformation {
   @SerializedName("additionalCosts")
   private String additionalCosts = null;
 
   @SerializedName("additionalCostsPercentage")
   private String additionalCostsPercentage = null;
+
+  @SerializedName("amount")
+  private String amount = null;
 
   @SerializedName("amountFunded")
   private String amountFunded = null;
@@ -58,20 +61,50 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
   @SerializedName("feesPercentage")
   private String feesPercentage = null;
 
+  @SerializedName("frequency")
+  private String frequency = null;
+
   @SerializedName("insurance")
   private String insurance = null;
 
   @SerializedName("insurancePercentage")
   private String insurancePercentage = null;
 
+  @SerializedName("invoiceData")
+  private String invoiceData = null;
+
   @SerializedName("monthlyInterestRate")
   private String monthlyInterestRate = null;
+
+  @SerializedName("planType")
+  private String planType = null;
+
+  @SerializedName("sequence")
+  private Integer sequence = null;
 
   @SerializedName("taxes")
   private String taxes = null;
 
   @SerializedName("taxesPercentage")
   private String taxesPercentage = null;
+
+  @SerializedName("totalAmount")
+  private String totalAmount = null;
+
+  @SerializedName("totalCount")
+  private Integer totalCount = null;
+
+  @SerializedName("minimumTotalCount")
+  private String minimumTotalCount = null;
+
+  @SerializedName("maximumTotalCount")
+  private String maximumTotalCount = null;
+
+  @SerializedName("firstInstallmentAmount")
+  private String firstInstallmentAmount = null;
+
+  @SerializedName("firstInstallmentDate")
+  private String firstInstallmentDate = null;
 
   public PtsV2PaymentsPost201ResponseInstallmentInformation additionalCosts(String additionalCosts) {
     this.additionalCosts = additionalCosts;
@@ -107,6 +140,24 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
 
   public void setAdditionalCostsPercentage(String additionalCostsPercentage) {
     this.additionalCostsPercentage = additionalCostsPercentage;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation amount(String amount) {
+    this.amount = amount;
+    return this;
+  }
+
+   /**
+   * Amount for the current installment payment.  This field is supported only for CyberSource through VisaNet.  For details, see &#x60;installment_amount&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * @return amount
+  **/
+  @ApiModelProperty(value = "Amount for the current installment payment.  This field is supported only for CyberSource through VisaNet.  For details, see `installment_amount` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  public String getAmount() {
+    return amount;
+  }
+
+  public void setAmount(String amount) {
+    this.amount = amount;
   }
 
   public PtsV2PaymentsPost201ResponseInstallmentInformation amountFunded(String amountFunded) {
@@ -253,6 +304,24 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
     this.feesPercentage = feesPercentage;
   }
 
+  public PtsV2PaymentsPost201ResponseInstallmentInformation frequency(String frequency) {
+    this.frequency = frequency;
+    return this;
+  }
+
+   /**
+   * Frequency of the installment payments. When you do not include this field in a request for a Crediario installment payment, CyberSource sends a space character to the processor.  For details, see &#x60;installment_frequency&#x60; field description in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for CyberSource through VisaNet. Possible values: - &#x60;B&#x60;: Biweekly - &#x60;M&#x60;: Monthly - &#x60;W&#x60;: Weekly  For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR9 - Position: 41 - Field: Installment Frequency  For details, see \&quot;Installment Payments\&quot; in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * @return frequency
+  **/
+  @ApiModelProperty(value = "Frequency of the installment payments. When you do not include this field in a request for a Crediario installment payment, CyberSource sends a space character to the processor.  For details, see `installment_frequency` field description in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for CyberSource through VisaNet. Possible values: - `B`: Biweekly - `M`: Monthly - `W`: Weekly  For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR9 - Position: 41 - Field: Installment Frequency  For details, see \"Installment Payments\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  public String getFrequency() {
+    return frequency;
+  }
+
+  public void setFrequency(String frequency) {
+    this.frequency = frequency;
+  }
+
   public PtsV2PaymentsPost201ResponseInstallmentInformation insurance(String insurance) {
     this.insurance = insurance;
     return this;
@@ -289,6 +358,24 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
     this.insurancePercentage = insurancePercentage;
   }
 
+  public PtsV2PaymentsPost201ResponseInstallmentInformation invoiceData(String invoiceData) {
+    this.invoiceData = invoiceData;
+    return this;
+  }
+
+   /**
+   * Invoice information that you want to provide to the issuer. This value is similar to a tracking number and is the same for all installment payments for one purchase.  This field is supported only for installment payments with Mastercard on CyberSource through VisaNet in Brazil.  For details, see \&quot;Installment Payments on CyberSource through VisaNet\&quot; in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR4 - Position: 51-70 - Field: Purchase Identification 
+   * @return invoiceData
+  **/
+  @ApiModelProperty(value = "Invoice information that you want to provide to the issuer. This value is similar to a tracking number and is the same for all installment payments for one purchase.  This field is supported only for installment payments with Mastercard on CyberSource through VisaNet in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR4 - Position: 51-70 - Field: Purchase Identification ")
+  public String getInvoiceData() {
+    return invoiceData;
+  }
+
+  public void setInvoiceData(String invoiceData) {
+    this.invoiceData = invoiceData;
+  }
+
   public PtsV2PaymentsPost201ResponseInstallmentInformation monthlyInterestRate(String monthlyInterestRate) {
     this.monthlyInterestRate = monthlyInterestRate;
     return this;
@@ -305,6 +392,43 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
 
   public void setMonthlyInterestRate(String monthlyInterestRate) {
     this.monthlyInterestRate = monthlyInterestRate;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation planType(String planType) {
+    this.planType = planType;
+    return this;
+  }
+
+   /**
+   * #### American Express Direct, Cielo, and CyberSource Latin American Processing Flag that indicates the type of funding for the installment plan associated with the payment.  Possible values: - &#x60;1&#x60;: Merchant-funded installment plan - &#x60;2&#x60;: Issuer-funded installment plan If you do not include this field in the request, CyberSource uses the value in your CyberSource account.  To change the value in your CyberSource account, contact CyberSource Customer Service. For details, see &#x60;installment_plan_type&#x60; field description in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet and American Express Defined code that indicates the type of installment plan for this transaction.  Contact American Express for: - Information about the kinds of installment plans that American Express provides - Values for this field  For installment payments with American Express in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR3 - Position: 5-6 - Field: Plan Type  * The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies.  #### CyberSource through VisaNet with Visa or Mastercard Flag indicating the type of funding for the installment plan associated with the payment. Possible values: - 1 or 01: Merchant-funded installment plan - 2 or 02: Issuer-funded installment plan - 43: Crediario installment plan—only with Visa in Brazil For details, see \&quot;Installment Payments on CyberSource through VisaNet\&quot; in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  For installment payments with Visa in Brazil, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR1 - Position: 5-6 - Field: Installment Type  For all other kinds of installment payments, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR5 - Position: 39-40 - Field: Installment Plan Type (Issuer or Merchant) 
+   * @return planType
+  **/
+  @ApiModelProperty(value = "#### American Express Direct, Cielo, and CyberSource Latin American Processing Flag that indicates the type of funding for the installment plan associated with the payment.  Possible values: - `1`: Merchant-funded installment plan - `2`: Issuer-funded installment plan If you do not include this field in the request, CyberSource uses the value in your CyberSource account.  To change the value in your CyberSource account, contact CyberSource Customer Service. For details, see `installment_plan_type` field description in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet and American Express Defined code that indicates the type of installment plan for this transaction.  Contact American Express for: - Information about the kinds of installment plans that American Express provides - Values for this field  For installment payments with American Express in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR3 - Position: 5-6 - Field: Plan Type  * The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies.  #### CyberSource through VisaNet with Visa or Mastercard Flag indicating the type of funding for the installment plan associated with the payment. Possible values: - 1 or 01: Merchant-funded installment plan - 2 or 02: Issuer-funded installment plan - 43: Crediario installment plan—only with Visa in Brazil For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  For installment payments with Visa in Brazil, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR1 - Position: 5-6 - Field: Installment Type  For all other kinds of installment payments, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR5 - Position: 39-40 - Field: Installment Plan Type (Issuer or Merchant) ")
+  public String getPlanType() {
+    return planType;
+  }
+
+  public void setPlanType(String planType) {
+    this.planType = planType;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation sequence(Integer sequence) {
+    this.sequence = sequence;
+    return this;
+  }
+
+   /**
+   * Installment number when making payments in installments. Used along with &#x60;totalCount&#x60; to track which payment is being processed.  For example, the second of 5 payments would be passed to CyberSource as &#x60;sequence&#x60; &#x3D; 2 and &#x60;totalCount&#x60; &#x3D; 5.  For details, see \&quot;Installment Payments\&quot; in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### Chase Paymentech Solutions and FDC Compass This field is optional because this value is required in the merchant descriptors. For details, see \&quot;Chase Paymentech Solutions Merchant Descriptors\&quot; and \&quot;FDC Compass Merchant Descriptors\&quot; in the [Merchant Descriptors Using the SCMP API] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet When you do not include this field in a request for a Crediario installment payment, CyberSource sends a value of 0 to the processor.  For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR9 - Position: 38-40 - Field: Installment Payment Number  * The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. 
+   * maximum: 99
+   * @return sequence
+  **/
+  @ApiModelProperty(value = "Installment number when making payments in installments. Used along with `totalCount` to track which payment is being processed.  For example, the second of 5 payments would be passed to CyberSource as `sequence` = 2 and `totalCount` = 5.  For details, see \"Installment Payments\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### Chase Paymentech Solutions and FDC Compass This field is optional because this value is required in the merchant descriptors. For details, see \"Chase Paymentech Solutions Merchant Descriptors\" and \"FDC Compass Merchant Descriptors\" in the [Merchant Descriptors Using the SCMP API] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet When you do not include this field in a request for a Crediario installment payment, CyberSource sends a value of 0 to the processor.  For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR9 - Position: 38-40 - Field: Installment Payment Number  * The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. ")
+  public Integer getSequence() {
+    return sequence;
+  }
+
+  public void setSequence(Integer sequence) {
+    this.sequence = sequence;
   }
 
   public PtsV2PaymentsPost201ResponseInstallmentInformation taxes(String taxes) {
@@ -343,6 +467,115 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
     this.taxesPercentage = taxesPercentage;
   }
 
+  public PtsV2PaymentsPost201ResponseInstallmentInformation totalAmount(String totalAmount) {
+    this.totalAmount = totalAmount;
+    return this;
+  }
+
+   /**
+   * Total amount of the loan that is being paid in installments. This field is supported only for CyberSource through VisaNet.  For details, see \&quot;Installment Payments\&quot; in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * @return totalAmount
+  **/
+  @ApiModelProperty(value = "Total amount of the loan that is being paid in installments. This field is supported only for CyberSource through VisaNet.  For details, see \"Installment Payments\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  public String getTotalAmount() {
+    return totalAmount;
+  }
+
+  public void setTotalAmount(String totalAmount) {
+    this.totalAmount = totalAmount;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation totalCount(Integer totalCount) {
+    this.totalCount = totalCount;
+    return this;
+  }
+
+   /**
+   * Total number of installments when making payments in installments.  For details, see \&quot;Installment Payments\&quot; in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### Chase Paymentech Solutions and FDC Compass This field is optional because this value is required in the merchant descriptors.  For details, see \&quot;Chase Paymentech Solutions Merchant Descriptors\&quot; and \&quot;FDC Compass Merchant Descriptors\&quot; in the [Merchant Descriptors Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### American Express Direct, Cielo, and Comercio Latino This value is the total number of installments you approved.  #### CyberSource Latin American Processing in Brazil This value is the total number of installments that you approved. The default is 1.  #### All Other Processors This value is used along with _sequence_ to track which payment is being processed.  For example, the second of 5 payments would be passed to CyberSource as _sequence_ &#x3D; 2 and _totalCount_ &#x3D; 5.  #### CyberSource through VisaNet For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR9 - Position: 23-25 - Field: Number of Installments  For installment payments with American Express in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR3 - Position: 7-8 - Field: Number of Installments  For installment payments with Visa in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR1 - Position: 7-8 - Field: Number of Installments  For all other kinds of installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR5 - Position: 20-22 - Field: Installment Total Count  **Note** The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. 
+   * maximum: 99
+   * @return totalCount
+  **/
+  @ApiModelProperty(value = "Total number of installments when making payments in installments.  For details, see \"Installment Payments\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### Chase Paymentech Solutions and FDC Compass This field is optional because this value is required in the merchant descriptors.  For details, see \"Chase Paymentech Solutions Merchant Descriptors\" and \"FDC Compass Merchant Descriptors\" in the [Merchant Descriptors Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### American Express Direct, Cielo, and Comercio Latino This value is the total number of installments you approved.  #### CyberSource Latin American Processing in Brazil This value is the total number of installments that you approved. The default is 1.  #### All Other Processors This value is used along with _sequence_ to track which payment is being processed.  For example, the second of 5 payments would be passed to CyberSource as _sequence_ = 2 and _totalCount_ = 5.  #### CyberSource through VisaNet For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR9 - Position: 23-25 - Field: Number of Installments  For installment payments with American Express in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR3 - Position: 7-8 - Field: Number of Installments  For installment payments with Visa in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR1 - Position: 7-8 - Field: Number of Installments  For all other kinds of installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR5 - Position: 20-22 - Field: Installment Total Count  **Note** The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies. ")
+  public Integer getTotalCount() {
+    return totalCount;
+  }
+
+  public void setTotalCount(Integer totalCount) {
+    this.totalCount = totalCount;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation minimumTotalCount(String minimumTotalCount) {
+    this.minimumTotalCount = minimumTotalCount;
+    return this;
+  }
+
+   /**
+   * \&quot;Minimum number of installments offered by the issuer for this purchase. The issuer provides this value when the first installment payment is successful. This field is supported for installment payments with Mastercard on CyberSource through VisaNet in all countries except Brazil, Croatia, Georgia, and Greece. The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 75-76 - Field: Mastercard Minimum Number Of Installments 
+   * @return minimumTotalCount
+  **/
+  @ApiModelProperty(value = "\"Minimum number of installments offered by the issuer for this purchase. The issuer provides this value when the first installment payment is successful. This field is supported for installment payments with Mastercard on CyberSource through VisaNet in all countries except Brazil, Croatia, Georgia, and Greece. The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 75-76 - Field: Mastercard Minimum Number Of Installments ")
+  public String getMinimumTotalCount() {
+    return minimumTotalCount;
+  }
+
+  public void setMinimumTotalCount(String minimumTotalCount) {
+    this.minimumTotalCount = minimumTotalCount;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation maximumTotalCount(String maximumTotalCount) {
+    this.maximumTotalCount = maximumTotalCount;
+    return this;
+  }
+
+   /**
+   * Maximum number of installments offered by the issuer for this purchase. The issuer provides this value when the first installment payment is successful. This field is supported for installment payments with Mastercard on CyberSource through VisaNet in all countries except Brazil, Croatia, Georgia, and Greece. The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR5 - Position: 77-78 - Field: Mastercard Maximum Number Of Installments 
+   * @return maximumTotalCount
+  **/
+  @ApiModelProperty(value = "Maximum number of installments offered by the issuer for this purchase. The issuer provides this value when the first installment payment is successful. This field is supported for installment payments with Mastercard on CyberSource through VisaNet in all countries except Brazil, Croatia, Georgia, and Greece. The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR5 - Position: 77-78 - Field: Mastercard Maximum Number Of Installments ")
+  public String getMaximumTotalCount() {
+    return maximumTotalCount;
+  }
+
+  public void setMaximumTotalCount(String maximumTotalCount) {
+    this.maximumTotalCount = maximumTotalCount;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation firstInstallmentAmount(String firstInstallmentAmount) {
+    this.firstInstallmentAmount = firstInstallmentAmount;
+    return this;
+  }
+
+   /**
+   * Amount of the first installment payment. The issuer provides this value when the first installment payment is successful. This field is supported for Mastercard installment payments on CyberSource through VisaNet in all countries except Brazil,Croatia, Georgia, and Greece. The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 23-34 - Field: Amount of Each Installment 
+   * @return firstInstallmentAmount
+  **/
+  @ApiModelProperty(value = "Amount of the first installment payment. The issuer provides this value when the first installment payment is successful. This field is supported for Mastercard installment payments on CyberSource through VisaNet in all countries except Brazil,Croatia, Georgia, and Greece. The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 23-34 - Field: Amount of Each Installment ")
+  public String getFirstInstallmentAmount() {
+    return firstInstallmentAmount;
+  }
+
+  public void setFirstInstallmentAmount(String firstInstallmentAmount) {
+    this.firstInstallmentAmount = firstInstallmentAmount;
+  }
+
+  public PtsV2PaymentsPost201ResponseInstallmentInformation firstInstallmentDate(String firstInstallmentDate) {
+    this.firstInstallmentDate = firstInstallmentDate;
+    return this;
+  }
+
+   /**
+   * Date of the first installment payment. Format: YYMMDD. When you do not include this field, CyberSource sends a string of six zeros (000000) to the processor. For details, see \&quot;Installment Payments on CyberSource through VisaNet\&quot; in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on CyberSource through VisaNet.  The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR9 - Position: 42-47 - Field: Date of First Installment 
+   * @return firstInstallmentDate
+  **/
+  @ApiModelProperty(value = "Date of the first installment payment. Format: YYMMDD. When you do not include this field, CyberSource sends a string of six zeros (000000) to the processor. For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on CyberSource through VisaNet.  The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR9 - Position: 42-47 - Field: Date of First Installment ")
+  public String getFirstInstallmentDate() {
+    return firstInstallmentDate;
+  }
+
+  public void setFirstInstallmentDate(String firstInstallmentDate) {
+    this.firstInstallmentDate = firstInstallmentDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -355,6 +588,7 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
     PtsV2PaymentsPost201ResponseInstallmentInformation ptsV2PaymentsPost201ResponseInstallmentInformation = (PtsV2PaymentsPost201ResponseInstallmentInformation) o;
     return Objects.equals(this.additionalCosts, ptsV2PaymentsPost201ResponseInstallmentInformation.additionalCosts) &&
         Objects.equals(this.additionalCostsPercentage, ptsV2PaymentsPost201ResponseInstallmentInformation.additionalCostsPercentage) &&
+        Objects.equals(this.amount, ptsV2PaymentsPost201ResponseInstallmentInformation.amount) &&
         Objects.equals(this.amountFunded, ptsV2PaymentsPost201ResponseInstallmentInformation.amountFunded) &&
         Objects.equals(this.amountRequestedPercentage, ptsV2PaymentsPost201ResponseInstallmentInformation.amountRequestedPercentage) &&
         Objects.equals(this.annualFinancingCost, ptsV2PaymentsPost201ResponseInstallmentInformation.annualFinancingCost) &&
@@ -363,16 +597,26 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
         Objects.equals(this.expensesPercentage, ptsV2PaymentsPost201ResponseInstallmentInformation.expensesPercentage) &&
         Objects.equals(this.fees, ptsV2PaymentsPost201ResponseInstallmentInformation.fees) &&
         Objects.equals(this.feesPercentage, ptsV2PaymentsPost201ResponseInstallmentInformation.feesPercentage) &&
+        Objects.equals(this.frequency, ptsV2PaymentsPost201ResponseInstallmentInformation.frequency) &&
         Objects.equals(this.insurance, ptsV2PaymentsPost201ResponseInstallmentInformation.insurance) &&
         Objects.equals(this.insurancePercentage, ptsV2PaymentsPost201ResponseInstallmentInformation.insurancePercentage) &&
+        Objects.equals(this.invoiceData, ptsV2PaymentsPost201ResponseInstallmentInformation.invoiceData) &&
         Objects.equals(this.monthlyInterestRate, ptsV2PaymentsPost201ResponseInstallmentInformation.monthlyInterestRate) &&
+        Objects.equals(this.planType, ptsV2PaymentsPost201ResponseInstallmentInformation.planType) &&
+        Objects.equals(this.sequence, ptsV2PaymentsPost201ResponseInstallmentInformation.sequence) &&
         Objects.equals(this.taxes, ptsV2PaymentsPost201ResponseInstallmentInformation.taxes) &&
-        Objects.equals(this.taxesPercentage, ptsV2PaymentsPost201ResponseInstallmentInformation.taxesPercentage);
+        Objects.equals(this.taxesPercentage, ptsV2PaymentsPost201ResponseInstallmentInformation.taxesPercentage) &&
+        Objects.equals(this.totalAmount, ptsV2PaymentsPost201ResponseInstallmentInformation.totalAmount) &&
+        Objects.equals(this.totalCount, ptsV2PaymentsPost201ResponseInstallmentInformation.totalCount) &&
+        Objects.equals(this.minimumTotalCount, ptsV2PaymentsPost201ResponseInstallmentInformation.minimumTotalCount) &&
+        Objects.equals(this.maximumTotalCount, ptsV2PaymentsPost201ResponseInstallmentInformation.maximumTotalCount) &&
+        Objects.equals(this.firstInstallmentAmount, ptsV2PaymentsPost201ResponseInstallmentInformation.firstInstallmentAmount) &&
+        Objects.equals(this.firstInstallmentDate, ptsV2PaymentsPost201ResponseInstallmentInformation.firstInstallmentDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalCosts, additionalCostsPercentage, amountFunded, amountRequestedPercentage, annualFinancingCost, annualInterestRate, expenses, expensesPercentage, fees, feesPercentage, insurance, insurancePercentage, monthlyInterestRate, taxes, taxesPercentage);
+    return Objects.hash(additionalCosts, additionalCostsPercentage, amount, amountFunded, amountRequestedPercentage, annualFinancingCost, annualInterestRate, expenses, expensesPercentage, fees, feesPercentage, frequency, insurance, insurancePercentage, invoiceData, monthlyInterestRate, planType, sequence, taxes, taxesPercentage, totalAmount, totalCount, minimumTotalCount, maximumTotalCount, firstInstallmentAmount, firstInstallmentDate);
   }
 
 
@@ -383,6 +627,7 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
     
     sb.append("    additionalCosts: ").append(toIndentedString(additionalCosts)).append("\n");
     sb.append("    additionalCostsPercentage: ").append(toIndentedString(additionalCostsPercentage)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    amountFunded: ").append(toIndentedString(amountFunded)).append("\n");
     sb.append("    amountRequestedPercentage: ").append(toIndentedString(amountRequestedPercentage)).append("\n");
     sb.append("    annualFinancingCost: ").append(toIndentedString(annualFinancingCost)).append("\n");
@@ -391,11 +636,21 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
     sb.append("    expensesPercentage: ").append(toIndentedString(expensesPercentage)).append("\n");
     sb.append("    fees: ").append(toIndentedString(fees)).append("\n");
     sb.append("    feesPercentage: ").append(toIndentedString(feesPercentage)).append("\n");
+    sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
     sb.append("    insurance: ").append(toIndentedString(insurance)).append("\n");
     sb.append("    insurancePercentage: ").append(toIndentedString(insurancePercentage)).append("\n");
+    sb.append("    invoiceData: ").append(toIndentedString(invoiceData)).append("\n");
     sb.append("    monthlyInterestRate: ").append(toIndentedString(monthlyInterestRate)).append("\n");
+    sb.append("    planType: ").append(toIndentedString(planType)).append("\n");
+    sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
     sb.append("    taxes: ").append(toIndentedString(taxes)).append("\n");
     sb.append("    taxesPercentage: ").append(toIndentedString(taxesPercentage)).append("\n");
+    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+    sb.append("    minimumTotalCount: ").append(toIndentedString(minimumTotalCount)).append("\n");
+    sb.append("    maximumTotalCount: ").append(toIndentedString(maximumTotalCount)).append("\n");
+    sb.append("    firstInstallmentAmount: ").append(toIndentedString(firstInstallmentAmount)).append("\n");
+    sb.append("    firstInstallmentDate: ").append(toIndentedString(firstInstallmentDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

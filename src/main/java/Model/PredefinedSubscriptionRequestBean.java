@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PredefinedSubscriptionRequestBean
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class PredefinedSubscriptionRequestBean {
   @SerializedName("reportDefinitionName")
   private String reportDefinitionName = null;
@@ -136,10 +136,10 @@ public class PredefinedSubscriptionRequestBean {
   }
 
    /**
-   * &#39;The frequency for which subscription is created. For Standard we can have DAILY, WEEKLY and MONTHLY. But for Classic we will have only DAILY.&#39;  Valid Values: - &#39;DAILY&#39; - &#39;WEEKLY&#39; - &#39;MONTHLY&#39; - &#39;USER_DEFINED&#39; 
+   * &#39;The frequency for which subscription is created. For Standard we can have DAILY, WEEKLY and MONTHLY. But for Classic we will have only DAILY.&#39; **NOTE: Do not document USER_DEFINED Frequency field in developer center** Valid Values: - &#39;DAILY&#39; - &#39;WEEKLY&#39; - &#39;MONTHLY&#39; - &#39;USER_DEFINED&#39; 
    * @return reportFrequency
   **/
-  @ApiModelProperty(example = "DAILY", value = "'The frequency for which subscription is created. For Standard we can have DAILY, WEEKLY and MONTHLY. But for Classic we will have only DAILY.'  Valid Values: - 'DAILY' - 'WEEKLY' - 'MONTHLY' - 'USER_DEFINED' ")
+  @ApiModelProperty(example = "DAILY", value = "'The frequency for which subscription is created. For Standard we can have DAILY, WEEKLY and MONTHLY. But for Classic we will have only DAILY.' **NOTE: Do not document USER_DEFINED Frequency field in developer center** Valid Values: - 'DAILY' - 'WEEKLY' - 'MONTHLY' - 'USER_DEFINED' ")
   public String getReportFrequency() {
     return reportFrequency;
   }

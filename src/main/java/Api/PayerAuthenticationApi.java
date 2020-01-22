@@ -30,10 +30,10 @@ import java.io.InputStream;
 
 import Model.CheckPayerAuthEnrollmentRequest;
 import Model.PtsV2PaymentsPost502Response;
-import Model.Request;
 import Model.RiskV1AuthenticationExcemptionsPost400Response;
 import Model.RiskV1AuthenticationResultsPost201Response;
 import Model.RiskV1AuthenticationsPost201Response;
+import Model.ValidateRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -187,14 +187,14 @@ public class PayerAuthenticationApi {
     }
     /**
      * Build call for validateAuthenticationResults
-     * @param request  (required)
+     * @param validateRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call validateAuthenticationResultsCall(Request request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = request;
+    public okhttp3.Call validateAuthenticationResultsCall(ValidateRequest validateRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = validateRequest;
         
         // create path and map variables
         String localVarPath = "/risk/v1/authentication-results";
@@ -234,15 +234,15 @@ public class PayerAuthenticationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call validateAuthenticationResultsValidateBeforeCall(Request request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call validateAuthenticationResultsValidateBeforeCall(ValidateRequest validateRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'request' is set
-        if (request == null) {
-            throw new ApiException("Missing the required parameter 'request' when calling validateAuthenticationResults(Async)");
+        // verify the required parameter 'validateRequest' is set
+        if (validateRequest == null) {
+            throw new ApiException("Missing the required parameter 'validateRequest' when calling validateAuthenticationResults(Async)");
         }
         
         
-        okhttp3.Call call = validateAuthenticationResultsCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = validateAuthenticationResultsCall(validateRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -254,24 +254,24 @@ public class PayerAuthenticationApi {
     /**
      * Validate authentication results
      * This call retrieves and validates the authentication results from issuer and allows the merchant to proceed with processing the payment. 
-     * @param request  (required)
+     * @param validateRequest  (required)
      * @return RiskV1AuthenticationResultsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public RiskV1AuthenticationResultsPost201Response validateAuthenticationResults(Request request) throws ApiException {
-        ApiResponse<RiskV1AuthenticationResultsPost201Response> resp = validateAuthenticationResultsWithHttpInfo(request);
+    public RiskV1AuthenticationResultsPost201Response validateAuthenticationResults(ValidateRequest validateRequest) throws ApiException {
+        ApiResponse<RiskV1AuthenticationResultsPost201Response> resp = validateAuthenticationResultsWithHttpInfo(validateRequest);
         return resp.getData();
     }
 
     /**
      * Validate authentication results
      * This call retrieves and validates the authentication results from issuer and allows the merchant to proceed with processing the payment. 
-     * @param request  (required)
+     * @param validateRequest  (required)
      * @return ApiResponse&lt;RiskV1AuthenticationResultsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<RiskV1AuthenticationResultsPost201Response> validateAuthenticationResultsWithHttpInfo(Request request) throws ApiException {
-        okhttp3.Call call = validateAuthenticationResultsValidateBeforeCall(request, null, null);
+    public ApiResponse<RiskV1AuthenticationResultsPost201Response> validateAuthenticationResultsWithHttpInfo(ValidateRequest validateRequest) throws ApiException {
+        okhttp3.Call call = validateAuthenticationResultsValidateBeforeCall(validateRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1AuthenticationResultsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -279,12 +279,12 @@ public class PayerAuthenticationApi {
     /**
      * Validate authentication results (asynchronously)
      * This call retrieves and validates the authentication results from issuer and allows the merchant to proceed with processing the payment. 
-     * @param request  (required)
+     * @param validateRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call validateAuthenticationResultsAsync(Request request, final ApiCallback<RiskV1AuthenticationResultsPost201Response> callback) throws ApiException {
+    public okhttp3.Call validateAuthenticationResultsAsync(ValidateRequest validateRequest, final ApiCallback<RiskV1AuthenticationResultsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -305,7 +305,7 @@ public class PayerAuthenticationApi {
             };
         }
 
-        okhttp3.Call call = validateAuthenticationResultsValidateBeforeCall(request, progressListener, progressRequestListener);
+        okhttp3.Call call = validateAuthenticationResultsValidateBeforeCall(validateRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<RiskV1AuthenticationResultsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

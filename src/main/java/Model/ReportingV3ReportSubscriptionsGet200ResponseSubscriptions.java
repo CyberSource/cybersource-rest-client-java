@@ -33,7 +33,7 @@ import org.joda.time.DateTime;
  * Subscription Details
  */
 @ApiModel(description = "Subscription Details")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -155,10 +155,10 @@ public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
   }
 
    /**
-   * &#39;Report Frequency&#39;   Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED 
+   * &#39;Report Frequency&#39; **NOTE: Do not document USER_DEFINED Frequency field in developer center**  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED 
    * @return reportFrequency
   **/
-  @ApiModelProperty(example = "DAILY", value = "'Report Frequency'   Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED ")
+  @ApiModelProperty(example = "DAILY", value = "'Report Frequency' **NOTE: Do not document USER_DEFINED Frequency field in developer center**  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED ")
   public String getReportFrequency() {
     return reportFrequency;
   }

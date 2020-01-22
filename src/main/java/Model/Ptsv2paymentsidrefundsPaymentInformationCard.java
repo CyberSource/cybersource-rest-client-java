@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidrefundsPaymentInformationCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsidrefundsPaymentInformationCard {
   @SerializedName("number")
   private String number = null;
@@ -51,6 +51,12 @@ public class Ptsv2paymentsidrefundsPaymentInformationCard {
 
   @SerializedName("startYear")
   private String startYear = null;
+
+  @SerializedName("sourceAccountType")
+  private String sourceAccountType = null;
+
+  @SerializedName("sourceAccountTypeDetails")
+  private String sourceAccountTypeDetails = null;
 
   public Ptsv2paymentsidrefundsPaymentInformationCard number(String number) {
     this.number = number;
@@ -196,6 +202,42 @@ public class Ptsv2paymentsidrefundsPaymentInformationCard {
     this.startYear = startYear;
   }
 
+  public Ptsv2paymentsidrefundsPaymentInformationCard sourceAccountType(String sourceAccountType) {
+    this.sourceAccountType = sourceAccountType;
+    return this;
+  }
+
+   /**
+   * Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  This field is required in the following cases:   - Debit transactions on Cielo and Comercio Latino.   - Transactions with Brazilian-issued cards on CyberSource through VisaNet.   - Applicable only for CyberSource through VisaNet (CtV).      **Note** Combo cards in Brazil contain credit and debit functionality in a single card. Visa systems use a credit bank identification number (BIN) for this type of card. Using the BIN to determine whether a card is debit or credit can cause transactions with these cards to be processed incorrectly. CyberSource strongly recommends that you include this field for combo card transactions.  Possible values include the following.   - &#x60;CHECKING&#x60;: Checking account  - &#x60;CREDIT&#x60;: Credit card account  - &#x60;SAVING&#x60;: Saving account  - &#x60;LINE_OF_CREDIT&#x60;: Line of credit or credit portion of combo card  - &#x60;PREPAID&#x60;: Prepaid card account or prepaid portion of combo card  - &#x60;UNIVERSAL&#x60;: Universal account 
+   * @return sourceAccountType
+  **/
+  @ApiModelProperty(value = "Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  This field is required in the following cases:   - Debit transactions on Cielo and Comercio Latino.   - Transactions with Brazilian-issued cards on CyberSource through VisaNet.   - Applicable only for CyberSource through VisaNet (CtV).      **Note** Combo cards in Brazil contain credit and debit functionality in a single card. Visa systems use a credit bank identification number (BIN) for this type of card. Using the BIN to determine whether a card is debit or credit can cause transactions with these cards to be processed incorrectly. CyberSource strongly recommends that you include this field for combo card transactions.  Possible values include the following.   - `CHECKING`: Checking account  - `CREDIT`: Credit card account  - `SAVING`: Saving account  - `LINE_OF_CREDIT`: Line of credit or credit portion of combo card  - `PREPAID`: Prepaid card account or prepaid portion of combo card  - `UNIVERSAL`: Universal account ")
+  public String getSourceAccountType() {
+    return sourceAccountType;
+  }
+
+  public void setSourceAccountType(String sourceAccountType) {
+    this.sourceAccountType = sourceAccountType;
+  }
+
+  public Ptsv2paymentsidrefundsPaymentInformationCard sourceAccountTypeDetails(String sourceAccountTypeDetails) {
+    this.sourceAccountTypeDetails = sourceAccountTypeDetails;
+    return this;
+  }
+
+   /**
+   * Type of account that is being used when the value for the override_payment_method field is line of credit (LI) or prepaid card (PP). Possible values for line of credit: - &#x60;AGRC&#x60;: Visa Agro Custeio - &#x60;AGRE&#x60;: Visa Agro Electron - &#x60;AGRI&#x60;: Visa Agro Investimento - &#x60;AGRO&#x60;: Visa Agro Possible values for prepaid card: - &#x60;VVA&#x60;: Visa Vale Alimentacao - &#x60;VVF&#x60;: Visa Vale Flex - &#x60;VVR&#x60;: Visa Vale Refeicao This field is supported only for combo card transactions in Brazil on CyberSource through VisaNet. The value for this field corresponds to the following data in the TC 33 capture file5: Record: CP07 TCR0, Position: 44-47, Field: Account Accessed 
+   * @return sourceAccountTypeDetails
+  **/
+  @ApiModelProperty(value = "Type of account that is being used when the value for the override_payment_method field is line of credit (LI) or prepaid card (PP). Possible values for line of credit: - `AGRC`: Visa Agro Custeio - `AGRE`: Visa Agro Electron - `AGRI`: Visa Agro Investimento - `AGRO`: Visa Agro Possible values for prepaid card: - `VVA`: Visa Vale Alimentacao - `VVF`: Visa Vale Flex - `VVR`: Visa Vale Refeicao This field is supported only for combo card transactions in Brazil on CyberSource through VisaNet. The value for this field corresponds to the following data in the TC 33 capture file5: Record: CP07 TCR0, Position: 44-47, Field: Account Accessed ")
+  public String getSourceAccountTypeDetails() {
+    return sourceAccountTypeDetails;
+  }
+
+  public void setSourceAccountTypeDetails(String sourceAccountTypeDetails) {
+    this.sourceAccountTypeDetails = sourceAccountTypeDetails;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -213,12 +255,14 @@ public class Ptsv2paymentsidrefundsPaymentInformationCard {
         Objects.equals(this.accountEncoderId, ptsv2paymentsidrefundsPaymentInformationCard.accountEncoderId) &&
         Objects.equals(this.issueNumber, ptsv2paymentsidrefundsPaymentInformationCard.issueNumber) &&
         Objects.equals(this.startMonth, ptsv2paymentsidrefundsPaymentInformationCard.startMonth) &&
-        Objects.equals(this.startYear, ptsv2paymentsidrefundsPaymentInformationCard.startYear);
+        Objects.equals(this.startYear, ptsv2paymentsidrefundsPaymentInformationCard.startYear) &&
+        Objects.equals(this.sourceAccountType, ptsv2paymentsidrefundsPaymentInformationCard.sourceAccountType) &&
+        Objects.equals(this.sourceAccountTypeDetails, ptsv2paymentsidrefundsPaymentInformationCard.sourceAccountTypeDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(number, expirationMonth, expirationYear, type, accountEncoderId, issueNumber, startMonth, startYear);
+    return Objects.hash(number, expirationMonth, expirationYear, type, accountEncoderId, issueNumber, startMonth, startYear, sourceAccountType, sourceAccountTypeDetails);
   }
 
 
@@ -235,6 +279,8 @@ public class Ptsv2paymentsidrefundsPaymentInformationCard {
     sb.append("    issueNumber: ").append(toIndentedString(issueNumber)).append("\n");
     sb.append("    startMonth: ").append(toIndentedString(startMonth)).append("\n");
     sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
+    sb.append("    sourceAccountType: ").append(toIndentedString(sourceAccountType)).append("\n");
+    sb.append("    sourceAccountTypeDetails: ").append(toIndentedString(sourceAccountTypeDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

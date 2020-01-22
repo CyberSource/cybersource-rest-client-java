@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-16T17:43:55.224+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
 public class Ptsv2paymentsPaymentInformationCard {
   @SerializedName("number")
   private String number = null;
@@ -45,6 +45,9 @@ public class Ptsv2paymentsPaymentInformationCard {
 
   @SerializedName("sourceAccountType")
   private String sourceAccountType = null;
+
+  @SerializedName("sourceAccountTypeDetails")
+  private String sourceAccountTypeDetails = null;
 
   @SerializedName("securityCode")
   private String securityCode = null;
@@ -173,6 +176,24 @@ public class Ptsv2paymentsPaymentInformationCard {
 
   public void setSourceAccountType(String sourceAccountType) {
     this.sourceAccountType = sourceAccountType;
+  }
+
+  public Ptsv2paymentsPaymentInformationCard sourceAccountTypeDetails(String sourceAccountTypeDetails) {
+    this.sourceAccountTypeDetails = sourceAccountTypeDetails;
+    return this;
+  }
+
+   /**
+   * Type of account that is being used when the value for the override_payment_method field is line of credit (LI) or prepaid card (PP). Possible values for line of credit: - &#x60;AGRC&#x60;: Visa Agro Custeio - &#x60;AGRE&#x60;: Visa Agro Electron - &#x60;AGRI&#x60;: Visa Agro Investimento - &#x60;AGRO&#x60;: Visa Agro Possible values for prepaid card: - &#x60;VVA&#x60;: Visa Vale Alimentacao - &#x60;VVF&#x60;: Visa Vale Flex - &#x60;VVR&#x60;: Visa Vale Refeicao This field is supported only for combo card transactions in Brazil on CyberSource through VisaNet. The value for this field corresponds to the following data in the TC 33 capture file5: Record: CP07 TCR0, Position: 44-47, Field: Account Accessed 
+   * @return sourceAccountTypeDetails
+  **/
+  @ApiModelProperty(value = "Type of account that is being used when the value for the override_payment_method field is line of credit (LI) or prepaid card (PP). Possible values for line of credit: - `AGRC`: Visa Agro Custeio - `AGRE`: Visa Agro Electron - `AGRI`: Visa Agro Investimento - `AGRO`: Visa Agro Possible values for prepaid card: - `VVA`: Visa Vale Alimentacao - `VVF`: Visa Vale Flex - `VVR`: Visa Vale Refeicao This field is supported only for combo card transactions in Brazil on CyberSource through VisaNet. The value for this field corresponds to the following data in the TC 33 capture file5: Record: CP07 TCR0, Position: 44-47, Field: Account Accessed ")
+  public String getSourceAccountTypeDetails() {
+    return sourceAccountTypeDetails;
+  }
+
+  public void setSourceAccountTypeDetails(String sourceAccountTypeDetails) {
+    this.sourceAccountTypeDetails = sourceAccountTypeDetails;
   }
 
   public Ptsv2paymentsPaymentInformationCard securityCode(String securityCode) {
@@ -317,6 +338,7 @@ public class Ptsv2paymentsPaymentInformationCard {
         Objects.equals(this.type, ptsv2paymentsPaymentInformationCard.type) &&
         Objects.equals(this.useAs, ptsv2paymentsPaymentInformationCard.useAs) &&
         Objects.equals(this.sourceAccountType, ptsv2paymentsPaymentInformationCard.sourceAccountType) &&
+        Objects.equals(this.sourceAccountTypeDetails, ptsv2paymentsPaymentInformationCard.sourceAccountTypeDetails) &&
         Objects.equals(this.securityCode, ptsv2paymentsPaymentInformationCard.securityCode) &&
         Objects.equals(this.securityCodeIndicator, ptsv2paymentsPaymentInformationCard.securityCodeIndicator) &&
         Objects.equals(this.accountEncoderId, ptsv2paymentsPaymentInformationCard.accountEncoderId) &&
@@ -328,7 +350,7 @@ public class Ptsv2paymentsPaymentInformationCard {
 
   @Override
   public int hashCode() {
-    return Objects.hash(number, expirationMonth, expirationYear, type, useAs, sourceAccountType, securityCode, securityCodeIndicator, accountEncoderId, issueNumber, startMonth, startYear, productName);
+    return Objects.hash(number, expirationMonth, expirationYear, type, useAs, sourceAccountType, sourceAccountTypeDetails, securityCode, securityCodeIndicator, accountEncoderId, issueNumber, startMonth, startYear, productName);
   }
 
 
@@ -343,6 +365,7 @@ public class Ptsv2paymentsPaymentInformationCard {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
     sb.append("    sourceAccountType: ").append(toIndentedString(sourceAccountType)).append("\n");
+    sb.append("    sourceAccountTypeDetails: ").append(toIndentedString(sourceAccountTypeDetails)).append("\n");
     sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
     sb.append("    securityCodeIndicator: ").append(toIndentedString(securityCodeIndicator)).append("\n");
     sb.append("    accountEncoderId: ").append(toIndentedString(accountEncoderId)).append("\n");

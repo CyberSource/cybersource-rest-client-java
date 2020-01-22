@@ -1,5 +1,5 @@
 
-# Request
+# ValidateRequest
 
 ## Properties
 Name | Type | Description | Notes
