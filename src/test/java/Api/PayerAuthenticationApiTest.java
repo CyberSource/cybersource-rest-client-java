@@ -15,10 +15,13 @@ package Api;
 
 import Invokers.ApiException;
 import Model.CheckPayerAuthEnrollmentRequest;
+import Model.PayerAuthSetupRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RiskV1AuthenticationExcemptionsPost400Response;
 import Model.RiskV1AuthenticationResultsPost201Response;
+import Model.RiskV1AuthenticationSetupsPost201Response;
 import Model.RiskV1AuthenticationsPost201Response;
+import Model.RiskV1AuthenticationsPost400Response;
 import Model.ValidateRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -38,7 +41,7 @@ public class PayerAuthenticationApiTest {
 
     
     /**
-     * Check payer auth enrollment
+     * Check Payer Auth Enrollment
      *
      * This call verifies that the card is enrolled in a card authentication program.
      *
@@ -54,7 +57,23 @@ public class PayerAuthenticationApiTest {
     }
     
     /**
-     * Validate authentication results
+     * Setup Payer Auth
+     *
+     * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void payerAuthSetupTest() throws ApiException {
+        PayerAuthSetupRequest payerAuthSetupRequest = null;
+        RiskV1AuthenticationSetupsPost201Response response = api.payerAuthSetup(payerAuthSetupRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Validate Authentication Results
      *
      * This call retrieves and validates the authentication results from issuer and allows the merchant to proceed with processing the payment. 
      *

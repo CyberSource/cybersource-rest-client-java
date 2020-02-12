@@ -35,7 +35,7 @@ public class NetFundingsApiTest {
 
     
     /**
-     * Get Netfunding information for an account or a merchant
+     * Get Netfunding Information for an Account or a Merchant
      *
      * Get Netfunding information for an account or a merchant.
      *

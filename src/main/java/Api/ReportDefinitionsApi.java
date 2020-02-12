@@ -134,7 +134,7 @@ public class ReportDefinitionsApi {
     }
 
     /**
-     * Get report definition
+     * Get Report Definition
      * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
@@ -149,7 +149,7 @@ public class ReportDefinitionsApi {
     }
 
     /**
-     * Get report definition
+     * Get Report Definition
      * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
@@ -165,7 +165,7 @@ public class ReportDefinitionsApi {
     }
 
     /**
-     * Get report definition (asynchronously)
+     * Get Report Definition (asynchronously)
      * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
@@ -268,7 +268,7 @@ public class ReportDefinitionsApi {
     }
 
     /**
-     * Get reporting resource information
+     * Get Reporting Resource Information
      * View a list of supported reports and their attributes before subscribing to them. 
      * @param subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -281,7 +281,7 @@ public class ReportDefinitionsApi {
     }
 
     /**
-     * Get reporting resource information
+     * Get Reporting Resource Information
      * View a list of supported reports and their attributes before subscribing to them. 
      * @param subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -295,7 +295,7 @@ public class ReportDefinitionsApi {
     }
 
     /**
-     * Get reporting resource information (asynchronously)
+     * Get Reporting Resource Information (asynchronously)
      * View a list of supported reports and their attributes before subscribing to them. 
      * @param subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
      * @param organizationId Valid Cybersource Organization Id (optional)

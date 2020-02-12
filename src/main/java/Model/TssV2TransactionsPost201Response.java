@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2PaymentsReversalsPost201ResponseLinks;
+import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.TssV2TransactionsPost201ResponseEmbedded;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class TssV2TransactionsPost201Response {
   @SerializedName("searchId")
   private String searchId = null;
@@ -70,7 +70,7 @@ public class TssV2TransactionsPost201Response {
   private TssV2TransactionsPost201ResponseEmbedded embedded = null;
 
   @SerializedName("_links")
-  private PtsV2PaymentsReversalsPost201ResponseLinks links = null;
+  private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
 
   public TssV2TransactionsPost201Response searchId(String searchId) {
     this.searchId = searchId;
@@ -306,7 +306,7 @@ public class TssV2TransactionsPost201Response {
     this.embedded = embedded;
   }
 
-  public TssV2TransactionsPost201Response links(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public TssV2TransactionsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -316,11 +316,11 @@ public class TssV2TransactionsPost201Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsReversalsPost201ResponseLinks getLinks() {
+  public PtsV2IncrementalAuthorizationPatch201ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public void setLinks(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
   }
 

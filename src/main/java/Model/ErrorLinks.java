@@ -29,41 +29,33 @@ import java.util.List;
 /**
  * ErrorLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class ErrorLinks {
-  @SerializedName("next")
-  private List<InlineResponseDefaultLinksNext> next = null;
+  @SerializedName("self")
+  private InlineResponseDefaultLinksNext self = null;
 
   @SerializedName("documentation")
   private List<InlineResponseDefaultLinksNext> documentation = null;
 
-  @SerializedName("self")
-  private InlineResponseDefaultLinksNext self = null;
+  @SerializedName("next")
+  private List<InlineResponseDefaultLinksNext> next = null;
 
-  public ErrorLinks next(List<InlineResponseDefaultLinksNext> next) {
-    this.next = next;
-    return this;
-  }
-
-  public ErrorLinks addNextItem(InlineResponseDefaultLinksNext nextItem) {
-    if (this.next == null) {
-      this.next = new ArrayList<InlineResponseDefaultLinksNext>();
-    }
-    this.next.add(nextItem);
+  public ErrorLinks self(InlineResponseDefaultLinksNext self) {
+    this.self = self;
     return this;
   }
 
    /**
-   * Get next
-   * @return next
+   * Get self
+   * @return self
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponseDefaultLinksNext> getNext() {
-    return next;
+  public InlineResponseDefaultLinksNext getSelf() {
+    return self;
   }
 
-  public void setNext(List<InlineResponseDefaultLinksNext> next) {
-    this.next = next;
+  public void setSelf(InlineResponseDefaultLinksNext self) {
+    this.self = self;
   }
 
   public ErrorLinks documentation(List<InlineResponseDefaultLinksNext> documentation) {
@@ -92,22 +84,30 @@ public class ErrorLinks {
     this.documentation = documentation;
   }
 
-  public ErrorLinks self(InlineResponseDefaultLinksNext self) {
-    this.self = self;
+  public ErrorLinks next(List<InlineResponseDefaultLinksNext> next) {
+    this.next = next;
+    return this;
+  }
+
+  public ErrorLinks addNextItem(InlineResponseDefaultLinksNext nextItem) {
+    if (this.next == null) {
+      this.next = new ArrayList<InlineResponseDefaultLinksNext>();
+    }
+    this.next.add(nextItem);
     return this;
   }
 
    /**
-   * Get self
-   * @return self
+   * Get next
+   * @return next
   **/
   @ApiModelProperty(value = "")
-  public InlineResponseDefaultLinksNext getSelf() {
-    return self;
+  public List<InlineResponseDefaultLinksNext> getNext() {
+    return next;
   }
 
-  public void setSelf(InlineResponseDefaultLinksNext self) {
-    this.self = self;
+  public void setNext(List<InlineResponseDefaultLinksNext> next) {
+    this.next = next;
   }
 
 
@@ -120,14 +120,14 @@ public class ErrorLinks {
       return false;
     }
     ErrorLinks errorLinks = (ErrorLinks) o;
-    return Objects.equals(this.next, errorLinks.next) &&
+    return Objects.equals(this.self, errorLinks.self) &&
         Objects.equals(this.documentation, errorLinks.documentation) &&
-        Objects.equals(this.self, errorLinks.self);
+        Objects.equals(this.next, errorLinks.next);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(next, documentation, self);
+    return Objects.hash(self, documentation, next);
   }
 
 
@@ -136,9 +136,9 @@ public class ErrorLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class ErrorLinks {\n");
     
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
-    sb.append("    documentation: ").append(toIndentedString(documentation)).append("\n");
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    sb.append("    documentation: ").append(toIndentedString(documentation)).append("\n");
+    sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("}");
     return sb.toString();
   }

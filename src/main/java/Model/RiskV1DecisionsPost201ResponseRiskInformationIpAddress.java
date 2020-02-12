@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains detailed response information about the customer&#39;s IP address.
  */
 @ApiModel(description = "Contains detailed response information about the customer's IP address.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
   @SerializedName("anonymizerStatus")
   private String anonymizerStatus = null;
@@ -43,6 +43,12 @@ public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
 
   @SerializedName("routingMethod")
   private String routingMethod = null;
+
+  @SerializedName("carrier")
+  private String carrier = null;
+
+  @SerializedName("organization")
+  private String organization = null;
 
   public RiskV1DecisionsPost201ResponseRiskInformationIpAddress anonymizerStatus(String anonymizerStatus) {
     this.anonymizerStatus = anonymizerStatus;
@@ -134,6 +140,42 @@ public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
     this.routingMethod = routingMethod;
   }
 
+  public RiskV1DecisionsPost201ResponseRiskInformationIpAddress carrier(String carrier) {
+    this.carrier = carrier;
+    return this;
+  }
+
+   /**
+   * Provides the name of the organization that owns the ASN. The carrier is responsible for the traffic carried on the network or set of networks designated as an Autonomous System (AS) and identified by the ASN. While there are more than 27,000 active ASNs, there are fewer carriers, because a single carrier often manages several ASNs. 
+   * @return carrier
+  **/
+  @ApiModelProperty(value = "Provides the name of the organization that owns the ASN. The carrier is responsible for the traffic carried on the network or set of networks designated as an Autonomous System (AS) and identified by the ASN. While there are more than 27,000 active ASNs, there are fewer carriers, because a single carrier often manages several ASNs. ")
+  public String getCarrier() {
+    return carrier;
+  }
+
+  public void setCarrier(String carrier) {
+    this.carrier = carrier;
+  }
+
+  public RiskV1DecisionsPost201ResponseRiskInformationIpAddress organization(String organization) {
+    this.organization = organization;
+    return this;
+  }
+
+   /**
+   * The Registering Organization is the entity responsible for the actions and content associated with a given block of IP addresses. This is in contrast to the carrier, which is responsible for the routing of traffic for network blocks. Registering Organizations include many types of entities, including corporate, government, or educational entities, and ISPs managing the allocation and use of network blocks. 
+   * @return organization
+  **/
+  @ApiModelProperty(value = "The Registering Organization is the entity responsible for the actions and content associated with a given block of IP addresses. This is in contrast to the carrier, which is responsible for the routing of traffic for network blocks. Registering Organizations include many types of entities, including corporate, government, or educational entities, and ISPs managing the allocation and use of network blocks. ")
+  public String getOrganization() {
+    return organization;
+  }
+
+  public void setOrganization(String organization) {
+    this.organization = organization;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,12 +190,14 @@ public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
         Objects.equals(this.locality, riskV1DecisionsPost201ResponseRiskInformationIpAddress.locality) &&
         Objects.equals(this.country, riskV1DecisionsPost201ResponseRiskInformationIpAddress.country) &&
         Objects.equals(this.administrativeArea, riskV1DecisionsPost201ResponseRiskInformationIpAddress.administrativeArea) &&
-        Objects.equals(this.routingMethod, riskV1DecisionsPost201ResponseRiskInformationIpAddress.routingMethod);
+        Objects.equals(this.routingMethod, riskV1DecisionsPost201ResponseRiskInformationIpAddress.routingMethod) &&
+        Objects.equals(this.carrier, riskV1DecisionsPost201ResponseRiskInformationIpAddress.carrier) &&
+        Objects.equals(this.organization, riskV1DecisionsPost201ResponseRiskInformationIpAddress.organization);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(anonymizerStatus, locality, country, administrativeArea, routingMethod);
+    return Objects.hash(anonymizerStatus, locality, country, administrativeArea, routingMethod, carrier, organization);
   }
 
 
@@ -167,6 +211,8 @@ public class RiskV1DecisionsPost201ResponseRiskInformationIpAddress {
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    routingMethod: ").append(toIndentedString(routingMethod)).append("\n");
+    sb.append("    carrier: ").append(toIndentedString(carrier)).append("\n");
+    sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("}");
     return sb.toString();
   }

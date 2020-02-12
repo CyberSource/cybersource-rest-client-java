@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1decisionsCardVerification
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class Riskv1decisionsCardVerification {
   @SerializedName("resultCode")
   private String resultCode = null;
@@ -37,10 +37,10 @@ public class Riskv1decisionsCardVerification {
   }
 
    /**
-   * CVN result code.  For details, see the &#x60;auth_cv_result&#x60; reply field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * CVN result code.  For details, see the &#x60;auth_cv_result&#x60; reply field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @return resultCode
   **/
-  @ApiModelProperty(value = "CVN result code.  For details, see the `auth_cv_result` reply field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  @ApiModelProperty(value = "CVN result code.  For details, see the `auth_cv_result` reply field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
   public String getResultCode() {
     return resultCode;
   }

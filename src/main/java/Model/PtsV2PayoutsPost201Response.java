@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
-import Model.PtsV2PaymentsReversalsPost201ResponseLinks;
 import Model.PtsV2PayoutsPost201ResponseErrorInformation;
 import Model.PtsV2PayoutsPost201ResponseMerchantInformation;
 import Model.PtsV2PayoutsPost201ResponseOrderInformation;
@@ -33,10 +33,10 @@ import java.io.IOException;
 /**
  * PtsV2PayoutsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class PtsV2PayoutsPost201Response {
   @SerializedName("_links")
-  private PtsV2PaymentsReversalsPost201ResponseLinks links = null;
+  private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -68,7 +68,7 @@ public class PtsV2PayoutsPost201Response {
   @SerializedName("recipientInformation")
   private PtsV2PayoutsPost201ResponseRecipientInformation recipientInformation = null;
 
-  public PtsV2PayoutsPost201Response links(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public PtsV2PayoutsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -78,11 +78,11 @@ public class PtsV2PayoutsPost201Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsReversalsPost201ResponseLinks getLinks() {
+  public PtsV2IncrementalAuthorizationPatch201ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public void setLinks(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
   }
 

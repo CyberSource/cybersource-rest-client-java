@@ -15,7 +15,7 @@ package Api;
 
 import Invokers.ApiException;
 import Model.CreateReportSubscriptionRequest;
-import Model.InlineResponse400;
+import Model.InlineResponse4001;
 import Model.PredefinedSubscriptionRequestBean;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
@@ -38,7 +38,7 @@ public class ReportSubscriptionsApiTest {
 
     
     /**
-     * Create Report Subscription for a report name by organization
+     * Create Report Subscription for a Report Name by Organization
      *
      * Create a report subscription for your organization. The report name must be unique. 
      *
@@ -55,7 +55,7 @@ public class ReportSubscriptionsApiTest {
     }
     
     /**
-     * Delete subscription of a report name by organization
+     * Delete Subscription of a Report Name by Organization
      *
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      *
@@ -71,7 +71,7 @@ public class ReportSubscriptionsApiTest {
     }
     
     /**
-     * Get all subscriptions
+     * Get All Subscriptions
      *
      * View a summary of all report subscriptions. 
      *
@@ -86,7 +86,7 @@ public class ReportSubscriptionsApiTest {
     }
     
     /**
-     * Get subscription for report name
+     * Get Subscription for Report Name
      *
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      *
@@ -102,7 +102,7 @@ public class ReportSubscriptionsApiTest {
     }
     
     /**
-     * Create a Standard or Classic subscription
+     * Create a Standard or Classic Subscription
      *
      * Create or update an already existing classic or standard subscription. 
      *

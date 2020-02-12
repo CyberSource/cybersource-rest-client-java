@@ -29,7 +29,7 @@ import java.io.InputStream;
 
 
 import Model.CreateReportSubscriptionRequest;
-import Model.InlineResponse400;
+import Model.InlineResponse4001;
 import Model.PredefinedSubscriptionRequestBean;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
@@ -130,7 +130,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Create Report Subscription for a report name by organization
+     * Create Report Subscription for a Report Name by Organization
      * Create a report subscription for your organization. The report name must be unique. 
      * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -141,7 +141,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Create Report Subscription for a report name by organization
+     * Create Report Subscription for a Report Name by Organization
      * Create a report subscription for your organization. The report name must be unique. 
      * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -154,7 +154,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Create Report Subscription for a report name by organization (asynchronously)
+     * Create Report Subscription for a Report Name by Organization (asynchronously)
      * Create a report subscription for your organization. The report name must be unique. 
      * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -255,7 +255,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Delete subscription of a report name by organization
+     * Delete Subscription of a Report Name by Organization
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -265,7 +265,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Delete subscription of a report name by organization
+     * Delete Subscription of a Report Name by Organization
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
      * @return ApiResponse&lt;Void&gt;
@@ -277,7 +277,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Delete subscription of a report name by organization (asynchronously)
+     * Delete Subscription of a Report Name by Organization (asynchronously)
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
      * @param callback The callback to be executed when the API call finishes
@@ -370,7 +370,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get all subscriptions
+     * Get All Subscriptions
      * View a summary of all report subscriptions. 
      * @return ReportingV3ReportSubscriptionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -381,7 +381,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get all subscriptions
+     * Get All Subscriptions
      * View a summary of all report subscriptions. 
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -393,7 +393,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get all subscriptions (asynchronously)
+     * Get All Subscriptions (asynchronously)
      * View a summary of all report subscriptions. 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -493,7 +493,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get subscription for report name
+     * Get Subscription for Report Name
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
      * @return ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
@@ -505,7 +505,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get subscription for report name
+     * Get Subscription for Report Name
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200ResponseSubscriptions&gt;
@@ -518,7 +518,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get subscription for report name (asynchronously)
+     * Get Subscription for Report Name (asynchronously)
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
      * @param callback The callback to be executed when the API call finishes
@@ -621,7 +621,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Create a Standard or Classic subscription
+     * Create a Standard or Classic Subscription
      * Create or update an already existing classic or standard subscription. 
      * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -632,7 +632,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Create a Standard or Classic subscription
+     * Create a Standard or Classic Subscription
      * Create or update an already existing classic or standard subscription. 
      * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -645,7 +645,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Create a Standard or Classic subscription (asynchronously)
+     * Create a Standard or Classic Subscription (asynchronously)
      * Create or update an already existing classic or standard subscription. 
      * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)

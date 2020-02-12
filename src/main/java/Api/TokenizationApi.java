@@ -124,7 +124,7 @@ public class TokenizationApi {
     }
 
     /**
-     * Tokenize card
+     * Tokenize Card
      * Returns a token representing the supplied card details. The token replaces card data and can be used as the Subscription ID in the CyberSource Simple Order API or SCMP API. This is an unauthenticated call that you should initiate from your customer’s device or browser.
      * @param tokenizeRequest  (required)
      * @return FlexV1TokensPost200Response
@@ -136,7 +136,7 @@ public class TokenizationApi {
     }
 
     /**
-     * Tokenize card
+     * Tokenize Card
      * Returns a token representing the supplied card details. The token replaces card data and can be used as the Subscription ID in the CyberSource Simple Order API or SCMP API. This is an unauthenticated call that you should initiate from your customer’s device or browser.
      * @param tokenizeRequest  (required)
      * @return ApiResponse&lt;FlexV1TokensPost200Response&gt;
@@ -149,7 +149,7 @@ public class TokenizationApi {
     }
 
     /**
-     * Tokenize card (asynchronously)
+     * Tokenize Card (asynchronously)
      * Returns a token representing the supplied card details. The token replaces card data and can be used as the Subscription ID in the CyberSource Simple Order API or SCMP API. This is an unauthenticated call that you should initiate from your customer’s device or browser.
      * @param tokenizeRequest  (required)
      * @param callback The callback to be executed when the API call finishes

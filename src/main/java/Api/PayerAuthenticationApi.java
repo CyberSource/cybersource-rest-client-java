@@ -29,10 +29,13 @@ import java.io.InputStream;
 
 
 import Model.CheckPayerAuthEnrollmentRequest;
+import Model.PayerAuthSetupRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RiskV1AuthenticationExcemptionsPost400Response;
 import Model.RiskV1AuthenticationResultsPost201Response;
+import Model.RiskV1AuthenticationSetupsPost201Response;
 import Model.RiskV1AuthenticationsPost201Response;
+import Model.RiskV1AuthenticationsPost400Response;
 import Model.ValidateRequest;
 
 import java.lang.reflect.Type;
@@ -127,7 +130,7 @@ public class PayerAuthenticationApi {
     }
 
     /**
-     * Check payer auth enrollment
+     * Check Payer Auth Enrollment
      * This call verifies that the card is enrolled in a card authentication program.
      * @param checkPayerAuthEnrollmentRequest  (required)
      * @return RiskV1AuthenticationsPost201Response
@@ -139,7 +142,7 @@ public class PayerAuthenticationApi {
     }
 
     /**
-     * Check payer auth enrollment
+     * Check Payer Auth Enrollment
      * This call verifies that the card is enrolled in a card authentication program.
      * @param checkPayerAuthEnrollmentRequest  (required)
      * @return ApiResponse&lt;RiskV1AuthenticationsPost201Response&gt;
@@ -152,7 +155,7 @@ public class PayerAuthenticationApi {
     }
 
     /**
-     * Check payer auth enrollment (asynchronously)
+     * Check Payer Auth Enrollment (asynchronously)
      * This call verifies that the card is enrolled in a card authentication program.
      * @param checkPayerAuthEnrollmentRequest  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -182,6 +185,131 @@ public class PayerAuthenticationApi {
 
         okhttp3.Call call = checkPayerAuthEnrollmentValidateBeforeCall(checkPayerAuthEnrollmentRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<RiskV1AuthenticationsPost201Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for payerAuthSetup
+     * @param payerAuthSetupRequest  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call payerAuthSetupCall(PayerAuthSetupRequest payerAuthSetupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = payerAuthSetupRequest;
+        
+        // create path and map variables
+        String localVarPath = "/risk/v1/authentication-setups";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call payerAuthSetupValidateBeforeCall(PayerAuthSetupRequest payerAuthSetupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'payerAuthSetupRequest' is set
+        if (payerAuthSetupRequest == null) {
+            throw new ApiException("Missing the required parameter 'payerAuthSetupRequest' when calling payerAuthSetup(Async)");
+        }
+        
+        
+        okhttp3.Call call = payerAuthSetupCall(payerAuthSetupRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Setup Payer Auth
+     * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check.
+     * @param payerAuthSetupRequest  (required)
+     * @return RiskV1AuthenticationSetupsPost201Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public RiskV1AuthenticationSetupsPost201Response payerAuthSetup(PayerAuthSetupRequest payerAuthSetupRequest) throws ApiException {
+        ApiResponse<RiskV1AuthenticationSetupsPost201Response> resp = payerAuthSetupWithHttpInfo(payerAuthSetupRequest);
+        return resp.getData();
+    }
+
+    /**
+     * Setup Payer Auth
+     * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check.
+     * @param payerAuthSetupRequest  (required)
+     * @return ApiResponse&lt;RiskV1AuthenticationSetupsPost201Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<RiskV1AuthenticationSetupsPost201Response> payerAuthSetupWithHttpInfo(PayerAuthSetupRequest payerAuthSetupRequest) throws ApiException {
+        okhttp3.Call call = payerAuthSetupValidateBeforeCall(payerAuthSetupRequest, null, null);
+        Type localVarReturnType = new TypeToken<RiskV1AuthenticationSetupsPost201Response>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Setup Payer Auth (asynchronously)
+     * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check.
+     * @param payerAuthSetupRequest  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call payerAuthSetupAsync(PayerAuthSetupRequest payerAuthSetupRequest, final ApiCallback<RiskV1AuthenticationSetupsPost201Response> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = payerAuthSetupValidateBeforeCall(payerAuthSetupRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<RiskV1AuthenticationSetupsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -252,7 +380,7 @@ public class PayerAuthenticationApi {
     }
 
     /**
-     * Validate authentication results
+     * Validate Authentication Results
      * This call retrieves and validates the authentication results from issuer and allows the merchant to proceed with processing the payment. 
      * @param validateRequest  (required)
      * @return RiskV1AuthenticationResultsPost201Response
@@ -264,7 +392,7 @@ public class PayerAuthenticationApi {
     }
 
     /**
-     * Validate authentication results
+     * Validate Authentication Results
      * This call retrieves and validates the authentication results from issuer and allows the merchant to proceed with processing the payment. 
      * @param validateRequest  (required)
      * @return ApiResponse&lt;RiskV1AuthenticationResultsPost201Response&gt;
@@ -277,7 +405,7 @@ public class PayerAuthenticationApi {
     }
 
     /**
-     * Validate authentication results (asynchronously)
+     * Validate Authentication Results (asynchronously)
      * This call retrieves and validates the authentication results from issuer and allows the merchant to proceed with processing the payment. 
      * @param validateRequest  (required)
      * @param callback The callback to be executed when the API call finishes

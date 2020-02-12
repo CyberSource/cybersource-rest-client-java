@@ -29,7 +29,7 @@ import java.io.InputStream;
 
 
 import Model.CreatePaymentInstrumentRequest;
-import Model.InlineResponse4001;
+import Model.InlineResponse400;
 import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments;
 import Model.UpdatePaymentInstrumentRequest;
 

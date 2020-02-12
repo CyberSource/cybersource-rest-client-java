@@ -36,7 +36,7 @@ public class SearchTransactionsApiTest {
 
     
     /**
-     * Create a search request
+     * Create a Search Request
      *
      * Create a search request. 
      *
@@ -52,7 +52,7 @@ public class SearchTransactionsApiTest {
     }
     
     /**
-     * Get Search results
+     * Get Search Results
      *
      * Include the Search ID in the GET request to retrieve the search results.
      *

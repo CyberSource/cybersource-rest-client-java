@@ -14,8 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments;
-import Model.TmsV1InstrumentIdentifiersPost200ResponseLinksSelf;
+import Model.InlineResponseDefaultLinksNext;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,25 +23,24 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Links
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class Links {
   @SerializedName("self")
-  private TmsV1InstrumentIdentifiersPost200ResponseLinksSelf self = null;
+  private InlineResponseDefaultLinksNext self = null;
 
-  @SerializedName("paymentInstruments")
-  private TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments paymentInstruments = null;
+  @SerializedName("documentation")
+  private List<InlineResponseDefaultLinksNext> documentation = null;
 
-  @SerializedName("ancestor")
-  private TmsV1InstrumentIdentifiersPost200ResponseLinksSelf ancestor = null;
+  @SerializedName("next")
+  private List<InlineResponseDefaultLinksNext> next = null;
 
-  @SerializedName("successor")
-  private TmsV1InstrumentIdentifiersPost200ResponseLinksSelf successor = null;
-
-  public Links self(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf self) {
+  public Links self(InlineResponseDefaultLinksNext self) {
     this.self = self;
     return this;
   }
@@ -52,66 +50,64 @@ public class Links {
    * @return self
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentIdentifiersPost200ResponseLinksSelf getSelf() {
+  public InlineResponseDefaultLinksNext getSelf() {
     return self;
   }
 
-  public void setSelf(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf self) {
+  public void setSelf(InlineResponseDefaultLinksNext self) {
     this.self = self;
   }
 
-  public Links paymentInstruments(TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments paymentInstruments) {
-    this.paymentInstruments = paymentInstruments;
+  public Links documentation(List<InlineResponseDefaultLinksNext> documentation) {
+    this.documentation = documentation;
+    return this;
+  }
+
+  public Links addDocumentationItem(InlineResponseDefaultLinksNext documentationItem) {
+    if (this.documentation == null) {
+      this.documentation = new ArrayList<InlineResponseDefaultLinksNext>();
+    }
+    this.documentation.add(documentationItem);
     return this;
   }
 
    /**
-   * Get paymentInstruments
-   * @return paymentInstruments
+   * Get documentation
+   * @return documentation
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments getPaymentInstruments() {
-    return paymentInstruments;
+  public List<InlineResponseDefaultLinksNext> getDocumentation() {
+    return documentation;
   }
 
-  public void setPaymentInstruments(TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments paymentInstruments) {
-    this.paymentInstruments = paymentInstruments;
+  public void setDocumentation(List<InlineResponseDefaultLinksNext> documentation) {
+    this.documentation = documentation;
   }
 
-  public Links ancestor(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf ancestor) {
-    this.ancestor = ancestor;
+  public Links next(List<InlineResponseDefaultLinksNext> next) {
+    this.next = next;
+    return this;
+  }
+
+  public Links addNextItem(InlineResponseDefaultLinksNext nextItem) {
+    if (this.next == null) {
+      this.next = new ArrayList<InlineResponseDefaultLinksNext>();
+    }
+    this.next.add(nextItem);
     return this;
   }
 
    /**
-   * Get ancestor
-   * @return ancestor
+   * Get next
+   * @return next
   **/
   @ApiModelProperty(value = "")
-  public TmsV1InstrumentIdentifiersPost200ResponseLinksSelf getAncestor() {
-    return ancestor;
+  public List<InlineResponseDefaultLinksNext> getNext() {
+    return next;
   }
 
-  public void setAncestor(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf ancestor) {
-    this.ancestor = ancestor;
-  }
-
-  public Links successor(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf successor) {
-    this.successor = successor;
-    return this;
-  }
-
-   /**
-   * Get successor
-   * @return successor
-  **/
-  @ApiModelProperty(value = "")
-  public TmsV1InstrumentIdentifiersPost200ResponseLinksSelf getSuccessor() {
-    return successor;
-  }
-
-  public void setSuccessor(TmsV1InstrumentIdentifiersPost200ResponseLinksSelf successor) {
-    this.successor = successor;
+  public void setNext(List<InlineResponseDefaultLinksNext> next) {
+    this.next = next;
   }
 
 
@@ -125,14 +121,13 @@ public class Links {
     }
     Links links = (Links) o;
     return Objects.equals(this.self, links.self) &&
-        Objects.equals(this.paymentInstruments, links.paymentInstruments) &&
-        Objects.equals(this.ancestor, links.ancestor) &&
-        Objects.equals(this.successor, links.successor);
+        Objects.equals(this.documentation, links.documentation) &&
+        Objects.equals(this.next, links.next);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self, paymentInstruments, ancestor, successor);
+    return Objects.hash(self, documentation, next);
   }
 
 
@@ -142,9 +137,8 @@ public class Links {
     sb.append("class Links {\n");
     
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    paymentInstruments: ").append(toIndentedString(paymentInstruments)).append("\n");
-    sb.append("    ancestor: ").append(toIndentedString(ancestor)).append("\n");
-    sb.append("    successor: ").append(toIndentedString(successor)).append("\n");
+    sb.append("    documentation: ").append(toIndentedString(documentation)).append("\n");
+    sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("}");
     return sb.toString();
   }

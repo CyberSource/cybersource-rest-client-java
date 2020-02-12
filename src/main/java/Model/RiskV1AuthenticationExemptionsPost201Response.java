@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseErrorInformation;
-import Model.PtsV2PaymentsReversalsPost201ResponseLinks;
 import Model.RiskV1AuthenticationExemptionsPost201ResponseConsumerAuthenticationInformation;
 import Model.RiskV1AuthenticationExemptionsPost201ResponseRiskInformation;
 import com.google.gson.TypeAdapter;
@@ -30,10 +30,10 @@ import java.io.IOException;
 /**
  * RiskV1AuthenticationExemptionsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class RiskV1AuthenticationExemptionsPost201Response {
   @SerializedName("_links")
-  private PtsV2PaymentsReversalsPost201ResponseLinks links = null;
+  private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -53,7 +53,7 @@ public class RiskV1AuthenticationExemptionsPost201Response {
   @SerializedName("errorInformation")
   private PtsV2PaymentsPost201ResponseErrorInformation errorInformation = null;
 
-  public RiskV1AuthenticationExemptionsPost201Response links(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public RiskV1AuthenticationExemptionsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -63,11 +63,11 @@ public class RiskV1AuthenticationExemptionsPost201Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsReversalsPost201ResponseLinks getLinks() {
+  public PtsV2IncrementalAuthorizationPatch201ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public void setLinks(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
   }
 

@@ -14,10 +14,10 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation;
 import Model.PtsV2PaymentsReversalsPost201ResponseIssuerInformation;
-import Model.PtsV2PaymentsReversalsPost201ResponseLinks;
 import Model.PtsV2PaymentsReversalsPost201ResponseProcessorInformation;
 import Model.PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails;
 import Model.Ptsv2paymentsidreversalsPointOfSaleInformation;
@@ -33,10 +33,10 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsReversalsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class PtsV2PaymentsReversalsPost201Response {
   @SerializedName("_links")
-  private PtsV2PaymentsReversalsPost201ResponseLinks links = null;
+  private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -68,7 +68,7 @@ public class PtsV2PaymentsReversalsPost201Response {
   @SerializedName("pointOfSaleInformation")
   private Ptsv2paymentsidreversalsPointOfSaleInformation pointOfSaleInformation = null;
 
-  public PtsV2PaymentsReversalsPost201Response links(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public PtsV2PaymentsReversalsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -78,11 +78,11 @@ public class PtsV2PaymentsReversalsPost201Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsReversalsPost201ResponseLinks getLinks() {
+  public PtsV2IncrementalAuthorizationPatch201ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public void setLinks(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
   }
 

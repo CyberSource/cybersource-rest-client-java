@@ -19,6 +19,7 @@ import Model.TmsV1InstrumentIdentifiersPost200ResponseIssuer;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseLinks;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseMetadata;
 import Model.TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation;
+import Model.TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard;
 import Model.Tmsv1instrumentidentifiersBankAccount;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -32,7 +33,7 @@ import java.io.IOException;
 /**
  * EmbeddedInstrumentIdentifierResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class EmbeddedInstrumentIdentifierResponse {
   @SerializedName("_links")
   private TmsV1InstrumentIdentifiersPost200ResponseLinks links = null;
@@ -48,6 +49,9 @@ public class EmbeddedInstrumentIdentifierResponse {
 
   @SerializedName("card")
   private TmsV1InstrumentIdentifiersPost200ResponseCard card = null;
+
+  @SerializedName("tokenizedCard")
+  private TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard tokenizedCard = null;
 
   @SerializedName("bankAccount")
   private Tmsv1instrumentidentifiersBankAccount bankAccount = null;
@@ -131,6 +135,24 @@ public class EmbeddedInstrumentIdentifierResponse {
 
   public void setCard(TmsV1InstrumentIdentifiersPost200ResponseCard card) {
     this.card = card;
+  }
+
+  public EmbeddedInstrumentIdentifierResponse tokenizedCard(TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
+    return this;
+  }
+
+   /**
+   * Get tokenizedCard
+   * @return tokenizedCard
+  **/
+  @ApiModelProperty(value = "")
+  public TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard getTokenizedCard() {
+    return tokenizedCard;
+  }
+
+  public void setTokenizedCard(TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
   }
 
   public EmbeddedInstrumentIdentifierResponse bankAccount(Tmsv1instrumentidentifiersBankAccount bankAccount) {
@@ -220,6 +242,7 @@ public class EmbeddedInstrumentIdentifierResponse {
         Objects.equals(this.state, embeddedInstrumentIdentifierResponse.state) &&
         Objects.equals(this.id, embeddedInstrumentIdentifierResponse.id) &&
         Objects.equals(this.card, embeddedInstrumentIdentifierResponse.card) &&
+        Objects.equals(this.tokenizedCard, embeddedInstrumentIdentifierResponse.tokenizedCard) &&
         Objects.equals(this.bankAccount, embeddedInstrumentIdentifierResponse.bankAccount) &&
         Objects.equals(this.issuer, embeddedInstrumentIdentifierResponse.issuer) &&
         Objects.equals(this.processingInformation, embeddedInstrumentIdentifierResponse.processingInformation) &&
@@ -228,7 +251,7 @@ public class EmbeddedInstrumentIdentifierResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, object, state, id, card, bankAccount, issuer, processingInformation, metadata);
+    return Objects.hash(links, object, state, id, card, tokenizedCard, bankAccount, issuer, processingInformation, metadata);
   }
 
 
@@ -242,6 +265,7 @@ public class EmbeddedInstrumentIdentifierResponse {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
     sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
     sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");

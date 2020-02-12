@@ -35,7 +35,7 @@ public class NotificationOfChangesApiTest {
 
     
     /**
-     * Get Notification Of Changes
+     * Get Notification of Changes
      *
      * Download the Notification of Change report. This report shows eCheck-related fields updated as a result of a response to an eCheck settlement transaction. 
      *

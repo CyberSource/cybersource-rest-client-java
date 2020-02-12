@@ -28,10 +28,13 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
+import Model.AddNegativeListRequest;
 import Model.CreateDecisionManagerCaseRequest;
+import Model.FraudMarkingActionRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RiskV1DecisionsPost201Response;
 import Model.RiskV1DecisionsPost400Response;
+import Model.RiskV1UpdatePost201Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -58,6 +61,141 @@ public class DecisionManagerApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for addNegative
+     * @param type The list to be updated. It can be &#39;positive&#39;, &#39;negative&#39; or &#39;review&#39;. (required)
+     * @param addNegativeListRequest  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call addNegativeCall(String type, AddNegativeListRequest addNegativeListRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = addNegativeListRequest;
+        
+        // create path and map variables
+        String localVarPath = "/risk/v1/lists/{type}/entries"
+            .replaceAll("\\{" + "type" + "\\}", apiClient.escapeString(type.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call addNegativeValidateBeforeCall(String type, AddNegativeListRequest addNegativeListRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'type' is set
+        if (type == null) {
+            throw new ApiException("Missing the required parameter 'type' when calling addNegative(Async)");
+        }
+        
+        // verify the required parameter 'addNegativeListRequest' is set
+        if (addNegativeListRequest == null) {
+            throw new ApiException("Missing the required parameter 'addNegativeListRequest' when calling addNegative(Async)");
+        }
+        
+        
+        okhttp3.Call call = addNegativeCall(type, addNegativeListRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * List Management
+     * This call adds/deletes/converts the request information in the negative list.  Provide the list to be updated as the path parameter. This value can be &#39;postiive&#39;, &#39;negative&#39; or &#39;review&#39;. 
+     * @param type The list to be updated. It can be &#39;positive&#39;, &#39;negative&#39; or &#39;review&#39;. (required)
+     * @param addNegativeListRequest  (required)
+     * @return RiskV1UpdatePost201Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public RiskV1UpdatePost201Response addNegative(String type, AddNegativeListRequest addNegativeListRequest) throws ApiException {
+        ApiResponse<RiskV1UpdatePost201Response> resp = addNegativeWithHttpInfo(type, addNegativeListRequest);
+        return resp.getData();
+    }
+
+    /**
+     * List Management
+     * This call adds/deletes/converts the request information in the negative list.  Provide the list to be updated as the path parameter. This value can be &#39;postiive&#39;, &#39;negative&#39; or &#39;review&#39;. 
+     * @param type The list to be updated. It can be &#39;positive&#39;, &#39;negative&#39; or &#39;review&#39;. (required)
+     * @param addNegativeListRequest  (required)
+     * @return ApiResponse&lt;RiskV1UpdatePost201Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<RiskV1UpdatePost201Response> addNegativeWithHttpInfo(String type, AddNegativeListRequest addNegativeListRequest) throws ApiException {
+        okhttp3.Call call = addNegativeValidateBeforeCall(type, addNegativeListRequest, null, null);
+        Type localVarReturnType = new TypeToken<RiskV1UpdatePost201Response>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List Management (asynchronously)
+     * This call adds/deletes/converts the request information in the negative list.  Provide the list to be updated as the path parameter. This value can be &#39;postiive&#39;, &#39;negative&#39; or &#39;review&#39;. 
+     * @param type The list to be updated. It can be &#39;positive&#39;, &#39;negative&#39; or &#39;review&#39;. (required)
+     * @param addNegativeListRequest  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call addNegativeAsync(String type, AddNegativeListRequest addNegativeListRequest, final ApiCallback<RiskV1UpdatePost201Response> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = addNegativeValidateBeforeCall(type, addNegativeListRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<RiskV1UpdatePost201Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /**
      * Build call for createDecisionManagerCase
      * @param createDecisionManagerCaseRequest  (required)
@@ -180,6 +318,141 @@ public class DecisionManagerApi {
 
         okhttp3.Call call = createDecisionManagerCaseValidateBeforeCall(createDecisionManagerCaseRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<RiskV1DecisionsPost201Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for fraudUdate
+     * @param id Request ID of the transaction that you want to mark as suspect or remove from history. (required)
+     * @param fraudMarkingActionRequest  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call fraudUdateCall(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = fraudMarkingActionRequest;
+        
+        // create path and map variables
+        String localVarPath = "/risk/v1/decisions/{id}/marking"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call fraudUdateValidateBeforeCall(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling fraudUdate(Async)");
+        }
+        
+        // verify the required parameter 'fraudMarkingActionRequest' is set
+        if (fraudMarkingActionRequest == null) {
+            throw new ApiException("Missing the required parameter 'fraudMarkingActionRequest' when calling fraudUdate(Async)");
+        }
+        
+        
+        okhttp3.Call call = fraudUdateCall(id, fraudMarkingActionRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Fraud Marking
+     * This can be used to - 1. Add known fraudulent data to the fraud history 2. Remove data added to history with Transaction Marking Tool or by uploading chargeback files 3. Remove chargeback data from history that was automatically added. For detailed information, contact your Cybersource representative  Place the request ID of the transaction you want to mark as suspect (or remove from history) as the path parameter in this request. 
+     * @param id Request ID of the transaction that you want to mark as suspect or remove from history. (required)
+     * @param fraudMarkingActionRequest  (required)
+     * @return RiskV1UpdatePost201Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public RiskV1UpdatePost201Response fraudUdate(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
+        ApiResponse<RiskV1UpdatePost201Response> resp = fraudUdateWithHttpInfo(id, fraudMarkingActionRequest);
+        return resp.getData();
+    }
+
+    /**
+     * Fraud Marking
+     * This can be used to - 1. Add known fraudulent data to the fraud history 2. Remove data added to history with Transaction Marking Tool or by uploading chargeback files 3. Remove chargeback data from history that was automatically added. For detailed information, contact your Cybersource representative  Place the request ID of the transaction you want to mark as suspect (or remove from history) as the path parameter in this request. 
+     * @param id Request ID of the transaction that you want to mark as suspect or remove from history. (required)
+     * @param fraudMarkingActionRequest  (required)
+     * @return ApiResponse&lt;RiskV1UpdatePost201Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<RiskV1UpdatePost201Response> fraudUdateWithHttpInfo(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
+        okhttp3.Call call = fraudUdateValidateBeforeCall(id, fraudMarkingActionRequest, null, null);
+        Type localVarReturnType = new TypeToken<RiskV1UpdatePost201Response>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Fraud Marking (asynchronously)
+     * This can be used to - 1. Add known fraudulent data to the fraud history 2. Remove data added to history with Transaction Marking Tool or by uploading chargeback files 3. Remove chargeback data from history that was automatically added. For detailed information, contact your Cybersource representative  Place the request ID of the transaction you want to mark as suspect (or remove from history) as the path parameter in this request. 
+     * @param id Request ID of the transaction that you want to mark as suspect or remove from history. (required)
+     * @param fraudMarkingActionRequest  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call fraudUdateAsync(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ApiCallback<RiskV1UpdatePost201Response> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = fraudUdateValidateBeforeCall(id, fraudMarkingActionRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<RiskV1UpdatePost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

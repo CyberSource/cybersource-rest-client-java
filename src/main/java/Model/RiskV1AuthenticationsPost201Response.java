@@ -14,9 +14,9 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation;
+import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseErrorInformation;
-import Model.PtsV2PaymentsReversalsPost201ResponseLinks;
-import Model.Ptsv2payoutsClientReferenceInformation;
 import Model.RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation;
 import Model.RiskV1AuthenticationsPost201ResponseOrderInformation;
 import com.google.gson.TypeAdapter;
@@ -31,10 +31,10 @@ import java.io.IOException;
 /**
  * RiskV1AuthenticationsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class RiskV1AuthenticationsPost201Response {
   @SerializedName("_links")
-  private PtsV2PaymentsReversalsPost201ResponseLinks links = null;
+  private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -55,7 +55,7 @@ public class RiskV1AuthenticationsPost201Response {
   private String message = null;
 
   @SerializedName("clientReferenceInformation")
-  private Ptsv2payoutsClientReferenceInformation clientReferenceInformation = null;
+  private PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private RiskV1AuthenticationsPost201ResponseOrderInformation orderInformation = null;
@@ -66,7 +66,7 @@ public class RiskV1AuthenticationsPost201Response {
   @SerializedName("errorInformation")
   private PtsV2PaymentsPost201ResponseErrorInformation errorInformation = null;
 
-  public RiskV1AuthenticationsPost201Response links(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public RiskV1AuthenticationsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -76,11 +76,11 @@ public class RiskV1AuthenticationsPost201Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsReversalsPost201ResponseLinks getLinks() {
+  public PtsV2IncrementalAuthorizationPatch201ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public void setLinks(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
   }
 
@@ -192,7 +192,7 @@ public class RiskV1AuthenticationsPost201Response {
     this.message = message;
   }
 
-  public RiskV1AuthenticationsPost201Response clientReferenceInformation(Ptsv2payoutsClientReferenceInformation clientReferenceInformation) {
+  public RiskV1AuthenticationsPost201Response clientReferenceInformation(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -202,11 +202,11 @@ public class RiskV1AuthenticationsPost201Response {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2payoutsClientReferenceInformation getClientReferenceInformation() {
+  public PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Ptsv2payoutsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

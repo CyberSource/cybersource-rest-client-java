@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint {
   @SerializedName("true_ipaddress")
   private String trueIpaddress = null;
@@ -43,10 +43,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFin
   }
 
    /**
-   * Customer’s true IP address detected by the application.  For details, see the &#x60;true_ipaddress&#x60; field description in [CyberSource Decision Manager Device Fingerprinting Guide.](https://www.cybersource.com/developers/documentation/fraud_management) 
+   * Customer’s true IP address detected by the application.  For details, see the &#x60;true_ipaddress&#x60; field description in _Device Fingerprinting Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Device Fingerprinting Guide_ (PDF link). 
    * @return trueIpaddress
   **/
-  @ApiModelProperty(value = "Customer’s true IP address detected by the application.  For details, see the `true_ipaddress` field description in [CyberSource Decision Manager Device Fingerprinting Guide.](https://www.cybersource.com/developers/documentation/fraud_management) ")
+  @ApiModelProperty(value = "Customer’s true IP address detected by the application.  For details, see the `true_ipaddress` field description in _Device Fingerprinting Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Device Fingerprinting Guide_ (PDF link). ")
   public String getTrueIpaddress() {
     return trueIpaddress;
   }
@@ -61,10 +61,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFin
   }
 
    /**
-   * The unique identifier of the device that is returned in the &#x60;riskInformation.providers.fingerprint.device_fingerprint_hash&#x60; API reply field.  NOTE: For details about the value of this field, see the &#x60;decision_provider_#_field_#_value&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link).  For more details about this field, see the &#x60;device_fingerprint_hash&#x60; field description in the _CyberSource Decision Manager Device Fingerprinting Guide_on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link) 
+   * The unique identifier of the device that is returned in the &#x60;riskInformation.providers.fingerprint.device_fingerprint_hash&#x60; API reply field.  NOTE: For details about the value of this field, see the &#x60;decision_provider_#_field_#_value&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link).  For more details about this field, see the &#x60;device_fingerprint_hash&#x60; field description in the _Device Fingerprinting Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Device Fingerprinting Guide_ (PDF link). 
    * @return hash
   **/
-  @ApiModelProperty(value = "The unique identifier of the device that is returned in the `riskInformation.providers.fingerprint.device_fingerprint_hash` API reply field.  NOTE: For details about the value of this field, see the `decision_provider_#_field_#_value` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).  For more details about this field, see the `device_fingerprint_hash` field description in the _CyberSource Decision Manager Device Fingerprinting Guide_on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link) ")
+  @ApiModelProperty(value = "The unique identifier of the device that is returned in the `riskInformation.providers.fingerprint.device_fingerprint_hash` API reply field.  NOTE: For details about the value of this field, see the `decision_provider_#_field_#_value` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).  For more details about this field, see the `device_fingerprint_hash` field description in the _Device Fingerprinting Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Device Fingerprinting Guide_ (PDF link). ")
   public String getHash() {
     return hash;
   }

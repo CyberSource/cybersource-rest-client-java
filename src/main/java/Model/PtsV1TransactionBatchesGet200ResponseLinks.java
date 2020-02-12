@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PtsV1TransactionBatchesGet200ResponseLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class PtsV1TransactionBatchesGet200ResponseLinks {
   @SerializedName("self")
   private PtsV1TransactionBatchesGet200ResponseLinksSelf self = null;

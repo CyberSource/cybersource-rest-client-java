@@ -17,7 +17,8 @@ import java.util.Objects;
 import Model.Riskv1authenticationresultsConsumerAuthenticationInformation;
 import Model.Riskv1authenticationresultsOrderInformation;
 import Model.Riskv1authenticationresultsPaymentInformation;
-import Model.Riskv1authenticationsClientReferenceInformation;
+import Model.Riskv1authenticationsetupsClientReferenceInformation;
+import Model.Riskv1authenticationsetupsProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,10 +31,13 @@ import java.io.IOException;
 /**
  * ValidateRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class ValidateRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1authenticationsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation = null;
+
+  @SerializedName("processingInformation")
+  private Riskv1authenticationsetupsProcessingInformation processingInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1authenticationresultsOrderInformation orderInformation = null;
@@ -44,7 +48,7 @@ public class ValidateRequest {
   @SerializedName("consumerAuthenticationInformation")
   private Riskv1authenticationresultsConsumerAuthenticationInformation consumerAuthenticationInformation = null;
 
-  public ValidateRequest clientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
+  public ValidateRequest clientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -54,12 +58,30 @@ public class ValidateRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1authenticationsetupsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
+  }
+
+  public ValidateRequest processingInformation(Riskv1authenticationsetupsProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1authenticationsetupsProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(Riskv1authenticationsetupsProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
   }
 
   public ValidateRequest orderInformation(Riskv1authenticationresultsOrderInformation orderInformation) {
@@ -127,6 +149,7 @@ public class ValidateRequest {
     }
     ValidateRequest validateRequest = (ValidateRequest) o;
     return Objects.equals(this.clientReferenceInformation, validateRequest.clientReferenceInformation) &&
+        Objects.equals(this.processingInformation, validateRequest.processingInformation) &&
         Objects.equals(this.orderInformation, validateRequest.orderInformation) &&
         Objects.equals(this.paymentInformation, validateRequest.paymentInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, validateRequest.consumerAuthenticationInformation);
@@ -134,7 +157,7 @@ public class ValidateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, orderInformation, paymentInformation, consumerAuthenticationInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, orderInformation, paymentInformation, consumerAuthenticationInformation);
   }
 
 
@@ -144,6 +167,7 @@ public class ValidateRequest {
     sb.append("class ValidateRequest {\n");
     
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");

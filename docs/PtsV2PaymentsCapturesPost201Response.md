@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **clientReferenceInformation** | [**PtsV2PaymentsPost201ResponseClientReferenceInformation**](PtsV2PaymentsPost201ResponseClientReferenceInformation.md) |  |  [optional]
 **processorInformation** | [**PtsV2PaymentsCapturesPost201ResponseProcessorInformation**](PtsV2PaymentsCapturesPost201ResponseProcessorInformation.md) |  |  [optional]
 **orderInformation** | [**PtsV2PaymentsCapturesPost201ResponseOrderInformation**](PtsV2PaymentsCapturesPost201ResponseOrderInformation.md) |  |  [optional]
+**processingInformation** | [**PtsV2PaymentsCapturesPost201ResponseProcessingInformation**](PtsV2PaymentsCapturesPost201ResponseProcessingInformation.md) |  |  [optional]
 **pointOfSaleInformation** | [**PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation**](PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation.md) |  |  [optional]
 
 

@@ -29,6 +29,7 @@ import java.io.InputStream;
 
 
 import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
 import Model.PtsV1TransactionBatchesGet200Response;
 import Model.PtsV1TransactionBatchesGet400Response;
 import Model.PtsV1TransactionBatchesGet500Response;
@@ -62,12 +63,14 @@ public class TransactionBatchesApi {
     /**
      * Build call for getTransactionBatchDetails
      * @param id The batch id assigned for the template. (required)
+     * @param uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd  (optional)
+     * @param status Allows you to filter by rejected response.  Valid values: - Rejected  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getTransactionBatchDetailsCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getTransactionBatchDetailsCall(String id, LocalDate uploadDate, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -75,13 +78,17 @@ public class TransactionBatchesApi {
             .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (uploadDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "uploadDate", uploadDate));
+        if (status != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "status", status));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "text/csv", "application/xml"
+            "text/csv", "application/xml", "text/vnd.cybersource.map-csv"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -109,7 +116,7 @@ public class TransactionBatchesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTransactionBatchDetailsValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getTransactionBatchDetailsValidateBeforeCall(String id, LocalDate uploadDate, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -117,7 +124,7 @@ public class TransactionBatchesApi {
         }
         
         
-        okhttp3.Call call = getTransactionBatchDetailsCall(id, progressListener, progressRequestListener);
+        okhttp3.Call call = getTransactionBatchDetailsCall(id, uploadDate, status, progressListener, progressRequestListener);
         return call;
 
         
@@ -127,36 +134,42 @@ public class TransactionBatchesApi {
     }
 
     /**
-     * Get transaction details for a given batch id
-     * Provides real-time detailed status information about the transactions  that you previously uploaded in the Business Center or processed with  the Offline Transaction File Submission service. 
+     * Get Transaction Details for a given Batch Id
+     * Provides real-time detailed status information about the transactions that you previously uploaded in the Business Center or processed with the Offline Transaction File Submission service. 
      * @param id The batch id assigned for the template. (required)
+     * @param uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd  (optional)
+     * @param status Allows you to filter by rejected response.  Valid values: - Rejected  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void getTransactionBatchDetails(String id) throws ApiException {
-        getTransactionBatchDetailsWithHttpInfo(id);
+    public void getTransactionBatchDetails(String id, LocalDate uploadDate, String status) throws ApiException {
+        getTransactionBatchDetailsWithHttpInfo(id, uploadDate, status);
     }
 
     /**
-     * Get transaction details for a given batch id
-     * Provides real-time detailed status information about the transactions  that you previously uploaded in the Business Center or processed with  the Offline Transaction File Submission service. 
+     * Get Transaction Details for a given Batch Id
+     * Provides real-time detailed status information about the transactions that you previously uploaded in the Business Center or processed with the Offline Transaction File Submission service. 
      * @param id The batch id assigned for the template. (required)
+     * @param uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd  (optional)
+     * @param status Allows you to filter by rejected response.  Valid values: - Rejected  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InputStream> getTransactionBatchDetailsWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call call = getTransactionBatchDetailsValidateBeforeCall(id, null, null);
+    public ApiResponse<InputStream> getTransactionBatchDetailsWithHttpInfo(String id, LocalDate uploadDate, String status) throws ApiException {
+        okhttp3.Call call = getTransactionBatchDetailsValidateBeforeCall(id, uploadDate, status, null, null);
         return apiClient.execute(call);
     }
 
     /**
-     * Get transaction details for a given batch id (asynchronously)
-     * Provides real-time detailed status information about the transactions  that you previously uploaded in the Business Center or processed with  the Offline Transaction File Submission service. 
+     * Get Transaction Details for a given Batch Id (asynchronously)
+     * Provides real-time detailed status information about the transactions that you previously uploaded in the Business Center or processed with the Offline Transaction File Submission service. 
      * @param id The batch id assigned for the template. (required)
+     * @param uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd  (optional)
+     * @param status Allows you to filter by rejected response.  Valid values: - Rejected  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getTransactionBatchDetailsAsync(String id, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call getTransactionBatchDetailsAsync(String id, LocalDate uploadDate, String status, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,7 +190,7 @@ public class TransactionBatchesApi {
             };
         }
 
-        okhttp3.Call call = getTransactionBatchDetailsValidateBeforeCall(id, progressListener, progressRequestListener);
+        okhttp3.Call call = getTransactionBatchDetailsValidateBeforeCall(id, uploadDate, status, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -249,7 +262,7 @@ public class TransactionBatchesApi {
     }
 
     /**
-     * Get individual batch file
+     * Get Individual Batch File
      * Provide the search range
      * @param id The batch id assigned for the template. (required)
      * @return PtsV1TransactionBatchesIdGet200Response
@@ -261,7 +274,7 @@ public class TransactionBatchesApi {
     }
 
     /**
-     * Get individual batch file
+     * Get Individual Batch File
      * Provide the search range
      * @param id The batch id assigned for the template. (required)
      * @return ApiResponse&lt;PtsV1TransactionBatchesIdGet200Response&gt;
@@ -274,7 +287,7 @@ public class TransactionBatchesApi {
     }
 
     /**
-     * Get individual batch file (asynchronously)
+     * Get Individual Batch File (asynchronously)
      * Provide the search range
      * @param id The batch id assigned for the template. (required)
      * @param callback The callback to be executed when the API call finishes
@@ -384,7 +397,7 @@ public class TransactionBatchesApi {
     }
 
     /**
-     * Get a list of batch files
+     * Get a List of Batch Files
      * Provide the search range
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
@@ -397,7 +410,7 @@ public class TransactionBatchesApi {
     }
 
     /**
-     * Get a list of batch files
+     * Get a List of Batch Files
      * Provide the search range
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
@@ -411,7 +424,7 @@ public class TransactionBatchesApi {
     }
 
     /**
-     * Get a list of batch files (asynchronously)
+     * Get a List of Batch Files (asynchronously)
      * Provide the search range
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)

@@ -15,6 +15,7 @@ package Api;
 
 import Invokers.ApiException;
 import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
 import Model.PtsV1TransactionBatchesGet200Response;
 import Model.PtsV1TransactionBatchesGet400Response;
 import Model.PtsV1TransactionBatchesGet500Response;
@@ -37,9 +38,9 @@ public class TransactionBatchesApiTest {
 
     
     /**
-     * Get transaction details for a given batch id
+     * Get Transaction Details for a given Batch Id
      *
-     * Provides real-time detailed status information about the transactions  that you previously uploaded in the Business Center or processed with  the Offline Transaction File Submission service. 
+     * Provides real-time detailed status information about the transactions that you previously uploaded in the Business Center or processed with the Offline Transaction File Submission service. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -47,13 +48,15 @@ public class TransactionBatchesApiTest {
     @Test
     public void getTransactionBatchDetailsTest() throws ApiException {
         String id = null;
-        api.getTransactionBatchDetails(id);
+        LocalDate uploadDate = null;
+        String status = null;
+        api.getTransactionBatchDetails(id, uploadDate, status);
 
         // TODO: test validations
     }
     
     /**
-     * Get individual batch file
+     * Get Individual Batch File
      *
      * Provide the search range
      *
@@ -69,7 +72,7 @@ public class TransactionBatchesApiTest {
     }
     
     /**
-     * Get a list of batch files
+     * Get a List of Batch Files
      *
      * Provide the search range
      *

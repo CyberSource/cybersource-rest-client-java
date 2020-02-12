@@ -14,7 +14,6 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1decisionsRiskInformationMarkingDetails;
 import Model.Riskv1decisionsRiskInformationProfile;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -28,16 +27,13 @@ import java.io.IOException;
 /**
  * Riskv1decisionsRiskInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class Riskv1decisionsRiskInformation {
   @SerializedName("profile")
   private Riskv1decisionsRiskInformationProfile profile = null;
 
   @SerializedName("eventType")
   private String eventType = null;
-
-  @SerializedName("markingDetails")
-  private Riskv1decisionsRiskInformationMarkingDetails markingDetails = null;
 
   public Riskv1decisionsRiskInformation profile(Riskv1decisionsRiskInformationProfile profile) {
     this.profile = profile;
@@ -75,24 +71,6 @@ public class Riskv1decisionsRiskInformation {
     this.eventType = eventType;
   }
 
-  public Riskv1decisionsRiskInformation markingDetails(Riskv1decisionsRiskInformationMarkingDetails markingDetails) {
-    this.markingDetails = markingDetails;
-    return this;
-  }
-
-   /**
-   * Get markingDetails
-   * @return markingDetails
-  **/
-  @ApiModelProperty(value = "")
-  public Riskv1decisionsRiskInformationMarkingDetails getMarkingDetails() {
-    return markingDetails;
-  }
-
-  public void setMarkingDetails(Riskv1decisionsRiskInformationMarkingDetails markingDetails) {
-    this.markingDetails = markingDetails;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,13 +82,12 @@ public class Riskv1decisionsRiskInformation {
     }
     Riskv1decisionsRiskInformation riskv1decisionsRiskInformation = (Riskv1decisionsRiskInformation) o;
     return Objects.equals(this.profile, riskv1decisionsRiskInformation.profile) &&
-        Objects.equals(this.eventType, riskv1decisionsRiskInformation.eventType) &&
-        Objects.equals(this.markingDetails, riskv1decisionsRiskInformation.markingDetails);
+        Objects.equals(this.eventType, riskv1decisionsRiskInformation.eventType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile, eventType, markingDetails);
+    return Objects.hash(profile, eventType);
   }
 
 
@@ -121,7 +98,6 @@ public class Riskv1decisionsRiskInformation {
     
     sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
-    sb.append("    markingDetails: ").append(toIndentedString(markingDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

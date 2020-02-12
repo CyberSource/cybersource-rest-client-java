@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * CreateInstrumentIdentifierRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
 public class CreateInstrumentIdentifierRequest {
   @SerializedName("type")
   private String type = null;
@@ -49,10 +49,10 @@ public class CreateInstrumentIdentifierRequest {
   }
 
    /**
-   * Type of Card
+   * Enrol card for a Network Token
    * @return type
   **/
-  @ApiModelProperty(example = "enrollable card", value = "Type of Card")
+  @ApiModelProperty(example = "enrollable card", value = "Enrol card for a Network Token")
   public String getType() {
     return type;
   }
