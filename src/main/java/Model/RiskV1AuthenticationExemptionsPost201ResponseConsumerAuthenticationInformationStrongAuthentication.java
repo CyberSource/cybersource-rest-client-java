@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * RiskV1AuthenticationExemptionsPost201ResponseConsumerAuthenticationInformationStrongAuthentication
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-17T12:35:22.882+05:30")
 public class RiskV1AuthenticationExemptionsPost201ResponseConsumerAuthenticationInformationStrongAuthentication {
   @SerializedName("acquirerReferenceFraudRateThresholdExceeded")
   private Boolean acquirerReferenceFraudRateThresholdExceeded = null;

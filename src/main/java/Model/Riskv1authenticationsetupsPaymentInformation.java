@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationsetupsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-17T12:35:22.882+05:30")
 public class Riskv1authenticationsetupsPaymentInformation {
   @SerializedName("card")
   private Riskv1authenticationsetupsPaymentInformationCard card = null;

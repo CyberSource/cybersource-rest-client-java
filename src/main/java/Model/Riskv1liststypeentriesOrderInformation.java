@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * Riskv1liststypeentriesOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-17T12:35:22.882+05:30")
 public class Riskv1liststypeentriesOrderInformation {
   @SerializedName("address")
   private Riskv1liststypeentriesOrderInformationAddress address = null;

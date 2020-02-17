@@ -38,22 +38,6 @@ public class VerificationApiTest {
 
     
     /**
-     * Verify customer address
-     *
-     * This call verifies that the customer address submitted is valid.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void riskV1AddressVerificationsPostTest() throws ApiException {
-        VerifyCustomerAddressRequest verifyCustomerAddressRequest = null;
-        RiskV1AddressVerificationsPost201Response response = api.riskV1AddressVerificationsPost(verifyCustomerAddressRequest);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Validate export compliance
      *
      * This call checks customer data against specified watch lists to ensure export compliance. 
@@ -62,9 +46,25 @@ public class VerificationApiTest {
      *          if the Api call fails
      */
     @Test
-    public void riskV1ExportComplianceInquiriesPostTest() throws ApiException {
+    public void validateExportComplianceTest() throws ApiException {
         ValidateExportComplianceRequest validateExportComplianceRequest = null;
-        RiskV1ExportComplianceInquiriesPost201Response response = api.riskV1ExportComplianceInquiriesPost(validateExportComplianceRequest);
+        RiskV1ExportComplianceInquiriesPost201Response response = api.validateExportCompliance(validateExportComplianceRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Verify customer address
+     *
+     * This call verifies that the customer address submitted is valid.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void verifyCustomerAddressTest() throws ApiException {
+        VerifyCustomerAddressRequest verifyCustomerAddressRequest = null;
+        RiskV1AddressVerificationsPost201Response response = api.verifyCustomerAddress(verifyCustomerAddressRequest);
 
         // TODO: test validations
     }

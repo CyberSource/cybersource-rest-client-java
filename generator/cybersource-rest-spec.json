@@ -29659,6 +29659,7 @@
             "post": {
                 "summary": "Verify customer address",
                 "description": "This call verifies that the customer address submitted is valid.",
+                "operationId": "verifyCustomerAddress",
                 "tags": [
                     "Verification"
                 ],
@@ -30510,6 +30511,7 @@
             "post": {
                 "summary": "Validate export compliance",
                 "description": "This call checks customer data against specified watch lists to ensure export compliance.\n",
+                "operationId": "validateExportCompliance",
                 "tags": [
                     "Verification"
                 ],
@@ -38118,6 +38120,7 @@
                 ],
                 "summary": "Create a Standard or Classic Subscription",
                 "description": "Create or update an already existing classic or standard subscription.\n",
+                "operationId": "createStandardOrClassicSubscription",
                 "x-devcenter-metaData": {
                     "categoryTag": "Reporting",
                     "isClientSideApi": true

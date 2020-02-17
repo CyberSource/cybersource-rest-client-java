@@ -4,58 +4,13 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**riskV1AddressVerificationsPost**](VerificationApi.md#riskV1AddressVerificationsPost) | **POST** /risk/v1/address-verifications | Verify customer address
-[**riskV1ExportComplianceInquiriesPost**](VerificationApi.md#riskV1ExportComplianceInquiriesPost) | **POST** /risk/v1/export-compliance-inquiries | Validate export compliance
+[**validateExportCompliance**](VerificationApi.md#validateExportCompliance) | **POST** /risk/v1/export-compliance-inquiries | Validate export compliance
+[**verifyCustomerAddress**](VerificationApi.md#verifyCustomerAddress) | **POST** /risk/v1/address-verifications | Verify customer address
 
 
-<a name="riskV1AddressVerificationsPost"></a>
-# **riskV1AddressVerificationsPost**
-> RiskV1AddressVerificationsPost201Response riskV1AddressVerificationsPost(verifyCustomerAddressRequest)
-
-Verify customer address
-
-This call verifies that the customer address submitted is valid.
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.VerificationApi;
-
-
-VerificationApi apiInstance = new VerificationApi();
-VerifyCustomerAddressRequest verifyCustomerAddressRequest = new VerifyCustomerAddressRequest(); // VerifyCustomerAddressRequest | 
-try {
-    RiskV1AddressVerificationsPost201Response result = apiInstance.riskV1AddressVerificationsPost(verifyCustomerAddressRequest);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling VerificationApi#riskV1AddressVerificationsPost");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **verifyCustomerAddressRequest** | [**VerifyCustomerAddressRequest**](VerifyCustomerAddressRequest.md)|  |
-
-### Return type
-
-[**RiskV1AddressVerificationsPost201Response**](RiskV1AddressVerificationsPost201Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
-
-<a name="riskV1ExportComplianceInquiriesPost"></a>
-# **riskV1ExportComplianceInquiriesPost**
-> RiskV1ExportComplianceInquiriesPost201Response riskV1ExportComplianceInquiriesPost(validateExportComplianceRequest)
+<a name="validateExportCompliance"></a>
+# **validateExportCompliance**
+> RiskV1ExportComplianceInquiriesPost201Response validateExportCompliance(validateExportComplianceRequest)
 
 Validate export compliance
 
@@ -71,10 +26,10 @@ This call checks customer data against specified watch lists to ensure export co
 VerificationApi apiInstance = new VerificationApi();
 ValidateExportComplianceRequest validateExportComplianceRequest = new ValidateExportComplianceRequest(); // ValidateExportComplianceRequest | 
 try {
-    RiskV1ExportComplianceInquiriesPost201Response result = apiInstance.riskV1ExportComplianceInquiriesPost(validateExportComplianceRequest);
+    RiskV1ExportComplianceInquiriesPost201Response result = apiInstance.validateExportCompliance(validateExportComplianceRequest);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling VerificationApi#riskV1ExportComplianceInquiriesPost");
+    System.err.println("Exception when calling VerificationApi#validateExportCompliance");
     e.printStackTrace();
 }
 ```
@@ -88,6 +43,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RiskV1ExportComplianceInquiriesPost201Response**](RiskV1ExportComplianceInquiriesPost201Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+<a name="verifyCustomerAddress"></a>
+# **verifyCustomerAddress**
+> RiskV1AddressVerificationsPost201Response verifyCustomerAddress(verifyCustomerAddressRequest)
+
+Verify customer address
+
+This call verifies that the customer address submitted is valid.
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.VerificationApi;
+
+
+VerificationApi apiInstance = new VerificationApi();
+VerifyCustomerAddressRequest verifyCustomerAddressRequest = new VerifyCustomerAddressRequest(); // VerifyCustomerAddressRequest | 
+try {
+    RiskV1AddressVerificationsPost201Response result = apiInstance.verifyCustomerAddress(verifyCustomerAddressRequest);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VerificationApi#verifyCustomerAddress");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **verifyCustomerAddressRequest** | [**VerifyCustomerAddressRequest**](VerifyCustomerAddressRequest.md)|  |
+
+### Return type
+
+[**RiskV1AddressVerificationsPost201Response**](RiskV1AddressVerificationsPost201Response.md)
 
 ### Authorization
 

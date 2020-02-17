@@ -61,139 +61,14 @@ public class VerificationApi {
     }
 
     /**
-     * Build call for riskV1AddressVerificationsPost
-     * @param verifyCustomerAddressRequest  (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public okhttp3.Call riskV1AddressVerificationsPostCall(VerifyCustomerAddressRequest verifyCustomerAddressRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = verifyCustomerAddressRequest;
-        
-        // create path and map variables
-        String localVarPath = "/risk/v1/address-verifications";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call riskV1AddressVerificationsPostValidateBeforeCall(VerifyCustomerAddressRequest verifyCustomerAddressRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'verifyCustomerAddressRequest' is set
-        if (verifyCustomerAddressRequest == null) {
-            throw new ApiException("Missing the required parameter 'verifyCustomerAddressRequest' when calling riskV1AddressVerificationsPost(Async)");
-        }
-        
-        
-        okhttp3.Call call = riskV1AddressVerificationsPostCall(verifyCustomerAddressRequest, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Verify customer address
-     * This call verifies that the customer address submitted is valid.
-     * @param verifyCustomerAddressRequest  (required)
-     * @return RiskV1AddressVerificationsPost201Response
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public RiskV1AddressVerificationsPost201Response riskV1AddressVerificationsPost(VerifyCustomerAddressRequest verifyCustomerAddressRequest) throws ApiException {
-        ApiResponse<RiskV1AddressVerificationsPost201Response> resp = riskV1AddressVerificationsPostWithHttpInfo(verifyCustomerAddressRequest);
-        return resp.getData();
-    }
-
-    /**
-     * Verify customer address
-     * This call verifies that the customer address submitted is valid.
-     * @param verifyCustomerAddressRequest  (required)
-     * @return ApiResponse&lt;RiskV1AddressVerificationsPost201Response&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<RiskV1AddressVerificationsPost201Response> riskV1AddressVerificationsPostWithHttpInfo(VerifyCustomerAddressRequest verifyCustomerAddressRequest) throws ApiException {
-        okhttp3.Call call = riskV1AddressVerificationsPostValidateBeforeCall(verifyCustomerAddressRequest, null, null);
-        Type localVarReturnType = new TypeToken<RiskV1AddressVerificationsPost201Response>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Verify customer address (asynchronously)
-     * This call verifies that the customer address submitted is valid.
-     * @param verifyCustomerAddressRequest  (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public okhttp3.Call riskV1AddressVerificationsPostAsync(VerifyCustomerAddressRequest verifyCustomerAddressRequest, final ApiCallback<RiskV1AddressVerificationsPost201Response> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call call = riskV1AddressVerificationsPostValidateBeforeCall(verifyCustomerAddressRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<RiskV1AddressVerificationsPost201Response>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for riskV1ExportComplianceInquiriesPost
+     * Build call for validateExportCompliance
      * @param validateExportComplianceRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call riskV1ExportComplianceInquiriesPostCall(ValidateExportComplianceRequest validateExportComplianceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call validateExportComplianceCall(ValidateExportComplianceRequest validateExportComplianceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = validateExportComplianceRequest;
         
         // create path and map variables
@@ -234,15 +109,15 @@ public class VerificationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call riskV1ExportComplianceInquiriesPostValidateBeforeCall(ValidateExportComplianceRequest validateExportComplianceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call validateExportComplianceValidateBeforeCall(ValidateExportComplianceRequest validateExportComplianceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'validateExportComplianceRequest' is set
         if (validateExportComplianceRequest == null) {
-            throw new ApiException("Missing the required parameter 'validateExportComplianceRequest' when calling riskV1ExportComplianceInquiriesPost(Async)");
+            throw new ApiException("Missing the required parameter 'validateExportComplianceRequest' when calling validateExportCompliance(Async)");
         }
         
         
-        okhttp3.Call call = riskV1ExportComplianceInquiriesPostCall(validateExportComplianceRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = validateExportComplianceCall(validateExportComplianceRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -258,8 +133,8 @@ public class VerificationApi {
      * @return RiskV1ExportComplianceInquiriesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public RiskV1ExportComplianceInquiriesPost201Response riskV1ExportComplianceInquiriesPost(ValidateExportComplianceRequest validateExportComplianceRequest) throws ApiException {
-        ApiResponse<RiskV1ExportComplianceInquiriesPost201Response> resp = riskV1ExportComplianceInquiriesPostWithHttpInfo(validateExportComplianceRequest);
+    public RiskV1ExportComplianceInquiriesPost201Response validateExportCompliance(ValidateExportComplianceRequest validateExportComplianceRequest) throws ApiException {
+        ApiResponse<RiskV1ExportComplianceInquiriesPost201Response> resp = validateExportComplianceWithHttpInfo(validateExportComplianceRequest);
         return resp.getData();
     }
 
@@ -270,8 +145,8 @@ public class VerificationApi {
      * @return ApiResponse&lt;RiskV1ExportComplianceInquiriesPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<RiskV1ExportComplianceInquiriesPost201Response> riskV1ExportComplianceInquiriesPostWithHttpInfo(ValidateExportComplianceRequest validateExportComplianceRequest) throws ApiException {
-        okhttp3.Call call = riskV1ExportComplianceInquiriesPostValidateBeforeCall(validateExportComplianceRequest, null, null);
+    public ApiResponse<RiskV1ExportComplianceInquiriesPost201Response> validateExportComplianceWithHttpInfo(ValidateExportComplianceRequest validateExportComplianceRequest) throws ApiException {
+        okhttp3.Call call = validateExportComplianceValidateBeforeCall(validateExportComplianceRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1ExportComplianceInquiriesPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -284,7 +159,7 @@ public class VerificationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call riskV1ExportComplianceInquiriesPostAsync(ValidateExportComplianceRequest validateExportComplianceRequest, final ApiCallback<RiskV1ExportComplianceInquiriesPost201Response> callback) throws ApiException {
+    public okhttp3.Call validateExportComplianceAsync(ValidateExportComplianceRequest validateExportComplianceRequest, final ApiCallback<RiskV1ExportComplianceInquiriesPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -305,8 +180,133 @@ public class VerificationApi {
             };
         }
 
-        okhttp3.Call call = riskV1ExportComplianceInquiriesPostValidateBeforeCall(validateExportComplianceRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = validateExportComplianceValidateBeforeCall(validateExportComplianceRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<RiskV1ExportComplianceInquiriesPost201Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for verifyCustomerAddress
+     * @param verifyCustomerAddressRequest  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call verifyCustomerAddressCall(VerifyCustomerAddressRequest verifyCustomerAddressRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = verifyCustomerAddressRequest;
+        
+        // create path and map variables
+        String localVarPath = "/risk/v1/address-verifications";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call verifyCustomerAddressValidateBeforeCall(VerifyCustomerAddressRequest verifyCustomerAddressRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'verifyCustomerAddressRequest' is set
+        if (verifyCustomerAddressRequest == null) {
+            throw new ApiException("Missing the required parameter 'verifyCustomerAddressRequest' when calling verifyCustomerAddress(Async)");
+        }
+        
+        
+        okhttp3.Call call = verifyCustomerAddressCall(verifyCustomerAddressRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Verify customer address
+     * This call verifies that the customer address submitted is valid.
+     * @param verifyCustomerAddressRequest  (required)
+     * @return RiskV1AddressVerificationsPost201Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public RiskV1AddressVerificationsPost201Response verifyCustomerAddress(VerifyCustomerAddressRequest verifyCustomerAddressRequest) throws ApiException {
+        ApiResponse<RiskV1AddressVerificationsPost201Response> resp = verifyCustomerAddressWithHttpInfo(verifyCustomerAddressRequest);
+        return resp.getData();
+    }
+
+    /**
+     * Verify customer address
+     * This call verifies that the customer address submitted is valid.
+     * @param verifyCustomerAddressRequest  (required)
+     * @return ApiResponse&lt;RiskV1AddressVerificationsPost201Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<RiskV1AddressVerificationsPost201Response> verifyCustomerAddressWithHttpInfo(VerifyCustomerAddressRequest verifyCustomerAddressRequest) throws ApiException {
+        okhttp3.Call call = verifyCustomerAddressValidateBeforeCall(verifyCustomerAddressRequest, null, null);
+        Type localVarReturnType = new TypeToken<RiskV1AddressVerificationsPost201Response>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Verify customer address (asynchronously)
+     * This call verifies that the customer address submitted is valid.
+     * @param verifyCustomerAddressRequest  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call verifyCustomerAddressAsync(VerifyCustomerAddressRequest verifyCustomerAddressRequest, final ApiCallback<RiskV1AddressVerificationsPost201Response> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = verifyCustomerAddressValidateBeforeCall(verifyCustomerAddressRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<RiskV1AddressVerificationsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

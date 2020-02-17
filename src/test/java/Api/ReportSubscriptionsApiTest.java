@@ -38,6 +38,23 @@ public class ReportSubscriptionsApiTest {
 
     
     /**
+     * Create a Standard or Classic Subscription
+     *
+     * Create or update an already existing classic or standard subscription. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createStandardOrClassicSubscriptionTest() throws ApiException {
+        PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean = null;
+        String organizationId = null;
+        api.createStandardOrClassicSubscription(predefinedSubscriptionRequestBean, organizationId);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Create Report Subscription for a Report Name by Organization
      *
      * Create a report subscription for your organization. The report name must be unique. 
@@ -97,23 +114,6 @@ public class ReportSubscriptionsApiTest {
     public void getSubscriptionTest() throws ApiException {
         String reportName = null;
         ReportingV3ReportSubscriptionsGet200ResponseSubscriptions response = api.getSubscription(reportName);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Create a Standard or Classic Subscription
-     *
-     * Create or update an already existing classic or standard subscription. 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportingV3PredefinedReportSubscriptionsPutTest() throws ApiException {
-        PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean = null;
-        String organizationId = null;
-        api.reportingV3PredefinedReportSubscriptionsPut(predefinedSubscriptionRequestBean, organizationId);
 
         // TODO: test validations
     }

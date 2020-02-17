@@ -27,7 +27,7 @@ import java.io.IOException;
  * The latest card details associated with the Network Token
  */
 @ApiModel(description = "The latest card details associated with the Network Token")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-12T15:59:24.815+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-17T12:35:22.882+05:30")
 public class TmsV1InstrumentIdentifiersPost200ResponseTokenizedCardCard {
   @SerializedName("suffix")
   private String suffix = null;
