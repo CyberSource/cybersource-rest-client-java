@@ -29451,7 +29451,7 @@
             "post": {
                 "summary": "Fraud Marking",
                 "description": "This can be used to -\n1. Add known fraudulent data to the fraud history\n2. Remove data added to history with Transaction Marking Tool or by uploading chargeback files\n3. Remove chargeback data from history that was automatically added.\nFor detailed information, contact your Cybersource representative\n\nPlace the request ID of the transaction you want to mark as suspect (or remove from history) as the path parameter in this request.\n",
-                "operationId": "fraudUdate",
+                "operationId": "fraudUpdate",
                 "tags": [
                     "Decision Manager"
                 ],
