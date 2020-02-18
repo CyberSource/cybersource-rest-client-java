@@ -43,7 +43,7 @@ import java.util.List;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-17T12:35:22.882+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
   @SerializedName("id")
   private String id = null;

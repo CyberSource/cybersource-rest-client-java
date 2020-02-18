@@ -264,7 +264,7 @@
 		<dependency>
 			<groupId>com.cybersource</groupId>
 			<artifactId>AuthenticationSdk</artifactId>
-			<version>0.0.8</version>
+			<version>0.0.9-SNAPSHOT</version>
 		</dependency>
 			<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>

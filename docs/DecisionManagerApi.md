@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addNegative**](DecisionManagerApi.md#addNegative) | **POST** /risk/v1/lists/{type}/entries | List Management
 [**createDecisionManagerCase**](DecisionManagerApi.md#createDecisionManagerCase) | **POST** /risk/v1/decisions | Create Decision Manager Case
-[**fraudUdate**](DecisionManagerApi.md#fraudUdate) | **POST** /risk/v1/decisions/{id}/marking | Fraud Marking
+[**fraudUpdate**](DecisionManagerApi.md#fraudUpdate) | **POST** /risk/v1/decisions/{id}/marking | Fraud Marking
 
 
 <a name="addNegative"></a>
@@ -101,9 +101,9 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/hal+json;charset=utf-8
 
-<a name="fraudUdate"></a>
-# **fraudUdate**
-> RiskV1UpdatePost201Response fraudUdate(id, fraudMarkingActionRequest)
+<a name="fraudUpdate"></a>
+# **fraudUpdate**
+> RiskV1UpdatePost201Response fraudUpdate(id, fraudMarkingActionRequest)
 
 Fraud Marking
 
@@ -120,10 +120,10 @@ DecisionManagerApi apiInstance = new DecisionManagerApi();
 String id = "id_example"; // String | Request ID of the transaction that you want to mark as suspect or remove from history.
 FraudMarkingActionRequest fraudMarkingActionRequest = new FraudMarkingActionRequest(); // FraudMarkingActionRequest | 
 try {
-    RiskV1UpdatePost201Response result = apiInstance.fraudUdate(id, fraudMarkingActionRequest);
+    RiskV1UpdatePost201Response result = apiInstance.fraudUpdate(id, fraudMarkingActionRequest);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DecisionManagerApi#fraudUdate");
+    System.err.println("Exception when calling DecisionManagerApi#fraudUpdate");
     e.printStackTrace();
 }
 ```

@@ -96,7 +96,7 @@ public class DecisionManagerApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -229,7 +229,7 @@ public class DecisionManagerApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -322,7 +322,7 @@ public class DecisionManagerApi {
         return call;
     }
     /**
-     * Build call for FraudUpdate
+     * Build call for fraudUpdate
      * @param id Request ID of the transaction that you want to mark as suspect or remove from history. (required)
      * @param fraudMarkingActionRequest  (required)
      * @param progressListener Progress listener
@@ -330,7 +330,7 @@ public class DecisionManagerApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call FraudUpdateCall(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call fraudUpdateCall(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = fraudMarkingActionRequest;
         
         // create path and map variables
@@ -356,7 +356,7 @@ public class DecisionManagerApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -372,20 +372,20 @@ public class DecisionManagerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call FraudUpdateValidateBeforeCall(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call fraudUpdateValidateBeforeCall(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling FraudUpdate(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling fraudUpdate(Async)");
         }
         
         // verify the required parameter 'fraudMarkingActionRequest' is set
         if (fraudMarkingActionRequest == null) {
-            throw new ApiException("Missing the required parameter 'fraudMarkingActionRequest' when calling FraudUpdate(Async)");
+            throw new ApiException("Missing the required parameter 'fraudMarkingActionRequest' when calling fraudUpdate(Async)");
         }
         
         
-        okhttp3.Call call = FraudUpdateCall(id, fraudMarkingActionRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = fraudUpdateCall(id, fraudMarkingActionRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -402,8 +402,8 @@ public class DecisionManagerApi {
      * @return RiskV1UpdatePost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public RiskV1UpdatePost201Response FraudUpdate(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
-        ApiResponse<RiskV1UpdatePost201Response> resp = FraudUpdateWithHttpInfo(id, fraudMarkingActionRequest);
+    public RiskV1UpdatePost201Response fraudUpdate(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
+        ApiResponse<RiskV1UpdatePost201Response> resp = fraudUpdateWithHttpInfo(id, fraudMarkingActionRequest);
         return resp.getData();
     }
 
@@ -415,8 +415,8 @@ public class DecisionManagerApi {
      * @return ApiResponse&lt;RiskV1UpdatePost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<RiskV1UpdatePost201Response> FraudUpdateWithHttpInfo(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
-        okhttp3.Call call = FraudUpdateValidateBeforeCall(id, fraudMarkingActionRequest, null, null);
+    public ApiResponse<RiskV1UpdatePost201Response> fraudUpdateWithHttpInfo(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
+        okhttp3.Call call = fraudUpdateValidateBeforeCall(id, fraudMarkingActionRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1UpdatePost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -430,7 +430,7 @@ public class DecisionManagerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call FraudUpdateAsync(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ApiCallback<RiskV1UpdatePost201Response> callback) throws ApiException {
+    public okhttp3.Call fraudUpdateAsync(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ApiCallback<RiskV1UpdatePost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -451,7 +451,7 @@ public class DecisionManagerApi {
             };
         }
 
-        okhttp3.Call call = FraudUpdateValidateBeforeCall(id, fraudMarkingActionRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = fraudUpdateValidateBeforeCall(id, fraudMarkingActionRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<RiskV1UpdatePost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

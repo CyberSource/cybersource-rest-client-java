@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-17T12:35:22.882+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class TssV2TransactionsGet200ResponseProcessingInformation {
   @SerializedName("paymentSolution")
   private String paymentSolution = null;

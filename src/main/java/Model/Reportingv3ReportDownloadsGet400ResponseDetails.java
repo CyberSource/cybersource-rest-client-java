@@ -27,7 +27,7 @@ import java.io.IOException;
  * Provides failed validation input field detail 
  */
 @ApiModel(description = "Provides failed validation input field detail ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-17T12:35:22.882+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class Reportingv3ReportDownloadsGet400ResponseDetails {
   @SerializedName("field")
   private String field = null;

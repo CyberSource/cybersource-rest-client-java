@@ -80,10 +80,10 @@ public class DecisionManagerApiTest {
      *          if the Api call fails
      */
     @Test
-    public void fraudUdateTest() throws ApiException {
+    public void fraudUpdateTest() throws ApiException {
         String id = null;
         FraudMarkingActionRequest fraudMarkingActionRequest = null;
-        RiskV1UpdatePost201Response response = api.fraudUdate(id, fraudMarkingActionRequest);
+        RiskV1UpdatePost201Response response = api.fraudUpdate(id, fraudMarkingActionRequest);
 
         // TODO: test validations
     }

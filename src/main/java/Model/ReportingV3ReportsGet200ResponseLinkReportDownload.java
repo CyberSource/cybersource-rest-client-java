@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * ReportingV3ReportsGet200ResponseLinkReportDownload
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-17T12:35:22.882+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class ReportingV3ReportsGet200ResponseLinkReportDownload {
   @SerializedName("href")
   private String href = null;
