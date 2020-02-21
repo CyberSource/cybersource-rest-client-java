@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2payoutsClientReferenceInformation;
+import Model.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation;
 import Model.Riskv1authenticationexemptionsAcquirerInformation;
 import Model.Riskv1authenticationexemptionsDeviceInformation;
 import Model.Riskv1authenticationexemptionsMerchantInformation;
@@ -32,10 +32,10 @@ import java.io.IOException;
 /**
  * AuthenticationExemptionsRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class AuthenticationExemptionsRequest {
   @SerializedName("clientReferenceInformation")
-  private Ptsv2payoutsClientReferenceInformation clientReferenceInformation = null;
+  private PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1authenticationexemptionsOrderInformation orderInformation = null;
@@ -52,7 +52,7 @@ public class AuthenticationExemptionsRequest {
   @SerializedName("acquirerInformation")
   private Riskv1authenticationexemptionsAcquirerInformation acquirerInformation = null;
 
-  public AuthenticationExemptionsRequest clientReferenceInformation(Ptsv2payoutsClientReferenceInformation clientReferenceInformation) {
+  public AuthenticationExemptionsRequest clientReferenceInformation(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -62,11 +62,11 @@ public class AuthenticationExemptionsRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2payoutsClientReferenceInformation getClientReferenceInformation() {
+  public PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Ptsv2payoutsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

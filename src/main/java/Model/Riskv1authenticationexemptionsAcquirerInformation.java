@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationexemptionsAcquirerInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class Riskv1authenticationexemptionsAcquirerInformation {
   @SerializedName("acquirerBin")
   private String acquirerBin = null;
@@ -37,10 +37,10 @@ public class Riskv1authenticationexemptionsAcquirerInformation {
   }
 
    /**
-   * Acquirer bank ID number that corresponds to a certificate that Cybersource already has.This ID has this format. 4XXXXX for Visa and 5XXXXX for Mastercard. 
+   * Acquirer bank ID number that  corresponds to a certificate that Cybersource already has.This ID has this format. 4XXXXX for Visa and 5XXXXX for Mastercard. 
    * @return acquirerBin
   **/
-  @ApiModelProperty(value = "Acquirer bank ID number that corresponds to a certificate that Cybersource already has.This ID has this format. 4XXXXX for Visa and 5XXXXX for Mastercard. ")
+  @ApiModelProperty(value = "Acquirer bank ID number that  corresponds to a certificate that Cybersource already has.This ID has this format. 4XXXXX for Visa and 5XXXXX for Mastercard. ")
   public String getAcquirerBin() {
     return acquirerBin;
   }

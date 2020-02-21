@@ -15,7 +15,7 @@ package Api;
 
 import Invokers.ApiException;
 import Model.CreateReportSubscriptionRequest;
-import Model.InlineResponse400;
+import Model.InlineResponse4001;
 import Model.PredefinedSubscriptionRequestBean;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
@@ -38,7 +38,24 @@ public class ReportSubscriptionsApiTest {
 
     
     /**
-     * Create Report Subscription for a report name by organization
+     * Create a Standard or Classic Subscription
+     *
+     * Create or update an already existing classic or standard subscription. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createStandardOrClassicSubscriptionTest() throws ApiException {
+        PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean = null;
+        String organizationId = null;
+        api.createStandardOrClassicSubscription(predefinedSubscriptionRequestBean, organizationId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create Report Subscription for a Report Name by Organization
      *
      * Create a report subscription for your organization. The report name must be unique. 
      *
@@ -55,7 +72,7 @@ public class ReportSubscriptionsApiTest {
     }
     
     /**
-     * Delete subscription of a report name by organization
+     * Delete Subscription of a Report Name by Organization
      *
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      *
@@ -71,7 +88,7 @@ public class ReportSubscriptionsApiTest {
     }
     
     /**
-     * Get all subscriptions
+     * Get All Subscriptions
      *
      * View a summary of all report subscriptions. 
      *
@@ -86,7 +103,7 @@ public class ReportSubscriptionsApiTest {
     }
     
     /**
-     * Get subscription for report name
+     * Get Subscription for Report Name
      *
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      *
@@ -97,23 +114,6 @@ public class ReportSubscriptionsApiTest {
     public void getSubscriptionTest() throws ApiException {
         String reportName = null;
         ReportingV3ReportSubscriptionsGet200ResponseSubscriptions response = api.getSubscription(reportName);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Create a Standard or Classic subscription
-     *
-     * Create or update an already existing classic or standard subscription. 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportingV3PredefinedReportSubscriptionsPutTest() throws ApiException {
-        PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean = null;
-        String organizationId = null;
-        api.reportingV3PredefinedReportSubscriptionsPut(predefinedSubscriptionRequestBean, organizationId);
 
         // TODO: test validations
     }

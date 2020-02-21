@@ -34,7 +34,7 @@ public class ReportDownloadsApiTest {
 
     
     /**
-     * Download a report
+     * Download a Report
      *
      * Download a report using the unique report name and date. 
      *

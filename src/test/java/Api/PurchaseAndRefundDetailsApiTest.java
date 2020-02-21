@@ -35,7 +35,7 @@ public class PurchaseAndRefundDetailsApiTest {
 
     
     /**
-     * Get Purchase and Refund details
+     * Get Purchase and Refund Details
      *
      * Download the Purchase and Refund Details report. This report report includes all purchases and refund transactions, as well as all activities related to transactions resulting in an adjustment to the net proceeds. 
      *

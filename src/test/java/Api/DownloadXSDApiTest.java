@@ -32,7 +32,7 @@ public class DownloadXSDApiTest {
 
     
     /**
-     * Download XSD for report
+     * Download XSD for Report
      *
      * Used to download XSDs for reports on no-auth.
      *

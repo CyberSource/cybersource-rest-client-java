@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard {
   @SerializedName("prefix")
   private String prefix = null;
@@ -55,10 +55,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard {
   }
 
    /**
-   * First six digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see &#x60;token_prefix&#x60; field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * First six digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see &#x60;token_prefix&#x60; field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/) 
    * @return prefix
   **/
-  @ApiModelProperty(value = "First six digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see `token_prefix` field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  @ApiModelProperty(value = "First six digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see `token_prefix` field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/) ")
   public String getPrefix() {
     return prefix;
   }
@@ -73,10 +73,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard {
   }
 
    /**
-   * Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see &#x60;token_suffix&#x60; field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see &#x60;token_suffix&#x60; field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/) 
    * @return suffix
   **/
-  @ApiModelProperty(value = "Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see `token_suffix` field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  @ApiModelProperty(value = "Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see `token_suffix` field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/) ")
   public String getSuffix() {
     return suffix;
   }

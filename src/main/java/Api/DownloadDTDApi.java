@@ -88,7 +88,7 @@ public class DownloadDTDApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -122,7 +122,7 @@ public class DownloadDTDApi {
     }
 
     /**
-     * Download DTD for report
+     * Download DTD for Report
      * Used to download DTDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of DTD file to download. Some DTDs only have one version. In that case version name is not needed. Some example values are ctdr-1.0, tdr, pbdr-1.1 (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -132,7 +132,7 @@ public class DownloadDTDApi {
     }
 
     /**
-     * Download DTD for report
+     * Download DTD for Report
      * Used to download DTDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of DTD file to download. Some DTDs only have one version. In that case version name is not needed. Some example values are ctdr-1.0, tdr, pbdr-1.1 (required)
      * @return ApiResponse&lt;Void&gt;
@@ -144,7 +144,7 @@ public class DownloadDTDApi {
     }
 
     /**
-     * Download DTD for report (asynchronously)
+     * Download DTD for Report (asynchronously)
      * Used to download DTDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of DTD file to download. Some DTDs only have one version. In that case version name is not needed. Some example values are ctdr-1.0, tdr, pbdr-1.1 (required)
      * @param callback The callback to be executed when the API call finishes

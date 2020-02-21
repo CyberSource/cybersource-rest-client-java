@@ -29,7 +29,7 @@ import java.io.InputStream;
 
 
 import Model.CreateReportSubscriptionRequest;
-import Model.InlineResponse400;
+import Model.InlineResponse4001;
 import Model.PredefinedSubscriptionRequestBean;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
@@ -60,6 +60,133 @@ public class ReportSubscriptionsApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for createStandardOrClassicSubscription
+     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call createStandardOrClassicSubscriptionCall(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = predefinedSubscriptionRequestBean;
+        
+        // create path and map variables
+        String localVarPath = "/reporting/v3/predefined-report-subscriptions";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createStandardOrClassicSubscriptionValidateBeforeCall(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'predefinedSubscriptionRequestBean' is set
+        if (predefinedSubscriptionRequestBean == null) {
+            throw new ApiException("Missing the required parameter 'predefinedSubscriptionRequestBean' when calling createStandardOrClassicSubscription(Async)");
+        }
+        
+        
+        okhttp3.Call call = createStandardOrClassicSubscriptionCall(predefinedSubscriptionRequestBean, organizationId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Create a Standard or Classic Subscription
+     * Create or update an already existing classic or standard subscription. 
+     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void createStandardOrClassicSubscription(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
+        createStandardOrClassicSubscriptionWithHttpInfo(predefinedSubscriptionRequestBean, organizationId);
+    }
+
+    /**
+     * Create a Standard or Classic Subscription
+     * Create or update an already existing classic or standard subscription. 
+     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> createStandardOrClassicSubscriptionWithHttpInfo(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
+        okhttp3.Call call = createStandardOrClassicSubscriptionValidateBeforeCall(predefinedSubscriptionRequestBean, organizationId, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Create a Standard or Classic Subscription (asynchronously)
+     * Create or update an already existing classic or standard subscription. 
+     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
+     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call createStandardOrClassicSubscriptionAsync(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = createStandardOrClassicSubscriptionValidateBeforeCall(predefinedSubscriptionRequestBean, organizationId, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
     /**
      * Build call for createSubscription
      * @param createReportSubscriptionRequest Report subscription request payload (required)
@@ -96,7 +223,7 @@ public class ReportSubscriptionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -130,7 +257,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Create Report Subscription for a report name by organization
+     * Create Report Subscription for a Report Name by Organization
      * Create a report subscription for your organization. The report name must be unique. 
      * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -141,7 +268,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Create Report Subscription for a report name by organization
+     * Create Report Subscription for a Report Name by Organization
      * Create a report subscription for your organization. The report name must be unique. 
      * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -154,7 +281,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Create Report Subscription for a report name by organization (asynchronously)
+     * Create Report Subscription for a Report Name by Organization (asynchronously)
      * Create a report subscription for your organization. The report name must be unique. 
      * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -221,7 +348,7 @@ public class ReportSubscriptionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -255,7 +382,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Delete subscription of a report name by organization
+     * Delete Subscription of a Report Name by Organization
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -265,7 +392,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Delete subscription of a report name by organization
+     * Delete Subscription of a Report Name by Organization
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
      * @return ApiResponse&lt;Void&gt;
@@ -277,7 +404,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Delete subscription of a report name by organization (asynchronously)
+     * Delete Subscription of a Report Name by Organization (asynchronously)
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
      * @param callback The callback to be executed when the API call finishes
@@ -341,7 +468,7 @@ public class ReportSubscriptionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -370,7 +497,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get all subscriptions
+     * Get All Subscriptions
      * View a summary of all report subscriptions. 
      * @return ReportingV3ReportSubscriptionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -381,7 +508,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get all subscriptions
+     * Get All Subscriptions
      * View a summary of all report subscriptions. 
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -393,7 +520,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get all subscriptions (asynchronously)
+     * Get All Subscriptions (asynchronously)
      * View a summary of all report subscriptions. 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -459,7 +586,7 @@ public class ReportSubscriptionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -493,7 +620,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get subscription for report name
+     * Get Subscription for Report Name
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
      * @return ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
@@ -505,7 +632,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get subscription for report name
+     * Get Subscription for Report Name
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200ResponseSubscriptions&gt;
@@ -518,7 +645,7 @@ public class ReportSubscriptionsApi {
     }
 
     /**
-     * Get subscription for report name (asynchronously)
+     * Get Subscription for Report Name (asynchronously)
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
      * @param callback The callback to be executed when the API call finishes
@@ -549,133 +676,6 @@ public class ReportSubscriptionsApi {
         okhttp3.Call call = getSubscriptionValidateBeforeCall(reportName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for reportingV3PredefinedReportSubscriptionsPut
-     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public okhttp3.Call reportingV3PredefinedReportSubscriptionsPutCall(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = predefinedSubscriptionRequestBean;
-        
-        // create path and map variables
-        String localVarPath = "/reporting/v3/predefined-report-subscriptions";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (organizationId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/hal+json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call reportingV3PredefinedReportSubscriptionsPutValidateBeforeCall(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'predefinedSubscriptionRequestBean' is set
-        if (predefinedSubscriptionRequestBean == null) {
-            throw new ApiException("Missing the required parameter 'predefinedSubscriptionRequestBean' when calling reportingV3PredefinedReportSubscriptionsPut(Async)");
-        }
-        
-        
-        okhttp3.Call call = reportingV3PredefinedReportSubscriptionsPutCall(predefinedSubscriptionRequestBean, organizationId, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Create a Standard or Classic subscription
-     * Create or update an already existing classic or standard subscription. 
-     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public void reportingV3PredefinedReportSubscriptionsPut(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
-        reportingV3PredefinedReportSubscriptionsPutWithHttpInfo(predefinedSubscriptionRequestBean, organizationId);
-    }
-
-    /**
-     * Create a Standard or Classic subscription
-     * Create or update an already existing classic or standard subscription. 
-     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<Void> reportingV3PredefinedReportSubscriptionsPutWithHttpInfo(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
-        okhttp3.Call call = reportingV3PredefinedReportSubscriptionsPutValidateBeforeCall(predefinedSubscriptionRequestBean, organizationId, null, null);
-        return apiClient.execute(call);
-    }
-
-    /**
-     * Create a Standard or Classic subscription (asynchronously)
-     * Create or update an already existing classic or standard subscription. 
-     * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public okhttp3.Call reportingV3PredefinedReportSubscriptionsPutAsync(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ApiCallback<Void> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call call = reportingV3PredefinedReportSubscriptionsPutValidateBeforeCall(predefinedSubscriptionRequestBean, organizationId, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
         return call;
     }
 }

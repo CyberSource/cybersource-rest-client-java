@@ -88,7 +88,7 @@ public class DownloadXSDApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -122,7 +122,7 @@ public class DownloadXSDApi {
     }
 
     /**
-     * Download XSD for report
+     * Download XSD for Report
      * Used to download XSDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -132,7 +132,7 @@ public class DownloadXSDApi {
     }
 
     /**
-     * Download XSD for report
+     * Download XSD for Report
      * Used to download XSDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes (required)
      * @return ApiResponse&lt;Void&gt;
@@ -144,7 +144,7 @@ public class DownloadXSDApi {
     }
 
     /**
-     * Download XSD for report (asynchronously)
+     * Download XSD for Report (asynchronously)
      * Used to download XSDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes (required)
      * @param callback The callback to be executed when the API call finishes

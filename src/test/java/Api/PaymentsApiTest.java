@@ -15,6 +15,9 @@ package Api;
 
 import Invokers.ApiException;
 import Model.CreatePaymentRequest;
+import Model.IncrementAuthRequest;
+import Model.PtsV2IncrementalAuthorizationPatch201Response;
+import Model.PtsV2IncrementalAuthorizationPatch400Response;
 import Model.PtsV2PaymentsPost201Response;
 import Model.PtsV2PaymentsPost400Response;
 import Model.PtsV2PaymentsPost502Response;
@@ -47,6 +50,23 @@ public class PaymentsApiTest {
     public void createPaymentTest() throws ApiException {
         CreatePaymentRequest createPaymentRequest = null;
         PtsV2PaymentsPost201Response response = api.createPayment(createPaymentRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Increment an Authorization
+     *
+     * Use this service to authorize additional charges in a lodging or autorental transaction. Include the ID returned from the original authorization in the PATCH request to add additional charges to that authorization. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void incrementAuthTest() throws ApiException {
+        String id = null;
+        IncrementAuthRequest incrementAuthRequest = null;
+        PtsV2IncrementalAuthorizationPatch201Response response = api.incrementAuth(id, incrementAuthRequest);
 
         // TODO: test validations
     }

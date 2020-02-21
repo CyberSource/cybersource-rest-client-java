@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("acsRenderingType")
   private String acsRenderingType = null;
@@ -132,6 +132,9 @@ public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformati
   @SerializedName("xid")
   private String xid = null;
 
+  @SerializedName("directoryServerTransactionId")
+  private String directoryServerTransactionId = null;
+
   public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation acsRenderingType(String acsRenderingType) {
     this.acsRenderingType = acsRenderingType;
     return this;
@@ -192,10 +195,10 @@ public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformati
   }
 
    /**
-   * Indicates what displays to the customer during the authentication process. This field can contain one of these values: - &#x60;ADS&#x60;: (Card not enrolled) customer prompted to activate the card during the checkout process. - &#x60;ATTEMPTS&#x60;: (Attempts processing) Processing briefly displays before the checkout process is completed. - &#x60;ENROLLED&#x60;: (Card enrolled) the card issuer’s authentication window displays. - &#x60;UNKNOWN&#x60;: Card enrollment status cannot be determined. - &#x60;NOREDIRECT&#x60;: (Card not enrolled, authentication unavailable, or error occurred) nothing displays to the customer.  The following values can be returned if you are using rules-based payer authentication. - &#x60;RIBA&#x60;: The card-issuing bank supports risk-based authentication, but whether the cardholder is likely to be challenged cannot be determined. - &#x60;RIBA_PASS&#x60;: The card-issuing bank supports risk-based authentication and it is likely that the cardholder will not be challenged to provide credentials, also known as _silent authentication_.  For details about possible values, see &#x60;pa_enroll_authentication_path&#x60; field description and \&quot;Rules-Based Payer Authentication\&quot; in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Indicates what displays to the customer during the authentication process. This field can contain one of these values: - &#x60;ADS&#x60;: (Card not enrolled) customer prompted to activate the card during the checkout process. - &#x60;ATTEMPTS&#x60;: (Attempts processing) Processing briefly displays before the checkout process is completed. - &#x60;ENROLLED&#x60;: (Card enrolled) the card issuer’s authentication window displays. - &#x60;UNKNOWN&#x60;: Card enrollment status cannot be determined. - &#x60;NOREDIRECT&#x60;: (Card not enrolled, authentication unavailable, or error occurred) nothing displays to the customer.  The following values can be returned if you are using rules-based payer authentication. - &#x60;RIBA&#x60;: The card-issuing bank supports risk-based authentication, but whether the cardholder is likely to be challenged cannot be determined. - &#x60;RIBA_PASS&#x60;: The card-issuing bank supports risk-based authentication and it is likely that the cardholder will not be challenged to provide credentials, also known as _silent authentication_.  For details about possible values, see &#x60;pa_enroll_authentication_path&#x60; field description and \&quot;Rules-Based Payer Authentication\&quot; in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/) 
    * @return authenticationPath
   **/
-  @ApiModelProperty(value = "Indicates what displays to the customer during the authentication process. This field can contain one of these values: - `ADS`: (Card not enrolled) customer prompted to activate the card during the checkout process. - `ATTEMPTS`: (Attempts processing) Processing briefly displays before the checkout process is completed. - `ENROLLED`: (Card enrolled) the card issuer’s authentication window displays. - `UNKNOWN`: Card enrollment status cannot be determined. - `NOREDIRECT`: (Card not enrolled, authentication unavailable, or error occurred) nothing displays to the customer.  The following values can be returned if you are using rules-based payer authentication. - `RIBA`: The card-issuing bank supports risk-based authentication, but whether the cardholder is likely to be challenged cannot be determined. - `RIBA_PASS`: The card-issuing bank supports risk-based authentication and it is likely that the cardholder will not be challenged to provide credentials, also known as _silent authentication_.  For details about possible values, see `pa_enroll_authentication_path` field description and \"Rules-Based Payer Authentication\" in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  @ApiModelProperty(value = "Indicates what displays to the customer during the authentication process. This field can contain one of these values: - `ADS`: (Card not enrolled) customer prompted to activate the card during the checkout process. - `ATTEMPTS`: (Attempts processing) Processing briefly displays before the checkout process is completed. - `ENROLLED`: (Card enrolled) the card issuer’s authentication window displays. - `UNKNOWN`: Card enrollment status cannot be determined. - `NOREDIRECT`: (Card not enrolled, authentication unavailable, or error occurred) nothing displays to the customer.  The following values can be returned if you are using rules-based payer authentication. - `RIBA`: The card-issuing bank supports risk-based authentication, but whether the cardholder is likely to be challenged cannot be determined. - `RIBA_PASS`: The card-issuing bank supports risk-based authentication and it is likely that the cardholder will not be challenged to provide credentials, also known as _silent authentication_.  For details about possible values, see `pa_enroll_authentication_path` field description and \"Rules-Based Payer Authentication\" in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/) ")
   public String getAuthenticationPath() {
     return authenticationPath;
   }
@@ -534,10 +537,10 @@ public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformati
   }
 
    /**
-   * Date and time of the enrollment check combined with the VEReq and VERes elements. If you ever need to show proof of enrollment checking, you may need to parse the string for the information required by the payment card company. The value can be very large. For details about possible values, see the &#x60;pa_enroll_proofxml&#x60; field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) - For cards issued in the U.S. or Canada, Visa may require this data for specific merchant category codes. - For cards not issued in the U.S. or Canada, your bank may require this data as proof of enrollment checking for any payer authentication transaction that you re-present because of a chargeback. 
+   * Date and time of the enrollment check combined with the VEReq and VERes elements. If you ever need to show proof of enrollment checking, you may need to parse the string for the information required by the payment card company. The value can be very large. For details about possible values, see the &#x60;pa_enroll_proofxml&#x60; field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/) - For cards issued in the U.S. or Canada, Visa may require this data for specific merchant category codes. - For cards not issued in the U.S. or Canada, your bank may require this data as proof of enrollment checking for any payer authentication transaction that you re-present because of a chargeback. 
    * @return proofXml
   **/
-  @ApiModelProperty(value = "Date and time of the enrollment check combined with the VEReq and VERes elements. If you ever need to show proof of enrollment checking, you may need to parse the string for the information required by the payment card company. The value can be very large. For details about possible values, see the `pa_enroll_proofxml` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) - For cards issued in the U.S. or Canada, Visa may require this data for specific merchant category codes. - For cards not issued in the U.S. or Canada, your bank may require this data as proof of enrollment checking for any payer authentication transaction that you re-present because of a chargeback. ")
+  @ApiModelProperty(value = "Date and time of the enrollment check combined with the VEReq and VERes elements. If you ever need to show proof of enrollment checking, you may need to parse the string for the information required by the payment card company. The value can be very large. For details about possible values, see the `pa_enroll_proofxml` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/) - For cards issued in the U.S. or Canada, Visa may require this data for specific merchant category codes. - For cards not issued in the U.S. or Canada, your bank may require this data as proof of enrollment checking for any payer authentication transaction that you re-present because of a chargeback. ")
   public String getProofXml() {
     return proofXml;
   }
@@ -696,10 +699,10 @@ public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformati
   }
 
    /**
-   * Result of the enrollment check. This field can contain one of these values: - &#x60;Y&#x60;: Card enrolled or can be enrolled; you must authenticate. Liability shift. - &#x60;N&#x60;: Card not enrolled; proceed with authorization. Liability shift. - &#x60;U&#x60;: Unable to authenticate regardless of the reason. No liability shift.  **Note** This field only applies to the Asia, Middle East, and Africa Gateway. If you are configured for this processor, you must send the value of this field in your authorization request.  The following value can be returned if you are using rules-based Payer Authentication: - &#x60;B&#x60;: Indicates that authentication was bypassed.  For details, see &#x60;pa_enroll_veres_enrolled&#x60; field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Result of the enrollment check. This field can contain one of these values: - &#x60;Y&#x60;: Card enrolled or can be enrolled; you must authenticate. Liability shift. - &#x60;N&#x60;: Card not enrolled; proceed with authorization. Liability shift. - &#x60;U&#x60;: Unable to authenticate regardless of the reason. No liability shift.  **Note** This field only applies to the Asia, Middle East, and Africa Gateway. If you are configured for this processor, you must send the value of this field in your authorization request.  The following value can be returned if you are using rules-based Payer Authentication: - &#x60;B&#x60;: Indicates that authentication was bypassed.  For details, see &#x60;pa_enroll_veres_enrolled&#x60; field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/) 
    * @return veresEnrolled
   **/
-  @ApiModelProperty(value = "Result of the enrollment check. This field can contain one of these values: - `Y`: Card enrolled or can be enrolled; you must authenticate. Liability shift. - `N`: Card not enrolled; proceed with authorization. Liability shift. - `U`: Unable to authenticate regardless of the reason. No liability shift.  **Note** This field only applies to the Asia, Middle East, and Africa Gateway. If you are configured for this processor, you must send the value of this field in your authorization request.  The following value can be returned if you are using rules-based Payer Authentication: - `B`: Indicates that authentication was bypassed.  For details, see `pa_enroll_veres_enrolled` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  @ApiModelProperty(value = "Result of the enrollment check. This field can contain one of these values: - `Y`: Card enrolled or can be enrolled; you must authenticate. Liability shift. - `N`: Card not enrolled; proceed with authorization. Liability shift. - `U`: Unable to authenticate regardless of the reason. No liability shift.  **Note** This field only applies to the Asia, Middle East, and Africa Gateway. If you are configured for this processor, you must send the value of this field in your authorization request.  The following value can be returned if you are using rules-based Payer Authentication: - `B`: Indicates that authentication was bypassed.  For details, see `pa_enroll_veres_enrolled` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/) ")
   public String getVeresEnrolled() {
     return veresEnrolled;
   }
@@ -742,6 +745,24 @@ public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformati
 
   public void setXid(String xid) {
     this.xid = xid;
+  }
+
+  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation directoryServerTransactionId(String directoryServerTransactionId) {
+    this.directoryServerTransactionId = directoryServerTransactionId;
+    return this;
+  }
+
+   /**
+   * The Directory Server Transaction ID is generated by the Mastercard Directory Server during the authentication transaction and passed back to the merchant with the authentication results. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 114-149, Field: MC AVV Verification—Directory Server Transaction ID 
+   * @return directoryServerTransactionId
+  **/
+  @ApiModelProperty(value = "The Directory Server Transaction ID is generated by the Mastercard Directory Server during the authentication transaction and passed back to the merchant with the authentication results. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 114-149, Field: MC AVV Verification—Directory Server Transaction ID ")
+  public String getDirectoryServerTransactionId() {
+    return directoryServerTransactionId;
+  }
+
+  public void setDirectoryServerTransactionId(String directoryServerTransactionId) {
+    this.directoryServerTransactionId = directoryServerTransactionId;
   }
 
 
@@ -787,12 +808,13 @@ public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformati
         Objects.equals(this.ucafCollectionIndicator, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation.ucafCollectionIndicator) &&
         Objects.equals(this.veresEnrolled, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation.veresEnrolled) &&
         Objects.equals(this.whiteListStatusSource, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation.whiteListStatusSource) &&
-        Objects.equals(this.xid, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation.xid);
+        Objects.equals(this.xid, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation.xid) &&
+        Objects.equals(this.directoryServerTransactionId, riskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation.directoryServerTransactionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid);
+    return Objects.hash(acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId);
   }
 
 
@@ -835,6 +857,7 @@ public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformati
     sb.append("    veresEnrolled: ").append(toIndentedString(veresEnrolled)).append("\n");
     sb.append("    whiteListStatusSource: ").append(toIndentedString(whiteListStatusSource)).append("\n");
     sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
+    sb.append("    directoryServerTransactionId: ").append(toIndentedString(directoryServerTransactionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

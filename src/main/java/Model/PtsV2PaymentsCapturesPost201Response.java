@@ -17,6 +17,7 @@ import java.util.Objects;
 import Model.PtsV2PaymentsCapturesPost201ResponseLinks;
 import Model.PtsV2PaymentsCapturesPost201ResponseOrderInformation;
 import Model.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation;
+import Model.PtsV2PaymentsCapturesPost201ResponseProcessingInformation;
 import Model.PtsV2PaymentsCapturesPost201ResponseProcessorInformation;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import com.google.gson.TypeAdapter;
@@ -31,7 +32,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsCapturesPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class PtsV2PaymentsCapturesPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsCapturesPost201ResponseLinks links = null;
@@ -56,6 +57,9 @@ public class PtsV2PaymentsCapturesPost201Response {
 
   @SerializedName("orderInformation")
   private PtsV2PaymentsCapturesPost201ResponseOrderInformation orderInformation = null;
+
+  @SerializedName("processingInformation")
+  private PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation = null;
 
   @SerializedName("pointOfSaleInformation")
   private PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation = null;
@@ -204,6 +208,24 @@ public class PtsV2PaymentsCapturesPost201Response {
     this.orderInformation = orderInformation;
   }
 
+  public PtsV2PaymentsCapturesPost201Response processingInformation(PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsCapturesPost201ResponseProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
   public PtsV2PaymentsCapturesPost201Response pointOfSaleInformation(PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
@@ -240,12 +262,13 @@ public class PtsV2PaymentsCapturesPost201Response {
         Objects.equals(this.clientReferenceInformation, ptsV2PaymentsCapturesPost201Response.clientReferenceInformation) &&
         Objects.equals(this.processorInformation, ptsV2PaymentsCapturesPost201Response.processorInformation) &&
         Objects.equals(this.orderInformation, ptsV2PaymentsCapturesPost201Response.orderInformation) &&
+        Objects.equals(this.processingInformation, ptsV2PaymentsCapturesPost201Response.processingInformation) &&
         Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsCapturesPost201Response.pointOfSaleInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, processorInformation, orderInformation, pointOfSaleInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, processorInformation, orderInformation, processingInformation, pointOfSaleInformation);
   }
 
 
@@ -262,6 +285,7 @@ public class PtsV2PaymentsCapturesPost201Response {
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("}");
     return sb.toString();

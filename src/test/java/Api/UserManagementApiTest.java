@@ -34,7 +34,7 @@ public class UserManagementApiTest {
 
     
     /**
-     * Get user information
+     * Get User Information
      *
      * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      *

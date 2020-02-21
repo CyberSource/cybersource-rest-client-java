@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.Ptsv2paymentsTravelInformationAgency;
 import Model.Ptsv2paymentsTravelInformationLodging;
+import Model.Ptsv2paymentsTravelInformationTransit;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,7 +29,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsTravelInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class Ptsv2paymentsTravelInformation {
   @SerializedName("duration")
   private String duration = null;
@@ -38,6 +39,9 @@ public class Ptsv2paymentsTravelInformation {
 
   @SerializedName("lodging")
   private Ptsv2paymentsTravelInformationLodging lodging = null;
+
+  @SerializedName("transit")
+  private Ptsv2paymentsTravelInformationTransit transit = null;
 
   public Ptsv2paymentsTravelInformation duration(String duration) {
     this.duration = duration;
@@ -93,6 +97,24 @@ public class Ptsv2paymentsTravelInformation {
     this.lodging = lodging;
   }
 
+  public Ptsv2paymentsTravelInformation transit(Ptsv2paymentsTravelInformationTransit transit) {
+    this.transit = transit;
+    return this;
+  }
+
+   /**
+   * Get transit
+   * @return transit
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsTravelInformationTransit getTransit() {
+    return transit;
+  }
+
+  public void setTransit(Ptsv2paymentsTravelInformationTransit transit) {
+    this.transit = transit;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,12 +127,13 @@ public class Ptsv2paymentsTravelInformation {
     Ptsv2paymentsTravelInformation ptsv2paymentsTravelInformation = (Ptsv2paymentsTravelInformation) o;
     return Objects.equals(this.duration, ptsv2paymentsTravelInformation.duration) &&
         Objects.equals(this.agency, ptsv2paymentsTravelInformation.agency) &&
-        Objects.equals(this.lodging, ptsv2paymentsTravelInformation.lodging);
+        Objects.equals(this.lodging, ptsv2paymentsTravelInformation.lodging) &&
+        Objects.equals(this.transit, ptsv2paymentsTravelInformation.transit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(duration, agency, lodging);
+    return Objects.hash(duration, agency, lodging, transit);
   }
 
 
@@ -122,6 +145,7 @@ public class Ptsv2paymentsTravelInformation {
     sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
     sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
     sb.append("    lodging: ").append(toIndentedString(lodging)).append("\n");
+    sb.append("    transit: ").append(toIndentedString(transit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

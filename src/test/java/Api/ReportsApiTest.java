@@ -54,7 +54,7 @@ public class ReportsApiTest {
     }
     
     /**
-     * Get Report based on reportId
+     * Get Report Based on Report Id
      *
      * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
      *
@@ -71,7 +71,7 @@ public class ReportsApiTest {
     }
     
     /**
-     * Retrieve available reports
+     * Retrieve Available Reports
      *
      * Retrieve a list of the available reports to which you are subscribed. This will also give you the reportId value, which you can also use to download a report. 
      *

@@ -91,7 +91,7 @@ public class AuthenticationExemptionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -125,7 +125,7 @@ public class AuthenticationExemptionsApi {
     }
 
     /**
-     * Authentication exemptions service
+     * Authentication Exemptions Service
      * A new CYBS branded service to connect to VISA’s REST API to enable Visa Transaction Advisor (VTA) as a standalone service for merchants to support PSD2/SCA adoption and exemptions processing startegy in Europe.VTA Provides intelligent risk data to merchants as inputs to their in-house fraud management tools for fraud mitigation on Visa transactions. 
      * @param authenticationExemptionsRequest  (required)
      * @return RiskV1AuthenticationExemptionsPost201Response
@@ -137,7 +137,7 @@ public class AuthenticationExemptionsApi {
     }
 
     /**
-     * Authentication exemptions service
+     * Authentication Exemptions Service
      * A new CYBS branded service to connect to VISA’s REST API to enable Visa Transaction Advisor (VTA) as a standalone service for merchants to support PSD2/SCA adoption and exemptions processing startegy in Europe.VTA Provides intelligent risk data to merchants as inputs to their in-house fraud management tools for fraud mitigation on Visa transactions. 
      * @param authenticationExemptionsRequest  (required)
      * @return ApiResponse&lt;RiskV1AuthenticationExemptionsPost201Response&gt;
@@ -150,7 +150,7 @@ public class AuthenticationExemptionsApi {
     }
 
     /**
-     * Authentication exemptions service (asynchronously)
+     * Authentication Exemptions Service (asynchronously)
      * A new CYBS branded service to connect to VISA’s REST API to enable Visa Transaction Advisor (VTA) as a standalone service for merchants to support PSD2/SCA adoption and exemptions processing startegy in Europe.VTA Provides intelligent risk data to merchants as inputs to their in-house fraud management tools for fraud mitigation on Visa transactions. 
      * @param authenticationExemptionsRequest  (required)
      * @param callback The callback to be executed when the API call finishes

@@ -32,7 +32,7 @@ public class DownloadDTDApiTest {
 
     
     /**
-     * Download DTD for report
+     * Download DTD for Report
      *
      * Used to download DTDs for reports on no-auth.
      *

@@ -27,10 +27,13 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class PtsV2PaymentsPost201ResponseProcessingInformation {
   @SerializedName("bankTransferOptions")
   private PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions bankTransferOptions = null;
+
+  @SerializedName("enhancedDataEnabled")
+  private Boolean enhancedDataEnabled = null;
 
   public PtsV2PaymentsPost201ResponseProcessingInformation bankTransferOptions(PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions bankTransferOptions) {
     this.bankTransferOptions = bankTransferOptions;
@@ -50,6 +53,24 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     this.bankTransferOptions = bankTransferOptions;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessingInformation enhancedDataEnabled(Boolean enhancedDataEnabled) {
+    this.enhancedDataEnabled = enhancedDataEnabled;
+    return this;
+  }
+
+   /**
+   * - true : the airline data was included in the request to the processor. - false : the airline data was not included in the request to the processor. 
+   * @return enhancedDataEnabled
+  **/
+  @ApiModelProperty(value = "- true : the airline data was included in the request to the processor. - false : the airline data was not included in the request to the processor. ")
+  public Boolean getEnhancedDataEnabled() {
+    return enhancedDataEnabled;
+  }
+
+  public void setEnhancedDataEnabled(Boolean enhancedDataEnabled) {
+    this.enhancedDataEnabled = enhancedDataEnabled;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +81,13 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
       return false;
     }
     PtsV2PaymentsPost201ResponseProcessingInformation ptsV2PaymentsPost201ResponseProcessingInformation = (PtsV2PaymentsPost201ResponseProcessingInformation) o;
-    return Objects.equals(this.bankTransferOptions, ptsV2PaymentsPost201ResponseProcessingInformation.bankTransferOptions);
+    return Objects.equals(this.bankTransferOptions, ptsV2PaymentsPost201ResponseProcessingInformation.bankTransferOptions) &&
+        Objects.equals(this.enhancedDataEnabled, ptsV2PaymentsPost201ResponseProcessingInformation.enhancedDataEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bankTransferOptions);
+    return Objects.hash(bankTransferOptions, enhancedDataEnabled);
   }
 
 
@@ -75,6 +97,7 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     sb.append("class PtsV2PaymentsPost201ResponseProcessingInformation {\n");
     
     sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
+    sb.append("    enhancedDataEnabled: ").append(toIndentedString(enhancedDataEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

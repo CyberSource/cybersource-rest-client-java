@@ -100,7 +100,7 @@ public class UserManagementApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -129,7 +129,7 @@ public class UserManagementApi {
     }
 
     /**
-     * Get user information
+     * Get User Information
      * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      * @param organizationId This is the orgId of the organization which the user belongs to. (optional)
      * @param userName User ID of the user you want to get details on. (optional)
@@ -144,7 +144,7 @@ public class UserManagementApi {
     }
 
     /**
-     * Get user information
+     * Get User Information
      * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      * @param organizationId This is the orgId of the organization which the user belongs to. (optional)
      * @param userName User ID of the user you want to get details on. (optional)
@@ -160,7 +160,7 @@ public class UserManagementApi {
     }
 
     /**
-     * Get user information (asynchronously)
+     * Get User Information (asynchronously)
      * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      * @param organizationId This is the orgId of the organization which the user belongs to. (optional)
      * @param userName User ID of the user you want to get details on. (optional)

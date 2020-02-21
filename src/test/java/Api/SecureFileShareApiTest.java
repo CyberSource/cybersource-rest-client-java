@@ -14,7 +14,7 @@
 package Api;
 
 import Invokers.ApiException;
-import Model.InlineResponse400;
+import Model.InlineResponse4001;
 import org.joda.time.LocalDate;
 import Model.V1FileDetailsGet200Response;
 import org.junit.Test;
@@ -35,7 +35,7 @@ public class SecureFileShareApiTest {
 
     
     /**
-     * Download a file with file identifier
+     * Download a File with File Identifier
      *
      * Download a file for the given file identifier
      *
@@ -52,7 +52,7 @@ public class SecureFileShareApiTest {
     }
     
     /**
-     * Get list of files
+     * Get List of Files
      *
      * Get list of files and it&#39;s information of them available inside the report directory
      *

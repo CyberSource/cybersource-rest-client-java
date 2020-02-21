@@ -91,7 +91,7 @@ public class SearchTransactionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -125,7 +125,7 @@ public class SearchTransactionsApi {
     }
 
     /**
-     * Create a search request
+     * Create a Search Request
      * Create a search request. 
      * @param createSearchRequest  (required)
      * @return TssV2TransactionsPost201Response
@@ -137,7 +137,7 @@ public class SearchTransactionsApi {
     }
 
     /**
-     * Create a search request
+     * Create a Search Request
      * Create a search request. 
      * @param createSearchRequest  (required)
      * @return ApiResponse&lt;TssV2TransactionsPost201Response&gt;
@@ -150,7 +150,7 @@ public class SearchTransactionsApi {
     }
 
     /**
-     * Create a search request (asynchronously)
+     * Create a Search Request (asynchronously)
      * Create a search request. 
      * @param createSearchRequest  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -217,7 +217,7 @@ public class SearchTransactionsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -251,7 +251,7 @@ public class SearchTransactionsApi {
     }
 
     /**
-     * Get Search results
+     * Get Search Results
      * Include the Search ID in the GET request to retrieve the search results.
      * @param searchId Search ID. (required)
      * @return TssV2TransactionsPost201Response
@@ -263,7 +263,7 @@ public class SearchTransactionsApi {
     }
 
     /**
-     * Get Search results
+     * Get Search Results
      * Include the Search ID in the GET request to retrieve the search results.
      * @param searchId Search ID. (required)
      * @return ApiResponse&lt;TssV2TransactionsPost201Response&gt;
@@ -276,7 +276,7 @@ public class SearchTransactionsApi {
     }
 
     /**
-     * Get Search results (asynchronously)
+     * Get Search Results (asynchronously)
      * Include the Search ID in the GET request to retrieve the search results.
      * @param searchId Search ID. (required)
      * @param callback The callback to be executed when the API call finishes

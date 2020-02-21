@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformationAchVerification
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification {
   @SerializedName("resultCode")
   private String resultCode = null;
@@ -40,10 +40,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification {
   }
 
    /**
-   * Results from the ACH verification service. For details about this service and the possible values for the results, see \&quot;ACH Verification\&quot; and \&quot;Verification Codes\&quot; in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). 
+   * Results from the ACH verification service. For details about this service and the possible values for the results, see \&quot;ACH Verification\&quot; and \&quot;Verification Codes\&quot; in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/). 
    * @return resultCode
   **/
-  @ApiModelProperty(value = "Results from the ACH verification service. For details about this service and the possible values for the results, see \"ACH Verification\" and \"Verification Codes\" in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). ")
+  @ApiModelProperty(value = "Results from the ACH verification service. For details about this service and the possible values for the results, see \"ACH Verification\" and \"Verification Codes\" in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/). ")
   public String getResultCode() {
     return resultCode;
   }
@@ -58,10 +58,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification {
   }
 
    /**
-   * Raw results from the ACH verification service. For details about this service and the possible values for the raw results, see \&quot;ACH Verification\&quot; and \&quot;Verification Codes\&quot; in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). 
+   * Raw results from the ACH verification service. For details about this service and the possible values for the raw results, see \&quot;ACH Verification\&quot; and \&quot;Verification Codes\&quot; in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/). 
    * @return resultCodeRaw
   **/
-  @ApiModelProperty(value = "Raw results from the ACH verification service. For details about this service and the possible values for the raw results, see \"ACH Verification\" and \"Verification Codes\" in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). ")
+  @ApiModelProperty(value = "Raw results from the ACH verification service. For details about this service and the possible values for the raw results, see \"ACH Verification\" and \"Verification Codes\" in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/). ")
   public String getResultCodeRaw() {
     return resultCodeRaw;
   }

@@ -35,7 +35,7 @@ public class PaymentBatchSummariesApiTest {
 
     
     /**
-     * Get payment batch summary data
+     * Get Payment Batch Summary Data
      *
      * Scope can be either account/merchant or reseller.
      *

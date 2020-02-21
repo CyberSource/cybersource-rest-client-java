@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Riskv1authenticationexemptionsPaymentInformationFluidData;
 import Model.Riskv1authenticationresultsPaymentInformationCard;
 import Model.Riskv1authenticationresultsPaymentInformationTokenizedCard;
 import com.google.gson.TypeAdapter;
@@ -28,13 +29,16 @@ import java.io.IOException;
 /**
  * Riskv1authenticationresultsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class Riskv1authenticationresultsPaymentInformation {
   @SerializedName("card")
   private Riskv1authenticationresultsPaymentInformationCard card = null;
 
   @SerializedName("tokenizedCard")
   private Riskv1authenticationresultsPaymentInformationTokenizedCard tokenizedCard = null;
+
+  @SerializedName("fluidData")
+  private Riskv1authenticationexemptionsPaymentInformationFluidData fluidData = null;
 
   public Riskv1authenticationresultsPaymentInformation card(Riskv1authenticationresultsPaymentInformationCard card) {
     this.card = card;
@@ -72,6 +76,24 @@ public class Riskv1authenticationresultsPaymentInformation {
     this.tokenizedCard = tokenizedCard;
   }
 
+  public Riskv1authenticationresultsPaymentInformation fluidData(Riskv1authenticationexemptionsPaymentInformationFluidData fluidData) {
+    this.fluidData = fluidData;
+    return this;
+  }
+
+   /**
+   * Get fluidData
+   * @return fluidData
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1authenticationexemptionsPaymentInformationFluidData getFluidData() {
+    return fluidData;
+  }
+
+  public void setFluidData(Riskv1authenticationexemptionsPaymentInformationFluidData fluidData) {
+    this.fluidData = fluidData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +105,13 @@ public class Riskv1authenticationresultsPaymentInformation {
     }
     Riskv1authenticationresultsPaymentInformation riskv1authenticationresultsPaymentInformation = (Riskv1authenticationresultsPaymentInformation) o;
     return Objects.equals(this.card, riskv1authenticationresultsPaymentInformation.card) &&
-        Objects.equals(this.tokenizedCard, riskv1authenticationresultsPaymentInformation.tokenizedCard);
+        Objects.equals(this.tokenizedCard, riskv1authenticationresultsPaymentInformation.tokenizedCard) &&
+        Objects.equals(this.fluidData, riskv1authenticationresultsPaymentInformation.fluidData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard);
+    return Objects.hash(card, tokenizedCard, fluidData);
   }
 
 
@@ -99,6 +122,7 @@ public class Riskv1authenticationresultsPaymentInformation {
     
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

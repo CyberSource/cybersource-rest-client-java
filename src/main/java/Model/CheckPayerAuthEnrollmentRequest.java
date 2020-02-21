@@ -17,7 +17,6 @@ import java.util.Objects;
 import Model.Riskv1authenticationexemptionsPaymentInformation;
 import Model.Riskv1authenticationsAcquirerInformation;
 import Model.Riskv1authenticationsBuyerInformation;
-import Model.Riskv1authenticationsClientReferenceInformation;
 import Model.Riskv1authenticationsConsumerAuthenticationInformation;
 import Model.Riskv1authenticationsDeviceInformation;
 import Model.Riskv1authenticationsMerchantInformation;
@@ -25,6 +24,8 @@ import Model.Riskv1authenticationsOrderInformation;
 import Model.Riskv1authenticationsRecurringPaymentInformation;
 import Model.Riskv1authenticationsRiskInformation;
 import Model.Riskv1authenticationsTravelInformation;
+import Model.Riskv1authenticationsetupsClientReferenceInformation;
+import Model.Riskv1authenticationsetupsProcessingInformation;
 import Model.Riskv1decisionsMerchantDefinedInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -40,16 +41,19 @@ import java.util.List;
 /**
  * CheckPayerAuthEnrollmentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class CheckPayerAuthEnrollmentRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1authenticationsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1authenticationsOrderInformation orderInformation = null;
 
   @SerializedName("paymentInformation")
   private Riskv1authenticationexemptionsPaymentInformation paymentInformation = null;
+
+  @SerializedName("processingInformation")
+  private Riskv1authenticationsetupsProcessingInformation processingInformation = null;
 
   @SerializedName("buyerInformation")
   private Riskv1authenticationsBuyerInformation buyerInformation = null;
@@ -78,7 +82,7 @@ public class CheckPayerAuthEnrollmentRequest {
   @SerializedName("merchantDefinedInformation")
   private List<Riskv1decisionsMerchantDefinedInformation> merchantDefinedInformation = null;
 
-  public CheckPayerAuthEnrollmentRequest clientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
+  public CheckPayerAuthEnrollmentRequest clientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -88,11 +92,11 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1authenticationsetupsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
@@ -130,6 +134,24 @@ public class CheckPayerAuthEnrollmentRequest {
 
   public void setPaymentInformation(Riskv1authenticationexemptionsPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
+  }
+
+  public CheckPayerAuthEnrollmentRequest processingInformation(Riskv1authenticationsetupsProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1authenticationsetupsProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(Riskv1authenticationsetupsProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
   }
 
   public CheckPayerAuthEnrollmentRequest buyerInformation(Riskv1authenticationsBuyerInformation buyerInformation) {
@@ -315,6 +337,7 @@ public class CheckPayerAuthEnrollmentRequest {
     return Objects.equals(this.clientReferenceInformation, checkPayerAuthEnrollmentRequest.clientReferenceInformation) &&
         Objects.equals(this.orderInformation, checkPayerAuthEnrollmentRequest.orderInformation) &&
         Objects.equals(this.paymentInformation, checkPayerAuthEnrollmentRequest.paymentInformation) &&
+        Objects.equals(this.processingInformation, checkPayerAuthEnrollmentRequest.processingInformation) &&
         Objects.equals(this.buyerInformation, checkPayerAuthEnrollmentRequest.buyerInformation) &&
         Objects.equals(this.deviceInformation, checkPayerAuthEnrollmentRequest.deviceInformation) &&
         Objects.equals(this.merchantInformation, checkPayerAuthEnrollmentRequest.merchantInformation) &&
@@ -328,7 +351,7 @@ public class CheckPayerAuthEnrollmentRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, orderInformation, paymentInformation, buyerInformation, deviceInformation, merchantInformation, acquirerInformation, recurringPaymentInformation, consumerAuthenticationInformation, riskInformation, travelInformation, merchantDefinedInformation);
+    return Objects.hash(clientReferenceInformation, orderInformation, paymentInformation, processingInformation, buyerInformation, deviceInformation, merchantInformation, acquirerInformation, recurringPaymentInformation, consumerAuthenticationInformation, riskInformation, travelInformation, merchantDefinedInformation);
   }
 
 
@@ -340,6 +363,7 @@ public class CheckPayerAuthEnrollmentRequest {
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
     sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");

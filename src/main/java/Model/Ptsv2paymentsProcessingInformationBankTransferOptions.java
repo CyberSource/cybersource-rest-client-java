@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformationBankTransferOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class Ptsv2paymentsProcessingInformationBankTransferOptions {
   @SerializedName("declineAvsFlags")
   private String declineAvsFlags = null;
@@ -82,10 +82,10 @@ public class Ptsv2paymentsProcessingInformationBankTransferOptions {
   }
 
    /**
-   * Specifies the authorization method for the transaction.  #### TeleCheck Accepts only the following values: - &#x60;ARC&#x60;: account receivable conversion - &#x60;CCD&#x60;: corporate cash disbursement - &#x60;POP&#x60;: point of purchase conversion - &#x60;PPD&#x60;: prearranged payment and deposit entry - &#x60;TEL&#x60;: telephone-initiated entry - &#x60;WEB&#x60;: internet-initiated entry  For details, see &#x60;ecp_sec_code&#x60; field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Specifies the authorization method for the transaction.  #### TeleCheck Accepts only the following values: - &#x60;ARC&#x60;: account receivable conversion - &#x60;CCD&#x60;: corporate cash disbursement - &#x60;POP&#x60;: point of purchase conversion - &#x60;PPD&#x60;: prearranged payment and deposit entry - &#x60;TEL&#x60;: telephone-initiated entry - &#x60;WEB&#x60;: internet-initiated entry  For details, see &#x60;ecp_sec_code&#x60; field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) 
    * @return secCode
   **/
-  @ApiModelProperty(value = "Specifies the authorization method for the transaction.  #### TeleCheck Accepts only the following values: - `ARC`: account receivable conversion - `CCD`: corporate cash disbursement - `POP`: point of purchase conversion - `PPD`: prearranged payment and deposit entry - `TEL`: telephone-initiated entry - `WEB`: internet-initiated entry  For details, see `ecp_sec_code` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  @ApiModelProperty(value = "Specifies the authorization method for the transaction.  #### TeleCheck Accepts only the following values: - `ARC`: account receivable conversion - `CCD`: corporate cash disbursement - `POP`: point of purchase conversion - `PPD`: prearranged payment and deposit entry - `TEL`: telephone-initiated entry - `WEB`: internet-initiated entry  For details, see `ecp_sec_code` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) ")
   public String getSecCode() {
     return secCode;
   }
@@ -154,10 +154,10 @@ public class Ptsv2paymentsProcessingInformationBankTransferOptions {
   }
 
    /**
-   * Identifier for a partial payment or partial credit.  The value for each debit request or credit request must be unique within the scope of the order. For details, see &#x60;partial_payment_id&#x60; field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Identifier for a partial payment or partial credit.  The value for each debit request or credit request must be unique within the scope of the order. For details, see &#x60;partial_payment_id&#x60; field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) 
    * @return partialPaymentId
   **/
-  @ApiModelProperty(value = "Identifier for a partial payment or partial credit.  The value for each debit request or credit request must be unique within the scope of the order. For details, see `partial_payment_id` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  @ApiModelProperty(value = "Identifier for a partial payment or partial credit.  The value for each debit request or credit request must be unique within the scope of the order. For details, see `partial_payment_id` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) ")
   public String getPartialPaymentId() {
     return partialPaymentId;
   }
@@ -190,10 +190,10 @@ public class Ptsv2paymentsProcessingInformationBankTransferOptions {
   }
 
    /**
-   * Flag that indicates whether to process the payment.  Use with deferred payments. For details, see &#x60;ecp_payment_mode&#x60; field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Possible values: - &#x60;0&#x60;: Standard debit with immediate payment (default). - &#x60;1&#x60;: For deferred payments, indicates that this is a deferred payment and that you will send a debit request with &#x60;paymentCategoryCode &#x3D; 2&#x60; in the future. - &#x60;2&#x60;: For deferred payments, indicates notification to initiate payment.  #### Chase Paymentech Solutions and TeleCheck Use for deferred and partial payments.  #### CyberSource ACH Service Not used.  #### RBS WorldPay Atlanta Not used. 
+   * Flag that indicates whether to process the payment.  Use with deferred payments. For details, see &#x60;ecp_payment_mode&#x60; field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/)  Possible values: - &#x60;0&#x60;: Standard debit with immediate payment (default). - &#x60;1&#x60;: For deferred payments, indicates that this is a deferred payment and that you will send a debit request with &#x60;paymentCategoryCode &#x3D; 2&#x60; in the future. - &#x60;2&#x60;: For deferred payments, indicates notification to initiate payment.  #### Chase Paymentech Solutions and TeleCheck Use for deferred and partial payments.  #### CyberSource ACH Service Not used.  #### RBS WorldPay Atlanta Not used. 
    * @return paymentCategoryCode
   **/
-  @ApiModelProperty(value = "Flag that indicates whether to process the payment.  Use with deferred payments. For details, see `ecp_payment_mode` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Possible values: - `0`: Standard debit with immediate payment (default). - `1`: For deferred payments, indicates that this is a deferred payment and that you will send a debit request with `paymentCategoryCode = 2` in the future. - `2`: For deferred payments, indicates notification to initiate payment.  #### Chase Paymentech Solutions and TeleCheck Use for deferred and partial payments.  #### CyberSource ACH Service Not used.  #### RBS WorldPay Atlanta Not used. ")
+  @ApiModelProperty(value = "Flag that indicates whether to process the payment.  Use with deferred payments. For details, see `ecp_payment_mode` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/)  Possible values: - `0`: Standard debit with immediate payment (default). - `1`: For deferred payments, indicates that this is a deferred payment and that you will send a debit request with `paymentCategoryCode = 2` in the future. - `2`: For deferred payments, indicates notification to initiate payment.  #### Chase Paymentech Solutions and TeleCheck Use for deferred and partial payments.  #### CyberSource ACH Service Not used.  #### RBS WorldPay Atlanta Not used. ")
   public String getPaymentCategoryCode() {
     return paymentCategoryCode;
   }
@@ -208,10 +208,10 @@ public class Ptsv2paymentsProcessingInformationBankTransferOptions {
   }
 
    /**
-   * Method used for settlement.  Possible values: - &#x60;A&#x60;: Automated Clearing House (default for credits and for transactions using Canadian dollars) - &#x60;F&#x60;: Facsimile draft (U.S. dollars only) - &#x60;B&#x60;: Best possible (U.S. dollars only) (default if the field has not already been configured for your merchant ID)  For details, see &#x60;ecp_settlement_method&#x60; field description for credit cars and &#x60;ecp_debit_settlement_method&#x60; for debit cards in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) 
+   * Method used for settlement.  Possible values: - &#x60;A&#x60;: Automated Clearing House (default for credits and for transactions using Canadian dollars) - &#x60;F&#x60;: Facsimile draft (U.S. dollars only) - &#x60;B&#x60;: Best possible (U.S. dollars only) (default if the field has not already been configured for your merchant ID)  For details, see &#x60;ecp_settlement_method&#x60; field description for credit cars and &#x60;ecp_debit_settlement_method&#x60; for debit cards in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) 
    * @return settlementMethod
   **/
-  @ApiModelProperty(value = "Method used for settlement.  Possible values: - `A`: Automated Clearing House (default for credits and for transactions using Canadian dollars) - `F`: Facsimile draft (U.S. dollars only) - `B`: Best possible (U.S. dollars only) (default if the field has not already been configured for your merchant ID)  For details, see `ecp_settlement_method` field description for credit cars and `ecp_debit_settlement_method` for debit cards in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) ")
+  @ApiModelProperty(value = "Method used for settlement.  Possible values: - `A`: Automated Clearing House (default for credits and for transactions using Canadian dollars) - `F`: Facsimile draft (U.S. dollars only) - `B`: Best possible (U.S. dollars only) (default if the field has not already been configured for your merchant ID)  For details, see `ecp_settlement_method` field description for credit cars and `ecp_debit_settlement_method` for debit cards in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) ")
   public String getSettlementMethod() {
     return settlementMethod;
   }
@@ -226,10 +226,10 @@ public class Ptsv2paymentsProcessingInformationBankTransferOptions {
   }
 
    /**
-   * Level of fraud screening.  Possible values: - &#x60;1&#x60;: Validation — default if the field has not already been configured for your merchant ID - &#x60;2&#x60;: Verification  For a description of this feature and a list of supported processors, see \&quot;Verification and Validation\&quot; in the [Electronic Check Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). 
+   * Level of fraud screening.  Possible values: - &#x60;1&#x60;: Validation — default if the field has not already been configured for your merchant ID - &#x60;2&#x60;: Verification  For a description of this feature and a list of supported processors, see \&quot;Verification and Validation\&quot; in the [Electronic Check Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/). 
    * @return fraudScreeningLevel
   **/
-  @ApiModelProperty(value = "Level of fraud screening.  Possible values: - `1`: Validation — default if the field has not already been configured for your merchant ID - `2`: Verification  For a description of this feature and a list of supported processors, see \"Verification and Validation\" in the [Electronic Check Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). ")
+  @ApiModelProperty(value = "Level of fraud screening.  Possible values: - `1`: Validation — default if the field has not already been configured for your merchant ID - `2`: Verification  For a description of this feature and a list of supported processors, see \"Verification and Validation\" in the [Electronic Check Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/). ")
   public String getFraudScreeningLevel() {
     return fraudScreeningLevel;
   }

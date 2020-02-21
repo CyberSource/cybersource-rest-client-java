@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1decisionsOrderInformationBillTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class Riskv1decisionsOrderInformationBillTo {
   @SerializedName("address1")
   private String address1 = null;
@@ -54,9 +54,6 @@ public class Riskv1decisionsOrderInformationBillTo {
 
   @SerializedName("email")
   private String email = null;
-
-  @SerializedName("emailDomain")
-  private String emailDomain = null;
 
   @SerializedName("postalCode")
   private String postalCode = null;
@@ -223,24 +220,6 @@ public class Riskv1decisionsOrderInformationBillTo {
     this.email = email;
   }
 
-  public Riskv1decisionsOrderInformationBillTo emailDomain(String emailDomain) {
-    this.emailDomain = emailDomain;
-    return this;
-  }
-
-   /**
-   * Email domain of the customer. The domain of the email address comprises all characters that follow the @ symbol, such as mail.example.com. For the Risk Update service, if the email address and the domain are sent in the request, the domain supersedes the email address. 
-   * @return emailDomain
-  **/
-  @ApiModelProperty(value = "Email domain of the customer. The domain of the email address comprises all characters that follow the @ symbol, such as mail.example.com. For the Risk Update service, if the email address and the domain are sent in the request, the domain supersedes the email address. ")
-  public String getEmailDomain() {
-    return emailDomain;
-  }
-
-  public void setEmailDomain(String emailDomain) {
-    this.emailDomain = emailDomain;
-  }
-
   public Riskv1decisionsOrderInformationBillTo postalCode(String postalCode) {
     this.postalCode = postalCode;
     return this;
@@ -278,13 +257,12 @@ public class Riskv1decisionsOrderInformationBillTo {
         Objects.equals(this.lastName, riskv1decisionsOrderInformationBillTo.lastName) &&
         Objects.equals(this.phoneNumber, riskv1decisionsOrderInformationBillTo.phoneNumber) &&
         Objects.equals(this.email, riskv1decisionsOrderInformationBillTo.email) &&
-        Objects.equals(this.emailDomain, riskv1decisionsOrderInformationBillTo.emailDomain) &&
         Objects.equals(this.postalCode, riskv1decisionsOrderInformationBillTo.postalCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address1, address2, administrativeArea, country, locality, firstName, lastName, phoneNumber, email, emailDomain, postalCode);
+    return Objects.hash(address1, address2, administrativeArea, country, locality, firstName, lastName, phoneNumber, email, postalCode);
   }
 
 
@@ -302,7 +280,6 @@ public class Riskv1decisionsOrderInformationBillTo {
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    emailDomain: ").append(toIndentedString(emailDomain)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("}");
     return sb.toString();

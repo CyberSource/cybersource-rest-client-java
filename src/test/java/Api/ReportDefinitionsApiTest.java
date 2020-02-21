@@ -35,7 +35,7 @@ public class ReportDefinitionsApiTest {
 
     
     /**
-     * Get report definition
+     * Get Report Definition
      *
      * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      *
@@ -54,7 +54,7 @@ public class ReportDefinitionsApiTest {
     }
     
     /**
-     * Get reporting resource information
+     * Get Reporting Resource Information
      *
      * View a list of supported reports and their attributes before subscribing to them. 
      *

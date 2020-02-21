@@ -14,15 +14,15 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse4001;
+import Model.InlineResponse400;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * ErrorResponseWithHAL
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
-public class ErrorResponseWithHAL extends ArrayList<InlineResponse4001> {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+public class ErrorResponseWithHAL extends ArrayList<InlineResponse400> {
 
   @Override
   public boolean equals(java.lang.Object o) {

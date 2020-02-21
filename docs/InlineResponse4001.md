@@ -4,9 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** |  |  [optional]
-**message** | **String** | The detailed message related to the type stated above. |  [optional]
-**details** | [**Tmsv1instrumentidentifiersDetails**](Tmsv1instrumentidentifiersDetails.md) |  |  [optional]
+**code** | **String** | Error code | 
+**message** | **String** | Error message | 
+**localizationKey** | **String** | Localization Key Name |  [optional]
+**correlationId** | **String** | Correlation Id |  [optional]
+**detail** | **String** | Error Detail |  [optional]
+**fields** | [**List&lt;InlineResponse4001Fields&gt;**](InlineResponse4001Fields.md) | Error fields List |  [optional]
 
 
 

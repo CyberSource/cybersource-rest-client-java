@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
-import Model.PtsV2PaymentsReversalsPost201ResponseLinks;
 import Model.PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -29,10 +29,10 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsVoidsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class PtsV2PaymentsVoidsPost201Response {
   @SerializedName("_links")
-  private PtsV2PaymentsReversalsPost201ResponseLinks links = null;
+  private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -49,7 +49,7 @@ public class PtsV2PaymentsVoidsPost201Response {
   @SerializedName("voidAmountDetails")
   private PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails voidAmountDetails = null;
 
-  public PtsV2PaymentsVoidsPost201Response links(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public PtsV2PaymentsVoidsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -59,11 +59,11 @@ public class PtsV2PaymentsVoidsPost201Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsReversalsPost201ResponseLinks getLinks() {
+  public PtsV2IncrementalAuthorizationPatch201ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(PtsV2PaymentsReversalsPost201ResponseLinks links) {
+  public void setLinks(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
   }
 

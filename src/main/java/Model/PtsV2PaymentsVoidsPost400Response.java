@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PtsV2PaymentsVoidsPost400Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-22T15:22:15.661+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
 public class PtsV2PaymentsVoidsPost400Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;

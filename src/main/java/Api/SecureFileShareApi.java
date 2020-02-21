@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse400;
+import Model.InlineResponse4001;
 import org.joda.time.LocalDate;
 import Model.V1FileDetailsGet200Response;
 
@@ -92,7 +92,7 @@ final String[] localVarContentTypes = {"*/*"};
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -126,7 +126,7 @@ final String[] localVarContentTypes = {"*/*"};
     }
 
     /**
-     * Download a file with file identifier
+     * Download a File with File Identifier
      * Download a file for the given file identifier
      * @param fileId Unique identifier for each file (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -137,7 +137,7 @@ final String[] localVarContentTypes = {"*/*"};
     }
 
     /**
-     * Download a file with file identifier
+     * Download a File with File Identifier
      * Download a file for the given file identifier
      * @param fileId Unique identifier for each file (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -150,7 +150,7 @@ final String[] localVarContentTypes = {"*/*"};
     }
 
     /**
-     * Download a file with file identifier (asynchronously)
+     * Download a File with File Identifier (asynchronously)
      * Download a file for the given file identifier
      * @param fileId Unique identifier for each file (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
@@ -222,7 +222,7 @@ final String[] localVarContentTypes = {"*/*"};
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -261,7 +261,7 @@ final String[] localVarContentTypes = {"*/*"};
     }
 
     /**
-     * Get list of files
+     * Get List of Files
      * Get list of files and it&#39;s information of them available inside the report directory
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
@@ -275,7 +275,7 @@ final String[] localVarContentTypes = {"*/*"};
     }
 
     /**
-     * Get list of files
+     * Get List of Files
      * Get list of files and it&#39;s information of them available inside the report directory
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
@@ -290,7 +290,7 @@ final String[] localVarContentTypes = {"*/*"};
     }
 
     /**
-     * Get list of files (asynchronously)
+     * Get List of Files (asynchronously)
      * Get list of files and it&#39;s information of them available inside the report directory
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)

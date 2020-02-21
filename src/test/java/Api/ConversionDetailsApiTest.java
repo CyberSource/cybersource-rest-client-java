@@ -35,7 +35,7 @@ public class ConversionDetailsApiTest {
 
     
     /**
-     * Get conversion detail transactions
+     * Get Conversion Detail Transactions
      *
      * Get conversion detail of transactions for a merchant.
      *

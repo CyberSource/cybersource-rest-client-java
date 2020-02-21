@@ -100,7 +100,7 @@ public class ReportDownloadsApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
                 @Override
                 public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
                     okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -139,7 +139,7 @@ public class ReportDownloadsApi {
     }
 
     /**
-     * Download a report
+     * Download a Report
      * Download a report using the unique report name and date. 
      * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd  (required)
      * @param reportName Name of the report to download (required)
@@ -152,7 +152,7 @@ public class ReportDownloadsApi {
     }
 
     /**
-     * Download a report
+     * Download a Report
      * Download a report using the unique report name and date. 
      * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd  (required)
      * @param reportName Name of the report to download (required)
@@ -167,7 +167,7 @@ public class ReportDownloadsApi {
     }
 
     /**
-     * Download a report (asynchronously)
+     * Download a Report (asynchronously)
      * Download a report using the unique report name and date. 
      * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd  (required)
      * @param reportName Name of the report to download (required)
