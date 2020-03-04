@@ -284,7 +284,7 @@
 		<jodatime-version>2.9.9</jodatime-version>
 		<maven-plugin-version>1.0.0</maven-plugin-version>
 		<junit-version>4.12</junit-version>
-		<jackson-version>2.9.10.2</jackson-version>
+		<jackson-version>2.9.10.3</jackson-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 </project>
