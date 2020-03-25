@@ -58,16 +58,15 @@ public class ReportDownloadsApi {
 
     /**
      * Build call for downloadReport
-     * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd  (required)
+     * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**  yyyy-mm-dd For reports that span multiple days, this value would be the end date of the report in the time zone of the report subscription. Example 1: If your report start date is 2020-03-06 and the end date is 2020-03-09, the reportDate passed in the query is 2020-03-09. Example 2: If your report runs from midnight to midnight on 2020-03-09, the reportDate passed in the query is 2020-03-10  (required)
      * @param reportName Name of the report to download (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param reportTime Valid time on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Time Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example time format:**   - hh:mm:ss±hh:mm  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call downloadReportCall(LocalDate reportDate, String reportName, String organizationId, String reportTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call downloadReportCall(LocalDate reportDate, String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -80,8 +79,6 @@ public class ReportDownloadsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportDate", reportDate));
         if (reportName != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportName", reportName));
-        if (reportTime != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "reportTime", reportTime));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -116,7 +113,7 @@ public class ReportDownloadsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call downloadReportValidateBeforeCall(LocalDate reportDate, String reportName, String organizationId, String reportTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call downloadReportValidateBeforeCall(LocalDate reportDate, String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportDate' is set
         if (reportDate == null) {
@@ -129,7 +126,7 @@ public class ReportDownloadsApi {
         }
         
         
-        okhttp3.Call call = downloadReportCall(reportDate, reportName, organizationId, reportTime, progressListener, progressRequestListener);
+        okhttp3.Call call = downloadReportCall(reportDate, reportName, organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -141,43 +138,40 @@ public class ReportDownloadsApi {
     /**
      * Download a Report
      * Download a report using the unique report name and date. 
-     * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd  (required)
+     * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**  yyyy-mm-dd For reports that span multiple days, this value would be the end date of the report in the time zone of the report subscription. Example 1: If your report start date is 2020-03-06 and the end date is 2020-03-09, the reportDate passed in the query is 2020-03-09. Example 2: If your report runs from midnight to midnight on 2020-03-09, the reportDate passed in the query is 2020-03-10  (required)
      * @param reportName Name of the report to download (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param reportTime Valid time on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Time Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example time format:**   - hh:mm:ss±hh:mm  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void downloadReport(LocalDate reportDate, String reportName, String organizationId, String reportTime) throws ApiException {
-        downloadReportWithHttpInfo(reportDate, reportName, organizationId, reportTime);
+    public void downloadReport(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
+        downloadReportWithHttpInfo(reportDate, reportName, organizationId);
     }
 
     /**
      * Download a Report
      * Download a report using the unique report name and date. 
-     * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd  (required)
+     * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**  yyyy-mm-dd For reports that span multiple days, this value would be the end date of the report in the time zone of the report subscription. Example 1: If your report start date is 2020-03-06 and the end date is 2020-03-09, the reportDate passed in the query is 2020-03-09. Example 2: If your report runs from midnight to midnight on 2020-03-09, the reportDate passed in the query is 2020-03-10  (required)
      * @param reportName Name of the report to download (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param reportTime Valid time on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Time Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example time format:**   - hh:mm:ss±hh:mm  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InputStream> downloadReportWithHttpInfo(LocalDate reportDate, String reportName, String organizationId, String reportTime) throws ApiException {
-        okhttp3.Call call = downloadReportValidateBeforeCall(reportDate, reportName, organizationId, reportTime, null, null);
+    public ApiResponse<InputStream> downloadReportWithHttpInfo(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
+        okhttp3.Call call = downloadReportValidateBeforeCall(reportDate, reportName, organizationId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Download a Report (asynchronously)
      * Download a report using the unique report name and date. 
-     * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd  (required)
+     * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**  yyyy-mm-dd For reports that span multiple days, this value would be the end date of the report in the time zone of the report subscription. Example 1: If your report start date is 2020-03-06 and the end date is 2020-03-09, the reportDate passed in the query is 2020-03-09. Example 2: If your report runs from midnight to midnight on 2020-03-09, the reportDate passed in the query is 2020-03-10  (required)
      * @param reportName Name of the report to download (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
-     * @param reportTime Valid time on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Time Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example time format:**   - hh:mm:ss±hh:mm  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call downloadReportAsync(LocalDate reportDate, String reportName, String organizationId, String reportTime, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call downloadReportAsync(LocalDate reportDate, String reportName, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -198,7 +192,7 @@ public class ReportDownloadsApi {
             };
         }
 
-        okhttp3.Call call = downloadReportValidateBeforeCall(reportDate, reportName, organizationId, reportTime, progressListener, progressRequestListener);
+        okhttp3.Call call = downloadReportValidateBeforeCall(reportDate, reportName, organizationId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

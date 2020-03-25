@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationresultsPaymentInformationCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Riskv1authenticationresultsPaymentInformationCard {
   @SerializedName("bin")
   private String bin = null;
@@ -52,7 +52,7 @@ public class Riskv1authenticationresultsPaymentInformationCard {
    * description: The BIN is the first six digits of the card&#39;s Primary Account Number (PAN). 
    * @return bin
   **/
-  @ApiModelProperty(required = true, value = "description: The BIN is the first six digits of the card's Primary Account Number (PAN). ")
+  @ApiModelProperty(value = "description: The BIN is the first six digits of the card's Primary Account Number (PAN). ")
   public String getBin() {
     return bin;
   }

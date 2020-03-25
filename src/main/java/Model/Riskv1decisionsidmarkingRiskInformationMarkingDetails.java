@@ -29,7 +29,7 @@ import java.util.List;
  * Details for marking the transaction.
  */
 @ApiModel(description = "Details for marking the transaction.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Riskv1decisionsidmarkingRiskInformationMarkingDetails {
   @SerializedName("notes")
   private String notes = null;
@@ -67,10 +67,10 @@ public class Riskv1decisionsidmarkingRiskInformationMarkingDetails {
   }
 
    /**
-   * Reason for marking the transaction as suspect or otherwise. This field can contain one of the following values: - fraud_chargeback: You have received a fraud-related chargeback for the transaction. - non_fraud_chargeback: You have received a non-fraudulent chargeback for the transaction. - suspected: You believe that you will probably receive a chargeback for the transaction. - creditback: You issued a refund to the customer to avoid a chargeback for the transaction. 
+   * Reason for marking the transaction as suspect or otherwise. This field can contain one of the following values: - &#x60;fraud_chargeback:&#x60; You have received a fraud-related chargeback for the transaction. - &#x60;non_fraud_chargeback:&#x60; You have received a non-fraudulent chargeback for the transaction. - &#x60;suspected:&#x60; You believe that you will probably receive a chargeback for the transaction. - &#x60;creditback:&#x60; You issued a refund to the customer to avoid a chargeback for the transaction. 
    * @return reason
   **/
-  @ApiModelProperty(value = "Reason for marking the transaction as suspect or otherwise. This field can contain one of the following values: - fraud_chargeback: You have received a fraud-related chargeback for the transaction. - non_fraud_chargeback: You have received a non-fraudulent chargeback for the transaction. - suspected: You believe that you will probably receive a chargeback for the transaction. - creditback: You issued a refund to the customer to avoid a chargeback for the transaction. ")
+  @ApiModelProperty(value = "Reason for marking the transaction as suspect or otherwise. This field can contain one of the following values: - `fraud_chargeback:` You have received a fraud-related chargeback for the transaction. - `non_fraud_chargeback:` You have received a non-fraudulent chargeback for the transaction. - `suspected:` You believe that you will probably receive a chargeback for the transaction. - `creditback:` You issued a refund to the customer to avoid a chargeback for the transaction. ")
   public String getReason() {
     return reason;
   }
@@ -93,10 +93,10 @@ public class Riskv1decisionsidmarkingRiskInformationMarkingDetails {
   }
 
    /**
-   * This field can contain one or more of the following values. When you specify more than one value, separate them with commas (,). - account_key_hash - customer_account_id - customer_email - customer_ipaddress - customer_phone - device_fingerprint - ship_address If no value is specified, account_key_hash, customer_email, and ship_address are used by default. Note account_key_hash adds the field that contains the card number (customer_cc_number). 
+   * This field can contain one or more of the following values. When you specify more than one value, separate them with commas (,). - &#x60;account_key_hash&#x60; - &#x60;customer_account_id&#x60; - &#x60;customer_email&#x60; - &#x60;customer_ipaddress&#x60; - &#x60;customer_phone&#x60; - &#x60;device_fingerprint&#x60; - &#x60;ship_address&#x60; If no value is specified, &#x60;account_key_hash&#x60;, &#x60;customer_email&#x60;, and &#x60;ship_address&#x60; are used by default. Note &#x60;account_key_hash&#x60; adds the field that contains the card number (&#x60;customer_cc_number&#x60;). 
    * @return fieldsIncluded
   **/
-  @ApiModelProperty(value = "This field can contain one or more of the following values. When you specify more than one value, separate them with commas (,). - account_key_hash - customer_account_id - customer_email - customer_ipaddress - customer_phone - device_fingerprint - ship_address If no value is specified, account_key_hash, customer_email, and ship_address are used by default. Note account_key_hash adds the field that contains the card number (customer_cc_number). ")
+  @ApiModelProperty(value = "This field can contain one or more of the following values. When you specify more than one value, separate them with commas (,). - `account_key_hash` - `customer_account_id` - `customer_email` - `customer_ipaddress` - `customer_phone` - `device_fingerprint` - `ship_address` If no value is specified, `account_key_hash`, `customer_email`, and `ship_address` are used by default. Note `account_key_hash` adds the field that contains the card number (`customer_cc_number`). ")
   public List<String> getFieldsIncluded() {
     return fieldsIncluded;
   }

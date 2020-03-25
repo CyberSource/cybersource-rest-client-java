@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1decisionsOrderInformationPassenger;
+import Model.Ptsv2paymentsOrderInformationPassenger;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Riskv1decisionsOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Riskv1decisionsOrderInformationLineItems {
   @SerializedName("unitPrice")
   private String unitPrice = null;
@@ -54,7 +54,7 @@ public class Riskv1decisionsOrderInformationLineItems {
   private String distributorProductSku = null;
 
   @SerializedName("passenger")
-  private Riskv1decisionsOrderInformationPassenger passenger = null;
+  private Ptsv2paymentsOrderInformationPassenger passenger = null;
 
   public Riskv1decisionsOrderInformationLineItems unitPrice(String unitPrice) {
     this.unitPrice = unitPrice;
@@ -172,10 +172,10 @@ public class Riskv1decisionsOrderInformationLineItems {
   }
 
    /**
-   * Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different. 
+   * This field is only used in DM service.  Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different. 
    * @return gift
   **/
-  @ApiModelProperty(value = "Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different. ")
+  @ApiModelProperty(value = "This field is only used in DM service.  Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different. ")
   public Boolean getGift() {
     return gift;
   }
@@ -202,7 +202,7 @@ public class Riskv1decisionsOrderInformationLineItems {
     this.distributorProductSku = distributorProductSku;
   }
 
-  public Riskv1decisionsOrderInformationLineItems passenger(Riskv1decisionsOrderInformationPassenger passenger) {
+  public Riskv1decisionsOrderInformationLineItems passenger(Ptsv2paymentsOrderInformationPassenger passenger) {
     this.passenger = passenger;
     return this;
   }
@@ -212,11 +212,11 @@ public class Riskv1decisionsOrderInformationLineItems {
    * @return passenger
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsOrderInformationPassenger getPassenger() {
+  public Ptsv2paymentsOrderInformationPassenger getPassenger() {
     return passenger;
   }
 
-  public void setPassenger(Riskv1decisionsOrderInformationPassenger passenger) {
+  public void setPassenger(Ptsv2paymentsOrderInformationPassenger passenger) {
     this.passenger = passenger;
   }
 

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amountDetails** | [**Riskv1decisionsOrderInformationAmountDetails**](Riskv1decisionsOrderInformationAmountDetails.md) |  |  [optional]
+**amountDetails** | [**Riskv1authenticationexemptionsOrderInformationAmountDetails**](Riskv1authenticationexemptionsOrderInformationAmountDetails.md) |  |  [optional]
 **preOrder** | **String** | Indicates whether cardholder is placing an order with a future availability or release date. This field can contain one of these values: - MERCHANDISE_AVAILABLE: Merchandise available - FUTURE_AVAILABILITY: Future availability  |  [optional]
 **preOrderDate** | **String** | Expected date that a pre-ordered purchase will be available. Format: YYYYMMDD  |  [optional]
 **reordered** | **Boolean** | Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered  |  [optional]

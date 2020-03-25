@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1authenticationsRiskInformationBuyerHistory;
+import Model.Ptsv2paymentsRiskInformationBuyerHistory;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,12 +27,12 @@ import java.io.IOException;
 /**
  * Riskv1authenticationsRiskInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Riskv1authenticationsRiskInformation {
   @SerializedName("buyerHistory")
-  private Riskv1authenticationsRiskInformationBuyerHistory buyerHistory = null;
+  private Ptsv2paymentsRiskInformationBuyerHistory buyerHistory = null;
 
-  public Riskv1authenticationsRiskInformation buyerHistory(Riskv1authenticationsRiskInformationBuyerHistory buyerHistory) {
+  public Riskv1authenticationsRiskInformation buyerHistory(Ptsv2paymentsRiskInformationBuyerHistory buyerHistory) {
     this.buyerHistory = buyerHistory;
     return this;
   }
@@ -42,11 +42,11 @@ public class Riskv1authenticationsRiskInformation {
    * @return buyerHistory
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsRiskInformationBuyerHistory getBuyerHistory() {
+  public Ptsv2paymentsRiskInformationBuyerHistory getBuyerHistory() {
     return buyerHistory;
   }
 
-  public void setBuyerHistory(Riskv1authenticationsRiskInformationBuyerHistory buyerHistory) {
+  public void setBuyerHistory(Ptsv2paymentsRiskInformationBuyerHistory buyerHistory) {
     this.buyerHistory = buyerHistory;
   }
 

@@ -27,7 +27,7 @@ import java.io.IOException;
  * Details for marking the transaction as either positive or negative.
  */
 @ApiModel(description = "Details for marking the transaction as either positive or negative.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Riskv1liststypeentriesRiskInformationMarkingDetails {
   @SerializedName("notes")
   private String notes = null;
@@ -65,10 +65,10 @@ public class Riskv1liststypeentriesRiskInformationMarkingDetails {
   }
 
    /**
-   * Reason for adding the transaction to the negative list. This field can contain one of the following values: - fraud_chargeback: You have received a fraud-related chargeback for the transaction. - non_fraud_chargeback: You have received a non-fraudulent chargeback for the transaction. - suspected: You believe that you will probably receive a chargeback for the transaction. - creditback: You issued a refund to the customer to avoid a chargeback for the transaction. 
+   * Reason for adding the transaction to the negative list. This field can contain one of the following values: - &#x60;fraud_chargeback:&#x60; You have received a fraud-related chargeback for the transaction. - &#x60;non_fraud_chargeback:&#x60; You have received a non-fraudulent chargeback for the transaction. - &#x60;suspected:&#x60; You believe that you will probably receive a chargeback for the transaction. - &#x60;creditback:&#x60; You issued a refund to the customer to avoid a chargeback for the transaction. 
    * @return reason
   **/
-  @ApiModelProperty(value = "Reason for adding the transaction to the negative list. This field can contain one of the following values: - fraud_chargeback: You have received a fraud-related chargeback for the transaction. - non_fraud_chargeback: You have received a non-fraudulent chargeback for the transaction. - suspected: You believe that you will probably receive a chargeback for the transaction. - creditback: You issued a refund to the customer to avoid a chargeback for the transaction. ")
+  @ApiModelProperty(value = "Reason for adding the transaction to the negative list. This field can contain one of the following values: - `fraud_chargeback:` You have received a fraud-related chargeback for the transaction. - `non_fraud_chargeback:` You have received a non-fraudulent chargeback for the transaction. - `suspected:` You believe that you will probably receive a chargeback for the transaction. - `creditback:` You issued a refund to the customer to avoid a chargeback for the transaction. ")
   public String getReason() {
     return reason;
   }
@@ -83,10 +83,10 @@ public class Riskv1liststypeentriesRiskInformationMarkingDetails {
   }
 
    /**
-   * Name of the customer’s record entered in the list. For the positive list, it is required if action_ code&#x3D;add_positive. If absent from the request, ics_risk_update creates the value for this field by concatenating the customer’s first and last names. For the negative and the review lists, record_name, customer_firstname, and customer_lastname are optional. 
+   * Name of the customer’s record entered in the list. For the positive list, it is required if &#x60;action_ code&#x60;&#x3D;&#x60;add_positive&#x60;. If absent from the request, &#x60;ics_risk_update&#x60; creates the value for this field by concatenating the customer’s first and last names. For the negative and the review lists, &#x60;record_name&#x60;, &#x60;customer_firstname&#x60;, and &#x60;customer_lastname&#x60; are optional. 
    * @return recordName
   **/
-  @ApiModelProperty(value = "Name of the customer’s record entered in the list. For the positive list, it is required if action_ code=add_positive. If absent from the request, ics_risk_update creates the value for this field by concatenating the customer’s first and last names. For the negative and the review lists, record_name, customer_firstname, and customer_lastname are optional. ")
+  @ApiModelProperty(value = "Name of the customer’s record entered in the list. For the positive list, it is required if `action_ code`=`add_positive`. If absent from the request, `ics_risk_update` creates the value for this field by concatenating the customer’s first and last names. For the negative and the review lists, `record_name`, `customer_firstname`, and `customer_lastname` are optional. ")
   public String getRecordName() {
     return recordName;
   }

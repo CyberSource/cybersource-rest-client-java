@@ -17,12 +17,12 @@ import java.util.Objects;
 import Model.Ptsv2creditsInstallmentInformation;
 import Model.Ptsv2creditsProcessingInformation;
 import Model.Ptsv2paymentsClientReferenceInformation;
-import Model.Ptsv2paymentsDeviceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsPointOfSaleInformation;
 import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsidcapturesAggregatorInformation;
 import Model.Ptsv2paymentsidcapturesBuyerInformation;
+import Model.Ptsv2paymentsidcapturesDeviceInformation;
 import Model.Ptsv2paymentsidcapturesTravelInformation;
 import Model.Ptsv2paymentsidrefundsMerchantInformation;
 import Model.Ptsv2paymentsidrefundsOrderInformation;
@@ -41,7 +41,7 @@ import java.util.List;
 /**
  * CreateCreditRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class CreateCreditRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -59,7 +59,7 @@ public class CreateCreditRequest {
   private Ptsv2paymentsidcapturesBuyerInformation buyerInformation = null;
 
   @SerializedName("deviceInformation")
-  private Ptsv2paymentsDeviceInformation deviceInformation = null;
+  private Ptsv2paymentsidcapturesDeviceInformation deviceInformation = null;
 
   @SerializedName("merchantInformation")
   private Ptsv2paymentsidrefundsMerchantInformation merchantInformation = null;
@@ -172,7 +172,7 @@ public class CreateCreditRequest {
     this.buyerInformation = buyerInformation;
   }
 
-  public CreateCreditRequest deviceInformation(Ptsv2paymentsDeviceInformation deviceInformation) {
+  public CreateCreditRequest deviceInformation(Ptsv2paymentsidcapturesDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
     return this;
   }
@@ -182,11 +182,11 @@ public class CreateCreditRequest {
    * @return deviceInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsDeviceInformation getDeviceInformation() {
+  public Ptsv2paymentsidcapturesDeviceInformation getDeviceInformation() {
     return deviceInformation;
   }
 
-  public void setDeviceInformation(Ptsv2paymentsDeviceInformation deviceInformation) {
+  public void setDeviceInformation(Ptsv2paymentsidcapturesDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
   }
 

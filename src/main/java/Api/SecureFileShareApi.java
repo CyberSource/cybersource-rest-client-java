@@ -188,12 +188,13 @@ final String[] localVarContentTypes = {"*/*"};
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param name **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getFileDetailCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getFileDetailCall(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -206,6 +207,8 @@ final String[] localVarContentTypes = {"*/*"};
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "endDate", endDate));
         if (organizationId != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
+        if (name != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "name", name));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -238,7 +241,7 @@ final String[] localVarContentTypes = {"*/*"};
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFileDetailValidateBeforeCall(LocalDate startDate, LocalDate endDate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getFileDetailValidateBeforeCall(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'startDate' is set
         if (startDate == null) {
@@ -251,7 +254,7 @@ final String[] localVarContentTypes = {"*/*"};
         }
         
         
-        okhttp3.Call call = getFileDetailCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getFileDetailCall(startDate, endDate, organizationId, name, progressListener, progressRequestListener);
         return call;
 
         
@@ -266,11 +269,12 @@ final String[] localVarContentTypes = {"*/*"};
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param name **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml  (optional)
      * @return V1FileDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public V1FileDetailsGet200Response getFileDetail(LocalDate startDate, LocalDate endDate, String organizationId) throws ApiException {
-        ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailWithHttpInfo(startDate, endDate, organizationId);
+    public V1FileDetailsGet200Response getFileDetail(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
+        ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailWithHttpInfo(startDate, endDate, organizationId, name);
         return resp.getData();
     }
 
@@ -280,11 +284,12 @@ final String[] localVarContentTypes = {"*/*"};
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param name **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml  (optional)
      * @return ApiResponse&lt;V1FileDetailsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<V1FileDetailsGet200Response> getFileDetailWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId) throws ApiException {
-        okhttp3.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, null, null);
+    public ApiResponse<V1FileDetailsGet200Response> getFileDetailWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
+        okhttp3.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, name, null, null);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -295,11 +300,12 @@ final String[] localVarContentTypes = {"*/*"};
      * @param startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
      * @param endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param name **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getFileDetailAsync(LocalDate startDate, LocalDate endDate, String organizationId, final ApiCallback<V1FileDetailsGet200Response> callback) throws ApiException {
+    public okhttp3.Call getFileDetailAsync(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ApiCallback<V1FileDetailsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -320,7 +326,7 @@ final String[] localVarContentTypes = {"*/*"};
             };
         }
 
-        okhttp3.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, name, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

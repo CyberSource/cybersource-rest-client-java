@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Ptsv2paymentsOrderInformation {
   @SerializedName("amountDetails")
   private Ptsv2paymentsOrderInformationAmountDetails amountDetails = null;
@@ -53,6 +53,21 @@ public class Ptsv2paymentsOrderInformation {
 
   @SerializedName("shippingDetails")
   private Ptsv2paymentsOrderInformationShippingDetails shippingDetails = null;
+
+  @SerializedName("returnsAccepted")
+  private Boolean returnsAccepted = null;
+
+  @SerializedName("preOrder")
+  private String preOrder = null;
+
+  @SerializedName("preOrderDate")
+  private String preOrderDate = null;
+
+  @SerializedName("reordered")
+  private Boolean reordered = null;
+
+  @SerializedName("totalOffersCount")
+  private String totalOffersCount = null;
 
   public Ptsv2paymentsOrderInformation amountDetails(Ptsv2paymentsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -170,6 +185,96 @@ public class Ptsv2paymentsOrderInformation {
     this.shippingDetails = shippingDetails;
   }
 
+  public Ptsv2paymentsOrderInformation returnsAccepted(Boolean returnsAccepted) {
+    this.returnsAccepted = returnsAccepted;
+    return this;
+  }
+
+   /**
+   * This is only needed when you are requesting both payment and DM service at same time.  Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order. 
+   * @return returnsAccepted
+  **/
+  @ApiModelProperty(value = "This is only needed when you are requesting both payment and DM service at same time.  Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order. ")
+  public Boolean getReturnsAccepted() {
+    return returnsAccepted;
+  }
+
+  public void setReturnsAccepted(Boolean returnsAccepted) {
+    this.returnsAccepted = returnsAccepted;
+  }
+
+  public Ptsv2paymentsOrderInformation preOrder(String preOrder) {
+    this.preOrder = preOrder;
+    return this;
+  }
+
+   /**
+   * Indicates whether cardholder is placing an order with a future availability or release date. This field can contain one of these values: - MERCHANDISE_AVAILABLE: Merchandise available - FUTURE_AVAILABILITY: Future availability 
+   * @return preOrder
+  **/
+  @ApiModelProperty(value = "Indicates whether cardholder is placing an order with a future availability or release date. This field can contain one of these values: - MERCHANDISE_AVAILABLE: Merchandise available - FUTURE_AVAILABILITY: Future availability ")
+  public String getPreOrder() {
+    return preOrder;
+  }
+
+  public void setPreOrder(String preOrder) {
+    this.preOrder = preOrder;
+  }
+
+  public Ptsv2paymentsOrderInformation preOrderDate(String preOrderDate) {
+    this.preOrderDate = preOrderDate;
+    return this;
+  }
+
+   /**
+   * Expected date that a pre-ordered purchase will be available. Format: YYYYMMDD 
+   * @return preOrderDate
+  **/
+  @ApiModelProperty(value = "Expected date that a pre-ordered purchase will be available. Format: YYYYMMDD ")
+  public String getPreOrderDate() {
+    return preOrderDate;
+  }
+
+  public void setPreOrderDate(String preOrderDate) {
+    this.preOrderDate = preOrderDate;
+  }
+
+  public Ptsv2paymentsOrderInformation reordered(Boolean reordered) {
+    this.reordered = reordered;
+    return this;
+  }
+
+   /**
+   * Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered 
+   * @return reordered
+  **/
+  @ApiModelProperty(value = "Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered ")
+  public Boolean getReordered() {
+    return reordered;
+  }
+
+  public void setReordered(Boolean reordered) {
+    this.reordered = reordered;
+  }
+
+  public Ptsv2paymentsOrderInformation totalOffersCount(String totalOffersCount) {
+    this.totalOffersCount = totalOffersCount;
+    return this;
+  }
+
+   /**
+   * Total number of articles/items in the order as a numeric decimal count. Possible values: 00 - 99 
+   * @return totalOffersCount
+  **/
+  @ApiModelProperty(value = "Total number of articles/items in the order as a numeric decimal count. Possible values: 00 - 99 ")
+  public String getTotalOffersCount() {
+    return totalOffersCount;
+  }
+
+  public void setTotalOffersCount(String totalOffersCount) {
+    this.totalOffersCount = totalOffersCount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -185,12 +290,17 @@ public class Ptsv2paymentsOrderInformation {
         Objects.equals(this.shipTo, ptsv2paymentsOrderInformation.shipTo) &&
         Objects.equals(this.lineItems, ptsv2paymentsOrderInformation.lineItems) &&
         Objects.equals(this.invoiceDetails, ptsv2paymentsOrderInformation.invoiceDetails) &&
-        Objects.equals(this.shippingDetails, ptsv2paymentsOrderInformation.shippingDetails);
+        Objects.equals(this.shippingDetails, ptsv2paymentsOrderInformation.shippingDetails) &&
+        Objects.equals(this.returnsAccepted, ptsv2paymentsOrderInformation.returnsAccepted) &&
+        Objects.equals(this.preOrder, ptsv2paymentsOrderInformation.preOrder) &&
+        Objects.equals(this.preOrderDate, ptsv2paymentsOrderInformation.preOrderDate) &&
+        Objects.equals(this.reordered, ptsv2paymentsOrderInformation.reordered) &&
+        Objects.equals(this.totalOffersCount, ptsv2paymentsOrderInformation.totalOffersCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails);
+    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails, returnsAccepted, preOrder, preOrderDate, reordered, totalOffersCount);
   }
 
 
@@ -205,6 +315,11 @@ public class Ptsv2paymentsOrderInformation {
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
+    sb.append("    returnsAccepted: ").append(toIndentedString(returnsAccepted)).append("\n");
+    sb.append("    preOrder: ").append(toIndentedString(preOrder)).append("\n");
+    sb.append("    preOrderDate: ").append(toIndentedString(preOrderDate)).append("\n");
+    sb.append("    reordered: ").append(toIndentedString(reordered)).append("\n");
+    sb.append("    totalOffersCount: ").append(toIndentedString(totalOffersCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

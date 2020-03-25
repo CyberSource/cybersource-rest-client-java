@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsOrderInformationShipTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Ptsv2paymentsOrderInformationShipTo {
   @SerializedName("firstName")
   private String firstName = null;
@@ -63,6 +63,15 @@ public class Ptsv2paymentsOrderInformationShipTo {
 
   @SerializedName("company")
   private String company = null;
+
+  @SerializedName("destinationTypes")
+  private String destinationTypes = null;
+
+  @SerializedName("destinationCode")
+  private Integer destinationCode = null;
+
+  @SerializedName("method")
+  private String method = null;
 
   public Ptsv2paymentsOrderInformationShipTo firstName(String firstName) {
     this.firstName = firstName;
@@ -280,6 +289,60 @@ public class Ptsv2paymentsOrderInformationShipTo {
     this.company = company;
   }
 
+  public Ptsv2paymentsOrderInformationShipTo destinationTypes(String destinationTypes) {
+    this.destinationTypes = destinationTypes;
+    return this;
+  }
+
+   /**
+   * Shipping destination of item. Example: Commercial, Residential, Store 
+   * @return destinationTypes
+  **/
+  @ApiModelProperty(value = "Shipping destination of item. Example: Commercial, Residential, Store ")
+  public String getDestinationTypes() {
+    return destinationTypes;
+  }
+
+  public void setDestinationTypes(String destinationTypes) {
+    this.destinationTypes = destinationTypes;
+  }
+
+  public Ptsv2paymentsOrderInformationShipTo destinationCode(Integer destinationCode) {
+    this.destinationCode = destinationCode;
+    return this;
+  }
+
+   /**
+   * Indicates destination chosen for the transaction. Possible values: - 01- Ship to cardholder billing address - 02- Ship to another verified address on file with merchant - 03- Ship to address that is different than billing address - 04- Ship to store (store address should be populated on request) - 05- Digital goods - 06- Travel and event tickets, not shipped - 07- Other 
+   * @return destinationCode
+  **/
+  @ApiModelProperty(value = "Indicates destination chosen for the transaction. Possible values: - 01- Ship to cardholder billing address - 02- Ship to another verified address on file with merchant - 03- Ship to address that is different than billing address - 04- Ship to store (store address should be populated on request) - 05- Digital goods - 06- Travel and event tickets, not shipped - 07- Other ")
+  public Integer getDestinationCode() {
+    return destinationCode;
+  }
+
+  public void setDestinationCode(Integer destinationCode) {
+    this.destinationCode = destinationCode;
+  }
+
+  public Ptsv2paymentsOrderInformationShipTo method(String method) {
+    this.method = method;
+    return this;
+  }
+
+   /**
+   * Shipping method for the product. Possible values: - lowcost: Lowest-cost service - sameday: Courier or same-day service - oneday: Next-day or overnight service - twoday: Two-day service - threeday: Three-day service - pickup: Store pick-up - other: Other shipping method - none: No shipping method because product is a service or subscription Required for American Express SafeKey (U.S.). 
+   * @return method
+  **/
+  @ApiModelProperty(value = "Shipping method for the product. Possible values: - lowcost: Lowest-cost service - sameday: Courier or same-day service - oneday: Next-day or overnight service - twoday: Two-day service - threeday: Three-day service - pickup: Store pick-up - other: Other shipping method - none: No shipping method because product is a service or subscription Required for American Express SafeKey (U.S.). ")
+  public String getMethod() {
+    return method;
+  }
+
+  public void setMethod(String method) {
+    this.method = method;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -301,12 +364,15 @@ public class Ptsv2paymentsOrderInformationShipTo {
         Objects.equals(this.district, ptsv2paymentsOrderInformationShipTo.district) &&
         Objects.equals(this.buildingNumber, ptsv2paymentsOrderInformationShipTo.buildingNumber) &&
         Objects.equals(this.phoneNumber, ptsv2paymentsOrderInformationShipTo.phoneNumber) &&
-        Objects.equals(this.company, ptsv2paymentsOrderInformationShipTo.company);
+        Objects.equals(this.company, ptsv2paymentsOrderInformationShipTo.company) &&
+        Objects.equals(this.destinationTypes, ptsv2paymentsOrderInformationShipTo.destinationTypes) &&
+        Objects.equals(this.destinationCode, ptsv2paymentsOrderInformationShipTo.destinationCode) &&
+        Objects.equals(this.method, ptsv2paymentsOrderInformationShipTo.method);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, address1, address2, locality, administrativeArea, postalCode, country, district, buildingNumber, phoneNumber, company);
+    return Objects.hash(firstName, lastName, address1, address2, locality, administrativeArea, postalCode, country, district, buildingNumber, phoneNumber, company, destinationTypes, destinationCode, method);
   }
 
 
@@ -327,6 +393,9 @@ public class Ptsv2paymentsOrderInformationShipTo {
     sb.append("    buildingNumber: ").append(toIndentedString(buildingNumber)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
+    sb.append("    destinationTypes: ").append(toIndentedString(destinationTypes)).append("\n");
+    sb.append("    destinationCode: ").append(toIndentedString(destinationCode)).append("\n");
+    sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();
   }

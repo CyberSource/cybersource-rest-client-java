@@ -15,11 +15,11 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsClientReferenceInformation;
-import Model.Ptsv2paymentsDeviceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsidcapturesAggregatorInformation;
 import Model.Ptsv2paymentsidcapturesBuyerInformation;
+import Model.Ptsv2paymentsidcapturesDeviceInformation;
 import Model.Ptsv2paymentsidcapturesInstallmentInformation;
 import Model.Ptsv2paymentsidcapturesMerchantInformation;
 import Model.Ptsv2paymentsidcapturesOrderInformation;
@@ -41,7 +41,7 @@ import java.util.List;
 /**
  * CapturePaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class CapturePaymentRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -59,7 +59,7 @@ public class CapturePaymentRequest {
   private Ptsv2paymentsidcapturesBuyerInformation buyerInformation = null;
 
   @SerializedName("deviceInformation")
-  private Ptsv2paymentsDeviceInformation deviceInformation = null;
+  private Ptsv2paymentsidcapturesDeviceInformation deviceInformation = null;
 
   @SerializedName("merchantInformation")
   private Ptsv2paymentsidcapturesMerchantInformation merchantInformation = null;
@@ -172,7 +172,7 @@ public class CapturePaymentRequest {
     this.buyerInformation = buyerInformation;
   }
 
-  public CapturePaymentRequest deviceInformation(Ptsv2paymentsDeviceInformation deviceInformation) {
+  public CapturePaymentRequest deviceInformation(Ptsv2paymentsidcapturesDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
     return this;
   }
@@ -182,11 +182,11 @@ public class CapturePaymentRequest {
    * @return deviceInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsDeviceInformation getDeviceInformation() {
+  public Ptsv2paymentsidcapturesDeviceInformation getDeviceInformation() {
     return deviceInformation;
   }
 
-  public void setDeviceInformation(Ptsv2paymentsDeviceInformation deviceInformation) {
+  public void setDeviceInformation(Ptsv2paymentsidcapturesDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
   }
 

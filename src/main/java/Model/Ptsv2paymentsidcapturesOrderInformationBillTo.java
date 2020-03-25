@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsOrderInformationBillToCompany;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidcapturesOrderInformationBillTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Ptsv2paymentsidcapturesOrderInformationBillTo {
   @SerializedName("firstName")
   private String firstName = null;
@@ -35,7 +36,7 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
   private String lastName = null;
 
   @SerializedName("company")
-  private String company = null;
+  private Ptsv2paymentsOrderInformationBillToCompany company = null;
 
   @SerializedName("address1")
   private String address1 = null;
@@ -97,21 +98,21 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
     this.lastName = lastName;
   }
 
-  public Ptsv2paymentsidcapturesOrderInformationBillTo company(String company) {
+  public Ptsv2paymentsidcapturesOrderInformationBillTo company(Ptsv2paymentsOrderInformationBillToCompany company) {
     this.company = company;
     return this;
   }
 
    /**
-   * Name of the customer’s company.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks. For processor-specific information, see the company_name field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Get company
    * @return company
   **/
-  @ApiModelProperty(value = "Name of the customer’s company.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks. For processor-specific information, see the company_name field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
-  public String getCompany() {
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsOrderInformationBillToCompany getCompany() {
     return company;
   }
 
-  public void setCompany(String company) {
+  public void setCompany(Ptsv2paymentsOrderInformationBillToCompany company) {
     this.company = company;
   }
 

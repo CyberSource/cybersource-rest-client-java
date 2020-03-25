@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication {
   @SerializedName("lowValueExemptionIndicator")
   private String lowValueExemptionIndicator = null;
@@ -42,6 +42,9 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
 
   @SerializedName("delegatedAuthenticationExemptionIndicator")
   private String delegatedAuthenticationExemptionIndicator = null;
+
+  @SerializedName("authenticationIndicator")
+  private String authenticationIndicator = null;
 
   public Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication lowValueExemptionIndicator(String lowValueExemptionIndicator) {
     this.lowValueExemptionIndicator = lowValueExemptionIndicator;
@@ -133,6 +136,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
     this.delegatedAuthenticationExemptionIndicator = delegatedAuthenticationExemptionIndicator;
   }
 
+  public Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication authenticationIndicator(String authenticationIndicator) {
+    this.authenticationIndicator = authenticationIndicator;
+    return this;
+  }
+
+   /**
+   * Indicates the type of Authentication request  01 - Payment transaction  02 - Recurring transaction  03 - Installment transaction  04 - Add card  05 - Maintain card  06 - Cardholder verification as part of EMV token ID and V 
+   * @return authenticationIndicator
+  **/
+  @ApiModelProperty(value = "Indicates the type of Authentication request  01 - Payment transaction  02 - Recurring transaction  03 - Installment transaction  04 - Add card  05 - Maintain card  06 - Cardholder verification as part of EMV token ID and V ")
+  public String getAuthenticationIndicator() {
+    return authenticationIndicator;
+  }
+
+  public void setAuthenticationIndicator(String authenticationIndicator) {
+    this.authenticationIndicator = authenticationIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,12 +168,13 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
         Objects.equals(this.riskAnalysisExemptionIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.riskAnalysisExemptionIndicator) &&
         Objects.equals(this.trustedMerchantExemptionIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.trustedMerchantExemptionIndicator) &&
         Objects.equals(this.secureCorporatePaymentIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.secureCorporatePaymentIndicator) &&
-        Objects.equals(this.delegatedAuthenticationExemptionIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.delegatedAuthenticationExemptionIndicator);
+        Objects.equals(this.delegatedAuthenticationExemptionIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.delegatedAuthenticationExemptionIndicator) &&
+        Objects.equals(this.authenticationIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.authenticationIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lowValueExemptionIndicator, riskAnalysisExemptionIndicator, trustedMerchantExemptionIndicator, secureCorporatePaymentIndicator, delegatedAuthenticationExemptionIndicator);
+    return Objects.hash(lowValueExemptionIndicator, riskAnalysisExemptionIndicator, trustedMerchantExemptionIndicator, secureCorporatePaymentIndicator, delegatedAuthenticationExemptionIndicator, authenticationIndicator);
   }
 
 
@@ -166,6 +188,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
     sb.append("    trustedMerchantExemptionIndicator: ").append(toIndentedString(trustedMerchantExemptionIndicator)).append("\n");
     sb.append("    secureCorporatePaymentIndicator: ").append(toIndentedString(secureCorporatePaymentIndicator)).append("\n");
     sb.append("    delegatedAuthenticationExemptionIndicator: ").append(toIndentedString(delegatedAuthenticationExemptionIndicator)).append("\n");
+    sb.append("    authenticationIndicator: ").append(toIndentedString(authenticationIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

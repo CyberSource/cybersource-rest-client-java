@@ -14,18 +14,18 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsAcquirerInformation;
+import Model.Ptsv2paymentsRecurringPaymentInformation;
 import Model.Riskv1authenticationexemptionsPaymentInformation;
-import Model.Riskv1authenticationsAcquirerInformation;
 import Model.Riskv1authenticationsBuyerInformation;
+import Model.Riskv1authenticationsClientReferenceInformation;
 import Model.Riskv1authenticationsConsumerAuthenticationInformation;
 import Model.Riskv1authenticationsDeviceInformation;
 import Model.Riskv1authenticationsMerchantInformation;
 import Model.Riskv1authenticationsOrderInformation;
-import Model.Riskv1authenticationsRecurringPaymentInformation;
+import Model.Riskv1authenticationsProcessingInformation;
 import Model.Riskv1authenticationsRiskInformation;
 import Model.Riskv1authenticationsTravelInformation;
-import Model.Riskv1authenticationsetupsClientReferenceInformation;
-import Model.Riskv1authenticationsetupsProcessingInformation;
 import Model.Riskv1decisionsMerchantDefinedInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -41,10 +41,10 @@ import java.util.List;
 /**
  * CheckPayerAuthEnrollmentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class CheckPayerAuthEnrollmentRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1authenticationsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1authenticationsOrderInformation orderInformation = null;
@@ -53,7 +53,7 @@ public class CheckPayerAuthEnrollmentRequest {
   private Riskv1authenticationexemptionsPaymentInformation paymentInformation = null;
 
   @SerializedName("processingInformation")
-  private Riskv1authenticationsetupsProcessingInformation processingInformation = null;
+  private Riskv1authenticationsProcessingInformation processingInformation = null;
 
   @SerializedName("buyerInformation")
   private Riskv1authenticationsBuyerInformation buyerInformation = null;
@@ -65,10 +65,10 @@ public class CheckPayerAuthEnrollmentRequest {
   private Riskv1authenticationsMerchantInformation merchantInformation = null;
 
   @SerializedName("acquirerInformation")
-  private Riskv1authenticationsAcquirerInformation acquirerInformation = null;
+  private Ptsv2paymentsAcquirerInformation acquirerInformation = null;
 
   @SerializedName("recurringPaymentInformation")
-  private Riskv1authenticationsRecurringPaymentInformation recurringPaymentInformation = null;
+  private Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation = null;
 
   @SerializedName("consumerAuthenticationInformation")
   private Riskv1authenticationsConsumerAuthenticationInformation consumerAuthenticationInformation = null;
@@ -82,7 +82,7 @@ public class CheckPayerAuthEnrollmentRequest {
   @SerializedName("merchantDefinedInformation")
   private List<Riskv1decisionsMerchantDefinedInformation> merchantDefinedInformation = null;
 
-  public CheckPayerAuthEnrollmentRequest clientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
+  public CheckPayerAuthEnrollmentRequest clientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -92,11 +92,11 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsetupsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1authenticationsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
@@ -136,7 +136,7 @@ public class CheckPayerAuthEnrollmentRequest {
     this.paymentInformation = paymentInformation;
   }
 
-  public CheckPayerAuthEnrollmentRequest processingInformation(Riskv1authenticationsetupsProcessingInformation processingInformation) {
+  public CheckPayerAuthEnrollmentRequest processingInformation(Riskv1authenticationsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
@@ -146,11 +146,11 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsetupsProcessingInformation getProcessingInformation() {
+  public Riskv1authenticationsProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(Riskv1authenticationsetupsProcessingInformation processingInformation) {
+  public void setProcessingInformation(Riskv1authenticationsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
   }
 
@@ -208,7 +208,7 @@ public class CheckPayerAuthEnrollmentRequest {
     this.merchantInformation = merchantInformation;
   }
 
-  public CheckPayerAuthEnrollmentRequest acquirerInformation(Riskv1authenticationsAcquirerInformation acquirerInformation) {
+  public CheckPayerAuthEnrollmentRequest acquirerInformation(Ptsv2paymentsAcquirerInformation acquirerInformation) {
     this.acquirerInformation = acquirerInformation;
     return this;
   }
@@ -218,15 +218,15 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return acquirerInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsAcquirerInformation getAcquirerInformation() {
+  public Ptsv2paymentsAcquirerInformation getAcquirerInformation() {
     return acquirerInformation;
   }
 
-  public void setAcquirerInformation(Riskv1authenticationsAcquirerInformation acquirerInformation) {
+  public void setAcquirerInformation(Ptsv2paymentsAcquirerInformation acquirerInformation) {
     this.acquirerInformation = acquirerInformation;
   }
 
-  public CheckPayerAuthEnrollmentRequest recurringPaymentInformation(Riskv1authenticationsRecurringPaymentInformation recurringPaymentInformation) {
+  public CheckPayerAuthEnrollmentRequest recurringPaymentInformation(Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation) {
     this.recurringPaymentInformation = recurringPaymentInformation;
     return this;
   }
@@ -236,11 +236,11 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return recurringPaymentInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsRecurringPaymentInformation getRecurringPaymentInformation() {
+  public Ptsv2paymentsRecurringPaymentInformation getRecurringPaymentInformation() {
     return recurringPaymentInformation;
   }
 
-  public void setRecurringPaymentInformation(Riskv1authenticationsRecurringPaymentInformation recurringPaymentInformation) {
+  public void setRecurringPaymentInformation(Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation) {
     this.recurringPaymentInformation = recurringPaymentInformation;
   }
 

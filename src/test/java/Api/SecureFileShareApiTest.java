@@ -64,7 +64,8 @@ public class SecureFileShareApiTest {
         LocalDate startDate = null;
         LocalDate endDate = null;
         String organizationId = null;
-        V1FileDetailsGet200Response response = api.getFileDetail(startDate, endDate, organizationId);
+        String name = null;
+        V1FileDetailsGet200Response response = api.getFileDetail(startDate, endDate, organizationId, name);
 
         // TODO: test validations
     }

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Ptsv2paymentsConsumerAuthenticationInformation {
   @SerializedName("cavv")
   private String cavv = null;
@@ -58,6 +58,129 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @SerializedName("paSpecificationVersion")
   private String paSpecificationVersion = null;
+
+  @SerializedName("authenticationType")
+  private String authenticationType = null;
+
+  @SerializedName("acsWindowSize")
+  private String acsWindowSize = null;
+
+  @SerializedName("alternateAuthenticationData")
+  private String alternateAuthenticationData = null;
+
+  @SerializedName("alternateAuthenticationDate")
+  private String alternateAuthenticationDate = null;
+
+  @SerializedName("alternateAuthenticationMethod")
+  private String alternateAuthenticationMethod = null;
+
+  @SerializedName("authenticationDate")
+  private String authenticationDate = null;
+
+  @SerializedName("authenticationTransactionId")
+  private String authenticationTransactionId = null;
+
+  @SerializedName("challengeCancelCode")
+  private String challengeCancelCode = null;
+
+  @SerializedName("challengeCode")
+  private String challengeCode = null;
+
+  @SerializedName("challengeStatus")
+  private String challengeStatus = null;
+
+  @SerializedName("customerCardAlias")
+  private String customerCardAlias = null;
+
+  @SerializedName("decoupledAuthenticationIndicator")
+  private String decoupledAuthenticationIndicator = null;
+
+  @SerializedName("decoupledAuthenticationMaxTime")
+  private String decoupledAuthenticationMaxTime = null;
+
+  @SerializedName("defaultCard")
+  private Boolean defaultCard = null;
+
+  @SerializedName("deviceChannel")
+  private String deviceChannel = null;
+
+  @SerializedName("installmentTotalCount")
+  private Integer installmentTotalCount = null;
+
+  @SerializedName("merchantFraudRate")
+  private String merchantFraudRate = null;
+
+  @SerializedName("marketingOptIn")
+  private Boolean marketingOptIn = null;
+
+  @SerializedName("marketingSource")
+  private String marketingSource = null;
+
+  @SerializedName("mcc")
+  private String mcc = null;
+
+  @SerializedName("merchantScore")
+  private Integer merchantScore = null;
+
+  @SerializedName("messageCategory")
+  private String messageCategory = null;
+
+  @SerializedName("npaCode")
+  private String npaCode = null;
+
+  @SerializedName("overridePaymentMethod")
+  private String overridePaymentMethod = null;
+
+  @SerializedName("overrideCountryCode")
+  private String overrideCountryCode = null;
+
+  @SerializedName("priorAuthenticationData")
+  private String priorAuthenticationData = null;
+
+  @SerializedName("priorAuthenticationMethod")
+  private String priorAuthenticationMethod = null;
+
+  @SerializedName("priorAuthenticationReferenceId")
+  private String priorAuthenticationReferenceId = null;
+
+  @SerializedName("priorAuthenticationTime")
+  private String priorAuthenticationTime = null;
+
+  @SerializedName("productCode")
+  private String productCode = null;
+
+  @SerializedName("requestorId")
+  private String requestorId = null;
+
+  @SerializedName("requestorInitiatedAuthenticationIndicator")
+  private String requestorInitiatedAuthenticationIndicator = null;
+
+  @SerializedName("requestorName")
+  private String requestorName = null;
+
+  @SerializedName("referenceId")
+  private String referenceId = null;
+
+  @SerializedName("sdkMaxTimeout")
+  private String sdkMaxTimeout = null;
+
+  @SerializedName("secureCorporatePaymentIndicator")
+  private String secureCorporatePaymentIndicator = null;
+
+  @SerializedName("transactionMode")
+  private String transactionMode = null;
+
+  @SerializedName("whiteListStatus")
+  private String whiteListStatus = null;
+
+  @SerializedName("effectiveAuthenticationType")
+  private String effectiveAuthenticationType = null;
+
+  @SerializedName("signedParesStatusReason")
+  private String signedParesStatusReason = null;
+
+  @SerializedName("signedPares")
+  private String signedPares = null;
 
   public Ptsv2paymentsConsumerAuthenticationInformation cavv(String cavv) {
     this.cavv = cavv;
@@ -239,6 +362,744 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     this.paSpecificationVersion = paSpecificationVersion;
   }
 
+  public Ptsv2paymentsConsumerAuthenticationInformation authenticationType(String authenticationType) {
+    this.authenticationType = authenticationType;
+    return this;
+  }
+
+   /**
+   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
+   * @return authenticationType
+  **/
+  @ApiModelProperty(value = "Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. ")
+  public String getAuthenticationType() {
+    return authenticationType;
+  }
+
+  public void setAuthenticationType(String authenticationType) {
+    this.authenticationType = authenticationType;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation acsWindowSize(String acsWindowSize) {
+    this.acsWindowSize = acsWindowSize;
+    return this;
+  }
+
+   /**
+   * An override field that a merchant can pass in to set the challenge window size to display to the end cardholder.  The ACS (Active Control Server) will reply with content that is formatted appropriately to this window size to allow for the best user experience.  The sizes are width x height in pixels of the window displayed in the cardholder browser window.  01 - 250x400  02 - 390x400  03 - 500x600  04 - 600x400  05 - Full page 
+   * @return acsWindowSize
+  **/
+  @ApiModelProperty(value = "An override field that a merchant can pass in to set the challenge window size to display to the end cardholder.  The ACS (Active Control Server) will reply with content that is formatted appropriately to this window size to allow for the best user experience.  The sizes are width x height in pixels of the window displayed in the cardholder browser window.  01 - 250x400  02 - 390x400  03 - 500x600  04 - 600x400  05 - Full page ")
+  public String getAcsWindowSize() {
+    return acsWindowSize;
+  }
+
+  public void setAcsWindowSize(String acsWindowSize) {
+    this.acsWindowSize = acsWindowSize;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation alternateAuthenticationData(String alternateAuthenticationData) {
+    this.alternateAuthenticationData = alternateAuthenticationData;
+    return this;
+  }
+
+   /**
+   * Data that documents and supports a specific authentication process. 
+   * @return alternateAuthenticationData
+  **/
+  @ApiModelProperty(value = "Data that documents and supports a specific authentication process. ")
+  public String getAlternateAuthenticationData() {
+    return alternateAuthenticationData;
+  }
+
+  public void setAlternateAuthenticationData(String alternateAuthenticationData) {
+    this.alternateAuthenticationData = alternateAuthenticationData;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation alternateAuthenticationDate(String alternateAuthenticationDate) {
+    this.alternateAuthenticationDate = alternateAuthenticationDate;
+    return this;
+  }
+
+   /**
+   * Date and time in UTC of the cardholder authentication. Format: YYYYMMDDHHMM 
+   * @return alternateAuthenticationDate
+  **/
+  @ApiModelProperty(value = "Date and time in UTC of the cardholder authentication. Format: YYYYMMDDHHMM ")
+  public String getAlternateAuthenticationDate() {
+    return alternateAuthenticationDate;
+  }
+
+  public void setAlternateAuthenticationDate(String alternateAuthenticationDate) {
+    this.alternateAuthenticationDate = alternateAuthenticationDate;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation alternateAuthenticationMethod(String alternateAuthenticationMethod) {
+    this.alternateAuthenticationMethod = alternateAuthenticationMethod;
+    return this;
+  }
+
+   /**
+   * Mechanism used by the cardholder to authenticate to the 3D Secure requestor. Possible values: - &#x60;01&#x60;: No authentication occurred - &#x60;02&#x60;: Login using merchant system credentials - &#x60;03&#x60;: Login using Federated ID - &#x60;04&#x60;: Login using issuer credentials - &#x60;05&#x60;: Login using third-party authenticator - &#x60;06&#x60;: Login using FIDO Authenticator 
+   * @return alternateAuthenticationMethod
+  **/
+  @ApiModelProperty(value = "Mechanism used by the cardholder to authenticate to the 3D Secure requestor. Possible values: - `01`: No authentication occurred - `02`: Login using merchant system credentials - `03`: Login using Federated ID - `04`: Login using issuer credentials - `05`: Login using third-party authenticator - `06`: Login using FIDO Authenticator ")
+  public String getAlternateAuthenticationMethod() {
+    return alternateAuthenticationMethod;
+  }
+
+  public void setAlternateAuthenticationMethod(String alternateAuthenticationMethod) {
+    this.alternateAuthenticationMethod = alternateAuthenticationMethod;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation authenticationDate(String authenticationDate) {
+    this.authenticationDate = authenticationDate;
+    return this;
+  }
+
+   /**
+   * The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in &#x60;consumerAuthenticationInformation.alternateAuthenticationData&#x60; if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider. 
+   * @return authenticationDate
+  **/
+  @ApiModelProperty(value = "The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in `consumerAuthenticationInformation.alternateAuthenticationData` if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider. ")
+  public String getAuthenticationDate() {
+    return authenticationDate;
+  }
+
+  public void setAuthenticationDate(String authenticationDate) {
+    this.authenticationDate = authenticationDate;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation authenticationTransactionId(String authenticationTransactionId) {
+    this.authenticationTransactionId = authenticationTransactionId;
+    return this;
+  }
+
+   /**
+   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. **Note**: Required for Standard integration for enroll service. Required for Hybrid integration for validate service. 
+   * @return authenticationTransactionId
+  **/
+  @ApiModelProperty(value = "Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. **Note**: Required for Standard integration for enroll service. Required for Hybrid integration for validate service. ")
+  public String getAuthenticationTransactionId() {
+    return authenticationTransactionId;
+  }
+
+  public void setAuthenticationTransactionId(String authenticationTransactionId) {
+    this.authenticationTransactionId = authenticationTransactionId;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation challengeCancelCode(String challengeCancelCode) {
+    this.challengeCancelCode = challengeCancelCode;
+    return this;
+  }
+
+   /**
+   * An indicator as to why the transaction was canceled. Possible Values:  - &#x60;01&#x60;: Cardholder selected Cancel. - &#x60;02&#x60;: Reserved for future EMVCo use (values invalid until defined by EMVCo). - &#x60;03&#x60;: Transaction Timed Out—Decoupled Authentication - &#x60;04&#x60;: Transaction timed out at ACS—other timeouts - &#x60;05&#x60;: Transaction Timed out at ACS - First CReq not received by ACS - &#x60;06&#x60;: Transaction Error - &#x60;07&#x60;: Unknown - &#x60;08&#x60;: Transaction Timed Out at SDK 
+   * @return challengeCancelCode
+  **/
+  @ApiModelProperty(value = "An indicator as to why the transaction was canceled. Possible Values:  - `01`: Cardholder selected Cancel. - `02`: Reserved for future EMVCo use (values invalid until defined by EMVCo). - `03`: Transaction Timed Out—Decoupled Authentication - `04`: Transaction timed out at ACS—other timeouts - `05`: Transaction Timed out at ACS - First CReq not received by ACS - `06`: Transaction Error - `07`: Unknown - `08`: Transaction Timed Out at SDK ")
+  public String getChallengeCancelCode() {
+    return challengeCancelCode;
+  }
+
+  public void setChallengeCancelCode(String challengeCancelCode) {
+    this.challengeCancelCode = challengeCancelCode;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation challengeCode(String challengeCode) {
+    this.challengeCode = challengeCode;
+    return this;
+  }
+
+   /**
+   * Possible values: - &#x60;01&#x60;: No preference - &#x60;02&#x60;: No challenge request - &#x60;03&#x60;: Challenge requested (3D Secure requestor preference) - &#x60;04&#x60;: Challenge requested (mandate) - &#x60;05&#x60;: No challenge requested (transactional risk analysis is already performed) - &#x60;06&#x60;: No challenge requested (Data share only) - &#x60;07&#x60;: No challenge requested (strong consumer authentication is already performed) - &#x60;08&#x60;: No challenge requested (utilize whitelist exemption if no challenge required) - &#x60;09&#x60;: Challenge requested (whitelist prompt requested if challenge required) **Note** This field will default to &#x60;01&#x60; on merchant configuration and can be overridden by the merchant. EMV 3D Secure version 2.1.0 supports values &#x60;01-04&#x60;. Version 2.2.0 supports values &#x60;01-09&#x60;.  For details, see &#x60;pa_challenge_code&#x60; field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html) 
+   * @return challengeCode
+  **/
+  @ApiModelProperty(value = "Possible values: - `01`: No preference - `02`: No challenge request - `03`: Challenge requested (3D Secure requestor preference) - `04`: Challenge requested (mandate) - `05`: No challenge requested (transactional risk analysis is already performed) - `06`: No challenge requested (Data share only) - `07`: No challenge requested (strong consumer authentication is already performed) - `08`: No challenge requested (utilize whitelist exemption if no challenge required) - `09`: Challenge requested (whitelist prompt requested if challenge required) **Note** This field will default to `01` on merchant configuration and can be overridden by the merchant. EMV 3D Secure version 2.1.0 supports values `01-04`. Version 2.2.0 supports values `01-09`.  For details, see `pa_challenge_code` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html) ")
+  public String getChallengeCode() {
+    return challengeCode;
+  }
+
+  public void setChallengeCode(String challengeCode) {
+    this.challengeCode = challengeCode;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation challengeStatus(String challengeStatus) {
+    this.challengeStatus = challengeStatus;
+    return this;
+  }
+
+   /**
+   * The &#x60;consumerAuthenticationInformation.challengeCode&#x60; indicates the authentication type/level, or challenge, that was presented to the cardholder at checkout by the merchant when calling the Carte Bancaire 3DS servers via CYBS RISK services. It conveys to the issuer the alternative authentication methods that the consumer used. 
+   * @return challengeStatus
+  **/
+  @ApiModelProperty(value = "The `consumerAuthenticationInformation.challengeCode` indicates the authentication type/level, or challenge, that was presented to the cardholder at checkout by the merchant when calling the Carte Bancaire 3DS servers via CYBS RISK services. It conveys to the issuer the alternative authentication methods that the consumer used. ")
+  public String getChallengeStatus() {
+    return challengeStatus;
+  }
+
+  public void setChallengeStatus(String challengeStatus) {
+    this.challengeStatus = challengeStatus;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation customerCardAlias(String customerCardAlias) {
+    this.customerCardAlias = customerCardAlias;
+    return this;
+  }
+
+   /**
+   * An alias that uniquely identifies the customer&#39;s account and credit card on file. Note This field is required if Tokenization is enabled in the merchant profile settings. 
+   * @return customerCardAlias
+  **/
+  @ApiModelProperty(value = "An alias that uniquely identifies the customer's account and credit card on file. Note This field is required if Tokenization is enabled in the merchant profile settings. ")
+  public String getCustomerCardAlias() {
+    return customerCardAlias;
+  }
+
+  public void setCustomerCardAlias(String customerCardAlias) {
+    this.customerCardAlias = customerCardAlias;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation decoupledAuthenticationIndicator(String decoupledAuthenticationIndicator) {
+    this.decoupledAuthenticationIndicator = decoupledAuthenticationIndicator;
+    return this;
+  }
+
+   /**
+   * Indicates whether the 3DS Requestor requests the ACS to utilize Decoupled Authentication and agrees to utilize Decoupled Authentication if the ACS confirms its use.  Possible Values:  Y - Decoupled Authentication is supported and preferred if challenge is necessary  N - Do not use Decoupled Authentication  **Default Value**: N 
+   * @return decoupledAuthenticationIndicator
+  **/
+  @ApiModelProperty(value = "Indicates whether the 3DS Requestor requests the ACS to utilize Decoupled Authentication and agrees to utilize Decoupled Authentication if the ACS confirms its use.  Possible Values:  Y - Decoupled Authentication is supported and preferred if challenge is necessary  N - Do not use Decoupled Authentication  **Default Value**: N ")
+  public String getDecoupledAuthenticationIndicator() {
+    return decoupledAuthenticationIndicator;
+  }
+
+  public void setDecoupledAuthenticationIndicator(String decoupledAuthenticationIndicator) {
+    this.decoupledAuthenticationIndicator = decoupledAuthenticationIndicator;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation decoupledAuthenticationMaxTime(String decoupledAuthenticationMaxTime) {
+    this.decoupledAuthenticationMaxTime = decoupledAuthenticationMaxTime;
+    return this;
+  }
+
+   /**
+   * Indicates the maximum amount of time that the 3DS Requestor will wait for an ACS (Active control server) to provide the results of a Decoupled Authentication transaction (in minutes). Possible Values: Numeric values between 1 and 10080 accepted. 
+   * @return decoupledAuthenticationMaxTime
+  **/
+  @ApiModelProperty(value = "Indicates the maximum amount of time that the 3DS Requestor will wait for an ACS (Active control server) to provide the results of a Decoupled Authentication transaction (in minutes). Possible Values: Numeric values between 1 and 10080 accepted. ")
+  public String getDecoupledAuthenticationMaxTime() {
+    return decoupledAuthenticationMaxTime;
+  }
+
+  public void setDecoupledAuthenticationMaxTime(String decoupledAuthenticationMaxTime) {
+    this.decoupledAuthenticationMaxTime = decoupledAuthenticationMaxTime;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation defaultCard(Boolean defaultCard) {
+    this.defaultCard = defaultCard;
+    return this;
+  }
+
+   /**
+   * Indicates that the card being used is the one designated as the primary payment card for purchase. Recommended for Discover ProtectBuy. 
+   * @return defaultCard
+  **/
+  @ApiModelProperty(value = "Indicates that the card being used is the one designated as the primary payment card for purchase. Recommended for Discover ProtectBuy. ")
+  public Boolean getDefaultCard() {
+    return defaultCard;
+  }
+
+  public void setDefaultCard(Boolean defaultCard) {
+    this.defaultCard = defaultCard;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation deviceChannel(String deviceChannel) {
+    this.deviceChannel = deviceChannel;
+    return this;
+  }
+
+   /**
+   * Determines the channel that the transaction came through. Possible Values: SDK/Browser/3RI. 3RI - 3DS request initiated. 
+   * @return deviceChannel
+  **/
+  @ApiModelProperty(value = "Determines the channel that the transaction came through. Possible Values: SDK/Browser/3RI. 3RI - 3DS request initiated. ")
+  public String getDeviceChannel() {
+    return deviceChannel;
+  }
+
+  public void setDeviceChannel(String deviceChannel) {
+    this.deviceChannel = deviceChannel;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation installmentTotalCount(Integer installmentTotalCount) {
+    this.installmentTotalCount = installmentTotalCount;
+    return this;
+  }
+
+   /**
+   * An integer value greater than 1 indicating the max number of permitted authorizations for installment payments. **Note** This is required if the merchant and cardholder have agreed to installment payments. 
+   * @return installmentTotalCount
+  **/
+  @ApiModelProperty(value = "An integer value greater than 1 indicating the max number of permitted authorizations for installment payments. **Note** This is required if the merchant and cardholder have agreed to installment payments. ")
+  public Integer getInstallmentTotalCount() {
+    return installmentTotalCount;
+  }
+
+  public void setInstallmentTotalCount(Integer installmentTotalCount) {
+    this.installmentTotalCount = installmentTotalCount;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation merchantFraudRate(String merchantFraudRate) {
+    this.merchantFraudRate = merchantFraudRate;
+    return this;
+  }
+
+   /**
+   * Calculated by merchants as per PSD2** RTS** (EEA** card fraud divided by all EEA card volumes). Possible Values: 1 &#x3D; Represents fraud rate &lt;&#x3D;1  2 &#x3D; Represents fraud rate &gt;1 and &lt;&#x3D;6  3 &#x3D; Represents fraud rate &gt;6 and &lt;&#x3D;13  4 &#x3D; Represents fraud rate &gt;13 and &lt;&#x3D;25  5 &#x3D; Represents fraud rate &gt;25  EEA** &#x3D; European Economic Area RTS** &#x3D; Regulatory Technical Standards PSD2** &#x3D; Payment Services Directive 
+   * @return merchantFraudRate
+  **/
+  @ApiModelProperty(value = "Calculated by merchants as per PSD2** RTS** (EEA** card fraud divided by all EEA card volumes). Possible Values: 1 = Represents fraud rate <=1  2 = Represents fraud rate >1 and <=6  3 = Represents fraud rate >6 and <=13  4 = Represents fraud rate >13 and <=25  5 = Represents fraud rate >25  EEA** = European Economic Area RTS** = Regulatory Technical Standards PSD2** = Payment Services Directive ")
+  public String getMerchantFraudRate() {
+    return merchantFraudRate;
+  }
+
+  public void setMerchantFraudRate(String merchantFraudRate) {
+    this.merchantFraudRate = merchantFraudRate;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation marketingOptIn(Boolean marketingOptIn) {
+    this.marketingOptIn = marketingOptIn;
+    return this;
+  }
+
+   /**
+   * Indicates whether the customer has opted in for marketing offers. Recommended for Discover ProtectBuy. 
+   * @return marketingOptIn
+  **/
+  @ApiModelProperty(value = "Indicates whether the customer has opted in for marketing offers. Recommended for Discover ProtectBuy. ")
+  public Boolean getMarketingOptIn() {
+    return marketingOptIn;
+  }
+
+  public void setMarketingOptIn(Boolean marketingOptIn) {
+    this.marketingOptIn = marketingOptIn;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation marketingSource(String marketingSource) {
+    this.marketingSource = marketingSource;
+    return this;
+  }
+
+   /**
+   * Indicates origin of the marketing offer. Recommended for Discover ProtectBuy. 
+   * @return marketingSource
+  **/
+  @ApiModelProperty(value = "Indicates origin of the marketing offer. Recommended for Discover ProtectBuy. ")
+  public String getMarketingSource() {
+    return marketingSource;
+  }
+
+  public void setMarketingSource(String marketingSource) {
+    this.marketingSource = marketingSource;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation mcc(String mcc) {
+    this.mcc = mcc;
+    return this;
+  }
+
+   /**
+   * Merchant category code. **Important** Required only for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
+   * @return mcc
+  **/
+  @ApiModelProperty(value = "Merchant category code. **Important** Required only for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. ")
+  public String getMcc() {
+    return mcc;
+  }
+
+  public void setMcc(String mcc) {
+    this.mcc = mcc;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation merchantScore(Integer merchantScore) {
+    this.merchantScore = merchantScore;
+    return this;
+  }
+
+   /**
+   * Risk Score provided by merchants. This is specific for CB transactions. 
+   * @return merchantScore
+  **/
+  @ApiModelProperty(value = "Risk Score provided by merchants. This is specific for CB transactions. ")
+  public Integer getMerchantScore() {
+    return merchantScore;
+  }
+
+  public void setMerchantScore(Integer merchantScore) {
+    this.merchantScore = merchantScore;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation messageCategory(String messageCategory) {
+    this.messageCategory = messageCategory;
+    return this;
+  }
+
+   /**
+   * Category of the message for a specific use case. Possible values:  - &#x60;01&#x60;: PA- payment authentication - &#x60;02&#x60;: NPA- non-payment authentication - &#x60;03-79&#x60;: Reserved for EMVCo future use (values invalid until defined by EMVCo) - &#x60;80-99&#x60;: Reserved for DS use 
+   * @return messageCategory
+  **/
+  @ApiModelProperty(value = "Category of the message for a specific use case. Possible values:  - `01`: PA- payment authentication - `02`: NPA- non-payment authentication - `03-79`: Reserved for EMVCo future use (values invalid until defined by EMVCo) - `80-99`: Reserved for DS use ")
+  public String getMessageCategory() {
+    return messageCategory;
+  }
+
+  public void setMessageCategory(String messageCategory) {
+    this.messageCategory = messageCategory;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation npaCode(String npaCode) {
+    this.npaCode = npaCode;
+    return this;
+  }
+
+   /**
+   * Non-Payer Authentication Indicator. Possible values: - &#x60;01&#x60;: Add card - &#x60;02&#x60;: Maintain card information - &#x60;03&#x60;: Cardholder verification for EMV token - &#x60;04-80&#x60; Reserved for EMVCo - &#x60;80-90&#x60; Reserved DS 
+   * @return npaCode
+  **/
+  @ApiModelProperty(value = "Non-Payer Authentication Indicator. Possible values: - `01`: Add card - `02`: Maintain card information - `03`: Cardholder verification for EMV token - `04-80` Reserved for EMVCo - `80-90` Reserved DS ")
+  public String getNpaCode() {
+    return npaCode;
+  }
+
+  public void setNpaCode(String npaCode) {
+    this.npaCode = npaCode;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation overridePaymentMethod(String overridePaymentMethod) {
+    this.overridePaymentMethod = overridePaymentMethod;
+    return this;
+  }
+
+   /**
+   * Specifies the Brazilian payment account type used for the transaction. This field overrides other payment types that might be specified in the request. Use one of the following values for this field: - &#x60;NA&#x60;: Not applicable. Do not override other payment types that are specified in the request. - &#x60;CR&#x60;: Credit card. - &#x60;DB&#x60;: Debit card. - &#x60;VSAVR&#x60;: Visa Vale Refeicao - &#x60;VSAVA&#x60;: Visa Vale Alimentacao **Important** Required only for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
+   * @return overridePaymentMethod
+  **/
+  @ApiModelProperty(value = "Specifies the Brazilian payment account type used for the transaction. This field overrides other payment types that might be specified in the request. Use one of the following values for this field: - `NA`: Not applicable. Do not override other payment types that are specified in the request. - `CR`: Credit card. - `DB`: Debit card. - `VSAVR`: Visa Vale Refeicao - `VSAVA`: Visa Vale Alimentacao **Important** Required only for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. ")
+  public String getOverridePaymentMethod() {
+    return overridePaymentMethod;
+  }
+
+  public void setOverridePaymentMethod(String overridePaymentMethod) {
+    this.overridePaymentMethod = overridePaymentMethod;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation overrideCountryCode(String overrideCountryCode) {
+    this.overrideCountryCode = overrideCountryCode;
+    return this;
+  }
+
+   /**
+   * Two-character ISO standard Country Codes. 
+   * @return overrideCountryCode
+  **/
+  @ApiModelProperty(value = "Two-character ISO standard Country Codes. ")
+  public String getOverrideCountryCode() {
+    return overrideCountryCode;
+  }
+
+  public void setOverrideCountryCode(String overrideCountryCode) {
+    this.overrideCountryCode = overrideCountryCode;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation priorAuthenticationData(String priorAuthenticationData) {
+    this.priorAuthenticationData = priorAuthenticationData;
+    return this;
+  }
+
+   /**
+   * This field carry data that the ACS can use to verify the authentication process. 
+   * @return priorAuthenticationData
+  **/
+  @ApiModelProperty(value = "This field carry data that the ACS can use to verify the authentication process. ")
+  public String getPriorAuthenticationData() {
+    return priorAuthenticationData;
+  }
+
+  public void setPriorAuthenticationData(String priorAuthenticationData) {
+    this.priorAuthenticationData = priorAuthenticationData;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation priorAuthenticationMethod(String priorAuthenticationMethod) {
+    this.priorAuthenticationMethod = priorAuthenticationMethod;
+    return this;
+  }
+
+   /**
+   * Mechanism used by the Cardholder to previously authenticate to the 3DS Requestor.  01 - Frictionless authentication occurred by ACS  02 - Cardholder challenge occurred by ACS  03 - AVS verified  04 - Other issuer methods  05-79 - Reserved for EMVCo future use (values invalid until defined by EMVCo)  80-99 - Reserved for DS use 
+   * @return priorAuthenticationMethod
+  **/
+  @ApiModelProperty(value = "Mechanism used by the Cardholder to previously authenticate to the 3DS Requestor.  01 - Frictionless authentication occurred by ACS  02 - Cardholder challenge occurred by ACS  03 - AVS verified  04 - Other issuer methods  05-79 - Reserved for EMVCo future use (values invalid until defined by EMVCo)  80-99 - Reserved for DS use ")
+  public String getPriorAuthenticationMethod() {
+    return priorAuthenticationMethod;
+  }
+
+  public void setPriorAuthenticationMethod(String priorAuthenticationMethod) {
+    this.priorAuthenticationMethod = priorAuthenticationMethod;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation priorAuthenticationReferenceId(String priorAuthenticationReferenceId) {
+    this.priorAuthenticationReferenceId = priorAuthenticationReferenceId;
+    return this;
+  }
+
+   /**
+   * This data element contains a ACS Transaction ID for a prior authenticated transaction. For example, the first recurring transaction that was authenticated with the cardholder 
+   * @return priorAuthenticationReferenceId
+  **/
+  @ApiModelProperty(value = "This data element contains a ACS Transaction ID for a prior authenticated transaction. For example, the first recurring transaction that was authenticated with the cardholder ")
+  public String getPriorAuthenticationReferenceId() {
+    return priorAuthenticationReferenceId;
+  }
+
+  public void setPriorAuthenticationReferenceId(String priorAuthenticationReferenceId) {
+    this.priorAuthenticationReferenceId = priorAuthenticationReferenceId;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation priorAuthenticationTime(String priorAuthenticationTime) {
+    this.priorAuthenticationTime = priorAuthenticationTime;
+    return this;
+  }
+
+   /**
+   * Date and time in UTC of the prior cardholder authentication. Format – YYYYMMDDHHMM 
+   * @return priorAuthenticationTime
+  **/
+  @ApiModelProperty(value = "Date and time in UTC of the prior cardholder authentication. Format – YYYYMMDDHHMM ")
+  public String getPriorAuthenticationTime() {
+    return priorAuthenticationTime;
+  }
+
+  public void setPriorAuthenticationTime(String priorAuthenticationTime) {
+    this.priorAuthenticationTime = priorAuthenticationTime;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation productCode(String productCode) {
+    this.productCode = productCode;
+    return this;
+  }
+
+   /**
+   * Specifies the product code, which designates the type of transaction. Specify one of the following values for this field: - AIR: Airline purchase Important Required for American Express SafeKey (U.S.). - &#x60;ACC&#x60;: Accommodation Rental - &#x60;ACF&#x60;: Account funding - &#x60;CHA&#x60;: Check acceptance - &#x60;DIG&#x60;: Digital Goods - &#x60;DSP&#x60;: Cash Dispensing - &#x60;GAS&#x60;: Fuel - &#x60;GEN&#x60;: General Retail - &#x60;LUX&#x60;: Luxury Retail - &#x60;PAL&#x60;: Prepaid activation and load - &#x60;PHY&#x60;: Goods or services purchase - &#x60;QCT&#x60;: Quasi-cash transaction - &#x60;REN&#x60;: Car Rental - &#x60;RES&#x60;: Restaurant - &#x60;SVC&#x60;: Services - &#x60;TBD&#x60;: Other - &#x60;TRA&#x60;: Travel **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
+   * @return productCode
+  **/
+  @ApiModelProperty(value = "Specifies the product code, which designates the type of transaction. Specify one of the following values for this field: - AIR: Airline purchase Important Required for American Express SafeKey (U.S.). - `ACC`: Accommodation Rental - `ACF`: Account funding - `CHA`: Check acceptance - `DIG`: Digital Goods - `DSP`: Cash Dispensing - `GAS`: Fuel - `GEN`: General Retail - `LUX`: Luxury Retail - `PAL`: Prepaid activation and load - `PHY`: Goods or services purchase - `QCT`: Quasi-cash transaction - `REN`: Car Rental - `RES`: Restaurant - `SVC`: Services - `TBD`: Other - `TRA`: Travel **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. ")
+  public String getProductCode() {
+    return productCode;
+  }
+
+  public void setProductCode(String productCode) {
+    this.productCode = productCode;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation requestorId(String requestorId) {
+    this.requestorId = requestorId;
+    return this;
+  }
+
+   /**
+   * Cardinal&#39;s directory server assigned 3DS Requestor ID value
+   * @return requestorId
+  **/
+  @ApiModelProperty(value = "Cardinal's directory server assigned 3DS Requestor ID value")
+  public String getRequestorId() {
+    return requestorId;
+  }
+
+  public void setRequestorId(String requestorId) {
+    this.requestorId = requestorId;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation requestorInitiatedAuthenticationIndicator(String requestorInitiatedAuthenticationIndicator) {
+    this.requestorInitiatedAuthenticationIndicator = requestorInitiatedAuthenticationIndicator;
+    return this;
+  }
+
+   /**
+   * Indicates the type of 3RI request.  Possible Values:  01 - Recurring transaction  02 - Installment transaction  03 - Add card  04 - Maintain card  05 - Account verification  06 - Split/delayed shipment  07 - Top-up  08 - Mail Order  09 - Telephone Order  10 - Whitelist status check  11 - Other payment 
+   * @return requestorInitiatedAuthenticationIndicator
+  **/
+  @ApiModelProperty(value = "Indicates the type of 3RI request.  Possible Values:  01 - Recurring transaction  02 - Installment transaction  03 - Add card  04 - Maintain card  05 - Account verification  06 - Split/delayed shipment  07 - Top-up  08 - Mail Order  09 - Telephone Order  10 - Whitelist status check  11 - Other payment ")
+  public String getRequestorInitiatedAuthenticationIndicator() {
+    return requestorInitiatedAuthenticationIndicator;
+  }
+
+  public void setRequestorInitiatedAuthenticationIndicator(String requestorInitiatedAuthenticationIndicator) {
+    this.requestorInitiatedAuthenticationIndicator = requestorInitiatedAuthenticationIndicator;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation requestorName(String requestorName) {
+    this.requestorName = requestorName;
+    return this;
+  }
+
+   /**
+   * Cardinal&#39;s directory server assigned 3DS Requestor Name value
+   * @return requestorName
+  **/
+  @ApiModelProperty(value = "Cardinal's directory server assigned 3DS Requestor Name value")
+  public String getRequestorName() {
+    return requestorName;
+  }
+
+  public void setRequestorName(String requestorName) {
+    this.requestorName = requestorName;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation referenceId(String referenceId) {
+    this.referenceId = referenceId;
+    return this;
+  }
+
+   /**
+   * Reference ID that corresponds to the device fingerprinting data that was collected previously. Note Required for Hybrid integration. 
+   * @return referenceId
+  **/
+  @ApiModelProperty(value = "Reference ID that corresponds to the device fingerprinting data that was collected previously. Note Required for Hybrid integration. ")
+  public String getReferenceId() {
+    return referenceId;
+  }
+
+  public void setReferenceId(String referenceId) {
+    this.referenceId = referenceId;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation sdkMaxTimeout(String sdkMaxTimeout) {
+    this.sdkMaxTimeout = sdkMaxTimeout;
+    return this;
+  }
+
+   /**
+   * This field indicates the maximum amount of time for all 3DS 2.0 messages to be communicated between all components (in minutes).  Possible Values:  Greater than or equal to 05 (05 is the minimum timeout to set)  Cardinal Default is set to 15  NOTE: This field is a required 3DS 2.0 field and Cardinal sends in a default of 15 if nothing is passed 
+   * @return sdkMaxTimeout
+  **/
+  @ApiModelProperty(value = "This field indicates the maximum amount of time for all 3DS 2.0 messages to be communicated between all components (in minutes).  Possible Values:  Greater than or equal to 05 (05 is the minimum timeout to set)  Cardinal Default is set to 15  NOTE: This field is a required 3DS 2.0 field and Cardinal sends in a default of 15 if nothing is passed ")
+  public String getSdkMaxTimeout() {
+    return sdkMaxTimeout;
+  }
+
+  public void setSdkMaxTimeout(String sdkMaxTimeout) {
+    this.sdkMaxTimeout = sdkMaxTimeout;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation secureCorporatePaymentIndicator(String secureCorporatePaymentIndicator) {
+    this.secureCorporatePaymentIndicator = secureCorporatePaymentIndicator;
+    return this;
+  }
+
+   /**
+   * Indicates dedicated payment processes and procedures were used, potential secure corporate payment exemption applies. Possible Values : 0/1 
+   * @return secureCorporatePaymentIndicator
+  **/
+  @ApiModelProperty(value = "Indicates dedicated payment processes and procedures were used, potential secure corporate payment exemption applies. Possible Values : 0/1 ")
+  public String getSecureCorporatePaymentIndicator() {
+    return secureCorporatePaymentIndicator;
+  }
+
+  public void setSecureCorporatePaymentIndicator(String secureCorporatePaymentIndicator) {
+    this.secureCorporatePaymentIndicator = secureCorporatePaymentIndicator;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation transactionMode(String transactionMode) {
+    this.transactionMode = transactionMode;
+    return this;
+  }
+
+   /**
+   * Transaction mode identifier. Identifies the channel from which the transaction originates. Possible values:  - &#x60;M&#x60;: MOTO (Mail Order Telephone Order) - &#x60;R&#x60;: Retail - &#x60;S&#x60;: eCommerce - &#x60;P&#x60;: Mobile Device - &#x60;T&#x60;: Tablet 
+   * @return transactionMode
+  **/
+  @ApiModelProperty(value = "Transaction mode identifier. Identifies the channel from which the transaction originates. Possible values:  - `M`: MOTO (Mail Order Telephone Order) - `R`: Retail - `S`: eCommerce - `P`: Mobile Device - `T`: Tablet ")
+  public String getTransactionMode() {
+    return transactionMode;
+  }
+
+  public void setTransactionMode(String transactionMode) {
+    this.transactionMode = transactionMode;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation whiteListStatus(String whiteListStatus) {
+    this.whiteListStatus = whiteListStatus;
+    return this;
+  }
+
+   /**
+   * Enables the communication of trusted beneficiary/whitelist status between the ACS, the DS and the 3DS Requestor.  Possible Values:  Y - 3DS Requestor is whitelisted by cardholder  N - 3DS Requestor is not whitelisted by cardholder 
+   * @return whiteListStatus
+  **/
+  @ApiModelProperty(value = "Enables the communication of trusted beneficiary/whitelist status between the ACS, the DS and the 3DS Requestor.  Possible Values:  Y - 3DS Requestor is whitelisted by cardholder  N - 3DS Requestor is not whitelisted by cardholder ")
+  public String getWhiteListStatus() {
+    return whiteListStatus;
+  }
+
+  public void setWhiteListStatus(String whiteListStatus) {
+    this.whiteListStatus = whiteListStatus;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation effectiveAuthenticationType(String effectiveAuthenticationType) {
+    this.effectiveAuthenticationType = effectiveAuthenticationType;
+    return this;
+  }
+
+   /**
+   * This field describes the type of 3DS transaction flow that took place.  It can be one of three possible flows; CH - Challenge FR - Frictionless FD - Frictionless with delegation, (challenge not generated by the issuer but by the scheme on behalf of the issuer). 
+   * @return effectiveAuthenticationType
+  **/
+  @ApiModelProperty(value = "This field describes the type of 3DS transaction flow that took place.  It can be one of three possible flows; CH - Challenge FR - Frictionless FD - Frictionless with delegation, (challenge not generated by the issuer but by the scheme on behalf of the issuer). ")
+  public String getEffectiveAuthenticationType() {
+    return effectiveAuthenticationType;
+  }
+
+  public void setEffectiveAuthenticationType(String effectiveAuthenticationType) {
+    this.effectiveAuthenticationType = effectiveAuthenticationType;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation signedParesStatusReason(String signedParesStatusReason) {
+    this.signedParesStatusReason = signedParesStatusReason;
+    return this;
+  }
+
+   /**
+   * Provides additional information as to why the PAResStatus has a specific value. 
+   * @return signedParesStatusReason
+  **/
+  @ApiModelProperty(value = "Provides additional information as to why the PAResStatus has a specific value. ")
+  public String getSignedParesStatusReason() {
+    return signedParesStatusReason;
+  }
+
+  public void setSignedParesStatusReason(String signedParesStatusReason) {
+    this.signedParesStatusReason = signedParesStatusReason;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation signedPares(String signedPares) {
+    this.signedPares = signedPares;
+    return this;
+  }
+
+   /**
+   * Payer authentication result (PARes) message returned by the card-issuing bank. If you need to show proof of enrollment checking, you may need to decrypt and parse the string for the information required by the payment card company. For more information, see \&quot;Storing Payer Authentication Data,\&quot; page 160. Important The value is in base64. You must remove all carriage returns and line feeds before adding the PARes to the request. 
+   * @return signedPares
+  **/
+  @ApiModelProperty(value = "Payer authentication result (PARes) message returned by the card-issuing bank. If you need to show proof of enrollment checking, you may need to decrypt and parse the string for the information required by the payment card company. For more information, see \"Storing Payer Authentication Data,\" page 160. Important The value is in base64. You must remove all carriage returns and line feeds before adding the PARes to the request. ")
+  public String getSignedPares() {
+    return signedPares;
+  }
+
+  public void setSignedPares(String signedPares) {
+    this.signedPares = signedPares;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -258,12 +1119,53 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
         Objects.equals(this.ucafAuthenticationData, ptsv2paymentsConsumerAuthenticationInformation.ucafAuthenticationData) &&
         Objects.equals(this.strongAuthentication, ptsv2paymentsConsumerAuthenticationInformation.strongAuthentication) &&
         Objects.equals(this.directoryServerTransactionId, ptsv2paymentsConsumerAuthenticationInformation.directoryServerTransactionId) &&
-        Objects.equals(this.paSpecificationVersion, ptsv2paymentsConsumerAuthenticationInformation.paSpecificationVersion);
+        Objects.equals(this.paSpecificationVersion, ptsv2paymentsConsumerAuthenticationInformation.paSpecificationVersion) &&
+        Objects.equals(this.authenticationType, ptsv2paymentsConsumerAuthenticationInformation.authenticationType) &&
+        Objects.equals(this.acsWindowSize, ptsv2paymentsConsumerAuthenticationInformation.acsWindowSize) &&
+        Objects.equals(this.alternateAuthenticationData, ptsv2paymentsConsumerAuthenticationInformation.alternateAuthenticationData) &&
+        Objects.equals(this.alternateAuthenticationDate, ptsv2paymentsConsumerAuthenticationInformation.alternateAuthenticationDate) &&
+        Objects.equals(this.alternateAuthenticationMethod, ptsv2paymentsConsumerAuthenticationInformation.alternateAuthenticationMethod) &&
+        Objects.equals(this.authenticationDate, ptsv2paymentsConsumerAuthenticationInformation.authenticationDate) &&
+        Objects.equals(this.authenticationTransactionId, ptsv2paymentsConsumerAuthenticationInformation.authenticationTransactionId) &&
+        Objects.equals(this.challengeCancelCode, ptsv2paymentsConsumerAuthenticationInformation.challengeCancelCode) &&
+        Objects.equals(this.challengeCode, ptsv2paymentsConsumerAuthenticationInformation.challengeCode) &&
+        Objects.equals(this.challengeStatus, ptsv2paymentsConsumerAuthenticationInformation.challengeStatus) &&
+        Objects.equals(this.customerCardAlias, ptsv2paymentsConsumerAuthenticationInformation.customerCardAlias) &&
+        Objects.equals(this.decoupledAuthenticationIndicator, ptsv2paymentsConsumerAuthenticationInformation.decoupledAuthenticationIndicator) &&
+        Objects.equals(this.decoupledAuthenticationMaxTime, ptsv2paymentsConsumerAuthenticationInformation.decoupledAuthenticationMaxTime) &&
+        Objects.equals(this.defaultCard, ptsv2paymentsConsumerAuthenticationInformation.defaultCard) &&
+        Objects.equals(this.deviceChannel, ptsv2paymentsConsumerAuthenticationInformation.deviceChannel) &&
+        Objects.equals(this.installmentTotalCount, ptsv2paymentsConsumerAuthenticationInformation.installmentTotalCount) &&
+        Objects.equals(this.merchantFraudRate, ptsv2paymentsConsumerAuthenticationInformation.merchantFraudRate) &&
+        Objects.equals(this.marketingOptIn, ptsv2paymentsConsumerAuthenticationInformation.marketingOptIn) &&
+        Objects.equals(this.marketingSource, ptsv2paymentsConsumerAuthenticationInformation.marketingSource) &&
+        Objects.equals(this.mcc, ptsv2paymentsConsumerAuthenticationInformation.mcc) &&
+        Objects.equals(this.merchantScore, ptsv2paymentsConsumerAuthenticationInformation.merchantScore) &&
+        Objects.equals(this.messageCategory, ptsv2paymentsConsumerAuthenticationInformation.messageCategory) &&
+        Objects.equals(this.npaCode, ptsv2paymentsConsumerAuthenticationInformation.npaCode) &&
+        Objects.equals(this.overridePaymentMethod, ptsv2paymentsConsumerAuthenticationInformation.overridePaymentMethod) &&
+        Objects.equals(this.overrideCountryCode, ptsv2paymentsConsumerAuthenticationInformation.overrideCountryCode) &&
+        Objects.equals(this.priorAuthenticationData, ptsv2paymentsConsumerAuthenticationInformation.priorAuthenticationData) &&
+        Objects.equals(this.priorAuthenticationMethod, ptsv2paymentsConsumerAuthenticationInformation.priorAuthenticationMethod) &&
+        Objects.equals(this.priorAuthenticationReferenceId, ptsv2paymentsConsumerAuthenticationInformation.priorAuthenticationReferenceId) &&
+        Objects.equals(this.priorAuthenticationTime, ptsv2paymentsConsumerAuthenticationInformation.priorAuthenticationTime) &&
+        Objects.equals(this.productCode, ptsv2paymentsConsumerAuthenticationInformation.productCode) &&
+        Objects.equals(this.requestorId, ptsv2paymentsConsumerAuthenticationInformation.requestorId) &&
+        Objects.equals(this.requestorInitiatedAuthenticationIndicator, ptsv2paymentsConsumerAuthenticationInformation.requestorInitiatedAuthenticationIndicator) &&
+        Objects.equals(this.requestorName, ptsv2paymentsConsumerAuthenticationInformation.requestorName) &&
+        Objects.equals(this.referenceId, ptsv2paymentsConsumerAuthenticationInformation.referenceId) &&
+        Objects.equals(this.sdkMaxTimeout, ptsv2paymentsConsumerAuthenticationInformation.sdkMaxTimeout) &&
+        Objects.equals(this.secureCorporatePaymentIndicator, ptsv2paymentsConsumerAuthenticationInformation.secureCorporatePaymentIndicator) &&
+        Objects.equals(this.transactionMode, ptsv2paymentsConsumerAuthenticationInformation.transactionMode) &&
+        Objects.equals(this.whiteListStatus, ptsv2paymentsConsumerAuthenticationInformation.whiteListStatus) &&
+        Objects.equals(this.effectiveAuthenticationType, ptsv2paymentsConsumerAuthenticationInformation.effectiveAuthenticationType) &&
+        Objects.equals(this.signedParesStatusReason, ptsv2paymentsConsumerAuthenticationInformation.signedParesStatusReason) &&
+        Objects.equals(this.signedPares, ptsv2paymentsConsumerAuthenticationInformation.signedPares);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cavv, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion);
+    return Objects.hash(cavv, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, effectiveAuthenticationType, signedParesStatusReason, signedPares);
   }
 
 
@@ -282,6 +1184,47 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     sb.append("    strongAuthentication: ").append(toIndentedString(strongAuthentication)).append("\n");
     sb.append("    directoryServerTransactionId: ").append(toIndentedString(directoryServerTransactionId)).append("\n");
     sb.append("    paSpecificationVersion: ").append(toIndentedString(paSpecificationVersion)).append("\n");
+    sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
+    sb.append("    acsWindowSize: ").append(toIndentedString(acsWindowSize)).append("\n");
+    sb.append("    alternateAuthenticationData: ").append(toIndentedString(alternateAuthenticationData)).append("\n");
+    sb.append("    alternateAuthenticationDate: ").append(toIndentedString(alternateAuthenticationDate)).append("\n");
+    sb.append("    alternateAuthenticationMethod: ").append(toIndentedString(alternateAuthenticationMethod)).append("\n");
+    sb.append("    authenticationDate: ").append(toIndentedString(authenticationDate)).append("\n");
+    sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
+    sb.append("    challengeCancelCode: ").append(toIndentedString(challengeCancelCode)).append("\n");
+    sb.append("    challengeCode: ").append(toIndentedString(challengeCode)).append("\n");
+    sb.append("    challengeStatus: ").append(toIndentedString(challengeStatus)).append("\n");
+    sb.append("    customerCardAlias: ").append(toIndentedString(customerCardAlias)).append("\n");
+    sb.append("    decoupledAuthenticationIndicator: ").append(toIndentedString(decoupledAuthenticationIndicator)).append("\n");
+    sb.append("    decoupledAuthenticationMaxTime: ").append(toIndentedString(decoupledAuthenticationMaxTime)).append("\n");
+    sb.append("    defaultCard: ").append(toIndentedString(defaultCard)).append("\n");
+    sb.append("    deviceChannel: ").append(toIndentedString(deviceChannel)).append("\n");
+    sb.append("    installmentTotalCount: ").append(toIndentedString(installmentTotalCount)).append("\n");
+    sb.append("    merchantFraudRate: ").append(toIndentedString(merchantFraudRate)).append("\n");
+    sb.append("    marketingOptIn: ").append(toIndentedString(marketingOptIn)).append("\n");
+    sb.append("    marketingSource: ").append(toIndentedString(marketingSource)).append("\n");
+    sb.append("    mcc: ").append(toIndentedString(mcc)).append("\n");
+    sb.append("    merchantScore: ").append(toIndentedString(merchantScore)).append("\n");
+    sb.append("    messageCategory: ").append(toIndentedString(messageCategory)).append("\n");
+    sb.append("    npaCode: ").append(toIndentedString(npaCode)).append("\n");
+    sb.append("    overridePaymentMethod: ").append(toIndentedString(overridePaymentMethod)).append("\n");
+    sb.append("    overrideCountryCode: ").append(toIndentedString(overrideCountryCode)).append("\n");
+    sb.append("    priorAuthenticationData: ").append(toIndentedString(priorAuthenticationData)).append("\n");
+    sb.append("    priorAuthenticationMethod: ").append(toIndentedString(priorAuthenticationMethod)).append("\n");
+    sb.append("    priorAuthenticationReferenceId: ").append(toIndentedString(priorAuthenticationReferenceId)).append("\n");
+    sb.append("    priorAuthenticationTime: ").append(toIndentedString(priorAuthenticationTime)).append("\n");
+    sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
+    sb.append("    requestorInitiatedAuthenticationIndicator: ").append(toIndentedString(requestorInitiatedAuthenticationIndicator)).append("\n");
+    sb.append("    requestorName: ").append(toIndentedString(requestorName)).append("\n");
+    sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
+    sb.append("    sdkMaxTimeout: ").append(toIndentedString(sdkMaxTimeout)).append("\n");
+    sb.append("    secureCorporatePaymentIndicator: ").append(toIndentedString(secureCorporatePaymentIndicator)).append("\n");
+    sb.append("    transactionMode: ").append(toIndentedString(transactionMode)).append("\n");
+    sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
+    sb.append("    effectiveAuthenticationType: ").append(toIndentedString(effectiveAuthenticationType)).append("\n");
+    sb.append("    signedParesStatusReason: ").append(toIndentedString(signedParesStatusReason)).append("\n");
+    sb.append("    signedPares: ").append(toIndentedString(signedPares)).append("\n");
     sb.append("}");
     return sb.toString();
   }

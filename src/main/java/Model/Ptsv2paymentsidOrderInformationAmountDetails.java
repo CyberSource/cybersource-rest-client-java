@@ -26,30 +26,30 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidOrderInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Ptsv2paymentsidOrderInformationAmountDetails {
-  @SerializedName("additonalAmount")
-  private String additonalAmount = null;
+  @SerializedName("additionalAmount")
+  private String additionalAmount = null;
 
   @SerializedName("currency")
   private String currency = null;
 
-  public Ptsv2paymentsidOrderInformationAmountDetails additonalAmount(String additonalAmount) {
-    this.additonalAmount = additonalAmount;
+  public Ptsv2paymentsidOrderInformationAmountDetails additionalAmount(String additionalAmount) {
+    this.additionalAmount = additionalAmount;
     return this;
   }
 
    /**
    * Additional charges that have to be authorized against a lodging or auto-rental order. This value cannot be negative. You can include a decimal point (.), but no other special characters. 
-   * @return additonalAmount
+   * @return additionalAmount
   **/
   @ApiModelProperty(value = "Additional charges that have to be authorized against a lodging or auto-rental order. This value cannot be negative. You can include a decimal point (.), but no other special characters. ")
-  public String getAdditonalAmount() {
-    return additonalAmount;
+  public String getAdditionalAmount() {
+    return additionalAmount;
   }
 
-  public void setAdditonalAmount(String additonalAmount) {
-    this.additonalAmount = additonalAmount;
+  public void setAdditionalAmount(String additionalAmount) {
+    this.additionalAmount = additionalAmount;
   }
 
   public Ptsv2paymentsidOrderInformationAmountDetails currency(String currency) {
@@ -80,13 +80,13 @@ public class Ptsv2paymentsidOrderInformationAmountDetails {
       return false;
     }
     Ptsv2paymentsidOrderInformationAmountDetails ptsv2paymentsidOrderInformationAmountDetails = (Ptsv2paymentsidOrderInformationAmountDetails) o;
-    return Objects.equals(this.additonalAmount, ptsv2paymentsidOrderInformationAmountDetails.additonalAmount) &&
+    return Objects.equals(this.additionalAmount, ptsv2paymentsidOrderInformationAmountDetails.additionalAmount) &&
         Objects.equals(this.currency, ptsv2paymentsidOrderInformationAmountDetails.currency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additonalAmount, currency);
+    return Objects.hash(additionalAmount, currency);
   }
 
 
@@ -95,7 +95,7 @@ public class Ptsv2paymentsidOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidOrderInformationAmountDetails {\n");
     
-    sb.append("    additonalAmount: ").append(toIndentedString(additonalAmount)).append("\n");
+    sb.append("    additionalAmount: ").append(toIndentedString(additionalAmount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("}");
     return sb.toString();

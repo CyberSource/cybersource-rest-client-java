@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsAcquirerInformation;
 import Model.Ptsv2paymentsAggregatorInformation;
 import Model.Ptsv2paymentsBuyerInformation;
 import Model.Ptsv2paymentsClientReferenceInformation;
@@ -29,6 +30,8 @@ import Model.Ptsv2paymentsPointOfSaleInformation;
 import Model.Ptsv2paymentsProcessingInformation;
 import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsRecipientInformation;
+import Model.Ptsv2paymentsRecurringPaymentInformation;
+import Model.Ptsv2paymentsRiskInformation;
 import Model.Ptsv2paymentsTravelInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -44,7 +47,7 @@ import java.util.List;
 /**
  * CreatePaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class CreatePaymentRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -93,6 +96,15 @@ public class CreatePaymentRequest {
 
   @SerializedName("promotionInformation")
   private Ptsv2paymentsPromotionInformation promotionInformation = null;
+
+  @SerializedName("riskInformation")
+  private Ptsv2paymentsRiskInformation riskInformation = null;
+
+  @SerializedName("acquirerInformation")
+  private Ptsv2paymentsAcquirerInformation acquirerInformation = null;
+
+  @SerializedName("recurringPaymentInformation")
+  private Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation = null;
 
   public CreatePaymentRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -390,6 +402,60 @@ public class CreatePaymentRequest {
     this.promotionInformation = promotionInformation;
   }
 
+  public CreatePaymentRequest riskInformation(Ptsv2paymentsRiskInformation riskInformation) {
+    this.riskInformation = riskInformation;
+    return this;
+  }
+
+   /**
+   * Get riskInformation
+   * @return riskInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsRiskInformation getRiskInformation() {
+    return riskInformation;
+  }
+
+  public void setRiskInformation(Ptsv2paymentsRiskInformation riskInformation) {
+    this.riskInformation = riskInformation;
+  }
+
+  public CreatePaymentRequest acquirerInformation(Ptsv2paymentsAcquirerInformation acquirerInformation) {
+    this.acquirerInformation = acquirerInformation;
+    return this;
+  }
+
+   /**
+   * Get acquirerInformation
+   * @return acquirerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsAcquirerInformation getAcquirerInformation() {
+    return acquirerInformation;
+  }
+
+  public void setAcquirerInformation(Ptsv2paymentsAcquirerInformation acquirerInformation) {
+    this.acquirerInformation = acquirerInformation;
+  }
+
+  public CreatePaymentRequest recurringPaymentInformation(Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation) {
+    this.recurringPaymentInformation = recurringPaymentInformation;
+    return this;
+  }
+
+   /**
+   * Get recurringPaymentInformation
+   * @return recurringPaymentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsRecurringPaymentInformation getRecurringPaymentInformation() {
+    return recurringPaymentInformation;
+  }
+
+  public void setRecurringPaymentInformation(Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation) {
+    this.recurringPaymentInformation = recurringPaymentInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -415,12 +481,15 @@ public class CreatePaymentRequest {
         Objects.equals(this.merchantDefinedInformation, createPaymentRequest.merchantDefinedInformation) &&
         Objects.equals(this.installmentInformation, createPaymentRequest.installmentInformation) &&
         Objects.equals(this.travelInformation, createPaymentRequest.travelInformation) &&
-        Objects.equals(this.promotionInformation, createPaymentRequest.promotionInformation);
+        Objects.equals(this.promotionInformation, createPaymentRequest.promotionInformation) &&
+        Objects.equals(this.riskInformation, createPaymentRequest.riskInformation) &&
+        Objects.equals(this.acquirerInformation, createPaymentRequest.acquirerInformation) &&
+        Objects.equals(this.recurringPaymentInformation, createPaymentRequest.recurringPaymentInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation, travelInformation, promotionInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation, travelInformation, promotionInformation, riskInformation, acquirerInformation, recurringPaymentInformation);
   }
 
 
@@ -445,6 +514,9 @@ public class CreatePaymentRequest {
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
     sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");
+    sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
+    sb.append("    acquirerInformation: ").append(toIndentedString(acquirerInformation)).append("\n");
+    sb.append("    recurringPaymentInformation: ").append(toIndentedString(recurringPaymentInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

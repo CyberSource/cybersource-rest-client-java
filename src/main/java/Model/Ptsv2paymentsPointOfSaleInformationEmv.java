@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPointOfSaleInformationEmv
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Ptsv2paymentsPointOfSaleInformationEmv {
   @SerializedName("tags")
   private String tags = null;

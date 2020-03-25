@@ -17,8 +17,8 @@ import java.util.Objects;
 import Model.Riskv1authenticationresultsConsumerAuthenticationInformation;
 import Model.Riskv1authenticationresultsOrderInformation;
 import Model.Riskv1authenticationresultsPaymentInformation;
-import Model.Riskv1authenticationsetupsClientReferenceInformation;
-import Model.Riskv1authenticationsetupsProcessingInformation;
+import Model.Riskv1authenticationsClientReferenceInformation;
+import Model.Riskv1authenticationsProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,13 +31,13 @@ import java.io.IOException;
 /**
  * ValidateRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class ValidateRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1authenticationsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("processingInformation")
-  private Riskv1authenticationsetupsProcessingInformation processingInformation = null;
+  private Riskv1authenticationsProcessingInformation processingInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1authenticationresultsOrderInformation orderInformation = null;
@@ -48,7 +48,7 @@ public class ValidateRequest {
   @SerializedName("consumerAuthenticationInformation")
   private Riskv1authenticationresultsConsumerAuthenticationInformation consumerAuthenticationInformation = null;
 
-  public ValidateRequest clientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
+  public ValidateRequest clientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -58,15 +58,15 @@ public class ValidateRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsetupsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1authenticationsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
-  public ValidateRequest processingInformation(Riskv1authenticationsetupsProcessingInformation processingInformation) {
+  public ValidateRequest processingInformation(Riskv1authenticationsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
@@ -76,11 +76,11 @@ public class ValidateRequest {
    * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsetupsProcessingInformation getProcessingInformation() {
+  public Riskv1authenticationsProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(Riskv1authenticationsetupsProcessingInformation processingInformation) {
+  public void setProcessingInformation(Riskv1authenticationsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
   }
 

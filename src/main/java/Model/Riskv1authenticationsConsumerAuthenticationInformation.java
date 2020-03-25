@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Riskv1authenticationsConsumerAuthenticationInformation {
   @SerializedName("strongAuthentication")
   private Riskv1authenticationsConsumerAuthenticationInformationStrongAuthentication strongAuthentication = null;
@@ -515,7 +515,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformation {
    * Merchant category code. **Important** Required only for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
    * @return mcc
   **/
-  @ApiModelProperty(required = true, value = "Merchant category code. **Important** Required only for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. ")
+  @ApiModelProperty(value = "Merchant category code. **Important** Required only for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. ")
   public String getMcc() {
     return mcc;
   }
@@ -605,7 +605,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformation {
    * Two-character ISO standard Country Codes. 
    * @return overrideCountryCode
   **/
-  @ApiModelProperty(required = true, value = "Two-character ISO standard Country Codes. ")
+  @ApiModelProperty(value = "Two-character ISO standard Country Codes. ")
   public String getOverrideCountryCode() {
     return overrideCountryCode;
   }
@@ -767,7 +767,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformation {
    * Reference ID that corresponds to the device fingerprinting data that was collected previously. Note Required for Hybrid integration. 
    * @return referenceId
   **/
-  @ApiModelProperty(required = true, value = "Reference ID that corresponds to the device fingerprinting data that was collected previously. Note Required for Hybrid integration. ")
+  @ApiModelProperty(value = "Reference ID that corresponds to the device fingerprinting data that was collected previously. Note Required for Hybrid integration. ")
   public String getReferenceId() {
     return referenceId;
   }
@@ -821,7 +821,7 @@ public class Riskv1authenticationsConsumerAuthenticationInformation {
    * Transaction mode identifier. Identifies the channel from which the transaction originates. Possible values:  - &#x60;M&#x60;: MOTO (Mail Order Telephone Order) - &#x60;R&#x60;: Retail - &#x60;S&#x60;: eCommerce - &#x60;P&#x60;: Mobile Device - &#x60;T&#x60;: Tablet 
    * @return transactionMode
   **/
-  @ApiModelProperty(required = true, value = "Transaction mode identifier. Identifies the channel from which the transaction originates. Possible values:  - `M`: MOTO (Mail Order Telephone Order) - `R`: Retail - `S`: eCommerce - `P`: Mobile Device - `T`: Tablet ")
+  @ApiModelProperty(value = "Transaction mode identifier. Identifies the channel from which the transaction originates. Possible values:  - `M`: MOTO (Mail Order Telephone Order) - `R`: Retail - `S`: eCommerce - `P`: Mobile Device - `T`: Tablet ")
   public String getTransactionMode() {
     return transactionMode;
   }
