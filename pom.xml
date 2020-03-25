@@ -266,11 +266,6 @@
 			<artifactId>AuthenticationSdk</artifactId>
 			<version>0.0.9</version>
 		</dependency>
-			<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson-version}</version>
-			</dependency>
 	</dependencies>
 
 	<properties>
@@ -284,7 +279,6 @@
 		<jodatime-version>2.9.9</jodatime-version>
 		<maven-plugin-version>1.0.0</maven-plugin-version>
 		<junit-version>4.12</junit-version>
-		<jackson-version>2.9.10.3</jackson-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 </project>
