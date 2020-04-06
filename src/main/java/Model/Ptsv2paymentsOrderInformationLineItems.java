@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsTaxDetails;
+import Model.Ptsv2paymentsOrderInformationPassenger;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +30,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Ptsv2paymentsOrderInformationLineItems {
   @SerializedName("productCode")
   private String productCode = null;
@@ -108,6 +109,21 @@ public class Ptsv2paymentsOrderInformationLineItems {
 
   @SerializedName("referenceDataNumber")
   private String referenceDataNumber = null;
+
+  @SerializedName("productDescription")
+  private String productDescription = null;
+
+  @SerializedName("giftCardCurrency")
+  private Integer giftCardCurrency = null;
+
+  @SerializedName("shippingDestinationTypes")
+  private String shippingDestinationTypes = null;
+
+  @SerializedName("gift")
+  private Boolean gift = null;
+
+  @SerializedName("passenger")
+  private Ptsv2paymentsOrderInformationPassenger passenger = null;
 
   public Ptsv2paymentsOrderInformationLineItems productCode(String productCode) {
     this.productCode = productCode;
@@ -587,6 +603,96 @@ public class Ptsv2paymentsOrderInformationLineItems {
     this.referenceDataNumber = referenceDataNumber;
   }
 
+  public Ptsv2paymentsOrderInformationLineItems productDescription(String productDescription) {
+    this.productDescription = productDescription;
+    return this;
+  }
+
+   /**
+   * Brief description of item.
+   * @return productDescription
+  **/
+  @ApiModelProperty(value = "Brief description of item.")
+  public String getProductDescription() {
+    return productDescription;
+  }
+
+  public void setProductDescription(String productDescription) {
+    this.productDescription = productDescription;
+  }
+
+  public Ptsv2paymentsOrderInformationLineItems giftCardCurrency(Integer giftCardCurrency) {
+    this.giftCardCurrency = giftCardCurrency;
+    return this;
+  }
+
+   /**
+   * When &#x60;orderInformation.lineItems[].productCode&#x60; is \&quot;gift_card\&quot;, this is the currency used for the gift card purchase.  For details, see &#x60;pa_gift_card_currency&#x60; field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/Payer_Authentication_SCMP_API.pdf)  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) 
+   * @return giftCardCurrency
+  **/
+  @ApiModelProperty(value = "When `orderInformation.lineItems[].productCode` is \"gift_card\", this is the currency used for the gift card purchase.  For details, see `pa_gift_card_currency` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/Payer_Authentication_SCMP_API.pdf)  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) ")
+  public Integer getGiftCardCurrency() {
+    return giftCardCurrency;
+  }
+
+  public void setGiftCardCurrency(Integer giftCardCurrency) {
+    this.giftCardCurrency = giftCardCurrency;
+  }
+
+  public Ptsv2paymentsOrderInformationLineItems shippingDestinationTypes(String shippingDestinationTypes) {
+    this.shippingDestinationTypes = shippingDestinationTypes;
+    return this;
+  }
+
+   /**
+   * Destination to where the item will be shipped. Example: Commercial, Residential, Store 
+   * @return shippingDestinationTypes
+  **/
+  @ApiModelProperty(value = "Destination to where the item will be shipped. Example: Commercial, Residential, Store ")
+  public String getShippingDestinationTypes() {
+    return shippingDestinationTypes;
+  }
+
+  public void setShippingDestinationTypes(String shippingDestinationTypes) {
+    this.shippingDestinationTypes = shippingDestinationTypes;
+  }
+
+  public Ptsv2paymentsOrderInformationLineItems gift(Boolean gift) {
+    this.gift = gift;
+    return this;
+  }
+
+   /**
+   * This field is only used in DM service.  Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different. 
+   * @return gift
+  **/
+  @ApiModelProperty(value = "This field is only used in DM service.  Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different. ")
+  public Boolean getGift() {
+    return gift;
+  }
+
+  public void setGift(Boolean gift) {
+    this.gift = gift;
+  }
+
+  public Ptsv2paymentsOrderInformationLineItems passenger(Ptsv2paymentsOrderInformationPassenger passenger) {
+    this.passenger = passenger;
+    return this;
+  }
+
+   /**
+   * Get passenger
+   * @return passenger
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsOrderInformationPassenger getPassenger() {
+    return passenger;
+  }
+
+  public void setPassenger(Ptsv2paymentsOrderInformationPassenger passenger) {
+    this.passenger = passenger;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -622,12 +728,17 @@ public class Ptsv2paymentsOrderInformationLineItems {
         Objects.equals(this.weightIdentifier, ptsv2paymentsOrderInformationLineItems.weightIdentifier) &&
         Objects.equals(this.weightUnit, ptsv2paymentsOrderInformationLineItems.weightUnit) &&
         Objects.equals(this.referenceDataCode, ptsv2paymentsOrderInformationLineItems.referenceDataCode) &&
-        Objects.equals(this.referenceDataNumber, ptsv2paymentsOrderInformationLineItems.referenceDataNumber);
+        Objects.equals(this.referenceDataNumber, ptsv2paymentsOrderInformationLineItems.referenceDataNumber) &&
+        Objects.equals(this.productDescription, ptsv2paymentsOrderInformationLineItems.productDescription) &&
+        Objects.equals(this.giftCardCurrency, ptsv2paymentsOrderInformationLineItems.giftCardCurrency) &&
+        Objects.equals(this.shippingDestinationTypes, ptsv2paymentsOrderInformationLineItems.shippingDestinationTypes) &&
+        Objects.equals(this.gift, ptsv2paymentsOrderInformationLineItems.gift) &&
+        Objects.equals(this.passenger, ptsv2paymentsOrderInformationLineItems.passenger);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productCode, productName, productSku, quantity, unitPrice, unitOfMeasure, totalAmount, taxAmount, taxRate, taxAppliedAfterDiscount, taxStatusIndicator, taxTypeCode, amountIncludesTax, typeOfSupply, commodityCode, discountAmount, discountApplied, discountRate, invoiceNumber, taxDetails, fulfillmentType, weight, weightIdentifier, weightUnit, referenceDataCode, referenceDataNumber);
+    return Objects.hash(productCode, productName, productSku, quantity, unitPrice, unitOfMeasure, totalAmount, taxAmount, taxRate, taxAppliedAfterDiscount, taxStatusIndicator, taxTypeCode, amountIncludesTax, typeOfSupply, commodityCode, discountAmount, discountApplied, discountRate, invoiceNumber, taxDetails, fulfillmentType, weight, weightIdentifier, weightUnit, referenceDataCode, referenceDataNumber, productDescription, giftCardCurrency, shippingDestinationTypes, gift, passenger);
   }
 
 
@@ -662,6 +773,11 @@ public class Ptsv2paymentsOrderInformationLineItems {
     sb.append("    weightUnit: ").append(toIndentedString(weightUnit)).append("\n");
     sb.append("    referenceDataCode: ").append(toIndentedString(referenceDataCode)).append("\n");
     sb.append("    referenceDataNumber: ").append(toIndentedString(referenceDataNumber)).append("\n");
+    sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
+    sb.append("    giftCardCurrency: ").append(toIndentedString(giftCardCurrency)).append("\n");
+    sb.append("    shippingDestinationTypes: ").append(toIndentedString(shippingDestinationTypes)).append("\n");
+    sb.append("    gift: ").append(toIndentedString(gift)).append("\n");
+    sb.append("    passenger: ").append(toIndentedString(passenger)).append("\n");
     sb.append("}");
     return sb.toString();
   }

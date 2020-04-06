@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
+import Model.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation;
 import Model.PtsV2PaymentsPost201ResponseErrorInformation;
 import Model.PtsV2PaymentsPost201ResponseInstallmentInformation;
 import Model.PtsV2PaymentsPost201ResponseIssuerInformation;
@@ -24,6 +25,7 @@ import Model.PtsV2PaymentsPost201ResponsePaymentInformation;
 import Model.PtsV2PaymentsPost201ResponsePointOfSaleInformation;
 import Model.PtsV2PaymentsPost201ResponseProcessingInformation;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformation;
+import Model.PtsV2PaymentsPost201ResponseRiskInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,7 +38,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class PtsV2PaymentsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsPost201ResponseLinks links = null;
@@ -79,6 +81,12 @@ public class PtsV2PaymentsPost201Response {
 
   @SerializedName("installmentInformation")
   private PtsV2PaymentsPost201ResponseInstallmentInformation installmentInformation = null;
+
+  @SerializedName("riskInformation")
+  private PtsV2PaymentsPost201ResponseRiskInformation riskInformation = null;
+
+  @SerializedName("consumerAuthenticationInformation")
+  private PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation = null;
 
   public PtsV2PaymentsPost201Response links(PtsV2PaymentsPost201ResponseLinks links) {
     this.links = links;
@@ -332,6 +340,42 @@ public class PtsV2PaymentsPost201Response {
     this.installmentInformation = installmentInformation;
   }
 
+  public PtsV2PaymentsPost201Response riskInformation(PtsV2PaymentsPost201ResponseRiskInformation riskInformation) {
+    this.riskInformation = riskInformation;
+    return this;
+  }
+
+   /**
+   * Get riskInformation
+   * @return riskInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseRiskInformation getRiskInformation() {
+    return riskInformation;
+  }
+
+  public void setRiskInformation(PtsV2PaymentsPost201ResponseRiskInformation riskInformation) {
+    this.riskInformation = riskInformation;
+  }
+
+  public PtsV2PaymentsPost201Response consumerAuthenticationInformation(PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation) {
+    this.consumerAuthenticationInformation = consumerAuthenticationInformation;
+    return this;
+  }
+
+   /**
+   * Get consumerAuthenticationInformation
+   * @return consumerAuthenticationInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation getConsumerAuthenticationInformation() {
+    return consumerAuthenticationInformation;
+  }
+
+  public void setConsumerAuthenticationInformation(PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation) {
+    this.consumerAuthenticationInformation = consumerAuthenticationInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -355,12 +399,14 @@ public class PtsV2PaymentsPost201Response {
         Objects.equals(this.paymentInformation, ptsV2PaymentsPost201Response.paymentInformation) &&
         Objects.equals(this.orderInformation, ptsV2PaymentsPost201Response.orderInformation) &&
         Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsPost201Response.pointOfSaleInformation) &&
-        Objects.equals(this.installmentInformation, ptsV2PaymentsPost201Response.installmentInformation);
+        Objects.equals(this.installmentInformation, ptsV2PaymentsPost201Response.installmentInformation) &&
+        Objects.equals(this.riskInformation, ptsV2PaymentsPost201Response.riskInformation) &&
+        Objects.equals(this.consumerAuthenticationInformation, ptsV2PaymentsPost201Response.consumerAuthenticationInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentInformation, orderInformation, pointOfSaleInformation, installmentInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentInformation, orderInformation, pointOfSaleInformation, installmentInformation, riskInformation, consumerAuthenticationInformation);
   }
 
 
@@ -383,6 +429,8 @@ public class PtsV2PaymentsPost201Response {
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
+    sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
+    sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

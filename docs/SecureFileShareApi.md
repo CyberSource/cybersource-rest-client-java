@@ -56,7 +56,7 @@ No authorization required
 
 <a name="getFileDetail"></a>
 # **getFileDetail**
-> V1FileDetailsGet200Response getFileDetail(startDate, endDate, organizationId)
+> V1FileDetailsGet200Response getFileDetail(startDate, endDate, organizationId, name)
 
 Get List of Files
 
@@ -73,8 +73,9 @@ SecureFileShareApi apiInstance = new SecureFileShareApi();
 LocalDate startDate = new LocalDate(); // LocalDate | Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd 
 LocalDate endDate = new LocalDate(); // LocalDate | Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd 
 String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
+String name = "name_example"; // String | **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml 
 try {
-    V1FileDetailsGet200Response result = apiInstance.getFileDetail(startDate, endDate, organizationId);
+    V1FileDetailsGet200Response result = apiInstance.getFileDetail(startDate, endDate, organizationId, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SecureFileShareApi#getFileDetail");
@@ -89,6 +90,7 @@ Name | Type | Description  | Notes
  **startDate** | **LocalDate**| Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  |
  **endDate** | **LocalDate**| Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd  |
  **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+ **name** | **String**| **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml  | [optional]
 
 ### Return type
 

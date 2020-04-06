@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsMerchantInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Ptsv2paymentsMerchantInformation {
   @SerializedName("merchantDescriptor")
   private Ptsv2paymentsMerchantInformationMerchantDescriptor merchantDescriptor = null;
@@ -56,6 +56,9 @@ public class Ptsv2paymentsMerchantInformation {
 
   @SerializedName("serviceFeeDescriptor")
   private Ptsv2paymentsMerchantInformationServiceFeeDescriptor serviceFeeDescriptor = null;
+
+  @SerializedName("merchantName")
+  private String merchantName = null;
 
   public Ptsv2paymentsMerchantInformation merchantDescriptor(Ptsv2paymentsMerchantInformationMerchantDescriptor merchantDescriptor) {
     this.merchantDescriptor = merchantDescriptor;
@@ -221,6 +224,24 @@ public class Ptsv2paymentsMerchantInformation {
     this.serviceFeeDescriptor = serviceFeeDescriptor;
   }
 
+  public Ptsv2paymentsMerchantInformation merchantName(String merchantName) {
+    this.merchantName = merchantName;
+    return this;
+  }
+
+   /**
+   * Use this field only if you are requesting payment with Payer Authentication serice together.  Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank. 
+   * @return merchantName
+  **/
+  @ApiModelProperty(value = "Use this field only if you are requesting payment with Payer Authentication serice together.  Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank. ")
+  public String getMerchantName() {
+    return merchantName;
+  }
+
+  public void setMerchantName(String merchantName) {
+    this.merchantName = merchantName;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -239,12 +260,13 @@ public class Ptsv2paymentsMerchantInformation {
         Objects.equals(this.vatRegistrationNumber, ptsv2paymentsMerchantInformation.vatRegistrationNumber) &&
         Objects.equals(this.cardAcceptorReferenceNumber, ptsv2paymentsMerchantInformation.cardAcceptorReferenceNumber) &&
         Objects.equals(this.transactionLocalDateTime, ptsv2paymentsMerchantInformation.transactionLocalDateTime) &&
-        Objects.equals(this.serviceFeeDescriptor, ptsv2paymentsMerchantInformation.serviceFeeDescriptor);
+        Objects.equals(this.serviceFeeDescriptor, ptsv2paymentsMerchantInformation.serviceFeeDescriptor) &&
+        Objects.equals(this.merchantName, ptsv2paymentsMerchantInformation.merchantName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantDescriptor, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor);
+    return Objects.hash(merchantDescriptor, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor, merchantName);
   }
 
 
@@ -262,6 +284,7 @@ public class Ptsv2paymentsMerchantInformation {
     sb.append("    cardAcceptorReferenceNumber: ").append(toIndentedString(cardAcceptorReferenceNumber)).append("\n");
     sb.append("    transactionLocalDateTime: ").append(toIndentedString(transactionLocalDateTime)).append("\n");
     sb.append("    serviceFeeDescriptor: ").append(toIndentedString(serviceFeeDescriptor)).append("\n");
+    sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

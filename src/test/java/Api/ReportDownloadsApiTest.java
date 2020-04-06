@@ -46,8 +46,7 @@ public class ReportDownloadsApiTest {
         LocalDate reportDate = null;
         String reportName = null;
         String organizationId = null;
-        String reportTime = null;
-        api.downloadReport(reportDate, reportName, organizationId, reportTime);
+        api.downloadReport(reportDate, reportName, organizationId);
 
         // TODO: test validations
     }

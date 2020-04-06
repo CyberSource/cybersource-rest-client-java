@@ -14,10 +14,10 @@
 package Model;
 
 import java.util.Objects;
+import Model.Riskv1authenticationexemptionsOrderInformationAmountDetails;
 import Model.Riskv1authenticationexemptionsOrderInformationBillTo;
 import Model.Riskv1authenticationexemptionsOrderInformationLineItems;
 import Model.Riskv1authenticationexemptionsOrderInformationShipTo;
-import Model.Riskv1decisionsOrderInformationAmountDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,10 +32,10 @@ import java.util.List;
 /**
  * Riskv1authenticationexemptionsOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Riskv1authenticationexemptionsOrderInformation {
   @SerializedName("amountDetails")
-  private Riskv1decisionsOrderInformationAmountDetails amountDetails = null;
+  private Riskv1authenticationexemptionsOrderInformationAmountDetails amountDetails = null;
 
   @SerializedName("shipTo")
   private Riskv1authenticationexemptionsOrderInformationShipTo shipTo = null;
@@ -46,7 +46,7 @@ public class Riskv1authenticationexemptionsOrderInformation {
   @SerializedName("billTo")
   private Riskv1authenticationexemptionsOrderInformationBillTo billTo = null;
 
-  public Riskv1authenticationexemptionsOrderInformation amountDetails(Riskv1decisionsOrderInformationAmountDetails amountDetails) {
+  public Riskv1authenticationexemptionsOrderInformation amountDetails(Riskv1authenticationexemptionsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
     return this;
   }
@@ -56,11 +56,11 @@ public class Riskv1authenticationexemptionsOrderInformation {
    * @return amountDetails
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsOrderInformationAmountDetails getAmountDetails() {
+  public Riskv1authenticationexemptionsOrderInformationAmountDetails getAmountDetails() {
     return amountDetails;
   }
 
-  public void setAmountDetails(Riskv1decisionsOrderInformationAmountDetails amountDetails) {
+  public void setAmountDetails(Riskv1authenticationexemptionsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
   }
 

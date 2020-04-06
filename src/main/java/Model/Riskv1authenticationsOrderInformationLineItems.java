@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1decisionsOrderInformationPassenger;
+import Model.Ptsv2paymentsOrderInformationPassenger;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationsOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Riskv1authenticationsOrderInformationLineItems {
   @SerializedName("totalAmount")
   private String totalAmount = null;
@@ -51,7 +51,7 @@ public class Riskv1authenticationsOrderInformationLineItems {
   private String productName = null;
 
   @SerializedName("passenger")
-  private Riskv1decisionsOrderInformationPassenger passenger = null;
+  private Ptsv2paymentsOrderInformationPassenger passenger = null;
 
   @SerializedName("shippingDestinationTypes")
   private String shippingDestinationTypes = null;
@@ -187,7 +187,7 @@ public class Riskv1authenticationsOrderInformationLineItems {
     this.productName = productName;
   }
 
-  public Riskv1authenticationsOrderInformationLineItems passenger(Riskv1decisionsOrderInformationPassenger passenger) {
+  public Riskv1authenticationsOrderInformationLineItems passenger(Ptsv2paymentsOrderInformationPassenger passenger) {
     this.passenger = passenger;
     return this;
   }
@@ -197,11 +197,11 @@ public class Riskv1authenticationsOrderInformationLineItems {
    * @return passenger
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsOrderInformationPassenger getPassenger() {
+  public Ptsv2paymentsOrderInformationPassenger getPassenger() {
     return passenger;
   }
 
-  public void setPassenger(Riskv1decisionsOrderInformationPassenger passenger) {
+  public void setPassenger(Ptsv2paymentsOrderInformationPassenger passenger) {
     this.passenger = passenger;
   }
 

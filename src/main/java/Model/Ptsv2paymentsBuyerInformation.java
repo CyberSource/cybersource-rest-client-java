@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsBuyerInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Ptsv2paymentsBuyerInformation {
   @SerializedName("merchantCustomerId")
   private String merchantCustomerId = null;
@@ -48,6 +48,9 @@ public class Ptsv2paymentsBuyerInformation {
 
   @SerializedName("hashedPassword")
   private String hashedPassword = null;
+
+  @SerializedName("mobilePhone")
+  private Integer mobilePhone = null;
 
   public Ptsv2paymentsBuyerInformation merchantCustomerId(String merchantCustomerId) {
     this.merchantCustomerId = merchantCustomerId;
@@ -165,6 +168,24 @@ public class Ptsv2paymentsBuyerInformation {
     this.hashedPassword = hashedPassword;
   }
 
+  public Ptsv2paymentsBuyerInformation mobilePhone(Integer mobilePhone) {
+    this.mobilePhone = mobilePhone;
+    return this;
+  }
+
+   /**
+   * Cardholder’s mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
+   * @return mobilePhone
+  **/
+  @ApiModelProperty(value = "Cardholder’s mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. ")
+  public Integer getMobilePhone() {
+    return mobilePhone;
+  }
+
+  public void setMobilePhone(Integer mobilePhone) {
+    this.mobilePhone = mobilePhone;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -180,12 +201,13 @@ public class Ptsv2paymentsBuyerInformation {
         Objects.equals(this.vatRegistrationNumber, ptsv2paymentsBuyerInformation.vatRegistrationNumber) &&
         Objects.equals(this.companyTaxId, ptsv2paymentsBuyerInformation.companyTaxId) &&
         Objects.equals(this.personalIdentification, ptsv2paymentsBuyerInformation.personalIdentification) &&
-        Objects.equals(this.hashedPassword, ptsv2paymentsBuyerInformation.hashedPassword);
+        Objects.equals(this.hashedPassword, ptsv2paymentsBuyerInformation.hashedPassword) &&
+        Objects.equals(this.mobilePhone, ptsv2paymentsBuyerInformation.mobilePhone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, companyTaxId, personalIdentification, hashedPassword);
+    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, companyTaxId, personalIdentification, hashedPassword, mobilePhone);
   }
 
 
@@ -200,6 +222,7 @@ public class Ptsv2paymentsBuyerInformation {
     sb.append("    companyTaxId: ").append(toIndentedString(companyTaxId)).append("\n");
     sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     sb.append("    hashedPassword: ").append(toIndentedString(hashedPassword)).append("\n");
+    sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1authenticationsDeviceInformationRawData;
+import Model.Ptsv2paymentsDeviceInformationRawData;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,13 +29,13 @@ import java.util.List;
 /**
  * Riskv1authenticationsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Riskv1authenticationsDeviceInformation {
   @SerializedName("ipAddress")
   private String ipAddress = null;
 
   @SerializedName("rawData")
-  private List<Riskv1authenticationsDeviceInformationRawData> rawData = null;
+  private List<Ptsv2paymentsDeviceInformationRawData> rawData = null;
 
   @SerializedName("httpAcceptBrowserValue")
   private String httpAcceptBrowserValue = null;
@@ -85,14 +85,14 @@ public class Riskv1authenticationsDeviceInformation {
     this.ipAddress = ipAddress;
   }
 
-  public Riskv1authenticationsDeviceInformation rawData(List<Riskv1authenticationsDeviceInformationRawData> rawData) {
+  public Riskv1authenticationsDeviceInformation rawData(List<Ptsv2paymentsDeviceInformationRawData> rawData) {
     this.rawData = rawData;
     return this;
   }
 
-  public Riskv1authenticationsDeviceInformation addRawDataItem(Riskv1authenticationsDeviceInformationRawData rawDataItem) {
+  public Riskv1authenticationsDeviceInformation addRawDataItem(Ptsv2paymentsDeviceInformationRawData rawDataItem) {
     if (this.rawData == null) {
-      this.rawData = new ArrayList<Riskv1authenticationsDeviceInformationRawData>();
+      this.rawData = new ArrayList<Ptsv2paymentsDeviceInformationRawData>();
     }
     this.rawData.add(rawDataItem);
     return this;
@@ -103,11 +103,11 @@ public class Riskv1authenticationsDeviceInformation {
    * @return rawData
   **/
   @ApiModelProperty(value = "")
-  public List<Riskv1authenticationsDeviceInformationRawData> getRawData() {
+  public List<Ptsv2paymentsDeviceInformationRawData> getRawData() {
     return rawData;
   }
 
-  public void setRawData(List<Riskv1authenticationsDeviceInformationRawData> rawData) {
+  public void setRawData(List<Ptsv2paymentsDeviceInformationRawData> rawData) {
     this.rawData = rawData;
   }
 

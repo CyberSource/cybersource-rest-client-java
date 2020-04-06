@@ -16,8 +16,8 @@ package Model;
 import java.util.Objects;
 import Model.PtsV2PaymentsPost201ResponseErrorInformation;
 import Model.PtsV2PaymentsPost201ResponseLinks;
+import Model.PtsV2PaymentsPost201ResponseRiskInformation;
 import Model.RiskV1DecisionsPost201ResponsePaymentInformation;
-import Model.RiskV1DecisionsPost201ResponseRiskInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * RiskV1DecisionsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class RiskV1DecisionsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsPost201ResponseLinks links = null;
@@ -48,7 +48,7 @@ public class RiskV1DecisionsPost201Response {
   private String status = null;
 
   @SerializedName("riskInformation")
-  private RiskV1DecisionsPost201ResponseRiskInformation riskInformation = null;
+  private PtsV2PaymentsPost201ResponseRiskInformation riskInformation = null;
 
   @SerializedName("paymentInformation")
   private RiskV1DecisionsPost201ResponsePaymentInformation paymentInformation = null;
@@ -134,10 +134,10 @@ public class RiskV1DecisionsPost201Response {
   }
 
    /**
-   * The status of the submitted transaction.  Possible values:   - &#x60;ACCEPTED&#x60;   - &#x60;REJECTED&#x60;   - &#x60;PENDING_REVIEW&#x60; 
+   * The status of the submitted transaction.  Possible values:   - &#x60;ACCEPTED&#x60;   - &#x60;REJECTED&#x60;   - &#x60;PENDING_REVIEW&#x60;   - &#x60;DECLINED&#x60;   - &#x60;CHALLENGE&#x60;   - &#x60;PENDING_AUTHENTICATION&#x60; 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW` ")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW`   - `DECLINED`   - `CHALLENGE`   - `PENDING_AUTHENTICATION` ")
   public String getStatus() {
     return status;
   }
@@ -146,7 +146,7 @@ public class RiskV1DecisionsPost201Response {
     this.status = status;
   }
 
-  public RiskV1DecisionsPost201Response riskInformation(RiskV1DecisionsPost201ResponseRiskInformation riskInformation) {
+  public RiskV1DecisionsPost201Response riskInformation(PtsV2PaymentsPost201ResponseRiskInformation riskInformation) {
     this.riskInformation = riskInformation;
     return this;
   }
@@ -156,11 +156,11 @@ public class RiskV1DecisionsPost201Response {
    * @return riskInformation
   **/
   @ApiModelProperty(value = "")
-  public RiskV1DecisionsPost201ResponseRiskInformation getRiskInformation() {
+  public PtsV2PaymentsPost201ResponseRiskInformation getRiskInformation() {
     return riskInformation;
   }
 
-  public void setRiskInformation(RiskV1DecisionsPost201ResponseRiskInformation riskInformation) {
+  public void setRiskInformation(PtsV2PaymentsPost201ResponseRiskInformation riskInformation) {
     this.riskInformation = riskInformation;
   }
 

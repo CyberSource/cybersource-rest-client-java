@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1decisionsRiskInformationProfile;
+import Model.Ptsv2paymentsRiskInformationProfile;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,15 +27,15 @@ import java.io.IOException;
 /**
  * Riskv1decisionsRiskInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class Riskv1decisionsRiskInformation {
   @SerializedName("profile")
-  private Riskv1decisionsRiskInformationProfile profile = null;
+  private Ptsv2paymentsRiskInformationProfile profile = null;
 
   @SerializedName("eventType")
   private String eventType = null;
 
-  public Riskv1decisionsRiskInformation profile(Riskv1decisionsRiskInformationProfile profile) {
+  public Riskv1decisionsRiskInformation profile(Ptsv2paymentsRiskInformationProfile profile) {
     this.profile = profile;
     return this;
   }
@@ -45,11 +45,11 @@ public class Riskv1decisionsRiskInformation {
    * @return profile
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsRiskInformationProfile getProfile() {
+  public Ptsv2paymentsRiskInformationProfile getProfile() {
     return profile;
   }
 
-  public void setProfile(Riskv1decisionsRiskInformationProfile profile) {
+  public void setProfile(Ptsv2paymentsRiskInformationProfile profile) {
     this.profile = profile;
   }
 

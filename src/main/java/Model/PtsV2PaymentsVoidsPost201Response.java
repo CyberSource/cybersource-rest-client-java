@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
+import Model.PtsV2PaymentsVoidsPost201ResponseProcessorInformation;
 import Model.PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -29,7 +30,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsVoidsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class PtsV2PaymentsVoidsPost201Response {
   @SerializedName("_links")
   private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
@@ -48,6 +49,9 @@ public class PtsV2PaymentsVoidsPost201Response {
 
   @SerializedName("voidAmountDetails")
   private PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails voidAmountDetails = null;
+
+  @SerializedName("processorInformation")
+  private PtsV2PaymentsVoidsPost201ResponseProcessorInformation processorInformation = null;
 
   public PtsV2PaymentsVoidsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
@@ -157,6 +161,24 @@ public class PtsV2PaymentsVoidsPost201Response {
     this.voidAmountDetails = voidAmountDetails;
   }
 
+  public PtsV2PaymentsVoidsPost201Response processorInformation(PtsV2PaymentsVoidsPost201ResponseProcessorInformation processorInformation) {
+    this.processorInformation = processorInformation;
+    return this;
+  }
+
+   /**
+   * Get processorInformation
+   * @return processorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsVoidsPost201ResponseProcessorInformation getProcessorInformation() {
+    return processorInformation;
+  }
+
+  public void setProcessorInformation(PtsV2PaymentsVoidsPost201ResponseProcessorInformation processorInformation) {
+    this.processorInformation = processorInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -172,12 +194,13 @@ public class PtsV2PaymentsVoidsPost201Response {
         Objects.equals(this.submitTimeUtc, ptsV2PaymentsVoidsPost201Response.submitTimeUtc) &&
         Objects.equals(this.status, ptsV2PaymentsVoidsPost201Response.status) &&
         Objects.equals(this.clientReferenceInformation, ptsV2PaymentsVoidsPost201Response.clientReferenceInformation) &&
-        Objects.equals(this.voidAmountDetails, ptsV2PaymentsVoidsPost201Response.voidAmountDetails);
+        Objects.equals(this.voidAmountDetails, ptsV2PaymentsVoidsPost201Response.voidAmountDetails) &&
+        Objects.equals(this.processorInformation, ptsV2PaymentsVoidsPost201Response.processorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, clientReferenceInformation, voidAmountDetails);
+    return Objects.hash(links, id, submitTimeUtc, status, clientReferenceInformation, voidAmountDetails, processorInformation);
   }
 
 
@@ -192,6 +215,7 @@ public class PtsV2PaymentsVoidsPost201Response {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    voidAmountDetails: ").append(toIndentedString(voidAmountDetails)).append("\n");
+    sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

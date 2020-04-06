@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr;
+import Model.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-18T15:21:09.334+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
 public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("acsRenderingType")
   private String acsRenderingType = null;
@@ -85,7 +85,7 @@ public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformati
   private String effectiveAuthenticationType = null;
 
   @SerializedName("ivr")
-  private RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr ivr = null;
+  private PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr ivr = null;
 
   @SerializedName("networkScore")
   private String networkScore = null;
@@ -459,7 +459,7 @@ public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformati
     this.effectiveAuthenticationType = effectiveAuthenticationType;
   }
 
-  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation ivr(RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr ivr) {
+  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation ivr(PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr ivr) {
     this.ivr = ivr;
     return this;
   }
@@ -469,11 +469,11 @@ public class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformati
    * @return ivr
   **/
   @ApiModelProperty(value = "")
-  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr getIvr() {
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr getIvr() {
     return ivr;
   }
 
-  public void setIvr(RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr ivr) {
+  public void setIvr(PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr ivr) {
     this.ivr = ivr;
   }
 
