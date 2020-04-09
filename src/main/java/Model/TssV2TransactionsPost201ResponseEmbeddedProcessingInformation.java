@@ -26,13 +26,16 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {
   @SerializedName("paymentSolution")
   private String paymentSolution = null;
 
   @SerializedName("businessApplicationId")
   private String businessApplicationId = null;
+
+  @SerializedName("commerceIndicator")
+  private String commerceIndicator = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedProcessingInformation paymentSolution(String paymentSolution) {
     this.paymentSolution = paymentSolution;
@@ -70,6 +73,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {
     this.businessApplicationId = businessApplicationId;
   }
 
+  public TssV2TransactionsPost201ResponseEmbeddedProcessingInformation commerceIndicator(String commerceIndicator) {
+    this.commerceIndicator = commerceIndicator;
+    return this;
+  }
+
+   /**
+   * Type of transaction. Certain card associations use this information when determining discount rates to charge you. Required for Verified by Visa and MasterCard SecureCode transactions.      This field can contain one of these values:      * 5: &#x60;vbv&#x60; (Successful Verified by Visa transaction)     * 6: &#x60;spa&#x60; (MasterCard SecureCode transaction)     * 7: &#x60;internet&#x60; (default) (eCommerce order placed by     using a Web site)     * 8: &#x60;vbv_attempted&#x60; (Verified by Visa transaction     was attempted but not authenticated)     * E: &#x60;vbv_failure&#x60; (Depending on your payment     processor, you may receive this result if Visa’s     directory service is not available)     * F: &#x60;spa_failure&#x60; (MasterCard SecureCode     authentication failed)     * M: &#x60;moto&#x60; (Mail order or telephone order)     * P: &#x60;retail&#x60; (Point-of-sale transaction)     * R: &#x60;recurring&#x60; (Recurring transaction)     * S: &#x60;install&#x60; (Installment payment) 
+   * @return commerceIndicator
+  **/
+  @ApiModelProperty(value = "Type of transaction. Certain card associations use this information when determining discount rates to charge you. Required for Verified by Visa and MasterCard SecureCode transactions.      This field can contain one of these values:      * 5: `vbv` (Successful Verified by Visa transaction)     * 6: `spa` (MasterCard SecureCode transaction)     * 7: `internet` (default) (eCommerce order placed by     using a Web site)     * 8: `vbv_attempted` (Verified by Visa transaction     was attempted but not authenticated)     * E: `vbv_failure` (Depending on your payment     processor, you may receive this result if Visa’s     directory service is not available)     * F: `spa_failure` (MasterCard SecureCode     authentication failed)     * M: `moto` (Mail order or telephone order)     * P: `retail` (Point-of-sale transaction)     * R: `recurring` (Recurring transaction)     * S: `install` (Installment payment) ")
+  public String getCommerceIndicator() {
+    return commerceIndicator;
+  }
+
+  public void setCommerceIndicator(String commerceIndicator) {
+    this.commerceIndicator = commerceIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +102,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {
     }
     TssV2TransactionsPost201ResponseEmbeddedProcessingInformation tssV2TransactionsPost201ResponseEmbeddedProcessingInformation = (TssV2TransactionsPost201ResponseEmbeddedProcessingInformation) o;
     return Objects.equals(this.paymentSolution, tssV2TransactionsPost201ResponseEmbeddedProcessingInformation.paymentSolution) &&
-        Objects.equals(this.businessApplicationId, tssV2TransactionsPost201ResponseEmbeddedProcessingInformation.businessApplicationId);
+        Objects.equals(this.businessApplicationId, tssV2TransactionsPost201ResponseEmbeddedProcessingInformation.businessApplicationId) &&
+        Objects.equals(this.commerceIndicator, tssV2TransactionsPost201ResponseEmbeddedProcessingInformation.commerceIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentSolution, businessApplicationId);
+    return Objects.hash(paymentSolution, businessApplicationId, commerceIndicator);
   }
 
 
@@ -97,6 +119,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {
     
     sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
     sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

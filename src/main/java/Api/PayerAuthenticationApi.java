@@ -30,9 +30,9 @@ import java.io.InputStream;
 
 import Model.CheckPayerAuthEnrollmentRequest;
 import Model.PtsV2PaymentsPost502Response;
-import Model.RiskV1AuthenticationExcemptionsPost400Response;
 import Model.RiskV1AuthenticationResultsPost201Response;
 import Model.RiskV1AuthenticationsPost201Response;
+import Model.RiskV1AuthenticationsPost400Response;
 import Model.ValidateRequest;
 
 import java.lang.reflect.Type;

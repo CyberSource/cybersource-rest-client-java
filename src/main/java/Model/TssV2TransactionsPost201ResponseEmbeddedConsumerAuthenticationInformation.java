@@ -26,13 +26,16 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation {
   @SerializedName("xid")
   private String xid = null;
 
   @SerializedName("transactionId")
   private String transactionId = null;
+
+  @SerializedName("eciRaw")
+  private String eciRaw = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation xid(String xid) {
     this.xid = xid;
@@ -70,6 +73,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInfor
     this.transactionId = transactionId;
   }
 
+  public TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation eciRaw(String eciRaw) {
+    this.eciRaw = eciRaw;
+    return this;
+  }
+
+   /**
+   * Raw electronic commerce indicator (ECI).  For details, see &#x60;eci_raw&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * @return eciRaw
+  **/
+  @ApiModelProperty(value = "Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  public String getEciRaw() {
+    return eciRaw;
+  }
+
+  public void setEciRaw(String eciRaw) {
+    this.eciRaw = eciRaw;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +102,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInfor
     }
     TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation tssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation = (TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation) o;
     return Objects.equals(this.xid, tssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation.xid) &&
-        Objects.equals(this.transactionId, tssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation.transactionId);
+        Objects.equals(this.transactionId, tssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation.transactionId) &&
+        Objects.equals(this.eciRaw, tssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation.eciRaw);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(xid, transactionId);
+    return Objects.hash(xid, transactionId, eciRaw);
   }
 
 
@@ -97,6 +119,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInfor
     
     sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    sb.append("    eciRaw: ").append(toIndentedString(eciRaw)).append("\n");
     sb.append("}");
     return sb.toString();
   }

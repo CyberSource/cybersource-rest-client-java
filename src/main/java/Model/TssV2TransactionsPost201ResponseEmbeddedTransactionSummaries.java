@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
-import Model.TssV2TransactionsGet200ResponseApplicationInformation;
 import Model.TssV2TransactionsGet200ResponseFraudMarkingInformation;
+import Model.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation;
@@ -43,7 +43,7 @@ import java.util.List;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
   @SerializedName("id")
   private String id = null;
@@ -55,7 +55,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
   private String merchantId = null;
 
   @SerializedName("applicationInformation")
-  private TssV2TransactionsGet200ResponseApplicationInformation applicationInformation = null;
+  private TssV2TransactionsPost201ResponseEmbeddedApplicationInformation applicationInformation = null;
 
   @SerializedName("buyerInformation")
   private TssV2TransactionsPost201ResponseEmbeddedBuyerInformation buyerInformation = null;
@@ -153,7 +153,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
     this.merchantId = merchantId;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries applicationInformation(TssV2TransactionsGet200ResponseApplicationInformation applicationInformation) {
+  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries applicationInformation(TssV2TransactionsPost201ResponseEmbeddedApplicationInformation applicationInformation) {
     this.applicationInformation = applicationInformation;
     return this;
   }
@@ -163,11 +163,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
    * @return applicationInformation
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsGet200ResponseApplicationInformation getApplicationInformation() {
+  public TssV2TransactionsPost201ResponseEmbeddedApplicationInformation getApplicationInformation() {
     return applicationInformation;
   }
 
-  public void setApplicationInformation(TssV2TransactionsGet200ResponseApplicationInformation applicationInformation) {
+  public void setApplicationInformation(TssV2TransactionsPost201ResponseEmbeddedApplicationInformation applicationInformation) {
     this.applicationInformation = applicationInformation;
   }
 

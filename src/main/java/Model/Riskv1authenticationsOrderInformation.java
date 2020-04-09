@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1authenticationexemptionsOrderInformationAmountDetails;
-import Model.Riskv1authenticationexemptionsOrderInformationBillTo;
+import Model.Riskv1authenticationsOrderInformationAmountDetails;
+import Model.Riskv1authenticationsOrderInformationBillTo;
 import Model.Riskv1authenticationsOrderInformationLineItems;
 import Model.Riskv1authenticationsOrderInformationShipTo;
 import com.google.gson.TypeAdapter;
@@ -32,10 +32,10 @@ import java.util.List;
 /**
  * Riskv1authenticationsOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
 public class Riskv1authenticationsOrderInformation {
   @SerializedName("amountDetails")
-  private Riskv1authenticationexemptionsOrderInformationAmountDetails amountDetails = null;
+  private Riskv1authenticationsOrderInformationAmountDetails amountDetails = null;
 
   @SerializedName("preOrder")
   private String preOrder = null;
@@ -53,12 +53,12 @@ public class Riskv1authenticationsOrderInformation {
   private List<Riskv1authenticationsOrderInformationLineItems> lineItems = null;
 
   @SerializedName("billTo")
-  private Riskv1authenticationexemptionsOrderInformationBillTo billTo = null;
+  private Riskv1authenticationsOrderInformationBillTo billTo = null;
 
   @SerializedName("totalOffersCount")
   private String totalOffersCount = null;
 
-  public Riskv1authenticationsOrderInformation amountDetails(Riskv1authenticationexemptionsOrderInformationAmountDetails amountDetails) {
+  public Riskv1authenticationsOrderInformation amountDetails(Riskv1authenticationsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
     return this;
   }
@@ -68,11 +68,11 @@ public class Riskv1authenticationsOrderInformation {
    * @return amountDetails
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationexemptionsOrderInformationAmountDetails getAmountDetails() {
+  public Riskv1authenticationsOrderInformationAmountDetails getAmountDetails() {
     return amountDetails;
   }
 
-  public void setAmountDetails(Riskv1authenticationexemptionsOrderInformationAmountDetails amountDetails) {
+  public void setAmountDetails(Riskv1authenticationsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
   }
 
@@ -174,7 +174,7 @@ public class Riskv1authenticationsOrderInformation {
     this.lineItems = lineItems;
   }
 
-  public Riskv1authenticationsOrderInformation billTo(Riskv1authenticationexemptionsOrderInformationBillTo billTo) {
+  public Riskv1authenticationsOrderInformation billTo(Riskv1authenticationsOrderInformationBillTo billTo) {
     this.billTo = billTo;
     return this;
   }
@@ -184,11 +184,11 @@ public class Riskv1authenticationsOrderInformation {
    * @return billTo
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationexemptionsOrderInformationBillTo getBillTo() {
+  public Riskv1authenticationsOrderInformationBillTo getBillTo() {
     return billTo;
   }
 
-  public void setBillTo(Riskv1authenticationexemptionsOrderInformationBillTo billTo) {
+  public void setBillTo(Riskv1authenticationsOrderInformationBillTo billTo) {
     this.billTo = billTo;
   }
 

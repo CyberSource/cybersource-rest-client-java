@@ -1,5 +1,5 @@
 
-# Riskv1authenticationexemptionsPaymentInformationCard
+# Riskv1authenticationsPaymentInformationCard
 
 ## Properties
 Name | Type | Description | Notes

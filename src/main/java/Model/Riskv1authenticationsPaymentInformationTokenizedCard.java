@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Riskv1authenticationexemptionsPaymentInformationTokenizedCard
+ * Riskv1authenticationsPaymentInformationTokenizedCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
-public class Riskv1authenticationexemptionsPaymentInformationTokenizedCard {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+public class Riskv1authenticationsPaymentInformationTokenizedCard {
   @SerializedName("type")
   private String type = null;
 
@@ -40,7 +40,7 @@ public class Riskv1authenticationexemptionsPaymentInformationTokenizedCard {
   @SerializedName("number")
   private String number = null;
 
-  public Riskv1authenticationexemptionsPaymentInformationTokenizedCard type(String type) {
+  public Riskv1authenticationsPaymentInformationTokenizedCard type(String type) {
     this.type = type;
     return this;
   }
@@ -58,7 +58,7 @@ public class Riskv1authenticationexemptionsPaymentInformationTokenizedCard {
     this.type = type;
   }
 
-  public Riskv1authenticationexemptionsPaymentInformationTokenizedCard expirationMonth(String expirationMonth) {
+  public Riskv1authenticationsPaymentInformationTokenizedCard expirationMonth(String expirationMonth) {
     this.expirationMonth = expirationMonth;
     return this;
   }
@@ -76,7 +76,7 @@ public class Riskv1authenticationexemptionsPaymentInformationTokenizedCard {
     this.expirationMonth = expirationMonth;
   }
 
-  public Riskv1authenticationexemptionsPaymentInformationTokenizedCard expirationYear(String expirationYear) {
+  public Riskv1authenticationsPaymentInformationTokenizedCard expirationYear(String expirationYear) {
     this.expirationYear = expirationYear;
     return this;
   }
@@ -94,7 +94,7 @@ public class Riskv1authenticationexemptionsPaymentInformationTokenizedCard {
     this.expirationYear = expirationYear;
   }
 
-  public Riskv1authenticationexemptionsPaymentInformationTokenizedCard number(String number) {
+  public Riskv1authenticationsPaymentInformationTokenizedCard number(String number) {
     this.number = number;
     return this;
   }
@@ -121,11 +121,11 @@ public class Riskv1authenticationexemptionsPaymentInformationTokenizedCard {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Riskv1authenticationexemptionsPaymentInformationTokenizedCard riskv1authenticationexemptionsPaymentInformationTokenizedCard = (Riskv1authenticationexemptionsPaymentInformationTokenizedCard) o;
-    return Objects.equals(this.type, riskv1authenticationexemptionsPaymentInformationTokenizedCard.type) &&
-        Objects.equals(this.expirationMonth, riskv1authenticationexemptionsPaymentInformationTokenizedCard.expirationMonth) &&
-        Objects.equals(this.expirationYear, riskv1authenticationexemptionsPaymentInformationTokenizedCard.expirationYear) &&
-        Objects.equals(this.number, riskv1authenticationexemptionsPaymentInformationTokenizedCard.number);
+    Riskv1authenticationsPaymentInformationTokenizedCard riskv1authenticationsPaymentInformationTokenizedCard = (Riskv1authenticationsPaymentInformationTokenizedCard) o;
+    return Objects.equals(this.type, riskv1authenticationsPaymentInformationTokenizedCard.type) &&
+        Objects.equals(this.expirationMonth, riskv1authenticationsPaymentInformationTokenizedCard.expirationMonth) &&
+        Objects.equals(this.expirationYear, riskv1authenticationsPaymentInformationTokenizedCard.expirationYear) &&
+        Objects.equals(this.number, riskv1authenticationsPaymentInformationTokenizedCard.number);
   }
 
   @Override
@@ -137,7 +137,7 @@ public class Riskv1authenticationexemptionsPaymentInformationTokenizedCard {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Riskv1authenticationexemptionsPaymentInformationTokenizedCard {\n");
+    sb.append("class Riskv1authenticationsPaymentInformationTokenizedCard {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");

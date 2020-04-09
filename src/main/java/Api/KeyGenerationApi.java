@@ -60,18 +60,21 @@ public class KeyGenerationApi {
     /**
      * Build call for generatePublicKey
      * @param generatePublicKeyRequest  (required)
+     * @param format Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) (optional, default to legacy)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call generatePublicKeyCall(GeneratePublicKeyRequest generatePublicKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call generatePublicKeyCall(GeneratePublicKeyRequest generatePublicKeyRequest, String format, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = generatePublicKeyRequest;
         
         // create path and map variables
         String localVarPath = "/flex/v1/keys";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (format != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "format", format));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -106,7 +109,7 @@ public class KeyGenerationApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call generatePublicKeyValidateBeforeCall(GeneratePublicKeyRequest generatePublicKeyRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call generatePublicKeyValidateBeforeCall(GeneratePublicKeyRequest generatePublicKeyRequest, String format, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'generatePublicKeyRequest' is set
         if (generatePublicKeyRequest == null) {
@@ -114,7 +117,7 @@ public class KeyGenerationApi {
         }
         
         
-        okhttp3.Call call = generatePublicKeyCall(generatePublicKeyRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = generatePublicKeyCall(generatePublicKeyRequest, format, progressListener, progressRequestListener);
         return call;
 
         
@@ -127,11 +130,12 @@ public class KeyGenerationApi {
      * Generate Key
      * Generate a one-time use public key and key ID to encrypt the card number in the follow-on Tokenize Card request. The key used to encrypt the card number on the cardholder’s device or browser is valid for 15 minutes and must be used to verify the signature in the response message. CyberSource recommends creating a new key for each order. Generating a key is an authenticated request initiated from your servers, prior to requesting to tokenize the card data from your customer’s device or browser.
      * @param generatePublicKeyRequest  (required)
+     * @param format Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) (optional, default to legacy)
      * @return FlexV1KeysPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public FlexV1KeysPost200Response generatePublicKey(GeneratePublicKeyRequest generatePublicKeyRequest) throws ApiException {
-        ApiResponse<FlexV1KeysPost200Response> resp = generatePublicKeyWithHttpInfo(generatePublicKeyRequest);
+    public FlexV1KeysPost200Response generatePublicKey(GeneratePublicKeyRequest generatePublicKeyRequest, String format) throws ApiException {
+        ApiResponse<FlexV1KeysPost200Response> resp = generatePublicKeyWithHttpInfo(generatePublicKeyRequest, format);
         return resp.getData();
     }
 
@@ -139,11 +143,12 @@ public class KeyGenerationApi {
      * Generate Key
      * Generate a one-time use public key and key ID to encrypt the card number in the follow-on Tokenize Card request. The key used to encrypt the card number on the cardholder’s device or browser is valid for 15 minutes and must be used to verify the signature in the response message. CyberSource recommends creating a new key for each order. Generating a key is an authenticated request initiated from your servers, prior to requesting to tokenize the card data from your customer’s device or browser.
      * @param generatePublicKeyRequest  (required)
+     * @param format Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) (optional, default to legacy)
      * @return ApiResponse&lt;FlexV1KeysPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<FlexV1KeysPost200Response> generatePublicKeyWithHttpInfo(GeneratePublicKeyRequest generatePublicKeyRequest) throws ApiException {
-        okhttp3.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest, null, null);
+    public ApiResponse<FlexV1KeysPost200Response> generatePublicKeyWithHttpInfo(GeneratePublicKeyRequest generatePublicKeyRequest, String format) throws ApiException {
+        okhttp3.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest, format, null, null);
         Type localVarReturnType = new TypeToken<FlexV1KeysPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -152,11 +157,12 @@ public class KeyGenerationApi {
      * Generate Key (asynchronously)
      * Generate a one-time use public key and key ID to encrypt the card number in the follow-on Tokenize Card request. The key used to encrypt the card number on the cardholder’s device or browser is valid for 15 minutes and must be used to verify the signature in the response message. CyberSource recommends creating a new key for each order. Generating a key is an authenticated request initiated from your servers, prior to requesting to tokenize the card data from your customer’s device or browser.
      * @param generatePublicKeyRequest  (required)
+     * @param format Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) (optional, default to legacy)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call generatePublicKeyAsync(GeneratePublicKeyRequest generatePublicKeyRequest, final ApiCallback<FlexV1KeysPost200Response> callback) throws ApiException {
+    public okhttp3.Call generatePublicKeyAsync(GeneratePublicKeyRequest generatePublicKeyRequest, String format, final ApiCallback<FlexV1KeysPost200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,7 +183,7 @@ public class KeyGenerationApi {
             };
         }
 
-        okhttp3.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = generatePublicKeyValidateBeforeCall(generatePublicKeyRequest, format, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<FlexV1KeysPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

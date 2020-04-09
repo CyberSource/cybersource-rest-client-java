@@ -1,5 +1,5 @@
 
-# Riskv1authenticationexemptionsOrderInformationBillTo
+# Riskv1authenticationsOrderInformationBillTo
 
 ## Properties
 Name | Type | Description | Notes

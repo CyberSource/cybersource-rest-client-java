@@ -1,5 +1,5 @@
 
-# Riskv1authenticationexemptionsOrderInformationAmountDetails
+# Riskv1authenticationsOrderInformationAmountDetails
 
 ## Properties
 Name | Type | Description | Notes

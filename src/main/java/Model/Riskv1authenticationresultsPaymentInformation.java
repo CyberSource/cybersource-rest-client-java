@@ -14,9 +14,9 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1authenticationexemptionsPaymentInformationFluidData;
 import Model.Riskv1authenticationresultsPaymentInformationCard;
 import Model.Riskv1authenticationresultsPaymentInformationTokenizedCard;
+import Model.Riskv1authenticationsPaymentInformationFluidData;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationresultsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
 public class Riskv1authenticationresultsPaymentInformation {
   @SerializedName("card")
   private Riskv1authenticationresultsPaymentInformationCard card = null;
@@ -38,7 +38,7 @@ public class Riskv1authenticationresultsPaymentInformation {
   private Riskv1authenticationresultsPaymentInformationTokenizedCard tokenizedCard = null;
 
   @SerializedName("fluidData")
-  private Riskv1authenticationexemptionsPaymentInformationFluidData fluidData = null;
+  private Riskv1authenticationsPaymentInformationFluidData fluidData = null;
 
   public Riskv1authenticationresultsPaymentInformation card(Riskv1authenticationresultsPaymentInformationCard card) {
     this.card = card;
@@ -76,7 +76,7 @@ public class Riskv1authenticationresultsPaymentInformation {
     this.tokenizedCard = tokenizedCard;
   }
 
-  public Riskv1authenticationresultsPaymentInformation fluidData(Riskv1authenticationexemptionsPaymentInformationFluidData fluidData) {
+  public Riskv1authenticationresultsPaymentInformation fluidData(Riskv1authenticationsPaymentInformationFluidData fluidData) {
     this.fluidData = fluidData;
     return this;
   }
@@ -86,11 +86,11 @@ public class Riskv1authenticationresultsPaymentInformation {
    * @return fluidData
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationexemptionsPaymentInformationFluidData getFluidData() {
+  public Riskv1authenticationsPaymentInformationFluidData getFluidData() {
     return fluidData;
   }
 
-  public void setFluidData(Riskv1authenticationexemptionsPaymentInformationFluidData fluidData) {
+  public void setFluidData(Riskv1authenticationsPaymentInformationFluidData fluidData) {
     this.fluidData = fluidData;
   }
 

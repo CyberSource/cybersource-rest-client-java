@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Riskv1authenticationexemptionsOrderInformationBillTo
+ * Riskv1authenticationsOrderInformationBillTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
-public class Riskv1authenticationexemptionsOrderInformationBillTo {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+public class Riskv1authenticationsOrderInformationBillTo {
   @SerializedName("address1")
   private String address1 = null;
 
@@ -58,7 +58,7 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
   @SerializedName("postalCode")
   private String postalCode = null;
 
-  public Riskv1authenticationexemptionsOrderInformationBillTo address1(String address1) {
+  public Riskv1authenticationsOrderInformationBillTo address1(String address1) {
     this.address1 = address1;
     return this;
   }
@@ -76,7 +76,7 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
     this.address1 = address1;
   }
 
-  public Riskv1authenticationexemptionsOrderInformationBillTo address2(String address2) {
+  public Riskv1authenticationsOrderInformationBillTo address2(String address2) {
     this.address2 = address2;
     return this;
   }
@@ -94,7 +94,7 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
     this.address2 = address2;
   }
 
-  public Riskv1authenticationexemptionsOrderInformationBillTo administrativeArea(String administrativeArea) {
+  public Riskv1authenticationsOrderInformationBillTo administrativeArea(String administrativeArea) {
     this.administrativeArea = administrativeArea;
     return this;
   }
@@ -112,7 +112,7 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
     this.administrativeArea = administrativeArea;
   }
 
-  public Riskv1authenticationexemptionsOrderInformationBillTo country(String country) {
+  public Riskv1authenticationsOrderInformationBillTo country(String country) {
     this.country = country;
     return this;
   }
@@ -130,7 +130,7 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
     this.country = country;
   }
 
-  public Riskv1authenticationexemptionsOrderInformationBillTo locality(String locality) {
+  public Riskv1authenticationsOrderInformationBillTo locality(String locality) {
     this.locality = locality;
     return this;
   }
@@ -148,7 +148,7 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
     this.locality = locality;
   }
 
-  public Riskv1authenticationexemptionsOrderInformationBillTo firstName(String firstName) {
+  public Riskv1authenticationsOrderInformationBillTo firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -166,7 +166,7 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
     this.firstName = firstName;
   }
 
-  public Riskv1authenticationexemptionsOrderInformationBillTo lastName(String lastName) {
+  public Riskv1authenticationsOrderInformationBillTo lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -184,7 +184,7 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
     this.lastName = lastName;
   }
 
-  public Riskv1authenticationexemptionsOrderInformationBillTo phoneNumber(String phoneNumber) {
+  public Riskv1authenticationsOrderInformationBillTo phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -202,7 +202,7 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
     this.phoneNumber = phoneNumber;
   }
 
-  public Riskv1authenticationexemptionsOrderInformationBillTo email(String email) {
+  public Riskv1authenticationsOrderInformationBillTo email(String email) {
     this.email = email;
     return this;
   }
@@ -220,7 +220,7 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
     this.email = email;
   }
 
-  public Riskv1authenticationexemptionsOrderInformationBillTo postalCode(String postalCode) {
+  public Riskv1authenticationsOrderInformationBillTo postalCode(String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
@@ -247,17 +247,17 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Riskv1authenticationexemptionsOrderInformationBillTo riskv1authenticationexemptionsOrderInformationBillTo = (Riskv1authenticationexemptionsOrderInformationBillTo) o;
-    return Objects.equals(this.address1, riskv1authenticationexemptionsOrderInformationBillTo.address1) &&
-        Objects.equals(this.address2, riskv1authenticationexemptionsOrderInformationBillTo.address2) &&
-        Objects.equals(this.administrativeArea, riskv1authenticationexemptionsOrderInformationBillTo.administrativeArea) &&
-        Objects.equals(this.country, riskv1authenticationexemptionsOrderInformationBillTo.country) &&
-        Objects.equals(this.locality, riskv1authenticationexemptionsOrderInformationBillTo.locality) &&
-        Objects.equals(this.firstName, riskv1authenticationexemptionsOrderInformationBillTo.firstName) &&
-        Objects.equals(this.lastName, riskv1authenticationexemptionsOrderInformationBillTo.lastName) &&
-        Objects.equals(this.phoneNumber, riskv1authenticationexemptionsOrderInformationBillTo.phoneNumber) &&
-        Objects.equals(this.email, riskv1authenticationexemptionsOrderInformationBillTo.email) &&
-        Objects.equals(this.postalCode, riskv1authenticationexemptionsOrderInformationBillTo.postalCode);
+    Riskv1authenticationsOrderInformationBillTo riskv1authenticationsOrderInformationBillTo = (Riskv1authenticationsOrderInformationBillTo) o;
+    return Objects.equals(this.address1, riskv1authenticationsOrderInformationBillTo.address1) &&
+        Objects.equals(this.address2, riskv1authenticationsOrderInformationBillTo.address2) &&
+        Objects.equals(this.administrativeArea, riskv1authenticationsOrderInformationBillTo.administrativeArea) &&
+        Objects.equals(this.country, riskv1authenticationsOrderInformationBillTo.country) &&
+        Objects.equals(this.locality, riskv1authenticationsOrderInformationBillTo.locality) &&
+        Objects.equals(this.firstName, riskv1authenticationsOrderInformationBillTo.firstName) &&
+        Objects.equals(this.lastName, riskv1authenticationsOrderInformationBillTo.lastName) &&
+        Objects.equals(this.phoneNumber, riskv1authenticationsOrderInformationBillTo.phoneNumber) &&
+        Objects.equals(this.email, riskv1authenticationsOrderInformationBillTo.email) &&
+        Objects.equals(this.postalCode, riskv1authenticationsOrderInformationBillTo.postalCode);
   }
 
   @Override
@@ -269,7 +269,7 @@ public class Riskv1authenticationexemptionsOrderInformationBillTo {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Riskv1authenticationexemptionsOrderInformationBillTo {\n");
+    sb.append("class Riskv1authenticationsOrderInformationBillTo {\n");
     
     sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("    address2: ").append(toIndentedString(address2)).append("\n");

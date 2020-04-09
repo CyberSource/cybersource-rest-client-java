@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsidreversalsPointOfSaleInformationEmv;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,13 +27,16 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
 public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
   @SerializedName("entryMode")
   private String entryMode = null;
 
   @SerializedName("terminalCapability")
   private Integer terminalCapability = null;
+
+  @SerializedName("emv")
+  private Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv = null;
 
   public TssV2TransactionsGet200ResponsePointOfSaleInformation entryMode(String entryMode) {
     this.entryMode = entryMode;
@@ -72,6 +76,24 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
     this.terminalCapability = terminalCapability;
   }
 
+  public TssV2TransactionsGet200ResponsePointOfSaleInformation emv(Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv) {
+    this.emv = emv;
+    return this;
+  }
+
+   /**
+   * Get emv
+   * @return emv
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidreversalsPointOfSaleInformationEmv getEmv() {
+    return emv;
+  }
+
+  public void setEmv(Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv) {
+    this.emv = emv;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +105,13 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
     }
     TssV2TransactionsGet200ResponsePointOfSaleInformation tssV2TransactionsGet200ResponsePointOfSaleInformation = (TssV2TransactionsGet200ResponsePointOfSaleInformation) o;
     return Objects.equals(this.entryMode, tssV2TransactionsGet200ResponsePointOfSaleInformation.entryMode) &&
-        Objects.equals(this.terminalCapability, tssV2TransactionsGet200ResponsePointOfSaleInformation.terminalCapability);
+        Objects.equals(this.terminalCapability, tssV2TransactionsGet200ResponsePointOfSaleInformation.terminalCapability) &&
+        Objects.equals(this.emv, tssV2TransactionsGet200ResponsePointOfSaleInformation.emv);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entryMode, terminalCapability);
+    return Objects.hash(entryMode, terminalCapability, emv);
   }
 
 
@@ -99,6 +122,7 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
     
     sb.append("    entryMode: ").append(toIndentedString(entryMode)).append("\n");
     sb.append("    terminalCapability: ").append(toIndentedString(terminalCapability)).append("\n");
+    sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
     sb.append("}");
     return sb.toString();
   }

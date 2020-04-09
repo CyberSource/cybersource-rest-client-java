@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.TssV2TransactionsGet200ResponseOrderInformationAmountDetails;
 import Model.TssV2TransactionsGet200ResponseOrderInformationBillTo;
+import Model.TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails;
 import Model.TssV2TransactionsGet200ResponseOrderInformationLineItems;
 import Model.TssV2TransactionsGet200ResponseOrderInformationShipTo;
 import Model.TssV2TransactionsGet200ResponseOrderInformationShippingDetails;
@@ -33,7 +34,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200ResponseOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
 public class TssV2TransactionsGet200ResponseOrderInformation {
   @SerializedName("billTo")
   private TssV2TransactionsGet200ResponseOrderInformationBillTo billTo = null;
@@ -49,6 +50,9 @@ public class TssV2TransactionsGet200ResponseOrderInformation {
 
   @SerializedName("shippingDetails")
   private TssV2TransactionsGet200ResponseOrderInformationShippingDetails shippingDetails = null;
+
+  @SerializedName("invoiceDetails")
+  private TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails invoiceDetails = null;
 
   public TssV2TransactionsGet200ResponseOrderInformation billTo(TssV2TransactionsGet200ResponseOrderInformationBillTo billTo) {
     this.billTo = billTo;
@@ -148,6 +152,24 @@ public class TssV2TransactionsGet200ResponseOrderInformation {
     this.shippingDetails = shippingDetails;
   }
 
+  public TssV2TransactionsGet200ResponseOrderInformation invoiceDetails(TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails invoiceDetails) {
+    this.invoiceDetails = invoiceDetails;
+    return this;
+  }
+
+   /**
+   * Get invoiceDetails
+   * @return invoiceDetails
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails getInvoiceDetails() {
+    return invoiceDetails;
+  }
+
+  public void setInvoiceDetails(TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails invoiceDetails) {
+    this.invoiceDetails = invoiceDetails;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -162,12 +184,13 @@ public class TssV2TransactionsGet200ResponseOrderInformation {
         Objects.equals(this.shipTo, tssV2TransactionsGet200ResponseOrderInformation.shipTo) &&
         Objects.equals(this.lineItems, tssV2TransactionsGet200ResponseOrderInformation.lineItems) &&
         Objects.equals(this.amountDetails, tssV2TransactionsGet200ResponseOrderInformation.amountDetails) &&
-        Objects.equals(this.shippingDetails, tssV2TransactionsGet200ResponseOrderInformation.shippingDetails);
+        Objects.equals(this.shippingDetails, tssV2TransactionsGet200ResponseOrderInformation.shippingDetails) &&
+        Objects.equals(this.invoiceDetails, tssV2TransactionsGet200ResponseOrderInformation.invoiceDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billTo, shipTo, lineItems, amountDetails, shippingDetails);
+    return Objects.hash(billTo, shipTo, lineItems, amountDetails, shippingDetails, invoiceDetails);
   }
 
 
@@ -181,6 +204,7 @@ public class TssV2TransactionsGet200ResponseOrderInformation {
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
     sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
+    sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
