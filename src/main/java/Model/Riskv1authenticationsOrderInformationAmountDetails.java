@@ -27,15 +27,15 @@ import java.io.IOException;
  * Contains &#x60;currency&#x60; and &#x60;totalAmount&#x60; for this order.
  */
 @ApiModel(description = "Contains `currency` and `totalAmount` for this order.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
-public class Riskv1authenticationexemptionsOrderInformationAmountDetails {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+public class Riskv1authenticationsOrderInformationAmountDetails {
   @SerializedName("currency")
   private String currency = null;
 
   @SerializedName("totalAmount")
   private String totalAmount = null;
 
-  public Riskv1authenticationexemptionsOrderInformationAmountDetails currency(String currency) {
+  public Riskv1authenticationsOrderInformationAmountDetails currency(String currency) {
     this.currency = currency;
     return this;
   }
@@ -53,7 +53,7 @@ public class Riskv1authenticationexemptionsOrderInformationAmountDetails {
     this.currency = currency;
   }
 
-  public Riskv1authenticationexemptionsOrderInformationAmountDetails totalAmount(String totalAmount) {
+  public Riskv1authenticationsOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
     return this;
   }
@@ -80,9 +80,9 @@ public class Riskv1authenticationexemptionsOrderInformationAmountDetails {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Riskv1authenticationexemptionsOrderInformationAmountDetails riskv1authenticationexemptionsOrderInformationAmountDetails = (Riskv1authenticationexemptionsOrderInformationAmountDetails) o;
-    return Objects.equals(this.currency, riskv1authenticationexemptionsOrderInformationAmountDetails.currency) &&
-        Objects.equals(this.totalAmount, riskv1authenticationexemptionsOrderInformationAmountDetails.totalAmount);
+    Riskv1authenticationsOrderInformationAmountDetails riskv1authenticationsOrderInformationAmountDetails = (Riskv1authenticationsOrderInformationAmountDetails) o;
+    return Objects.equals(this.currency, riskv1authenticationsOrderInformationAmountDetails.currency) &&
+        Objects.equals(this.totalAmount, riskv1authenticationsOrderInformationAmountDetails.totalAmount);
   }
 
   @Override
@@ -94,7 +94,7 @@ public class Riskv1authenticationexemptionsOrderInformationAmountDetails {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Riskv1authenticationexemptionsOrderInformationAmountDetails {\n");
+    sb.append("class Riskv1authenticationsOrderInformationAmountDetails {\n");
     
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");

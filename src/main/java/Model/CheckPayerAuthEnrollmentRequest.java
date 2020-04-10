@@ -16,13 +16,13 @@ package Model;
 import java.util.Objects;
 import Model.Ptsv2paymentsAcquirerInformation;
 import Model.Ptsv2paymentsRecurringPaymentInformation;
-import Model.Riskv1authenticationexemptionsPaymentInformation;
 import Model.Riskv1authenticationsBuyerInformation;
 import Model.Riskv1authenticationsClientReferenceInformation;
 import Model.Riskv1authenticationsConsumerAuthenticationInformation;
 import Model.Riskv1authenticationsDeviceInformation;
 import Model.Riskv1authenticationsMerchantInformation;
 import Model.Riskv1authenticationsOrderInformation;
+import Model.Riskv1authenticationsPaymentInformation;
 import Model.Riskv1authenticationsProcessingInformation;
 import Model.Riskv1authenticationsRiskInformation;
 import Model.Riskv1authenticationsTravelInformation;
@@ -41,7 +41,7 @@ import java.util.List;
 /**
  * CheckPayerAuthEnrollmentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
 public class CheckPayerAuthEnrollmentRequest {
   @SerializedName("clientReferenceInformation")
   private Riskv1authenticationsClientReferenceInformation clientReferenceInformation = null;
@@ -50,7 +50,7 @@ public class CheckPayerAuthEnrollmentRequest {
   private Riskv1authenticationsOrderInformation orderInformation = null;
 
   @SerializedName("paymentInformation")
-  private Riskv1authenticationexemptionsPaymentInformation paymentInformation = null;
+  private Riskv1authenticationsPaymentInformation paymentInformation = null;
 
   @SerializedName("processingInformation")
   private Riskv1authenticationsProcessingInformation processingInformation = null;
@@ -118,7 +118,7 @@ public class CheckPayerAuthEnrollmentRequest {
     this.orderInformation = orderInformation;
   }
 
-  public CheckPayerAuthEnrollmentRequest paymentInformation(Riskv1authenticationexemptionsPaymentInformation paymentInformation) {
+  public CheckPayerAuthEnrollmentRequest paymentInformation(Riskv1authenticationsPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
     return this;
   }
@@ -128,11 +128,11 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return paymentInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationexemptionsPaymentInformation getPaymentInformation() {
+  public Riskv1authenticationsPaymentInformation getPaymentInformation() {
     return paymentInformation;
   }
 
-  public void setPaymentInformation(Riskv1authenticationexemptionsPaymentInformation paymentInformation) {
+  public void setPaymentInformation(Riskv1authenticationsPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
   }
 

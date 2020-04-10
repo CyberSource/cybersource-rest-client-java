@@ -1,5 +1,5 @@
 
-# Riskv1authenticationexemptionsPaymentInformationFluidData
+# Riskv1authenticationsPaymentInformationFluidData
 
 ## Properties
 Name | Type | Description | Notes

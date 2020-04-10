@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Riskv1authenticationexemptionsPaymentInformationFluidData
+ * Riskv1authenticationsPaymentInformationFluidData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
-public class Riskv1authenticationexemptionsPaymentInformationFluidData {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+public class Riskv1authenticationsPaymentInformationFluidData {
   @SerializedName("value")
   private String value = null;
 
@@ -40,7 +40,7 @@ public class Riskv1authenticationexemptionsPaymentInformationFluidData {
   @SerializedName("encoding")
   private String encoding = null;
 
-  public Riskv1authenticationexemptionsPaymentInformationFluidData value(String value) {
+  public Riskv1authenticationsPaymentInformationFluidData value(String value) {
     this.value = value;
     return this;
   }
@@ -58,7 +58,7 @@ public class Riskv1authenticationexemptionsPaymentInformationFluidData {
     this.value = value;
   }
 
-  public Riskv1authenticationexemptionsPaymentInformationFluidData keySerialNumber(String keySerialNumber) {
+  public Riskv1authenticationsPaymentInformationFluidData keySerialNumber(String keySerialNumber) {
     this.keySerialNumber = keySerialNumber;
     return this;
   }
@@ -76,7 +76,7 @@ public class Riskv1authenticationexemptionsPaymentInformationFluidData {
     this.keySerialNumber = keySerialNumber;
   }
 
-  public Riskv1authenticationexemptionsPaymentInformationFluidData descriptor(String descriptor) {
+  public Riskv1authenticationsPaymentInformationFluidData descriptor(String descriptor) {
     this.descriptor = descriptor;
     return this;
   }
@@ -94,7 +94,7 @@ public class Riskv1authenticationexemptionsPaymentInformationFluidData {
     this.descriptor = descriptor;
   }
 
-  public Riskv1authenticationexemptionsPaymentInformationFluidData encoding(String encoding) {
+  public Riskv1authenticationsPaymentInformationFluidData encoding(String encoding) {
     this.encoding = encoding;
     return this;
   }
@@ -121,11 +121,11 @@ public class Riskv1authenticationexemptionsPaymentInformationFluidData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Riskv1authenticationexemptionsPaymentInformationFluidData riskv1authenticationexemptionsPaymentInformationFluidData = (Riskv1authenticationexemptionsPaymentInformationFluidData) o;
-    return Objects.equals(this.value, riskv1authenticationexemptionsPaymentInformationFluidData.value) &&
-        Objects.equals(this.keySerialNumber, riskv1authenticationexemptionsPaymentInformationFluidData.keySerialNumber) &&
-        Objects.equals(this.descriptor, riskv1authenticationexemptionsPaymentInformationFluidData.descriptor) &&
-        Objects.equals(this.encoding, riskv1authenticationexemptionsPaymentInformationFluidData.encoding);
+    Riskv1authenticationsPaymentInformationFluidData riskv1authenticationsPaymentInformationFluidData = (Riskv1authenticationsPaymentInformationFluidData) o;
+    return Objects.equals(this.value, riskv1authenticationsPaymentInformationFluidData.value) &&
+        Objects.equals(this.keySerialNumber, riskv1authenticationsPaymentInformationFluidData.keySerialNumber) &&
+        Objects.equals(this.descriptor, riskv1authenticationsPaymentInformationFluidData.descriptor) &&
+        Objects.equals(this.encoding, riskv1authenticationsPaymentInformationFluidData.encoding);
   }
 
   @Override
@@ -137,7 +137,7 @@ public class Riskv1authenticationexemptionsPaymentInformationFluidData {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Riskv1authenticationexemptionsPaymentInformationFluidData {\n");
+    sb.append("class Riskv1authenticationsPaymentInformationFluidData {\n");
     
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    keySerialNumber: ").append(toIndentedString(keySerialNumber)).append("\n");

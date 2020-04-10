@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amountDetails** | [**Riskv1authenticationexemptionsOrderInformationAmountDetails**](Riskv1authenticationexemptionsOrderInformationAmountDetails.md) |  |  [optional]
+**amountDetails** | [**Riskv1authenticationsOrderInformationAmountDetails**](Riskv1authenticationsOrderInformationAmountDetails.md) |  |  [optional]
 **lineItems** | [**List&lt;Riskv1authenticationresultsOrderInformationLineItems&gt;**](Riskv1authenticationresultsOrderInformationLineItems.md) |  |  [optional]
 
 

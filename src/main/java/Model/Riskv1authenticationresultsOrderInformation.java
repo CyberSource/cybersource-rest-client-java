@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1authenticationexemptionsOrderInformationAmountDetails;
 import Model.Riskv1authenticationresultsOrderInformationLineItems;
+import Model.Riskv1authenticationsOrderInformationAmountDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,15 +30,15 @@ import java.util.List;
 /**
  * Riskv1authenticationresultsOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
 public class Riskv1authenticationresultsOrderInformation {
   @SerializedName("amountDetails")
-  private Riskv1authenticationexemptionsOrderInformationAmountDetails amountDetails = null;
+  private Riskv1authenticationsOrderInformationAmountDetails amountDetails = null;
 
   @SerializedName("lineItems")
   private List<Riskv1authenticationresultsOrderInformationLineItems> lineItems = null;
 
-  public Riskv1authenticationresultsOrderInformation amountDetails(Riskv1authenticationexemptionsOrderInformationAmountDetails amountDetails) {
+  public Riskv1authenticationresultsOrderInformation amountDetails(Riskv1authenticationsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
     return this;
   }
@@ -48,11 +48,11 @@ public class Riskv1authenticationresultsOrderInformation {
    * @return amountDetails
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationexemptionsOrderInformationAmountDetails getAmountDetails() {
+  public Riskv1authenticationsOrderInformationAmountDetails getAmountDetails() {
     return amountDetails;
   }
 
-  public void setAmountDetails(Riskv1authenticationexemptionsOrderInformationAmountDetails amountDetails) {
+  public void setAmountDetails(Riskv1authenticationsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
   }
 

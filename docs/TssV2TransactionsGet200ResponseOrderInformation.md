@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **lineItems** | [**List&lt;TssV2TransactionsGet200ResponseOrderInformationLineItems&gt;**](TssV2TransactionsGet200ResponseOrderInformationLineItems.md) | Transaction Line Item data. |  [optional]
 **amountDetails** | [**TssV2TransactionsGet200ResponseOrderInformationAmountDetails**](TssV2TransactionsGet200ResponseOrderInformationAmountDetails.md) |  |  [optional]
 **shippingDetails** | [**TssV2TransactionsGet200ResponseOrderInformationShippingDetails**](TssV2TransactionsGet200ResponseOrderInformationShippingDetails.md) |  |  [optional]
+**invoiceDetails** | [**TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails**](TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails.md) |  |  [optional]
 
 
 

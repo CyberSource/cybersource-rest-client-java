@@ -27,10 +27,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
   @SerializedName("processor")
   private TssV2TransactionsGet200ResponseProcessorInformationProcessor processor = null;
+
+  @SerializedName("approvalCode")
+  private String approvalCode = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedProcessorInformation processor(TssV2TransactionsGet200ResponseProcessorInformationProcessor processor) {
     this.processor = processor;
@@ -50,6 +53,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
     this.processor = processor;
   }
 
+  public TssV2TransactionsPost201ResponseEmbeddedProcessorInformation approvalCode(String approvalCode) {
+    this.approvalCode = approvalCode;
+    return this;
+  }
+
+   /**
+   * Authorization code. Returned only when the processor returns this value. 
+   * @return approvalCode
+  **/
+  @ApiModelProperty(value = "Authorization code. Returned only when the processor returns this value. ")
+  public String getApprovalCode() {
+    return approvalCode;
+  }
+
+  public void setApprovalCode(String approvalCode) {
+    this.approvalCode = approvalCode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +81,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
       return false;
     }
     TssV2TransactionsPost201ResponseEmbeddedProcessorInformation tssV2TransactionsPost201ResponseEmbeddedProcessorInformation = (TssV2TransactionsPost201ResponseEmbeddedProcessorInformation) o;
-    return Objects.equals(this.processor, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.processor);
+    return Objects.equals(this.processor, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.processor) &&
+        Objects.equals(this.approvalCode, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.approvalCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processor);
+    return Objects.hash(processor, approvalCode);
   }
 
 
@@ -75,6 +97,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {\n");
     
     sb.append("    processor: ").append(toIndentedString(processor)).append("\n");
+    sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsidreversalsOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-26T01:49:30.319+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
 public class Ptsv2paymentsidreversalsOrderInformation {
   @SerializedName("amountDetails")
   private Ptsv2paymentsidreversalsOrderInformationAmountDetails amountDetails = null;

@@ -1,5 +1,5 @@
 
-# RiskV1AuthenticationExcemptionsPost400Response
+# RiskV1AuthenticationsPost400Response
 
 ## Properties
 Name | Type | Description | Notes

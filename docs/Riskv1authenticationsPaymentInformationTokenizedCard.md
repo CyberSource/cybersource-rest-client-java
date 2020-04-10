@@ -1,5 +1,5 @@
 
-# Riskv1authenticationexemptionsPaymentInformationTokenizedCard
+# Riskv1authenticationsPaymentInformationTokenizedCard
 
 ## Properties
 Name | Type | Description | Notes
