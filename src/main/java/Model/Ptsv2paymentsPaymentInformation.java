@@ -18,7 +18,6 @@ import Model.Ptsv2paymentsPaymentInformationBank;
 import Model.Ptsv2paymentsPaymentInformationCard;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Ptsv2paymentsPaymentInformationFluidData;
-import Model.Ptsv2paymentsPaymentInformationPaymentType;
 import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -32,7 +31,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
 public class Ptsv2paymentsPaymentInformation {
   @SerializedName("card")
   private Ptsv2paymentsPaymentInformationCard card = null;
@@ -48,9 +47,6 @@ public class Ptsv2paymentsPaymentInformation {
 
   @SerializedName("bank")
   private Ptsv2paymentsPaymentInformationBank bank = null;
-
-  @SerializedName("paymentType")
-  private Ptsv2paymentsPaymentInformationPaymentType paymentType = null;
 
   @SerializedName("initiationChannel")
   private String initiationChannel = null;
@@ -145,24 +141,6 @@ public class Ptsv2paymentsPaymentInformation {
     this.bank = bank;
   }
 
-  public Ptsv2paymentsPaymentInformation paymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
-    this.paymentType = paymentType;
-    return this;
-  }
-
-   /**
-   * Get paymentType
-   * @return paymentType
-  **/
-  @ApiModelProperty(value = "")
-  public Ptsv2paymentsPaymentInformationPaymentType getPaymentType() {
-    return paymentType;
-  }
-
-  public void setPaymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
-    this.paymentType = paymentType;
-  }
-
   public Ptsv2paymentsPaymentInformation initiationChannel(String initiationChannel) {
     this.initiationChannel = initiationChannel;
     return this;
@@ -196,13 +174,12 @@ public class Ptsv2paymentsPaymentInformation {
         Objects.equals(this.fluidData, ptsv2paymentsPaymentInformation.fluidData) &&
         Objects.equals(this.customer, ptsv2paymentsPaymentInformation.customer) &&
         Objects.equals(this.bank, ptsv2paymentsPaymentInformation.bank) &&
-        Objects.equals(this.paymentType, ptsv2paymentsPaymentInformation.paymentType) &&
         Objects.equals(this.initiationChannel, ptsv2paymentsPaymentInformation.initiationChannel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, fluidData, customer, bank, paymentType, initiationChannel);
+    return Objects.hash(card, tokenizedCard, fluidData, customer, bank, initiationChannel);
   }
 
 
@@ -216,7 +193,6 @@ public class Ptsv2paymentsPaymentInformation {
     sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("    initiationChannel: ").append(toIndentedString(initiationChannel)).append("\n");
     sb.append("}");
     return sb.toString();

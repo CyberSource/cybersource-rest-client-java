@@ -27,7 +27,7 @@ import java.io.IOException;
  * List of the line items from the order, which are included in an invoice.
  */
 @ApiModel(description = "List of the line items from the order, which are included in an invoice.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
 public class Invoicingv2invoicesOrderInformationLineItems {
   @SerializedName("productSku")
   private String productSku = null;

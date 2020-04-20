@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsPaymentInformationPaymentTypeMethod;
+import Model.Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,10 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Ptsv2paymentsPaymentInformationPaymentType
+ * Ptsv2paymentsidrefundsPaymentInformationPaymentType
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
-public class Ptsv2paymentsPaymentInformationPaymentType {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+public class Ptsv2paymentsidrefundsPaymentInformationPaymentType {
   @SerializedName("name")
   private String name = null;
 
@@ -36,18 +36,18 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
   private String subTypeName = null;
 
   @SerializedName("method")
-  private Ptsv2paymentsPaymentInformationPaymentTypeMethod method = null;
+  private Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod method = null;
 
-  public Ptsv2paymentsPaymentInformationPaymentType name(String name) {
+  public Ptsv2paymentsidrefundsPaymentInformationPaymentType name(String name) {
     this.name = name;
     return this;
   }
 
    /**
-   * A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. Possible values: - &#x60;CARD&#x60; (use this for a PIN debit transaction) 
+   * A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. Possible values: - &#x60;CARD&#x60; (use this for a PIN debit transaction) - &#x60;CHECK&#x60; (use this for eCheck payment and this is equivalent to invoke ics_ecp_debit or ics_ecp_credit service) 
    * @return name
   **/
-  @ApiModelProperty(value = "A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. Possible values: - `CARD` (use this for a PIN debit transaction) ")
+  @ApiModelProperty(value = "A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. Possible values: - `CARD` (use this for a PIN debit transaction) - `CHECK` (use this for eCheck payment and this is equivalent to invoke ics_ecp_debit or ics_ecp_credit service) ")
   public String getName() {
     return name;
   }
@@ -56,7 +56,7 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
     this.name = name;
   }
 
-  public Ptsv2paymentsPaymentInformationPaymentType subTypeName(String subTypeName) {
+  public Ptsv2paymentsidrefundsPaymentInformationPaymentType subTypeName(String subTypeName) {
     this.subTypeName = subTypeName;
     return this;
   }
@@ -74,7 +74,7 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
     this.subTypeName = subTypeName;
   }
 
-  public Ptsv2paymentsPaymentInformationPaymentType method(Ptsv2paymentsPaymentInformationPaymentTypeMethod method) {
+  public Ptsv2paymentsidrefundsPaymentInformationPaymentType method(Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod method) {
     this.method = method;
     return this;
   }
@@ -84,11 +84,11 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
    * @return method
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsPaymentInformationPaymentTypeMethod getMethod() {
+  public Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod getMethod() {
     return method;
   }
 
-  public void setMethod(Ptsv2paymentsPaymentInformationPaymentTypeMethod method) {
+  public void setMethod(Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod method) {
     this.method = method;
   }
 
@@ -101,10 +101,10 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Ptsv2paymentsPaymentInformationPaymentType ptsv2paymentsPaymentInformationPaymentType = (Ptsv2paymentsPaymentInformationPaymentType) o;
-    return Objects.equals(this.name, ptsv2paymentsPaymentInformationPaymentType.name) &&
-        Objects.equals(this.subTypeName, ptsv2paymentsPaymentInformationPaymentType.subTypeName) &&
-        Objects.equals(this.method, ptsv2paymentsPaymentInformationPaymentType.method);
+    Ptsv2paymentsidrefundsPaymentInformationPaymentType ptsv2paymentsidrefundsPaymentInformationPaymentType = (Ptsv2paymentsidrefundsPaymentInformationPaymentType) o;
+    return Objects.equals(this.name, ptsv2paymentsidrefundsPaymentInformationPaymentType.name) &&
+        Objects.equals(this.subTypeName, ptsv2paymentsidrefundsPaymentInformationPaymentType.subTypeName) &&
+        Objects.equals(this.method, ptsv2paymentsidrefundsPaymentInformationPaymentType.method);
   }
 
   @Override
@@ -116,7 +116,7 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Ptsv2paymentsPaymentInformationPaymentType {\n");
+    sb.append("class Ptsv2paymentsidrefundsPaymentInformationPaymentType {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    subTypeName: ").append(toIndentedString(subTypeName)).append("\n");
