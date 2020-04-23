@@ -274,7 +274,7 @@ public class ApiClient {
 	 * @return An instance of OkHttpClient
 	 */
 	public ApiClient setBasePath(String basePath) {
-		this.basePath = this.basePath.concat(merchantConfig.getRequestHost());
+		this.basePath = this.basePath.concat(merchantConfig.getRequestHost().trim());
 		return this;
 	}
 
@@ -1301,13 +1301,15 @@ public class ApiClient {
 			authorization.setJWTRequestBody(requestBody);
 			merchantConfig.setRequestJsonPath(GlobalLabelParameters.POST_OBJECT_METHOD_REQUEST_PATH);
 			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(logger);
+			
+			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
 
 			if (isMerchantDetails) {
 				String token = authorization.getToken(merchantConfig);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
 					addDefaultHeader("Date", PropertiesUtil.date);
-					addDefaultHeader("Host", merchantConfig.getRequestHost());
+					addDefaultHeader("Host", merchantConfig.getRequestHost().trim());
 					addDefaultHeader("v-c-merchant-id", merchantConfig.getMerchantID());
 					addDefaultHeader("Signature", token);
 					addDefaultHeader("User-Agent", "Mozilla/5.0");
