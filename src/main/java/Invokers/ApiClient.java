@@ -274,7 +274,7 @@ public class ApiClient {
 	 * @return An instance of OkHttpClient
 	 */
 	public ApiClient setBasePath(String basePath) {
-		this.basePath = this.basePath.concat(merchantConfig.getRequestHost());
+		this.basePath = this.basePath.concat(merchantConfig.getRequestHost().trim());
 		return this;
 	}
 
@@ -1301,13 +1301,15 @@ public class ApiClient {
 			authorization.setJWTRequestBody(requestBody);
 			merchantConfig.setRequestJsonPath(GlobalLabelParameters.POST_OBJECT_METHOD_REQUEST_PATH);
 			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(logger);
+			
+			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
 
 			if (isMerchantDetails) {
 				String token = authorization.getToken(merchantConfig);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
 					addDefaultHeader("Date", PropertiesUtil.date);
-					addDefaultHeader("Host", merchantConfig.getRequestHost());
+					addDefaultHeader("Host", merchantConfig.getRequestHost().trim());
 					addDefaultHeader("v-c-merchant-id", merchantConfig.getMerchantID());
 					addDefaultHeader("Signature", token);
 					addDefaultHeader("User-Agent", "Mozilla/5.0");
@@ -1421,7 +1423,7 @@ public class ApiClient {
 	 */
 	public String buildUrl(String path, List<Pair> queryParams) {
 		final StringBuilder url = new StringBuilder();
-		url.append(GlobalLabelParameters.URL_PREFIX).append(merchantConfig.getRequestHost()).append(path);
+		url.append(GlobalLabelParameters.URL_PREFIX).append(merchantConfig.getRequestHost().trim()).append(path);
 
 		if (queryParams != null && !queryParams.isEmpty()) {
 			// support (constant) query string in `path`, e.g. "/posts?draft=1"
