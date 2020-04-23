@@ -1421,7 +1421,7 @@ public class ApiClient {
 	 */
 	public String buildUrl(String path, List<Pair> queryParams) {
 		final StringBuilder url = new StringBuilder();
-		url.append(GlobalLabelParameters.URL_PREFIX).append(merchantConfig.getRequestHost()).append(path);
+		url.append(GlobalLabelParameters.URL_PREFIX).append(merchantConfig.getRequestHost().trim()).append(path);
 
 		if (queryParams != null && !queryParams.isEmpty()) {
 			// support (constant) query string in `path`, e.g. "/posts?draft=1"
