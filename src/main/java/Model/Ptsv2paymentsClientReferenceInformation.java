@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsClientReferenceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
 public class Ptsv2paymentsClientReferenceInformation {
   @SerializedName("code")
   private String code = null;
@@ -40,6 +40,15 @@ public class Ptsv2paymentsClientReferenceInformation {
 
   @SerializedName("partner")
   private Ptsv2paymentsClientReferenceInformationPartner partner = null;
+
+  @SerializedName("applicationName")
+  private String applicationName = null;
+
+  @SerializedName("applicationVersion")
+  private String applicationVersion = null;
+
+  @SerializedName("applicationUser")
+  private String applicationUser = null;
 
   public Ptsv2paymentsClientReferenceInformation code(String code) {
     this.code = code;
@@ -113,6 +122,60 @@ public class Ptsv2paymentsClientReferenceInformation {
     this.partner = partner;
   }
 
+  public Ptsv2paymentsClientReferenceInformation applicationName(String applicationName) {
+    this.applicationName = applicationName;
+    return this;
+  }
+
+   /**
+   * The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource. 
+   * @return applicationName
+  **/
+  @ApiModelProperty(value = "The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource. ")
+  public String getApplicationName() {
+    return applicationName;
+  }
+
+  public void setApplicationName(String applicationName) {
+    this.applicationName = applicationName;
+  }
+
+  public Ptsv2paymentsClientReferenceInformation applicationVersion(String applicationVersion) {
+    this.applicationVersion = applicationVersion;
+    return this;
+  }
+
+   /**
+   * Version of the CyberSource application or integration used for a transaction. 
+   * @return applicationVersion
+  **/
+  @ApiModelProperty(value = "Version of the CyberSource application or integration used for a transaction. ")
+  public String getApplicationVersion() {
+    return applicationVersion;
+  }
+
+  public void setApplicationVersion(String applicationVersion) {
+    this.applicationVersion = applicationVersion;
+  }
+
+  public Ptsv2paymentsClientReferenceInformation applicationUser(String applicationUser) {
+    this.applicationUser = applicationUser;
+    return this;
+  }
+
+   /**
+   * The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method. 
+   * @return applicationUser
+  **/
+  @ApiModelProperty(value = "The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method. ")
+  public String getApplicationUser() {
+    return applicationUser;
+  }
+
+  public void setApplicationUser(String applicationUser) {
+    this.applicationUser = applicationUser;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,12 +189,15 @@ public class Ptsv2paymentsClientReferenceInformation {
     return Objects.equals(this.code, ptsv2paymentsClientReferenceInformation.code) &&
         Objects.equals(this.transactionId, ptsv2paymentsClientReferenceInformation.transactionId) &&
         Objects.equals(this.comments, ptsv2paymentsClientReferenceInformation.comments) &&
-        Objects.equals(this.partner, ptsv2paymentsClientReferenceInformation.partner);
+        Objects.equals(this.partner, ptsv2paymentsClientReferenceInformation.partner) &&
+        Objects.equals(this.applicationName, ptsv2paymentsClientReferenceInformation.applicationName) &&
+        Objects.equals(this.applicationVersion, ptsv2paymentsClientReferenceInformation.applicationVersion) &&
+        Objects.equals(this.applicationUser, ptsv2paymentsClientReferenceInformation.applicationUser);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, transactionId, comments, partner);
+    return Objects.hash(code, transactionId, comments, partner, applicationName, applicationVersion, applicationUser);
   }
 
 
@@ -144,6 +210,9 @@ public class Ptsv2paymentsClientReferenceInformation {
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
+    sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
+    sb.append("    applicationVersion: ").append(toIndentedString(applicationVersion)).append("\n");
+    sb.append("    applicationUser: ").append(toIndentedString(applicationUser)).append("\n");
     sb.append("}");
     return sb.toString();
   }

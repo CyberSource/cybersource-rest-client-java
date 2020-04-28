@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformationBankTransferOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
 public class Ptsv2paymentsProcessingInformationBankTransferOptions {
   @SerializedName("declineAvsFlags")
   private String declineAvsFlags = null;
@@ -57,6 +57,9 @@ public class Ptsv2paymentsProcessingInformationBankTransferOptions {
 
   @SerializedName("fraudScreeningLevel")
   private String fraudScreeningLevel = null;
+
+  @SerializedName("customerPresent")
+  private String customerPresent = null;
 
   public Ptsv2paymentsProcessingInformationBankTransferOptions declineAvsFlags(String declineAvsFlags) {
     this.declineAvsFlags = declineAvsFlags;
@@ -238,6 +241,24 @@ public class Ptsv2paymentsProcessingInformationBankTransferOptions {
     this.fraudScreeningLevel = fraudScreeningLevel;
   }
 
+  public Ptsv2paymentsProcessingInformationBankTransferOptions customerPresent(String customerPresent) {
+    this.customerPresent = customerPresent;
+    return this;
+  }
+
+   /**
+   * Indicates whether a customer is physically present and whether the customer is enrolling in CyberSource Recurring Billing.  Possible values: - &#x60;1&#x60;: Customer is present and not enrolling. - &#x60;2&#x60;: Customer is not present and not enrolling. - &#x60;3&#x60;: Customer is present and enrolling. - &#x60;4&#x60;: Customer is not present and enrolling. 
+   * @return customerPresent
+  **/
+  @ApiModelProperty(value = "Indicates whether a customer is physically present and whether the customer is enrolling in CyberSource Recurring Billing.  Possible values: - `1`: Customer is present and not enrolling. - `2`: Customer is not present and not enrolling. - `3`: Customer is present and enrolling. - `4`: Customer is not present and enrolling. ")
+  public String getCustomerPresent() {
+    return customerPresent;
+  }
+
+  public void setCustomerPresent(String customerPresent) {
+    this.customerPresent = customerPresent;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -257,12 +278,13 @@ public class Ptsv2paymentsProcessingInformationBankTransferOptions {
         Objects.equals(this.customerMemo, ptsv2paymentsProcessingInformationBankTransferOptions.customerMemo) &&
         Objects.equals(this.paymentCategoryCode, ptsv2paymentsProcessingInformationBankTransferOptions.paymentCategoryCode) &&
         Objects.equals(this.settlementMethod, ptsv2paymentsProcessingInformationBankTransferOptions.settlementMethod) &&
-        Objects.equals(this.fraudScreeningLevel, ptsv2paymentsProcessingInformationBankTransferOptions.fraudScreeningLevel);
+        Objects.equals(this.fraudScreeningLevel, ptsv2paymentsProcessingInformationBankTransferOptions.fraudScreeningLevel) &&
+        Objects.equals(this.customerPresent, ptsv2paymentsProcessingInformationBankTransferOptions.customerPresent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(declineAvsFlags, secCode, terminalCity, terminalState, effectiveDate, partialPaymentId, customerMemo, paymentCategoryCode, settlementMethod, fraudScreeningLevel);
+    return Objects.hash(declineAvsFlags, secCode, terminalCity, terminalState, effectiveDate, partialPaymentId, customerMemo, paymentCategoryCode, settlementMethod, fraudScreeningLevel, customerPresent);
   }
 
 
@@ -281,6 +303,7 @@ public class Ptsv2paymentsProcessingInformationBankTransferOptions {
     sb.append("    paymentCategoryCode: ").append(toIndentedString(paymentCategoryCode)).append("\n");
     sb.append("    settlementMethod: ").append(toIndentedString(settlementMethod)).append("\n");
     sb.append("    fraudScreeningLevel: ").append(toIndentedString(fraudScreeningLevel)).append("\n");
+    sb.append("    customerPresent: ").append(toIndentedString(customerPresent)).append("\n");
     sb.append("}");
     return sb.toString();
   }

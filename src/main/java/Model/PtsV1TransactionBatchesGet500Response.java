@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PtsV1TransactionBatchesGet500Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
 public class PtsV1TransactionBatchesGet500Response {
   @SerializedName("errorInformation")
   private PtsV1TransactionBatchesGet500ResponseErrorInformation errorInformation = null;

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * RiskV1AddressVerificationsPost201ResponseAddressVerificationInformationStandardAddress
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
 public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformationStandardAddress {
   @SerializedName("address1")
   private RiskV1AddressVerificationsPost201ResponseAddressVerificationInformationStandardAddressAddress1 address1 = null;

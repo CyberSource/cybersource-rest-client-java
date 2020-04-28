@@ -1,5 +1,5 @@
 
-# Ptsv2paymentsPaymentInformationPaymentTypeMethod
+# Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod
 
 ## Properties
 Name | Type | Description | Notes

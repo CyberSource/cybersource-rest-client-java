@@ -28,7 +28,7 @@ import java.io.IOException;
  * The Network Token associated with the Instrument Identifier (PAN)
  */
 @ApiModel(description = "The Network Token associated with the Instrument Identifier (PAN)")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
 public class TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard {
   @SerializedName("state")
   private String state = null;

@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation;
+import Model.Ptsv2payoutsClientReferenceInformation;
 import Model.Ptsv2payoutsMerchantInformation;
 import Model.Ptsv2payoutsOrderInformation;
 import Model.Ptsv2payoutsPaymentInformation;
@@ -33,10 +33,10 @@ import java.io.IOException;
 /**
  * OctCreatePaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
 public class OctCreatePaymentRequest {
   @SerializedName("clientReferenceInformation")
-  private PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation = null;
+  private Ptsv2payoutsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Ptsv2payoutsOrderInformation orderInformation = null;
@@ -56,7 +56,7 @@ public class OctCreatePaymentRequest {
   @SerializedName("paymentInformation")
   private Ptsv2payoutsPaymentInformation paymentInformation = null;
 
-  public OctCreatePaymentRequest clientReferenceInformation(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation) {
+  public OctCreatePaymentRequest clientReferenceInformation(Ptsv2payoutsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -66,11 +66,11 @@ public class OctCreatePaymentRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation getClientReferenceInformation() {
+  public Ptsv2payoutsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Ptsv2payoutsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

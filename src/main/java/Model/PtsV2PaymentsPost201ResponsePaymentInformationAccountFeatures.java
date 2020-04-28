@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,17 +23,22 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
 public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   @SerializedName("accountType")
   private String accountType = null;
 
   @SerializedName("accountStatus")
   private String accountStatus = null;
+
+  @SerializedName("balances")
+  private List<PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances> balances = null;
 
   @SerializedName("balanceAmount")
   private String balanceAmount = null;
@@ -115,6 +121,32 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
     this.accountStatus = accountStatus;
   }
 
+  public PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures balances(List<PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances> balances) {
+    this.balances = balances;
+    return this;
+  }
+
+  public PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures addBalancesItem(PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances balancesItem) {
+    if (this.balances == null) {
+      this.balances = new ArrayList<PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances>();
+    }
+    this.balances.add(balancesItem);
+    return this;
+  }
+
+   /**
+   * This is an array of multiple balances information an issuer can return for a given card.
+   * @return balances
+  **/
+  @ApiModelProperty(value = "This is an array of multiple balances information an issuer can return for a given card.")
+  public List<PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances> getBalances() {
+    return balances;
+  }
+
+  public void setBalances(List<PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances> balances) {
+    this.balances = balances;
+  }
+
   public PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures balanceAmount(String balanceAmount) {
     this.balanceAmount = balanceAmount;
     return this;
@@ -175,10 +207,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **+**  - **-** 
+   * Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **positive**  - **negative** 
    * @return balanceSign
   **/
-  @ApiModelProperty(value = "Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **+**  - **-** ")
+  @ApiModelProperty(value = "Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **positive**  - **negative** ")
   public String getBalanceSign() {
     return balanceSign;
   }
@@ -397,6 +429,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
     PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures = (PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures) o;
     return Objects.equals(this.accountType, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.accountType) &&
         Objects.equals(this.accountStatus, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.accountStatus) &&
+        Objects.equals(this.balances, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.balances) &&
         Objects.equals(this.balanceAmount, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.balanceAmount) &&
         Objects.equals(this.balanceAmountType, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.balanceAmountType) &&
         Objects.equals(this.currency, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.currency) &&
@@ -416,7 +449,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountType, accountStatus, balanceAmount, balanceAmountType, currency, balanceSign, affluenceIndicator, category, commercial, group, healthCare, payroll, level3Eligible, pinlessDebit, signatureDebit, prepaid, regulated);
+    return Objects.hash(accountType, accountStatus, balances, balanceAmount, balanceAmountType, currency, balanceSign, affluenceIndicator, category, commercial, group, healthCare, payroll, level3Eligible, pinlessDebit, signatureDebit, prepaid, regulated);
   }
 
 
@@ -427,6 +460,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
     
     sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
     sb.append("    accountStatus: ").append(toIndentedString(accountStatus)).append("\n");
+    sb.append("    balances: ").append(toIndentedString(balances)).append("\n");
     sb.append("    balanceAmount: ").append(toIndentedString(balanceAmount)).append("\n");
     sb.append("    balanceAmountType: ").append(toIndentedString(balanceAmountType)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");

@@ -24,14 +24,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Ptsv2paymentsPaymentInformationPaymentTypeMethod
+ * Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-09T11:41:34.789+05:30")
-public class Ptsv2paymentsPaymentInformationPaymentTypeMethod {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+public class Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod {
   @SerializedName("name")
   private String name = null;
 
-  public Ptsv2paymentsPaymentInformationPaymentTypeMethod name(String name) {
+  public Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod name(String name) {
     this.name = name;
     return this;
   }
@@ -58,8 +58,8 @@ public class Ptsv2paymentsPaymentInformationPaymentTypeMethod {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Ptsv2paymentsPaymentInformationPaymentTypeMethod ptsv2paymentsPaymentInformationPaymentTypeMethod = (Ptsv2paymentsPaymentInformationPaymentTypeMethod) o;
-    return Objects.equals(this.name, ptsv2paymentsPaymentInformationPaymentTypeMethod.name);
+    Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod = (Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod) o;
+    return Objects.equals(this.name, ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod.name);
   }
 
   @Override
@@ -71,7 +71,7 @@ public class Ptsv2paymentsPaymentInformationPaymentTypeMethod {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Ptsv2paymentsPaymentInformationPaymentTypeMethod {\n");
+    sb.append("class Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
