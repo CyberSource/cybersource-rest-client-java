@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationInvoiceDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class Ptsv2paymentsOrderInformationInvoiceDetails {
   @SerializedName("invoiceNumber")
   private String invoiceNumber = null;
@@ -241,10 +241,10 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
   }
 
    /**
-   * Identifier for the merchandise. Possible value:   - 1000: Gift card  This field is supported only for **American Express Direct**. 
+   * Identifier for the merchandise. This field is supported only on the processors listed in this field description.  #### American Express Direct Possible value: - 1000: Gift card  #### CyberSource through VisaNet This value must be right justified. In Japan, this value is called a _goods code_.  #### JCN Gateway This value must be right justified. In Japan, this value is called a _goods code_. 
    * @return merchandiseCode
   **/
-  @ApiModelProperty(value = "Identifier for the merchandise. Possible value:   - 1000: Gift card  This field is supported only for **American Express Direct**. ")
+  @ApiModelProperty(value = "Identifier for the merchandise. This field is supported only on the processors listed in this field description.  #### American Express Direct Possible value: - 1000: Gift card  #### CyberSource through VisaNet This value must be right justified. In Japan, this value is called a _goods code_.  #### JCN Gateway This value must be right justified. In Japan, this value is called a _goods code_. ")
   public Integer getMerchandiseCode() {
     return merchandiseCode;
   }
@@ -321,11 +321,11 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
   }
 
    /**
-   * Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway. 
+   * Transaction identifier that is generated. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway.  Optional field.  #### Card Present processing message If you included this field in the request, the returned value is the value that you sent in the request. If you did not include this field in the request, the system generated this value for you.  The difference between this reply field and the &#x60;processorInformation.systemTraceAuditNumber&#x60; field is that the system generates the system trace audit number (STAN), and you must print the receipt number on the receipt; whereas you can generate the sales slip number, and you can choose to print the sales slip number on the receipt. 
    * maximum: 99999
    * @return salesSlipNumber
   **/
-  @ApiModelProperty(value = "Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway. ")
+  @ApiModelProperty(value = "Transaction identifier that is generated. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway.  Optional field.  #### Card Present processing message If you included this field in the request, the returned value is the value that you sent in the request. If you did not include this field in the request, the system generated this value for you.  The difference between this reply field and the `processorInformation.systemTraceAuditNumber` field is that the system generates the system trace audit number (STAN), and you must print the receipt number on the receipt; whereas you can generate the sales slip number, and you can choose to print the sales slip number on the receipt. ")
   public Integer getSalesSlipNumber() {
     return salesSlipNumber;
   }

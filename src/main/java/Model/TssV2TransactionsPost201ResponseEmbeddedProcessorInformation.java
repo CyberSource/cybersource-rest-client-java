@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
   @SerializedName("processor")
   private TssV2TransactionsGet200ResponseProcessorInformationProcessor processor = null;
@@ -59,10 +59,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
   }
 
    /**
-   * Authorization code. Returned only when the processor returns this value. 
+   * Authorization code. Returned only when the processor returns this value.  The length of this value depends on your processor.  Returned by authorization service.  #### Elavon Encrypted Account Number Program The returned value is OFFLINE. See \&quot;Encoded Account Numbers,\&quot; page 136.  #### TSYS Acquiring Solutions The returned value for a successful zero amount authorization is 000000. See \&quot;Zero Amount Authorizations,\&quot; page 230. 
    * @return approvalCode
   **/
-  @ApiModelProperty(value = "Authorization code. Returned only when the processor returns this value. ")
+  @ApiModelProperty(value = "Authorization code. Returned only when the processor returns this value.  The length of this value depends on your processor.  Returned by authorization service.  #### Elavon Encrypted Account Number Program The returned value is OFFLINE. See \"Encoded Account Numbers,\" page 136.  #### TSYS Acquiring Solutions The returned value for a successful zero amount authorization is 000000. See \"Zero Amount Authorizations,\" page 230. ")
   public String getApprovalCode() {
     return approvalCode;
   }

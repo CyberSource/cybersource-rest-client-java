@@ -27,7 +27,7 @@ import java.io.IOException;
  * A link to the previous collection starting at the supplied offset minus the supplied limit.
  */
 @ApiModel(description = "A link to the previous collection starting at the supplied offset minus the supplied limit.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class PIForIILinkPrev {
   @SerializedName("href")
   private String href = null;

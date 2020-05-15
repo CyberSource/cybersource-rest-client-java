@@ -40,7 +40,7 @@ import java.util.List;
 /**
  * RefundCaptureRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class RefundCaptureRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;

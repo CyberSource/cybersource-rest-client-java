@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Riskv1decisionsProcessorInformationAvs;
+import Model.Riskv1decisionsProcessorInformationCardVerification;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,10 +29,13 @@ import java.io.IOException;
  * Contains information related to the payment processor.
  */
 @ApiModel(description = "Contains information related to the payment processor.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class Riskv1decisionsProcessorInformation {
   @SerializedName("avs")
   private Riskv1decisionsProcessorInformationAvs avs = null;
+
+  @SerializedName("cardVerification")
+  private Riskv1decisionsProcessorInformationCardVerification cardVerification = null;
 
   public Riskv1decisionsProcessorInformation avs(Riskv1decisionsProcessorInformationAvs avs) {
     this.avs = avs;
@@ -51,6 +55,24 @@ public class Riskv1decisionsProcessorInformation {
     this.avs = avs;
   }
 
+  public Riskv1decisionsProcessorInformation cardVerification(Riskv1decisionsProcessorInformationCardVerification cardVerification) {
+    this.cardVerification = cardVerification;
+    return this;
+  }
+
+   /**
+   * Get cardVerification
+   * @return cardVerification
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsProcessorInformationCardVerification getCardVerification() {
+    return cardVerification;
+  }
+
+  public void setCardVerification(Riskv1decisionsProcessorInformationCardVerification cardVerification) {
+    this.cardVerification = cardVerification;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +83,13 @@ public class Riskv1decisionsProcessorInformation {
       return false;
     }
     Riskv1decisionsProcessorInformation riskv1decisionsProcessorInformation = (Riskv1decisionsProcessorInformation) o;
-    return Objects.equals(this.avs, riskv1decisionsProcessorInformation.avs);
+    return Objects.equals(this.avs, riskv1decisionsProcessorInformation.avs) &&
+        Objects.equals(this.cardVerification, riskv1decisionsProcessorInformation.cardVerification);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(avs);
+    return Objects.hash(avs, cardVerification);
   }
 
 
@@ -76,6 +99,7 @@ public class Riskv1decisionsProcessorInformation {
     sb.append("class Riskv1decisionsProcessorInformation {\n");
     
     sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
+    sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
     sb.append("}");
     return sb.toString();
   }

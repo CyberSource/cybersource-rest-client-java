@@ -129,7 +129,7 @@ public class PaymentsApi {
 
     /**
      * Process a Payment
-     * Authorize the payment for the transaction. 
+     * Authorize the payment for the transaction. Authorization can be requested with Capture, Decision Manager, Payer Authentication(3ds). Find more on [Authorization with Add-On Features page.] (https://developer.cybersource.com/api/authorization-add-ons.html) 
      * @param createPaymentRequest  (required)
      * @return PtsV2PaymentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -141,7 +141,7 @@ public class PaymentsApi {
 
     /**
      * Process a Payment
-     * Authorize the payment for the transaction. 
+     * Authorize the payment for the transaction. Authorization can be requested with Capture, Decision Manager, Payer Authentication(3ds). Find more on [Authorization with Add-On Features page.] (https://developer.cybersource.com/api/authorization-add-ons.html) 
      * @param createPaymentRequest  (required)
      * @return ApiResponse&lt;PtsV2PaymentsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -154,7 +154,7 @@ public class PaymentsApi {
 
     /**
      * Process a Payment (asynchronously)
-     * Authorize the payment for the transaction. 
+     * Authorize the payment for the transaction. Authorization can be requested with Capture, Decision Manager, Payer Authentication(3ds). Find more on [Authorization with Add-On Features page.] (https://developer.cybersource.com/api/authorization-add-ons.html) 
      * @param createPaymentRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

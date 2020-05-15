@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains travel-related passenger details used by DM service only.
  */
 @ApiModel(description = "Contains travel-related passenger details used by DM service only.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class Ptsv2paymentsOrderInformationPassenger {
   @SerializedName("type")
   private String type = null;

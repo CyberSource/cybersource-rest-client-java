@@ -17,7 +17,7 @@ import java.util.Objects;
 import Model.Riskv1authenticationsOrderInformationAmountDetails;
 import Model.Riskv1authenticationsOrderInformationBillTo;
 import Model.Riskv1authenticationsOrderInformationLineItems;
-import Model.Riskv1authenticationsOrderInformationShipTo;
+import Model.Riskv1decisionsOrderInformationShipTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * Riskv1authenticationsOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class Riskv1authenticationsOrderInformation {
   @SerializedName("amountDetails")
   private Riskv1authenticationsOrderInformationAmountDetails amountDetails = null;
@@ -47,7 +47,7 @@ public class Riskv1authenticationsOrderInformation {
   private Boolean reordered = null;
 
   @SerializedName("shipTo")
-  private Riskv1authenticationsOrderInformationShipTo shipTo = null;
+  private Riskv1decisionsOrderInformationShipTo shipTo = null;
 
   @SerializedName("lineItems")
   private List<Riskv1authenticationsOrderInformationLineItems> lineItems = null;
@@ -130,7 +130,7 @@ public class Riskv1authenticationsOrderInformation {
     this.reordered = reordered;
   }
 
-  public Riskv1authenticationsOrderInformation shipTo(Riskv1authenticationsOrderInformationShipTo shipTo) {
+  public Riskv1authenticationsOrderInformation shipTo(Riskv1decisionsOrderInformationShipTo shipTo) {
     this.shipTo = shipTo;
     return this;
   }
@@ -140,11 +140,11 @@ public class Riskv1authenticationsOrderInformation {
    * @return shipTo
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsOrderInformationShipTo getShipTo() {
+  public Riskv1decisionsOrderInformationShipTo getShipTo() {
     return shipTo;
   }
 
-  public void setShipTo(Riskv1authenticationsOrderInformationShipTo shipTo) {
+  public void setShipTo(Riskv1decisionsOrderInformationShipTo shipTo) {
     this.shipTo = shipTo;
   }
 

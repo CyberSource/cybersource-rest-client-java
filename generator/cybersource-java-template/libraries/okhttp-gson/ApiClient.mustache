@@ -141,6 +141,7 @@ public class ApiClient {
 	private InputStream sslCaCert;
 	private boolean verifyingSsl;
 	private KeyManager[] keyManagers;
+	private String acceptHeader = "";
 
 	private OkHttpClient httpClient;
 	private JSON json;
@@ -264,6 +265,13 @@ public class ApiClient {
 	 */
 	public String getBasePath() {
 		return basePath;
+	}
+	
+	/**
+	 * @param acceptHeader the acceptHeader to set
+	 */
+	public void setAcceptHeader(String acceptHeader) {
+		this.acceptHeader = acceptHeader;
 	}
 
 	/**
@@ -1250,6 +1258,14 @@ public class ApiClient {
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		callAuthenticationHeader(method, path, body, queryParams);
+		
+		if (acceptHeader != null && !acceptHeader.isEmpty()) {
+			String defaultAcceptHeader = "," + headerParams.get("Accept");
+			defaultAcceptHeader = acceptHeader + defaultAcceptHeader.replace("," + acceptHeader, "");
+			headerParams.remove("Accept");
+			headerParams.put("Accept", defaultAcceptHeader);
+		}
+		
 		headerParams.putAll(defaultHeaderMap);
 		Request request = buildRequest(path, method, queryParams, body, headerParams, formParams, authNames,
 				progressRequestListener);
