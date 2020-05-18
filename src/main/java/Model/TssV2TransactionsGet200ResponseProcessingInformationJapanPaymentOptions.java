@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions {
   @SerializedName("paymentMethod")
   private String paymentMethod = null;
@@ -64,10 +64,10 @@ public class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOpt
   }
 
    /**
-   * This value is the 13-digit JCCA number.
+   * Unique Japan Credit Card Association (JCCA) terminal identifier.  The difference between this field and the &#x60;pointOfSaleInformation.terminalID&#x60; field is that you can define &#x60;pointOfSaleInformation.terminalID&#x60;, but &#x60;processingInformation.japanPaymentOptions.terminalId&#x60; is defined by the JCCA and is used only in Japan.  This field is supported only on CyberSource through VisaNet and JCN Gateway.  Optional field. 
    * @return terminalId
   **/
-  @ApiModelProperty(value = "This value is the 13-digit JCCA number.")
+  @ApiModelProperty(value = "Unique Japan Credit Card Association (JCCA) terminal identifier.  The difference between this field and the `pointOfSaleInformation.terminalID` field is that you can define `pointOfSaleInformation.terminalID`, but `processingInformation.japanPaymentOptions.terminalId` is defined by the JCCA and is used only in Japan.  This field is supported only on CyberSource through VisaNet and JCN Gateway.  Optional field. ")
   public String getTerminalId() {
     return terminalId;
   }

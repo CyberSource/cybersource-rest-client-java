@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidcapturesDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class Ptsv2paymentsidcapturesDeviceInformation {
   @SerializedName("hostName")
   private String hostName = null;
@@ -61,10 +61,10 @@ public class Ptsv2paymentsidcapturesDeviceInformation {
   }
 
    /**
-   * IP address of the customer. 
+   * IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. 
    * @return ipAddress
   **/
-  @ApiModelProperty(value = "IP address of the customer. ")
+  @ApiModelProperty(value = "IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. ")
   public String getIpAddress() {
     return ipAddress;
   }

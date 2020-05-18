@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 import Model.PtsV2PaymentsPost502Response;
 import Model.RiskV1AddressVerificationsPost201Response;
-import Model.RiskV1DecisionsPost400Response;
+import Model.RiskV1DecisionsPost400Response1;
 import Model.RiskV1ExportComplianceInquiriesPost201Response;
 import Model.ValidateExportComplianceRequest;
 import Model.VerifyCustomerAddressRequest;

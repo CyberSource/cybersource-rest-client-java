@@ -27,19 +27,28 @@ import java.io.IOException;
 /**
  * Riskv1decisionsOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class Riskv1decisionsOrderInformationLineItems {
+  @SerializedName("totalAmount")
+  private String totalAmount = null;
+
   @SerializedName("unitPrice")
   private String unitPrice = null;
 
   @SerializedName("quantity")
   private Integer quantity = null;
 
+  @SerializedName("giftCardCurrency")
+  private Integer giftCardCurrency = null;
+
   @SerializedName("productSKU")
   private String productSKU = null;
 
   @SerializedName("productRisk")
   private String productRisk = null;
+
+  @SerializedName("productDescription")
+  private String productDescription = null;
 
   @SerializedName("productName")
   private String productName = null;
@@ -56,16 +65,40 @@ public class Riskv1decisionsOrderInformationLineItems {
   @SerializedName("passenger")
   private Ptsv2paymentsOrderInformationPassenger passenger = null;
 
+  @SerializedName("shippingDestinationTypes")
+  private String shippingDestinationTypes = null;
+
+  @SerializedName("taxAmount")
+  private String taxAmount = null;
+
+  public Riskv1decisionsOrderInformationLineItems totalAmount(String totalAmount) {
+    this.totalAmount = totalAmount;
+    return this;
+  }
+
+   /**
+   * Total amount for the item. Normally calculated as the unit price times quantity.  When &#x60;orderInformation.lineItems[].productCode&#x60; is \&quot;gift_card\&quot;, this is the purchase amount total for prepaid gift cards in major units.  Example: 123.45 USD &#x3D; 123 
+   * @return totalAmount
+  **/
+  @ApiModelProperty(value = "Total amount for the item. Normally calculated as the unit price times quantity.  When `orderInformation.lineItems[].productCode` is \"gift_card\", this is the purchase amount total for prepaid gift cards in major units.  Example: 123.45 USD = 123 ")
+  public String getTotalAmount() {
+    return totalAmount;
+  }
+
+  public void setTotalAmount(String totalAmount) {
+    this.totalAmount = totalAmount;
+  }
+
   public Riskv1decisionsOrderInformationLineItems unitPrice(String unitPrice) {
     this.unitPrice = unitPrice;
     return this;
   }
 
    /**
-   * Per-item price of the product. This value cannot be negative. You can include a decimal point (.), but you cannot include any other special characters. CyberSource truncates the amount to the correct number of decimal places.  For processor-specific information, see the &#x60;amount&#x60; field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. See these guides for details: - [Merchant Descriptors Using the SCMP API Guide] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/) - \&quot;Capture Information for Specific Processors\&quot; section in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either the 1st line item in the order and this field, or the request-level field &#x60;orderInformation.amountDetails.totalAmount&#x60; in your request. For details, see \&quot;Dynamic Currency Conversion with a Third Party Provider\&quot; in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### FDMS South If you accept IDR or CLP currencies, see the entry for FDMS South in the [Merchant Descriptors Using the SCMP API Guide.] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/)  #### Zero Amount Authorizations If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \&quot;Zero Amount Authorizations\&quot; in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Per-item price of the product. This value for this field cannot be negative.  You must include either this field or the request-level field &#x60;orderInformation.amountDetails.totalAmount&#x60; in your request.  You can include a decimal point (.), but you cannot include any other special characters. The value is truncated to the correct number of decimal places.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either the 1st line item in the order and this field, or the request-level field &#x60;orderInformation.amountDetails.totalAmount&#x60; in your request.  #### FDMS South If you accept IDR or CLP currencies, see the entry for FDMS South in the [Merchant Descriptors Using the SCMP API Guide.] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/)  #### Zero Amount Authorizations If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.  #### Maximum Field Lengths For GPN and JCN Gateway: Decimal (10) All other processors: Decimal (15) 
    * @return unitPrice
   **/
-  @ApiModelProperty(value = "Per-item price of the product. This value cannot be negative. You can include a decimal point (.), but you cannot include any other special characters. CyberSource truncates the amount to the correct number of decimal places.  For processor-specific information, see the `amount` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. See these guides for details: - [Merchant Descriptors Using the SCMP API Guide] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/) - \"Capture Information for Specific Processors\" section in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either the 1st line item in the order and this field, or the request-level field `orderInformation.amountDetails.totalAmount` in your request. For details, see \"Dynamic Currency Conversion with a Third Party Provider\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### FDMS South If you accept IDR or CLP currencies, see the entry for FDMS South in the [Merchant Descriptors Using the SCMP API Guide.] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/)  #### Zero Amount Authorizations If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \"Zero Amount Authorizations\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Per-item price of the product. This value for this field cannot be negative.  You must include either this field or the request-level field `orderInformation.amountDetails.totalAmount` in your request.  You can include a decimal point (.), but you cannot include any other special characters. The value is truncated to the correct number of decimal places.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either the 1st line item in the order and this field, or the request-level field `orderInformation.amountDetails.totalAmount` in your request.  #### FDMS South If you accept IDR or CLP currencies, see the entry for FDMS South in the [Merchant Descriptors Using the SCMP API Guide.] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/)  #### Zero Amount Authorizations If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.  #### Maximum Field Lengths For GPN and JCN Gateway: Decimal (10) All other processors: Decimal (15) ")
   public String getUnitPrice() {
     return unitPrice;
   }
@@ -80,12 +113,12 @@ public class Riskv1decisionsOrderInformationLineItems {
   }
 
    /**
-   * Number of units for this order.  The default is &#x60;1&#x60;. For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60;), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.  When orderInformation.lineItems[].productCode is \&quot;gift_card\&quot;, this is the total count of individual prepaid gift cards purchased. 
+   * Number of units for this order. Must be a non-negative integer.  The default is &#x60;1&#x60;. For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60;), this field is required when &#x60;orderInformation.lineItems[].productCode&#x60; is not &#x60;default&#x60; or one of the other values related to shipping and/or handling. 
    * minimum: 1
    * maximum: 999999999
    * @return quantity
   **/
-  @ApiModelProperty(value = "Number of units for this order.  The default is `1`. For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.  When orderInformation.lineItems[].productCode is \"gift_card\", this is the total count of individual prepaid gift cards purchased. ")
+  @ApiModelProperty(value = "Number of units for this order. Must be a non-negative integer.  The default is `1`. For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when `orderInformation.lineItems[].productCode` is not `default` or one of the other values related to shipping and/or handling. ")
   public Integer getQuantity() {
     return quantity;
   }
@@ -94,16 +127,34 @@ public class Riskv1decisionsOrderInformationLineItems {
     this.quantity = quantity;
   }
 
+  public Riskv1decisionsOrderInformationLineItems giftCardCurrency(Integer giftCardCurrency) {
+    this.giftCardCurrency = giftCardCurrency;
+    return this;
+  }
+
+   /**
+   * When &#x60;orderInformation.lineItems[].productCode&#x60; is \&quot;gift_card\&quot;, this is the currency used for the gift card purchase.  For details, see &#x60;pa_gift_card_currency&#x60; field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/Payer_Authentication_SCMP_API.pdf)  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) 
+   * @return giftCardCurrency
+  **/
+  @ApiModelProperty(value = "When `orderInformation.lineItems[].productCode` is \"gift_card\", this is the currency used for the gift card purchase.  For details, see `pa_gift_card_currency` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/Payer_Authentication_SCMP_API.pdf)  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) ")
+  public Integer getGiftCardCurrency() {
+    return giftCardCurrency;
+  }
+
+  public void setGiftCardCurrency(Integer giftCardCurrency) {
+    this.giftCardCurrency = giftCardCurrency;
+  }
+
   public Riskv1decisionsOrderInformationLineItems productSKU(String productSKU) {
     this.productSKU = productSKU;
     return this;
   }
 
    /**
-   * Stock Keeping Unit (SKU) code for the product.  For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60;), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling. 
+   * Product identifier code. Also known as the Stock Keeping Unit (SKU) code for the product.  For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60;), this field is required when &#x60;orderInformation.lineItems[].productCode&#x60; is not &#x60;default&#x60; or one of the values related to shipping and/or handling. 
    * @return productSKU
   **/
-  @ApiModelProperty(value = "Stock Keeping Unit (SKU) code for the product.  For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling. ")
+  @ApiModelProperty(value = "Product identifier code. Also known as the Stock Keeping Unit (SKU) code for the product.  For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when `orderInformation.lineItems[].productCode` is not `default` or one of the values related to shipping and/or handling. ")
   public String getProductSKU() {
     return productSKU;
   }
@@ -130,16 +181,34 @@ public class Riskv1decisionsOrderInformationLineItems {
     this.productRisk = productRisk;
   }
 
+  public Riskv1decisionsOrderInformationLineItems productDescription(String productDescription) {
+    this.productDescription = productDescription;
+    return this;
+  }
+
+   /**
+   * Brief description of item.
+   * @return productDescription
+  **/
+  @ApiModelProperty(value = "Brief description of item.")
+  public String getProductDescription() {
+    return productDescription;
+  }
+
+  public void setProductDescription(String productDescription) {
+    this.productDescription = productDescription;
+  }
+
   public Riskv1decisionsOrderInformationLineItems productName(String productName) {
     this.productName = productName;
     return this;
   }
 
    /**
-   * For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60; or &#x60;false&#x60;), this field is required when &#x60;orderInformation.lineItems[].productCode&#x60; is not set to &#x60;default&#x60; or one of the other values that are related to shipping and/or handling. 
+   * For an authorization or capture transaction (&#x60;processingOptions.capture&#x60; is &#x60;true&#x60; or &#x60;false&#x60;), this field is required when &#x60;orderInformation.lineItems[].productCode&#x60; is not &#x60;default&#x60; or one of the other values that are related to shipping and/or handling. 
    * @return productName
   **/
-  @ApiModelProperty(value = "For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when `orderInformation.lineItems[].productCode` is not set to `default` or one of the other values that are related to shipping and/or handling. ")
+  @ApiModelProperty(value = "For an authorization or capture transaction (`processingOptions.capture` is `true` or `false`), this field is required when `orderInformation.lineItems[].productCode` is not `default` or one of the other values that are related to shipping and/or handling. ")
   public String getProductName() {
     return productName;
   }
@@ -154,10 +223,10 @@ public class Riskv1decisionsOrderInformationLineItems {
   }
 
    /**
-   * Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**. If you are performing an authorization transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;false&#x60;), and you set this field to a value other than default or any of the values related to shipping and handling, then the fields &#x60;quantity&#x60;, &#x60;productName&#x60;, and &#x60;productSku&#x60; are required. It can also have a value of \&quot;gift_card\&quot;.  For details, see the &#x60;product_code&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Type of product. The value for this field is used to identify the product category (electronic, handling, physical, service, or shipping). The default value is &#x60;default&#x60;.  If you are performing an authorization transaction (&#x60;processingOptions.capture&#x60; is set to &#x60;false&#x60;), and you set this field to a value other than &#x60;default&#x60; or one of the values related to shipping and/or handling, then &#x60;orderInformation.lineItems[].quantity&#x60;, &#x60;orderInformation.lineItems[].productName&#x60;, and &#x60;orderInformation.lineItems[].productSku&#x60; fields are required.  Optional field. 
    * @return productCode
   **/
-  @ApiModelProperty(value = "Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**. If you are performing an authorization transaction (`processingOptions.capture` is set to `false`), and you set this field to a value other than default or any of the values related to shipping and handling, then the fields `quantity`, `productName`, and `productSku` are required. It can also have a value of \"gift_card\".  For details, see the `product_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Type of product. The value for this field is used to identify the product category (electronic, handling, physical, service, or shipping). The default value is `default`.  If you are performing an authorization transaction (`processingOptions.capture` is set to `false`), and you set this field to a value other than `default` or one of the values related to shipping and/or handling, then `orderInformation.lineItems[].quantity`, `orderInformation.lineItems[].productName`, and `orderInformation.lineItems[].productSku` fields are required.  Optional field. ")
   public String getProductCode() {
     return productCode;
   }
@@ -220,6 +289,42 @@ public class Riskv1decisionsOrderInformationLineItems {
     this.passenger = passenger;
   }
 
+  public Riskv1decisionsOrderInformationLineItems shippingDestinationTypes(String shippingDestinationTypes) {
+    this.shippingDestinationTypes = shippingDestinationTypes;
+    return this;
+  }
+
+   /**
+   * Destination to where the item will be shipped. Example: Commercial, Residential, Store 
+   * @return shippingDestinationTypes
+  **/
+  @ApiModelProperty(value = "Destination to where the item will be shipped. Example: Commercial, Residential, Store ")
+  public String getShippingDestinationTypes() {
+    return shippingDestinationTypes;
+  }
+
+  public void setShippingDestinationTypes(String shippingDestinationTypes) {
+    this.shippingDestinationTypes = shippingDestinationTypes;
+  }
+
+  public Riskv1decisionsOrderInformationLineItems taxAmount(String taxAmount) {
+    this.taxAmount = taxAmount;
+    return this;
+  }
+
+   /**
+   * Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount&#x3D;10.00, quantity&#x3D;1, and taxAmount&#x3D;0.80  ..- 2nd line item has amount&#x3D;20.00, quantity&#x3D;1, and taxAmount&#x3D;1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  Optional field. 
+   * @return taxAmount
+  **/
+  @ApiModelProperty(value = "Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount=10.00, quantity=1, and taxAmount=0.80  ..- 2nd line item has amount=20.00, quantity=1, and taxAmount=1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  Optional field. ")
+  public String getTaxAmount() {
+    return taxAmount;
+  }
+
+  public void setTaxAmount(String taxAmount) {
+    this.taxAmount = taxAmount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -230,20 +335,25 @@ public class Riskv1decisionsOrderInformationLineItems {
       return false;
     }
     Riskv1decisionsOrderInformationLineItems riskv1decisionsOrderInformationLineItems = (Riskv1decisionsOrderInformationLineItems) o;
-    return Objects.equals(this.unitPrice, riskv1decisionsOrderInformationLineItems.unitPrice) &&
+    return Objects.equals(this.totalAmount, riskv1decisionsOrderInformationLineItems.totalAmount) &&
+        Objects.equals(this.unitPrice, riskv1decisionsOrderInformationLineItems.unitPrice) &&
         Objects.equals(this.quantity, riskv1decisionsOrderInformationLineItems.quantity) &&
+        Objects.equals(this.giftCardCurrency, riskv1decisionsOrderInformationLineItems.giftCardCurrency) &&
         Objects.equals(this.productSKU, riskv1decisionsOrderInformationLineItems.productSKU) &&
         Objects.equals(this.productRisk, riskv1decisionsOrderInformationLineItems.productRisk) &&
+        Objects.equals(this.productDescription, riskv1decisionsOrderInformationLineItems.productDescription) &&
         Objects.equals(this.productName, riskv1decisionsOrderInformationLineItems.productName) &&
         Objects.equals(this.productCode, riskv1decisionsOrderInformationLineItems.productCode) &&
         Objects.equals(this.gift, riskv1decisionsOrderInformationLineItems.gift) &&
         Objects.equals(this.distributorProductSku, riskv1decisionsOrderInformationLineItems.distributorProductSku) &&
-        Objects.equals(this.passenger, riskv1decisionsOrderInformationLineItems.passenger);
+        Objects.equals(this.passenger, riskv1decisionsOrderInformationLineItems.passenger) &&
+        Objects.equals(this.shippingDestinationTypes, riskv1decisionsOrderInformationLineItems.shippingDestinationTypes) &&
+        Objects.equals(this.taxAmount, riskv1decisionsOrderInformationLineItems.taxAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(unitPrice, quantity, productSKU, productRisk, productName, productCode, gift, distributorProductSku, passenger);
+    return Objects.hash(totalAmount, unitPrice, quantity, giftCardCurrency, productSKU, productRisk, productDescription, productName, productCode, gift, distributorProductSku, passenger, shippingDestinationTypes, taxAmount);
   }
 
 
@@ -252,15 +362,20 @@ public class Riskv1decisionsOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsOrderInformationLineItems {\n");
     
+    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    sb.append("    giftCardCurrency: ").append(toIndentedString(giftCardCurrency)).append("\n");
     sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
     sb.append("    productRisk: ").append(toIndentedString(productRisk)).append("\n");
+    sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
     sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
     sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
     sb.append("    gift: ").append(toIndentedString(gift)).append("\n");
     sb.append("    distributorProductSku: ").append(toIndentedString(distributorProductSku)).append("\n");
     sb.append("    passenger: ").append(toIndentedString(passenger)).append("\n");
+    sb.append("    shippingDestinationTypes: ").append(toIndentedString(shippingDestinationTypes)).append("\n");
+    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

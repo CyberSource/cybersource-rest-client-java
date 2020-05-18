@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * FileBean
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class FileBean {
   @SerializedName("fileId")
   private String fileId = null;

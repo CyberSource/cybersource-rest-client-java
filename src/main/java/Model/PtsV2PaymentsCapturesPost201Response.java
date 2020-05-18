@@ -32,7 +32,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsCapturesPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class PtsV2PaymentsCapturesPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsCapturesPost201ResponseLinks links = null;
@@ -106,10 +106,10 @@ public class PtsV2PaymentsCapturesPost201Response {
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by authorization service. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service. ")
   public String getSubmitTimeUtc() {
     return submitTimeUtc;
   }
@@ -142,10 +142,10 @@ public class PtsV2PaymentsCapturesPost201Response {
   }
 
    /**
-   * The reconciliation id for the submitted transaction. This value is not returned for all processors. 
+   * Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  #### Atos Positive string (6)  #### All other processors String (60) 
    * @return reconciliationId
   **/
-  @ApiModelProperty(value = "The reconciliation id for the submitted transaction. This value is not returned for all processors. ")
+  @ApiModelProperty(value = "Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  #### Atos Positive string (6)  #### All other processors String (60) ")
   public String getReconciliationId() {
     return reconciliationId;
   }

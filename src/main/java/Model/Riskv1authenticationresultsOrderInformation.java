@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Riskv1authenticationresultsOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class Riskv1authenticationresultsOrderInformation {
   @SerializedName("amountDetails")
   private Riskv1authenticationsOrderInformationAmountDetails amountDetails = null;

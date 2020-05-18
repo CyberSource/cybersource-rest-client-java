@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidreversalsClientReferenceInformationPartner
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-20T15:59:18.387+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
 public class Ptsv2paymentsidreversalsClientReferenceInformationPartner {
   @SerializedName("developerId")
   private String developerId = null;
@@ -79,10 +79,10 @@ public class Ptsv2paymentsidreversalsClientReferenceInformationPartner {
   }
 
    /**
-   * Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet. 
+   * Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization, Authorization Reversal, Capture, Credit, Incremental Authorization, and Void** Optional field. 
    * @return thirdPartyCertificationNumber
   **/
-  @ApiModelProperty(value = "Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet. ")
+  @ApiModelProperty(value = "Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization, Authorization Reversal, Capture, Credit, Incremental Authorization, and Void** Optional field. ")
   public String getThirdPartyCertificationNumber() {
     return thirdPartyCertificationNumber;
   }
