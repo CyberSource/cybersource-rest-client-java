@@ -23,7 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.joda.time.LocalDate;
+import org.joda.time.DateTime;
 
 /**
  * InvoicingV2InvoicesGet200ResponseInvoiceHistory
@@ -34,7 +34,7 @@ public class InvoicingV2InvoicesGet200ResponseInvoiceHistory {
   private String event = null;
 
   @SerializedName("date")
-  private LocalDate date = null;
+  private DateTime date = null;
 
   @SerializedName("transactionDetails")
   private InvoicingV2InvoicesGet200ResponseTransactionDetails transactionDetails = null;
@@ -57,7 +57,7 @@ public class InvoicingV2InvoicesGet200ResponseInvoiceHistory {
     this.event = event;
   }
 
-  public InvoicingV2InvoicesGet200ResponseInvoiceHistory date(LocalDate date) {
+  public InvoicingV2InvoicesGet200ResponseInvoiceHistory date(DateTime date) {
     this.date = date;
     return this;
   }
@@ -67,11 +67,11 @@ public class InvoicingV2InvoicesGet200ResponseInvoiceHistory {
    * @return date
   **/
   @ApiModelProperty(value = "The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day ")
-  public LocalDate getDate() {
+  public DateTime getDate() {
     return date;
   }
 
-  public void setDate(LocalDate date) {
+  public void setDate(DateTime date) {
     this.date = date;
   }
 
