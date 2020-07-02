@@ -17,9 +17,9 @@ import java.util.Objects;
 import Model.Ptsv2paymentsPaymentInformationBank;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Ptsv2paymentsPaymentInformationFluidData;
-import Model.Ptsv2paymentsPaymentInformationPaymentType;
 import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
 import Model.Ptsv2paymentsidrefundsPaymentInformationCard;
+import Model.Ptsv2paymentsidrefundsPaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,7 +32,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidrefundsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Ptsv2paymentsidrefundsPaymentInformation {
   @SerializedName("card")
   private Ptsv2paymentsidrefundsPaymentInformationCard card = null;
@@ -50,7 +50,7 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
   private Ptsv2paymentsPaymentInformationCustomer customer = null;
 
   @SerializedName("paymentType")
-  private Ptsv2paymentsPaymentInformationPaymentType paymentType = null;
+  private Ptsv2paymentsidrefundsPaymentInformationPaymentType paymentType = null;
 
   public Ptsv2paymentsidrefundsPaymentInformation card(Ptsv2paymentsidrefundsPaymentInformationCard card) {
     this.card = card;
@@ -142,7 +142,7 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     this.customer = customer;
   }
 
-  public Ptsv2paymentsidrefundsPaymentInformation paymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
+  public Ptsv2paymentsidrefundsPaymentInformation paymentType(Ptsv2paymentsidrefundsPaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
     return this;
   }
@@ -152,11 +152,11 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
    * @return paymentType
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsPaymentInformationPaymentType getPaymentType() {
+  public Ptsv2paymentsidrefundsPaymentInformationPaymentType getPaymentType() {
     return paymentType;
   }
 
-  public void setPaymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
+  public void setPaymentType(Ptsv2paymentsidrefundsPaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
   }
 

@@ -317,13 +317,12 @@ public class ReportSubscriptionsApi {
     /**
      * Build call for deleteSubscription
      * @param reportName Name of the Report to Delete (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deleteSubscriptionCall(String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteSubscriptionCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -331,8 +330,6 @@ public class ReportSubscriptionsApi {
             .replaceAll("\\{" + "reportName" + "\\}", apiClient.escapeString(reportName.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (organizationId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -367,7 +364,7 @@ public class ReportSubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteSubscriptionValidateBeforeCall(String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteSubscriptionValidateBeforeCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
@@ -375,7 +372,7 @@ public class ReportSubscriptionsApi {
         }
         
         
-        okhttp3.Call call = deleteSubscriptionCall(reportName, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteSubscriptionCall(reportName, progressListener, progressRequestListener);
         return call;
 
         
@@ -388,23 +385,21 @@ public class ReportSubscriptionsApi {
      * Delete Subscription of a Report Name by Organization
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteSubscription(String reportName, String organizationId) throws ApiException {
-        deleteSubscriptionWithHttpInfo(reportName, organizationId);
+    public void deleteSubscription(String reportName) throws ApiException {
+        deleteSubscriptionWithHttpInfo(reportName);
     }
 
     /**
      * Delete Subscription of a Report Name by Organization
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteSubscriptionWithHttpInfo(String reportName, String organizationId) throws ApiException {
-        okhttp3.Call call = deleteSubscriptionValidateBeforeCall(reportName, organizationId, null, null);
+    public ApiResponse<Void> deleteSubscriptionWithHttpInfo(String reportName) throws ApiException {
+        okhttp3.Call call = deleteSubscriptionValidateBeforeCall(reportName, null, null);
         return apiClient.execute(call);
     }
 
@@ -412,12 +407,11 @@ public class ReportSubscriptionsApi {
      * Delete Subscription of a Report Name by Organization (asynchronously)
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deleteSubscriptionAsync(String reportName, String organizationId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteSubscriptionAsync(String reportName, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -438,27 +432,24 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        okhttp3.Call call = deleteSubscriptionValidateBeforeCall(reportName, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteSubscriptionValidateBeforeCall(reportName, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for getAllSubscriptions
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getAllSubscriptionsCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getAllSubscriptionsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (organizationId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -493,10 +484,10 @@ public class ReportSubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllSubscriptionsValidateBeforeCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getAllSubscriptionsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        okhttp3.Call call = getAllSubscriptionsCall(organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getAllSubscriptionsCall(progressListener, progressRequestListener);
         return call;
 
         
@@ -508,24 +499,22 @@ public class ReportSubscriptionsApi {
     /**
      * Get All Subscriptions
      * View a summary of all report subscriptions. 
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ReportingV3ReportSubscriptionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions(String organizationId) throws ApiException {
-        ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getAllSubscriptionsWithHttpInfo(organizationId);
+    public ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions() throws ApiException {
+        ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getAllSubscriptionsWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * Get All Subscriptions
      * View a summary of all report subscriptions. 
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getAllSubscriptionsWithHttpInfo(String organizationId) throws ApiException {
-        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(organizationId, null, null);
+    public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getAllSubscriptionsWithHttpInfo() throws ApiException {
+        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -533,12 +522,11 @@ public class ReportSubscriptionsApi {
     /**
      * Get All Subscriptions (asynchronously)
      * View a summary of all report subscriptions. 
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getAllSubscriptionsAsync(String organizationId, final ApiCallback<ReportingV3ReportSubscriptionsGet200Response> callback) throws ApiException {
+    public okhttp3.Call getAllSubscriptionsAsync(final ApiCallback<ReportingV3ReportSubscriptionsGet200Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -559,7 +547,7 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -567,13 +555,12 @@ public class ReportSubscriptionsApi {
     /**
      * Build call for getSubscription
      * @param reportName Name of the Report to Retrieve (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getSubscriptionCall(String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getSubscriptionCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -581,8 +568,6 @@ public class ReportSubscriptionsApi {
             .replaceAll("\\{" + "reportName" + "\\}", apiClient.escapeString(reportName.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (organizationId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -617,7 +602,7 @@ public class ReportSubscriptionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSubscriptionValidateBeforeCall(String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getSubscriptionValidateBeforeCall(String reportName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
@@ -625,7 +610,7 @@ public class ReportSubscriptionsApi {
         }
         
         
-        okhttp3.Call call = getSubscriptionCall(reportName, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getSubscriptionCall(reportName, progressListener, progressRequestListener);
         return call;
 
         
@@ -638,12 +623,11 @@ public class ReportSubscriptionsApi {
      * Get Subscription for Report Name
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(String reportName, String organizationId) throws ApiException {
-        ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> resp = getSubscriptionWithHttpInfo(reportName, organizationId);
+    public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(String reportName) throws ApiException {
+        ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> resp = getSubscriptionWithHttpInfo(reportName);
         return resp.getData();
     }
 
@@ -651,12 +635,11 @@ public class ReportSubscriptionsApi {
      * Get Subscription for Report Name
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200ResponseSubscriptions&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> getSubscriptionWithHttpInfo(String reportName, String organizationId) throws ApiException {
-        okhttp3.Call call = getSubscriptionValidateBeforeCall(reportName, organizationId, null, null);
+    public ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> getSubscriptionWithHttpInfo(String reportName) throws ApiException {
+        okhttp3.Call call = getSubscriptionValidateBeforeCall(reportName, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -665,12 +648,11 @@ public class ReportSubscriptionsApi {
      * Get Subscription for Report Name (asynchronously)
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getSubscriptionAsync(String reportName, String organizationId, final ApiCallback<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> callback) throws ApiException {
+    public okhttp3.Call getSubscriptionAsync(String reportName, final ApiCallback<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -691,7 +673,7 @@ public class ReportSubscriptionsApi {
             };
         }
 
-        okhttp3.Call call = getSubscriptionValidateBeforeCall(reportName, organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = getSubscriptionValidateBeforeCall(reportName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

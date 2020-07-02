@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Ptsv2paymentsDeviceInformation {
   @SerializedName("hostName")
   private String hostName = null;
@@ -103,10 +103,10 @@ public class Ptsv2paymentsDeviceInformation {
   }
 
    /**
-   * IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. 
+   * IP address of the customer. 
    * @return ipAddress
   **/
-  @ApiModelProperty(value = "IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. ")
+  @ApiModelProperty(value = "IP address of the customer. ")
   public String getIpAddress() {
     return ipAddress;
   }

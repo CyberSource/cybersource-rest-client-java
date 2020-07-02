@@ -129,8 +129,8 @@ public class UserManagementApi {
     }
 
     /**
-     * Get User Information - Deprecated
-     * This endpoint is deprecated. Please use the search end point.
+     * Get User Information
+     * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      * @param organizationId This is the orgId of the organization which the user belongs to. (optional)
      * @param userName User ID of the user you want to get details on. (optional)
      * @param permissionId permission that you are trying to search user on. (optional)
@@ -144,8 +144,8 @@ public class UserManagementApi {
     }
 
     /**
-     * Get User Information - Deprecated
-     * This endpoint is deprecated. Please use the search end point.
+     * Get User Information
+     * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      * @param organizationId This is the orgId of the organization which the user belongs to. (optional)
      * @param userName User ID of the user you want to get details on. (optional)
      * @param permissionId permission that you are trying to search user on. (optional)
@@ -160,8 +160,8 @@ public class UserManagementApi {
     }
 
     /**
-     * Get User Information - Deprecated (asynchronously)
-     * This endpoint is deprecated. Please use the search end point.
+     * Get User Information (asynchronously)
+     * This endpoint is to get all the user information depending on the filter criteria passed in the query.
      * @param organizationId This is the orgId of the organization which the user belongs to. (optional)
      * @param userName User ID of the user you want to get details on. (optional)
      * @param permissionId permission that you are trying to search user on. (optional)

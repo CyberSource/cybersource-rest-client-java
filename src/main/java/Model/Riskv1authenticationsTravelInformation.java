@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1decisionsTravelInformationLegs;
-import Model.Riskv1decisionsTravelInformationPassengers;
+import Model.Riskv1authenticationsTravelInformationLegs;
+import Model.Riskv1authenticationsTravelInformationPassengers;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,25 +30,25 @@ import java.util.List;
 /**
  * Riskv1authenticationsTravelInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Riskv1authenticationsTravelInformation {
   @SerializedName("legs")
-  private List<Riskv1decisionsTravelInformationLegs> legs = null;
+  private List<Riskv1authenticationsTravelInformationLegs> legs = null;
 
   @SerializedName("numberOfPassengers")
   private Integer numberOfPassengers = null;
 
   @SerializedName("passengers")
-  private List<Riskv1decisionsTravelInformationPassengers> passengers = null;
+  private List<Riskv1authenticationsTravelInformationPassengers> passengers = null;
 
-  public Riskv1authenticationsTravelInformation legs(List<Riskv1decisionsTravelInformationLegs> legs) {
+  public Riskv1authenticationsTravelInformation legs(List<Riskv1authenticationsTravelInformationLegs> legs) {
     this.legs = legs;
     return this;
   }
 
-  public Riskv1authenticationsTravelInformation addLegsItem(Riskv1decisionsTravelInformationLegs legsItem) {
+  public Riskv1authenticationsTravelInformation addLegsItem(Riskv1authenticationsTravelInformationLegs legsItem) {
     if (this.legs == null) {
-      this.legs = new ArrayList<Riskv1decisionsTravelInformationLegs>();
+      this.legs = new ArrayList<Riskv1authenticationsTravelInformationLegs>();
     }
     this.legs.add(legsItem);
     return this;
@@ -59,11 +59,11 @@ public class Riskv1authenticationsTravelInformation {
    * @return legs
   **/
   @ApiModelProperty(value = "")
-  public List<Riskv1decisionsTravelInformationLegs> getLegs() {
+  public List<Riskv1authenticationsTravelInformationLegs> getLegs() {
     return legs;
   }
 
-  public void setLegs(List<Riskv1decisionsTravelInformationLegs> legs) {
+  public void setLegs(List<Riskv1authenticationsTravelInformationLegs> legs) {
     this.legs = legs;
   }
 
@@ -85,14 +85,14 @@ public class Riskv1authenticationsTravelInformation {
     this.numberOfPassengers = numberOfPassengers;
   }
 
-  public Riskv1authenticationsTravelInformation passengers(List<Riskv1decisionsTravelInformationPassengers> passengers) {
+  public Riskv1authenticationsTravelInformation passengers(List<Riskv1authenticationsTravelInformationPassengers> passengers) {
     this.passengers = passengers;
     return this;
   }
 
-  public Riskv1authenticationsTravelInformation addPassengersItem(Riskv1decisionsTravelInformationPassengers passengersItem) {
+  public Riskv1authenticationsTravelInformation addPassengersItem(Riskv1authenticationsTravelInformationPassengers passengersItem) {
     if (this.passengers == null) {
-      this.passengers = new ArrayList<Riskv1decisionsTravelInformationPassengers>();
+      this.passengers = new ArrayList<Riskv1authenticationsTravelInformationPassengers>();
     }
     this.passengers.add(passengersItem);
     return this;
@@ -103,11 +103,11 @@ public class Riskv1authenticationsTravelInformation {
    * @return passengers
   **/
   @ApiModelProperty(value = "")
-  public List<Riskv1decisionsTravelInformationPassengers> getPassengers() {
+  public List<Riskv1authenticationsTravelInformationPassengers> getPassengers() {
     return passengers;
   }
 
-  public void setPassengers(List<Riskv1decisionsTravelInformationPassengers> passengers) {
+  public void setPassengers(List<Riskv1authenticationsTravelInformationPassengers> passengers) {
     this.passengers = passengers;
   }
 

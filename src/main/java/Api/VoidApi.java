@@ -129,8 +129,8 @@ public class VoidApi {
     }
 
     /**
-     * Timeout Void
-     * This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply(Mostly due to timeout). This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply(Mostly due to Timeout). To use this feature/API, make sure to pass unique value to field - clientReferenceInformation -&gt; transactionId in your payment, capture, refund, or credit API call and use same transactionId in this API request payload to reverse the payment.
+     * Merchant Initiated Void
+     * This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply.
      * @param mitVoidRequest  (required)
      * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -141,8 +141,8 @@ public class VoidApi {
     }
 
     /**
-     * Timeout Void
-     * This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply(Mostly due to timeout). This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply(Mostly due to Timeout). To use this feature/API, make sure to pass unique value to field - clientReferenceInformation -&gt; transactionId in your payment, capture, refund, or credit API call and use same transactionId in this API request payload to reverse the payment.
+     * Merchant Initiated Void
+     * This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply.
      * @param mitVoidRequest  (required)
      * @return ApiResponse&lt;PtsV2PaymentsVoidsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -154,8 +154,8 @@ public class VoidApi {
     }
 
     /**
-     * Timeout Void (asynchronously)
-     * This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply(Mostly due to timeout). This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply(Mostly due to Timeout). To use this feature/API, make sure to pass unique value to field - clientReferenceInformation -&gt; transactionId in your payment, capture, refund, or credit API call and use same transactionId in this API request payload to reverse the payment.
+     * Merchant Initiated Void (asynchronously)
+     * This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply.
      * @param mitVoidRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -262,7 +262,7 @@ public class VoidApi {
 
     /**
      * Void a Capture
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call.  Include the capture ID in the POST request to cancel the capture. 
+     * Include the capture ID in the POST request to cancel the capture.
      * @param voidCaptureRequest  (required)
      * @param id The capture ID returned from a previous capture request. (required)
      * @return PtsV2PaymentsVoidsPost201Response
@@ -275,7 +275,7 @@ public class VoidApi {
 
     /**
      * Void a Capture
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call.  Include the capture ID in the POST request to cancel the capture. 
+     * Include the capture ID in the POST request to cancel the capture.
      * @param voidCaptureRequest  (required)
      * @param id The capture ID returned from a previous capture request. (required)
      * @return ApiResponse&lt;PtsV2PaymentsVoidsPost201Response&gt;
@@ -289,7 +289,7 @@ public class VoidApi {
 
     /**
      * Void a Capture (asynchronously)
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call.  Include the capture ID in the POST request to cancel the capture. 
+     * Include the capture ID in the POST request to cancel the capture.
      * @param voidCaptureRequest  (required)
      * @param id The capture ID returned from a previous capture request. (required)
      * @param callback The callback to be executed when the API call finishes
@@ -532,7 +532,7 @@ public class VoidApi {
 
     /**
      * Void a Payment
-     * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to cancel the payment. 
+     * Include the payment ID in the POST request to cancel the payment.
      * @param voidPaymentRequest  (required)
      * @param id The payment ID returned from a previous payment request. (required)
      * @return PtsV2PaymentsVoidsPost201Response
@@ -545,7 +545,7 @@ public class VoidApi {
 
     /**
      * Void a Payment
-     * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to cancel the payment. 
+     * Include the payment ID in the POST request to cancel the payment.
      * @param voidPaymentRequest  (required)
      * @param id The payment ID returned from a previous payment request. (required)
      * @return ApiResponse&lt;PtsV2PaymentsVoidsPost201Response&gt;
@@ -559,7 +559,7 @@ public class VoidApi {
 
     /**
      * Void a Payment (asynchronously)
-     * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to cancel the payment. 
+     * Include the payment ID in the POST request to cancel the payment.
      * @param voidPaymentRequest  (required)
      * @param id The payment ID returned from a previous payment request. (required)
      * @param callback The callback to be executed when the API call finishes

@@ -29,12 +29,11 @@ import java.io.InputStream;
 
 
 import Model.AddNegativeListRequest;
-import Model.CreateBundledDecisionManagerCaseRequest;
+import Model.CreateDecisionManagerCaseRequest;
 import Model.FraudMarkingActionRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RiskV1DecisionsPost201Response;
 import Model.RiskV1DecisionsPost400Response;
-import Model.RiskV1DecisionsPost400Response1;
 import Model.RiskV1UpdatePost201Response;
 
 import java.lang.reflect.Type;
@@ -198,15 +197,15 @@ public class DecisionManagerApi {
         return call;
     }
     /**
-     * Build call for createBundledDecisionManagerCase
-     * @param createBundledDecisionManagerCaseRequest  (required)
+     * Build call for createDecisionManagerCase
+     * @param createDecisionManagerCaseRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call createBundledDecisionManagerCaseCall(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createBundledDecisionManagerCaseRequest;
+    public okhttp3.Call createDecisionManagerCaseCall(CreateDecisionManagerCaseRequest createDecisionManagerCaseRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createDecisionManagerCaseRequest;
         
         // create path and map variables
         String localVarPath = "/risk/v1/decisions";
@@ -246,15 +245,15 @@ public class DecisionManagerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createBundledDecisionManagerCaseValidateBeforeCall(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createDecisionManagerCaseValidateBeforeCall(CreateDecisionManagerCaseRequest createDecisionManagerCaseRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'createBundledDecisionManagerCaseRequest' is set
-        if (createBundledDecisionManagerCaseRequest == null) {
-            throw new ApiException("Missing the required parameter 'createBundledDecisionManagerCaseRequest' when calling createBundledDecisionManagerCase(Async)");
+        // verify the required parameter 'createDecisionManagerCaseRequest' is set
+        if (createDecisionManagerCaseRequest == null) {
+            throw new ApiException("Missing the required parameter 'createDecisionManagerCaseRequest' when calling createDecisionManagerCase(Async)");
         }
         
         
-        okhttp3.Call call = createBundledDecisionManagerCaseCall(createBundledDecisionManagerCaseRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = createDecisionManagerCaseCall(createDecisionManagerCaseRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -265,38 +264,38 @@ public class DecisionManagerApi {
 
     /**
      * Create Decision Manager Case
-     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
-     * @param createBundledDecisionManagerCaseRequest  (required)
+     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values. 
+     * @param createDecisionManagerCaseRequest  (required)
      * @return RiskV1DecisionsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public RiskV1DecisionsPost201Response createBundledDecisionManagerCase(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest) throws ApiException {
-        ApiResponse<RiskV1DecisionsPost201Response> resp = createBundledDecisionManagerCaseWithHttpInfo(createBundledDecisionManagerCaseRequest);
+    public RiskV1DecisionsPost201Response createDecisionManagerCase(CreateDecisionManagerCaseRequest createDecisionManagerCaseRequest) throws ApiException {
+        ApiResponse<RiskV1DecisionsPost201Response> resp = createDecisionManagerCaseWithHttpInfo(createDecisionManagerCaseRequest);
         return resp.getData();
     }
 
     /**
      * Create Decision Manager Case
-     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
-     * @param createBundledDecisionManagerCaseRequest  (required)
+     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values. 
+     * @param createDecisionManagerCaseRequest  (required)
      * @return ApiResponse&lt;RiskV1DecisionsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<RiskV1DecisionsPost201Response> createBundledDecisionManagerCaseWithHttpInfo(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest) throws ApiException {
-        okhttp3.Call call = createBundledDecisionManagerCaseValidateBeforeCall(createBundledDecisionManagerCaseRequest, null, null);
+    public ApiResponse<RiskV1DecisionsPost201Response> createDecisionManagerCaseWithHttpInfo(CreateDecisionManagerCaseRequest createDecisionManagerCaseRequest) throws ApiException {
+        okhttp3.Call call = createDecisionManagerCaseValidateBeforeCall(createDecisionManagerCaseRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1DecisionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Create Decision Manager Case (asynchronously)
-     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
-     * @param createBundledDecisionManagerCaseRequest  (required)
+     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values. 
+     * @param createDecisionManagerCaseRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createBundledDecisionManagerCaseAsync(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest, final ApiCallback<RiskV1DecisionsPost201Response> callback) throws ApiException {
+    public okhttp3.Call createDecisionManagerCaseAsync(CreateDecisionManagerCaseRequest createDecisionManagerCaseRequest, final ApiCallback<RiskV1DecisionsPost201Response> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -317,7 +316,7 @@ public class DecisionManagerApi {
             };
         }
 
-        okhttp3.Call call = createBundledDecisionManagerCaseValidateBeforeCall(createBundledDecisionManagerCaseRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = createDecisionManagerCaseValidateBeforeCall(createDecisionManagerCaseRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<RiskV1DecisionsPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

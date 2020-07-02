@@ -134,7 +134,7 @@ public class RefundApi {
 
     /**
      * Refund a Capture
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call Include the capture ID in the POST request to refund the captured amount. 
+     * Include the capture ID in the POST request to refund the captured amount. 
      * @param refundCaptureRequest  (required)
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
      * @return PtsV2PaymentsRefundPost201Response
@@ -147,7 +147,7 @@ public class RefundApi {
 
     /**
      * Refund a Capture
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call Include the capture ID in the POST request to refund the captured amount. 
+     * Include the capture ID in the POST request to refund the captured amount. 
      * @param refundCaptureRequest  (required)
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
      * @return ApiResponse&lt;PtsV2PaymentsRefundPost201Response&gt;
@@ -161,7 +161,7 @@ public class RefundApi {
 
     /**
      * Refund a Capture (asynchronously)
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call Include the capture ID in the POST request to refund the captured amount. 
+     * Include the capture ID in the POST request to refund the captured amount. 
      * @param refundCaptureRequest  (required)
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
      * @param callback The callback to be executed when the API call finishes
@@ -269,7 +269,7 @@ public class RefundApi {
 
     /**
      * Refund a Payment
-     * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to refund the payment amount. 
+     * Include the payment ID in the POST request to refund the payment amount. 
      * @param refundPaymentRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @return PtsV2PaymentsRefundPost201Response
@@ -282,7 +282,7 @@ public class RefundApi {
 
     /**
      * Refund a Payment
-     * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to refund the payment amount. 
+     * Include the payment ID in the POST request to refund the payment amount. 
      * @param refundPaymentRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @return ApiResponse&lt;PtsV2PaymentsRefundPost201Response&gt;
@@ -296,7 +296,7 @@ public class RefundApi {
 
     /**
      * Refund a Payment (asynchronously)
-     * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to refund the payment amount. 
+     * Include the payment ID in the POST request to refund the payment amount. 
      * @param refundPaymentRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @param callback The callback to be executed when the API call finishes

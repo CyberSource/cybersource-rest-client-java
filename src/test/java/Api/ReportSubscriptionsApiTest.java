@@ -82,8 +82,7 @@ public class ReportSubscriptionsApiTest {
     @Test
     public void deleteSubscriptionTest() throws ApiException {
         String reportName = null;
-        String organizationId = null;
-        api.deleteSubscription(reportName, organizationId);
+        api.deleteSubscription(reportName);
 
         // TODO: test validations
     }
@@ -98,8 +97,7 @@ public class ReportSubscriptionsApiTest {
      */
     @Test
     public void getAllSubscriptionsTest() throws ApiException {
-        String organizationId = null;
-        ReportingV3ReportSubscriptionsGet200Response response = api.getAllSubscriptions(organizationId);
+        ReportingV3ReportSubscriptionsGet200Response response = api.getAllSubscriptions();
 
         // TODO: test validations
     }
@@ -115,8 +113,7 @@ public class ReportSubscriptionsApiTest {
     @Test
     public void getSubscriptionTest() throws ApiException {
         String reportName = null;
-        String organizationId = null;
-        ReportingV3ReportSubscriptionsGet200ResponseSubscriptions response = api.getSubscription(reportName, organizationId);
+        ReportingV3ReportSubscriptionsGet200ResponseSubscriptions response = api.getSubscription(reportName);
 
         // TODO: test validations
     }

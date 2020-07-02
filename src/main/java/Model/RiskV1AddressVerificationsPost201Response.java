@@ -16,8 +16,8 @@ package Model;
 import java.util.Objects;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
+import Model.PtsV2PaymentsPost201ResponseErrorInformation;
 import Model.RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation;
-import Model.RiskV1AddressVerificationsPost201ResponseErrorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * RiskV1AddressVerificationsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class RiskV1AddressVerificationsPost201Response {
   @SerializedName("_links")
   private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
@@ -47,6 +47,9 @@ public class RiskV1AddressVerificationsPost201Response {
   @SerializedName("status")
   private String status = null;
 
+  @SerializedName("reason")
+  private String reason = null;
+
   @SerializedName("message")
   private String message = null;
 
@@ -57,7 +60,7 @@ public class RiskV1AddressVerificationsPost201Response {
   private RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation addressVerificationInformation = null;
 
   @SerializedName("errorInformation")
-  private RiskV1AddressVerificationsPost201ResponseErrorInformation errorInformation = null;
+  private PtsV2PaymentsPost201ResponseErrorInformation errorInformation = null;
 
   public RiskV1AddressVerificationsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
@@ -101,10 +104,10 @@ public class RiskV1AddressVerificationsPost201Response {
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by authorization service. 
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service. ")
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
   public String getSubmitTimeUtc() {
     return submitTimeUtc;
   }
@@ -147,6 +150,24 @@ public class RiskV1AddressVerificationsPost201Response {
 
   public void setStatus(String status) {
     this.status = status;
+  }
+
+  public RiskV1AddressVerificationsPost201Response reason(String reason) {
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * The reason of the status. Value can be   - APARTMENT_NUMBER_NOT_FOUND   - INSUFFICIENT_ADDRESS_INFORMATION   - HOUSE_OR_BOX_NUMBER_NOT_FOUND   - MULTIPLE_ADDRESS_MATCHES   - BOX_NUMBER_NOT_FOUND   - ROUTE_SERVICE_NOT_FOUND   - STREET_NAME_NOT_FOUND   - POSTAL_CODE_NOT_FOUND   - UNVERIFIABLE_ADDRESS   - MULTIPLE_ADDRESS_MATCHES_INTERNATIONAL   - ADDRESS_MATCH_NOT_FOUND   - UNSUPPORTED_CHARACTER_SET 
+   * @return reason
+  **/
+  @ApiModelProperty(value = "The reason of the status. Value can be   - APARTMENT_NUMBER_NOT_FOUND   - INSUFFICIENT_ADDRESS_INFORMATION   - HOUSE_OR_BOX_NUMBER_NOT_FOUND   - MULTIPLE_ADDRESS_MATCHES   - BOX_NUMBER_NOT_FOUND   - ROUTE_SERVICE_NOT_FOUND   - STREET_NAME_NOT_FOUND   - POSTAL_CODE_NOT_FOUND   - UNVERIFIABLE_ADDRESS   - MULTIPLE_ADDRESS_MATCHES_INTERNATIONAL   - ADDRESS_MATCH_NOT_FOUND   - UNSUPPORTED_CHARACTER_SET ")
+  public String getReason() {
+    return reason;
+  }
+
+  public void setReason(String reason) {
+    this.reason = reason;
   }
 
   public RiskV1AddressVerificationsPost201Response message(String message) {
@@ -203,7 +224,7 @@ public class RiskV1AddressVerificationsPost201Response {
     this.addressVerificationInformation = addressVerificationInformation;
   }
 
-  public RiskV1AddressVerificationsPost201Response errorInformation(RiskV1AddressVerificationsPost201ResponseErrorInformation errorInformation) {
+  public RiskV1AddressVerificationsPost201Response errorInformation(PtsV2PaymentsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
     return this;
   }
@@ -213,11 +234,11 @@ public class RiskV1AddressVerificationsPost201Response {
    * @return errorInformation
   **/
   @ApiModelProperty(value = "")
-  public RiskV1AddressVerificationsPost201ResponseErrorInformation getErrorInformation() {
+  public PtsV2PaymentsPost201ResponseErrorInformation getErrorInformation() {
     return errorInformation;
   }
 
-  public void setErrorInformation(RiskV1AddressVerificationsPost201ResponseErrorInformation errorInformation) {
+  public void setErrorInformation(PtsV2PaymentsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
   }
 
@@ -236,6 +257,7 @@ public class RiskV1AddressVerificationsPost201Response {
         Objects.equals(this.submitTimeUtc, riskV1AddressVerificationsPost201Response.submitTimeUtc) &&
         Objects.equals(this.submitTimeLocal, riskV1AddressVerificationsPost201Response.submitTimeLocal) &&
         Objects.equals(this.status, riskV1AddressVerificationsPost201Response.status) &&
+        Objects.equals(this.reason, riskV1AddressVerificationsPost201Response.reason) &&
         Objects.equals(this.message, riskV1AddressVerificationsPost201Response.message) &&
         Objects.equals(this.clientReferenceInformation, riskV1AddressVerificationsPost201Response.clientReferenceInformation) &&
         Objects.equals(this.addressVerificationInformation, riskV1AddressVerificationsPost201Response.addressVerificationInformation) &&
@@ -244,7 +266,7 @@ public class RiskV1AddressVerificationsPost201Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, message, clientReferenceInformation, addressVerificationInformation, errorInformation);
+    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, reason, message, clientReferenceInformation, addressVerificationInformation, errorInformation);
   }
 
 
@@ -258,6 +280,7 @@ public class RiskV1AddressVerificationsPost201Response {
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    submitTimeLocal: ").append(toIndentedString(submitTimeLocal)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    addressVerificationInformation: ").append(toIndentedString(addressVerificationInformation)).append("\n");

@@ -24,9 +24,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Riskv1decisionsOrderInformationShipTo
+ * Contains recipient shipping information.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@ApiModel(description = "Contains recipient shipping information.")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Riskv1decisionsOrderInformationShipTo {
   @SerializedName("address1")
   private String address1 = null;
@@ -39,9 +40,6 @@ public class Riskv1decisionsOrderInformationShipTo {
 
   @SerializedName("country")
   private String country = null;
-
-  @SerializedName("destinationTypes")
-  private String destinationTypes = null;
 
   @SerializedName("locality")
   private String locality = null;
@@ -58,22 +56,16 @@ public class Riskv1decisionsOrderInformationShipTo {
   @SerializedName("postalCode")
   private String postalCode = null;
 
-  @SerializedName("destinationCode")
-  private Integer destinationCode = null;
-
-  @SerializedName("method")
-  private String method = null;
-
   public Riskv1decisionsOrderInformationShipTo address1(String address1) {
     this.address1 = address1;
     return this;
   }
 
    /**
-   * First line of the shipping address.  Required field for authorization if any shipping address information is included in the request; otherwise, optional. 
+   * First line of the shipping address.
    * @return address1
   **/
-  @ApiModelProperty(value = "First line of the shipping address.  Required field for authorization if any shipping address information is included in the request; otherwise, optional. ")
+  @ApiModelProperty(value = "First line of the shipping address.")
   public String getAddress1() {
     return address1;
   }
@@ -88,10 +80,10 @@ public class Riskv1decisionsOrderInformationShipTo {
   }
 
    /**
-   * Second line of the shipping address.  Optional field. 
+   * Second line of the shipping address.
    * @return address2
   **/
-  @ApiModelProperty(value = "Second line of the shipping address.  Optional field. ")
+  @ApiModelProperty(value = "Second line of the shipping address.")
   public String getAddress2() {
     return address2;
   }
@@ -106,10 +98,10 @@ public class Riskv1decisionsOrderInformationShipTo {
   }
 
    /**
-   * State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf)  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional. 
+   * State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada. 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf)  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional. ")
+  @ApiModelProperty(value = "State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada. ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -124,10 +116,10 @@ public class Riskv1decisionsOrderInformationShipTo {
   }
 
    /**
-   * Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional. 
+   * Country of the shipping address. Use the two-character ISO Standard Country Codes.
    * @return country
   **/
-  @ApiModelProperty(value = "Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional. ")
+  @ApiModelProperty(value = "Country of the shipping address. Use the two-character ISO Standard Country Codes.")
   public String getCountry() {
     return country;
   }
@@ -136,34 +128,16 @@ public class Riskv1decisionsOrderInformationShipTo {
     this.country = country;
   }
 
-  public Riskv1decisionsOrderInformationShipTo destinationTypes(String destinationTypes) {
-    this.destinationTypes = destinationTypes;
-    return this;
-  }
-
-   /**
-   * Shipping destination of item. Example: Commercial, Residential, Store 
-   * @return destinationTypes
-  **/
-  @ApiModelProperty(value = "Shipping destination of item. Example: Commercial, Residential, Store ")
-  public String getDestinationTypes() {
-    return destinationTypes;
-  }
-
-  public void setDestinationTypes(String destinationTypes) {
-    this.destinationTypes = destinationTypes;
-  }
-
   public Riskv1decisionsOrderInformationShipTo locality(String locality) {
     this.locality = locality;
     return this;
   }
 
    /**
-   * City of the shipping address.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional. 
+   * City of the shipping address.
    * @return locality
   **/
-  @ApiModelProperty(value = "City of the shipping address.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional. ")
+  @ApiModelProperty(value = "City of the shipping address.")
   public String getLocality() {
     return locality;
   }
@@ -178,10 +152,10 @@ public class Riskv1decisionsOrderInformationShipTo {
   }
 
    /**
-   * First name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
+   * First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 
    * @return firstName
   **/
-  @ApiModelProperty(value = "First name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. ")
+  @ApiModelProperty(value = "First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 ")
   public String getFirstName() {
     return firstName;
   }
@@ -196,10 +170,10 @@ public class Riskv1decisionsOrderInformationShipTo {
   }
 
    /**
-   * Last name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
+   * Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60 
    * @return lastName
   **/
-  @ApiModelProperty(value = "Last name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. ")
+  @ApiModelProperty(value = "Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60 ")
   public String getLastName() {
     return lastName;
   }
@@ -232,52 +206,16 @@ public class Riskv1decisionsOrderInformationShipTo {
   }
 
    /**
-   * Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  #### American Express Direct Before sending the postal code to the processor, all nonalphanumeric characters are removed and, if the remaining value is longer than nine characters, the value is truncated starting from the right side. 
+   * Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  **American Express Direct**\\ Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side. 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  #### American Express Direct Before sending the postal code to the processor, all nonalphanumeric characters are removed and, if the remaining value is longer than nine characters, the value is truncated starting from the right side. ")
+  @ApiModelProperty(value = "Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  **American Express Direct**\\ Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side. ")
   public String getPostalCode() {
     return postalCode;
   }
 
   public void setPostalCode(String postalCode) {
     this.postalCode = postalCode;
-  }
-
-  public Riskv1decisionsOrderInformationShipTo destinationCode(Integer destinationCode) {
-    this.destinationCode = destinationCode;
-    return this;
-  }
-
-   /**
-   * Indicates destination chosen for the transaction. Possible values: - 01- Ship to cardholder billing address - 02- Ship to another verified address on file with merchant - 03- Ship to address that is different than billing address - 04- Ship to store (store address should be populated on request) - 05- Digital goods - 06- Travel and event tickets, not shipped - 07- Other 
-   * @return destinationCode
-  **/
-  @ApiModelProperty(value = "Indicates destination chosen for the transaction. Possible values: - 01- Ship to cardholder billing address - 02- Ship to another verified address on file with merchant - 03- Ship to address that is different than billing address - 04- Ship to store (store address should be populated on request) - 05- Digital goods - 06- Travel and event tickets, not shipped - 07- Other ")
-  public Integer getDestinationCode() {
-    return destinationCode;
-  }
-
-  public void setDestinationCode(Integer destinationCode) {
-    this.destinationCode = destinationCode;
-  }
-
-  public Riskv1decisionsOrderInformationShipTo method(String method) {
-    this.method = method;
-    return this;
-  }
-
-   /**
-   * Shipping method for the product. Possible values: - lowcost: Lowest-cost service - sameday: Courier or same-day service - oneday: Next-day or overnight service - twoday: Two-day service - threeday: Three-day service - pickup: Store pick-up - other: Other shipping method - none: No shipping method because product is a service or subscription Required for American Express SafeKey (U.S.). 
-   * @return method
-  **/
-  @ApiModelProperty(value = "Shipping method for the product. Possible values: - lowcost: Lowest-cost service - sameday: Courier or same-day service - oneday: Next-day or overnight service - twoday: Two-day service - threeday: Three-day service - pickup: Store pick-up - other: Other shipping method - none: No shipping method because product is a service or subscription Required for American Express SafeKey (U.S.). ")
-  public String getMethod() {
-    return method;
-  }
-
-  public void setMethod(String method) {
-    this.method = method;
   }
 
 
@@ -294,19 +232,16 @@ public class Riskv1decisionsOrderInformationShipTo {
         Objects.equals(this.address2, riskv1decisionsOrderInformationShipTo.address2) &&
         Objects.equals(this.administrativeArea, riskv1decisionsOrderInformationShipTo.administrativeArea) &&
         Objects.equals(this.country, riskv1decisionsOrderInformationShipTo.country) &&
-        Objects.equals(this.destinationTypes, riskv1decisionsOrderInformationShipTo.destinationTypes) &&
         Objects.equals(this.locality, riskv1decisionsOrderInformationShipTo.locality) &&
         Objects.equals(this.firstName, riskv1decisionsOrderInformationShipTo.firstName) &&
         Objects.equals(this.lastName, riskv1decisionsOrderInformationShipTo.lastName) &&
         Objects.equals(this.phoneNumber, riskv1decisionsOrderInformationShipTo.phoneNumber) &&
-        Objects.equals(this.postalCode, riskv1decisionsOrderInformationShipTo.postalCode) &&
-        Objects.equals(this.destinationCode, riskv1decisionsOrderInformationShipTo.destinationCode) &&
-        Objects.equals(this.method, riskv1decisionsOrderInformationShipTo.method);
+        Objects.equals(this.postalCode, riskv1decisionsOrderInformationShipTo.postalCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address1, address2, administrativeArea, country, destinationTypes, locality, firstName, lastName, phoneNumber, postalCode, destinationCode, method);
+    return Objects.hash(address1, address2, administrativeArea, country, locality, firstName, lastName, phoneNumber, postalCode);
   }
 
 
@@ -319,14 +254,11 @@ public class Riskv1decisionsOrderInformationShipTo {
     sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    destinationTypes: ").append(toIndentedString(destinationTypes)).append("\n");
     sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
-    sb.append("    destinationCode: ").append(toIndentedString(destinationCode)).append("\n");
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Riskv1authenticationsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Riskv1authenticationsDeviceInformation {
   @SerializedName("ipAddress")
   private String ipAddress = null;
@@ -73,10 +73,10 @@ public class Riskv1authenticationsDeviceInformation {
   }
 
    /**
-   * IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. 
+   * IP address of the customer. 
    * @return ipAddress
   **/
-  @ApiModelProperty(value = "IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. ")
+  @ApiModelProperty(value = "IP address of the customer. ")
   public String getIpAddress() {
     return ipAddress;
   }

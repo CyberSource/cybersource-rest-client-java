@@ -16,7 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
-import Model.RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation;
+import Model.PtsV2PaymentsPost201ResponseErrorInformation;
 import Model.RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * RiskV1ExportComplianceInquiriesPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class RiskV1ExportComplianceInquiriesPost201Response {
   @SerializedName("_links")
   private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
@@ -47,6 +47,9 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
   @SerializedName("status")
   private String status = null;
 
+  @SerializedName("reason")
+  private String reason = null;
+
   @SerializedName("message")
   private String message = null;
 
@@ -57,7 +60,7 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
   private RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation exportComplianceInformation = null;
 
   @SerializedName("errorInformation")
-  private RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation errorInformation = null;
+  private PtsV2PaymentsPost201ResponseErrorInformation errorInformation = null;
 
   public RiskV1ExportComplianceInquiriesPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
@@ -101,10 +104,10 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by authorization service. 
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service. ")
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
   public String getSubmitTimeUtc() {
     return submitTimeUtc;
   }
@@ -147,6 +150,24 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
 
   public void setStatus(String status) {
     this.status = status;
+  }
+
+  public RiskV1ExportComplianceInquiriesPost201Response reason(String reason) {
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * The reason of the status. Value can be   - CUSTOMER_WATCHLIST_MATCH   - ADDRESS_COUNTRY_WATCHLIST_MATCH   - EMAIL_COUNTRY_WATCHLIST_MATCH   - IP_COUNTRY_WATCHLIST_MATCH 
+   * @return reason
+  **/
+  @ApiModelProperty(value = "The reason of the status. Value can be   - CUSTOMER_WATCHLIST_MATCH   - ADDRESS_COUNTRY_WATCHLIST_MATCH   - EMAIL_COUNTRY_WATCHLIST_MATCH   - IP_COUNTRY_WATCHLIST_MATCH ")
+  public String getReason() {
+    return reason;
+  }
+
+  public void setReason(String reason) {
+    this.reason = reason;
   }
 
   public RiskV1ExportComplianceInquiriesPost201Response message(String message) {
@@ -203,7 +224,7 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
     this.exportComplianceInformation = exportComplianceInformation;
   }
 
-  public RiskV1ExportComplianceInquiriesPost201Response errorInformation(RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation errorInformation) {
+  public RiskV1ExportComplianceInquiriesPost201Response errorInformation(PtsV2PaymentsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
     return this;
   }
@@ -213,11 +234,11 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
    * @return errorInformation
   **/
   @ApiModelProperty(value = "")
-  public RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation getErrorInformation() {
+  public PtsV2PaymentsPost201ResponseErrorInformation getErrorInformation() {
     return errorInformation;
   }
 
-  public void setErrorInformation(RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation errorInformation) {
+  public void setErrorInformation(PtsV2PaymentsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
   }
 
@@ -236,6 +257,7 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
         Objects.equals(this.submitTimeUtc, riskV1ExportComplianceInquiriesPost201Response.submitTimeUtc) &&
         Objects.equals(this.submitTimeLocal, riskV1ExportComplianceInquiriesPost201Response.submitTimeLocal) &&
         Objects.equals(this.status, riskV1ExportComplianceInquiriesPost201Response.status) &&
+        Objects.equals(this.reason, riskV1ExportComplianceInquiriesPost201Response.reason) &&
         Objects.equals(this.message, riskV1ExportComplianceInquiriesPost201Response.message) &&
         Objects.equals(this.clientReferenceInformation, riskV1ExportComplianceInquiriesPost201Response.clientReferenceInformation) &&
         Objects.equals(this.exportComplianceInformation, riskV1ExportComplianceInquiriesPost201Response.exportComplianceInformation) &&
@@ -244,7 +266,7 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, message, clientReferenceInformation, exportComplianceInformation, errorInformation);
+    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, reason, message, clientReferenceInformation, exportComplianceInformation, errorInformation);
   }
 
 
@@ -258,6 +280,7 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    submitTimeLocal: ").append(toIndentedString(submitTimeLocal)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    exportComplianceInformation: ").append(toIndentedString(exportComplianceInformation)).append("\n");

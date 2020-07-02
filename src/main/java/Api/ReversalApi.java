@@ -261,8 +261,8 @@ public class ReversalApi {
     }
 
     /**
-     * Timeout Reversal
-     * This is to reverse a previous payment that merchant does not receive a reply(Mostly due to Timeout). To use this feature/API, make sure to pass unique value to field - clientReferenceInformation -&gt; transactionId in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call and use same transactionId in this API request payload to reverse the payment.
+     * Merchant Initiated Reversal
+     * This is to reverse a previous payment that merchant does not receive a reply.
      * @param mitReversalRequest  (required)
      * @return PtsV2PaymentsReversalsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -273,8 +273,8 @@ public class ReversalApi {
     }
 
     /**
-     * Timeout Reversal
-     * This is to reverse a previous payment that merchant does not receive a reply(Mostly due to Timeout). To use this feature/API, make sure to pass unique value to field - clientReferenceInformation -&gt; transactionId in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call and use same transactionId in this API request payload to reverse the payment.
+     * Merchant Initiated Reversal
+     * This is to reverse a previous payment that merchant does not receive a reply.
      * @param mitReversalRequest  (required)
      * @return ApiResponse&lt;PtsV2PaymentsReversalsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -286,8 +286,8 @@ public class ReversalApi {
     }
 
     /**
-     * Timeout Reversal (asynchronously)
-     * This is to reverse a previous payment that merchant does not receive a reply(Mostly due to Timeout). To use this feature/API, make sure to pass unique value to field - clientReferenceInformation -&gt; transactionId in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call and use same transactionId in this API request payload to reverse the payment.
+     * Merchant Initiated Reversal (asynchronously)
+     * This is to reverse a previous payment that merchant does not receive a reply.
      * @param mitReversalRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
