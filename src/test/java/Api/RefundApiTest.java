@@ -39,7 +39,7 @@ public class RefundApiTest {
     /**
      * Refund a Capture
      *
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call Include the capture ID in the POST request to refund the captured amount. 
+     * Include the capture ID in the POST request to refund the captured amount. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -56,7 +56,7 @@ public class RefundApiTest {
     /**
      * Refund a Payment
      *
-     * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to refund the payment amount. 
+     * Include the payment ID in the POST request to refund the payment amount. 
      *
      * @throws ApiException
      *          if the Api call fails

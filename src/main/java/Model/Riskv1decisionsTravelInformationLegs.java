@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1decisionsTravelInformationLegs
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Riskv1decisionsTravelInformationLegs {
   @SerializedName("origination")
   private String origination = null;
@@ -34,11 +34,8 @@ public class Riskv1decisionsTravelInformationLegs {
   @SerializedName("destination")
   private String destination = null;
 
-  @SerializedName("carrierCode")
-  private String carrierCode = null;
-
-  @SerializedName("departureDate")
-  private String departureDate = null;
+  @SerializedName("departureDateTime")
+  private String departureDateTime = null;
 
   public Riskv1decisionsTravelInformationLegs origination(String origination) {
     this.origination = origination;
@@ -76,40 +73,22 @@ public class Riskv1decisionsTravelInformationLegs {
     this.destination = destination;
   }
 
-  public Riskv1decisionsTravelInformationLegs carrierCode(String carrierCode) {
-    this.carrierCode = carrierCode;
+  public Riskv1decisionsTravelInformationLegs departureDateTime(String departureDateTime) {
+    this.departureDateTime = departureDateTime;
     return this;
   }
 
    /**
-   * International Air Transport Association (IATA) code for the carrier for this leg of the trip. Required for each leg. Required for American Express SafeKey (U.S.) for travel-related requests.  For details, see &#x60;airline_leg#_carrier_code&#x60; in [Airline Processing Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Airline_SCMP_API/Airline_SCMP_API.pdf) 
-   * @return carrierCode
+   * Departure date and time for the each leg of the trip. Use one of the following formats: - &#x60;yyyy-MM-dd HH:mm z&#x60; - &#x60;yyyy-MM-dd hh:mm a z&#x60; - &#x60;yyyy-MM-dd hh:mma z&#x60;  Where:\\ &#x60;HH&#x60; &#x3D; hour in 24-hour format\\ &#x60;hh&#x60; &#x3D; hour in 12-hour format\\ &#x60;a&#x60; &#x3D; am or pm (case insensitive)\\ &#x60;z&#x60; &#x3D; time zone of the departing flight. For example, if the airline is based in city A, but the flight departs from city B, &#x60;z&#x60; is the time zone of city B at the time of departure.\\ **Important** For travel information, use GMT instead of UTC, or use the local time zone.  #### Examples  2011-03-20 11:30 PM PDT\\ 2011-03-20 11:30pm GMT\\ 2011-03-20 11:30pm GMT-05:00\\ Eastern Standard Time: GMT-05:00 or EST\\  **Note** When specifying an offset from GMT, the format must be exactly as specified in the example. Insert no spaces between the time zone and the offset. 
+   * @return departureDateTime
   **/
-  @ApiModelProperty(value = "International Air Transport Association (IATA) code for the carrier for this leg of the trip. Required for each leg. Required for American Express SafeKey (U.S.) for travel-related requests.  For details, see `airline_leg#_carrier_code` in [Airline Processing Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Airline_SCMP_API/Airline_SCMP_API.pdf) ")
-  public String getCarrierCode() {
-    return carrierCode;
+  @ApiModelProperty(value = "Departure date and time for the each leg of the trip. Use one of the following formats: - `yyyy-MM-dd HH:mm z` - `yyyy-MM-dd hh:mm a z` - `yyyy-MM-dd hh:mma z`  Where:\\ `HH` = hour in 24-hour format\\ `hh` = hour in 12-hour format\\ `a` = am or pm (case insensitive)\\ `z` = time zone of the departing flight. For example, if the airline is based in city A, but the flight departs from city B, `z` is the time zone of city B at the time of departure.\\ **Important** For travel information, use GMT instead of UTC, or use the local time zone.  #### Examples  2011-03-20 11:30 PM PDT\\ 2011-03-20 11:30pm GMT\\ 2011-03-20 11:30pm GMT-05:00\\ Eastern Standard Time: GMT-05:00 or EST\\  **Note** When specifying an offset from GMT, the format must be exactly as specified in the example. Insert no spaces between the time zone and the offset. ")
+  public String getDepartureDateTime() {
+    return departureDateTime;
   }
 
-  public void setCarrierCode(String carrierCode) {
-    this.carrierCode = carrierCode;
-  }
-
-  public Riskv1decisionsTravelInformationLegs departureDate(String departureDate) {
-    this.departureDate = departureDate;
-    return this;
-  }
-
-   /**
-   * Departure date for the first leg of the trip. Format: YYYYMMDD. Required for American Express SafeKey (U.S.) for travel-related requests.  For details, see &#x60;airline_leg#_leg_departure_date&#x60; in [Airline Processing Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Airline_SCMP_API/Airline_SCMP_API.pdf) 
-   * @return departureDate
-  **/
-  @ApiModelProperty(value = "Departure date for the first leg of the trip. Format: YYYYMMDD. Required for American Express SafeKey (U.S.) for travel-related requests.  For details, see `airline_leg#_leg_departure_date` in [Airline Processing Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Airline_SCMP_API/Airline_SCMP_API.pdf) ")
-  public String getDepartureDate() {
-    return departureDate;
-  }
-
-  public void setDepartureDate(String departureDate) {
-    this.departureDate = departureDate;
+  public void setDepartureDateTime(String departureDateTime) {
+    this.departureDateTime = departureDateTime;
   }
 
 
@@ -124,13 +103,12 @@ public class Riskv1decisionsTravelInformationLegs {
     Riskv1decisionsTravelInformationLegs riskv1decisionsTravelInformationLegs = (Riskv1decisionsTravelInformationLegs) o;
     return Objects.equals(this.origination, riskv1decisionsTravelInformationLegs.origination) &&
         Objects.equals(this.destination, riskv1decisionsTravelInformationLegs.destination) &&
-        Objects.equals(this.carrierCode, riskv1decisionsTravelInformationLegs.carrierCode) &&
-        Objects.equals(this.departureDate, riskv1decisionsTravelInformationLegs.departureDate);
+        Objects.equals(this.departureDateTime, riskv1decisionsTravelInformationLegs.departureDateTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(origination, destination, carrierCode, departureDate);
+    return Objects.hash(origination, destination, departureDateTime);
   }
 
 
@@ -141,8 +119,7 @@ public class Riskv1decisionsTravelInformationLegs {
     
     sb.append("    origination: ").append(toIndentedString(origination)).append("\n");
     sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
-    sb.append("    carrierCode: ").append(toIndentedString(carrierCode)).append("\n");
-    sb.append("    departureDate: ").append(toIndentedString(departureDate)).append("\n");
+    sb.append("    departureDateTime: ").append(toIndentedString(departureDateTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

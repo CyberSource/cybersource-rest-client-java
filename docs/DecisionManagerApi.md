@@ -5,7 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addNegative**](DecisionManagerApi.md#addNegative) | **POST** /risk/v1/lists/{type}/entries | List Management
-[**createBundledDecisionManagerCase**](DecisionManagerApi.md#createBundledDecisionManagerCase) | **POST** /risk/v1/decisions | Create Decision Manager Case
+[**createDecisionManagerCase**](DecisionManagerApi.md#createDecisionManagerCase) | **POST** /risk/v1/decisions | Create Decision Manager Case
 [**fraudUpdate**](DecisionManagerApi.md#fraudUpdate) | **POST** /risk/v1/decisions/{id}/marking | Fraud Marking
 
 
@@ -56,13 +56,13 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/hal+json;charset=utf-8
 
-<a name="createBundledDecisionManagerCase"></a>
-# **createBundledDecisionManagerCase**
-> RiskV1DecisionsPost201Response createBundledDecisionManagerCase(createBundledDecisionManagerCaseRequest)
+<a name="createDecisionManagerCase"></a>
+# **createDecisionManagerCase**
+> RiskV1DecisionsPost201Response createDecisionManagerCase(createDecisionManagerCaseRequest)
 
 Create Decision Manager Case
 
-This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
+This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values. 
 
 ### Example
 ```java
@@ -72,12 +72,12 @@ This is the combined request to the Decision Manager Service for a transaction s
 
 
 DecisionManagerApi apiInstance = new DecisionManagerApi();
-CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest = new CreateBundledDecisionManagerCaseRequest(); // CreateBundledDecisionManagerCaseRequest | 
+CreateDecisionManagerCaseRequest createDecisionManagerCaseRequest = new CreateDecisionManagerCaseRequest(); // CreateDecisionManagerCaseRequest | 
 try {
-    RiskV1DecisionsPost201Response result = apiInstance.createBundledDecisionManagerCase(createBundledDecisionManagerCaseRequest);
+    RiskV1DecisionsPost201Response result = apiInstance.createDecisionManagerCase(createDecisionManagerCaseRequest);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DecisionManagerApi#createBundledDecisionManagerCase");
+    System.err.println("Exception when calling DecisionManagerApi#createDecisionManagerCase");
     e.printStackTrace();
 }
 ```
@@ -86,7 +86,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createBundledDecisionManagerCaseRequest** | [**CreateBundledDecisionManagerCaseRequest**](CreateBundledDecisionManagerCaseRequest.md)|  |
+ **createDecisionManagerCaseRequest** | [**CreateDecisionManagerCaseRequest**](CreateDecisionManagerCaseRequest.md)|  |
 
 ### Return type
 

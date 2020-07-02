@@ -14,7 +14,6 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsRiskInformationBuyerHistory;
 import Model.Ptsv2paymentsRiskInformationProfile;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -28,16 +27,13 @@ import java.io.IOException;
 /**
  * Riskv1decisionsRiskInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Riskv1decisionsRiskInformation {
   @SerializedName("profile")
   private Ptsv2paymentsRiskInformationProfile profile = null;
 
   @SerializedName("eventType")
   private String eventType = null;
-
-  @SerializedName("buyerHistory")
-  private Ptsv2paymentsRiskInformationBuyerHistory buyerHistory = null;
 
   public Riskv1decisionsRiskInformation profile(Ptsv2paymentsRiskInformationProfile profile) {
     this.profile = profile;
@@ -75,24 +71,6 @@ public class Riskv1decisionsRiskInformation {
     this.eventType = eventType;
   }
 
-  public Riskv1decisionsRiskInformation buyerHistory(Ptsv2paymentsRiskInformationBuyerHistory buyerHistory) {
-    this.buyerHistory = buyerHistory;
-    return this;
-  }
-
-   /**
-   * Get buyerHistory
-   * @return buyerHistory
-  **/
-  @ApiModelProperty(value = "")
-  public Ptsv2paymentsRiskInformationBuyerHistory getBuyerHistory() {
-    return buyerHistory;
-  }
-
-  public void setBuyerHistory(Ptsv2paymentsRiskInformationBuyerHistory buyerHistory) {
-    this.buyerHistory = buyerHistory;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,13 +82,12 @@ public class Riskv1decisionsRiskInformation {
     }
     Riskv1decisionsRiskInformation riskv1decisionsRiskInformation = (Riskv1decisionsRiskInformation) o;
     return Objects.equals(this.profile, riskv1decisionsRiskInformation.profile) &&
-        Objects.equals(this.eventType, riskv1decisionsRiskInformation.eventType) &&
-        Objects.equals(this.buyerHistory, riskv1decisionsRiskInformation.buyerHistory);
+        Objects.equals(this.eventType, riskv1decisionsRiskInformation.eventType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile, eventType, buyerHistory);
+    return Objects.hash(profile, eventType);
   }
 
 
@@ -121,7 +98,6 @@ public class Riskv1decisionsRiskInformation {
     
     sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
-    sb.append("    buyerHistory: ").append(toIndentedString(buyerHistory)).append("\n");
     sb.append("}");
     return sb.toString();
   }

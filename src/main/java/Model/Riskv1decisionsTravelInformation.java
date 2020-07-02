@@ -15,7 +15,6 @@ package Model;
 
 import java.util.Objects;
 import Model.Riskv1decisionsTravelInformationLegs;
-import Model.Riskv1decisionsTravelInformationPassengers;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,7 +29,7 @@ import java.util.List;
 /**
  * Riskv1decisionsTravelInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Riskv1decisionsTravelInformation {
   @SerializedName("actualFinalDestination")
   private String actualFinalDestination = null;
@@ -46,12 +45,6 @@ public class Riskv1decisionsTravelInformation {
 
   @SerializedName("legs")
   private List<Riskv1decisionsTravelInformationLegs> legs = null;
-
-  @SerializedName("numberOfPassengers")
-  private Integer numberOfPassengers = null;
-
-  @SerializedName("passengers")
-  private List<Riskv1decisionsTravelInformationPassengers> passengers = null;
 
   public Riskv1decisionsTravelInformation actualFinalDestination(String actualFinalDestination) {
     this.actualFinalDestination = actualFinalDestination;
@@ -151,50 +144,6 @@ public class Riskv1decisionsTravelInformation {
     this.legs = legs;
   }
 
-  public Riskv1decisionsTravelInformation numberOfPassengers(Integer numberOfPassengers) {
-    this.numberOfPassengers = numberOfPassengers;
-    return this;
-  }
-
-   /**
-   * Number of passengers for whom the ticket was issued. If you do not include this field in your request, CyberSource uses a default value of 1. Required for American Express SafeKey (U.S.) for travel-related requests. 
-   * @return numberOfPassengers
-  **/
-  @ApiModelProperty(value = "Number of passengers for whom the ticket was issued. If you do not include this field in your request, CyberSource uses a default value of 1. Required for American Express SafeKey (U.S.) for travel-related requests. ")
-  public Integer getNumberOfPassengers() {
-    return numberOfPassengers;
-  }
-
-  public void setNumberOfPassengers(Integer numberOfPassengers) {
-    this.numberOfPassengers = numberOfPassengers;
-  }
-
-  public Riskv1decisionsTravelInformation passengers(List<Riskv1decisionsTravelInformationPassengers> passengers) {
-    this.passengers = passengers;
-    return this;
-  }
-
-  public Riskv1decisionsTravelInformation addPassengersItem(Riskv1decisionsTravelInformationPassengers passengersItem) {
-    if (this.passengers == null) {
-      this.passengers = new ArrayList<Riskv1decisionsTravelInformationPassengers>();
-    }
-    this.passengers.add(passengersItem);
-    return this;
-  }
-
-   /**
-   * Get passengers
-   * @return passengers
-  **/
-  @ApiModelProperty(value = "")
-  public List<Riskv1decisionsTravelInformationPassengers> getPassengers() {
-    return passengers;
-  }
-
-  public void setPassengers(List<Riskv1decisionsTravelInformationPassengers> passengers) {
-    this.passengers = passengers;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -209,14 +158,12 @@ public class Riskv1decisionsTravelInformation {
         Objects.equals(this.completeRoute, riskv1decisionsTravelInformation.completeRoute) &&
         Objects.equals(this.departureTime, riskv1decisionsTravelInformation.departureTime) &&
         Objects.equals(this.journeyType, riskv1decisionsTravelInformation.journeyType) &&
-        Objects.equals(this.legs, riskv1decisionsTravelInformation.legs) &&
-        Objects.equals(this.numberOfPassengers, riskv1decisionsTravelInformation.numberOfPassengers) &&
-        Objects.equals(this.passengers, riskv1decisionsTravelInformation.passengers);
+        Objects.equals(this.legs, riskv1decisionsTravelInformation.legs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actualFinalDestination, completeRoute, departureTime, journeyType, legs, numberOfPassengers, passengers);
+    return Objects.hash(actualFinalDestination, completeRoute, departureTime, journeyType, legs);
   }
 
 
@@ -230,8 +177,6 @@ public class Riskv1decisionsTravelInformation {
     sb.append("    departureTime: ").append(toIndentedString(departureTime)).append("\n");
     sb.append("    journeyType: ").append(toIndentedString(journeyType)).append("\n");
     sb.append("    legs: ").append(toIndentedString(legs)).append("\n");
-    sb.append("    numberOfPassengers: ").append(toIndentedString(numberOfPassengers)).append("\n");
-    sb.append("    passengers: ").append(toIndentedString(passengers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

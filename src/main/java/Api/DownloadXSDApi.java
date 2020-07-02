@@ -66,7 +66,7 @@ public class DownloadXSDApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/reporting/v3/xsds/{reportDefinitionNameVersion}"
+        String localVarPath = "/xsds/{reportDefinitionNameVersion}"
             .replaceAll("\\{" + "reportDefinitionNameVersion" + "\\}", apiClient.escapeString(reportDefinitionNameVersion.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

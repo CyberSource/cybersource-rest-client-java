@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsProcessingInformationAuthorizationOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("authType")
   private String authType = null;
@@ -130,10 +130,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support. For details, see \&quot;Final Authorization Indicator\&quot; in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/).  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file.  For processor-specific information, see the &#x60;auth_indicator&#x60; field in [Credit Card Services Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html). 
+   * Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support. For details, see \&quot;Final Authorization Indicator\&quot; in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/).  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file5:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file.  For processor-specific information, see the &#x60;auth_indicator&#x60; field in [Credit Card Services Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html). 
    * @return authIndicator
   **/
-  @ApiModelProperty(value = "Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support. For details, see \"Final Authorization Indicator\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/).  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file.  For processor-specific information, see the `auth_indicator` field in [Credit Card Services Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html). ")
+  @ApiModelProperty(value = "Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support. For details, see \"Final Authorization Indicator\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/).  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file5:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file.  For processor-specific information, see the `auth_indicator` field in [Credit Card Services Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html). ")
   public String getAuthIndicator() {
     return authIndicator;
   }
@@ -148,10 +148,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Flag that indicates whether the transaction is enabled for partial authorization or not. When your request includes this field, this value overrides the information in your account.  Possible values: - &#x60;true&#x60;: Enable the transaction for partial authorization. - &#x60;false&#x60;: Do not enable the transaction for partial authorization.  #### Used by **Authorization** Optional field.  #### CyberSource through VisaNet To set the default for this field, contact CyberSource Customer Support. The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 164 - Field: Additional Authorization Indicators 
+   * Flag that indicates whether the transaction is enabled for partial authorization or not. When your request includes this field, this value overrides the information in your CyberSource account.  For processor-specific information, see the &#x60;auth_partial_auth_indicator&#x60; field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  #### CyberSource through VisaNet To set the default for this field, contact CyberSource Customer Support. The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 164 - Field: Additional Authorization Indicators  Possible values: - **true** Enable the transaction for partial authorization. - **false** Do not enable the transaction for partial authorization. 
    * @return partialAuthIndicator
   **/
-  @ApiModelProperty(value = "Flag that indicates whether the transaction is enabled for partial authorization or not. When your request includes this field, this value overrides the information in your account.  Possible values: - `true`: Enable the transaction for partial authorization. - `false`: Do not enable the transaction for partial authorization.  #### Used by **Authorization** Optional field.  #### CyberSource through VisaNet To set the default for this field, contact CyberSource Customer Support. The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 164 - Field: Additional Authorization Indicators ")
+  @ApiModelProperty(value = "Flag that indicates whether the transaction is enabled for partial authorization or not. When your request includes this field, this value overrides the information in your CyberSource account.  For processor-specific information, see the `auth_partial_auth_indicator` field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  #### CyberSource through VisaNet To set the default for this field, contact CyberSource Customer Support. The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 164 - Field: Additional Authorization Indicators  Possible values: - **true** Enable the transaction for partial authorization. - **false** Do not enable the transaction for partial authorization. ")
   public Boolean getPartialAuthIndicator() {
     return partialAuthIndicator;
   }
@@ -166,10 +166,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Flag that indicates whether to return balance information.  Possible values: - &#x60;true&#x60;: Return balance information. - &#x60;false&#x60;: Do not return balance information.  #### Used by **Authorization** Required for a balance inquiry; otherwise, not used. 
+   * Flag that indicates whether to return balance information.  Possible values: - **true** - **false** 
    * @return balanceInquiry
   **/
-  @ApiModelProperty(value = "Flag that indicates whether to return balance information.  Possible values: - `true`: Return balance information. - `false`: Do not return balance information.  #### Used by **Authorization** Required for a balance inquiry; otherwise, not used. ")
+  @ApiModelProperty(value = "Flag that indicates whether to return balance information.  Possible values: - **true** - **false** ")
   public Boolean getBalanceInquiry() {
     return balanceInquiry;
   }
@@ -184,10 +184,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives an AVS decline, as indicated by a reply flag value of DAVSNO.  Possible values: - &#x60;true&#x60;: Ignore the results of AVS checking and run the capture service. - &#x60;false&#x60; (default): If the authorization receives an AVS decline, do not run the capture service. When the value of this field is &#x60;true&#x60;, the list in the &#x60;processingInformation.authorizationOptions.declineAvsFlags&#x60; field is ignored.  #### Used by **Authorization** Optional field. String (3) 
+   * Flag that indicates whether to allow the capture service to run, even when the payment receives an AVS decline.  Possible values: - **true**  Ignore the results of AVS checking and run the capture service. - **false**  (default): If the authorization receives an AVS decline, do not run the capture service. 
    * @return ignoreAvsResult
   **/
-  @ApiModelProperty(value = "Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives an AVS decline, as indicated by a reply flag value of DAVSNO.  Possible values: - `true`: Ignore the results of AVS checking and run the capture service. - `false` (default): If the authorization receives an AVS decline, do not run the capture service. When the value of this field is `true`, the list in the `processingInformation.authorizationOptions.declineAvsFlags` field is ignored.  #### Used by **Authorization** Optional field. String (3) ")
+  @ApiModelProperty(value = "Flag that indicates whether to allow the capture service to run, even when the payment receives an AVS decline.  Possible values: - **true**  Ignore the results of AVS checking and run the capture service. - **false**  (default): If the authorization receives an AVS decline, do not run the capture service. ")
   public Boolean getIgnoreAvsResult() {
     return ignoreAvsResult;
   }
@@ -228,10 +228,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives a CVN decline, as indicated by an &#x60;processorInformation.cardVerification.resultCode&#x60; value of &#x60;D&#x60; or &#x60;N&#x60;. Possible values: - &#x60;true&#x60;: Ignore the results of CVN checking and run the capture service. - &#x60;false&#x60; (default): If the authorization receives a CVN decline, do not run the capture service.  #### Used by **Authorization** Optional field. 
+   * Flag that indicates whether to allow the capture service to run even when the payment receives a CVN decline.  Possible values: - **true**  Ignore the results of CVN checking and run the capture service. - **false**  (default) If the authorization receives a CVN decline, do not run the capture service. 
    * @return ignoreCvResult
   **/
-  @ApiModelProperty(value = "Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives a CVN decline, as indicated by an `processorInformation.cardVerification.resultCode` value of `D` or `N`. Possible values: - `true`: Ignore the results of CVN checking and run the capture service. - `false` (default): If the authorization receives a CVN decline, do not run the capture service.  #### Used by **Authorization** Optional field. ")
+  @ApiModelProperty(value = "Flag that indicates whether to allow the capture service to run even when the payment receives a CVN decline.  Possible values: - **true**  Ignore the results of CVN checking and run the capture service. - **false**  (default) If the authorization receives a CVN decline, do not run the capture service. ")
   public Boolean getIgnoreCvResult() {
     return ignoreCvResult;
   }
@@ -264,10 +264,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Indicates payment for bill or payment towards existing contractual loan.  Possible values: - &#x60;true&#x60;: Bill payment or loan payment. - &#x60;false&#x60; (default): Not a bill payment or loan payment.  Optional field 
+   * Flag that indicates that this is a payment for a bill or for an existing contractual loan. For processor-specific details, see the &#x60;bill_payment&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  Possible values: - &#x60;true&#x60;: Bill payment or loan payment. - &#x60;false&#x60; (default): Not a bill payment or loan payment. 
    * @return billPayment
   **/
-  @ApiModelProperty(value = "Indicates payment for bill or payment towards existing contractual loan.  Possible values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment.  Optional field ")
+  @ApiModelProperty(value = "Flag that indicates that this is a payment for a bill or for an existing contractual loan. For processor-specific details, see the `bill_payment` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  Possible values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment. ")
   public Boolean getBillPayment() {
     return billPayment;
   }

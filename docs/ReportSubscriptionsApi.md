@@ -105,7 +105,7 @@ No authorization required
 
 <a name="deleteSubscription"></a>
 # **deleteSubscription**
-> deleteSubscription(reportName, organizationId)
+> deleteSubscription(reportName)
 
 Delete Subscription of a Report Name by Organization
 
@@ -120,9 +120,8 @@ Delete a report subscription for your organization. You must know the unique nam
 
 ReportSubscriptionsApi apiInstance = new ReportSubscriptionsApi();
 String reportName = "reportName_example"; // String | Name of the Report to Delete
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
 try {
-    apiInstance.deleteSubscription(reportName, organizationId);
+    apiInstance.deleteSubscription(reportName);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportSubscriptionsApi#deleteSubscription");
     e.printStackTrace();
@@ -134,7 +133,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **String**| Name of the Report to Delete |
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
 
 ### Return type
 
@@ -151,7 +149,7 @@ No authorization required
 
 <a name="getAllSubscriptions"></a>
 # **getAllSubscriptions**
-> ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions(organizationId)
+> ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions()
 
 Get All Subscriptions
 
@@ -165,9 +163,8 @@ View a summary of all report subscriptions.
 
 
 ReportSubscriptionsApi apiInstance = new ReportSubscriptionsApi();
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
 try {
-    ReportingV3ReportSubscriptionsGet200Response result = apiInstance.getAllSubscriptions(organizationId);
+    ReportingV3ReportSubscriptionsGet200Response result = apiInstance.getAllSubscriptions();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportSubscriptionsApi#getAllSubscriptions");
@@ -176,10 +173,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -196,7 +190,7 @@ No authorization required
 
 <a name="getSubscription"></a>
 # **getSubscription**
-> ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(reportName, organizationId)
+> ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(reportName)
 
 Get Subscription for Report Name
 
@@ -211,9 +205,8 @@ View the details of a report subscription, such as the report format or report f
 
 ReportSubscriptionsApi apiInstance = new ReportSubscriptionsApi();
 String reportName = "reportName_example"; // String | Name of the Report to Retrieve
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
 try {
-    ReportingV3ReportSubscriptionsGet200ResponseSubscriptions result = apiInstance.getSubscription(reportName, organizationId);
+    ReportingV3ReportSubscriptionsGet200ResponseSubscriptions result = apiInstance.getSubscription(reportName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportSubscriptionsApi#getSubscription");
@@ -226,7 +219,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **String**| Name of the Report to Retrieve |
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
 
 ### Return type
 

@@ -14,7 +14,6 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsDeviceInformationRawData;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,13 +22,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Riskv1decisionsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Riskv1decisionsDeviceInformation {
   @SerializedName("cookiesAccepted")
   private String cookiesAccepted = null;
@@ -48,39 +45,6 @@ public class Riskv1decisionsDeviceInformation {
 
   @SerializedName("userAgent")
   private String userAgent = null;
-
-  @SerializedName("rawData")
-  private List<Ptsv2paymentsDeviceInformationRawData> rawData = null;
-
-  @SerializedName("httpAcceptBrowserValue")
-  private String httpAcceptBrowserValue = null;
-
-  @SerializedName("httpAcceptContent")
-  private String httpAcceptContent = null;
-
-  @SerializedName("httpBrowserLanguage")
-  private String httpBrowserLanguage = null;
-
-  @SerializedName("httpBrowserJavaEnabled")
-  private Boolean httpBrowserJavaEnabled = null;
-
-  @SerializedName("httpBrowserJavaScriptEnabled")
-  private Boolean httpBrowserJavaScriptEnabled = null;
-
-  @SerializedName("httpBrowserColorDepth")
-  private String httpBrowserColorDepth = null;
-
-  @SerializedName("httpBrowserScreenHeight")
-  private String httpBrowserScreenHeight = null;
-
-  @SerializedName("httpBrowserScreenWidth")
-  private String httpBrowserScreenWidth = null;
-
-  @SerializedName("httpBrowserTimeDifference")
-  private String httpBrowserTimeDifference = null;
-
-  @SerializedName("userAgentBrowserValue")
-  private String userAgentBrowserValue = null;
 
   public Riskv1decisionsDeviceInformation cookiesAccepted(String cookiesAccepted) {
     this.cookiesAccepted = cookiesAccepted;
@@ -106,10 +70,10 @@ public class Riskv1decisionsDeviceInformation {
   }
 
    /**
-   * IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. 
+   * IP address of the customer. 
    * @return ipAddress
   **/
-  @ApiModelProperty(value = "IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. ")
+  @ApiModelProperty(value = "IP address of the customer. ")
   public String getIpAddress() {
     return ipAddress;
   }
@@ -190,212 +154,6 @@ public class Riskv1decisionsDeviceInformation {
     this.userAgent = userAgent;
   }
 
-  public Riskv1decisionsDeviceInformation rawData(List<Ptsv2paymentsDeviceInformationRawData> rawData) {
-    this.rawData = rawData;
-    return this;
-  }
-
-  public Riskv1decisionsDeviceInformation addRawDataItem(Ptsv2paymentsDeviceInformationRawData rawDataItem) {
-    if (this.rawData == null) {
-      this.rawData = new ArrayList<Ptsv2paymentsDeviceInformationRawData>();
-    }
-    this.rawData.add(rawDataItem);
-    return this;
-  }
-
-   /**
-   * Get rawData
-   * @return rawData
-  **/
-  @ApiModelProperty(value = "")
-  public List<Ptsv2paymentsDeviceInformationRawData> getRawData() {
-    return rawData;
-  }
-
-  public void setRawData(List<Ptsv2paymentsDeviceInformationRawData> rawData) {
-    this.rawData = rawData;
-  }
-
-  public Riskv1decisionsDeviceInformation httpAcceptBrowserValue(String httpAcceptBrowserValue) {
-    this.httpAcceptBrowserValue = httpAcceptBrowserValue;
-    return this;
-  }
-
-   /**
-   * Value of the Accept header sent by the customer’s web browser. **Note** If the customer’s browser provides a value, you must include it in your request. 
-   * @return httpAcceptBrowserValue
-  **/
-  @ApiModelProperty(value = "Value of the Accept header sent by the customer’s web browser. **Note** If the customer’s browser provides a value, you must include it in your request. ")
-  public String getHttpAcceptBrowserValue() {
-    return httpAcceptBrowserValue;
-  }
-
-  public void setHttpAcceptBrowserValue(String httpAcceptBrowserValue) {
-    this.httpAcceptBrowserValue = httpAcceptBrowserValue;
-  }
-
-  public Riskv1decisionsDeviceInformation httpAcceptContent(String httpAcceptContent) {
-    this.httpAcceptContent = httpAcceptContent;
-    return this;
-  }
-
-   /**
-   * The exact content of the HTTP accept header. 
-   * @return httpAcceptContent
-  **/
-  @ApiModelProperty(value = "The exact content of the HTTP accept header. ")
-  public String getHttpAcceptContent() {
-    return httpAcceptContent;
-  }
-
-  public void setHttpAcceptContent(String httpAcceptContent) {
-    this.httpAcceptContent = httpAcceptContent;
-  }
-
-  public Riskv1decisionsDeviceInformation httpBrowserLanguage(String httpBrowserLanguage) {
-    this.httpBrowserLanguage = httpBrowserLanguage;
-    return this;
-  }
-
-   /**
-   * Value represents the browser language as defined in IETF BCP47. Example:en-US, refer  https://en.wikipedia.org/wiki/IETF_language_tag for more details. 
-   * @return httpBrowserLanguage
-  **/
-  @ApiModelProperty(value = "Value represents the browser language as defined in IETF BCP47. Example:en-US, refer  https://en.wikipedia.org/wiki/IETF_language_tag for more details. ")
-  public String getHttpBrowserLanguage() {
-    return httpBrowserLanguage;
-  }
-
-  public void setHttpBrowserLanguage(String httpBrowserLanguage) {
-    this.httpBrowserLanguage = httpBrowserLanguage;
-  }
-
-  public Riskv1decisionsDeviceInformation httpBrowserJavaEnabled(Boolean httpBrowserJavaEnabled) {
-    this.httpBrowserJavaEnabled = httpBrowserJavaEnabled;
-    return this;
-  }
-
-   /**
-   * A Boolean value that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property. Possible Values:True/False 
-   * @return httpBrowserJavaEnabled
-  **/
-  @ApiModelProperty(value = "A Boolean value that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property. Possible Values:True/False ")
-  public Boolean getHttpBrowserJavaEnabled() {
-    return httpBrowserJavaEnabled;
-  }
-
-  public void setHttpBrowserJavaEnabled(Boolean httpBrowserJavaEnabled) {
-    this.httpBrowserJavaEnabled = httpBrowserJavaEnabled;
-  }
-
-  public Riskv1decisionsDeviceInformation httpBrowserJavaScriptEnabled(Boolean httpBrowserJavaScriptEnabled) {
-    this.httpBrowserJavaScriptEnabled = httpBrowserJavaScriptEnabled;
-    return this;
-  }
-
-   /**
-   * A Boolean value that represents the ability of the cardholder browser to execute JavaScript. Possible Values:True/False. **Note**: Merchants should be able to know the values from fingerprint details of cardholder&#39;s browser. 
-   * @return httpBrowserJavaScriptEnabled
-  **/
-  @ApiModelProperty(value = "A Boolean value that represents the ability of the cardholder browser to execute JavaScript. Possible Values:True/False. **Note**: Merchants should be able to know the values from fingerprint details of cardholder's browser. ")
-  public Boolean getHttpBrowserJavaScriptEnabled() {
-    return httpBrowserJavaScriptEnabled;
-  }
-
-  public void setHttpBrowserJavaScriptEnabled(Boolean httpBrowserJavaScriptEnabled) {
-    this.httpBrowserJavaScriptEnabled = httpBrowserJavaScriptEnabled;
-  }
-
-  public Riskv1decisionsDeviceInformation httpBrowserColorDepth(String httpBrowserColorDepth) {
-    this.httpBrowserColorDepth = httpBrowserColorDepth;
-    return this;
-  }
-
-   /**
-   * Value represents the bit depth of the color palette for displaying images, in bits per pixel. Example : 24, refer https://en.wikipedia.org/wiki/Color_depth for more details 
-   * @return httpBrowserColorDepth
-  **/
-  @ApiModelProperty(value = "Value represents the bit depth of the color palette for displaying images, in bits per pixel. Example : 24, refer https://en.wikipedia.org/wiki/Color_depth for more details ")
-  public String getHttpBrowserColorDepth() {
-    return httpBrowserColorDepth;
-  }
-
-  public void setHttpBrowserColorDepth(String httpBrowserColorDepth) {
-    this.httpBrowserColorDepth = httpBrowserColorDepth;
-  }
-
-  public Riskv1decisionsDeviceInformation httpBrowserScreenHeight(String httpBrowserScreenHeight) {
-    this.httpBrowserScreenHeight = httpBrowserScreenHeight;
-    return this;
-  }
-
-   /**
-   * Total height of the Cardholder&#39;s scree in pixels, example: 864. 
-   * @return httpBrowserScreenHeight
-  **/
-  @ApiModelProperty(value = "Total height of the Cardholder's scree in pixels, example: 864. ")
-  public String getHttpBrowserScreenHeight() {
-    return httpBrowserScreenHeight;
-  }
-
-  public void setHttpBrowserScreenHeight(String httpBrowserScreenHeight) {
-    this.httpBrowserScreenHeight = httpBrowserScreenHeight;
-  }
-
-  public Riskv1decisionsDeviceInformation httpBrowserScreenWidth(String httpBrowserScreenWidth) {
-    this.httpBrowserScreenWidth = httpBrowserScreenWidth;
-    return this;
-  }
-
-   /**
-   * Total width of the cardholder&#39;s screen in pixels. Example: 1536. 
-   * @return httpBrowserScreenWidth
-  **/
-  @ApiModelProperty(value = "Total width of the cardholder's screen in pixels. Example: 1536. ")
-  public String getHttpBrowserScreenWidth() {
-    return httpBrowserScreenWidth;
-  }
-
-  public void setHttpBrowserScreenWidth(String httpBrowserScreenWidth) {
-    this.httpBrowserScreenWidth = httpBrowserScreenWidth;
-  }
-
-  public Riskv1decisionsDeviceInformation httpBrowserTimeDifference(String httpBrowserTimeDifference) {
-    this.httpBrowserTimeDifference = httpBrowserTimeDifference;
-    return this;
-  }
-
-   /**
-   * Time difference between UTC time and the cardholder browser local time, in minutes, Example:300 
-   * @return httpBrowserTimeDifference
-  **/
-  @ApiModelProperty(value = "Time difference between UTC time and the cardholder browser local time, in minutes, Example:300 ")
-  public String getHttpBrowserTimeDifference() {
-    return httpBrowserTimeDifference;
-  }
-
-  public void setHttpBrowserTimeDifference(String httpBrowserTimeDifference) {
-    this.httpBrowserTimeDifference = httpBrowserTimeDifference;
-  }
-
-  public Riskv1decisionsDeviceInformation userAgentBrowserValue(String userAgentBrowserValue) {
-    this.userAgentBrowserValue = userAgentBrowserValue;
-    return this;
-  }
-
-   /**
-   * Value of the User-Agent header sent by the customer’s web browser. Note If the customer’s browser provides a value, you must include it in your request. 
-   * @return userAgentBrowserValue
-  **/
-  @ApiModelProperty(value = "Value of the User-Agent header sent by the customer’s web browser. Note If the customer’s browser provides a value, you must include it in your request. ")
-  public String getUserAgentBrowserValue() {
-    return userAgentBrowserValue;
-  }
-
-  public void setUserAgentBrowserValue(String userAgentBrowserValue) {
-    this.userAgentBrowserValue = userAgentBrowserValue;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -411,23 +169,12 @@ public class Riskv1decisionsDeviceInformation {
         Objects.equals(this.hostName, riskv1decisionsDeviceInformation.hostName) &&
         Objects.equals(this.fingerprintSessionId, riskv1decisionsDeviceInformation.fingerprintSessionId) &&
         Objects.equals(this.httpBrowserEmail, riskv1decisionsDeviceInformation.httpBrowserEmail) &&
-        Objects.equals(this.userAgent, riskv1decisionsDeviceInformation.userAgent) &&
-        Objects.equals(this.rawData, riskv1decisionsDeviceInformation.rawData) &&
-        Objects.equals(this.httpAcceptBrowserValue, riskv1decisionsDeviceInformation.httpAcceptBrowserValue) &&
-        Objects.equals(this.httpAcceptContent, riskv1decisionsDeviceInformation.httpAcceptContent) &&
-        Objects.equals(this.httpBrowserLanguage, riskv1decisionsDeviceInformation.httpBrowserLanguage) &&
-        Objects.equals(this.httpBrowserJavaEnabled, riskv1decisionsDeviceInformation.httpBrowserJavaEnabled) &&
-        Objects.equals(this.httpBrowserJavaScriptEnabled, riskv1decisionsDeviceInformation.httpBrowserJavaScriptEnabled) &&
-        Objects.equals(this.httpBrowserColorDepth, riskv1decisionsDeviceInformation.httpBrowserColorDepth) &&
-        Objects.equals(this.httpBrowserScreenHeight, riskv1decisionsDeviceInformation.httpBrowserScreenHeight) &&
-        Objects.equals(this.httpBrowserScreenWidth, riskv1decisionsDeviceInformation.httpBrowserScreenWidth) &&
-        Objects.equals(this.httpBrowserTimeDifference, riskv1decisionsDeviceInformation.httpBrowserTimeDifference) &&
-        Objects.equals(this.userAgentBrowserValue, riskv1decisionsDeviceInformation.userAgentBrowserValue);
+        Objects.equals(this.userAgent, riskv1decisionsDeviceInformation.userAgent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cookiesAccepted, ipAddress, hostName, fingerprintSessionId, httpBrowserEmail, userAgent, rawData, httpAcceptBrowserValue, httpAcceptContent, httpBrowserLanguage, httpBrowserJavaEnabled, httpBrowserJavaScriptEnabled, httpBrowserColorDepth, httpBrowserScreenHeight, httpBrowserScreenWidth, httpBrowserTimeDifference, userAgentBrowserValue);
+    return Objects.hash(cookiesAccepted, ipAddress, hostName, fingerprintSessionId, httpBrowserEmail, userAgent);
   }
 
 
@@ -442,17 +189,6 @@ public class Riskv1decisionsDeviceInformation {
     sb.append("    fingerprintSessionId: ").append(toIndentedString(fingerprintSessionId)).append("\n");
     sb.append("    httpBrowserEmail: ").append(toIndentedString(httpBrowserEmail)).append("\n");
     sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
-    sb.append("    rawData: ").append(toIndentedString(rawData)).append("\n");
-    sb.append("    httpAcceptBrowserValue: ").append(toIndentedString(httpAcceptBrowserValue)).append("\n");
-    sb.append("    httpAcceptContent: ").append(toIndentedString(httpAcceptContent)).append("\n");
-    sb.append("    httpBrowserLanguage: ").append(toIndentedString(httpBrowserLanguage)).append("\n");
-    sb.append("    httpBrowserJavaEnabled: ").append(toIndentedString(httpBrowserJavaEnabled)).append("\n");
-    sb.append("    httpBrowserJavaScriptEnabled: ").append(toIndentedString(httpBrowserJavaScriptEnabled)).append("\n");
-    sb.append("    httpBrowserColorDepth: ").append(toIndentedString(httpBrowserColorDepth)).append("\n");
-    sb.append("    httpBrowserScreenHeight: ").append(toIndentedString(httpBrowserScreenHeight)).append("\n");
-    sb.append("    httpBrowserScreenWidth: ").append(toIndentedString(httpBrowserScreenWidth)).append("\n");
-    sb.append("    httpBrowserTimeDifference: ").append(toIndentedString(httpBrowserTimeDifference)).append("\n");
-    sb.append("    userAgentBrowserValue: ").append(toIndentedString(userAgentBrowserValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

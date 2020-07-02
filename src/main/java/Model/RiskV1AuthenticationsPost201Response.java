@@ -16,9 +16,9 @@ package Model;
 import java.util.Objects;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
-import Model.RiskV1AuthenticationsPost201ResponseErrorInformation;
-import Model.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation;
-import Model.RiskV1DecisionsPost201ResponseOrderInformation;
+import Model.PtsV2PaymentsPost201ResponseErrorInformation;
+import Model.RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation;
+import Model.RiskV1AuthenticationsPost201ResponseOrderInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,7 +31,7 @@ import java.io.IOException;
 /**
  * RiskV1AuthenticationsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class RiskV1AuthenticationsPost201Response {
   @SerializedName("_links")
   private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
@@ -48,6 +48,9 @@ public class RiskV1AuthenticationsPost201Response {
   @SerializedName("status")
   private String status = null;
 
+  @SerializedName("reason")
+  private String reason = null;
+
   @SerializedName("message")
   private String message = null;
 
@@ -55,13 +58,13 @@ public class RiskV1AuthenticationsPost201Response {
   private PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
-  private RiskV1DecisionsPost201ResponseOrderInformation orderInformation = null;
+  private RiskV1AuthenticationsPost201ResponseOrderInformation orderInformation = null;
 
   @SerializedName("consumerAuthenticationInformation")
-  private RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation = null;
+  private RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation = null;
 
   @SerializedName("errorInformation")
-  private RiskV1AuthenticationsPost201ResponseErrorInformation errorInformation = null;
+  private PtsV2PaymentsPost201ResponseErrorInformation errorInformation = null;
 
   public RiskV1AuthenticationsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
@@ -105,10 +108,10 @@ public class RiskV1AuthenticationsPost201Response {
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by authorization service. 
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service. ")
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
   public String getSubmitTimeUtc() {
     return submitTimeUtc;
   }
@@ -141,16 +144,34 @@ public class RiskV1AuthenticationsPost201Response {
   }
 
    /**
-   * The status for payerAuthentication 201 enroll and validate calls. Possible values are: - &#x60;AUTHENTICATION_SUCCESSFUL&#x60; - &#x60;PENDING_AUTHENTICATION&#x60; - &#x60;INVALID_REQUEST&#x60; - &#x60;AUTHENTICATION_FAILED&#x60; 
+   * The status for payerAuthentication 201 enroll and validate calls. Possible values are: - AUTHENTICATION_SUCCESSFUL - PENDING_AUTHENTICATION 
    * @return status
   **/
-  @ApiModelProperty(value = "The status for payerAuthentication 201 enroll and validate calls. Possible values are: - `AUTHENTICATION_SUCCESSFUL` - `PENDING_AUTHENTICATION` - `INVALID_REQUEST` - `AUTHENTICATION_FAILED` ")
+  @ApiModelProperty(value = "The status for payerAuthentication 201 enroll and validate calls. Possible values are: - AUTHENTICATION_SUCCESSFUL - PENDING_AUTHENTICATION ")
   public String getStatus() {
     return status;
   }
 
   public void setStatus(String status) {
     this.status = status;
+  }
+
+  public RiskV1AuthenticationsPost201Response reason(String reason) {
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * The reason of the status. Possible values are: - Authentication_Completed_Or_Skipped_Sucessfully - Pending_Authentication 
+   * @return reason
+  **/
+  @ApiModelProperty(value = "The reason of the status. Possible values are: - Authentication_Completed_Or_Skipped_Sucessfully - Pending_Authentication ")
+  public String getReason() {
+    return reason;
+  }
+
+  public void setReason(String reason) {
+    this.reason = reason;
   }
 
   public RiskV1AuthenticationsPost201Response message(String message) {
@@ -189,7 +210,7 @@ public class RiskV1AuthenticationsPost201Response {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
-  public RiskV1AuthenticationsPost201Response orderInformation(RiskV1DecisionsPost201ResponseOrderInformation orderInformation) {
+  public RiskV1AuthenticationsPost201Response orderInformation(RiskV1AuthenticationsPost201ResponseOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
   }
@@ -199,15 +220,15 @@ public class RiskV1AuthenticationsPost201Response {
    * @return orderInformation
   **/
   @ApiModelProperty(value = "")
-  public RiskV1DecisionsPost201ResponseOrderInformation getOrderInformation() {
+  public RiskV1AuthenticationsPost201ResponseOrderInformation getOrderInformation() {
     return orderInformation;
   }
 
-  public void setOrderInformation(RiskV1DecisionsPost201ResponseOrderInformation orderInformation) {
+  public void setOrderInformation(RiskV1AuthenticationsPost201ResponseOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
   }
 
-  public RiskV1AuthenticationsPost201Response consumerAuthenticationInformation(RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation) {
+  public RiskV1AuthenticationsPost201Response consumerAuthenticationInformation(RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation) {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
     return this;
   }
@@ -217,15 +238,15 @@ public class RiskV1AuthenticationsPost201Response {
    * @return consumerAuthenticationInformation
   **/
   @ApiModelProperty(value = "")
-  public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation getConsumerAuthenticationInformation() {
+  public RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation getConsumerAuthenticationInformation() {
     return consumerAuthenticationInformation;
   }
 
-  public void setConsumerAuthenticationInformation(RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation) {
+  public void setConsumerAuthenticationInformation(RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation) {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
   }
 
-  public RiskV1AuthenticationsPost201Response errorInformation(RiskV1AuthenticationsPost201ResponseErrorInformation errorInformation) {
+  public RiskV1AuthenticationsPost201Response errorInformation(PtsV2PaymentsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
     return this;
   }
@@ -235,11 +256,11 @@ public class RiskV1AuthenticationsPost201Response {
    * @return errorInformation
   **/
   @ApiModelProperty(value = "")
-  public RiskV1AuthenticationsPost201ResponseErrorInformation getErrorInformation() {
+  public PtsV2PaymentsPost201ResponseErrorInformation getErrorInformation() {
     return errorInformation;
   }
 
-  public void setErrorInformation(RiskV1AuthenticationsPost201ResponseErrorInformation errorInformation) {
+  public void setErrorInformation(PtsV2PaymentsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
   }
 
@@ -258,6 +279,7 @@ public class RiskV1AuthenticationsPost201Response {
         Objects.equals(this.submitTimeUtc, riskV1AuthenticationsPost201Response.submitTimeUtc) &&
         Objects.equals(this.submitTimeLocal, riskV1AuthenticationsPost201Response.submitTimeLocal) &&
         Objects.equals(this.status, riskV1AuthenticationsPost201Response.status) &&
+        Objects.equals(this.reason, riskV1AuthenticationsPost201Response.reason) &&
         Objects.equals(this.message, riskV1AuthenticationsPost201Response.message) &&
         Objects.equals(this.clientReferenceInformation, riskV1AuthenticationsPost201Response.clientReferenceInformation) &&
         Objects.equals(this.orderInformation, riskV1AuthenticationsPost201Response.orderInformation) &&
@@ -267,7 +289,7 @@ public class RiskV1AuthenticationsPost201Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, message, clientReferenceInformation, orderInformation, consumerAuthenticationInformation, errorInformation);
+    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, reason, message, clientReferenceInformation, orderInformation, consumerAuthenticationInformation, errorInformation);
   }
 
 
@@ -281,6 +303,7 @@ public class RiskV1AuthenticationsPost201Response {
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    submitTimeLocal: ").append(toIndentedString(submitTimeLocal)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");

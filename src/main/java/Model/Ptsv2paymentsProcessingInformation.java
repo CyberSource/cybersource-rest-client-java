@@ -30,17 +30,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Ptsv2paymentsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Ptsv2paymentsProcessingInformation {
-  @SerializedName("actionList")
-  private List<String> actionList = null;
-
   @SerializedName("capture")
   private Boolean capture = false;
 
@@ -113,42 +108,16 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("networkRoutingOrder")
   private String networkRoutingOrder = null;
 
-  public Ptsv2paymentsProcessingInformation actionList(List<String> actionList) {
-    this.actionList = actionList;
-    return this;
-  }
-
-  public Ptsv2paymentsProcessingInformation addActionListItem(String actionListItem) {
-    if (this.actionList == null) {
-      this.actionList = new ArrayList<String>();
-    }
-    this.actionList.add(actionListItem);
-    return this;
-  }
-
-   /**
-   * Array of actions (one or more) to be included in the payment to invoke bundled serviecs along with payment.  Possible values are one or more of follows:   - &#x60;DECISION&#x60;: Use this when you want to check Risk Score along with your payment request.   - &#x60;DECISION_SKIP&#x60;: Use this when you want to skip Decision Manager service(s).   - &#x60;TOKEN_CREATE&#x60;: Use this when you want to create a token from the card/bank data in your payment request.   - &#x60;CONSUMER_AUTHENTICATION&#x60;: Use this when you want to check if a card is enrolled in Payer Authentioncation along with your payment request.   - &#x60;VALIDATE_CONSUMER_AUTHENTICATION&#x60;: Use this after you acquire a Payer Authentioncation result that needs to be included for your payment request. 
-   * @return actionList
-  **/
-  @ApiModelProperty(value = "Array of actions (one or more) to be included in the payment to invoke bundled serviecs along with payment.  Possible values are one or more of follows:   - `DECISION`: Use this when you want to check Risk Score along with your payment request.   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentioncation along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentioncation result that needs to be included for your payment request. ")
-  public List<String> getActionList() {
-    return actionList;
-  }
-
-  public void setActionList(List<String> actionList) {
-    this.actionList = actionList;
-  }
-
   public Ptsv2paymentsProcessingInformation capture(Boolean capture) {
     this.capture = capture;
     return this;
   }
 
    /**
-   * Indicates whether to also include a capture  in the submitted authorization request or not.  Possible values: - &#x60;true&#x60;: Include a capture with an authorization request. - &#x60;false&#x60;: (default) Do not include a capture with an authorization request.  #### Used by **Authorization and Capture** Optional field. 
+   * Flag that specifies whether to also include capture service in the submitted request or not.  Possible values: - **true** - **false** (default). 
    * @return capture
   **/
-  @ApiModelProperty(value = "Indicates whether to also include a capture  in the submitted authorization request or not.  Possible values: - `true`: Include a capture with an authorization request. - `false`: (default) Do not include a capture with an authorization request.  #### Used by **Authorization and Capture** Optional field. ")
+  @ApiModelProperty(value = "Flag that specifies whether to also include capture service in the submitted request or not.  Possible values: - **true** - **false** (default). ")
   public Boolean getCapture() {
     return capture;
   }
@@ -199,10 +168,10 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   * Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional. Only &#x60;internet&#x60;, &#x60;moto&#x60;, &#x60;recurring&#x60;, and &#x60;recurring_internet&#x60; are valid values.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \&quot;Commerce Indicators,\&quot; on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \&quot;Payer Authentication,\&quot; page 195.  #### Other Types of Transactions See Appendix I, \&quot;Commerce Indicators,\&quot; on page 441.  #### Card Present You must set this field to &#x60;retail&#x60;. This field is required for a card-present transaction. 
+   * Type of transaction. Certain card associations use this information when determining discount rates to charge you. Required for Verified by Visa and MasterCard SecureCode transactions.      This field can contain one of these values:      * 5: &#x60;vbv&#x60; (Successful Verified by Visa transaction)     * 6: &#x60;spa&#x60; (MasterCard SecureCode transaction)     * 7: &#x60;internet&#x60; (default) (eCommerce order placed by     using a Web site)     * 8: &#x60;vbv_attempted&#x60; (Verified by Visa transaction     was attempted but not authenticated)     * E: &#x60;vbv_failure&#x60; (Depending on your payment     processor, you may receive this result if Visa’s     directory service is not available)     * F: &#x60;spa_failure&#x60; (MasterCard SecureCode     authentication failed)     * M: &#x60;moto&#x60; (Mail order or telephone order)     * P: &#x60;retail&#x60; (Point-of-sale transaction)     * R: &#x60;recurring&#x60; (Recurring transaction)     * S: &#x60;install&#x60; (Installment payment) 
    * @return commerceIndicator
   **/
-  @ApiModelProperty(value = "Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional. Only `internet`, `moto`, `recurring`, and `recurring_internet` are valid values.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \"Commerce Indicators,\" on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication,\" page 195.  #### Other Types of Transactions See Appendix I, \"Commerce Indicators,\" on page 441.  #### Card Present You must set this field to `retail`. This field is required for a card-present transaction. ")
+  @ApiModelProperty(value = "Type of transaction. Certain card associations use this information when determining discount rates to charge you. Required for Verified by Visa and MasterCard SecureCode transactions.      This field can contain one of these values:      * 5: `vbv` (Successful Verified by Visa transaction)     * 6: `spa` (MasterCard SecureCode transaction)     * 7: `internet` (default) (eCommerce order placed by     using a Web site)     * 8: `vbv_attempted` (Verified by Visa transaction     was attempted but not authenticated)     * E: `vbv_failure` (Depending on your payment     processor, you may receive this result if Visa’s     directory service is not available)     * F: `spa_failure` (MasterCard SecureCode     authentication failed)     * M: `moto` (Mail order or telephone order)     * P: `retail` (Point-of-sale transaction)     * R: `recurring` (Recurring transaction)     * S: `install` (Installment payment) ")
   public String getCommerceIndicator() {
     return commerceIndicator;
   }
@@ -325,10 +294,10 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   * Indicates that the transaction includes airline data or restaurant data. Possible Values: - &#x60;airline&#x60; - &#x60;restaurant&#x60; - &#x60;lodging&#x60; - &#x60;auto_rental&#x60; - &#x60;transit&#x60; - &#x60;healthcare_medical&#x60; - &#x60;healthcare_transit&#x60;  #### Card Present You must set this field to &#x60;airline&#x60; in order for airline data to be sent to the processor. For example, if this field is not set to &#x60;airline&#x60; or is not included in the request, no airline data is sent to the processor.  You must set this field to &#x60;restaurant&#x60; in order for restaurant data to be sent to the processor. When this field is not set to &#x60;restaurant&#x60; or is not included in the request, no restaurant data is sent to the processor.  Restaurant data is supported only on CyberSource through VisaNet. 
+   * Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to &#x60;airline&#x60; in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to &#x60;restaurant&#x60; in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - &#x60;airline&#x60; - &#x60;restaurant&#x60; - &#x60;lodging&#x60; - &#x60;auto_rental&#x60; - &#x60;transit&#x60; - &#x60;healthcare_medical&#x60; - &#x60;healthcare_transit&#x60; 
    * @return industryDataType
   **/
-  @ApiModelProperty(value = "Indicates that the transaction includes airline data or restaurant data. Possible Values: - `airline` - `restaurant` - `lodging` - `auto_rental` - `transit` - `healthcare_medical` - `healthcare_transit`  #### Card Present You must set this field to `airline` in order for airline data to be sent to the processor. For example, if this field is not set to `airline` or is not included in the request, no airline data is sent to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor. When this field is not set to `restaurant` or is not included in the request, no restaurant data is sent to the processor.  Restaurant data is supported only on CyberSource through VisaNet. ")
+  @ApiModelProperty(value = "Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to `airline` in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - `airline` - `restaurant` - `lodging` - `auto_rental` - `transit` - `healthcare_medical` - `healthcare_transit` ")
   public String getIndustryDataType() {
     return industryDataType;
   }
@@ -523,10 +492,10 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   * Type of payment initiated from a cardholder&#39;s mobile device. Possible values: - &#x60;1&#x60; :  Consumer-initiated remote purchase, face-to-face - &#x60;2&#x60; :  Consumer-initiated remote purchase, e-commerce - &#x60;3&#x60; :  Consumer-initiated remote purchase, mail order / telephone order - &#x60;4&#x60; :  Consumer-initiated bill pay - &#x60;5&#x60; :  Consumer-initiated top up - &#x60;6&#x60; :  Consumer-initiated cash out - &#x60;7&#x60; :  ATM triggered or agent-initiated cash out - &#x60;8&#x60; :  Merchant-initiated remote purchase, face-to-face - &#x60;9&#x60; :  Merchant-initiated remote purchase, e-commerce  This field is supported only for Mastercard transactions on CyberSource through VisaNet.  Optional field.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 94 - Field: Mastercard Mobile Remote Payment Program Indicator  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. 
+   * This tag contains one of the following values: - &#x60;1&#x60; :  Remote purchase (Consumer initiated) face-to-face - &#x60;2&#x60; :  Remote purchase (Consumer initiated) ecommerce - &#x60;3&#x60; :  Remote purchase (Consumer initiated) MOTO - &#x60;4&#x60; :  Bill Pay (Consumer initiated) - &#x60;5&#x60; :  Top-up (Consumer initiated) - &#x60;6&#x60; :  Cash-out (Consumer initiated) - &#x60;7&#x60; :  Case-out (ATM/Agent triggered) - &#x60;8&#x60; :  Remote purchase (Merchant triggered) face-to-face - &#x60;9&#x60; :  Remote purchase (Merchant triggered) ecommerce 
    * @return mobileRemotePaymentType
   **/
-  @ApiModelProperty(value = "Type of payment initiated from a cardholder's mobile device. Possible values: - `1` :  Consumer-initiated remote purchase, face-to-face - `2` :  Consumer-initiated remote purchase, e-commerce - `3` :  Consumer-initiated remote purchase, mail order / telephone order - `4` :  Consumer-initiated bill pay - `5` :  Consumer-initiated top up - `6` :  Consumer-initiated cash out - `7` :  ATM triggered or agent-initiated cash out - `8` :  Merchant-initiated remote purchase, face-to-face - `9` :  Merchant-initiated remote purchase, e-commerce  This field is supported only for Mastercard transactions on CyberSource through VisaNet.  Optional field.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 94 - Field: Mastercard Mobile Remote Payment Program Indicator  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. ")
+  @ApiModelProperty(value = "This tag contains one of the following values: - `1` :  Remote purchase (Consumer initiated) face-to-face - `2` :  Remote purchase (Consumer initiated) ecommerce - `3` :  Remote purchase (Consumer initiated) MOTO - `4` :  Bill Pay (Consumer initiated) - `5` :  Top-up (Consumer initiated) - `6` :  Cash-out (Consumer initiated) - `7` :  Case-out (ATM/Agent triggered) - `8` :  Remote purchase (Merchant triggered) face-to-face - `9` :  Remote purchase (Merchant triggered) ecommerce ")
   public String getMobileRemotePaymentType() {
     return mobileRemotePaymentType;
   }
@@ -581,8 +550,7 @@ public class Ptsv2paymentsProcessingInformation {
       return false;
     }
     Ptsv2paymentsProcessingInformation ptsv2paymentsProcessingInformation = (Ptsv2paymentsProcessingInformation) o;
-    return Objects.equals(this.actionList, ptsv2paymentsProcessingInformation.actionList) &&
-        Objects.equals(this.capture, ptsv2paymentsProcessingInformation.capture) &&
+    return Objects.equals(this.capture, ptsv2paymentsProcessingInformation.capture) &&
         Objects.equals(this.processorId, ptsv2paymentsProcessingInformation.processorId) &&
         Objects.equals(this.businessApplicationId, ptsv2paymentsProcessingInformation.businessApplicationId) &&
         Objects.equals(this.commerceIndicator, ptsv2paymentsProcessingInformation.commerceIndicator) &&
@@ -610,7 +578,7 @@ public class Ptsv2paymentsProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, capture, processorId, businessApplicationId, commerceIndicator, paymentSolution, reconciliationId, linkId, purchaseLevel, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder);
+    return Objects.hash(capture, processorId, businessApplicationId, commerceIndicator, paymentSolution, reconciliationId, linkId, purchaseLevel, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder);
   }
 
 
@@ -619,7 +587,6 @@ public class Ptsv2paymentsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformation {\n");
     
-    sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
     sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
     sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
     sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");

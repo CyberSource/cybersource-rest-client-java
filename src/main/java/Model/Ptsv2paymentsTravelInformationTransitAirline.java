@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsTravelInformationTransitAirline
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Ptsv2paymentsTravelInformationTransitAirline {
   @SerializedName("bookingReferenceNumber")
   private String bookingReferenceNumber = null;
@@ -279,10 +279,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * The field is not currently supported. 
+   * Airline process identifier. This value is the airline’s three-digit IATA1 code which is used to process extended payment airline tickets.. 
    * @return extendedPaymentCode
   **/
-  @ApiModelProperty(value = "The field is not currently supported. ")
+  @ApiModelProperty(value = "Airline process identifier. This value is the airline’s three-digit IATA1 code which is used to process extended payment airline tickets.. ")
   public String getExtendedPaymentCode() {
     return extendedPaymentCode;
   }
@@ -351,10 +351,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * The field is not currently supported. 
+   * Ticket number or a value that might be a booking reference number. 
    * @return documentNumber
   **/
-  @ApiModelProperty(value = "The field is not currently supported. ")
+  @ApiModelProperty(value = "Ticket number or a value that might be a booking reference number. ")
   public String getDocumentNumber() {
     return documentNumber;
   }
@@ -369,10 +369,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * The field is not currently supported. 
+   * Number of travel legs. Numbering for the travel legs: 0 to 3. 
    * @return documentNumberOfParts
   **/
-  @ApiModelProperty(value = "The field is not currently supported. ")
+  @ApiModelProperty(value = "Number of travel legs. Numbering for the travel legs: 0 to 3. ")
   public Integer getDocumentNumberOfParts() {
     return documentNumberOfParts;
   }
@@ -765,10 +765,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * The field is not currently supported. 
+   * Type of journey such as one way or round trip. 
    * @return reservationType
   **/
-  @ApiModelProperty(value = "The field is not currently supported. ")
+  @ApiModelProperty(value = "Type of journey such as one way or round trip. ")
   public String getReservationType() {
     return reservationType;
   }

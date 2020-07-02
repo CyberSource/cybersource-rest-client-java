@@ -15,12 +15,11 @@ package Api;
 
 import Invokers.ApiException;
 import Model.AddNegativeListRequest;
-import Model.CreateBundledDecisionManagerCaseRequest;
+import Model.CreateDecisionManagerCaseRequest;
 import Model.FraudMarkingActionRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RiskV1DecisionsPost201Response;
 import Model.RiskV1DecisionsPost400Response;
-import Model.RiskV1DecisionsPost400Response1;
 import Model.RiskV1UpdatePost201Response;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -59,15 +58,15 @@ public class DecisionManagerApiTest {
     /**
      * Create Decision Manager Case
      *
-     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
+     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values. 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void createBundledDecisionManagerCaseTest() throws ApiException {
-        CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest = null;
-        RiskV1DecisionsPost201Response response = api.createBundledDecisionManagerCase(createBundledDecisionManagerCaseRequest);
+    public void createDecisionManagerCaseTest() throws ApiException {
+        CreateDecisionManagerCaseRequest createDecisionManagerCaseRequest = null;
+        RiskV1DecisionsPost201Response response = api.createDecisionManagerCase(createDecisionManagerCaseRequest);
 
         // TODO: test validations
     }

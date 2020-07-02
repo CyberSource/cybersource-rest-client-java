@@ -34,19 +34,10 @@ import java.util.List;
  * Contains detailed order-level information.
  */
 @ApiModel(description = "Contains detailed order-level information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class Riskv1decisionsOrderInformation {
   @SerializedName("amountDetails")
   private Riskv1decisionsOrderInformationAmountDetails amountDetails = null;
-
-  @SerializedName("preOrder")
-  private String preOrder = null;
-
-  @SerializedName("preOrderDate")
-  private String preOrderDate = null;
-
-  @SerializedName("reordered")
-  private Boolean reordered = null;
 
   @SerializedName("shippingDetails")
   private Riskv1decisionsOrderInformationShippingDetails shippingDetails = null;
@@ -62,9 +53,6 @@ public class Riskv1decisionsOrderInformation {
 
   @SerializedName("billTo")
   private Riskv1decisionsOrderInformationBillTo billTo = null;
-
-  @SerializedName("totalOffersCount")
-  private String totalOffersCount = null;
 
   public Riskv1decisionsOrderInformation amountDetails(Riskv1decisionsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -82,60 +70,6 @@ public class Riskv1decisionsOrderInformation {
 
   public void setAmountDetails(Riskv1decisionsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
-  }
-
-  public Riskv1decisionsOrderInformation preOrder(String preOrder) {
-    this.preOrder = preOrder;
-    return this;
-  }
-
-   /**
-   * Indicates whether cardholder is placing an order with a future availability or release date. This field can contain one of these values: - MERCHANDISE_AVAILABLE: Merchandise available - FUTURE_AVAILABILITY: Future availability 
-   * @return preOrder
-  **/
-  @ApiModelProperty(value = "Indicates whether cardholder is placing an order with a future availability or release date. This field can contain one of these values: - MERCHANDISE_AVAILABLE: Merchandise available - FUTURE_AVAILABILITY: Future availability ")
-  public String getPreOrder() {
-    return preOrder;
-  }
-
-  public void setPreOrder(String preOrder) {
-    this.preOrder = preOrder;
-  }
-
-  public Riskv1decisionsOrderInformation preOrderDate(String preOrderDate) {
-    this.preOrderDate = preOrderDate;
-    return this;
-  }
-
-   /**
-   * Expected date that a pre-ordered purchase will be available. Format: YYYYMMDD 
-   * @return preOrderDate
-  **/
-  @ApiModelProperty(value = "Expected date that a pre-ordered purchase will be available. Format: YYYYMMDD ")
-  public String getPreOrderDate() {
-    return preOrderDate;
-  }
-
-  public void setPreOrderDate(String preOrderDate) {
-    this.preOrderDate = preOrderDate;
-  }
-
-  public Riskv1decisionsOrderInformation reordered(Boolean reordered) {
-    this.reordered = reordered;
-    return this;
-  }
-
-   /**
-   * Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered 
-   * @return reordered
-  **/
-  @ApiModelProperty(value = "Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered ")
-  public Boolean getReordered() {
-    return reordered;
-  }
-
-  public void setReordered(Boolean reordered) {
-    this.reordered = reordered;
   }
 
   public Riskv1decisionsOrderInformation shippingDetails(Riskv1decisionsOrderInformationShippingDetails shippingDetails) {
@@ -236,24 +170,6 @@ public class Riskv1decisionsOrderInformation {
     this.billTo = billTo;
   }
 
-  public Riskv1decisionsOrderInformation totalOffersCount(String totalOffersCount) {
-    this.totalOffersCount = totalOffersCount;
-    return this;
-  }
-
-   /**
-   * Total number of articles/items in the order as a numeric decimal count. Possible values: 00 - 99 
-   * @return totalOffersCount
-  **/
-  @ApiModelProperty(value = "Total number of articles/items in the order as a numeric decimal count. Possible values: 00 - 99 ")
-  public String getTotalOffersCount() {
-    return totalOffersCount;
-  }
-
-  public void setTotalOffersCount(String totalOffersCount) {
-    this.totalOffersCount = totalOffersCount;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -265,20 +181,16 @@ public class Riskv1decisionsOrderInformation {
     }
     Riskv1decisionsOrderInformation riskv1decisionsOrderInformation = (Riskv1decisionsOrderInformation) o;
     return Objects.equals(this.amountDetails, riskv1decisionsOrderInformation.amountDetails) &&
-        Objects.equals(this.preOrder, riskv1decisionsOrderInformation.preOrder) &&
-        Objects.equals(this.preOrderDate, riskv1decisionsOrderInformation.preOrderDate) &&
-        Objects.equals(this.reordered, riskv1decisionsOrderInformation.reordered) &&
         Objects.equals(this.shippingDetails, riskv1decisionsOrderInformation.shippingDetails) &&
         Objects.equals(this.shipTo, riskv1decisionsOrderInformation.shipTo) &&
         Objects.equals(this.returnsAccepted, riskv1decisionsOrderInformation.returnsAccepted) &&
         Objects.equals(this.lineItems, riskv1decisionsOrderInformation.lineItems) &&
-        Objects.equals(this.billTo, riskv1decisionsOrderInformation.billTo) &&
-        Objects.equals(this.totalOffersCount, riskv1decisionsOrderInformation.totalOffersCount);
+        Objects.equals(this.billTo, riskv1decisionsOrderInformation.billTo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, preOrder, preOrderDate, reordered, shippingDetails, shipTo, returnsAccepted, lineItems, billTo, totalOffersCount);
+    return Objects.hash(amountDetails, shippingDetails, shipTo, returnsAccepted, lineItems, billTo);
   }
 
 
@@ -288,15 +200,11 @@ public class Riskv1decisionsOrderInformation {
     sb.append("class Riskv1decisionsOrderInformation {\n");
     
     sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
-    sb.append("    preOrder: ").append(toIndentedString(preOrder)).append("\n");
-    sb.append("    preOrderDate: ").append(toIndentedString(preOrderDate)).append("\n");
-    sb.append("    reordered: ").append(toIndentedString(reordered)).append("\n");
     sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     sb.append("    returnsAccepted: ").append(toIndentedString(returnsAccepted)).append("\n");
     sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
-    sb.append("    totalOffersCount: ").append(toIndentedString(totalOffersCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

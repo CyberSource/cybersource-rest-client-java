@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo {
   @SerializedName("firstName")
   private String firstName = null;
@@ -49,10 +49,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo {
   }
 
    /**
-   * First name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
+   * First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 
    * @return firstName
   **/
-  @ApiModelProperty(value = "First name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. ")
+  @ApiModelProperty(value = "First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 ")
   public String getFirstName() {
     return firstName;
   }
@@ -67,10 +67,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo {
   }
 
    /**
-   * Last name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
+   * Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60 
    * @return lastName
   **/
-  @ApiModelProperty(value = "Last name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. ")
+  @ApiModelProperty(value = "Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60 ")
   public String getLastName() {
     return lastName;
   }
@@ -85,10 +85,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo {
   }
 
    /**
-   * First line of the shipping address.  Required field for authorization if any shipping address information is included in the request; otherwise, optional. 
+   * First line of the shipping address.
    * @return address1
   **/
-  @ApiModelProperty(value = "First line of the shipping address.  Required field for authorization if any shipping address information is included in the request; otherwise, optional. ")
+  @ApiModelProperty(value = "First line of the shipping address.")
   public String getAddress1() {
     return address1;
   }
@@ -103,10 +103,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo {
   }
 
    /**
-   * Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional. 
+   * Country of the shipping address. Use the two-character ISO Standard Country Codes.
    * @return country
   **/
-  @ApiModelProperty(value = "Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional. ")
+  @ApiModelProperty(value = "Country of the shipping address. Use the two-character ISO Standard Country Codes.")
   public String getCountry() {
     return country;
   }
