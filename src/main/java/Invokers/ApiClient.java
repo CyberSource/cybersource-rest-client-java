@@ -161,6 +161,8 @@ public class ApiClient {
 			    .connectTimeout(1, TimeUnit.SECONDS)
 			    .writeTimeout(60, TimeUnit.SECONDS)
 			    .readTimeout(60, TimeUnit.SECONDS)
+			    .retryOnConnectionFailure(true)
+			    .addInterceptor(new RetryInterceptor())
 			    .build();
 
 		verifyingSsl = true;
@@ -248,6 +250,8 @@ public class ApiClient {
 					.writeTimeout(60, TimeUnit.SECONDS)
 					.readTimeout(60, TimeUnit.SECONDS)
 					.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
+					.retryOnConnectionFailure(true)
+					.addInterceptor(new RetryInterceptor())
 					.proxyAuthenticator(proxyAuthenticator)
 					.build();
 
@@ -255,7 +259,8 @@ public class ApiClient {
 		}
 
 		this.merchantConfig = merchantConfig;
-
+		RetryInterceptor.retryDelay = merchantConfig.getRetryDelay();
+		RetryInterceptor.retryEnabled = merchantConfig.isRetryEnabled();
 	}
 
 	/**
