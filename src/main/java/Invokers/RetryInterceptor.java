@@ -5,6 +5,7 @@ import java.io.IOException;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
+import utilities.telemetry.RequestResponseTelemetryHandler;
 
 public class RetryInterceptor implements Interceptor {
 	public static long retryDelay;
@@ -13,12 +14,13 @@ public class RetryInterceptor implements Interceptor {
 	@Override
 	public Response intercept(Chain chain) throws IOException {
 		int MAX_RETRIES = 3;
-		int retryNo = 0;
+		int retryNo = 1;
 		Request request = null;
 		Response response = null;
 		long retryWait = retryDelay;
 		
 		request = chain.request();
+		request = RequestResponseTelemetryHandler.addTelemetryFromPreviousRequest(request);
 		
 		response = doRequest(chain, request);
 		
@@ -35,8 +37,10 @@ public class RetryInterceptor implements Interceptor {
 				response = doRequest(chain, request);
 				retryNo++;
 			} 
+		}	
+		if (response != null) {
+			RequestResponseTelemetryHandler.collectResponseTelemetry(response, retryNo);
 		}
-		
 		
 		return response;
 	}
