@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.TssV2TransactionsGet200ResponseApplicationInformationApplications;
+import Model.TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,11 +29,8 @@ import java.util.List;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedApplicationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
-  @SerializedName("status")
-  private String status = null;
-
   @SerializedName("reasonCode")
   private String reasonCode = null;
 
@@ -44,28 +41,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
   private String rFlag = null;
 
   @SerializedName("applications")
-  private List<TssV2TransactionsGet200ResponseApplicationInformationApplications> applications = null;
+  private List<TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications> applications = null;
 
   @SerializedName("returnCode")
-  private String returnCode = null;
-
-  public TssV2TransactionsPost201ResponseEmbeddedApplicationInformation status(String status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * The status of the submitted transaction.
-   * @return status
-  **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
+  private Integer returnCode = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedApplicationInformation reasonCode(String reasonCode) {
     this.reasonCode = reasonCode;
@@ -91,10 +70,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
   }
 
    /**
-   * Indicates whether the service request was successful. Possible values:  - &#x60;-1&#x60;: An error occurred. - &#x60;0&#x60;: The request was declined. - &#x60;1&#x60;: The request was successful.  For details, see &#x60;auth_rcode&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Indicates whether the service request was successful. Possible values:  - &#x60;-1&#x60;: An error occurred. - &#x60;0&#x60;: The request was declined. - &#x60;1&#x60;: The request was successful. 
    * @return rCode
   **/
-  @ApiModelProperty(value = "Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful.  For details, see `auth_rcode` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful. ")
   public String getRCode() {
     return rCode;
   }
@@ -109,10 +88,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
   }
 
    /**
-   * One-word description of the result of the application.  For details, see &#x60;auth_rflag&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * One-word description of the result of the application. 
    * @return rFlag
   **/
-  @ApiModelProperty(value = "One-word description of the result of the application.  For details, see `auth_rflag` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "One-word description of the result of the application. ")
   public String getRFlag() {
     return rFlag;
   }
@@ -121,14 +100,14 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
     this.rFlag = rFlag;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedApplicationInformation applications(List<TssV2TransactionsGet200ResponseApplicationInformationApplications> applications) {
+  public TssV2TransactionsPost201ResponseEmbeddedApplicationInformation applications(List<TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications> applications) {
     this.applications = applications;
     return this;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedApplicationInformation addApplicationsItem(TssV2TransactionsGet200ResponseApplicationInformationApplications applicationsItem) {
+  public TssV2TransactionsPost201ResponseEmbeddedApplicationInformation addApplicationsItem(TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications applicationsItem) {
     if (this.applications == null) {
-      this.applications = new ArrayList<TssV2TransactionsGet200ResponseApplicationInformationApplications>();
+      this.applications = new ArrayList<TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications>();
     }
     this.applications.add(applicationsItem);
     return this;
@@ -139,15 +118,15 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
    * @return applications
   **/
   @ApiModelProperty(value = "")
-  public List<TssV2TransactionsGet200ResponseApplicationInformationApplications> getApplications() {
+  public List<TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications> getApplications() {
     return applications;
   }
 
-  public void setApplications(List<TssV2TransactionsGet200ResponseApplicationInformationApplications> applications) {
+  public void setApplications(List<TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications> applications) {
     this.applications = applications;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedApplicationInformation returnCode(String returnCode) {
+  public TssV2TransactionsPost201ResponseEmbeddedApplicationInformation returnCode(Integer returnCode) {
     this.returnCode = returnCode;
     return this;
   }
@@ -157,11 +136,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
    * @return returnCode
   **/
   @ApiModelProperty(value = "The description for this field is not available.")
-  public String getReturnCode() {
+  public Integer getReturnCode() {
     return returnCode;
   }
 
-  public void setReturnCode(String returnCode) {
+  public void setReturnCode(Integer returnCode) {
     this.returnCode = returnCode;
   }
 
@@ -175,8 +154,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
       return false;
     }
     TssV2TransactionsPost201ResponseEmbeddedApplicationInformation tssV2TransactionsPost201ResponseEmbeddedApplicationInformation = (TssV2TransactionsPost201ResponseEmbeddedApplicationInformation) o;
-    return Objects.equals(this.status, tssV2TransactionsPost201ResponseEmbeddedApplicationInformation.status) &&
-        Objects.equals(this.reasonCode, tssV2TransactionsPost201ResponseEmbeddedApplicationInformation.reasonCode) &&
+    return Objects.equals(this.reasonCode, tssV2TransactionsPost201ResponseEmbeddedApplicationInformation.reasonCode) &&
         Objects.equals(this.rCode, tssV2TransactionsPost201ResponseEmbeddedApplicationInformation.rCode) &&
         Objects.equals(this.rFlag, tssV2TransactionsPost201ResponseEmbeddedApplicationInformation.rFlag) &&
         Objects.equals(this.applications, tssV2TransactionsPost201ResponseEmbeddedApplicationInformation.applications) &&
@@ -185,7 +163,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, reasonCode, rCode, rFlag, applications, returnCode);
+    return Objects.hash(reasonCode, rCode, rFlag, applications, returnCode);
   }
 
 
@@ -194,7 +172,6 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {\n");
     
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
     sb.append("    rCode: ").append(toIndentedString(rCode)).append("\n");
     sb.append("    rFlag: ").append(toIndentedString(rFlag)).append("\n");

@@ -34,9 +34,9 @@ public class UserManagementApiTest {
 
     
     /**
-     * Get User Information
+     * Get User Information - Deprecated
      *
-     * This endpoint is to get all the user information depending on the filter criteria passed in the query.
+     * This endpoint is deprecated. Please use the search end point.
      *
      * @throws ApiException
      *          if the Api call fails

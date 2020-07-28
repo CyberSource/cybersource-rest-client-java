@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1exportcomplianceinquiriesOrderInformationShipTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Riskv1exportcomplianceinquiriesOrderInformationShipTo {
   @SerializedName("country")
   private String country = null;
@@ -43,10 +43,10 @@ public class Riskv1exportcomplianceinquiriesOrderInformationShipTo {
   }
 
    /**
-   * Country of the shipping address. Use the two-character ISO Standard Country Codes.
+   * Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional.  #### Tax Calculation Optional field for U.S., Canadian, international tax, and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present. 
    * @return country
   **/
-  @ApiModelProperty(value = "Country of the shipping address. Use the two-character ISO Standard Country Codes.")
+  @ApiModelProperty(value = "Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional.  #### Tax Calculation Optional field for U.S., Canadian, international tax, and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present. ")
   public String getCountry() {
     return country;
   }
@@ -61,10 +61,10 @@ public class Riskv1exportcomplianceinquiriesOrderInformationShipTo {
   }
 
    /**
-   * First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 
+   * First name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
    * @return firstName
   **/
-  @ApiModelProperty(value = "First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 ")
+  @ApiModelProperty(value = "First name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. ")
   public String getFirstName() {
     return firstName;
   }
@@ -79,10 +79,10 @@ public class Riskv1exportcomplianceinquiriesOrderInformationShipTo {
   }
 
    /**
-   * Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60 
+   * Last name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
    * @return lastName
   **/
-  @ApiModelProperty(value = "Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60 ")
+  @ApiModelProperty(value = "Last name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. ")
   public String getLastName() {
     return lastName;
   }

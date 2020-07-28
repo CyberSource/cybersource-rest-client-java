@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformationAvs
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformationAvs {
   @SerializedName("code")
   private String code = null;
@@ -40,10 +40,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationAvs {
   }
 
    /**
-   * AVS result code. 
+   * AVS result code.  Returned by authorization service. 
    * @return code
   **/
-  @ApiModelProperty(value = "AVS result code. ")
+  @ApiModelProperty(value = "AVS result code.  Returned by authorization service. ")
   public String getCode() {
     return code;
   }
@@ -58,10 +58,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationAvs {
   }
 
    /**
-   * AVS result code sent directly from the processor. Returned only when the processor returns this value. Important Do not use this field to evaluate the result of AVS. Use for debugging purposes only. 
+   * AVS result code sent directly from the processor. Returned only when the processor returns this value. **Important** Do not use this field to evaluate the result of AVS. Use for debugging purposes only.  Returned by authorization service. 
    * @return codeRaw
   **/
-  @ApiModelProperty(value = "AVS result code sent directly from the processor. Returned only when the processor returns this value. Important Do not use this field to evaluate the result of AVS. Use for debugging purposes only. ")
+  @ApiModelProperty(value = "AVS result code sent directly from the processor. Returned only when the processor returns this value. **Important** Do not use this field to evaluate the result of AVS. Use for debugging purposes only.  Returned by authorization service. ")
   public String getCodeRaw() {
     return codeRaw;
   }

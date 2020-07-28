@@ -28,12 +28,11 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.CreateInstrumentIdentifierRequest;
 import Model.InlineResponse400;
-import Model.TmsV1InstrumentIdentifiersDelete409Response;
-import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response;
-import Model.TmsV1InstrumentIdentifiersPost200Response;
-import Model.UpdateInstrumentIdentifierRequest;
+import Model.PatchInstrumentIdentifierRequest;
+import Model.PaymentInstrumentListForCustomer;
+import Model.PostInstrumentIdentifierRequest;
+import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -61,156 +60,20 @@ public class InstrumentIdentifierApi {
     }
 
     /**
-     * Build call for createInstrumentIdentifier
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public okhttp3.Call createInstrumentIdentifierCall(String profileId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createInstrumentIdentifierRequest;
-        
-        // create path and map variables
-        String localVarPath = "/tms/v1/instrumentidentifiers";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (profileId != null)
-        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call createInstrumentIdentifierValidateBeforeCall(String profileId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'profileId' is set
-        if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling createInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'createInstrumentIdentifierRequest' is set
-        if (createInstrumentIdentifierRequest == null) {
-            throw new ApiException("Missing the required parameter 'createInstrumentIdentifierRequest' when calling createInstrumentIdentifier(Async)");
-        }
-        
-        
-        okhttp3.Call call = createInstrumentIdentifierCall(profileId, createInstrumentIdentifierRequest, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Create an Instrument Identifier
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
-     * @return TmsV1InstrumentIdentifiersPost200Response
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public TmsV1InstrumentIdentifiersPost200Response createInstrumentIdentifier(String profileId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest) throws ApiException {
-        ApiResponse<TmsV1InstrumentIdentifiersPost200Response> resp = createInstrumentIdentifierWithHttpInfo(profileId, createInstrumentIdentifierRequest);
-        return resp.getData();
-    }
-
-    /**
-     * Create an Instrument Identifier
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
-     * @return ApiResponse&lt;TmsV1InstrumentIdentifiersPost200Response&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> createInstrumentIdentifierWithHttpInfo(String profileId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest) throws ApiException {
-        okhttp3.Call call = createInstrumentIdentifierValidateBeforeCall(profileId, createInstrumentIdentifierRequest, null, null);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Create an Instrument Identifier (asynchronously)
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public okhttp3.Call createInstrumentIdentifierAsync(String profileId, CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest, final ApiCallback<TmsV1InstrumentIdentifiersPost200Response> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call call = createInstrumentIdentifierValidateBeforeCall(profileId, createInstrumentIdentifierRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for deleteInstrumentIdentifier
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deleteInstrumentIdentifierCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteInstrumentIdentifierCall(String instrumentIdentifierTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/tms/v1/instrumentidentifiers/{tokenId}"
-            .replaceAll("\\{" + "tokenId" + "\\}", apiClient.escapeString(tokenId.toString()));
+        String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}"
+            .replaceAll("\\{" + "instrumentIdentifierTokenId" + "\\}", apiClient.escapeString(instrumentIdentifierTokenId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -249,20 +112,15 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteInstrumentIdentifierValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteInstrumentIdentifierValidateBeforeCall(String instrumentIdentifierTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'profileId' is set
-        if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling deleteInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'tokenId' is set
-        if (tokenId == null) {
-            throw new ApiException("Missing the required parameter 'tokenId' when calling deleteInstrumentIdentifier(Async)");
+        // verify the required parameter 'instrumentIdentifierTokenId' is set
+        if (instrumentIdentifierTokenId == null) {
+            throw new ApiException("Missing the required parameter 'instrumentIdentifierTokenId' when calling deleteInstrumentIdentifier(Async)");
         }
         
         
-        okhttp3.Call call = deleteInstrumentIdentifierCall(profileId, tokenId, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteInstrumentIdentifierCall(instrumentIdentifierTokenId, profileId, progressListener, progressRequestListener);
         return call;
 
         
@@ -274,37 +132,37 @@ public class InstrumentIdentifierApi {
     /**
      * Delete an Instrument Identifier
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteInstrumentIdentifier(String profileId, String tokenId) throws ApiException {
-        deleteInstrumentIdentifierWithHttpInfo(profileId, tokenId);
+    public void deleteInstrumentIdentifier(String instrumentIdentifierTokenId, String profileId) throws ApiException {
+        deleteInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, profileId);
     }
 
     /**
      * Delete an Instrument Identifier
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteInstrumentIdentifierWithHttpInfo(String profileId, String tokenId) throws ApiException {
-        okhttp3.Call call = deleteInstrumentIdentifierValidateBeforeCall(profileId, tokenId, null, null);
+    public ApiResponse<Void> deleteInstrumentIdentifierWithHttpInfo(String instrumentIdentifierTokenId, String profileId) throws ApiException {
+        okhttp3.Call call = deleteInstrumentIdentifierValidateBeforeCall(instrumentIdentifierTokenId, profileId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Delete an Instrument Identifier (asynchronously)
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deleteInstrumentIdentifierAsync(String profileId, String tokenId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteInstrumentIdentifierAsync(String instrumentIdentifierTokenId, String profileId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -325,27 +183,159 @@ public class InstrumentIdentifierApi {
             };
         }
 
-        okhttp3.Call call = deleteInstrumentIdentifierValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteInstrumentIdentifierValidateBeforeCall(instrumentIdentifierTokenId, profileId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
-     * Build call for getAllPaymentInstruments
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
-     * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
+     * Build call for getInstrumentIdentifier
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getAllPaymentInstrumentsCall(String profileId, String tokenId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getInstrumentIdentifierCall(String instrumentIdentifierTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/tms/v1/instrumentidentifiers/{tokenId}/paymentinstruments"
-            .replaceAll("\\{" + "tokenId" + "\\}", apiClient.escapeString(tokenId.toString()));
+        String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}"
+            .replaceAll("\\{" + "instrumentIdentifierTokenId" + "\\}", apiClient.escapeString(instrumentIdentifierTokenId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (profileId != null)
+        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getInstrumentIdentifierValidateBeforeCall(String instrumentIdentifierTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'instrumentIdentifierTokenId' is set
+        if (instrumentIdentifierTokenId == null) {
+            throw new ApiException("Missing the required parameter 'instrumentIdentifierTokenId' when calling getInstrumentIdentifier(Async)");
+        }
+        
+        
+        okhttp3.Call call = getInstrumentIdentifierCall(instrumentIdentifierTokenId, profileId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Retrieve an Instrument Identifier
+     * 
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @return Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier getInstrumentIdentifier(String instrumentIdentifierTokenId, String profileId) throws ApiException {
+        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = getInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, profileId);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve an Instrument Identifier
+     * 
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> getInstrumentIdentifierWithHttpInfo(String instrumentIdentifierTokenId, String profileId) throws ApiException {
+        okhttp3.Call call = getInstrumentIdentifierValidateBeforeCall(instrumentIdentifierTokenId, profileId, null, null);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve an Instrument Identifier (asynchronously)
+     * 
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call getInstrumentIdentifierAsync(String instrumentIdentifierTokenId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = getInstrumentIdentifierValidateBeforeCall(instrumentIdentifierTokenId, profileId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getInstrumentIdentifierPaymentInstrumentsList
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
+     * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListCall(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments"
+            .replaceAll("\\{" + "instrumentIdentifierTokenId" + "\\}", apiClient.escapeString(instrumentIdentifierTokenId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (offset != null)
@@ -388,20 +378,15 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllPaymentInstrumentsValidateBeforeCall(String profileId, String tokenId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListValidateBeforeCall(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'profileId' is set
-        if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling getAllPaymentInstruments(Async)");
-        }
-        
-        // verify the required parameter 'tokenId' is set
-        if (tokenId == null) {
-            throw new ApiException("Missing the required parameter 'tokenId' when calling getAllPaymentInstruments(Async)");
+        // verify the required parameter 'instrumentIdentifierTokenId' is set
+        if (instrumentIdentifierTokenId == null) {
+            throw new ApiException("Missing the required parameter 'instrumentIdentifierTokenId' when calling getInstrumentIdentifierPaymentInstrumentsList(Async)");
         }
         
         
-        okhttp3.Call call = getAllPaymentInstrumentsCall(profileId, tokenId, offset, limit, progressListener, progressRequestListener);
+        okhttp3.Call call = getInstrumentIdentifierPaymentInstrumentsListCall(instrumentIdentifierTokenId, profileId, offset, limit, progressListener, progressRequestListener);
         return call;
 
         
@@ -411,48 +396,48 @@ public class InstrumentIdentifierApi {
     }
 
     /**
-     * Retrieve all Payment Instruments
+     * List Payment Instruments for an Instrument Identifier
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
-     * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
-     * @return TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
+     * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
+     * @return PaymentInstrumentListForCustomer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response getAllPaymentInstruments(String profileId, String tokenId, Long offset, Long limit) throws ApiException {
-        ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response> resp = getAllPaymentInstrumentsWithHttpInfo(profileId, tokenId, offset, limit);
+    public PaymentInstrumentListForCustomer getInstrumentIdentifierPaymentInstrumentsList(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit) throws ApiException {
+        ApiResponse<PaymentInstrumentListForCustomer> resp = getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(instrumentIdentifierTokenId, profileId, offset, limit);
         return resp.getData();
     }
 
     /**
-     * Retrieve all Payment Instruments
+     * List Payment Instruments for an Instrument Identifier
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
-     * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
-     * @return ApiResponse&lt;TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response&gt;
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
+     * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
+     * @return ApiResponse&lt;PaymentInstrumentListForCustomer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response> getAllPaymentInstrumentsWithHttpInfo(String profileId, String tokenId, Long offset, Long limit) throws ApiException {
-        okhttp3.Call call = getAllPaymentInstrumentsValidateBeforeCall(profileId, tokenId, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response>(){}.getType();
+    public ApiResponse<PaymentInstrumentListForCustomer> getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit) throws ApiException {
+        okhttp3.Call call = getInstrumentIdentifierPaymentInstrumentsListValidateBeforeCall(instrumentIdentifierTokenId, profileId, offset, limit, null, null);
+        Type localVarReturnType = new TypeToken<PaymentInstrumentListForCustomer>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Retrieve all Payment Instruments (asynchronously)
+     * List Payment Instruments for an Instrument Identifier (asynchronously)
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
-     * @param limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
+     * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getAllPaymentInstrumentsAsync(String profileId, String tokenId, Long offset, Long limit, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response> callback) throws ApiException {
+    public okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListAsync(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit, final ApiCallback<PaymentInstrumentListForCustomer> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -473,170 +458,36 @@ public class InstrumentIdentifierApi {
             };
         }
 
-        okhttp3.Call call = getAllPaymentInstrumentsValidateBeforeCall(profileId, tokenId, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response>(){}.getType();
+        okhttp3.Call call = getInstrumentIdentifierPaymentInstrumentsListValidateBeforeCall(instrumentIdentifierTokenId, profileId, offset, limit, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PaymentInstrumentListForCustomer>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for getInstrumentIdentifier
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
+     * Build call for patchInstrumentIdentifier
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param patchInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getInstrumentIdentifierCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+    public okhttp3.Call patchInstrumentIdentifierCall(String instrumentIdentifierTokenId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = patchInstrumentIdentifierRequest;
         
         // create path and map variables
-        String localVarPath = "/tms/v1/instrumentidentifiers/{tokenId}"
-            .replaceAll("\\{" + "tokenId" + "\\}", apiClient.escapeString(tokenId.toString()));
+        String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}"
+            .replaceAll("\\{" + "instrumentIdentifierTokenId" + "\\}", apiClient.escapeString(instrumentIdentifierTokenId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (profileId != null)
         localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInstrumentIdentifierValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'profileId' is set
-        if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling getInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'tokenId' is set
-        if (tokenId == null) {
-            throw new ApiException("Missing the required parameter 'tokenId' when calling getInstrumentIdentifier(Async)");
-        }
-        
-        
-        okhttp3.Call call = getInstrumentIdentifierCall(profileId, tokenId, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Retrieve an Instrument Identifier
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @return TmsV1InstrumentIdentifiersPost200Response
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public TmsV1InstrumentIdentifiersPost200Response getInstrumentIdentifier(String profileId, String tokenId) throws ApiException {
-        ApiResponse<TmsV1InstrumentIdentifiersPost200Response> resp = getInstrumentIdentifierWithHttpInfo(profileId, tokenId);
-        return resp.getData();
-    }
-
-    /**
-     * Retrieve an Instrument Identifier
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @return ApiResponse&lt;TmsV1InstrumentIdentifiersPost200Response&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> getInstrumentIdentifierWithHttpInfo(String profileId, String tokenId) throws ApiException {
-        okhttp3.Call call = getInstrumentIdentifierValidateBeforeCall(profileId, tokenId, null, null);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Retrieve an Instrument Identifier (asynchronously)
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public okhttp3.Call getInstrumentIdentifierAsync(String profileId, String tokenId, final ApiCallback<TmsV1InstrumentIdentifiersPost200Response> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call call = getInstrumentIdentifierValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for updateInstrumentIdentifier
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param updateInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public okhttp3.Call updateInstrumentIdentifierCall(String profileId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = updateInstrumentIdentifierRequest;
-        
-        // create path and map variables
-        String localVarPath = "/tms/v1/instrumentidentifiers/{tokenId}"
-            .replaceAll("\\{" + "tokenId" + "\\}", apiClient.escapeString(tokenId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (profileId != null)
-        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
+        if (ifMatch != null)
+        localVarHeaderParams.put("if-match", apiClient.parameterToString(ifMatch));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -669,25 +520,20 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateInstrumentIdentifierValidateBeforeCall(String profileId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call patchInstrumentIdentifierValidateBeforeCall(String instrumentIdentifierTokenId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'profileId' is set
-        if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling updateInstrumentIdentifier(Async)");
+        // verify the required parameter 'instrumentIdentifierTokenId' is set
+        if (instrumentIdentifierTokenId == null) {
+            throw new ApiException("Missing the required parameter 'instrumentIdentifierTokenId' when calling patchInstrumentIdentifier(Async)");
         }
         
-        // verify the required parameter 'tokenId' is set
-        if (tokenId == null) {
-            throw new ApiException("Missing the required parameter 'tokenId' when calling updateInstrumentIdentifier(Async)");
-        }
-        
-        // verify the required parameter 'updateInstrumentIdentifierRequest' is set
-        if (updateInstrumentIdentifierRequest == null) {
-            throw new ApiException("Missing the required parameter 'updateInstrumentIdentifierRequest' when calling updateInstrumentIdentifier(Async)");
+        // verify the required parameter 'patchInstrumentIdentifierRequest' is set
+        if (patchInstrumentIdentifierRequest == null) {
+            throw new ApiException("Missing the required parameter 'patchInstrumentIdentifierRequest' when calling patchInstrumentIdentifier(Async)");
         }
         
         
-        okhttp3.Call call = updateInstrumentIdentifierCall(profileId, tokenId, updateInstrumentIdentifierRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = patchInstrumentIdentifierCall(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, profileId, ifMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -697,45 +543,48 @@ public class InstrumentIdentifierApi {
     }
 
     /**
-     * Update a Instrument Identifier
+     * Update an Instrument Identifier
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param updateInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
-     * @return TmsV1InstrumentIdentifiersPost200Response
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param patchInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
+     * @return Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV1InstrumentIdentifiersPost200Response updateInstrumentIdentifier(String profileId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest) throws ApiException {
-        ApiResponse<TmsV1InstrumentIdentifiersPost200Response> resp = updateInstrumentIdentifierWithHttpInfo(profileId, tokenId, updateInstrumentIdentifierRequest);
+    public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier patchInstrumentIdentifier(String instrumentIdentifierTokenId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch) throws ApiException {
+        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = patchInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, profileId, ifMatch);
         return resp.getData();
     }
 
     /**
-     * Update a Instrument Identifier
+     * Update an Instrument Identifier
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param updateInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
-     * @return ApiResponse&lt;TmsV1InstrumentIdentifiersPost200Response&gt;
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param patchInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
+     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV1InstrumentIdentifiersPost200Response> updateInstrumentIdentifierWithHttpInfo(String profileId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest) throws ApiException {
-        okhttp3.Call call = updateInstrumentIdentifierValidateBeforeCall(profileId, tokenId, updateInstrumentIdentifierRequest, null, null);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
+    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> patchInstrumentIdentifierWithHttpInfo(String instrumentIdentifierTokenId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch) throws ApiException {
+        okhttp3.Call call = patchInstrumentIdentifierValidateBeforeCall(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, profileId, ifMatch, null, null);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Update a Instrument Identifier (asynchronously)
+     * Update an Instrument Identifier (asynchronously)
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of an Instrument Identifier. (required)
-     * @param updateInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
+     * @param instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param patchInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call updateInstrumentIdentifierAsync(String profileId, String tokenId, UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest, final ApiCallback<TmsV1InstrumentIdentifiersPost200Response> callback) throws ApiException {
+    public okhttp3.Call patchInstrumentIdentifierAsync(String instrumentIdentifierTokenId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -756,8 +605,139 @@ public class InstrumentIdentifierApi {
             };
         }
 
-        okhttp3.Call call = updateInstrumentIdentifierValidateBeforeCall(profileId, tokenId, updateInstrumentIdentifierRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPost200Response>(){}.getType();
+        okhttp3.Call call = patchInstrumentIdentifierValidateBeforeCall(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, profileId, ifMatch, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for postInstrumentIdentifier
+     * @param postInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call postInstrumentIdentifierCall(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = postInstrumentIdentifierRequest;
+        
+        // create path and map variables
+        String localVarPath = "/tms/v1/instrumentidentifiers";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (profileId != null)
+        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call postInstrumentIdentifierValidateBeforeCall(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'postInstrumentIdentifierRequest' is set
+        if (postInstrumentIdentifierRequest == null) {
+            throw new ApiException("Missing the required parameter 'postInstrumentIdentifierRequest' when calling postInstrumentIdentifier(Async)");
+        }
+        
+        
+        okhttp3.Call call = postInstrumentIdentifierCall(postInstrumentIdentifierRequest, profileId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Create an Instrument Identifier
+     * 
+     * @param postInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @return Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier postInstrumentIdentifier(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId) throws ApiException {
+        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = postInstrumentIdentifierWithHttpInfo(postInstrumentIdentifierRequest, profileId);
+        return resp.getData();
+    }
+
+    /**
+     * Create an Instrument Identifier
+     * 
+     * @param postInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> postInstrumentIdentifierWithHttpInfo(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId) throws ApiException {
+        okhttp3.Call call = postInstrumentIdentifierValidateBeforeCall(postInstrumentIdentifierRequest, profileId, null, null);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create an Instrument Identifier (asynchronously)
+     * 
+     * @param postInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call postInstrumentIdentifierAsync(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = postInstrumentIdentifierValidateBeforeCall(postInstrumentIdentifierRequest, profileId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

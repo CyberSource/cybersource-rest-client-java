@@ -14,6 +14,8 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsPaymentInformationBank;
+import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Riskv1decisionsPaymentInformationCard;
 import Model.Riskv1decisionsPaymentInformationTokenizedCard;
 import com.google.gson.TypeAdapter;
@@ -29,13 +31,22 @@ import java.io.IOException;
  * Contains the payment data for this transaction.
  */
 @ApiModel(description = "Contains the payment data for this transaction.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Riskv1decisionsPaymentInformation {
   @SerializedName("card")
   private Riskv1decisionsPaymentInformationCard card = null;
 
   @SerializedName("tokenizedCard")
   private Riskv1decisionsPaymentInformationTokenizedCard tokenizedCard = null;
+
+  @SerializedName("customer")
+  private Ptsv2paymentsPaymentInformationCustomer customer = null;
+
+  @SerializedName("bank")
+  private Ptsv2paymentsPaymentInformationBank bank = null;
+
+  @SerializedName("method")
+  private String method = null;
 
   public Riskv1decisionsPaymentInformation card(Riskv1decisionsPaymentInformationCard card) {
     this.card = card;
@@ -73,6 +84,60 @@ public class Riskv1decisionsPaymentInformation {
     this.tokenizedCard = tokenizedCard;
   }
 
+  public Riskv1decisionsPaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
+    this.customer = customer;
+    return this;
+  }
+
+   /**
+   * Get customer
+   * @return customer
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationCustomer getCustomer() {
+    return customer;
+  }
+
+  public void setCustomer(Ptsv2paymentsPaymentInformationCustomer customer) {
+    this.customer = customer;
+  }
+
+  public Riskv1decisionsPaymentInformation bank(Ptsv2paymentsPaymentInformationBank bank) {
+    this.bank = bank;
+    return this;
+  }
+
+   /**
+   * Get bank
+   * @return bank
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationBank getBank() {
+    return bank;
+  }
+
+  public void setBank(Ptsv2paymentsPaymentInformationBank bank) {
+    this.bank = bank;
+  }
+
+  public Riskv1decisionsPaymentInformation method(String method) {
+    this.method = method;
+    return this;
+  }
+
+   /**
+   * Method of payment used for the order. This field can contain one of the following values:   - &#x60;consumer&#x60; (default): Customer credit card   - &#x60;corporate&#x60;: Corporate credit card   - &#x60;debit&#x60;: Debit card, such as a Maestro (UK Domestic) card   - &#x60;cod&#x60;: Collect on delivery   - &#x60;check&#x60;: Electronic check   - &#x60;p2p&#x60;: Person-to-person payment   - &#x60;private1&#x60;: Private label credit card   - &#x60;other&#x60;: Other payment method 
+   * @return method
+  **/
+  @ApiModelProperty(value = "Method of payment used for the order. This field can contain one of the following values:   - `consumer` (default): Customer credit card   - `corporate`: Corporate credit card   - `debit`: Debit card, such as a Maestro (UK Domestic) card   - `cod`: Collect on delivery   - `check`: Electronic check   - `p2p`: Person-to-person payment   - `private1`: Private label credit card   - `other`: Other payment method ")
+  public String getMethod() {
+    return method;
+  }
+
+  public void setMethod(String method) {
+    this.method = method;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,12 +149,15 @@ public class Riskv1decisionsPaymentInformation {
     }
     Riskv1decisionsPaymentInformation riskv1decisionsPaymentInformation = (Riskv1decisionsPaymentInformation) o;
     return Objects.equals(this.card, riskv1decisionsPaymentInformation.card) &&
-        Objects.equals(this.tokenizedCard, riskv1decisionsPaymentInformation.tokenizedCard);
+        Objects.equals(this.tokenizedCard, riskv1decisionsPaymentInformation.tokenizedCard) &&
+        Objects.equals(this.customer, riskv1decisionsPaymentInformation.customer) &&
+        Objects.equals(this.bank, riskv1decisionsPaymentInformation.bank) &&
+        Objects.equals(this.method, riskv1decisionsPaymentInformation.method);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard);
+    return Objects.hash(card, tokenizedCard, customer, bank, method);
   }
 
 
@@ -100,6 +168,9 @@ public class Riskv1decisionsPaymentInformation {
     
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,7 +27,7 @@ import java.io.IOException;
  * This object contains recurring payment information.
  */
 @ApiModel(description = "This object contains recurring payment information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsRecurringPaymentInformation {
   @SerializedName("endDate")
   private String endDate = null;

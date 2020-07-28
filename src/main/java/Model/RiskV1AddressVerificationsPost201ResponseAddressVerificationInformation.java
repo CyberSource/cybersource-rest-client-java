@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation {
   @SerializedName("addressType")
   private String addressType = null;
@@ -96,10 +96,10 @@ public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInforma
   }
 
    /**
-   * Value can be - Canada - US - International. The values of errorCode and statusCode mean different things depending on the applicable region. Refer to the guide for more info. 
+   * Value can be - Canada - US - International The values of errorCode and statusCode mean different things depending on the applicable region. Refer to the guide for more info. 
    * @return applicableRegion
   **/
-  @ApiModelProperty(value = "Value can be - Canada - US - International. The values of errorCode and statusCode mean different things depending on the applicable region. Refer to the guide for more info. ")
+  @ApiModelProperty(value = "Value can be - Canada - US - International The values of errorCode and statusCode mean different things depending on the applicable region. Refer to the guide for more info. ")
   public String getApplicableRegion() {
     return applicableRegion;
   }

@@ -44,9 +44,9 @@ public class KeyGenerationApiTest {
      */
     @Test
     public void generatePublicKeyTest() throws ApiException {
-        GeneratePublicKeyRequest generatePublicKeyRequest = null;
         String format = null;
-        FlexV1KeysPost200Response response = api.generatePublicKey(generatePublicKeyRequest, format);
+        GeneratePublicKeyRequest generatePublicKeyRequest = null;
+        FlexV1KeysPost200Response response = api.generatePublicKey(format, generatePublicKeyRequest);
 
         // TODO: test validations
     }

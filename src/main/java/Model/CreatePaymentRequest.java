@@ -20,6 +20,7 @@ import Model.Ptsv2paymentsBuyerInformation;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsConsumerAuthenticationInformation;
 import Model.Ptsv2paymentsDeviceInformation;
+import Model.Ptsv2paymentsHealthCareInformation;
 import Model.Ptsv2paymentsInstallmentInformation;
 import Model.Ptsv2paymentsIssuerInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
@@ -48,7 +49,7 @@ import java.util.List;
 /**
  * CreatePaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class CreatePaymentRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -94,6 +95,9 @@ public class CreatePaymentRequest {
 
   @SerializedName("travelInformation")
   private Ptsv2paymentsTravelInformation travelInformation = null;
+
+  @SerializedName("healthCareInformation")
+  private Ptsv2paymentsHealthCareInformation healthCareInformation = null;
 
   @SerializedName("promotionInformation")
   private Ptsv2paymentsPromotionInformation promotionInformation = null;
@@ -388,6 +392,24 @@ public class CreatePaymentRequest {
     this.travelInformation = travelInformation;
   }
 
+  public CreatePaymentRequest healthCareInformation(Ptsv2paymentsHealthCareInformation healthCareInformation) {
+    this.healthCareInformation = healthCareInformation;
+    return this;
+  }
+
+   /**
+   * Get healthCareInformation
+   * @return healthCareInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsHealthCareInformation getHealthCareInformation() {
+    return healthCareInformation;
+  }
+
+  public void setHealthCareInformation(Ptsv2paymentsHealthCareInformation healthCareInformation) {
+    this.healthCareInformation = healthCareInformation;
+  }
+
   public CreatePaymentRequest promotionInformation(Ptsv2paymentsPromotionInformation promotionInformation) {
     this.promotionInformation = promotionInformation;
     return this;
@@ -503,6 +525,7 @@ public class CreatePaymentRequest {
         Objects.equals(this.merchantDefinedInformation, createPaymentRequest.merchantDefinedInformation) &&
         Objects.equals(this.installmentInformation, createPaymentRequest.installmentInformation) &&
         Objects.equals(this.travelInformation, createPaymentRequest.travelInformation) &&
+        Objects.equals(this.healthCareInformation, createPaymentRequest.healthCareInformation) &&
         Objects.equals(this.promotionInformation, createPaymentRequest.promotionInformation) &&
         Objects.equals(this.tokenInformation, createPaymentRequest.tokenInformation) &&
         Objects.equals(this.riskInformation, createPaymentRequest.riskInformation) &&
@@ -512,7 +535,7 @@ public class CreatePaymentRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation, travelInformation, promotionInformation, tokenInformation, riskInformation, acquirerInformation, recurringPaymentInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, riskInformation, acquirerInformation, recurringPaymentInformation);
   }
 
 
@@ -536,6 +559,7 @@ public class CreatePaymentRequest {
     sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
+    sb.append("    healthCareInformation: ").append(toIndentedString(healthCareInformation)).append("\n");
     sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");
     sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
