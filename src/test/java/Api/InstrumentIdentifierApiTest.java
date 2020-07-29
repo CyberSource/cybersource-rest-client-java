@@ -14,12 +14,11 @@
 package Api;
 
 import Invokers.ApiException;
-import Model.CreateInstrumentIdentifierRequest;
 import Model.InlineResponse400;
-import Model.TmsV1InstrumentIdentifiersDelete409Response;
-import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response;
-import Model.TmsV1InstrumentIdentifiersPost200Response;
-import Model.UpdateInstrumentIdentifierRequest;
+import Model.PatchInstrumentIdentifierRequest;
+import Model.PaymentInstrumentListForCustomer;
+import Model.PostInstrumentIdentifierRequest;
+import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -38,23 +37,6 @@ public class InstrumentIdentifierApiTest {
 
     
     /**
-     * Create an Instrument Identifier
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void createInstrumentIdentifierTest() throws ApiException {
-        String profileId = null;
-        CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest = null;
-        TmsV1InstrumentIdentifiersPost200Response response = api.createInstrumentIdentifier(profileId, createInstrumentIdentifierRequest);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Delete an Instrument Identifier
      *
      * 
@@ -64,28 +46,9 @@ public class InstrumentIdentifierApiTest {
      */
     @Test
     public void deleteInstrumentIdentifierTest() throws ApiException {
+        String instrumentIdentifierTokenId = null;
         String profileId = null;
-        String tokenId = null;
-        api.deleteInstrumentIdentifier(profileId, tokenId);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Retrieve all Payment Instruments
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getAllPaymentInstrumentsTest() throws ApiException {
-        String profileId = null;
-        String tokenId = null;
-        Long offset = null;
-        Long limit = null;
-        TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response response = api.getAllPaymentInstruments(profileId, tokenId, offset, limit);
+        api.deleteInstrumentIdentifier(instrumentIdentifierTokenId, profileId);
 
         // TODO: test validations
     }
@@ -100,15 +63,15 @@ public class InstrumentIdentifierApiTest {
      */
     @Test
     public void getInstrumentIdentifierTest() throws ApiException {
+        String instrumentIdentifierTokenId = null;
         String profileId = null;
-        String tokenId = null;
-        TmsV1InstrumentIdentifiersPost200Response response = api.getInstrumentIdentifier(profileId, tokenId);
+        Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier response = api.getInstrumentIdentifier(instrumentIdentifierTokenId, profileId);
 
         // TODO: test validations
     }
     
     /**
-     * Update a Instrument Identifier
+     * List Payment Instruments for an Instrument Identifier
      *
      * 
      *
@@ -116,11 +79,48 @@ public class InstrumentIdentifierApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateInstrumentIdentifierTest() throws ApiException {
+    public void getInstrumentIdentifierPaymentInstrumentsListTest() throws ApiException {
+        String instrumentIdentifierTokenId = null;
         String profileId = null;
-        String tokenId = null;
-        UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest = null;
-        TmsV1InstrumentIdentifiersPost200Response response = api.updateInstrumentIdentifier(profileId, tokenId, updateInstrumentIdentifierRequest);
+        Long offset = null;
+        Long limit = null;
+        PaymentInstrumentListForCustomer response = api.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierTokenId, profileId, offset, limit);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update an Instrument Identifier
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void patchInstrumentIdentifierTest() throws ApiException {
+        String instrumentIdentifierTokenId = null;
+        PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest = null;
+        String profileId = null;
+        String ifMatch = null;
+        Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier response = api.patchInstrumentIdentifier(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, profileId, ifMatch);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create an Instrument Identifier
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postInstrumentIdentifierTest() throws ApiException {
+        PostInstrumentIdentifierRequest postInstrumentIdentifierRequest = null;
+        String profileId = null;
+        Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier response = api.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId);
 
         // TODO: test validations
     }

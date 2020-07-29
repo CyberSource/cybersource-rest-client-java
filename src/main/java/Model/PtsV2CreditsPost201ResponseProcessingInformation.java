@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PtsV2CreditsPost201ResponseProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class PtsV2CreditsPost201ResponseProcessingInformation {
   @SerializedName("bankTransferOptions")
   private PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions bankTransferOptions = null;
@@ -59,10 +59,10 @@ public class PtsV2CreditsPost201ResponseProcessingInformation {
   }
 
    /**
-   * - true : the airline data was included in the request to the processor. - false : the airline data was not included in the request to the processor. 
+   * The possible values for the reply field are: - &#x60;true&#x60; : the airline data was included in the request to the processor. - &#x60;false&#x60; : the airline data was not included in the request to the processor.  Returned by authorization, capture, or credit services. 
    * @return enhancedDataEnabled
   **/
-  @ApiModelProperty(value = "- true : the airline data was included in the request to the processor. - false : the airline data was not included in the request to the processor. ")
+  @ApiModelProperty(value = "The possible values for the reply field are: - `true` : the airline data was included in the request to the processor. - `false` : the airline data was not included in the request to the processor.  Returned by authorization, capture, or credit services. ")
   public Boolean getEnhancedDataEnabled() {
     return enhancedDataEnabled;
   }

@@ -28,7 +28,7 @@ import org.joda.time.DateTime;
 /**
  * InvoicingV2InvoicesGet200ResponseInvoiceHistory
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class InvoicingV2InvoicesGet200ResponseInvoiceHistory {
   @SerializedName("event")
   private String event = null;
@@ -63,10 +63,10 @@ public class InvoicingV2InvoicesGet200ResponseInvoiceHistory {
   }
 
    /**
-   * The invoice due date. This field is required for creating an invoice. Format: &#x60;YYYY-MM-DD&#x60;, where &#x60;YYYY&#x60; &#x3D; year, &#x60;MM&#x60; &#x3D; month, and &#x60;DD&#x60; &#x3D; day 
+   * The date and time when the invoice event was triggered in ISO 8601 format. Format: YYYY-MM-DDThh:mm:ssZ 
    * @return date
   **/
-  @ApiModelProperty(value = "The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day ")
+  @ApiModelProperty(value = "The date and time when the invoice event was triggered in ISO 8601 format. Format: YYYY-MM-DDThh:mm:ssZ ")
   public DateTime getDate() {
     return date;
   }

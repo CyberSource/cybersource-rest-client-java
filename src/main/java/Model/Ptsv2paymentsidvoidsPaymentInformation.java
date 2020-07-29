@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsidrefundsPaymentInformationPaymentType;
+import Model.Ptsv2paymentsPaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,12 +27,12 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidvoidsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsidvoidsPaymentInformation {
   @SerializedName("paymentType")
-  private Ptsv2paymentsidrefundsPaymentInformationPaymentType paymentType = null;
+  private Ptsv2paymentsPaymentInformationPaymentType paymentType = null;
 
-  public Ptsv2paymentsidvoidsPaymentInformation paymentType(Ptsv2paymentsidrefundsPaymentInformationPaymentType paymentType) {
+  public Ptsv2paymentsidvoidsPaymentInformation paymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
     return this;
   }
@@ -42,11 +42,11 @@ public class Ptsv2paymentsidvoidsPaymentInformation {
    * @return paymentType
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidrefundsPaymentInformationPaymentType getPaymentType() {
+  public Ptsv2paymentsPaymentInformationPaymentType getPaymentType() {
     return paymentType;
   }
 
-  public void setPaymentType(Ptsv2paymentsidrefundsPaymentInformationPaymentType paymentType) {
+  public void setPaymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
   }
 

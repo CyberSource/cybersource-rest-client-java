@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1liststypeentriesDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Riskv1liststypeentriesDeviceInformation {
   @SerializedName("ipAddress")
   private String ipAddress = null;
@@ -40,10 +40,10 @@ public class Riskv1liststypeentriesDeviceInformation {
   }
 
    /**
-   * IP address of the customer. 
+   * IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. 
    * @return ipAddress
   **/
-  @ApiModelProperty(value = "IP address of the customer. ")
+  @ApiModelProperty(value = "IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field. ")
   public String getIpAddress() {
     return ipAddress;
   }

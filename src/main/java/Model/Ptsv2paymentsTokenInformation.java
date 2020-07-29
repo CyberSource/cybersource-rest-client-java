@@ -14,6 +14,8 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsTokenInformationPaymentInstrument;
+import Model.Ptsv2paymentsTokenInformationShippingAddress;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,13 +28,19 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsTokenInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsTokenInformation {
   @SerializedName("jti")
   private String jti = null;
 
   @SerializedName("transientTokenJwt")
   private String transientTokenJwt = null;
+
+  @SerializedName("paymentInstrument")
+  private Ptsv2paymentsTokenInformationPaymentInstrument paymentInstrument = null;
+
+  @SerializedName("shippingAddress")
+  private Ptsv2paymentsTokenInformationShippingAddress shippingAddress = null;
 
   public Ptsv2paymentsTokenInformation jti(String jti) {
     this.jti = jti;
@@ -70,6 +78,42 @@ public class Ptsv2paymentsTokenInformation {
     this.transientTokenJwt = transientTokenJwt;
   }
 
+  public Ptsv2paymentsTokenInformation paymentInstrument(Ptsv2paymentsTokenInformationPaymentInstrument paymentInstrument) {
+    this.paymentInstrument = paymentInstrument;
+    return this;
+  }
+
+   /**
+   * Get paymentInstrument
+   * @return paymentInstrument
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsTokenInformationPaymentInstrument getPaymentInstrument() {
+    return paymentInstrument;
+  }
+
+  public void setPaymentInstrument(Ptsv2paymentsTokenInformationPaymentInstrument paymentInstrument) {
+    this.paymentInstrument = paymentInstrument;
+  }
+
+  public Ptsv2paymentsTokenInformation shippingAddress(Ptsv2paymentsTokenInformationShippingAddress shippingAddress) {
+    this.shippingAddress = shippingAddress;
+    return this;
+  }
+
+   /**
+   * Get shippingAddress
+   * @return shippingAddress
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsTokenInformationShippingAddress getShippingAddress() {
+    return shippingAddress;
+  }
+
+  public void setShippingAddress(Ptsv2paymentsTokenInformationShippingAddress shippingAddress) {
+    this.shippingAddress = shippingAddress;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +125,14 @@ public class Ptsv2paymentsTokenInformation {
     }
     Ptsv2paymentsTokenInformation ptsv2paymentsTokenInformation = (Ptsv2paymentsTokenInformation) o;
     return Objects.equals(this.jti, ptsv2paymentsTokenInformation.jti) &&
-        Objects.equals(this.transientTokenJwt, ptsv2paymentsTokenInformation.transientTokenJwt);
+        Objects.equals(this.transientTokenJwt, ptsv2paymentsTokenInformation.transientTokenJwt) &&
+        Objects.equals(this.paymentInstrument, ptsv2paymentsTokenInformation.paymentInstrument) &&
+        Objects.equals(this.shippingAddress, ptsv2paymentsTokenInformation.shippingAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(jti, transientTokenJwt);
+    return Objects.hash(jti, transientTokenJwt, paymentInstrument, shippingAddress);
   }
 
 
@@ -97,6 +143,8 @@ public class Ptsv2paymentsTokenInformation {
     
     sb.append("    jti: ").append(toIndentedString(jti)).append("\n");
     sb.append("    transientTokenJwt: ").append(toIndentedString(transientTokenJwt)).append("\n");
+    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

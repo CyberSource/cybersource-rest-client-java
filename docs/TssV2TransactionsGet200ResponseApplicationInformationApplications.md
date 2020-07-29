@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **rFlag** | **String** | One-word description of the result of the application.  |  [optional]
 **reconciliationId** | **String** | Reference number that you use to reconcile your CyberSource reports with your processor reports.  |  [optional]
 **rMessage** | **String** | Message that explains the reply flag for the application.  |  [optional]
-**returnCode** | **String** | The description for this field is not available. |  [optional]
+**returnCode** | **Integer** | The description for this field is not available. |  [optional]
 
 
 

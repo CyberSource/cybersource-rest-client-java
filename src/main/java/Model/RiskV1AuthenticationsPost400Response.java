@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * RiskV1AuthenticationsPost400Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class RiskV1AuthenticationsPost400Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -52,10 +52,10 @@ public class RiskV1AuthenticationsPost400Response {
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal. ")
   public String getSubmitTimeUtc() {
     return submitTimeUtc;
   }
@@ -70,10 +70,10 @@ public class RiskV1AuthenticationsPost400Response {
   }
 
    /**
-   * The status for payerAuthentication 201 enroll and validate calls. Value is: - AUTHENTICATION_FAILED 
+   * The status for payerAuthentication 400 setup calls. Possible values are: - INVALID_REQUEST 
    * @return status
   **/
-  @ApiModelProperty(value = "The status for payerAuthentication 201 enroll and validate calls. Value is: - AUTHENTICATION_FAILED ")
+  @ApiModelProperty(value = "The status for payerAuthentication 400 setup calls. Possible values are: - INVALID_REQUEST ")
   public String getStatus() {
     return status;
   }
@@ -88,10 +88,10 @@ public class RiskV1AuthenticationsPost400Response {
   }
 
    /**
-   * The reason of the status. Value is Failed_Authentication. 
+   * The reason of the status. 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status. Value is Failed_Authentication. ")
+  @ApiModelProperty(value = "The reason of the status. ")
   public String getReason() {
     return reason;
   }
@@ -106,10 +106,10 @@ public class RiskV1AuthenticationsPost400Response {
   }
 
    /**
-   * The message describing the reason of the status. Value is: - Encountered a Payer Authentication problem. Payer could not be authenticated. 
+   * The message describing the reason of the status. Value is: - Encountered a Payer Authentication problem. Payer could not be setup. 
    * @return message
   **/
-  @ApiModelProperty(value = "The message describing the reason of the status. Value is: - Encountered a Payer Authentication problem. Payer could not be authenticated. ")
+  @ApiModelProperty(value = "The message describing the reason of the status. Value is: - Encountered a Payer Authentication problem. Payer could not be setup. ")
   public String getMessage() {
     return message;
   }

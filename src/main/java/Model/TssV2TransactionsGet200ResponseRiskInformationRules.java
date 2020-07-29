@@ -27,7 +27,7 @@ import java.io.IOException;
  * Names of one or more rules that were processed, and the decisions made by the rules.
  */
 @ApiModel(description = "Names of one or more rules that were processed, and the decisions made by the rules.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class TssV2TransactionsGet200ResponseRiskInformationRules {
   @SerializedName("name")
   private String name = null;

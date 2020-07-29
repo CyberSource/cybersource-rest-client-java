@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * CreateSearchRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class CreateSearchRequest {
   @SerializedName("save")
   private Boolean save = null;
@@ -55,10 +55,10 @@ public class CreateSearchRequest {
   }
 
    /**
-   * save or not save.
+   * Indicates whether or not you want to save this search request for future use. The options are:  * &#x60;true&#x60; * &#x60;false&#x60; (default value)  If set to &#x60;true&#x60;, this field returns &#x60;searchID&#x60; in the response. You can use this value to retrieve the details of the saved search. 
    * @return save
   **/
-  @ApiModelProperty(value = "save or not save.")
+  @ApiModelProperty(value = "Indicates whether or not you want to save this search request for future use. The options are:  * `true` * `false` (default value)  If set to `true`, this field returns `searchID` in the response. You can use this value to retrieve the details of the saved search. ")
   public Boolean getSave() {
     return save;
   }
@@ -73,10 +73,10 @@ public class CreateSearchRequest {
   }
 
    /**
-   * The description for this field is not available. 
+   * Name of this search. When &#x60;save&#x60; is set to &#x60;true&#x60;, this search is saved with this name. 
    * @return name
   **/
-  @ApiModelProperty(value = "The description for this field is not available. ")
+  @ApiModelProperty(value = "Name of this search. When `save` is set to `true`, this search is saved with this name. ")
   public String getName() {
     return name;
   }
@@ -91,10 +91,10 @@ public class CreateSearchRequest {
   }
 
    /**
-   * Time Zone in ISO format.
+   * Merchant’s time zone in ISO standard, using the TZ database format. For example: &#x60;America/Chicago&#x60; 
    * @return timezone
   **/
-  @ApiModelProperty(value = "Time Zone in ISO format.")
+  @ApiModelProperty(value = "Merchant’s time zone in ISO standard, using the TZ database format. For example: `America/Chicago` ")
   public String getTimezone() {
     return timezone;
   }
@@ -109,10 +109,10 @@ public class CreateSearchRequest {
   }
 
    /**
-   * transaction search query string.
+   * String that contains the filters and variables for which you want to search. For information about supported field-filters and operators, see the [Query Filters]( https://developer.cybersource.com/api/developer-guides/dita-txn-search-details-rest-api-dev-guide-102718/txn_search_api/creating_txn_search_request.html) section of the Transaction Search Developer Guide. 
    * @return query
   **/
-  @ApiModelProperty(value = "transaction search query string.")
+  @ApiModelProperty(value = "String that contains the filters and variables for which you want to search. For information about supported field-filters and operators, see the [Query Filters]( https://developer.cybersource.com/api/developer-guides/dita-txn-search-details-rest-api-dev-guide-102718/txn_search_api/creating_txn_search_request.html) section of the Transaction Search Developer Guide. ")
   public String getQuery() {
     return query;
   }
@@ -127,10 +127,10 @@ public class CreateSearchRequest {
   }
 
    /**
-   * offset.
+   * Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit&#x3D;5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  &#x60;offset&#x3D;0&#x60; &#x60;offset&#x3D;5&#x60; &#x60;offset&#x3D;10&#x60;  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned. 
    * @return offset
   **/
-  @ApiModelProperty(value = "offset.")
+  @ApiModelProperty(value = "Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  `offset=0` `offset=5` `offset=10`  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned. ")
   public Integer getOffset() {
     return offset;
   }
@@ -145,10 +145,10 @@ public class CreateSearchRequest {
   }
 
    /**
-   * Limit on number of results.
+   * Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2000. 
    * @return limit
   **/
-  @ApiModelProperty(value = "Limit on number of results.")
+  @ApiModelProperty(value = "Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2000. ")
   public Integer getLimit() {
     return limit;
   }
@@ -163,10 +163,10 @@ public class CreateSearchRequest {
   }
 
    /**
-   * A comma separated list of the following form - fieldName1 asc or desc, fieldName2 asc or desc, etc.
+   * A comma separated list of the following form:  &#x60;submitTimeUtc:desc&#x60; 
    * @return sort
   **/
-  @ApiModelProperty(value = "A comma separated list of the following form - fieldName1 asc or desc, fieldName2 asc or desc, etc.")
+  @ApiModelProperty(value = "A comma separated list of the following form:  `submitTimeUtc:desc` ")
   public String getSort() {
     return sort;
   }

@@ -14,10 +14,10 @@
 package Api;
 
 import Invokers.ApiException;
-import Model.CreatePaymentInstrumentRequest;
 import Model.InlineResponse400;
-import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments;
-import Model.UpdatePaymentInstrumentRequest;
+import Model.PatchPaymentInstrumentRequest;
+import Model.PostPaymentInstrumentRequest;
+import Model.Tmsv2customersEmbeddedDefaultPaymentInstrument;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -36,23 +36,6 @@ public class PaymentInstrumentApiTest {
 
     
     /**
-     * Create a Payment Instrument
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void createPaymentInstrumentTest() throws ApiException {
-        String profileId = null;
-        CreatePaymentInstrumentRequest createPaymentInstrumentRequest = null;
-        TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments response = api.createPaymentInstrument(profileId, createPaymentInstrumentRequest);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Delete a Payment Instrument
      *
      * 
@@ -62,9 +45,9 @@ public class PaymentInstrumentApiTest {
      */
     @Test
     public void deletePaymentInstrumentTest() throws ApiException {
+        String paymentInstrumentTokenId = null;
         String profileId = null;
-        String tokenId = null;
-        api.deletePaymentInstrument(profileId, tokenId);
+        api.deletePaymentInstrument(paymentInstrumentTokenId, profileId);
 
         // TODO: test validations
     }
@@ -79,9 +62,9 @@ public class PaymentInstrumentApiTest {
      */
     @Test
     public void getPaymentInstrumentTest() throws ApiException {
+        String paymentInstrumentTokenId = null;
         String profileId = null;
-        String tokenId = null;
-        TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments response = api.getPaymentInstrument(profileId, tokenId);
+        Tmsv2customersEmbeddedDefaultPaymentInstrument response = api.getPaymentInstrument(paymentInstrumentTokenId, profileId);
 
         // TODO: test validations
     }
@@ -95,11 +78,29 @@ public class PaymentInstrumentApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updatePaymentInstrumentTest() throws ApiException {
+    public void patchPaymentInstrumentTest() throws ApiException {
+        String paymentInstrumentTokenId = null;
+        PatchPaymentInstrumentRequest patchPaymentInstrumentRequest = null;
         String profileId = null;
-        String tokenId = null;
-        UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest = null;
-        TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments response = api.updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest);
+        String ifMatch = null;
+        Tmsv2customersEmbeddedDefaultPaymentInstrument response = api.patchPaymentInstrument(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a Payment Instrument
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postPaymentInstrumentTest() throws ApiException {
+        PostPaymentInstrumentRequest postPaymentInstrumentRequest = null;
+        String profileId = null;
+        Tmsv2customersEmbeddedDefaultPaymentInstrument response = api.postPaymentInstrument(postPaymentInstrumentRequest, profileId);
 
         // TODO: test validations
     }

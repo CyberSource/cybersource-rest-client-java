@@ -17,16 +17,17 @@ import java.util.Objects;
 import Model.Ptsv2paymentsAcquirerInformation;
 import Model.Ptsv2paymentsRecurringPaymentInformation;
 import Model.Riskv1authenticationsBuyerInformation;
-import Model.Riskv1authenticationsClientReferenceInformation;
-import Model.Riskv1authenticationsConsumerAuthenticationInformation;
 import Model.Riskv1authenticationsDeviceInformation;
-import Model.Riskv1authenticationsMerchantInformation;
 import Model.Riskv1authenticationsOrderInformation;
 import Model.Riskv1authenticationsPaymentInformation;
-import Model.Riskv1authenticationsProcessingInformation;
 import Model.Riskv1authenticationsRiskInformation;
 import Model.Riskv1authenticationsTravelInformation;
+import Model.Riskv1authenticationsetupsClientReferenceInformation;
+import Model.Riskv1authenticationsetupsProcessingInformation;
+import Model.Riskv1authenticationsetupsTokenInformation;
+import Model.Riskv1decisionsConsumerAuthenticationInformation;
 import Model.Riskv1decisionsMerchantDefinedInformation;
+import Model.Riskv1decisionsMerchantInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,10 +42,10 @@ import java.util.List;
 /**
  * CheckPayerAuthEnrollmentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class CheckPayerAuthEnrollmentRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1authenticationsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1authenticationsOrderInformation orderInformation = null;
@@ -53,7 +54,10 @@ public class CheckPayerAuthEnrollmentRequest {
   private Riskv1authenticationsPaymentInformation paymentInformation = null;
 
   @SerializedName("processingInformation")
-  private Riskv1authenticationsProcessingInformation processingInformation = null;
+  private Riskv1authenticationsetupsProcessingInformation processingInformation = null;
+
+  @SerializedName("tokenInformation")
+  private Riskv1authenticationsetupsTokenInformation tokenInformation = null;
 
   @SerializedName("buyerInformation")
   private Riskv1authenticationsBuyerInformation buyerInformation = null;
@@ -62,7 +66,7 @@ public class CheckPayerAuthEnrollmentRequest {
   private Riskv1authenticationsDeviceInformation deviceInformation = null;
 
   @SerializedName("merchantInformation")
-  private Riskv1authenticationsMerchantInformation merchantInformation = null;
+  private Riskv1decisionsMerchantInformation merchantInformation = null;
 
   @SerializedName("acquirerInformation")
   private Ptsv2paymentsAcquirerInformation acquirerInformation = null;
@@ -71,7 +75,7 @@ public class CheckPayerAuthEnrollmentRequest {
   private Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation = null;
 
   @SerializedName("consumerAuthenticationInformation")
-  private Riskv1authenticationsConsumerAuthenticationInformation consumerAuthenticationInformation = null;
+  private Riskv1decisionsConsumerAuthenticationInformation consumerAuthenticationInformation = null;
 
   @SerializedName("riskInformation")
   private Riskv1authenticationsRiskInformation riskInformation = null;
@@ -82,7 +86,7 @@ public class CheckPayerAuthEnrollmentRequest {
   @SerializedName("merchantDefinedInformation")
   private List<Riskv1decisionsMerchantDefinedInformation> merchantDefinedInformation = null;
 
-  public CheckPayerAuthEnrollmentRequest clientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
+  public CheckPayerAuthEnrollmentRequest clientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -92,11 +96,11 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1authenticationsetupsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1authenticationsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
@@ -136,7 +140,7 @@ public class CheckPayerAuthEnrollmentRequest {
     this.paymentInformation = paymentInformation;
   }
 
-  public CheckPayerAuthEnrollmentRequest processingInformation(Riskv1authenticationsProcessingInformation processingInformation) {
+  public CheckPayerAuthEnrollmentRequest processingInformation(Riskv1authenticationsetupsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
@@ -146,12 +150,30 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsProcessingInformation getProcessingInformation() {
+  public Riskv1authenticationsetupsProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(Riskv1authenticationsProcessingInformation processingInformation) {
+  public void setProcessingInformation(Riskv1authenticationsetupsProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
+  }
+
+  public CheckPayerAuthEnrollmentRequest tokenInformation(Riskv1authenticationsetupsTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+    return this;
+  }
+
+   /**
+   * Get tokenInformation
+   * @return tokenInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1authenticationsetupsTokenInformation getTokenInformation() {
+    return tokenInformation;
+  }
+
+  public void setTokenInformation(Riskv1authenticationsetupsTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
   }
 
   public CheckPayerAuthEnrollmentRequest buyerInformation(Riskv1authenticationsBuyerInformation buyerInformation) {
@@ -190,7 +212,7 @@ public class CheckPayerAuthEnrollmentRequest {
     this.deviceInformation = deviceInformation;
   }
 
-  public CheckPayerAuthEnrollmentRequest merchantInformation(Riskv1authenticationsMerchantInformation merchantInformation) {
+  public CheckPayerAuthEnrollmentRequest merchantInformation(Riskv1decisionsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
     return this;
   }
@@ -200,11 +222,11 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return merchantInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsMerchantInformation getMerchantInformation() {
+  public Riskv1decisionsMerchantInformation getMerchantInformation() {
     return merchantInformation;
   }
 
-  public void setMerchantInformation(Riskv1authenticationsMerchantInformation merchantInformation) {
+  public void setMerchantInformation(Riskv1decisionsMerchantInformation merchantInformation) {
     this.merchantInformation = merchantInformation;
   }
 
@@ -244,7 +266,7 @@ public class CheckPayerAuthEnrollmentRequest {
     this.recurringPaymentInformation = recurringPaymentInformation;
   }
 
-  public CheckPayerAuthEnrollmentRequest consumerAuthenticationInformation(Riskv1authenticationsConsumerAuthenticationInformation consumerAuthenticationInformation) {
+  public CheckPayerAuthEnrollmentRequest consumerAuthenticationInformation(Riskv1decisionsConsumerAuthenticationInformation consumerAuthenticationInformation) {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
     return this;
   }
@@ -254,11 +276,11 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return consumerAuthenticationInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsConsumerAuthenticationInformation getConsumerAuthenticationInformation() {
+  public Riskv1decisionsConsumerAuthenticationInformation getConsumerAuthenticationInformation() {
     return consumerAuthenticationInformation;
   }
 
-  public void setConsumerAuthenticationInformation(Riskv1authenticationsConsumerAuthenticationInformation consumerAuthenticationInformation) {
+  public void setConsumerAuthenticationInformation(Riskv1decisionsConsumerAuthenticationInformation consumerAuthenticationInformation) {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
   }
 
@@ -338,6 +360,7 @@ public class CheckPayerAuthEnrollmentRequest {
         Objects.equals(this.orderInformation, checkPayerAuthEnrollmentRequest.orderInformation) &&
         Objects.equals(this.paymentInformation, checkPayerAuthEnrollmentRequest.paymentInformation) &&
         Objects.equals(this.processingInformation, checkPayerAuthEnrollmentRequest.processingInformation) &&
+        Objects.equals(this.tokenInformation, checkPayerAuthEnrollmentRequest.tokenInformation) &&
         Objects.equals(this.buyerInformation, checkPayerAuthEnrollmentRequest.buyerInformation) &&
         Objects.equals(this.deviceInformation, checkPayerAuthEnrollmentRequest.deviceInformation) &&
         Objects.equals(this.merchantInformation, checkPayerAuthEnrollmentRequest.merchantInformation) &&
@@ -351,7 +374,7 @@ public class CheckPayerAuthEnrollmentRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, orderInformation, paymentInformation, processingInformation, buyerInformation, deviceInformation, merchantInformation, acquirerInformation, recurringPaymentInformation, consumerAuthenticationInformation, riskInformation, travelInformation, merchantDefinedInformation);
+    return Objects.hash(clientReferenceInformation, orderInformation, paymentInformation, processingInformation, tokenInformation, buyerInformation, deviceInformation, merchantInformation, acquirerInformation, recurringPaymentInformation, consumerAuthenticationInformation, riskInformation, travelInformation, merchantDefinedInformation);
   }
 
 
@@ -364,6 +387,7 @@ public class CheckPayerAuthEnrollmentRequest {
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
     sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");

@@ -27,7 +27,7 @@ import org.joda.time.LocalDate;
 /**
  * InvoicingV2InvoicesAllGet200ResponseInvoiceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation {
   @SerializedName("dueDate")
   private LocalDate dueDate = null;

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="generatePublicKey"></a>
 # **generatePublicKey**
-> FlexV1KeysPost200Response generatePublicKey(generatePublicKeyRequest, format)
+> FlexV1KeysPost200Response generatePublicKey(format, generatePublicKeyRequest)
 
 Generate Key
 
@@ -23,10 +23,10 @@ Generate a one-time use public key and key ID to encrypt the card number in the 
 
 
 KeyGenerationApi apiInstance = new KeyGenerationApi();
+String format = "JWT"; // String | Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required)
 GeneratePublicKeyRequest generatePublicKeyRequest = new GeneratePublicKeyRequest(); // GeneratePublicKeyRequest | 
-String format = "legacy"; // String | Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required)
 try {
-    FlexV1KeysPost200Response result = apiInstance.generatePublicKey(generatePublicKeyRequest, format);
+    FlexV1KeysPost200Response result = apiInstance.generatePublicKey(format, generatePublicKeyRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KeyGenerationApi#generatePublicKey");
@@ -38,8 +38,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **format** | **String**| Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) | [default to JWT]
  **generatePublicKeyRequest** | [**GeneratePublicKeyRequest**](GeneratePublicKeyRequest.md)|  |
- **format** | **String**| Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) | [optional] [default to legacy]
 
 ### Return type
 
