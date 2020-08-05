@@ -163,7 +163,7 @@ public class ApiClient {
 			    .connectTimeout(1, TimeUnit.SECONDS)
 			    .writeTimeout(60, TimeUnit.SECONDS)
 			    .readTimeout(60, TimeUnit.SECONDS)
-			    .connectionPool(new ConnectionPool(0, 1, TimeUnit.MILLISECONDS))//this.connectionPool)
+			    .connectionPool(this.connectionPool)
 				.hostnameVerifier(new HostnameVerifier() {
 					@Override
 					public boolean verify(String hostname, SSLSession session) {
@@ -256,7 +256,7 @@ public class ApiClient {
 					.connectTimeout(1, TimeUnit.SECONDS)
 					.writeTimeout(60, TimeUnit.SECONDS)
 					.readTimeout(60, TimeUnit.SECONDS)
-					.connectionPool(new ConnectionPool(0, 1, TimeUnit.MILLISECONDS))//this.connectionPool)
+					.connectionPool(this.connectionPool)
 					.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
 					.proxyAuthenticator(proxyAuthenticator)
 					.hostnameVerifier(new HostnameVerifier() {
