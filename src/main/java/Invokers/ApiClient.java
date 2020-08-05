@@ -164,12 +164,6 @@ public class ApiClient {
 			    .writeTimeout(60, TimeUnit.SECONDS)
 			    .readTimeout(60, TimeUnit.SECONDS)
 			    .connectionPool(this.connectionPool)
-				.hostnameVerifier(new HostnameVerifier() {
-					@Override
-					public boolean verify(String hostname, SSLSession session) {
-						return true;
-					}
-				})
 			    .build();
 
 		verifyingSsl = true;
@@ -259,12 +253,6 @@ public class ApiClient {
 					.connectionPool(this.connectionPool)
 					.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
 					.proxyAuthenticator(proxyAuthenticator)
-					.hostnameVerifier(new HostnameVerifier() {
-						@Override
-						public boolean verify(String hostname, SSLSession session) {
-							return true;
-						}
-					})
 					.build();
 			this.setHttpClient(httpClient);	
 		}
@@ -1237,7 +1225,7 @@ public class ApiClient {
 			if (response.body() != null) {
 				try {
 					respBody = response.body().string();
-//					System.out.println(respBody);
+					System.out.println(respBody);
 				} catch (IOException e) {
 					throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
 				}
