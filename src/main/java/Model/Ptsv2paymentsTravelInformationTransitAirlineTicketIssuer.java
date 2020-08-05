@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer {
   @SerializedName("code")
   private String code = null;
@@ -55,10 +55,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer {
   }
 
    /**
-   * IATA2 airline code. Format: English characters only. 
+   * IATA2 airline code. Format: English characters only. Required for Mastercard; optional for all other card types. 
    * @return code
   **/
-  @ApiModelProperty(value = "IATA2 airline code. Format: English characters only. ")
+  @ApiModelProperty(value = "IATA2 airline code. Format: English characters only. Required for Mastercard; optional for all other card types. ")
   public String getCode() {
     return code;
   }
@@ -109,10 +109,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer {
   }
 
    /**
-   * City in which the transactionoccurred. If the name of the city exceeds 18 characters, use meaningful abbreviations. Format: English characters only 
+   * City in which the transaction occurred. If the name of the city exceeds 18 characters, use meaningful abbreviations. Format: English characters only. Optional request field. 
    * @return locality
   **/
-  @ApiModelProperty(value = "City in which the transactionoccurred. If the name of the city exceeds 18 characters, use meaningful abbreviations. Format: English characters only ")
+  @ApiModelProperty(value = "City in which the transaction occurred. If the name of the city exceeds 18 characters, use meaningful abbreviations. Format: English characters only. Optional request field. ")
   public String getLocality() {
     return locality;
   }

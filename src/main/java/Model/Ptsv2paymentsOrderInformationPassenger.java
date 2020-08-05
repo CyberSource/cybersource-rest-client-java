@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains travel-related passenger details used by DM service only.
  */
 @ApiModel(description = "Contains travel-related passenger details used by DM service only.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsOrderInformationPassenger {
   @SerializedName("type")
   private String type = null;
@@ -95,10 +95,10 @@ public class Ptsv2paymentsOrderInformationPassenger {
   }
 
    /**
-   * Passenger&#39;s phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf) 
+   * Passenger&#39;s phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf). 
    * @return phone
   **/
-  @ApiModelProperty(value = "Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf) ")
+  @ApiModelProperty(value = "Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf). ")
   public String getPhone() {
     return phone;
   }
@@ -185,10 +185,10 @@ public class Ptsv2paymentsOrderInformationPassenger {
   }
 
    /**
-   * Passenger&#39;s nationality country. Use the two character ISO Standard Country Codes.
+   * Passenger&#39;s nationality country. Use the two character [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).
    * @return nationality
   **/
-  @ApiModelProperty(value = "Passenger's nationality country. Use the two character ISO Standard Country Codes.")
+  @ApiModelProperty(value = "Passenger's nationality country. Use the two character [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).")
   public String getNationality() {
     return nationality;
   }

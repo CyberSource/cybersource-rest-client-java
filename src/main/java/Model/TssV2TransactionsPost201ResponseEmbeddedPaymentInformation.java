@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.Riskv1authenticationsetupsPaymentInformationCustomer;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
@@ -29,13 +29,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
   @SerializedName("paymentType")
   private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType paymentType = null;
 
   @SerializedName("customer")
-  private Ptsv2paymentsPaymentInformationCustomer customer = null;
+  private Riskv1authenticationsetupsPaymentInformationCustomer customer = null;
 
   @SerializedName("card")
   private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard card = null;
@@ -58,7 +58,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
     this.paymentType = paymentType;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation customer(Riskv1authenticationsetupsPaymentInformationCustomer customer) {
     this.customer = customer;
     return this;
   }
@@ -68,11 +68,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsPaymentInformationCustomer getCustomer() {
+  public Riskv1authenticationsetupsPaymentInformationCustomer getCustomer() {
     return customer;
   }
 
-  public void setCustomer(Ptsv2paymentsPaymentInformationCustomer customer) {
+  public void setCustomer(Riskv1authenticationsetupsPaymentInformationCustomer customer) {
     this.customer = customer;
   }
 

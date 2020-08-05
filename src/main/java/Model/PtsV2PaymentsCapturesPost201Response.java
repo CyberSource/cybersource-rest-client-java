@@ -32,7 +32,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsCapturesPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class PtsV2PaymentsCapturesPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsCapturesPost201ResponseLinks links = null;
@@ -58,11 +58,11 @@ public class PtsV2PaymentsCapturesPost201Response {
   @SerializedName("orderInformation")
   private PtsV2PaymentsCapturesPost201ResponseOrderInformation orderInformation = null;
 
-  @SerializedName("processingInformation")
-  private PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation = null;
-
   @SerializedName("pointOfSaleInformation")
   private PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation = null;
+
+  @SerializedName("processingInformation")
+  private PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation = null;
 
   public PtsV2PaymentsCapturesPost201Response links(PtsV2PaymentsCapturesPost201ResponseLinks links) {
     this.links = links;
@@ -88,10 +88,10 @@ public class PtsV2PaymentsCapturesPost201Response {
   }
 
    /**
-   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. 
+   * An unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.  #### PIN debit Returned for all PIN debit services. 
    * @return id
   **/
-  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. ")
+  @ApiModelProperty(value = "An unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.  #### PIN debit Returned for all PIN debit services. ")
   public String getId() {
     return id;
   }
@@ -106,10 +106,10 @@ public class PtsV2PaymentsCapturesPost201Response {
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by authorization service. 
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service. ")
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal. ")
   public String getSubmitTimeUtc() {
     return submitTimeUtc;
   }
@@ -142,10 +142,10 @@ public class PtsV2PaymentsCapturesPost201Response {
   }
 
    /**
-   * Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  #### Atos Positive string (6)  #### All other processors String (60) 
+   * Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  ##### PIN debit Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### Atos Positive string (6)  #### All other processors String (60) 
    * @return reconciliationId
   **/
-  @ApiModelProperty(value = "Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  #### Atos Positive string (6)  #### All other processors String (60) ")
+  @ApiModelProperty(value = "Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  ##### PIN debit Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### Atos Positive string (6)  #### All other processors String (60) ")
   public String getReconciliationId() {
     return reconciliationId;
   }
@@ -208,24 +208,6 @@ public class PtsV2PaymentsCapturesPost201Response {
     this.orderInformation = orderInformation;
   }
 
-  public PtsV2PaymentsCapturesPost201Response processingInformation(PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation) {
-    this.processingInformation = processingInformation;
-    return this;
-  }
-
-   /**
-   * Get processingInformation
-   * @return processingInformation
-  **/
-  @ApiModelProperty(value = "")
-  public PtsV2PaymentsCapturesPost201ResponseProcessingInformation getProcessingInformation() {
-    return processingInformation;
-  }
-
-  public void setProcessingInformation(PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation) {
-    this.processingInformation = processingInformation;
-  }
-
   public PtsV2PaymentsCapturesPost201Response pointOfSaleInformation(PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
     return this;
@@ -242,6 +224,24 @@ public class PtsV2PaymentsCapturesPost201Response {
 
   public void setPointOfSaleInformation(PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation pointOfSaleInformation) {
     this.pointOfSaleInformation = pointOfSaleInformation;
+  }
+
+  public PtsV2PaymentsCapturesPost201Response processingInformation(PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsCapturesPost201ResponseProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
   }
 
 
@@ -262,13 +262,13 @@ public class PtsV2PaymentsCapturesPost201Response {
         Objects.equals(this.clientReferenceInformation, ptsV2PaymentsCapturesPost201Response.clientReferenceInformation) &&
         Objects.equals(this.processorInformation, ptsV2PaymentsCapturesPost201Response.processorInformation) &&
         Objects.equals(this.orderInformation, ptsV2PaymentsCapturesPost201Response.orderInformation) &&
-        Objects.equals(this.processingInformation, ptsV2PaymentsCapturesPost201Response.processingInformation) &&
-        Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsCapturesPost201Response.pointOfSaleInformation);
+        Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsCapturesPost201Response.pointOfSaleInformation) &&
+        Objects.equals(this.processingInformation, ptsV2PaymentsCapturesPost201Response.processingInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, processorInformation, orderInformation, processingInformation, pointOfSaleInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, processorInformation, orderInformation, pointOfSaleInformation, processingInformation);
   }
 
 
@@ -285,8 +285,8 @@ public class PtsV2PaymentsCapturesPost201Response {
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
+    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

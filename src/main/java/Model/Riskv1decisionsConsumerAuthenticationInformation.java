@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Riskv1decisionsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Riskv1decisionsConsumerAuthenticationInformation {
   @SerializedName("strongAuthentication")
   private Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication strongAuthentication = null;
@@ -121,6 +121,9 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
 
   @SerializedName("productCode")
   private String productCode = null;
+
+  @SerializedName("returnUrl")
+  private String returnUrl = null;
 
   @SerializedName("requestorId")
   private String requestorId = null;
@@ -602,10 +605,10 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
   }
 
    /**
-   * Two-character ISO standard Country Codes. 
+   * Two-character [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).. 
    * @return overrideCountryCode
   **/
-  @ApiModelProperty(value = "Two-character ISO standard Country Codes. ")
+  @ApiModelProperty(value = "Two-character [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).. ")
   public String getOverrideCountryCode() {
     return overrideCountryCode;
   }
@@ -702,6 +705,24 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
 
   public void setProductCode(String productCode) {
     this.productCode = productCode;
+  }
+
+  public Riskv1decisionsConsumerAuthenticationInformation returnUrl(String returnUrl) {
+    this.returnUrl = returnUrl;
+    return this;
+  }
+
+   /**
+   * The URL of the merchant’s return page. CyberSource adds this return URL to the step-up JWT and returns it in the response of the Payer Authentication enrollment call. The merchant&#39;s return URL page serves as a listening URL. Once the bank session completes, the merchant receives a POST to their URL. This response contains the completed bank session’s transactionId. The merchant’s return page should capture the transaction ID and send it in the Payer Authentication validation call. 
+   * @return returnUrl
+  **/
+  @ApiModelProperty(value = "The URL of the merchant’s return page. CyberSource adds this return URL to the step-up JWT and returns it in the response of the Payer Authentication enrollment call. The merchant's return URL page serves as a listening URL. Once the bank session completes, the merchant receives a POST to their URL. This response contains the completed bank session’s transactionId. The merchant’s return page should capture the transaction ID and send it in the Payer Authentication validation call. ")
+  public String getReturnUrl() {
+    return returnUrl;
+  }
+
+  public void setReturnUrl(String returnUrl) {
+    this.returnUrl = returnUrl;
   }
 
   public Riskv1decisionsConsumerAuthenticationInformation requestorId(String requestorId) {
@@ -889,6 +910,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
         Objects.equals(this.priorAuthenticationReferenceId, riskv1decisionsConsumerAuthenticationInformation.priorAuthenticationReferenceId) &&
         Objects.equals(this.priorAuthenticationTime, riskv1decisionsConsumerAuthenticationInformation.priorAuthenticationTime) &&
         Objects.equals(this.productCode, riskv1decisionsConsumerAuthenticationInformation.productCode) &&
+        Objects.equals(this.returnUrl, riskv1decisionsConsumerAuthenticationInformation.returnUrl) &&
         Objects.equals(this.requestorId, riskv1decisionsConsumerAuthenticationInformation.requestorId) &&
         Objects.equals(this.requestorInitiatedAuthenticationIndicator, riskv1decisionsConsumerAuthenticationInformation.requestorInitiatedAuthenticationIndicator) &&
         Objects.equals(this.requestorName, riskv1decisionsConsumerAuthenticationInformation.requestorName) &&
@@ -901,7 +923,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(strongAuthentication, authenticationType, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus);
+    return Objects.hash(strongAuthentication, authenticationType, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus);
   }
 
 
@@ -941,6 +963,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
     sb.append("    priorAuthenticationReferenceId: ").append(toIndentedString(priorAuthenticationReferenceId)).append("\n");
     sb.append("    priorAuthenticationTime: ").append(toIndentedString(priorAuthenticationTime)).append("\n");
     sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
     sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
     sb.append("    requestorInitiatedAuthenticationIndicator: ").append(toIndentedString(requestorInitiatedAuthenticationIndicator)).append("\n");
     sb.append("    requestorName: ").append(toIndentedString(requestorName)).append("\n");

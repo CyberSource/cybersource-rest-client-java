@@ -57,9 +57,9 @@ public class DecisionManagerApiTest {
     }
     
     /**
-     * Create Decision Manager Case
+     * Create Decision Manager
      *
-     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
+     * Decision Manager can help you automate and streamline your fraud operations. Decision Manager will return a decision based on the request values.
      *
      * @throws ApiException
      *          if the Api call fails

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsTravelInformationAgency;
+import Model.Ptsv2paymentsTravelInformationAutoRental;
 import Model.Ptsv2paymentsTravelInformationLodging;
 import Model.Ptsv2paymentsTravelInformationTransit;
 import com.google.gson.TypeAdapter;
@@ -29,13 +30,16 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsTravelInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsTravelInformation {
   @SerializedName("duration")
   private String duration = null;
 
   @SerializedName("agency")
   private Ptsv2paymentsTravelInformationAgency agency = null;
+
+  @SerializedName("autoRental")
+  private Ptsv2paymentsTravelInformationAutoRental autoRental = null;
 
   @SerializedName("lodging")
   private Ptsv2paymentsTravelInformationLodging lodging = null;
@@ -49,10 +53,10 @@ public class Ptsv2paymentsTravelInformation {
   }
 
    /**
-   * Duration for which the vehicle was rented or lodge/hotel was booked. 
+   * Duration of the auto rental or lodging rental.  #### Auto rental This field is supported for Visa, MasterCard, and American Express. **Important** If this field is not included when the &#x60;processingInformation.industryDataType&#x60; is auto rental, the transaction is declined. 
    * @return duration
   **/
-  @ApiModelProperty(value = "Duration for which the vehicle was rented or lodge/hotel was booked. ")
+  @ApiModelProperty(value = "Duration of the auto rental or lodging rental.  #### Auto rental This field is supported for Visa, MasterCard, and American Express. **Important** If this field is not included when the `processingInformation.industryDataType` is auto rental, the transaction is declined. ")
   public String getDuration() {
     return duration;
   }
@@ -77,6 +81,24 @@ public class Ptsv2paymentsTravelInformation {
 
   public void setAgency(Ptsv2paymentsTravelInformationAgency agency) {
     this.agency = agency;
+  }
+
+  public Ptsv2paymentsTravelInformation autoRental(Ptsv2paymentsTravelInformationAutoRental autoRental) {
+    this.autoRental = autoRental;
+    return this;
+  }
+
+   /**
+   * Get autoRental
+   * @return autoRental
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsTravelInformationAutoRental getAutoRental() {
+    return autoRental;
+  }
+
+  public void setAutoRental(Ptsv2paymentsTravelInformationAutoRental autoRental) {
+    this.autoRental = autoRental;
   }
 
   public Ptsv2paymentsTravelInformation lodging(Ptsv2paymentsTravelInformationLodging lodging) {
@@ -127,13 +149,14 @@ public class Ptsv2paymentsTravelInformation {
     Ptsv2paymentsTravelInformation ptsv2paymentsTravelInformation = (Ptsv2paymentsTravelInformation) o;
     return Objects.equals(this.duration, ptsv2paymentsTravelInformation.duration) &&
         Objects.equals(this.agency, ptsv2paymentsTravelInformation.agency) &&
+        Objects.equals(this.autoRental, ptsv2paymentsTravelInformation.autoRental) &&
         Objects.equals(this.lodging, ptsv2paymentsTravelInformation.lodging) &&
         Objects.equals(this.transit, ptsv2paymentsTravelInformation.transit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(duration, agency, lodging, transit);
+    return Objects.hash(duration, agency, autoRental, lodging, transit);
   }
 
 
@@ -144,6 +167,7 @@ public class Ptsv2paymentsTravelInformation {
     
     sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
     sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
+    sb.append("    autoRental: ").append(toIndentedString(autoRental)).append("\n");
     sb.append("    lodging: ").append(toIndentedString(lodging)).append("\n");
     sb.append("    transit: ").append(toIndentedString(transit)).append("\n");
     sb.append("}");

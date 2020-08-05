@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsTravelInformationAgency
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsTravelInformationAgency {
   @SerializedName("code")
   private String code = null;
@@ -40,10 +40,10 @@ public class Ptsv2paymentsTravelInformationAgency {
   }
 
    /**
-   * Code of travel agency that made the vehicle rental reservation. 
+   * International Air Transport Association (IATA) code of travel agency that made the vehicle rental reservation. 
    * @return code
   **/
-  @ApiModelProperty(value = "Code of travel agency that made the vehicle rental reservation. ")
+  @ApiModelProperty(value = "International Air Transport Association (IATA) code of travel agency that made the vehicle rental reservation. ")
   public String getCode() {
     return code;
   }

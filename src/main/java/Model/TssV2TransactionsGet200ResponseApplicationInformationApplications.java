@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseApplicationInformationApplications
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
   @SerializedName("name")
   private String name = null;
@@ -50,7 +50,7 @@ public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
   private String rMessage = null;
 
   @SerializedName("returnCode")
-  private String returnCode = null;
+  private Integer returnCode = null;
 
   public TssV2TransactionsGet200ResponseApplicationInformationApplications name(String name) {
     this.name = name;
@@ -178,7 +178,7 @@ public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
     this.rMessage = rMessage;
   }
 
-  public TssV2TransactionsGet200ResponseApplicationInformationApplications returnCode(String returnCode) {
+  public TssV2TransactionsGet200ResponseApplicationInformationApplications returnCode(Integer returnCode) {
     this.returnCode = returnCode;
     return this;
   }
@@ -188,11 +188,11 @@ public class TssV2TransactionsGet200ResponseApplicationInformationApplications {
    * @return returnCode
   **/
   @ApiModelProperty(value = "The description for this field is not available.")
-  public String getReturnCode() {
+  public Integer getReturnCode() {
     return returnCode;
   }
 
-  public void setReturnCode(String returnCode) {
+  public void setReturnCode(Integer returnCode) {
     this.returnCode = returnCode;
   }
 

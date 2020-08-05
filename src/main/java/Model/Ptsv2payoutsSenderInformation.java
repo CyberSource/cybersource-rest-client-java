@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2payoutsSenderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2payoutsSenderInformation {
   @SerializedName("referenceNumber")
   private String referenceNumber = null;
@@ -221,10 +221,10 @@ public class Ptsv2payoutsSenderInformation {
   }
 
    /**
-   * Sender’s state. Use the State, Province, and Territory Codes for the United States and Canada. 
+   * Sender’s state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf). 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "Sender’s state. Use the State, Province, and Territory Codes for the United States and Canada. ")
+  @ApiModelProperty(value = "Sender’s state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf). ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -239,10 +239,10 @@ public class Ptsv2payoutsSenderInformation {
   }
 
    /**
-   * Country of sender. Use the ISO Standard Country Codes. * CTV (3) 
+   * Country of sender. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf). * CTV (3) 
    * @return countryCode
   **/
-  @ApiModelProperty(value = "Country of sender. Use the ISO Standard Country Codes. * CTV (3) ")
+  @ApiModelProperty(value = "Country of sender. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf). * CTV (3) ")
   public String getCountryCode() {
     return countryCode;
   }

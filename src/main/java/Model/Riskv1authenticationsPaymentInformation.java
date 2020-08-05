@@ -14,9 +14,10 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Riskv1authenticationsPaymentInformationCard;
-import Model.Riskv1authenticationsPaymentInformationFluidData;
 import Model.Riskv1authenticationsPaymentInformationTokenizedCard;
+import Model.Riskv1authenticationsetupsPaymentInformationFluidData;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +30,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Riskv1authenticationsPaymentInformation {
   @SerializedName("card")
   private Riskv1authenticationsPaymentInformationCard card = null;
@@ -38,7 +39,10 @@ public class Riskv1authenticationsPaymentInformation {
   private Riskv1authenticationsPaymentInformationTokenizedCard tokenizedCard = null;
 
   @SerializedName("fluidData")
-  private Riskv1authenticationsPaymentInformationFluidData fluidData = null;
+  private Riskv1authenticationsetupsPaymentInformationFluidData fluidData = null;
+
+  @SerializedName("customer")
+  private Ptsv2paymentsPaymentInformationCustomer customer = null;
 
   public Riskv1authenticationsPaymentInformation card(Riskv1authenticationsPaymentInformationCard card) {
     this.card = card;
@@ -76,7 +80,7 @@ public class Riskv1authenticationsPaymentInformation {
     this.tokenizedCard = tokenizedCard;
   }
 
-  public Riskv1authenticationsPaymentInformation fluidData(Riskv1authenticationsPaymentInformationFluidData fluidData) {
+  public Riskv1authenticationsPaymentInformation fluidData(Riskv1authenticationsetupsPaymentInformationFluidData fluidData) {
     this.fluidData = fluidData;
     return this;
   }
@@ -86,12 +90,30 @@ public class Riskv1authenticationsPaymentInformation {
    * @return fluidData
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsPaymentInformationFluidData getFluidData() {
+  public Riskv1authenticationsetupsPaymentInformationFluidData getFluidData() {
     return fluidData;
   }
 
-  public void setFluidData(Riskv1authenticationsPaymentInformationFluidData fluidData) {
+  public void setFluidData(Riskv1authenticationsetupsPaymentInformationFluidData fluidData) {
     this.fluidData = fluidData;
+  }
+
+  public Riskv1authenticationsPaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
+    this.customer = customer;
+    return this;
+  }
+
+   /**
+   * Get customer
+   * @return customer
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationCustomer getCustomer() {
+    return customer;
+  }
+
+  public void setCustomer(Ptsv2paymentsPaymentInformationCustomer customer) {
+    this.customer = customer;
   }
 
 
@@ -106,12 +128,13 @@ public class Riskv1authenticationsPaymentInformation {
     Riskv1authenticationsPaymentInformation riskv1authenticationsPaymentInformation = (Riskv1authenticationsPaymentInformation) o;
     return Objects.equals(this.card, riskv1authenticationsPaymentInformation.card) &&
         Objects.equals(this.tokenizedCard, riskv1authenticationsPaymentInformation.tokenizedCard) &&
-        Objects.equals(this.fluidData, riskv1authenticationsPaymentInformation.fluidData);
+        Objects.equals(this.fluidData, riskv1authenticationsPaymentInformation.fluidData) &&
+        Objects.equals(this.customer, riskv1authenticationsPaymentInformation.customer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, fluidData);
+    return Objects.hash(card, tokenizedCard, fluidData, customer);
   }
 
 
@@ -123,6 +146,7 @@ public class Riskv1authenticationsPaymentInformation {
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
     sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
+    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsConsumerAuthenticationInformation {
   @SerializedName("cavv")
   private String cavv = null;
@@ -46,6 +46,9 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @SerializedName("xid")
   private String xid = null;
+
+  @SerializedName("ucafCollectionIndicator")
+  private String ucafCollectionIndicator = null;
 
   @SerializedName("ucafAuthenticationData")
   private String ucafAuthenticationData = null;
@@ -288,6 +291,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   public void setXid(String xid) {
     this.xid = xid;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation ucafCollectionIndicator(String ucafCollectionIndicator) {
+    this.ucafCollectionIndicator = ucafCollectionIndicator;
+    return this;
+  }
+
+   /**
+   * Universal cardholder authentication field (UCAF) collection indicator.  For details, see &#x60;ucaf_collection_indicator&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator 
+   * @return ucafCollectionIndicator
+  **/
+  @ApiModelProperty(value = "Universal cardholder authentication field (UCAF) collection indicator.  For details, see `ucaf_collection_indicator` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator ")
+  public String getUcafCollectionIndicator() {
+    return ucafCollectionIndicator;
+  }
+
+  public void setUcafCollectionIndicator(String ucafCollectionIndicator) {
+    this.ucafCollectionIndicator = ucafCollectionIndicator;
   }
 
   public Ptsv2paymentsConsumerAuthenticationInformation ucafAuthenticationData(String ucafAuthenticationData) {
@@ -800,10 +821,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Two-character ISO standard Country Codes. 
+   * Two-character [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).. 
    * @return overrideCountryCode
   **/
-  @ApiModelProperty(value = "Two-character ISO standard Country Codes. ")
+  @ApiModelProperty(value = "Two-character [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).. ")
   public String getOverrideCountryCode() {
     return overrideCountryCode;
   }
@@ -1116,6 +1137,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
         Objects.equals(this.paresStatus, ptsv2paymentsConsumerAuthenticationInformation.paresStatus) &&
         Objects.equals(this.veresEnrolled, ptsv2paymentsConsumerAuthenticationInformation.veresEnrolled) &&
         Objects.equals(this.xid, ptsv2paymentsConsumerAuthenticationInformation.xid) &&
+        Objects.equals(this.ucafCollectionIndicator, ptsv2paymentsConsumerAuthenticationInformation.ucafCollectionIndicator) &&
         Objects.equals(this.ucafAuthenticationData, ptsv2paymentsConsumerAuthenticationInformation.ucafAuthenticationData) &&
         Objects.equals(this.strongAuthentication, ptsv2paymentsConsumerAuthenticationInformation.strongAuthentication) &&
         Objects.equals(this.directoryServerTransactionId, ptsv2paymentsConsumerAuthenticationInformation.directoryServerTransactionId) &&
@@ -1165,7 +1187,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cavv, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, effectiveAuthenticationType, signedParesStatusReason, signedPares);
+    return Objects.hash(cavv, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, effectiveAuthenticationType, signedParesStatusReason, signedPares);
   }
 
 
@@ -1180,6 +1202,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     sb.append("    paresStatus: ").append(toIndentedString(paresStatus)).append("\n");
     sb.append("    veresEnrolled: ").append(toIndentedString(veresEnrolled)).append("\n");
     sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
+    sb.append("    ucafCollectionIndicator: ").append(toIndentedString(ucafCollectionIndicator)).append("\n");
     sb.append("    ucafAuthenticationData: ").append(toIndentedString(ucafAuthenticationData)).append("\n");
     sb.append("    strongAuthentication: ").append(toIndentedString(strongAuthentication)).append("\n");
     sb.append("    directoryServerTransactionId: ").append(toIndentedString(directoryServerTransactionId)).append("\n");

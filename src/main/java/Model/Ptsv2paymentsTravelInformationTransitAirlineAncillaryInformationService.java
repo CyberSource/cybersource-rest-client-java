@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService {
   @SerializedName("categoryCode")
   private String categoryCode = null;
@@ -40,10 +40,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationSer
   }
 
    /**
-   * Category code for the ancillary service that is provided. Obtain the codes from the International Air Transport Association (IATA). Note is either 0, 1, 2, or 3. Important This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF)program.
+   * Category code for the ancillary service that is provided. Obtain the codes from the International Air Transport Association (IATA). **Note** &#x60;#&#x60; is either 0, 1, 2, or 3. **Important** This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF)program. Format: English characters only. Optional request field for ancillary services. 
    * @return categoryCode
   **/
-  @ApiModelProperty(value = "Category code for the ancillary service that is provided. Obtain the codes from the International Air Transport Association (IATA). Note is either 0, 1, 2, or 3. Important This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF)program.")
+  @ApiModelProperty(value = "Category code for the ancillary service that is provided. Obtain the codes from the International Air Transport Association (IATA). **Note** `#` is either 0, 1, 2, or 3. **Important** This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF)program. Format: English characters only. Optional request field for ancillary services. ")
   public String getCategoryCode() {
     return categoryCode;
   }
@@ -58,10 +58,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationSer
   }
 
    /**
-   * Subcategory code for the ancillary service category. Obtain the codes from the International Air Transport Association (IATA). Note  is 0, 1, 2, or 3. Format  English characters only
+   * Subcategory code for the ancillary service category. Obtain the codes from the International Air Transport Association (IATA). **Note** &#x60;#&#x60; is either 0, 1, 2, or 3. Format  English characters only. Optional request field for ancillary services. 
    * @return subCategoryCode
   **/
-  @ApiModelProperty(value = "Subcategory code for the ancillary service category. Obtain the codes from the International Air Transport Association (IATA). Note  is 0, 1, 2, or 3. Format  English characters only")
+  @ApiModelProperty(value = "Subcategory code for the ancillary service category. Obtain the codes from the International Air Transport Association (IATA). **Note** `#` is either 0, 1, 2, or 3. Format  English characters only. Optional request field for ancillary services. ")
   public String getSubCategoryCode() {
     return subCategoryCode;
   }

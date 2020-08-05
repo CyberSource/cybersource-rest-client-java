@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts {
   @SerializedName("code")
   private String code = null;
@@ -58,10 +58,10 @@ public class Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts {
   }
 
    /**
-   * Additional amount. This field is supported only for **American Express Direct**.  For processor-specific information, see the additional_amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Additional amount. This field is supported only for **American Express Direct**. 
    * @return amount
   **/
-  @ApiModelProperty(value = "Additional amount. This field is supported only for **American Express Direct**.  For processor-specific information, see the additional_amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Additional amount. This field is supported only for **American Express Direct**. ")
   public String getAmount() {
     return amount;
   }

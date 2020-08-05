@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsTravelInformationLodgingRoom
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsTravelInformationLodgingRoom {
   @SerializedName("dailyRate")
   private String dailyRate = null;
@@ -58,12 +58,12 @@ public class Ptsv2paymentsTravelInformationLodgingRoom {
   }
 
    /**
-   * Number of nights billed at the rate specified by lodging_daily_room_rate_1. 
+   * Number of nights billed at the rate specified by &#x60;travelInformation.lodging.room[].dailyRate&#x60;. 
    * minimum: 1
    * maximum: 9999
    * @return numberOfNights
   **/
-  @ApiModelProperty(value = "Number of nights billed at the rate specified by lodging_daily_room_rate_1. ")
+  @ApiModelProperty(value = "Number of nights billed at the rate specified by `travelInformation.lodging.room[].dailyRate`. ")
   public Integer getNumberOfNights() {
     return numberOfNights;
   }

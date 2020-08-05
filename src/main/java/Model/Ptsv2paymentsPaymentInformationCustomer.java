@@ -26,10 +26,13 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationCustomer
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsPaymentInformationCustomer {
   @SerializedName("customerId")
   private String customerId = null;
+
+  @SerializedName("id")
+  private String id = null;
 
   public Ptsv2paymentsPaymentInformationCustomer customerId(String customerId) {
     this.customerId = customerId;
@@ -49,6 +52,24 @@ public class Ptsv2paymentsPaymentInformationCustomer {
     this.customerId = customerId;
   }
 
+  public Ptsv2paymentsPaymentInformationCustomer id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Unique identifier for the Customer token used in the transaction. When you include this value in your request, many of the fields that are normally required for an authorization or credit become optional. 
+   * @return id
+  **/
+  @ApiModelProperty(value = "Unique identifier for the Customer token used in the transaction. When you include this value in your request, many of the fields that are normally required for an authorization or credit become optional. ")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +80,13 @@ public class Ptsv2paymentsPaymentInformationCustomer {
       return false;
     }
     Ptsv2paymentsPaymentInformationCustomer ptsv2paymentsPaymentInformationCustomer = (Ptsv2paymentsPaymentInformationCustomer) o;
-    return Objects.equals(this.customerId, ptsv2paymentsPaymentInformationCustomer.customerId);
+    return Objects.equals(this.customerId, ptsv2paymentsPaymentInformationCustomer.customerId) &&
+        Objects.equals(this.id, ptsv2paymentsPaymentInformationCustomer.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerId);
+    return Objects.hash(customerId, id);
   }
 
 
@@ -74,6 +96,7 @@ public class Ptsv2paymentsPaymentInformationCustomer {
     sb.append("class Ptsv2paymentsPaymentInformationCustomer {\n");
     
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

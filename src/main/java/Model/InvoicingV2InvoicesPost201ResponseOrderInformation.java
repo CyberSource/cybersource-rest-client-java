@@ -31,7 +31,7 @@ import java.util.List;
  * Contains all of the order-related fields for the invoice.
  */
 @ApiModel(description = "Contains all of the order-related fields for the invoice.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class InvoicingV2InvoicesPost201ResponseOrderInformation {
   @SerializedName("amountDetails")
   private InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails amountDetails = null;

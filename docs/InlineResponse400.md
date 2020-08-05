@@ -4,9 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** |  |  [optional]
-**message** | **String** | The detailed message related to the type stated above. |  [optional]
-**details** | [**Tmsv1instrumentidentifiersDetails**](Tmsv1instrumentidentifiersDetails.md) |  |  [optional]
+**errors** | [**List&lt;InlineResponse400Errors&gt;**](InlineResponse400Errors.md) |  |  [optional]
 
 
 

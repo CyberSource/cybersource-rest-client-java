@@ -26,6 +26,7 @@ import Model.PtsV2PaymentsPost201ResponsePointOfSaleInformation;
 import Model.PtsV2PaymentsPost201ResponseProcessingInformation;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformation;
 import Model.PtsV2PaymentsPost201ResponseRiskInformation;
+import Model.PtsV2PaymentsPost201ResponseTokenInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,7 +39,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class PtsV2PaymentsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsPost201ResponseLinks links = null;
@@ -82,6 +83,9 @@ public class PtsV2PaymentsPost201Response {
   @SerializedName("installmentInformation")
   private PtsV2PaymentsPost201ResponseInstallmentInformation installmentInformation = null;
 
+  @SerializedName("tokenInformation")
+  private PtsV2PaymentsPost201ResponseTokenInformation tokenInformation = null;
+
   @SerializedName("riskInformation")
   private PtsV2PaymentsPost201ResponseRiskInformation riskInformation = null;
 
@@ -112,10 +116,10 @@ public class PtsV2PaymentsPost201Response {
   }
 
    /**
-   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. 
+   * An unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.  #### PIN debit Returned for all PIN debit services. 
    * @return id
   **/
-  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. ")
+  @ApiModelProperty(value = "An unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.  #### PIN debit Returned for all PIN debit services. ")
   public String getId() {
     return id;
   }
@@ -130,10 +134,10 @@ public class PtsV2PaymentsPost201Response {
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by authorization service. 
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service. ")
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal. ")
   public String getSubmitTimeUtc() {
     return submitTimeUtc;
   }
@@ -166,10 +170,10 @@ public class PtsV2PaymentsPost201Response {
   }
 
    /**
-   * Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  #### Atos Positive string (6)  #### All other processors String (60) 
+   * Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  ##### PIN debit Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### Atos Positive string (6)  #### All other processors String (60) 
    * @return reconciliationId
   **/
-  @ApiModelProperty(value = "Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  #### Atos Positive string (6)  #### All other processors String (60) ")
+  @ApiModelProperty(value = "Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  ##### PIN debit Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### Atos Positive string (6)  #### All other processors String (60) ")
   public String getReconciliationId() {
     return reconciliationId;
   }
@@ -340,6 +344,24 @@ public class PtsV2PaymentsPost201Response {
     this.installmentInformation = installmentInformation;
   }
 
+  public PtsV2PaymentsPost201Response tokenInformation(PtsV2PaymentsPost201ResponseTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+    return this;
+  }
+
+   /**
+   * Get tokenInformation
+   * @return tokenInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseTokenInformation getTokenInformation() {
+    return tokenInformation;
+  }
+
+  public void setTokenInformation(PtsV2PaymentsPost201ResponseTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+  }
+
   public PtsV2PaymentsPost201Response riskInformation(PtsV2PaymentsPost201ResponseRiskInformation riskInformation) {
     this.riskInformation = riskInformation;
     return this;
@@ -400,13 +422,14 @@ public class PtsV2PaymentsPost201Response {
         Objects.equals(this.orderInformation, ptsV2PaymentsPost201Response.orderInformation) &&
         Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsPost201Response.pointOfSaleInformation) &&
         Objects.equals(this.installmentInformation, ptsV2PaymentsPost201Response.installmentInformation) &&
+        Objects.equals(this.tokenInformation, ptsV2PaymentsPost201Response.tokenInformation) &&
         Objects.equals(this.riskInformation, ptsV2PaymentsPost201Response.riskInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, ptsV2PaymentsPost201Response.consumerAuthenticationInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentInformation, orderInformation, pointOfSaleInformation, installmentInformation, riskInformation, consumerAuthenticationInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, riskInformation, consumerAuthenticationInformation);
   }
 
 
@@ -429,6 +452,7 @@ public class PtsV2PaymentsPost201Response {
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
+    sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
     sb.append("}");

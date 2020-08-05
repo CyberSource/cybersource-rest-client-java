@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Tmsv1instrumentidentifiersDetails;
+import Model.InlineResponse400Errors;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,73 +23,41 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse400
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class InlineResponse400 {
-  @SerializedName("type")
-  private String type = null;
+  @SerializedName("errors")
+  private List<InlineResponse400Errors> errors = null;
 
-  @SerializedName("message")
-  private String message = null;
+  public InlineResponse400 errors(List<InlineResponse400Errors> errors) {
+    this.errors = errors;
+    return this;
+  }
 
-  @SerializedName("details")
-  private Tmsv1instrumentidentifiersDetails details = null;
-
-  public InlineResponse400 type(String type) {
-    this.type = type;
+  public InlineResponse400 addErrorsItem(InlineResponse400Errors errorsItem) {
+    if (this.errors == null) {
+      this.errors = new ArrayList<InlineResponse400Errors>();
+    }
+    this.errors.add(errorsItem);
     return this;
   }
 
    /**
-   * Get type
-   * @return type
+   * Get errors
+   * @return errors
   **/
   @ApiModelProperty(value = "")
-  public String getType() {
-    return type;
+  public List<InlineResponse400Errors> getErrors() {
+    return errors;
   }
 
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public InlineResponse400 message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * The detailed message related to the type stated above.
-   * @return message
-  **/
-  @ApiModelProperty(value = "The detailed message related to the type stated above.")
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-  public InlineResponse400 details(Tmsv1instrumentidentifiersDetails details) {
-    this.details = details;
-    return this;
-  }
-
-   /**
-   * Get details
-   * @return details
-  **/
-  @ApiModelProperty(value = "")
-  public Tmsv1instrumentidentifiersDetails getDetails() {
-    return details;
-  }
-
-  public void setDetails(Tmsv1instrumentidentifiersDetails details) {
-    this.details = details;
+  public void setErrors(List<InlineResponse400Errors> errors) {
+    this.errors = errors;
   }
 
 
@@ -102,14 +70,12 @@ public class InlineResponse400 {
       return false;
     }
     InlineResponse400 inlineResponse400 = (InlineResponse400) o;
-    return Objects.equals(this.type, inlineResponse400.type) &&
-        Objects.equals(this.message, inlineResponse400.message) &&
-        Objects.equals(this.details, inlineResponse400.details);
+    return Objects.equals(this.errors, inlineResponse400.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, message, details);
+    return Objects.hash(errors);
   }
 
 
@@ -118,9 +84,7 @@ public class InlineResponse400 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse400 {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

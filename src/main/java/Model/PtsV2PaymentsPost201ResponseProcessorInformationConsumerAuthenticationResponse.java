@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse {
   @SerializedName("code")
   private String code = null;
@@ -40,10 +40,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticat
   }
 
    /**
-   * Mapped response code for Visa Secure and American Express SafeKey.  For processor-specific details, see &#x60;auth_cavv_response_code&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped response code for Visa Secure and American Express SafeKey. 
    * @return code
   **/
-  @ApiModelProperty(value = "Mapped response code for Visa Secure and American Express SafeKey.  For processor-specific details, see `auth_cavv_response_code` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Mapped response code for Visa Secure and American Express SafeKey. ")
   public String getCode() {
     return code;
   }
@@ -58,10 +58,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticat
   }
 
    /**
-   * Raw response code sent directly from the processor for Visa Secure and American Express SafeKey:  For processor-specific details, see &#x60;auth_cavv_response_code_raw&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Raw response code sent directly from the processor for Visa Secure and American Express SafeKey: 
    * @return codeRaw
   **/
-  @ApiModelProperty(value = "Raw response code sent directly from the processor for Visa Secure and American Express SafeKey:  For processor-specific details, see `auth_cavv_response_code_raw` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Raw response code sent directly from the processor for Visa Secure and American Express SafeKey: ")
   public String getCodeRaw() {
     return codeRaw;
   }

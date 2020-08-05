@@ -23,13 +23,15 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
+  @SerializedName("accessToken")
+  private String accessToken = null;
+
   @SerializedName("acsRenderingType")
   private String acsRenderingType = null;
 
@@ -121,7 +123,7 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
   private String ucafAuthenticationData = null;
 
   @SerializedName("ucafCollectionIndicator")
-  private BigDecimal ucafCollectionIndicator = null;
+  private String ucafCollectionIndicator = null;
 
   @SerializedName("veresEnrolled")
   private String veresEnrolled = null;
@@ -134,6 +136,24 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
 
   @SerializedName("directoryServerTransactionId")
   private String directoryServerTransactionId = null;
+
+  public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation accessToken(String accessToken) {
+    this.accessToken = accessToken;
+    return this;
+  }
+
+   /**
+   * JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. 
+   * @return accessToken
+  **/
+  @ApiModelProperty(value = "JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. ")
+  public String getAccessToken() {
+    return accessToken;
+  }
+
+  public void setAccessToken(String accessToken) {
+    this.accessToken = accessToken;
+  }
 
   public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation acsRenderingType(String acsRenderingType) {
     this.acsRenderingType = acsRenderingType;
@@ -675,7 +695,7 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
     this.ucafAuthenticationData = ucafAuthenticationData;
   }
 
-  public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation ucafCollectionIndicator(BigDecimal ucafCollectionIndicator) {
+  public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation ucafCollectionIndicator(String ucafCollectionIndicator) {
     this.ucafCollectionIndicator = ucafCollectionIndicator;
     return this;
   }
@@ -685,11 +705,11 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
    * @return ucafCollectionIndicator
   **/
   @ApiModelProperty(value = "For enroll, Returned only for Mastercard transactions. Indicates that authentication is not required because the customer is not enrolled. Add the value of this field to the authorization field ucaf_collection_indicator. This field can contain these values: 0, 1.  For validate, Numeric electronic commerce indicator (ECI) returned only for Mastercard Identity Check transactions. The field is absent when authentication fails. You must send this value to your payment processor in the request for card authorization. This field contain one of these values: - `0`: Authentication data not collected, and customer authentication was not completed. - `1`: Authentication data not collected because customer authentication was not completed. - `2`: Authentication data collected because customer completed authentication. ")
-  public BigDecimal getUcafCollectionIndicator() {
+  public String getUcafCollectionIndicator() {
     return ucafCollectionIndicator;
   }
 
-  public void setUcafCollectionIndicator(BigDecimal ucafCollectionIndicator) {
+  public void setUcafCollectionIndicator(String ucafCollectionIndicator) {
     this.ucafCollectionIndicator = ucafCollectionIndicator;
   }
 
@@ -775,7 +795,8 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
       return false;
     }
     RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation riskV1DecisionsPost201ResponseConsumerAuthenticationInformation = (RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation) o;
-    return Objects.equals(this.acsRenderingType, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.acsRenderingType) &&
+    return Objects.equals(this.accessToken, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.accessToken) &&
+        Objects.equals(this.acsRenderingType, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.acsRenderingType) &&
         Objects.equals(this.acsTransactionId, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.acsTransactionId) &&
         Objects.equals(this.acsUrl, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.acsUrl) &&
         Objects.equals(this.authenticationPath, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.authenticationPath) &&
@@ -814,7 +835,7 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId);
+    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId);
   }
 
 
@@ -823,6 +844,7 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {\n");
     
+    sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
     sb.append("    acsRenderingType: ").append(toIndentedString(acsRenderingType)).append("\n");
     sb.append("    acsTransactionId: ").append(toIndentedString(acsTransactionId)).append("\n");
     sb.append("    acsUrl: ").append(toIndentedString(acsUrl)).append("\n");

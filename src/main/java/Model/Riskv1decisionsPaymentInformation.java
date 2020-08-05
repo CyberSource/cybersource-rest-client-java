@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsPaymentInformationBank;
+import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Riskv1decisionsPaymentInformationCard;
-import Model.Riskv1decisionsPaymentInformationCustomer;
 import Model.Riskv1decisionsPaymentInformationTokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -31,7 +31,7 @@ import java.io.IOException;
  * Contains the payment data for this transaction.
  */
 @ApiModel(description = "Contains the payment data for this transaction.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Riskv1decisionsPaymentInformation {
   @SerializedName("card")
   private Riskv1decisionsPaymentInformationCard card = null;
@@ -40,7 +40,7 @@ public class Riskv1decisionsPaymentInformation {
   private Riskv1decisionsPaymentInformationTokenizedCard tokenizedCard = null;
 
   @SerializedName("customer")
-  private Riskv1decisionsPaymentInformationCustomer customer = null;
+  private Ptsv2paymentsPaymentInformationCustomer customer = null;
 
   @SerializedName("bank")
   private Ptsv2paymentsPaymentInformationBank bank = null;
@@ -84,7 +84,7 @@ public class Riskv1decisionsPaymentInformation {
     this.tokenizedCard = tokenizedCard;
   }
 
-  public Riskv1decisionsPaymentInformation customer(Riskv1decisionsPaymentInformationCustomer customer) {
+  public Riskv1decisionsPaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
     this.customer = customer;
     return this;
   }
@@ -94,11 +94,11 @@ public class Riskv1decisionsPaymentInformation {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsPaymentInformationCustomer getCustomer() {
+  public Ptsv2paymentsPaymentInformationCustomer getCustomer() {
     return customer;
   }
 
-  public void setCustomer(Riskv1decisionsPaymentInformationCustomer customer) {
+  public void setCustomer(Ptsv2paymentsPaymentInformationCustomer customer) {
     this.customer = customer;
   }
 

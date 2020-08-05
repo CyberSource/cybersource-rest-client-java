@@ -17,7 +17,11 @@ import java.util.Objects;
 import Model.Ptsv2paymentsPaymentInformationBank;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Ptsv2paymentsPaymentInformationFluidData;
+import Model.Ptsv2paymentsPaymentInformationInstrumentIdentifier;
+import Model.Ptsv2paymentsPaymentInformationLegacyToken;
+import Model.Ptsv2paymentsPaymentInformationPaymentInstrument;
 import Model.Ptsv2paymentsPaymentInformationPaymentType;
+import Model.Ptsv2paymentsPaymentInformationShippingAddress;
 import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
 import Model.Ptsv2paymentsidrefundsPaymentInformationCard;
 import com.google.gson.TypeAdapter;
@@ -32,7 +36,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidrefundsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsidrefundsPaymentInformation {
   @SerializedName("card")
   private Ptsv2paymentsidrefundsPaymentInformationCard card = null;
@@ -48,6 +52,18 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
 
   @SerializedName("customer")
   private Ptsv2paymentsPaymentInformationCustomer customer = null;
+
+  @SerializedName("paymentInstrument")
+  private Ptsv2paymentsPaymentInformationPaymentInstrument paymentInstrument = null;
+
+  @SerializedName("instrumentIdentifier")
+  private Ptsv2paymentsPaymentInformationInstrumentIdentifier instrumentIdentifier = null;
+
+  @SerializedName("shippingAddress")
+  private Ptsv2paymentsPaymentInformationShippingAddress shippingAddress = null;
+
+  @SerializedName("legacyToken")
+  private Ptsv2paymentsPaymentInformationLegacyToken legacyToken = null;
 
   @SerializedName("paymentType")
   private Ptsv2paymentsPaymentInformationPaymentType paymentType = null;
@@ -142,6 +158,78 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     this.customer = customer;
   }
 
+  public Ptsv2paymentsidrefundsPaymentInformation paymentInstrument(Ptsv2paymentsPaymentInformationPaymentInstrument paymentInstrument) {
+    this.paymentInstrument = paymentInstrument;
+    return this;
+  }
+
+   /**
+   * Get paymentInstrument
+   * @return paymentInstrument
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationPaymentInstrument getPaymentInstrument() {
+    return paymentInstrument;
+  }
+
+  public void setPaymentInstrument(Ptsv2paymentsPaymentInformationPaymentInstrument paymentInstrument) {
+    this.paymentInstrument = paymentInstrument;
+  }
+
+  public Ptsv2paymentsidrefundsPaymentInformation instrumentIdentifier(Ptsv2paymentsPaymentInformationInstrumentIdentifier instrumentIdentifier) {
+    this.instrumentIdentifier = instrumentIdentifier;
+    return this;
+  }
+
+   /**
+   * Get instrumentIdentifier
+   * @return instrumentIdentifier
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationInstrumentIdentifier getInstrumentIdentifier() {
+    return instrumentIdentifier;
+  }
+
+  public void setInstrumentIdentifier(Ptsv2paymentsPaymentInformationInstrumentIdentifier instrumentIdentifier) {
+    this.instrumentIdentifier = instrumentIdentifier;
+  }
+
+  public Ptsv2paymentsidrefundsPaymentInformation shippingAddress(Ptsv2paymentsPaymentInformationShippingAddress shippingAddress) {
+    this.shippingAddress = shippingAddress;
+    return this;
+  }
+
+   /**
+   * Get shippingAddress
+   * @return shippingAddress
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationShippingAddress getShippingAddress() {
+    return shippingAddress;
+  }
+
+  public void setShippingAddress(Ptsv2paymentsPaymentInformationShippingAddress shippingAddress) {
+    this.shippingAddress = shippingAddress;
+  }
+
+  public Ptsv2paymentsidrefundsPaymentInformation legacyToken(Ptsv2paymentsPaymentInformationLegacyToken legacyToken) {
+    this.legacyToken = legacyToken;
+    return this;
+  }
+
+   /**
+   * Get legacyToken
+   * @return legacyToken
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationLegacyToken getLegacyToken() {
+    return legacyToken;
+  }
+
+  public void setLegacyToken(Ptsv2paymentsPaymentInformationLegacyToken legacyToken) {
+    this.legacyToken = legacyToken;
+  }
+
   public Ptsv2paymentsidrefundsPaymentInformation paymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
     return this;
@@ -175,12 +263,16 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
         Objects.equals(this.tokenizedCard, ptsv2paymentsidrefundsPaymentInformation.tokenizedCard) &&
         Objects.equals(this.fluidData, ptsv2paymentsidrefundsPaymentInformation.fluidData) &&
         Objects.equals(this.customer, ptsv2paymentsidrefundsPaymentInformation.customer) &&
+        Objects.equals(this.paymentInstrument, ptsv2paymentsidrefundsPaymentInformation.paymentInstrument) &&
+        Objects.equals(this.instrumentIdentifier, ptsv2paymentsidrefundsPaymentInformation.instrumentIdentifier) &&
+        Objects.equals(this.shippingAddress, ptsv2paymentsidrefundsPaymentInformation.shippingAddress) &&
+        Objects.equals(this.legacyToken, ptsv2paymentsidrefundsPaymentInformation.legacyToken) &&
         Objects.equals(this.paymentType, ptsv2paymentsidrefundsPaymentInformation.paymentType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, bank, tokenizedCard, fluidData, customer, paymentType);
+    return Objects.hash(card, bank, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, paymentType);
   }
 
 
@@ -194,6 +286,10 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
     sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    sb.append("    legacyToken: ").append(toIndentedString(legacyToken)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("}");
     return sb.toString();

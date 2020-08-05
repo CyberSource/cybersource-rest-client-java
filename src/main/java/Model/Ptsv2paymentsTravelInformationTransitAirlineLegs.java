@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsTravelInformationTransitAirlineLegs
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   @SerializedName("carrierCode")
   private String carrierCode = null;
@@ -94,10 +94,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Carrier Code: IATA1 code for the carrier for this leg of the trip. 
+   * IATA code for the carrier for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. 
    * @return carrierCode
   **/
-  @ApiModelProperty(value = "Carrier Code: IATA1 code for the carrier for this leg of the trip. ")
+  @ApiModelProperty(value = "IATA code for the carrier for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
   public String getCarrierCode() {
     return carrierCode;
   }
@@ -112,10 +112,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Flight number for this leg of the trip. 
+   * Flight number for this leg of the trip. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable ticket or a 3-day minimum stay. Format: English characters only. Optional request field for travel legs. 
    * @return flightNumber
   **/
-  @ApiModelProperty(value = "Flight number for this leg of the trip. ")
+  @ApiModelProperty(value = "Flight number for this leg of the trip. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable ticket or a 3-day minimum stay. Format: English characters only. Optional request field for travel legs. ")
   public String getFlightNumber() {
     return flightNumber;
   }
@@ -130,10 +130,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * IATA1 code for the originating airport for this leg of the trip. 
+   * IATA code for the originating airport for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. 
    * @return originatingAirportCode
   **/
-  @ApiModelProperty(value = "IATA1 code for the originating airport for this leg of the trip. ")
+  @ApiModelProperty(value = "IATA code for the originating airport for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
   public String getOriginatingAirportCode() {
     return originatingAirportCode;
   }
@@ -148,10 +148,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * IATA1 code for the class of service for this leg of the trip. 
+   * IATA code for the class of service for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. 
    * @return propertyClass
   **/
-  @ApiModelProperty(value = "IATA1 code for the class of service for this leg of the trip. ")
+  @ApiModelProperty(value = "IATA code for the class of service for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
   public String getPropertyClass() {
     return propertyClass;
   }
@@ -166,10 +166,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Code that indicates whether a stopover is allowed on this leg of the trip. Possible Values: O(capital letter \&quot;O\&quot;): stopover allowed.  X(capital letter \&quot;X\&quot;): Stopover not allowed. 
+   * Code that indicates whether a stopover is allowed on this leg of the trip. Possible values: - &#x60;O&#x60; (capital letter “O”) (default): Stopover allowed - &#x60;X&#x60; (capital letter “X”): Stopover not allowed Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. 
    * @return stopoverIndicator
   **/
-  @ApiModelProperty(value = "Code that indicates whether a stopover is allowed on this leg of the trip. Possible Values: O(capital letter \"O\"): stopover allowed.  X(capital letter \"X\"): Stopover not allowed. ")
+  @ApiModelProperty(value = "Code that indicates whether a stopover is allowed on this leg of the trip. Possible values: - `O` (capital letter “O”) (default): Stopover allowed - `X` (capital letter “X”): Stopover not allowed Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
   public Integer getStopoverIndicator() {
     return stopoverIndicator;
   }
@@ -184,10 +184,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Departure date for the first leg of the trip. Format: YYYYMMDD. 
+   * Departure date for the first leg of the trip. Format: &#x60;YYYYMMDD&#x60;. Format: English characters only. Optional request field for travel legs. 
    * @return departureDate
   **/
-  @ApiModelProperty(value = "Departure date for the first leg of the trip. Format: YYYYMMDD. ")
+  @ApiModelProperty(value = "Departure date for the first leg of the trip. Format: `YYYYMMDD`. Format: English characters only. Optional request field for travel legs. ")
   public Integer getDepartureDate() {
     return departureDate;
   }
@@ -202,10 +202,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * IATA1 code for the destination airport for this leg of the trip. 
+   * IATA code for the destination airport for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. 
    * @return destinationAirportCode
   **/
-  @ApiModelProperty(value = "IATA1 code for the destination airport for this leg of the trip. ")
+  @ApiModelProperty(value = "IATA code for the destination airport for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
   public String getDestinationAirportCode() {
     return destinationAirportCode;
   }
@@ -220,10 +220,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Code for the fare basis for this leg of the trip. The fare basis is assigned by the carriers and indicates a particular ticket type, such as business class or discounted/nonrefundable. 
+   * Code for the fare basis for this leg of the trip. The fare basis is assigned by the carriers and indicates a particular ticket type, such as business class or discounted/nonrefundable. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Format: English characters only. Optional request field for travel legs.auto_rental_regular_mileage_cost 
    * @return fareBasis
   **/
-  @ApiModelProperty(value = "Code for the fare basis for this leg of the trip. The fare basis is assigned by the carriers and indicates a particular ticket type, such as business class or discounted/nonrefundable. ")
+  @ApiModelProperty(value = "Code for the fare basis for this leg of the trip. The fare basis is assigned by the carriers and indicates a particular ticket type, such as business class or discounted/nonrefundable. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Format: English characters only. Optional request field for travel legs.auto_rental_regular_mileage_cost ")
   public String getFareBasis() {
     return fareBasis;
   }
@@ -256,10 +256,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Ticket that contains additional coupons for this leg of the trip on an itinerary that has more than four segments. 
+   * Ticket that contains additional coupons for this leg of the trip on an itinerary that has more than four segments. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. 
    * @return conjunctionTicket
   **/
-  @ApiModelProperty(value = "Ticket that contains additional coupons for this leg of the trip on an itinerary that has more than four segments. ")
+  @ApiModelProperty(value = "Ticket that contains additional coupons for this leg of the trip on an itinerary that has more than four segments. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
   public String getConjunctionTicket() {
     return conjunctionTicket;
   }
@@ -274,10 +274,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * New ticket number that is issued when the ticket is exchanged for this leg of the trip. 
+   * New ticket number that is issued when the ticket is exchanged for this leg of the trip. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable ticket or a 3-day minimum stay. Format: English characters only. Optional request field for travel legs. 
    * @return exchangeTicketNumber
   **/
-  @ApiModelProperty(value = "New ticket number that is issued when the ticket is exchanged for this leg of the trip. ")
+  @ApiModelProperty(value = "New ticket number that is issued when the ticket is exchanged for this leg of the trip. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable ticket or a 3-day minimum stay. Format: English characters only. Optional request field for travel legs. ")
   public String getExchangeTicketNumber() {
     return exchangeTicketNumber;
   }
@@ -292,10 +292,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Each leg on the ticket requires a separate coupon, and each coupon is identified by the coupon number. 
+   * Coupon number. Each leg on the ticket requires a separate coupon, and each coupon is identified by the coupon number. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. 
    * @return couponNumber
   **/
-  @ApiModelProperty(value = "Each leg on the ticket requires a separate coupon, and each coupon is identified by the coupon number. ")
+  @ApiModelProperty(value = "Coupon number. Each leg on the ticket requires a separate coupon, and each coupon is identified by the coupon number. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
   public String getCouponNumber() {
     return couponNumber;
   }
@@ -310,10 +310,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Time of departure for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be 00-23 and the minutes must be 00-59 
+   * Time of departure for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be &#x60;00-23&#x60; and the minutes must be &#x60;00-59&#x60;. Format: English characters only. Optional request field for travel legs. 
    * @return departureTime
   **/
-  @ApiModelProperty(value = "Time of departure for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be 00-23 and the minutes must be 00-59 ")
+  @ApiModelProperty(value = "Time of departure for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be `00-23` and the minutes must be `00-59`. Format: English characters only. Optional request field for travel legs. ")
   public Integer getDepartureTime() {
     return departureTime;
   }
@@ -328,10 +328,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * AM or PM for the departure time. Possible values: - A: 12:00 midnight to 11:59 a.m. - P: 12:00 noon to 11:59 p.m 
+   * AM or PM for the departure time. Possible values: - A: 12:00 midnight to 11:59 a.m. - P: 12:00 noon to 11:59 p.m Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. 
    * @return departureTimeMeridian
   **/
-  @ApiModelProperty(value = "AM or PM for the departure time. Possible values: - A: 12:00 midnight to 11:59 a.m. - P: 12:00 noon to 11:59 p.m ")
+  @ApiModelProperty(value = "AM or PM for the departure time. Possible values: - A: 12:00 midnight to 11:59 a.m. - P: 12:00 noon to 11:59 p.m Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
   public String getDepartureTimeMeridian() {
     return departureTimeMeridian;
   }
@@ -346,10 +346,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Time of arrival for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be 00-23 and the minutes must be 00-59 
+   * Time of arrival for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be &#x60;00-23&#x60; and the minutes must be &#x60;00-59&#x60; Format: English characters only. Optional request field for travel legs. 
    * @return arrivalTime
   **/
-  @ApiModelProperty(value = "Time of arrival for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be 00-23 and the minutes must be 00-59 ")
+  @ApiModelProperty(value = "Time of arrival for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be `00-23` and the minutes must be `00-59` Format: English characters only. Optional request field for travel legs. ")
   public Integer getArrivalTime() {
     return arrivalTime;
   }
@@ -364,10 +364,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * AM or PM for the arrival time for this leg of the trip. Possible values: - A: 12:00 midnight to 11:59 a.m. - P: 12:00 noon to 11:59 p.m. Format: English characters only 
+   * AM or PM for the arrival time for this leg of the trip. Possible values: - &#x60;A&#x60;: 12:00 midnight to 11:59 a.m. - &#x60;P&#x60;: 12:00 noon to 11:59 p.m. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. 
    * @return arrivalTimeMeridian
   **/
-  @ApiModelProperty(value = "AM or PM for the arrival time for this leg of the trip. Possible values: - A: 12:00 midnight to 11:59 a.m. - P: 12:00 noon to 11:59 p.m. Format: English characters only ")
+  @ApiModelProperty(value = "AM or PM for the arrival time for this leg of the trip. Possible values: - `A`: 12:00 midnight to 11:59 a.m. - `P`: 12:00 noon to 11:59 p.m. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
   public String getArrivalTimeMeridian() {
     return arrivalTimeMeridian;
   }
@@ -382,10 +382,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Notes or notations about endorsements and restrictions for this leg of the trip. Endorsements can be notations added by the travel agency, including mandatory government required notations such as value added tax. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable tic. 
+   * Notes or notations about endorsements and restrictions for this leg of the trip. Endorsements can be notations added by the travel agency, including mandatory government-required notations such as value added tax. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable ticket or a 3-day minimum stay. Format: English characters only. Optional request field for travel legs. 
    * @return endorsementsRestrictions
   **/
-  @ApiModelProperty(value = "Notes or notations about endorsements and restrictions for this leg of the trip. Endorsements can be notations added by the travel agency, including mandatory government required notations such as value added tax. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable tic. ")
+  @ApiModelProperty(value = "Notes or notations about endorsements and restrictions for this leg of the trip. Endorsements can be notations added by the travel agency, including mandatory government-required notations such as value added tax. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable ticket or a 3-day minimum stay. Format: English characters only. Optional request field for travel legs. ")
   public String getEndorsementsRestrictions() {
     return endorsementsRestrictions;
   }
@@ -400,10 +400,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Total fare for this leg of the trip. 
+   * Total fare for this leg of the trip. Format: English characters only. Optional request field for travel legs. 
    * @return totalFareAmount
   **/
-  @ApiModelProperty(value = "Total fare for this leg of the trip. ")
+  @ApiModelProperty(value = "Total fare for this leg of the trip. Format: English characters only. Optional request field for travel legs. ")
   public String getTotalFareAmount() {
     return totalFareAmount;
   }
@@ -418,10 +418,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Fee for this leg of the trip, such as an airport fee or country fee. 
+   * Fee for this leg of the trip, such as an airport fee or country fee. Format: English characters only. Optional request field for travel legs. 
    * @return feeAmount
   **/
-  @ApiModelProperty(value = "Fee for this leg of the trip, such as an airport fee or country fee. ")
+  @ApiModelProperty(value = "Fee for this leg of the trip, such as an airport fee or country fee. Format: English characters only. Optional request field for travel legs. ")
   public String getFeeAmount() {
     return feeAmount;
   }
@@ -436,10 +436,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Tax for this leg of the trip 
+   * Tax for this leg of the trip. Format: English characters only. Optional request field for travel legs. 
    * @return taxAmount
   **/
-  @ApiModelProperty(value = "Tax for this leg of the trip ")
+  @ApiModelProperty(value = "Tax for this leg of the trip. Format: English characters only. Optional request field for travel legs. ")
   public String getTaxAmount() {
     return taxAmount;
   }

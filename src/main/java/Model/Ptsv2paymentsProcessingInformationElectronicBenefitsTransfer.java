@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer {
   @SerializedName("category")
   private String category = null;
@@ -40,10 +40,10 @@ public class Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer {
   }
 
    /**
-   * Flag that specifies the category for the EBT transaction.  Possible values: - &#x60;CASH&#x60;: Cash benefits, which can be used to purchase any item at a participating retailer, as well as to obtain cash-back or make a cash withdrawal from a participating ATM. - &#x60;FOOD&#x60;: Food stamp benefits, which can be used only to purchase food items authorized by the USDA SNAP program. 
+   * Flag that specifies the category for the EBT transaction.  Possible values: - &#x60;CASH&#x60;: Cash benefits, which can be used to purchase any item at a participating retailer, as well as to obtain cash-back or make a cash withdrawal from a participating ATM. - &#x60;FOOD&#x60;: Food stamp benefits, which can be used only to purchase food items authorized by the USDA SNAP program.  #### PIN debit Required field for EBT transactions that use PIN debit credit or PIN debit purchase; otherwise, not used. 
    * @return category
   **/
-  @ApiModelProperty(value = "Flag that specifies the category for the EBT transaction.  Possible values: - `CASH`: Cash benefits, which can be used to purchase any item at a participating retailer, as well as to obtain cash-back or make a cash withdrawal from a participating ATM. - `FOOD`: Food stamp benefits, which can be used only to purchase food items authorized by the USDA SNAP program. ")
+  @ApiModelProperty(value = "Flag that specifies the category for the EBT transaction.  Possible values: - `CASH`: Cash benefits, which can be used to purchase any item at a participating retailer, as well as to obtain cash-back or make a cash withdrawal from a participating ATM. - `FOOD`: Food stamp benefits, which can be used only to purchase food items authorized by the USDA SNAP program.  #### PIN debit Required field for EBT transactions that use PIN debit credit or PIN debit purchase; otherwise, not used. ")
   public String getCategory() {
     return category;
   }
@@ -58,10 +58,10 @@ public class Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer {
   }
 
    /**
-   * The serial number printed on the EBT voucher. 
+   * The serial number printed on the EBT voucher.  #### PIN debit Required field for EBT voucher transactions that use PIN debit purchase; otherwise, not used. 
    * @return voucherSerialNumber
   **/
-  @ApiModelProperty(value = "The serial number printed on the EBT voucher. ")
+  @ApiModelProperty(value = "The serial number printed on the EBT voucher.  #### PIN debit Required field for EBT voucher transactions that use PIN debit purchase; otherwise, not used. ")
   public String getVoucherSerialNumber() {
     return voucherSerialNumber;
   }

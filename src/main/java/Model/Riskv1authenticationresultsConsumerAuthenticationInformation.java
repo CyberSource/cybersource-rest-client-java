@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationresultsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Riskv1authenticationresultsConsumerAuthenticationInformation {
   @SerializedName("authenticationTransactionId")
   private String authenticationTransactionId = null;
@@ -36,6 +36,9 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
 
   @SerializedName("effectiveAuthenticationType")
   private String effectiveAuthenticationType = null;
+
+  @SerializedName("responseAccessToken")
+  private String responseAccessToken = null;
 
   @SerializedName("signedParesStatusReason")
   private String signedParesStatusReason = null;
@@ -98,6 +101,24 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
 
   public void setEffectiveAuthenticationType(String effectiveAuthenticationType) {
     this.effectiveAuthenticationType = effectiveAuthenticationType;
+  }
+
+  public Riskv1authenticationresultsConsumerAuthenticationInformation responseAccessToken(String responseAccessToken) {
+    this.responseAccessToken = responseAccessToken;
+    return this;
+  }
+
+   /**
+   * A JWT returned by 3DS provider once the authentication is complete, required in cruise hybrid integration method when using CyberSource generated access token. 
+   * @return responseAccessToken
+  **/
+  @ApiModelProperty(value = "A JWT returned by 3DS provider once the authentication is complete, required in cruise hybrid integration method when using CyberSource generated access token. ")
+  public String getResponseAccessToken() {
+    return responseAccessToken;
+  }
+
+  public void setResponseAccessToken(String responseAccessToken) {
+    this.responseAccessToken = responseAccessToken;
   }
 
   public Riskv1authenticationresultsConsumerAuthenticationInformation signedParesStatusReason(String signedParesStatusReason) {
@@ -167,6 +188,7 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
     return Objects.equals(this.authenticationTransactionId, riskv1authenticationresultsConsumerAuthenticationInformation.authenticationTransactionId) &&
         Objects.equals(this.authenticationType, riskv1authenticationresultsConsumerAuthenticationInformation.authenticationType) &&
         Objects.equals(this.effectiveAuthenticationType, riskv1authenticationresultsConsumerAuthenticationInformation.effectiveAuthenticationType) &&
+        Objects.equals(this.responseAccessToken, riskv1authenticationresultsConsumerAuthenticationInformation.responseAccessToken) &&
         Objects.equals(this.signedParesStatusReason, riskv1authenticationresultsConsumerAuthenticationInformation.signedParesStatusReason) &&
         Objects.equals(this.signedPares, riskv1authenticationresultsConsumerAuthenticationInformation.signedPares) &&
         Objects.equals(this.whiteListStatus, riskv1authenticationresultsConsumerAuthenticationInformation.whiteListStatus);
@@ -174,7 +196,7 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authenticationTransactionId, authenticationType, effectiveAuthenticationType, signedParesStatusReason, signedPares, whiteListStatus);
+    return Objects.hash(authenticationTransactionId, authenticationType, effectiveAuthenticationType, responseAccessToken, signedParesStatusReason, signedPares, whiteListStatus);
   }
 
 
@@ -186,6 +208,7 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
     sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
     sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
     sb.append("    effectiveAuthenticationType: ").append(toIndentedString(effectiveAuthenticationType)).append("\n");
+    sb.append("    responseAccessToken: ").append(toIndentedString(responseAccessToken)).append("\n");
     sb.append("    signedParesStatusReason: ").append(toIndentedString(signedParesStatusReason)).append("\n");
     sb.append("    signedPares: ").append(toIndentedString(signedPares)).append("\n");
     sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");

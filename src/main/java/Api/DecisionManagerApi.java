@@ -264,8 +264,8 @@ public class DecisionManagerApi {
     }
 
     /**
-     * Create Decision Manager Case
-     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
+     * Create Decision Manager
+     * Decision Manager can help you automate and streamline your fraud operations. Decision Manager will return a decision based on the request values.
      * @param createBundledDecisionManagerCaseRequest  (required)
      * @return RiskV1DecisionsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -276,8 +276,8 @@ public class DecisionManagerApi {
     }
 
     /**
-     * Create Decision Manager Case
-     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
+     * Create Decision Manager
+     * Decision Manager can help you automate and streamline your fraud operations. Decision Manager will return a decision based on the request values.
      * @param createBundledDecisionManagerCaseRequest  (required)
      * @return ApiResponse&lt;RiskV1DecisionsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -289,8 +289,8 @@ public class DecisionManagerApi {
     }
 
     /**
-     * Create Decision Manager Case (asynchronously)
-     * This is the combined request to the Decision Manager Service for a transaction sent to Cybersource. Decision Manager will return a decision based on the request values.
+     * Create Decision Manager (asynchronously)
+     * Decision Manager can help you automate and streamline your fraud operations. Decision Manager will return a decision based on the request values.
      * @param createBundledDecisionManagerCaseRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

@@ -23,12 +23,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("acsRenderingType")
   private String acsRenderingType = null;
@@ -121,7 +120,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
   private String ucafAuthenticationData = null;
 
   @SerializedName("ucafCollectionIndicator")
-  private BigDecimal ucafCollectionIndicator = null;
+  private String ucafCollectionIndicator = null;
 
   @SerializedName("veresEnrolled")
   private String veresEnrolled = null;
@@ -690,7 +689,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
     this.ucafAuthenticationData = ucafAuthenticationData;
   }
 
-  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation ucafCollectionIndicator(BigDecimal ucafCollectionIndicator) {
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation ucafCollectionIndicator(String ucafCollectionIndicator) {
     this.ucafCollectionIndicator = ucafCollectionIndicator;
     return this;
   }
@@ -700,11 +699,11 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
    * @return ucafCollectionIndicator
   **/
   @ApiModelProperty(value = "For enroll, Returned only for Mastercard transactions. Indicates that authentication is not required because the customer is not enrolled. Add the value of this field to the authorization field ucaf_collection_indicator. This field can contain these values: 0, 1.  For validate, Numeric electronic commerce indicator (ECI) returned only for Mastercard Identity Check transactions. The field is absent when authentication fails. You must send this value to your payment processor in the request for card authorization. This field contain one of these values: - `0`: Authentication data not collected, and customer authentication was not completed. - `1`: Authentication data not collected because customer authentication was not completed. - `2`: Authentication data collected because customer completed authentication. ")
-  public BigDecimal getUcafCollectionIndicator() {
+  public String getUcafCollectionIndicator() {
     return ucafCollectionIndicator;
   }
 
-  public void setUcafCollectionIndicator(BigDecimal ucafCollectionIndicator) {
+  public void setUcafCollectionIndicator(String ucafCollectionIndicator) {
     this.ucafCollectionIndicator = ucafCollectionIndicator;
   }
 

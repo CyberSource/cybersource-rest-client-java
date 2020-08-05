@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsTravelInformationLodging
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T15:31:38.576+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsTravelInformationLodging {
   @SerializedName("checkInDate")
   private String checkInDate = null;
@@ -163,10 +163,10 @@ public class Ptsv2paymentsTravelInformationLodging {
   }
 
    /**
-   * Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date. Format: MMDDYY. For best interchange rates, make sure it is a valid date. 
+   * Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date. Format: &#x60;MMDDYY&#x60;. For best interchange rates, make sure it is a valid date. 
    * @return checkInDate
   **/
-  @ApiModelProperty(value = "Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date. Format: MMDDYY. For best interchange rates, make sure it is a valid date. ")
+  @ApiModelProperty(value = "Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date. Format: `MMDDYY`. For best interchange rates, make sure it is a valid date. ")
   public String getCheckInDate() {
     return checkInDate;
   }
@@ -181,10 +181,10 @@ public class Ptsv2paymentsTravelInformationLodging {
   }
 
    /**
-   * Date on which the guest checked out. Format: MMDDYY. For best interchange rates, make sure it is a valid date. 
+   * Date on which the guest checked out. Format: &#x60;MMDDYY&#x60;. For best interchange rates, make sure it is a valid date. 
    * @return checkOutDate
   **/
-  @ApiModelProperty(value = "Date on which the guest checked out. Format: MMDDYY. For best interchange rates, make sure it is a valid date. ")
+  @ApiModelProperty(value = "Date on which the guest checked out. Format: `MMDDYY`. For best interchange rates, make sure it is a valid date. ")
   public String getCheckOutDate() {
     return checkOutDate;
   }
