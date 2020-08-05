@@ -67,6 +67,7 @@ import Invokers.auth.OAuth;
 import okhttp3.Authenticator;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.ConnectionPool;
 import okhttp3.Credentials;
 import okhttp3.FormBody;
 import okhttp3.FormBody.Builder;
@@ -148,6 +149,7 @@ public class ApiClient {
 	private String versionInfo;
 
 	private HttpLoggingInterceptor loggingInterceptor;
+	private ConnectionPool connectionPool = new ConnectionPool(0, 1, TimeUnit.MILLISECONDS);
 
 	/*
 	 * Constructor for ApiClient
@@ -161,6 +163,13 @@ public class ApiClient {
 			    .connectTimeout(1, TimeUnit.SECONDS)
 			    .writeTimeout(60, TimeUnit.SECONDS)
 			    .readTimeout(60, TimeUnit.SECONDS)
+			    .connectionPool(new ConnectionPool(0, 1, TimeUnit.MILLISECONDS))//this.connectionPool)
+				.hostnameVerifier(new HostnameVerifier() {
+					@Override
+					public boolean verify(String hostname, SSLSession session) {
+						return true;
+					}
+				})
 			    .build();
 
 		verifyingSsl = true;
@@ -247,11 +256,17 @@ public class ApiClient {
 					.connectTimeout(1, TimeUnit.SECONDS)
 					.writeTimeout(60, TimeUnit.SECONDS)
 					.readTimeout(60, TimeUnit.SECONDS)
+					.connectionPool(new ConnectionPool(0, 1, TimeUnit.MILLISECONDS))//this.connectionPool)
 					.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
 					.proxyAuthenticator(proxyAuthenticator)
+					.hostnameVerifier(new HostnameVerifier() {
+						@Override
+						public boolean verify(String hostname, SSLSession session) {
+							return true;
+						}
+					})
 					.build();
-
-			this.setHttpClient(httpClient);			
+			this.setHttpClient(httpClient);	
 		}
 
 		this.merchantConfig = merchantConfig;
@@ -1136,6 +1151,7 @@ public class ApiClient {
 						
 			T data = handleResponse(response, returnType);
 			
+			httpClient.connectionPool().evictAll();
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
 		} catch (IOException e) {
 			throw new ApiException(e);
@@ -1221,7 +1237,7 @@ public class ApiClient {
 			if (response.body() != null) {
 				try {
 					respBody = response.body().string();
-					System.out.println(respBody);
+//					System.out.println(respBody);
 				} catch (IOException e) {
 					throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
 				}
