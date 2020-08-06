@@ -67,6 +67,7 @@ import Invokers.auth.OAuth;
 import okhttp3.Authenticator;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.ConnectionPool;
 import okhttp3.Credentials;
 import okhttp3.FormBody;
 import okhttp3.FormBody.Builder;
@@ -148,6 +149,7 @@ public class ApiClient {
 	private String versionInfo;
 
 	private HttpLoggingInterceptor loggingInterceptor;
+	private ConnectionPool connectionPool = new ConnectionPool(0, 1, TimeUnit.MILLISECONDS);
 
 	/*
 	 * Constructor for ApiClient
@@ -161,6 +163,7 @@ public class ApiClient {
 			    .connectTimeout(1, TimeUnit.SECONDS)
 			    .writeTimeout(60, TimeUnit.SECONDS)
 			    .readTimeout(60, TimeUnit.SECONDS)
+			    .connectionPool(this.connectionPool)
 			    .build();
 
 		verifyingSsl = true;
@@ -247,11 +250,12 @@ public class ApiClient {
 					.connectTimeout(1, TimeUnit.SECONDS)
 					.writeTimeout(60, TimeUnit.SECONDS)
 					.readTimeout(60, TimeUnit.SECONDS)
+					.connectionPool(this.connectionPool)
 					.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
 					.proxyAuthenticator(proxyAuthenticator)
 					.build();
 
-			this.setHttpClient(httpClient);			
+			this.setHttpClient(httpClient);
 		}
 
 		this.merchantConfig = merchantConfig;
@@ -1133,9 +1137,10 @@ public class ApiClient {
 			responseCode = String.valueOf(response.code());
 			status = response.message();
 			String headerType = response.header("Content-Type");
-						
+
 			T data = handleResponse(response, returnType);
-			
+
+			httpClient.connectionPool().evictAll();
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
 		} catch (IOException e) {
 			throw new ApiException(e);
