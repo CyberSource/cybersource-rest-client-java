@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
+import java.util.Random;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -67,6 +68,7 @@ import Invokers.auth.OAuth;
 import okhttp3.Authenticator;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.ConnectionPool;
 import okhttp3.Credentials;
 import okhttp3.FormBody;
 import okhttp3.FormBody.Builder;
@@ -83,6 +85,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
+import utilities.listeners.PrintingEventListener;
 
 public class ApiClient {
 	public static final double JAVA_VERSION;
@@ -143,26 +146,42 @@ public class ApiClient {
 	private KeyManager[] keyManagers;
 	private String acceptHeader = "";
 
-	private OkHttpClient httpClient;
+	private static OkHttpClient httpClient;
+	private final OkHttpClient classHttpClient = initializeFinalVariables();
+
 	private JSON json;
 	private String versionInfo;
-
+	private static ConnectionPool connectionPool = new ConnectionPool(0, 1, TimeUnit.MILLISECONDS);
 	private HttpLoggingInterceptor loggingInterceptor;
+	
+	public static OkHttpClient initializeFinalVariables() {		
+		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+		logging.setLevel(Level.NONE);
+		
+		return new OkHttpClient.Builder()
+							.connectTimeout(1, TimeUnit.SECONDS)
+						    .writeTimeout(60, TimeUnit.SECONDS)
+							.readTimeout(60, TimeUnit.SECONDS)
+						    .connectionPool(ApiClient.connectionPool)
+							.eventListener(new PrintingEventListener(new Random().nextLong(), System.nanoTime()))
+							.addInterceptor(logging)
+							.retryOnConnectionFailure(true)
+							.addInterceptor(new RetryInterceptor())
+							.build();
+	}
 
 	/*
 	 * Constructor for ApiClient
 	 */
 	public ApiClient() {
-		httpClient = new OkHttpClient();
+//		httpClient = new OkHttpClient();
 		
 		versionInfo = getClientID();
 
-		httpClient = new OkHttpClient.Builder()
-			    .connectTimeout(1, TimeUnit.SECONDS)
-			    .writeTimeout(60, TimeUnit.SECONDS)
-			    .readTimeout(60, TimeUnit.SECONDS)
-			    .retryOnConnectionFailure(true)
-			    .addInterceptor(new RetryInterceptor())
+		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+		logging.setLevel(Level.NONE);
+		
+		httpClient = classHttpClient.newBuilder()
 			    .build();
 
 		verifyingSsl = true;
@@ -245,13 +264,8 @@ public class ApiClient {
 				};
 			}
 
-			httpClient = new OkHttpClient.Builder()
-					.connectTimeout(1, TimeUnit.SECONDS)
-					.writeTimeout(60, TimeUnit.SECONDS)
-					.readTimeout(60, TimeUnit.SECONDS)
+			httpClient = classHttpClient.newBuilder()
 					.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
-					.retryOnConnectionFailure(true)
-					.addInterceptor(new RetryInterceptor())
 					.proxyAuthenticator(proxyAuthenticator)
 					.build();
 
@@ -1141,6 +1155,7 @@ public class ApiClient {
 						
 			T data = handleResponse(response, returnType);
 			
+			httpClient.connectionPool().evictAll();
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
 		} catch (IOException e) {
 			throw new ApiException(e);
