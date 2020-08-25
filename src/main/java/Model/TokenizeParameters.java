@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Flexv1tokensCardInfo;
+import Model.TokenizeParametersCardInfo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,13 +27,13 @@ import java.io.IOException;
 /**
  * TokenizeParameters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class TokenizeParameters {
   @SerializedName("keyId")
   private String keyId = null;
 
   @SerializedName("cardInfo")
-  private Flexv1tokensCardInfo cardInfo = null;
+  private TokenizeParametersCardInfo cardInfo = null;
 
   public TokenizeParameters keyId(String keyId) {
     this.keyId = keyId;
@@ -53,7 +53,7 @@ public class TokenizeParameters {
     this.keyId = keyId;
   }
 
-  public TokenizeParameters cardInfo(Flexv1tokensCardInfo cardInfo) {
+  public TokenizeParameters cardInfo(TokenizeParametersCardInfo cardInfo) {
     this.cardInfo = cardInfo;
     return this;
   }
@@ -63,11 +63,11 @@ public class TokenizeParameters {
    * @return cardInfo
   **/
   @ApiModelProperty(value = "")
-  public Flexv1tokensCardInfo getCardInfo() {
+  public TokenizeParametersCardInfo getCardInfo() {
     return cardInfo;
   }
 
-  public void setCardInfo(Flexv1tokensCardInfo cardInfo) {
+  public void setCardInfo(TokenizeParametersCardInfo cardInfo) {
     this.cardInfo = cardInfo;
   }
 

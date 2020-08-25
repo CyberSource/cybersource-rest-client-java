@@ -66,7 +66,7 @@ public class DownloadDTDApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/dtds/{reportDefinitionNameVersion}"
+        String localVarPath = "/reporting/v3/dtds/{reportDefinitionNameVersion}"
             .replaceAll("\\{" + "reportDefinitionNameVersion" + "\\}", apiClient.escapeString(reportDefinitionNameVersion.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

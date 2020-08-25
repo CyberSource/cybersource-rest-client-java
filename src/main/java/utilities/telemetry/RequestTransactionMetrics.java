@@ -5,32 +5,36 @@ import com.google.gson.Gson;
 public class RequestTransactionMetrics {
 	private String responseCorrelationId;
 	private String roundaboutTime;
+	private String computeTime;
 	private int retryCount;
 	
-	public RequestTransactionMetrics(String correlationId, String roundaboutTime) {
+	public RequestTransactionMetrics() {
+	}
+
+	public RequestTransactionMetrics addHeaderValues(String computeTime) {
+		this.computeTime = computeTime;
+
+		return this;
+	}
+
+	public RequestTransactionMetrics addHeaderValues(String correlationId, String roundaboutTime) {
 		this.responseCorrelationId = correlationId;
 		this.roundaboutTime = roundaboutTime;
+
+		return this;
 	}
-	
-	public RequestTransactionMetrics(String correlationId, String roundaboutTime, int retries) {
+
+	public RequestTransactionMetrics addHeaderValues(String correlationId, String roundaboutTime, int retries) {
 		this.responseCorrelationId = correlationId;
 		this.roundaboutTime = roundaboutTime;
 		this.retryCount = retries;
+
+		return this;
 	}
-	
+
 	public String getTelemetryHeaderValue() {
-//		StringBuilder str = new StringBuilder();
-//		
-//		str.append("previous-correlation-id:").append(this.responseCorrelationId);
-//		str.append(",");
-//		str.append("previous-time-taken:").append(this.roundaboutTime);
-//		str.append(",");
-//		str.append("previous-retries:").append(this.retryCount);
-//		
-//		return str.toString();
-		
 		Gson gson = new Gson();
-		
+
 		return gson.toJson(this);
 	}
 }

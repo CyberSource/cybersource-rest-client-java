@@ -4,61 +4,16 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createInstrumentIdentifier**](InstrumentIdentifierApi.md#createInstrumentIdentifier) | **POST** /tms/v1/instrumentidentifiers | Create an Instrument Identifier
-[**deleteInstrumentIdentifier**](InstrumentIdentifierApi.md#deleteInstrumentIdentifier) | **DELETE** /tms/v1/instrumentidentifiers/{tokenId} | Delete an Instrument Identifier
-[**getAllPaymentInstruments**](InstrumentIdentifierApi.md#getAllPaymentInstruments) | **GET** /tms/v1/instrumentidentifiers/{tokenId}/paymentinstruments | Retrieve all Payment Instruments
-[**getInstrumentIdentifier**](InstrumentIdentifierApi.md#getInstrumentIdentifier) | **GET** /tms/v1/instrumentidentifiers/{tokenId} | Retrieve an Instrument Identifier
-[**updateInstrumentIdentifier**](InstrumentIdentifierApi.md#updateInstrumentIdentifier) | **PATCH** /tms/v1/instrumentidentifiers/{tokenId} | Update a Instrument Identifier
+[**deleteInstrumentIdentifier**](InstrumentIdentifierApi.md#deleteInstrumentIdentifier) | **DELETE** /tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId} | Delete an Instrument Identifier
+[**getInstrumentIdentifier**](InstrumentIdentifierApi.md#getInstrumentIdentifier) | **GET** /tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId} | Retrieve an Instrument Identifier
+[**getInstrumentIdentifierPaymentInstrumentsList**](InstrumentIdentifierApi.md#getInstrumentIdentifierPaymentInstrumentsList) | **GET** /tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments | List Payment Instruments for an Instrument Identifier
+[**patchInstrumentIdentifier**](InstrumentIdentifierApi.md#patchInstrumentIdentifier) | **PATCH** /tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId} | Update an Instrument Identifier
+[**postInstrumentIdentifier**](InstrumentIdentifierApi.md#postInstrumentIdentifier) | **POST** /tms/v1/instrumentidentifiers | Create an Instrument Identifier
 
-
-<a name="createInstrumentIdentifier"></a>
-# **createInstrumentIdentifier**
-> TmsV1InstrumentIdentifiersPost200Response createInstrumentIdentifier(profileId, createInstrumentIdentifierRequest)
-
-Create an Instrument Identifier
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.InstrumentIdentifierApi;
-
-
-InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
-String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-CreateInstrumentIdentifierRequest createInstrumentIdentifierRequest = new CreateInstrumentIdentifierRequest(); // CreateInstrumentIdentifierRequest | Please specify either a Card, Bank Account or Enrollable Card
-try {
-    TmsV1InstrumentIdentifiersPost200Response result = apiInstance.createInstrumentIdentifier(profileId, createInstrumentIdentifierRequest);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InstrumentIdentifierApi#createInstrumentIdentifier");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **createInstrumentIdentifierRequest** | [**CreateInstrumentIdentifierRequest**](CreateInstrumentIdentifierRequest.md)| Please specify either a Card, Bank Account or Enrollable Card |
-
-### Return type
-
-[**TmsV1InstrumentIdentifiersPost200Response**](TmsV1InstrumentIdentifiersPost200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
 
 <a name="deleteInstrumentIdentifier"></a>
 # **deleteInstrumentIdentifier**
-> deleteInstrumentIdentifier(profileId, tokenId)
+> deleteInstrumentIdentifier(instrumentIdentifierTokenId, profileId)
 
 Delete an Instrument Identifier
 
@@ -70,10 +25,10 @@ Delete an Instrument Identifier
 
 
 InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
+String instrumentIdentifierTokenId = "instrumentIdentifierTokenId_example"; // String | The TokenId of a Instrument Identifier.
 String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-String tokenId = "tokenId_example"; // String | The TokenId of an Instrument Identifier.
 try {
-    apiInstance.deleteInstrumentIdentifier(profileId, tokenId);
+    apiInstance.deleteInstrumentIdentifier(instrumentIdentifierTokenId, profileId);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#deleteInstrumentIdentifier");
     e.printStackTrace();
@@ -84,8 +39,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **tokenId** | **String**| The TokenId of an Instrument Identifier. |
+ **instrumentIdentifierTokenId** | **String**| The TokenId of a Instrument Identifier. |
+ **profileId** | **String**| The id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
 
@@ -100,58 +55,9 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
-<a name="getAllPaymentInstruments"></a>
-# **getAllPaymentInstruments**
-> TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response getAllPaymentInstruments(profileId, tokenId, offset, limit)
-
-Retrieve all Payment Instruments
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.InstrumentIdentifierApi;
-
-
-InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
-String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-String tokenId = "tokenId_example"; // String | The TokenId of an Instrument Identifier.
-Long offset = 0L; // Long | Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0.
-Long limit = 20L; // Long | The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100.
-try {
-    TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response result = apiInstance.getAllPaymentInstruments(profileId, tokenId, offset, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling InstrumentIdentifierApi#getAllPaymentInstruments");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **tokenId** | **String**| The TokenId of an Instrument Identifier. |
- **offset** | **Long**| Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. | [optional] [default to 0]
- **limit** | **Long**| The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. | [optional] [default to 20]
-
-### Return type
-
-[**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
 <a name="getInstrumentIdentifier"></a>
 # **getInstrumentIdentifier**
-> TmsV1InstrumentIdentifiersPost200Response getInstrumentIdentifier(profileId, tokenId)
+> Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier getInstrumentIdentifier(instrumentIdentifierTokenId, profileId)
 
 Retrieve an Instrument Identifier
 
@@ -163,10 +69,10 @@ Retrieve an Instrument Identifier
 
 
 InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
+String instrumentIdentifierTokenId = "instrumentIdentifierTokenId_example"; // String | The TokenId of a Instrument Identifier.
 String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-String tokenId = "tokenId_example"; // String | The TokenId of an Instrument Identifier.
 try {
-    TmsV1InstrumentIdentifiersPost200Response result = apiInstance.getInstrumentIdentifier(profileId, tokenId);
+    Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier result = apiInstance.getInstrumentIdentifier(instrumentIdentifierTokenId, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#getInstrumentIdentifier");
@@ -178,12 +84,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **tokenId** | **String**| The TokenId of an Instrument Identifier. |
+ **instrumentIdentifierTokenId** | **String**| The TokenId of a Instrument Identifier. |
+ **profileId** | **String**| The id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
 
-[**TmsV1InstrumentIdentifiersPost200Response**](TmsV1InstrumentIdentifiersPost200Response.md)
+[**Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
 
 ### Authorization
 
@@ -194,11 +100,11 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
-<a name="updateInstrumentIdentifier"></a>
-# **updateInstrumentIdentifier**
-> TmsV1InstrumentIdentifiersPost200Response updateInstrumentIdentifier(profileId, tokenId, updateInstrumentIdentifierRequest)
+<a name="getInstrumentIdentifierPaymentInstrumentsList"></a>
+# **getInstrumentIdentifierPaymentInstrumentsList**
+> PaymentInstrumentListForCustomer getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierTokenId, profileId, offset, limit)
 
-Update a Instrument Identifier
+List Payment Instruments for an Instrument Identifier
 
 ### Example
 ```java
@@ -208,14 +114,15 @@ Update a Instrument Identifier
 
 
 InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
+String instrumentIdentifierTokenId = "instrumentIdentifierTokenId_example"; // String | The TokenId of a Instrument Identifier.
 String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-String tokenId = "tokenId_example"; // String | The TokenId of an Instrument Identifier.
-UpdateInstrumentIdentifierRequest updateInstrumentIdentifierRequest = new UpdateInstrumentIdentifierRequest(); // UpdateInstrumentIdentifierRequest | Specify the previous transaction ID to update.
+Long offset = 0L; // Long | Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0.
+Long limit = 20L; // Long | The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100.
 try {
-    TmsV1InstrumentIdentifiersPost200Response result = apiInstance.updateInstrumentIdentifier(profileId, tokenId, updateInstrumentIdentifierRequest);
+    PaymentInstrumentListForCustomer result = apiInstance.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierTokenId, profileId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling InstrumentIdentifierApi#updateInstrumentIdentifier");
+    System.err.println("Exception when calling InstrumentIdentifierApi#getInstrumentIdentifierPaymentInstrumentsList");
     e.printStackTrace();
 }
 ```
@@ -224,13 +131,108 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **tokenId** | **String**| The TokenId of an Instrument Identifier. |
- **updateInstrumentIdentifierRequest** | [**UpdateInstrumentIdentifierRequest**](UpdateInstrumentIdentifierRequest.md)| Specify the previous transaction ID to update. |
+ **instrumentIdentifierTokenId** | **String**| The TokenId of a Instrument Identifier. |
+ **profileId** | **String**| The id of a profile containing user specific TMS configuration. | [optional]
+ **offset** | **Long**| Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. | [optional] [default to 0]
+ **limit** | **Long**| The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. | [optional] [default to 20]
 
 ### Return type
 
-[**TmsV1InstrumentIdentifiersPost200Response**](TmsV1InstrumentIdentifiersPost200Response.md)
+[**PaymentInstrumentListForCustomer**](PaymentInstrumentListForCustomer.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a name="patchInstrumentIdentifier"></a>
+# **patchInstrumentIdentifier**
+> Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier patchInstrumentIdentifier(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, profileId, ifMatch)
+
+Update an Instrument Identifier
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.InstrumentIdentifierApi;
+
+
+InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
+String instrumentIdentifierTokenId = "instrumentIdentifierTokenId_example"; // String | The TokenId of a Instrument Identifier.
+PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest = new PatchInstrumentIdentifierRequest(); // PatchInstrumentIdentifierRequest | Specify the previous transaction ID to update.
+String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
+String ifMatch = "ifMatch_example"; // String | Contains an ETag value from a GET request to make the request conditional.
+try {
+    Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier result = apiInstance.patchInstrumentIdentifier(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, profileId, ifMatch);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling InstrumentIdentifierApi#patchInstrumentIdentifier");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instrumentIdentifierTokenId** | **String**| The TokenId of a Instrument Identifier. |
+ **patchInstrumentIdentifierRequest** | [**PatchInstrumentIdentifierRequest**](PatchInstrumentIdentifierRequest.md)| Specify the previous transaction ID to update. |
+ **profileId** | **String**| The id of a profile containing user specific TMS configuration. | [optional]
+ **ifMatch** | **String**| Contains an ETag value from a GET request to make the request conditional. | [optional]
+
+### Return type
+
+[**Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a name="postInstrumentIdentifier"></a>
+# **postInstrumentIdentifier**
+> Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId)
+
+Create an Instrument Identifier
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.InstrumentIdentifierApi;
+
+
+InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
+PostInstrumentIdentifierRequest postInstrumentIdentifierRequest = new PostInstrumentIdentifierRequest(); // PostInstrumentIdentifierRequest | Please specify either a Card, Bank Account or Enrollable Card
+String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
+try {
+    Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier result = apiInstance.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling InstrumentIdentifierApi#postInstrumentIdentifier");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **postInstrumentIdentifierRequest** | [**PostInstrumentIdentifierRequest**](PostInstrumentIdentifierRequest.md)| Please specify either a Card, Bank Account or Enrollable Card |
+ **profileId** | **String**| The id of a profile containing user specific TMS configuration. | [optional]
+
+### Return type
+
+[**Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
 
 ### Authorization
 

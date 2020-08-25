@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing {
   @SerializedName("count")
   private Integer count = null;
@@ -43,10 +43,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing {
   }
 
    /**
-   * Morphing count specified by the number #.  **Note** The count is not returned for the initial transaction.  For all possible values, see the &#x60;decision_velocity_morphing_#_count&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * Morphing count specified by the number #.  **Note** The count is not returned for the initial transaction. 
    * @return count
   **/
-  @ApiModelProperty(value = "Morphing count specified by the number #.  **Note** The count is not returned for the initial transaction.  For all possible values, see the `decision_velocity_morphing_#_count` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  @ApiModelProperty(value = "Morphing count specified by the number #.  **Note** The count is not returned for the initial transaction. ")
   public Integer getCount() {
     return count;
   }

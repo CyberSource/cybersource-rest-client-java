@@ -85,7 +85,9 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
+import utilities.interceptors.RetryInterceptor;
 import utilities.listeners.PrintingEventListener;
+import utilities.telemetry.RequestTransactionMetrics;
 
 public class ApiClient {
 	public static final double JAVA_VERSION;
@@ -153,6 +155,7 @@ public class ApiClient {
 	private String versionInfo;
 	private static ConnectionPool connectionPool = new ConnectionPool(0, 1, TimeUnit.MILLISECONDS);
 	private HttpLoggingInterceptor loggingInterceptor;
+	private RequestTransactionMetrics apiRequestMetrics = new RequestTransactionMetrics();
 	
 	public static OkHttpClient initializeFinalVariables() {		
 		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
@@ -160,13 +163,10 @@ public class ApiClient {
 		
 		return new OkHttpClient.Builder()
 							.connectTimeout(1, TimeUnit.SECONDS)
-						    .writeTimeout(60, TimeUnit.SECONDS)
+							.writeTimeout(60, TimeUnit.SECONDS)
 							.readTimeout(60, TimeUnit.SECONDS)
-						    .connectionPool(ApiClient.connectionPool)
-							.eventListener(new PrintingEventListener(new Random().nextLong(), System.nanoTime()))
+							.connectionPool(ApiClient.connectionPool)
 							.addInterceptor(logging)
-							.retryOnConnectionFailure(true)
-							.addInterceptor(new RetryInterceptor())
 							.build();
 	}
 
@@ -174,15 +174,14 @@ public class ApiClient {
 	 * Constructor for ApiClient
 	 */
 	public ApiClient() {
-//		httpClient = new OkHttpClient();
 		
 		versionInfo = getClientID();
-
-		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-		logging.setLevel(Level.NONE);
 		
 		httpClient = classHttpClient.newBuilder()
-			    .build();
+				.retryOnConnectionFailure(true)
+				.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
+				.eventListener(new PrintingEventListener(new Random().nextLong(), System.nanoTime(), this.apiRequestMetrics))
+				.build();
 
 		verifyingSsl = true;
 
@@ -267,9 +266,12 @@ public class ApiClient {
 			httpClient = classHttpClient.newBuilder()
 					.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
 					.proxyAuthenticator(proxyAuthenticator)
+					.retryOnConnectionFailure(true)
+					.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
+					.eventListener(new PrintingEventListener(new Random().nextLong(), System.nanoTime(), this.apiRequestMetrics))
 					.build();
 
-			this.setHttpClient(httpClient);			
+			this.setHttpClient(httpClient);
 		}
 
 		this.merchantConfig = merchantConfig;

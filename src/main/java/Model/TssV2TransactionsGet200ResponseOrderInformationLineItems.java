@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class TssV2TransactionsGet200ResponseOrderInformationLineItems {
   @SerializedName("productCode")
   private String productCode = null;
@@ -91,10 +91,10 @@ public class TssV2TransactionsGet200ResponseOrderInformationLineItems {
   }
 
    /**
-   * Identification code for the product. For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and/or handling. 
+   * Identification code for the product. For Payment and Capture APIs, this field is required when above &#x60;productCode&#x60; is not **default** or one of the values related to shipping and/or handling. 
    * @return productSku
   **/
-  @ApiModelProperty(value = "Identification code for the product. For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and/or handling. ")
+  @ApiModelProperty(value = "Identification code for the product. For Payment and Capture APIs, this field is required when above `productCode` is not **default** or one of the values related to shipping and/or handling. ")
   public String getProductSku() {
     return productSku;
   }

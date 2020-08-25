@@ -17,6 +17,7 @@ import java.util.Objects;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsPromotionInformation;
+import Model.Ptsv2paymentsTravelInformation;
 import Model.Ptsv2paymentsidcapturesAggregatorInformation;
 import Model.Ptsv2paymentsidcapturesBuyerInformation;
 import Model.Ptsv2paymentsidcapturesDeviceInformation;
@@ -26,7 +27,6 @@ import Model.Ptsv2paymentsidcapturesOrderInformation;
 import Model.Ptsv2paymentsidcapturesPaymentInformation;
 import Model.Ptsv2paymentsidcapturesPointOfSaleInformation;
 import Model.Ptsv2paymentsidcapturesProcessingInformation;
-import Model.Ptsv2paymentsidcapturesTravelInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,7 +41,7 @@ import java.util.List;
 /**
  * CapturePaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class CapturePaymentRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -77,7 +77,7 @@ public class CapturePaymentRequest {
   private Ptsv2paymentsidcapturesInstallmentInformation installmentInformation = null;
 
   @SerializedName("travelInformation")
-  private Ptsv2paymentsidcapturesTravelInformation travelInformation = null;
+  private Ptsv2paymentsTravelInformation travelInformation = null;
 
   @SerializedName("promotionInformation")
   private Ptsv2paymentsPromotionInformation promotionInformation = null;
@@ -288,7 +288,7 @@ public class CapturePaymentRequest {
     this.installmentInformation = installmentInformation;
   }
 
-  public CapturePaymentRequest travelInformation(Ptsv2paymentsidcapturesTravelInformation travelInformation) {
+  public CapturePaymentRequest travelInformation(Ptsv2paymentsTravelInformation travelInformation) {
     this.travelInformation = travelInformation;
     return this;
   }
@@ -298,11 +298,11 @@ public class CapturePaymentRequest {
    * @return travelInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidcapturesTravelInformation getTravelInformation() {
+  public Ptsv2paymentsTravelInformation getTravelInformation() {
     return travelInformation;
   }
 
-  public void setTravelInformation(Ptsv2paymentsidcapturesTravelInformation travelInformation) {
+  public void setTravelInformation(Ptsv2paymentsTravelInformation travelInformation) {
     this.travelInformation = travelInformation;
   }
 

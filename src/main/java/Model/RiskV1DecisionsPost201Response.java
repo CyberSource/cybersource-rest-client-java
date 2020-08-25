@@ -14,9 +14,12 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2PaymentsPost201ResponseErrorInformation;
+import Model.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsPost201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseRiskInformation;
+import Model.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation;
+import Model.RiskV1DecisionsPost201ResponseErrorInformation;
+import Model.RiskV1DecisionsPost201ResponseOrderInformation;
 import Model.RiskV1DecisionsPost201ResponsePaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -30,7 +33,7 @@ import java.io.IOException;
 /**
  * RiskV1DecisionsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class RiskV1DecisionsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsPost201ResponseLinks links = null;
@@ -53,8 +56,17 @@ public class RiskV1DecisionsPost201Response {
   @SerializedName("paymentInformation")
   private RiskV1DecisionsPost201ResponsePaymentInformation paymentInformation = null;
 
+  @SerializedName("clientReferenceInformation")
+  private PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation = null;
+
+  @SerializedName("orderInformation")
+  private RiskV1DecisionsPost201ResponseOrderInformation orderInformation = null;
+
+  @SerializedName("consumerAuthenticationInformation")
+  private RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation = null;
+
   @SerializedName("errorInformation")
-  private PtsV2PaymentsPost201ResponseErrorInformation errorInformation = null;
+  private RiskV1DecisionsPost201ResponseErrorInformation errorInformation = null;
 
   public RiskV1DecisionsPost201Response links(PtsV2PaymentsPost201ResponseLinks links) {
     this.links = links;
@@ -80,10 +92,10 @@ public class RiskV1DecisionsPost201Response {
   }
 
    /**
-   * An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. 
+   * An unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.  #### PIN debit Returned for all PIN debit services. 
    * @return id
   **/
-  @ApiModelProperty(value = "An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. ")
+  @ApiModelProperty(value = "An unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.  #### PIN debit Returned for all PIN debit services. ")
   public String getId() {
     return id;
   }
@@ -98,10 +110,10 @@ public class RiskV1DecisionsPost201Response {
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; Example &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC. 
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC. ")
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal. ")
   public String getSubmitTimeUtc() {
     return submitTimeUtc;
   }
@@ -134,10 +146,10 @@ public class RiskV1DecisionsPost201Response {
   }
 
    /**
-   * The status of the submitted transaction.  Possible values:   - &#x60;ACCEPTED&#x60;   - &#x60;REJECTED&#x60;   - &#x60;PENDING_REVIEW&#x60;   - &#x60;DECLINED&#x60;   - &#x60;CHALLENGE&#x60;   - &#x60;PENDING_AUTHENTICATION&#x60; 
+   * The status of the submitted transaction.  Possible values:   - &#x60;ACCEPTED&#x60;   - &#x60;REJECTED&#x60;   - &#x60;PENDING_REVIEW&#x60;   - &#x60;DECLINED&#x60;   - &#x60;PENDING_AUTHENTICATION&#x60;   - &#x60;INVALID_REQUEST&#x60;   - &#x60;AUTHENTICATION_FAILED&#x60;   - &#x60;CHALLENGE&#x60; 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW`   - `DECLINED`   - `CHALLENGE`   - `PENDING_AUTHENTICATION` ")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW`   - `DECLINED`   - `PENDING_AUTHENTICATION`   - `INVALID_REQUEST`   - `AUTHENTICATION_FAILED`   - `CHALLENGE` ")
   public String getStatus() {
     return status;
   }
@@ -182,7 +194,61 @@ public class RiskV1DecisionsPost201Response {
     this.paymentInformation = paymentInformation;
   }
 
-  public RiskV1DecisionsPost201Response errorInformation(PtsV2PaymentsPost201ResponseErrorInformation errorInformation) {
+  public RiskV1DecisionsPost201Response clientReferenceInformation(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+    return this;
+  }
+
+   /**
+   * Get clientReferenceInformation
+   * @return clientReferenceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation getClientReferenceInformation() {
+    return clientReferenceInformation;
+  }
+
+  public void setClientReferenceInformation(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+  }
+
+  public RiskV1DecisionsPost201Response orderInformation(RiskV1DecisionsPost201ResponseOrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
+    return this;
+  }
+
+   /**
+   * Get orderInformation
+   * @return orderInformation
+  **/
+  @ApiModelProperty(value = "")
+  public RiskV1DecisionsPost201ResponseOrderInformation getOrderInformation() {
+    return orderInformation;
+  }
+
+  public void setOrderInformation(RiskV1DecisionsPost201ResponseOrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
+  }
+
+  public RiskV1DecisionsPost201Response consumerAuthenticationInformation(RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation) {
+    this.consumerAuthenticationInformation = consumerAuthenticationInformation;
+    return this;
+  }
+
+   /**
+   * Get consumerAuthenticationInformation
+   * @return consumerAuthenticationInformation
+  **/
+  @ApiModelProperty(value = "")
+  public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation getConsumerAuthenticationInformation() {
+    return consumerAuthenticationInformation;
+  }
+
+  public void setConsumerAuthenticationInformation(RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation) {
+    this.consumerAuthenticationInformation = consumerAuthenticationInformation;
+  }
+
+  public RiskV1DecisionsPost201Response errorInformation(RiskV1DecisionsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
     return this;
   }
@@ -192,11 +258,11 @@ public class RiskV1DecisionsPost201Response {
    * @return errorInformation
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseErrorInformation getErrorInformation() {
+  public RiskV1DecisionsPost201ResponseErrorInformation getErrorInformation() {
     return errorInformation;
   }
 
-  public void setErrorInformation(PtsV2PaymentsPost201ResponseErrorInformation errorInformation) {
+  public void setErrorInformation(RiskV1DecisionsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
   }
 
@@ -217,12 +283,15 @@ public class RiskV1DecisionsPost201Response {
         Objects.equals(this.status, riskV1DecisionsPost201Response.status) &&
         Objects.equals(this.riskInformation, riskV1DecisionsPost201Response.riskInformation) &&
         Objects.equals(this.paymentInformation, riskV1DecisionsPost201Response.paymentInformation) &&
+        Objects.equals(this.clientReferenceInformation, riskV1DecisionsPost201Response.clientReferenceInformation) &&
+        Objects.equals(this.orderInformation, riskV1DecisionsPost201Response.orderInformation) &&
+        Objects.equals(this.consumerAuthenticationInformation, riskV1DecisionsPost201Response.consumerAuthenticationInformation) &&
         Objects.equals(this.errorInformation, riskV1DecisionsPost201Response.errorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, riskInformation, paymentInformation, errorInformation);
+    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, riskInformation, paymentInformation, clientReferenceInformation, orderInformation, consumerAuthenticationInformation, errorInformation);
   }
 
 
@@ -238,6 +307,9 @@ public class RiskV1DecisionsPost201Response {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
     sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("}");
     return sb.toString();

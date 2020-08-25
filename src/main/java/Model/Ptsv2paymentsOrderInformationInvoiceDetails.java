@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationInvoiceDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsOrderInformationInvoiceDetails {
   @SerializedName("invoiceNumber")
   private String invoiceNumber = null;
@@ -72,6 +72,9 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
 
   @SerializedName("salesSlipNumber")
   private Integer salesSlipNumber = null;
+
+  @SerializedName("invoiceDate")
+  private String invoiceDate = null;
 
   public Ptsv2paymentsOrderInformationInvoiceDetails invoiceNumber(String invoiceNumber) {
     this.invoiceNumber = invoiceNumber;
@@ -241,10 +244,10 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
   }
 
    /**
-   * Identifier for the merchandise. Possible value:   - 1000: Gift card  This field is supported only for **American Express Direct**. 
+   * Identifier for the merchandise. This field is supported only on the processors listed in this field description.  #### American Express Direct Possible value: - 1000: Gift card  #### CyberSource through VisaNet This value must be right justified. In Japan, this value is called a _goods code_.  #### JCN Gateway This value must be right justified. In Japan, this value is called a _goods code_. 
    * @return merchandiseCode
   **/
-  @ApiModelProperty(value = "Identifier for the merchandise. Possible value:   - 1000: Gift card  This field is supported only for **American Express Direct**. ")
+  @ApiModelProperty(value = "Identifier for the merchandise. This field is supported only on the processors listed in this field description.  #### American Express Direct Possible value: - 1000: Gift card  #### CyberSource through VisaNet This value must be right justified. In Japan, this value is called a _goods code_.  #### JCN Gateway This value must be right justified. In Japan, this value is called a _goods code_. ")
   public Integer getMerchandiseCode() {
     return merchandiseCode;
   }
@@ -321,17 +324,35 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
   }
 
    /**
-   * Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway. 
+   * Transaction identifier that is generated. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway.  Optional field.  #### Card Present processing message If you included this field in the request, the returned value is the value that you sent in the request. If you did not include this field in the request, the system generated this value for you.  The difference between this reply field and the &#x60;processorInformation.systemTraceAuditNumber&#x60; field is that the system generates the system trace audit number (STAN), and you must print the receipt number on the receipt; whereas you can generate the sales slip number, and you can choose to print the sales slip number on the receipt. 
    * maximum: 99999
    * @return salesSlipNumber
   **/
-  @ApiModelProperty(value = "Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway. ")
+  @ApiModelProperty(value = "Transaction identifier that is generated. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway.  Optional field.  #### Card Present processing message If you included this field in the request, the returned value is the value that you sent in the request. If you did not include this field in the request, the system generated this value for you.  The difference between this reply field and the `processorInformation.systemTraceAuditNumber` field is that the system generates the system trace audit number (STAN), and you must print the receipt number on the receipt; whereas you can generate the sales slip number, and you can choose to print the sales slip number on the receipt. ")
   public Integer getSalesSlipNumber() {
     return salesSlipNumber;
   }
 
   public void setSalesSlipNumber(Integer salesSlipNumber) {
     this.salesSlipNumber = salesSlipNumber;
+  }
+
+  public Ptsv2paymentsOrderInformationInvoiceDetails invoiceDate(String invoiceDate) {
+    this.invoiceDate = invoiceDate;
+    return this;
+  }
+
+   /**
+   * Date of the tax calculation. Use format YYYYMMDD. You can provide a date in the past if you are calculating tax for a refund and want to know what the tax was on the date the order was placed. You can provide a date in the future if you are calculating the tax for a future date, such as an upcoming tax holiday.  The default is the date, in Pacific time, that the bank receives the request. Keep this in mind if you are in a different time zone and want the tax calculated with the rates that are applicable on a specific date.  #### Tax Calculation Optional field for U.S., Canadian, international tax, and value added taxes. 
+   * @return invoiceDate
+  **/
+  @ApiModelProperty(value = "Date of the tax calculation. Use format YYYYMMDD. You can provide a date in the past if you are calculating tax for a refund and want to know what the tax was on the date the order was placed. You can provide a date in the future if you are calculating the tax for a future date, such as an upcoming tax holiday.  The default is the date, in Pacific time, that the bank receives the request. Keep this in mind if you are in a different time zone and want the tax calculated with the rates that are applicable on a specific date.  #### Tax Calculation Optional field for U.S., Canadian, international tax, and value added taxes. ")
+  public String getInvoiceDate() {
+    return invoiceDate;
+  }
+
+  public void setInvoiceDate(String invoiceDate) {
+    this.invoiceDate = invoiceDate;
   }
 
 
@@ -357,12 +378,13 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
         Objects.equals(this.transactionAdviceAddendum, ptsv2paymentsOrderInformationInvoiceDetails.transactionAdviceAddendum) &&
         Objects.equals(this.referenceDataCode, ptsv2paymentsOrderInformationInvoiceDetails.referenceDataCode) &&
         Objects.equals(this.referenceDataNumber, ptsv2paymentsOrderInformationInvoiceDetails.referenceDataNumber) &&
-        Objects.equals(this.salesSlipNumber, ptsv2paymentsOrderInformationInvoiceDetails.salesSlipNumber);
+        Objects.equals(this.salesSlipNumber, ptsv2paymentsOrderInformationInvoiceDetails.salesSlipNumber) &&
+        Objects.equals(this.invoiceDate, ptsv2paymentsOrderInformationInvoiceDetails.invoiceDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum, referenceDataCode, referenceDataNumber, salesSlipNumber);
+    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum, referenceDataCode, referenceDataNumber, salesSlipNumber, invoiceDate);
   }
 
 
@@ -385,6 +407,7 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     sb.append("    referenceDataCode: ").append(toIndentedString(referenceDataCode)).append("\n");
     sb.append("    referenceDataNumber: ").append(toIndentedString(referenceDataNumber)).append("\n");
     sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
+    sb.append("    invoiceDate: ").append(toIndentedString(invoiceDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

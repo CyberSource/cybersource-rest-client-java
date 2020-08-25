@@ -4,60 +4,15 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createPaymentInstrument**](PaymentInstrumentApi.md#createPaymentInstrument) | **POST** /tms/v1/paymentinstruments | Create a Payment Instrument
-[**deletePaymentInstrument**](PaymentInstrumentApi.md#deletePaymentInstrument) | **DELETE** /tms/v1/paymentinstruments/{tokenId} | Delete a Payment Instrument
-[**getPaymentInstrument**](PaymentInstrumentApi.md#getPaymentInstrument) | **GET** /tms/v1/paymentinstruments/{tokenId} | Retrieve a Payment Instrument
-[**updatePaymentInstrument**](PaymentInstrumentApi.md#updatePaymentInstrument) | **PATCH** /tms/v1/paymentinstruments/{tokenId} | Update a Payment Instrument
+[**deletePaymentInstrument**](PaymentInstrumentApi.md#deletePaymentInstrument) | **DELETE** /tms/v1/paymentinstruments/{paymentInstrumentTokenId} | Delete a Payment Instrument
+[**getPaymentInstrument**](PaymentInstrumentApi.md#getPaymentInstrument) | **GET** /tms/v1/paymentinstruments/{paymentInstrumentTokenId} | Retrieve a Payment Instrument
+[**patchPaymentInstrument**](PaymentInstrumentApi.md#patchPaymentInstrument) | **PATCH** /tms/v1/paymentinstruments/{paymentInstrumentTokenId} | Update a Payment Instrument
+[**postPaymentInstrument**](PaymentInstrumentApi.md#postPaymentInstrument) | **POST** /tms/v1/paymentinstruments | Create a Payment Instrument
 
-
-<a name="createPaymentInstrument"></a>
-# **createPaymentInstrument**
-> TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments createPaymentInstrument(profileId, createPaymentInstrumentRequest)
-
-Create a Payment Instrument
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.PaymentInstrumentApi;
-
-
-PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
-String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-CreatePaymentInstrumentRequest createPaymentInstrumentRequest = new CreatePaymentInstrumentRequest(); // CreatePaymentInstrumentRequest | Specify the customer's payment details for card or bank account.
-try {
-    TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments result = apiInstance.createPaymentInstrument(profileId, createPaymentInstrumentRequest);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentInstrumentApi#createPaymentInstrument");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **createPaymentInstrumentRequest** | [**CreatePaymentInstrumentRequest**](CreatePaymentInstrumentRequest.md)| Specify the customer&#39;s payment details for card or bank account. |
-
-### Return type
-
-[**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
 
 <a name="deletePaymentInstrument"></a>
 # **deletePaymentInstrument**
-> deletePaymentInstrument(profileId, tokenId)
+> deletePaymentInstrument(paymentInstrumentTokenId, profileId)
 
 Delete a Payment Instrument
 
@@ -69,10 +24,10 @@ Delete a Payment Instrument
 
 
 PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
+String paymentInstrumentTokenId = "paymentInstrumentTokenId_example"; // String | The TokenId of a payment instrument.
 String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-String tokenId = "tokenId_example"; // String | The TokenId of a Payment Instrument.
 try {
-    apiInstance.deletePaymentInstrument(profileId, tokenId);
+    apiInstance.deletePaymentInstrument(paymentInstrumentTokenId, profileId);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#deletePaymentInstrument");
     e.printStackTrace();
@@ -83,8 +38,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **tokenId** | **String**| The TokenId of a Payment Instrument. |
+ **paymentInstrumentTokenId** | **String**| The TokenId of a payment instrument. |
+ **profileId** | **String**| The id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
 
@@ -101,7 +56,7 @@ No authorization required
 
 <a name="getPaymentInstrument"></a>
 # **getPaymentInstrument**
-> TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments getPaymentInstrument(profileId, tokenId)
+> Tmsv2customersEmbeddedDefaultPaymentInstrument getPaymentInstrument(paymentInstrumentTokenId, profileId)
 
 Retrieve a Payment Instrument
 
@@ -113,10 +68,10 @@ Retrieve a Payment Instrument
 
 
 PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
+String paymentInstrumentTokenId = "paymentInstrumentTokenId_example"; // String | The TokenId of a payment instrument.
 String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-String tokenId = "tokenId_example"; // String | The TokenId of a Payment Instrument.
 try {
-    TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments result = apiInstance.getPaymentInstrument(profileId, tokenId);
+    Tmsv2customersEmbeddedDefaultPaymentInstrument result = apiInstance.getPaymentInstrument(paymentInstrumentTokenId, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#getPaymentInstrument");
@@ -128,12 +83,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **tokenId** | **String**| The TokenId of a Payment Instrument. |
+ **paymentInstrumentTokenId** | **String**| The TokenId of a payment instrument. |
+ **profileId** | **String**| The id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
 
-[**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.md)
+[**Tmsv2customersEmbeddedDefaultPaymentInstrument**](Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
 
 ### Authorization
 
@@ -144,9 +99,9 @@ No authorization required
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/json;charset=utf-8
 
-<a name="updatePaymentInstrument"></a>
-# **updatePaymentInstrument**
-> TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest)
+<a name="patchPaymentInstrument"></a>
+# **patchPaymentInstrument**
+> Tmsv2customersEmbeddedDefaultPaymentInstrument patchPaymentInstrument(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch)
 
 Update a Payment Instrument
 
@@ -158,14 +113,15 @@ Update a Payment Instrument
 
 
 PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
+String paymentInstrumentTokenId = "paymentInstrumentTokenId_example"; // String | The TokenId of a payment instrument.
+PatchPaymentInstrumentRequest patchPaymentInstrumentRequest = new PatchPaymentInstrumentRequest(); // PatchPaymentInstrumentRequest | 
 String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
-String tokenId = "tokenId_example"; // String | The TokenId of a Payment Instrument.
-UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest = new UpdatePaymentInstrumentRequest(); // UpdatePaymentInstrumentRequest | Specify the customer's payment details.
+String ifMatch = "ifMatch_example"; // String | Contains an ETag value from a GET request to make the request conditional.
 try {
-    TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments result = apiInstance.updatePaymentInstrument(profileId, tokenId, updatePaymentInstrumentRequest);
+    Tmsv2customersEmbeddedDefaultPaymentInstrument result = apiInstance.patchPaymentInstrument(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PaymentInstrumentApi#updatePaymentInstrument");
+    System.err.println("Exception when calling PaymentInstrumentApi#patchPaymentInstrument");
     e.printStackTrace();
 }
 ```
@@ -174,13 +130,59 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profileId** | **String**| The id of a profile containing user specific TMS configuration. |
- **tokenId** | **String**| The TokenId of a Payment Instrument. |
- **updatePaymentInstrumentRequest** | [**UpdatePaymentInstrumentRequest**](UpdatePaymentInstrumentRequest.md)| Specify the customer&#39;s payment details. |
+ **paymentInstrumentTokenId** | **String**| The TokenId of a payment instrument. |
+ **patchPaymentInstrumentRequest** | [**PatchPaymentInstrumentRequest**](PatchPaymentInstrumentRequest.md)|  |
+ **profileId** | **String**| The id of a profile containing user specific TMS configuration. | [optional]
+ **ifMatch** | **String**| Contains an ETag value from a GET request to make the request conditional. | [optional]
 
 ### Return type
 
-[**TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.md)
+[**Tmsv2customersEmbeddedDefaultPaymentInstrument**](Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a name="postPaymentInstrument"></a>
+# **postPaymentInstrument**
+> Tmsv2customersEmbeddedDefaultPaymentInstrument postPaymentInstrument(postPaymentInstrumentRequest, profileId)
+
+Create a Payment Instrument
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.PaymentInstrumentApi;
+
+
+PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
+PostPaymentInstrumentRequest postPaymentInstrumentRequest = new PostPaymentInstrumentRequest(); // PostPaymentInstrumentRequest | 
+String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
+try {
+    Tmsv2customersEmbeddedDefaultPaymentInstrument result = apiInstance.postPaymentInstrument(postPaymentInstrumentRequest, profileId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PaymentInstrumentApi#postPaymentInstrument");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **postPaymentInstrumentRequest** | [**PostPaymentInstrumentRequest**](PostPaymentInstrumentRequest.md)|  |
+ **profileId** | **String**| The id of a profile containing user specific TMS configuration. | [optional]
+
+### Return type
+
+[**Tmsv2customersEmbeddedDefaultPaymentInstrument**](Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
 
 ### Authorization
 

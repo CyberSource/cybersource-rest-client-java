@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsTravelInformationTransitAirline
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsTravelInformationTransitAirline {
   @SerializedName("bookingReferenceNumber")
   private String bookingReferenceNumber = null;
@@ -171,10 +171,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Name of the airline. If you do not include this field, CyberSource uses the value for your merchant name that is in the CyberSource merchant configuration database. 
+   * Airline that generated the ticket. Format: English characters only. Optional request field. 
    * @return carrierName
   **/
-  @ApiModelProperty(value = "Name of the airline. If you do not include this field, CyberSource uses the value for your merchant name that is in the CyberSource merchant configuration database. ")
+  @ApiModelProperty(value = "Airline that generated the ticket. Format: English characters only. Optional request field. ")
   public String getCarrierName() {
     return carrierName;
   }
@@ -207,10 +207,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Ticket number. Format: English characters only 
+   * Ticket number. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field. 
    * @return ticketNumber
   **/
-  @ApiModelProperty(value = "Ticket number. Format: English characters only ")
+  @ApiModelProperty(value = "Ticket number. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field. ")
   public String getTicketNumber() {
     return ticketNumber;
   }
@@ -243,10 +243,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Flag that indicates whether or not the ticket is restricted (nonrefundable). Possible values: - 0: No restriction (refundable) - 1: Restricted (nonrefundable) 
+   * Flag that indicates whether or not the ticket is restricted (nonrefundable). Possible values: - 0: No restriction (refundable) - 1: Restricted (nonrefundable) Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field. 
    * @return restrictedTicketIndicator
   **/
-  @ApiModelProperty(value = "Flag that indicates whether or not the ticket is restricted (nonrefundable). Possible values: - 0: No restriction (refundable) - 1: Restricted (nonrefundable) ")
+  @ApiModelProperty(value = "Flag that indicates whether or not the ticket is restricted (nonrefundable). Possible values: - 0: No restriction (refundable) - 1: Restricted (nonrefundable) Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field. ")
   public Integer getRestrictedTicketIndicator() {
     return restrictedTicketIndicator;
   }
@@ -279,10 +279,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Airline process identifier. This value is the airline’s three-digit IATA1 code which is used to process extended payment airline tickets.. 
+   * The field is not currently supported. 
    * @return extendedPaymentCode
   **/
-  @ApiModelProperty(value = "Airline process identifier. This value is the airline’s three-digit IATA1 code which is used to process extended payment airline tickets.. ")
+  @ApiModelProperty(value = "The field is not currently supported. ")
   public String getExtendedPaymentCode() {
     return extendedPaymentCode;
   }
@@ -297,10 +297,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Name of the passenger to whom the ticket was issued. This will always be a single passenger&#39;s name. If there are more than one passengers, provide only the primary passenger&#39;s name. Do not include special characters such as commas, hyphens, or apostrophes. Only ASCII characters are supported. 
+   * Name of the passenger to whom the ticket was issued.  This will always be a single passenger&#39;s name. If there are more than one passengers, provide only the primary passenger&#39;s name. Do not include special characters such as commas, hyphens, or apostrophes. Only ASCII characters are supported. Format: English characters only. Optional request field. 
    * @return passengerName
   **/
-  @ApiModelProperty(value = "Name of the passenger to whom the ticket was issued. This will always be a single passenger's name. If there are more than one passengers, provide only the primary passenger's name. Do not include special characters such as commas, hyphens, or apostrophes. Only ASCII characters are supported. ")
+  @ApiModelProperty(value = "Name of the passenger to whom the ticket was issued.  This will always be a single passenger's name. If there are more than one passengers, provide only the primary passenger's name. Do not include special characters such as commas, hyphens, or apostrophes. Only ASCII characters are supported. Format: English characters only. Optional request field. ")
   public String getPassengerName() {
     return passengerName;
   }
@@ -315,10 +315,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * 1.Reference number or code that identifies the cardholder. 2. Code provided by the cardholder. 3. Address of the ticket issuer. The first 13 characters will appear onthe cardholder’s statement. 4. Customer reference. 
+   * Reference number or code that identifies the cardholder. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field. 
    * @return customerCode
   **/
-  @ApiModelProperty(value = "1.Reference number or code that identifies the cardholder. 2. Code provided by the cardholder. 3. Address of the ticket issuer. The first 13 characters will appear onthe cardholder’s statement. 4. Customer reference. ")
+  @ApiModelProperty(value = "Reference number or code that identifies the cardholder. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field. ")
   public String getCustomerCode() {
     return customerCode;
   }
@@ -333,10 +333,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Airline document type code that specifies the purpose of the transaction. For the possible values, see Appendix A, \&quot;Airline Document Type Codes\&quot;. 
+   * Airline document type code that specifies the purpose of the transaction. Format: English characters only. Optional request field.  | Code | Description | | --- | --- | | 01 | Passenger ticket | | 02 | Additional collection | | 03 | Excess baggage | | 04 | Miscellaneous charge order (MCO) or prepaid ticket authorization | | 05 | Special service ticket | | 06 | Supported refund | | 07 | Unsupported refund | | 08 | Lost ticket application | | 09 | Tour order voucher | | 10 | Ticket by mail | | 11 | Undercharge adjustment | | 12 | Group ticket | | 13 | Exchange adjustment | | 14 | SPD or air freight | | 15 | In-flight adjustment | | 16 | Agency passenger ticket | | 17 | Agency tour order or voucher | | 18 | Agency miscellaneous charge order (MCO) | | 19 | Agency exchange order | | 20 | Agency group ticket | | 21 | Debit adjustment for duplicate refund or use | | 22 | In-flight merchandise order | | 23 | Catalogue merchandise order | | 24 | In-flight phone charges | | 25 | Frequent flyer fee or purchase | | 26 | Kennel charge | | 27 | Animal transportation charge | | 28 | Firearms case | | 29 | Upgrade charge | | 30 | Credit for unused transportation | | 31 | Credit for class of service adjustment | | 32 | Credit for denied boarding | | 33 | Credit for miscellaneous refund | | 34 | Credit for lost ticket refund | | 35 | Credit for exchange refund | | 36 | Credit for overcharge adjustment | | 37 | Credit for multiple Unused tickets | | 38 | Exchange order | | 39 | Self-service ticket | | 41 | In-flight duty-free purchase | | 42 | Senior citizen discount booklets | | 43 | Club membership fee | | 44 | Coupon book | | 45 | In-flight charges | | 46 | Tour deposit | | 47 | Frequent flyer overnight delivery charge | | 48 | Frequent flyer fulfillment | | 49 | Small package delivery | | 50 | Vendor sale | | 51 | Miscellaneous taxes or fees | | 52 | Travel agency fee | | 60 | Vendor refund or credit | | 64 | Duty free sale | | 65 | Preferred seat upgrade | | 66 | Cabin upgrade | | 67 | Lounge or club access or day pass | | 68 | Agent assisted reservation or ticketing fee | | 69 | Ticket change or cancel fee | | 70 | Trip insurance | | 71 | Unaccompanied minor | | 72 | Standby fee | | 73 | Curbside baggage | | 74 | In-flight medical equipment | | 75 | Ticket or pass print fee | | 76 | Checked sporting or special equipment | | 77 | Dry ice fee | | 78 | Mail or postage fee | | 79 | Club membership fee or temporary trial | | 80 | Frequent flyer activation or reinstatement | | 81 | Gift certificate | | 82 | Onboard or in-flight prepaid voucher | | 83 | Optional services fee | | 84 | Advance purchase for excess baggage | | 85 | Advance purchase for preferred seat upgrade | | 86 | Advance purchase for cabin upgrade | | 87 | Advance purchase for optional services | | 88 | WiFi | | 89 | Packages | | 90 | In-flight entertainment or internet access | | 91 | Overweight bag fee | | 92 | Sleep sets | | 93 | Special purchase fee | 
    * @return documentType
   **/
-  @ApiModelProperty(value = "Airline document type code that specifies the purpose of the transaction. For the possible values, see Appendix A, \"Airline Document Type Codes\". ")
+  @ApiModelProperty(value = "Airline document type code that specifies the purpose of the transaction. Format: English characters only. Optional request field.  | Code | Description | | --- | --- | | 01 | Passenger ticket | | 02 | Additional collection | | 03 | Excess baggage | | 04 | Miscellaneous charge order (MCO) or prepaid ticket authorization | | 05 | Special service ticket | | 06 | Supported refund | | 07 | Unsupported refund | | 08 | Lost ticket application | | 09 | Tour order voucher | | 10 | Ticket by mail | | 11 | Undercharge adjustment | | 12 | Group ticket | | 13 | Exchange adjustment | | 14 | SPD or air freight | | 15 | In-flight adjustment | | 16 | Agency passenger ticket | | 17 | Agency tour order or voucher | | 18 | Agency miscellaneous charge order (MCO) | | 19 | Agency exchange order | | 20 | Agency group ticket | | 21 | Debit adjustment for duplicate refund or use | | 22 | In-flight merchandise order | | 23 | Catalogue merchandise order | | 24 | In-flight phone charges | | 25 | Frequent flyer fee or purchase | | 26 | Kennel charge | | 27 | Animal transportation charge | | 28 | Firearms case | | 29 | Upgrade charge | | 30 | Credit for unused transportation | | 31 | Credit for class of service adjustment | | 32 | Credit for denied boarding | | 33 | Credit for miscellaneous refund | | 34 | Credit for lost ticket refund | | 35 | Credit for exchange refund | | 36 | Credit for overcharge adjustment | | 37 | Credit for multiple Unused tickets | | 38 | Exchange order | | 39 | Self-service ticket | | 41 | In-flight duty-free purchase | | 42 | Senior citizen discount booklets | | 43 | Club membership fee | | 44 | Coupon book | | 45 | In-flight charges | | 46 | Tour deposit | | 47 | Frequent flyer overnight delivery charge | | 48 | Frequent flyer fulfillment | | 49 | Small package delivery | | 50 | Vendor sale | | 51 | Miscellaneous taxes or fees | | 52 | Travel agency fee | | 60 | Vendor refund or credit | | 64 | Duty free sale | | 65 | Preferred seat upgrade | | 66 | Cabin upgrade | | 67 | Lounge or club access or day pass | | 68 | Agent assisted reservation or ticketing fee | | 69 | Ticket change or cancel fee | | 70 | Trip insurance | | 71 | Unaccompanied minor | | 72 | Standby fee | | 73 | Curbside baggage | | 74 | In-flight medical equipment | | 75 | Ticket or pass print fee | | 76 | Checked sporting or special equipment | | 77 | Dry ice fee | | 78 | Mail or postage fee | | 79 | Club membership fee or temporary trial | | 80 | Frequent flyer activation or reinstatement | | 81 | Gift certificate | | 82 | Onboard or in-flight prepaid voucher | | 83 | Optional services fee | | 84 | Advance purchase for excess baggage | | 85 | Advance purchase for preferred seat upgrade | | 86 | Advance purchase for cabin upgrade | | 87 | Advance purchase for optional services | | 88 | WiFi | | 89 | Packages | | 90 | In-flight entertainment or internet access | | 91 | Overweight bag fee | | 92 | Sleep sets | | 93 | Special purchase fee | ")
   public String getDocumentType() {
     return documentType;
   }
@@ -351,10 +351,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Ticket number or a value that might be a booking reference number. 
+   * The field is not currently supported. 
    * @return documentNumber
   **/
-  @ApiModelProperty(value = "Ticket number or a value that might be a booking reference number. ")
+  @ApiModelProperty(value = "The field is not currently supported. ")
   public String getDocumentNumber() {
     return documentNumber;
   }
@@ -369,10 +369,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Number of travel legs. Numbering for the travel legs: 0 to 3. 
+   * The field is not currently supported. 
    * @return documentNumberOfParts
   **/
-  @ApiModelProperty(value = "Number of travel legs. Numbering for the travel legs: 0 to 3. ")
+  @ApiModelProperty(value = "The field is not currently supported. ")
   public Integer getDocumentNumberOfParts() {
     return documentNumberOfParts;
   }
@@ -441,10 +441,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Total fee for the ticket. This value cannot exceed 99999999999999999999 (twenty 9s). 
+   * Total fee for the ticket. This value cannot exceed &#x60;99999999999999999999&#x60; (twenty 9s). Format: English characters only. Optional request field. 
    * @return totalFeeAmount
   **/
-  @ApiModelProperty(value = "Total fee for the ticket. This value cannot exceed 99999999999999999999 (twenty 9s). ")
+  @ApiModelProperty(value = "Total fee for the ticket. This value cannot exceed `99999999999999999999` (twenty 9s). Format: English characters only. Optional request field. ")
   public String getTotalFeeAmount() {
     return totalFeeAmount;
   }
@@ -459,10 +459,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Total number of captures when requesting multiple partial captures for one authorization. Used along with airlineData_clearingCount to keep track of which capture is beingprocessed. For example, the second of five captures would be passed to CyberSource as airlineData_clearingSequence &#x3D; 2 and airlineData_clearingCount &#x3D; 5. 
+   * Number that identifies the clearing message when multiple clearing messages are allowed per authorized transaction. Each clearing message linked to one authorization request must include a unique clearing sequence number between 1 and the total number of clearing records. Format: English characters only. Optional request field. 
    * @return clearingSequence
   **/
-  @ApiModelProperty(value = "Total number of captures when requesting multiple partial captures for one authorization. Used along with airlineData_clearingCount to keep track of which capture is beingprocessed. For example, the second of five captures would be passed to CyberSource as airlineData_clearingSequence = 2 and airlineData_clearingCount = 5. ")
+  @ApiModelProperty(value = "Number that identifies the clearing message when multiple clearing messages are allowed per authorized transaction. Each clearing message linked to one authorization request must include a unique clearing sequence number between 1 and the total number of clearing records. Format: English characters only. Optional request field. ")
   public String getClearingSequence() {
     return clearingSequence;
   }
@@ -477,10 +477,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Total number of clearing messages associated with the authorization request. Format: English characters only. 
+   * Total number of clearing messages associated with the authorization request. Format: English characters only. Optional request field. 
    * @return clearingCount
   **/
-  @ApiModelProperty(value = "Total number of clearing messages associated with the authorization request. Format: English characters only. ")
+  @ApiModelProperty(value = "Total number of clearing messages associated with the authorization request. Format: English characters only. Optional request field. ")
   public String getClearingCount() {
     return clearingCount;
   }
@@ -495,10 +495,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Total clearing amount for all transactions in the clearing count set. If this field is not set and if the total amount from the original authorization is not NULL, CyberSource sets the total clearing amount to the total amount from the original authorization. 
+   * Total clearing amount for all transactions in the clearing count set. This value cannot exceed &#x60;99999999999999999999&#x60; (twenty 9s). Format: English characters only. If this field is not set and if the total amount from the original authorization is not NULL, the total clearing amount is set to the total amount from the original authorization. 
    * @return totalClearingAmount
   **/
-  @ApiModelProperty(value = "Total clearing amount for all transactions in the clearing count set. If this field is not set and if the total amount from the original authorization is not NULL, CyberSource sets the total clearing amount to the total amount from the original authorization. ")
+  @ApiModelProperty(value = "Total clearing amount for all transactions in the clearing count set. This value cannot exceed `99999999999999999999` (twenty 9s). Format: English characters only. If this field is not set and if the total amount from the original authorization is not NULL, the total clearing amount is set to the total amount from the original authorization. ")
   public String getTotalClearingAmount() {
     return totalClearingAmount;
   }
@@ -513,10 +513,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Number of passengers for whom the ticket was issued. If you do not include this field in your request, CyberSource uses a default value of 1. 
+   * Number of passengers for whom the ticket was issued. Format: English characters only. Optional request field. 
    * @return numberOfPassengers
   **/
-  @ApiModelProperty(value = "Number of passengers for whom the ticket was issued. If you do not include this field in your request, CyberSource uses a default value of 1. ")
+  @ApiModelProperty(value = "Number of passengers for whom the ticket was issued. Format: English characters only. Optional request field. ")
   public Integer getNumberOfPassengers() {
     return numberOfPassengers;
   }
@@ -531,10 +531,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Code that specifies the computerized reservation system used to make the reservation and purchase the ticket. Format: English characters only 
+   * Code that specifies the computerized reservation system used to make the reservation and purchase the ticket. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field. 
    * @return reservationSystemCode
   **/
-  @ApiModelProperty(value = "Code that specifies the computerized reservation system used to make the reservation and purchase the ticket. Format: English characters only ")
+  @ApiModelProperty(value = "Code that specifies the computerized reservation system used to make the reservation and purchase the ticket. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field. ")
   public String getReservationSystemCode() {
     return reservationSystemCode;
   }
@@ -567,10 +567,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Date on which the transactionoccurred. Format: YYYYMMDD 
+   * Date on which the transaction occurred. Format: &#x60;YYYYMMDD&#x60; Format: English characters only. Optional request field. 
    * @return ticketIssueDate
   **/
-  @ApiModelProperty(value = "Date on which the transactionoccurred. Format: YYYYMMDD ")
+  @ApiModelProperty(value = "Date on which the transaction occurred. Format: `YYYYMMDD` Format: English characters only. Optional request field. ")
   public String getTicketIssueDate() {
     return ticketIssueDate;
   }
@@ -585,10 +585,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Flag that indicates whether an electronic ticket was issued. Possible values: - true - false 
+   * Flag that indicates whether an electronic ticket was issued. Possible values: - &#x60;true&#x60; - &#x60;false&#x60; Optional request field. 
    * @return electronicTicketIndicator
   **/
-  @ApiModelProperty(value = "Flag that indicates whether an electronic ticket was issued. Possible values: - true - false ")
+  @ApiModelProperty(value = "Flag that indicates whether an electronic ticket was issued. Possible values: - `true` - `false` Optional request field. ")
   public Boolean getElectronicTicketIndicator() {
     return electronicTicketIndicator;
   }
@@ -621,10 +621,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Type of purchase. Possible values: - EXC: Exchange ticket - MSC: Miscellaneous (not a ticket purchase and not a transaction related to an exchange ticket) - REF: Refund - TKT: Ticket Format: English characters only. 
+   * Type of purchase. Possible values: - &#x60;EXC&#x60;: Exchange ticket - &#x60;MSC&#x60;: Miscellaneous (not a ticket purchase and not a transaction related to an exchange ticket) - &#x60;REF&#x60;: Refund - &#x60;TKT&#x60;: Ticket Format: English characters only. Optional request field. 
    * @return purchaseType
   **/
-  @ApiModelProperty(value = "Type of purchase. Possible values: - EXC: Exchange ticket - MSC: Miscellaneous (not a ticket purchase and not a transaction related to an exchange ticket) - REF: Refund - TKT: Ticket Format: English characters only. ")
+  @ApiModelProperty(value = "Type of purchase. Possible values: - `EXC`: Exchange ticket - `MSC`: Miscellaneous (not a ticket purchase and not a transaction related to an exchange ticket) - `REF`: Refund - `TKT`: Ticket Format: English characters only. Optional request field. ")
   public String getPurchaseType() {
     return purchaseType;
   }
@@ -639,10 +639,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Reason for the credit. Possible values: - A: Cancellation of the ancillary passenger transport purchase. - B: Cancellation of the airline ticket and the passenger transport ancillary purchase. - C: Cancellation of the airline ticket. - O: Other. - P: Partial refund of the airline ticket. 
+   * Reason for the credit. Possible values: - &#x60;A&#x60;: Cancellation of the ancillary passenger transport purchase. - &#x60;B&#x60;: Cancellation of the airline ticket and the passenger transport ancillary purchase. - &#x60;C&#x60;: Cancellation of the airline ticket. - &#x60;O&#x60;: Other. - &#x60;P&#x60;: Partial refund of the airline ticket. Format: English characters only.  Optional request field. 
    * @return creditReasonIndicator
   **/
-  @ApiModelProperty(value = "Reason for the credit. Possible values: - A: Cancellation of the ancillary passenger transport purchase. - B: Cancellation of the airline ticket and the passenger transport ancillary purchase. - C: Cancellation of the airline ticket. - O: Other. - P: Partial refund of the airline ticket. ")
+  @ApiModelProperty(value = "Reason for the credit. Possible values: - `A`: Cancellation of the ancillary passenger transport purchase. - `B`: Cancellation of the airline ticket and the passenger transport ancillary purchase. - `C`: Cancellation of the airline ticket. - `O`: Other. - `P`: Partial refund of the airline ticket. Format: English characters only.  Optional request field. ")
   public String getCreditReasonIndicator() {
     return creditReasonIndicator;
   }
@@ -657,10 +657,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Type of update. Possible values: - C: Change to the existing ticket. - N: New ticket. Format: English characters only 
+   * Type of update. Possible values: - &#x60;C&#x60;: Change to the existing ticket. - &#x60;N&#x60;: New ticket. Format: English characters only Optional request field. 
    * @return ticketChangeIndicator
   **/
-  @ApiModelProperty(value = "Type of update. Possible values: - C: Change to the existing ticket. - N: New ticket. Format: English characters only ")
+  @ApiModelProperty(value = "Type of update. Possible values: - `C`: Change to the existing ticket. - `N`: New ticket. Format: English characters only Optional request field. ")
   public String getTicketChangeIndicator() {
     return ticketChangeIndicator;
   }
@@ -675,10 +675,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Plan number based on the fare. This value is provided by the airline. Format: English characters only 
+   * Plan number based on the fare. This value is provided by the airline. Format: English characters only. Optional request field. 
    * @return planNumber
   **/
-  @ApiModelProperty(value = "Plan number based on the fare. This value is provided by the airline. Format: English characters only ")
+  @ApiModelProperty(value = "Plan number based on the fare. This value is provided by the airline. Format: English characters only. Optional request field. ")
   public String getPlanNumber() {
     return planNumber;
   }
@@ -693,10 +693,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Date of arrival for the last leg of the trip. Format: MMDDYYYY English characters only. 
+   * Date of arrival for the last leg of the trip. Format: &#x60;MMDDYYYY&#x60; English characters only. Optional request field. 
    * @return arrivalDate
   **/
-  @ApiModelProperty(value = "Date of arrival for the last leg of the trip. Format: MMDDYYYY English characters only. ")
+  @ApiModelProperty(value = "Date of arrival for the last leg of the trip. Format: `MMDDYYYY` English characters only. Optional request field. ")
   public String getArrivalDate() {
     return arrivalDate;
   }
@@ -711,10 +711,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Text that describes the ticket limitations, such as nonrefundable. Format: English characters only. 
+   * Text that describes the ticket limitations, such as _nonrefundable_. Format: English characters only. Optional request field. 
    * @return restrictedTicketDesciption
   **/
-  @ApiModelProperty(value = "Text that describes the ticket limitations, such as nonrefundable. Format: English characters only. ")
+  @ApiModelProperty(value = "Text that describes the ticket limitations, such as _nonrefundable_. Format: English characters only. Optional request field. ")
   public String getRestrictedTicketDesciption() {
     return restrictedTicketDesciption;
   }
@@ -747,10 +747,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Fee for exchanging the ticket. Format: English characters only 
+   * Fee for exchanging the ticket. Format: English characters only. Optional request field. 
    * @return exchangeTicketFeeAmount
   **/
-  @ApiModelProperty(value = "Fee for exchanging the ticket. Format: English characters only ")
+  @ApiModelProperty(value = "Fee for exchanging the ticket. Format: English characters only. Optional request field. ")
   public String getExchangeTicketFeeAmount() {
     return exchangeTicketFeeAmount;
   }
@@ -765,10 +765,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Type of journey such as one way or round trip. 
+   * The field is not currently supported. 
    * @return reservationType
   **/
-  @ApiModelProperty(value = "Type of journey such as one way or round trip. ")
+  @ApiModelProperty(value = "The field is not currently supported. ")
   public String getReservationType() {
     return reservationType;
   }

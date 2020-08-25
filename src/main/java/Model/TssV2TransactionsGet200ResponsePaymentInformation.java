@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.Riskv1authenticationsetupsPaymentInformationCustomer;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationBank;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationCard;
@@ -32,13 +32,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class TssV2TransactionsGet200ResponsePaymentInformation {
   @SerializedName("paymentType")
   private TssV2TransactionsGet200ResponsePaymentInformationPaymentType paymentType = null;
 
   @SerializedName("customer")
-  private Ptsv2paymentsPaymentInformationCustomer customer = null;
+  private Riskv1authenticationsetupsPaymentInformationCustomer customer = null;
 
   @SerializedName("card")
   private TssV2TransactionsGet200ResponsePaymentInformationCard card = null;
@@ -70,7 +70,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     this.paymentType = paymentType;
   }
 
-  public TssV2TransactionsGet200ResponsePaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
+  public TssV2TransactionsGet200ResponsePaymentInformation customer(Riskv1authenticationsetupsPaymentInformationCustomer customer) {
     this.customer = customer;
     return this;
   }
@@ -80,11 +80,11 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsPaymentInformationCustomer getCustomer() {
+  public Riskv1authenticationsetupsPaymentInformationCustomer getCustomer() {
     return customer;
   }
 
-  public void setCustomer(Ptsv2paymentsPaymentInformationCustomer customer) {
+  public void setCustomer(Riskv1authenticationsetupsPaymentInformationCustomer customer) {
     this.customer = customer;
   }
 

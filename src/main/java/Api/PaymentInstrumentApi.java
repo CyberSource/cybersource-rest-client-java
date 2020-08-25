@@ -28,10 +28,10 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.CreatePaymentInstrumentRequest;
 import Model.InlineResponse400;
-import Model.TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments;
-import Model.UpdatePaymentInstrumentRequest;
+import Model.PatchPaymentInstrumentRequest;
+import Model.PostPaymentInstrumentRequest;
+import Model.Tmsv2customersEmbeddedDefaultPaymentInstrument;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -59,16 +59,423 @@ public class PaymentInstrumentApi {
     }
 
     /**
-     * Build call for createPaymentInstrument
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account. (required)
+     * Build call for deletePaymentInstrument
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call createPaymentInstrumentCall(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createPaymentInstrumentRequest;
+    public okhttp3.Call deletePaymentInstrumentCall(String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentTokenId}"
+            .replaceAll("\\{" + "paymentInstrumentTokenId" + "\\}", apiClient.escapeString(paymentInstrumentTokenId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (profileId != null)
+        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deletePaymentInstrumentValidateBeforeCall(String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'paymentInstrumentTokenId' is set
+        if (paymentInstrumentTokenId == null) {
+            throw new ApiException("Missing the required parameter 'paymentInstrumentTokenId' when calling deletePaymentInstrument(Async)");
+        }
+        
+        
+        okhttp3.Call call = deletePaymentInstrumentCall(paymentInstrumentTokenId, profileId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Delete a Payment Instrument
+     * 
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void deletePaymentInstrument(String paymentInstrumentTokenId, String profileId) throws ApiException {
+        deletePaymentInstrumentWithHttpInfo(paymentInstrumentTokenId, profileId);
+    }
+
+    /**
+     * Delete a Payment Instrument
+     * 
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String paymentInstrumentTokenId, String profileId) throws ApiException {
+        okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, profileId, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Delete a Payment Instrument (asynchronously)
+     * 
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call deletePaymentInstrumentAsync(String paymentInstrumentTokenId, String profileId, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, profileId, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
+     * Build call for getPaymentInstrument
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call getPaymentInstrumentCall(String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentTokenId}"
+            .replaceAll("\\{" + "paymentInstrumentTokenId" + "\\}", apiClient.escapeString(paymentInstrumentTokenId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (profileId != null)
+        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getPaymentInstrumentValidateBeforeCall(String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'paymentInstrumentTokenId' is set
+        if (paymentInstrumentTokenId == null) {
+            throw new ApiException("Missing the required parameter 'paymentInstrumentTokenId' when calling getPaymentInstrument(Async)");
+        }
+        
+        
+        okhttp3.Call call = getPaymentInstrumentCall(paymentInstrumentTokenId, profileId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Retrieve a Payment Instrument
+     * 
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @return Tmsv2customersEmbeddedDefaultPaymentInstrument
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Tmsv2customersEmbeddedDefaultPaymentInstrument getPaymentInstrument(String paymentInstrumentTokenId, String profileId) throws ApiException {
+        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = getPaymentInstrumentWithHttpInfo(paymentInstrumentTokenId, profileId);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve a Payment Instrument
+     * 
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrument&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> getPaymentInstrumentWithHttpInfo(String paymentInstrumentTokenId, String profileId) throws ApiException {
+        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, profileId, null, null);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve a Payment Instrument (asynchronously)
+     * 
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call getPaymentInstrumentAsync(String paymentInstrumentTokenId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, profileId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for patchPaymentInstrument
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param patchPaymentInstrumentRequest  (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call patchPaymentInstrumentCall(String paymentInstrumentTokenId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = patchPaymentInstrumentRequest;
+        
+        // create path and map variables
+        String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentTokenId}"
+            .replaceAll("\\{" + "paymentInstrumentTokenId" + "\\}", apiClient.escapeString(paymentInstrumentTokenId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (profileId != null)
+        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
+        if (ifMatch != null)
+        localVarHeaderParams.put("if-match", apiClient.parameterToString(ifMatch));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call patchPaymentInstrumentValidateBeforeCall(String paymentInstrumentTokenId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'paymentInstrumentTokenId' is set
+        if (paymentInstrumentTokenId == null) {
+            throw new ApiException("Missing the required parameter 'paymentInstrumentTokenId' when calling patchPaymentInstrument(Async)");
+        }
+        
+        // verify the required parameter 'patchPaymentInstrumentRequest' is set
+        if (patchPaymentInstrumentRequest == null) {
+            throw new ApiException("Missing the required parameter 'patchPaymentInstrumentRequest' when calling patchPaymentInstrument(Async)");
+        }
+        
+        
+        okhttp3.Call call = patchPaymentInstrumentCall(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update a Payment Instrument
+     * 
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param patchPaymentInstrumentRequest  (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
+     * @return Tmsv2customersEmbeddedDefaultPaymentInstrument
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Tmsv2customersEmbeddedDefaultPaymentInstrument patchPaymentInstrument(String paymentInstrumentTokenId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = patchPaymentInstrumentWithHttpInfo(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch);
+        return resp.getData();
+    }
+
+    /**
+     * Update a Payment Instrument
+     * 
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param patchPaymentInstrumentRequest  (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
+     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrument&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> patchPaymentInstrumentWithHttpInfo(String paymentInstrumentTokenId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+        okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch, null, null);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update a Payment Instrument (asynchronously)
+     * 
+     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param patchPaymentInstrumentRequest  (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call patchPaymentInstrumentAsync(String paymentInstrumentTokenId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for postPaymentInstrument
+     * @param postPaymentInstrumentRequest  (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call postPaymentInstrumentCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = postPaymentInstrumentRequest;
         
         // create path and map variables
         String localVarPath = "/tms/v1/paymentinstruments";
@@ -110,20 +517,15 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPaymentInstrumentValidateBeforeCall(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postPaymentInstrumentValidateBeforeCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'profileId' is set
-        if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling createPaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'createPaymentInstrumentRequest' is set
-        if (createPaymentInstrumentRequest == null) {
-            throw new ApiException("Missing the required parameter 'createPaymentInstrumentRequest' when calling createPaymentInstrument(Async)");
+        // verify the required parameter 'postPaymentInstrumentRequest' is set
+        if (postPaymentInstrumentRequest == null) {
+            throw new ApiException("Missing the required parameter 'postPaymentInstrumentRequest' when calling postPaymentInstrument(Async)");
         }
         
         
-        okhttp3.Call call = createPaymentInstrumentCall(profileId, createPaymentInstrumentRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = postPaymentInstrumentCall(postPaymentInstrumentRequest, profileId, progressListener, progressRequestListener);
         return call;
 
         
@@ -135,40 +537,40 @@ public class PaymentInstrumentApi {
     /**
      * Create a Payment Instrument
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account. (required)
-     * @return TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments
+     * @param postPaymentInstrumentRequest  (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @return Tmsv2customersEmbeddedDefaultPaymentInstrument
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments createPaymentInstrument(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest) throws ApiException {
-        ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> resp = createPaymentInstrumentWithHttpInfo(profileId, createPaymentInstrumentRequest);
+    public Tmsv2customersEmbeddedDefaultPaymentInstrument postPaymentInstrument(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId) throws ApiException {
+        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = postPaymentInstrumentWithHttpInfo(postPaymentInstrumentRequest, profileId);
         return resp.getData();
     }
 
     /**
      * Create a Payment Instrument
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account. (required)
-     * @return ApiResponse&lt;TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments&gt;
+     * @param postPaymentInstrumentRequest  (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrument&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> createPaymentInstrumentWithHttpInfo(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest) throws ApiException {
-        okhttp3.Call call = createPaymentInstrumentValidateBeforeCall(profileId, createPaymentInstrumentRequest, null, null);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
+    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> postPaymentInstrumentWithHttpInfo(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId) throws ApiException {
+        okhttp3.Call call = postPaymentInstrumentValidateBeforeCall(postPaymentInstrumentRequest, profileId, null, null);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Create a Payment Instrument (asynchronously)
      * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account. (required)
+     * @param postPaymentInstrumentRequest  (required)
+     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createPaymentInstrumentAsync(String profileId, CreatePaymentInstrumentRequest createPaymentInstrumentRequest, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> callback) throws ApiException {
+    public okhttp3.Call postPaymentInstrumentAsync(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -189,424 +591,8 @@ public class PaymentInstrumentApi {
             };
         }
 
-        okhttp3.Call call = createPaymentInstrumentValidateBeforeCall(profileId, createPaymentInstrumentRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for deletePaymentInstrument
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public okhttp3.Call deletePaymentInstrumentCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/tms/v1/paymentinstruments/{tokenId}"
-            .replaceAll("\\{" + "tokenId" + "\\}", apiClient.escapeString(tokenId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (profileId != null)
-        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePaymentInstrumentValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'profileId' is set
-        if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling deletePaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'tokenId' is set
-        if (tokenId == null) {
-            throw new ApiException("Missing the required parameter 'tokenId' when calling deletePaymentInstrument(Async)");
-        }
-        
-        
-        okhttp3.Call call = deletePaymentInstrumentCall(profileId, tokenId, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Delete a Payment Instrument
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public void deletePaymentInstrument(String profileId, String tokenId) throws ApiException {
-        deletePaymentInstrumentWithHttpInfo(profileId, tokenId);
-    }
-
-    /**
-     * Delete a Payment Instrument
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String profileId, String tokenId) throws ApiException {
-        okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
-        return apiClient.execute(call);
-    }
-
-    /**
-     * Delete a Payment Instrument (asynchronously)
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public okhttp3.Call deletePaymentInstrumentAsync(String profileId, String tokenId, final ApiCallback<Void> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
-        return call;
-    }
-    /**
-     * Build call for getPaymentInstrument
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public okhttp3.Call getPaymentInstrumentCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/tms/v1/paymentinstruments/{tokenId}"
-            .replaceAll("\\{" + "tokenId" + "\\}", apiClient.escapeString(tokenId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (profileId != null)
-        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPaymentInstrumentValidateBeforeCall(String profileId, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'profileId' is set
-        if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling getPaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'tokenId' is set
-        if (tokenId == null) {
-            throw new ApiException("Missing the required parameter 'tokenId' when calling getPaymentInstrument(Async)");
-        }
-        
-        
-        okhttp3.Call call = getPaymentInstrumentCall(profileId, tokenId, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Retrieve a Payment Instrument
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @return TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments getPaymentInstrument(String profileId, String tokenId) throws ApiException {
-        ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> resp = getPaymentInstrumentWithHttpInfo(profileId, tokenId);
-        return resp.getData();
-    }
-
-    /**
-     * Retrieve a Payment Instrument
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @return ApiResponse&lt;TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> getPaymentInstrumentWithHttpInfo(String profileId, String tokenId) throws ApiException {
-        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(profileId, tokenId, null, null);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Retrieve a Payment Instrument (asynchronously)
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public okhttp3.Call getPaymentInstrumentAsync(String profileId, String tokenId, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(profileId, tokenId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for updatePaymentInstrument
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param updatePaymentInstrumentRequest Specify the customer&#39;s payment details. (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public okhttp3.Call updatePaymentInstrumentCall(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = updatePaymentInstrumentRequest;
-        
-        // create path and map variables
-        String localVarPath = "/tms/v1/paymentinstruments/{tokenId}"
-            .replaceAll("\\{" + "tokenId" + "\\}", apiClient.escapeString(tokenId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (profileId != null)
-        localVarHeaderParams.put("profile-id", apiClient.parameterToString(profileId));
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePaymentInstrumentValidateBeforeCall(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'profileId' is set
-        if (profileId == null) {
-            throw new ApiException("Missing the required parameter 'profileId' when calling updatePaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'tokenId' is set
-        if (tokenId == null) {
-            throw new ApiException("Missing the required parameter 'tokenId' when calling updatePaymentInstrument(Async)");
-        }
-        
-        // verify the required parameter 'updatePaymentInstrumentRequest' is set
-        if (updatePaymentInstrumentRequest == null) {
-            throw new ApiException("Missing the required parameter 'updatePaymentInstrumentRequest' when calling updatePaymentInstrument(Async)");
-        }
-        
-        
-        okhttp3.Call call = updatePaymentInstrumentCall(profileId, tokenId, updatePaymentInstrumentRequest, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Update a Payment Instrument
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param updatePaymentInstrumentRequest Specify the customer&#39;s payment details. (required)
-     * @return TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments updatePaymentInstrument(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest) throws ApiException {
-        ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> resp = updatePaymentInstrumentWithHttpInfo(profileId, tokenId, updatePaymentInstrumentRequest);
-        return resp.getData();
-    }
-
-    /**
-     * Update a Payment Instrument
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param updatePaymentInstrumentRequest Specify the customer&#39;s payment details. (required)
-     * @return ApiResponse&lt;TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> updatePaymentInstrumentWithHttpInfo(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest) throws ApiException {
-        okhttp3.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, tokenId, updatePaymentInstrumentRequest, null, null);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Update a Payment Instrument (asynchronously)
-     * 
-     * @param profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param tokenId The TokenId of a Payment Instrument. (required)
-     * @param updatePaymentInstrumentRequest Specify the customer&#39;s payment details. (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public okhttp3.Call updatePaymentInstrumentAsync(String profileId, String tokenId, UpdatePaymentInstrumentRequest updatePaymentInstrumentRequest, final ApiCallback<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call call = updatePaymentInstrumentValidateBeforeCall(profileId, tokenId, updatePaymentInstrumentRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments>(){}.getType();
+        okhttp3.Call call = postPaymentInstrumentValidateBeforeCall(postPaymentInstrumentRequest, profileId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

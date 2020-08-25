@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2creditsProcessingInformationPurchaseOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2creditsProcessingInformationPurchaseOptions {
   @SerializedName("isElectronicBenefitsTransfer")
   private Boolean isElectronicBenefitsTransfer = null;
@@ -37,10 +37,10 @@ public class Ptsv2creditsProcessingInformationPurchaseOptions {
   }
 
    /**
-   * Flag that indicates that this transaction is an EBT transaction.Possible values: - **true** - **false** 
+   * Flag that indicates whether this transaction is an EBT transaction. Possible values: - &#x60;true&#x60; - &#x60;false&#x60;  #### PIN debit Required field for EBT and EBT voucher transactions that use PIN debit credit or PIN debit purchase; otherwise, not used. 
    * @return isElectronicBenefitsTransfer
   **/
-  @ApiModelProperty(value = "Flag that indicates that this transaction is an EBT transaction.Possible values: - **true** - **false** ")
+  @ApiModelProperty(value = "Flag that indicates whether this transaction is an EBT transaction. Possible values: - `true` - `false`  #### PIN debit Required field for EBT and EBT voucher transactions that use PIN debit credit or PIN debit purchase; otherwise, not used. ")
   public Boolean getIsElectronicBenefitsTransfer() {
     return isElectronicBenefitsTransfer;
   }

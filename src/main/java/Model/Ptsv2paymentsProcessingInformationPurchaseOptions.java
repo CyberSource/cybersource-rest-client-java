@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformationPurchaseOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class Ptsv2paymentsProcessingInformationPurchaseOptions {
   @SerializedName("isElectronicBenefitsTransfer")
   private Boolean isElectronicBenefitsTransfer = null;
@@ -40,10 +40,10 @@ public class Ptsv2paymentsProcessingInformationPurchaseOptions {
   }
 
    /**
-   * Flag that indicates that this transaction is an EBT transaction.Possible values: - **true** - **false** 
+   * Flag that indicates whether this transaction is an EBT transaction. Possible values: - &#x60;true&#x60; - &#x60;false&#x60;  #### PIN debit Required field for EBT and EBT voucher transactions that use PIN debit credit or PIN debit purchase; otherwise, not used. 
    * @return isElectronicBenefitsTransfer
   **/
-  @ApiModelProperty(value = "Flag that indicates that this transaction is an EBT transaction.Possible values: - **true** - **false** ")
+  @ApiModelProperty(value = "Flag that indicates whether this transaction is an EBT transaction. Possible values: - `true` - `false`  #### PIN debit Required field for EBT and EBT voucher transactions that use PIN debit credit or PIN debit purchase; otherwise, not used. ")
   public Boolean getIsElectronicBenefitsTransfer() {
     return isElectronicBenefitsTransfer;
   }
@@ -58,10 +58,10 @@ public class Ptsv2paymentsProcessingInformationPurchaseOptions {
   }
 
    /**
-   * This field is used in PIN Debit EBT transaction as a flag to identify EBT vouchers.Possible values: - &#x60;EBT_VOUCHER&#x60;: Indicates EBT voucher 
+   * Flag that indicates an EBT voucher transaction. Possible value: - &#x60;EBT_VOUCHER&#x60;: Indicates the PIN debit transaction is an EBT voucher.  #### PIN debit Required field for EBT voucher transactions that use PIN debit purchase; otherwise, not used. 
    * @return type
   **/
-  @ApiModelProperty(value = "This field is used in PIN Debit EBT transaction as a flag to identify EBT vouchers.Possible values: - `EBT_VOUCHER`: Indicates EBT voucher ")
+  @ApiModelProperty(value = "Flag that indicates an EBT voucher transaction. Possible value: - `EBT_VOUCHER`: Indicates the PIN debit transaction is an EBT voucher.  #### PIN debit Required field for EBT voucher transactions that use PIN debit purchase; otherwise, not used. ")
   public String getType() {
     return type;
   }

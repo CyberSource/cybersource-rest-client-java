@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-02T11:10:54.851+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
 public class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures {
   @SerializedName("balanceAmount")
   private String balanceAmount = null;
@@ -43,10 +43,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Remaining balance on the account. 
+   * Remaining balance on the account.  Returned by authorization service.  #### PIN debit Remaining balance on the prepaid card.  Returned by PIN debit purchase. 
    * @return balanceAmount
   **/
-  @ApiModelProperty(value = "Remaining balance on the account. ")
+  @ApiModelProperty(value = "Remaining balance on the account.  Returned by authorization service.  #### PIN debit Remaining balance on the prepaid card.  Returned by PIN debit purchase. ")
   public String getBalanceAmount() {
     return balanceAmount;
   }
@@ -61,10 +61,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Remaining balance on the account. 
+   * Remaining balance on the account.  Returned by authorization service.  #### PIN debit Remaining balance on the prepaid card.  Returned by PIN debit purchase. 
    * @return previousBalanceAmount
   **/
-  @ApiModelProperty(value = "Remaining balance on the account. ")
+  @ApiModelProperty(value = "Remaining balance on the account.  Returned by authorization service.  #### PIN debit Remaining balance on the prepaid card.  Returned by PIN debit purchase. ")
   public String getPreviousBalanceAmount() {
     return previousBalanceAmount;
   }
@@ -79,10 +79,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures {
   }
 
    /**
-   * Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  For details, see &#x60;auth_account_balance_currency&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  Returned by authorization service.  #### PIN debit Currency of the remaining balance on the prepaid card.  Returned by PIN debit purchase. 
    * @return currency
   **/
-  @ApiModelProperty(value = "Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  For details, see `auth_account_balance_currency` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  Returned by authorization service.  #### PIN debit Currency of the remaining balance on the prepaid card.  Returned by PIN debit purchase. ")
   public String getCurrency() {
     return currency;
   }
