@@ -173,6 +173,7 @@ public class {{classname}} {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public {{#returnType}}{{{returnType}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{operationId}}({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         {{#returnType}}ApiResponse<{{{returnType}}}> {{localVariablePrefix}}resp = {{/returnType}}{{operationId}}WithHttpInfo({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});{{#returnType}}
         return {{localVariablePrefix}}resp.getData();{{/returnType}}
     }
@@ -200,6 +201,7 @@ public class {{classname}} {
      */
     public okhttp3.Call {{operationId}}Async({{#allParams}}{{{dataType}}} {{paramName}}, {{/allParams}}final ApiCallback<{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Void{{/returnType}}> {{localVariablePrefix}}callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

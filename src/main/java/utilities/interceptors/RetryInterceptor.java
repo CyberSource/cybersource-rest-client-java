@@ -45,7 +45,7 @@ public class RetryInterceptor implements Interceptor {
 			} 
 		}	
 		if (response != null) {
-			RequestResponseTelemetryHandler.collectResponseTelemetry(requestMetrics, response, retryNo);
+			RequestResponseTelemetryHandler.collectResponseTelemetry(requestMetrics, response, retryNo - 1);
 		}
 		
 		return response;

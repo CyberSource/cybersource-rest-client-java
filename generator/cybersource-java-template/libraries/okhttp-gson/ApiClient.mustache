@@ -155,7 +155,8 @@ public class ApiClient {
 	private String versionInfo;
 	private static ConnectionPool connectionPool = new ConnectionPool(0, 1, TimeUnit.MILLISECONDS);
 	private HttpLoggingInterceptor loggingInterceptor;
-	private RequestTransactionMetrics apiRequestMetrics = new RequestTransactionMetrics();
+	public RequestTransactionMetrics apiRequestMetrics = new RequestTransactionMetrics();
+	private long computationStartTime;
 	
 	public static OkHttpClient initializeFinalVariables() {		
 		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
@@ -174,13 +175,13 @@ public class ApiClient {
 	 * Constructor for ApiClient
 	 */
 	public ApiClient() {
-		
+
 		versionInfo = getClientID();
 
 		httpClient = classHttpClient.newBuilder()
 				.retryOnConnectionFailure(true)
 				.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-				.eventListener(new PrintingEventListener(new Random().nextLong(), System.nanoTime(), this.apiRequestMetrics))
+				.eventListener(new PrintingEventListener(new Random().nextLong(), System.nanoTime()))
 				.build();
 
 		verifyingSsl = true;
@@ -268,15 +269,15 @@ public class ApiClient {
 					.proxyAuthenticator(proxyAuthenticator)
 					.retryOnConnectionFailure(true)
 					.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-					.eventListener(new PrintingEventListener(new Random().nextLong(), System.nanoTime(), this.apiRequestMetrics))
+					.eventListener(new PrintingEventListener(new Random().nextLong(), System.nanoTime()))
 					.build();
 
 			this.setHttpClient(httpClient);
 		}
 
 		this.merchantConfig = merchantConfig;
-		RetryInterceptor.retryDelay = merchantConfig.getRetryDelay();
-		RetryInterceptor.retryEnabled = merchantConfig.isRetryEnabled();
+//		RetryInterceptor.retryDelay = merchantConfig.getRetryDelay();
+//		RetryInterceptor.retryEnabled = merchantConfig.isRetryEnabled();
 	}
 
 	/**
@@ -783,6 +784,24 @@ public class ApiClient {
 	}
 
 	/**
+	 * @return the computationStartTime
+	 */
+	public long getComputationStartTime() {
+		return computationStartTime;
+	}
+
+	/**
+	 * @param computationStartTime the computationStartTime to set
+	 */
+	public void setComputationStartTime(long computationStartTime) {
+		this.computationStartTime = computationStartTime;
+	}
+
+	public void resetInstance() {
+		this.defaultHeaderMap.clear();
+	}
+
+	/**
 	 * Format the given parameter object into string.
 	 *
 	 * @param param
@@ -1150,6 +1169,7 @@ public class ApiClient {
 	 */
 	public <T> ApiResponse<T> execute(Call call, Type returnType) throws ApiException {
 		try {
+			this.apiRequestMetrics.setComputeTime(System.nanoTime() - this.getComputationStartTime());
 			Response response = call.execute();
 			responseCode = String.valueOf(response.code());
 			status = response.message();

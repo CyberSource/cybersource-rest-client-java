@@ -1,8 +1,6 @@
 package utilities.listeners;
 
 import okhttp3.*;
-import utilities.telemetry.RequestTransactionMetrics;
-
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -26,23 +24,14 @@ public class PrintingEventListener  extends EventListener {
     final long callStartNanos;
 	private static DecimalFormat df = new DecimalFormat("#.###");
 
-	private RequestTransactionMetrics requestMetrics;
-
     public PrintingEventListener(long callId, long callStartNanos) {
         this.callId = callId;
         this.callStartNanos = callStartNanos;
-        this.requestMetrics = null;
-    }
-
-    public PrintingEventListener(long callId, long callStartNanos, RequestTransactionMetrics requestMetrics) {
-        this.callId = callId;
-        this.callStartNanos = callStartNanos;
-        this.requestMetrics = requestMetrics;
     }
 
     private void printEvent(String name) {
         long elapsedNanos = System.nanoTime() - callStartNanos;
-        System.out.printf("%04d %.3f %.3f %s%n", callId, elapsedNanos / 1000000000d, callStartNanos / 1000000000d, name);
+        System.out.printf("%04d %.3f %s%n", callId, elapsedNanos / 1000000000d, name);
 
     }
 
@@ -101,8 +90,6 @@ public class PrintingEventListener  extends EventListener {
 
     @Override public void requestBodyEnd(Call call, long byteCount) {
 //        printEvent("requestBodyEnd");
-        long elapsedNanos = System.nanoTime() - callStartNanos;
-        this.requestMetrics = this.requestMetrics.addHeaderValues(df.format(elapsedNanos / 1000000000d));
     }
 
     @Override public void requestFailed(Call call, IOException ioe) {
