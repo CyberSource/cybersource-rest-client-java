@@ -144,6 +144,7 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> resp = getResourceInfoByReportDefinitionWithHttpInfo(reportDefinitionName, subscriptionType, reportMimeType, organizationId);
         return resp.getData();
     }
@@ -177,6 +178,7 @@ public class ReportDefinitionsApi {
      */
     public okhttp3.Call getResourceInfoByReportDefinitionAsync(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ApiCallback<ReportingV3ReportDefinitionsNameGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -276,6 +278,7 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportDefinitionsGet200Response getResourceV2Info(String subscriptionType, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportDefinitionsGet200Response> resp = getResourceV2InfoWithHttpInfo(subscriptionType, organizationId);
         return resp.getData();
     }
@@ -305,6 +308,7 @@ public class ReportDefinitionsApi {
      */
     public okhttp3.Call getResourceV2InfoAsync(String subscriptionType, String organizationId, final ApiCallback<ReportingV3ReportDefinitionsGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

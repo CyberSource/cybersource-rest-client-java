@@ -82,7 +82,7 @@ public class AsymmetricKeyManagementApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
+            "application/hal+json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -135,6 +135,7 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2011 createP12Keys(CreateP12KeysRequest createP12KeysRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2011> resp = createP12KeysWithHttpInfo(createP12KeysRequest);
         return resp.getData();
     }
@@ -162,6 +163,7 @@ public class AsymmetricKeyManagementApi {
      */
     public okhttp3.Call createP12KeysAsync(CreateP12KeysRequest createP12KeysRequest, final ApiCallback<InlineResponse2011> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -207,7 +209,7 @@ public class AsymmetricKeyManagementApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
+            "application/hal+json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -260,6 +262,7 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2003 deleteBulkP12Keys(DeleteBulkP12KeysRequest deleteBulkP12KeysRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2003> resp = deleteBulkP12KeysWithHttpInfo(deleteBulkP12KeysRequest);
         return resp.getData();
     }
@@ -287,6 +290,7 @@ public class AsymmetricKeyManagementApi {
      */
     public okhttp3.Call deleteBulkP12KeysAsync(DeleteBulkP12KeysRequest deleteBulkP12KeysRequest, final ApiCallback<InlineResponse2003> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -333,7 +337,7 @@ public class AsymmetricKeyManagementApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
+            "application/hal+json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -386,6 +390,7 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2002 getP12KeyDetails(String keyId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2002> resp = getP12KeyDetailsWithHttpInfo(keyId);
         return resp.getData();
     }
@@ -413,6 +418,7 @@ public class AsymmetricKeyManagementApi {
      */
     public okhttp3.Call getP12KeyDetailsAsync(String keyId, final ApiCallback<InlineResponse2002> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

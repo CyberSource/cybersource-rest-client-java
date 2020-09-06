@@ -140,6 +140,7 @@ public class CaptureApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsCapturesPost201Response capturePayment(CapturePaymentRequest capturePaymentRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsCapturesPost201Response> resp = capturePaymentWithHttpInfo(capturePaymentRequest, id);
         return resp.getData();
     }
@@ -169,6 +170,7 @@ public class CaptureApi {
      */
     public okhttp3.Call capturePaymentAsync(CapturePaymentRequest capturePaymentRequest, String id, final ApiCallback<PtsV2PaymentsCapturesPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

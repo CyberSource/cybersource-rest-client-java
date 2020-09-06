@@ -137,6 +137,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response createInvoice(CreateInvoiceRequest createInvoiceRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = createInvoiceWithHttpInfo(createInvoiceRequest);
         return resp.getData();
     }
@@ -164,6 +165,7 @@ public class InvoicesApi {
      */
     public okhttp3.Call createInvoiceAsync(CreateInvoiceRequest createInvoiceRequest, final ApiCallback<InvoicingV2InvoicesPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -277,6 +279,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesAllGet200Response getAllInvoices(Integer offset, Integer limit, String status) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesAllGet200Response> resp = getAllInvoicesWithHttpInfo(offset, limit, status);
         return resp.getData();
     }
@@ -308,6 +311,7 @@ public class InvoicesApi {
      */
     public okhttp3.Call getAllInvoicesAsync(Integer offset, Integer limit, String status, final ApiCallback<InvoicingV2InvoicesAllGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -407,6 +411,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesGet200Response getInvoice(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesGet200Response> resp = getInvoiceWithHttpInfo(id);
         return resp.getData();
     }
@@ -434,6 +439,7 @@ public class InvoicesApi {
      */
     public okhttp3.Call getInvoiceAsync(String id, final ApiCallback<InvoicingV2InvoicesGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -533,6 +539,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response performCancelAction(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = performCancelActionWithHttpInfo(id);
         return resp.getData();
     }
@@ -560,6 +567,7 @@ public class InvoicesApi {
      */
     public okhttp3.Call performCancelActionAsync(String id, final ApiCallback<InvoicingV2InvoicesPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -659,6 +667,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response performSendAction(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = performSendActionWithHttpInfo(id);
         return resp.getData();
     }
@@ -686,6 +695,7 @@ public class InvoicesApi {
      */
     public okhttp3.Call performSendActionAsync(String id, final ApiCallback<InvoicingV2InvoicesPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -792,6 +802,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response updateInvoice(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = updateInvoiceWithHttpInfo(id, updateInvoiceRequest);
         return resp.getData();
     }
@@ -821,6 +832,7 @@ public class InvoicesApi {
      */
     public okhttp3.Call updateInvoiceAsync(String id, UpdateInvoiceRequest updateInvoiceRequest, final ApiCallback<InvoicingV2InvoicesPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

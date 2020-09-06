@@ -28,7 +28,7 @@ import org.joda.time.DateTime;
  * Settlement Status Section Values.
  */
 @ApiModel(description = "Settlement Status Section Values.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-06T20:16:20.516+05:30")
 public class ReportingV3PurchaseRefundDetailsGet200ResponseSettlementStatuses {
   @SerializedName("requestId")
   private String requestId = null;

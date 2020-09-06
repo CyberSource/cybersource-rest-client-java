@@ -142,6 +142,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void getTransactionBatchDetails(String id, LocalDate uploadDate, String status) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         getTransactionBatchDetailsWithHttpInfo(id, uploadDate, status);
     }
 
@@ -171,6 +172,7 @@ public class TransactionBatchesApi {
      */
     public okhttp3.Call getTransactionBatchDetailsAsync(String id, LocalDate uploadDate, String status, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -269,6 +271,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV1TransactionBatchesIdGet200Response getTransactionBatchId(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV1TransactionBatchesIdGet200Response> resp = getTransactionBatchIdWithHttpInfo(id);
         return resp.getData();
     }
@@ -296,6 +299,7 @@ public class TransactionBatchesApi {
      */
     public okhttp3.Call getTransactionBatchIdAsync(String id, final ApiCallback<PtsV1TransactionBatchesIdGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -405,6 +409,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV1TransactionBatchesGet200Response getTransactionBatches(DateTime startTime, DateTime endTime) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV1TransactionBatchesGet200Response> resp = getTransactionBatchesWithHttpInfo(startTime, endTime);
         return resp.getData();
     }
@@ -434,6 +439,7 @@ public class TransactionBatchesApi {
      */
     public okhttp3.Call getTransactionBatchesAsync(DateTime startTime, DateTime endTime, final ApiCallback<PtsV1TransactionBatchesGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

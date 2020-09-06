@@ -52,7 +52,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 
 <a name="deleteBulkP12Keys"></a>
 # **deleteBulkP12Keys**
@@ -97,7 +97,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 
 <a name="getP12KeyDetails"></a>
 # **getP12KeyDetails**
@@ -142,5 +142,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 

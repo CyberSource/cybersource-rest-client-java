@@ -135,6 +135,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsPost201Response createPayment(CreatePaymentRequest createPaymentRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsPost201Response> resp = createPaymentWithHttpInfo(createPaymentRequest);
         return resp.getData();
     }
@@ -162,6 +163,7 @@ public class PaymentsApi {
      */
     public okhttp3.Call createPaymentAsync(CreatePaymentRequest createPaymentRequest, final ApiCallback<PtsV2PaymentsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -268,6 +270,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2IncrementalAuthorizationPatch201Response incrementAuth(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2IncrementalAuthorizationPatch201Response> resp = incrementAuthWithHttpInfo(id, incrementAuthRequest);
         return resp.getData();
     }
@@ -297,6 +300,7 @@ public class PaymentsApi {
      */
     public okhttp3.Call incrementAuthAsync(String id, IncrementAuthRequest incrementAuthRequest, final ApiCallback<PtsV2IncrementalAuthorizationPatch201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

@@ -136,6 +136,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteCustomer(String customerTokenId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerWithHttpInfo(customerTokenId, profileId);
     }
 
@@ -163,6 +164,7 @@ public class CustomerApi {
      */
     public okhttp3.Call deleteCustomerAsync(String customerTokenId, String profileId, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -265,6 +267,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TmsV2CustomersResponse getCustomer(String customerTokenId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = getCustomerWithHttpInfo(customerTokenId, profileId);
         return resp.getData();
     }
@@ -294,6 +297,7 @@ public class CustomerApi {
      */
     public okhttp3.Call getCustomerAsync(String customerTokenId, String profileId, final ApiCallback<TmsV2CustomersResponse> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -408,6 +412,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TmsV2CustomersResponse patchCustomer(String customerTokenId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = patchCustomerWithHttpInfo(customerTokenId, patchCustomerRequest, profileId, ifMatch);
         return resp.getData();
     }
@@ -441,6 +446,7 @@ public class CustomerApi {
      */
     public okhttp3.Call patchCustomerAsync(String customerTokenId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ApiCallback<TmsV2CustomersResponse> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -543,6 +549,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TmsV2CustomersResponse postCustomer(PostCustomerRequest postCustomerRequest, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = postCustomerWithHttpInfo(postCustomerRequest, profileId);
         return resp.getData();
     }
@@ -572,6 +579,7 @@ public class CustomerApi {
      */
     public okhttp3.Call postCustomerAsync(PostCustomerRequest postCustomerRequest, String profileId, final ApiCallback<TmsV2CustomersResponse> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

@@ -136,6 +136,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void createReport(CreateAdhocReportRequest createAdhocReportRequest, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         createReportWithHttpInfo(createAdhocReportRequest, organizationId);
     }
 
@@ -163,6 +164,7 @@ public class ReportsApi {
      */
     public okhttp3.Call createReportAsync(CreateAdhocReportRequest createAdhocReportRequest, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -265,6 +267,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportsIdGet200Response getReportByReportId(String reportId, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportsIdGet200Response> resp = getReportByReportIdWithHttpInfo(reportId, organizationId);
         return resp.getData();
     }
@@ -294,6 +297,7 @@ public class ReportsApi {
      */
     public okhttp3.Call getReportByReportIdAsync(String reportId, String organizationId, final ApiCallback<ReportingV3ReportsIdGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -436,6 +440,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportsGet200Response searchReports(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportsGet200Response> resp = searchReportsWithHttpInfo(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus);
         return resp.getData();
     }
@@ -479,6 +484,7 @@ public class ReportsApi {
      */
     public okhttp3.Call searchReportsAsync(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus, final ApiCallback<ReportingV3ReportsGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

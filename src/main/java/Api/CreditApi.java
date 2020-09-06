@@ -132,6 +132,7 @@ public class CreditApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2CreditsPost201Response createCredit(CreateCreditRequest createCreditRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2CreditsPost201Response> resp = createCreditWithHttpInfo(createCreditRequest);
         return resp.getData();
     }
@@ -159,6 +160,7 @@ public class CreditApi {
      */
     public okhttp3.Call createCreditAsync(CreateCreditRequest createCreditRequest, final ApiCallback<PtsV2CreditsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

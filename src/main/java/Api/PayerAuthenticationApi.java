@@ -137,6 +137,7 @@ public class PayerAuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1AuthenticationsPost201Response checkPayerAuthEnrollment(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationsPost201Response> resp = checkPayerAuthEnrollmentWithHttpInfo(checkPayerAuthEnrollmentRequest);
         return resp.getData();
     }
@@ -164,6 +165,7 @@ public class PayerAuthenticationApi {
      */
     public okhttp3.Call checkPayerAuthEnrollmentAsync(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest, final ApiCallback<RiskV1AuthenticationsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -262,6 +264,7 @@ public class PayerAuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1AuthenticationSetupsPost201Response payerAuthSetup(PayerAuthSetupRequest payerAuthSetupRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationSetupsPost201Response> resp = payerAuthSetupWithHttpInfo(payerAuthSetupRequest);
         return resp.getData();
     }
@@ -289,6 +292,7 @@ public class PayerAuthenticationApi {
      */
     public okhttp3.Call payerAuthSetupAsync(PayerAuthSetupRequest payerAuthSetupRequest, final ApiCallback<RiskV1AuthenticationSetupsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -387,6 +391,7 @@ public class PayerAuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1AuthenticationResultsPost201Response validateAuthenticationResults(ValidateRequest validateRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationResultsPost201Response> resp = validateAuthenticationResultsWithHttpInfo(validateRequest);
         return resp.getData();
     }
@@ -414,6 +419,7 @@ public class PayerAuthenticationApi {
      */
     public okhttp3.Call validateAuthenticationResultsAsync(ValidateRequest validateRequest, final ApiCallback<RiskV1AuthenticationResultsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

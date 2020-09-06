@@ -135,6 +135,7 @@ public class TaxesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public VasV2PaymentsPost201Response calculateTax(TaxRequest taxRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<VasV2PaymentsPost201Response> resp = calculateTaxWithHttpInfo(taxRequest);
         return resp.getData();
     }
@@ -162,6 +163,7 @@ public class TaxesApi {
      */
     public okhttp3.Call calculateTaxAsync(TaxRequest taxRequest, final ApiCallback<VasV2PaymentsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -268,6 +270,7 @@ public class TaxesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public VasV2TaxVoid200Response voidTax(VoidTaxRequest voidTaxRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<VasV2TaxVoid200Response> resp = voidTaxWithHttpInfo(voidTaxRequest, id);
         return resp.getData();
     }
@@ -297,6 +300,7 @@ public class TaxesApi {
      */
     public okhttp3.Call voidTaxAsync(VoidTaxRequest voidTaxRequest, String id, final ApiCallback<VasV2TaxVoid200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

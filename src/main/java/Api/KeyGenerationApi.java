@@ -140,6 +140,7 @@ public class KeyGenerationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public FlexV1KeysPost200Response generatePublicKey(String format, GeneratePublicKeyRequest generatePublicKeyRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<FlexV1KeysPost200Response> resp = generatePublicKeyWithHttpInfo(format, generatePublicKeyRequest);
         return resp.getData();
     }
@@ -169,6 +170,7 @@ public class KeyGenerationApi {
      */
     public okhttp3.Call generatePublicKeyAsync(String format, GeneratePublicKeyRequest generatePublicKeyRequest, final ApiCallback<FlexV1KeysPost200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

@@ -145,6 +145,7 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteCustomerShippingAddress(String customerTokenId, String shippingAddressTokenId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, profileId);
     }
 
@@ -174,6 +175,7 @@ public class CustomerShippingAddressApi {
      */
     public okhttp3.Call deleteCustomerShippingAddressAsync(String customerTokenId, String shippingAddressTokenId, String profileId, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -284,6 +286,7 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultShippingAddress getCustomerShippingAddress(String customerTokenId, String shippingAddressTokenId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = getCustomerShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, profileId);
         return resp.getData();
     }
@@ -315,6 +318,7 @@ public class CustomerShippingAddressApi {
      */
     public okhttp3.Call getCustomerShippingAddressAsync(String customerTokenId, String shippingAddressTokenId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -426,6 +430,7 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ShippingAddressListForCustomer getCustomerShippingAddressesList(String customerTokenId, String profileId, Long offset, Long limit) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ShippingAddressListForCustomer> resp = getCustomerShippingAddressesListWithHttpInfo(customerTokenId, profileId, offset, limit);
         return resp.getData();
     }
@@ -459,6 +464,7 @@ public class CustomerShippingAddressApi {
      */
     public okhttp3.Call getCustomerShippingAddressesListAsync(String customerTokenId, String profileId, Long offset, Long limit, final ApiCallback<ShippingAddressListForCustomer> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -581,6 +587,7 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultShippingAddress patchCustomersShippingAddress(String customerTokenId, String shippingAddressTokenId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = patchCustomersShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, patchCustomerShippingAddressRequest, profileId, ifMatch);
         return resp.getData();
     }
@@ -616,6 +623,7 @@ public class CustomerShippingAddressApi {
      */
     public okhttp3.Call patchCustomersShippingAddressAsync(String customerTokenId, String shippingAddressTokenId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -726,6 +734,7 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultShippingAddress postCustomerShippingAddress(String customerTokenId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = postCustomerShippingAddressWithHttpInfo(customerTokenId, postCustomerShippingAddressRequest, profileId);
         return resp.getData();
     }
@@ -757,6 +766,7 @@ public class CustomerShippingAddressApi {
      */
     public okhttp3.Call postCustomerShippingAddressAsync(String customerTokenId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

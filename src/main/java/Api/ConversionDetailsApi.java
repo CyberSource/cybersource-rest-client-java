@@ -146,6 +146,7 @@ public class ConversionDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ConversionDetailsGet200Response getConversionDetail(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ConversionDetailsGet200Response> resp = getConversionDetailWithHttpInfo(startTime, endTime, organizationId);
         return resp.getData();
     }
@@ -177,6 +178,7 @@ public class ConversionDetailsApi {
      */
     public okhttp3.Call getConversionDetailAsync(DateTime startTime, DateTime endTime, String organizationId, final ApiCallback<ReportingV3ConversionDetailsGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

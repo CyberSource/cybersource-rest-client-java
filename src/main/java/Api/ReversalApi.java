@@ -141,6 +141,7 @@ public class ReversalApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsReversalsPost201Response authReversal(String id, AuthReversalRequest authReversalRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = authReversalWithHttpInfo(id, authReversalRequest);
         return resp.getData();
     }
@@ -170,6 +171,7 @@ public class ReversalApi {
      */
     public okhttp3.Call authReversalAsync(String id, AuthReversalRequest authReversalRequest, final ApiCallback<PtsV2PaymentsReversalsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -268,6 +270,7 @@ public class ReversalApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsReversalsPost201Response mitReversal(MitReversalRequest mitReversalRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = mitReversalWithHttpInfo(mitReversalRequest);
         return resp.getData();
     }
@@ -295,6 +298,7 @@ public class ReversalApi {
      */
     public okhttp3.Call mitReversalAsync(MitReversalRequest mitReversalRequest, final ApiCallback<PtsV2PaymentsReversalsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

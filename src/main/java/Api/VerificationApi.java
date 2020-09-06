@@ -134,6 +134,7 @@ public class VerificationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1ExportComplianceInquiriesPost201Response validateExportCompliance(ValidateExportComplianceRequest validateExportComplianceRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1ExportComplianceInquiriesPost201Response> resp = validateExportComplianceWithHttpInfo(validateExportComplianceRequest);
         return resp.getData();
     }
@@ -161,6 +162,7 @@ public class VerificationApi {
      */
     public okhttp3.Call validateExportComplianceAsync(ValidateExportComplianceRequest validateExportComplianceRequest, final ApiCallback<RiskV1ExportComplianceInquiriesPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -259,6 +261,7 @@ public class VerificationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1AddressVerificationsPost201Response verifyCustomerAddress(VerifyCustomerAddressRequest verifyCustomerAddressRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AddressVerificationsPost201Response> resp = verifyCustomerAddressWithHttpInfo(verifyCustomerAddressRequest);
         return resp.getData();
     }
@@ -286,6 +289,7 @@ public class VerificationApi {
      */
     public okhttp3.Call verifyCustomerAddressAsync(VerifyCustomerAddressRequest verifyCustomerAddressRequest, final ApiCallback<RiskV1AddressVerificationsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

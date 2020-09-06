@@ -28,7 +28,7 @@ import org.joda.time.LocalDate;
  * Contains all of the invoice-specific fields, such as the invoice number and due date.
  */
 @ApiModel(description = "Contains all of the invoice-specific fields, such as the invoice number and due date.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-06T20:16:20.516+05:30")
 public class Invoicingv2invoicesInvoiceInformation {
   @SerializedName("invoiceNumber")
   private String invoiceNumber = null;

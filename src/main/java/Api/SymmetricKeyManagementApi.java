@@ -82,7 +82,7 @@ public class SymmetricKeyManagementApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
+            "application/hal+json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -135,6 +135,7 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse201 createV2SharedSecretKeys(CreateSharedSecretKeysRequest createSharedSecretKeysRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse201> resp = createV2SharedSecretKeysWithHttpInfo(createSharedSecretKeysRequest);
         return resp.getData();
     }
@@ -162,6 +163,7 @@ public class SymmetricKeyManagementApi {
      */
     public okhttp3.Call createV2SharedSecretKeysAsync(CreateSharedSecretKeysRequest createSharedSecretKeysRequest, final ApiCallback<InlineResponse201> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -207,7 +209,7 @@ public class SymmetricKeyManagementApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
+            "application/hal+json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -260,6 +262,7 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2001 deleteBulkSymmetricKeys(DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2001> resp = deleteBulkSymmetricKeysWithHttpInfo(deleteBulkSymmetricKeysRequest);
         return resp.getData();
     }
@@ -287,6 +290,7 @@ public class SymmetricKeyManagementApi {
      */
     public okhttp3.Call deleteBulkSymmetricKeysAsync(DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest, final ApiCallback<InlineResponse2001> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -333,7 +337,7 @@ public class SymmetricKeyManagementApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
+            "application/hal+json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -386,6 +390,7 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse200 getKeyDetails(String keyId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse200> resp = getKeyDetailsWithHttpInfo(keyId);
         return resp.getData();
     }
@@ -413,6 +418,7 @@ public class SymmetricKeyManagementApi {
      */
     public okhttp3.Call getKeyDetailsAsync(String keyId, final ApiCallback<InlineResponse200> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

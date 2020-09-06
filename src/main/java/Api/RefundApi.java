@@ -141,6 +141,7 @@ public class RefundApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsRefundPost201Response refundCapture(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundCaptureWithHttpInfo(refundCaptureRequest, id);
         return resp.getData();
     }
@@ -170,6 +171,7 @@ public class RefundApi {
      */
     public okhttp3.Call refundCaptureAsync(RefundCaptureRequest refundCaptureRequest, String id, final ApiCallback<PtsV2PaymentsRefundPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -276,6 +278,7 @@ public class RefundApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsRefundPost201Response refundPayment(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundPaymentWithHttpInfo(refundPaymentRequest, id);
         return resp.getData();
     }
@@ -305,6 +308,7 @@ public class RefundApi {
      */
     public okhttp3.Call refundPaymentAsync(RefundPaymentRequest refundPaymentRequest, String id, final ApiCallback<PtsV2PaymentsRefundPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

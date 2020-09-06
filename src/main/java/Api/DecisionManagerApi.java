@@ -144,6 +144,7 @@ public class DecisionManagerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1UpdatePost201Response addNegative(String type, AddNegativeListRequest addNegativeListRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1UpdatePost201Response> resp = addNegativeWithHttpInfo(type, addNegativeListRequest);
         return resp.getData();
     }
@@ -173,6 +174,7 @@ public class DecisionManagerApi {
      */
     public okhttp3.Call addNegativeAsync(String type, AddNegativeListRequest addNegativeListRequest, final ApiCallback<RiskV1UpdatePost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -271,6 +273,7 @@ public class DecisionManagerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1DecisionsPost201Response createBundledDecisionManagerCase(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1DecisionsPost201Response> resp = createBundledDecisionManagerCaseWithHttpInfo(createBundledDecisionManagerCaseRequest);
         return resp.getData();
     }
@@ -298,6 +301,7 @@ public class DecisionManagerApi {
      */
     public okhttp3.Call createBundledDecisionManagerCaseAsync(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest, final ApiCallback<RiskV1DecisionsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -404,6 +408,7 @@ public class DecisionManagerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1UpdatePost201Response fraudUpdate(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1UpdatePost201Response> resp = fraudUpdateWithHttpInfo(id, fraudMarkingActionRequest);
         return resp.getData();
     }
@@ -433,6 +438,7 @@ public class DecisionManagerApi {
      */
     public okhttp3.Call fraudUpdateAsync(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ApiCallback<RiskV1UpdatePost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
