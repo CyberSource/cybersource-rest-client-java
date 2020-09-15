@@ -276,8 +276,8 @@ public class ApiClient {
 		}
 
 		this.merchantConfig = merchantConfig;
-//		RetryInterceptor.retryDelay = merchantConfig.getRetryDelay();
-//		RetryInterceptor.retryEnabled = merchantConfig.isRetryEnabled();
+		RetryInterceptor.retryDelay = merchantConfig.getRetryDelay();
+		RetryInterceptor.retryEnabled = merchantConfig.isRetryEnabled();
 	}
 
 	/**
@@ -1169,7 +1169,7 @@ public class ApiClient {
 	 */
 	public <T> ApiResponse<T> execute(Call call, Type returnType) throws ApiException {
 		try {
-			this.apiRequestMetrics.setComputeTime(System.nanoTime() - this.getComputationStartTime());
+			this.apiRequestMetrics.setComputeTime((System.nanoTime() - this.getComputationStartTime())/1000000);
 			Response response = call.execute();
 			responseCode = String.valueOf(response.code());
 			status = response.message();
