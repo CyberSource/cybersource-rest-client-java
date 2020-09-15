@@ -30,10 +30,10 @@ import java.io.InputStream;
 
 import Model.CreateP12KeysRequest;
 import Model.DeleteBulkP12KeysRequest;
-import Model.InlineResponse2002;
-import Model.InlineResponse2003;
-import Model.InlineResponse2011;
 import Model.InlineResponse4002;
+import Model.KmsV2KeysAsymDeletesPost200Response;
+import Model.KmsV2KeysAsymGet200Response;
+import Model.KmsV2KeysAsymPost201Response;
 import Model.PtsV2PaymentsPost502Response;
 
 import java.lang.reflect.Type;
@@ -131,12 +131,12 @@ public class AsymmetricKeyManagementApi {
      * Create one or more PKCS#12 keys
      * &#39;Create one or more PKCS#12 keys&#39; 
      * @param createP12KeysRequest  (required)
-     * @return InlineResponse2011
+     * @return KmsV2KeysAsymPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2011 createP12Keys(CreateP12KeysRequest createP12KeysRequest) throws ApiException {
+    public KmsV2KeysAsymPost201Response createP12Keys(CreateP12KeysRequest createP12KeysRequest) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2011> resp = createP12KeysWithHttpInfo(createP12KeysRequest);
+        ApiResponse<KmsV2KeysAsymPost201Response> resp = createP12KeysWithHttpInfo(createP12KeysRequest);
         return resp.getData();
     }
 
@@ -144,12 +144,12 @@ public class AsymmetricKeyManagementApi {
      * Create one or more PKCS#12 keys
      * &#39;Create one or more PKCS#12 keys&#39; 
      * @param createP12KeysRequest  (required)
-     * @return ApiResponse&lt;InlineResponse2011&gt;
+     * @return ApiResponse&lt;KmsV2KeysAsymPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2011> createP12KeysWithHttpInfo(CreateP12KeysRequest createP12KeysRequest) throws ApiException {
+    public ApiResponse<KmsV2KeysAsymPost201Response> createP12KeysWithHttpInfo(CreateP12KeysRequest createP12KeysRequest) throws ApiException {
         okhttp3.Call call = createP12KeysValidateBeforeCall(createP12KeysRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysAsymPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -161,7 +161,7 @@ public class AsymmetricKeyManagementApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createP12KeysAsync(CreateP12KeysRequest createP12KeysRequest, final ApiCallback<InlineResponse2011> callback) throws ApiException {
+    public okhttp3.Call createP12KeysAsync(CreateP12KeysRequest createP12KeysRequest, final ApiCallback<KmsV2KeysAsymPost201Response> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -184,7 +184,7 @@ public class AsymmetricKeyManagementApi {
         }
 
         okhttp3.Call call = createP12KeysValidateBeforeCall(createP12KeysRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysAsymPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -258,12 +258,12 @@ public class AsymmetricKeyManagementApi {
      * Delete one or more PKCS#12 keys
      * &#39;Delete one or more PKCS#12 keys&#39; 
      * @param deleteBulkP12KeysRequest  (required)
-     * @return InlineResponse2003
+     * @return KmsV2KeysAsymDeletesPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2003 deleteBulkP12Keys(DeleteBulkP12KeysRequest deleteBulkP12KeysRequest) throws ApiException {
+    public KmsV2KeysAsymDeletesPost200Response deleteBulkP12Keys(DeleteBulkP12KeysRequest deleteBulkP12KeysRequest) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2003> resp = deleteBulkP12KeysWithHttpInfo(deleteBulkP12KeysRequest);
+        ApiResponse<KmsV2KeysAsymDeletesPost200Response> resp = deleteBulkP12KeysWithHttpInfo(deleteBulkP12KeysRequest);
         return resp.getData();
     }
 
@@ -271,12 +271,12 @@ public class AsymmetricKeyManagementApi {
      * Delete one or more PKCS#12 keys
      * &#39;Delete one or more PKCS#12 keys&#39; 
      * @param deleteBulkP12KeysRequest  (required)
-     * @return ApiResponse&lt;InlineResponse2003&gt;
+     * @return ApiResponse&lt;KmsV2KeysAsymDeletesPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2003> deleteBulkP12KeysWithHttpInfo(DeleteBulkP12KeysRequest deleteBulkP12KeysRequest) throws ApiException {
+    public ApiResponse<KmsV2KeysAsymDeletesPost200Response> deleteBulkP12KeysWithHttpInfo(DeleteBulkP12KeysRequest deleteBulkP12KeysRequest) throws ApiException {
         okhttp3.Call call = deleteBulkP12KeysValidateBeforeCall(deleteBulkP12KeysRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysAsymDeletesPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -288,7 +288,7 @@ public class AsymmetricKeyManagementApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deleteBulkP12KeysAsync(DeleteBulkP12KeysRequest deleteBulkP12KeysRequest, final ApiCallback<InlineResponse2003> callback) throws ApiException {
+    public okhttp3.Call deleteBulkP12KeysAsync(DeleteBulkP12KeysRequest deleteBulkP12KeysRequest, final ApiCallback<KmsV2KeysAsymDeletesPost200Response> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -311,7 +311,7 @@ public class AsymmetricKeyManagementApi {
         }
 
         okhttp3.Call call = deleteBulkP12KeysValidateBeforeCall(deleteBulkP12KeysRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysAsymDeletesPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -386,12 +386,12 @@ public class AsymmetricKeyManagementApi {
      * Retrieves PKCS#12 key details
      * Retrieves keys details by providing the key id.
      * @param keyId Key ID.  (required)
-     * @return InlineResponse2002
+     * @return KmsV2KeysAsymGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2002 getP12KeyDetails(String keyId) throws ApiException {
+    public KmsV2KeysAsymGet200Response getP12KeyDetails(String keyId) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2002> resp = getP12KeyDetailsWithHttpInfo(keyId);
+        ApiResponse<KmsV2KeysAsymGet200Response> resp = getP12KeyDetailsWithHttpInfo(keyId);
         return resp.getData();
     }
 
@@ -399,12 +399,12 @@ public class AsymmetricKeyManagementApi {
      * Retrieves PKCS#12 key details
      * Retrieves keys details by providing the key id.
      * @param keyId Key ID.  (required)
-     * @return ApiResponse&lt;InlineResponse2002&gt;
+     * @return ApiResponse&lt;KmsV2KeysAsymGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2002> getP12KeyDetailsWithHttpInfo(String keyId) throws ApiException {
+    public ApiResponse<KmsV2KeysAsymGet200Response> getP12KeyDetailsWithHttpInfo(String keyId) throws ApiException {
         okhttp3.Call call = getP12KeyDetailsValidateBeforeCall(keyId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysAsymGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -416,7 +416,7 @@ public class AsymmetricKeyManagementApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getP12KeyDetailsAsync(String keyId, final ApiCallback<InlineResponse2002> callback) throws ApiException {
+    public okhttp3.Call getP12KeyDetailsAsync(String keyId, final ApiCallback<KmsV2KeysAsymGet200Response> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -439,7 +439,7 @@ public class AsymmetricKeyManagementApi {
         }
 
         okhttp3.Call call = getP12KeyDetailsValidateBeforeCall(keyId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysAsymGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

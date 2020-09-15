@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createV2SharedSecretKeys"></a>
 # **createV2SharedSecretKeys**
-> InlineResponse201 createV2SharedSecretKeys(createSharedSecretKeysRequest)
+> KmsV2KeysSymPost201Response createV2SharedSecretKeys(createSharedSecretKeysRequest)
 
 Create Shared-Secret Keys
 
@@ -27,7 +27,7 @@ Create one or more Shared-Secret Keys
 SymmetricKeyManagementApi apiInstance = new SymmetricKeyManagementApi();
 CreateSharedSecretKeysRequest createSharedSecretKeysRequest = new CreateSharedSecretKeysRequest(); // CreateSharedSecretKeysRequest | 
 try {
-    InlineResponse201 result = apiInstance.createV2SharedSecretKeys(createSharedSecretKeysRequest);
+    KmsV2KeysSymPost201Response result = apiInstance.createV2SharedSecretKeys(createSharedSecretKeysRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SymmetricKeyManagementApi#createV2SharedSecretKeys");
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**KmsV2KeysSymPost201Response**](KmsV2KeysSymPost201Response.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 
 <a name="deleteBulkSymmetricKeys"></a>
 # **deleteBulkSymmetricKeys**
-> InlineResponse2001 deleteBulkSymmetricKeys(deleteBulkSymmetricKeysRequest)
+> KmsV2KeysSymDeletesPost200Response deleteBulkSymmetricKeys(deleteBulkSymmetricKeysRequest)
 
 Delete one or more Symmetric keys
 
@@ -72,7 +72,7 @@ Delete one or more Symmetric keys
 SymmetricKeyManagementApi apiInstance = new SymmetricKeyManagementApi();
 DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest = new DeleteBulkSymmetricKeysRequest(); // DeleteBulkSymmetricKeysRequest | 
 try {
-    InlineResponse2001 result = apiInstance.deleteBulkSymmetricKeys(deleteBulkSymmetricKeysRequest);
+    KmsV2KeysSymDeletesPost200Response result = apiInstance.deleteBulkSymmetricKeys(deleteBulkSymmetricKeysRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SymmetricKeyManagementApi#deleteBulkSymmetricKeys");
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**KmsV2KeysSymDeletesPost200Response**](KmsV2KeysSymDeletesPost200Response.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 
 <a name="getKeyDetails"></a>
 # **getKeyDetails**
-> InlineResponse200 getKeyDetails(keyId)
+> KmsV2KeysSymGet200Response getKeyDetails(keyId)
 
 Retrieves shared secret key details
 
@@ -117,7 +117,7 @@ Retrieves keys details by providing the key id.
 SymmetricKeyManagementApi apiInstance = new SymmetricKeyManagementApi();
 String keyId = "keyId_example"; // String | Key ID. 
 try {
-    InlineResponse200 result = apiInstance.getKeyDetails(keyId);
+    KmsV2KeysSymGet200Response result = apiInstance.getKeyDetails(keyId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SymmetricKeyManagementApi#getKeyDetails");
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**KmsV2KeysSymGet200Response**](KmsV2KeysSymGet200Response.md)
 
 ### Authorization
 

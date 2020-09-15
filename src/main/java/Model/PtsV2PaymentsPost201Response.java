@@ -39,7 +39,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-06T20:16:20.516+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
 public class PtsV2PaymentsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsPost201ResponseLinks links = null;

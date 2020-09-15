@@ -36,91 +36,91 @@ public class PrintingEventListener  extends EventListener {
     }
 
     @Override public void callStart(Call call) {
-//        printEvent("callStart");
+        printEvent("callStart");
     }
 
 
     @Override public void dnsStart(Call call, String domainName) {
-//        printEvent("dnsStart");
+        printEvent("dnsStart");
     }
 
     @Override public void dnsEnd(Call call, String domainName, List<InetAddress> inetAddressList) {
-//        printEvent("dnsEnd");
+        printEvent("dnsEnd");
     }
 
     @Override public void connectStart(Call call, InetSocketAddress inetSocketAddress, Proxy proxy) {
-//        printEvent("connectStart");
+        printEvent("connectStart");
     }
 
     @Override public void secureConnectStart(Call call) {
-//        printEvent("secureConnectStart");
+        printEvent("secureConnectStart");
     }
 
     @Override public void secureConnectEnd(Call call, Handshake handshake) {
-//        printEvent("secureConnectEnd");
+        printEvent("secureConnectEnd");
     }
 
     @Override public void connectEnd(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, Protocol protocol) {
-//        printEvent("connectEnd");
+        printEvent("connectEnd");
     }
 
     @Override public void connectFailed(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, Protocol protocol, IOException ioe) {
-//        printEvent("connectFailed");
+        printEvent("connectFailed");
     }
 
     @Override public void connectionAcquired(Call call, Connection connection) {
-//        printEvent("connectionAcquired");
+        printEvent("connectionAcquired");
     }
 
     @Override public void connectionReleased(Call call, Connection connection) {
-//        printEvent("connectionReleased");
+        printEvent("connectionReleased");
     }
 
     @Override public void requestHeadersStart(Call call) {
-//        printEvent("requestHeadersStart");
+        printEvent("requestHeadersStart");
     }
 
     @Override public void requestHeadersEnd(Call call, Request request) {
-//        printEvent("requestHeadersEnd");
+        printEvent("requestHeadersEnd");
     }
 
     @Override public void requestBodyStart(Call call) {
-//        printEvent("requestBodyStart");
+        printEvent("requestBodyStart");
     }
 
     @Override public void requestBodyEnd(Call call, long byteCount) {
-//        printEvent("requestBodyEnd");
+        printEvent("requestBodyEnd");
     }
 
     @Override public void requestFailed(Call call, IOException ioe) {
-//        printEvent("requestFailed");
+        printEvent("requestFailed");
     }
 
     @Override public void responseHeadersStart(Call call) {
-//        printEvent("responseHeadersStart");
+        printEvent("responseHeadersStart");
     }
 
     @Override public void responseHeadersEnd(Call call, Response response) {
-//        printEvent("responseHeadersEnd");
+        printEvent("responseHeadersEnd");
     }
 
     @Override public void responseBodyStart(Call call) {
-//        printEvent("responseBodyStart");
+        printEvent("responseBodyStart");
     }
 
     @Override public void responseBodyEnd(Call call, long byteCount) {
-//        printEvent("responseBodyEnd");
+        printEvent("responseBodyEnd");
     }
 
     @Override public void responseFailed(Call call, IOException ioe) {
-//        printEvent("responseFailed");
+        printEvent("responseFailed");
     }
 
     @Override public void callEnd(Call call) {
-//        printEvent("callEnd");
+        printEvent("callEnd");
     }
 
     @Override public void callFailed(Call call, IOException ioe) {
-//        printEvent("callFailed");
+        printEvent("callFailed");
     }
 }

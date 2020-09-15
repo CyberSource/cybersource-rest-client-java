@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsClientReferenceInformationPartner
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-06T20:16:20.516+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
 public class Ptsv2paymentsClientReferenceInformationPartner {
   @SerializedName("originalTransactionId")
   private String originalTransactionId = null;

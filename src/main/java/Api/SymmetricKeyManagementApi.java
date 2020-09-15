@@ -30,10 +30,10 @@ import java.io.InputStream;
 
 import Model.CreateSharedSecretKeysRequest;
 import Model.DeleteBulkSymmetricKeysRequest;
-import Model.InlineResponse200;
-import Model.InlineResponse2001;
-import Model.InlineResponse201;
 import Model.InlineResponse4002;
+import Model.KmsV2KeysSymDeletesPost200Response;
+import Model.KmsV2KeysSymGet200Response;
+import Model.KmsV2KeysSymPost201Response;
 import Model.PtsV2PaymentsPost502Response;
 
 import java.lang.reflect.Type;
@@ -131,12 +131,12 @@ public class SymmetricKeyManagementApi {
      * Create Shared-Secret Keys
      * Create one or more Shared-Secret Keys 
      * @param createSharedSecretKeysRequest  (required)
-     * @return InlineResponse201
+     * @return KmsV2KeysSymPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse201 createV2SharedSecretKeys(CreateSharedSecretKeysRequest createSharedSecretKeysRequest) throws ApiException {
+    public KmsV2KeysSymPost201Response createV2SharedSecretKeys(CreateSharedSecretKeysRequest createSharedSecretKeysRequest) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse201> resp = createV2SharedSecretKeysWithHttpInfo(createSharedSecretKeysRequest);
+        ApiResponse<KmsV2KeysSymPost201Response> resp = createV2SharedSecretKeysWithHttpInfo(createSharedSecretKeysRequest);
         return resp.getData();
     }
 
@@ -144,12 +144,12 @@ public class SymmetricKeyManagementApi {
      * Create Shared-Secret Keys
      * Create one or more Shared-Secret Keys 
      * @param createSharedSecretKeysRequest  (required)
-     * @return ApiResponse&lt;InlineResponse201&gt;
+     * @return ApiResponse&lt;KmsV2KeysSymPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse201> createV2SharedSecretKeysWithHttpInfo(CreateSharedSecretKeysRequest createSharedSecretKeysRequest) throws ApiException {
+    public ApiResponse<KmsV2KeysSymPost201Response> createV2SharedSecretKeysWithHttpInfo(CreateSharedSecretKeysRequest createSharedSecretKeysRequest) throws ApiException {
         okhttp3.Call call = createV2SharedSecretKeysValidateBeforeCall(createSharedSecretKeysRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysSymPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -161,7 +161,7 @@ public class SymmetricKeyManagementApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createV2SharedSecretKeysAsync(CreateSharedSecretKeysRequest createSharedSecretKeysRequest, final ApiCallback<InlineResponse201> callback) throws ApiException {
+    public okhttp3.Call createV2SharedSecretKeysAsync(CreateSharedSecretKeysRequest createSharedSecretKeysRequest, final ApiCallback<KmsV2KeysSymPost201Response> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -184,7 +184,7 @@ public class SymmetricKeyManagementApi {
         }
 
         okhttp3.Call call = createV2SharedSecretKeysValidateBeforeCall(createSharedSecretKeysRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysSymPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -258,12 +258,12 @@ public class SymmetricKeyManagementApi {
      * Delete one or more Symmetric keys
      * &#39;Delete one or more Symmetric keys&#39; 
      * @param deleteBulkSymmetricKeysRequest  (required)
-     * @return InlineResponse2001
+     * @return KmsV2KeysSymDeletesPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2001 deleteBulkSymmetricKeys(DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest) throws ApiException {
+    public KmsV2KeysSymDeletesPost200Response deleteBulkSymmetricKeys(DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2001> resp = deleteBulkSymmetricKeysWithHttpInfo(deleteBulkSymmetricKeysRequest);
+        ApiResponse<KmsV2KeysSymDeletesPost200Response> resp = deleteBulkSymmetricKeysWithHttpInfo(deleteBulkSymmetricKeysRequest);
         return resp.getData();
     }
 
@@ -271,12 +271,12 @@ public class SymmetricKeyManagementApi {
      * Delete one or more Symmetric keys
      * &#39;Delete one or more Symmetric keys&#39; 
      * @param deleteBulkSymmetricKeysRequest  (required)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;KmsV2KeysSymDeletesPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2001> deleteBulkSymmetricKeysWithHttpInfo(DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest) throws ApiException {
+    public ApiResponse<KmsV2KeysSymDeletesPost200Response> deleteBulkSymmetricKeysWithHttpInfo(DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest) throws ApiException {
         okhttp3.Call call = deleteBulkSymmetricKeysValidateBeforeCall(deleteBulkSymmetricKeysRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysSymDeletesPost200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -288,7 +288,7 @@ public class SymmetricKeyManagementApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deleteBulkSymmetricKeysAsync(DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest, final ApiCallback<InlineResponse2001> callback) throws ApiException {
+    public okhttp3.Call deleteBulkSymmetricKeysAsync(DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest, final ApiCallback<KmsV2KeysSymDeletesPost200Response> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -311,7 +311,7 @@ public class SymmetricKeyManagementApi {
         }
 
         okhttp3.Call call = deleteBulkSymmetricKeysValidateBeforeCall(deleteBulkSymmetricKeysRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysSymDeletesPost200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -386,12 +386,12 @@ public class SymmetricKeyManagementApi {
      * Retrieves shared secret key details
      * Retrieves keys details by providing the key id.
      * @param keyId Key ID.  (required)
-     * @return InlineResponse200
+     * @return KmsV2KeysSymGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse200 getKeyDetails(String keyId) throws ApiException {
+    public KmsV2KeysSymGet200Response getKeyDetails(String keyId) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse200> resp = getKeyDetailsWithHttpInfo(keyId);
+        ApiResponse<KmsV2KeysSymGet200Response> resp = getKeyDetailsWithHttpInfo(keyId);
         return resp.getData();
     }
 
@@ -399,12 +399,12 @@ public class SymmetricKeyManagementApi {
      * Retrieves shared secret key details
      * Retrieves keys details by providing the key id.
      * @param keyId Key ID.  (required)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;KmsV2KeysSymGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse200> getKeyDetailsWithHttpInfo(String keyId) throws ApiException {
+    public ApiResponse<KmsV2KeysSymGet200Response> getKeyDetailsWithHttpInfo(String keyId) throws ApiException {
         okhttp3.Call call = getKeyDetailsValidateBeforeCall(keyId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysSymGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -416,7 +416,7 @@ public class SymmetricKeyManagementApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getKeyDetailsAsync(String keyId, final ApiCallback<InlineResponse200> callback) throws ApiException {
+    public okhttp3.Call getKeyDetailsAsync(String keyId, final ApiCallback<KmsV2KeysSymGet200Response> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -439,7 +439,7 @@ public class SymmetricKeyManagementApi {
         }
 
         okhttp3.Call call = getKeyDetailsValidateBeforeCall(keyId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<KmsV2KeysSymGet200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

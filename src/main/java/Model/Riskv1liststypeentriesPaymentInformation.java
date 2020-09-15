@@ -29,7 +29,7 @@ import java.io.IOException;
  * Contains the payment data for updating in List Management.
  */
 @ApiModel(description = "Contains the payment data for updating in List Management.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-06T20:16:20.516+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
 public class Riskv1liststypeentriesPaymentInformation {
   @SerializedName("card")
   private Riskv1liststypeentriesPaymentInformationCard card = null;

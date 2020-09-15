@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createP12Keys"></a>
 # **createP12Keys**
-> InlineResponse2011 createP12Keys(createP12KeysRequest)
+> KmsV2KeysAsymPost201Response createP12Keys(createP12KeysRequest)
 
 Create one or more PKCS#12 keys
 
@@ -27,7 +27,7 @@ Create one or more PKCS#12 keys
 AsymmetricKeyManagementApi apiInstance = new AsymmetricKeyManagementApi();
 CreateP12KeysRequest createP12KeysRequest = new CreateP12KeysRequest(); // CreateP12KeysRequest | 
 try {
-    InlineResponse2011 result = apiInstance.createP12Keys(createP12KeysRequest);
+    KmsV2KeysAsymPost201Response result = apiInstance.createP12Keys(createP12KeysRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AsymmetricKeyManagementApi#createP12Keys");
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**KmsV2KeysAsymPost201Response**](KmsV2KeysAsymPost201Response.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 
 <a name="deleteBulkP12Keys"></a>
 # **deleteBulkP12Keys**
-> InlineResponse2003 deleteBulkP12Keys(deleteBulkP12KeysRequest)
+> KmsV2KeysAsymDeletesPost200Response deleteBulkP12Keys(deleteBulkP12KeysRequest)
 
 Delete one or more PKCS#12 keys
 
@@ -72,7 +72,7 @@ Delete one or more PKCS#12 keys
 AsymmetricKeyManagementApi apiInstance = new AsymmetricKeyManagementApi();
 DeleteBulkP12KeysRequest deleteBulkP12KeysRequest = new DeleteBulkP12KeysRequest(); // DeleteBulkP12KeysRequest | 
 try {
-    InlineResponse2003 result = apiInstance.deleteBulkP12Keys(deleteBulkP12KeysRequest);
+    KmsV2KeysAsymDeletesPost200Response result = apiInstance.deleteBulkP12Keys(deleteBulkP12KeysRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AsymmetricKeyManagementApi#deleteBulkP12Keys");
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**KmsV2KeysAsymDeletesPost200Response**](KmsV2KeysAsymDeletesPost200Response.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 
 <a name="getP12KeyDetails"></a>
 # **getP12KeyDetails**
-> InlineResponse2002 getP12KeyDetails(keyId)
+> KmsV2KeysAsymGet200Response getP12KeyDetails(keyId)
 
 Retrieves PKCS#12 key details
 
@@ -117,7 +117,7 @@ Retrieves keys details by providing the key id.
 AsymmetricKeyManagementApi apiInstance = new AsymmetricKeyManagementApi();
 String keyId = "keyId_example"; // String | Key ID. 
 try {
-    InlineResponse2002 result = apiInstance.getP12KeyDetails(keyId);
+    KmsV2KeysAsymGet200Response result = apiInstance.getP12KeyDetails(keyId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AsymmetricKeyManagementApi#getP12KeyDetails");
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**KmsV2KeysAsymGet200Response**](KmsV2KeysAsymGet200Response.md)
 
 ### Authorization
 

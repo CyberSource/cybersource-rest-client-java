@@ -48,10 +48,10 @@ public class RequestTransactionMetrics {
 
 	/**
 	 * Adds Header Values from response object of previous request
-	 * @param correlationId
-	 * @param timeTaken
-	 * @param noOfRetries
-	 * @return
+	 * @param correlationId The correlation ID from the previous response
+	 * @param timeTaken The time taken by the SDK to create the request before sending
+	 * @param noOfRetries The number of retries made by the previous request chain
+	 * @return The Request Transaction Metrics object after setting the header values
 	 */
 	public RequestTransactionMetrics addHeaderValues(String correlationId, long timeTaken, int noOfRetries) {
 		this.setResponseCorrelationId(correlationId);

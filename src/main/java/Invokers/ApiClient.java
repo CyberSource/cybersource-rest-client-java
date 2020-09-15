@@ -153,7 +153,7 @@ public class ApiClient {
 
 	private JSON json;
 	private String versionInfo;
-	private static ConnectionPool connectionPool = new ConnectionPool(0, 1, TimeUnit.MILLISECONDS);
+	private static ConnectionPool connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
 	private HttpLoggingInterceptor loggingInterceptor;
 	public RequestTransactionMetrics apiRequestMetrics = new RequestTransactionMetrics();
 	private long computationStartTime;
@@ -1173,11 +1173,9 @@ public class ApiClient {
 			Response response = call.execute();
 			responseCode = String.valueOf(response.code());
 			status = response.message();
-			String headerType = response.header("Content-Type");
 
 			T data = handleResponse(response, returnType);
 
-			httpClient.connectionPool().evictAll();
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
 		} catch (IOException e) {
 			throw new ApiException(e);
@@ -1521,7 +1519,7 @@ public class ApiClient {
 			}
 		}
 		
-		reqBuilder.header("Connection", "close");
+		reqBuilder.header("Connection", "keep-alive");
 	}
 
 	/**
