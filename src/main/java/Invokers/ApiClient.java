@@ -86,7 +86,7 @@ import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
 import utilities.interceptors.RetryInterceptor;
-import utilities.listeners.PrintingEventListener;
+import utilities.listeners.NetworkEventListener;
 import utilities.telemetry.RequestTransactionMetrics;
 
 public class ApiClient {
@@ -181,7 +181,7 @@ public class ApiClient {
 		httpClient = classHttpClient.newBuilder()
 				.retryOnConnectionFailure(true)
 				.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-				.eventListener(new PrintingEventListener(new Random().nextLong(), System.nanoTime()))
+				.eventListener(new NetworkEventListener(new Random().nextLong(), System.nanoTime()))
 				.build();
 
 		verifyingSsl = true;
@@ -269,7 +269,7 @@ public class ApiClient {
 					.proxyAuthenticator(proxyAuthenticator)
 					.retryOnConnectionFailure(true)
 					.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-					.eventListener(new PrintingEventListener(new Random().nextLong(), System.nanoTime()))
+					.eventListener(new NetworkEventListener(new Random().nextLong(), System.nanoTime()))
 					.build();
 
 			this.setHttpClient(httpClient);

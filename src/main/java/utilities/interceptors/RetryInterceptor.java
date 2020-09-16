@@ -30,20 +30,6 @@ public class RetryInterceptor implements Interceptor {
 
 		response = doRequest(chain, request);
 		
-		if (retryEnabled) {
-			while (response == null && retryNo <= MAX_RETRIES) {
-				try {
-					Thread.sleep(retryWait);
-				} catch (InterruptedException e) {
-
-				}
-
-				retryWait *= 2;
-
-				response = doRequest(chain, request);
-				retryNo++;
-			} 
-		}	
 		if (response != null) {
 			RequestResponseTelemetryHandler.collectResponseTelemetry(requestMetrics, response, retryNo - 1);
 		}

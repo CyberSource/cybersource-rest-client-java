@@ -9,14 +9,14 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class PrintingEventListener  extends EventListener {
+public class NetworkEventListener  extends EventListener {
     public static final Factory FACTORY = new Factory() {
         final AtomicLong nextCallId = new AtomicLong(1L);
 
         @Override public EventListener create(Call call) {
             long callId = nextCallId.getAndIncrement();
             System.out.printf("%04d %s%n", callId, call.request().url());
-            return new PrintingEventListener(callId, System.nanoTime());
+            return new NetworkEventListener(callId, System.nanoTime());
         }
     };
 
@@ -24,7 +24,7 @@ public class PrintingEventListener  extends EventListener {
     final long callStartNanos;
 	private static DecimalFormat df = new DecimalFormat("#.###");
 
-    public PrintingEventListener(long callId, long callStartNanos) {
+    public NetworkEventListener(long callId, long callStartNanos) {
         this.callId = callId;
         this.callStartNanos = callStartNanos;
     }
