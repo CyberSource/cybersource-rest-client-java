@@ -131,6 +131,7 @@ public class UserManagementSearchApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public UmsV1UsersGet200Response searchUsers(SearchRequest searchRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<UmsV1UsersGet200Response> resp = searchUsersWithHttpInfo(searchRequest);
         return resp.getData();
     }
@@ -158,6 +159,7 @@ public class UserManagementSearchApi {
      */
     public okhttp3.Call searchUsersAsync(SearchRequest searchRequest, final ApiCallback<UmsV1UsersGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

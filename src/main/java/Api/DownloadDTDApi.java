@@ -128,6 +128,7 @@ public class DownloadDTDApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void getDTDV2(String reportDefinitionNameVersion) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         getDTDV2WithHttpInfo(reportDefinitionNameVersion);
     }
 
@@ -153,6 +154,7 @@ public class DownloadDTDApi {
      */
     public okhttp3.Call getDTDV2Async(String reportDefinitionNameVersion, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

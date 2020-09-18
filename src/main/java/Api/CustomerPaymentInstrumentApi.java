@@ -145,6 +145,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteCustomerPaymentInstrument(String customerTokenId, String paymentInstrumentTokenId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerPaymentInstrumentWithHttpInfo(customerTokenId, paymentInstrumentTokenId, profileId);
     }
 
@@ -174,6 +175,7 @@ public class CustomerPaymentInstrumentApi {
      */
     public okhttp3.Call deleteCustomerPaymentInstrumentAsync(String customerTokenId, String paymentInstrumentTokenId, String profileId, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -284,6 +286,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrument getCustomerPaymentInstrument(String customerTokenId, String paymentInstrumentTokenId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = getCustomerPaymentInstrumentWithHttpInfo(customerTokenId, paymentInstrumentTokenId, profileId);
         return resp.getData();
     }
@@ -315,6 +318,7 @@ public class CustomerPaymentInstrumentApi {
      */
     public okhttp3.Call getCustomerPaymentInstrumentAsync(String customerTokenId, String paymentInstrumentTokenId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -426,6 +430,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PaymentInstrumentListForCustomer getCustomerPaymentInstrumentsList(String customerTokenId, String profileId, Long offset, Long limit) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PaymentInstrumentListForCustomer> resp = getCustomerPaymentInstrumentsListWithHttpInfo(customerTokenId, profileId, offset, limit);
         return resp.getData();
     }
@@ -459,6 +464,7 @@ public class CustomerPaymentInstrumentApi {
      */
     public okhttp3.Call getCustomerPaymentInstrumentsListAsync(String customerTokenId, String profileId, Long offset, Long limit, final ApiCallback<PaymentInstrumentListForCustomer> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -581,6 +587,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrument patchCustomersPaymentInstrument(String customerTokenId, String paymentInstrumentTokenId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = patchCustomersPaymentInstrumentWithHttpInfo(customerTokenId, paymentInstrumentTokenId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch);
         return resp.getData();
     }
@@ -616,6 +623,7 @@ public class CustomerPaymentInstrumentApi {
      */
     public okhttp3.Call patchCustomersPaymentInstrumentAsync(String customerTokenId, String paymentInstrumentTokenId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -726,6 +734,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrument postCustomerPaymentInstrument(String customerTokenId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = postCustomerPaymentInstrumentWithHttpInfo(customerTokenId, postCustomerPaymentInstrumentRequest, profileId);
         return resp.getData();
     }
@@ -757,6 +766,7 @@ public class CustomerPaymentInstrumentApi {
      */
     public okhttp3.Call postCustomerPaymentInstrumentAsync(String customerTokenId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

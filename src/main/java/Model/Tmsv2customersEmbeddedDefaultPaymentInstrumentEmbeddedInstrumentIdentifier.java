@@ -34,7 +34,7 @@ import java.io.IOException;
 /**
  * Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier {
   @SerializedName("_links")
   private Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierLinks links = null;

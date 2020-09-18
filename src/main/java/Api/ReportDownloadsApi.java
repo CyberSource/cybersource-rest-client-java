@@ -144,6 +144,7 @@ public class ReportDownloadsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void downloadReport(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         downloadReportWithHttpInfo(reportDate, reportName, organizationId);
     }
 
@@ -173,6 +174,7 @@ public class ReportDownloadsApi {
      */
     public okhttp3.Call downloadReportAsync(LocalDate reportDate, String reportName, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

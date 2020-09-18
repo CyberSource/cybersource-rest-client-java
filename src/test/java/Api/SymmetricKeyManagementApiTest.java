@@ -16,10 +16,10 @@ package Api;
 import Invokers.ApiException;
 import Model.CreateSharedSecretKeysRequest;
 import Model.DeleteBulkSymmetricKeysRequest;
-import Model.InlineResponse200;
-import Model.InlineResponse2001;
-import Model.InlineResponse201;
 import Model.InlineResponse4002;
+import Model.KmsV2KeysSymDeletesPost200Response;
+import Model.KmsV2KeysSymGet200Response;
+import Model.KmsV2KeysSymPost201Response;
 import Model.PtsV2PaymentsPost502Response;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -49,7 +49,7 @@ public class SymmetricKeyManagementApiTest {
     @Test
     public void createV2SharedSecretKeysTest() throws ApiException {
         CreateSharedSecretKeysRequest createSharedSecretKeysRequest = null;
-        InlineResponse201 response = api.createV2SharedSecretKeys(createSharedSecretKeysRequest);
+        KmsV2KeysSymPost201Response response = api.createV2SharedSecretKeys(createSharedSecretKeysRequest);
 
         // TODO: test validations
     }
@@ -65,7 +65,7 @@ public class SymmetricKeyManagementApiTest {
     @Test
     public void deleteBulkSymmetricKeysTest() throws ApiException {
         DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest = null;
-        InlineResponse2001 response = api.deleteBulkSymmetricKeys(deleteBulkSymmetricKeysRequest);
+        KmsV2KeysSymDeletesPost200Response response = api.deleteBulkSymmetricKeys(deleteBulkSymmetricKeysRequest);
 
         // TODO: test validations
     }
@@ -81,7 +81,7 @@ public class SymmetricKeyManagementApiTest {
     @Test
     public void getKeyDetailsTest() throws ApiException {
         String keyId = null;
-        InlineResponse200 response = api.getKeyDetails(keyId);
+        KmsV2KeysSymGet200Response response = api.getKeyDetails(keyId);
 
         // TODO: test validations
     }

@@ -16,10 +16,10 @@ package Api;
 import Invokers.ApiException;
 import Model.CreateP12KeysRequest;
 import Model.DeleteBulkP12KeysRequest;
-import Model.InlineResponse2002;
-import Model.InlineResponse2003;
-import Model.InlineResponse2011;
 import Model.InlineResponse4002;
+import Model.KmsV2KeysAsymDeletesPost200Response;
+import Model.KmsV2KeysAsymGet200Response;
+import Model.KmsV2KeysAsymPost201Response;
 import Model.PtsV2PaymentsPost502Response;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -49,7 +49,7 @@ public class AsymmetricKeyManagementApiTest {
     @Test
     public void createP12KeysTest() throws ApiException {
         CreateP12KeysRequest createP12KeysRequest = null;
-        InlineResponse2011 response = api.createP12Keys(createP12KeysRequest);
+        KmsV2KeysAsymPost201Response response = api.createP12Keys(createP12KeysRequest);
 
         // TODO: test validations
     }
@@ -65,7 +65,7 @@ public class AsymmetricKeyManagementApiTest {
     @Test
     public void deleteBulkP12KeysTest() throws ApiException {
         DeleteBulkP12KeysRequest deleteBulkP12KeysRequest = null;
-        InlineResponse2003 response = api.deleteBulkP12Keys(deleteBulkP12KeysRequest);
+        KmsV2KeysAsymDeletesPost200Response response = api.deleteBulkP12Keys(deleteBulkP12KeysRequest);
 
         // TODO: test validations
     }
@@ -81,7 +81,7 @@ public class AsymmetricKeyManagementApiTest {
     @Test
     public void getP12KeyDetailsTest() throws ApiException {
         String keyId = null;
-        InlineResponse2002 response = api.getP12KeyDetails(keyId);
+        KmsV2KeysAsymGet200Response response = api.getP12KeyDetails(keyId);
 
         // TODO: test validations
     }

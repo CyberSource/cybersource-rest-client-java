@@ -34,7 +34,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("authIndicator")
   private String authIndicator = null;
@@ -267,10 +267,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   }
 
    /**
-   * Processor-defined response category code. The associated detail error code is in the &#x60;processorInformation.responseCode&#x60; or &#x60;issuerInformation.responseCode&#x60; field of the service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latino—processor transaction ID required for troubleshooting  #### Maximum length for processors   - Comercio Latino: 32  - All other processors: 3 
+   * Processor-defined response category code. The associated detail error code is in the &#x60;processorInformation.responseCode&#x60; or &#x60;issuerInformation.responseCode&#x60; field of the service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latino—processor transaction ID required for troubleshooting  #### Maximum length for processors   - Comercio Latino: 36  - All other processors: 3 
    * @return responseCategoryCode
   **/
-  @ApiModelProperty(value = "Processor-defined response category code. The associated detail error code is in the `processorInformation.responseCode` or `issuerInformation.responseCode` field of the service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latino—processor transaction ID required for troubleshooting  #### Maximum length for processors   - Comercio Latino: 32  - All other processors: 3 ")
+  @ApiModelProperty(value = "Processor-defined response category code. The associated detail error code is in the `processorInformation.responseCode` or `issuerInformation.responseCode` field of the service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latino—processor transaction ID required for troubleshooting  #### Maximum length for processors   - Comercio Latino: 36  - All other processors: 3 ")
   public String getResponseCategoryCode() {
     return responseCategoryCode;
   }

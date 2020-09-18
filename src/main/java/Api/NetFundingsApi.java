@@ -150,6 +150,7 @@ public class NetFundingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3NetFundingsGet200Response getNetFundingDetails(DateTime startTime, DateTime endTime, String organizationId, String groupName) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3NetFundingsGet200Response> resp = getNetFundingDetailsWithHttpInfo(startTime, endTime, organizationId, groupName);
         return resp.getData();
     }
@@ -183,6 +184,7 @@ public class NetFundingsApi {
      */
     public okhttp3.Call getNetFundingDetailsAsync(DateTime startTime, DateTime endTime, String organizationId, String groupName, final ApiCallback<ReportingV3NetFundingsGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

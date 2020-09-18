@@ -137,6 +137,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void createStandardOrClassicSubscription(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         createStandardOrClassicSubscriptionWithHttpInfo(predefinedSubscriptionRequestBean, organizationId);
     }
 
@@ -164,6 +165,7 @@ public class ReportSubscriptionsApi {
      */
     public okhttp3.Call createStandardOrClassicSubscriptionAsync(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -264,6 +266,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void createSubscription(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         createSubscriptionWithHttpInfo(createReportSubscriptionRequest, organizationId);
     }
 
@@ -291,6 +294,7 @@ public class ReportSubscriptionsApi {
      */
     public okhttp3.Call createSubscriptionAsync(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -392,6 +396,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteSubscription(String reportName, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         deleteSubscriptionWithHttpInfo(reportName, organizationId);
     }
 
@@ -419,6 +424,7 @@ public class ReportSubscriptionsApi {
      */
     public okhttp3.Call deleteSubscriptionAsync(String reportName, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -513,6 +519,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions(String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getAllSubscriptionsWithHttpInfo(organizationId);
         return resp.getData();
     }
@@ -540,6 +547,7 @@ public class ReportSubscriptionsApi {
      */
     public okhttp3.Call getAllSubscriptionsAsync(String organizationId, final ApiCallback<ReportingV3ReportSubscriptionsGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -643,6 +651,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(String reportName, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> resp = getSubscriptionWithHttpInfo(reportName, organizationId);
         return resp.getData();
     }
@@ -672,6 +681,7 @@ public class ReportSubscriptionsApi {
      */
     public okhttp3.Call getSubscriptionAsync(String reportName, String organizationId, final ApiCallback<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

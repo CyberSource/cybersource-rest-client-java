@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
+import java.util.Random;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -84,6 +85,9 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
+import utilities.interceptors.RetryInterceptor;
+import utilities.listeners.NetworkEventListener;
+import utilities.telemetry.RequestTransactionMetrics;
 
 public class ApiClient {
 	public static final double JAVA_VERSION;
@@ -144,27 +148,41 @@ public class ApiClient {
 	private KeyManager[] keyManagers;
 	private String acceptHeader = "";
 
-	private OkHttpClient httpClient;
+	private static OkHttpClient httpClient;
+	private final OkHttpClient classHttpClient = initializeFinalVariables();
+
 	private JSON json;
 	private String versionInfo;
-
+	private static ConnectionPool connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
 	private HttpLoggingInterceptor loggingInterceptor;
-	private ConnectionPool connectionPool = new ConnectionPool(0, 1, TimeUnit.MILLISECONDS);
+	public RequestTransactionMetrics apiRequestMetrics = new RequestTransactionMetrics();
+	private long computationStartTime;
+	
+	public static OkHttpClient initializeFinalVariables() {		
+		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+		logging.setLevel(Level.NONE);
+		
+		return new OkHttpClient.Builder()
+							.connectTimeout(1, TimeUnit.SECONDS)
+							.writeTimeout(60, TimeUnit.SECONDS)
+							.readTimeout(60, TimeUnit.SECONDS)
+							.connectionPool(ApiClient.connectionPool)
+							.addInterceptor(logging)
+							.build();
+	}
 
 	/*
 	 * Constructor for ApiClient
 	 */
 	public ApiClient() {
-		httpClient = new OkHttpClient();
-		
+
 		versionInfo = getClientID();
 
-		httpClient = new OkHttpClient.Builder()
-			    .connectTimeout(1, TimeUnit.SECONDS)
-			    .writeTimeout(60, TimeUnit.SECONDS)
-			    .readTimeout(60, TimeUnit.SECONDS)
-			    .connectionPool(this.connectionPool)
-			    .build();
+		httpClient = classHttpClient.newBuilder()
+				.retryOnConnectionFailure(true)
+				.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
+				.eventListener(new NetworkEventListener(new Random().nextLong(), System.nanoTime()))
+				.build();
 
 		verifyingSsl = true;
 
@@ -246,19 +264,20 @@ public class ApiClient {
 				};
 			}
 
-			httpClient = new OkHttpClient.Builder()
-					.connectTimeout(1, TimeUnit.SECONDS)
-					.writeTimeout(60, TimeUnit.SECONDS)
-					.readTimeout(60, TimeUnit.SECONDS)
-					.connectionPool(this.connectionPool)
+			httpClient = classHttpClient.newBuilder()
 					.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
 					.proxyAuthenticator(proxyAuthenticator)
+					.retryOnConnectionFailure(true)
+					.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
+					.eventListener(new NetworkEventListener(new Random().nextLong(), System.nanoTime()))
 					.build();
-			this.setHttpClient(httpClient);	
+
+			this.setHttpClient(httpClient);
 		}
 
 		this.merchantConfig = merchantConfig;
-
+		RetryInterceptor.retryDelay = merchantConfig.getRetryDelay();
+		RetryInterceptor.retryEnabled = merchantConfig.isRetryEnabled();
 	}
 
 	/**
@@ -765,6 +784,24 @@ public class ApiClient {
 	}
 
 	/**
+	 * @return the computationStartTime
+	 */
+	public long getComputationStartTime() {
+		return computationStartTime;
+	}
+
+	/**
+	 * @param computationStartTime the computationStartTime to set
+	 */
+	public void setComputationStartTime(long computationStartTime) {
+		this.computationStartTime = computationStartTime;
+	}
+
+	public void resetInstance() {
+		this.defaultHeaderMap.clear();
+	}
+
+	/**
 	 * Format the given parameter object into string.
 	 *
 	 * @param param
@@ -1132,14 +1169,13 @@ public class ApiClient {
 	 */
 	public <T> ApiResponse<T> execute(Call call, Type returnType) throws ApiException {
 		try {
+			this.apiRequestMetrics.setComputeTime((System.nanoTime() - this.getComputationStartTime())/1000000);
 			Response response = call.execute();
 			responseCode = String.valueOf(response.code());
 			status = response.message();
-			String headerType = response.header("Content-Type");
-						
+
 			T data = handleResponse(response, returnType);
-			
-			httpClient.connectionPool().evictAll();
+
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
 		} catch (IOException e) {
 			throw new ApiException(e);
@@ -1483,7 +1519,7 @@ public class ApiClient {
 			}
 		}
 		
-		reqBuilder.header("Connection", "close");
+		reqBuilder.header("Connection", "keep-alive");
 	}
 
 	/**

@@ -136,6 +136,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response mitVoid(MitVoidRequest mitVoidRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = mitVoidWithHttpInfo(mitVoidRequest);
         return resp.getData();
     }
@@ -163,6 +164,7 @@ public class VoidApi {
      */
     public okhttp3.Call mitVoidAsync(MitVoidRequest mitVoidRequest, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -269,6 +271,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidCapture(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCaptureWithHttpInfo(voidCaptureRequest, id);
         return resp.getData();
     }
@@ -298,6 +301,7 @@ public class VoidApi {
      */
     public okhttp3.Call voidCaptureAsync(VoidCaptureRequest voidCaptureRequest, String id, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -404,6 +408,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidCredit(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCreditWithHttpInfo(voidCreditRequest, id);
         return resp.getData();
     }
@@ -433,6 +438,7 @@ public class VoidApi {
      */
     public okhttp3.Call voidCreditAsync(VoidCreditRequest voidCreditRequest, String id, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -539,6 +545,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidPayment(VoidPaymentRequest voidPaymentRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidPaymentWithHttpInfo(voidPaymentRequest, id);
         return resp.getData();
     }
@@ -568,6 +575,7 @@ public class VoidApi {
      */
     public okhttp3.Call voidPaymentAsync(VoidPaymentRequest voidPaymentRequest, String id, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -674,6 +682,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidRefund(VoidRefundRequest voidRefundRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidRefundWithHttpInfo(voidRefundRequest, id);
         return resp.getData();
     }
@@ -703,6 +712,7 @@ public class VoidApi {
      */
     public okhttp3.Call voidRefundAsync(VoidRefundRequest voidRefundRequest, String id, final ApiCallback<PtsV2PaymentsVoidsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

@@ -132,6 +132,7 @@ public class PayoutsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PayoutsPost201Response octCreatePayment(OctCreatePaymentRequest octCreatePaymentRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PayoutsPost201Response> resp = octCreatePaymentWithHttpInfo(octCreatePaymentRequest);
         return resp.getData();
     }
@@ -159,6 +160,7 @@ public class PayoutsApi {
      */
     public okhttp3.Call octCreatePaymentAsync(OctCreatePaymentRequest octCreatePaymentRequest, final ApiCallback<PtsV2PayoutsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

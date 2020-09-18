@@ -166,6 +166,7 @@ public class PurchaseAndRefundDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3PurchaseRefundDetailsGet200Response getPurchaseAndRefundDetails(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3PurchaseRefundDetailsGet200Response> resp = getPurchaseAndRefundDetailsWithHttpInfo(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
         return resp.getData();
     }
@@ -207,6 +208,7 @@ public class PurchaseAndRefundDetailsApi {
      */
     public okhttp3.Call getPurchaseAndRefundDetailsAsync(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit, final ApiCallback<ReportingV3PurchaseRefundDetailsGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

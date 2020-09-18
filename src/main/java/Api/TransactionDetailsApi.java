@@ -130,6 +130,7 @@ public class TransactionDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TssV2TransactionsGet200Response getTransaction(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsGet200Response> resp = getTransactionWithHttpInfo(id);
         return resp.getData();
     }
@@ -157,6 +158,7 @@ public class TransactionDetailsApi {
      */
     public okhttp3.Call getTransactionAsync(String id, final ApiCallback<TssV2TransactionsGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

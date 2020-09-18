@@ -133,6 +133,7 @@ final String[] localVarContentTypes = {"*/*"};
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void getFile(String fileId, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         getFileWithHttpInfo(fileId, organizationId);
     }
 
@@ -160,6 +161,7 @@ final String[] localVarContentTypes = {"*/*"};
      */
     public okhttp3.Call getFileAsync(String fileId, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -274,6 +276,7 @@ final String[] localVarContentTypes = {"*/*"};
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public V1FileDetailsGet200Response getFileDetail(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailWithHttpInfo(startDate, endDate, organizationId, name);
         return resp.getData();
     }
@@ -307,6 +310,7 @@ final String[] localVarContentTypes = {"*/*"};
      */
     public okhttp3.Call getFileDetailAsync(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ApiCallback<V1FileDetailsGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

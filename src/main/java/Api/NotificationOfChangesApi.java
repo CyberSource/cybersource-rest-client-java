@@ -142,6 +142,7 @@ public class NotificationOfChangesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3NotificationofChangesGet200Response getNotificationOfChangeReport(DateTime startTime, DateTime endTime) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3NotificationofChangesGet200Response> resp = getNotificationOfChangeReportWithHttpInfo(startTime, endTime);
         return resp.getData();
     }
@@ -171,6 +172,7 @@ public class NotificationOfChangesApi {
      */
     public okhttp3.Call getNotificationOfChangeReportAsync(DateTime startTime, DateTime endTime, final ApiCallback<ReportingV3NotificationofChangesGet200Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

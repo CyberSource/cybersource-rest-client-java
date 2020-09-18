@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationresultsOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-27T16:17:50.788+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
 public class Riskv1authenticationresultsOrderInformationLineItems {
   @SerializedName("unitPrice")
   private String unitPrice = null;

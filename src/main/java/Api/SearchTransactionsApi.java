@@ -132,6 +132,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TssV2TransactionsPost201Response createSearch(CreateSearchRequest createSearchRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = createSearchWithHttpInfo(createSearchRequest);
         return resp.getData();
     }
@@ -159,6 +160,7 @@ public class SearchTransactionsApi {
      */
     public okhttp3.Call createSearchAsync(CreateSearchRequest createSearchRequest, final ApiCallback<TssV2TransactionsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -258,6 +260,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TssV2TransactionsPost201Response getSearch(String searchId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = getSearchWithHttpInfo(searchId);
         return resp.getData();
     }
@@ -285,6 +288,7 @@ public class SearchTransactionsApi {
      */
     public okhttp3.Call getSearchAsync(String searchId, final ApiCallback<TssV2TransactionsPost201Response> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 

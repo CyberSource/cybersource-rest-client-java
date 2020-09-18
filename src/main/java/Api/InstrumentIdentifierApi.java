@@ -137,6 +137,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteInstrumentIdentifier(String instrumentIdentifierTokenId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         deleteInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, profileId);
     }
 
@@ -164,6 +165,7 @@ public class InstrumentIdentifierApi {
      */
     public okhttp3.Call deleteInstrumentIdentifierAsync(String instrumentIdentifierTokenId, String profileId, final ApiCallback<Void> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -266,6 +268,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier getInstrumentIdentifier(String instrumentIdentifierTokenId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = getInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, profileId);
         return resp.getData();
     }
@@ -295,6 +298,7 @@ public class InstrumentIdentifierApi {
      */
     public okhttp3.Call getInstrumentIdentifierAsync(String instrumentIdentifierTokenId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -406,6 +410,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PaymentInstrumentListForCustomer getInstrumentIdentifierPaymentInstrumentsList(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PaymentInstrumentListForCustomer> resp = getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(instrumentIdentifierTokenId, profileId, offset, limit);
         return resp.getData();
     }
@@ -439,6 +444,7 @@ public class InstrumentIdentifierApi {
      */
     public okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListAsync(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit, final ApiCallback<PaymentInstrumentListForCustomer> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -553,6 +559,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier patchInstrumentIdentifier(String instrumentIdentifierTokenId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = patchInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, profileId, ifMatch);
         return resp.getData();
     }
@@ -586,6 +593,7 @@ public class InstrumentIdentifierApi {
      */
     public okhttp3.Call patchInstrumentIdentifierAsync(String instrumentIdentifierTokenId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
@@ -688,6 +696,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier postInstrumentIdentifier(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = postInstrumentIdentifierWithHttpInfo(postInstrumentIdentifierRequest, profileId);
         return resp.getData();
     }
@@ -717,6 +726,7 @@ public class InstrumentIdentifierApi {
      */
     public okhttp3.Call postInstrumentIdentifierAsync(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> callback) throws ApiException {
 
+        this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
 
