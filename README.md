@@ -4,7 +4,9 @@ The CyberSource Java client provides convenient access to the [CyberSource REST 
 
 ## Requirements
 
-Java 1.8 or later.
+Java 1.8.
+
+***Support for higher versions of JDK (>= 1.9.0) has not been made available.***
 
 ## Installation
 
