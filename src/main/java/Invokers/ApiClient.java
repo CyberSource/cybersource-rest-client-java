@@ -41,7 +41,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
-import java.util.Random;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -181,7 +180,7 @@ public class ApiClient {
 		httpClient = classHttpClient.newBuilder()
 				.retryOnConnectionFailure(true)
 				.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-				.eventListener(new NetworkEventListener(new Random().nextLong(), System.nanoTime()))
+				.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
 				.build();
 
 		verifyingSsl = true;
@@ -269,15 +268,13 @@ public class ApiClient {
 					.proxyAuthenticator(proxyAuthenticator)
 					.retryOnConnectionFailure(true)
 					.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-					.eventListener(new NetworkEventListener(new Random().nextLong(), System.nanoTime()))
+					.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
 					.build();
 
 			this.setHttpClient(httpClient);
 		}
 
 		this.merchantConfig = merchantConfig;
-		RetryInterceptor.retryDelay = merchantConfig.getRetryDelay();
-		RetryInterceptor.retryEnabled = merchantConfig.isRetryEnabled();
 	}
 
 	/**
@@ -1700,5 +1697,21 @@ public class ApiClient {
 		} catch (IOException e) {
 			throw new AssertionError(e);
 		}
+	}
+	
+	private long getNewRandomId() {
+		SecureRandom random = new SecureRandom();
+
+		byte sessBytes[] = new byte[32];
+
+		random.nextBytes(sessBytes);
+		
+		long randomId = 0;
+		for (int i = 0; i < sessBytes.length; i++)
+		{
+			randomId += ((long) sessBytes[i] & 0xffL) << (8 * i);
+		}
+		
+		return randomId;
 	}
 }
