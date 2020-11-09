@@ -36,7 +36,7 @@ import java.io.IOException;
 /**
  * PatchCustomerPaymentInstrumentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class PatchCustomerPaymentInstrumentRequest {
   @SerializedName("_links")
   private Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks links = null;
@@ -46,6 +46,9 @@ public class PatchCustomerPaymentInstrumentRequest {
 
   @SerializedName("object")
   private String object = null;
+
+  @SerializedName("default")
+  private Boolean _default = null;
 
   @SerializedName("state")
   private String state = null;
@@ -120,6 +123,24 @@ public class PatchCustomerPaymentInstrumentRequest {
   @ApiModelProperty(example = "paymentInstrument", value = "The type of token.  Valid values: - paymentInstrument ")
   public String getObject() {
     return object;
+  }
+
+  public PatchCustomerPaymentInstrumentRequest _default(Boolean _default) {
+    this._default = _default;
+    return this;
+  }
+
+   /**
+   * Flag that indicates whether customer payment instrument is the dafault. Valid values:  - &#x60;true&#x60;: Payment instrument is customer&#39;s default.  - &#x60;false&#x60;: Payment instrument is not customer&#39;s default. 
+   * @return _default
+  **/
+  @ApiModelProperty(value = "Flag that indicates whether customer payment instrument is the dafault. Valid values:  - `true`: Payment instrument is customer's default.  - `false`: Payment instrument is not customer's default. ")
+  public Boolean getDefault() {
+    return _default;
+  }
+
+  public void setDefault(Boolean _default) {
+    this._default = _default;
   }
 
    /**
@@ -306,6 +327,7 @@ public class PatchCustomerPaymentInstrumentRequest {
     return Objects.equals(this.links, patchCustomerPaymentInstrumentRequest.links) &&
         Objects.equals(this.id, patchCustomerPaymentInstrumentRequest.id) &&
         Objects.equals(this.object, patchCustomerPaymentInstrumentRequest.object) &&
+        Objects.equals(this._default, patchCustomerPaymentInstrumentRequest._default) &&
         Objects.equals(this.state, patchCustomerPaymentInstrumentRequest.state) &&
         Objects.equals(this.bankAccount, patchCustomerPaymentInstrumentRequest.bankAccount) &&
         Objects.equals(this.card, patchCustomerPaymentInstrumentRequest.card) &&
@@ -320,7 +342,7 @@ public class PatchCustomerPaymentInstrumentRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, object, state, bankAccount, card, buyerInformation, billTo, processingInformation, merchantInformation, instrumentIdentifier, metadata, embedded);
+    return Objects.hash(links, id, object, _default, state, bankAccount, card, buyerInformation, billTo, processingInformation, merchantInformation, instrumentIdentifier, metadata, embedded);
   }
 
 
@@ -332,6 +354,7 @@ public class PatchCustomerPaymentInstrumentRequest {
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    object: ").append(toIndentedString(object)).append("\n");
+    sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");

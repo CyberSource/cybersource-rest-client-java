@@ -726,7 +726,7 @@ public class CustomerShippingAddressApi {
 
     /**
      * Create a Customer Shipping Address
-     * 
+     * Include an existing TMS Customer token id in the request URI. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** 
      * @param customerTokenId The TokenId of a customer. (required)
      * @param postCustomerShippingAddressRequest  (required)
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)
@@ -741,7 +741,7 @@ public class CustomerShippingAddressApi {
 
     /**
      * Create a Customer Shipping Address
-     * 
+     * Include an existing TMS Customer token id in the request URI. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** 
      * @param customerTokenId The TokenId of a customer. (required)
      * @param postCustomerShippingAddressRequest  (required)
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)
@@ -756,7 +756,7 @@ public class CustomerShippingAddressApi {
 
     /**
      * Create a Customer Shipping Address (asynchronously)
-     * 
+     * Include an existing TMS Customer token id in the request URI. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** 
      * @param customerTokenId The TokenId of a customer. (required)
      * @param postCustomerShippingAddressRequest  (required)
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)

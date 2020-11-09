@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200ResponseOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class TssV2TransactionsGet200ResponseOrderInformation {
   @SerializedName("billTo")
   private TssV2TransactionsGet200ResponseOrderInformationBillTo billTo = null;

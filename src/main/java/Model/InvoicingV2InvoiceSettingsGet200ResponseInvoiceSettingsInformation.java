@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation {
   @SerializedName("merchantLogo")
   private String merchantLogo = null;
@@ -49,6 +49,9 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
 
   @SerializedName("defaultCurrencyCode")
   private String defaultCurrencyCode = null;
+
+  @SerializedName("payerAuthentication3DSVersion")
+  private String payerAuthentication3DSVersion = null;
 
   public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation merchantLogo(String merchantLogo) {
     this.merchantLogo = merchantLogo;
@@ -176,6 +179,24 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
     this.defaultCurrencyCode = defaultCurrencyCode;
   }
 
+  public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation payerAuthentication3DSVersion(String payerAuthentication3DSVersion) {
+    this.payerAuthentication3DSVersion = payerAuthentication3DSVersion;
+    return this;
+  }
+
+   /**
+   * The 3D Secure payer authentication version or status for a merchant&#39;s invoice payments. Possible values are: - &#x60;1&#x60; - &#x60;2&#x60; - &#x60;None&#x60; - &#x60;Disabled&#x60; 
+   * @return payerAuthentication3DSVersion
+  **/
+  @ApiModelProperty(value = "The 3D Secure payer authentication version or status for a merchant's invoice payments. Possible values are: - `1` - `2` - `None` - `Disabled` ")
+  public String getPayerAuthentication3DSVersion() {
+    return payerAuthentication3DSVersion;
+  }
+
+  public void setPayerAuthentication3DSVersion(String payerAuthentication3DSVersion) {
+    this.payerAuthentication3DSVersion = payerAuthentication3DSVersion;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -192,12 +213,13 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
         Objects.equals(this.enableReminders, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.enableReminders) &&
         Objects.equals(this.headerStyle, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.headerStyle) &&
         Objects.equals(this.deliveryLanguage, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.deliveryLanguage) &&
-        Objects.equals(this.defaultCurrencyCode, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.defaultCurrencyCode);
+        Objects.equals(this.defaultCurrencyCode, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.defaultCurrencyCode) &&
+        Objects.equals(this.payerAuthentication3DSVersion, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.payerAuthentication3DSVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode);
+    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthentication3DSVersion);
   }
 
 
@@ -213,6 +235,7 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
     sb.append("    headerStyle: ").append(toIndentedString(headerStyle)).append("\n");
     sb.append("    deliveryLanguage: ").append(toIndentedString(deliveryLanguage)).append("\n");
     sb.append("    defaultCurrencyCode: ").append(toIndentedString(defaultCurrencyCode)).append("\n");
+    sb.append("    payerAuthentication3DSVersion: ").append(toIndentedString(payerAuthentication3DSVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }

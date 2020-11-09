@@ -18,6 +18,7 @@ import Model.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAvs;
 import Model.Riskv1decisionsProcessorInformationCardVerification;
 import Model.TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults;
+import Model.TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting;
 import Model.TssV2TransactionsGet200ResponseProcessorInformationProcessor;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -27,14 +28,19 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * TssV2TransactionsGet200ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class TssV2TransactionsGet200ResponseProcessorInformation {
   @SerializedName("processor")
   private TssV2TransactionsGet200ResponseProcessorInformationProcessor processor = null;
+
+  @SerializedName("multiProcessorRouting")
+  private List<TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting> multiProcessorRouting = null;
 
   @SerializedName("transactionId")
   private String transactionId = null;
@@ -88,6 +94,32 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   public void setProcessor(TssV2TransactionsGet200ResponseProcessorInformationProcessor processor) {
     this.processor = processor;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessorInformation multiProcessorRouting(List<TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting> multiProcessorRouting) {
+    this.multiProcessorRouting = multiProcessorRouting;
+    return this;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessorInformation addMultiProcessorRoutingItem(TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting multiProcessorRoutingItem) {
+    if (this.multiProcessorRouting == null) {
+      this.multiProcessorRouting = new ArrayList<TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting>();
+    }
+    this.multiProcessorRouting.add(multiProcessorRoutingItem);
+    return this;
+  }
+
+   /**
+   * An array of object that contains the list of acquirer response codes &amp; reasons if a transaction is routed to multiple acquirers.
+   * @return multiProcessorRouting
+  **/
+  @ApiModelProperty(value = "An array of object that contains the list of acquirer response codes & reasons if a transaction is routed to multiple acquirers.")
+  public List<TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting> getMultiProcessorRouting() {
+    return multiProcessorRouting;
+  }
+
+  public void setMultiProcessorRouting(List<TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting> multiProcessorRouting) {
+    this.multiProcessorRouting = multiProcessorRouting;
   }
 
   public TssV2TransactionsGet200ResponseProcessorInformation transactionId(String transactionId) {
@@ -317,6 +349,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     }
     TssV2TransactionsGet200ResponseProcessorInformation tssV2TransactionsGet200ResponseProcessorInformation = (TssV2TransactionsGet200ResponseProcessorInformation) o;
     return Objects.equals(this.processor, tssV2TransactionsGet200ResponseProcessorInformation.processor) &&
+        Objects.equals(this.multiProcessorRouting, tssV2TransactionsGet200ResponseProcessorInformation.multiProcessorRouting) &&
         Objects.equals(this.transactionId, tssV2TransactionsGet200ResponseProcessorInformation.transactionId) &&
         Objects.equals(this.networkTransactionId, tssV2TransactionsGet200ResponseProcessorInformation.networkTransactionId) &&
         Objects.equals(this.responseId, tssV2TransactionsGet200ResponseProcessorInformation.responseId) &&
@@ -333,7 +366,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(processor, transactionId, networkTransactionId, responseId, providerTransactionId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, systemTraceAuditNumber, responseCodeSource);
+    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, responseId, providerTransactionId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, systemTraceAuditNumber, responseCodeSource);
   }
 
 
@@ -343,6 +376,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     sb.append("class TssV2TransactionsGet200ResponseProcessorInformation {\n");
     
     sb.append("    processor: ").append(toIndentedString(processor)).append("\n");
+    sb.append("    multiProcessorRouting: ").append(toIndentedString(multiProcessorRouting)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
     sb.append("    responseId: ").append(toIndentedString(responseId)).append("\n");

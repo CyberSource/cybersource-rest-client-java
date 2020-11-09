@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing {
   @SerializedName("count")
   private Integer count = null;
@@ -79,10 +79,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing {
   }
 
    /**
-   * Identifier that CyberSource assigned to the velocity rule specified by the number #.  For all possible values, see the &#x60;decision_velocity_morphing_#_info_code&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * Identifier that CyberSource assigned to the velocity rule specified by the number #.  For all possible values, see the &#x60;decision_velocity_morphing_#_info_code&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt;  
    * @return informationCode
   **/
-  @ApiModelProperty(value = "Identifier that CyberSource assigned to the velocity rule specified by the number #.  For all possible values, see the `decision_velocity_morphing_#_info_code` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  @ApiModelProperty(value = "Identifier that CyberSource assigned to the velocity rule specified by the number #.  For all possible values, see the `decision_velocity_morphing_#_info_code` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** >  ")
   public String getInformationCode() {
     return informationCode;
   }

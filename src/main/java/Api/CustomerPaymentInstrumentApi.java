@@ -726,7 +726,7 @@ public class CustomerPaymentInstrumentApi {
 
     /**
      * Create a Customer Payment Instrument
-     * 
+     * Include an existing TMS Customer &amp; Instrument Identifier token id in the request. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
      * @param customerTokenId The TokenId of a customer. (required)
      * @param postCustomerPaymentInstrumentRequest  (required)
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)
@@ -741,7 +741,7 @@ public class CustomerPaymentInstrumentApi {
 
     /**
      * Create a Customer Payment Instrument
-     * 
+     * Include an existing TMS Customer &amp; Instrument Identifier token id in the request. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
      * @param customerTokenId The TokenId of a customer. (required)
      * @param postCustomerPaymentInstrumentRequest  (required)
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)
@@ -756,7 +756,7 @@ public class CustomerPaymentInstrumentApi {
 
     /**
      * Create a Customer Payment Instrument (asynchronously)
-     * 
+     * Include an existing TMS Customer &amp; Instrument Identifier token id in the request. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
      * @param customerTokenId The TokenId of a customer. (required)
      * @param postCustomerPaymentInstrumentRequest  (required)
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)

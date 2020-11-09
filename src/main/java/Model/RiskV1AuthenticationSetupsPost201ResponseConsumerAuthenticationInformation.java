@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("accessToken")
   private String accessToken = null;
@@ -43,10 +43,10 @@ public class RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInfo
   }
 
    /**
-   * JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. 
+   * JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. Note - Max Length of this field is 2048 characters. 
    * @return accessToken
   **/
-  @ApiModelProperty(value = "JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. ")
+  @ApiModelProperty(value = "JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. Note - Max Length of this field is 2048 characters. ")
   public String getAccessToken() {
     return accessToken;
   }

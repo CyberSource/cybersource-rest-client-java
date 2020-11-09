@@ -29,13 +29,16 @@ import java.io.IOException;
 /**
  * PatchCustomerShippingAddressRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class PatchCustomerShippingAddressRequest {
   @SerializedName("_links")
   private Tmsv2customersEmbeddedDefaultShippingAddressLinks links = null;
 
   @SerializedName("id")
   private String id = null;
+
+  @SerializedName("default")
+  private Boolean _default = null;
 
   @SerializedName("shipTo")
   private Tmsv2customersEmbeddedDefaultShippingAddressShipTo shipTo = null;
@@ -77,6 +80,24 @@ public class PatchCustomerShippingAddressRequest {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+  public PatchCustomerShippingAddressRequest _default(Boolean _default) {
+    this._default = _default;
+    return this;
+  }
+
+   /**
+   * Flag that indicates whether customer shipping address is the dafault. Valid values:  - &#x60;true&#x60;: Shipping Address is customer&#39;s default.  - &#x60;false&#x60;: Shipping Address is not customer&#39;s default. 
+   * @return _default
+  **/
+  @ApiModelProperty(value = "Flag that indicates whether customer shipping address is the dafault. Valid values:  - `true`: Shipping Address is customer's default.  - `false`: Shipping Address is not customer's default. ")
+  public Boolean getDefault() {
+    return _default;
+  }
+
+  public void setDefault(Boolean _default) {
+    this._default = _default;
   }
 
   public PatchCustomerShippingAddressRequest shipTo(Tmsv2customersEmbeddedDefaultShippingAddressShipTo shipTo) {
@@ -127,13 +148,14 @@ public class PatchCustomerShippingAddressRequest {
     PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest = (PatchCustomerShippingAddressRequest) o;
     return Objects.equals(this.links, patchCustomerShippingAddressRequest.links) &&
         Objects.equals(this.id, patchCustomerShippingAddressRequest.id) &&
+        Objects.equals(this._default, patchCustomerShippingAddressRequest._default) &&
         Objects.equals(this.shipTo, patchCustomerShippingAddressRequest.shipTo) &&
         Objects.equals(this.metadata, patchCustomerShippingAddressRequest.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, shipTo, metadata);
+    return Objects.hash(links, id, _default, shipTo, metadata);
   }
 
 
@@ -144,6 +166,7 @@ public class PatchCustomerShippingAddressRequest {
     
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");

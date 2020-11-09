@@ -157,11 +157,11 @@ public class ApiClient {
 	private HttpLoggingInterceptor loggingInterceptor;
 	public RequestTransactionMetrics apiRequestMetrics = new RequestTransactionMetrics();
 	private long computationStartTime;
-	
-	public static OkHttpClient initializeFinalVariables() {		
+
+	public static OkHttpClient initializeFinalVariables() {
 		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
 		logging.setLevel(Level.NONE);
-		
+
 		return new OkHttpClient.Builder()
 							.connectTimeout(1, TimeUnit.SECONDS)
 							.writeTimeout(60, TimeUnit.SECONDS)
@@ -216,10 +216,10 @@ public class ApiClient {
 		String propertyVersionInfo = null; 
 		final Properties properties = new Properties();
 		try {
-			properties.load(this.getClass().getClassLoader().getResourceAsStream("cybersource-rest-client-java.properties"));			
+			properties.load(this.getClass().getClassLoader().getResourceAsStream("cybersource-rest-client-java.properties"));
 			propertyVersionInfo = properties.getProperty("sdk.version");
 		} catch (IOException e) {
-			
+
 		}
 
 		return propertyVersionInfo;
@@ -246,7 +246,7 @@ public class ApiClient {
 						if (proxyCounter++ > 0) {
 							if (response.code() == 407) {
 								throw new HttpRetryException("Proxy Authentication Missing or Incorrect.", 407);
-							} else {							
+							} else {
 								throw new IOException(response.message());
 							}
 						}
@@ -288,7 +288,7 @@ public class ApiClient {
 	public String getBasePath() {
 		return basePath;
 	}
-	
+
 	/**
 	 * @param acceptHeader the acceptHeader to set
 	 */
@@ -998,7 +998,7 @@ public class ApiClient {
 		if (response == null) {
 			return null;
 		}
-		
+
 		if ((returnType == null && response != null) || ("byte[]".equals(returnType.toString()))) {
 			T respBody =  (T) response.body().byteStream();
 
@@ -1298,14 +1298,14 @@ public class ApiClient {
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		callAuthenticationHeader(method, path, body, queryParams);
-		
+
 		if (acceptHeader != null && !acceptHeader.isEmpty()) {
 			String defaultAcceptHeader = "," + headerParams.get("Accept");
 			defaultAcceptHeader = acceptHeader + defaultAcceptHeader.replace("," + acceptHeader, "");
 			headerParams.remove("Accept");
 			headerParams.put("Accept", defaultAcceptHeader);
 		}
-		
+
 		headerParams.putAll(defaultHeaderMap);
 		Request request = buildRequest(path, method, queryParams, body, headerParams, formParams, authNames,
 				progressRequestListener);
@@ -1357,7 +1357,7 @@ public class ApiClient {
 			authorization.setJWTRequestBody(requestBody);
 			merchantConfig.setRequestJsonPath(GlobalLabelParameters.POST_OBJECT_METHOD_REQUEST_PATH);
 			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(logger);
-			
+
 			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
 
 			if (isMerchantDetails) {
@@ -1381,12 +1381,12 @@ public class ApiClient {
 					token = "Bearer " + token;
 					addDefaultHeader("Authorization", token);
 				}
-				
+
 				// if (merchantConfig.getSolutionId() != null && !merchantConfig.getSolutionId().isEmpty()) {
 					// addDefaultHeader("v-c-solution-id", merchantConfig.getSolutionId());
 				// }
 			}
-			
+
 			if (versionInfo != null && !versionInfo.isEmpty()) {
 				addDefaultHeader("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			}
@@ -1518,7 +1518,7 @@ public class ApiClient {
 				reqBuilder.header(header.getKey(), parameterToString(header.getValue()));
 			}
 		}
-		
+
 		reqBuilder.header("Connection", "keep-alive");
 	}
 
