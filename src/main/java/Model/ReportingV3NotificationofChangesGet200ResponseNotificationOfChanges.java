@@ -28,7 +28,7 @@ import org.joda.time.DateTime;
  * Notification Of Change
  */
 @ApiModel(description = "Notification Of Change")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges {
   @SerializedName("merchantReferenceNumber")
   private String merchantReferenceNumber = null;

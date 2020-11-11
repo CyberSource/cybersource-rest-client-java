@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation;
+import Model.Invoicingv2invoiceSettingsInvoiceSettingsInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,12 +27,12 @@ import java.io.IOException;
 /**
  * InvoiceSettingsRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class InvoiceSettingsRequest {
   @SerializedName("invoiceSettingsInformation")
-  private InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation invoiceSettingsInformation = null;
+  private Invoicingv2invoiceSettingsInvoiceSettingsInformation invoiceSettingsInformation = null;
 
-  public InvoiceSettingsRequest invoiceSettingsInformation(InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation invoiceSettingsInformation) {
+  public InvoiceSettingsRequest invoiceSettingsInformation(Invoicingv2invoiceSettingsInvoiceSettingsInformation invoiceSettingsInformation) {
     this.invoiceSettingsInformation = invoiceSettingsInformation;
     return this;
   }
@@ -42,11 +42,11 @@ public class InvoiceSettingsRequest {
    * @return invoiceSettingsInformation
   **/
   @ApiModelProperty(value = "")
-  public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation getInvoiceSettingsInformation() {
+  public Invoicingv2invoiceSettingsInvoiceSettingsInformation getInvoiceSettingsInformation() {
     return invoiceSettingsInformation;
   }
 
-  public void setInvoiceSettingsInformation(InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation invoiceSettingsInformation) {
+  public void setInvoiceSettingsInformation(Invoicingv2invoiceSettingsInvoiceSettingsInformation invoiceSettingsInformation) {
     this.invoiceSettingsInformation = invoiceSettingsInformation;
   }
 

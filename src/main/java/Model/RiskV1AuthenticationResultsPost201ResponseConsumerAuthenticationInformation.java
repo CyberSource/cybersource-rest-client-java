@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("acsRenderingType")
   private String acsRenderingType = null;
@@ -229,10 +229,10 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
   }
 
    /**
-   * The directory server error code indicating a problem with this transaction. 
+   * The directory server error code indicating a problem with this transaction. Note - Max Length of this field is typically 3 characters. 
    * @return directoryServerErrorCode
   **/
-  @ApiModelProperty(value = "The directory server error code indicating a problem with this transaction. ")
+  @ApiModelProperty(value = "The directory server error code indicating a problem with this transaction. Note - Max Length of this field is typically 3 characters. ")
   public String getDirectoryServerErrorCode() {
     return directoryServerErrorCode;
   }

@@ -542,7 +542,7 @@ public class PaymentInstrumentApi {
 
     /**
      * Create a Payment Instrument
-     * 
+     * Include an existing TMS Instrument Identifier id in the request body. * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
      * @param postPaymentInstrumentRequest  (required)
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @return Tmsv2customersEmbeddedDefaultPaymentInstrument
@@ -556,7 +556,7 @@ public class PaymentInstrumentApi {
 
     /**
      * Create a Payment Instrument
-     * 
+     * Include an existing TMS Instrument Identifier id in the request body. * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
      * @param postPaymentInstrumentRequest  (required)
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrument&gt;
@@ -570,7 +570,7 @@ public class PaymentInstrumentApi {
 
     /**
      * Create a Payment Instrument (asynchronously)
-     * 
+     * Include an existing TMS Instrument Identifier id in the request body. * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
      * @param postPaymentInstrumentRequest  (required)
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes

@@ -34,7 +34,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class PtsV2PaymentsPost201ResponsePaymentInformation {
   @SerializedName("card")
   private PtsV2PaymentsPost201ResponsePaymentInformationCard card = null;
@@ -59,6 +59,21 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
 
   @SerializedName("shippingAddress")
   private Ptsv2paymentsPaymentInformationShippingAddress shippingAddress = null;
+
+  @SerializedName("scheme")
+  private String scheme = null;
+
+  @SerializedName("bin")
+  private String bin = null;
+
+  @SerializedName("accountType")
+  private String accountType = null;
+
+  @SerializedName("issuer")
+  private String issuer = null;
+
+  @SerializedName("binCountry")
+  private String binCountry = null;
 
   public PtsV2PaymentsPost201ResponsePaymentInformation card(PtsV2PaymentsPost201ResponsePaymentInformationCard card) {
     this.card = card;
@@ -204,6 +219,96 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
     this.shippingAddress = shippingAddress;
   }
 
+  public PtsV2PaymentsPost201ResponsePaymentInformation scheme(String scheme) {
+    this.scheme = scheme;
+    return this;
+  }
+
+   /**
+   * Subtype of card account. This field can contain one of the following values: - Maestro International - Maestro UK Domestic - MasterCard Credit - MasterCard Debit - Visa Credit - Visa Debit - Visa Electron  **Note** Additional values may be present.  For all possible values, see the &#x60;score_card_scheme&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @return scheme
+  **/
+  @ApiModelProperty(value = "Subtype of card account. This field can contain one of the following values: - Maestro International - Maestro UK Domestic - MasterCard Credit - MasterCard Debit - Visa Credit - Visa Debit - Visa Electron  **Note** Additional values may be present.  For all possible values, see the `score_card_scheme` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  public String getScheme() {
+    return scheme;
+  }
+
+  public void setScheme(String scheme) {
+    this.scheme = scheme;
+  }
+
+  public PtsV2PaymentsPost201ResponsePaymentInformation bin(String bin) {
+    this.bin = bin;
+    return this;
+  }
+
+   /**
+   * Credit card BIN (the first six digits of the credit card).Derived either from the &#x60;cc_bin&#x60; request field or from the first six characters of the &#x60;customer_cc_num&#x60; field.  For all possible values, see the &#x60;score_cc_bin&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @return bin
+  **/
+  @ApiModelProperty(value = "Credit card BIN (the first six digits of the credit card).Derived either from the `cc_bin` request field or from the first six characters of the `customer_cc_num` field.  For all possible values, see the `score_cc_bin` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  public String getBin() {
+    return bin;
+  }
+
+  public void setBin(String bin) {
+    this.bin = bin;
+  }
+
+  public PtsV2PaymentsPost201ResponsePaymentInformation accountType(String accountType) {
+    this.accountType = accountType;
+    return this;
+  }
+
+   /**
+   * Type of payment card account. This field can refer to a credit card, debit card, or prepaid card account type.  For all possible values, see the &#x60;score_card_account_type&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @return accountType
+  **/
+  @ApiModelProperty(value = "Type of payment card account. This field can refer to a credit card, debit card, or prepaid card account type.  For all possible values, see the `score_card_account_type` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  public String getAccountType() {
+    return accountType;
+  }
+
+  public void setAccountType(String accountType) {
+    this.accountType = accountType;
+  }
+
+  public PtsV2PaymentsPost201ResponsePaymentInformation issuer(String issuer) {
+    this.issuer = issuer;
+    return this;
+  }
+
+   /**
+   * Name of the bank or entity that issued the card account.  For all possible values, see the &#x60;score_card_issuer&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @return issuer
+  **/
+  @ApiModelProperty(value = "Name of the bank or entity that issued the card account.  For all possible values, see the `score_card_issuer` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  public String getIssuer() {
+    return issuer;
+  }
+
+  public void setIssuer(String issuer) {
+    this.issuer = issuer;
+  }
+
+  public PtsV2PaymentsPost201ResponsePaymentInformation binCountry(String binCountry) {
+    this.binCountry = binCountry;
+    return this;
+  }
+
+   /**
+   * Country (two-digit country code) associated with the BIN of the customer’s card used for the payment. Returned if the information is available. Use this field for additional information when reviewing orders. This information is also displayed in the details page of the CyberSource Business Center.  For all possible values, see the &#x60;bin_country&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @return binCountry
+  **/
+  @ApiModelProperty(value = "Country (two-digit country code) associated with the BIN of the customer’s card used for the payment. Returned if the information is available. Use this field for additional information when reviewing orders. This information is also displayed in the details page of the CyberSource Business Center.  For all possible values, see the `bin_country` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  public String getBinCountry() {
+    return binCountry;
+  }
+
+  public void setBinCountry(String binCountry) {
+    this.binCountry = binCountry;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -221,12 +326,17 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
         Objects.equals(this.customer, ptsV2PaymentsPost201ResponsePaymentInformation.customer) &&
         Objects.equals(this.paymentInstrument, ptsV2PaymentsPost201ResponsePaymentInformation.paymentInstrument) &&
         Objects.equals(this.instrumentIdentifier, ptsV2PaymentsPost201ResponsePaymentInformation.instrumentIdentifier) &&
-        Objects.equals(this.shippingAddress, ptsV2PaymentsPost201ResponsePaymentInformation.shippingAddress);
+        Objects.equals(this.shippingAddress, ptsV2PaymentsPost201ResponsePaymentInformation.shippingAddress) &&
+        Objects.equals(this.scheme, ptsV2PaymentsPost201ResponsePaymentInformation.scheme) &&
+        Objects.equals(this.bin, ptsV2PaymentsPost201ResponsePaymentInformation.bin) &&
+        Objects.equals(this.accountType, ptsV2PaymentsPost201ResponsePaymentInformation.accountType) &&
+        Objects.equals(this.issuer, ptsV2PaymentsPost201ResponsePaymentInformation.issuer) &&
+        Objects.equals(this.binCountry, ptsV2PaymentsPost201ResponsePaymentInformation.binCountry);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, accountFeatures, bank, customer, paymentInstrument, instrumentIdentifier, shippingAddress);
+    return Objects.hash(card, tokenizedCard, accountFeatures, bank, customer, paymentInstrument, instrumentIdentifier, shippingAddress, scheme, bin, accountType, issuer, binCountry);
   }
 
 
@@ -243,6 +353,11 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
     sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
     sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
     sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
+    sb.append("    bin: ").append(toIndentedString(bin)).append("\n");
+    sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
+    sb.append("    binCountry: ").append(toIndentedString(binCountry)).append("\n");
     sb.append("}");
     return sb.toString();
   }

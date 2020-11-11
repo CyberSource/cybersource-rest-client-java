@@ -30,7 +30,7 @@ import java.util.List;
  * Error Bean
  */
 @ApiModel(description = "Error Bean")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-14T15:19:00.879+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
 public class InlineResponse4001 {
   @SerializedName("code")
   private String code = null;

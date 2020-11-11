@@ -114,7 +114,7 @@ public class CustomerShippingAddressApiTest {
     /**
      * Create a Customer Shipping Address
      *
-     * 
+     * Include an existing TMS Customer token id in the request URI. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** 
      *
      * @throws ApiException
      *          if the Api call fails
