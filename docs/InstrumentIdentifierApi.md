@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getInstrumentIdentifierPaymentInstrumentsList**](InstrumentIdentifierApi.md#getInstrumentIdentifierPaymentInstrumentsList) | **GET** /tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments | List Payment Instruments for an Instrument Identifier
 [**patchInstrumentIdentifier**](InstrumentIdentifierApi.md#patchInstrumentIdentifier) | **PATCH** /tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId} | Update an Instrument Identifier
 [**postInstrumentIdentifier**](InstrumentIdentifierApi.md#postInstrumentIdentifier) | **POST** /tms/v1/instrumentidentifiers | Create an Instrument Identifier
+[**postInstrumentIdentifierEnrollment**](InstrumentIdentifierApi.md#postInstrumentIdentifierEnrollment) | **POST** /tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/enrollment | Enroll an Instrument Identifier for Network Tokenization
 
 
 <a name="deleteInstrumentIdentifier"></a>
@@ -212,7 +213,7 @@ Create an Instrument Identifier
 
 
 InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
-PostInstrumentIdentifierRequest postInstrumentIdentifierRequest = new PostInstrumentIdentifierRequest(); // PostInstrumentIdentifierRequest | Please specify either a Card, Bank Account or Enrollable Card
+PostInstrumentIdentifierRequest postInstrumentIdentifierRequest = new PostInstrumentIdentifierRequest(); // PostInstrumentIdentifierRequest | Specify either a Card, Bank Account or Enrollable Card
 String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
 try {
     Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier result = apiInstance.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId);
@@ -227,12 +228,58 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **postInstrumentIdentifierRequest** | [**PostInstrumentIdentifierRequest**](PostInstrumentIdentifierRequest.md)| Please specify either a Card, Bank Account or Enrollable Card |
+ **postInstrumentIdentifierRequest** | [**PostInstrumentIdentifierRequest**](PostInstrumentIdentifierRequest.md)| Specify either a Card, Bank Account or Enrollable Card |
  **profileId** | **String**| The id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
 
 [**Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+<a name="postInstrumentIdentifierEnrollment"></a>
+# **postInstrumentIdentifierEnrollment**
+> postInstrumentIdentifierEnrollment(instrumentIdentifierTokenId, postInstrumentIdentifierEnrollmentRequest, profileId)
+
+Enroll an Instrument Identifier for Network Tokenization
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.InstrumentIdentifierApi;
+
+
+InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
+String instrumentIdentifierTokenId = "instrumentIdentifierTokenId_example"; // String | The TokenId of a Instrument Identifier.
+PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest = new PostInstrumentIdentifierEnrollmentRequest(); // PostInstrumentIdentifierEnrollmentRequest | Specify Enrollable Card details
+String profileId = "profileId_example"; // String | The id of a profile containing user specific TMS configuration.
+try {
+    apiInstance.postInstrumentIdentifierEnrollment(instrumentIdentifierTokenId, postInstrumentIdentifierEnrollmentRequest, profileId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling InstrumentIdentifierApi#postInstrumentIdentifierEnrollment");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instrumentIdentifierTokenId** | **String**| The TokenId of a Instrument Identifier. |
+ **postInstrumentIdentifierEnrollmentRequest** | [**PostInstrumentIdentifierEnrollmentRequest**](PostInstrumentIdentifierEnrollmentRequest.md)| Specify Enrollable Card details |
+ **profileId** | **String**| The id of a profile containing user specific TMS configuration. | [optional]
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
