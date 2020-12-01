@@ -125,4 +125,22 @@ public class InstrumentIdentifierApiTest {
         // TODO: test validations
     }
     
+    /**
+     * Enroll an Instrument Identifier for Network Tokenization
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void postInstrumentIdentifierEnrollmentTest() throws ApiException {
+        String instrumentIdentifierTokenId = null;
+        PostInstrumentIdentifierRequest postInstrumentIdentifierEnrollmentRequest = null;
+        String profileId = null;
+        api.postInstrumentIdentifierEnrollment(instrumentIdentifierTokenId, postInstrumentIdentifierEnrollmentRequest, profileId);
+
+        // TODO: test validations
+    }
+    
 }

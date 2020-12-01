@@ -31,7 +31,7 @@ import java.io.IOException;
 /**
  * IncrementAuthRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
 public class IncrementAuthRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsidClientReferenceInformation clientReferenceInformation = null;

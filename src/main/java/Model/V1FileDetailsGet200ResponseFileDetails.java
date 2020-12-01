@@ -22,13 +22,14 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
 /**
  * V1FileDetailsGet200ResponseFileDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-30T13:05:11.653+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
 public class V1FileDetailsGet200ResponseFileDetails {
   @SerializedName("fileId")
   private String fileId = null;
@@ -49,7 +50,7 @@ public class V1FileDetailsGet200ResponseFileDetails {
   private String mimeType = null;
 
   @SerializedName("size")
-  private Integer size = null;
+  private BigDecimal size = null;
 
   public V1FileDetailsGet200ResponseFileDetails fileId(String fileId) {
     this.fileId = fileId;
@@ -159,7 +160,7 @@ public class V1FileDetailsGet200ResponseFileDetails {
     this.mimeType = mimeType;
   }
 
-  public V1FileDetailsGet200ResponseFileDetails size(Integer size) {
+  public V1FileDetailsGet200ResponseFileDetails size(BigDecimal size) {
     this.size = size;
     return this;
   }
@@ -168,12 +169,12 @@ public class V1FileDetailsGet200ResponseFileDetails {
    * Size of the file in bytes
    * @return size
   **/
-  @ApiModelProperty(example = "2245397", value = "Size of the file in bytes")
-  public Integer getSize() {
+  @ApiModelProperty(example = "2245397.0", value = "Size of the file in bytes")
+  public BigDecimal getSize() {
     return size;
   }
 
-  public void setSize(Integer size) {
+  public void setSize(BigDecimal size) {
     this.size = size;
   }
 
