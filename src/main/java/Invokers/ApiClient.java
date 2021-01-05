@@ -41,7 +41,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.net.ssl.*;
-
 import com.google.gson.Gson;
 import org.apache.logging.log4j.Logger;
 import com.cybersource.authsdk.core.Authorization;
@@ -267,6 +266,8 @@ public class ApiClient {
 		}
 
 		this.merchantConfig = merchantConfig;
+		// RetryInterceptor.retryDelay = merchantConfig.getRetryDelay();
+		// RetryInterceptor.retryEnabled = merchantConfig.isRetryEnabled();
 	}
 
 	/**
@@ -1286,12 +1287,12 @@ public class ApiClient {
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-			callAuthenticationHeader(method, path, body, queryParams);
+		callAuthenticationHeader(method, path, body, queryParams);
 
-			if(merchantConfig.getEnableClientCert())
-			{
-				addClientCertToKeyStore();
-			}
+		if(merchantConfig.getEnableClientCert())
+		{
+			addClientCertToKeyStore();
+		}
 
 		if (acceptHeader != null && !acceptHeader.isEmpty()) {
 			String defaultAcceptHeader = "," + headerParams.get("Accept");
@@ -1439,7 +1440,6 @@ public class ApiClient {
 			Gson gson = new Gson();
 			String jsonString = json.serialize(body);
 			formParams = gson.fromJson(jsonString, HashMap.class);
-			while (formParams.values().remove(null));
 			reqBody = buildRequestBodyFormEncoding(formParams);
 		} else if ("multipart/form-data".equals(contentType)) {
 			reqBody = buildRequestBodyMultipart(formParams);
@@ -1667,7 +1667,6 @@ public class ApiClient {
 		catch (IOException | CertificateException | NoSuchAlgorithmException | KeyStoreException | KeyManagementException | UnrecoverableKeyException ex) {
 
 		}
-
 	}
 
 	/**
