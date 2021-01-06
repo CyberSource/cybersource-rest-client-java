@@ -41,7 +41,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.net.ssl.*;
+import com.cybersource.authsdk.util.Utility;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.apache.logging.log4j.Logger;
 import com.cybersource.authsdk.core.Authorization;
 import com.cybersource.authsdk.core.ConfigException;
@@ -1164,6 +1166,10 @@ public class ApiClient {
 			responseCode = String.valueOf(response.code());
 			status = response.message();
 
+			if(returnType == new TypeToken< Model.AccessTokenResponse >(){}.getType()) {
+				Logger logger = Log4j.getInstance(merchantConfig);
+				Utility.log(logger, response.peekBody(Long.MAX_VALUE).string(), org.apache.logging.log4j.Level.DEBUG);
+			}
 			T data = handleResponse(response, returnType);
 
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
@@ -1355,33 +1361,33 @@ public class ApiClient {
 
 			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
 
-			if (isMerchantDetails && !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.NOAUTH)) {
-				String token = authorization.getToken(merchantConfig);
-				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
-					addDefaultHeader("Date", PropertiesUtil.date);
-					addDefaultHeader("Host", merchantConfig.getRequestHost().trim());
-					addDefaultHeader("v-c-merchant-id", merchantConfig.getMerchantID());
-					addDefaultHeader("Signature", token);
-					addDefaultHeader("User-Agent", "Mozilla/5.0");
+			if (isMerchantDetails && !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
+					String token = authorization.getToken(merchantConfig);
+					if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
-					if (method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT")
-							|| method.equalsIgnoreCase("PATCH")) {
-						PayloadDigest payloadDigest = new PayloadDigest(merchantConfig);
-						String digest = payloadDigest.getDigest();
-						addDefaultHeader("Digest", digest);
+						addDefaultHeader("Date", PropertiesUtil.date);
+						addDefaultHeader("Host", merchantConfig.getRequestHost().trim());
+						addDefaultHeader("v-c-merchant-id", merchantConfig.getMerchantID());
+						addDefaultHeader("Signature", token);
+						addDefaultHeader("User-Agent", "Mozilla/5.0");
+
+						if (method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT")
+								|| method.equalsIgnoreCase("PATCH")) {
+							PayloadDigest payloadDigest = new PayloadDigest(merchantConfig);
+							String digest = payloadDigest.getDigest();
+							addDefaultHeader("Digest", digest);
+						}
+
+					} else if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.JWT)) {
+						token = "Bearer " + token;
+						addDefaultHeader("Authorization", token);
 					}
-
-				} else if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.JWT)) {
-					token = "Bearer " + token;
-					addDefaultHeader("Authorization", token);
+					else if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.OAUTH)) {
+						token = "Bearer " + token;
+						addDefaultHeader("Authorization", token);
+					}
 				}
-				else if(merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.OAUTH))
-				{
-					token = "Bearer " + token;
-					addDefaultHeader("Authorization", token);
-				}
-			}
 
 			if (versionInfo != null && !versionInfo.isEmpty()) {
 				addDefaultHeader("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);

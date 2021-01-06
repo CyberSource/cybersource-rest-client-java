@@ -41,7 +41,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.net.ssl.*;
+import com.cybersource.authsdk.util.Utility;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.apache.logging.log4j.Logger;
 import com.cybersource.authsdk.core.Authorization;
 import com.cybersource.authsdk.core.ConfigException;
@@ -1164,6 +1166,10 @@ public class ApiClient {
 			responseCode = String.valueOf(response.code());
 			status = response.message();
 
+			if(returnType == new TypeToken< Model.AccessTokenResponse >(){}.getType()) {
+            				Logger logger = Log4j.getInstance(merchantConfig);
+            				Utility.log(logger, response.peekBody(Long.MAX_VALUE).string(), org.apache.logging.log4j.Level.DEBUG);
+            			}
 			T data = handleResponse(response, returnType);
 
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
@@ -1355,7 +1361,7 @@ public class ApiClient {
 
 			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
 
-			if (isMerchantDetails && !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.NOAUTH)) {
+			if (isMerchantDetails && !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
 				String token = authorization.getToken(merchantConfig);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
