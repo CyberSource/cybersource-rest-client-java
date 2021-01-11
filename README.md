@@ -69,6 +69,15 @@ props.setProperty("runEnvironment", "CyberSource.Environment.SANDBOX");
 //props.setProperty("runEnvironment", "CyberSource.Environment.PRODUCTION");
 ```
 
+To Use OAuth, use OAuth enabled URLs
+
+```
+   	// For TESTING use
+	props.setProperty("runEnvironment", "CyberSource.Environment.MutualAuth.SANDBOX");
+	// For PRODUCTION use
+	//props.setProperty("runEnvironment", "CyberSource.Environment.MutualAuth.PRODUCTION");
+```
+
 API credentials are different for each environment, so be sure to switch to the appropriate credentials when switching environments.
 
 
