@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Riskv1decisionsidmarkingRiskInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class Riskv1decisionsidmarkingRiskInformation {
   @SerializedName("markingDetails")
   private Riskv1decisionsidmarkingRiskInformationMarkingDetails markingDetails = null;

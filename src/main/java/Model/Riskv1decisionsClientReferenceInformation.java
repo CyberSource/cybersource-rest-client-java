@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Riskv1decisionsClientReferenceInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,13 +27,16 @@ import java.io.IOException;
 /**
  * Riskv1decisionsClientReferenceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class Riskv1decisionsClientReferenceInformation {
   @SerializedName("code")
   private String code = null;
 
   @SerializedName("comments")
   private String comments = null;
+
+  @SerializedName("partner")
+  private Riskv1decisionsClientReferenceInformationPartner partner = null;
 
   public Riskv1decisionsClientReferenceInformation code(String code) {
     this.code = code;
@@ -43,7 +47,7 @@ public class Riskv1decisionsClientReferenceInformation {
    * Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. 
    * @return code
   **/
-  @ApiModelProperty(value = "Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. ")
+  @ApiModelProperty(required = true, value = "Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. ")
   public String getCode() {
     return code;
   }
@@ -70,6 +74,24 @@ public class Riskv1decisionsClientReferenceInformation {
     this.comments = comments;
   }
 
+  public Riskv1decisionsClientReferenceInformation partner(Riskv1decisionsClientReferenceInformationPartner partner) {
+    this.partner = partner;
+    return this;
+  }
+
+   /**
+   * Get partner
+   * @return partner
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsClientReferenceInformationPartner getPartner() {
+    return partner;
+  }
+
+  public void setPartner(Riskv1decisionsClientReferenceInformationPartner partner) {
+    this.partner = partner;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +103,13 @@ public class Riskv1decisionsClientReferenceInformation {
     }
     Riskv1decisionsClientReferenceInformation riskv1decisionsClientReferenceInformation = (Riskv1decisionsClientReferenceInformation) o;
     return Objects.equals(this.code, riskv1decisionsClientReferenceInformation.code) &&
-        Objects.equals(this.comments, riskv1decisionsClientReferenceInformation.comments);
+        Objects.equals(this.comments, riskv1decisionsClientReferenceInformation.comments) &&
+        Objects.equals(this.partner, riskv1decisionsClientReferenceInformation.partner);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, comments);
+    return Objects.hash(code, comments, partner);
   }
 
 
@@ -97,6 +120,7 @@ public class Riskv1decisionsClientReferenceInformation {
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
     sb.append("}");
     return sb.toString();
   }

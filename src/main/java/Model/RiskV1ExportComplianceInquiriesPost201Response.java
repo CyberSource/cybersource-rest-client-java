@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
+import Model.RiskV1DecisionsPost201ResponseClientReferenceInformation;
 import Model.RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation;
 import Model.RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation;
 import com.google.gson.TypeAdapter;
@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * RiskV1ExportComplianceInquiriesPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class RiskV1ExportComplianceInquiriesPost201Response {
   @SerializedName("_links")
   private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
@@ -51,7 +51,7 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
   private String message = null;
 
   @SerializedName("clientReferenceInformation")
-  private PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation = null;
+  private RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("exportComplianceInformation")
   private RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation exportComplianceInformation = null;
@@ -167,7 +167,7 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
     this.message = message;
   }
 
-  public RiskV1ExportComplianceInquiriesPost201Response clientReferenceInformation(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation) {
+  public RiskV1ExportComplianceInquiriesPost201Response clientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -177,11 +177,11 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation getClientReferenceInformation() {
+  public RiskV1DecisionsPost201ResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

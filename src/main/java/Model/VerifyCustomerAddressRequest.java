@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import Model.Riskv1addressverificationsBuyerInformation;
-import Model.Riskv1addressverificationsClientReferenceInformation;
 import Model.Riskv1addressverificationsOrderInformation;
+import Model.Riskv1decisionsClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,10 +29,10 @@ import java.io.IOException;
 /**
  * VerifyCustomerAddressRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class VerifyCustomerAddressRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1addressverificationsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1decisionsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1addressverificationsOrderInformation orderInformation = null;
@@ -40,7 +40,7 @@ public class VerifyCustomerAddressRequest {
   @SerializedName("buyerInformation")
   private Riskv1addressverificationsBuyerInformation buyerInformation = null;
 
-  public VerifyCustomerAddressRequest clientReferenceInformation(Riskv1addressverificationsClientReferenceInformation clientReferenceInformation) {
+  public VerifyCustomerAddressRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -50,11 +50,11 @@ public class VerifyCustomerAddressRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1addressverificationsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1decisionsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1addressverificationsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Vasv2taxClientReferenceInformationPartner;
+import Model.Riskv1decisionsClientReferenceInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,13 +27,13 @@ import java.io.IOException;
 /**
  * Vasv2taxClientReferenceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class Vasv2taxClientReferenceInformation {
   @SerializedName("code")
   private String code = null;
 
   @SerializedName("partner")
-  private Vasv2taxClientReferenceInformationPartner partner = null;
+  private Riskv1decisionsClientReferenceInformationPartner partner = null;
 
   @SerializedName("comments")
   private String comments = null;
@@ -56,7 +56,7 @@ public class Vasv2taxClientReferenceInformation {
     this.code = code;
   }
 
-  public Vasv2taxClientReferenceInformation partner(Vasv2taxClientReferenceInformationPartner partner) {
+  public Vasv2taxClientReferenceInformation partner(Riskv1decisionsClientReferenceInformationPartner partner) {
     this.partner = partner;
     return this;
   }
@@ -66,11 +66,11 @@ public class Vasv2taxClientReferenceInformation {
    * @return partner
   **/
   @ApiModelProperty(value = "")
-  public Vasv2taxClientReferenceInformationPartner getPartner() {
+  public Riskv1decisionsClientReferenceInformationPartner getPartner() {
     return partner;
   }
 
-  public void setPartner(Vasv2taxClientReferenceInformationPartner partner) {
+  public void setPartner(Riskv1decisionsClientReferenceInformationPartner partner) {
     this.partner = partner;
   }
 

@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
+import Model.RiskV1DecisionsPost201ResponseClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,13 +28,13 @@ import java.io.IOException;
 /**
  * RiskV1UpdatePost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class RiskV1UpdatePost201Response {
   @SerializedName("_links")
   private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
 
   @SerializedName("clientReferenceInformaton")
-  private PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformaton = null;
+  private RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformaton = null;
 
   @SerializedName("id")
   private String id = null;
@@ -63,7 +63,7 @@ public class RiskV1UpdatePost201Response {
     this.links = links;
   }
 
-  public RiskV1UpdatePost201Response clientReferenceInformaton(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformaton) {
+  public RiskV1UpdatePost201Response clientReferenceInformaton(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformaton) {
     this.clientReferenceInformaton = clientReferenceInformaton;
     return this;
   }
@@ -73,11 +73,11 @@ public class RiskV1UpdatePost201Response {
    * @return clientReferenceInformaton
   **/
   @ApiModelProperty(value = "")
-  public PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation getClientReferenceInformaton() {
+  public RiskV1DecisionsPost201ResponseClientReferenceInformation getClientReferenceInformaton() {
     return clientReferenceInformaton;
   }
 
-  public void setClientReferenceInformaton(PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformaton) {
+  public void setClientReferenceInformaton(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformaton) {
     this.clientReferenceInformaton = clientReferenceInformaton;
   }
 

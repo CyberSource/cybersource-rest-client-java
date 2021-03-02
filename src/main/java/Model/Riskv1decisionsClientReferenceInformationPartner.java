@@ -24,17 +24,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Vasv2taxClientReferenceInformationPartner
+ * Riskv1decisionsClientReferenceInformationPartner
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
-public class Vasv2taxClientReferenceInformationPartner {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
+public class Riskv1decisionsClientReferenceInformationPartner {
   @SerializedName("developerId")
   private String developerId = null;
 
   @SerializedName("solutionId")
   private String solutionId = null;
 
-  public Vasv2taxClientReferenceInformationPartner developerId(String developerId) {
+  public Riskv1decisionsClientReferenceInformationPartner developerId(String developerId) {
     this.developerId = developerId;
     return this;
   }
@@ -52,7 +52,7 @@ public class Vasv2taxClientReferenceInformationPartner {
     this.developerId = developerId;
   }
 
-  public Vasv2taxClientReferenceInformationPartner solutionId(String solutionId) {
+  public Riskv1decisionsClientReferenceInformationPartner solutionId(String solutionId) {
     this.solutionId = solutionId;
     return this;
   }
@@ -79,9 +79,9 @@ public class Vasv2taxClientReferenceInformationPartner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Vasv2taxClientReferenceInformationPartner vasv2taxClientReferenceInformationPartner = (Vasv2taxClientReferenceInformationPartner) o;
-    return Objects.equals(this.developerId, vasv2taxClientReferenceInformationPartner.developerId) &&
-        Objects.equals(this.solutionId, vasv2taxClientReferenceInformationPartner.solutionId);
+    Riskv1decisionsClientReferenceInformationPartner riskv1decisionsClientReferenceInformationPartner = (Riskv1decisionsClientReferenceInformationPartner) o;
+    return Objects.equals(this.developerId, riskv1decisionsClientReferenceInformationPartner.developerId) &&
+        Objects.equals(this.solutionId, riskv1decisionsClientReferenceInformationPartner.solutionId);
   }
 
   @Override
@@ -93,7 +93,7 @@ public class Vasv2taxClientReferenceInformationPartner {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Vasv2taxClientReferenceInformationPartner {\n");
+    sb.append("class Riskv1decisionsClientReferenceInformationPartner {\n");
     
     sb.append("    developerId: ").append(toIndentedString(developerId)).append("\n");
     sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");

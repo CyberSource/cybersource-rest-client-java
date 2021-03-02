@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Riskv1addressverificationsBuyerInformation;
-import Model.Riskv1addressverificationsClientReferenceInformation;
+import Model.Riskv1decisionsClientReferenceInformation;
 import Model.Riskv1exportcomplianceinquiriesDeviceInformation;
 import Model.Riskv1exportcomplianceinquiriesExportComplianceInformation;
 import Model.Riskv1exportcomplianceinquiriesOrderInformation;
@@ -31,10 +31,10 @@ import java.io.IOException;
 /**
  * ValidateExportComplianceRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class ValidateExportComplianceRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1addressverificationsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1decisionsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1exportcomplianceinquiriesOrderInformation orderInformation = null;
@@ -48,7 +48,7 @@ public class ValidateExportComplianceRequest {
   @SerializedName("exportComplianceInformation")
   private Riskv1exportcomplianceinquiriesExportComplianceInformation exportComplianceInformation = null;
 
-  public ValidateExportComplianceRequest clientReferenceInformation(Riskv1addressverificationsClientReferenceInformation clientReferenceInformation) {
+  public ValidateExportComplianceRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -58,11 +58,11 @@ public class ValidateExportComplianceRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1addressverificationsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1decisionsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1addressverificationsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

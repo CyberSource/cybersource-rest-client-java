@@ -17,6 +17,7 @@ import Invokers.ApiException;
 import Model.InlineResponse400;
 import Model.PatchInstrumentIdentifierRequest;
 import Model.PaymentInstrumentListForCustomer;
+import Model.PostInstrumentIdentifierEnrollmentRequest;
 import Model.PostInstrumentIdentifierRequest;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
 import org.junit.Test;
@@ -136,7 +137,7 @@ public class InstrumentIdentifierApiTest {
     @Test
     public void postInstrumentIdentifierEnrollmentTest() throws ApiException {
         String instrumentIdentifierTokenId = null;
-        PostInstrumentIdentifierRequest postInstrumentIdentifierEnrollmentRequest = null;
+        PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest = null;
         String profileId = null;
         api.postInstrumentIdentifierEnrollment(instrumentIdentifierTokenId, postInstrumentIdentifierEnrollmentRequest, profileId);
 

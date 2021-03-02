@@ -29,8 +29,11 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class TssV2TransactionsGet200ResponseProcessingInformation {
+  @SerializedName("industryDataType")
+  private String industryDataType = null;
+
   @SerializedName("paymentSolution")
   private String paymentSolution = null;
 
@@ -48,6 +51,24 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
 
   @SerializedName("japanPaymentOptions")
   private TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions japanPaymentOptions = null;
+
+  public TssV2TransactionsGet200ResponseProcessingInformation industryDataType(String industryDataType) {
+    this.industryDataType = industryDataType;
+    return this;
+  }
+
+   /**
+   * Indicates that the transaction includes industry-specific data.  Possible Values: - &#x60;airline&#x60; - &#x60;restaurant&#x60; - &#x60;lodging&#x60; - &#x60;auto_rental&#x60; - &#x60;transit&#x60; - &#x60;healthcare_medical&#x60; - &#x60;healthcare_transit&#x60; - &#x60;transit&#x60;  #### Card Present, Airlines and Auto Rental You must set this field to &#x60;airline&#x60; in order for airline data to be sent to the processor. For example, if this field is not set to &#x60;airline&#x60; or is not included in the request, no airline data is sent to the processor.  You must set this field to &#x60;restaurant&#x60; in order for restaurant data to be sent to the processor. When this field is not set to &#x60;restaurant&#x60; or is not included in the request, no restaurant data is sent to the processor.  You must set this field to &#x60;auto_rental&#x60; in order for auto rental data to be sent to the processor. For example, if this field is not set to &#x60;auto_rental&#x60; or is not included in the request, no auto rental data is sent to the processor.  Restaurant data is supported only on CyberSource through VisaNet. 
+   * @return industryDataType
+  **/
+  @ApiModelProperty(value = "Indicates that the transaction includes industry-specific data.  Possible Values: - `airline` - `restaurant` - `lodging` - `auto_rental` - `transit` - `healthcare_medical` - `healthcare_transit` - `transit`  #### Card Present, Airlines and Auto Rental You must set this field to `airline` in order for airline data to be sent to the processor. For example, if this field is not set to `airline` or is not included in the request, no airline data is sent to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor. When this field is not set to `restaurant` or is not included in the request, no restaurant data is sent to the processor.  You must set this field to `auto_rental` in order for auto rental data to be sent to the processor. For example, if this field is not set to `auto_rental` or is not included in the request, no auto rental data is sent to the processor.  Restaurant data is supported only on CyberSource through VisaNet. ")
+  public String getIndustryDataType() {
+    return industryDataType;
+  }
+
+  public void setIndustryDataType(String industryDataType) {
+    this.industryDataType = industryDataType;
+  }
 
   public TssV2TransactionsGet200ResponseProcessingInformation paymentSolution(String paymentSolution) {
     this.paymentSolution = paymentSolution;
@@ -167,7 +188,8 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
       return false;
     }
     TssV2TransactionsGet200ResponseProcessingInformation tssV2TransactionsGet200ResponseProcessingInformation = (TssV2TransactionsGet200ResponseProcessingInformation) o;
-    return Objects.equals(this.paymentSolution, tssV2TransactionsGet200ResponseProcessingInformation.paymentSolution) &&
+    return Objects.equals(this.industryDataType, tssV2TransactionsGet200ResponseProcessingInformation.industryDataType) &&
+        Objects.equals(this.paymentSolution, tssV2TransactionsGet200ResponseProcessingInformation.paymentSolution) &&
         Objects.equals(this.commerceIndicator, tssV2TransactionsGet200ResponseProcessingInformation.commerceIndicator) &&
         Objects.equals(this.businessApplicationId, tssV2TransactionsGet200ResponseProcessingInformation.businessApplicationId) &&
         Objects.equals(this.authorizationOptions, tssV2TransactionsGet200ResponseProcessingInformation.authorizationOptions) &&
@@ -177,7 +199,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentSolution, commerceIndicator, businessApplicationId, authorizationOptions, bankTransferOptions, japanPaymentOptions);
+    return Objects.hash(industryDataType, paymentSolution, commerceIndicator, businessApplicationId, authorizationOptions, bankTransferOptions, japanPaymentOptions);
   }
 
 
@@ -186,6 +208,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessingInformation {\n");
     
+    sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
     sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
     sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
     sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");

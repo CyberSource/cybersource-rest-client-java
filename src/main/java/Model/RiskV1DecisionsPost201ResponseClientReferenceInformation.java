@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Riskv1decisionsClientReferenceInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,17 +25,20 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Riskv1addressverificationsClientReferenceInformation
+ * RiskV1DecisionsPost201ResponseClientReferenceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
-public class Riskv1addressverificationsClientReferenceInformation {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
+public class RiskV1DecisionsPost201ResponseClientReferenceInformation {
   @SerializedName("code")
   private String code = null;
 
   @SerializedName("comments")
   private String comments = null;
 
-  public Riskv1addressverificationsClientReferenceInformation code(String code) {
+  @SerializedName("partner")
+  private Riskv1decisionsClientReferenceInformationPartner partner = null;
+
+  public RiskV1DecisionsPost201ResponseClientReferenceInformation code(String code) {
     this.code = code;
     return this;
   }
@@ -43,7 +47,7 @@ public class Riskv1addressverificationsClientReferenceInformation {
    * Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. 
    * @return code
   **/
-  @ApiModelProperty(required = true, value = "Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. ")
+  @ApiModelProperty(value = "Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports. ")
   public String getCode() {
     return code;
   }
@@ -52,7 +56,7 @@ public class Riskv1addressverificationsClientReferenceInformation {
     this.code = code;
   }
 
-  public Riskv1addressverificationsClientReferenceInformation comments(String comments) {
+  public RiskV1DecisionsPost201ResponseClientReferenceInformation comments(String comments) {
     this.comments = comments;
     return this;
   }
@@ -70,6 +74,24 @@ public class Riskv1addressverificationsClientReferenceInformation {
     this.comments = comments;
   }
 
+  public RiskV1DecisionsPost201ResponseClientReferenceInformation partner(Riskv1decisionsClientReferenceInformationPartner partner) {
+    this.partner = partner;
+    return this;
+  }
+
+   /**
+   * Get partner
+   * @return partner
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsClientReferenceInformationPartner getPartner() {
+    return partner;
+  }
+
+  public void setPartner(Riskv1decisionsClientReferenceInformationPartner partner) {
+    this.partner = partner;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -79,24 +101,26 @@ public class Riskv1addressverificationsClientReferenceInformation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Riskv1addressverificationsClientReferenceInformation riskv1addressverificationsClientReferenceInformation = (Riskv1addressverificationsClientReferenceInformation) o;
-    return Objects.equals(this.code, riskv1addressverificationsClientReferenceInformation.code) &&
-        Objects.equals(this.comments, riskv1addressverificationsClientReferenceInformation.comments);
+    RiskV1DecisionsPost201ResponseClientReferenceInformation riskV1DecisionsPost201ResponseClientReferenceInformation = (RiskV1DecisionsPost201ResponseClientReferenceInformation) o;
+    return Objects.equals(this.code, riskV1DecisionsPost201ResponseClientReferenceInformation.code) &&
+        Objects.equals(this.comments, riskV1DecisionsPost201ResponseClientReferenceInformation.comments) &&
+        Objects.equals(this.partner, riskV1DecisionsPost201ResponseClientReferenceInformation.partner);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, comments);
+    return Objects.hash(code, comments, partner);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Riskv1addressverificationsClientReferenceInformation {\n");
+    sb.append("class RiskV1DecisionsPost201ResponseClientReferenceInformation {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
     sb.append("}");
     return sb.toString();
   }
