@@ -31,6 +31,7 @@ import java.io.InputStream;
 import Model.InlineResponse400;
 import Model.PatchInstrumentIdentifierRequest;
 import Model.PaymentInstrumentListForCustomer;
+import Model.PostInstrumentIdentifierEnrollmentRequest;
 import Model.PostInstrumentIdentifierRequest;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
 
@@ -761,7 +762,7 @@ public class InstrumentIdentifierApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call postInstrumentIdentifierEnrollmentCall(String instrumentIdentifierTokenId, PostInstrumentIdentifierRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postInstrumentIdentifierEnrollmentCall(String instrumentIdentifierTokenId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = postInstrumentIdentifierEnrollmentRequest;
         
         // create path and map variables
@@ -805,7 +806,7 @@ public class InstrumentIdentifierApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postInstrumentIdentifierEnrollmentValidateBeforeCall(String instrumentIdentifierTokenId, PostInstrumentIdentifierRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postInstrumentIdentifierEnrollmentValidateBeforeCall(String instrumentIdentifierTokenId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'instrumentIdentifierTokenId' is set
         if (instrumentIdentifierTokenId == null) {
@@ -835,7 +836,7 @@ public class InstrumentIdentifierApi {
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void postInstrumentIdentifierEnrollment(String instrumentIdentifierTokenId, PostInstrumentIdentifierRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException {
+    public void postInstrumentIdentifierEnrollment(String instrumentIdentifierTokenId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         postInstrumentIdentifierEnrollmentWithHttpInfo(instrumentIdentifierTokenId, postInstrumentIdentifierEnrollmentRequest, profileId);
     }
@@ -849,7 +850,7 @@ public class InstrumentIdentifierApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> postInstrumentIdentifierEnrollmentWithHttpInfo(String instrumentIdentifierTokenId, PostInstrumentIdentifierRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException {
+    public ApiResponse<Void> postInstrumentIdentifierEnrollmentWithHttpInfo(String instrumentIdentifierTokenId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException {
         okhttp3.Call call = postInstrumentIdentifierEnrollmentValidateBeforeCall(instrumentIdentifierTokenId, postInstrumentIdentifierEnrollmentRequest, profileId, null, null);
         return apiClient.execute(call);
     }
@@ -864,7 +865,7 @@ public class InstrumentIdentifierApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postInstrumentIdentifierEnrollmentAsync(String instrumentIdentifierTokenId, PostInstrumentIdentifierRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call postInstrumentIdentifierEnrollmentAsync(String instrumentIdentifierTokenId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ApiCallback<Void> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;

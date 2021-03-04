@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains &#x60;currency&#x60; and &#x60;totalAmount&#x60; for this order.
  */
 @ApiModel(description = "Contains `currency` and `totalAmount` for this order.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class Riskv1decisionsOrderInformationAmountDetails {
   @SerializedName("currency")
   private String currency = null;

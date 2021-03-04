@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * RiskV1AuthenticationsPost201ResponseErrorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class RiskV1AuthenticationsPost201ResponseErrorInformation {
   @SerializedName("reason")
   private String reason = null;
@@ -46,10 +46,10 @@ public class RiskV1AuthenticationsPost201ResponseErrorInformation {
   }
 
    /**
-   * The reason of the status. Possible values are: - &#x60;INVALID_MERCHANT_CONFIGURATION&#x60; - &#x60;PENDING_AUTHENTICATION&#x60; - &#x60;AUTHENTICATION_FAILED&#x60; 
+   * The reason of the status. Possible values are: - &#x60;INVALID_MERCHANT_CONFIGURATION&#x60; - &#x60;CONSUMER_AUTHENTICATION_REQUIRED&#x60; - &#x60;CONSUMER_AUTHENTICATION_FAILED&#x60; - &#x60;AUTHENTICATION_FAILED&#x60; 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status. Possible values are: - `INVALID_MERCHANT_CONFIGURATION` - `PENDING_AUTHENTICATION` - `AUTHENTICATION_FAILED` ")
+  @ApiModelProperty(value = "The reason of the status. Possible values are: - `INVALID_MERCHANT_CONFIGURATION` - `CONSUMER_AUTHENTICATION_REQUIRED` - `CONSUMER_AUTHENTICATION_FAILED` - `AUTHENTICATION_FAILED` ")
   public String getReason() {
     return reason;
   }

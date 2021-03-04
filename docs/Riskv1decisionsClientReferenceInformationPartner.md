@@ -1,5 +1,5 @@
 
-# Vasv2taxClientReferenceInformationPartner
+# Riskv1decisionsClientReferenceInformationPartner
 
 ## Properties
 Name | Type | Description | Notes

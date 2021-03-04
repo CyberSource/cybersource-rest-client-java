@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * PtsV2PaymentsPost201ResponseRiskInformationInfoCodes
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   @SerializedName("velocity")
   private List<String> velocity = null;
@@ -38,6 +38,9 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
 
   @SerializedName("customerList")
   private List<String> customerList = null;
+
+  @SerializedName("deviceBehavior")
+  private List<String> deviceBehavior = null;
 
   @SerializedName("identityChange")
   private List<String> identityChange = null;
@@ -68,10 +71,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.  Returned by Decision Manager service. 
+   * List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules. 
    * @return velocity
   **/
-  @ApiModelProperty(value = "List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.  Returned by Decision Manager service. ")
+  @ApiModelProperty(value = "List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules. ")
   public List<String> getVelocity() {
     return velocity;
   }
@@ -94,10 +97,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates a mismatch between the customer’s billing and shipping addresses.  Returned by scoring service. 
+   * Indicates a mismatch between the customer’s billing and shipping addresses. 
    * @return address
   **/
-  @ApiModelProperty(value = "Indicates a mismatch between the customer’s billing and shipping addresses.  Returned by scoring service. ")
+  @ApiModelProperty(value = "Indicates a mismatch between the customer’s billing and shipping addresses. ")
   public List<String> getAddress() {
     return address;
   }
@@ -120,16 +123,42 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates that customer information is associated with transactions that are either on the negative or the positive list.  Returned by scoring service. 
+   * Indicates that customer information is associated with transactions that are either on the negative or the positive list. 
    * @return customerList
   **/
-  @ApiModelProperty(value = "Indicates that customer information is associated with transactions that are either on the negative or the positive list.  Returned by scoring service. ")
+  @ApiModelProperty(value = "Indicates that customer information is associated with transactions that are either on the negative or the positive list. ")
   public List<String> getCustomerList() {
     return customerList;
   }
 
   public void setCustomerList(List<String> customerList) {
     this.customerList = customerList;
+  }
+
+  public PtsV2PaymentsPost201ResponseRiskInformationInfoCodes deviceBehavior(List<String> deviceBehavior) {
+    this.deviceBehavior = deviceBehavior;
+    return this;
+  }
+
+  public PtsV2PaymentsPost201ResponseRiskInformationInfoCodes addDeviceBehaviorItem(String deviceBehaviorItem) {
+    if (this.deviceBehavior == null) {
+      this.deviceBehavior = new ArrayList<String>();
+    }
+    this.deviceBehavior.add(deviceBehaviorItem);
+    return this;
+  }
+
+   /**
+   * Indicates the device behavior information code(s) returned from device fingerprinting. 
+   * @return deviceBehavior
+  **/
+  @ApiModelProperty(value = "Indicates the device behavior information code(s) returned from device fingerprinting. ")
+  public List<String> getDeviceBehavior() {
+    return deviceBehavior;
+  }
+
+  public void setDeviceBehavior(List<String> deviceBehavior) {
+    this.deviceBehavior = deviceBehavior;
   }
 
   public PtsV2PaymentsPost201ResponseRiskInformationInfoCodes identityChange(List<String> identityChange) {
@@ -146,10 +175,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^).  Returned by scoring service. 
+   * Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. 
    * @return identityChange
   **/
-  @ApiModelProperty(value = "Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^).  Returned by scoring service. ")
+  @ApiModelProperty(value = "Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. ")
   public List<String> getIdentityChange() {
     return identityChange;
   }
@@ -172,10 +201,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates a problem with the customer’s email address, IP address, or billing address.  Returned by scoring service. 
+   * Indicates a problem with the customer’s email address, IP address, or billing address. 
    * @return internet
   **/
-  @ApiModelProperty(value = "Indicates a problem with the customer’s email address, IP address, or billing address.  Returned by scoring service. ")
+  @ApiModelProperty(value = "Indicates a problem with the customer’s email address, IP address, or billing address. ")
   public List<String> getInternet() {
     return internet;
   }
@@ -198,10 +227,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates a problem with the customer’s phone number.  Returned by scoring service. 
+   * Indicates a problem with the customer’s phone number. 
    * @return phone
   **/
-  @ApiModelProperty(value = "Indicates a problem with the customer’s phone number.  Returned by scoring service. ")
+  @ApiModelProperty(value = "Indicates a problem with the customer’s phone number. ")
   public List<String> getPhone() {
     return phone;
   }
@@ -224,10 +253,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates that the customer provided potentially suspicious information.  Returned by scoring service. 
+   * Indicates that the customer provided potentially suspicious information. 
    * @return suspicious
   **/
-  @ApiModelProperty(value = "Indicates that the customer provided potentially suspicious information.  Returned by scoring service. ")
+  @ApiModelProperty(value = "Indicates that the customer provided potentially suspicious information. ")
   public List<String> getSuspicious() {
     return suspicious;
   }
@@ -250,10 +279,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates that the customer has a high purchase frequency.  Returned by scoring service. 
+   * Indicates that the customer has a high purchase frequency. 
    * @return globalVelocity
   **/
-  @ApiModelProperty(value = "Indicates that the customer has a high purchase frequency.  Returned by scoring service. ")
+  @ApiModelProperty(value = "Indicates that the customer has a high purchase frequency. ")
   public List<String> getGlobalVelocity() {
     return globalVelocity;
   }
@@ -275,6 +304,7 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
     return Objects.equals(this.velocity, ptsV2PaymentsPost201ResponseRiskInformationInfoCodes.velocity) &&
         Objects.equals(this.address, ptsV2PaymentsPost201ResponseRiskInformationInfoCodes.address) &&
         Objects.equals(this.customerList, ptsV2PaymentsPost201ResponseRiskInformationInfoCodes.customerList) &&
+        Objects.equals(this.deviceBehavior, ptsV2PaymentsPost201ResponseRiskInformationInfoCodes.deviceBehavior) &&
         Objects.equals(this.identityChange, ptsV2PaymentsPost201ResponseRiskInformationInfoCodes.identityChange) &&
         Objects.equals(this.internet, ptsV2PaymentsPost201ResponseRiskInformationInfoCodes.internet) &&
         Objects.equals(this.phone, ptsV2PaymentsPost201ResponseRiskInformationInfoCodes.phone) &&
@@ -284,7 +314,7 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(velocity, address, customerList, identityChange, internet, phone, suspicious, globalVelocity);
+    return Objects.hash(velocity, address, customerList, deviceBehavior, identityChange, internet, phone, suspicious, globalVelocity);
   }
 
 
@@ -296,6 +326,7 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
     sb.append("    velocity: ").append(toIndentedString(velocity)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    customerList: ").append(toIndentedString(customerList)).append("\n");
+    sb.append("    deviceBehavior: ").append(toIndentedString(deviceBehavior)).append("\n");
     sb.append("    identityChange: ").append(toIndentedString(identityChange)).append("\n");
     sb.append("    internet: ").append(toIndentedString(internet)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");

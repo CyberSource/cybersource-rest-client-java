@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsHealthCareInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.TssV2TransactionsGet200ResponseApplicationInformation;
 import Model.TssV2TransactionsGet200ResponseBuyerInformation;
@@ -46,7 +47,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class TssV2TransactionsGet200Response {
   @SerializedName("id")
   private String id = null;
@@ -89,6 +90,9 @@ public class TssV2TransactionsGet200Response {
 
   @SerializedName("fraudMarkingInformation")
   private TssV2TransactionsGet200ResponseFraudMarkingInformation fraudMarkingInformation = null;
+
+  @SerializedName("healthCareInformation")
+  private Ptsv2paymentsHealthCareInformation healthCareInformation = null;
 
   @SerializedName("merchantDefinedInformation")
   private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
@@ -372,6 +376,24 @@ public class TssV2TransactionsGet200Response {
     this.fraudMarkingInformation = fraudMarkingInformation;
   }
 
+  public TssV2TransactionsGet200Response healthCareInformation(Ptsv2paymentsHealthCareInformation healthCareInformation) {
+    this.healthCareInformation = healthCareInformation;
+    return this;
+  }
+
+   /**
+   * Get healthCareInformation
+   * @return healthCareInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsHealthCareInformation getHealthCareInformation() {
+    return healthCareInformation;
+  }
+
+  public void setHealthCareInformation(Ptsv2paymentsHealthCareInformation healthCareInformation) {
+    this.healthCareInformation = healthCareInformation;
+  }
+
   public TssV2TransactionsGet200Response merchantDefinedInformation(List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation) {
     this.merchantDefinedInformation = merchantDefinedInformation;
     return this;
@@ -584,6 +606,7 @@ public class TssV2TransactionsGet200Response {
         Objects.equals(this.errorInformation, tssV2TransactionsGet200Response.errorInformation) &&
         Objects.equals(this.installmentInformation, tssV2TransactionsGet200Response.installmentInformation) &&
         Objects.equals(this.fraudMarkingInformation, tssV2TransactionsGet200Response.fraudMarkingInformation) &&
+        Objects.equals(this.healthCareInformation, tssV2TransactionsGet200Response.healthCareInformation) &&
         Objects.equals(this.merchantDefinedInformation, tssV2TransactionsGet200Response.merchantDefinedInformation) &&
         Objects.equals(this.merchantInformation, tssV2TransactionsGet200Response.merchantInformation) &&
         Objects.equals(this.orderInformation, tssV2TransactionsGet200Response.orderInformation) &&
@@ -598,7 +621,7 @@ public class TssV2TransactionsGet200Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, rootId, reconciliationId, merchantId, status, submitTimeUTC, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, senderInformation, links);
+    return Objects.hash(id, rootId, reconciliationId, merchantId, status, submitTimeUTC, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, senderInformation, links);
   }
 
 
@@ -621,6 +644,7 @@ public class TssV2TransactionsGet200Response {
     sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     sb.append("    fraudMarkingInformation: ").append(toIndentedString(fraudMarkingInformation)).append("\n");
+    sb.append("    healthCareInformation: ").append(toIndentedString(healthCareInformation)).append("\n");
     sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
     sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");

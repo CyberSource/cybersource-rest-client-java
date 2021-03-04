@@ -17,6 +17,7 @@ import java.util.Objects;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation;
 import Model.RiskV1AuthenticationSetupsPost201ResponseErrorInformation;
+import Model.RiskV1DecisionsPost201ResponseClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +30,7 @@ import java.io.IOException;
 /**
  * RiskV1AuthenticationSetupsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class RiskV1AuthenticationSetupsPost201Response {
   @SerializedName("_links")
   private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
@@ -45,6 +46,9 @@ public class RiskV1AuthenticationSetupsPost201Response {
 
   @SerializedName("consumerAuthenticationInformation")
   private RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation = null;
+
+  @SerializedName("clientReferenceInformation")
+  private RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("errorInformation")
   private RiskV1AuthenticationSetupsPost201ResponseErrorInformation errorInformation = null;
@@ -139,6 +143,24 @@ public class RiskV1AuthenticationSetupsPost201Response {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
   }
 
+  public RiskV1AuthenticationSetupsPost201Response clientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+    return this;
+  }
+
+   /**
+   * Get clientReferenceInformation
+   * @return clientReferenceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public RiskV1DecisionsPost201ResponseClientReferenceInformation getClientReferenceInformation() {
+    return clientReferenceInformation;
+  }
+
+  public void setClientReferenceInformation(RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+  }
+
   public RiskV1AuthenticationSetupsPost201Response errorInformation(RiskV1AuthenticationSetupsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
     return this;
@@ -172,12 +194,13 @@ public class RiskV1AuthenticationSetupsPost201Response {
         Objects.equals(this.submitTimeUtc, riskV1AuthenticationSetupsPost201Response.submitTimeUtc) &&
         Objects.equals(this.status, riskV1AuthenticationSetupsPost201Response.status) &&
         Objects.equals(this.consumerAuthenticationInformation, riskV1AuthenticationSetupsPost201Response.consumerAuthenticationInformation) &&
+        Objects.equals(this.clientReferenceInformation, riskV1AuthenticationSetupsPost201Response.clientReferenceInformation) &&
         Objects.equals(this.errorInformation, riskV1AuthenticationSetupsPost201Response.errorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, consumerAuthenticationInformation, errorInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, consumerAuthenticationInformation, clientReferenceInformation, errorInformation);
   }
 
 
@@ -191,6 +214,7 @@ public class RiskV1AuthenticationSetupsPost201Response {
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
+    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("}");
     return sb.toString();

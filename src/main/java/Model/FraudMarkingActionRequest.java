@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Riskv1decisionsClientReferenceInformation;
 import Model.Riskv1decisionsidmarkingRiskInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -27,10 +28,13 @@ import java.io.IOException;
 /**
  * FraudMarkingActionRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-22T14:46:25.834+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
 public class FraudMarkingActionRequest {
   @SerializedName("riskInformation")
   private Riskv1decisionsidmarkingRiskInformation riskInformation = null;
+
+  @SerializedName("clientReferenceInformation")
+  private Riskv1decisionsClientReferenceInformation clientReferenceInformation = null;
 
   public FraudMarkingActionRequest riskInformation(Riskv1decisionsidmarkingRiskInformation riskInformation) {
     this.riskInformation = riskInformation;
@@ -50,6 +54,24 @@ public class FraudMarkingActionRequest {
     this.riskInformation = riskInformation;
   }
 
+  public FraudMarkingActionRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+    return this;
+  }
+
+   /**
+   * Get clientReferenceInformation
+   * @return clientReferenceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsClientReferenceInformation getClientReferenceInformation() {
+    return clientReferenceInformation;
+  }
+
+  public void setClientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +82,13 @@ public class FraudMarkingActionRequest {
       return false;
     }
     FraudMarkingActionRequest fraudMarkingActionRequest = (FraudMarkingActionRequest) o;
-    return Objects.equals(this.riskInformation, fraudMarkingActionRequest.riskInformation);
+    return Objects.equals(this.riskInformation, fraudMarkingActionRequest.riskInformation) &&
+        Objects.equals(this.clientReferenceInformation, fraudMarkingActionRequest.clientReferenceInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(riskInformation);
+    return Objects.hash(riskInformation, clientReferenceInformation);
   }
 
 
@@ -75,6 +98,7 @@ public class FraudMarkingActionRequest {
     sb.append("class FraudMarkingActionRequest {\n");
     
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
+    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
