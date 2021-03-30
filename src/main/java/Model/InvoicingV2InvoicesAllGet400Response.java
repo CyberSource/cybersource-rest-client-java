@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * InvoicingV2InvoicesAllGet400Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
 public class InvoicingV2InvoicesAllGet400Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;

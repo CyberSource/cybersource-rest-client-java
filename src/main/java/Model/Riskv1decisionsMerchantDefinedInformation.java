@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains merchant-defined key-value pairs.
  */
 @ApiModel(description = "Contains merchant-defined key-value pairs.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
 public class Riskv1decisionsMerchantDefinedInformation {
   @SerializedName("key")
   private String key = null;
