@@ -27,7 +27,7 @@ import java.io.IOException;
  * Use this for a non-tokenized payment card.
  */
 @ApiModel(description = "Use this for a non-tokenized payment card.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
 public class Riskv1decisionsPaymentInformationCard {
   @SerializedName("number")
   private String number = null;

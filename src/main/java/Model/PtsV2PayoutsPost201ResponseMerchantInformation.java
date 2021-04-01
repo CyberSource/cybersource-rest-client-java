@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PtsV2PayoutsPost201ResponseMerchantInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
 public class PtsV2PayoutsPost201ResponseMerchantInformation {
   @SerializedName("merchantDescriptor")
   private PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor merchantDescriptor = null;

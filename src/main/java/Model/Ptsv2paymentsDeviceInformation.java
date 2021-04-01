@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
 public class Ptsv2paymentsDeviceInformation {
   @SerializedName("hostName")
   private String hostName = null;
@@ -42,6 +42,9 @@ public class Ptsv2paymentsDeviceInformation {
 
   @SerializedName("fingerprintSessionId")
   private String fingerprintSessionId = null;
+
+  @SerializedName("useRawFingerprintSessionId")
+  private Boolean useRawFingerprintSessionId = null;
 
   @SerializedName("rawData")
   private List<Ptsv2paymentsDeviceInformationRawData> rawData = null;
@@ -149,6 +152,24 @@ public class Ptsv2paymentsDeviceInformation {
 
   public void setFingerprintSessionId(String fingerprintSessionId) {
     this.fingerprintSessionId = fingerprintSessionId;
+  }
+
+  public Ptsv2paymentsDeviceInformation useRawFingerprintSessionId(Boolean useRawFingerprintSessionId) {
+    this.useRawFingerprintSessionId = useRawFingerprintSessionId;
+    return this;
+  }
+
+   /**
+   * Boolean that indicates whether request contains the device fingerprint information. Values: - &#x60;true&#x60;: Use raw fingerprintSessionId when looking up device details. - &#x60;false&#x60; (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection. 
+   * @return useRawFingerprintSessionId
+  **/
+  @ApiModelProperty(value = "Boolean that indicates whether request contains the device fingerprint information. Values: - `true`: Use raw fingerprintSessionId when looking up device details. - `false` (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection. ")
+  public Boolean getUseRawFingerprintSessionId() {
+    return useRawFingerprintSessionId;
+  }
+
+  public void setUseRawFingerprintSessionId(Boolean useRawFingerprintSessionId) {
+    this.useRawFingerprintSessionId = useRawFingerprintSessionId;
   }
 
   public Ptsv2paymentsDeviceInformation rawData(List<Ptsv2paymentsDeviceInformationRawData> rawData) {
@@ -389,6 +410,7 @@ public class Ptsv2paymentsDeviceInformation {
         Objects.equals(this.ipAddress, ptsv2paymentsDeviceInformation.ipAddress) &&
         Objects.equals(this.userAgent, ptsv2paymentsDeviceInformation.userAgent) &&
         Objects.equals(this.fingerprintSessionId, ptsv2paymentsDeviceInformation.fingerprintSessionId) &&
+        Objects.equals(this.useRawFingerprintSessionId, ptsv2paymentsDeviceInformation.useRawFingerprintSessionId) &&
         Objects.equals(this.rawData, ptsv2paymentsDeviceInformation.rawData) &&
         Objects.equals(this.httpAcceptBrowserValue, ptsv2paymentsDeviceInformation.httpAcceptBrowserValue) &&
         Objects.equals(this.httpAcceptContent, ptsv2paymentsDeviceInformation.httpAcceptContent) &&
@@ -405,7 +427,7 @@ public class Ptsv2paymentsDeviceInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hostName, ipAddress, userAgent, fingerprintSessionId, rawData, httpAcceptBrowserValue, httpAcceptContent, httpBrowserEmail, httpBrowserLanguage, httpBrowserJavaEnabled, httpBrowserJavaScriptEnabled, httpBrowserColorDepth, httpBrowserScreenHeight, httpBrowserScreenWidth, httpBrowserTimeDifference, userAgentBrowserValue);
+    return Objects.hash(hostName, ipAddress, userAgent, fingerprintSessionId, useRawFingerprintSessionId, rawData, httpAcceptBrowserValue, httpAcceptContent, httpBrowserEmail, httpBrowserLanguage, httpBrowserJavaEnabled, httpBrowserJavaScriptEnabled, httpBrowserColorDepth, httpBrowserScreenHeight, httpBrowserScreenWidth, httpBrowserTimeDifference, userAgentBrowserValue);
   }
 
 
@@ -418,6 +440,7 @@ public class Ptsv2paymentsDeviceInformation {
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
     sb.append("    fingerprintSessionId: ").append(toIndentedString(fingerprintSessionId)).append("\n");
+    sb.append("    useRawFingerprintSessionId: ").append(toIndentedString(useRawFingerprintSessionId)).append("\n");
     sb.append("    rawData: ").append(toIndentedString(rawData)).append("\n");
     sb.append("    httpAcceptBrowserValue: ").append(toIndentedString(httpAcceptBrowserValue)).append("\n");
     sb.append("    httpAcceptContent: ").append(toIndentedString(httpAcceptContent)).append("\n");

@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * Tmsv2customersEmbeddedDefaultShippingAddress
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-02-24T13:03:20.341+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
 public class Tmsv2customersEmbeddedDefaultShippingAddress {
   @SerializedName("_links")
   private Tmsv2customersEmbeddedDefaultShippingAddressLinks links = null;
