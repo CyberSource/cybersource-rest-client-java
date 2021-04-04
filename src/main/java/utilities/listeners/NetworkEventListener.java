@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
-import java.text.DecimalFormat;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -22,18 +21,17 @@ public class NetworkEventListener  extends EventListener {
 
     final long callId;
     final long callStartNanos;
-	private static DecimalFormat df = new DecimalFormat("#.###");
 
     public NetworkEventListener(long callId, long callStartNanos) {
         this.callId = callId;
         this.callStartNanos = callStartNanos;
     }
 
-    private void printEvent(String name) {
-        long elapsedNanos = System.nanoTime() - callStartNanos;
-        System.out.printf("%04d %.3f %s%n", callId, elapsedNanos / 1000000000d, name);
-
-    }
+//    private void printEvent(String name) {
+//        long elapsedNanos = System.nanoTime() - callStartNanos;
+//        System.out.printf("%04d %.3f %s%n", callId, elapsedNanos / 1000000000d, name);
+//
+//    }
 
     @Override public void callStart(Call call) {
 //        printEvent("callStart");
