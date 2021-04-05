@@ -48,9 +48,9 @@ import org.apache.logging.log4j.Logger;
 
 {{#operations}}
 public class {{classname}} {
-    private ApiClient {{localVariablePrefix}}apiClient;
+    private static Logger logger = LogManager.getLogger({{classname}}.class);
     
-    private Logger logger;
+    private ApiClient {{localVariablePrefix}}apiClient;
 
     public {{classname}}() {
         this(Configuration.getDefaultApiClient());
@@ -58,7 +58,6 @@ public class {{classname}} {
 
     public {{classname}}(ApiClient apiClient) {
         this.{{localVariablePrefix}}apiClient = apiClient;
-        this.logger = LogManager.getLogger(this.getClass());
     }
 
     public ApiClient getApiClient() {
@@ -131,7 +130,7 @@ public class {{classname}} {
         {{#allParams}}{{#required}}
         // verify the required parameter '{{paramName}}' is set
         if ({{paramName}} == null) {
-        	this.logger.error("Missing the required parameter '{{paramName}}' when calling {{operationId}}(Async)");
+        	logger.error("Missing the required parameter '{{paramName}}' when calling {{operationId}}(Async)");
             throw new ApiException("Missing the required parameter '{{paramName}}' when calling {{operationId}}(Async)");
         }
         {{/required}}{{/allParams}}
@@ -180,10 +179,10 @@ public class {{classname}} {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public {{#returnType}}{{{returnType}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{operationId}}({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
-    	this.logger.info("CALL TO METHOD '{{operationId}}' STARTED");
+    	logger.info("CALL TO METHOD '{{operationId}}' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         {{#returnType}}ApiResponse<{{{returnType}}}> {{localVariablePrefix}}resp = {{/returnType}}{{operationId}}WithHttpInfo({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});{{#returnType}}
-        this.logger.info("CALL TO METHOD '{{operationId}}' ENDED");
+        logger.info("CALL TO METHOD '{{operationId}}' ENDED");
         return {{localVariablePrefix}}resp.getData();{{/returnType}}
     }
 

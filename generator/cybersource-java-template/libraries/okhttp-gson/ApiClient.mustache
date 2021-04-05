@@ -140,7 +140,7 @@ public class ApiClient {
 	private static ConnectionPool connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
 	private HttpLoggingInterceptor loggingInterceptor;
 	private long computationStartTime;
-	private Logger logger;
+	private static Logger logger = LogManager.getLogger(ApiClient.class);
 
 	/**
 	 * The datetime format to be used when <code>lenientDatetimeFormat</code> is
@@ -172,8 +172,6 @@ public class ApiClient {
 	 * Constructor for ApiClient
 	 */
 	public ApiClient() {
-		this.logger = LogManager.getLogger(this.getClass());
-
 		versionInfo = getClientID();
 
         httpClient = classHttpClient.newBuilder()
