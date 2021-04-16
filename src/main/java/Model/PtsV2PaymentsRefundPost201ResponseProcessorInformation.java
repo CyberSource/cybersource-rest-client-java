@@ -41,6 +41,12 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
   @SerializedName("responseCode")
   private String responseCode = null;
 
+  @SerializedName("approvalCode")
+  private String approvalCode = null;
+
+  @SerializedName("networkTransactionId")
+  private String networkTransactionId = null;
+
   @SerializedName("achVerification")
   private PtsV2PaymentsPost201ResponseProcessorInformationAchVerification achVerification = null;
 
@@ -134,6 +140,31 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     this.achVerification = achVerification;
   }
 
+  /**
+   * Get networkTransactionId
+   * @return networkTransactionId
+  **/
+  @ApiModelProperty(value = "")
+  public String getNetworkTransactionId() {
+    return networkTransactionId;
+  }
+
+  public void setNetworkTransactionId(String networkTransactionId) {
+    this.networkTransactionId = networkTransactionId;
+  }
+
+  /**
+   * Get approvalCode
+   * @return approvalCode
+  **/
+  @ApiModelProperty(value = "")
+  public String getApprovalCode() {
+    return approvalCode;
+  }
+
+  public void setApprovalCode(String approvalCode) {
+    this.approvalCode = approvalCode;
+  }
 
   @Override
   public boolean equals(java.lang.Object o) {
