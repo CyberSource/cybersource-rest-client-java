@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsHealthCareInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
 public class Ptsv2paymentsHealthCareInformationAmountDetails {
   @SerializedName("amountType")
   private String amountType = null;
@@ -58,10 +58,10 @@ public class Ptsv2paymentsHealthCareInformationAmountDetails {
   }
 
    /**
-   * Total Amount that has been spent on transit healthcare. This is 13 byte field including sign. If the amount is positive, then it is a debit for the customer. If the amount is negative, then it is a credit for the customer. 
+   * Total Amount that has been spent on the corresponding amountType. This is 13 byte field including sign. If the amount is positive, then it is a debit for the customer. If the amount is negative, then it is a credit for the customer. 
    * @return amount
   **/
-  @ApiModelProperty(value = "Total Amount that has been spent on transit healthcare. This is 13 byte field including sign. If the amount is positive, then it is a debit for the customer. If the amount is negative, then it is a credit for the customer. ")
+  @ApiModelProperty(value = "Total Amount that has been spent on the corresponding amountType. This is 13 byte field including sign. If the amount is positive, then it is a debit for the customer. If the amount is negative, then it is a credit for the customer. ")
   public String getAmount() {
     return amount;
   }

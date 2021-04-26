@@ -30,7 +30,7 @@ import java.util.List;
  * Shipping Address Resources. 
  */
 @ApiModel(description = "Shipping Address Resources. ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
 public class ShippingAddressListForCustomerEmbedded {
   @SerializedName("shippingAddresses")
   private List<Tmsv2customersEmbeddedDefaultShippingAddress> shippingAddresses = null;

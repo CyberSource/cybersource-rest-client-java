@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Riskv1decisionsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
 public class Riskv1decisionsConsumerAuthenticationInformation {
   @SerializedName("strongAuthentication")
   private Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication strongAuthentication = null;
@@ -263,10 +263,10 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
   }
 
    /**
-   * The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in &#x60;consumerAuthenticationInformation.alternateAuthenticationData&#x60; if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider. 
+   * The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in &#x60;consumerAuthenticationInformation.alternateAuthenticationData&#x60; if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider.  This field is supported for Cartes Bancaires Fast&#39;R transactions on Credit Mutuel-CIC. Format: YYYYMMDDHHMMSS 
    * @return authenticationDate
   **/
-  @ApiModelProperty(value = "The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in `consumerAuthenticationInformation.alternateAuthenticationData` if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider. ")
+  @ApiModelProperty(value = "The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in `consumerAuthenticationInformation.alternateAuthenticationData` if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider.  This field is supported for Cartes Bancaires Fast'R transactions on Credit Mutuel-CIC. Format: YYYYMMDDHHMMSS ")
   public String getAuthenticationDate() {
     return authenticationDate;
   }

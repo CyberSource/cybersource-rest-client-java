@@ -34,13 +34,16 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("authIndicator")
   private String authIndicator = null;
 
   @SerializedName("approvalCode")
   private String approvalCode = null;
+
+  @SerializedName("cardReferenceData")
+  private String cardReferenceData = null;
 
   @SerializedName("transactionId")
   private String transactionId = null;
@@ -151,6 +154,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   public void setApprovalCode(String approvalCode) {
     this.approvalCode = approvalCode;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation cardReferenceData(String cardReferenceData) {
+    this.cardReferenceData = cardReferenceData;
+    return this;
+  }
+
+   /**
+   * The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the  authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same  transaction. This field is used by Streamline and HSBC UK only, at present. 
+   * @return cardReferenceData
+  **/
+  @ApiModelProperty(value = "The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the  authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same  transaction. This field is used by Streamline and HSBC UK only, at present. ")
+  public String getCardReferenceData() {
+    return cardReferenceData;
+  }
+
+  public void setCardReferenceData(String cardReferenceData) {
+    this.cardReferenceData = cardReferenceData;
   }
 
   public PtsV2PaymentsPost201ResponseProcessorInformation transactionId(String transactionId) {
@@ -615,6 +636,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     PtsV2PaymentsPost201ResponseProcessorInformation ptsV2PaymentsPost201ResponseProcessorInformation = (PtsV2PaymentsPost201ResponseProcessorInformation) o;
     return Objects.equals(this.authIndicator, ptsV2PaymentsPost201ResponseProcessorInformation.authIndicator) &&
         Objects.equals(this.approvalCode, ptsV2PaymentsPost201ResponseProcessorInformation.approvalCode) &&
+        Objects.equals(this.cardReferenceData, ptsV2PaymentsPost201ResponseProcessorInformation.cardReferenceData) &&
         Objects.equals(this.transactionId, ptsV2PaymentsPost201ResponseProcessorInformation.transactionId) &&
         Objects.equals(this.networkTransactionId, ptsV2PaymentsPost201ResponseProcessorInformation.networkTransactionId) &&
         Objects.equals(this.providerTransactionId, ptsV2PaymentsPost201ResponseProcessorInformation.providerTransactionId) &&
@@ -644,7 +666,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, transactionId, networkTransactionId, providerTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, providerTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber);
   }
 
 
@@ -655,6 +677,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     
     sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
     sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
+    sb.append("    cardReferenceData: ").append(toIndentedString(cardReferenceData)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
     sb.append("    providerTransactionId: ").append(toIndentedString(providerTransactionId)).append("\n");
