@@ -29,7 +29,7 @@ import java.io.IOException;
  * A paginated container of Shipping Addresses. 
  */
 @ApiModel(description = "A paginated container of Shipping Addresses. ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
 public class ShippingAddressListForCustomer {
   @SerializedName("_links")
   private ShippingAddressListForCustomerLinks links = null;
