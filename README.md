@@ -16,7 +16,7 @@ Java 1.8.
             <dependency>
                 <groupId>com.cybersource</groupId>
                 <artifactId>cybersource-rest-client-java</artifactId>
-                <version>0.0.4</version>
+                <version>[INSERT VERSION NUMBER HERE]</version>
             </dependency>
     ```
 
@@ -24,9 +24,13 @@ Java 1.8.
 
     ````gradle
     dependencies {
-    compile 'com.cybersource:cybersource-rest-client-java:0.0.4'
+    compile 'com.cybersource:cybersource-rest-client-java:[INSERT VERSION NUMBER HERE]'
     }
     ````
+
+***Please note that the version number to be used needs to be inserted in the placeholder mentioned above. Also, remove the square brackets as they are not required with the version number.***
+
+For released versions of the SDK, please refer to [Releases](https://github.com/CyberSource/cybersource-rest-client-java/releases) or search on [mvnrepository](https://mvnrepository.com/artifact/com.cybersource/cybersource-rest-client-java) or [search.maven](https://search.maven.org/artifact/com.cybersource/cybersource-rest-client-java).
 
 ## Registration & Configuration
 
