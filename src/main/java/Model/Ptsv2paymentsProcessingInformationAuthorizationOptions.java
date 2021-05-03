@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsProcessingInformationAuthorizationOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
 public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("authType")
   private String authType = null;
@@ -70,8 +70,8 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("redemptionInquiry")
   private Boolean redemptionInquiry = null;
 
-  @SerializedName("transitTransactionType")
-  private String transitTransactionType = null;
+  @SerializedName("transportationMode")
+  private String transportationMode = null;
 
   @SerializedName("aggregatedAuthIndicator")
   private String aggregatedAuthIndicator = null;
@@ -324,22 +324,22 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     this.redemptionInquiry = redemptionInquiry;
   }
 
-  public Ptsv2paymentsProcessingInformationAuthorizationOptions transitTransactionType(String transitTransactionType) {
-    this.transitTransactionType = transitTransactionType;
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions transportationMode(String transportationMode) {
+    this.transportationMode = transportationMode;
     return this;
   }
 
    /**
    * Type of transportation mode :  Possible Values: - 00 &#x3D; Unknown - 01 &#x3D; Urban bus - 02 &#x3D; Interurban bus - 03&#x3D;Lighttrainmasstransit(Underground Metro LTR) - 04 &#x3D; Train - 05 &#x3D; Commuter train - 06 &#x3D; Water-borne vehicle - 07 &#x3D; Toll - 08 &#x3D; Parking - 09 &#x3D; Taxi - 10 &#x3D; High-speed train - 11 &#x3D; Rural bus - 12 &#x3D; Express commuter train - 13 &#x3D; Para transit - 14 &#x3D; Self drive vehicle - 15 &#x3D; Coach - 16 &#x3D; Locomotive - 17 &#x3D; Powered motor coach - 18 &#x3D; Trailer - 19 &#x3D; Regional train - 20 &#x3D; Inter-city - 21 &#x3D; Funicular train - 22 &#x3D; Cable car 
-   * @return transitTransactionType
+   * @return transportationMode
   **/
   @ApiModelProperty(value = "Type of transportation mode :  Possible Values: - 00 = Unknown - 01 = Urban bus - 02 = Interurban bus - 03=Lighttrainmasstransit(Underground Metro LTR) - 04 = Train - 05 = Commuter train - 06 = Water-borne vehicle - 07 = Toll - 08 = Parking - 09 = Taxi - 10 = High-speed train - 11 = Rural bus - 12 = Express commuter train - 13 = Para transit - 14 = Self drive vehicle - 15 = Coach - 16 = Locomotive - 17 = Powered motor coach - 18 = Trailer - 19 = Regional train - 20 = Inter-city - 21 = Funicular train - 22 = Cable car ")
-  public String getTransitTransactionType() {
-    return transitTransactionType;
+  public String getTransportationMode() {
+    return transportationMode;
   }
 
-  public void setTransitTransactionType(String transitTransactionType) {
-    this.transitTransactionType = transitTransactionType;
+  public void setTransportationMode(String transportationMode) {
+    this.transportationMode = transportationMode;
   }
 
   public Ptsv2paymentsProcessingInformationAuthorizationOptions aggregatedAuthIndicator(String aggregatedAuthIndicator) {
@@ -419,7 +419,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
         Objects.equals(this.billPayment, ptsv2paymentsProcessingInformationAuthorizationOptions.billPayment) &&
         Objects.equals(this.billPaymentType, ptsv2paymentsProcessingInformationAuthorizationOptions.billPaymentType) &&
         Objects.equals(this.redemptionInquiry, ptsv2paymentsProcessingInformationAuthorizationOptions.redemptionInquiry) &&
-        Objects.equals(this.transitTransactionType, ptsv2paymentsProcessingInformationAuthorizationOptions.transitTransactionType) &&
+        Objects.equals(this.transportationMode, ptsv2paymentsProcessingInformationAuthorizationOptions.transportationMode) &&
         Objects.equals(this.aggregatedAuthIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.aggregatedAuthIndicator) &&
         Objects.equals(this.debtRecoveryIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.debtRecoveryIndicator) &&
         Objects.equals(this.deferredAuthIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.deferredAuthIndicator);
@@ -427,7 +427,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transitTransactionType, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator);
+    return Objects.hash(authType, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator);
   }
 
 
@@ -449,7 +449,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     sb.append("    billPayment: ").append(toIndentedString(billPayment)).append("\n");
     sb.append("    billPaymentType: ").append(toIndentedString(billPaymentType)).append("\n");
     sb.append("    redemptionInquiry: ").append(toIndentedString(redemptionInquiry)).append("\n");
-    sb.append("    transitTransactionType: ").append(toIndentedString(transitTransactionType)).append("\n");
+    sb.append("    transportationMode: ").append(toIndentedString(transportationMode)).append("\n");
     sb.append("    aggregatedAuthIndicator: ").append(toIndentedString(aggregatedAuthIndicator)).append("\n");
     sb.append("    debtRecoveryIndicator: ").append(toIndentedString(debtRecoveryIndicator)).append("\n");
     sb.append("    deferredAuthIndicator: ").append(toIndentedString(deferredAuthIndicator)).append("\n");

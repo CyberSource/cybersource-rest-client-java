@@ -27,7 +27,7 @@ import java.io.IOException;
  * This object contains recurring payment information.
  */
 @ApiModel(description = "This object contains recurring payment information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
 public class Ptsv2paymentsRecurringPaymentInformation {
   @SerializedName("endDate")
   private String endDate = null;
@@ -35,8 +35,14 @@ public class Ptsv2paymentsRecurringPaymentInformation {
   @SerializedName("frequency")
   private Integer frequency = null;
 
+  @SerializedName("numberOfPayments")
+  private Integer numberOfPayments = null;
+
   @SerializedName("originalPurchaseDate")
   private String originalPurchaseDate = null;
+
+  @SerializedName("sequenceNumber")
+  private Integer sequenceNumber = null;
 
   public Ptsv2paymentsRecurringPaymentInformation endDate(String endDate) {
     this.endDate = endDate;
@@ -74,6 +80,24 @@ public class Ptsv2paymentsRecurringPaymentInformation {
     this.frequency = frequency;
   }
 
+  public Ptsv2paymentsRecurringPaymentInformation numberOfPayments(Integer numberOfPayments) {
+    this.numberOfPayments = numberOfPayments;
+    return this;
+  }
+
+   /**
+   * Total number of payments for the duration of the recurring subscription. 
+   * @return numberOfPayments
+  **/
+  @ApiModelProperty(value = "Total number of payments for the duration of the recurring subscription. ")
+  public Integer getNumberOfPayments() {
+    return numberOfPayments;
+  }
+
+  public void setNumberOfPayments(Integer numberOfPayments) {
+    this.numberOfPayments = numberOfPayments;
+  }
+
   public Ptsv2paymentsRecurringPaymentInformation originalPurchaseDate(String originalPurchaseDate) {
     this.originalPurchaseDate = originalPurchaseDate;
     return this;
@@ -92,6 +116,24 @@ public class Ptsv2paymentsRecurringPaymentInformation {
     this.originalPurchaseDate = originalPurchaseDate;
   }
 
+  public Ptsv2paymentsRecurringPaymentInformation sequenceNumber(Integer sequenceNumber) {
+    this.sequenceNumber = sequenceNumber;
+    return this;
+  }
+
+   /**
+   * This field is mandatory for Cartes Bancaires recurring transactions on Credit Mutuel-CIC.       This field records recurring sequence, e.g. 1st for initial,  2 for subsequent, 3 etc 
+   * @return sequenceNumber
+  **/
+  @ApiModelProperty(value = "This field is mandatory for Cartes Bancaires recurring transactions on Credit Mutuel-CIC.       This field records recurring sequence, e.g. 1st for initial,  2 for subsequent, 3 etc ")
+  public Integer getSequenceNumber() {
+    return sequenceNumber;
+  }
+
+  public void setSequenceNumber(Integer sequenceNumber) {
+    this.sequenceNumber = sequenceNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,12 +146,14 @@ public class Ptsv2paymentsRecurringPaymentInformation {
     Ptsv2paymentsRecurringPaymentInformation ptsv2paymentsRecurringPaymentInformation = (Ptsv2paymentsRecurringPaymentInformation) o;
     return Objects.equals(this.endDate, ptsv2paymentsRecurringPaymentInformation.endDate) &&
         Objects.equals(this.frequency, ptsv2paymentsRecurringPaymentInformation.frequency) &&
-        Objects.equals(this.originalPurchaseDate, ptsv2paymentsRecurringPaymentInformation.originalPurchaseDate);
+        Objects.equals(this.numberOfPayments, ptsv2paymentsRecurringPaymentInformation.numberOfPayments) &&
+        Objects.equals(this.originalPurchaseDate, ptsv2paymentsRecurringPaymentInformation.originalPurchaseDate) &&
+        Objects.equals(this.sequenceNumber, ptsv2paymentsRecurringPaymentInformation.sequenceNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(endDate, frequency, originalPurchaseDate);
+    return Objects.hash(endDate, frequency, numberOfPayments, originalPurchaseDate, sequenceNumber);
   }
 
 
@@ -120,7 +164,9 @@ public class Ptsv2paymentsRecurringPaymentInformation {
     
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
+    sb.append("    numberOfPayments: ").append(toIndentedString(numberOfPayments)).append("\n");
     sb.append("    originalPurchaseDate: ").append(toIndentedString(originalPurchaseDate)).append("\n");
+    sb.append("    sequenceNumber: ").append(toIndentedString(sequenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
