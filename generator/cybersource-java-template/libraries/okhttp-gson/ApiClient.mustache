@@ -73,6 +73,7 @@ import com.cybersource.authsdk.core.ConfigException;
 import com.cybersource.authsdk.core.MerchantConfig;
 import com.cybersource.authsdk.payloaddigest.PayloadDigest;
 import com.cybersource.authsdk.util.GlobalLabelParameters;
+import com.cybersource.authsdk.util.PrettyPrintingMap;
 import com.cybersource.authsdk.util.PropertiesUtil;
 
 import Invokers.auth.ApiKeyAuth;
@@ -1276,6 +1277,7 @@ public class ApiClient {
 		}
 
 		headerParams.putAll(defaultHeaderMap);
+		logger.info("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
 		Request request = buildRequest(path, method, queryParams, body, headerParams, formParams, authNames,
 				progressRequestListener);
 		return httpClient.newCall(request);
