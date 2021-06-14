@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-03-26T11:59:18.619+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
 public class Ptsv2paymentsConsumerAuthenticationInformation {
   @SerializedName("cavv")
   private String cavv = null;
@@ -64,6 +64,9 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @SerializedName("authenticationType")
   private String authenticationType = null;
+
+  @SerializedName("acsTransactionId")
+  private String acsTransactionId = null;
 
   @SerializedName("acsWindowSize")
   private String acsWindowSize = null;
@@ -127,6 +130,9 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @SerializedName("messageCategory")
   private String messageCategory = null;
+
+  @SerializedName("networkScore")
+  private String networkScore = null;
 
   @SerializedName("npaCode")
   private String npaCode = null;
@@ -401,6 +407,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     this.authenticationType = authenticationType;
   }
 
+  public Ptsv2paymentsConsumerAuthenticationInformation acsTransactionId(String acsTransactionId) {
+    this.acsTransactionId = acsTransactionId;
+    return this;
+  }
+
+   /**
+   * Unique transaction identifier assigned by the ACS to identify a single transaction.  This field is supported for Cartes Bancaires Fast&#39;R transactions on Credit Mutuel-CIC. 
+   * @return acsTransactionId
+  **/
+  @ApiModelProperty(value = "Unique transaction identifier assigned by the ACS to identify a single transaction.  This field is supported for Cartes Bancaires Fast'R transactions on Credit Mutuel-CIC. ")
+  public String getAcsTransactionId() {
+    return acsTransactionId;
+  }
+
+  public void setAcsTransactionId(String acsTransactionId) {
+    this.acsTransactionId = acsTransactionId;
+  }
+
   public Ptsv2paymentsConsumerAuthenticationInformation acsWindowSize(String acsWindowSize) {
     this.acsWindowSize = acsWindowSize;
     return this;
@@ -479,10 +503,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in &#x60;consumerAuthenticationInformation.alternateAuthenticationData&#x60; if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider. 
+   * The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in &#x60;consumerAuthenticationInformation.alternateAuthenticationData&#x60; if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider.  This field is supported for Cartes Bancaires Fast&#39;R transactions on Credit Mutuel-CIC. Format: YYYYMMDDHHMMSS 
    * @return authenticationDate
   **/
-  @ApiModelProperty(value = "The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in `consumerAuthenticationInformation.alternateAuthenticationData` if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider. ")
+  @ApiModelProperty(value = "The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in `consumerAuthenticationInformation.alternateAuthenticationData` if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider.  This field is supported for Cartes Bancaires Fast'R transactions on Credit Mutuel-CIC. Format: YYYYMMDDHHMMSS ")
   public String getAuthenticationDate() {
     return authenticationDate;
   }
@@ -777,6 +801,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   public void setMessageCategory(String messageCategory) {
     this.messageCategory = messageCategory;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation networkScore(String networkScore) {
+    this.networkScore = networkScore;
+    return this;
+  }
+
+   /**
+   * The global score calculated by the CB scoring platform and returned to merchants.  Possible values:  - &#39;00&#39; - &#39;99&#39;  When you request the payer authentication and authorization services separately, get the value for this field from the pa_network_score reply field.         This field is supported only for Cartes Bancaires Fast&#39;R transactions on Credit Mutuel-CIC. 
+   * @return networkScore
+  **/
+  @ApiModelProperty(value = "The global score calculated by the CB scoring platform and returned to merchants.  Possible values:  - '00' - '99'  When you request the payer authentication and authorization services separately, get the value for this field from the pa_network_score reply field.         This field is supported only for Cartes Bancaires Fast'R transactions on Credit Mutuel-CIC. ")
+  public String getNetworkScore() {
+    return networkScore;
+  }
+
+  public void setNetworkScore(String networkScore) {
+    this.networkScore = networkScore;
   }
 
   public Ptsv2paymentsConsumerAuthenticationInformation npaCode(String npaCode) {
@@ -1143,6 +1185,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
         Objects.equals(this.directoryServerTransactionId, ptsv2paymentsConsumerAuthenticationInformation.directoryServerTransactionId) &&
         Objects.equals(this.paSpecificationVersion, ptsv2paymentsConsumerAuthenticationInformation.paSpecificationVersion) &&
         Objects.equals(this.authenticationType, ptsv2paymentsConsumerAuthenticationInformation.authenticationType) &&
+        Objects.equals(this.acsTransactionId, ptsv2paymentsConsumerAuthenticationInformation.acsTransactionId) &&
         Objects.equals(this.acsWindowSize, ptsv2paymentsConsumerAuthenticationInformation.acsWindowSize) &&
         Objects.equals(this.alternateAuthenticationData, ptsv2paymentsConsumerAuthenticationInformation.alternateAuthenticationData) &&
         Objects.equals(this.alternateAuthenticationDate, ptsv2paymentsConsumerAuthenticationInformation.alternateAuthenticationDate) &&
@@ -1164,6 +1207,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
         Objects.equals(this.mcc, ptsv2paymentsConsumerAuthenticationInformation.mcc) &&
         Objects.equals(this.merchantScore, ptsv2paymentsConsumerAuthenticationInformation.merchantScore) &&
         Objects.equals(this.messageCategory, ptsv2paymentsConsumerAuthenticationInformation.messageCategory) &&
+        Objects.equals(this.networkScore, ptsv2paymentsConsumerAuthenticationInformation.networkScore) &&
         Objects.equals(this.npaCode, ptsv2paymentsConsumerAuthenticationInformation.npaCode) &&
         Objects.equals(this.overridePaymentMethod, ptsv2paymentsConsumerAuthenticationInformation.overridePaymentMethod) &&
         Objects.equals(this.overrideCountryCode, ptsv2paymentsConsumerAuthenticationInformation.overrideCountryCode) &&
@@ -1187,7 +1231,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cavv, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, effectiveAuthenticationType, signedParesStatusReason, signedPares);
+    return Objects.hash(cavv, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, acsTransactionId, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, networkScore, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, effectiveAuthenticationType, signedParesStatusReason, signedPares);
   }
 
 
@@ -1208,6 +1252,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     sb.append("    directoryServerTransactionId: ").append(toIndentedString(directoryServerTransactionId)).append("\n");
     sb.append("    paSpecificationVersion: ").append(toIndentedString(paSpecificationVersion)).append("\n");
     sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
+    sb.append("    acsTransactionId: ").append(toIndentedString(acsTransactionId)).append("\n");
     sb.append("    acsWindowSize: ").append(toIndentedString(acsWindowSize)).append("\n");
     sb.append("    alternateAuthenticationData: ").append(toIndentedString(alternateAuthenticationData)).append("\n");
     sb.append("    alternateAuthenticationDate: ").append(toIndentedString(alternateAuthenticationDate)).append("\n");
@@ -1229,6 +1274,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     sb.append("    mcc: ").append(toIndentedString(mcc)).append("\n");
     sb.append("    merchantScore: ").append(toIndentedString(merchantScore)).append("\n");
     sb.append("    messageCategory: ").append(toIndentedString(messageCategory)).append("\n");
+    sb.append("    networkScore: ").append(toIndentedString(networkScore)).append("\n");
     sb.append("    npaCode: ").append(toIndentedString(npaCode)).append("\n");
     sb.append("    overridePaymentMethod: ").append(toIndentedString(overridePaymentMethod)).append("\n");
     sb.append("    overrideCountryCode: ").append(toIndentedString(overrideCountryCode)).append("\n");

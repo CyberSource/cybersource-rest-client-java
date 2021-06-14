@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 import Model.InlineResponse400;
 import Model.PatchInstrumentIdentifierRequest;
-import Model.PaymentInstrumentListForCustomer;
+import Model.PaymentInstrumentList;
 import Model.PostInstrumentIdentifierEnrollmentRequest;
 import Model.PostInstrumentIdentifierRequest;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
@@ -407,12 +407,12 @@ public class InstrumentIdentifierApi {
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
-     * @return PaymentInstrumentListForCustomer
+     * @return PaymentInstrumentList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaymentInstrumentListForCustomer getInstrumentIdentifierPaymentInstrumentsList(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit) throws ApiException {
+    public PaymentInstrumentList getInstrumentIdentifierPaymentInstrumentsList(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<PaymentInstrumentListForCustomer> resp = getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(instrumentIdentifierTokenId, profileId, offset, limit);
+        ApiResponse<PaymentInstrumentList> resp = getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(instrumentIdentifierTokenId, profileId, offset, limit);
         return resp.getData();
     }
 
@@ -423,12 +423,12 @@ public class InstrumentIdentifierApi {
      * @param profileId The id of a profile containing user specific TMS configuration. (optional)
      * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
-     * @return ApiResponse&lt;PaymentInstrumentListForCustomer&gt;
+     * @return ApiResponse&lt;PaymentInstrumentList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaymentInstrumentListForCustomer> getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit) throws ApiException {
+    public ApiResponse<PaymentInstrumentList> getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit) throws ApiException {
         okhttp3.Call call = getInstrumentIdentifierPaymentInstrumentsListValidateBeforeCall(instrumentIdentifierTokenId, profileId, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaymentInstrumentListForCustomer>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaymentInstrumentList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -443,7 +443,7 @@ public class InstrumentIdentifierApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListAsync(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit, final ApiCallback<PaymentInstrumentListForCustomer> callback) throws ApiException {
+    public okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListAsync(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit, final ApiCallback<PaymentInstrumentList> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -466,7 +466,7 @@ public class InstrumentIdentifierApi {
         }
 
         okhttp3.Call call = getInstrumentIdentifierPaymentInstrumentsListValidateBeforeCall(instrumentIdentifierTokenId, profileId, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaymentInstrumentListForCustomer>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaymentInstrumentList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

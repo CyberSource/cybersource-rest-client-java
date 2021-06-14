@@ -16,7 +16,7 @@ package Api;
 import Invokers.ApiException;
 import Model.InlineResponse400;
 import Model.PatchCustomerPaymentInstrumentRequest;
-import Model.PaymentInstrumentListForCustomer;
+import Model.PaymentInstrumentList;
 import Model.PostCustomerPaymentInstrumentRequest;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrument;
 import org.junit.Test;
@@ -86,7 +86,7 @@ public class CustomerPaymentInstrumentApiTest {
         String profileId = null;
         Long offset = null;
         Long limit = null;
-        PaymentInstrumentListForCustomer response = api.getCustomerPaymentInstrumentsList(customerTokenId, profileId, offset, limit);
+        PaymentInstrumentList response = api.getCustomerPaymentInstrumentsList(customerTokenId, profileId, offset, limit);
 
         // TODO: test validations
     }

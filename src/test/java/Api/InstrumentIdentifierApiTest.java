@@ -16,7 +16,7 @@ package Api;
 import Invokers.ApiException;
 import Model.InlineResponse400;
 import Model.PatchInstrumentIdentifierRequest;
-import Model.PaymentInstrumentListForCustomer;
+import Model.PaymentInstrumentList;
 import Model.PostInstrumentIdentifierEnrollmentRequest;
 import Model.PostInstrumentIdentifierRequest;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
@@ -85,7 +85,7 @@ public class InstrumentIdentifierApiTest {
         String profileId = null;
         Long offset = null;
         Long limit = null;
-        PaymentInstrumentListForCustomer response = api.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierTokenId, profileId, offset, limit);
+        PaymentInstrumentList response = api.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierTokenId, profileId, offset, limit);
 
         // TODO: test validations
     }
