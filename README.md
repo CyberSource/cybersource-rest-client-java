@@ -78,9 +78,9 @@ In order to use OAuth, set the run environment to OAuth enabled URLs. OAuth only
 
 ```java
     // For TESTING use
-    props.setProperty("runEnvironment", "CyberSource.Environment.MutualAuth.SANDBOX");
+    props.setProperty("runEnvironment", "api-matest.cybersource.com");
     // For PRODUCTION use
-    //props.setProperty("runEnvironment", "CyberSource.Environment.MutualAuth.PRODUCTION");
+    //props.setProperty("runEnvironment", "api-ma.cybersource.com");
 ```
 
 ### Switching between the sandbox environment and the production environment
@@ -89,18 +89,18 @@ Cybersource maintains a complete sandbox environment for testing and development
 
 ```java
     // For TESTING use
-    props.setProperty("runEnvironment", "CyberSource.Environment.SANDBOX");
+    props.setProperty("runEnvironment", "apitest.cybersource.com");
     // For PRODUCTION use
-    //props.setProperty("runEnvironment", "CyberSource.Environment.PRODUCTION");
+    //props.setProperty("runEnvironment", "api.cybersource.com");
 ```
 
 To Use OAuth, use OAuth enabled URLs
 
 ```java
     // For TESTING use
-    props.setProperty("runEnvironment", "CyberSource.Environment.MutualAuth.SANDBOX");
+    props.setProperty("runEnvironment", "api-matest.cybersource.com");
     // For PRODUCTION use
-    //props.setProperty("runEnvironment", "CyberSource.Environment.MutualAuth.PRODUCTION");
+    //props.setProperty("runEnvironment", "api-ma.cybersource.com");
 ```
 
 API credentials are different for each environment, so be sure to switch to the appropriate credentials when switching environments.
