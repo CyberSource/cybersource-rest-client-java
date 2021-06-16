@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
@@ -224,12 +224,12 @@ public class Ptsv2paymentsPointOfSaleInformation {
   }
 
    /**
-   * A one-digit code that identifies the capability of terminal to capture PINs.  This code does not necessarily mean that a PIN was entered or is included in this message.  POS terminal’s capability. Possible values: - &#x60;1&#x60;: Terminal has a magnetic stripe reader only. - &#x60;2&#x60;: Terminal has a magnetic stripe reader and manual entry capability. - &#x60;3&#x60;: Terminal has manual entry capability only. - &#x60;4&#x60;: Terminal can read chip cards.* - &#x60;5&#x60;: Terminal can read contactless chip cards.* * The values of 4 and 5 are supported only for EMV transactions.  For Payouts: This field is applicable for CtV. 
+   * A one-digit code that identifies the capability of terminal to capture PINs. This code does not necessarily mean that a PIN was entered or is included in this message. For Payouts: This field is applicable for CtV. For details, see the &#x60;terminal_pin_capability&#x60; field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/) 
    * minimum: 1
    * maximum: 1
    * @return pinEntryCapability
   **/
-  @ApiModelProperty(value = "A one-digit code that identifies the capability of terminal to capture PINs.  This code does not necessarily mean that a PIN was entered or is included in this message.  POS terminal’s capability. Possible values: - `1`: Terminal has a magnetic stripe reader only. - `2`: Terminal has a magnetic stripe reader and manual entry capability. - `3`: Terminal has manual entry capability only. - `4`: Terminal can read chip cards.* - `5`: Terminal can read contactless chip cards.* * The values of 4 and 5 are supported only for EMV transactions.  For Payouts: This field is applicable for CtV. ")
+  @ApiModelProperty(value = "A one-digit code that identifies the capability of terminal to capture PINs. This code does not necessarily mean that a PIN was entered or is included in this message. For Payouts: This field is applicable for CtV. For details, see the `terminal_pin_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/) ")
   public Integer getPinEntryCapability() {
     return pinEntryCapability;
   }
@@ -345,7 +345,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
    * Get cardholderVerificationMethod
    * @return cardholderVerificationMethod
   **/
-  @ApiModelProperty(example = "[\"PIN\",\"Signature\"]", value = "")
+  @ApiModelProperty(value = "")
   public List<String> getCardholderVerificationMethod() {
     return cardholderVerificationMethod;
   }
@@ -371,7 +371,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
    * Get terminalInputCapability
    * @return terminalInputCapability
   **/
-  @ApiModelProperty(example = "[\"Keyed\",\"Swiped\",\"Contact\",\"QRcode\"]", value = "")
+  @ApiModelProperty(value = "")
   public List<String> getTerminalInputCapability() {
     return terminalInputCapability;
   }

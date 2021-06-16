@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class Ptsv2paymentsConsumerAuthenticationInformation {
   @SerializedName("cavv")
   private String cavv = null;
@@ -64,6 +64,9 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @SerializedName("authenticationType")
   private String authenticationType = null;
+
+  @SerializedName("responseAccessToken")
+  private String responseAccessToken = null;
 
   @SerializedName("acsTransactionId")
   private String acsTransactionId = null;
@@ -157,6 +160,9 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @SerializedName("productCode")
   private String productCode = null;
+
+  @SerializedName("returnUrl")
+  private String returnUrl = null;
 
   @SerializedName("requestorId")
   private String requestorId = null;
@@ -405,6 +411,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   public void setAuthenticationType(String authenticationType) {
     this.authenticationType = authenticationType;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation responseAccessToken(String responseAccessToken) {
+    this.responseAccessToken = responseAccessToken;
+    return this;
+  }
+
+   /**
+   * JWT returned by the 3D Secure provider when the authentication is complete. Required for Hybrid integration if you use the Cybersource-generated access token. Note: Max. length of this field is 2048 characters. 
+   * @return responseAccessToken
+  **/
+  @ApiModelProperty(value = "JWT returned by the 3D Secure provider when the authentication is complete. Required for Hybrid integration if you use the Cybersource-generated access token. Note: Max. length of this field is 2048 characters. ")
+  public String getResponseAccessToken() {
+    return responseAccessToken;
+  }
+
+  public void setResponseAccessToken(String responseAccessToken) {
+    this.responseAccessToken = responseAccessToken;
   }
 
   public Ptsv2paymentsConsumerAuthenticationInformation acsTransactionId(String acsTransactionId) {
@@ -965,6 +989,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     this.productCode = productCode;
   }
 
+  public Ptsv2paymentsConsumerAuthenticationInformation returnUrl(String returnUrl) {
+    this.returnUrl = returnUrl;
+    return this;
+  }
+
+   /**
+   * The URL of the merchant’s return page. CyberSource adds this return URL to the step-up JWT and returns it in the response of the Payer Authentication enrollment call. The merchant&#39;s return URL page serves as a listening URL. Once the bank session completes, the merchant receives a POST to their URL. This response contains the completed bank session’s transactionId. The merchant’s return page should capture the transaction ID and send it in the Payer Authentication validation call. 
+   * @return returnUrl
+  **/
+  @ApiModelProperty(value = "The URL of the merchant’s return page. CyberSource adds this return URL to the step-up JWT and returns it in the response of the Payer Authentication enrollment call. The merchant's return URL page serves as a listening URL. Once the bank session completes, the merchant receives a POST to their URL. This response contains the completed bank session’s transactionId. The merchant’s return page should capture the transaction ID and send it in the Payer Authentication validation call. ")
+  public String getReturnUrl() {
+    return returnUrl;
+  }
+
+  public void setReturnUrl(String returnUrl) {
+    this.returnUrl = returnUrl;
+  }
+
   public Ptsv2paymentsConsumerAuthenticationInformation requestorId(String requestorId) {
     this.requestorId = requestorId;
     return this;
@@ -1185,6 +1227,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
         Objects.equals(this.directoryServerTransactionId, ptsv2paymentsConsumerAuthenticationInformation.directoryServerTransactionId) &&
         Objects.equals(this.paSpecificationVersion, ptsv2paymentsConsumerAuthenticationInformation.paSpecificationVersion) &&
         Objects.equals(this.authenticationType, ptsv2paymentsConsumerAuthenticationInformation.authenticationType) &&
+        Objects.equals(this.responseAccessToken, ptsv2paymentsConsumerAuthenticationInformation.responseAccessToken) &&
         Objects.equals(this.acsTransactionId, ptsv2paymentsConsumerAuthenticationInformation.acsTransactionId) &&
         Objects.equals(this.acsWindowSize, ptsv2paymentsConsumerAuthenticationInformation.acsWindowSize) &&
         Objects.equals(this.alternateAuthenticationData, ptsv2paymentsConsumerAuthenticationInformation.alternateAuthenticationData) &&
@@ -1216,6 +1259,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
         Objects.equals(this.priorAuthenticationReferenceId, ptsv2paymentsConsumerAuthenticationInformation.priorAuthenticationReferenceId) &&
         Objects.equals(this.priorAuthenticationTime, ptsv2paymentsConsumerAuthenticationInformation.priorAuthenticationTime) &&
         Objects.equals(this.productCode, ptsv2paymentsConsumerAuthenticationInformation.productCode) &&
+        Objects.equals(this.returnUrl, ptsv2paymentsConsumerAuthenticationInformation.returnUrl) &&
         Objects.equals(this.requestorId, ptsv2paymentsConsumerAuthenticationInformation.requestorId) &&
         Objects.equals(this.requestorInitiatedAuthenticationIndicator, ptsv2paymentsConsumerAuthenticationInformation.requestorInitiatedAuthenticationIndicator) &&
         Objects.equals(this.requestorName, ptsv2paymentsConsumerAuthenticationInformation.requestorName) &&
@@ -1231,7 +1275,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cavv, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, acsTransactionId, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, networkScore, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, effectiveAuthenticationType, signedParesStatusReason, signedPares);
+    return Objects.hash(cavv, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, responseAccessToken, acsTransactionId, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, networkScore, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, effectiveAuthenticationType, signedParesStatusReason, signedPares);
   }
 
 
@@ -1252,6 +1296,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     sb.append("    directoryServerTransactionId: ").append(toIndentedString(directoryServerTransactionId)).append("\n");
     sb.append("    paSpecificationVersion: ").append(toIndentedString(paSpecificationVersion)).append("\n");
     sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
+    sb.append("    responseAccessToken: ").append(toIndentedString(responseAccessToken)).append("\n");
     sb.append("    acsTransactionId: ").append(toIndentedString(acsTransactionId)).append("\n");
     sb.append("    acsWindowSize: ").append(toIndentedString(acsWindowSize)).append("\n");
     sb.append("    alternateAuthenticationData: ").append(toIndentedString(alternateAuthenticationData)).append("\n");
@@ -1283,6 +1328,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     sb.append("    priorAuthenticationReferenceId: ").append(toIndentedString(priorAuthenticationReferenceId)).append("\n");
     sb.append("    priorAuthenticationTime: ").append(toIndentedString(priorAuthenticationTime)).append("\n");
     sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
     sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
     sb.append("    requestorInitiatedAuthenticationIndicator: ").append(toIndentedString(requestorInitiatedAuthenticationIndicator)).append("\n");
     sb.append("    requestorName: ").append(toIndentedString(requestorName)).append("\n");

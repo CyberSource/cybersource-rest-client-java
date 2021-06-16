@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1decisionsClientReferenceInformation;
 import Model.Riskv1liststypeentriesBuyerInformation;
+import Model.Riskv1liststypeentriesClientReferenceInformation;
 import Model.Riskv1liststypeentriesDeviceInformation;
 import Model.Riskv1liststypeentriesOrderInformation;
 import Model.Riskv1liststypeentriesPaymentInformation;
@@ -32,7 +32,7 @@ import java.io.IOException;
 /**
  * AddNegativeListRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class AddNegativeListRequest {
   @SerializedName("orderInformation")
   private Riskv1liststypeentriesOrderInformation orderInformation = null;
@@ -41,7 +41,7 @@ public class AddNegativeListRequest {
   private Riskv1liststypeentriesPaymentInformation paymentInformation = null;
 
   @SerializedName("clientReferenceInformation")
-  private Riskv1decisionsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("deviceInformation")
   private Riskv1liststypeentriesDeviceInformation deviceInformation = null;
@@ -88,7 +88,7 @@ public class AddNegativeListRequest {
     this.paymentInformation = paymentInformation;
   }
 
-  public AddNegativeListRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+  public AddNegativeListRequest clientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -98,11 +98,11 @@ public class AddNegativeListRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1liststypeentriesClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

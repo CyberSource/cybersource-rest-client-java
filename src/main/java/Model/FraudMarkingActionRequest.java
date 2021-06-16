@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1decisionsClientReferenceInformation;
 import Model.Riskv1decisionsidmarkingRiskInformation;
+import Model.Riskv1liststypeentriesClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,13 +28,13 @@ import java.io.IOException;
 /**
  * FraudMarkingActionRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class FraudMarkingActionRequest {
   @SerializedName("riskInformation")
   private Riskv1decisionsidmarkingRiskInformation riskInformation = null;
 
   @SerializedName("clientReferenceInformation")
-  private Riskv1decisionsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation = null;
 
   public FraudMarkingActionRequest riskInformation(Riskv1decisionsidmarkingRiskInformation riskInformation) {
     this.riskInformation = riskInformation;
@@ -54,7 +54,7 @@ public class FraudMarkingActionRequest {
     this.riskInformation = riskInformation;
   }
 
-  public FraudMarkingActionRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+  public FraudMarkingActionRequest clientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -64,11 +64,11 @@ public class FraudMarkingActionRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1liststypeentriesClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

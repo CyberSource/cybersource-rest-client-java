@@ -27,10 +27,13 @@ import java.io.IOException;
 /**
  * Riskv1decisionsClientReferenceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class Riskv1decisionsClientReferenceInformation {
   @SerializedName("code")
   private String code = null;
+
+  @SerializedName("pausedRequestId")
+  private String pausedRequestId = null;
 
   @SerializedName("comments")
   private String comments = null;
@@ -54,6 +57,24 @@ public class Riskv1decisionsClientReferenceInformation {
 
   public void setCode(String code) {
     this.code = code;
+  }
+
+  public Riskv1decisionsClientReferenceInformation pausedRequestId(String pausedRequestId) {
+    this.pausedRequestId = pausedRequestId;
+    return this;
+  }
+
+   /**
+   * Used to resume a transaction that was paused for an order modification rule to allow for payer authentication to complete. To resume and continue with the authorization/decision service flow, call the services and include the request id from the prior decision call. 
+   * @return pausedRequestId
+  **/
+  @ApiModelProperty(value = "Used to resume a transaction that was paused for an order modification rule to allow for payer authentication to complete. To resume and continue with the authorization/decision service flow, call the services and include the request id from the prior decision call. ")
+  public String getPausedRequestId() {
+    return pausedRequestId;
+  }
+
+  public void setPausedRequestId(String pausedRequestId) {
+    this.pausedRequestId = pausedRequestId;
   }
 
   public Riskv1decisionsClientReferenceInformation comments(String comments) {
@@ -103,13 +124,14 @@ public class Riskv1decisionsClientReferenceInformation {
     }
     Riskv1decisionsClientReferenceInformation riskv1decisionsClientReferenceInformation = (Riskv1decisionsClientReferenceInformation) o;
     return Objects.equals(this.code, riskv1decisionsClientReferenceInformation.code) &&
+        Objects.equals(this.pausedRequestId, riskv1decisionsClientReferenceInformation.pausedRequestId) &&
         Objects.equals(this.comments, riskv1decisionsClientReferenceInformation.comments) &&
         Objects.equals(this.partner, riskv1decisionsClientReferenceInformation.partner);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, comments, partner);
+    return Objects.hash(code, pausedRequestId, comments, partner);
   }
 
 
@@ -119,6 +141,7 @@ public class Riskv1decisionsClientReferenceInformation {
     sb.append("class Riskv1decisionsClientReferenceInformation {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    pausedRequestId: ").append(toIndentedString(pausedRequestId)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
     sb.append("}");

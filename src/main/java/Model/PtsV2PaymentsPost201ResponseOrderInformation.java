@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails;
 import Model.PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails;
+import Model.PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,13 +29,16 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class PtsV2PaymentsPost201ResponseOrderInformation {
   @SerializedName("amountDetails")
   private PtsV2PaymentsPost201ResponseOrderInformationAmountDetails amountDetails = null;
 
   @SerializedName("invoiceDetails")
   private PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails invoiceDetails = null;
+
+  @SerializedName("rewardPointsDetails")
+  private PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails rewardPointsDetails = null;
 
   public PtsV2PaymentsPost201ResponseOrderInformation amountDetails(PtsV2PaymentsPost201ResponseOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -72,6 +76,24 @@ public class PtsV2PaymentsPost201ResponseOrderInformation {
     this.invoiceDetails = invoiceDetails;
   }
 
+  public PtsV2PaymentsPost201ResponseOrderInformation rewardPointsDetails(PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails rewardPointsDetails) {
+    this.rewardPointsDetails = rewardPointsDetails;
+    return this;
+  }
+
+   /**
+   * Get rewardPointsDetails
+   * @return rewardPointsDetails
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails getRewardPointsDetails() {
+    return rewardPointsDetails;
+  }
+
+  public void setRewardPointsDetails(PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails rewardPointsDetails) {
+    this.rewardPointsDetails = rewardPointsDetails;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +105,13 @@ public class PtsV2PaymentsPost201ResponseOrderInformation {
     }
     PtsV2PaymentsPost201ResponseOrderInformation ptsV2PaymentsPost201ResponseOrderInformation = (PtsV2PaymentsPost201ResponseOrderInformation) o;
     return Objects.equals(this.amountDetails, ptsV2PaymentsPost201ResponseOrderInformation.amountDetails) &&
-        Objects.equals(this.invoiceDetails, ptsV2PaymentsPost201ResponseOrderInformation.invoiceDetails);
+        Objects.equals(this.invoiceDetails, ptsV2PaymentsPost201ResponseOrderInformation.invoiceDetails) &&
+        Objects.equals(this.rewardPointsDetails, ptsV2PaymentsPost201ResponseOrderInformation.rewardPointsDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, invoiceDetails);
+    return Objects.hash(amountDetails, invoiceDetails, rewardPointsDetails);
   }
 
 
@@ -99,6 +122,7 @@ public class PtsV2PaymentsPost201ResponseOrderInformation {
     
     sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
     sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
+    sb.append("    rewardPointsDetails: ").append(toIndentedString(rewardPointsDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
