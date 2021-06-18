@@ -27,7 +27,7 @@ import org.joda.time.DateTime;
 /**
  * ReportingV3PurchaseRefundDetailsGet200ResponseSettlements
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class ReportingV3PurchaseRefundDetailsGet200ResponseSettlements {
   @SerializedName("requestId")
   private String requestId = null;

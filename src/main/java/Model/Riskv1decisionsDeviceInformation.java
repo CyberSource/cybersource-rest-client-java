@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Riskv1decisionsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class Riskv1decisionsDeviceInformation {
   @SerializedName("cookiesAccepted")
   private String cookiesAccepted = null;

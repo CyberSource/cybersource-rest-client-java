@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsRiskInformationAuxiliaryData;
 import Model.Ptsv2paymentsRiskInformationBuyerHistory;
 import Model.Ptsv2paymentsRiskInformationProfile;
 import com.google.gson.TypeAdapter;
@@ -24,12 +25,14 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This object is only needed when you are requesting both payment and DM services at same time.
  */
 @ApiModel(description = "This object is only needed when you are requesting both payment and DM services at same time.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class Ptsv2paymentsRiskInformation {
   @SerializedName("profile")
   private Ptsv2paymentsRiskInformationProfile profile = null;
@@ -39,6 +42,9 @@ public class Ptsv2paymentsRiskInformation {
 
   @SerializedName("buyerHistory")
   private Ptsv2paymentsRiskInformationBuyerHistory buyerHistory = null;
+
+  @SerializedName("auxiliaryData")
+  private List<Ptsv2paymentsRiskInformationAuxiliaryData> auxiliaryData = null;
 
   public Ptsv2paymentsRiskInformation profile(Ptsv2paymentsRiskInformationProfile profile) {
     this.profile = profile;
@@ -94,6 +100,32 @@ public class Ptsv2paymentsRiskInformation {
     this.buyerHistory = buyerHistory;
   }
 
+  public Ptsv2paymentsRiskInformation auxiliaryData(List<Ptsv2paymentsRiskInformationAuxiliaryData> auxiliaryData) {
+    this.auxiliaryData = auxiliaryData;
+    return this;
+  }
+
+  public Ptsv2paymentsRiskInformation addAuxiliaryDataItem(Ptsv2paymentsRiskInformationAuxiliaryData auxiliaryDataItem) {
+    if (this.auxiliaryData == null) {
+      this.auxiliaryData = new ArrayList<Ptsv2paymentsRiskInformationAuxiliaryData>();
+    }
+    this.auxiliaryData.add(auxiliaryDataItem);
+    return this;
+  }
+
+   /**
+   * Get auxiliaryData
+   * @return auxiliaryData
+  **/
+  @ApiModelProperty(value = "")
+  public List<Ptsv2paymentsRiskInformationAuxiliaryData> getAuxiliaryData() {
+    return auxiliaryData;
+  }
+
+  public void setAuxiliaryData(List<Ptsv2paymentsRiskInformationAuxiliaryData> auxiliaryData) {
+    this.auxiliaryData = auxiliaryData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,12 +138,13 @@ public class Ptsv2paymentsRiskInformation {
     Ptsv2paymentsRiskInformation ptsv2paymentsRiskInformation = (Ptsv2paymentsRiskInformation) o;
     return Objects.equals(this.profile, ptsv2paymentsRiskInformation.profile) &&
         Objects.equals(this.eventType, ptsv2paymentsRiskInformation.eventType) &&
-        Objects.equals(this.buyerHistory, ptsv2paymentsRiskInformation.buyerHistory);
+        Objects.equals(this.buyerHistory, ptsv2paymentsRiskInformation.buyerHistory) &&
+        Objects.equals(this.auxiliaryData, ptsv2paymentsRiskInformation.auxiliaryData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile, eventType, buyerHistory);
+    return Objects.hash(profile, eventType, buyerHistory, auxiliaryData);
   }
 
 
@@ -123,6 +156,7 @@ public class Ptsv2paymentsRiskInformation {
     sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    buyerHistory: ").append(toIndentedString(buyerHistory)).append("\n");
+    sb.append("    auxiliaryData: ").append(toIndentedString(auxiliaryData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,7 +27,7 @@ import java.io.IOException;
  * Details for marking the transaction as either positive or negative.
  */
 @ApiModel(description = "Details for marking the transaction as either positive or negative.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class Riskv1liststypeentriesRiskInformationMarkingDetails {
   @SerializedName("notes")
   private String notes = null;

@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidcapturesProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class Ptsv2paymentsidcapturesProcessingInformation {
   @SerializedName("paymentSolution")
   private String paymentSolution = null;
@@ -65,16 +65,19 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
   @SerializedName("loanOptions")
   private Ptsv2paymentsProcessingInformationLoanOptions loanOptions = null;
 
+  @SerializedName("payByPointsIndicator")
+  private Boolean payByPointsIndicator = null;
+
   public Ptsv2paymentsidcapturesProcessingInformation paymentSolution(String paymentSolution) {
     this.paymentSolution = paymentSolution;
     return this;
   }
 
    /**
-   * Type of digital payment solution for the transaction. Possible Values:   - &#x60;visacheckout&#x60;: Visa Checkout. This value is required for Visa Checkout transactions. For details, see &#x60;payment_solution&#x60; field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - &#x60;001&#x60;: Apple Pay.  - &#x60;004&#x60;: Cybersource In-App Solution.  - &#x60;005&#x60;: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \&quot;Masterpass\&quot; in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - &#x60;006&#x60;: Android Pay.  - &#x60;007&#x60;: Chase Pay.  - &#x60;008&#x60;: Samsung Pay.  - &#x60;012&#x60;: Google Pay.  - &#x60;014&#x60;: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - &#x60;015&#x60;: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token. 
+   * Type of digital payment solution for the transaction. Possible Values:   - &#x60;visacheckout&#x60;: Visa Checkout. This value is required for Visa Checkout transactions. For details, see &#x60;payment_solution&#x60; field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - &#x60;001&#x60;: Apple Pay.  - &#x60;004&#x60;: Cybersource In-App Solution.  - &#x60;005&#x60;: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \&quot;Masterpass\&quot; in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - &#x60;006&#x60;: Android Pay.  - &#x60;007&#x60;: Chase Pay.  - &#x60;008&#x60;: Samsung Pay.  - &#x60;012&#x60;: Google Pay.  - &#x60;013&#x60;: Cybersource P2PE Decryption  - &#x60;014&#x60;: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - &#x60;015&#x60;: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token. 
    * @return paymentSolution
   **/
-  @ApiModelProperty(value = "Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.  - `014`: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `015`: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token. ")
+  @ApiModelProperty(value = "Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.  - `013`: Cybersource P2PE Decryption  - `014`: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `015`: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token. ")
   public String getPaymentSolution() {
     return paymentSolution;
   }
@@ -263,6 +266,24 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     this.loanOptions = loanOptions;
   }
 
+  public Ptsv2paymentsidcapturesProcessingInformation payByPointsIndicator(Boolean payByPointsIndicator) {
+    this.payByPointsIndicator = payByPointsIndicator;
+    return this;
+  }
+
+   /**
+   * Flag that indicates if the transaction is pay by points transaction true: Transaction uses loyalty points false: Transaction does not use loyalty points Default: false 
+   * @return payByPointsIndicator
+  **/
+  @ApiModelProperty(value = "Flag that indicates if the transaction is pay by points transaction true: Transaction uses loyalty points false: Transaction does not use loyalty points Default: false ")
+  public Boolean getPayByPointsIndicator() {
+    return payByPointsIndicator;
+  }
+
+  public void setPayByPointsIndicator(Boolean payByPointsIndicator) {
+    this.payByPointsIndicator = payByPointsIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -283,12 +304,13 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
         Objects.equals(this.issuer, ptsv2paymentsidcapturesProcessingInformation.issuer) &&
         Objects.equals(this.authorizationOptions, ptsv2paymentsidcapturesProcessingInformation.authorizationOptions) &&
         Objects.equals(this.captureOptions, ptsv2paymentsidcapturesProcessingInformation.captureOptions) &&
-        Objects.equals(this.loanOptions, ptsv2paymentsidcapturesProcessingInformation.loanOptions);
+        Objects.equals(this.loanOptions, ptsv2paymentsidcapturesProcessingInformation.loanOptions) &&
+        Objects.equals(this.payByPointsIndicator, ptsv2paymentsidcapturesProcessingInformation.payByPointsIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, issuer, authorizationOptions, captureOptions, loanOptions);
+    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, issuer, authorizationOptions, captureOptions, loanOptions, payByPointsIndicator);
   }
 
 
@@ -308,6 +330,7 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
     sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
+    sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

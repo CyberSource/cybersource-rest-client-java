@@ -15,10 +15,10 @@ package Model;
 
 import java.util.Objects;
 import Model.Riskv1addressverificationsBuyerInformation;
-import Model.Riskv1decisionsClientReferenceInformation;
 import Model.Riskv1exportcomplianceinquiriesDeviceInformation;
 import Model.Riskv1exportcomplianceinquiriesExportComplianceInformation;
 import Model.Riskv1exportcomplianceinquiriesOrderInformation;
+import Model.Riskv1liststypeentriesClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,10 +31,10 @@ import java.io.IOException;
 /**
  * ValidateExportComplianceRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class ValidateExportComplianceRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1decisionsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1exportcomplianceinquiriesOrderInformation orderInformation = null;
@@ -48,7 +48,7 @@ public class ValidateExportComplianceRequest {
   @SerializedName("exportComplianceInformation")
   private Riskv1exportcomplianceinquiriesExportComplianceInformation exportComplianceInformation = null;
 
-  public ValidateExportComplianceRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+  public ValidateExportComplianceRequest clientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -58,11 +58,11 @@ public class ValidateExportComplianceRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1liststypeentriesClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1liststypeentriesClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PayoutsPost201ResponseRecipientInformationCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class PtsV2PayoutsPost201ResponseRecipientInformationCard {
   @SerializedName("balance")
   private String balance = null;
@@ -40,10 +40,10 @@ public class PtsV2PayoutsPost201ResponseRecipientInformationCard {
   }
 
    /**
-   * This field shows the available balance in the prepaid account.  Acquirers always receive the available balance in the transaction currency. 
+   * This field shows the available balance in the prepaid account. Acquirers always receive the available balance in the transaction currency. 
    * @return balance
   **/
-  @ApiModelProperty(value = "This field shows the available balance in the prepaid account.  Acquirers always receive the available balance in the transaction currency. ")
+  @ApiModelProperty(value = "This field shows the available balance in the prepaid account. Acquirers always receive the available balance in the transaction currency. ")
   public String getBalance() {
     return balance;
   }

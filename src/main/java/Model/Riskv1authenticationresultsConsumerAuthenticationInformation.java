@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationresultsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class Riskv1authenticationresultsConsumerAuthenticationInformation {
   @SerializedName("authenticationTransactionId")
   private String authenticationTransactionId = null;
@@ -109,10 +109,10 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
   }
 
    /**
-   * A JWT returned by 3DS provider once the authentication is complete, required in cruise hybrid integration method when using CyberSource generated access token. Note - Max Length of this field is 2048 characters. 
+   * JWT returned by the 3D Secure provider when the authentication is complete. Required for Hybrid integration if you use the Cybersource-generated access token. Note: Max. length of this field is 2048 characters. 
    * @return responseAccessToken
   **/
-  @ApiModelProperty(value = "A JWT returned by 3DS provider once the authentication is complete, required in cruise hybrid integration method when using CyberSource generated access token. Note - Max Length of this field is 2048 characters. ")
+  @ApiModelProperty(value = "JWT returned by the 3D Secure provider when the authentication is complete. Required for Hybrid integration if you use the Cybersource-generated access token. Note: Max. length of this field is 2048 characters. ")
   public String getResponseAccessToken() {
     return responseAccessToken;
   }

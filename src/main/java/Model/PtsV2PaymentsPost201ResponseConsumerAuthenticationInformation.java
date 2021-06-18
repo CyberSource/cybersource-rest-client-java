@@ -27,8 +27,11 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-21T20:24:19.795+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
 public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
+  @SerializedName("accessToken")
+  private String accessToken = null;
+
   @SerializedName("acsRenderingType")
   private String acsRenderingType = null;
 
@@ -148,6 +151,24 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
 
   @SerializedName("whiteListStatus")
   private String whiteListStatus = null;
+
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation accessToken(String accessToken) {
+    this.accessToken = accessToken;
+    return this;
+  }
+
+   /**
+   * JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. Note - Max Length of this field is 2048 characters. 
+   * @return accessToken
+  **/
+  @ApiModelProperty(value = "JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. Note - Max Length of this field is 2048 characters. ")
+  public String getAccessToken() {
+    return accessToken;
+  }
+
+  public void setAccessToken(String accessToken) {
+    this.accessToken = accessToken;
+  }
 
   public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation acsRenderingType(String acsRenderingType) {
     this.acsRenderingType = acsRenderingType;
@@ -879,7 +900,8 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
       return false;
     }
     PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation = (PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation) o;
-    return Objects.equals(this.acsRenderingType, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.acsRenderingType) &&
+    return Objects.equals(this.accessToken, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.accessToken) &&
+        Objects.equals(this.acsRenderingType, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.acsRenderingType) &&
         Objects.equals(this.acsTransactionId, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.acsTransactionId) &&
         Objects.equals(this.acsUrl, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.acsUrl) &&
         Objects.equals(this.authenticationPath, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.authenticationPath) &&
@@ -923,7 +945,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId, authenticationResult, authenticationStatusMsg, indicator, interactionCounter, whiteListStatus);
+    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId, authenticationResult, authenticationStatusMsg, indicator, interactionCounter, whiteListStatus);
   }
 
 
@@ -932,6 +954,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {\n");
     
+    sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
     sb.append("    acsRenderingType: ").append(toIndentedString(acsRenderingType)).append("\n");
     sb.append("    acsTransactionId: ").append(toIndentedString(acsTransactionId)).append("\n");
     sb.append("    acsUrl: ").append(toIndentedString(acsUrl)).append("\n");
