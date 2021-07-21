@@ -19,11 +19,11 @@ public class RetryInterceptor implements Interceptor {
 
 	@Override
 	public Response intercept(Chain chain) throws IOException {
-		int MAX_RETRIES = 3;
+		// int MAX_RETRIES = 3;
 		int retryNo = 1;
 		Request request = null;
 		Response response = null;
-		long retryWait = retryDelay;
+		// long retryWait = retryDelay;
 		
 		request = chain.request();
 		request = RequestResponseTelemetryHandler.addTelemetryFromPreviousRequest(request);

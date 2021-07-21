@@ -1,8 +1,9 @@
 package utilities.flex.exception;
 
 public class FlexException extends Exception {
+	private static final long serialVersionUID = 1L;
 
-    public FlexException(final String msg) {
+	public FlexException(final String msg) {
         super(msg);
     }
 
