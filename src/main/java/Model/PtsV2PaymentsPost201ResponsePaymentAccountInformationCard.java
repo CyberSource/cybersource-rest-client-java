@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * PtsV2PaymentsPost201ResponsePaymentInformationCard
+ * PtsV2PaymentsPost201ResponsePaymentAccountInformationCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
-public class PtsV2PaymentsPost201ResponsePaymentInformationCard {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+public class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard {
   @SerializedName("suffix")
   private String suffix = null;
 
@@ -43,7 +43,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationCard {
   @SerializedName("prefix")
   private String prefix = null;
 
-  public PtsV2PaymentsPost201ResponsePaymentInformationCard suffix(String suffix) {
+  public PtsV2PaymentsPost201ResponsePaymentAccountInformationCard suffix(String suffix) {
     this.suffix = suffix;
     return this;
   }
@@ -61,7 +61,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationCard {
     this.suffix = suffix;
   }
 
-  public PtsV2PaymentsPost201ResponsePaymentInformationCard expirationMonth(String expirationMonth) {
+  public PtsV2PaymentsPost201ResponsePaymentAccountInformationCard expirationMonth(String expirationMonth) {
     this.expirationMonth = expirationMonth;
     return this;
   }
@@ -79,7 +79,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationCard {
     this.expirationMonth = expirationMonth;
   }
 
-  public PtsV2PaymentsPost201ResponsePaymentInformationCard expirationYear(String expirationYear) {
+  public PtsV2PaymentsPost201ResponsePaymentAccountInformationCard expirationYear(String expirationYear) {
     this.expirationYear = expirationYear;
     return this;
   }
@@ -97,7 +97,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationCard {
     this.expirationYear = expirationYear;
   }
 
-  public PtsV2PaymentsPost201ResponsePaymentInformationCard type(String type) {
+  public PtsV2PaymentsPost201ResponsePaymentAccountInformationCard type(String type) {
     this.type = type;
     return this;
   }
@@ -115,7 +115,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationCard {
     this.type = type;
   }
 
-  public PtsV2PaymentsPost201ResponsePaymentInformationCard prefix(String prefix) {
+  public PtsV2PaymentsPost201ResponsePaymentAccountInformationCard prefix(String prefix) {
     this.prefix = prefix;
     return this;
   }
@@ -142,12 +142,12 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationCard {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PtsV2PaymentsPost201ResponsePaymentInformationCard ptsV2PaymentsPost201ResponsePaymentInformationCard = (PtsV2PaymentsPost201ResponsePaymentInformationCard) o;
-    return Objects.equals(this.suffix, ptsV2PaymentsPost201ResponsePaymentInformationCard.suffix) &&
-        Objects.equals(this.expirationMonth, ptsV2PaymentsPost201ResponsePaymentInformationCard.expirationMonth) &&
-        Objects.equals(this.expirationYear, ptsV2PaymentsPost201ResponsePaymentInformationCard.expirationYear) &&
-        Objects.equals(this.type, ptsV2PaymentsPost201ResponsePaymentInformationCard.type) &&
-        Objects.equals(this.prefix, ptsV2PaymentsPost201ResponsePaymentInformationCard.prefix);
+    PtsV2PaymentsPost201ResponsePaymentAccountInformationCard ptsV2PaymentsPost201ResponsePaymentAccountInformationCard = (PtsV2PaymentsPost201ResponsePaymentAccountInformationCard) o;
+    return Objects.equals(this.suffix, ptsV2PaymentsPost201ResponsePaymentAccountInformationCard.suffix) &&
+        Objects.equals(this.expirationMonth, ptsV2PaymentsPost201ResponsePaymentAccountInformationCard.expirationMonth) &&
+        Objects.equals(this.expirationYear, ptsV2PaymentsPost201ResponsePaymentAccountInformationCard.expirationYear) &&
+        Objects.equals(this.type, ptsV2PaymentsPost201ResponsePaymentAccountInformationCard.type) &&
+        Objects.equals(this.prefix, ptsV2PaymentsPost201ResponsePaymentAccountInformationCard.prefix);
   }
 
   @Override
@@ -159,7 +159,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationCard {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PtsV2PaymentsPost201ResponsePaymentInformationCard {\n");
+    sb.append("class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard {\n");
     
     sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
     sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");

@@ -40,7 +40,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ReportsApi {
+    private static Logger logger = LogManager.getLogger(ReportsApi.class);
+    
     private ApiClient apiClient;
 
     public ReportsApi() {
@@ -115,6 +120,7 @@ public class ReportsApi {
         
         // verify the required parameter 'createAdhocReportRequest' is set
         if (createAdhocReportRequest == null) {
+        	logger.error("Missing the required parameter 'createAdhocReportRequest' when calling createReport(Async)");
             throw new ApiException("Missing the required parameter 'createAdhocReportRequest' when calling createReport(Async)");
         }
         
@@ -136,6 +142,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void createReport(CreateAdhocReportRequest createAdhocReportRequest, String organizationId) throws ApiException {
+    	logger.info("CALL TO METHOD 'createReport' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         createReportWithHttpInfo(createAdhocReportRequest, organizationId);
     }
@@ -245,6 +252,7 @@ public class ReportsApi {
         
         // verify the required parameter 'reportId' is set
         if (reportId == null) {
+        	logger.error("Missing the required parameter 'reportId' when calling getReportByReportId(Async)");
             throw new ApiException("Missing the required parameter 'reportId' when calling getReportByReportId(Async)");
         }
         
@@ -267,8 +275,10 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportsIdGet200Response getReportByReportId(String reportId, String organizationId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getReportByReportId' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportsIdGet200Response> resp = getReportByReportIdWithHttpInfo(reportId, organizationId);
+        logger.info("CALL TO METHOD 'getReportByReportId' ENDED");
         return resp.getData();
     }
 
@@ -401,16 +411,19 @@ public class ReportsApi {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
+        	logger.error("Missing the required parameter 'startTime' when calling searchReports(Async)");
             throw new ApiException("Missing the required parameter 'startTime' when calling searchReports(Async)");
         }
         
         // verify the required parameter 'endTime' is set
         if (endTime == null) {
+        	logger.error("Missing the required parameter 'endTime' when calling searchReports(Async)");
             throw new ApiException("Missing the required parameter 'endTime' when calling searchReports(Async)");
         }
         
         // verify the required parameter 'timeQueryType' is set
         if (timeQueryType == null) {
+        	logger.error("Missing the required parameter 'timeQueryType' when calling searchReports(Async)");
             throw new ApiException("Missing the required parameter 'timeQueryType' when calling searchReports(Async)");
         }
         
@@ -440,8 +453,10 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportsGet200Response searchReports(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus) throws ApiException {
+    	logger.info("CALL TO METHOD 'searchReports' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportsGet200Response> resp = searchReportsWithHttpInfo(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus);
+        logger.info("CALL TO METHOD 'searchReports' ENDED");
         return resp.getData();
     }
 

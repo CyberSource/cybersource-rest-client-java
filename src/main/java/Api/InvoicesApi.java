@@ -44,7 +44,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class InvoicesApi {
+    private static Logger logger = LogManager.getLogger(InvoicesApi.class);
+    
     private ApiClient apiClient;
 
     public InvoicesApi() {
@@ -116,6 +121,7 @@ public class InvoicesApi {
         
         // verify the required parameter 'createInvoiceRequest' is set
         if (createInvoiceRequest == null) {
+        	logger.error("Missing the required parameter 'createInvoiceRequest' when calling createInvoice(Async)");
             throw new ApiException("Missing the required parameter 'createInvoiceRequest' when calling createInvoice(Async)");
         }
         
@@ -137,8 +143,10 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response createInvoice(CreateInvoiceRequest createInvoiceRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'createInvoice' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = createInvoiceWithHttpInfo(createInvoiceRequest);
+        logger.info("CALL TO METHOD 'createInvoice' ENDED");
         return resp.getData();
     }
 
@@ -251,11 +259,13 @@ public class InvoicesApi {
         
         // verify the required parameter 'offset' is set
         if (offset == null) {
+        	logger.error("Missing the required parameter 'offset' when calling getAllInvoices(Async)");
             throw new ApiException("Missing the required parameter 'offset' when calling getAllInvoices(Async)");
         }
         
         // verify the required parameter 'limit' is set
         if (limit == null) {
+        	logger.error("Missing the required parameter 'limit' when calling getAllInvoices(Async)");
             throw new ApiException("Missing the required parameter 'limit' when calling getAllInvoices(Async)");
         }
         
@@ -279,8 +289,10 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesAllGet200Response getAllInvoices(Integer offset, Integer limit, String status) throws ApiException {
+    	logger.info("CALL TO METHOD 'getAllInvoices' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesAllGet200Response> resp = getAllInvoicesWithHttpInfo(offset, limit, status);
+        logger.info("CALL TO METHOD 'getAllInvoices' ENDED");
         return resp.getData();
     }
 
@@ -390,6 +402,7 @@ public class InvoicesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling getInvoice(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling getInvoice(Async)");
         }
         
@@ -411,8 +424,10 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesGet200Response getInvoice(String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'getInvoice' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesGet200Response> resp = getInvoiceWithHttpInfo(id);
+        logger.info("CALL TO METHOD 'getInvoice' ENDED");
         return resp.getData();
     }
 
@@ -518,6 +533,7 @@ public class InvoicesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling performCancelAction(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling performCancelAction(Async)");
         }
         
@@ -539,8 +555,10 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response performCancelAction(String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'performCancelAction' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = performCancelActionWithHttpInfo(id);
+        logger.info("CALL TO METHOD 'performCancelAction' ENDED");
         return resp.getData();
     }
 
@@ -646,6 +664,7 @@ public class InvoicesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling performSendAction(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling performSendAction(Async)");
         }
         
@@ -667,8 +686,10 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response performSendAction(String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'performSendAction' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = performSendActionWithHttpInfo(id);
+        logger.info("CALL TO METHOD 'performSendAction' ENDED");
         return resp.getData();
     }
 
@@ -775,11 +796,13 @@ public class InvoicesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling updateInvoice(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling updateInvoice(Async)");
         }
         
         // verify the required parameter 'updateInvoiceRequest' is set
         if (updateInvoiceRequest == null) {
+        	logger.error("Missing the required parameter 'updateInvoiceRequest' when calling updateInvoice(Async)");
             throw new ApiException("Missing the required parameter 'updateInvoiceRequest' when calling updateInvoice(Async)");
         }
         
@@ -802,8 +825,10 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response updateInvoice(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'updateInvoice' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = updateInvoiceWithHttpInfo(id, updateInvoiceRequest);
+        logger.info("CALL TO METHOD 'updateInvoice' ENDED");
         return resp.getData();
     }
 

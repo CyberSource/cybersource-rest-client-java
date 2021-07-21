@@ -41,7 +41,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class TransactionBatchesApi {
+    private static Logger logger = LogManager.getLogger(TransactionBatchesApi.class);
+    
     private ApiClient apiClient;
 
     public TransactionBatchesApi() {
@@ -120,6 +125,7 @@ public class TransactionBatchesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling getTransactionBatchDetails(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling getTransactionBatchDetails(Async)");
         }
         
@@ -142,6 +148,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void getTransactionBatchDetails(String id, LocalDate uploadDate, String status) throws ApiException {
+    	logger.info("CALL TO METHOD 'getTransactionBatchDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getTransactionBatchDetailsWithHttpInfo(id, uploadDate, status);
     }
@@ -250,6 +257,7 @@ public class TransactionBatchesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling getTransactionBatchId(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling getTransactionBatchId(Async)");
         }
         
@@ -271,8 +279,10 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV1TransactionBatchesIdGet200Response getTransactionBatchId(String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'getTransactionBatchId' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV1TransactionBatchesIdGet200Response> resp = getTransactionBatchIdWithHttpInfo(id);
+        logger.info("CALL TO METHOD 'getTransactionBatchId' ENDED");
         return resp.getData();
     }
 
@@ -382,11 +392,13 @@ public class TransactionBatchesApi {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
+        	logger.error("Missing the required parameter 'startTime' when calling getTransactionBatches(Async)");
             throw new ApiException("Missing the required parameter 'startTime' when calling getTransactionBatches(Async)");
         }
         
         // verify the required parameter 'endTime' is set
         if (endTime == null) {
+        	logger.error("Missing the required parameter 'endTime' when calling getTransactionBatches(Async)");
             throw new ApiException("Missing the required parameter 'endTime' when calling getTransactionBatches(Async)");
         }
         
@@ -409,8 +421,10 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV1TransactionBatchesGet200Response getTransactionBatches(DateTime startTime, DateTime endTime) throws ApiException {
+    	logger.info("CALL TO METHOD 'getTransactionBatches' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV1TransactionBatchesGet200Response> resp = getTransactionBatchesWithHttpInfo(startTime, endTime);
+        logger.info("CALL TO METHOD 'getTransactionBatches' ENDED");
         return resp.getData();
     }
 

@@ -40,7 +40,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class RefundApi {
+    private static Logger logger = LogManager.getLogger(RefundApi.class);
+    
     private ApiClient apiClient;
 
     public RefundApi() {
@@ -114,11 +119,13 @@ public class RefundApi {
         
         // verify the required parameter 'refundCaptureRequest' is set
         if (refundCaptureRequest == null) {
+        	logger.error("Missing the required parameter 'refundCaptureRequest' when calling refundCapture(Async)");
             throw new ApiException("Missing the required parameter 'refundCaptureRequest' when calling refundCapture(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling refundCapture(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling refundCapture(Async)");
         }
         
@@ -134,21 +141,23 @@ public class RefundApi {
 
     /**
      * Refund a Capture
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call Include the capture ID in the POST request to refund the captured amount. 
+     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call. Include the capture ID in the POST request to refund the captured amount. 
      * @param refundCaptureRequest  (required)
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
      * @return PtsV2PaymentsRefundPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsRefundPost201Response refundCapture(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'refundCapture' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundCaptureWithHttpInfo(refundCaptureRequest, id);
+        logger.info("CALL TO METHOD 'refundCapture' ENDED");
         return resp.getData();
     }
 
     /**
      * Refund a Capture
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call Include the capture ID in the POST request to refund the captured amount. 
+     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call. Include the capture ID in the POST request to refund the captured amount. 
      * @param refundCaptureRequest  (required)
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
      * @return ApiResponse&lt;PtsV2PaymentsRefundPost201Response&gt;
@@ -162,7 +171,7 @@ public class RefundApi {
 
     /**
      * Refund a Capture (asynchronously)
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call Include the capture ID in the POST request to refund the captured amount. 
+     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call. Include the capture ID in the POST request to refund the captured amount. 
      * @param refundCaptureRequest  (required)
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
      * @param callback The callback to be executed when the API call finishes
@@ -251,11 +260,13 @@ public class RefundApi {
         
         // verify the required parameter 'refundPaymentRequest' is set
         if (refundPaymentRequest == null) {
+        	logger.error("Missing the required parameter 'refundPaymentRequest' when calling refundPayment(Async)");
             throw new ApiException("Missing the required parameter 'refundPaymentRequest' when calling refundPayment(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling refundPayment(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling refundPayment(Async)");
         }
         
@@ -271,21 +282,23 @@ public class RefundApi {
 
     /**
      * Refund a Payment
-     * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to refund the payment amount. 
+     * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call. Include the payment ID in the POST request to refund the payment amount. 
      * @param refundPaymentRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @return PtsV2PaymentsRefundPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsRefundPost201Response refundPayment(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'refundPayment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundPaymentWithHttpInfo(refundPaymentRequest, id);
+        logger.info("CALL TO METHOD 'refundPayment' ENDED");
         return resp.getData();
     }
 
     /**
      * Refund a Payment
-     * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to refund the payment amount. 
+     * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call. Include the payment ID in the POST request to refund the payment amount. 
      * @param refundPaymentRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @return ApiResponse&lt;PtsV2PaymentsRefundPost201Response&gt;
@@ -299,7 +312,7 @@ public class RefundApi {
 
     /**
      * Refund a Payment (asynchronously)
-     * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to refund the payment amount. 
+     * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call. Include the payment ID in the POST request to refund the payment amount. 
      * @param refundPaymentRequest  (required)
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @param callback The callback to be executed when the API call finishes

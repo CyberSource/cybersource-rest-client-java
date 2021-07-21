@@ -40,7 +40,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ReversalApi {
+    private static Logger logger = LogManager.getLogger(ReversalApi.class);
+    
     private ApiClient apiClient;
 
     public ReversalApi() {
@@ -114,11 +119,13 @@ public class ReversalApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling authReversal(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling authReversal(Async)");
         }
         
         // verify the required parameter 'authReversalRequest' is set
         if (authReversalRequest == null) {
+        	logger.error("Missing the required parameter 'authReversalRequest' when calling authReversal(Async)");
             throw new ApiException("Missing the required parameter 'authReversalRequest' when calling authReversal(Async)");
         }
         
@@ -141,8 +148,10 @@ public class ReversalApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsReversalsPost201Response authReversal(String id, AuthReversalRequest authReversalRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'authReversal' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = authReversalWithHttpInfo(id, authReversalRequest);
+        logger.info("CALL TO METHOD 'authReversal' ENDED");
         return resp.getData();
     }
 
@@ -249,6 +258,7 @@ public class ReversalApi {
         
         // verify the required parameter 'mitReversalRequest' is set
         if (mitReversalRequest == null) {
+        	logger.error("Missing the required parameter 'mitReversalRequest' when calling mitReversal(Async)");
             throw new ApiException("Missing the required parameter 'mitReversalRequest' when calling mitReversal(Async)");
         }
         
@@ -270,8 +280,10 @@ public class ReversalApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsReversalsPost201Response mitReversal(MitReversalRequest mitReversalRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'mitReversal' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = mitReversalWithHttpInfo(mitReversalRequest);
+        logger.info("CALL TO METHOD 'mitReversal' ENDED");
         return resp.getData();
     }
 

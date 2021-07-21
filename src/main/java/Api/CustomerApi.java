@@ -39,7 +39,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class CustomerApi {
+    private static Logger logger = LogManager.getLogger(CustomerApi.class);
+    
     private ApiClient apiClient;
 
     public CustomerApi() {
@@ -115,6 +120,7 @@ public class CustomerApi {
         
         // verify the required parameter 'customerTokenId' is set
         if (customerTokenId == null) {
+        	logger.error("Missing the required parameter 'customerTokenId' when calling deleteCustomer(Async)");
             throw new ApiException("Missing the required parameter 'customerTokenId' when calling deleteCustomer(Async)");
         }
         
@@ -136,6 +142,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteCustomer(String customerTokenId, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'deleteCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerWithHttpInfo(customerTokenId, profileId);
     }
@@ -245,6 +252,7 @@ public class CustomerApi {
         
         // verify the required parameter 'customerTokenId' is set
         if (customerTokenId == null) {
+        	logger.error("Missing the required parameter 'customerTokenId' when calling getCustomer(Async)");
             throw new ApiException("Missing the required parameter 'customerTokenId' when calling getCustomer(Async)");
         }
         
@@ -267,8 +275,10 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TmsV2CustomersResponse getCustomer(String customerTokenId, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = getCustomerWithHttpInfo(customerTokenId, profileId);
+        logger.info("CALL TO METHOD 'getCustomer' ENDED");
         return resp.getData();
     }
 
@@ -383,11 +393,13 @@ public class CustomerApi {
         
         // verify the required parameter 'customerTokenId' is set
         if (customerTokenId == null) {
+        	logger.error("Missing the required parameter 'customerTokenId' when calling patchCustomer(Async)");
             throw new ApiException("Missing the required parameter 'customerTokenId' when calling patchCustomer(Async)");
         }
         
         // verify the required parameter 'patchCustomerRequest' is set
         if (patchCustomerRequest == null) {
+        	logger.error("Missing the required parameter 'patchCustomerRequest' when calling patchCustomer(Async)");
             throw new ApiException("Missing the required parameter 'patchCustomerRequest' when calling patchCustomer(Async)");
         }
         
@@ -412,8 +424,10 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TmsV2CustomersResponse patchCustomer(String customerTokenId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
+    	logger.info("CALL TO METHOD 'patchCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = patchCustomerWithHttpInfo(customerTokenId, patchCustomerRequest, profileId, ifMatch);
+        logger.info("CALL TO METHOD 'patchCustomer' ENDED");
         return resp.getData();
     }
 
@@ -527,6 +541,7 @@ public class CustomerApi {
         
         // verify the required parameter 'postCustomerRequest' is set
         if (postCustomerRequest == null) {
+        	logger.error("Missing the required parameter 'postCustomerRequest' when calling postCustomer(Async)");
             throw new ApiException("Missing the required parameter 'postCustomerRequest' when calling postCustomer(Async)");
         }
         
@@ -549,8 +564,10 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TmsV2CustomersResponse postCustomer(PostCustomerRequest postCustomerRequest, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'postCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = postCustomerWithHttpInfo(postCustomerRequest, profileId);
+        logger.info("CALL TO METHOD 'postCustomer' ENDED");
         return resp.getData();
     }
 

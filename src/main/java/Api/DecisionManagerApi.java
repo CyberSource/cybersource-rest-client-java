@@ -43,7 +43,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class DecisionManagerApi {
+    private static Logger logger = LogManager.getLogger(DecisionManagerApi.class);
+    
     private ApiClient apiClient;
 
     public DecisionManagerApi() {
@@ -117,11 +122,13 @@ public class DecisionManagerApi {
         
         // verify the required parameter 'type' is set
         if (type == null) {
+        	logger.error("Missing the required parameter 'type' when calling addNegative(Async)");
             throw new ApiException("Missing the required parameter 'type' when calling addNegative(Async)");
         }
         
         // verify the required parameter 'addNegativeListRequest' is set
         if (addNegativeListRequest == null) {
+        	logger.error("Missing the required parameter 'addNegativeListRequest' when calling addNegative(Async)");
             throw new ApiException("Missing the required parameter 'addNegativeListRequest' when calling addNegative(Async)");
         }
         
@@ -144,8 +151,10 @@ public class DecisionManagerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1UpdatePost201Response addNegative(String type, AddNegativeListRequest addNegativeListRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'addNegative' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1UpdatePost201Response> resp = addNegativeWithHttpInfo(type, addNegativeListRequest);
+        logger.info("CALL TO METHOD 'addNegative' ENDED");
         return resp.getData();
     }
 
@@ -252,6 +261,7 @@ public class DecisionManagerApi {
         
         // verify the required parameter 'createBundledDecisionManagerCaseRequest' is set
         if (createBundledDecisionManagerCaseRequest == null) {
+        	logger.error("Missing the required parameter 'createBundledDecisionManagerCaseRequest' when calling createBundledDecisionManagerCase(Async)");
             throw new ApiException("Missing the required parameter 'createBundledDecisionManagerCaseRequest' when calling createBundledDecisionManagerCase(Async)");
         }
         
@@ -273,8 +283,10 @@ public class DecisionManagerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1DecisionsPost201Response createBundledDecisionManagerCase(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'createBundledDecisionManagerCase' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1DecisionsPost201Response> resp = createBundledDecisionManagerCaseWithHttpInfo(createBundledDecisionManagerCaseRequest);
+        logger.info("CALL TO METHOD 'createBundledDecisionManagerCase' ENDED");
         return resp.getData();
     }
 
@@ -381,11 +393,13 @@ public class DecisionManagerApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling fraudUpdate(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling fraudUpdate(Async)");
         }
         
         // verify the required parameter 'fraudMarkingActionRequest' is set
         if (fraudMarkingActionRequest == null) {
+        	logger.error("Missing the required parameter 'fraudMarkingActionRequest' when calling fraudUpdate(Async)");
             throw new ApiException("Missing the required parameter 'fraudMarkingActionRequest' when calling fraudUpdate(Async)");
         }
         
@@ -408,8 +422,10 @@ public class DecisionManagerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1UpdatePost201Response fraudUpdate(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'fraudUpdate' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1UpdatePost201Response> resp = fraudUpdateWithHttpInfo(id, fraudMarkingActionRequest);
+        logger.info("CALL TO METHOD 'fraudUpdate' ENDED");
         return resp.getData();
     }
 

@@ -41,7 +41,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class InstrumentIdentifierApi {
+    private static Logger logger = LogManager.getLogger(InstrumentIdentifierApi.class);
+    
     private ApiClient apiClient;
 
     public InstrumentIdentifierApi() {
@@ -117,6 +122,7 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'instrumentIdentifierTokenId' is set
         if (instrumentIdentifierTokenId == null) {
+        	logger.error("Missing the required parameter 'instrumentIdentifierTokenId' when calling deleteInstrumentIdentifier(Async)");
             throw new ApiException("Missing the required parameter 'instrumentIdentifierTokenId' when calling deleteInstrumentIdentifier(Async)");
         }
         
@@ -138,6 +144,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteInstrumentIdentifier(String instrumentIdentifierTokenId, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'deleteInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, profileId);
     }
@@ -247,6 +254,7 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'instrumentIdentifierTokenId' is set
         if (instrumentIdentifierTokenId == null) {
+        	logger.error("Missing the required parameter 'instrumentIdentifierTokenId' when calling getInstrumentIdentifier(Async)");
             throw new ApiException("Missing the required parameter 'instrumentIdentifierTokenId' when calling getInstrumentIdentifier(Async)");
         }
         
@@ -269,8 +277,10 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier getInstrumentIdentifier(String instrumentIdentifierTokenId, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = getInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, profileId);
+        logger.info("CALL TO METHOD 'getInstrumentIdentifier' ENDED");
         return resp.getData();
     }
 
@@ -387,6 +397,7 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'instrumentIdentifierTokenId' is set
         if (instrumentIdentifierTokenId == null) {
+        	logger.error("Missing the required parameter 'instrumentIdentifierTokenId' when calling getInstrumentIdentifierPaymentInstrumentsList(Async)");
             throw new ApiException("Missing the required parameter 'instrumentIdentifierTokenId' when calling getInstrumentIdentifierPaymentInstrumentsList(Async)");
         }
         
@@ -411,8 +422,10 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PaymentInstrumentList getInstrumentIdentifierPaymentInstrumentsList(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit) throws ApiException {
+    	logger.info("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PaymentInstrumentList> resp = getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(instrumentIdentifierTokenId, profileId, offset, limit);
+        logger.info("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' ENDED");
         return resp.getData();
     }
 
@@ -531,11 +544,13 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'instrumentIdentifierTokenId' is set
         if (instrumentIdentifierTokenId == null) {
+        	logger.error("Missing the required parameter 'instrumentIdentifierTokenId' when calling patchInstrumentIdentifier(Async)");
             throw new ApiException("Missing the required parameter 'instrumentIdentifierTokenId' when calling patchInstrumentIdentifier(Async)");
         }
         
         // verify the required parameter 'patchInstrumentIdentifierRequest' is set
         if (patchInstrumentIdentifierRequest == null) {
+        	logger.error("Missing the required parameter 'patchInstrumentIdentifierRequest' when calling patchInstrumentIdentifier(Async)");
             throw new ApiException("Missing the required parameter 'patchInstrumentIdentifierRequest' when calling patchInstrumentIdentifier(Async)");
         }
         
@@ -560,8 +575,10 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier patchInstrumentIdentifier(String instrumentIdentifierTokenId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch) throws ApiException {
+    	logger.info("CALL TO METHOD 'patchInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = patchInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, profileId, ifMatch);
+        logger.info("CALL TO METHOD 'patchInstrumentIdentifier' ENDED");
         return resp.getData();
     }
 
@@ -675,6 +692,7 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'postInstrumentIdentifierRequest' is set
         if (postInstrumentIdentifierRequest == null) {
+        	logger.error("Missing the required parameter 'postInstrumentIdentifierRequest' when calling postInstrumentIdentifier(Async)");
             throw new ApiException("Missing the required parameter 'postInstrumentIdentifierRequest' when calling postInstrumentIdentifier(Async)");
         }
         
@@ -697,8 +715,10 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier postInstrumentIdentifier(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'postInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = postInstrumentIdentifierWithHttpInfo(postInstrumentIdentifierRequest, profileId);
+        logger.info("CALL TO METHOD 'postInstrumentIdentifier' ENDED");
         return resp.getData();
     }
 
@@ -810,11 +830,13 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'instrumentIdentifierTokenId' is set
         if (instrumentIdentifierTokenId == null) {
+        	logger.error("Missing the required parameter 'instrumentIdentifierTokenId' when calling postInstrumentIdentifierEnrollment(Async)");
             throw new ApiException("Missing the required parameter 'instrumentIdentifierTokenId' when calling postInstrumentIdentifierEnrollment(Async)");
         }
         
         // verify the required parameter 'postInstrumentIdentifierEnrollmentRequest' is set
         if (postInstrumentIdentifierEnrollmentRequest == null) {
+        	logger.error("Missing the required parameter 'postInstrumentIdentifierEnrollmentRequest' when calling postInstrumentIdentifierEnrollment(Async)");
             throw new ApiException("Missing the required parameter 'postInstrumentIdentifierEnrollmentRequest' when calling postInstrumentIdentifierEnrollment(Async)");
         }
         
@@ -837,6 +859,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void postInstrumentIdentifierEnrollment(String instrumentIdentifierTokenId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'postInstrumentIdentifierEnrollment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         postInstrumentIdentifierEnrollmentWithHttpInfo(instrumentIdentifierTokenId, postInstrumentIdentifierEnrollmentRequest, profileId);
     }

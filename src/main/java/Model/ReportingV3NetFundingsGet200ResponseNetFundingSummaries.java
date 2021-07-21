@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * ReportingV3NetFundingsGet200ResponseNetFundingSummaries
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
 public class ReportingV3NetFundingsGet200ResponseNetFundingSummaries {
   @SerializedName("type")
   private String type = null;

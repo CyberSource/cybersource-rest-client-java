@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,10 +27,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
 public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions {
   @SerializedName("authType")
   private String authType = null;
+
+  @SerializedName("initiator")
+  private Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator initiator = null;
 
   public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions authType(String authType) {
     this.authType = authType;
@@ -49,6 +53,24 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     this.authType = authType;
   }
 
+  public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions initiator(Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator initiator) {
+    this.initiator = initiator;
+    return this;
+  }
+
+   /**
+   * Get initiator
+   * @return initiator
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator getInitiator() {
+    return initiator;
+  }
+
+  public void setInitiator(Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator initiator) {
+    this.initiator = initiator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +81,13 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
       return false;
     }
     TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions = (TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions) o;
-    return Objects.equals(this.authType, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.authType);
+    return Objects.equals(this.authType, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.authType) &&
+        Objects.equals(this.initiator, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.initiator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType);
+    return Objects.hash(authType, initiator);
   }
 
 
@@ -74,6 +97,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     sb.append("class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions {\n");
     
     sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
+    sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

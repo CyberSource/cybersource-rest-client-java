@@ -36,7 +36,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class TransactionDetailsApi {
+    private static Logger logger = LogManager.getLogger(TransactionDetailsApi.class);
+    
     private ApiClient apiClient;
 
     public TransactionDetailsApi() {
@@ -109,6 +114,7 @@ public class TransactionDetailsApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling getTransaction(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling getTransaction(Async)");
         }
         
@@ -130,8 +136,10 @@ public class TransactionDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TssV2TransactionsGet200Response getTransaction(String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'getTransaction' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsGet200Response> resp = getTransactionWithHttpInfo(id);
+        logger.info("CALL TO METHOD 'getTransaction' ENDED");
         return resp.getData();
     }
 

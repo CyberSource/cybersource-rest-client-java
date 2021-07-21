@@ -39,7 +39,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class PaymentInstrumentApi {
+    private static Logger logger = LogManager.getLogger(PaymentInstrumentApi.class);
+    
     private ApiClient apiClient;
 
     public PaymentInstrumentApi() {
@@ -115,6 +120,7 @@ public class PaymentInstrumentApi {
         
         // verify the required parameter 'paymentInstrumentTokenId' is set
         if (paymentInstrumentTokenId == null) {
+        	logger.error("Missing the required parameter 'paymentInstrumentTokenId' when calling deletePaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'paymentInstrumentTokenId' when calling deletePaymentInstrument(Async)");
         }
         
@@ -136,6 +142,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deletePaymentInstrument(String paymentInstrumentTokenId, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'deletePaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deletePaymentInstrumentWithHttpInfo(paymentInstrumentTokenId, profileId);
     }
@@ -245,6 +252,7 @@ public class PaymentInstrumentApi {
         
         // verify the required parameter 'paymentInstrumentTokenId' is set
         if (paymentInstrumentTokenId == null) {
+        	logger.error("Missing the required parameter 'paymentInstrumentTokenId' when calling getPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'paymentInstrumentTokenId' when calling getPaymentInstrument(Async)");
         }
         
@@ -267,8 +275,10 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrument getPaymentInstrument(String paymentInstrumentTokenId, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = getPaymentInstrumentWithHttpInfo(paymentInstrumentTokenId, profileId);
+        logger.info("CALL TO METHOD 'getPaymentInstrument' ENDED");
         return resp.getData();
     }
 
@@ -383,11 +393,13 @@ public class PaymentInstrumentApi {
         
         // verify the required parameter 'paymentInstrumentTokenId' is set
         if (paymentInstrumentTokenId == null) {
+        	logger.error("Missing the required parameter 'paymentInstrumentTokenId' when calling patchPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'paymentInstrumentTokenId' when calling patchPaymentInstrument(Async)");
         }
         
         // verify the required parameter 'patchPaymentInstrumentRequest' is set
         if (patchPaymentInstrumentRequest == null) {
+        	logger.error("Missing the required parameter 'patchPaymentInstrumentRequest' when calling patchPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'patchPaymentInstrumentRequest' when calling patchPaymentInstrument(Async)");
         }
         
@@ -412,8 +424,10 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrument patchPaymentInstrument(String paymentInstrumentTokenId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+    	logger.info("CALL TO METHOD 'patchPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = patchPaymentInstrumentWithHttpInfo(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch);
+        logger.info("CALL TO METHOD 'patchPaymentInstrument' ENDED");
         return resp.getData();
     }
 
@@ -527,6 +541,7 @@ public class PaymentInstrumentApi {
         
         // verify the required parameter 'postPaymentInstrumentRequest' is set
         if (postPaymentInstrumentRequest == null) {
+        	logger.error("Missing the required parameter 'postPaymentInstrumentRequest' when calling postPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'postPaymentInstrumentRequest' when calling postPaymentInstrument(Async)");
         }
         
@@ -549,8 +564,10 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrument postPaymentInstrument(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'postPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = postPaymentInstrumentWithHttpInfo(postPaymentInstrumentRequest, profileId);
+        logger.info("CALL TO METHOD 'postPaymentInstrument' ENDED");
         return resp.getData();
     }
 

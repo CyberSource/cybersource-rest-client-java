@@ -1,5 +1,5 @@
 
-# PtsV2PaymentsPost201ResponsePaymentInformationCard
+# PtsV2PaymentsPost201ResponsePaymentAccountInformationCard
 
 ## Properties
 Name | Type | Description | Notes

@@ -31,7 +31,7 @@ import java.io.IOException;
  * A list of invoices.
  */
 @ApiModel(description = "A list of invoices.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
 public class InvoicingV2InvoicesAllGet200ResponseInvoices {
   @SerializedName("_links")
   private InvoicingV2InvoicesAllGet200ResponseLinks1 links = null;

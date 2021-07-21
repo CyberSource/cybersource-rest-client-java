@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * InvoicingV2InvoicesPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
 public class InvoicingV2InvoicesPost201Response {
   @SerializedName("_links")
   private InvoicingV2InvoicesAllGet200ResponseLinks1 links = null;

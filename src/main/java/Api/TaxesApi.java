@@ -42,7 +42,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class TaxesApi {
+    private static Logger logger = LogManager.getLogger(TaxesApi.class);
+    
     private ApiClient apiClient;
 
     public TaxesApi() {
@@ -114,6 +119,7 @@ public class TaxesApi {
         
         // verify the required parameter 'taxRequest' is set
         if (taxRequest == null) {
+        	logger.error("Missing the required parameter 'taxRequest' when calling calculateTax(Async)");
             throw new ApiException("Missing the required parameter 'taxRequest' when calling calculateTax(Async)");
         }
         
@@ -135,8 +141,10 @@ public class TaxesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public VasV2PaymentsPost201Response calculateTax(TaxRequest taxRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'calculateTax' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<VasV2PaymentsPost201Response> resp = calculateTaxWithHttpInfo(taxRequest);
+        logger.info("CALL TO METHOD 'calculateTax' ENDED");
         return resp.getData();
     }
 
@@ -243,11 +251,13 @@ public class TaxesApi {
         
         // verify the required parameter 'voidTaxRequest' is set
         if (voidTaxRequest == null) {
+        	logger.error("Missing the required parameter 'voidTaxRequest' when calling voidTax(Async)");
             throw new ApiException("Missing the required parameter 'voidTaxRequest' when calling voidTax(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling voidTax(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling voidTax(Async)");
         }
         
@@ -270,8 +280,10 @@ public class TaxesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public VasV2TaxVoid200Response voidTax(VoidTaxRequest voidTaxRequest, String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'voidTax' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<VasV2TaxVoid200Response> resp = voidTaxWithHttpInfo(voidTaxRequest, id);
+        logger.info("CALL TO METHOD 'voidTax' ENDED");
         return resp.getData();
     }
 

@@ -38,7 +38,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class UserManagementSearchApi {
+    private static Logger logger = LogManager.getLogger(UserManagementSearchApi.class);
+    
     private ApiClient apiClient;
 
     public UserManagementSearchApi() {
@@ -110,6 +115,7 @@ public class UserManagementSearchApi {
         
         // verify the required parameter 'searchRequest' is set
         if (searchRequest == null) {
+        	logger.error("Missing the required parameter 'searchRequest' when calling searchUsers(Async)");
             throw new ApiException("Missing the required parameter 'searchRequest' when calling searchUsers(Async)");
         }
         
@@ -131,8 +137,10 @@ public class UserManagementSearchApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public UmsV1UsersGet200Response searchUsers(SearchRequest searchRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'searchUsers' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<UmsV1UsersGet200Response> resp = searchUsersWithHttpInfo(searchRequest);
+        logger.info("CALL TO METHOD 'searchUsers' ENDED");
         return resp.getData();
     }
 

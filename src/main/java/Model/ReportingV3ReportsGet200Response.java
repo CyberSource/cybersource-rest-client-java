@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ReportingV3ReportsGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
 public class ReportingV3ReportsGet200Response {
   @SerializedName("reportSearchResults")
   private List<ReportingV3ReportsGet200ResponseReportSearchResults> reportSearchResults = null;

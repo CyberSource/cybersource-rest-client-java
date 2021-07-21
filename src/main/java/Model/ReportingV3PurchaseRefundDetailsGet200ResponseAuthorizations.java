@@ -28,7 +28,7 @@ import org.joda.time.DateTime;
  * Authorization Info Values
  */
 @ApiModel(description = "Authorization Info Values")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
 public class ReportingV3PurchaseRefundDetailsGet200ResponseAuthorizations {
   @SerializedName("requestId")
   private String requestId = null;

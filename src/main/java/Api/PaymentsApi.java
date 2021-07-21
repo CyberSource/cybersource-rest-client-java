@@ -42,7 +42,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class PaymentsApi {
+    private static Logger logger = LogManager.getLogger(PaymentsApi.class);
+    
     private ApiClient apiClient;
 
     public PaymentsApi() {
@@ -114,6 +119,7 @@ public class PaymentsApi {
         
         // verify the required parameter 'createPaymentRequest' is set
         if (createPaymentRequest == null) {
+        	logger.error("Missing the required parameter 'createPaymentRequest' when calling createPayment(Async)");
             throw new ApiException("Missing the required parameter 'createPaymentRequest' when calling createPayment(Async)");
         }
         
@@ -129,20 +135,22 @@ public class PaymentsApi {
 
     /**
      * Process a Payment
-     * A payment authorizes the amount for the transaction. There are a number of supported payment feature, such as E-commerce and Card Present - Credit Card/Debit Card, Echeck, e-Wallets, Level II/III Data, etc..  A payment response includes the status of the request. It also includes processor-specific information when the request is successful and errors if unsuccessful. See the [Payments Developer Guides Page](https://developer.cybersource.com/api/developer-guides/dita-payments/GettingStarted.html).  Authorization can be requested with Capture, Decision Manager, Payer Authentication(3ds), and Token Creation. Find more on [Authorization with Add-On Features page.] (https://developer.cybersource.com/api/authorization-add-ons.html)  Possible [RESPONSE CODES](https://developer.cybersource.com/api/reference/response-codes.html) .  Processor specific [Testing Triggers](https://developer.cybersource.com/hello-world/testing-guide.html). 
+     * A payment authorizes the amount for the transaction. There are a number of supported payment feature, such as E-commerce and Card Present - Credit Card/Debit Card, Echeck, e-Wallets, Level II/III Data, etc..  A payment response includes the status of the request. It also includes processor-specific information when the request is successful and errors if unsuccessful. See the [Payments Developer Guides Page](https://developer.cybersource.com/api/developer-guides/dita-payments/GettingStarted.html).  Authorization can be requested with Capture, Decision Manager, Payer Authentication(3ds), and Token Creation. Find more on [Authorization with Add-On Features page.](https://developer.cybersource.com/api/authorization-add-ons.html) 
      * @param createPaymentRequest  (required)
      * @return PtsV2PaymentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsPost201Response createPayment(CreatePaymentRequest createPaymentRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'createPayment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsPost201Response> resp = createPaymentWithHttpInfo(createPaymentRequest);
+        logger.info("CALL TO METHOD 'createPayment' ENDED");
         return resp.getData();
     }
 
     /**
      * Process a Payment
-     * A payment authorizes the amount for the transaction. There are a number of supported payment feature, such as E-commerce and Card Present - Credit Card/Debit Card, Echeck, e-Wallets, Level II/III Data, etc..  A payment response includes the status of the request. It also includes processor-specific information when the request is successful and errors if unsuccessful. See the [Payments Developer Guides Page](https://developer.cybersource.com/api/developer-guides/dita-payments/GettingStarted.html).  Authorization can be requested with Capture, Decision Manager, Payer Authentication(3ds), and Token Creation. Find more on [Authorization with Add-On Features page.] (https://developer.cybersource.com/api/authorization-add-ons.html)  Possible [RESPONSE CODES](https://developer.cybersource.com/api/reference/response-codes.html) .  Processor specific [Testing Triggers](https://developer.cybersource.com/hello-world/testing-guide.html). 
+     * A payment authorizes the amount for the transaction. There are a number of supported payment feature, such as E-commerce and Card Present - Credit Card/Debit Card, Echeck, e-Wallets, Level II/III Data, etc..  A payment response includes the status of the request. It also includes processor-specific information when the request is successful and errors if unsuccessful. See the [Payments Developer Guides Page](https://developer.cybersource.com/api/developer-guides/dita-payments/GettingStarted.html).  Authorization can be requested with Capture, Decision Manager, Payer Authentication(3ds), and Token Creation. Find more on [Authorization with Add-On Features page.](https://developer.cybersource.com/api/authorization-add-ons.html) 
      * @param createPaymentRequest  (required)
      * @return ApiResponse&lt;PtsV2PaymentsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -155,7 +163,7 @@ public class PaymentsApi {
 
     /**
      * Process a Payment (asynchronously)
-     * A payment authorizes the amount for the transaction. There are a number of supported payment feature, such as E-commerce and Card Present - Credit Card/Debit Card, Echeck, e-Wallets, Level II/III Data, etc..  A payment response includes the status of the request. It also includes processor-specific information when the request is successful and errors if unsuccessful. See the [Payments Developer Guides Page](https://developer.cybersource.com/api/developer-guides/dita-payments/GettingStarted.html).  Authorization can be requested with Capture, Decision Manager, Payer Authentication(3ds), and Token Creation. Find more on [Authorization with Add-On Features page.] (https://developer.cybersource.com/api/authorization-add-ons.html)  Possible [RESPONSE CODES](https://developer.cybersource.com/api/reference/response-codes.html) .  Processor specific [Testing Triggers](https://developer.cybersource.com/hello-world/testing-guide.html). 
+     * A payment authorizes the amount for the transaction. There are a number of supported payment feature, such as E-commerce and Card Present - Credit Card/Debit Card, Echeck, e-Wallets, Level II/III Data, etc..  A payment response includes the status of the request. It also includes processor-specific information when the request is successful and errors if unsuccessful. See the [Payments Developer Guides Page](https://developer.cybersource.com/api/developer-guides/dita-payments/GettingStarted.html).  Authorization can be requested with Capture, Decision Manager, Payer Authentication(3ds), and Token Creation. Find more on [Authorization with Add-On Features page.](https://developer.cybersource.com/api/authorization-add-ons.html) 
      * @param createPaymentRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -243,11 +251,13 @@ public class PaymentsApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling incrementAuth(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling incrementAuth(Async)");
         }
         
         // verify the required parameter 'incrementAuthRequest' is set
         if (incrementAuthRequest == null) {
+        	logger.error("Missing the required parameter 'incrementAuthRequest' when calling incrementAuth(Async)");
             throw new ApiException("Missing the required parameter 'incrementAuthRequest' when calling incrementAuth(Async)");
         }
         
@@ -270,8 +280,10 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2IncrementalAuthorizationPatch201Response incrementAuth(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'incrementAuth' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2IncrementalAuthorizationPatch201Response> resp = incrementAuthWithHttpInfo(id, incrementAuthRequest);
+        logger.info("CALL TO METHOD 'incrementAuth' ENDED");
         return resp.getData();
     }
 

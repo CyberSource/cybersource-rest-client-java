@@ -42,7 +42,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class SymmetricKeyManagementApi {
+    private static Logger logger = LogManager.getLogger(SymmetricKeyManagementApi.class);
+    
     private ApiClient apiClient;
 
     public SymmetricKeyManagementApi() {
@@ -114,6 +119,7 @@ public class SymmetricKeyManagementApi {
         
         // verify the required parameter 'createSharedSecretKeysRequest' is set
         if (createSharedSecretKeysRequest == null) {
+        	logger.error("Missing the required parameter 'createSharedSecretKeysRequest' when calling createV2SharedSecretKeys(Async)");
             throw new ApiException("Missing the required parameter 'createSharedSecretKeysRequest' when calling createV2SharedSecretKeys(Async)");
         }
         
@@ -135,8 +141,10 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysSymPost201Response createV2SharedSecretKeys(CreateSharedSecretKeysRequest createSharedSecretKeysRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'createV2SharedSecretKeys' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysSymPost201Response> resp = createV2SharedSecretKeysWithHttpInfo(createSharedSecretKeysRequest);
+        logger.info("CALL TO METHOD 'createV2SharedSecretKeys' ENDED");
         return resp.getData();
     }
 
@@ -241,6 +249,7 @@ public class SymmetricKeyManagementApi {
         
         // verify the required parameter 'deleteBulkSymmetricKeysRequest' is set
         if (deleteBulkSymmetricKeysRequest == null) {
+        	logger.error("Missing the required parameter 'deleteBulkSymmetricKeysRequest' when calling deleteBulkSymmetricKeys(Async)");
             throw new ApiException("Missing the required parameter 'deleteBulkSymmetricKeysRequest' when calling deleteBulkSymmetricKeys(Async)");
         }
         
@@ -262,8 +271,10 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysSymDeletesPost200Response deleteBulkSymmetricKeys(DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'deleteBulkSymmetricKeys' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysSymDeletesPost200Response> resp = deleteBulkSymmetricKeysWithHttpInfo(deleteBulkSymmetricKeysRequest);
+        logger.info("CALL TO METHOD 'deleteBulkSymmetricKeys' ENDED");
         return resp.getData();
     }
 
@@ -369,6 +380,7 @@ public class SymmetricKeyManagementApi {
         
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
+        	logger.error("Missing the required parameter 'keyId' when calling getKeyDetails(Async)");
             throw new ApiException("Missing the required parameter 'keyId' when calling getKeyDetails(Async)");
         }
         
@@ -390,8 +402,10 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysSymGet200Response getKeyDetails(String keyId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getKeyDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysSymGet200Response> resp = getKeyDetailsWithHttpInfo(keyId);
+        logger.info("CALL TO METHOD 'getKeyDetails' ENDED");
         return resp.getData();
     }
 

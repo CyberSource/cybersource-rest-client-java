@@ -14,9 +14,9 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2PaymentsPost201ResponsePaymentAccountInformationCard;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationBank;
-import Model.PtsV2PaymentsPost201ResponsePaymentInformationCard;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
@@ -34,10 +34,10 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
 public class PtsV2PaymentsPost201ResponsePaymentInformation {
   @SerializedName("card")
-  private PtsV2PaymentsPost201ResponsePaymentInformationCard card = null;
+  private PtsV2PaymentsPost201ResponsePaymentAccountInformationCard card = null;
 
   @SerializedName("tokenizedCard")
   private PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard tokenizedCard = null;
@@ -75,7 +75,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
   @SerializedName("binCountry")
   private String binCountry = null;
 
-  public PtsV2PaymentsPost201ResponsePaymentInformation card(PtsV2PaymentsPost201ResponsePaymentInformationCard card) {
+  public PtsV2PaymentsPost201ResponsePaymentInformation card(PtsV2PaymentsPost201ResponsePaymentAccountInformationCard card) {
     this.card = card;
     return this;
   }
@@ -85,11 +85,11 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
    * @return card
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponsePaymentInformationCard getCard() {
+  public PtsV2PaymentsPost201ResponsePaymentAccountInformationCard getCard() {
     return card;
   }
 
-  public void setCard(PtsV2PaymentsPost201ResponsePaymentInformationCard card) {
+  public void setCard(PtsV2PaymentsPost201ResponsePaymentAccountInformationCard card) {
     this.card = card;
   }
 
