@@ -160,13 +160,20 @@ public class ApiClient {
 		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
 		logging.setLevel(Level.NONE);
 
-        return new OkHttpClient.Builder()
-                            .connectTimeout(1, TimeUnit.SECONDS)
-                            .writeTimeout(60, TimeUnit.SECONDS)
-                            .readTimeout(60, TimeUnit.SECONDS)
-                            .connectionPool(ApiClient.connectionPool)
-                            .addInterceptor(logging)
-                            .build();
+		try {
+			return new OkHttpClient.Builder()
+								.connectTimeout(1, TimeUnit.SECONDS)
+								.writeTimeout(60, TimeUnit.SECONDS)
+								.readTimeout(60, TimeUnit.SECONDS)
+								.connectionPool(ApiClient.connectionPool)
+								.addInterceptor(logging)
+								.build();
+		}
+		catch (Exception ex)
+		{
+			logger.error("Error in creating HTTP Client");
+			return null;
+		}
     }
 
 	/*
@@ -175,11 +182,17 @@ public class ApiClient {
 	public ApiClient() {
 		versionInfo = getClientID();
 
-        httpClient = classHttpClient.newBuilder()
-                .retryOnConnectionFailure(true)
-                .addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-                .eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
-                .build();
+		try {
+			httpClient = classHttpClient.newBuilder()
+					.retryOnConnectionFailure(true)
+					.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
+					.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
+					.build();
+		}
+		catch (Exception ex)
+		{
+			logger.error("Error in creating HTTP Client");
+		}
 
 		verifyingSsl = true;
 
@@ -227,6 +240,11 @@ public class ApiClient {
 		int proxyPort = merchantConfig.getProxyPort();
 		String proxyHost = merchantConfig.getProxyAddress();
 
+		// User Defined Timeout for HTTP Client
+		int connectionTimeout = Math.max(merchantConfig.getUserDefinedConnectionTimeout(), 1);
+		int readTimeout = Math.max(merchantConfig.getUserDefinedReadTimeout(), 60);
+		int writeTimeout = Math.max(merchantConfig.getUserDefinedWriteTimeout(), 60);
+
 		Authenticator proxyAuthenticator;
 
 		if (useProxy && (proxyHost != null && !proxyHost.isEmpty())) {
@@ -259,13 +277,42 @@ public class ApiClient {
 				};
 			}
 
-            httpClient = classHttpClient.newBuilder()
-                    .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
-                    .proxyAuthenticator(proxyAuthenticator)
-                    .retryOnConnectionFailure(true)
-                    .addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-                    .eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
-                    .build();
+            try {
+				httpClient = classHttpClient.newBuilder()
+						.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
+						.proxyAuthenticator(proxyAuthenticator)
+						.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
+						.writeTimeout(writeTimeout, TimeUnit.SECONDS)
+						.readTimeout(readTimeout, TimeUnit.SECONDS)
+						.retryOnConnectionFailure(true)
+						.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
+						.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
+						.build();
+			}
+			catch (Exception ex)
+			{
+				logger.error("Error in creating HTTP Client");
+			}
+
+			this.setHttpClient(httpClient);
+		}
+		else
+		{
+			// override the custom timeout in HTTPClient
+			try {
+				httpClient = classHttpClient.newBuilder()
+						.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
+						.writeTimeout(writeTimeout, TimeUnit.SECONDS)
+						.readTimeout(readTimeout, TimeUnit.SECONDS)
+						.retryOnConnectionFailure(true)
+						.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
+						.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
+						.build();
+			}
+			catch (Exception ex)
+			{
+				logger.error("Error in creating HTTP Client");
+			}
 
 			this.setHttpClient(httpClient);
 		}

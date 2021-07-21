@@ -239,6 +239,8 @@ public class ApiClient {
 		final String password = merchantConfig.getProxyPassword();
 		int proxyPort = merchantConfig.getProxyPort();
 		String proxyHost = merchantConfig.getProxyAddress();
+
+		// User Defined Timeout for HTTP Client
 		int connectionTimeout = Math.max(merchantConfig.getUserDefinedConnectionTimeout(), 1);
 		int readTimeout = Math.max(merchantConfig.getUserDefinedReadTimeout(), 60);
 		int writeTimeout = Math.max(merchantConfig.getUserDefinedWriteTimeout(), 60);
@@ -296,6 +298,7 @@ public class ApiClient {
 		}
 		else
 		{
+			// override the custom timeout in HTTPClient
 			try {
 				httpClient = classHttpClient.newBuilder()
 						.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
