@@ -35,7 +35,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class DownloadDTDApi {
+    private static Logger logger = LogManager.getLogger(DownloadDTDApi.class);
+    
     private ApiClient apiClient;
 
     public DownloadDTDApi() {
@@ -108,6 +113,7 @@ public class DownloadDTDApi {
         
         // verify the required parameter 'reportDefinitionNameVersion' is set
         if (reportDefinitionNameVersion == null) {
+        	logger.error("Missing the required parameter 'reportDefinitionNameVersion' when calling getDTDV2(Async)");
             throw new ApiException("Missing the required parameter 'reportDefinitionNameVersion' when calling getDTDV2(Async)");
         }
         
@@ -128,6 +134,7 @@ public class DownloadDTDApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void getDTDV2(String reportDefinitionNameVersion) throws ApiException {
+    	logger.info("CALL TO METHOD 'getDTDV2' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getDTDV2WithHttpInfo(reportDefinitionNameVersion);
     }

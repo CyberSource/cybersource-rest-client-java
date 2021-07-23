@@ -38,7 +38,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class PurchaseAndRefundDetailsApi {
+    private static Logger logger = LogManager.getLogger(PurchaseAndRefundDetailsApi.class);
+    
     private ApiClient apiClient;
 
     public PurchaseAndRefundDetailsApi() {
@@ -133,11 +138,13 @@ public class PurchaseAndRefundDetailsApi {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
+        	logger.error("Missing the required parameter 'startTime' when calling getPurchaseAndRefundDetails(Async)");
             throw new ApiException("Missing the required parameter 'startTime' when calling getPurchaseAndRefundDetails(Async)");
         }
         
         // verify the required parameter 'endTime' is set
         if (endTime == null) {
+        	logger.error("Missing the required parameter 'endTime' when calling getPurchaseAndRefundDetails(Async)");
             throw new ApiException("Missing the required parameter 'endTime' when calling getPurchaseAndRefundDetails(Async)");
         }
         
@@ -166,8 +173,10 @@ public class PurchaseAndRefundDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3PurchaseRefundDetailsGet200Response getPurchaseAndRefundDetails(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
+    	logger.info("CALL TO METHOD 'getPurchaseAndRefundDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3PurchaseRefundDetailsGet200Response> resp = getPurchaseAndRefundDetailsWithHttpInfo(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
+        logger.info("CALL TO METHOD 'getPurchaseAndRefundDetails' ENDED");
         return resp.getData();
     }
 

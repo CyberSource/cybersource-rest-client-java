@@ -39,7 +39,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class PayoutsApi {
+    private static Logger logger = LogManager.getLogger(PayoutsApi.class);
+    
     private ApiClient apiClient;
 
     public PayoutsApi() {
@@ -111,6 +116,7 @@ public class PayoutsApi {
         
         // verify the required parameter 'octCreatePaymentRequest' is set
         if (octCreatePaymentRequest == null) {
+        	logger.error("Missing the required parameter 'octCreatePaymentRequest' when calling octCreatePayment(Async)");
             throw new ApiException("Missing the required parameter 'octCreatePaymentRequest' when calling octCreatePayment(Async)");
         }
         
@@ -132,8 +138,10 @@ public class PayoutsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PayoutsPost201Response octCreatePayment(OctCreatePaymentRequest octCreatePaymentRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'octCreatePayment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PayoutsPost201Response> resp = octCreatePaymentWithHttpInfo(octCreatePaymentRequest);
+        logger.info("CALL TO METHOD 'octCreatePayment' ENDED");
         return resp.getData();
     }
 

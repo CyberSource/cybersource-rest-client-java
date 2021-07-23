@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
 public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
@@ -48,9 +48,6 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   @SerializedName("terminalCapability")
   private Integer terminalCapability = null;
-
-  @SerializedName("pinEntryCapability")
-  private Integer pinEntryCapability = null;
 
   @SerializedName("operatingEnvironment")
   private String operatingEnvironment = null;
@@ -105,6 +102,12 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   @SerializedName("isDedicatedHardwareTerminal")
   private String isDedicatedHardwareTerminal = null;
+
+  @SerializedName("terminalModel")
+  private String terminalModel = null;
+
+  @SerializedName("terminalMake")
+  private String terminalMake = null;
 
   public Ptsv2paymentsPointOfSaleInformation terminalId(String terminalId) {
     this.terminalId = terminalId;
@@ -216,26 +219,6 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   public void setTerminalCapability(Integer terminalCapability) {
     this.terminalCapability = terminalCapability;
-  }
-
-  public Ptsv2paymentsPointOfSaleInformation pinEntryCapability(Integer pinEntryCapability) {
-    this.pinEntryCapability = pinEntryCapability;
-    return this;
-  }
-
-   /**
-   * A one-digit code that identifies the capability of terminal to capture PINs. This code does not necessarily mean that a PIN was entered or is included in this message. For Payouts: This field is applicable for CtV. For details, see the &#x60;terminal_pin_capability&#x60; field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/) 
-   * minimum: 1
-   * maximum: 1
-   * @return pinEntryCapability
-  **/
-  @ApiModelProperty(value = "A one-digit code that identifies the capability of terminal to capture PINs. This code does not necessarily mean that a PIN was entered or is included in this message. For Payouts: This field is applicable for CtV. For details, see the `terminal_pin_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/) ")
-  public Integer getPinEntryCapability() {
-    return pinEntryCapability;
-  }
-
-  public void setPinEntryCapability(Integer pinEntryCapability) {
-    this.pinEntryCapability = pinEntryCapability;
   }
 
   public Ptsv2paymentsPointOfSaleInformation operatingEnvironment(String operatingEnvironment) {
@@ -579,6 +562,42 @@ public class Ptsv2paymentsPointOfSaleInformation {
     this.isDedicatedHardwareTerminal = isDedicatedHardwareTerminal;
   }
 
+  public Ptsv2paymentsPointOfSaleInformation terminalModel(String terminalModel) {
+    this.terminalModel = terminalModel;
+    return this;
+  }
+
+   /**
+   * This is the model name of the reader which is used to accept the payment. Possible values:  - E3555  - P400  - A920 
+   * @return terminalModel
+  **/
+  @ApiModelProperty(value = "This is the model name of the reader which is used to accept the payment. Possible values:  - E3555  - P400  - A920 ")
+  public String getTerminalModel() {
+    return terminalModel;
+  }
+
+  public void setTerminalModel(String terminalModel) {
+    this.terminalModel = terminalModel;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation terminalMake(String terminalMake) {
+    this.terminalMake = terminalMake;
+    return this;
+  }
+
+   /**
+   * This is the manufacturer name of the reader which is used to accept the payment. Possible values:  - PAX  - Verifone  - Ingenico 
+   * @return terminalMake
+  **/
+  @ApiModelProperty(value = "This is the manufacturer name of the reader which is used to accept the payment. Possible values:  - PAX  - Verifone  - Ingenico ")
+  public String getTerminalMake() {
+    return terminalMake;
+  }
+
+  public void setTerminalMake(String terminalMake) {
+    this.terminalMake = terminalMake;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -595,7 +614,6 @@ public class Ptsv2paymentsPointOfSaleInformation {
         Objects.equals(this.catLevel, ptsv2paymentsPointOfSaleInformation.catLevel) &&
         Objects.equals(this.entryMode, ptsv2paymentsPointOfSaleInformation.entryMode) &&
         Objects.equals(this.terminalCapability, ptsv2paymentsPointOfSaleInformation.terminalCapability) &&
-        Objects.equals(this.pinEntryCapability, ptsv2paymentsPointOfSaleInformation.pinEntryCapability) &&
         Objects.equals(this.operatingEnvironment, ptsv2paymentsPointOfSaleInformation.operatingEnvironment) &&
         Objects.equals(this.emv, ptsv2paymentsPointOfSaleInformation.emv) &&
         Objects.equals(this.amexCapnData, ptsv2paymentsPointOfSaleInformation.amexCapnData) &&
@@ -613,12 +631,14 @@ public class Ptsv2paymentsPointOfSaleInformation {
         Objects.equals(this.partnerSdkVersion, ptsv2paymentsPointOfSaleInformation.partnerSdkVersion) &&
         Objects.equals(this.emvApplicationIdentifierAndDedicatedFileName, ptsv2paymentsPointOfSaleInformation.emvApplicationIdentifierAndDedicatedFileName) &&
         Objects.equals(this.terminalCompliance, ptsv2paymentsPointOfSaleInformation.terminalCompliance) &&
-        Objects.equals(this.isDedicatedHardwareTerminal, ptsv2paymentsPointOfSaleInformation.isDedicatedHardwareTerminal);
+        Objects.equals(this.isDedicatedHardwareTerminal, ptsv2paymentsPointOfSaleInformation.isDedicatedHardwareTerminal) &&
+        Objects.equals(this.terminalModel, ptsv2paymentsPointOfSaleInformation.terminalModel) &&
+        Objects.equals(this.terminalMake, ptsv2paymentsPointOfSaleInformation.terminalMake);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId, terminalSerialNumber, laneNumber, catLevel, entryMode, terminalCapability, pinEntryCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal);
+    return Objects.hash(terminalId, terminalSerialNumber, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake);
   }
 
 
@@ -633,7 +653,6 @@ public class Ptsv2paymentsPointOfSaleInformation {
     sb.append("    catLevel: ").append(toIndentedString(catLevel)).append("\n");
     sb.append("    entryMode: ").append(toIndentedString(entryMode)).append("\n");
     sb.append("    terminalCapability: ").append(toIndentedString(terminalCapability)).append("\n");
-    sb.append("    pinEntryCapability: ").append(toIndentedString(pinEntryCapability)).append("\n");
     sb.append("    operatingEnvironment: ").append(toIndentedString(operatingEnvironment)).append("\n");
     sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
     sb.append("    amexCapnData: ").append(toIndentedString(amexCapnData)).append("\n");
@@ -652,6 +671,8 @@ public class Ptsv2paymentsPointOfSaleInformation {
     sb.append("    emvApplicationIdentifierAndDedicatedFileName: ").append(toIndentedString(emvApplicationIdentifierAndDedicatedFileName)).append("\n");
     sb.append("    terminalCompliance: ").append(toIndentedString(terminalCompliance)).append("\n");
     sb.append("    isDedicatedHardwareTerminal: ").append(toIndentedString(isDedicatedHardwareTerminal)).append("\n");
+    sb.append("    terminalModel: ").append(toIndentedString(terminalModel)).append("\n");
+    sb.append("    terminalMake: ").append(toIndentedString(terminalMake)).append("\n");
     sb.append("}");
     return sb.toString();
   }

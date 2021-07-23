@@ -39,7 +39,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class CaptureApi {
+    private static Logger logger = LogManager.getLogger(CaptureApi.class);
+    
     private ApiClient apiClient;
 
     public CaptureApi() {
@@ -113,11 +118,13 @@ public class CaptureApi {
         
         // verify the required parameter 'capturePaymentRequest' is set
         if (capturePaymentRequest == null) {
+        	logger.error("Missing the required parameter 'capturePaymentRequest' when calling capturePayment(Async)");
             throw new ApiException("Missing the required parameter 'capturePaymentRequest' when calling capturePayment(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling capturePayment(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling capturePayment(Async)");
         }
         
@@ -140,8 +147,10 @@ public class CaptureApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsCapturesPost201Response capturePayment(CapturePaymentRequest capturePaymentRequest, String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'capturePayment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsCapturesPost201Response> resp = capturePaymentWithHttpInfo(capturePaymentRequest, id);
+        logger.info("CALL TO METHOD 'capturePayment' ENDED");
         return resp.getData();
     }
 

@@ -43,7 +43,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class VoidApi {
+    private static Logger logger = LogManager.getLogger(VoidApi.class);
+    
     private ApiClient apiClient;
 
     public VoidApi() {
@@ -115,6 +120,7 @@ public class VoidApi {
         
         // verify the required parameter 'mitVoidRequest' is set
         if (mitVoidRequest == null) {
+        	logger.error("Missing the required parameter 'mitVoidRequest' when calling mitVoid(Async)");
             throw new ApiException("Missing the required parameter 'mitVoidRequest' when calling mitVoid(Async)");
         }
         
@@ -136,8 +142,10 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response mitVoid(MitVoidRequest mitVoidRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'mitVoid' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = mitVoidWithHttpInfo(mitVoidRequest);
+        logger.info("CALL TO METHOD 'mitVoid' ENDED");
         return resp.getData();
     }
 
@@ -244,11 +252,13 @@ public class VoidApi {
         
         // verify the required parameter 'voidCaptureRequest' is set
         if (voidCaptureRequest == null) {
+        	logger.error("Missing the required parameter 'voidCaptureRequest' when calling voidCapture(Async)");
             throw new ApiException("Missing the required parameter 'voidCaptureRequest' when calling voidCapture(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling voidCapture(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling voidCapture(Async)");
         }
         
@@ -264,21 +274,23 @@ public class VoidApi {
 
     /**
      * Void a Capture
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call.  Include the capture ID in the POST request to cancel the capture. 
+     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call. Include the capture ID in the POST request to cancel the capture. 
      * @param voidCaptureRequest  (required)
      * @param id The capture ID returned from a previous capture request. (required)
      * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidCapture(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'voidCapture' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCaptureWithHttpInfo(voidCaptureRequest, id);
+        logger.info("CALL TO METHOD 'voidCapture' ENDED");
         return resp.getData();
     }
 
     /**
      * Void a Capture
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call.  Include the capture ID in the POST request to cancel the capture. 
+     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call. Include the capture ID in the POST request to cancel the capture. 
      * @param voidCaptureRequest  (required)
      * @param id The capture ID returned from a previous capture request. (required)
      * @return ApiResponse&lt;PtsV2PaymentsVoidsPost201Response&gt;
@@ -292,7 +304,7 @@ public class VoidApi {
 
     /**
      * Void a Capture (asynchronously)
-     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call.  Include the capture ID in the POST request to cancel the capture. 
+     * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call. Include the capture ID in the POST request to cancel the capture. 
      * @param voidCaptureRequest  (required)
      * @param id The capture ID returned from a previous capture request. (required)
      * @param callback The callback to be executed when the API call finishes
@@ -381,11 +393,13 @@ public class VoidApi {
         
         // verify the required parameter 'voidCreditRequest' is set
         if (voidCreditRequest == null) {
+        	logger.error("Missing the required parameter 'voidCreditRequest' when calling voidCredit(Async)");
             throw new ApiException("Missing the required parameter 'voidCreditRequest' when calling voidCredit(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling voidCredit(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling voidCredit(Async)");
         }
         
@@ -408,8 +422,10 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidCredit(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'voidCredit' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCreditWithHttpInfo(voidCreditRequest, id);
+        logger.info("CALL TO METHOD 'voidCredit' ENDED");
         return resp.getData();
     }
 
@@ -518,11 +534,13 @@ public class VoidApi {
         
         // verify the required parameter 'voidPaymentRequest' is set
         if (voidPaymentRequest == null) {
+        	logger.error("Missing the required parameter 'voidPaymentRequest' when calling voidPayment(Async)");
             throw new ApiException("Missing the required parameter 'voidPaymentRequest' when calling voidPayment(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling voidPayment(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling voidPayment(Async)");
         }
         
@@ -538,21 +556,23 @@ public class VoidApi {
 
     /**
      * Void a Payment
-     * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to cancel the payment. 
+     * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call. Include the payment ID in the POST request to cancel the payment. 
      * @param voidPaymentRequest  (required)
      * @param id The payment ID returned from a previous payment request. (required)
      * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidPayment(VoidPaymentRequest voidPaymentRequest, String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'voidPayment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidPaymentWithHttpInfo(voidPaymentRequest, id);
+        logger.info("CALL TO METHOD 'voidPayment' ENDED");
         return resp.getData();
     }
 
     /**
      * Void a Payment
-     * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to cancel the payment. 
+     * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call. Include the payment ID in the POST request to cancel the payment. 
      * @param voidPaymentRequest  (required)
      * @param id The payment ID returned from a previous payment request. (required)
      * @return ApiResponse&lt;PtsV2PaymentsVoidsPost201Response&gt;
@@ -566,7 +586,7 @@ public class VoidApi {
 
     /**
      * Void a Payment (asynchronously)
-     * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call.  Include the payment ID in the POST request to cancel the payment. 
+     * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call. Include the payment ID in the POST request to cancel the payment. 
      * @param voidPaymentRequest  (required)
      * @param id The payment ID returned from a previous payment request. (required)
      * @param callback The callback to be executed when the API call finishes
@@ -655,11 +675,13 @@ public class VoidApi {
         
         // verify the required parameter 'voidRefundRequest' is set
         if (voidRefundRequest == null) {
+        	logger.error("Missing the required parameter 'voidRefundRequest' when calling voidRefund(Async)");
             throw new ApiException("Missing the required parameter 'voidRefundRequest' when calling voidRefund(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling voidRefund(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling voidRefund(Async)");
         }
         
@@ -682,8 +704,10 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidRefund(VoidRefundRequest voidRefundRequest, String id) throws ApiException {
+    	logger.info("CALL TO METHOD 'voidRefund' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidRefundWithHttpInfo(voidRefundRequest, id);
+        logger.info("CALL TO METHOD 'voidRefund' ENDED");
         return resp.getData();
     }
 

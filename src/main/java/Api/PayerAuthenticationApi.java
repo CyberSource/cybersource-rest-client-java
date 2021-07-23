@@ -44,7 +44,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class PayerAuthenticationApi {
+    private static Logger logger = LogManager.getLogger(PayerAuthenticationApi.class);
+    
     private ApiClient apiClient;
 
     public PayerAuthenticationApi() {
@@ -116,6 +121,7 @@ public class PayerAuthenticationApi {
         
         // verify the required parameter 'checkPayerAuthEnrollmentRequest' is set
         if (checkPayerAuthEnrollmentRequest == null) {
+        	logger.error("Missing the required parameter 'checkPayerAuthEnrollmentRequest' when calling checkPayerAuthEnrollment(Async)");
             throw new ApiException("Missing the required parameter 'checkPayerAuthEnrollmentRequest' when calling checkPayerAuthEnrollment(Async)");
         }
         
@@ -137,8 +143,10 @@ public class PayerAuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1AuthenticationsPost201Response checkPayerAuthEnrollment(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'checkPayerAuthEnrollment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationsPost201Response> resp = checkPayerAuthEnrollmentWithHttpInfo(checkPayerAuthEnrollmentRequest);
+        logger.info("CALL TO METHOD 'checkPayerAuthEnrollment' ENDED");
         return resp.getData();
     }
 
@@ -243,6 +251,7 @@ public class PayerAuthenticationApi {
         
         // verify the required parameter 'payerAuthSetupRequest' is set
         if (payerAuthSetupRequest == null) {
+        	logger.error("Missing the required parameter 'payerAuthSetupRequest' when calling payerAuthSetup(Async)");
             throw new ApiException("Missing the required parameter 'payerAuthSetupRequest' when calling payerAuthSetup(Async)");
         }
         
@@ -264,8 +273,10 @@ public class PayerAuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1AuthenticationSetupsPost201Response payerAuthSetup(PayerAuthSetupRequest payerAuthSetupRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'payerAuthSetup' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationSetupsPost201Response> resp = payerAuthSetupWithHttpInfo(payerAuthSetupRequest);
+        logger.info("CALL TO METHOD 'payerAuthSetup' ENDED");
         return resp.getData();
     }
 
@@ -370,6 +381,7 @@ public class PayerAuthenticationApi {
         
         // verify the required parameter 'validateRequest' is set
         if (validateRequest == null) {
+        	logger.error("Missing the required parameter 'validateRequest' when calling validateAuthenticationResults(Async)");
             throw new ApiException("Missing the required parameter 'validateRequest' when calling validateAuthenticationResults(Async)");
         }
         
@@ -391,8 +403,10 @@ public class PayerAuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1AuthenticationResultsPost201Response validateAuthenticationResults(ValidateRequest validateRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'validateAuthenticationResults' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationResultsPost201Response> resp = validateAuthenticationResultsWithHttpInfo(validateRequest);
+        logger.info("CALL TO METHOD 'validateAuthenticationResults' ENDED");
         return resp.getData();
     }
 

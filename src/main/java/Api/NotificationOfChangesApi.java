@@ -38,7 +38,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class NotificationOfChangesApi {
+    private static Logger logger = LogManager.getLogger(NotificationOfChangesApi.class);
+    
     private ApiClient apiClient;
 
     public NotificationOfChangesApi() {
@@ -115,11 +120,13 @@ public class NotificationOfChangesApi {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
+        	logger.error("Missing the required parameter 'startTime' when calling getNotificationOfChangeReport(Async)");
             throw new ApiException("Missing the required parameter 'startTime' when calling getNotificationOfChangeReport(Async)");
         }
         
         // verify the required parameter 'endTime' is set
         if (endTime == null) {
+        	logger.error("Missing the required parameter 'endTime' when calling getNotificationOfChangeReport(Async)");
             throw new ApiException("Missing the required parameter 'endTime' when calling getNotificationOfChangeReport(Async)");
         }
         
@@ -142,8 +149,10 @@ public class NotificationOfChangesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3NotificationofChangesGet200Response getNotificationOfChangeReport(DateTime startTime, DateTime endTime) throws ApiException {
+    	logger.info("CALL TO METHOD 'getNotificationOfChangeReport' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3NotificationofChangesGet200Response> resp = getNotificationOfChangeReportWithHttpInfo(startTime, endTime);
+        logger.info("CALL TO METHOD 'getNotificationOfChangeReport' ENDED");
         return resp.getData();
     }
 

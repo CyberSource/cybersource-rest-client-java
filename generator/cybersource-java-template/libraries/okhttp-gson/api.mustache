@@ -43,8 +43,13 @@ import java.util.List;
 import java.util.Map;
 {{/fullJavaUtil}}
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 {{#operations}}
 public class {{classname}} {
+    private static Logger logger = LogManager.getLogger({{classname}}.class);
+    
     private ApiClient {{localVariablePrefix}}apiClient;
 
     public {{classname}}() {
@@ -125,6 +130,7 @@ public class {{classname}} {
         {{#allParams}}{{#required}}
         // verify the required parameter '{{paramName}}' is set
         if ({{paramName}} == null) {
+        	logger.error("Missing the required parameter '{{paramName}}' when calling {{operationId}}(Async)");
             throw new ApiException("Missing the required parameter '{{paramName}}' when calling {{operationId}}(Async)");
         }
         {{/required}}{{/allParams}}
@@ -173,8 +179,10 @@ public class {{classname}} {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public {{#returnType}}{{{returnType}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{operationId}}({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
+    	logger.info("CALL TO METHOD '{{operationId}}' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         {{#returnType}}ApiResponse<{{{returnType}}}> {{localVariablePrefix}}resp = {{/returnType}}{{operationId}}WithHttpInfo({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});{{#returnType}}
+        logger.info("CALL TO METHOD '{{operationId}}' ENDED");
         return {{localVariablePrefix}}resp.getData();{{/returnType}}
     }
 

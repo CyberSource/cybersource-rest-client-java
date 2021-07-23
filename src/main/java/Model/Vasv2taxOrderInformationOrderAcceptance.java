@@ -27,7 +27,7 @@ import java.io.IOException;
  * The place of business where you accept/approve the customer’s order, thereby becoming contractually obligated to make the sale.
  */
 @ApiModel(description = "The place of business where you accept/approve the customer’s order, thereby becoming contractually obligated to make the sale.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-16T13:03:35.933+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
 public class Vasv2taxOrderInformationOrderAcceptance {
   @SerializedName("locality")
   private String locality = null;

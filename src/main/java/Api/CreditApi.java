@@ -39,7 +39,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class CreditApi {
+    private static Logger logger = LogManager.getLogger(CreditApi.class);
+    
     private ApiClient apiClient;
 
     public CreditApi() {
@@ -111,6 +116,7 @@ public class CreditApi {
         
         // verify the required parameter 'createCreditRequest' is set
         if (createCreditRequest == null) {
+        	logger.error("Missing the required parameter 'createCreditRequest' when calling createCredit(Async)");
             throw new ApiException("Missing the required parameter 'createCreditRequest' when calling createCredit(Async)");
         }
         
@@ -132,8 +138,10 @@ public class CreditApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2CreditsPost201Response createCredit(CreateCreditRequest createCreditRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'createCredit' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2CreditsPost201Response> resp = createCreditWithHttpInfo(createCreditRequest);
+        logger.info("CALL TO METHOD 'createCredit' ENDED");
         return resp.getData();
     }
 

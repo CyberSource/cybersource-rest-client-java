@@ -38,7 +38,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ReportDefinitionsApi {
+    private static Logger logger = LogManager.getLogger(ReportDefinitionsApi.class);
+    
     private ApiClient apiClient;
 
     public ReportDefinitionsApi() {
@@ -120,6 +125,7 @@ public class ReportDefinitionsApi {
         
         // verify the required parameter 'reportDefinitionName' is set
         if (reportDefinitionName == null) {
+        	logger.error("Missing the required parameter 'reportDefinitionName' when calling getResourceInfoByReportDefinition(Async)");
             throw new ApiException("Missing the required parameter 'reportDefinitionName' when calling getResourceInfoByReportDefinition(Async)");
         }
         
@@ -144,8 +150,10 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getResourceInfoByReportDefinition' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> resp = getResourceInfoByReportDefinitionWithHttpInfo(reportDefinitionName, subscriptionType, reportMimeType, organizationId);
+        logger.info("CALL TO METHOD 'getResourceInfoByReportDefinition' ENDED");
         return resp.getData();
     }
 
@@ -278,8 +286,10 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportDefinitionsGet200Response getResourceV2Info(String subscriptionType, String organizationId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getResourceV2Info' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportDefinitionsGet200Response> resp = getResourceV2InfoWithHttpInfo(subscriptionType, organizationId);
+        logger.info("CALL TO METHOD 'getResourceV2Info' ENDED");
         return resp.getData();
     }
 

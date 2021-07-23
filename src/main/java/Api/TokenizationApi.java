@@ -38,7 +38,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class TokenizationApi {
+    private static Logger logger = LogManager.getLogger(TokenizationApi.class);
+    
     private ApiClient apiClient;
 
     public TokenizationApi() {
@@ -110,6 +115,7 @@ public class TokenizationApi {
         
         // verify the required parameter 'tokenizeRequest' is set
         if (tokenizeRequest == null) {
+        	logger.error("Missing the required parameter 'tokenizeRequest' when calling tokenize(Async)");
             throw new ApiException("Missing the required parameter 'tokenizeRequest' when calling tokenize(Async)");
         }
         
@@ -131,8 +137,10 @@ public class TokenizationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public FlexV1TokensPost200Response tokenize(TokenizeRequest tokenizeRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'tokenize' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<FlexV1TokensPost200Response> resp = tokenizeWithHttpInfo(tokenizeRequest);
+        logger.info("CALL TO METHOD 'tokenize' ENDED");
         return resp.getData();
     }
 

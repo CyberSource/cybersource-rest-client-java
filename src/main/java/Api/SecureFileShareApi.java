@@ -38,7 +38,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class SecureFileShareApi {
+    private static Logger logger = LogManager.getLogger(SecureFileShareApi.class);
+    
     private ApiClient apiClient;
 
     public SecureFileShareApi() {
@@ -112,6 +117,7 @@ final String[] localVarContentTypes = {"*/*"};
         
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
+        	logger.error("Missing the required parameter 'fileId' when calling getFile(Async)");
             throw new ApiException("Missing the required parameter 'fileId' when calling getFile(Async)");
         }
         
@@ -133,6 +139,7 @@ final String[] localVarContentTypes = {"*/*"};
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void getFile(String fileId, String organizationId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getFile' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getFileWithHttpInfo(fileId, organizationId);
     }
@@ -247,11 +254,13 @@ final String[] localVarContentTypes = {"*/*"};
         
         // verify the required parameter 'startDate' is set
         if (startDate == null) {
+        	logger.error("Missing the required parameter 'startDate' when calling getFileDetail(Async)");
             throw new ApiException("Missing the required parameter 'startDate' when calling getFileDetail(Async)");
         }
         
         // verify the required parameter 'endDate' is set
         if (endDate == null) {
+        	logger.error("Missing the required parameter 'endDate' when calling getFileDetail(Async)");
             throw new ApiException("Missing the required parameter 'endDate' when calling getFileDetail(Async)");
         }
         
@@ -276,8 +285,10 @@ final String[] localVarContentTypes = {"*/*"};
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public V1FileDetailsGet200Response getFileDetail(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
+    	logger.info("CALL TO METHOD 'getFileDetail' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailWithHttpInfo(startDate, endDate, organizationId, name);
+        logger.info("CALL TO METHOD 'getFileDetail' ENDED");
         return resp.getData();
     }
 

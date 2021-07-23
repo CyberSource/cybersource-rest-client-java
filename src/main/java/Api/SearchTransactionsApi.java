@@ -39,7 +39,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class SearchTransactionsApi {
+    private static Logger logger = LogManager.getLogger(SearchTransactionsApi.class);
+    
     private ApiClient apiClient;
 
     public SearchTransactionsApi() {
@@ -111,6 +116,7 @@ public class SearchTransactionsApi {
         
         // verify the required parameter 'createSearchRequest' is set
         if (createSearchRequest == null) {
+        	logger.error("Missing the required parameter 'createSearchRequest' when calling createSearch(Async)");
             throw new ApiException("Missing the required parameter 'createSearchRequest' when calling createSearch(Async)");
         }
         
@@ -132,8 +138,10 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TssV2TransactionsPost201Response createSearch(CreateSearchRequest createSearchRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'createSearch' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = createSearchWithHttpInfo(createSearchRequest);
+        logger.info("CALL TO METHOD 'createSearch' ENDED");
         return resp.getData();
     }
 
@@ -239,6 +247,7 @@ public class SearchTransactionsApi {
         
         // verify the required parameter 'searchId' is set
         if (searchId == null) {
+        	logger.error("Missing the required parameter 'searchId' when calling getSearch(Async)");
             throw new ApiException("Missing the required parameter 'searchId' when calling getSearch(Async)");
         }
         
@@ -260,8 +269,10 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TssV2TransactionsPost201Response getSearch(String searchId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getSearch' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = getSearchWithHttpInfo(searchId);
+        logger.info("CALL TO METHOD 'getSearch' ENDED");
         return resp.getData();
     }
 

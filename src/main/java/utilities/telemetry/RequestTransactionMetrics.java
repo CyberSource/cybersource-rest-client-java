@@ -8,8 +8,24 @@ public class RequestTransactionMetrics {
 	private long computeTime;
 	private int retryCount;
 	//private long computationStartTime;
-	
+
 	public RequestTransactionMetrics() {
+	}
+	
+	public String getResponseCorrelationId() {
+		return responseCorrelationId;
+	}
+
+	public long getRoundaboutTime() {
+		return roundaboutTime;
+	}
+
+	public long getComputeTime() {
+		return computeTime;
+	}
+
+	public int getRetryCount() {
+		return retryCount;
 	}
 	
 	/**

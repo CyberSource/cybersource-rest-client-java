@@ -42,7 +42,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class AsymmetricKeyManagementApi {
+    private static Logger logger = LogManager.getLogger(AsymmetricKeyManagementApi.class);
+    
     private ApiClient apiClient;
 
     public AsymmetricKeyManagementApi() {
@@ -114,6 +119,7 @@ public class AsymmetricKeyManagementApi {
         
         // verify the required parameter 'createP12KeysRequest' is set
         if (createP12KeysRequest == null) {
+        	logger.error("Missing the required parameter 'createP12KeysRequest' when calling createP12Keys(Async)");
             throw new ApiException("Missing the required parameter 'createP12KeysRequest' when calling createP12Keys(Async)");
         }
         
@@ -135,8 +141,10 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysAsymPost201Response createP12Keys(CreateP12KeysRequest createP12KeysRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'createP12Keys' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysAsymPost201Response> resp = createP12KeysWithHttpInfo(createP12KeysRequest);
+        logger.info("CALL TO METHOD 'createP12Keys' ENDED");
         return resp.getData();
     }
 
@@ -241,6 +249,7 @@ public class AsymmetricKeyManagementApi {
         
         // verify the required parameter 'deleteBulkP12KeysRequest' is set
         if (deleteBulkP12KeysRequest == null) {
+        	logger.error("Missing the required parameter 'deleteBulkP12KeysRequest' when calling deleteBulkP12Keys(Async)");
             throw new ApiException("Missing the required parameter 'deleteBulkP12KeysRequest' when calling deleteBulkP12Keys(Async)");
         }
         
@@ -262,8 +271,10 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysAsymDeletesPost200Response deleteBulkP12Keys(DeleteBulkP12KeysRequest deleteBulkP12KeysRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'deleteBulkP12Keys' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysAsymDeletesPost200Response> resp = deleteBulkP12KeysWithHttpInfo(deleteBulkP12KeysRequest);
+        logger.info("CALL TO METHOD 'deleteBulkP12Keys' ENDED");
         return resp.getData();
     }
 
@@ -369,6 +380,7 @@ public class AsymmetricKeyManagementApi {
         
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
+        	logger.error("Missing the required parameter 'keyId' when calling getP12KeyDetails(Async)");
             throw new ApiException("Missing the required parameter 'keyId' when calling getP12KeyDetails(Async)");
         }
         
@@ -390,8 +402,10 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysAsymGet200Response getP12KeyDetails(String keyId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getP12KeyDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysAsymGet200Response> resp = getP12KeyDetailsWithHttpInfo(keyId);
+        logger.info("CALL TO METHOD 'getP12KeyDetails' ENDED");
         return resp.getData();
     }
 

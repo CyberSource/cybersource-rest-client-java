@@ -37,7 +37,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ReportDownloadsApi {
+    private static Logger logger = LogManager.getLogger(ReportDownloadsApi.class);
+    
     private ApiClient apiClient;
 
     public ReportDownloadsApi() {
@@ -117,11 +122,13 @@ public class ReportDownloadsApi {
         
         // verify the required parameter 'reportDate' is set
         if (reportDate == null) {
+        	logger.error("Missing the required parameter 'reportDate' when calling downloadReport(Async)");
             throw new ApiException("Missing the required parameter 'reportDate' when calling downloadReport(Async)");
         }
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
+        	logger.error("Missing the required parameter 'reportName' when calling downloadReport(Async)");
             throw new ApiException("Missing the required parameter 'reportName' when calling downloadReport(Async)");
         }
         
@@ -144,6 +151,7 @@ public class ReportDownloadsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void downloadReport(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
+    	logger.info("CALL TO METHOD 'downloadReport' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         downloadReportWithHttpInfo(reportDate, reportName, organizationId);
     }

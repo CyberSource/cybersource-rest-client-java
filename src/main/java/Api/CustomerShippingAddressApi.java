@@ -40,7 +40,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class CustomerShippingAddressApi {
+    private static Logger logger = LogManager.getLogger(CustomerShippingAddressApi.class);
+    
     private ApiClient apiClient;
 
     public CustomerShippingAddressApi() {
@@ -118,11 +123,13 @@ public class CustomerShippingAddressApi {
         
         // verify the required parameter 'customerTokenId' is set
         if (customerTokenId == null) {
+        	logger.error("Missing the required parameter 'customerTokenId' when calling deleteCustomerShippingAddress(Async)");
             throw new ApiException("Missing the required parameter 'customerTokenId' when calling deleteCustomerShippingAddress(Async)");
         }
         
         // verify the required parameter 'shippingAddressTokenId' is set
         if (shippingAddressTokenId == null) {
+        	logger.error("Missing the required parameter 'shippingAddressTokenId' when calling deleteCustomerShippingAddress(Async)");
             throw new ApiException("Missing the required parameter 'shippingAddressTokenId' when calling deleteCustomerShippingAddress(Async)");
         }
         
@@ -145,6 +152,7 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteCustomerShippingAddress(String customerTokenId, String shippingAddressTokenId, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'deleteCustomerShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, profileId);
     }
@@ -258,11 +266,13 @@ public class CustomerShippingAddressApi {
         
         // verify the required parameter 'customerTokenId' is set
         if (customerTokenId == null) {
+        	logger.error("Missing the required parameter 'customerTokenId' when calling getCustomerShippingAddress(Async)");
             throw new ApiException("Missing the required parameter 'customerTokenId' when calling getCustomerShippingAddress(Async)");
         }
         
         // verify the required parameter 'shippingAddressTokenId' is set
         if (shippingAddressTokenId == null) {
+        	logger.error("Missing the required parameter 'shippingAddressTokenId' when calling getCustomerShippingAddress(Async)");
             throw new ApiException("Missing the required parameter 'shippingAddressTokenId' when calling getCustomerShippingAddress(Async)");
         }
         
@@ -286,8 +296,10 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultShippingAddress getCustomerShippingAddress(String customerTokenId, String shippingAddressTokenId, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getCustomerShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = getCustomerShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, profileId);
+        logger.info("CALL TO METHOD 'getCustomerShippingAddress' ENDED");
         return resp.getData();
     }
 
@@ -406,6 +418,7 @@ public class CustomerShippingAddressApi {
         
         // verify the required parameter 'customerTokenId' is set
         if (customerTokenId == null) {
+        	logger.error("Missing the required parameter 'customerTokenId' when calling getCustomerShippingAddressesList(Async)");
             throw new ApiException("Missing the required parameter 'customerTokenId' when calling getCustomerShippingAddressesList(Async)");
         }
         
@@ -430,8 +443,10 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ShippingAddressListForCustomer getCustomerShippingAddressesList(String customerTokenId, String profileId, Long offset, Long limit) throws ApiException {
+    	logger.info("CALL TO METHOD 'getCustomerShippingAddressesList' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ShippingAddressListForCustomer> resp = getCustomerShippingAddressesListWithHttpInfo(customerTokenId, profileId, offset, limit);
+        logger.info("CALL TO METHOD 'getCustomerShippingAddressesList' ENDED");
         return resp.getData();
     }
 
@@ -552,16 +567,19 @@ public class CustomerShippingAddressApi {
         
         // verify the required parameter 'customerTokenId' is set
         if (customerTokenId == null) {
+        	logger.error("Missing the required parameter 'customerTokenId' when calling patchCustomersShippingAddress(Async)");
             throw new ApiException("Missing the required parameter 'customerTokenId' when calling patchCustomersShippingAddress(Async)");
         }
         
         // verify the required parameter 'shippingAddressTokenId' is set
         if (shippingAddressTokenId == null) {
+        	logger.error("Missing the required parameter 'shippingAddressTokenId' when calling patchCustomersShippingAddress(Async)");
             throw new ApiException("Missing the required parameter 'shippingAddressTokenId' when calling patchCustomersShippingAddress(Async)");
         }
         
         // verify the required parameter 'patchCustomerShippingAddressRequest' is set
         if (patchCustomerShippingAddressRequest == null) {
+        	logger.error("Missing the required parameter 'patchCustomerShippingAddressRequest' when calling patchCustomersShippingAddress(Async)");
             throw new ApiException("Missing the required parameter 'patchCustomerShippingAddressRequest' when calling patchCustomersShippingAddress(Async)");
         }
         
@@ -587,8 +605,10 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultShippingAddress patchCustomersShippingAddress(String customerTokenId, String shippingAddressTokenId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
+    	logger.info("CALL TO METHOD 'patchCustomersShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = patchCustomersShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, patchCustomerShippingAddressRequest, profileId, ifMatch);
+        logger.info("CALL TO METHOD 'patchCustomersShippingAddress' ENDED");
         return resp.getData();
     }
 
@@ -706,11 +726,13 @@ public class CustomerShippingAddressApi {
         
         // verify the required parameter 'customerTokenId' is set
         if (customerTokenId == null) {
+        	logger.error("Missing the required parameter 'customerTokenId' when calling postCustomerShippingAddress(Async)");
             throw new ApiException("Missing the required parameter 'customerTokenId' when calling postCustomerShippingAddress(Async)");
         }
         
         // verify the required parameter 'postCustomerShippingAddressRequest' is set
         if (postCustomerShippingAddressRequest == null) {
+        	logger.error("Missing the required parameter 'postCustomerShippingAddressRequest' when calling postCustomerShippingAddress(Async)");
             throw new ApiException("Missing the required parameter 'postCustomerShippingAddressRequest' when calling postCustomerShippingAddress(Async)");
         }
         
@@ -734,8 +756,10 @@ public class CustomerShippingAddressApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultShippingAddress postCustomerShippingAddress(String customerTokenId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
+    	logger.info("CALL TO METHOD 'postCustomerShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = postCustomerShippingAddressWithHttpInfo(customerTokenId, postCustomerShippingAddressRequest, profileId);
+        logger.info("CALL TO METHOD 'postCustomerShippingAddress' ENDED");
         return resp.getData();
     }
 

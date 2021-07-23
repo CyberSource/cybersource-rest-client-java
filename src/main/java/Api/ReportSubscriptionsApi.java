@@ -41,7 +41,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ReportSubscriptionsApi {
+    private static Logger logger = LogManager.getLogger(ReportSubscriptionsApi.class);
+    
     private ApiClient apiClient;
 
     public ReportSubscriptionsApi() {
@@ -116,6 +121,7 @@ public class ReportSubscriptionsApi {
         
         // verify the required parameter 'predefinedSubscriptionRequestBean' is set
         if (predefinedSubscriptionRequestBean == null) {
+        	logger.error("Missing the required parameter 'predefinedSubscriptionRequestBean' when calling createStandardOrClassicSubscription(Async)");
             throw new ApiException("Missing the required parameter 'predefinedSubscriptionRequestBean' when calling createStandardOrClassicSubscription(Async)");
         }
         
@@ -137,6 +143,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void createStandardOrClassicSubscription(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
+    	logger.info("CALL TO METHOD 'createStandardOrClassicSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         createStandardOrClassicSubscriptionWithHttpInfo(predefinedSubscriptionRequestBean, organizationId);
     }
@@ -245,6 +252,7 @@ public class ReportSubscriptionsApi {
         
         // verify the required parameter 'createReportSubscriptionRequest' is set
         if (createReportSubscriptionRequest == null) {
+        	logger.error("Missing the required parameter 'createReportSubscriptionRequest' when calling createSubscription(Async)");
             throw new ApiException("Missing the required parameter 'createReportSubscriptionRequest' when calling createSubscription(Async)");
         }
         
@@ -266,6 +274,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void createSubscription(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException {
+    	logger.info("CALL TO METHOD 'createSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         createSubscriptionWithHttpInfo(createReportSubscriptionRequest, organizationId);
     }
@@ -375,6 +384,7 @@ public class ReportSubscriptionsApi {
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
+        	logger.error("Missing the required parameter 'reportName' when calling deleteSubscription(Async)");
             throw new ApiException("Missing the required parameter 'reportName' when calling deleteSubscription(Async)");
         }
         
@@ -396,6 +406,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteSubscription(String reportName, String organizationId) throws ApiException {
+    	logger.info("CALL TO METHOD 'deleteSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteSubscriptionWithHttpInfo(reportName, organizationId);
     }
@@ -519,8 +530,10 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions(String organizationId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getAllSubscriptionsWithHttpInfo(organizationId);
+        logger.info("CALL TO METHOD 'getAllSubscriptions' ENDED");
         return resp.getData();
     }
 
@@ -629,6 +642,7 @@ public class ReportSubscriptionsApi {
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
+        	logger.error("Missing the required parameter 'reportName' when calling getSubscription(Async)");
             throw new ApiException("Missing the required parameter 'reportName' when calling getSubscription(Async)");
         }
         
@@ -651,8 +665,10 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(String reportName, String organizationId) throws ApiException {
+    	logger.info("CALL TO METHOD 'getSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> resp = getSubscriptionWithHttpInfo(reportName, organizationId);
+        logger.info("CALL TO METHOD 'getSubscription' ENDED");
         return resp.getData();
     }
 

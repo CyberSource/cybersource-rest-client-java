@@ -38,7 +38,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class KeyGenerationApi {
+    private static Logger logger = LogManager.getLogger(KeyGenerationApi.class);
+    
     private ApiClient apiClient;
 
     public KeyGenerationApi() {
@@ -113,11 +118,13 @@ public class KeyGenerationApi {
         
         // verify the required parameter 'format' is set
         if (format == null) {
+        	logger.error("Missing the required parameter 'format' when calling generatePublicKey(Async)");
             throw new ApiException("Missing the required parameter 'format' when calling generatePublicKey(Async)");
         }
         
         // verify the required parameter 'generatePublicKeyRequest' is set
         if (generatePublicKeyRequest == null) {
+        	logger.error("Missing the required parameter 'generatePublicKeyRequest' when calling generatePublicKey(Async)");
             throw new ApiException("Missing the required parameter 'generatePublicKeyRequest' when calling generatePublicKey(Async)");
         }
         
@@ -140,8 +147,10 @@ public class KeyGenerationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public FlexV1KeysPost200Response generatePublicKey(String format, GeneratePublicKeyRequest generatePublicKeyRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'generatePublicKey' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<FlexV1KeysPost200Response> resp = generatePublicKeyWithHttpInfo(format, generatePublicKeyRequest);
+        logger.info("CALL TO METHOD 'generatePublicKey' ENDED");
         return resp.getData();
     }
 

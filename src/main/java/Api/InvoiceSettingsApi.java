@@ -39,7 +39,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class InvoiceSettingsApi {
+    private static Logger logger = LogManager.getLogger(InvoiceSettingsApi.class);
+    
     private ApiClient apiClient;
 
     public InvoiceSettingsApi() {
@@ -125,8 +130,10 @@ public class InvoiceSettingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings() throws ApiException {
+    	logger.info("CALL TO METHOD 'getInvoiceSettings' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = getInvoiceSettingsWithHttpInfo();
+        logger.info("CALL TO METHOD 'getInvoiceSettings' ENDED");
         return resp.getData();
     }
 
@@ -229,6 +236,7 @@ public class InvoiceSettingsApi {
         
         // verify the required parameter 'invoiceSettingsRequest' is set
         if (invoiceSettingsRequest == null) {
+        	logger.error("Missing the required parameter 'invoiceSettingsRequest' when calling updateInvoiceSettings(Async)");
             throw new ApiException("Missing the required parameter 'invoiceSettingsRequest' when calling updateInvoiceSettings(Async)");
         }
         
@@ -250,8 +258,10 @@ public class InvoiceSettingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(InvoiceSettingsRequest invoiceSettingsRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'updateInvoiceSettings' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = updateInvoiceSettingsWithHttpInfo(invoiceSettingsRequest);
+        logger.info("CALL TO METHOD 'updateInvoiceSettings' ENDED");
         return resp.getData();
     }
 
