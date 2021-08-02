@@ -15,7 +15,7 @@ public class TransientTokenUtility {
     {
         // split the jwt token into two parts 
         // bearer and token part
-        String splitContents[] = jwt.split(" ");
+        String splitContents[] = jwt.split(".");
         if(splitContents.length > 1)
         {
             // decode the base 64 encoded string
