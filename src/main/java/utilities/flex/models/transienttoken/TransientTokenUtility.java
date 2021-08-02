@@ -1,4 +1,4 @@
-package utilities.flex.models.transienttoken;
+package utilities.flex.models.transientToken;
 
 import java.util.Base64;
 

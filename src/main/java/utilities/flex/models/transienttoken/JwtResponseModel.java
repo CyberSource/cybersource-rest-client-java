@@ -1,5 +1,5 @@
 
-package utilities.flex.models.transienttoken;
+package utilities.flex.models.transientToken;
 
 import java.util.List;
 import javax.annotation.Generated;

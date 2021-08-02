@@ -1,5 +1,5 @@
 
-package utilities.flex.models.transienttoken;
+package utilities.flex.models.transientToken;
 
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
