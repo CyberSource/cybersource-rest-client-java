@@ -142,6 +142,11 @@ public class SearchTransactionsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = createSearchWithHttpInfo(createSearchRequest);
         logger.info("CALL TO METHOD 'createSearch' ENDED");
+        if(resp == null)
+        {
+            logger.info("CALL TO METHOD 'createSearch' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
         return resp.getData();
     }
 
