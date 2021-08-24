@@ -138,7 +138,7 @@ public class ApiClient {
 
 	private JSON json;
 	private String versionInfo;
-	private static ConnectionPool defaultConnectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
+	private static ConnectionPool connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
 	private HttpLoggingInterceptor loggingInterceptor;
 	private long computationStartTime;
 	private static Logger logger = LogManager.getLogger(ApiClient.class);
@@ -165,7 +165,7 @@ public class ApiClient {
 					.connectTimeout(1, TimeUnit.SECONDS)
 					.writeTimeout(60, TimeUnit.SECONDS)
 					.readTimeout(60, TimeUnit.SECONDS)
-					.connectionPool(ApiClient.defaultConnectionPool)
+					.connectionPool(ApiClient.connectionPool)
 					.addInterceptor(logging)
 					.build();
 		}
@@ -245,7 +245,7 @@ public class ApiClient {
 		int readTimeout = Math.max(merchantConfig.getUserDefinedReadTimeout(), 60);
 		int writeTimeout = Math.max(merchantConfig.getUserDefinedWriteTimeout(), 60);
 		int keepAliveDuration = Math.max(merchantConfig.getUserDefinedKeepAliveDuration(), 10);
-		ConnectionPool connectionPool = new ConnectionPool(5, keepAliveDuration, TimeUnit.SECONDS);
+		connectionPool = new ConnectionPool(5, keepAliveDuration, TimeUnit.SECONDS);
 
 		Authenticator proxyAuthenticator;
 
@@ -288,7 +288,7 @@ public class ApiClient {
 						.readTimeout(readTimeout, TimeUnit.SECONDS)
 						.retryOnConnectionFailure(true)
 						.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
-						.connectionPool(connectionPool)
+						.connectionPool(ApiClient.connectionPool)
 						.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
 						.build();
 			}
@@ -307,7 +307,7 @@ public class ApiClient {
 						.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
 						.writeTimeout(writeTimeout, TimeUnit.SECONDS)
 						.readTimeout(readTimeout, TimeUnit.SECONDS)
-						.connectionPool(connectionPool)
+						.connectionPool(ApiClient.connectionPool)
 						.retryOnConnectionFailure(true)
 						.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
 						.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
