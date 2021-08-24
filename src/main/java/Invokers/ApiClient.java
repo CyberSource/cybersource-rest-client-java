@@ -138,7 +138,7 @@ public class ApiClient {
 
 	private JSON json;
 	private String versionInfo;
-	private static ConnectionPool connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
+	private static ConnectionPool connectionPool;
 	private HttpLoggingInterceptor loggingInterceptor;
 	private long computationStartTime;
 	private static Logger logger = LogManager.getLogger(ApiClient.class);
@@ -159,6 +159,7 @@ public class ApiClient {
 	public static OkHttpClient initializeFinalVariables() {
 		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
 		logging.setLevel(Level.NONE);
+		connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
 
 		try {
 			return new OkHttpClient.Builder()
