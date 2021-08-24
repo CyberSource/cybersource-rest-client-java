@@ -111,7 +111,15 @@ public class OAuthApi {
     public AccessTokenResponse postAccessTokenFromAuthCode(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<AccessTokenResponse> resp = postAccessTokenFromAuthCodeWithHttpInfo(createAccessTokenRequest);
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'postAccessTokenFromAuthCode' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
 
@@ -235,7 +243,15 @@ public class OAuthApi {
     public AccessTokenResponse postAccessTokenFromRefreshToken(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<AccessTokenResponse> resp = postAccessTokenFromRefreshTokenWithHttpInfo(createAccessTokenRequest);
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'postAccessTokenFromRefreshToken' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
 
