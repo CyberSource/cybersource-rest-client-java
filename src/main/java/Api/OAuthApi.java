@@ -11,6 +11,8 @@ import Invokers.ProgressResponseBody;
 
 import Model.*;
 import com.google.gson.reflect.TypeToken;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,6 +25,8 @@ import java.util.List;
 import java.util.Map;
 
 public class OAuthApi {
+    private static Logger logger = LogManager.getLogger(NotificationOfChangesApi.class);
+
     private ApiClient apiClient;
 
     public OAuthApi() {

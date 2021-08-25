@@ -154,7 +154,15 @@ public class ReportDefinitionsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> resp = getResourceInfoByReportDefinitionWithHttpInfo(reportDefinitionName, subscriptionType, reportMimeType, organizationId);
         logger.info("CALL TO METHOD 'getResourceInfoByReportDefinition' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getResourceInfoByReportDefinition' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -290,7 +298,15 @@ public class ReportDefinitionsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportDefinitionsGet200Response> resp = getResourceV2InfoWithHttpInfo(subscriptionType, organizationId);
         logger.info("CALL TO METHOD 'getResourceV2Info' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getResourceV2Info' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

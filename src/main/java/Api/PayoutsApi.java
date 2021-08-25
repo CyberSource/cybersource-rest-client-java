@@ -142,7 +142,15 @@ public class PayoutsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PayoutsPost201Response> resp = octCreatePaymentWithHttpInfo(octCreatePaymentRequest);
         logger.info("CALL TO METHOD 'octCreatePayment' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'octCreatePayment' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

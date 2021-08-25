@@ -144,7 +144,15 @@ public class VerificationApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1ExportComplianceInquiriesPost201Response> resp = validateExportComplianceWithHttpInfo(validateExportComplianceRequest);
         logger.info("CALL TO METHOD 'validateExportCompliance' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'validateExportCompliance' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -274,7 +282,15 @@ public class VerificationApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AddressVerificationsPost201Response> resp = verifyCustomerAddressWithHttpInfo(verifyCustomerAddressRequest);
         logger.info("CALL TO METHOD 'verifyCustomerAddress' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'verifyCustomerAddress' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

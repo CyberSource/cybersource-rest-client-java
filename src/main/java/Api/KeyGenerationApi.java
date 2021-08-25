@@ -151,7 +151,15 @@ public class KeyGenerationApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<FlexV1KeysPost200Response> resp = generatePublicKeyWithHttpInfo(format, generatePublicKeyRequest);
         logger.info("CALL TO METHOD 'generatePublicKey' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'generatePublicKey' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

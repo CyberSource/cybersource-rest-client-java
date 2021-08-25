@@ -279,7 +279,15 @@ public class ReportsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportsIdGet200Response> resp = getReportByReportIdWithHttpInfo(reportId, organizationId);
         logger.info("CALL TO METHOD 'getReportByReportId' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getReportByReportId' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -457,7 +465,15 @@ public class ReportsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportsGet200Response> resp = searchReportsWithHttpInfo(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus);
         logger.info("CALL TO METHOD 'searchReports' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'searchReports' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

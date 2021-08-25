@@ -146,8 +146,9 @@ public class SearchTransactionsApi {
         {
             return resp.getData();
         }
-        else {
-            logger.info("CALL TO METHOD 'createSearch' FAILED DUE TO AN EXCEPTION");
+        else 
+        {
+            logger.error("CALL TO METHOD 'createSearch' FAILED DUE TO AN EXCEPTION");
             return null;
         }
     }
@@ -280,7 +281,15 @@ public class SearchTransactionsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = getSearchWithHttpInfo(searchId);
         logger.info("CALL TO METHOD 'getSearch' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getSearch' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

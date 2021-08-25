@@ -281,7 +281,15 @@ public class InstrumentIdentifierApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = getInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, profileId);
         logger.info("CALL TO METHOD 'getInstrumentIdentifier' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getInstrumentIdentifier' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -426,7 +434,15 @@ public class InstrumentIdentifierApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PaymentInstrumentList> resp = getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(instrumentIdentifierTokenId, profileId, offset, limit);
         logger.info("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -579,7 +595,15 @@ public class InstrumentIdentifierApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = patchInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, patchInstrumentIdentifierRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchInstrumentIdentifier' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'patchInstrumentIdentifier' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -719,7 +743,15 @@ public class InstrumentIdentifierApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = postInstrumentIdentifierWithHttpInfo(postInstrumentIdentifierRequest, profileId);
         logger.info("CALL TO METHOD 'postInstrumentIdentifier' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'postInstrumentIdentifier' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-25T14:03:18.082+05:30")
 public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
@@ -325,10 +325,10 @@ public class Ptsv2paymentsPointOfSaleInformation {
   }
 
    /**
-   * Get cardholderVerificationMethod
+   * Complete list of cardholder verification methods (CVMs) supported by the terminal. Optional field. Possible values: - &#x60;PIN&#x60; - &#x60;Signature&#x60;  **EXAMPLE**: [\&quot;PIN\&quot;,\&quot;Signature\&quot;]  **NOTE**: You can submit one of the values or both of the above in a request.  For authorizations and credits, this field is only supported on these processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX 
    * @return cardholderVerificationMethod
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Complete list of cardholder verification methods (CVMs) supported by the terminal. Optional field. Possible values: - `PIN` - `Signature`  **EXAMPLE**: [\"PIN\",\"Signature\"]  **NOTE**: You can submit one of the values or both of the above in a request.  For authorizations and credits, this field is only supported on these processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX ")
   public List<String> getCardholderVerificationMethod() {
     return cardholderVerificationMethod;
   }
@@ -351,10 +351,10 @@ public class Ptsv2paymentsPointOfSaleInformation {
   }
 
    /**
-   * Get terminalInputCapability
+   * Complete list of card input methods supported by the terminal.  Possible values: - &#x60;Keyed&#x60;: Terminal can accept card data that is entered manually. - &#x60;Swiped&#x60;: Terminal can accept card data from a magnetic stripe reader. - &#x60;Contact&#x60;: Terminal can accept card data in EMV contact mode (\&quot;dipping a card\&quot;). - &#x60;Contactless&#x60;: Terminal can accept card data in EMV contactless mode (\&quot;tapping a card\&quot;). - &#x60;BarCode&#x60;: Terminal can read bar codes. - &#x60;QRcode&#x60;: Terminal can read or scan QR codes. - &#x60;OCR&#x60;: Terminal can perform optical character recognition (OCT) on the card.  **EXAMPLE**: [\&quot;Keyed\&quot;,\&quot;Swiped\&quot;,\&quot;Contact\&quot;,\&quot;Contactless\&quot;]  #### Used by **Authorization and Credit** Optional. This field is supported only by client software that is installed on your POS terminals for the following processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX 
    * @return terminalInputCapability
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Complete list of card input methods supported by the terminal.  Possible values: - `Keyed`: Terminal can accept card data that is entered manually. - `Swiped`: Terminal can accept card data from a magnetic stripe reader. - `Contact`: Terminal can accept card data in EMV contact mode (\"dipping a card\"). - `Contactless`: Terminal can accept card data in EMV contactless mode (\"tapping a card\"). - `BarCode`: Terminal can read bar codes. - `QRcode`: Terminal can read or scan QR codes. - `OCR`: Terminal can perform optical character recognition (OCT) on the card.  **EXAMPLE**: [\"Keyed\",\"Swiped\",\"Contact\",\"Contactless\"]  #### Used by **Authorization and Credit** Optional. This field is supported only by client software that is installed on your POS terminals for the following processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX ")
   public List<String> getTerminalInputCapability() {
     return terminalInputCapability;
   }

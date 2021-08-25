@@ -163,12 +163,12 @@ public class ApiClient {
 
 		try {
 			return new OkHttpClient.Builder()
-					.connectTimeout(1, TimeUnit.SECONDS)
-					.writeTimeout(60, TimeUnit.SECONDS)
-					.readTimeout(60, TimeUnit.SECONDS)
-					.connectionPool(ApiClient.connectionPool)
-					.addInterceptor(logging)
-					.build();
+								.connectTimeout(1, TimeUnit.SECONDS)
+								.writeTimeout(60, TimeUnit.SECONDS)
+								.readTimeout(60, TimeUnit.SECONDS)
+								.connectionPool(ApiClient.connectionPool)
+								.addInterceptor(logging)
+								.build();
 		}
 		catch (Exception ex)
 		{
@@ -280,7 +280,7 @@ public class ApiClient {
 				};
 			}
 
-			try {
+            try {
 				httpClient = classHttpClient.newBuilder()
 						.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
 						.proxyAuthenticator(proxyAuthenticator)

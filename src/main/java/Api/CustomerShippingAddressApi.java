@@ -300,7 +300,15 @@ public class CustomerShippingAddressApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = getCustomerShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, profileId);
         logger.info("CALL TO METHOD 'getCustomerShippingAddress' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getCustomerShippingAddress' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -447,7 +455,15 @@ public class CustomerShippingAddressApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ShippingAddressListForCustomer> resp = getCustomerShippingAddressesListWithHttpInfo(customerTokenId, profileId, offset, limit);
         logger.info("CALL TO METHOD 'getCustomerShippingAddressesList' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getCustomerShippingAddressesList' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -609,7 +625,15 @@ public class CustomerShippingAddressApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = patchCustomersShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, patchCustomerShippingAddressRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomersShippingAddress' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'patchCustomersShippingAddress' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -760,7 +784,15 @@ public class CustomerShippingAddressApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = postCustomerShippingAddressWithHttpInfo(customerTokenId, postCustomerShippingAddressRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomerShippingAddress' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'postCustomerShippingAddress' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

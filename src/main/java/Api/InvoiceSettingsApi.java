@@ -134,7 +134,15 @@ public class InvoiceSettingsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = getInvoiceSettingsWithHttpInfo();
         logger.info("CALL TO METHOD 'getInvoiceSettings' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getInvoiceSettings' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -262,7 +270,15 @@ public class InvoiceSettingsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = updateInvoiceSettingsWithHttpInfo(invoiceSettingsRequest);
         logger.info("CALL TO METHOD 'updateInvoiceSettings' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'updateInvoiceSettings' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

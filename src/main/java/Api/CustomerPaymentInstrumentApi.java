@@ -300,7 +300,15 @@ public class CustomerPaymentInstrumentApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = getCustomerPaymentInstrumentWithHttpInfo(customerTokenId, paymentInstrumentTokenId, profileId);
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrument' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getCustomerPaymentInstrument' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -447,7 +455,15 @@ public class CustomerPaymentInstrumentApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PaymentInstrumentList> resp = getCustomerPaymentInstrumentsListWithHttpInfo(customerTokenId, profileId, offset, limit);
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrumentsList' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getCustomerPaymentInstrumentsList' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -609,7 +625,15 @@ public class CustomerPaymentInstrumentApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = patchCustomersPaymentInstrumentWithHttpInfo(customerTokenId, paymentInstrumentTokenId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomersPaymentInstrument' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'patchCustomersPaymentInstrument' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -760,7 +784,15 @@ public class CustomerPaymentInstrumentApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = postCustomerPaymentInstrumentWithHttpInfo(customerTokenId, postCustomerPaymentInstrumentRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomerPaymentInstrument' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'postCustomerPaymentInstrument' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
