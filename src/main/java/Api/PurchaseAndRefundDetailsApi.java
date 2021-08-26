@@ -177,7 +177,15 @@ public class PurchaseAndRefundDetailsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3PurchaseRefundDetailsGet200Response> resp = getPurchaseAndRefundDetailsWithHttpInfo(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
         logger.info("CALL TO METHOD 'getPurchaseAndRefundDetails' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getPurchaseAndRefundDetails' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

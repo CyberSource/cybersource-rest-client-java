@@ -34,7 +34,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-25T14:03:18.082+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("authIndicator")
   private String authIndicator = null;
@@ -50,9 +50,6 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @SerializedName("networkTransactionId")
   private String networkTransactionId = null;
-
-  @SerializedName("providerTransactionId")
-  private String providerTransactionId = null;
 
   @SerializedName("responseCode")
   private String responseCode = null;
@@ -162,10 +159,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   }
 
    /**
-   * The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the  authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same  transaction. This field is used by Streamline and HSBC UK only, at present. 
+   * The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same transaction. This field is used by Streamline and HSBC UK only, at present. 
    * @return cardReferenceData
   **/
-  @ApiModelProperty(value = "The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the  authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same  transaction. This field is used by Streamline and HSBC UK only, at present. ")
+  @ApiModelProperty(value = "The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same transaction. This field is used by Streamline and HSBC UK only, at present. ")
   public String getCardReferenceData() {
     return cardReferenceData;
   }
@@ -198,34 +195,16 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   }
 
    /**
-   * The description for this field is not available.
+   * Same value as &#x60;processorInformation.transactionId&#x60;
    * @return networkTransactionId
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Same value as `processorInformation.transactionId`")
   public String getNetworkTransactionId() {
     return networkTransactionId;
   }
 
   public void setNetworkTransactionId(String networkTransactionId) {
     this.networkTransactionId = networkTransactionId;
-  }
-
-  public PtsV2PaymentsPost201ResponseProcessorInformation providerTransactionId(String providerTransactionId) {
-    this.providerTransactionId = providerTransactionId;
-    return this;
-  }
-
-   /**
-   * The description for this field is not available.
-   * @return providerTransactionId
-  **/
-  @ApiModelProperty(value = "The description for this field is not available.")
-  public String getProviderTransactionId() {
-    return providerTransactionId;
-  }
-
-  public void setProviderTransactionId(String providerTransactionId) {
-    this.providerTransactionId = providerTransactionId;
   }
 
   public PtsV2PaymentsPost201ResponseProcessorInformation responseCode(String responseCode) {
@@ -639,7 +618,6 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.cardReferenceData, ptsV2PaymentsPost201ResponseProcessorInformation.cardReferenceData) &&
         Objects.equals(this.transactionId, ptsV2PaymentsPost201ResponseProcessorInformation.transactionId) &&
         Objects.equals(this.networkTransactionId, ptsV2PaymentsPost201ResponseProcessorInformation.networkTransactionId) &&
-        Objects.equals(this.providerTransactionId, ptsV2PaymentsPost201ResponseProcessorInformation.providerTransactionId) &&
         Objects.equals(this.responseCode, ptsV2PaymentsPost201ResponseProcessorInformation.responseCode) &&
         Objects.equals(this.responseCodeSource, ptsV2PaymentsPost201ResponseProcessorInformation.responseCodeSource) &&
         Objects.equals(this.responseDetails, ptsV2PaymentsPost201ResponseProcessorInformation.responseDetails) &&
@@ -666,7 +644,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, providerTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber);
   }
 
 
@@ -680,7 +658,6 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    cardReferenceData: ").append(toIndentedString(cardReferenceData)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
-    sb.append("    providerTransactionId: ").append(toIndentedString(providerTransactionId)).append("\n");
     sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
     sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
     sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");

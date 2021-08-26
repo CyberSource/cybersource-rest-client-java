@@ -26,13 +26,16 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-25T14:03:18.082+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo {
   @SerializedName("firstName")
   private String firstName = null;
 
   @SerializedName("lastName")
   private String lastName = null;
+
+  @SerializedName("address1")
+  private String address1 = null;
 
   @SerializedName("email")
   private String email = null;
@@ -77,6 +80,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo {
 
   public void setLastName(String lastName) {
     this.lastName = lastName;
+  }
+
+  public TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo address1(String address1) {
+    this.address1 = address1;
+    return this;
+  }
+
+   /**
+   * Payment card billing street address as it appears on the credit card issuer’s records.  #### Atos This field must not contain colons (:).  #### CyberSource through VisaNet **Important** When you populate orderInformation.billTo.address1 and orderInformation.billTo.address2, CyberSource through VisaNet concatenates the two values. If the concatenated value exceeds 40 characters, CyberSource through VisaNet truncates the value at 40 characters before sending it to Visa and the issuing bank. Truncating this value affects AVS results and therefore might also affect risk decisions and chargebacks. Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### FDMS Nashville When the street name is numeric, it must be sent in numeric format. For example, if the address is _One First Street_, it must be sent as _1 1st Street_.  Required if keyed; not used if swiped.  String (20)  #### TSYS Acquiring Solutions Required when &#x60;processingInformation.billPaymentOptions.billPayment&#x3D;true&#x60; and &#x60;pointOfSaleInformation.entryMode&#x3D;keyed&#x60;.  #### All other processors: Optional. String (60)  #### For Payouts This field may be sent only for FDC Compass.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting. 
+   * @return address1
+  **/
+  @ApiModelProperty(value = "Payment card billing street address as it appears on the credit card issuer’s records.  #### Atos This field must not contain colons (:).  #### CyberSource through VisaNet **Important** When you populate orderInformation.billTo.address1 and orderInformation.billTo.address2, CyberSource through VisaNet concatenates the two values. If the concatenated value exceeds 40 characters, CyberSource through VisaNet truncates the value at 40 characters before sending it to Visa and the issuing bank. Truncating this value affects AVS results and therefore might also affect risk decisions and chargebacks. Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### FDMS Nashville When the street name is numeric, it must be sent in numeric format. For example, if the address is _One First Street_, it must be sent as _1 1st Street_.  Required if keyed; not used if swiped.  String (20)  #### TSYS Acquiring Solutions Required when `processingInformation.billPaymentOptions.billPayment=true` and `pointOfSaleInformation.entryMode=keyed`.  #### All other processors: Optional. String (60)  #### For Payouts This field may be sent only for FDC Compass.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting. ")
+  public String getAddress1() {
+    return address1;
+  }
+
+  public void setAddress1(String address1) {
+    this.address1 = address1;
   }
 
   public TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo email(String email) {
@@ -145,6 +166,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo {
     TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo tssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo = (TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo) o;
     return Objects.equals(this.firstName, tssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo.firstName) &&
         Objects.equals(this.lastName, tssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo.lastName) &&
+        Objects.equals(this.address1, tssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo.address1) &&
         Objects.equals(this.email, tssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo.email) &&
         Objects.equals(this.country, tssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo.country) &&
         Objects.equals(this.phoneNumber, tssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo.phoneNumber);
@@ -152,7 +174,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, email, country, phoneNumber);
+    return Objects.hash(firstName, lastName, address1, email, country, phoneNumber);
   }
 
 
@@ -163,6 +185,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo {
     
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");

@@ -151,7 +151,15 @@ public class CaptureApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsCapturesPost201Response> resp = capturePaymentWithHttpInfo(capturePaymentRequest, id);
         logger.info("CALL TO METHOD 'capturePayment' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'capturePayment' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

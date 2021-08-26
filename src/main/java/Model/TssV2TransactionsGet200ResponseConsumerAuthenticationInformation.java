@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,7 +27,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-25T14:03:18.082+05:30")
 public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation {
   @SerializedName("eciRaw")
   private String eciRaw = null;
@@ -39,6 +40,9 @@ public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation {
 
   @SerializedName("transactionId")
   private String transactionId = null;
+
+  @SerializedName("strongAuthentication")
+  private TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication strongAuthentication = null;
 
   public TssV2TransactionsGet200ResponseConsumerAuthenticationInformation eciRaw(String eciRaw) {
     this.eciRaw = eciRaw;
@@ -112,6 +116,24 @@ public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation {
     this.transactionId = transactionId;
   }
 
+  public TssV2TransactionsGet200ResponseConsumerAuthenticationInformation strongAuthentication(TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication strongAuthentication) {
+    this.strongAuthentication = strongAuthentication;
+    return this;
+  }
+
+   /**
+   * Get strongAuthentication
+   * @return strongAuthentication
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication getStrongAuthentication() {
+    return strongAuthentication;
+  }
+
+  public void setStrongAuthentication(TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication strongAuthentication) {
+    this.strongAuthentication = strongAuthentication;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +147,13 @@ public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation {
     return Objects.equals(this.eciRaw, tssV2TransactionsGet200ResponseConsumerAuthenticationInformation.eciRaw) &&
         Objects.equals(this.cavv, tssV2TransactionsGet200ResponseConsumerAuthenticationInformation.cavv) &&
         Objects.equals(this.xid, tssV2TransactionsGet200ResponseConsumerAuthenticationInformation.xid) &&
-        Objects.equals(this.transactionId, tssV2TransactionsGet200ResponseConsumerAuthenticationInformation.transactionId);
+        Objects.equals(this.transactionId, tssV2TransactionsGet200ResponseConsumerAuthenticationInformation.transactionId) &&
+        Objects.equals(this.strongAuthentication, tssV2TransactionsGet200ResponseConsumerAuthenticationInformation.strongAuthentication);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eciRaw, cavv, xid, transactionId);
+    return Objects.hash(eciRaw, cavv, xid, transactionId, strongAuthentication);
   }
 
 
@@ -143,6 +166,7 @@ public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation {
     sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
     sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    sb.append("    strongAuthentication: ").append(toIndentedString(strongAuthentication)).append("\n");
     sb.append("}");
     return sb.toString();
   }

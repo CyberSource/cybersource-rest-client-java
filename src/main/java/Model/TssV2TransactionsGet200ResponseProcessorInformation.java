@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-25T14:03:18.082+05:30")
 public class TssV2TransactionsGet200ResponseProcessorInformation {
   @SerializedName("processor")
   private TssV2TransactionsGet200ResponseProcessorInformationProcessor processor = null;
@@ -50,9 +50,6 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   @SerializedName("responseId")
   private String responseId = null;
-
-  @SerializedName("providerTransactionId")
-  private String providerTransactionId = null;
 
   @SerializedName("approvalCode")
   private String approvalCode = null;
@@ -146,10 +143,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
   }
 
    /**
-   * The description for this field is not available.
+   * Same value as &#x60;processorInformation.transactionId&#x60;
    * @return networkTransactionId
   **/
-  @ApiModelProperty(value = "The description for this field is not available.")
+  @ApiModelProperty(value = "Same value as `processorInformation.transactionId`")
   public String getNetworkTransactionId() {
     return networkTransactionId;
   }
@@ -174,24 +171,6 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   public void setResponseId(String responseId) {
     this.responseId = responseId;
-  }
-
-  public TssV2TransactionsGet200ResponseProcessorInformation providerTransactionId(String providerTransactionId) {
-    this.providerTransactionId = providerTransactionId;
-    return this;
-  }
-
-   /**
-   * The description for this field is not available.
-   * @return providerTransactionId
-  **/
-  @ApiModelProperty(value = "The description for this field is not available.")
-  public String getProviderTransactionId() {
-    return providerTransactionId;
-  }
-
-  public void setProviderTransactionId(String providerTransactionId) {
-    this.providerTransactionId = providerTransactionId;
   }
 
   public TssV2TransactionsGet200ResponseProcessorInformation approvalCode(String approvalCode) {
@@ -353,7 +332,6 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
         Objects.equals(this.transactionId, tssV2TransactionsGet200ResponseProcessorInformation.transactionId) &&
         Objects.equals(this.networkTransactionId, tssV2TransactionsGet200ResponseProcessorInformation.networkTransactionId) &&
         Objects.equals(this.responseId, tssV2TransactionsGet200ResponseProcessorInformation.responseId) &&
-        Objects.equals(this.providerTransactionId, tssV2TransactionsGet200ResponseProcessorInformation.providerTransactionId) &&
         Objects.equals(this.approvalCode, tssV2TransactionsGet200ResponseProcessorInformation.approvalCode) &&
         Objects.equals(this.responseCode, tssV2TransactionsGet200ResponseProcessorInformation.responseCode) &&
         Objects.equals(this.avs, tssV2TransactionsGet200ResponseProcessorInformation.avs) &&
@@ -366,7 +344,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, responseId, providerTransactionId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, systemTraceAuditNumber, responseCodeSource);
+    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, responseId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, systemTraceAuditNumber, responseCodeSource);
   }
 
 
@@ -380,7 +358,6 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
     sb.append("    responseId: ").append(toIndentedString(responseId)).append("\n");
-    sb.append("    providerTransactionId: ").append(toIndentedString(providerTransactionId)).append("\n");
     sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
     sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
     sb.append("    avs: ").append(toIndentedString(avs)).append("\n");

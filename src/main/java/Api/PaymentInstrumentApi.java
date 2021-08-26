@@ -279,7 +279,15 @@ public class PaymentInstrumentApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = getPaymentInstrumentWithHttpInfo(paymentInstrumentTokenId, profileId);
         logger.info("CALL TO METHOD 'getPaymentInstrument' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getPaymentInstrument' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -428,7 +436,15 @@ public class PaymentInstrumentApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = patchPaymentInstrumentWithHttpInfo(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchPaymentInstrument' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'patchPaymentInstrument' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -568,7 +584,15 @@ public class PaymentInstrumentApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = postPaymentInstrumentWithHttpInfo(postPaymentInstrumentRequest, profileId);
         logger.info("CALL TO METHOD 'postPaymentInstrument' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'postPaymentInstrument' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

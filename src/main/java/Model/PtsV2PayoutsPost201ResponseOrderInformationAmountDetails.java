@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PayoutsPost201ResponseOrderInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-25T14:03:18.082+05:30")
 public class PtsV2PayoutsPost201ResponseOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;
@@ -82,10 +82,10 @@ public class PtsV2PayoutsPost201ResponseOrderInformationAmountDetails {
   }
 
    /**
-   * This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account. 
+   * This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account. This field is returned for OCT transactions. 
    * @return settlementAmount
   **/
-  @ApiModelProperty(value = "This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account. ")
+  @ApiModelProperty(value = "This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account. This field is returned for OCT transactions. ")
   public String getSettlementAmount() {
     return settlementAmount;
   }
@@ -100,10 +100,10 @@ public class PtsV2PayoutsPost201ResponseOrderInformationAmountDetails {
   }
 
    /**
-   * This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder&#39;s account. 
+   * This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder&#39;s account. This field is returned for OCT transactions. 
    * @return settlementCurrency
   **/
-  @ApiModelProperty(value = "This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder's account. ")
+  @ApiModelProperty(value = "This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder's account. This field is returned for OCT transactions. ")
   public String getSettlementCurrency() {
     return settlementCurrency;
   }

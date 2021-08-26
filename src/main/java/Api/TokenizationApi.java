@@ -141,7 +141,15 @@ public class TokenizationApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<FlexV1TokensPost200Response> resp = tokenizeWithHttpInfo(tokenizeRequest);
         logger.info("CALL TO METHOD 'tokenize' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'tokenize' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

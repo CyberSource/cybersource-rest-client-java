@@ -138,7 +138,7 @@ public class ApiClient {
 
 	private JSON json;
 	private String versionInfo;
-	private static ConnectionPool connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
+	private static ConnectionPool connectionPool;
 	private HttpLoggingInterceptor loggingInterceptor;
 	private long computationStartTime;
 	private static Logger logger = LogManager.getLogger(ApiClient.class);
@@ -159,15 +159,16 @@ public class ApiClient {
 	public static OkHttpClient initializeFinalVariables() {
 		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
 		logging.setLevel(Level.NONE);
+		connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
 
 		try {
 			return new OkHttpClient.Builder()
-					.connectTimeout(1, TimeUnit.SECONDS)
-					.writeTimeout(60, TimeUnit.SECONDS)
-					.readTimeout(60, TimeUnit.SECONDS)
-					.connectionPool(ApiClient.connectionPool)
-					.addInterceptor(logging)
-					.build();
+								.connectTimeout(1, TimeUnit.SECONDS)
+								.writeTimeout(60, TimeUnit.SECONDS)
+								.readTimeout(60, TimeUnit.SECONDS)
+								.connectionPool(ApiClient.connectionPool)
+								.addInterceptor(logging)
+								.build();
 		}
 		catch (Exception ex)
 		{
@@ -244,6 +245,8 @@ public class ApiClient {
 		int connectionTimeout = Math.max(merchantConfig.getUserDefinedConnectionTimeout(), 1);
 		int readTimeout = Math.max(merchantConfig.getUserDefinedReadTimeout(), 60);
 		int writeTimeout = Math.max(merchantConfig.getUserDefinedWriteTimeout(), 60);
+		int keepAliveDuration = Math.max(merchantConfig.getUserDefinedKeepAliveDuration(), 10);
+		connectionPool = new ConnectionPool(5, keepAliveDuration, TimeUnit.SECONDS);
 
 		Authenticator proxyAuthenticator;
 
@@ -277,7 +280,7 @@ public class ApiClient {
 				};
 			}
 
-			try {
+            try {
 				httpClient = classHttpClient.newBuilder()
 						.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)))
 						.proxyAuthenticator(proxyAuthenticator)
@@ -286,6 +289,7 @@ public class ApiClient {
 						.readTimeout(readTimeout, TimeUnit.SECONDS)
 						.retryOnConnectionFailure(true)
 						.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
+						.connectionPool(ApiClient.connectionPool)
 						.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
 						.build();
 			}
@@ -304,6 +308,7 @@ public class ApiClient {
 						.connectTimeout(connectionTimeout, TimeUnit.SECONDS)
 						.writeTimeout(writeTimeout, TimeUnit.SECONDS)
 						.readTimeout(readTimeout, TimeUnit.SECONDS)
+						.connectionPool(ApiClient.connectionPool)
 						.retryOnConnectionFailure(true)
 						.addInterceptor(new RetryInterceptor(this.apiRequestMetrics))
 						.eventListener(new NetworkEventListener(this.getNewRandomId(), System.nanoTime()))
@@ -1207,8 +1212,12 @@ public class ApiClient {
 
 			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
 		} catch (IOException e) {
-			logger.error("ApiException : " + e);
+			logger.error("ApiException : " + e.getMessage());
 			throw new ApiException(e);
+		}
+		catch (NullPointerException e) {
+			logger.error("ApiException : " + e.getMessage());
+			return null;
 		}
 	}
 
@@ -1280,7 +1289,7 @@ public class ApiClient {
 			if (response.body() != null) {
 				try {
 					respBody = response.body().string();
-					System.out.println(respBody);
+					logger.info(respBody);
 				} catch (IOException e) {
 					logger.error("ApiException : " + e + " " + response.code() + " " + response.message());
 					throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
@@ -1407,7 +1416,7 @@ public class ApiClient {
 			}
 
 		} catch (ConfigException e) {
-			System.out.println(e.getMessage());
+			logger.error(e.getMessage());
 		}
 
 	}

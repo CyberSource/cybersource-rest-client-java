@@ -152,7 +152,15 @@ public class ReversalApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = authReversalWithHttpInfo(id, authReversalRequest);
         logger.info("CALL TO METHOD 'authReversal' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'authReversal' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -284,7 +292,15 @@ public class ReversalApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = mitReversalWithHttpInfo(mitReversalRequest);
         logger.info("CALL TO METHOD 'mitReversal' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'mitReversal' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**

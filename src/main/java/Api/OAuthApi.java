@@ -11,6 +11,8 @@ import Invokers.ProgressResponseBody;
 
 import Model.*;
 import com.google.gson.reflect.TypeToken;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,6 +25,8 @@ import java.util.List;
 import java.util.Map;
 
 public class OAuthApi {
+    private static Logger logger = LogManager.getLogger(NotificationOfChangesApi.class);
+
     private ApiClient apiClient;
 
     public OAuthApi() {
@@ -111,7 +115,15 @@ public class OAuthApi {
     public AccessTokenResponse postAccessTokenFromAuthCode(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<AccessTokenResponse> resp = postAccessTokenFromAuthCodeWithHttpInfo(createAccessTokenRequest);
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'postAccessTokenFromAuthCode' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
 
@@ -235,7 +247,15 @@ public class OAuthApi {
     public AccessTokenResponse postAccessTokenFromRefreshToken(CreateAccessTokenRequest createAccessTokenRequest) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<AccessTokenResponse> resp = postAccessTokenFromRefreshTokenWithHttpInfo(createAccessTokenRequest);
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'postAccessTokenFromRefreshToken' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
 

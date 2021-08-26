@@ -145,7 +145,15 @@ public class AsymmetricKeyManagementApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysAsymPost201Response> resp = createP12KeysWithHttpInfo(createP12KeysRequest);
         logger.info("CALL TO METHOD 'createP12Keys' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'createP12Keys' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -275,7 +283,15 @@ public class AsymmetricKeyManagementApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysAsymDeletesPost200Response> resp = deleteBulkP12KeysWithHttpInfo(deleteBulkP12KeysRequest);
         logger.info("CALL TO METHOD 'deleteBulkP12Keys' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'deleteBulkP12Keys' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
@@ -406,7 +422,15 @@ public class AsymmetricKeyManagementApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysAsymGet200Response> resp = getP12KeyDetailsWithHttpInfo(keyId);
         logger.info("CALL TO METHOD 'getP12KeyDetails' ENDED");
-        return resp.getData();
+        if(resp != null)
+        {
+            return resp.getData();
+        }
+        else 
+        {
+            logger.error("CALL TO METHOD 'getP12KeyDetails' FAILED DUE TO AN EXCEPTION");
+            return null;
+        }
     }
 
     /**
