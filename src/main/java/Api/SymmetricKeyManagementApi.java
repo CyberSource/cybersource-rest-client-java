@@ -145,15 +145,7 @@ public class SymmetricKeyManagementApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysSymPost201Response> resp = createV2SharedSecretKeysWithHttpInfo(createSharedSecretKeysRequest);
         logger.info("CALL TO METHOD 'createV2SharedSecretKeys' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'createV2SharedSecretKeys' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -283,15 +275,7 @@ public class SymmetricKeyManagementApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysSymDeletesPost200Response> resp = deleteBulkSymmetricKeysWithHttpInfo(deleteBulkSymmetricKeysRequest);
         logger.info("CALL TO METHOD 'deleteBulkSymmetricKeys' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'deleteBulkSymmetricKeys' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -422,15 +406,7 @@ public class SymmetricKeyManagementApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysSymGet200Response> resp = getKeyDetailsWithHttpInfo(keyId);
         logger.info("CALL TO METHOD 'getKeyDetails' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getKeyDetails' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

@@ -157,15 +157,7 @@ public class ConversionDetailsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ConversionDetailsGet200Response> resp = getConversionDetailWithHttpInfo(startTime, endTime, organizationId);
         logger.info("CALL TO METHOD 'getConversionDetail' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getConversionDetail' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

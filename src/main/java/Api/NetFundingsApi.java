@@ -161,15 +161,7 @@ public class NetFundingsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3NetFundingsGet200Response> resp = getNetFundingDetailsWithHttpInfo(startTime, endTime, organizationId, groupName);
         logger.info("CALL TO METHOD 'getNetFundingDetails' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getNetFundingDetails' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

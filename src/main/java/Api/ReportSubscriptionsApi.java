@@ -534,15 +534,7 @@ public class ReportSubscriptionsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getAllSubscriptionsWithHttpInfo(organizationId);
         logger.info("CALL TO METHOD 'getAllSubscriptions' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getAllSubscriptions' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -677,15 +669,7 @@ public class ReportSubscriptionsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> resp = getSubscriptionWithHttpInfo(reportName, organizationId);
         logger.info("CALL TO METHOD 'getSubscription' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getSubscription' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

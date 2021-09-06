@@ -169,15 +169,7 @@ public class PaymentBatchSummariesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3PaymentBatchSummariesGet200Response> resp = getPaymentBatchSummaryWithHttpInfo(startTime, endTime, organizationId, rollUp, breakdown, startDayOfWeek);
         logger.info("CALL TO METHOD 'getPaymentBatchSummary' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getPaymentBatchSummary' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

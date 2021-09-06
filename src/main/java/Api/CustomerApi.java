@@ -279,15 +279,7 @@ public class CustomerApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = getCustomerWithHttpInfo(customerTokenId, profileId);
         logger.info("CALL TO METHOD 'getCustomer' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getCustomer' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -436,15 +428,7 @@ public class CustomerApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = patchCustomerWithHttpInfo(customerTokenId, patchCustomerRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomer' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'patchCustomer' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -584,15 +568,7 @@ public class CustomerApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = postCustomerWithHttpInfo(postCustomerRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomer' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'postCustomer' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

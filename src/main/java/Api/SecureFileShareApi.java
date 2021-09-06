@@ -289,15 +289,7 @@ final String[] localVarContentTypes = {"*/*"};
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailWithHttpInfo(startDate, endDate, organizationId, name);
         logger.info("CALL TO METHOD 'getFileDetail' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getFileDetail' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

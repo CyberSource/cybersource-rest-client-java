@@ -145,15 +145,7 @@ public class PaymentsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsPost201Response> resp = createPaymentWithHttpInfo(createPaymentRequest);
         logger.info("CALL TO METHOD 'createPayment' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'createPayment' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -292,15 +284,7 @@ public class PaymentsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2IncrementalAuthorizationPatch201Response> resp = incrementAuthWithHttpInfo(id, incrementAuthRequest);
         logger.info("CALL TO METHOD 'incrementAuth' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'incrementAuth' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
