@@ -1217,7 +1217,7 @@ public class ApiClient {
 		}
 		catch (NullPointerException e) {
 			logger.error("ApiException : " + e.getMessage());
-			return null;
+			throw new ApiException(e);
 		}
 	}
 

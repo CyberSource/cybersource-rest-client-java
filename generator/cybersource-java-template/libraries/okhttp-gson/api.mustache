@@ -183,15 +183,7 @@ public class {{classname}} {
         this.apiClient.setComputationStartTime(System.nanoTime());
         {{#returnType}}ApiResponse<{{{returnType}}}> {{localVariablePrefix}}resp = {{/returnType}}{{operationId}}WithHttpInfo({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});{{#returnType}}
         logger.info("CALL TO METHOD '{{operationId}}' ENDED");
-        if(resp != null)
-        {
-            return {{localVariablePrefix}}resp.getData();{{/returnType}}
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD '{{operationId}}' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return {{localVariablePrefix}}resp.getData();{{/returnType}}
     }
 
     /**
