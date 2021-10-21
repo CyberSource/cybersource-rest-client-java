@@ -27,10 +27,13 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsClientReferenceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-13T13:37:43.460+05:30")
 public class Ptsv2paymentsClientReferenceInformation {
   @SerializedName("code")
   private String code = null;
+
+  @SerializedName("pausedRequestId")
+  private String pausedRequestId = null;
 
   @SerializedName("transactionId")
   private String transactionId = null;
@@ -66,6 +69,24 @@ public class Ptsv2paymentsClientReferenceInformation {
 
   public void setCode(String code) {
     this.code = code;
+  }
+
+  public Ptsv2paymentsClientReferenceInformation pausedRequestId(String pausedRequestId) {
+    this.pausedRequestId = pausedRequestId;
+    return this;
+  }
+
+   /**
+   * Used to resume a transaction that was paused for an order modification rule to allow for payer authentication to complete. To resume and continue with the authorization/decision service flow, call the services and include the request id from the prior decision call. 
+   * @return pausedRequestId
+  **/
+  @ApiModelProperty(value = "Used to resume a transaction that was paused for an order modification rule to allow for payer authentication to complete. To resume and continue with the authorization/decision service flow, call the services and include the request id from the prior decision call. ")
+  public String getPausedRequestId() {
+    return pausedRequestId;
+  }
+
+  public void setPausedRequestId(String pausedRequestId) {
+    this.pausedRequestId = pausedRequestId;
   }
 
   public Ptsv2paymentsClientReferenceInformation transactionId(String transactionId) {
@@ -187,6 +208,7 @@ public class Ptsv2paymentsClientReferenceInformation {
     }
     Ptsv2paymentsClientReferenceInformation ptsv2paymentsClientReferenceInformation = (Ptsv2paymentsClientReferenceInformation) o;
     return Objects.equals(this.code, ptsv2paymentsClientReferenceInformation.code) &&
+        Objects.equals(this.pausedRequestId, ptsv2paymentsClientReferenceInformation.pausedRequestId) &&
         Objects.equals(this.transactionId, ptsv2paymentsClientReferenceInformation.transactionId) &&
         Objects.equals(this.comments, ptsv2paymentsClientReferenceInformation.comments) &&
         Objects.equals(this.partner, ptsv2paymentsClientReferenceInformation.partner) &&
@@ -197,7 +219,7 @@ public class Ptsv2paymentsClientReferenceInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, transactionId, comments, partner, applicationName, applicationVersion, applicationUser);
+    return Objects.hash(code, pausedRequestId, transactionId, comments, partner, applicationName, applicationVersion, applicationUser);
   }
 
 
@@ -207,6 +229,7 @@ public class Ptsv2paymentsClientReferenceInformation {
     sb.append("class Ptsv2paymentsClientReferenceInformation {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    pausedRequestId: ").append(toIndentedString(pausedRequestId)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("    partner: ").append(toIndentedString(partner)).append("\n");

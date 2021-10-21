@@ -67,7 +67,7 @@ public class ReportDefinitionsApi {
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
      * @param reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv  (optional)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -145,7 +145,7 @@ public class ReportDefinitionsApi {
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
      * @param reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv  (optional)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportDefinitionsNameGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -163,7 +163,7 @@ public class ReportDefinitionsApi {
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
      * @param reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv  (optional)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportDefinitionsNameGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -179,7 +179,7 @@ public class ReportDefinitionsApi {
      * @param reportDefinitionName Name of the Report definition to retrieve (required)
      * @param subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
      * @param reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv  (optional)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -214,7 +214,7 @@ public class ReportDefinitionsApi {
     /**
      * Build call for getResourceV2Info
      * @param subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -281,7 +281,7 @@ public class ReportDefinitionsApi {
      * Get Reporting Resource Information
      * View a list of supported reports and their attributes before subscribing to them. 
      * @param subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportDefinitionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -297,7 +297,7 @@ public class ReportDefinitionsApi {
      * Get Reporting Resource Information
      * View a list of supported reports and their attributes before subscribing to them. 
      * @param subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportDefinitionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -311,7 +311,7 @@ public class ReportDefinitionsApi {
      * Get Reporting Resource Information (asynchronously)
      * View a list of supported reports and their attributes before subscribing to them. 
      * @param subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD  (optional)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

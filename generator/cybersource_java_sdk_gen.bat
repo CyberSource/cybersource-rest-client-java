@@ -29,5 +29,9 @@ powershell Rename-Item ..\docs\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmb
 
 powershell -Command " Set-Content ..\src\main\java\Api\SecureFileShareApi.java ((get-content ..\src\main\java\Api\SecureFileShareApi.java -raw) -replace '(?m)(.*)^*final String\[\] localVarContentTypes = {[\r\n\s]+\"application\/json;charset=utf-8\"[\r\n\s]+};', 'final String[] localVarContentTypes = {\"*/*\"};') "
 
+git checkout ..\src\main\java\Api\OAuthApi.java
+git checkout ..\src\main\java\Model\AccessTokenResponse.java
+git checkout ..\src\main\java\Model\CreateAccessTokenRequest.java
+
 git checkout ..\pom.xml
 git checkout ..\README.md

@@ -138,7 +138,7 @@ public class ApiClient {
 
 	private JSON json;
 	private String versionInfo;
-	private static ConnectionPool connectionPool;
+	private static ConnectionPool connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
 	private HttpLoggingInterceptor loggingInterceptor;
 	private long computationStartTime;
 	private static Logger logger = LogManager.getLogger(ApiClient.class);
@@ -159,7 +159,7 @@ public class ApiClient {
 	public static OkHttpClient initializeFinalVariables() {
 		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
 		logging.setLevel(Level.NONE);
-		connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
+		// connectionPool = new ConnectionPool(5, 10, TimeUnit.SECONDS);
 
 		try {
 			return new OkHttpClient.Builder()
@@ -253,19 +253,19 @@ public class ApiClient {
 		if (useProxy && (proxyHost != null && !proxyHost.isEmpty())) {
 			if ((username != null && !username.isEmpty()) && (password != null && !password.isEmpty())) {
 				proxyAuthenticator = new Authenticator() {
-					private int proxyCounter = 0;
+					// private int proxyCounter = 0;
 
 					@Override
 					public Request authenticate(Route route, Response response) throws IOException {
-						if (proxyCounter++ > 0) {
-							if (response.code() == 407) {
-								logger.error("HttpRetryException : 407 Proxy Authentication Missing or Incorrect");
-								throw new HttpRetryException("Proxy Authentication Missing or Incorrect.", 407);
-							} else {
-								logger.error("IOException : " + response.message());
-								throw new IOException(response.message());
-							}
-						}
+						// if (proxyCounter++ > 0) {
+							// if (response.code() == 407) {
+								// logger.error("HttpRetryException : 407 Proxy Authentication Missing or Incorrect");
+								// throw new HttpRetryException("Proxy Authentication Missing or Incorrect.", 407);
+							// } else {
+								// logger.error("IOException : " + response.message());
+								// throw new IOException(response.message());
+							// }
+						// }
 
 						String credential = Credentials.basic(username, password);
 						return response.request().newBuilder().header("Proxy-Authorization", credential).build();
@@ -813,26 +813,26 @@ public class ApiClient {
 		return this;
 	}
 
-	/**
-	 * Get connection timeout (in milliseconds).
-	 *
-	 * @return Timeout in milliseconds
-	 */
-	public int getConnectTimeout() {
-		return httpClient.connectTimeoutMillis();
-	}
+	// /**
+	 // * Get connection timeout (in milliseconds).
+	 // *
+	 // * @return Timeout in milliseconds
+	 // */
+	// public int getConnectTimeout() {
+		// return httpClient.connectTimeoutMillis();
+	// }
 
-	/**
-	 * Sets the connect timeout (in milliseconds). A value of 0 means no timeout,
-	 * otherwise values must be between 1 and
-	 *
-	 * @param connectionTimeout connection timeout in milliseconds
-	 * @return Api client
-	 */
-	public ApiClient setConnectTimeout(int connectionTimeout) {
-		ApiClient.httpClient = ApiClient.httpClient.newBuilder().connectTimeout(connectionTimeout, TimeUnit.MILLISECONDS).build();
-		return this;
-	}
+	// /**
+	 // * Sets the connect timeout (in milliseconds). A value of 0 means no timeout,
+	 // * otherwise values must be between 1 and
+	 // *
+	 // * @param connectionTimeout connection timeout in milliseconds
+	 // * @return Api client
+	 // */
+	// public ApiClient setConnectTimeout(int connectionTimeout) {
+		// ApiClient.httpClient = ApiClient.httpClient.newBuilder().connectTimeout(connectionTimeout, TimeUnit.MILLISECONDS).build();
+		// return this;
+	// }
 
 	/**
 	 * @return the computationStartTime
@@ -1207,6 +1207,8 @@ public class ApiClient {
 				logger.debug("Response :\n" + response.peekBody(Long.MAX_VALUE).string());
 			}
 			T data = handleResponse(response, returnType);
+			
+			response.body().close();
 			
 			logger.info("HTTP Response Body :\n{}", data);
 

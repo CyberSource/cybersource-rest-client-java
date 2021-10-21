@@ -65,7 +65,7 @@ public class ReportDownloadsApi {
      * Build call for downloadReport
      * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**  yyyy-mm-dd For reports that span multiple days, this value would be the end date of the report in the time zone of the report subscription. Example 1: If your report start date is 2020-03-06 and the end date is 2020-03-09, the reportDate passed in the query is 2020-03-09. Example 2: If your report runs from midnight to midnight on 2020-03-09, the reportDate passed in the query is 2020-03-10  (required)
      * @param reportName Name of the report to download (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -147,13 +147,14 @@ public class ReportDownloadsApi {
      * Download a report using the unique report name and date. 
      * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**  yyyy-mm-dd For reports that span multiple days, this value would be the end date of the report in the time zone of the report subscription. Example 1: If your report start date is 2020-03-06 and the end date is 2020-03-09, the reportDate passed in the query is 2020-03-09. Example 2: If your report runs from midnight to midnight on 2020-03-09, the reportDate passed in the query is 2020-03-10  (required)
      * @param reportName Name of the report to download (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void downloadReport(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
     	logger.info("CALL TO METHOD 'downloadReport' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         downloadReportWithHttpInfo(reportDate, reportName, organizationId);
+
     }
 
     /**
@@ -161,7 +162,7 @@ public class ReportDownloadsApi {
      * Download a report using the unique report name and date. 
      * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**  yyyy-mm-dd For reports that span multiple days, this value would be the end date of the report in the time zone of the report subscription. Example 1: If your report start date is 2020-03-06 and the end date is 2020-03-09, the reportDate passed in the query is 2020-03-09. Example 2: If your report runs from midnight to midnight on 2020-03-09, the reportDate passed in the query is 2020-03-10  (required)
      * @param reportName Name of the report to download (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -175,7 +176,7 @@ public class ReportDownloadsApi {
      * Download a report using the unique report name and date. 
      * @param reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**  yyyy-mm-dd For reports that span multiple days, this value would be the end date of the report in the time zone of the report subscription. Example 1: If your report start date is 2020-03-06 and the end date is 2020-03-09, the reportDate passed in the query is 2020-03-09. Example 2: If your report runs from midnight to midnight on 2020-03-09, the reportDate passed in the query is 2020-03-10  (required)
      * @param reportName Name of the report to download (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

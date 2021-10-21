@@ -147,6 +147,7 @@ public class InstrumentIdentifierApi {
     	logger.info("CALL TO METHOD 'deleteInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteInstrumentIdentifierWithHttpInfo(instrumentIdentifierTokenId, profileId);
+
     }
 
     /**
@@ -862,6 +863,7 @@ public class InstrumentIdentifierApi {
     	logger.info("CALL TO METHOD 'postInstrumentIdentifierEnrollment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         postInstrumentIdentifierEnrollmentWithHttpInfo(instrumentIdentifierTokenId, postInstrumentIdentifierEnrollmentRequest, profileId);
+
     }
 
     /**

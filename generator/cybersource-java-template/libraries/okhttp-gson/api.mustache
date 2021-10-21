@@ -181,7 +181,8 @@ public class {{classname}} {
     public {{#returnType}}{{{returnType}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{operationId}}({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
     	logger.info("CALL TO METHOD '{{operationId}}' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        {{#returnType}}ApiResponse<{{{returnType}}}> {{localVariablePrefix}}resp = {{/returnType}}{{operationId}}WithHttpInfo({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});{{#returnType}}
+        {{#returnType}}ApiResponse<{{{returnType}}}> {{localVariablePrefix}}resp = {{/returnType}}{{operationId}}WithHttpInfo({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
+		{{#returnType}}
         logger.info("CALL TO METHOD '{{operationId}}' ENDED");
         return {{localVariablePrefix}}resp.getData();{{/returnType}}
     }

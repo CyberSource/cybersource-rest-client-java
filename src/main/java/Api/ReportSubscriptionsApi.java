@@ -68,7 +68,7 @@ public class ReportSubscriptionsApi {
     /**
      * Build call for createStandardOrClassicSubscription
      * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -139,20 +139,21 @@ public class ReportSubscriptionsApi {
      * Create a Standard or Classic Subscription
      * Create or update an already existing classic or standard subscription. 
      * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void createStandardOrClassicSubscription(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
     	logger.info("CALL TO METHOD 'createStandardOrClassicSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         createStandardOrClassicSubscriptionWithHttpInfo(predefinedSubscriptionRequestBean, organizationId);
+
     }
 
     /**
      * Create a Standard or Classic Subscription
      * Create or update an already existing classic or standard subscription. 
      * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -165,7 +166,7 @@ public class ReportSubscriptionsApi {
      * Create a Standard or Classic Subscription (asynchronously)
      * Create or update an already existing classic or standard subscription. 
      * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -199,7 +200,7 @@ public class ReportSubscriptionsApi {
     /**
      * Build call for createSubscription
      * @param createReportSubscriptionRequest Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -270,20 +271,21 @@ public class ReportSubscriptionsApi {
      * Create Report Subscription for a Report Name by Organization
      * Create a report subscription for your organization. The report name must be unique. 
      * @param createReportSubscriptionRequest Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void createSubscription(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException {
     	logger.info("CALL TO METHOD 'createSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         createSubscriptionWithHttpInfo(createReportSubscriptionRequest, organizationId);
+
     }
 
     /**
      * Create Report Subscription for a Report Name by Organization
      * Create a report subscription for your organization. The report name must be unique. 
      * @param createReportSubscriptionRequest Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -296,7 +298,7 @@ public class ReportSubscriptionsApi {
      * Create Report Subscription for a Report Name by Organization (asynchronously)
      * Create a report subscription for your organization. The report name must be unique. 
      * @param createReportSubscriptionRequest Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -330,7 +332,7 @@ public class ReportSubscriptionsApi {
     /**
      * Build call for deleteSubscription
      * @param reportName Name of the Report to Delete (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -402,20 +404,21 @@ public class ReportSubscriptionsApi {
      * Delete Subscription of a Report Name by Organization
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteSubscription(String reportName, String organizationId) throws ApiException {
     	logger.info("CALL TO METHOD 'deleteSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteSubscriptionWithHttpInfo(reportName, organizationId);
+
     }
 
     /**
      * Delete Subscription of a Report Name by Organization
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -428,7 +431,7 @@ public class ReportSubscriptionsApi {
      * Delete Subscription of a Report Name by Organization (asynchronously)
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      * @param reportName Name of the Report to Delete (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -461,7 +464,7 @@ public class ReportSubscriptionsApi {
     }
     /**
      * Build call for getAllSubscriptions
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -525,7 +528,7 @@ public class ReportSubscriptionsApi {
     /**
      * Get All Subscriptions
      * View a summary of all report subscriptions. 
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportSubscriptionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -540,7 +543,7 @@ public class ReportSubscriptionsApi {
     /**
      * Get All Subscriptions
      * View a summary of all report subscriptions. 
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -553,7 +556,7 @@ public class ReportSubscriptionsApi {
     /**
      * Get All Subscriptions (asynchronously)
      * View a summary of all report subscriptions. 
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -588,7 +591,7 @@ public class ReportSubscriptionsApi {
     /**
      * Build call for getSubscription
      * @param reportName Name of the Report to Retrieve (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -660,7 +663,7 @@ public class ReportSubscriptionsApi {
      * Get Subscription for Report Name
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -676,7 +679,7 @@ public class ReportSubscriptionsApi {
      * Get Subscription for Report Name
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200ResponseSubscriptions&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -690,7 +693,7 @@ public class ReportSubscriptionsApi {
      * Get Subscription for Report Name (asynchronously)
      * View the details of a report subscription, such as the report format or report frequency, using the report’s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
