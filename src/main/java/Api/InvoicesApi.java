@@ -147,15 +147,7 @@ public class InvoicesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = createInvoiceWithHttpInfo(createInvoiceRequest);
         logger.info("CALL TO METHOD 'createInvoice' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'createInvoice' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -301,15 +293,7 @@ public class InvoicesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesAllGet200Response> resp = getAllInvoicesWithHttpInfo(offset, limit, status);
         logger.info("CALL TO METHOD 'getAllInvoices' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getAllInvoices' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -444,15 +428,7 @@ public class InvoicesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesGet200Response> resp = getInvoiceWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getInvoice' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getInvoice' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -583,15 +559,7 @@ public class InvoicesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = performCancelActionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'performCancelAction' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'performCancelAction' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -722,15 +690,7 @@ public class InvoicesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = performSendActionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'performSendAction' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'performSendAction' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -869,15 +829,7 @@ public class InvoicesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = updateInvoiceWithHttpInfo(id, updateInvoiceRequest);
         logger.info("CALL TO METHOD 'updateInvoice' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'updateInvoice' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

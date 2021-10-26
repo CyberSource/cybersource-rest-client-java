@@ -155,15 +155,7 @@ public class DecisionManagerApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1UpdatePost201Response> resp = addNegativeWithHttpInfo(type, addNegativeListRequest);
         logger.info("CALL TO METHOD 'addNegative' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'addNegative' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -295,15 +287,7 @@ public class DecisionManagerApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1DecisionsPost201Response> resp = createBundledDecisionManagerCaseWithHttpInfo(createBundledDecisionManagerCaseRequest);
         logger.info("CALL TO METHOD 'createBundledDecisionManagerCase' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'createBundledDecisionManagerCase' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -442,15 +426,7 @@ public class DecisionManagerApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1UpdatePost201Response> resp = fraudUpdateWithHttpInfo(id, fraudMarkingActionRequest);
         logger.info("CALL TO METHOD 'fraudUpdate' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'fraudUpdate' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

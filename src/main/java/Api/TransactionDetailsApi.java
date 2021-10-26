@@ -140,15 +140,7 @@ public class TransactionDetailsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsGet200Response> resp = getTransactionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getTransaction' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getTransaction' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

@@ -145,15 +145,7 @@ public class TaxesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<VasV2PaymentsPost201Response> resp = calculateTaxWithHttpInfo(taxRequest);
         logger.info("CALL TO METHOD 'calculateTax' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'calculateTax' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -292,15 +284,7 @@ public class TaxesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<VasV2TaxVoid200Response> resp = voidTaxWithHttpInfo(voidTaxRequest, id);
         logger.info("CALL TO METHOD 'voidTax' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'voidTax' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

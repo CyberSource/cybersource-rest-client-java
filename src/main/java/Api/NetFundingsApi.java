@@ -66,7 +66,7 @@ public class NetFundingsApi {
      * Build call for getNetFundingDetails
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param groupName Valid CyberSource Group Name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -151,7 +151,7 @@ public class NetFundingsApi {
      * Get Netfunding information for an account or a merchant.
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param groupName Valid CyberSource Group Name. (optional)
      * @return ReportingV3NetFundingsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -161,15 +161,7 @@ public class NetFundingsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3NetFundingsGet200Response> resp = getNetFundingDetailsWithHttpInfo(startTime, endTime, organizationId, groupName);
         logger.info("CALL TO METHOD 'getNetFundingDetails' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getNetFundingDetails' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -177,7 +169,7 @@ public class NetFundingsApi {
      * Get Netfunding information for an account or a merchant.
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param groupName Valid CyberSource Group Name. (optional)
      * @return ApiResponse&lt;ReportingV3NetFundingsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -193,7 +185,7 @@ public class NetFundingsApi {
      * Get Netfunding information for an account or a merchant.
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param groupName Valid CyberSource Group Name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

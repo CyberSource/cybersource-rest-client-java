@@ -28,7 +28,7 @@ Create or update an already existing classic or standard subscription.
 
 ReportSubscriptionsApi apiInstance = new ReportSubscriptionsApi();
 PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean = new PredefinedSubscriptionRequestBean(); // PredefinedSubscriptionRequestBean | Report subscription request payload
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
+String organizationId = "organizationId_example"; // String | Valid Organization Id
 try {
     apiInstance.createStandardOrClassicSubscription(predefinedSubscriptionRequestBean, organizationId);
 } catch (ApiException e) {
@@ -42,7 +42,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **predefinedSubscriptionRequestBean** | [**PredefinedSubscriptionRequestBean**](PredefinedSubscriptionRequestBean.md)| Report subscription request payload |
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **String**| Valid Organization Id | [optional]
 
 ### Return type
 
@@ -74,7 +74,7 @@ Create a report subscription for your organization. The report name must be uniq
 
 ReportSubscriptionsApi apiInstance = new ReportSubscriptionsApi();
 CreateReportSubscriptionRequest createReportSubscriptionRequest = new CreateReportSubscriptionRequest(); // CreateReportSubscriptionRequest | Report subscription request payload
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
+String organizationId = "organizationId_example"; // String | Valid Organization Id
 try {
     apiInstance.createSubscription(createReportSubscriptionRequest, organizationId);
 } catch (ApiException e) {
@@ -88,7 +88,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createReportSubscriptionRequest** | [**CreateReportSubscriptionRequest**](CreateReportSubscriptionRequest.md)| Report subscription request payload |
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **String**| Valid Organization Id | [optional]
 
 ### Return type
 
@@ -120,7 +120,7 @@ Delete a report subscription for your organization. You must know the unique nam
 
 ReportSubscriptionsApi apiInstance = new ReportSubscriptionsApi();
 String reportName = "reportName_example"; // String | Name of the Report to Delete
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
+String organizationId = "organizationId_example"; // String | Valid Organization Id
 try {
     apiInstance.deleteSubscription(reportName, organizationId);
 } catch (ApiException e) {
@@ -134,7 +134,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **String**| Name of the Report to Delete |
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **String**| Valid Organization Id | [optional]
 
 ### Return type
 
@@ -165,7 +165,7 @@ View a summary of all report subscriptions.
 
 
 ReportSubscriptionsApi apiInstance = new ReportSubscriptionsApi();
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
+String organizationId = "organizationId_example"; // String | Valid Organization Id
 try {
     ReportingV3ReportSubscriptionsGet200Response result = apiInstance.getAllSubscriptions(organizationId);
     System.out.println(result);
@@ -179,7 +179,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **String**| Valid Organization Id | [optional]
 
 ### Return type
 
@@ -211,7 +211,7 @@ View the details of a report subscription, such as the report format or report f
 
 ReportSubscriptionsApi apiInstance = new ReportSubscriptionsApi();
 String reportName = "reportName_example"; // String | Name of the Report to Retrieve
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
+String organizationId = "organizationId_example"; // String | Valid Organization Id
 try {
     ReportingV3ReportSubscriptionsGet200ResponseSubscriptions result = apiInstance.getSubscription(reportName, organizationId);
     System.out.println(result);
@@ -226,7 +226,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **String**| Name of the Report to Retrieve |
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **String**| Valid Organization Id | [optional]
 
 ### Return type
 

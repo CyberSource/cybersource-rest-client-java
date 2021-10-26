@@ -66,7 +66,7 @@ public class PaymentBatchSummariesApi {
      * Build call for getPaymentBatchSummary
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param rollUp Conditional - RollUp for data for day/week/month. Required while getting breakdown data for a Merchant (optional)
      * @param breakdown Conditional - Breakdown on account_rollup/all_merchant/selected_merchant. Required while getting breakdown data for a Merchant. (optional)
      * @param startDayOfWeek Optional - Start day of week to breakdown data for weeks in a month (optional)
@@ -157,7 +157,7 @@ public class PaymentBatchSummariesApi {
      * Scope can be either account/merchant or reseller.
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param rollUp Conditional - RollUp for data for day/week/month. Required while getting breakdown data for a Merchant (optional)
      * @param breakdown Conditional - Breakdown on account_rollup/all_merchant/selected_merchant. Required while getting breakdown data for a Merchant. (optional)
      * @param startDayOfWeek Optional - Start day of week to breakdown data for weeks in a month (optional)
@@ -169,15 +169,7 @@ public class PaymentBatchSummariesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3PaymentBatchSummariesGet200Response> resp = getPaymentBatchSummaryWithHttpInfo(startTime, endTime, organizationId, rollUp, breakdown, startDayOfWeek);
         logger.info("CALL TO METHOD 'getPaymentBatchSummary' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getPaymentBatchSummary' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -185,7 +177,7 @@ public class PaymentBatchSummariesApi {
      * Scope can be either account/merchant or reseller.
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param rollUp Conditional - RollUp for data for day/week/month. Required while getting breakdown data for a Merchant (optional)
      * @param breakdown Conditional - Breakdown on account_rollup/all_merchant/selected_merchant. Required while getting breakdown data for a Merchant. (optional)
      * @param startDayOfWeek Optional - Start day of week to breakdown data for weeks in a month (optional)
@@ -203,7 +195,7 @@ public class PaymentBatchSummariesApi {
      * Scope can be either account/merchant or reseller.
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param rollUp Conditional - RollUp for data for day/week/month. Required while getting breakdown data for a Merchant (optional)
      * @param breakdown Conditional - Breakdown on account_rollup/all_merchant/selected_merchant. Required while getting breakdown data for a Merchant. (optional)
      * @param startDayOfWeek Optional - Start day of week to breakdown data for weeks in a month (optional)

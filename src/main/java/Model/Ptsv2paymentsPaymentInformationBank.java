@@ -27,13 +27,16 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationBank
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-09-17T17:07:34.089+05:30")
 public class Ptsv2paymentsPaymentInformationBank {
   @SerializedName("account")
   private Ptsv2paymentsPaymentInformationBankAccount account = null;
 
   @SerializedName("routingNumber")
   private String routingNumber = null;
+
+  @SerializedName("iban")
+  private String iban = null;
 
   public Ptsv2paymentsPaymentInformationBank account(Ptsv2paymentsPaymentInformationBankAccount account) {
     this.account = account;
@@ -71,6 +74,24 @@ public class Ptsv2paymentsPaymentInformationBank {
     this.routingNumber = routingNumber;
   }
 
+  public Ptsv2paymentsPaymentInformationBank iban(String iban) {
+    this.iban = iban;
+    return this;
+  }
+
+   /**
+   * International Bank Account Number (IBAN) for the bank account. For some countries you can provide this number instead of the traditional bank account information. You can use this field only when scoring a direct debit transaction.  For all possible values, see the &#x60;bank_iban&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @return iban
+  **/
+  @ApiModelProperty(value = "International Bank Account Number (IBAN) for the bank account. For some countries you can provide this number instead of the traditional bank account information. You can use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_iban` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  public String getIban() {
+    return iban;
+  }
+
+  public void setIban(String iban) {
+    this.iban = iban;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,12 +103,13 @@ public class Ptsv2paymentsPaymentInformationBank {
     }
     Ptsv2paymentsPaymentInformationBank ptsv2paymentsPaymentInformationBank = (Ptsv2paymentsPaymentInformationBank) o;
     return Objects.equals(this.account, ptsv2paymentsPaymentInformationBank.account) &&
-        Objects.equals(this.routingNumber, ptsv2paymentsPaymentInformationBank.routingNumber);
+        Objects.equals(this.routingNumber, ptsv2paymentsPaymentInformationBank.routingNumber) &&
+        Objects.equals(this.iban, ptsv2paymentsPaymentInformationBank.iban);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, routingNumber);
+    return Objects.hash(account, routingNumber, iban);
   }
 
 
@@ -98,6 +120,7 @@ public class Ptsv2paymentsPaymentInformationBank {
     
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");
+    sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,7 +26,7 @@ Create a one-time report. You must specify the type of report in reportDefinitio
 
 ReportsApi apiInstance = new ReportsApi();
 CreateAdhocReportRequest createAdhocReportRequest = new CreateAdhocReportRequest(); // CreateAdhocReportRequest | Report subscription request payload
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
+String organizationId = "organizationId_example"; // String | Valid Organization Id
 try {
     apiInstance.createReport(createAdhocReportRequest, organizationId);
 } catch (ApiException e) {
@@ -40,7 +40,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createAdhocReportRequest** | [**CreateAdhocReportRequest**](CreateAdhocReportRequest.md)| Report subscription request payload |
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **String**| Valid Organization Id | [optional]
 
 ### Return type
 
@@ -72,7 +72,7 @@ Download a report using the reportId value. If you don’t already know this val
 
 ReportsApi apiInstance = new ReportsApi();
 String reportId = "reportId_example"; // String | Valid Report Id
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
+String organizationId = "organizationId_example"; // String | Valid Organization Id
 try {
     ReportingV3ReportsIdGet200Response result = apiInstance.getReportByReportId(reportId, organizationId);
     System.out.println(result);
@@ -87,7 +87,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportId** | **String**| Valid Report Id |
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **String**| Valid Organization Id | [optional]
 
 ### Return type
 
@@ -121,7 +121,7 @@ ReportsApi apiInstance = new ReportsApi();
 DateTime startTime = new DateTime(); // DateTime | Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
 DateTime endTime = new DateTime(); // DateTime | Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
 String timeQueryType = "timeQueryType_example"; // String | Specify time you would like to search  Valid values: - reportTimeFrame - executedTime 
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
+String organizationId = "organizationId_example"; // String | Valid Organization Id
 String reportMimeType = "reportMimeType_example"; // String | Valid Report Format  Valid values: - application/xml - text/csv 
 String reportFrequency = "reportFrequency_example"; // String | Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC 
 String reportName = "reportName_example"; // String | Valid Report Name
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
  **startTime** | **DateTime**| Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  |
  **endTime** | **DateTime**| Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  |
  **timeQueryType** | **String**| Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  |
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **String**| Valid Organization Id | [optional]
  **reportMimeType** | **String**| Valid Report Format  Valid values: - application/xml - text/csv  | [optional]
  **reportFrequency** | **String**| Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC  | [optional]
  **reportName** | **String**| Valid Report Name | [optional]

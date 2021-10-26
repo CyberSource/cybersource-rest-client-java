@@ -147,15 +147,7 @@ public class PayerAuthenticationApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationsPost201Response> resp = checkPayerAuthEnrollmentWithHttpInfo(checkPayerAuthEnrollmentRequest);
         logger.info("CALL TO METHOD 'checkPayerAuthEnrollment' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'checkPayerAuthEnrollment' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -285,15 +277,7 @@ public class PayerAuthenticationApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationSetupsPost201Response> resp = payerAuthSetupWithHttpInfo(payerAuthSetupRequest);
         logger.info("CALL TO METHOD 'payerAuthSetup' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'payerAuthSetup' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -423,15 +407,7 @@ public class PayerAuthenticationApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationResultsPost201Response> resp = validateAuthenticationResultsWithHttpInfo(validateRequest);
         logger.info("CALL TO METHOD 'validateAuthenticationResults' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'validateAuthenticationResults' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

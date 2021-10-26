@@ -153,15 +153,7 @@ public class NotificationOfChangesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3NotificationofChangesGet200Response> resp = getNotificationOfChangeReportWithHttpInfo(startTime, endTime);
         logger.info("CALL TO METHOD 'getNotificationOfChangeReport' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getNotificationOfChangeReport' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

@@ -141,15 +141,7 @@ public class UserManagementSearchApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<UmsV1UsersGet200Response> resp = searchUsersWithHttpInfo(searchRequest);
         logger.info("CALL TO METHOD 'searchUsers' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'searchUsers' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

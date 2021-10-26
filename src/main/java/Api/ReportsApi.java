@@ -67,7 +67,7 @@ public class ReportsApi {
     /**
      * Build call for createReport
      * @param createAdhocReportRequest Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -138,20 +138,21 @@ public class ReportsApi {
      * Create Adhoc Report
      * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
      * @param createAdhocReportRequest Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void createReport(CreateAdhocReportRequest createAdhocReportRequest, String organizationId) throws ApiException {
     	logger.info("CALL TO METHOD 'createReport' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         createReportWithHttpInfo(createAdhocReportRequest, organizationId);
+
     }
 
     /**
      * Create Adhoc Report
      * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
      * @param createAdhocReportRequest Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -164,7 +165,7 @@ public class ReportsApi {
      * Create Adhoc Report (asynchronously)
      * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
      * @param createAdhocReportRequest Report subscription request payload (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -198,7 +199,7 @@ public class ReportsApi {
     /**
      * Build call for getReportByReportId
      * @param reportId Valid Report Id (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -270,7 +271,7 @@ public class ReportsApi {
      * Get Report Based on Report Id
      * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
      * @param reportId Valid Report Id (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportsIdGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -279,22 +280,14 @@ public class ReportsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportsIdGet200Response> resp = getReportByReportIdWithHttpInfo(reportId, organizationId);
         logger.info("CALL TO METHOD 'getReportByReportId' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getReportByReportId' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
      * Get Report Based on Report Id
      * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
      * @param reportId Valid Report Id (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -308,7 +301,7 @@ public class ReportsApi {
      * Get Report Based on Report Id (asynchronously)
      * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
      * @param reportId Valid Report Id (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -345,7 +338,7 @@ public class ReportsApi {
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param timeQueryType Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param reportMimeType Valid Report Format  Valid values: - application/xml - text/csv  (optional)
      * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC  (optional)
      * @param reportName Valid Report Name (optional)
@@ -451,7 +444,7 @@ public class ReportsApi {
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param timeQueryType Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param reportMimeType Valid Report Format  Valid values: - application/xml - text/csv  (optional)
      * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC  (optional)
      * @param reportName Valid Report Name (optional)
@@ -465,15 +458,7 @@ public class ReportsApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportsGet200Response> resp = searchReportsWithHttpInfo(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus);
         logger.info("CALL TO METHOD 'searchReports' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'searchReports' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -482,7 +467,7 @@ public class ReportsApi {
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param timeQueryType Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param reportMimeType Valid Report Format  Valid values: - application/xml - text/csv  (optional)
      * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC  (optional)
      * @param reportName Valid Report Name (optional)
@@ -503,7 +488,7 @@ public class ReportsApi {
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @param timeQueryType Specify time you would like to search  Valid values: - reportTimeFrame - executedTime  (required)
-     * @param organizationId Valid Cybersource Organization Id (optional)
+     * @param organizationId Valid Organization Id (optional)
      * @param reportMimeType Valid Report Format  Valid values: - application/xml - text/csv  (optional)
      * @param reportFrequency Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC  (optional)
      * @param reportName Valid Report Name (optional)

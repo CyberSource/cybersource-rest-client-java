@@ -151,7 +151,7 @@ public class TransactionBatchesApi {
     	logger.info("CALL TO METHOD 'getTransactionBatchDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getTransactionBatchDetailsWithHttpInfo(id, uploadDate, status);
-        }
+    }
 
     /**
      * Get Transaction Details for a given Batch Id
@@ -283,15 +283,7 @@ public class TransactionBatchesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV1TransactionBatchesIdGet200Response> resp = getTransactionBatchIdWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getTransactionBatchId' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getTransactionBatchId' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -433,15 +425,7 @@ public class TransactionBatchesApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV1TransactionBatchesGet200Response> resp = getTransactionBatchesWithHttpInfo(startTime, endTime);
         logger.info("CALL TO METHOD 'getTransactionBatches' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'getTransactionBatches' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

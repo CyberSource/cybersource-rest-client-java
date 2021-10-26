@@ -142,15 +142,7 @@ public class CreditApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2CreditsPost201Response> resp = createCreditWithHttpInfo(createCreditRequest);
         logger.info("CALL TO METHOD 'createCredit' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'createCredit' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

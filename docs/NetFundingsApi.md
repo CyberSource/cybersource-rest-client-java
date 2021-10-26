@@ -25,7 +25,7 @@ Get Netfunding information for an account or a merchant.
 NetFundingsApi apiInstance = new NetFundingsApi();
 DateTime startTime = new DateTime(); // DateTime | Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
 DateTime endTime = new DateTime(); // DateTime | Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd'T'HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) 
-String organizationId = "organizationId_example"; // String | Valid Cybersource Organization Id
+String organizationId = "organizationId_example"; // String | Valid Organization Id
 String groupName = "groupName_example"; // String | Valid CyberSource Group Name.
 try {
     ReportingV3NetFundingsGet200Response result = apiInstance.getNetFundingDetails(startTime, endTime, organizationId, groupName);
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startTime** | **DateTime**| Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  |
  **endTime** | **DateTime**| Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  |
- **organizationId** | **String**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **String**| Valid Organization Id | [optional]
  **groupName** | **String**| Valid CyberSource Group Name. | [optional]
 
 ### Return type

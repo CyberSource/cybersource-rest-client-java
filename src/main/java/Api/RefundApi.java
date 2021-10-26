@@ -152,15 +152,7 @@ public class RefundApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundCaptureWithHttpInfo(refundCaptureRequest, id);
         logger.info("CALL TO METHOD 'refundCapture' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'refundCapture' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -301,15 +293,7 @@ public class RefundApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundPaymentWithHttpInfo(refundPaymentRequest, id);
         logger.info("CALL TO METHOD 'refundPayment' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'refundPayment' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

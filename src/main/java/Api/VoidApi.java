@@ -146,15 +146,7 @@ public class VoidApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = mitVoidWithHttpInfo(mitVoidRequest);
         logger.info("CALL TO METHOD 'mitVoid' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'mitVoid' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -293,15 +285,7 @@ public class VoidApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCaptureWithHttpInfo(voidCaptureRequest, id);
         logger.info("CALL TO METHOD 'voidCapture' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'voidCapture' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -442,15 +426,7 @@ public class VoidApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCreditWithHttpInfo(voidCreditRequest, id);
         logger.info("CALL TO METHOD 'voidCredit' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'voidCredit' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -591,15 +567,7 @@ public class VoidApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidPaymentWithHttpInfo(voidPaymentRequest, id);
         logger.info("CALL TO METHOD 'voidPayment' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'voidPayment' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**
@@ -740,15 +708,7 @@ public class VoidApi {
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidRefundWithHttpInfo(voidRefundRequest, id);
         logger.info("CALL TO METHOD 'voidRefund' ENDED");
-        if(resp != null)
-        {
-            return resp.getData();
-        }
-        else 
-        {
-            logger.error("CALL TO METHOD 'voidRefund' FAILED DUE TO AN EXCEPTION");
-            return null;
-        }
+        return resp.getData();
     }
 
     /**

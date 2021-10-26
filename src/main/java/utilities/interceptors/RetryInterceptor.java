@@ -37,12 +37,16 @@ public class RetryInterceptor implements Interceptor {
 		return response;
 	}
 	
-	private Response doRequest(Chain chain, Request request){
+	private Response doRequest(Chain chain, Request request) throws IOException {
 		Response response = null;
 		try{
 			response = chain.proceed(request);
-		}catch (Exception e){
-			
+		}
+		catch (NullPointerException e){
+			throw e;
+		}
+		catch (Exception e){
+			throw e;
 		}
 		
 		return response;
