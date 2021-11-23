@@ -137,6 +137,7 @@ public class DownloadXSDApi {
     	logger.info("CALL TO METHOD 'getXSDV2' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getXSDV2WithHttpInfo(reportDefinitionNameVersion);
+
     }
 
     /**

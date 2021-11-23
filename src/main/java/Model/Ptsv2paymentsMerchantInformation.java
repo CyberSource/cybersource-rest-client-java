@@ -28,10 +28,13 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsMerchantInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class Ptsv2paymentsMerchantInformation {
   @SerializedName("merchantDescriptor")
   private Ptsv2paymentsMerchantInformationMerchantDescriptor merchantDescriptor = null;
+
+  @SerializedName("domainName")
+  private String domainName = null;
 
   @SerializedName("salesOrganizationId")
   private String salesOrganizationId = null;
@@ -76,6 +79,24 @@ public class Ptsv2paymentsMerchantInformation {
 
   public void setMerchantDescriptor(Ptsv2paymentsMerchantInformationMerchantDescriptor merchantDescriptor) {
     this.merchantDescriptor = merchantDescriptor;
+  }
+
+  public Ptsv2paymentsMerchantInformation domainName(String domainName) {
+    this.domainName = domainName;
+    return this;
+  }
+
+   /**
+   * This field will contain either the merchant url or the reverse domain as per the requirement for DSRP Format 3. This might vary transaction to transaction and might not be static. Merchant needs to have access to send this value for all DSRP program. 
+   * @return domainName
+  **/
+  @ApiModelProperty(value = "This field will contain either the merchant url or the reverse domain as per the requirement for DSRP Format 3. This might vary transaction to transaction and might not be static. Merchant needs to have access to send this value for all DSRP program. ")
+  public String getDomainName() {
+    return domainName;
+  }
+
+  public void setDomainName(String domainName) {
+    this.domainName = domainName;
   }
 
   public Ptsv2paymentsMerchantInformation salesOrganizationId(String salesOrganizationId) {
@@ -253,6 +274,7 @@ public class Ptsv2paymentsMerchantInformation {
     }
     Ptsv2paymentsMerchantInformation ptsv2paymentsMerchantInformation = (Ptsv2paymentsMerchantInformation) o;
     return Objects.equals(this.merchantDescriptor, ptsv2paymentsMerchantInformation.merchantDescriptor) &&
+        Objects.equals(this.domainName, ptsv2paymentsMerchantInformation.domainName) &&
         Objects.equals(this.salesOrganizationId, ptsv2paymentsMerchantInformation.salesOrganizationId) &&
         Objects.equals(this.categoryCode, ptsv2paymentsMerchantInformation.categoryCode) &&
         Objects.equals(this.categoryCodeDomestic, ptsv2paymentsMerchantInformation.categoryCodeDomestic) &&
@@ -266,7 +288,7 @@ public class Ptsv2paymentsMerchantInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantDescriptor, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor, merchantName);
+    return Objects.hash(merchantDescriptor, domainName, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor, merchantName);
   }
 
 
@@ -276,6 +298,7 @@ public class Ptsv2paymentsMerchantInformation {
     sb.append("class Ptsv2paymentsMerchantInformation {\n");
     
     sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
+    sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
     sb.append("    salesOrganizationId: ").append(toIndentedString(salesOrganizationId)).append("\n");
     sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
     sb.append("    categoryCodeDomestic: ").append(toIndentedString(categoryCodeDomestic)).append("\n");

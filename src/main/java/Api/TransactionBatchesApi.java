@@ -151,6 +151,7 @@ public class TransactionBatchesApi {
     	logger.info("CALL TO METHOD 'getTransactionBatchDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getTransactionBatchDetailsWithHttpInfo(id, uploadDate, status);
+
     }
 
     /**

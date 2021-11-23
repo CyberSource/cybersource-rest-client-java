@@ -145,6 +145,7 @@ public class CustomerApi {
     	logger.info("CALL TO METHOD 'deleteCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerWithHttpInfo(customerTokenId, profileId);
+
     }
 
     /**

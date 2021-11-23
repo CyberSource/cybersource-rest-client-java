@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsBuyerInformationPersonalIdentification
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class Ptsv2paymentsBuyerInformationPersonalIdentification {
   @SerializedName("type")
   private String type = null;
@@ -37,16 +37,19 @@ public class Ptsv2paymentsBuyerInformationPersonalIdentification {
   @SerializedName("issuedBy")
   private String issuedBy = null;
 
+  @SerializedName("verificationResults")
+  private String verificationResults = null;
+
   public Ptsv2paymentsBuyerInformationPersonalIdentification type(String type) {
     this.type = type;
     return this;
   }
 
    /**
-   * The type of the identification.  Possible values:   - &#x60;NATIONAL&#x60;   - &#x60;CPF&#x60;   - &#x60;CPNJ&#x60;   - &#x60;CURP&#x60;   - &#x60;SSN&#x60;   - &#x60;DRIVER_LICENSE&#x60;  This field is supported only on the following processors.  #### ComercioLatino Set this field to the Cadastro de Pessoas Fisicas (CPF).  #### CyberSource Latin American Processing Supported for Redecard in Brazil. Set this field to the Cadastro de Pessoas Fisicas (CPF), which is required for AVS for Redecard in Brazil. **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America. The information in this field description is for the specific processing connection called CyberSource Latin American Processing. It is not for any other Latin American processors that CyberSource supports.  For processor-specific information, see the &#x60;personal_id&#x60; field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * The type of the identification.  Possible values:   - &#x60;NATIONAL&#x60;   - &#x60;CPF&#x60;   - &#x60;CPNJ&#x60;   - &#x60;CURP&#x60;   - &#x60;SSN&#x60;   - &#x60;DRIVER_LICENSE&#x60;   - &#x60;PASSPORT_NUMBER&#x60;   - &#x60;PERSONAL_ID&#x60;   - &#x60;TAX_ID&#x60;  This field is supported only on the following processors.  #### ComercioLatino Set this field to the Cadastro de Pessoas Fisicas (CPF).  #### CyberSource Latin American Processing Supported for Redecard in Brazil. Set this field to the Cadastro de Pessoas Fisicas (CPF), which is required for AVS for Redecard in Brazil. **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America. The information in this field description is for the specific processing connection called CyberSource Latin American Processing. It is not for any other Latin American processors that CyberSource supports.  For processor-specific information, see the &#x60;personal_id&#x60; field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
    * @return type
   **/
-  @ApiModelProperty(value = "The type of the identification.  Possible values:   - `NATIONAL`   - `CPF`   - `CPNJ`   - `CURP`   - `SSN`   - `DRIVER_LICENSE`  This field is supported only on the following processors.  #### ComercioLatino Set this field to the Cadastro de Pessoas Fisicas (CPF).  #### CyberSource Latin American Processing Supported for Redecard in Brazil. Set this field to the Cadastro de Pessoas Fisicas (CPF), which is required for AVS for Redecard in Brazil. **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America. The information in this field description is for the specific processing connection called CyberSource Latin American Processing. It is not for any other Latin American processors that CyberSource supports.  For processor-specific information, see the `personal_id` field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "The type of the identification.  Possible values:   - `NATIONAL`   - `CPF`   - `CPNJ`   - `CURP`   - `SSN`   - `DRIVER_LICENSE`   - `PASSPORT_NUMBER`   - `PERSONAL_ID`   - `TAX_ID`  This field is supported only on the following processors.  #### ComercioLatino Set this field to the Cadastro de Pessoas Fisicas (CPF).  #### CyberSource Latin American Processing Supported for Redecard in Brazil. Set this field to the Cadastro de Pessoas Fisicas (CPF), which is required for AVS for Redecard in Brazil. **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America. The information in this field description is for the specific processing connection called CyberSource Latin American Processing. It is not for any other Latin American processors that CyberSource supports.  For processor-specific information, see the `personal_id` field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
   public String getType() {
     return type;
   }
@@ -91,6 +94,24 @@ public class Ptsv2paymentsBuyerInformationPersonalIdentification {
     this.issuedBy = issuedBy;
   }
 
+  public Ptsv2paymentsBuyerInformationPersonalIdentification verificationResults(String verificationResults) {
+    this.verificationResults = verificationResults;
+    return this;
+  }
+
+   /**
+   * Verification results received from Issuer or Card Network for verification transactions. Response Only Field. 
+   * @return verificationResults
+  **/
+  @ApiModelProperty(value = "Verification results received from Issuer or Card Network for verification transactions. Response Only Field. ")
+  public String getVerificationResults() {
+    return verificationResults;
+  }
+
+  public void setVerificationResults(String verificationResults) {
+    this.verificationResults = verificationResults;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,12 +124,13 @@ public class Ptsv2paymentsBuyerInformationPersonalIdentification {
     Ptsv2paymentsBuyerInformationPersonalIdentification ptsv2paymentsBuyerInformationPersonalIdentification = (Ptsv2paymentsBuyerInformationPersonalIdentification) o;
     return Objects.equals(this.type, ptsv2paymentsBuyerInformationPersonalIdentification.type) &&
         Objects.equals(this.id, ptsv2paymentsBuyerInformationPersonalIdentification.id) &&
-        Objects.equals(this.issuedBy, ptsv2paymentsBuyerInformationPersonalIdentification.issuedBy);
+        Objects.equals(this.issuedBy, ptsv2paymentsBuyerInformationPersonalIdentification.issuedBy) &&
+        Objects.equals(this.verificationResults, ptsv2paymentsBuyerInformationPersonalIdentification.verificationResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, id, issuedBy);
+    return Objects.hash(type, id, issuedBy, verificationResults);
   }
 
 
@@ -120,6 +142,7 @@ public class Ptsv2paymentsBuyerInformationPersonalIdentification {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    issuedBy: ").append(toIndentedString(issuedBy)).append("\n");
+    sb.append("    verificationResults: ").append(toIndentedString(verificationResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }

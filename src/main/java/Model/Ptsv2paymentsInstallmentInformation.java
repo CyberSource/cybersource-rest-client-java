@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsInstallmentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class Ptsv2paymentsInstallmentInformation {
   @SerializedName("amount")
   private String amount = null;
@@ -66,6 +66,12 @@ public class Ptsv2paymentsInstallmentInformation {
 
   @SerializedName("firstInstallmentAmount")
   private String firstInstallmentAmount = null;
+
+  @SerializedName("validationIndicator")
+  private String validationIndicator = null;
+
+  @SerializedName("identifier")
+  private String identifier = null;
 
   public Ptsv2paymentsInstallmentInformation amount(String amount) {
     this.amount = amount;
@@ -303,6 +309,42 @@ public class Ptsv2paymentsInstallmentInformation {
     this.firstInstallmentAmount = firstInstallmentAmount;
   }
 
+  public Ptsv2paymentsInstallmentInformation validationIndicator(String validationIndicator) {
+    this.validationIndicator = validationIndicator;
+    return this;
+  }
+
+   /**
+   * Standing Instruction/Installment validation indicator. - &#39;1&#39;: Prevalidated - &#39;2&#39;: Not Validated 
+   * @return validationIndicator
+  **/
+  @ApiModelProperty(value = "Standing Instruction/Installment validation indicator. - '1': Prevalidated - '2': Not Validated ")
+  public String getValidationIndicator() {
+    return validationIndicator;
+  }
+
+  public void setValidationIndicator(String validationIndicator) {
+    this.validationIndicator = validationIndicator;
+  }
+
+  public Ptsv2paymentsInstallmentInformation identifier(String identifier) {
+    this.identifier = identifier;
+    return this;
+  }
+
+   /**
+   * Standing Instruction/Installment identifier. 
+   * @return identifier
+  **/
+  @ApiModelProperty(value = "Standing Instruction/Installment identifier. ")
+  public String getIdentifier() {
+    return identifier;
+  }
+
+  public void setIdentifier(String identifier) {
+    this.identifier = identifier;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -325,12 +367,14 @@ public class Ptsv2paymentsInstallmentInformation {
         Objects.equals(this.eligibilityInquiry, ptsv2paymentsInstallmentInformation.eligibilityInquiry) &&
         Objects.equals(this.gracePeriodDuration, ptsv2paymentsInstallmentInformation.gracePeriodDuration) &&
         Objects.equals(this.gracePeriodDurationType, ptsv2paymentsInstallmentInformation.gracePeriodDurationType) &&
-        Objects.equals(this.firstInstallmentAmount, ptsv2paymentsInstallmentInformation.firstInstallmentAmount);
+        Objects.equals(this.firstInstallmentAmount, ptsv2paymentsInstallmentInformation.firstInstallmentAmount) &&
+        Objects.equals(this.validationIndicator, ptsv2paymentsInstallmentInformation.validationIndicator) &&
+        Objects.equals(this.identifier, ptsv2paymentsInstallmentInformation.identifier);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, frequency, planType, sequence, totalAmount, totalCount, firstInstallmentDate, invoiceData, paymentType, eligibilityInquiry, gracePeriodDuration, gracePeriodDurationType, firstInstallmentAmount);
+    return Objects.hash(amount, frequency, planType, sequence, totalAmount, totalCount, firstInstallmentDate, invoiceData, paymentType, eligibilityInquiry, gracePeriodDuration, gracePeriodDurationType, firstInstallmentAmount, validationIndicator, identifier);
   }
 
 
@@ -352,6 +396,8 @@ public class Ptsv2paymentsInstallmentInformation {
     sb.append("    gracePeriodDuration: ").append(toIndentedString(gracePeriodDuration)).append("\n");
     sb.append("    gracePeriodDurationType: ").append(toIndentedString(gracePeriodDurationType)).append("\n");
     sb.append("    firstInstallmentAmount: ").append(toIndentedString(firstInstallmentAmount)).append("\n");
+    sb.append("    validationIndicator: ").append(toIndentedString(validationIndicator)).append("\n");
+    sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }

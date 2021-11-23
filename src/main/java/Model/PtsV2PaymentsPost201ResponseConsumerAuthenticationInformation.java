@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr;
+import Model.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,7 +28,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("accessToken")
   private String accessToken = null;
@@ -88,6 +89,9 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
 
   @SerializedName("ivr")
   private PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr ivr = null;
+
+  @SerializedName("strongAuthentication")
+  private PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication strongAuthentication = null;
 
   @SerializedName("networkScore")
   private String networkScore = null;
@@ -512,6 +516,24 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
     this.ivr = ivr;
   }
 
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation strongAuthentication(PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication strongAuthentication) {
+    this.strongAuthentication = strongAuthentication;
+    return this;
+  }
+
+   /**
+   * Get strongAuthentication
+   * @return strongAuthentication
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication getStrongAuthentication() {
+    return strongAuthentication;
+  }
+
+  public void setStrongAuthentication(PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication strongAuthentication) {
+    this.strongAuthentication = strongAuthentication;
+  }
+
   public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation networkScore(String networkScore) {
     this.networkScore = networkScore;
     return this;
@@ -920,6 +942,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
         Objects.equals(this.eciRaw, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.eciRaw) &&
         Objects.equals(this.effectiveAuthenticationType, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.effectiveAuthenticationType) &&
         Objects.equals(this.ivr, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.ivr) &&
+        Objects.equals(this.strongAuthentication, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.strongAuthentication) &&
         Objects.equals(this.networkScore, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.networkScore) &&
         Objects.equals(this.pareq, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.pareq) &&
         Objects.equals(this.paresStatus, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.paresStatus) &&
@@ -945,7 +968,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId, authenticationResult, authenticationStatusMsg, indicator, interactionCounter, whiteListStatus);
+    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, strongAuthentication, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId, authenticationResult, authenticationStatusMsg, indicator, interactionCounter, whiteListStatus);
   }
 
 
@@ -974,6 +997,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
     sb.append("    eciRaw: ").append(toIndentedString(eciRaw)).append("\n");
     sb.append("    effectiveAuthenticationType: ").append(toIndentedString(effectiveAuthenticationType)).append("\n");
     sb.append("    ivr: ").append(toIndentedString(ivr)).append("\n");
+    sb.append("    strongAuthentication: ").append(toIndentedString(strongAuthentication)).append("\n");
     sb.append("    networkScore: ").append(toIndentedString(networkScore)).append("\n");
     sb.append("    pareq: ").append(toIndentedString(pareq)).append("\n");
     sb.append("    paresStatus: ").append(toIndentedString(paresStatus)).append("\n");

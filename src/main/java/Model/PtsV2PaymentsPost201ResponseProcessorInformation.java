@@ -34,7 +34,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-25T14:03:18.082+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("authIndicator")
   private String authIndicator = null;
@@ -116,6 +116,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @SerializedName("merchantNumber")
   private String merchantNumber = null;
+
+  @SerializedName("retrievalReferenceNumber")
+  private String retrievalReferenceNumber = null;
 
   public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
     this.authIndicator = authIndicator;
@@ -603,6 +606,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.merchantNumber = merchantNumber;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation retrievalReferenceNumber(String retrievalReferenceNumber) {
+    this.retrievalReferenceNumber = retrievalReferenceNumber;
+    return this;
+  }
+
+   /**
+   * #### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number. 
+   * @return retrievalReferenceNumber
+  **/
+  @ApiModelProperty(value = "#### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number. ")
+  public String getRetrievalReferenceNumber() {
+    return retrievalReferenceNumber;
+  }
+
+  public void setRetrievalReferenceNumber(String retrievalReferenceNumber) {
+    this.retrievalReferenceNumber = retrievalReferenceNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -639,12 +660,13 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.masterCardAuthenticationType, ptsV2PaymentsPost201ResponseProcessorInformation.masterCardAuthenticationType) &&
         Objects.equals(this.name, ptsV2PaymentsPost201ResponseProcessorInformation.name) &&
         Objects.equals(this.routing, ptsV2PaymentsPost201ResponseProcessorInformation.routing) &&
-        Objects.equals(this.merchantNumber, ptsV2PaymentsPost201ResponseProcessorInformation.merchantNumber);
+        Objects.equals(this.merchantNumber, ptsV2PaymentsPost201ResponseProcessorInformation.merchantNumber) &&
+        Objects.equals(this.retrievalReferenceNumber, ptsV2PaymentsPost201ResponseProcessorInformation.retrievalReferenceNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber);
   }
 
 
@@ -680,6 +702,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
     sb.append("    merchantNumber: ").append(toIndentedString(merchantNumber)).append("\n");
+    sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

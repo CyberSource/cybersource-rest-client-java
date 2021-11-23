@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2payoutsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class Ptsv2payoutsProcessingInformation {
   @SerializedName("businessApplicationId")
   private String businessApplicationId = null;
@@ -43,6 +43,12 @@ public class Ptsv2payoutsProcessingInformation {
 
   @SerializedName("payoutsOptions")
   private Ptsv2payoutsProcessingInformationPayoutsOptions payoutsOptions = null;
+
+  @SerializedName("transactionReason")
+  private String transactionReason = null;
+
+  @SerializedName("purposeOfPayment")
+  private String purposeOfPayment = null;
 
   public Ptsv2payoutsProcessingInformation businessApplicationId(String businessApplicationId) {
     this.businessApplicationId = businessApplicationId;
@@ -134,6 +140,42 @@ public class Ptsv2payoutsProcessingInformation {
     this.payoutsOptions = payoutsOptions;
   }
 
+  public Ptsv2payoutsProcessingInformation transactionReason(String transactionReason) {
+    this.transactionReason = transactionReason;
+    return this;
+  }
+
+   /**
+   * Transaction reason code. 
+   * @return transactionReason
+  **/
+  @ApiModelProperty(value = "Transaction reason code. ")
+  public String getTransactionReason() {
+    return transactionReason;
+  }
+
+  public void setTransactionReason(String transactionReason) {
+    this.transactionReason = transactionReason;
+  }
+
+  public Ptsv2payoutsProcessingInformation purposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
+    return this;
+  }
+
+   /**
+   * This will send purpose of funds code for original credit transactions (OCTs). 
+   * @return purposeOfPayment
+  **/
+  @ApiModelProperty(value = "This will send purpose of funds code for original credit transactions (OCTs). ")
+  public String getPurposeOfPayment() {
+    return purposeOfPayment;
+  }
+
+  public void setPurposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,12 +190,14 @@ public class Ptsv2payoutsProcessingInformation {
         Objects.equals(this.networkRoutingOrder, ptsv2payoutsProcessingInformation.networkRoutingOrder) &&
         Objects.equals(this.commerceIndicator, ptsv2payoutsProcessingInformation.commerceIndicator) &&
         Objects.equals(this.reconciliationId, ptsv2payoutsProcessingInformation.reconciliationId) &&
-        Objects.equals(this.payoutsOptions, ptsv2payoutsProcessingInformation.payoutsOptions);
+        Objects.equals(this.payoutsOptions, ptsv2payoutsProcessingInformation.payoutsOptions) &&
+        Objects.equals(this.transactionReason, ptsv2payoutsProcessingInformation.transactionReason) &&
+        Objects.equals(this.purposeOfPayment, ptsv2payoutsProcessingInformation.purposeOfPayment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(businessApplicationId, networkRoutingOrder, commerceIndicator, reconciliationId, payoutsOptions);
+    return Objects.hash(businessApplicationId, networkRoutingOrder, commerceIndicator, reconciliationId, payoutsOptions, transactionReason, purposeOfPayment);
   }
 
 
@@ -167,6 +211,8 @@ public class Ptsv2payoutsProcessingInformation {
     sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
+    sb.append("    transactionReason: ").append(toIndentedString(transactionReason)).append("\n");
+    sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -155,6 +155,7 @@ public class CustomerPaymentInstrumentApi {
     	logger.info("CALL TO METHOD 'deleteCustomerPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerPaymentInstrumentWithHttpInfo(customerTokenId, paymentInstrumentTokenId, profileId);
+
     }
 
     /**
