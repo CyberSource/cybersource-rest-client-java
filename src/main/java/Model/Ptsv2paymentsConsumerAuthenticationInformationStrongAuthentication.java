@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication {
   @SerializedName("lowValueExemptionIndicator")
   private String lowValueExemptionIndicator = null;
@@ -42,6 +42,9 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
 
   @SerializedName("delegatedAuthenticationExemptionIndicator")
   private String delegatedAuthenticationExemptionIndicator = null;
+
+  @SerializedName("outageExemptionIndicator")
+  private String outageExemptionIndicator = null;
 
   @SerializedName("authenticationIndicator")
   private String authenticationIndicator = null;
@@ -136,6 +139,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
     this.delegatedAuthenticationExemptionIndicator = delegatedAuthenticationExemptionIndicator;
   }
 
+  public Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication outageExemptionIndicator(String outageExemptionIndicator) {
+    this.outageExemptionIndicator = outageExemptionIndicator;
+    return this;
+  }
+
+   /**
+   * This field will contain the outage exemption indicator with one of the following values: Possible values: - &#x60;0&#x60;  (Outage Authentication exemption does not apply to the transaction) - &#x60;1&#x60; (Outage exempt from SCA as authentication could not be done due to outage) 
+   * @return outageExemptionIndicator
+  **/
+  @ApiModelProperty(value = "This field will contain the outage exemption indicator with one of the following values: Possible values: - `0`  (Outage Authentication exemption does not apply to the transaction) - `1` (Outage exempt from SCA as authentication could not be done due to outage) ")
+  public String getOutageExemptionIndicator() {
+    return outageExemptionIndicator;
+  }
+
+  public void setOutageExemptionIndicator(String outageExemptionIndicator) {
+    this.outageExemptionIndicator = outageExemptionIndicator;
+  }
+
   public Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication authenticationIndicator(String authenticationIndicator) {
     this.authenticationIndicator = authenticationIndicator;
     return this;
@@ -169,12 +190,13 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
         Objects.equals(this.trustedMerchantExemptionIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.trustedMerchantExemptionIndicator) &&
         Objects.equals(this.secureCorporatePaymentIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.secureCorporatePaymentIndicator) &&
         Objects.equals(this.delegatedAuthenticationExemptionIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.delegatedAuthenticationExemptionIndicator) &&
+        Objects.equals(this.outageExemptionIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.outageExemptionIndicator) &&
         Objects.equals(this.authenticationIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.authenticationIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lowValueExemptionIndicator, riskAnalysisExemptionIndicator, trustedMerchantExemptionIndicator, secureCorporatePaymentIndicator, delegatedAuthenticationExemptionIndicator, authenticationIndicator);
+    return Objects.hash(lowValueExemptionIndicator, riskAnalysisExemptionIndicator, trustedMerchantExemptionIndicator, secureCorporatePaymentIndicator, delegatedAuthenticationExemptionIndicator, outageExemptionIndicator, authenticationIndicator);
   }
 
 
@@ -188,6 +210,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
     sb.append("    trustedMerchantExemptionIndicator: ").append(toIndentedString(trustedMerchantExemptionIndicator)).append("\n");
     sb.append("    secureCorporatePaymentIndicator: ").append(toIndentedString(secureCorporatePaymentIndicator)).append("\n");
     sb.append("    delegatedAuthenticationExemptionIndicator: ").append(toIndentedString(delegatedAuthenticationExemptionIndicator)).append("\n");
+    sb.append("    outageExemptionIndicator: ").append(toIndentedString(outageExemptionIndicator)).append("\n");
     sb.append("    authenticationIndicator: ").append(toIndentedString(authenticationIndicator)).append("\n");
     sb.append("}");
     return sb.toString();

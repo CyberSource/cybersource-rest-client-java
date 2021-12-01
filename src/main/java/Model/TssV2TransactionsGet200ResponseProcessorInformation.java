@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-25T14:03:18.082+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class TssV2TransactionsGet200ResponseProcessorInformation {
   @SerializedName("processor")
   private TssV2TransactionsGet200ResponseProcessorInformationProcessor processor = null;
@@ -47,6 +47,9 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   @SerializedName("networkTransactionId")
   private String networkTransactionId = null;
+
+  @SerializedName("retrievalReferenceNumber")
+  private String retrievalReferenceNumber = null;
 
   @SerializedName("responseId")
   private String responseId = null;
@@ -153,6 +156,24 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   public void setNetworkTransactionId(String networkTransactionId) {
     this.networkTransactionId = networkTransactionId;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessorInformation retrievalReferenceNumber(String retrievalReferenceNumber) {
+    this.retrievalReferenceNumber = retrievalReferenceNumber;
+    return this;
+  }
+
+   /**
+   * #### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number. 
+   * @return retrievalReferenceNumber
+  **/
+  @ApiModelProperty(value = "#### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number. ")
+  public String getRetrievalReferenceNumber() {
+    return retrievalReferenceNumber;
+  }
+
+  public void setRetrievalReferenceNumber(String retrievalReferenceNumber) {
+    this.retrievalReferenceNumber = retrievalReferenceNumber;
   }
 
   public TssV2TransactionsGet200ResponseProcessorInformation responseId(String responseId) {
@@ -331,6 +352,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
         Objects.equals(this.multiProcessorRouting, tssV2TransactionsGet200ResponseProcessorInformation.multiProcessorRouting) &&
         Objects.equals(this.transactionId, tssV2TransactionsGet200ResponseProcessorInformation.transactionId) &&
         Objects.equals(this.networkTransactionId, tssV2TransactionsGet200ResponseProcessorInformation.networkTransactionId) &&
+        Objects.equals(this.retrievalReferenceNumber, tssV2TransactionsGet200ResponseProcessorInformation.retrievalReferenceNumber) &&
         Objects.equals(this.responseId, tssV2TransactionsGet200ResponseProcessorInformation.responseId) &&
         Objects.equals(this.approvalCode, tssV2TransactionsGet200ResponseProcessorInformation.approvalCode) &&
         Objects.equals(this.responseCode, tssV2TransactionsGet200ResponseProcessorInformation.responseCode) &&
@@ -344,7 +366,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, responseId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, systemTraceAuditNumber, responseCodeSource);
+    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, retrievalReferenceNumber, responseId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, systemTraceAuditNumber, responseCodeSource);
   }
 
 
@@ -357,6 +379,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     sb.append("    multiProcessorRouting: ").append(toIndentedString(multiProcessorRouting)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
+    sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
     sb.append("    responseId: ").append(toIndentedString(responseId)).append("\n");
     sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
     sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");

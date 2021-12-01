@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-25T14:03:18.082+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication {
   @SerializedName("lowValueExemptionIndicator")
   private String lowValueExemptionIndicator = null;

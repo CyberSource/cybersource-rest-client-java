@@ -155,6 +155,7 @@ public class CustomerShippingAddressApi {
     	logger.info("CALL TO METHOD 'deleteCustomerShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, profileId);
+
     }
 
     /**

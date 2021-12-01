@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2PaymentsPost201ResponseBuyerInformation;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation;
 import Model.PtsV2PaymentsPost201ResponseErrorInformation;
@@ -40,7 +41,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-25T14:03:18.082+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class PtsV2PaymentsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsPost201ResponseLinks links = null;
@@ -89,6 +90,9 @@ public class PtsV2PaymentsPost201Response {
 
   @SerializedName("tokenInformation")
   private PtsV2PaymentsPost201ResponseTokenInformation tokenInformation = null;
+
+  @SerializedName("buyerInformation")
+  private PtsV2PaymentsPost201ResponseBuyerInformation buyerInformation = null;
 
   @SerializedName("riskInformation")
   private PtsV2PaymentsPost201ResponseRiskInformation riskInformation = null;
@@ -384,6 +388,24 @@ public class PtsV2PaymentsPost201Response {
     this.tokenInformation = tokenInformation;
   }
 
+  public PtsV2PaymentsPost201Response buyerInformation(PtsV2PaymentsPost201ResponseBuyerInformation buyerInformation) {
+    this.buyerInformation = buyerInformation;
+    return this;
+  }
+
+   /**
+   * Get buyerInformation
+   * @return buyerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseBuyerInformation getBuyerInformation() {
+    return buyerInformation;
+  }
+
+  public void setBuyerInformation(PtsV2PaymentsPost201ResponseBuyerInformation buyerInformation) {
+    this.buyerInformation = buyerInformation;
+  }
+
   public PtsV2PaymentsPost201Response riskInformation(PtsV2PaymentsPost201ResponseRiskInformation riskInformation) {
     this.riskInformation = riskInformation;
     return this;
@@ -446,13 +468,14 @@ public class PtsV2PaymentsPost201Response {
         Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsPost201Response.pointOfSaleInformation) &&
         Objects.equals(this.installmentInformation, ptsV2PaymentsPost201Response.installmentInformation) &&
         Objects.equals(this.tokenInformation, ptsV2PaymentsPost201Response.tokenInformation) &&
+        Objects.equals(this.buyerInformation, ptsV2PaymentsPost201Response.buyerInformation) &&
         Objects.equals(this.riskInformation, ptsV2PaymentsPost201Response.riskInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, ptsV2PaymentsPost201Response.consumerAuthenticationInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, riskInformation, consumerAuthenticationInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation);
   }
 
 
@@ -477,6 +500,7 @@ public class PtsV2PaymentsPost201Response {
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
+    sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
     sb.append("}");

@@ -32,7 +32,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class TssV2TransactionsGet200ResponsePaymentInformation {
   @SerializedName("paymentType")
   private TssV2TransactionsGet200ResponsePaymentInformationPaymentType paymentType = null;

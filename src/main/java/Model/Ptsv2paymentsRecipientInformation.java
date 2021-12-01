@@ -26,13 +26,16 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsRecipientInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class Ptsv2paymentsRecipientInformation {
   @SerializedName("accountId")
   private String accountId = null;
 
   @SerializedName("lastName")
   private String lastName = null;
+
+  @SerializedName("middleName")
+  private String middleName = null;
 
   @SerializedName("postalCode")
   private String postalCode = null;
@@ -73,6 +76,24 @@ public class Ptsv2paymentsRecipientInformation {
     this.lastName = lastName;
   }
 
+  public Ptsv2paymentsRecipientInformation middleName(String middleName) {
+    this.middleName = middleName;
+    return this;
+  }
+
+   /**
+   * Recipient’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the &#x60;recipient_middlename&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * @return middleName
+  **/
+  @ApiModelProperty(value = "Recipient’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the `recipient_middlename` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  public String getMiddleName() {
+    return middleName;
+  }
+
+  public void setMiddleName(String middleName) {
+    this.middleName = middleName;
+  }
+
   public Ptsv2paymentsRecipientInformation postalCode(String postalCode) {
     this.postalCode = postalCode;
     return this;
@@ -103,12 +124,13 @@ public class Ptsv2paymentsRecipientInformation {
     Ptsv2paymentsRecipientInformation ptsv2paymentsRecipientInformation = (Ptsv2paymentsRecipientInformation) o;
     return Objects.equals(this.accountId, ptsv2paymentsRecipientInformation.accountId) &&
         Objects.equals(this.lastName, ptsv2paymentsRecipientInformation.lastName) &&
+        Objects.equals(this.middleName, ptsv2paymentsRecipientInformation.middleName) &&
         Objects.equals(this.postalCode, ptsv2paymentsRecipientInformation.postalCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, lastName, postalCode);
+    return Objects.hash(accountId, lastName, middleName, postalCode);
   }
 
 
@@ -119,6 +141,7 @@ public class Ptsv2paymentsRecipientInformation {
     
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("}");
     return sb.toString();

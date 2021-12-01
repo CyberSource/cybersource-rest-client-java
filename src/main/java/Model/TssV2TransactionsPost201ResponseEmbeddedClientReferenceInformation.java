@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,7 +27,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation {
   @SerializedName("code")
   private String code = null;
@@ -36,6 +37,9 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation 
 
   @SerializedName("applicationUser")
   private String applicationUser = null;
+
+  @SerializedName("partner")
+  private TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner partner = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation code(String code) {
     this.code = code;
@@ -91,6 +95,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation 
     this.applicationUser = applicationUser;
   }
 
+  public TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation partner(TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner partner) {
+    this.partner = partner;
+    return this;
+  }
+
+   /**
+   * Get partner
+   * @return partner
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner getPartner() {
+    return partner;
+  }
+
+  public void setPartner(TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner partner) {
+    this.partner = partner;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,12 +125,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation 
     TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation tssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation = (TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation) o;
     return Objects.equals(this.code, tssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation.code) &&
         Objects.equals(this.applicationName, tssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation.applicationName) &&
-        Objects.equals(this.applicationUser, tssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation.applicationUser);
+        Objects.equals(this.applicationUser, tssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation.applicationUser) &&
+        Objects.equals(this.partner, tssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation.partner);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, applicationName, applicationUser);
+    return Objects.hash(code, applicationName, applicationUser, partner);
   }
 
 
@@ -120,6 +143,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation 
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
     sb.append("    applicationUser: ").append(toIndentedString(applicationUser)).append("\n");
+    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
     sb.append("}");
     return sb.toString();
   }

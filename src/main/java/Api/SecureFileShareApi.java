@@ -142,6 +142,7 @@ final String[] localVarContentTypes = {"*/*"};
     	logger.info("CALL TO METHOD 'getFile' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getFileWithHttpInfo(fileId, organizationId);
+
     }
 
     /**

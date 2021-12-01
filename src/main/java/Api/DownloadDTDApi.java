@@ -137,6 +137,7 @@ public class DownloadDTDApi {
     	logger.info("CALL TO METHOD 'getDTDV2' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getDTDV2WithHttpInfo(reportDefinitionNameVersion);
+
     }
 
     /**

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2payoutsSenderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-07-21T19:52:27.193+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class Ptsv2payoutsSenderInformation {
   @SerializedName("referenceNumber")
   private String referenceNumber = null;
@@ -40,6 +40,9 @@ public class Ptsv2payoutsSenderInformation {
 
   @SerializedName("middleInitial")
   private String middleInitial = null;
+
+  @SerializedName("middleName")
+  private String middleName = null;
 
   @SerializedName("lastName")
   private String lastName = null;
@@ -141,6 +144,24 @@ public class Ptsv2payoutsSenderInformation {
 
   public void setMiddleInitial(String middleInitial) {
     this.middleInitial = middleInitial;
+  }
+
+  public Ptsv2payoutsSenderInformation middleName(String middleName) {
+    this.middleName = middleName;
+    return this;
+  }
+
+   /**
+   * Sender’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
+   * @return middleName
+  **/
+  @ApiModelProperty(value = "Sender’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. ")
+  public String getMiddleName() {
+    return middleName;
+  }
+
+  public void setMiddleName(String middleName) {
+    this.middleName = middleName;
   }
 
   public Ptsv2payoutsSenderInformation lastName(String lastName) {
@@ -337,6 +358,7 @@ public class Ptsv2payoutsSenderInformation {
         Objects.equals(this.account, ptsv2payoutsSenderInformation.account) &&
         Objects.equals(this.firstName, ptsv2payoutsSenderInformation.firstName) &&
         Objects.equals(this.middleInitial, ptsv2payoutsSenderInformation.middleInitial) &&
+        Objects.equals(this.middleName, ptsv2payoutsSenderInformation.middleName) &&
         Objects.equals(this.lastName, ptsv2payoutsSenderInformation.lastName) &&
         Objects.equals(this.name, ptsv2payoutsSenderInformation.name) &&
         Objects.equals(this.address1, ptsv2payoutsSenderInformation.address1) &&
@@ -351,7 +373,7 @@ public class Ptsv2payoutsSenderInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(referenceNumber, account, firstName, middleInitial, lastName, name, address1, locality, administrativeArea, countryCode, postalCode, phoneNumber, dateOfBirth, vatRegistrationNumber);
+    return Objects.hash(referenceNumber, account, firstName, middleInitial, middleName, lastName, name, address1, locality, administrativeArea, countryCode, postalCode, phoneNumber, dateOfBirth, vatRegistrationNumber);
   }
 
 
@@ -364,6 +386,7 @@ public class Ptsv2payoutsSenderInformation {
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    middleInitial: ").append(toIndentedString(middleInitial)).append("\n");
+    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    address1: ").append(toIndentedString(address1)).append("\n");

@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PtsV2PayoutsPost201ResponseErrorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-09-17T17:07:34.089+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
 public class PtsV2PayoutsPost201ResponseErrorInformation {
   @SerializedName("reason")
   private String reason = null;
