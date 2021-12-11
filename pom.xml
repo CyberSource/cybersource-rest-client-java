@@ -231,26 +231,26 @@
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>2.13.3</version>
+			<version>${log4j.version}</version>
 			<type>pom</type>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.13.3</version>
+			<version>${log4j.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.13.3</version>
+			<version>${log4j.version}</version>
 		</dependency>
 		
 		<dependency>
 		    <groupId>org.apache.logging.log4j</groupId>
 		    <artifactId>log4j-1.2-api</artifactId>
-		    <version>2.13.3</version>
+			<version>${log4j.version}</version>
 		</dependency>
 
 		<!-- test dependencies -->
@@ -265,7 +265,7 @@
 		<dependency>
 			<groupId>com.cybersource</groupId>
 			<artifactId>AuthenticationSdk</artifactId>
-			<version>0.0.18</version>
+			<version>0.0.19</version>
 		</dependency>
 	</dependencies>
 
@@ -281,5 +281,6 @@
 		<maven-plugin-version>1.0.0</maven-plugin-version>
 		<junit-version>4.13.2</junit-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<log4j.version>2.15.0</log4j.version>
 	</properties>
 </project>
