@@ -2,6 +2,12 @@
 
 The CyberSource Java client provides convenient access to the [CyberSource REST API](https://developer.cybersource.com/api/reference/api-reference.html) from your Java application.
 
+## IMPORTANT NOTE:
+
+***Due to restrictions on Log4j2 v2.15.0, masking/hiding of sensitive data will not work for the time being.***
+
+***We will work to include it again in future versions.***
+
 ## Requirements
 
 Java 1.8.
