@@ -265,7 +265,7 @@
 		<dependency>
 			<groupId>com.cybersource</groupId>
 			<artifactId>AuthenticationSdk</artifactId>
-			<version>0.0.20-SNAPSHOT</version>
+			<version>0.0.20</version>
 		</dependency>
 	</dependencies>
 
