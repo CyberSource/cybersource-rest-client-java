@@ -1208,7 +1208,9 @@ public class ApiClient {
 			}
 			T data = handleResponse(response, returnType);
 			
-			response.body().close();
+			if (returnType != null) {
+				response.body().close();
+			}
 			
 			logger.info("HTTP Response Body :\n{}", data);
 
