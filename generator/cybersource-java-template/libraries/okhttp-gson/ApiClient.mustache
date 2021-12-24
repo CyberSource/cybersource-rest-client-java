@@ -1206,9 +1206,10 @@ public class ApiClient {
 			if(returnType == new TypeToken< Model.AccessTokenResponse >(){}.getType()) {
 				logger.debug("Response :\n" + response.peekBody(Long.MAX_VALUE).string());
 			}
+
 			T data = handleResponse(response, returnType);
 			
-			if (returnType != null) {
+			if (returnType != null || call.request().method().equalsIgnoreCase("DELETE") || responseCode.equalsIgnoreCase("202")) {
 				response.body().close();
 			}
 			
