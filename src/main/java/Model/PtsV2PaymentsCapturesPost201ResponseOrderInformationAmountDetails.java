@@ -26,13 +26,16 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;
 
   @SerializedName("currency")
   private String currency = null;
+
+  @SerializedName("processorTransactionFee")
+  private String processorTransactionFee = null;
 
   public PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
@@ -70,6 +73,24 @@ public class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails {
     this.currency = currency;
   }
 
+  public PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails processorTransactionFee(String processorTransactionFee) {
+    this.processorTransactionFee = processorTransactionFee;
+    return this;
+  }
+
+   /**
+   * The fee decided by the PSP/Processor per transaction.
+   * @return processorTransactionFee
+  **/
+  @ApiModelProperty(value = "The fee decided by the PSP/Processor per transaction.")
+  public String getProcessorTransactionFee() {
+    return processorTransactionFee;
+  }
+
+  public void setProcessorTransactionFee(String processorTransactionFee) {
+    this.processorTransactionFee = processorTransactionFee;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +102,13 @@ public class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails {
     }
     PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails ptsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails = (PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails) o;
     return Objects.equals(this.totalAmount, ptsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails.totalAmount) &&
-        Objects.equals(this.currency, ptsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails.currency);
+        Objects.equals(this.currency, ptsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails.currency) &&
+        Objects.equals(this.processorTransactionFee, ptsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails.processorTransactionFee);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency);
+    return Objects.hash(totalAmount, currency, processorTransactionFee);
   }
 
 
@@ -97,6 +119,7 @@ public class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails {
     
     sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    processorTransactionFee: ").append(toIndentedString(processorTransactionFee)).append("\n");
     sb.append("}");
     return sb.toString();
   }

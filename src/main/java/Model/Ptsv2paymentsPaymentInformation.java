@@ -17,6 +17,7 @@ import java.util.Objects;
 import Model.Ptsv2paymentsPaymentInformationBank;
 import Model.Ptsv2paymentsPaymentInformationCard;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.Ptsv2paymentsPaymentInformationEWallet;
 import Model.Ptsv2paymentsPaymentInformationFluidData;
 import Model.Ptsv2paymentsPaymentInformationInstrumentIdentifier;
 import Model.Ptsv2paymentsPaymentInformationLegacyToken;
@@ -36,7 +37,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class Ptsv2paymentsPaymentInformation {
   @SerializedName("card")
   private Ptsv2paymentsPaymentInformationCard card = null;
@@ -70,6 +71,9 @@ public class Ptsv2paymentsPaymentInformation {
 
   @SerializedName("initiationChannel")
   private String initiationChannel = null;
+
+  @SerializedName("eWallet")
+  private Ptsv2paymentsPaymentInformationEWallet eWallet = null;
 
   public Ptsv2paymentsPaymentInformation card(Ptsv2paymentsPaymentInformationCard card) {
     this.card = card;
@@ -269,6 +273,24 @@ public class Ptsv2paymentsPaymentInformation {
     this.initiationChannel = initiationChannel;
   }
 
+  public Ptsv2paymentsPaymentInformation eWallet(Ptsv2paymentsPaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
+    return this;
+  }
+
+   /**
+   * Get eWallet
+   * @return eWallet
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationEWallet getEWallet() {
+    return eWallet;
+  }
+
+  public void setEWallet(Ptsv2paymentsPaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -289,12 +311,13 @@ public class Ptsv2paymentsPaymentInformation {
         Objects.equals(this.legacyToken, ptsv2paymentsPaymentInformation.legacyToken) &&
         Objects.equals(this.bank, ptsv2paymentsPaymentInformation.bank) &&
         Objects.equals(this.paymentType, ptsv2paymentsPaymentInformation.paymentType) &&
-        Objects.equals(this.initiationChannel, ptsv2paymentsPaymentInformation.initiationChannel);
+        Objects.equals(this.initiationChannel, ptsv2paymentsPaymentInformation.initiationChannel) &&
+        Objects.equals(this.eWallet, ptsv2paymentsPaymentInformation.eWallet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, paymentType, initiationChannel);
+    return Objects.hash(card, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, paymentType, initiationChannel, eWallet);
   }
 
 
@@ -314,6 +337,7 @@ public class Ptsv2paymentsPaymentInformation {
     sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("    initiationChannel: ").append(toIndentedString(initiationChannel)).append("\n");
+    sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
     sb.append("}");
     return sb.toString();
   }

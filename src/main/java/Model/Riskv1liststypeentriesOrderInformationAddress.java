@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains address information related to the order
  */
 @ApiModel(description = "Contains address information related to the order")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class Riskv1liststypeentriesOrderInformationAddress {
   @SerializedName("address1")
   private String address1 = null;

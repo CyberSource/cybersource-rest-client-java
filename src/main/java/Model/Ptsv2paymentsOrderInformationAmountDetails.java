@@ -32,10 +32,13 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class Ptsv2paymentsOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;
+
+  @SerializedName("subTotalAmount")
+  private String subTotalAmount = null;
 
   @SerializedName("currency")
   private String currency = null;
@@ -125,6 +128,24 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
 
   public void setTotalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
+  }
+
+  public Ptsv2paymentsOrderInformationAmountDetails subTotalAmount(String subTotalAmount) {
+    this.subTotalAmount = subTotalAmount;
+    return this;
+  }
+
+   /**
+   * Subtotal amount of all the items.This amount (which is the value of all items in the cart, not including the additional amounts such as tax, shipping, etc.) cannot change after a sessions request. When there is a change to any of the additional amounts, this field should be resent in the order request. When the sub total amount changes, you must initiate a new transaction starting with a sessions request. Note The amount value must be a non-negative number containing 2 decimal places and limited to 7 digits before the decimal point. This value can not be changed after a sessions request. 
+   * @return subTotalAmount
+  **/
+  @ApiModelProperty(value = "Subtotal amount of all the items.This amount (which is the value of all items in the cart, not including the additional amounts such as tax, shipping, etc.) cannot change after a sessions request. When there is a change to any of the additional amounts, this field should be resent in the order request. When the sub total amount changes, you must initiate a new transaction starting with a sessions request. Note The amount value must be a non-negative number containing 2 decimal places and limited to 7 digits before the decimal point. This value can not be changed after a sessions request. ")
+  public String getSubTotalAmount() {
+    return subTotalAmount;
+  }
+
+  public void setSubTotalAmount(String subTotalAmount) {
+    this.subTotalAmount = subTotalAmount;
   }
 
   public Ptsv2paymentsOrderInformationAmountDetails currency(String currency) {
@@ -586,6 +607,7 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     }
     Ptsv2paymentsOrderInformationAmountDetails ptsv2paymentsOrderInformationAmountDetails = (Ptsv2paymentsOrderInformationAmountDetails) o;
     return Objects.equals(this.totalAmount, ptsv2paymentsOrderInformationAmountDetails.totalAmount) &&
+        Objects.equals(this.subTotalAmount, ptsv2paymentsOrderInformationAmountDetails.subTotalAmount) &&
         Objects.equals(this.currency, ptsv2paymentsOrderInformationAmountDetails.currency) &&
         Objects.equals(this.discountAmount, ptsv2paymentsOrderInformationAmountDetails.discountAmount) &&
         Objects.equals(this.dutyAmount, ptsv2paymentsOrderInformationAmountDetails.dutyAmount) &&
@@ -614,7 +636,7 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount, currencyConversion);
+    return Objects.hash(totalAmount, subTotalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount, currencyConversion);
   }
 
 
@@ -624,6 +646,7 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     sb.append("class Ptsv2paymentsOrderInformationAmountDetails {\n");
     
     sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    sb.append("    subTotalAmount: ").append(toIndentedString(subTotalAmount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
     sb.append("    dutyAmount: ").append(toIndentedString(dutyAmount)).append("\n");

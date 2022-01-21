@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationBank
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class Ptsv2paymentsPaymentInformationBank {
   @SerializedName("account")
   private Ptsv2paymentsPaymentInformationBankAccount account = null;
@@ -37,6 +37,9 @@ public class Ptsv2paymentsPaymentInformationBank {
 
   @SerializedName("iban")
   private String iban = null;
+
+  @SerializedName("swiftCode")
+  private String swiftCode = null;
 
   public Ptsv2paymentsPaymentInformationBank account(Ptsv2paymentsPaymentInformationBankAccount account) {
     this.account = account;
@@ -92,6 +95,24 @@ public class Ptsv2paymentsPaymentInformationBank {
     this.iban = iban;
   }
 
+  public Ptsv2paymentsPaymentInformationBank swiftCode(String swiftCode) {
+    this.swiftCode = swiftCode;
+    return this;
+  }
+
+   /**
+   * Bank’s SWIFT code. You can use this field only when scoring a direct debit transaction. Required only for crossborder transactions.  For all possible values, see the &#x60;bank_swiftcode&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @return swiftCode
+  **/
+  @ApiModelProperty(value = "Bank’s SWIFT code. You can use this field only when scoring a direct debit transaction. Required only for crossborder transactions.  For all possible values, see the `bank_swiftcode` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  public String getSwiftCode() {
+    return swiftCode;
+  }
+
+  public void setSwiftCode(String swiftCode) {
+    this.swiftCode = swiftCode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,12 +125,13 @@ public class Ptsv2paymentsPaymentInformationBank {
     Ptsv2paymentsPaymentInformationBank ptsv2paymentsPaymentInformationBank = (Ptsv2paymentsPaymentInformationBank) o;
     return Objects.equals(this.account, ptsv2paymentsPaymentInformationBank.account) &&
         Objects.equals(this.routingNumber, ptsv2paymentsPaymentInformationBank.routingNumber) &&
-        Objects.equals(this.iban, ptsv2paymentsPaymentInformationBank.iban);
+        Objects.equals(this.iban, ptsv2paymentsPaymentInformationBank.iban) &&
+        Objects.equals(this.swiftCode, ptsv2paymentsPaymentInformationBank.swiftCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, routingNumber, iban);
+    return Objects.hash(account, routingNumber, iban, swiftCode);
   }
 
 
@@ -121,6 +143,7 @@ public class Ptsv2paymentsPaymentInformationBank {
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");
     sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
+    sb.append("    swiftCode: ").append(toIndentedString(swiftCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

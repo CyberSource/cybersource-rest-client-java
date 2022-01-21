@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **timezone** | **String** | Timezone of the report |  [optional]
 **reportStartTime** | [**DateTime**](DateTime.md) | Start time of the report |  [optional]
 **reportEndTime** | [**DateTime**](DateTime.md) | End time of the report |  [optional]
-**reportFilters** | [**Map&lt;String, List&lt;String&gt;&gt;**](List.md) | List of filters to apply |  [optional]
+**reportFilters** | [**Reportingv3reportsReportFilters**](Reportingv3reportsReportFilters.md) |  |  [optional]
 **reportPreferences** | [**Reportingv3reportsReportPreferences**](Reportingv3reportsReportPreferences.md) |  |  [optional]
 **groupName** | **String** | Specifies the group name |  [optional]
 

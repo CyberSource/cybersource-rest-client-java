@@ -37,7 +37,7 @@ import java.util.List;
  * Contains the result of risk assessment.
  */
 @ApiModel(description = "Contains the result of risk assessment.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class PtsV2PaymentsPost201ResponseRiskInformation {
   @SerializedName("profile")
   private PtsV2PaymentsPost201ResponseRiskInformationProfile profile = null;

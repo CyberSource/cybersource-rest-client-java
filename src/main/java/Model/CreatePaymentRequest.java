@@ -22,6 +22,7 @@ import Model.Ptsv2paymentsConsumerAuthenticationInformation;
 import Model.Ptsv2paymentsDeviceInformation;
 import Model.Ptsv2paymentsHealthCareInformation;
 import Model.Ptsv2paymentsInstallmentInformation;
+import Model.Ptsv2paymentsInvoiceDetails;
 import Model.Ptsv2paymentsIssuerInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsMerchantInformation;
@@ -29,6 +30,7 @@ import Model.Ptsv2paymentsOrderInformation;
 import Model.Ptsv2paymentsPaymentInformation;
 import Model.Ptsv2paymentsPointOfSaleInformation;
 import Model.Ptsv2paymentsProcessingInformation;
+import Model.Ptsv2paymentsProcessorInformation;
 import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsRecipientInformation;
 import Model.Ptsv2paymentsRecurringPaymentInformation;
@@ -49,7 +51,7 @@ import java.util.List;
 /**
  * CreatePaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class CreatePaymentRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -104,6 +106,12 @@ public class CreatePaymentRequest {
 
   @SerializedName("tokenInformation")
   private Ptsv2paymentsTokenInformation tokenInformation = null;
+
+  @SerializedName("invoiceDetails")
+  private Ptsv2paymentsInvoiceDetails invoiceDetails = null;
+
+  @SerializedName("processorInformation")
+  private Ptsv2paymentsProcessorInformation processorInformation = null;
 
   @SerializedName("riskInformation")
   private Ptsv2paymentsRiskInformation riskInformation = null;
@@ -446,6 +454,42 @@ public class CreatePaymentRequest {
     this.tokenInformation = tokenInformation;
   }
 
+  public CreatePaymentRequest invoiceDetails(Ptsv2paymentsInvoiceDetails invoiceDetails) {
+    this.invoiceDetails = invoiceDetails;
+    return this;
+  }
+
+   /**
+   * Get invoiceDetails
+   * @return invoiceDetails
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsInvoiceDetails getInvoiceDetails() {
+    return invoiceDetails;
+  }
+
+  public void setInvoiceDetails(Ptsv2paymentsInvoiceDetails invoiceDetails) {
+    this.invoiceDetails = invoiceDetails;
+  }
+
+  public CreatePaymentRequest processorInformation(Ptsv2paymentsProcessorInformation processorInformation) {
+    this.processorInformation = processorInformation;
+    return this;
+  }
+
+   /**
+   * Get processorInformation
+   * @return processorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessorInformation getProcessorInformation() {
+    return processorInformation;
+  }
+
+  public void setProcessorInformation(Ptsv2paymentsProcessorInformation processorInformation) {
+    this.processorInformation = processorInformation;
+  }
+
   public CreatePaymentRequest riskInformation(Ptsv2paymentsRiskInformation riskInformation) {
     this.riskInformation = riskInformation;
     return this;
@@ -528,6 +572,8 @@ public class CreatePaymentRequest {
         Objects.equals(this.healthCareInformation, createPaymentRequest.healthCareInformation) &&
         Objects.equals(this.promotionInformation, createPaymentRequest.promotionInformation) &&
         Objects.equals(this.tokenInformation, createPaymentRequest.tokenInformation) &&
+        Objects.equals(this.invoiceDetails, createPaymentRequest.invoiceDetails) &&
+        Objects.equals(this.processorInformation, createPaymentRequest.processorInformation) &&
         Objects.equals(this.riskInformation, createPaymentRequest.riskInformation) &&
         Objects.equals(this.acquirerInformation, createPaymentRequest.acquirerInformation) &&
         Objects.equals(this.recurringPaymentInformation, createPaymentRequest.recurringPaymentInformation);
@@ -535,7 +581,7 @@ public class CreatePaymentRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, riskInformation, acquirerInformation, recurringPaymentInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, riskInformation, acquirerInformation, recurringPaymentInformation);
   }
 
 
@@ -562,6 +608,8 @@ public class CreatePaymentRequest {
     sb.append("    healthCareInformation: ").append(toIndentedString(healthCareInformation)).append("\n");
     sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");
     sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
+    sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
+    sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    acquirerInformation: ").append(toIndentedString(acquirerInformation)).append("\n");
     sb.append("    recurringPaymentInformation: ").append(toIndentedString(recurringPaymentInformation)).append("\n");

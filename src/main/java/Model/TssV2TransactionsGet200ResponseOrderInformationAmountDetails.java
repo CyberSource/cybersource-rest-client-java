@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsOrderInformationAmountDetailsSurcharge;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,7 +27,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseOrderInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;
@@ -45,6 +46,9 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
 
   @SerializedName("settlementCurrency")
   private String settlementCurrency = null;
+
+  @SerializedName("surcharge")
+  private Ptsv2paymentsOrderInformationAmountDetailsSurcharge surcharge = null;
 
   public TssV2TransactionsGet200ResponseOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
@@ -154,6 +158,24 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
     this.settlementCurrency = settlementCurrency;
   }
 
+  public TssV2TransactionsGet200ResponseOrderInformationAmountDetails surcharge(Ptsv2paymentsOrderInformationAmountDetailsSurcharge surcharge) {
+    this.surcharge = surcharge;
+    return this;
+  }
+
+   /**
+   * Get surcharge
+   * @return surcharge
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsOrderInformationAmountDetailsSurcharge getSurcharge() {
+    return surcharge;
+  }
+
+  public void setSurcharge(Ptsv2paymentsOrderInformationAmountDetailsSurcharge surcharge) {
+    this.surcharge = surcharge;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -169,12 +191,13 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
         Objects.equals(this.taxAmount, tssV2TransactionsGet200ResponseOrderInformationAmountDetails.taxAmount) &&
         Objects.equals(this.authorizedAmount, tssV2TransactionsGet200ResponseOrderInformationAmountDetails.authorizedAmount) &&
         Objects.equals(this.settlementAmount, tssV2TransactionsGet200ResponseOrderInformationAmountDetails.settlementAmount) &&
-        Objects.equals(this.settlementCurrency, tssV2TransactionsGet200ResponseOrderInformationAmountDetails.settlementCurrency);
+        Objects.equals(this.settlementCurrency, tssV2TransactionsGet200ResponseOrderInformationAmountDetails.settlementCurrency) &&
+        Objects.equals(this.surcharge, tssV2TransactionsGet200ResponseOrderInformationAmountDetails.surcharge);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency, taxAmount, authorizedAmount, settlementAmount, settlementCurrency);
+    return Objects.hash(totalAmount, currency, taxAmount, authorizedAmount, settlementAmount, settlementCurrency, surcharge);
   }
 
 
@@ -189,6 +212,7 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
     sb.append("    authorizedAmount: ").append(toIndentedString(authorizedAmount)).append("\n");
     sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
     sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
+    sb.append("    surcharge: ").append(toIndentedString(surcharge)).append("\n");
     sb.append("}");
     return sb.toString();
   }

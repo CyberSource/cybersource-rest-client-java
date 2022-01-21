@@ -26,10 +26,16 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsOrderInformationShipTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class Ptsv2paymentsOrderInformationShipTo {
+  @SerializedName("title")
+  private String title = null;
+
   @SerializedName("firstName")
   private String firstName = null;
+
+  @SerializedName("middleName")
+  private String middleName = null;
 
   @SerializedName("lastName")
   private String lastName = null;
@@ -73,6 +79,24 @@ public class Ptsv2paymentsOrderInformationShipTo {
   @SerializedName("method")
   private String method = null;
 
+  public Ptsv2paymentsOrderInformationShipTo title(String title) {
+    this.title = title;
+    return this;
+  }
+
+   /**
+   * The title of the person receiving the product.
+   * @return title
+  **/
+  @ApiModelProperty(value = "The title of the person receiving the product.")
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
   public Ptsv2paymentsOrderInformationShipTo firstName(String firstName) {
     this.firstName = firstName;
     return this;
@@ -89,6 +113,24 @@ public class Ptsv2paymentsOrderInformationShipTo {
 
   public void setFirstName(String firstName) {
     this.firstName = firstName;
+  }
+
+  public Ptsv2paymentsOrderInformationShipTo middleName(String middleName) {
+    this.middleName = middleName;
+    return this;
+  }
+
+   /**
+   * Middle name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
+   * @return middleName
+  **/
+  @ApiModelProperty(value = "Middle name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. ")
+  public String getMiddleName() {
+    return middleName;
+  }
+
+  public void setMiddleName(String middleName) {
+    this.middleName = middleName;
   }
 
   public Ptsv2paymentsOrderInformationShipTo lastName(String lastName) {
@@ -353,7 +395,9 @@ public class Ptsv2paymentsOrderInformationShipTo {
       return false;
     }
     Ptsv2paymentsOrderInformationShipTo ptsv2paymentsOrderInformationShipTo = (Ptsv2paymentsOrderInformationShipTo) o;
-    return Objects.equals(this.firstName, ptsv2paymentsOrderInformationShipTo.firstName) &&
+    return Objects.equals(this.title, ptsv2paymentsOrderInformationShipTo.title) &&
+        Objects.equals(this.firstName, ptsv2paymentsOrderInformationShipTo.firstName) &&
+        Objects.equals(this.middleName, ptsv2paymentsOrderInformationShipTo.middleName) &&
         Objects.equals(this.lastName, ptsv2paymentsOrderInformationShipTo.lastName) &&
         Objects.equals(this.address1, ptsv2paymentsOrderInformationShipTo.address1) &&
         Objects.equals(this.address2, ptsv2paymentsOrderInformationShipTo.address2) &&
@@ -372,7 +416,7 @@ public class Ptsv2paymentsOrderInformationShipTo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, address1, address2, locality, administrativeArea, postalCode, country, district, buildingNumber, phoneNumber, company, destinationTypes, destinationCode, method);
+    return Objects.hash(title, firstName, middleName, lastName, address1, address2, locality, administrativeArea, postalCode, country, district, buildingNumber, phoneNumber, company, destinationTypes, destinationCode, method);
   }
 
 
@@ -381,7 +425,9 @@ public class Ptsv2paymentsOrderInformationShipTo {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformationShipTo {\n");
     
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("    address2: ").append(toIndentedString(address2)).append("\n");

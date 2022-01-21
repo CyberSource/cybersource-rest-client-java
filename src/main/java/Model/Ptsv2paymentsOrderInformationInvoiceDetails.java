@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationInvoiceDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class Ptsv2paymentsOrderInformationInvoiceDetails {
   @SerializedName("invoiceNumber")
   private String invoiceNumber = null;
@@ -75,6 +75,9 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
 
   @SerializedName("invoiceDate")
   private String invoiceDate = null;
+
+  @SerializedName("costCenter")
+  private String costCenter = null;
 
   public Ptsv2paymentsOrderInformationInvoiceDetails invoiceNumber(String invoiceNumber) {
     this.invoiceNumber = invoiceNumber;
@@ -355,6 +358,24 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     this.invoiceDate = invoiceDate;
   }
 
+  public Ptsv2paymentsOrderInformationInvoiceDetails costCenter(String costCenter) {
+    this.costCenter = costCenter;
+    return this;
+  }
+
+   /**
+   * Cost centre of the merchant
+   * @return costCenter
+  **/
+  @ApiModelProperty(value = "Cost centre of the merchant")
+  public String getCostCenter() {
+    return costCenter;
+  }
+
+  public void setCostCenter(String costCenter) {
+    this.costCenter = costCenter;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -379,12 +400,13 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
         Objects.equals(this.referenceDataCode, ptsv2paymentsOrderInformationInvoiceDetails.referenceDataCode) &&
         Objects.equals(this.referenceDataNumber, ptsv2paymentsOrderInformationInvoiceDetails.referenceDataNumber) &&
         Objects.equals(this.salesSlipNumber, ptsv2paymentsOrderInformationInvoiceDetails.salesSlipNumber) &&
-        Objects.equals(this.invoiceDate, ptsv2paymentsOrderInformationInvoiceDetails.invoiceDate);
+        Objects.equals(this.invoiceDate, ptsv2paymentsOrderInformationInvoiceDetails.invoiceDate) &&
+        Objects.equals(this.costCenter, ptsv2paymentsOrderInformationInvoiceDetails.costCenter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum, referenceDataCode, referenceDataNumber, salesSlipNumber, invoiceDate);
+    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum, referenceDataCode, referenceDataNumber, salesSlipNumber, invoiceDate, costCenter);
   }
 
 
@@ -408,6 +430,7 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     sb.append("    referenceDataNumber: ").append(toIndentedString(referenceDataNumber)).append("\n");
     sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
     sb.append("    invoiceDate: ").append(toIndentedString(invoiceDate)).append("\n");
+    sb.append("    costCenter: ").append(toIndentedString(costCenter)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsPaymentInformationBank;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.Ptsv2paymentsPaymentInformationEWallet;
 import Model.Ptsv2paymentsPaymentInformationFluidData;
 import Model.Ptsv2paymentsPaymentInformationInstrumentIdentifier;
 import Model.Ptsv2paymentsPaymentInformationLegacyToken;
@@ -23,6 +23,7 @@ import Model.Ptsv2paymentsPaymentInformationPaymentInstrument;
 import Model.Ptsv2paymentsPaymentInformationPaymentType;
 import Model.Ptsv2paymentsPaymentInformationShippingAddress;
 import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
+import Model.Ptsv2paymentsidrefundsPaymentInformationBank;
 import Model.Ptsv2paymentsidrefundsPaymentInformationCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -36,13 +37,13 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidrefundsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class Ptsv2paymentsidrefundsPaymentInformation {
   @SerializedName("card")
   private Ptsv2paymentsidrefundsPaymentInformationCard card = null;
 
   @SerializedName("bank")
-  private Ptsv2paymentsPaymentInformationBank bank = null;
+  private Ptsv2paymentsidrefundsPaymentInformationBank bank = null;
 
   @SerializedName("tokenizedCard")
   private Ptsv2paymentsPaymentInformationTokenizedCard tokenizedCard = null;
@@ -68,6 +69,9 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
   @SerializedName("paymentType")
   private Ptsv2paymentsPaymentInformationPaymentType paymentType = null;
 
+  @SerializedName("eWallet")
+  private Ptsv2paymentsPaymentInformationEWallet eWallet = null;
+
   public Ptsv2paymentsidrefundsPaymentInformation card(Ptsv2paymentsidrefundsPaymentInformationCard card) {
     this.card = card;
     return this;
@@ -86,7 +90,7 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     this.card = card;
   }
 
-  public Ptsv2paymentsidrefundsPaymentInformation bank(Ptsv2paymentsPaymentInformationBank bank) {
+  public Ptsv2paymentsidrefundsPaymentInformation bank(Ptsv2paymentsidrefundsPaymentInformationBank bank) {
     this.bank = bank;
     return this;
   }
@@ -96,11 +100,11 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
    * @return bank
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsPaymentInformationBank getBank() {
+  public Ptsv2paymentsidrefundsPaymentInformationBank getBank() {
     return bank;
   }
 
-  public void setBank(Ptsv2paymentsPaymentInformationBank bank) {
+  public void setBank(Ptsv2paymentsidrefundsPaymentInformationBank bank) {
     this.bank = bank;
   }
 
@@ -248,6 +252,24 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     this.paymentType = paymentType;
   }
 
+  public Ptsv2paymentsidrefundsPaymentInformation eWallet(Ptsv2paymentsPaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
+    return this;
+  }
+
+   /**
+   * Get eWallet
+   * @return eWallet
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationEWallet getEWallet() {
+    return eWallet;
+  }
+
+  public void setEWallet(Ptsv2paymentsPaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -267,12 +289,13 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
         Objects.equals(this.instrumentIdentifier, ptsv2paymentsidrefundsPaymentInformation.instrumentIdentifier) &&
         Objects.equals(this.shippingAddress, ptsv2paymentsidrefundsPaymentInformation.shippingAddress) &&
         Objects.equals(this.legacyToken, ptsv2paymentsidrefundsPaymentInformation.legacyToken) &&
-        Objects.equals(this.paymentType, ptsv2paymentsidrefundsPaymentInformation.paymentType);
+        Objects.equals(this.paymentType, ptsv2paymentsidrefundsPaymentInformation.paymentType) &&
+        Objects.equals(this.eWallet, ptsv2paymentsidrefundsPaymentInformation.eWallet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, bank, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, paymentType);
+    return Objects.hash(card, bank, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, paymentType, eWallet);
   }
 
 
@@ -291,6 +314,7 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
     sb.append("    legacyToken: ").append(toIndentedString(legacyToken)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
     sb.append("}");
     return sb.toString();
   }

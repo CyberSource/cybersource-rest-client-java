@@ -26,8 +26,11 @@ import java.io.IOException;
 /**
  * Riskv1authenticationsPaymentInformationTokenizedCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class Riskv1authenticationsPaymentInformationTokenizedCard {
+  @SerializedName("transactionType")
+  private String transactionType = null;
+
   @SerializedName("type")
   private String type = null;
 
@@ -39,6 +42,24 @@ public class Riskv1authenticationsPaymentInformationTokenizedCard {
 
   @SerializedName("number")
   private String number = null;
+
+  public Riskv1authenticationsPaymentInformationTokenizedCard transactionType(String transactionType) {
+    this.transactionType = transactionType;
+    return this;
+  }
+
+   /**
+   * Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - &#x60;2&#x60;: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. 
+   * @return transactionType
+  **/
+  @ApiModelProperty(value = "Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - `2`: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. ")
+  public String getTransactionType() {
+    return transactionType;
+  }
+
+  public void setTransactionType(String transactionType) {
+    this.transactionType = transactionType;
+  }
 
   public Riskv1authenticationsPaymentInformationTokenizedCard type(String type) {
     this.type = type;
@@ -122,7 +143,8 @@ public class Riskv1authenticationsPaymentInformationTokenizedCard {
       return false;
     }
     Riskv1authenticationsPaymentInformationTokenizedCard riskv1authenticationsPaymentInformationTokenizedCard = (Riskv1authenticationsPaymentInformationTokenizedCard) o;
-    return Objects.equals(this.type, riskv1authenticationsPaymentInformationTokenizedCard.type) &&
+    return Objects.equals(this.transactionType, riskv1authenticationsPaymentInformationTokenizedCard.transactionType) &&
+        Objects.equals(this.type, riskv1authenticationsPaymentInformationTokenizedCard.type) &&
         Objects.equals(this.expirationMonth, riskv1authenticationsPaymentInformationTokenizedCard.expirationMonth) &&
         Objects.equals(this.expirationYear, riskv1authenticationsPaymentInformationTokenizedCard.expirationYear) &&
         Objects.equals(this.number, riskv1authenticationsPaymentInformationTokenizedCard.number);
@@ -130,7 +152,7 @@ public class Riskv1authenticationsPaymentInformationTokenizedCard {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, expirationMonth, expirationYear, number);
+    return Objects.hash(transactionType, type, expirationMonth, expirationYear, number);
   }
 
 
@@ -139,6 +161,7 @@ public class Riskv1authenticationsPaymentInformationTokenizedCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationsPaymentInformationTokenizedCard {\n");
     
+    sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
     sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");

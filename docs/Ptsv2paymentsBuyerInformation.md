@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **companyTaxId** | **String** | Company’s tax identifier. This is only used for eCheck service.  ** TeleCheck ** Contact your TeleCheck representative to find out whether this field is required or optional.  ** All Other Processors ** Not used.  |  [optional]
 **personalIdentification** | [**List&lt;Ptsv2paymentsBuyerInformationPersonalIdentification&gt;**](Ptsv2paymentsBuyerInformationPersonalIdentification.md) |  |  [optional]
 **hashedPassword** | **String** | The merchant&#39;s password that CyberSource hashes and stores as a hashed password.  For details about this field, see the &#x60;customer_password&#x60; field description in _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link).  |  [optional]
+**gender** | **String** | Customer&#39;s gender. Possible values are F (female), M (male),O (other). |  [optional]
+**language** | **String** | language setting of the user |  [optional]
 **mobilePhone** | **Integer** | Cardholder’s mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions.  |  [optional]
 
 
