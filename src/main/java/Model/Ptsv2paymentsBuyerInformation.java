@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsBuyerInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class Ptsv2paymentsBuyerInformation {
   @SerializedName("merchantCustomerId")
   private String merchantCustomerId = null;
@@ -48,6 +48,12 @@ public class Ptsv2paymentsBuyerInformation {
 
   @SerializedName("hashedPassword")
   private String hashedPassword = null;
+
+  @SerializedName("gender")
+  private String gender = null;
+
+  @SerializedName("language")
+  private String language = null;
 
   @SerializedName("mobilePhone")
   private Integer mobilePhone = null;
@@ -168,6 +174,42 @@ public class Ptsv2paymentsBuyerInformation {
     this.hashedPassword = hashedPassword;
   }
 
+  public Ptsv2paymentsBuyerInformation gender(String gender) {
+    this.gender = gender;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s gender. Possible values are F (female), M (male),O (other).
+   * @return gender
+  **/
+  @ApiModelProperty(value = "Customer's gender. Possible values are F (female), M (male),O (other).")
+  public String getGender() {
+    return gender;
+  }
+
+  public void setGender(String gender) {
+    this.gender = gender;
+  }
+
+  public Ptsv2paymentsBuyerInformation language(String language) {
+    this.language = language;
+    return this;
+  }
+
+   /**
+   * language setting of the user
+   * @return language
+  **/
+  @ApiModelProperty(value = "language setting of the user")
+  public String getLanguage() {
+    return language;
+  }
+
+  public void setLanguage(String language) {
+    this.language = language;
+  }
+
   public Ptsv2paymentsBuyerInformation mobilePhone(Integer mobilePhone) {
     this.mobilePhone = mobilePhone;
     return this;
@@ -202,12 +244,14 @@ public class Ptsv2paymentsBuyerInformation {
         Objects.equals(this.companyTaxId, ptsv2paymentsBuyerInformation.companyTaxId) &&
         Objects.equals(this.personalIdentification, ptsv2paymentsBuyerInformation.personalIdentification) &&
         Objects.equals(this.hashedPassword, ptsv2paymentsBuyerInformation.hashedPassword) &&
+        Objects.equals(this.gender, ptsv2paymentsBuyerInformation.gender) &&
+        Objects.equals(this.language, ptsv2paymentsBuyerInformation.language) &&
         Objects.equals(this.mobilePhone, ptsv2paymentsBuyerInformation.mobilePhone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, companyTaxId, personalIdentification, hashedPassword, mobilePhone);
+    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, companyTaxId, personalIdentification, hashedPassword, gender, language, mobilePhone);
   }
 
 
@@ -222,6 +266,8 @@ public class Ptsv2paymentsBuyerInformation {
     sb.append("    companyTaxId: ").append(toIndentedString(companyTaxId)).append("\n");
     sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     sb.append("    hashedPassword: ").append(toIndentedString(hashedPassword)).append("\n");
+    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
     sb.append("}");
     return sb.toString();

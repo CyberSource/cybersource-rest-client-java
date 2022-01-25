@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsMerchantInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class Ptsv2paymentsMerchantInformation {
   @SerializedName("merchantDescriptor")
   private Ptsv2paymentsMerchantInformationMerchantDescriptor merchantDescriptor = null;
@@ -59,6 +59,15 @@ public class Ptsv2paymentsMerchantInformation {
 
   @SerializedName("serviceFeeDescriptor")
   private Ptsv2paymentsMerchantInformationServiceFeeDescriptor serviceFeeDescriptor = null;
+
+  @SerializedName("cancelUrl")
+  private String cancelUrl = null;
+
+  @SerializedName("successUrl")
+  private String successUrl = null;
+
+  @SerializedName("failureUrl")
+  private String failureUrl = null;
 
   @SerializedName("merchantName")
   private String merchantName = null;
@@ -245,6 +254,60 @@ public class Ptsv2paymentsMerchantInformation {
     this.serviceFeeDescriptor = serviceFeeDescriptor;
   }
 
+  public Ptsv2paymentsMerchantInformation cancelUrl(String cancelUrl) {
+    this.cancelUrl = cancelUrl;
+    return this;
+  }
+
+   /**
+   * customer would be redirected to this url based on the decision of the transaction
+   * @return cancelUrl
+  **/
+  @ApiModelProperty(value = "customer would be redirected to this url based on the decision of the transaction")
+  public String getCancelUrl() {
+    return cancelUrl;
+  }
+
+  public void setCancelUrl(String cancelUrl) {
+    this.cancelUrl = cancelUrl;
+  }
+
+  public Ptsv2paymentsMerchantInformation successUrl(String successUrl) {
+    this.successUrl = successUrl;
+    return this;
+  }
+
+   /**
+   * customer would be redirected to this url based on the decision of the transaction
+   * @return successUrl
+  **/
+  @ApiModelProperty(value = "customer would be redirected to this url based on the decision of the transaction")
+  public String getSuccessUrl() {
+    return successUrl;
+  }
+
+  public void setSuccessUrl(String successUrl) {
+    this.successUrl = successUrl;
+  }
+
+  public Ptsv2paymentsMerchantInformation failureUrl(String failureUrl) {
+    this.failureUrl = failureUrl;
+    return this;
+  }
+
+   /**
+   * customer would be redirected to this url based on the decision of the transaction
+   * @return failureUrl
+  **/
+  @ApiModelProperty(value = "customer would be redirected to this url based on the decision of the transaction")
+  public String getFailureUrl() {
+    return failureUrl;
+  }
+
+  public void setFailureUrl(String failureUrl) {
+    this.failureUrl = failureUrl;
+  }
+
   public Ptsv2paymentsMerchantInformation merchantName(String merchantName) {
     this.merchantName = merchantName;
     return this;
@@ -283,12 +346,15 @@ public class Ptsv2paymentsMerchantInformation {
         Objects.equals(this.cardAcceptorReferenceNumber, ptsv2paymentsMerchantInformation.cardAcceptorReferenceNumber) &&
         Objects.equals(this.transactionLocalDateTime, ptsv2paymentsMerchantInformation.transactionLocalDateTime) &&
         Objects.equals(this.serviceFeeDescriptor, ptsv2paymentsMerchantInformation.serviceFeeDescriptor) &&
+        Objects.equals(this.cancelUrl, ptsv2paymentsMerchantInformation.cancelUrl) &&
+        Objects.equals(this.successUrl, ptsv2paymentsMerchantInformation.successUrl) &&
+        Objects.equals(this.failureUrl, ptsv2paymentsMerchantInformation.failureUrl) &&
         Objects.equals(this.merchantName, ptsv2paymentsMerchantInformation.merchantName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantDescriptor, domainName, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor, merchantName);
+    return Objects.hash(merchantDescriptor, domainName, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor, cancelUrl, successUrl, failureUrl, merchantName);
   }
 
 
@@ -307,6 +373,9 @@ public class Ptsv2paymentsMerchantInformation {
     sb.append("    cardAcceptorReferenceNumber: ").append(toIndentedString(cardAcceptorReferenceNumber)).append("\n");
     sb.append("    transactionLocalDateTime: ").append(toIndentedString(transactionLocalDateTime)).append("\n");
     sb.append("    serviceFeeDescriptor: ").append(toIndentedString(serviceFeeDescriptor)).append("\n");
+    sb.append("    cancelUrl: ").append(toIndentedString(cancelUrl)).append("\n");
+    sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
+    sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
     sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
     sb.append("}");
     return sb.toString();

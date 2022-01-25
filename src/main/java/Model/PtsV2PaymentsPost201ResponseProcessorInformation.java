@@ -34,7 +34,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("authIndicator")
   private String authIndicator = null;
@@ -119,6 +119,12 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @SerializedName("retrievalReferenceNumber")
   private String retrievalReferenceNumber = null;
+
+  @SerializedName("paymentUrl")
+  private String paymentUrl = null;
+
+  @SerializedName("completeUrl")
+  private String completeUrl = null;
 
   public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
     this.authIndicator = authIndicator;
@@ -624,6 +630,42 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.retrievalReferenceNumber = retrievalReferenceNumber;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation paymentUrl(String paymentUrl) {
+    this.paymentUrl = paymentUrl;
+    return this;
+  }
+
+   /**
+   * Direct the customer to this URL to complete the payment.
+   * @return paymentUrl
+  **/
+  @ApiModelProperty(value = "Direct the customer to this URL to complete the payment.")
+  public String getPaymentUrl() {
+    return paymentUrl;
+  }
+
+  public void setPaymentUrl(String paymentUrl) {
+    this.paymentUrl = paymentUrl;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation completeUrl(String completeUrl) {
+    this.completeUrl = completeUrl;
+    return this;
+  }
+
+   /**
+   * The redirect URL for forwarding the consumer to complete page.  This redirect needed by PSP to track browser information of consumer. PSP then redirect consumer to merchant success URL. 
+   * @return completeUrl
+  **/
+  @ApiModelProperty(value = "The redirect URL for forwarding the consumer to complete page.  This redirect needed by PSP to track browser information of consumer. PSP then redirect consumer to merchant success URL. ")
+  public String getCompleteUrl() {
+    return completeUrl;
+  }
+
+  public void setCompleteUrl(String completeUrl) {
+    this.completeUrl = completeUrl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -661,12 +703,14 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.name, ptsV2PaymentsPost201ResponseProcessorInformation.name) &&
         Objects.equals(this.routing, ptsV2PaymentsPost201ResponseProcessorInformation.routing) &&
         Objects.equals(this.merchantNumber, ptsV2PaymentsPost201ResponseProcessorInformation.merchantNumber) &&
-        Objects.equals(this.retrievalReferenceNumber, ptsV2PaymentsPost201ResponseProcessorInformation.retrievalReferenceNumber);
+        Objects.equals(this.retrievalReferenceNumber, ptsV2PaymentsPost201ResponseProcessorInformation.retrievalReferenceNumber) &&
+        Objects.equals(this.paymentUrl, ptsV2PaymentsPost201ResponseProcessorInformation.paymentUrl) &&
+        Objects.equals(this.completeUrl, ptsV2PaymentsPost201ResponseProcessorInformation.completeUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl);
   }
 
 
@@ -703,6 +747,8 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
     sb.append("    merchantNumber: ").append(toIndentedString(merchantNumber)).append("\n");
     sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
+    sb.append("    paymentUrl: ").append(toIndentedString(paymentUrl)).append("\n");
+    sb.append("    completeUrl: ").append(toIndentedString(completeUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

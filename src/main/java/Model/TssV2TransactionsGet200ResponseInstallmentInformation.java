@@ -26,10 +26,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseInstallmentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class TssV2TransactionsGet200ResponseInstallmentInformation {
   @SerializedName("numberOfInstallments")
   private String numberOfInstallments = null;
+
+  @SerializedName("identifier")
+  private String identifier = null;
 
   public TssV2TransactionsGet200ResponseInstallmentInformation numberOfInstallments(String numberOfInstallments) {
     this.numberOfInstallments = numberOfInstallments;
@@ -49,6 +52,24 @@ public class TssV2TransactionsGet200ResponseInstallmentInformation {
     this.numberOfInstallments = numberOfInstallments;
   }
 
+  public TssV2TransactionsGet200ResponseInstallmentInformation identifier(String identifier) {
+    this.identifier = identifier;
+    return this;
+  }
+
+   /**
+   * Standing Instruction/Installment identifier. 
+   * @return identifier
+  **/
+  @ApiModelProperty(value = "Standing Instruction/Installment identifier. ")
+  public String getIdentifier() {
+    return identifier;
+  }
+
+  public void setIdentifier(String identifier) {
+    this.identifier = identifier;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +80,13 @@ public class TssV2TransactionsGet200ResponseInstallmentInformation {
       return false;
     }
     TssV2TransactionsGet200ResponseInstallmentInformation tssV2TransactionsGet200ResponseInstallmentInformation = (TssV2TransactionsGet200ResponseInstallmentInformation) o;
-    return Objects.equals(this.numberOfInstallments, tssV2TransactionsGet200ResponseInstallmentInformation.numberOfInstallments);
+    return Objects.equals(this.numberOfInstallments, tssV2TransactionsGet200ResponseInstallmentInformation.numberOfInstallments) &&
+        Objects.equals(this.identifier, tssV2TransactionsGet200ResponseInstallmentInformation.identifier);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(numberOfInstallments);
+    return Objects.hash(numberOfInstallments, identifier);
   }
 
 
@@ -74,6 +96,7 @@ public class TssV2TransactionsGet200ResponseInstallmentInformation {
     sb.append("class TssV2TransactionsGet200ResponseInstallmentInformation {\n");
     
     sb.append("    numberOfInstallments: ").append(toIndentedString(numberOfInstallments)).append("\n");
+    sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Reportingv3reportsReportFilters;
 import Model.Reportingv3reportsReportPreferences;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -24,15 +25,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.joda.time.DateTime;
 
 /**
  * CreateAdhocReportRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-11-22T16:37:43.981+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
 public class CreateAdhocReportRequest {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -59,7 +58,7 @@ public class CreateAdhocReportRequest {
   private DateTime reportEndTime = null;
 
   @SerializedName("reportFilters")
-  private Map<String, List<String>> reportFilters = null;
+  private Reportingv3reportsReportFilters reportFilters = null;
 
   @SerializedName("reportPreferences")
   private Reportingv3reportsReportPreferences reportPreferences = null;
@@ -219,29 +218,21 @@ public class CreateAdhocReportRequest {
     this.reportEndTime = reportEndTime;
   }
 
-  public CreateAdhocReportRequest reportFilters(Map<String, List<String>> reportFilters) {
+  public CreateAdhocReportRequest reportFilters(Reportingv3reportsReportFilters reportFilters) {
     this.reportFilters = reportFilters;
     return this;
   }
 
-  public CreateAdhocReportRequest putReportFiltersItem(String key, List<String> reportFiltersItem) {
-    if (this.reportFilters == null) {
-      this.reportFilters = new HashMap<String, List<String>>();
-    }
-    this.reportFilters.put(key, reportFiltersItem);
-    return this;
-  }
-
    /**
-   * List of filters to apply
+   * Get reportFilters
    * @return reportFilters
   **/
-  @ApiModelProperty(example = "{\"Application.Name\":[\"ics_auth\",\"ics_bill\"]}", value = "List of filters to apply")
-  public Map<String, List<String>> getReportFilters() {
+  @ApiModelProperty(value = "")
+  public Reportingv3reportsReportFilters getReportFilters() {
     return reportFilters;
   }
 
-  public void setReportFilters(Map<String, List<String>> reportFilters) {
+  public void setReportFilters(Reportingv3reportsReportFilters reportFilters) {
     this.reportFilters = reportFilters;
   }
 
