@@ -28,7 +28,7 @@ import org.joda.time.DateTime;
 /**
  * ReportingV3ChargebackSummariesGet200ResponseChargebackSummaries
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
 public class ReportingV3ChargebackSummariesGet200ResponseChargebackSummaries {
   @SerializedName("count")
   private BigDecimal count = null;

@@ -27,7 +27,7 @@ import java.io.IOException;
  * Use this object to submit a payment network token instead of card-based values.
  */
 @ApiModel(description = "Use this object to submit a payment network token instead of card-based values.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
 public class Riskv1decisionsPaymentInformationTokenizedCard {
   @SerializedName("transactionType")
   private String transactionType = null;

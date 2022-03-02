@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner;
+import Model.TssV2TransactionsGet200ResponseClientReferenceInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation {
   @SerializedName("code")
   private String code = null;
@@ -39,7 +39,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation 
   private String applicationUser = null;
 
   @SerializedName("partner")
-  private TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner partner = null;
+  private TssV2TransactionsGet200ResponseClientReferenceInformationPartner partner = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation code(String code) {
     this.code = code;
@@ -95,7 +95,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation 
     this.applicationUser = applicationUser;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation partner(TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner partner) {
+  public TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation partner(TssV2TransactionsGet200ResponseClientReferenceInformationPartner partner) {
     this.partner = partner;
     return this;
   }
@@ -105,11 +105,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation 
    * @return partner
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner getPartner() {
+  public TssV2TransactionsGet200ResponseClientReferenceInformationPartner getPartner() {
     return partner;
   }
 
-  public void setPartner(TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner partner) {
+  public void setPartner(TssV2TransactionsGet200ResponseClientReferenceInformationPartner partner) {
     this.partner = partner;
   }
 

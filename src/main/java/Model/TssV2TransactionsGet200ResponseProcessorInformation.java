@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
 public class TssV2TransactionsGet200ResponseProcessorInformation {
   @SerializedName("processor")
   private TssV2TransactionsGet200ResponseProcessorInformationProcessor processor = null;
@@ -77,6 +77,9 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
 
   @SerializedName("responseCodeSource")
   private String responseCodeSource = null;
+
+  @SerializedName("paymentAccountReferenceNumber")
+  private String paymentAccountReferenceNumber = null;
 
   public TssV2TransactionsGet200ResponseProcessorInformation processor(TssV2TransactionsGet200ResponseProcessorInformationProcessor processor) {
     this.processor = processor;
@@ -338,6 +341,24 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     this.responseCodeSource = responseCodeSource;
   }
 
+  public TssV2TransactionsGet200ResponseProcessorInformation paymentAccountReferenceNumber(String paymentAccountReferenceNumber) {
+    this.paymentAccountReferenceNumber = paymentAccountReferenceNumber;
+    return this;
+  }
+
+   /**
+   * Visa-generated reference number that identifies a card-present transaction for which you provided one of the following:   - Visa primary account number (PAN)  - Visa-generated token for a PAN  This reference number serves as a link to the cardholder account and to all transactions for that account. This reply field is returned only for CyberSource through VisaNet.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR8 - Position: 79-110 - Field: Payment Account Reference  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. 
+   * @return paymentAccountReferenceNumber
+  **/
+  @ApiModelProperty(value = "Visa-generated reference number that identifies a card-present transaction for which you provided one of the following:   - Visa primary account number (PAN)  - Visa-generated token for a PAN  This reference number serves as a link to the cardholder account and to all transactions for that account. This reply field is returned only for CyberSource through VisaNet.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR8 - Position: 79-110 - Field: Payment Account Reference  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks. ")
+  public String getPaymentAccountReferenceNumber() {
+    return paymentAccountReferenceNumber;
+  }
+
+  public void setPaymentAccountReferenceNumber(String paymentAccountReferenceNumber) {
+    this.paymentAccountReferenceNumber = paymentAccountReferenceNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -361,12 +382,13 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
         Objects.equals(this.achVerification, tssV2TransactionsGet200ResponseProcessorInformation.achVerification) &&
         Objects.equals(this.electronicVerificationResults, tssV2TransactionsGet200ResponseProcessorInformation.electronicVerificationResults) &&
         Objects.equals(this.systemTraceAuditNumber, tssV2TransactionsGet200ResponseProcessorInformation.systemTraceAuditNumber) &&
-        Objects.equals(this.responseCodeSource, tssV2TransactionsGet200ResponseProcessorInformation.responseCodeSource);
+        Objects.equals(this.responseCodeSource, tssV2TransactionsGet200ResponseProcessorInformation.responseCodeSource) &&
+        Objects.equals(this.paymentAccountReferenceNumber, tssV2TransactionsGet200ResponseProcessorInformation.paymentAccountReferenceNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, retrievalReferenceNumber, responseId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, systemTraceAuditNumber, responseCodeSource);
+    return Objects.hash(processor, multiProcessorRouting, transactionId, networkTransactionId, retrievalReferenceNumber, responseId, approvalCode, responseCode, avs, cardVerification, achVerification, electronicVerificationResults, systemTraceAuditNumber, responseCodeSource, paymentAccountReferenceNumber);
   }
 
 
@@ -389,6 +411,7 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     sb.append("    electronicVerificationResults: ").append(toIndentedString(electronicVerificationResults)).append("\n");
     sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
     sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
+    sb.append("    paymentAccountReferenceNumber: ").append(toIndentedString(paymentAccountReferenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

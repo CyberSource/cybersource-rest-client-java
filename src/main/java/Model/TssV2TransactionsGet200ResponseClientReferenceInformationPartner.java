@@ -24,14 +24,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner
+ * TssV2TransactionsGet200ResponseClientReferenceInformationPartner
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
-public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
+public class TssV2TransactionsGet200ResponseClientReferenceInformationPartner {
   @SerializedName("solutionId")
   private String solutionId = null;
 
-  public TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner solutionId(String solutionId) {
+  public TssV2TransactionsGet200ResponseClientReferenceInformationPartner solutionId(String solutionId) {
     this.solutionId = solutionId;
     return this;
   }
@@ -58,8 +58,8 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationP
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner tssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner = (TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner) o;
-    return Objects.equals(this.solutionId, tssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner.solutionId);
+    TssV2TransactionsGet200ResponseClientReferenceInformationPartner tssV2TransactionsGet200ResponseClientReferenceInformationPartner = (TssV2TransactionsGet200ResponseClientReferenceInformationPartner) o;
+    return Objects.equals(this.solutionId, tssV2TransactionsGet200ResponseClientReferenceInformationPartner.solutionId);
   }
 
   @Override
@@ -71,7 +71,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationP
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner {\n");
+    sb.append("class TssV2TransactionsGet200ResponseClientReferenceInformationPartner {\n");
     
     sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
     sb.append("}");

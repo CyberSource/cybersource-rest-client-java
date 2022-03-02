@@ -14,10 +14,13 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1authenticationsetupsPaymentInformationCustomer;
+import Model.PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument;
+import Model.PtsV2PaymentsPost201ResponseTokenInformationShippingAddress;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationBank;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationCard;
+import Model.TssV2TransactionsGet200ResponsePaymentInformationCustomer;
+import Model.TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationInvoice;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
@@ -32,13 +35,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
 public class TssV2TransactionsGet200ResponsePaymentInformation {
   @SerializedName("paymentType")
   private TssV2TransactionsGet200ResponsePaymentInformationPaymentType paymentType = null;
 
   @SerializedName("customer")
-  private Riskv1authenticationsetupsPaymentInformationCustomer customer = null;
+  private TssV2TransactionsGet200ResponsePaymentInformationCustomer customer = null;
 
   @SerializedName("card")
   private TssV2TransactionsGet200ResponsePaymentInformationCard card = null;
@@ -51,6 +54,15 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
 
   @SerializedName("accountFeatures")
   private TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures accountFeatures = null;
+
+  @SerializedName("paymentInstrument")
+  private PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument paymentInstrument = null;
+
+  @SerializedName("instrumentIdentifier")
+  private TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier instrumentIdentifier = null;
+
+  @SerializedName("shippingAddress")
+  private PtsV2PaymentsPost201ResponseTokenInformationShippingAddress shippingAddress = null;
 
   public TssV2TransactionsGet200ResponsePaymentInformation paymentType(TssV2TransactionsGet200ResponsePaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
@@ -70,7 +82,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     this.paymentType = paymentType;
   }
 
-  public TssV2TransactionsGet200ResponsePaymentInformation customer(Riskv1authenticationsetupsPaymentInformationCustomer customer) {
+  public TssV2TransactionsGet200ResponsePaymentInformation customer(TssV2TransactionsGet200ResponsePaymentInformationCustomer customer) {
     this.customer = customer;
     return this;
   }
@@ -80,11 +92,11 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsetupsPaymentInformationCustomer getCustomer() {
+  public TssV2TransactionsGet200ResponsePaymentInformationCustomer getCustomer() {
     return customer;
   }
 
-  public void setCustomer(Riskv1authenticationsetupsPaymentInformationCustomer customer) {
+  public void setCustomer(TssV2TransactionsGet200ResponsePaymentInformationCustomer customer) {
     this.customer = customer;
   }
 
@@ -160,6 +172,60 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     this.accountFeatures = accountFeatures;
   }
 
+  public TssV2TransactionsGet200ResponsePaymentInformation paymentInstrument(PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument paymentInstrument) {
+    this.paymentInstrument = paymentInstrument;
+    return this;
+  }
+
+   /**
+   * Get paymentInstrument
+   * @return paymentInstrument
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument getPaymentInstrument() {
+    return paymentInstrument;
+  }
+
+  public void setPaymentInstrument(PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument paymentInstrument) {
+    this.paymentInstrument = paymentInstrument;
+  }
+
+  public TssV2TransactionsGet200ResponsePaymentInformation instrumentIdentifier(TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier instrumentIdentifier) {
+    this.instrumentIdentifier = instrumentIdentifier;
+    return this;
+  }
+
+   /**
+   * Get instrumentIdentifier
+   * @return instrumentIdentifier
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier getInstrumentIdentifier() {
+    return instrumentIdentifier;
+  }
+
+  public void setInstrumentIdentifier(TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier instrumentIdentifier) {
+    this.instrumentIdentifier = instrumentIdentifier;
+  }
+
+  public TssV2TransactionsGet200ResponsePaymentInformation shippingAddress(PtsV2PaymentsPost201ResponseTokenInformationShippingAddress shippingAddress) {
+    this.shippingAddress = shippingAddress;
+    return this;
+  }
+
+   /**
+   * Get shippingAddress
+   * @return shippingAddress
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseTokenInformationShippingAddress getShippingAddress() {
+    return shippingAddress;
+  }
+
+  public void setShippingAddress(PtsV2PaymentsPost201ResponseTokenInformationShippingAddress shippingAddress) {
+    this.shippingAddress = shippingAddress;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -175,12 +241,15 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
         Objects.equals(this.card, tssV2TransactionsGet200ResponsePaymentInformation.card) &&
         Objects.equals(this.invoice, tssV2TransactionsGet200ResponsePaymentInformation.invoice) &&
         Objects.equals(this.bank, tssV2TransactionsGet200ResponsePaymentInformation.bank) &&
-        Objects.equals(this.accountFeatures, tssV2TransactionsGet200ResponsePaymentInformation.accountFeatures);
+        Objects.equals(this.accountFeatures, tssV2TransactionsGet200ResponsePaymentInformation.accountFeatures) &&
+        Objects.equals(this.paymentInstrument, tssV2TransactionsGet200ResponsePaymentInformation.paymentInstrument) &&
+        Objects.equals(this.instrumentIdentifier, tssV2TransactionsGet200ResponsePaymentInformation.instrumentIdentifier) &&
+        Objects.equals(this.shippingAddress, tssV2TransactionsGet200ResponsePaymentInformation.shippingAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentType, customer, card, invoice, bank, accountFeatures);
+    return Objects.hash(paymentType, customer, card, invoice, bank, accountFeatures, paymentInstrument, instrumentIdentifier, shippingAddress);
   }
 
 
@@ -195,6 +264,9 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     sb.append("    invoice: ").append(toIndentedString(invoice)).append("\n");
     sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("    accountFeatures: ").append(toIndentedString(accountFeatures)).append("\n");
+    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
