@@ -1,5 +1,5 @@
 
-# TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner
+# TssV2TransactionsGet200ResponseClientReferenceInformationPartner
 
 ## Properties
 Name | Type | Description | Notes

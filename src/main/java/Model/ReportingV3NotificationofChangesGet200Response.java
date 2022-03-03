@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ReportingV3NotificationofChangesGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
 public class ReportingV3NotificationofChangesGet200Response {
   @SerializedName("notificationOfChanges")
   private List<ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges> notificationOfChanges = null;

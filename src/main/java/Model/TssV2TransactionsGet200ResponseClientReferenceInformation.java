@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.TssV2TransactionsGet200ResponseClientReferenceInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,7 +27,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseClientReferenceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
 public class TssV2TransactionsGet200ResponseClientReferenceInformation {
   @SerializedName("code")
   private String code = null;
@@ -39,6 +40,9 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformation {
 
   @SerializedName("applicationUser")
   private String applicationUser = null;
+
+  @SerializedName("partner")
+  private TssV2TransactionsGet200ResponseClientReferenceInformationPartner partner = null;
 
   @SerializedName("comments")
   private String comments = null;
@@ -115,6 +119,24 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformation {
     this.applicationUser = applicationUser;
   }
 
+  public TssV2TransactionsGet200ResponseClientReferenceInformation partner(TssV2TransactionsGet200ResponseClientReferenceInformationPartner partner) {
+    this.partner = partner;
+    return this;
+  }
+
+   /**
+   * Get partner
+   * @return partner
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponseClientReferenceInformationPartner getPartner() {
+    return partner;
+  }
+
+  public void setPartner(TssV2TransactionsGet200ResponseClientReferenceInformationPartner partner) {
+    this.partner = partner;
+  }
+
   public TssV2TransactionsGet200ResponseClientReferenceInformation comments(String comments) {
     this.comments = comments;
     return this;
@@ -147,12 +169,13 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformation {
         Objects.equals(this.applicationVersion, tssV2TransactionsGet200ResponseClientReferenceInformation.applicationVersion) &&
         Objects.equals(this.applicationName, tssV2TransactionsGet200ResponseClientReferenceInformation.applicationName) &&
         Objects.equals(this.applicationUser, tssV2TransactionsGet200ResponseClientReferenceInformation.applicationUser) &&
+        Objects.equals(this.partner, tssV2TransactionsGet200ResponseClientReferenceInformation.partner) &&
         Objects.equals(this.comments, tssV2TransactionsGet200ResponseClientReferenceInformation.comments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, applicationVersion, applicationName, applicationUser, comments);
+    return Objects.hash(code, applicationVersion, applicationName, applicationUser, partner, comments);
   }
 
 
@@ -165,6 +188,7 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformation {
     sb.append("    applicationVersion: ").append(toIndentedString(applicationVersion)).append("\n");
     sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
     sb.append("    applicationUser: ").append(toIndentedString(applicationUser)).append("\n");
+    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("}");
     return sb.toString();

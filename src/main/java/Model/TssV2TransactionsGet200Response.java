@@ -33,6 +33,7 @@ import Model.TssV2TransactionsGet200ResponseProcessingInformation;
 import Model.TssV2TransactionsGet200ResponseProcessorInformation;
 import Model.TssV2TransactionsGet200ResponseRiskInformation;
 import Model.TssV2TransactionsGet200ResponseSenderInformation;
+import Model.TssV2TransactionsGet200ResponseTokenInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,7 +48,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
 public class TssV2TransactionsGet200Response {
   @SerializedName("id")
   private String id = null;
@@ -60,9 +61,6 @@ public class TssV2TransactionsGet200Response {
 
   @SerializedName("merchantId")
   private String merchantId = null;
-
-  @SerializedName("status")
-  private String status = null;
 
   @SerializedName("submitTimeUTC")
   private String submitTimeUTC = null;
@@ -120,6 +118,9 @@ public class TssV2TransactionsGet200Response {
 
   @SerializedName("senderInformation")
   private TssV2TransactionsGet200ResponseSenderInformation senderInformation = null;
+
+  @SerializedName("tokenInformation")
+  private TssV2TransactionsGet200ResponseTokenInformation tokenInformation = null;
 
   @SerializedName("_links")
   private TssV2TransactionsGet200ResponseLinks links = null;
@@ -194,24 +195,6 @@ public class TssV2TransactionsGet200Response {
 
   public void setMerchantId(String merchantId) {
     this.merchantId = merchantId;
-  }
-
-  public TssV2TransactionsGet200Response status(String status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * The status of the submitted transaction.
-   * @return status
-  **/
-  @ApiModelProperty(value = "The status of the submitted transaction.")
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
   }
 
   public TssV2TransactionsGet200Response submitTimeUTC(String submitTimeUTC) {
@@ -564,6 +547,24 @@ public class TssV2TransactionsGet200Response {
     this.senderInformation = senderInformation;
   }
 
+  public TssV2TransactionsGet200Response tokenInformation(TssV2TransactionsGet200ResponseTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+    return this;
+  }
+
+   /**
+   * Get tokenInformation
+   * @return tokenInformation
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponseTokenInformation getTokenInformation() {
+    return tokenInformation;
+  }
+
+  public void setTokenInformation(TssV2TransactionsGet200ResponseTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+  }
+
   public TssV2TransactionsGet200Response links(TssV2TransactionsGet200ResponseLinks links) {
     this.links = links;
     return this;
@@ -596,7 +597,6 @@ public class TssV2TransactionsGet200Response {
         Objects.equals(this.rootId, tssV2TransactionsGet200Response.rootId) &&
         Objects.equals(this.reconciliationId, tssV2TransactionsGet200Response.reconciliationId) &&
         Objects.equals(this.merchantId, tssV2TransactionsGet200Response.merchantId) &&
-        Objects.equals(this.status, tssV2TransactionsGet200Response.status) &&
         Objects.equals(this.submitTimeUTC, tssV2TransactionsGet200Response.submitTimeUTC) &&
         Objects.equals(this.applicationInformation, tssV2TransactionsGet200Response.applicationInformation) &&
         Objects.equals(this.buyerInformation, tssV2TransactionsGet200Response.buyerInformation) &&
@@ -616,12 +616,13 @@ public class TssV2TransactionsGet200Response {
         Objects.equals(this.pointOfSaleInformation, tssV2TransactionsGet200Response.pointOfSaleInformation) &&
         Objects.equals(this.riskInformation, tssV2TransactionsGet200Response.riskInformation) &&
         Objects.equals(this.senderInformation, tssV2TransactionsGet200Response.senderInformation) &&
+        Objects.equals(this.tokenInformation, tssV2TransactionsGet200Response.tokenInformation) &&
         Objects.equals(this.links, tssV2TransactionsGet200Response.links);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, rootId, reconciliationId, merchantId, status, submitTimeUTC, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, senderInformation, links);
+    return Objects.hash(id, rootId, reconciliationId, merchantId, submitTimeUTC, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, senderInformation, tokenInformation, links);
   }
 
 
@@ -634,7 +635,6 @@ public class TssV2TransactionsGet200Response {
     sb.append("    rootId: ").append(toIndentedString(rootId)).append("\n");
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    submitTimeUTC: ").append(toIndentedString(submitTimeUTC)).append("\n");
     sb.append("    applicationInformation: ").append(toIndentedString(applicationInformation)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
@@ -654,6 +654,7 @@ public class TssV2TransactionsGet200Response {
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
+    sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();

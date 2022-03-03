@@ -32,7 +32,7 @@ import java.util.List;
  * This object is only needed when you are requesting both payment and DM services at same time.
  */
 @ApiModel(description = "This object is only needed when you are requesting both payment and DM services at same time.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-19T16:20:04.317+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
 public class Ptsv2paymentsRiskInformation {
   @SerializedName("profile")
   private Ptsv2paymentsRiskInformationProfile profile = null;
