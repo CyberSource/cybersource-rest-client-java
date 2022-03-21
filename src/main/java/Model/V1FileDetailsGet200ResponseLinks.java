@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * V1FileDetailsGet200ResponseLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-16T15:14:23.160+05:30")
 public class V1FileDetailsGet200ResponseLinks {
   @SerializedName("self")
   private V1FileDetailsGet200ResponseLinksSelf self = null;

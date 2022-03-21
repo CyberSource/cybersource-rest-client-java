@@ -36,7 +36,7 @@ import java.io.IOException;
 /**
  * PatchCustomerPaymentInstrumentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-16T15:14:23.160+05:30")
 public class PatchCustomerPaymentInstrumentRequest {
   @SerializedName("_links")
   private Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks links = null;

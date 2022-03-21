@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains all of the shipping-related fields for the invoice.
  */
 @ApiModel(description = "Contains all of the shipping-related fields for the invoice.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-16T15:14:23.160+05:30")
 public class Invoicingv2invoicesOrderInformationAmountDetailsFreight {
   @SerializedName("amount")
   private String amount = null;

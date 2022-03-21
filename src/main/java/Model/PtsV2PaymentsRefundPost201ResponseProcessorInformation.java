@@ -27,8 +27,11 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsRefundPost201ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-01T22:27:14.566+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-16T15:14:23.160+05:30")
 public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
+  @SerializedName("approvalCode")
+  private String approvalCode = null;
+
   @SerializedName("transactionId")
   private String transactionId = null;
 
@@ -43,6 +46,24 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
 
   @SerializedName("achVerification")
   private PtsV2PaymentsPost201ResponseProcessorInformationAchVerification achVerification = null;
+
+  public PtsV2PaymentsRefundPost201ResponseProcessorInformation approvalCode(String approvalCode) {
+    this.approvalCode = approvalCode;
+    return this;
+  }
+
+   /**
+   * Authorization code. Returned only when the processor returns this value.  The length of this value depends on your processor.  Returned by authorization service.  #### PIN debit Authorization code that is returned by the processor.  Returned by PIN debit credit.  #### Elavon Encrypted Account Number Program The returned value is OFFLINE.  #### TSYS Acquiring Solutions The returned value for a successful zero amount authorization is 000000. 
+   * @return approvalCode
+  **/
+  @ApiModelProperty(value = "Authorization code. Returned only when the processor returns this value.  The length of this value depends on your processor.  Returned by authorization service.  #### PIN debit Authorization code that is returned by the processor.  Returned by PIN debit credit.  #### Elavon Encrypted Account Number Program The returned value is OFFLINE.  #### TSYS Acquiring Solutions The returned value for a successful zero amount authorization is 000000. ")
+  public String getApprovalCode() {
+    return approvalCode;
+  }
+
+  public void setApprovalCode(String approvalCode) {
+    this.approvalCode = approvalCode;
+  }
 
   public PtsV2PaymentsRefundPost201ResponseProcessorInformation transactionId(String transactionId) {
     this.transactionId = transactionId;
@@ -144,7 +165,8 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
       return false;
     }
     PtsV2PaymentsRefundPost201ResponseProcessorInformation ptsV2PaymentsRefundPost201ResponseProcessorInformation = (PtsV2PaymentsRefundPost201ResponseProcessorInformation) o;
-    return Objects.equals(this.transactionId, ptsV2PaymentsRefundPost201ResponseProcessorInformation.transactionId) &&
+    return Objects.equals(this.approvalCode, ptsV2PaymentsRefundPost201ResponseProcessorInformation.approvalCode) &&
+        Objects.equals(this.transactionId, ptsV2PaymentsRefundPost201ResponseProcessorInformation.transactionId) &&
         Objects.equals(this.forwardedAcquirerCode, ptsV2PaymentsRefundPost201ResponseProcessorInformation.forwardedAcquirerCode) &&
         Objects.equals(this.merchantNumber, ptsV2PaymentsRefundPost201ResponseProcessorInformation.merchantNumber) &&
         Objects.equals(this.responseCode, ptsV2PaymentsRefundPost201ResponseProcessorInformation.responseCode) &&
@@ -153,7 +175,7 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, forwardedAcquirerCode, merchantNumber, responseCode, achVerification);
+    return Objects.hash(approvalCode, transactionId, forwardedAcquirerCode, merchantNumber, responseCode, achVerification);
   }
 
 
@@ -162,6 +184,7 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsRefundPost201ResponseProcessorInformation {\n");
     
+    sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
     sb.append("    merchantNumber: ").append(toIndentedString(merchantNumber)).append("\n");
