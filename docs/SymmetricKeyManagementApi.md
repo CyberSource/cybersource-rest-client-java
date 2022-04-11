@@ -5,6 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createV2SharedSecretKeys**](SymmetricKeyManagementApi.md#createV2SharedSecretKeys) | **POST** /kms/v2/keys-sym | Create Shared-Secret Keys
+[**createV2SharedSecretKeysVerifi**](SymmetricKeyManagementApi.md#createV2SharedSecretKeysVerifi) | **POST** /kms/v2/keys-sym/verifi | Create Shared-Secret Keys as per verifi spec
 [**deleteBulkSymmetricKeys**](SymmetricKeyManagementApi.md#deleteBulkSymmetricKeys) | **POST** /kms/v2/keys-sym/deletes | Delete one or more Symmetric keys
 [**getKeyDetails**](SymmetricKeyManagementApi.md#getKeyDetails) | **GET** /kms/v2/keys-sym/{keyId} | Retrieves shared secret key details
 
@@ -40,6 +41,53 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createSharedSecretKeysRequest** | [**CreateSharedSecretKeysRequest**](CreateSharedSecretKeysRequest.md)|  |
+
+### Return type
+
+[**KmsV2KeysSymPost201Response**](KmsV2KeysSymPost201Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+<a name="createV2SharedSecretKeysVerifi"></a>
+# **createV2SharedSecretKeysVerifi**
+> KmsV2KeysSymPost201Response createV2SharedSecretKeysVerifi(vIcDomain, createSharedSecretKeysRequest)
+
+Create Shared-Secret Keys as per verifi spec
+
+Create one or more Shared-Secret Keys as per Verifi spec with 32 chars, store digest algo during key generation. 
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.SymmetricKeyManagementApi;
+
+
+SymmetricKeyManagementApi apiInstance = new SymmetricKeyManagementApi();
+String vIcDomain = "vIcDomain_example"; // String | domain
+CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest = new CreateSharedSecretKeysRequest1(); // CreateSharedSecretKeysRequest1 | 
+try {
+    KmsV2KeysSymPost201Response result = apiInstance.createV2SharedSecretKeysVerifi(vIcDomain, createSharedSecretKeysRequest);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SymmetricKeyManagementApi#createV2SharedSecretKeysVerifi");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vIcDomain** | **String**| domain |
+ **createSharedSecretKeysRequest** | [**CreateSharedSecretKeysRequest1**](CreateSharedSecretKeysRequest1.md)|  |
 
 ### Return type
 

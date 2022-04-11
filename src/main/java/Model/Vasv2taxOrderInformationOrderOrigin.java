@@ -27,7 +27,7 @@ import java.io.IOException;
  * The location of the buyer at the time of placing the order.
  */
 @ApiModel(description = "The location of the buyer at the time of placing the order.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-16T15:14:23.160+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-11T15:42:49.539+05:30")
 public class Vasv2taxOrderInformationOrderOrigin {
   @SerializedName("locality")
   private String locality = null;

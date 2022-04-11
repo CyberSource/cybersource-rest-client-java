@@ -29,6 +29,7 @@ import java.io.InputStream;
 
 
 import Model.CreateSharedSecretKeysRequest;
+import Model.CreateSharedSecretKeysRequest1;
 import Model.DeleteBulkSymmetricKeysRequest;
 import Model.InlineResponse4002;
 import Model.KmsV2KeysSymDeletesPost200Response;
@@ -192,6 +193,148 @@ public class SymmetricKeyManagementApi {
         }
 
         okhttp3.Call call = createV2SharedSecretKeysValidateBeforeCall(createSharedSecretKeysRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<KmsV2KeysSymPost201Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for createV2SharedSecretKeysVerifi
+     * @param vIcDomain domain (required)
+     * @param createSharedSecretKeysRequest  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call createV2SharedSecretKeysVerifiCall(String vIcDomain, CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createSharedSecretKeysRequest;
+        
+        // create path and map variables
+        String localVarPath = "/kms/v2/keys-sym/verifi";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (vIcDomain != null)
+        localVarHeaderParams.put("v-ic-domain", apiClient.parameterToString(vIcDomain));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createV2SharedSecretKeysVerifiValidateBeforeCall(String vIcDomain, CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'vIcDomain' is set
+        if (vIcDomain == null) {
+        	logger.error("Missing the required parameter 'vIcDomain' when calling createV2SharedSecretKeysVerifi(Async)");
+            throw new ApiException("Missing the required parameter 'vIcDomain' when calling createV2SharedSecretKeysVerifi(Async)");
+        }
+        
+        // verify the required parameter 'createSharedSecretKeysRequest' is set
+        if (createSharedSecretKeysRequest == null) {
+        	logger.error("Missing the required parameter 'createSharedSecretKeysRequest' when calling createV2SharedSecretKeysVerifi(Async)");
+            throw new ApiException("Missing the required parameter 'createSharedSecretKeysRequest' when calling createV2SharedSecretKeysVerifi(Async)");
+        }
+        
+        
+        okhttp3.Call call = createV2SharedSecretKeysVerifiCall(vIcDomain, createSharedSecretKeysRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Create Shared-Secret Keys as per verifi spec
+     * Create one or more Shared-Secret Keys as per Verifi spec with 32 chars, store digest algo during key generation. 
+     * @param vIcDomain domain (required)
+     * @param createSharedSecretKeysRequest  (required)
+     * @return KmsV2KeysSymPost201Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public KmsV2KeysSymPost201Response createV2SharedSecretKeysVerifi(String vIcDomain, CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'createV2SharedSecretKeysVerifi' STARTED");
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ApiResponse<KmsV2KeysSymPost201Response> resp = createV2SharedSecretKeysVerifiWithHttpInfo(vIcDomain, createSharedSecretKeysRequest);
+        logger.info("CALL TO METHOD 'createV2SharedSecretKeysVerifi' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Create Shared-Secret Keys as per verifi spec
+     * Create one or more Shared-Secret Keys as per Verifi spec with 32 chars, store digest algo during key generation. 
+     * @param vIcDomain domain (required)
+     * @param createSharedSecretKeysRequest  (required)
+     * @return ApiResponse&lt;KmsV2KeysSymPost201Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<KmsV2KeysSymPost201Response> createV2SharedSecretKeysVerifiWithHttpInfo(String vIcDomain, CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest) throws ApiException {
+        okhttp3.Call call = createV2SharedSecretKeysVerifiValidateBeforeCall(vIcDomain, createSharedSecretKeysRequest, null, null);
+        Type localVarReturnType = new TypeToken<KmsV2KeysSymPost201Response>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create Shared-Secret Keys as per verifi spec (asynchronously)
+     * Create one or more Shared-Secret Keys as per Verifi spec with 32 chars, store digest algo during key generation. 
+     * @param vIcDomain domain (required)
+     * @param createSharedSecretKeysRequest  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call createV2SharedSecretKeysVerifiAsync(String vIcDomain, CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest, final ApiCallback<KmsV2KeysSymPost201Response> callback) throws ApiException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = createV2SharedSecretKeysVerifiValidateBeforeCall(vIcDomain, createSharedSecretKeysRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<KmsV2KeysSymPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

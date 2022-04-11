@@ -27,7 +27,7 @@ import java.io.IOException;
  * invoice Details
  */
 @ApiModel(description = "invoice Details")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-16T15:14:23.160+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-11T15:42:49.539+05:30")
 public class Ptsv2paymentsInvoiceDetails {
   @SerializedName("barcodeNumber")
   private String barcodeNumber = null;

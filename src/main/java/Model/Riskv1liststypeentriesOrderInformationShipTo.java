@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains recipient shipping information.
  */
 @ApiModel(description = "Contains recipient shipping information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-16T15:14:23.160+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-11T15:42:49.539+05:30")
 public class Riskv1liststypeentriesOrderInformationShipTo {
   @SerializedName("address1")
   private String address1 = null;

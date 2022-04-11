@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-16T15:14:23.160+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-11T15:42:49.539+05:30")
 public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
   @SerializedName("type")
   private String type = null;
@@ -36,7 +36,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
   private Boolean credentialStoredOnFile = null;
 
   @SerializedName("storedCredentialUsed")
-  private Boolean storedCredentialUsed = null;
+  private String storedCredentialUsed = null;
 
   @SerializedName("merchantInitiatedTransaction")
   private Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction merchantInitiatedTransaction = null;
@@ -77,21 +77,21 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
     this.credentialStoredOnFile = credentialStoredOnFile;
   }
 
-  public Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator storedCredentialUsed(Boolean storedCredentialUsed) {
+  public Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator storedCredentialUsed(String storedCredentialUsed) {
     this.storedCredentialUsed = storedCredentialUsed;
     return this;
   }
 
    /**
-   * Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **true** means the merchant-initiated transaction came from a card that was already stored on file. - **false**  means the merchant-initiated transaction came from a card that was not stored on file. 
+   * Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **Y** means the merchant-initiated transaction came from a card that was already stored on file. - **N**  means the merchant-initiated transaction came from a card that was not stored on file. 
    * @return storedCredentialUsed
   **/
-  @ApiModelProperty(value = "Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **true** means the merchant-initiated transaction came from a card that was already stored on file. - **false**  means the merchant-initiated transaction came from a card that was not stored on file. ")
-  public Boolean getStoredCredentialUsed() {
+  @ApiModelProperty(value = "Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **Y** means the merchant-initiated transaction came from a card that was already stored on file. - **N**  means the merchant-initiated transaction came from a card that was not stored on file. ")
+  public String getStoredCredentialUsed() {
     return storedCredentialUsed;
   }
 
-  public void setStoredCredentialUsed(Boolean storedCredentialUsed) {
+  public void setStoredCredentialUsed(String storedCredentialUsed) {
     this.storedCredentialUsed = storedCredentialUsed;
   }
 

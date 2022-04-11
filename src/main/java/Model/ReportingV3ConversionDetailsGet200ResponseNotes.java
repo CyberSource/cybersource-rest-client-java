@@ -27,7 +27,7 @@ import org.joda.time.DateTime;
 /**
  * ReportingV3ConversionDetailsGet200ResponseNotes
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-16T15:14:23.160+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-11T15:42:49.539+05:30")
 public class ReportingV3ConversionDetailsGet200ResponseNotes {
   @SerializedName("time")
   private DateTime time = null;

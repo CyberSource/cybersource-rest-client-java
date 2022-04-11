@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-16T15:14:23.160+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-11T15:42:49.539+05:30")
 public class PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions {
   @SerializedName("settlementMethod")
   private String settlementMethod = null;
