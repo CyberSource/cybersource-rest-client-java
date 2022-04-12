@@ -15,7 +15,7 @@ package Api;
 
 import Invokers.ApiException;
 import Model.CreateSharedSecretKeysRequest;
-import Model.CreateSharedSecretKeysRequest1;
+import Model.CreateSharedSecretKeysVerifiRequest;
 import Model.DeleteBulkSymmetricKeysRequest;
 import Model.InlineResponse4002;
 import Model.KmsV2KeysSymDeletesPost200Response;
@@ -66,8 +66,8 @@ public class SymmetricKeyManagementApiTest {
     @Test
     public void createV2SharedSecretKeysVerifiTest() throws ApiException {
         String vIcDomain = null;
-        CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest = null;
-        KmsV2KeysSymPost201Response response = api.createV2SharedSecretKeysVerifi(vIcDomain, createSharedSecretKeysRequest);
+        CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest = null;
+        KmsV2KeysSymPost201Response response = api.createV2SharedSecretKeysVerifi(vIcDomain, createSharedSecretKeysVerifiRequest);
 
         // TODO: test validations
     }

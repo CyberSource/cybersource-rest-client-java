@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * InlineResponse400Errors
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-11T15:42:49.539+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
 public class InlineResponse400Errors {
   @SerializedName("type")
   private String type = null;

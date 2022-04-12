@@ -57,7 +57,7 @@ No authorization required
 
 <a name="createV2SharedSecretKeysVerifi"></a>
 # **createV2SharedSecretKeysVerifi**
-> KmsV2KeysSymPost201Response createV2SharedSecretKeysVerifi(vIcDomain, createSharedSecretKeysRequest)
+> KmsV2KeysSymPost201Response createV2SharedSecretKeysVerifi(vIcDomain, createSharedSecretKeysVerifiRequest)
 
 Create Shared-Secret Keys as per verifi spec
 
@@ -72,9 +72,9 @@ Create one or more Shared-Secret Keys as per Verifi spec with 32 chars, store di
 
 SymmetricKeyManagementApi apiInstance = new SymmetricKeyManagementApi();
 String vIcDomain = "vIcDomain_example"; // String | domain
-CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest = new CreateSharedSecretKeysRequest1(); // CreateSharedSecretKeysRequest1 | 
+CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest = new CreateSharedSecretKeysVerifiRequest(); // CreateSharedSecretKeysVerifiRequest | 
 try {
-    KmsV2KeysSymPost201Response result = apiInstance.createV2SharedSecretKeysVerifi(vIcDomain, createSharedSecretKeysRequest);
+    KmsV2KeysSymPost201Response result = apiInstance.createV2SharedSecretKeysVerifi(vIcDomain, createSharedSecretKeysVerifiRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SymmetricKeyManagementApi#createV2SharedSecretKeysVerifi");
@@ -87,7 +87,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vIcDomain** | **String**| domain |
- **createSharedSecretKeysRequest** | [**CreateSharedSecretKeysRequest1**](CreateSharedSecretKeysRequest1.md)|  |
+ **createSharedSecretKeysVerifiRequest** | [**CreateSharedSecretKeysVerifiRequest**](CreateSharedSecretKeysVerifiRequest.md)|  |
 
 ### Return type
 

@@ -1,5 +1,5 @@
 
-# CreateSharedSecretKeysRequest1
+# CreateSharedSecretKeysVerifiRequest
 
 ## Properties
 Name | Type | Description | Notes

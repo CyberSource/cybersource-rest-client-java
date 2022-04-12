@@ -28,17 +28,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * CreateSharedSecretKeysRequest1
+ * CreateSharedSecretKeysVerifiRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-11T15:42:49.539+05:30")
-public class CreateSharedSecretKeysRequest1 {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+public class CreateSharedSecretKeysVerifiRequest {
   @SerializedName("clientReferenceInformation")
   private Kmsv2keyssymClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("keyInformation")
   private List<Kmsv2keyssymverifiKeyInformation> keyInformation = null;
 
-  public CreateSharedSecretKeysRequest1 clientReferenceInformation(Kmsv2keyssymClientReferenceInformation clientReferenceInformation) {
+  public CreateSharedSecretKeysVerifiRequest clientReferenceInformation(Kmsv2keyssymClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -56,12 +56,12 @@ public class CreateSharedSecretKeysRequest1 {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
-  public CreateSharedSecretKeysRequest1 keyInformation(List<Kmsv2keyssymverifiKeyInformation> keyInformation) {
+  public CreateSharedSecretKeysVerifiRequest keyInformation(List<Kmsv2keyssymverifiKeyInformation> keyInformation) {
     this.keyInformation = keyInformation;
     return this;
   }
 
-  public CreateSharedSecretKeysRequest1 addKeyInformationItem(Kmsv2keyssymverifiKeyInformation keyInformationItem) {
+  public CreateSharedSecretKeysVerifiRequest addKeyInformationItem(Kmsv2keyssymverifiKeyInformation keyInformationItem) {
     if (this.keyInformation == null) {
       this.keyInformation = new ArrayList<Kmsv2keyssymverifiKeyInformation>();
     }
@@ -91,9 +91,9 @@ public class CreateSharedSecretKeysRequest1 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest1 = (CreateSharedSecretKeysRequest1) o;
-    return Objects.equals(this.clientReferenceInformation, createSharedSecretKeysRequest1.clientReferenceInformation) &&
-        Objects.equals(this.keyInformation, createSharedSecretKeysRequest1.keyInformation);
+    CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest = (CreateSharedSecretKeysVerifiRequest) o;
+    return Objects.equals(this.clientReferenceInformation, createSharedSecretKeysVerifiRequest.clientReferenceInformation) &&
+        Objects.equals(this.keyInformation, createSharedSecretKeysVerifiRequest.keyInformation);
   }
 
   @Override
@@ -105,7 +105,7 @@ public class CreateSharedSecretKeysRequest1 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateSharedSecretKeysRequest1 {\n");
+    sb.append("class CreateSharedSecretKeysVerifiRequest {\n");
     
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    keyInformation: ").append(toIndentedString(keyInformation)).append("\n");

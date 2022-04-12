@@ -29,7 +29,7 @@ import java.io.InputStream;
 
 
 import Model.CreateSharedSecretKeysRequest;
-import Model.CreateSharedSecretKeysRequest1;
+import Model.CreateSharedSecretKeysVerifiRequest;
 import Model.DeleteBulkSymmetricKeysRequest;
 import Model.InlineResponse4002;
 import Model.KmsV2KeysSymDeletesPost200Response;
@@ -200,14 +200,14 @@ public class SymmetricKeyManagementApi {
     /**
      * Build call for createV2SharedSecretKeysVerifi
      * @param vIcDomain domain (required)
-     * @param createSharedSecretKeysRequest  (required)
+     * @param createSharedSecretKeysVerifiRequest  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call createV2SharedSecretKeysVerifiCall(String vIcDomain, CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createSharedSecretKeysRequest;
+    public okhttp3.Call createV2SharedSecretKeysVerifiCall(String vIcDomain, CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createSharedSecretKeysVerifiRequest;
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-sym/verifi";
@@ -249,7 +249,7 @@ public class SymmetricKeyManagementApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createV2SharedSecretKeysVerifiValidateBeforeCall(String vIcDomain, CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createV2SharedSecretKeysVerifiValidateBeforeCall(String vIcDomain, CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'vIcDomain' is set
         if (vIcDomain == null) {
@@ -257,14 +257,14 @@ public class SymmetricKeyManagementApi {
             throw new ApiException("Missing the required parameter 'vIcDomain' when calling createV2SharedSecretKeysVerifi(Async)");
         }
         
-        // verify the required parameter 'createSharedSecretKeysRequest' is set
-        if (createSharedSecretKeysRequest == null) {
-        	logger.error("Missing the required parameter 'createSharedSecretKeysRequest' when calling createV2SharedSecretKeysVerifi(Async)");
-            throw new ApiException("Missing the required parameter 'createSharedSecretKeysRequest' when calling createV2SharedSecretKeysVerifi(Async)");
+        // verify the required parameter 'createSharedSecretKeysVerifiRequest' is set
+        if (createSharedSecretKeysVerifiRequest == null) {
+        	logger.error("Missing the required parameter 'createSharedSecretKeysVerifiRequest' when calling createV2SharedSecretKeysVerifi(Async)");
+            throw new ApiException("Missing the required parameter 'createSharedSecretKeysVerifiRequest' when calling createV2SharedSecretKeysVerifi(Async)");
         }
         
         
-        okhttp3.Call call = createV2SharedSecretKeysVerifiCall(vIcDomain, createSharedSecretKeysRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = createV2SharedSecretKeysVerifiCall(vIcDomain, createSharedSecretKeysVerifiRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -277,14 +277,14 @@ public class SymmetricKeyManagementApi {
      * Create Shared-Secret Keys as per verifi spec
      * Create one or more Shared-Secret Keys as per Verifi spec with 32 chars, store digest algo during key generation. 
      * @param vIcDomain domain (required)
-     * @param createSharedSecretKeysRequest  (required)
+     * @param createSharedSecretKeysVerifiRequest  (required)
      * @return KmsV2KeysSymPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public KmsV2KeysSymPost201Response createV2SharedSecretKeysVerifi(String vIcDomain, CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest) throws ApiException {
+    public KmsV2KeysSymPost201Response createV2SharedSecretKeysVerifi(String vIcDomain, CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest) throws ApiException {
     	logger.info("CALL TO METHOD 'createV2SharedSecretKeysVerifi' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<KmsV2KeysSymPost201Response> resp = createV2SharedSecretKeysVerifiWithHttpInfo(vIcDomain, createSharedSecretKeysRequest);
+        ApiResponse<KmsV2KeysSymPost201Response> resp = createV2SharedSecretKeysVerifiWithHttpInfo(vIcDomain, createSharedSecretKeysVerifiRequest);
         logger.info("CALL TO METHOD 'createV2SharedSecretKeysVerifi' ENDED");
         return resp.getData();
     }
@@ -293,12 +293,12 @@ public class SymmetricKeyManagementApi {
      * Create Shared-Secret Keys as per verifi spec
      * Create one or more Shared-Secret Keys as per Verifi spec with 32 chars, store digest algo during key generation. 
      * @param vIcDomain domain (required)
-     * @param createSharedSecretKeysRequest  (required)
+     * @param createSharedSecretKeysVerifiRequest  (required)
      * @return ApiResponse&lt;KmsV2KeysSymPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<KmsV2KeysSymPost201Response> createV2SharedSecretKeysVerifiWithHttpInfo(String vIcDomain, CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest) throws ApiException {
-        okhttp3.Call call = createV2SharedSecretKeysVerifiValidateBeforeCall(vIcDomain, createSharedSecretKeysRequest, null, null);
+    public ApiResponse<KmsV2KeysSymPost201Response> createV2SharedSecretKeysVerifiWithHttpInfo(String vIcDomain, CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest) throws ApiException {
+        okhttp3.Call call = createV2SharedSecretKeysVerifiValidateBeforeCall(vIcDomain, createSharedSecretKeysVerifiRequest, null, null);
         Type localVarReturnType = new TypeToken<KmsV2KeysSymPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -307,12 +307,12 @@ public class SymmetricKeyManagementApi {
      * Create Shared-Secret Keys as per verifi spec (asynchronously)
      * Create one or more Shared-Secret Keys as per Verifi spec with 32 chars, store digest algo during key generation. 
      * @param vIcDomain domain (required)
-     * @param createSharedSecretKeysRequest  (required)
+     * @param createSharedSecretKeysVerifiRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createV2SharedSecretKeysVerifiAsync(String vIcDomain, CreateSharedSecretKeysRequest1 createSharedSecretKeysRequest, final ApiCallback<KmsV2KeysSymPost201Response> callback) throws ApiException {
+    public okhttp3.Call createV2SharedSecretKeysVerifiAsync(String vIcDomain, CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest, final ApiCallback<KmsV2KeysSymPost201Response> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -334,7 +334,7 @@ public class SymmetricKeyManagementApi {
             };
         }
 
-        okhttp3.Call call = createV2SharedSecretKeysVerifiValidateBeforeCall(vIcDomain, createSharedSecretKeysRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = createV2SharedSecretKeysVerifiValidateBeforeCall(vIcDomain, createSharedSecretKeysVerifiRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<KmsV2KeysSymPost201Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

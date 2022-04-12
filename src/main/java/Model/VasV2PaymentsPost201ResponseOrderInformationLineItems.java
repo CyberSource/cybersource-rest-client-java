@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * VasV2PaymentsPost201ResponseOrderInformationLineItems
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-11T15:42:49.539+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
 public class VasV2PaymentsPost201ResponseOrderInformationLineItems {
   @SerializedName("taxDetails")
   private List<VasV2PaymentsPost201ResponseOrderInformationTaxDetails> taxDetails = null;
