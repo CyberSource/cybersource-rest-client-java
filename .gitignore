@@ -19,10 +19,4 @@ hs_err_pid*
 target
 .gradle
 build
-.classpath
-.project
-.settings/org.eclipse.core.resources.prefs
-.settings/org.eclipse.jdt.core.prefs
-.swagger-codegen-ignore
-.travis.yml
-.swagger-codegen/VERSION
+**/bin
