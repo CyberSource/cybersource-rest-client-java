@@ -15,6 +15,7 @@ package Api;
 
 import Invokers.ApiException;
 import Model.CreateSharedSecretKeysRequest;
+import Model.CreateSharedSecretKeysVerifiRequest;
 import Model.DeleteBulkSymmetricKeysRequest;
 import Model.InlineResponse4002;
 import Model.KmsV2KeysSymDeletesPost200Response;
@@ -50,6 +51,23 @@ public class SymmetricKeyManagementApiTest {
     public void createV2SharedSecretKeysTest() throws ApiException {
         CreateSharedSecretKeysRequest createSharedSecretKeysRequest = null;
         KmsV2KeysSymPost201Response response = api.createV2SharedSecretKeys(createSharedSecretKeysRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create Shared-Secret Keys as per verifi spec
+     *
+     * Create one or more Shared-Secret Keys as per Verifi spec with 32 chars, store digest algo during key generation. 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createV2SharedSecretKeysVerifiTest() throws ApiException {
+        String vIcDomain = null;
+        CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest = null;
+        KmsV2KeysSymPost201Response response = api.createV2SharedSecretKeysVerifi(vIcDomain, createSharedSecretKeysVerifiRequest);
 
         // TODO: test validations
     }

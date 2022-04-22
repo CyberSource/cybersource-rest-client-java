@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains detailed response information about the customer&#39;s IP address.
  */
 @ApiModel(description = "Contains detailed response information about the customer's IP address.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-16T15:14:23.160+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
 public class PtsV2PaymentsPost201ResponseRiskInformationIpAddress {
   @SerializedName("anonymizerStatus")
   private String anonymizerStatus = null;
