@@ -80,7 +80,7 @@ public class {{classname}} {
     public okhttp3.Call {{operationId}}Call({{#allParams}}{{{dataType}}} {{paramName}}, {{/allParams}}final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object {{localVariablePrefix}}localVarPostBody = {{#bodyParam}}{{paramName}}{{/bodyParam}}{{^bodyParam}}null{{/bodyParam}};
         {{^bodyParam}}
-        if ("{{httpMethod}}".equals("POST")) {
+        if ("{{httpMethod}}".equalsIgnoreCase("POST")) {
             {{localVariablePrefix}}localVarPostBody = "{}";
         }
         {{/bodyParam}}
