@@ -29,10 +29,13 @@ import java.util.List;
 /**
  * Ptsv2paymentsProcessingInformationAuthorizationOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("authType")
   private String authType = null;
+
+  @SerializedName("panReturnIndicator")
+  private String panReturnIndicator = null;
 
   @SerializedName("verbalAuthCode")
   private String verbalAuthCode = null;
@@ -98,6 +101,24 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
 
   public void setAuthType(String authType) {
     this.authType = authType;
+  }
+
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions panReturnIndicator(String panReturnIndicator) {
+    this.panReturnIndicator = panReturnIndicator;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect The field contains the PAN translation indicator for American Express Contactless Transaction. Valid value is   1- Expresspay Translation, PAN request 2- Expresspay Translation, PAN and Expiry date request 
+   * @return panReturnIndicator
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect The field contains the PAN translation indicator for American Express Contactless Transaction. Valid value is   1- Expresspay Translation, PAN request 2- Expresspay Translation, PAN and Expiry date request ")
+  public String getPanReturnIndicator() {
+    return panReturnIndicator;
+  }
+
+  public void setPanReturnIndicator(String panReturnIndicator) {
+    this.panReturnIndicator = panReturnIndicator;
   }
 
   public Ptsv2paymentsProcessingInformationAuthorizationOptions verbalAuthCode(String verbalAuthCode) {
@@ -407,6 +428,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     }
     Ptsv2paymentsProcessingInformationAuthorizationOptions ptsv2paymentsProcessingInformationAuthorizationOptions = (Ptsv2paymentsProcessingInformationAuthorizationOptions) o;
     return Objects.equals(this.authType, ptsv2paymentsProcessingInformationAuthorizationOptions.authType) &&
+        Objects.equals(this.panReturnIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.panReturnIndicator) &&
         Objects.equals(this.verbalAuthCode, ptsv2paymentsProcessingInformationAuthorizationOptions.verbalAuthCode) &&
         Objects.equals(this.verbalAuthTransactionId, ptsv2paymentsProcessingInformationAuthorizationOptions.verbalAuthTransactionId) &&
         Objects.equals(this.authIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.authIndicator) &&
@@ -427,7 +449,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator);
+    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator);
   }
 
 
@@ -437,6 +459,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     sb.append("class Ptsv2paymentsProcessingInformationAuthorizationOptions {\n");
     
     sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
+    sb.append("    panReturnIndicator: ").append(toIndentedString(panReturnIndicator)).append("\n");
     sb.append("    verbalAuthCode: ").append(toIndentedString(verbalAuthCode)).append("\n");
     sb.append("    verbalAuthTransactionId: ").append(toIndentedString(verbalAuthTransactionId)).append("\n");
     sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");

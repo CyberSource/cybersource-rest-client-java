@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPointOfSaleInformationEmv
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class Ptsv2paymentsPointOfSaleInformationEmv {
   @SerializedName("tags")
   private String tags = null;
@@ -38,10 +38,13 @@ public class Ptsv2paymentsPointOfSaleInformationEmv {
   private String cardSequenceNumber = null;
 
   @SerializedName("fallback")
-  private Boolean fallback = false;
+  private Boolean fallback = null;
 
   @SerializedName("fallbackCondition")
   private Integer fallbackCondition = null;
+
+  @SerializedName("isRepeat")
+  private String isRepeat = null;
 
   public Ptsv2paymentsPointOfSaleInformationEmv tags(String tags) {
     this.tags = tags;
@@ -121,16 +124,34 @@ public class Ptsv2paymentsPointOfSaleInformationEmv {
   }
 
    /**
-   * Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - &#x60;1&#x60;: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal either used information from a successful chip read or it was not a chip transaction.  - &#x60;2&#x60;: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN** and **JCN Gateway**.  **NOTE**: This field is required when an EMV transaction fails for a technical reason. Do not include this field  when the EMV terminal does not have any applications in common with the EMV card. 
+   * Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - &#x60;1&#x60;: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the     EMV terminal either used information from a successful chip read or it was not a chip transaction.  - &#x60;2&#x60;: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the     EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN** and **JCN Gateway**. **NOTE**: This field is required when an EMV transaction fails for a technical reason. Do not include this field when the EMV terminal does not have any applications in common with the EMV card. 
    * @return fallbackCondition
   **/
-  @ApiModelProperty(value = "Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - `1`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal either used information from a successful chip read or it was not a chip transaction.  - `2`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN** and **JCN Gateway**.  **NOTE**: This field is required when an EMV transaction fails for a technical reason. Do not include this field  when the EMV terminal does not have any applications in common with the EMV card. ")
+  @ApiModelProperty(value = "Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - `1`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the     EMV terminal either used information from a successful chip read or it was not a chip transaction.  - `2`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the     EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN** and **JCN Gateway**. **NOTE**: This field is required when an EMV transaction fails for a technical reason. Do not include this field when the EMV terminal does not have any applications in common with the EMV card. ")
   public Integer getFallbackCondition() {
     return fallbackCondition;
   }
 
   public void setFallbackCondition(Integer fallbackCondition) {
     this.fallbackCondition = fallbackCondition;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformationEmv isRepeat(String isRepeat) {
+    this.isRepeat = isRepeat;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect Value 1  indicates this transaction is intentionally duplicated  The field contains value “1” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN. 
+   * @return isRepeat
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect Value 1  indicates this transaction is intentionally duplicated  The field contains value “1” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN. ")
+  public String getIsRepeat() {
+    return isRepeat;
+  }
+
+  public void setIsRepeat(String isRepeat) {
+    this.isRepeat = isRepeat;
   }
 
 
@@ -147,12 +168,13 @@ public class Ptsv2paymentsPointOfSaleInformationEmv {
         Objects.equals(this.cardholderVerificationMethodUsed, ptsv2paymentsPointOfSaleInformationEmv.cardholderVerificationMethodUsed) &&
         Objects.equals(this.cardSequenceNumber, ptsv2paymentsPointOfSaleInformationEmv.cardSequenceNumber) &&
         Objects.equals(this.fallback, ptsv2paymentsPointOfSaleInformationEmv.fallback) &&
-        Objects.equals(this.fallbackCondition, ptsv2paymentsPointOfSaleInformationEmv.fallbackCondition);
+        Objects.equals(this.fallbackCondition, ptsv2paymentsPointOfSaleInformationEmv.fallbackCondition) &&
+        Objects.equals(this.isRepeat, ptsv2paymentsPointOfSaleInformationEmv.isRepeat);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tags, cardholderVerificationMethodUsed, cardSequenceNumber, fallback, fallbackCondition);
+    return Objects.hash(tags, cardholderVerificationMethodUsed, cardSequenceNumber, fallback, fallbackCondition, isRepeat);
   }
 
 
@@ -166,6 +188,7 @@ public class Ptsv2paymentsPointOfSaleInformationEmv {
     sb.append("    cardSequenceNumber: ").append(toIndentedString(cardSequenceNumber)).append("\n");
     sb.append("    fallback: ").append(toIndentedString(fallback)).append("\n");
     sb.append("    fallbackCondition: ").append(toIndentedString(fallbackCondition)).append("\n");
+    sb.append("    isRepeat: ").append(toIndentedString(isRepeat)).append("\n");
     sb.append("}");
     return sb.toString();
   }

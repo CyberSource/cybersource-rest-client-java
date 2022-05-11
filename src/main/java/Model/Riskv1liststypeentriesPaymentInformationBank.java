@@ -27,7 +27,7 @@ import java.io.IOException;
  * Customer&#39;s bank account details
  */
 @ApiModel(description = "Customer's bank account details")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class Riskv1liststypeentriesPaymentInformationBank {
   @SerializedName("accountNumber")
   private String accountNumber = null;

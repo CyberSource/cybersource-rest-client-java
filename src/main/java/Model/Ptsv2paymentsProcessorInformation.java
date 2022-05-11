@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsProcessorInformationAuthorizationOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,10 +28,13 @@ import java.io.IOException;
  * Processor Information
  */
 @ApiModel(description = "Processor Information")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class Ptsv2paymentsProcessorInformation {
   @SerializedName("preApprovalToken")
   private String preApprovalToken = null;
+
+  @SerializedName("authorizationOptions")
+  private Ptsv2paymentsProcessorInformationAuthorizationOptions authorizationOptions = null;
 
   public Ptsv2paymentsProcessorInformation preApprovalToken(String preApprovalToken) {
     this.preApprovalToken = preApprovalToken;
@@ -50,6 +54,24 @@ public class Ptsv2paymentsProcessorInformation {
     this.preApprovalToken = preApprovalToken;
   }
 
+  public Ptsv2paymentsProcessorInformation authorizationOptions(Ptsv2paymentsProcessorInformationAuthorizationOptions authorizationOptions) {
+    this.authorizationOptions = authorizationOptions;
+    return this;
+  }
+
+   /**
+   * Get authorizationOptions
+   * @return authorizationOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessorInformationAuthorizationOptions getAuthorizationOptions() {
+    return authorizationOptions;
+  }
+
+  public void setAuthorizationOptions(Ptsv2paymentsProcessorInformationAuthorizationOptions authorizationOptions) {
+    this.authorizationOptions = authorizationOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +82,13 @@ public class Ptsv2paymentsProcessorInformation {
       return false;
     }
     Ptsv2paymentsProcessorInformation ptsv2paymentsProcessorInformation = (Ptsv2paymentsProcessorInformation) o;
-    return Objects.equals(this.preApprovalToken, ptsv2paymentsProcessorInformation.preApprovalToken);
+    return Objects.equals(this.preApprovalToken, ptsv2paymentsProcessorInformation.preApprovalToken) &&
+        Objects.equals(this.authorizationOptions, ptsv2paymentsProcessorInformation.authorizationOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(preApprovalToken);
+    return Objects.hash(preApprovalToken, authorizationOptions);
   }
 
 
@@ -75,6 +98,7 @@ public class Ptsv2paymentsProcessorInformation {
     sb.append("class Ptsv2paymentsProcessorInformation {\n");
     
     sb.append("    preApprovalToken: ").append(toIndentedString(preApprovalToken)).append("\n");
+    sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

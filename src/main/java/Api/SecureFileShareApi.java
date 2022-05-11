@@ -73,6 +73,9 @@ public class SecureFileShareApi {
      */
     public okhttp3.Call getFileCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/sfs/v1/files/{fileId}"
@@ -92,7 +95,7 @@ public class SecureFileShareApi {
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-final String[] localVarContentTypes = {"*/*"};
+        final String[] localVarContentTypes = {"*/*"};
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
@@ -206,6 +209,9 @@ final String[] localVarContentTypes = {"*/*"};
      */
     public okhttp3.Call getFileDetailCall(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/sfs/v1/file-details";
@@ -230,7 +236,7 @@ final String[] localVarContentTypes = {"*/*"};
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-final String[] localVarContentTypes = {"*/*"};
+        final String[] localVarContentTypes = {"*/*"};
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 

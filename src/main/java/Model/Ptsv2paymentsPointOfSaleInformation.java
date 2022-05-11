@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
@@ -108,6 +108,9 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   @SerializedName("terminalMake")
   private String terminalMake = null;
+
+  @SerializedName("serviceCode")
+  private String serviceCode = null;
 
   public Ptsv2paymentsPointOfSaleInformation terminalId(String terminalId) {
     this.terminalId = terminalId;
@@ -598,6 +601,24 @@ public class Ptsv2paymentsPointOfSaleInformation {
     this.terminalMake = terminalMake;
   }
 
+  public Ptsv2paymentsPointOfSaleInformation serviceCode(String serviceCode) {
+    this.serviceCode = serviceCode;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect Mastercard service code that is included in the track data. You can extract the service code from the track data and provide it in this API field. This field is supported only for Mastercard on Visa Platform Connect. 
+   * @return serviceCode
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect Mastercard service code that is included in the track data. You can extract the service code from the track data and provide it in this API field. This field is supported only for Mastercard on Visa Platform Connect. ")
+  public String getServiceCode() {
+    return serviceCode;
+  }
+
+  public void setServiceCode(String serviceCode) {
+    this.serviceCode = serviceCode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -633,12 +654,13 @@ public class Ptsv2paymentsPointOfSaleInformation {
         Objects.equals(this.terminalCompliance, ptsv2paymentsPointOfSaleInformation.terminalCompliance) &&
         Objects.equals(this.isDedicatedHardwareTerminal, ptsv2paymentsPointOfSaleInformation.isDedicatedHardwareTerminal) &&
         Objects.equals(this.terminalModel, ptsv2paymentsPointOfSaleInformation.terminalModel) &&
-        Objects.equals(this.terminalMake, ptsv2paymentsPointOfSaleInformation.terminalMake);
+        Objects.equals(this.terminalMake, ptsv2paymentsPointOfSaleInformation.terminalMake) &&
+        Objects.equals(this.serviceCode, ptsv2paymentsPointOfSaleInformation.serviceCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId, terminalSerialNumber, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake);
+    return Objects.hash(terminalId, terminalSerialNumber, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake, serviceCode);
   }
 
 
@@ -673,6 +695,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
     sb.append("    isDedicatedHardwareTerminal: ").append(toIndentedString(isDedicatedHardwareTerminal)).append("\n");
     sb.append("    terminalModel: ").append(toIndentedString(terminalModel)).append("\n");
     sb.append("    terminalMake: ").append(toIndentedString(terminalMake)).append("\n");
+    sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

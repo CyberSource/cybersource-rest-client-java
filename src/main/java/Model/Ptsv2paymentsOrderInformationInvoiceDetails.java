@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformationInvoiceDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class Ptsv2paymentsOrderInformationInvoiceDetails {
   @SerializedName("invoiceNumber")
   private String invoiceNumber = null;
@@ -78,6 +78,9 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
 
   @SerializedName("costCenter")
   private String costCenter = null;
+
+  @SerializedName("issuerMessage")
+  private String issuerMessage = null;
 
   public Ptsv2paymentsOrderInformationInvoiceDetails invoiceNumber(String invoiceNumber) {
     this.invoiceNumber = invoiceNumber;
@@ -376,6 +379,24 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     this.costCenter = costCenter;
   }
 
+  public Ptsv2paymentsOrderInformationInvoiceDetails issuerMessage(String issuerMessage) {
+    this.issuerMessage = issuerMessage;
+    return this;
+  }
+
+   /**
+   * Text message from the issuer. If you give the customer a receipt, display this value on the receipt.
+   * @return issuerMessage
+  **/
+  @ApiModelProperty(value = "Text message from the issuer. If you give the customer a receipt, display this value on the receipt.")
+  public String getIssuerMessage() {
+    return issuerMessage;
+  }
+
+  public void setIssuerMessage(String issuerMessage) {
+    this.issuerMessage = issuerMessage;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -401,12 +422,13 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
         Objects.equals(this.referenceDataNumber, ptsv2paymentsOrderInformationInvoiceDetails.referenceDataNumber) &&
         Objects.equals(this.salesSlipNumber, ptsv2paymentsOrderInformationInvoiceDetails.salesSlipNumber) &&
         Objects.equals(this.invoiceDate, ptsv2paymentsOrderInformationInvoiceDetails.invoiceDate) &&
-        Objects.equals(this.costCenter, ptsv2paymentsOrderInformationInvoiceDetails.costCenter);
+        Objects.equals(this.costCenter, ptsv2paymentsOrderInformationInvoiceDetails.costCenter) &&
+        Objects.equals(this.issuerMessage, ptsv2paymentsOrderInformationInvoiceDetails.issuerMessage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum, referenceDataCode, referenceDataNumber, salesSlipNumber, invoiceDate, costCenter);
+    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum, referenceDataCode, referenceDataNumber, salesSlipNumber, invoiceDate, costCenter, issuerMessage);
   }
 
 
@@ -431,6 +453,7 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
     sb.append("    invoiceDate: ").append(toIndentedString(invoiceDate)).append("\n");
     sb.append("    costCenter: ").append(toIndentedString(costCenter)).append("\n");
+    sb.append("    issuerMessage: ").append(toIndentedString(issuerMessage)).append("\n");
     sb.append("}");
     return sb.toString();
   }

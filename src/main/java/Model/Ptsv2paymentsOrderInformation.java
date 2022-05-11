@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class Ptsv2paymentsOrderInformation {
   @SerializedName("amountDetails")
   private Ptsv2paymentsOrderInformationAmountDetails amountDetails = null;
@@ -56,6 +56,9 @@ public class Ptsv2paymentsOrderInformation {
 
   @SerializedName("returnsAccepted")
   private Boolean returnsAccepted = null;
+
+  @SerializedName("isCryptocurrencyPurchase")
+  private String isCryptocurrencyPurchase = null;
 
   @SerializedName("preOrder")
   private String preOrder = null;
@@ -203,6 +206,24 @@ public class Ptsv2paymentsOrderInformation {
     this.returnsAccepted = returnsAccepted;
   }
 
+  public Ptsv2paymentsOrderInformation isCryptocurrencyPurchase(String isCryptocurrencyPurchase) {
+    this.isCryptocurrencyPurchase = isCryptocurrencyPurchase;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. Additional values to add : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. valid values are - Y/y, true - N/n, false 
+   * @return isCryptocurrencyPurchase
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. Additional values to add : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. valid values are - Y/y, true - N/n, false ")
+  public String getIsCryptocurrencyPurchase() {
+    return isCryptocurrencyPurchase;
+  }
+
+  public void setIsCryptocurrencyPurchase(String isCryptocurrencyPurchase) {
+    this.isCryptocurrencyPurchase = isCryptocurrencyPurchase;
+  }
+
   public Ptsv2paymentsOrderInformation preOrder(String preOrder) {
     this.preOrder = preOrder;
     return this;
@@ -292,6 +313,7 @@ public class Ptsv2paymentsOrderInformation {
         Objects.equals(this.invoiceDetails, ptsv2paymentsOrderInformation.invoiceDetails) &&
         Objects.equals(this.shippingDetails, ptsv2paymentsOrderInformation.shippingDetails) &&
         Objects.equals(this.returnsAccepted, ptsv2paymentsOrderInformation.returnsAccepted) &&
+        Objects.equals(this.isCryptocurrencyPurchase, ptsv2paymentsOrderInformation.isCryptocurrencyPurchase) &&
         Objects.equals(this.preOrder, ptsv2paymentsOrderInformation.preOrder) &&
         Objects.equals(this.preOrderDate, ptsv2paymentsOrderInformation.preOrderDate) &&
         Objects.equals(this.reordered, ptsv2paymentsOrderInformation.reordered) &&
@@ -300,7 +322,7 @@ public class Ptsv2paymentsOrderInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails, returnsAccepted, preOrder, preOrderDate, reordered, totalOffersCount);
+    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails, returnsAccepted, isCryptocurrencyPurchase, preOrder, preOrderDate, reordered, totalOffersCount);
   }
 
 
@@ -316,6 +338,7 @@ public class Ptsv2paymentsOrderInformation {
     sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
     sb.append("    returnsAccepted: ").append(toIndentedString(returnsAccepted)).append("\n");
+    sb.append("    isCryptocurrencyPurchase: ").append(toIndentedString(isCryptocurrencyPurchase)).append("\n");
     sb.append("    preOrder: ").append(toIndentedString(preOrder)).append("\n");
     sb.append("    preOrderDate: ").append(toIndentedString(preOrderDate)).append("\n");
     sb.append("    reordered: ").append(toIndentedString(reordered)).append("\n");

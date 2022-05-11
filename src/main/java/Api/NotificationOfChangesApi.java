@@ -73,6 +73,9 @@ public class NotificationOfChangesApi {
      */
     public okhttp3.Call getNotificationOfChangeReportCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/reporting/v3/notification-of-changes";

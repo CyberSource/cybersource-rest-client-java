@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsMerchantInformationMerchantDescriptor
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
   @SerializedName("name")
   private String name = null;
@@ -57,6 +57,9 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
 
   @SerializedName("url")
   private String url = null;
+
+  @SerializedName("countryOfOrigin")
+  private String countryOfOrigin = null;
 
   public Ptsv2paymentsMerchantInformationMerchantDescriptor name(String name) {
     this.name = name;
@@ -238,6 +241,24 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
     this.url = url;
   }
 
+  public Ptsv2paymentsMerchantInformationMerchantDescriptor countryOfOrigin(String countryOfOrigin) {
+    this.countryOfOrigin = countryOfOrigin;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect This field will indicate merchant country of origin 
+   * @return countryOfOrigin
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect This field will indicate merchant country of origin ")
+  public String getCountryOfOrigin() {
+    return countryOfOrigin;
+  }
+
+  public void setCountryOfOrigin(String countryOfOrigin) {
+    this.countryOfOrigin = countryOfOrigin;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -257,12 +278,13 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
         Objects.equals(this.postalCode, ptsv2paymentsMerchantInformationMerchantDescriptor.postalCode) &&
         Objects.equals(this.administrativeArea, ptsv2paymentsMerchantInformationMerchantDescriptor.administrativeArea) &&
         Objects.equals(this.phone, ptsv2paymentsMerchantInformationMerchantDescriptor.phone) &&
-        Objects.equals(this.url, ptsv2paymentsMerchantInformationMerchantDescriptor.url);
+        Objects.equals(this.url, ptsv2paymentsMerchantInformationMerchantDescriptor.url) &&
+        Objects.equals(this.countryOfOrigin, ptsv2paymentsMerchantInformationMerchantDescriptor.countryOfOrigin);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, alternateName, contact, address1, locality, country, postalCode, administrativeArea, phone, url);
+    return Objects.hash(name, alternateName, contact, address1, locality, country, postalCode, administrativeArea, phone, url, countryOfOrigin);
   }
 
 
@@ -281,6 +303,7 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    countryOfOrigin: ").append(toIndentedString(countryOfOrigin)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -77,6 +77,9 @@ public class PaymentBatchSummariesApi {
      */
     public okhttp3.Call getPaymentBatchSummaryCall(DateTime startTime, DateTime endTime, String organizationId, String rollUp, String breakdown, Integer startDayOfWeek, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/reporting/v3/payment-batch-summaries";

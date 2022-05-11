@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * ReportingV3ReportDefinitionsNameGet200ResponseAttributes
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {
   @SerializedName("id")
   private String id = null;

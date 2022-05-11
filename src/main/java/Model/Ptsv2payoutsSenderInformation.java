@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2payoutsSenderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class Ptsv2payoutsSenderInformation {
   @SerializedName("referenceNumber")
   private String referenceNumber = null;
@@ -73,6 +73,15 @@ public class Ptsv2payoutsSenderInformation {
 
   @SerializedName("vatRegistrationNumber")
   private String vatRegistrationNumber = null;
+
+  @SerializedName("personalIdType")
+  private String personalIdType = null;
+
+  @SerializedName("type")
+  private String type = null;
+
+  @SerializedName("identificationNumber")
+  private String identificationNumber = null;
 
   public Ptsv2payoutsSenderInformation referenceNumber(String referenceNumber) {
     this.referenceNumber = referenceNumber;
@@ -344,6 +353,60 @@ public class Ptsv2payoutsSenderInformation {
     this.vatRegistrationNumber = vatRegistrationNumber;
   }
 
+  public Ptsv2payoutsSenderInformation personalIdType(String personalIdType) {
+    this.personalIdType = personalIdType;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect This tag will contain the type of sender identification. The valid values are: • BTHD (Date of birth) • CUID (Customer identification (unspecified)) • NTID (National identification) • PASN (Passport number) • DRLN (Driver license) • TXIN (Tax identification) • CPNY (Company registration number) • PRXY (Proxy identification) • SSNB (Social security number) • ARNB (Alien registration number) • LAWE (Law enforcement identification) • MILI (Military identification) • TRVL (Travel identification (non-passport)) • EMAL (Email) • PHON (Phone number) 
+   * @return personalIdType
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect This tag will contain the type of sender identification. The valid values are: • BTHD (Date of birth) • CUID (Customer identification (unspecified)) • NTID (National identification) • PASN (Passport number) • DRLN (Driver license) • TXIN (Tax identification) • CPNY (Company registration number) • PRXY (Proxy identification) • SSNB (Social security number) • ARNB (Alien registration number) • LAWE (Law enforcement identification) • MILI (Military identification) • TRVL (Travel identification (non-passport)) • EMAL (Email) • PHON (Phone number) ")
+  public String getPersonalIdType() {
+    return personalIdType;
+  }
+
+  public void setPersonalIdType(String personalIdType) {
+    this.personalIdType = personalIdType;
+  }
+
+  public Ptsv2payoutsSenderInformation type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect This tag will denote whether the tax ID is a business or individual tax ID when personal ID Type contains the value of TXIN (Tax identification).  The valid values are: • B (Business) • I (Individual) 
+   * @return type
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect This tag will denote whether the tax ID is a business or individual tax ID when personal ID Type contains the value of TXIN (Tax identification).  The valid values are: • B (Business) • I (Individual) ")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public Ptsv2payoutsSenderInformation identificationNumber(String identificationNumber) {
+    this.identificationNumber = identificationNumber;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect This tag will contain an acquirer-populated value associated with the API : senderInformation.personalIdType which will identify the personal ID type of the sender. 
+   * @return identificationNumber
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect This tag will contain an acquirer-populated value associated with the API : senderInformation.personalIdType which will identify the personal ID type of the sender. ")
+  public String getIdentificationNumber() {
+    return identificationNumber;
+  }
+
+  public void setIdentificationNumber(String identificationNumber) {
+    this.identificationNumber = identificationNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -368,12 +431,15 @@ public class Ptsv2payoutsSenderInformation {
         Objects.equals(this.postalCode, ptsv2payoutsSenderInformation.postalCode) &&
         Objects.equals(this.phoneNumber, ptsv2payoutsSenderInformation.phoneNumber) &&
         Objects.equals(this.dateOfBirth, ptsv2payoutsSenderInformation.dateOfBirth) &&
-        Objects.equals(this.vatRegistrationNumber, ptsv2payoutsSenderInformation.vatRegistrationNumber);
+        Objects.equals(this.vatRegistrationNumber, ptsv2payoutsSenderInformation.vatRegistrationNumber) &&
+        Objects.equals(this.personalIdType, ptsv2payoutsSenderInformation.personalIdType) &&
+        Objects.equals(this.type, ptsv2payoutsSenderInformation.type) &&
+        Objects.equals(this.identificationNumber, ptsv2payoutsSenderInformation.identificationNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(referenceNumber, account, firstName, middleInitial, middleName, lastName, name, address1, locality, administrativeArea, countryCode, postalCode, phoneNumber, dateOfBirth, vatRegistrationNumber);
+    return Objects.hash(referenceNumber, account, firstName, middleInitial, middleName, lastName, name, address1, locality, administrativeArea, countryCode, postalCode, phoneNumber, dateOfBirth, vatRegistrationNumber, personalIdType, type, identificationNumber);
   }
 
 
@@ -397,6 +463,9 @@ public class Ptsv2payoutsSenderInformation {
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
+    sb.append("    personalIdType: ").append(toIndentedString(personalIdType)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    identificationNumber: ").append(toIndentedString(identificationNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

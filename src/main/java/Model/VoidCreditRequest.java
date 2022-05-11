@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsidreversalsClientReferenceInformation;
+import Model.Ptsv2paymentsidvoidsOrderInformation;
 import Model.Ptsv2paymentsidvoidsPaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -28,13 +29,16 @@ import java.io.IOException;
 /**
  * VoidCreditRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class VoidCreditRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsidreversalsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("paymentInformation")
   private Ptsv2paymentsidvoidsPaymentInformation paymentInformation = null;
+
+  @SerializedName("orderInformation")
+  private Ptsv2paymentsidvoidsOrderInformation orderInformation = null;
 
   public VoidCreditRequest clientReferenceInformation(Ptsv2paymentsidreversalsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -72,6 +76,24 @@ public class VoidCreditRequest {
     this.paymentInformation = paymentInformation;
   }
 
+  public VoidCreditRequest orderInformation(Ptsv2paymentsidvoidsOrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
+    return this;
+  }
+
+   /**
+   * Get orderInformation
+   * @return orderInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidvoidsOrderInformation getOrderInformation() {
+    return orderInformation;
+  }
+
+  public void setOrderInformation(Ptsv2paymentsidvoidsOrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +105,13 @@ public class VoidCreditRequest {
     }
     VoidCreditRequest voidCreditRequest = (VoidCreditRequest) o;
     return Objects.equals(this.clientReferenceInformation, voidCreditRequest.clientReferenceInformation) &&
-        Objects.equals(this.paymentInformation, voidCreditRequest.paymentInformation);
+        Objects.equals(this.paymentInformation, voidCreditRequest.paymentInformation) &&
+        Objects.equals(this.orderInformation, voidCreditRequest.orderInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, paymentInformation);
+    return Objects.hash(clientReferenceInformation, paymentInformation, orderInformation);
   }
 
 
@@ -99,6 +122,7 @@ public class VoidCreditRequest {
     
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

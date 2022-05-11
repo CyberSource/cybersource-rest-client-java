@@ -74,6 +74,9 @@ public class UserManagementApi {
      */
     public okhttp3.Call getUsersCall(String organizationId, String userName, String permissionId, String roleId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/ums/v1/users";

@@ -74,6 +74,9 @@ public class PaymentInstrumentApi {
      */
     public okhttp3.Call deletePaymentInstrumentCall(String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("DELETE".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentTokenId}"
@@ -207,6 +210,9 @@ public class PaymentInstrumentApi {
      */
     public okhttp3.Call getPaymentInstrumentCall(String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentTokenId}"

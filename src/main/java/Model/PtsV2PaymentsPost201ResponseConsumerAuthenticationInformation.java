@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("accessToken")
   private String accessToken = null;

@@ -69,6 +69,9 @@ public class DownloadDTDApi {
      */
     public okhttp3.Call getDTDV2Call(String reportDefinitionNameVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/reporting/v3/dtds/{reportDefinitionNameVersion}"

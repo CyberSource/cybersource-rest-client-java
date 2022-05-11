@@ -76,6 +76,9 @@ public class CustomerShippingAddressApi {
      */
     public okhttp3.Call deleteCustomerShippingAddressCall(String customerTokenId, String shippingAddressTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("DELETE".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}"
@@ -220,6 +223,9 @@ public class CustomerShippingAddressApi {
      */
     public okhttp3.Call getCustomerShippingAddressCall(String customerTokenId, String shippingAddressTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}"
@@ -369,6 +375,9 @@ public class CustomerShippingAddressApi {
      */
     public okhttp3.Call getCustomerShippingAddressesListCall(String customerTokenId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerTokenId}/shipping-addresses"

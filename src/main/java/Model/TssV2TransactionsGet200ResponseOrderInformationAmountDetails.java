@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsOrderInformationAmountDetailsSurcharge;
+import Model.Ptsv2payoutsOrderInformationAmountDetailsSurcharge;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseOrderInformationAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;
@@ -48,7 +48,7 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
   private String settlementCurrency = null;
 
   @SerializedName("surcharge")
-  private Ptsv2paymentsOrderInformationAmountDetailsSurcharge surcharge = null;
+  private Ptsv2payoutsOrderInformationAmountDetailsSurcharge surcharge = null;
 
   public TssV2TransactionsGet200ResponseOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
@@ -158,7 +158,7 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
     this.settlementCurrency = settlementCurrency;
   }
 
-  public TssV2TransactionsGet200ResponseOrderInformationAmountDetails surcharge(Ptsv2paymentsOrderInformationAmountDetailsSurcharge surcharge) {
+  public TssV2TransactionsGet200ResponseOrderInformationAmountDetails surcharge(Ptsv2payoutsOrderInformationAmountDetailsSurcharge surcharge) {
     this.surcharge = surcharge;
     return this;
   }
@@ -168,11 +168,11 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
    * @return surcharge
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsOrderInformationAmountDetailsSurcharge getSurcharge() {
+  public Ptsv2payoutsOrderInformationAmountDetailsSurcharge getSurcharge() {
     return surcharge;
   }
 
-  public void setSurcharge(Ptsv2paymentsOrderInformationAmountDetailsSurcharge surcharge) {
+  public void setSurcharge(Ptsv2payoutsOrderInformationAmountDetailsSurcharge surcharge) {
     this.surcharge = surcharge;
   }
 

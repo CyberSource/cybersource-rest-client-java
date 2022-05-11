@@ -73,6 +73,9 @@ public class InterchangeClearingLevelDetailsApi {
      */
     public okhttp3.Call getInterchangeClearingLevelDetailsCall(DateTime startTime, DateTime endTime, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/reporting/v3/interchange-clearing-level-details";

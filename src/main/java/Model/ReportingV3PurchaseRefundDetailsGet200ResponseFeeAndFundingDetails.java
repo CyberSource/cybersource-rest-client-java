@@ -27,7 +27,7 @@ import java.io.IOException;
  * Fee Funding Section
  */
 @ApiModel(description = "Fee Funding Section")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
 public class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails {
   @SerializedName("requestId")
   private String requestId = null;
