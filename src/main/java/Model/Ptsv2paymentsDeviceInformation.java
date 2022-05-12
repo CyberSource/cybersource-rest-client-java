@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
 public class Ptsv2paymentsDeviceInformation {
   @SerializedName("hostName")
   private String hostName = null;
@@ -157,6 +157,11 @@ public class Ptsv2paymentsDeviceInformation {
     this.fingerprintSessionId = fingerprintSessionId;
   }
 
+  public Ptsv2paymentsDeviceInformation useRawFingerprintSessionId(Boolean useRawFingerprintSessionId) {
+    this.useRawFingerprintSessionId = useRawFingerprintSessionId;
+    return this;
+  }
+
    /**
    * Boolean that indicates whether request contains the device fingerprint information. Values: - &#x60;true&#x60;: Use raw fingerprintSessionId when looking up device details. - &#x60;false&#x60; (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection. 
    * @return useRawFingerprintSessionId
@@ -164,6 +169,10 @@ public class Ptsv2paymentsDeviceInformation {
   @ApiModelProperty(value = "Boolean that indicates whether request contains the device fingerprint information. Values: - `true`: Use raw fingerprintSessionId when looking up device details. - `false` (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection. ")
   public Boolean getUseRawFingerprintSessionId() {
     return useRawFingerprintSessionId;
+  }
+
+  public void setUseRawFingerprintSessionId(Boolean useRawFingerprintSessionId) {
+    this.useRawFingerprintSessionId = useRawFingerprintSessionId;
   }
 
   public Ptsv2paymentsDeviceInformation deviceType(String deviceType) {

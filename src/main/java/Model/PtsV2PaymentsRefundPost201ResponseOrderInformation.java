@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsRefundPost201ResponseOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
 public class PtsV2PaymentsRefundPost201ResponseOrderInformation {
   @SerializedName("invoiceDetails")
   private PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails invoiceDetails = null;

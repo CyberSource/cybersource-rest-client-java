@@ -27,7 +27,7 @@ import java.io.IOException;
  * Request Info Section
  */
 @ApiModel(description = "Request Info Section")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
 public class ReportingV3PurchaseRefundDetailsGet200ResponseRequestDetails {
   @SerializedName("requestId")
   private String requestId = null;

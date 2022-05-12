@@ -27,7 +27,7 @@ import java.io.IOException;
  * Contains all of the tax-related fields for the invoice.
  */
 @ApiModel(description = "Contains all of the tax-related fields for the invoice.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-11T15:37:08.221+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
 public class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails {
   @SerializedName("type")
   private String type = null;
