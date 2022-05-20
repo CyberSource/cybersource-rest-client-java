@@ -76,6 +76,9 @@ public class CustomerPaymentInstrumentApi {
      */
     public okhttp3.Call deleteCustomerPaymentInstrumentCall(String customerTokenId, String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("DELETE".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerTokenId}/payment-instruments/{paymentInstrumentTokenId}"
@@ -220,6 +223,9 @@ public class CustomerPaymentInstrumentApi {
      */
     public okhttp3.Call getCustomerPaymentInstrumentCall(String customerTokenId, String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerTokenId}/payment-instruments/{paymentInstrumentTokenId}"
@@ -369,6 +375,9 @@ public class CustomerPaymentInstrumentApi {
      */
     public okhttp3.Call getCustomerPaymentInstrumentsListCall(String customerTokenId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerTokenId}/payment-instruments"

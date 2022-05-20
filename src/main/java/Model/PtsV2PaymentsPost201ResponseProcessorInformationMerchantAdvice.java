@@ -26,13 +26,16 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice {
   @SerializedName("code")
   private String code = null;
 
   @SerializedName("codeRaw")
   private String codeRaw = null;
+
+  @SerializedName("nameMatch")
+  private String nameMatch = null;
 
   public PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice code(String code) {
     this.code = code;
@@ -70,6 +73,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice {
     this.codeRaw = codeRaw;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice nameMatch(String nameMatch) {
+    this.nameMatch = nameMatch;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect The field contains will contain the Account Name Request Result for zero amount Authorization request. Valid values are:  00 &#x3D; Name Match Performed 01 &#x3D; Name Match not Performed 02 &#x3D; Name Match not supported 
+   * @return nameMatch
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect The field contains will contain the Account Name Request Result for zero amount Authorization request. Valid values are:  00 = Name Match Performed 01 = Name Match not Performed 02 = Name Match not supported ")
+  public String getNameMatch() {
+    return nameMatch;
+  }
+
+  public void setNameMatch(String nameMatch) {
+    this.nameMatch = nameMatch;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +102,13 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice {
     }
     PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice ptsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice = (PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice) o;
     return Objects.equals(this.code, ptsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice.code) &&
-        Objects.equals(this.codeRaw, ptsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice.codeRaw);
+        Objects.equals(this.codeRaw, ptsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice.codeRaw) &&
+        Objects.equals(this.nameMatch, ptsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice.nameMatch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, codeRaw);
+    return Objects.hash(code, codeRaw, nameMatch);
   }
 
 
@@ -97,6 +119,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice {
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    codeRaw: ").append(toIndentedString(codeRaw)).append("\n");
+    sb.append("    nameMatch: ").append(toIndentedString(nameMatch)).append("\n");
     sb.append("}");
     return sb.toString();
   }

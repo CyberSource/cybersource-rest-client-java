@@ -203,6 +203,9 @@ public class SearchTransactionsApi {
      */
     public okhttp3.Call getSearchCall(String searchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tss/v2/searches/{searchId}"

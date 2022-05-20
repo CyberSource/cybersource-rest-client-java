@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponsePaymentAccountInformationCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
 public class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard {
   @SerializedName("suffix")
   private String suffix = null;
@@ -42,6 +42,9 @@ public class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard {
 
   @SerializedName("prefix")
   private String prefix = null;
+
+  @SerializedName("hashedNumber")
+  private String hashedNumber = null;
 
   public PtsV2PaymentsPost201ResponsePaymentAccountInformationCard suffix(String suffix) {
     this.suffix = suffix;
@@ -133,6 +136,24 @@ public class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard {
     this.prefix = prefix;
   }
 
+  public PtsV2PaymentsPost201ResponsePaymentAccountInformationCard hashedNumber(String hashedNumber) {
+    this.hashedNumber = hashedNumber;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect This API field will contain the SHA 256 hashed value of PAN. 
+   * @return hashedNumber
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect This API field will contain the SHA 256 hashed value of PAN. ")
+  public String getHashedNumber() {
+    return hashedNumber;
+  }
+
+  public void setHashedNumber(String hashedNumber) {
+    this.hashedNumber = hashedNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,12 +168,13 @@ public class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard {
         Objects.equals(this.expirationMonth, ptsV2PaymentsPost201ResponsePaymentAccountInformationCard.expirationMonth) &&
         Objects.equals(this.expirationYear, ptsV2PaymentsPost201ResponsePaymentAccountInformationCard.expirationYear) &&
         Objects.equals(this.type, ptsV2PaymentsPost201ResponsePaymentAccountInformationCard.type) &&
-        Objects.equals(this.prefix, ptsV2PaymentsPost201ResponsePaymentAccountInformationCard.prefix);
+        Objects.equals(this.prefix, ptsV2PaymentsPost201ResponsePaymentAccountInformationCard.prefix) &&
+        Objects.equals(this.hashedNumber, ptsV2PaymentsPost201ResponsePaymentAccountInformationCard.hashedNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(suffix, expirationMonth, expirationYear, type, prefix);
+    return Objects.hash(suffix, expirationMonth, expirationYear, type, prefix, hashedNumber);
   }
 
 
@@ -166,6 +188,7 @@ public class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard {
     sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
+    sb.append("    hashedNumber: ").append(toIndentedString(hashedNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2payoutsProcessingInformationFundingOptions;
 import Model.Ptsv2payoutsProcessingInformationPayoutsOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -27,7 +28,7 @@ import java.io.IOException;
 /**
  * Ptsv2payoutsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
 public class Ptsv2payoutsProcessingInformation {
   @SerializedName("businessApplicationId")
   private String businessApplicationId = null;
@@ -49,6 +50,9 @@ public class Ptsv2payoutsProcessingInformation {
 
   @SerializedName("purposeOfPayment")
   private String purposeOfPayment = null;
+
+  @SerializedName("fundingOptions")
+  private Ptsv2payoutsProcessingInformationFundingOptions fundingOptions = null;
 
   public Ptsv2payoutsProcessingInformation businessApplicationId(String businessApplicationId) {
     this.businessApplicationId = businessApplicationId;
@@ -176,6 +180,24 @@ public class Ptsv2payoutsProcessingInformation {
     this.purposeOfPayment = purposeOfPayment;
   }
 
+  public Ptsv2payoutsProcessingInformation fundingOptions(Ptsv2payoutsProcessingInformationFundingOptions fundingOptions) {
+    this.fundingOptions = fundingOptions;
+    return this;
+  }
+
+   /**
+   * Get fundingOptions
+   * @return fundingOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2payoutsProcessingInformationFundingOptions getFundingOptions() {
+    return fundingOptions;
+  }
+
+  public void setFundingOptions(Ptsv2payoutsProcessingInformationFundingOptions fundingOptions) {
+    this.fundingOptions = fundingOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -192,12 +214,13 @@ public class Ptsv2payoutsProcessingInformation {
         Objects.equals(this.reconciliationId, ptsv2payoutsProcessingInformation.reconciliationId) &&
         Objects.equals(this.payoutsOptions, ptsv2payoutsProcessingInformation.payoutsOptions) &&
         Objects.equals(this.transactionReason, ptsv2payoutsProcessingInformation.transactionReason) &&
-        Objects.equals(this.purposeOfPayment, ptsv2payoutsProcessingInformation.purposeOfPayment);
+        Objects.equals(this.purposeOfPayment, ptsv2payoutsProcessingInformation.purposeOfPayment) &&
+        Objects.equals(this.fundingOptions, ptsv2payoutsProcessingInformation.fundingOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(businessApplicationId, networkRoutingOrder, commerceIndicator, reconciliationId, payoutsOptions, transactionReason, purposeOfPayment);
+    return Objects.hash(businessApplicationId, networkRoutingOrder, commerceIndicator, reconciliationId, payoutsOptions, transactionReason, purposeOfPayment, fundingOptions);
   }
 
 
@@ -213,6 +236,7 @@ public class Ptsv2payoutsProcessingInformation {
     sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
     sb.append("    transactionReason: ").append(toIndentedString(transactionReason)).append("\n");
     sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
+    sb.append("    fundingOptions: ").append(toIndentedString(fundingOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

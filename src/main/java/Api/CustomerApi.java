@@ -74,6 +74,9 @@ public class CustomerApi {
      */
     public okhttp3.Call deleteCustomerCall(String customerTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("DELETE".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerTokenId}"
@@ -207,6 +210,9 @@ public class CustomerApi {
      */
     public okhttp3.Call getCustomerCall(String customerTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerTokenId}"

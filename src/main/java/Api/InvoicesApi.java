@@ -210,6 +210,9 @@ public class InvoicesApi {
      */
     public okhttp3.Call getAllInvoicesCall(Integer offset, Integer limit, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/invoices";
@@ -358,6 +361,9 @@ public class InvoicesApi {
      */
     public okhttp3.Call getInvoiceCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/invoices/{id}"
@@ -489,6 +495,9 @@ public class InvoicesApi {
      */
     public okhttp3.Call performCancelActionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("POST".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/invoices/{id}/cancelation"
@@ -620,6 +629,9 @@ public class InvoicesApi {
      */
     public okhttp3.Call performSendActionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("POST".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/invoices/{id}/delivery"

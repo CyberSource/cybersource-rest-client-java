@@ -76,6 +76,9 @@ public class InstrumentIdentifierApi {
      */
     public okhttp3.Call deleteInstrumentIdentifierCall(String instrumentIdentifierTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("DELETE".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}"
@@ -209,6 +212,9 @@ public class InstrumentIdentifierApi {
      */
     public okhttp3.Call getInstrumentIdentifierCall(String instrumentIdentifierTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}"
@@ -348,6 +354,9 @@ public class InstrumentIdentifierApi {
      */
     public okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListCall(String instrumentIdentifierTokenId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments"

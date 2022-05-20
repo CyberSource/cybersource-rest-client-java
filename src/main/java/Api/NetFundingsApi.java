@@ -75,6 +75,9 @@ public class NetFundingsApi {
      */
     public okhttp3.Call getNetFundingDetailsCall(DateTime startTime, DateTime endTime, String organizationId, String groupName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/reporting/v3/net-fundings";

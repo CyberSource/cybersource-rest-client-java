@@ -336,6 +336,9 @@ public class AsymmetricKeyManagementApi {
      */
     public okhttp3.Call getP12KeyDetailsCall(String keyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-asym/{keyId}"

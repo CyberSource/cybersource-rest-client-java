@@ -75,6 +75,9 @@ public class ReportDefinitionsApi {
      */
     public okhttp3.Call getResourceInfoByReportDefinitionCall(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-definitions/{reportDefinitionName}"
@@ -222,6 +225,9 @@ public class ReportDefinitionsApi {
      */
     public okhttp3.Call getResourceV2InfoCall(String subscriptionType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-definitions";

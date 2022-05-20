@@ -77,6 +77,9 @@ public class TransactionBatchesApi {
      */
     public okhttp3.Call getTransactionBatchDetailsCall(String id, LocalDate uploadDate, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v1/transaction-batch-details/{id}"
@@ -214,6 +217,9 @@ public class TransactionBatchesApi {
      */
     public okhttp3.Call getTransactionBatchIdCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v1/transaction-batches/{id}"
@@ -346,6 +352,9 @@ public class TransactionBatchesApi {
      */
     public okhttp3.Call getTransactionBatchesCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/pts/v1/transaction-batches";

@@ -26,13 +26,13 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidcapturesPointOfSaleInformationEmv
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
 public class Ptsv2paymentsidcapturesPointOfSaleInformationEmv {
   @SerializedName("tags")
   private String tags = null;
 
   @SerializedName("fallback")
-  private Boolean fallback = false;
+  private Boolean fallback = null;
 
   public Ptsv2paymentsidcapturesPointOfSaleInformationEmv tags(String tags) {
     this.tags = tags;

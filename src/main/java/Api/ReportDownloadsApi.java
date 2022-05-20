@@ -73,6 +73,9 @@ public class ReportDownloadsApi {
      */
     public okhttp3.Call downloadReportCall(LocalDate reportDate, String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-downloads";

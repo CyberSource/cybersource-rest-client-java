@@ -340,6 +340,9 @@ public class ReportSubscriptionsApi {
      */
     public okhttp3.Call deleteSubscriptionCall(String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("DELETE".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions/{reportName}"
@@ -472,6 +475,9 @@ public class ReportSubscriptionsApi {
      */
     public okhttp3.Call getAllSubscriptionsCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions";
@@ -599,6 +605,9 @@ public class ReportSubscriptionsApi {
      */
     public okhttp3.Call getSubscriptionCall(String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions/{reportName}"

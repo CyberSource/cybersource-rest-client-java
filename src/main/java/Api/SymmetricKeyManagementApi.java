@@ -479,6 +479,9 @@ public class SymmetricKeyManagementApi {
      */
     public okhttp3.Call getKeyDetailsCall(String keyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-sym/{keyId}"

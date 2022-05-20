@@ -27,7 +27,7 @@ import java.io.IOException;
  * Report Preferences
  */
 @ApiModel(description = "Report Preferences")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-04-12T09:56:59.728+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
 public class Reportingv3reportsReportPreferences {
   @SerializedName("signedAmounts")
   private Boolean signedAmounts = null;
