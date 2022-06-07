@@ -1,5 +1,5 @@
 
-# TssV2TransactionsPost201ResponseEmbeddedDeviceInformation
+# Riskv1authenticationresultsDeviceInformation
 
 ## Properties
 Name | Type | Description | Notes

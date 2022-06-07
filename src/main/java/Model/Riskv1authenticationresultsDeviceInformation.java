@@ -24,14 +24,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TssV2TransactionsPost201ResponseEmbeddedDeviceInformation
+ * Riskv1authenticationresultsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
-public class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
+public class Riskv1authenticationresultsDeviceInformation {
   @SerializedName("ipAddress")
   private String ipAddress = null;
 
-  public TssV2TransactionsPost201ResponseEmbeddedDeviceInformation ipAddress(String ipAddress) {
+  public Riskv1authenticationresultsDeviceInformation ipAddress(String ipAddress) {
     this.ipAddress = ipAddress;
     return this;
   }
@@ -58,8 +58,8 @@ public class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TssV2TransactionsPost201ResponseEmbeddedDeviceInformation tssV2TransactionsPost201ResponseEmbeddedDeviceInformation = (TssV2TransactionsPost201ResponseEmbeddedDeviceInformation) o;
-    return Objects.equals(this.ipAddress, tssV2TransactionsPost201ResponseEmbeddedDeviceInformation.ipAddress);
+    Riskv1authenticationresultsDeviceInformation riskv1authenticationresultsDeviceInformation = (Riskv1authenticationresultsDeviceInformation) o;
+    return Objects.equals(this.ipAddress, riskv1authenticationresultsDeviceInformation.ipAddress);
   }
 
   @Override
@@ -71,7 +71,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation {\n");
+    sb.append("class Riskv1authenticationresultsDeviceInformation {\n");
     
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     sb.append("}");

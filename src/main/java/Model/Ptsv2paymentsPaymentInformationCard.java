@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
 public class Ptsv2paymentsPaymentInformationCard {
   @SerializedName("number")
   private String number = null;
@@ -69,6 +69,9 @@ public class Ptsv2paymentsPaymentInformationCard {
 
   @SerializedName("productName")
   private String productName = null;
+
+  @SerializedName("typeSelectionIndicator")
+  private String typeSelectionIndicator = null;
 
   public Ptsv2paymentsPaymentInformationCard number(String number) {
     this.number = number;
@@ -322,6 +325,24 @@ public class Ptsv2paymentsPaymentInformationCard {
     this.productName = productName;
   }
 
+  public Ptsv2paymentsPaymentInformationCard typeSelectionIndicator(String typeSelectionIndicator) {
+    this.typeSelectionIndicator = typeSelectionIndicator;
+    return this;
+  }
+
+   /**
+   * Flag that identifies how the card type was selected.  Possible values: - 0: Card type was selected based on default acquirer settings. - 1: Customer selected the card type. 
+   * @return typeSelectionIndicator
+  **/
+  @ApiModelProperty(value = "Flag that identifies how the card type was selected.  Possible values: - 0: Card type was selected based on default acquirer settings. - 1: Customer selected the card type. ")
+  public String getTypeSelectionIndicator() {
+    return typeSelectionIndicator;
+  }
+
+  public void setTypeSelectionIndicator(String typeSelectionIndicator) {
+    this.typeSelectionIndicator = typeSelectionIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -345,12 +366,13 @@ public class Ptsv2paymentsPaymentInformationCard {
         Objects.equals(this.issueNumber, ptsv2paymentsPaymentInformationCard.issueNumber) &&
         Objects.equals(this.startMonth, ptsv2paymentsPaymentInformationCard.startMonth) &&
         Objects.equals(this.startYear, ptsv2paymentsPaymentInformationCard.startYear) &&
-        Objects.equals(this.productName, ptsv2paymentsPaymentInformationCard.productName);
+        Objects.equals(this.productName, ptsv2paymentsPaymentInformationCard.productName) &&
+        Objects.equals(this.typeSelectionIndicator, ptsv2paymentsPaymentInformationCard.typeSelectionIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(number, expirationMonth, expirationYear, type, useAs, sourceAccountType, sourceAccountTypeDetails, securityCode, securityCodeIndicator, accountEncoderId, issueNumber, startMonth, startYear, productName);
+    return Objects.hash(number, expirationMonth, expirationYear, type, useAs, sourceAccountType, sourceAccountTypeDetails, securityCode, securityCodeIndicator, accountEncoderId, issueNumber, startMonth, startYear, productName, typeSelectionIndicator);
   }
 
 
@@ -373,6 +395,7 @@ public class Ptsv2paymentsPaymentInformationCard {
     sb.append("    startMonth: ").append(toIndentedString(startMonth)).append("\n");
     sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
     sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    sb.append("    typeSelectionIndicator: ").append(toIndentedString(typeSelectionIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

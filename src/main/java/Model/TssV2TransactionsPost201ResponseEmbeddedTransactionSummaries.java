@@ -15,12 +15,12 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
+import Model.Riskv1authenticationresultsDeviceInformation;
 import Model.TssV2TransactionsGet200ResponseFraudMarkingInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation;
-import Model.TssV2TransactionsPost201ResponseEmbeddedDeviceInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedLinks;
 import Model.TssV2TransactionsPost201ResponseEmbeddedMerchantInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedOrderInformation;
@@ -43,7 +43,7 @@ import java.util.List;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
   @SerializedName("id")
   private String id = null;
@@ -67,7 +67,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
   private TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation consumerAuthenticationInformation = null;
 
   @SerializedName("deviceInformation")
-  private TssV2TransactionsPost201ResponseEmbeddedDeviceInformation deviceInformation = null;
+  private Riskv1authenticationresultsDeviceInformation deviceInformation = null;
 
   @SerializedName("fraudMarkingInformation")
   private TssV2TransactionsGet200ResponseFraudMarkingInformation fraudMarkingInformation = null;
@@ -225,7 +225,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries deviceInformation(TssV2TransactionsPost201ResponseEmbeddedDeviceInformation deviceInformation) {
+  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries deviceInformation(Riskv1authenticationresultsDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
     return this;
   }
@@ -235,11 +235,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
    * @return deviceInformation
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsPost201ResponseEmbeddedDeviceInformation getDeviceInformation() {
+  public Riskv1authenticationresultsDeviceInformation getDeviceInformation() {
     return deviceInformation;
   }
 
-  public void setDeviceInformation(TssV2TransactionsPost201ResponseEmbeddedDeviceInformation deviceInformation) {
+  public void setDeviceInformation(Riskv1authenticationresultsDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
   }
 

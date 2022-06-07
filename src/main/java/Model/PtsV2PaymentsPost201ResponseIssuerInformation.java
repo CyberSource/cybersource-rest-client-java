@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseIssuerInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
 public class PtsV2PaymentsPost201ResponseIssuerInformation {
   @SerializedName("country")
   private String country = null;
@@ -39,6 +39,9 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
 
   @SerializedName("responseCode")
   private String responseCode = null;
+
+  @SerializedName("responseRaw")
+  private String responseRaw = null;
 
   public PtsV2PaymentsPost201ResponseIssuerInformation country(String country) {
     this.country = country;
@@ -112,6 +115,24 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
     this.responseCode = responseCode;
   }
 
+  public PtsV2PaymentsPost201ResponseIssuerInformation responseRaw(String responseRaw) {
+    this.responseRaw = responseRaw;
+    return this;
+  }
+
+   /**
+   * issuerInformation.responseRaw is the raw processor auth response returned to merchant in CYBS auth response if auth request includes \&quot;processingInformation.isReturnAuthRecordEnabled&#x3D;true\&quot;.  If supported by the gateway code, it is available to merchants who auth through CYBS and run their own settlement processing. 
+   * @return responseRaw
+  **/
+  @ApiModelProperty(value = "issuerInformation.responseRaw is the raw processor auth response returned to merchant in CYBS auth response if auth request includes \"processingInformation.isReturnAuthRecordEnabled=true\".  If supported by the gateway code, it is available to merchants who auth through CYBS and run their own settlement processing. ")
+  public String getResponseRaw() {
+    return responseRaw;
+  }
+
+  public void setResponseRaw(String responseRaw) {
+    this.responseRaw = responseRaw;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +146,13 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
     return Objects.equals(this.country, ptsV2PaymentsPost201ResponseIssuerInformation.country) &&
         Objects.equals(this.discretionaryData, ptsV2PaymentsPost201ResponseIssuerInformation.discretionaryData) &&
         Objects.equals(this.countrySpecificDiscretionaryData, ptsV2PaymentsPost201ResponseIssuerInformation.countrySpecificDiscretionaryData) &&
-        Objects.equals(this.responseCode, ptsV2PaymentsPost201ResponseIssuerInformation.responseCode);
+        Objects.equals(this.responseCode, ptsV2PaymentsPost201ResponseIssuerInformation.responseCode) &&
+        Objects.equals(this.responseRaw, ptsV2PaymentsPost201ResponseIssuerInformation.responseRaw);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(country, discretionaryData, countrySpecificDiscretionaryData, responseCode);
+    return Objects.hash(country, discretionaryData, countrySpecificDiscretionaryData, responseCode, responseRaw);
   }
 
 
@@ -143,6 +165,7 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
     sb.append("    discretionaryData: ").append(toIndentedString(discretionaryData)).append("\n");
     sb.append("    countrySpecificDiscretionaryData: ").append(toIndentedString(countrySpecificDiscretionaryData)).append("\n");
     sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    sb.append("    responseRaw: ").append(toIndentedString(responseRaw)).append("\n");
     sb.append("}");
     return sb.toString();
   }

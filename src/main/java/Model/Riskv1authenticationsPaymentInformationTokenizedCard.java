@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationsPaymentInformationTokenizedCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
 public class Riskv1authenticationsPaymentInformationTokenizedCard {
   @SerializedName("transactionType")
   private String transactionType = null;
@@ -40,6 +40,12 @@ public class Riskv1authenticationsPaymentInformationTokenizedCard {
   @SerializedName("expirationYear")
   private String expirationYear = null;
 
+  @SerializedName("cryptogram")
+  private String cryptogram = null;
+
+  @SerializedName("securityCode")
+  private String securityCode = null;
+
   @SerializedName("number")
   private String number = null;
 
@@ -49,10 +55,10 @@ public class Riskv1authenticationsPaymentInformationTokenizedCard {
   }
 
    /**
-   * Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - &#x60;2&#x60;: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - &#x60;1&#x60;: In App tokenization. Example: InApp apple pay. - &#x60;3&#x60;: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. 
+   * Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - &#x60;2&#x60;: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - &#x60;1&#x60;: For Rupay and In App tokenization. Example: InApp apple pay. - &#x60;3&#x60;: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. 
    * @return transactionType
   **/
-  @ApiModelProperty(value = "Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - `2`: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - `1`: In App tokenization. Example: InApp apple pay. - `3`: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. ")
+  @ApiModelProperty(required = true, value = "Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - `2`: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - `1`: For Rupay and In App tokenization. Example: InApp apple pay. - `3`: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. ")
   public String getTransactionType() {
     return transactionType;
   }
@@ -115,6 +121,42 @@ public class Riskv1authenticationsPaymentInformationTokenizedCard {
     this.expirationYear = expirationYear;
   }
 
+  public Riskv1authenticationsPaymentInformationTokenizedCard cryptogram(String cryptogram) {
+    this.cryptogram = cryptogram;
+    return this;
+  }
+
+   /**
+   * This field contains token information.
+   * @return cryptogram
+  **/
+  @ApiModelProperty(required = true, value = "This field contains token information.")
+  public String getCryptogram() {
+    return cryptogram;
+  }
+
+  public void setCryptogram(String cryptogram) {
+    this.cryptogram = cryptogram;
+  }
+
+  public Riskv1authenticationsPaymentInformationTokenizedCard securityCode(String securityCode) {
+    this.securityCode = securityCode;
+    return this;
+  }
+
+   /**
+   * Card Verification Number (CVN).  #### Ingenico ePayments Do not include this field when **commerceIndicator&#x3D;recurring**. **Note** Ingenico ePayments was previously called _Global Collect_.  For details, see &#x60;customer_cc_cv_number&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * @return securityCode
+  **/
+  @ApiModelProperty(required = true, value = "Card Verification Number (CVN).  #### Ingenico ePayments Do not include this field when **commerceIndicator=recurring**. **Note** Ingenico ePayments was previously called _Global Collect_.  For details, see `customer_cc_cv_number` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  public String getSecurityCode() {
+    return securityCode;
+  }
+
+  public void setSecurityCode(String securityCode) {
+    this.securityCode = securityCode;
+  }
+
   public Riskv1authenticationsPaymentInformationTokenizedCard number(String number) {
     this.number = number;
     return this;
@@ -147,12 +189,14 @@ public class Riskv1authenticationsPaymentInformationTokenizedCard {
         Objects.equals(this.type, riskv1authenticationsPaymentInformationTokenizedCard.type) &&
         Objects.equals(this.expirationMonth, riskv1authenticationsPaymentInformationTokenizedCard.expirationMonth) &&
         Objects.equals(this.expirationYear, riskv1authenticationsPaymentInformationTokenizedCard.expirationYear) &&
+        Objects.equals(this.cryptogram, riskv1authenticationsPaymentInformationTokenizedCard.cryptogram) &&
+        Objects.equals(this.securityCode, riskv1authenticationsPaymentInformationTokenizedCard.securityCode) &&
         Objects.equals(this.number, riskv1authenticationsPaymentInformationTokenizedCard.number);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionType, type, expirationMonth, expirationYear, number);
+    return Objects.hash(transactionType, type, expirationMonth, expirationYear, cryptogram, securityCode, number);
   }
 
 
@@ -165,6 +209,8 @@ public class Riskv1authenticationsPaymentInformationTokenizedCard {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
     sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    sb.append("    cryptogram: ").append(toIndentedString(cryptogram)).append("\n");
+    sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("}");
     return sb.toString();

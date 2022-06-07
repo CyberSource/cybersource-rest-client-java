@@ -26,10 +26,16 @@ import java.io.IOException;
 /**
  * Riskv1authenticationresultsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
 public class Riskv1authenticationresultsConsumerAuthenticationInformation {
   @SerializedName("authenticationTransactionId")
   private String authenticationTransactionId = null;
+
+  @SerializedName("authenticationTransactionContext")
+  private String authenticationTransactionContext = null;
+
+  @SerializedName("otpToken")
+  private String otpToken = null;
 
   @SerializedName("authenticationType")
   private String authenticationType = null;
@@ -55,10 +61,10 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
   }
 
    /**
-   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. **Note**: Required for Standard integration for enroll service. Required for Hybrid integration for validate service. 
+   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages.For Rupay,this is passed only in Re-Send OTP usecase. **Note**: Required for Standard integration, Rupay Seamless server to server integration for enroll service. Required for Hybrid integration for validate service. 
    * @return authenticationTransactionId
   **/
-  @ApiModelProperty(value = "Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. **Note**: Required for Standard integration for enroll service. Required for Hybrid integration for validate service. ")
+  @ApiModelProperty(value = "Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages.For Rupay,this is passed only in Re-Send OTP usecase. **Note**: Required for Standard integration, Rupay Seamless server to server integration for enroll service. Required for Hybrid integration for validate service. ")
   public String getAuthenticationTransactionId() {
     return authenticationTransactionId;
   }
@@ -67,16 +73,52 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
     this.authenticationTransactionId = authenticationTransactionId;
   }
 
+  public Riskv1authenticationresultsConsumerAuthenticationInformation authenticationTransactionContext(String authenticationTransactionContext) {
+    this.authenticationTransactionContext = authenticationTransactionContext;
+    return this;
+  }
+
+   /**
+   * Authentication transaction context is used as a unique identifier to link enroll and validate call. 
+   * @return authenticationTransactionContext
+  **/
+  @ApiModelProperty(value = "Authentication transaction context is used as a unique identifier to link enroll and validate call. ")
+  public String getAuthenticationTransactionContext() {
+    return authenticationTransactionContext;
+  }
+
+  public void setAuthenticationTransactionContext(String authenticationTransactionContext) {
+    this.authenticationTransactionContext = authenticationTransactionContext;
+  }
+
+  public Riskv1authenticationresultsConsumerAuthenticationInformation otpToken(String otpToken) {
+    this.otpToken = otpToken;
+    return this;
+  }
+
+   /**
+   * OTP entered by the card holder. 
+   * @return otpToken
+  **/
+  @ApiModelProperty(value = "OTP entered by the card holder. ")
+  public String getOtpToken() {
+    return otpToken;
+  }
+
+  public void setOtpToken(String otpToken) {
+    this.otpToken = otpToken;
+  }
+
   public Riskv1authenticationresultsConsumerAuthenticationInformation authenticationType(String authenticationType) {
     this.authenticationType = authenticationType;
     return this;
   }
 
    /**
-   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
+   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
    * @return authenticationType
   **/
-  @ApiModelProperty(value = "Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. ")
+  @ApiModelProperty(value = "Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. ")
   public String getAuthenticationType() {
     return authenticationType;
   }
@@ -186,6 +228,8 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
     }
     Riskv1authenticationresultsConsumerAuthenticationInformation riskv1authenticationresultsConsumerAuthenticationInformation = (Riskv1authenticationresultsConsumerAuthenticationInformation) o;
     return Objects.equals(this.authenticationTransactionId, riskv1authenticationresultsConsumerAuthenticationInformation.authenticationTransactionId) &&
+        Objects.equals(this.authenticationTransactionContext, riskv1authenticationresultsConsumerAuthenticationInformation.authenticationTransactionContext) &&
+        Objects.equals(this.otpToken, riskv1authenticationresultsConsumerAuthenticationInformation.otpToken) &&
         Objects.equals(this.authenticationType, riskv1authenticationresultsConsumerAuthenticationInformation.authenticationType) &&
         Objects.equals(this.effectiveAuthenticationType, riskv1authenticationresultsConsumerAuthenticationInformation.effectiveAuthenticationType) &&
         Objects.equals(this.responseAccessToken, riskv1authenticationresultsConsumerAuthenticationInformation.responseAccessToken) &&
@@ -196,7 +240,7 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authenticationTransactionId, authenticationType, effectiveAuthenticationType, responseAccessToken, signedParesStatusReason, signedPares, whiteListStatus);
+    return Objects.hash(authenticationTransactionId, authenticationTransactionContext, otpToken, authenticationType, effectiveAuthenticationType, responseAccessToken, signedParesStatusReason, signedPares, whiteListStatus);
   }
 
 
@@ -206,6 +250,8 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
     sb.append("class Riskv1authenticationresultsConsumerAuthenticationInformation {\n");
     
     sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
+    sb.append("    authenticationTransactionContext: ").append(toIndentedString(authenticationTransactionContext)).append("\n");
+    sb.append("    otpToken: ").append(toIndentedString(otpToken)).append("\n");
     sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
     sb.append("    effectiveAuthenticationType: ").append(toIndentedString(effectiveAuthenticationType)).append("\n");
     sb.append("    responseAccessToken: ").append(toIndentedString(responseAccessToken)).append("\n");

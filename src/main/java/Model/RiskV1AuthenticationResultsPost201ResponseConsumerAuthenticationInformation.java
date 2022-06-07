@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
 public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("acsRenderingType")
   private String acsRenderingType = null;
@@ -39,6 +39,15 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
 
   @SerializedName("authenticationStatusMsg")
   private String authenticationStatusMsg = null;
+
+  @SerializedName("authenticationTransactionId")
+  private String authenticationTransactionId = null;
+
+  @SerializedName("authenticationTransactionContextId")
+  private String authenticationTransactionContextId = null;
+
+  @SerializedName("transactionToken")
+  private String transactionToken = null;
 
   @SerializedName("authorizationPayload")
   private String authorizationPayload = null;
@@ -167,6 +176,60 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
 
   public void setAuthenticationStatusMsg(String authenticationStatusMsg) {
     this.authenticationStatusMsg = authenticationStatusMsg;
+  }
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation authenticationTransactionId(String authenticationTransactionId) {
+    this.authenticationTransactionId = authenticationTransactionId;
+    return this;
+  }
+
+   /**
+   * Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case. 
+   * @return authenticationTransactionId
+  **/
+  @ApiModelProperty(value = "Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case. ")
+  public String getAuthenticationTransactionId() {
+    return authenticationTransactionId;
+  }
+
+  public void setAuthenticationTransactionId(String authenticationTransactionId) {
+    this.authenticationTransactionId = authenticationTransactionId;
+  }
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation authenticationTransactionContextId(String authenticationTransactionContextId) {
+    this.authenticationTransactionContextId = authenticationTransactionContextId;
+    return this;
+  }
+
+   /**
+   * Payer authentication transaction identifier passed to link the validation and authorization calls. 
+   * @return authenticationTransactionContextId
+  **/
+  @ApiModelProperty(value = "Payer authentication transaction identifier passed to link the validation and authorization calls. ")
+  public String getAuthenticationTransactionContextId() {
+    return authenticationTransactionContextId;
+  }
+
+  public void setAuthenticationTransactionContextId(String authenticationTransactionContextId) {
+    this.authenticationTransactionContextId = authenticationTransactionContextId;
+  }
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation transactionToken(String transactionToken) {
+    this.transactionToken = transactionToken;
+    return this;
+  }
+
+   /**
+   * Web based token used to authenticate consumer with Rupay authentication provider. 
+   * @return transactionToken
+  **/
+  @ApiModelProperty(value = "Web based token used to authenticate consumer with Rupay authentication provider. ")
+  public String getTransactionToken() {
+    return transactionToken;
+  }
+
+  public void setTransactionToken(String transactionToken) {
+    this.transactionToken = transactionToken;
   }
 
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation authorizationPayload(String authorizationPayload) {
@@ -525,6 +588,9 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
         Objects.equals(this.acsTransactionId, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.acsTransactionId) &&
         Objects.equals(this.authenticationResult, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationResult) &&
         Objects.equals(this.authenticationStatusMsg, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationStatusMsg) &&
+        Objects.equals(this.authenticationTransactionId, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationTransactionId) &&
+        Objects.equals(this.authenticationTransactionContextId, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationTransactionContextId) &&
+        Objects.equals(this.transactionToken, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.transactionToken) &&
         Objects.equals(this.authorizationPayload, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authorizationPayload) &&
         Objects.equals(this.cavv, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.cavv) &&
         Objects.equals(this.cavvAlgorithm, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.cavvAlgorithm) &&
@@ -548,7 +614,7 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
 
   @Override
   public int hashCode() {
-    return Objects.hash(acsRenderingType, acsTransactionId, authenticationResult, authenticationStatusMsg, authorizationPayload, cavv, cavvAlgorithm, directoryServerErrorCode, directoryServerErrorDescription, indicator, interactionCounter, eci, eciRaw, paresStatus, sdkTransactionId, specificationVersion, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, whiteListStatus, whiteListStatusSource, xid, directoryServerTransactionId);
+    return Objects.hash(acsRenderingType, acsTransactionId, authenticationResult, authenticationStatusMsg, authenticationTransactionId, authenticationTransactionContextId, transactionToken, authorizationPayload, cavv, cavvAlgorithm, directoryServerErrorCode, directoryServerErrorDescription, indicator, interactionCounter, eci, eciRaw, paresStatus, sdkTransactionId, specificationVersion, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, whiteListStatus, whiteListStatusSource, xid, directoryServerTransactionId);
   }
 
 
@@ -561,6 +627,9 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     sb.append("    acsTransactionId: ").append(toIndentedString(acsTransactionId)).append("\n");
     sb.append("    authenticationResult: ").append(toIndentedString(authenticationResult)).append("\n");
     sb.append("    authenticationStatusMsg: ").append(toIndentedString(authenticationStatusMsg)).append("\n");
+    sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
+    sb.append("    authenticationTransactionContextId: ").append(toIndentedString(authenticationTransactionContextId)).append("\n");
+    sb.append("    transactionToken: ").append(toIndentedString(transactionToken)).append("\n");
     sb.append("    authorizationPayload: ").append(toIndentedString(authorizationPayload)).append("\n");
     sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
     sb.append("    cavvAlgorithm: ").append(toIndentedString(cavvAlgorithm)).append("\n");

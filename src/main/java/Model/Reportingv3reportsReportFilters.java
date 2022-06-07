@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * Reportingv3reportsReportFilters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
 public class Reportingv3reportsReportFilters {
   @SerializedName("Application.Name")
   private List<String> applicationName = null;

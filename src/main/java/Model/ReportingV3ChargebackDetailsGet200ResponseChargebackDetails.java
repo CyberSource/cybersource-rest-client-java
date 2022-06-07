@@ -27,7 +27,7 @@ import org.joda.time.DateTime;
 /**
  * ReportingV3ChargebackDetailsGet200ResponseChargebackDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
 public class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails {
   @SerializedName("processorMerchantId")
   private String processorMerchantId = null;
@@ -94,6 +94,9 @@ public class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails {
 
   @SerializedName("eventRequestedTime")
   private DateTime eventRequestedTime = null;
+
+  @SerializedName("preDisputeFlag")
+  private String preDisputeFlag = null;
 
   public ReportingV3ChargebackDetailsGet200ResponseChargebackDetails processorMerchantId(String processorMerchantId) {
     this.processorMerchantId = processorMerchantId;
@@ -491,6 +494,24 @@ public class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails {
     this.eventRequestedTime = eventRequestedTime;
   }
 
+  public ReportingV3ChargebackDetailsGet200ResponseChargebackDetails preDisputeFlag(String preDisputeFlag) {
+    this.preDisputeFlag = preDisputeFlag;
+    return this;
+  }
+
+   /**
+   * Pre Dispute Flag
+   * @return preDisputeFlag
+  **/
+  @ApiModelProperty(example = "N", value = "Pre Dispute Flag")
+  public String getPreDisputeFlag() {
+    return preDisputeFlag;
+  }
+
+  public void setPreDisputeFlag(String preDisputeFlag) {
+    this.preDisputeFlag = preDisputeFlag;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -522,12 +543,13 @@ public class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails {
         Objects.equals(this.reasonCode, reportingV3ChargebackDetailsGet200ResponseChargebackDetails.reasonCode) &&
         Objects.equals(this.representmentCPTime, reportingV3ChargebackDetailsGet200ResponseChargebackDetails.representmentCPTime) &&
         Objects.equals(this.applications, reportingV3ChargebackDetailsGet200ResponseChargebackDetails.applications) &&
-        Objects.equals(this.eventRequestedTime, reportingV3ChargebackDetailsGet200ResponseChargebackDetails.eventRequestedTime);
+        Objects.equals(this.eventRequestedTime, reportingV3ChargebackDetailsGet200ResponseChargebackDetails.eventRequestedTime) &&
+        Objects.equals(this.preDisputeFlag, reportingV3ChargebackDetailsGet200ResponseChargebackDetails.preDisputeFlag);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processorMerchantId, merchantName, transactionReferenceNumber, merchantReferenceNumber, natureOfDispute, alertType, amount, sign, action, cardType, originalSettlementTime, trackingNumber, currencyCode, requestId, responseDueTime, time, actionDescription, customerId, reasonCode, representmentCPTime, applications, eventRequestedTime);
+    return Objects.hash(processorMerchantId, merchantName, transactionReferenceNumber, merchantReferenceNumber, natureOfDispute, alertType, amount, sign, action, cardType, originalSettlementTime, trackingNumber, currencyCode, requestId, responseDueTime, time, actionDescription, customerId, reasonCode, representmentCPTime, applications, eventRequestedTime, preDisputeFlag);
   }
 
 
@@ -558,6 +580,7 @@ public class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails {
     sb.append("    representmentCPTime: ").append(toIndentedString(representmentCPTime)).append("\n");
     sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
     sb.append("    eventRequestedTime: ").append(toIndentedString(eventRequestedTime)).append("\n");
+    sb.append("    preDisputeFlag: ").append(toIndentedString(preDisputeFlag)).append("\n");
     sb.append("}");
     return sb.toString();
   }

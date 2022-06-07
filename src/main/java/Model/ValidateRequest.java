@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Riskv1authenticationresultsConsumerAuthenticationInformation;
+import Model.Riskv1authenticationresultsDeviceInformation;
 import Model.Riskv1authenticationresultsOrderInformation;
 import Model.Riskv1authenticationresultsPaymentInformation;
 import Model.Riskv1authenticationsetupsProcessingInformation;
@@ -31,7 +32,7 @@ import java.io.IOException;
 /**
  * ValidateRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
 public class ValidateRequest {
   @SerializedName("clientReferenceInformation")
   private Riskv1decisionsClientReferenceInformation clientReferenceInformation = null;
@@ -47,6 +48,9 @@ public class ValidateRequest {
 
   @SerializedName("consumerAuthenticationInformation")
   private Riskv1authenticationresultsConsumerAuthenticationInformation consumerAuthenticationInformation = null;
+
+  @SerializedName("deviceInformation")
+  private Riskv1authenticationresultsDeviceInformation deviceInformation = null;
 
   public ValidateRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -138,6 +142,24 @@ public class ValidateRequest {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
   }
 
+  public ValidateRequest deviceInformation(Riskv1authenticationresultsDeviceInformation deviceInformation) {
+    this.deviceInformation = deviceInformation;
+    return this;
+  }
+
+   /**
+   * Get deviceInformation
+   * @return deviceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1authenticationresultsDeviceInformation getDeviceInformation() {
+    return deviceInformation;
+  }
+
+  public void setDeviceInformation(Riskv1authenticationresultsDeviceInformation deviceInformation) {
+    this.deviceInformation = deviceInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +174,13 @@ public class ValidateRequest {
         Objects.equals(this.processingInformation, validateRequest.processingInformation) &&
         Objects.equals(this.orderInformation, validateRequest.orderInformation) &&
         Objects.equals(this.paymentInformation, validateRequest.paymentInformation) &&
-        Objects.equals(this.consumerAuthenticationInformation, validateRequest.consumerAuthenticationInformation);
+        Objects.equals(this.consumerAuthenticationInformation, validateRequest.consumerAuthenticationInformation) &&
+        Objects.equals(this.deviceInformation, validateRequest.deviceInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, orderInformation, paymentInformation, consumerAuthenticationInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, orderInformation, paymentInformation, consumerAuthenticationInformation, deviceInformation);
   }
 
 
@@ -171,6 +194,7 @@ public class ValidateRequest {
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
+    sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

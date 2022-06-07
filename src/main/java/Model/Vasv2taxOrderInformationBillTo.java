@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Vasv2taxOrderInformationBillTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
 public class Vasv2taxOrderInformationBillTo {
   @SerializedName("address1")
   private String address1 = null;

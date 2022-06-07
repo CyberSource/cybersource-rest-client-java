@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPointOfSaleInformationEmv
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
 public class Ptsv2paymentsPointOfSaleInformationEmv {
   @SerializedName("tags")
   private String tags = null;
@@ -44,7 +44,7 @@ public class Ptsv2paymentsPointOfSaleInformationEmv {
   private Integer fallbackCondition = null;
 
   @SerializedName("isRepeat")
-  private String isRepeat = null;
+  private Boolean isRepeat = null;
 
   public Ptsv2paymentsPointOfSaleInformationEmv tags(String tags) {
     this.tags = tags;
@@ -136,21 +136,21 @@ public class Ptsv2paymentsPointOfSaleInformationEmv {
     this.fallbackCondition = fallbackCondition;
   }
 
-  public Ptsv2paymentsPointOfSaleInformationEmv isRepeat(String isRepeat) {
+  public Ptsv2paymentsPointOfSaleInformationEmv isRepeat(Boolean isRepeat) {
     this.isRepeat = isRepeat;
     return this;
   }
 
    /**
-   * #### Visa Platform Connect Value 1  indicates this transaction is intentionally duplicated  The field contains value “1” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN. 
+   * #### Visa Platform Connect Value “true” indicates this transaction is intentionally duplicated . The field contains value “true” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN. 
    * @return isRepeat
   **/
-  @ApiModelProperty(value = "#### Visa Platform Connect Value 1  indicates this transaction is intentionally duplicated  The field contains value “1” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN. ")
-  public String getIsRepeat() {
+  @ApiModelProperty(value = "#### Visa Platform Connect Value “true” indicates this transaction is intentionally duplicated . The field contains value “true” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN. ")
+  public Boolean getIsRepeat() {
     return isRepeat;
   }
 
-  public void setIsRepeat(String isRepeat) {
+  public void setIsRepeat(Boolean isRepeat) {
     this.isRepeat = isRepeat;
   }
 
