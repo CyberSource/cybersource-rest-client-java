@@ -51,7 +51,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
+ - **Content-Type**: *_/_*;charset=utf-8
  - **Accept**: application/xml, text/csv, application/pdf
 
 <a name="getFileDetail"></a>
@@ -102,6 +102,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
+ - **Content-Type**: *_/_*;charset=utf-8
  - **Accept**: application/hal+json
 

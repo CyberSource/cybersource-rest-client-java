@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator;
+import Model.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,13 +27,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
 public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions {
   @SerializedName("authType")
   private String authType = null;
 
   @SerializedName("initiator")
-  private Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator initiator = null;
+  private TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator initiator = null;
 
   public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions authType(String authType) {
     this.authType = authType;
@@ -53,7 +53,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     this.authType = authType;
   }
 
-  public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions initiator(Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator initiator) {
+  public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions initiator(TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator initiator) {
     this.initiator = initiator;
     return this;
   }
@@ -63,11 +63,11 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
    * @return initiator
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator getInitiator() {
+  public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator getInitiator() {
     return initiator;
   }
 
-  public void setInitiator(Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator initiator) {
+  public void setInitiator(TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator initiator) {
     this.initiator = initiator;
   }
 

@@ -30,7 +30,7 @@ import org.joda.time.DateTime;
 /**
  * ReportingV3RetrievalSummariesGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
 public class ReportingV3RetrievalSummariesGet200Response {
   @SerializedName("organizationId")
   private String organizationId = null;

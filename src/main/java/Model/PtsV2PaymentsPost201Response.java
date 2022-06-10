@@ -24,6 +24,7 @@ import Model.PtsV2PaymentsPost201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseOrderInformation;
 import Model.PtsV2PaymentsPost201ResponsePaymentAccountInformation;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformation;
+import Model.PtsV2PaymentsPost201ResponsePaymentInsightsInformation;
 import Model.PtsV2PaymentsPost201ResponsePointOfSaleInformation;
 import Model.PtsV2PaymentsPost201ResponseProcessingInformation;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformation;
@@ -41,7 +42,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-07T13:59:51.194+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
 public class PtsV2PaymentsPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsPost201ResponseLinks links = null;
@@ -78,6 +79,9 @@ public class PtsV2PaymentsPost201Response {
 
   @SerializedName("paymentInformation")
   private PtsV2PaymentsPost201ResponsePaymentInformation paymentInformation = null;
+
+  @SerializedName("paymentInsightsInformation")
+  private PtsV2PaymentsPost201ResponsePaymentInsightsInformation paymentInsightsInformation = null;
 
   @SerializedName("orderInformation")
   private PtsV2PaymentsPost201ResponseOrderInformation orderInformation = null;
@@ -316,6 +320,24 @@ public class PtsV2PaymentsPost201Response {
     this.paymentInformation = paymentInformation;
   }
 
+  public PtsV2PaymentsPost201Response paymentInsightsInformation(PtsV2PaymentsPost201ResponsePaymentInsightsInformation paymentInsightsInformation) {
+    this.paymentInsightsInformation = paymentInsightsInformation;
+    return this;
+  }
+
+   /**
+   * Get paymentInsightsInformation
+   * @return paymentInsightsInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponsePaymentInsightsInformation getPaymentInsightsInformation() {
+    return paymentInsightsInformation;
+  }
+
+  public void setPaymentInsightsInformation(PtsV2PaymentsPost201ResponsePaymentInsightsInformation paymentInsightsInformation) {
+    this.paymentInsightsInformation = paymentInsightsInformation;
+  }
+
   public PtsV2PaymentsPost201Response orderInformation(PtsV2PaymentsPost201ResponseOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
@@ -464,6 +486,7 @@ public class PtsV2PaymentsPost201Response {
         Objects.equals(this.issuerInformation, ptsV2PaymentsPost201Response.issuerInformation) &&
         Objects.equals(this.paymentAccountInformation, ptsV2PaymentsPost201Response.paymentAccountInformation) &&
         Objects.equals(this.paymentInformation, ptsV2PaymentsPost201Response.paymentInformation) &&
+        Objects.equals(this.paymentInsightsInformation, ptsV2PaymentsPost201Response.paymentInsightsInformation) &&
         Objects.equals(this.orderInformation, ptsV2PaymentsPost201Response.orderInformation) &&
         Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsPost201Response.pointOfSaleInformation) &&
         Objects.equals(this.installmentInformation, ptsV2PaymentsPost201Response.installmentInformation) &&
@@ -475,7 +498,7 @@ public class PtsV2PaymentsPost201Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation);
   }
 
 
@@ -496,6 +519,7 @@ public class PtsV2PaymentsPost201Response {
     sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
     sb.append("    paymentAccountInformation: ").append(toIndentedString(paymentAccountInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    sb.append("    paymentInsightsInformation: ").append(toIndentedString(paymentInsightsInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
