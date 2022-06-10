@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * InvoicingV2InvoicesAllGet200ResponseOrderInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
 public class InvoicingV2InvoicesAllGet200ResponseOrderInformation {
   @SerializedName("amountDetails")
   private InvoicingV2InvoicesAllGet200ResponseOrderInformationAmountDetails amountDetails = null;

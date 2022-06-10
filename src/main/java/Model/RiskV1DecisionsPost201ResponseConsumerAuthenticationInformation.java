@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
 public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("accessToken")
   private String accessToken = null;
@@ -47,8 +47,17 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("authorizationPayload")
   private String authorizationPayload = null;
 
+  @SerializedName("authenticationType")
+  private String authenticationType = null;
+
   @SerializedName("authenticationTransactionId")
   private String authenticationTransactionId = null;
+
+  @SerializedName("authenticationTransactionContextId")
+  private String authenticationTransactionContextId = null;
+
+  @SerializedName("validityPeriod")
+  private Integer validityPeriod = null;
 
   @SerializedName("cardholderMessage")
   private String cardholderMessage = null;
@@ -245,22 +254,76 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
     this.authorizationPayload = authorizationPayload;
   }
 
+  public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation authenticationType(String authenticationType) {
+    this.authenticationType = authenticationType;
+    return this;
+  }
+
+   /**
+   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
+   * @return authenticationType
+  **/
+  @ApiModelProperty(value = "Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. ")
+  public String getAuthenticationType() {
+    return authenticationType;
+  }
+
+  public void setAuthenticationType(String authenticationType) {
+    this.authenticationType = authenticationType;
+  }
+
   public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation authenticationTransactionId(String authenticationTransactionId) {
     this.authenticationTransactionId = authenticationTransactionId;
     return this;
   }
 
    /**
-   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. 
+   * Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case. 
    * @return authenticationTransactionId
   **/
-  @ApiModelProperty(value = "Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. ")
+  @ApiModelProperty(value = "Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case. ")
   public String getAuthenticationTransactionId() {
     return authenticationTransactionId;
   }
 
   public void setAuthenticationTransactionId(String authenticationTransactionId) {
     this.authenticationTransactionId = authenticationTransactionId;
+  }
+
+  public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation authenticationTransactionContextId(String authenticationTransactionContextId) {
+    this.authenticationTransactionContextId = authenticationTransactionContextId;
+    return this;
+  }
+
+   /**
+   * Payer authentication transaction identifier passed to link the validation and authorization calls. 
+   * @return authenticationTransactionContextId
+  **/
+  @ApiModelProperty(value = "Payer authentication transaction identifier passed to link the validation and authorization calls. ")
+  public String getAuthenticationTransactionContextId() {
+    return authenticationTransactionContextId;
+  }
+
+  public void setAuthenticationTransactionContextId(String authenticationTransactionContextId) {
+    this.authenticationTransactionContextId = authenticationTransactionContextId;
+  }
+
+  public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation validityPeriod(Integer validityPeriod) {
+    this.validityPeriod = validityPeriod;
+    return this;
+  }
+
+   /**
+   * Describes validity of OTP in minutes for incoming transaction.        . 
+   * @return validityPeriod
+  **/
+  @ApiModelProperty(value = "Describes validity of OTP in minutes for incoming transaction.        . ")
+  public Integer getValidityPeriod() {
+    return validityPeriod;
+  }
+
+  public void setValidityPeriod(Integer validityPeriod) {
+    this.validityPeriod = validityPeriod;
   }
 
   public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation cardholderMessage(String cardholderMessage) {
@@ -801,7 +864,10 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
         Objects.equals(this.acsUrl, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.acsUrl) &&
         Objects.equals(this.authenticationPath, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.authenticationPath) &&
         Objects.equals(this.authorizationPayload, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.authorizationPayload) &&
+        Objects.equals(this.authenticationType, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.authenticationType) &&
         Objects.equals(this.authenticationTransactionId, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.authenticationTransactionId) &&
+        Objects.equals(this.authenticationTransactionContextId, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.authenticationTransactionContextId) &&
+        Objects.equals(this.validityPeriod, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.validityPeriod) &&
         Objects.equals(this.cardholderMessage, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.cardholderMessage) &&
         Objects.equals(this.cavv, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.cavv) &&
         Objects.equals(this.cavvAlgorithm, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.cavvAlgorithm) &&
@@ -835,7 +901,7 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId);
+    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationType, authenticationTransactionId, authenticationTransactionContextId, validityPeriod, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId);
   }
 
 
@@ -850,7 +916,10 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
     sb.append("    acsUrl: ").append(toIndentedString(acsUrl)).append("\n");
     sb.append("    authenticationPath: ").append(toIndentedString(authenticationPath)).append("\n");
     sb.append("    authorizationPayload: ").append(toIndentedString(authorizationPayload)).append("\n");
+    sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
     sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
+    sb.append("    authenticationTransactionContextId: ").append(toIndentedString(authenticationTransactionContextId)).append("\n");
+    sb.append("    validityPeriod: ").append(toIndentedString(validityPeriod)).append("\n");
     sb.append("    cardholderMessage: ").append(toIndentedString(cardholderMessage)).append("\n");
     sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
     sb.append("    cavvAlgorithm: ").append(toIndentedString(cavvAlgorithm)).append("\n");

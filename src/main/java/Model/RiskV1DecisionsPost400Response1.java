@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * RiskV1DecisionsPost400Response1
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
 public class RiskV1DecisionsPost400Response1 {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;

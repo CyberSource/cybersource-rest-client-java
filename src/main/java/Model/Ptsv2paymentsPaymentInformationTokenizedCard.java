@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationTokenizedCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
 public class Ptsv2paymentsPaymentInformationTokenizedCard {
   @SerializedName("number")
   private String number = null;
@@ -57,6 +57,9 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
 
   @SerializedName("securityCode")
   private String securityCode = null;
+
+  @SerializedName("securityCodeIndicator")
+  private String securityCodeIndicator = null;
 
   public Ptsv2paymentsPaymentInformationTokenizedCard number(String number) {
     this.number = number;
@@ -136,10 +139,10 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
   }
 
    /**
-   * This field is used internally.
+   * This field contains token information.
    * @return cryptogram
   **/
-  @ApiModelProperty(value = "This field is used internally.")
+  @ApiModelProperty(value = "This field contains token information.")
   public String getCryptogram() {
     return cryptogram;
   }
@@ -172,10 +175,10 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
   }
 
    /**
-   * Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - &#x60;2&#x60;: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - &#x60;1&#x60;: In App tokenization. Example: InApp apple pay. - &#x60;3&#x60;: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. 
+   * Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - &#x60;2&#x60;: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - &#x60;1&#x60;: For Rupay and In App tokenization. Example: InApp apple pay. - &#x60;3&#x60;: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. 
    * @return transactionType
   **/
-  @ApiModelProperty(value = "Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - `2`: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - `1`: In App tokenization. Example: InApp apple pay. - `3`: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. ")
+  @ApiModelProperty(value = "Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - `2`: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - `1`: For Rupay and In App tokenization. Example: InApp apple pay. - `3`: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used. ")
   public String getTransactionType() {
     return transactionType;
   }
@@ -238,6 +241,24 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
     this.securityCode = securityCode;
   }
 
+  public Ptsv2paymentsPaymentInformationTokenizedCard securityCodeIndicator(String securityCodeIndicator) {
+    this.securityCodeIndicator = securityCodeIndicator;
+    return this;
+  }
+
+   /**
+   * Indicates whether a CVN code was sent. Possible values:   - &#x60;0&#x60; (default): CVN service not requested. This default value is used when you do not include      &#x60;securityCode&#x60; field in the request.  - &#x60;1&#x60; (default): CVN service requested and supported. This default value is used when you include      &#x60;securityCode&#x60; field in the request.  - &#x60;2&#x60;: CVN on credit card is illegible.  - &#x60;9&#x60;: CVN was not imprinted on credit card.  #### FDMS Nashville Required for American Express cards; otherwise, optional.  #### TSYS Acquiring Solutions Optional if &#x60;pointOfSaleInformation.entryMode&#x3D;keyed&#x60;; otherwise, not used.  #### All other processors Optional. 
+   * @return securityCodeIndicator
+  **/
+  @ApiModelProperty(value = "Indicates whether a CVN code was sent. Possible values:   - `0` (default): CVN service not requested. This default value is used when you do not include      `securityCode` field in the request.  - `1` (default): CVN service requested and supported. This default value is used when you include      `securityCode` field in the request.  - `2`: CVN on credit card is illegible.  - `9`: CVN was not imprinted on credit card.  #### FDMS Nashville Required for American Express cards; otherwise, optional.  #### TSYS Acquiring Solutions Optional if `pointOfSaleInformation.entryMode=keyed`; otherwise, not used.  #### All other processors Optional. ")
+  public String getSecurityCodeIndicator() {
+    return securityCodeIndicator;
+  }
+
+  public void setSecurityCodeIndicator(String securityCodeIndicator) {
+    this.securityCodeIndicator = securityCodeIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -257,12 +278,13 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
         Objects.equals(this.transactionType, ptsv2paymentsPaymentInformationTokenizedCard.transactionType) &&
         Objects.equals(this.assuranceLevel, ptsv2paymentsPaymentInformationTokenizedCard.assuranceLevel) &&
         Objects.equals(this.storageMethod, ptsv2paymentsPaymentInformationTokenizedCard.storageMethod) &&
-        Objects.equals(this.securityCode, ptsv2paymentsPaymentInformationTokenizedCard.securityCode);
+        Objects.equals(this.securityCode, ptsv2paymentsPaymentInformationTokenizedCard.securityCode) &&
+        Objects.equals(this.securityCodeIndicator, ptsv2paymentsPaymentInformationTokenizedCard.securityCodeIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(number, expirationMonth, expirationYear, type, cryptogram, requestorId, transactionType, assuranceLevel, storageMethod, securityCode);
+    return Objects.hash(number, expirationMonth, expirationYear, type, cryptogram, requestorId, transactionType, assuranceLevel, storageMethod, securityCode, securityCodeIndicator);
   }
 
 
@@ -281,6 +303,7 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
     sb.append("    assuranceLevel: ").append(toIndentedString(assuranceLevel)).append("\n");
     sb.append("    storageMethod: ").append(toIndentedString(storageMethod)).append("\n");
     sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
+    sb.append("    securityCodeIndicator: ").append(toIndentedString(securityCodeIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

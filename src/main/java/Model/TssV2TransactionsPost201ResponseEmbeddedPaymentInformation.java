@@ -14,8 +14,9 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1authenticationsetupsPaymentInformationCustomer;
+import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard;
+import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -29,16 +30,19 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
   @SerializedName("paymentType")
   private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType paymentType = null;
 
   @SerializedName("customer")
-  private Riskv1authenticationsetupsPaymentInformationCustomer customer = null;
+  private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer customer = null;
 
   @SerializedName("card")
   private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard card = null;
+
+  @SerializedName("bank")
+  private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank bank = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation paymentType(TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
@@ -58,7 +62,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
     this.paymentType = paymentType;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation customer(Riskv1authenticationsetupsPaymentInformationCustomer customer) {
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation customer(TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer customer) {
     this.customer = customer;
     return this;
   }
@@ -68,11 +72,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsetupsPaymentInformationCustomer getCustomer() {
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer getCustomer() {
     return customer;
   }
 
-  public void setCustomer(Riskv1authenticationsetupsPaymentInformationCustomer customer) {
+  public void setCustomer(TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer customer) {
     this.customer = customer;
   }
 
@@ -94,6 +98,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
     this.card = card;
   }
 
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation bank(TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank bank) {
+    this.bank = bank;
+    return this;
+  }
+
+   /**
+   * Get bank
+   * @return bank
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank getBank() {
+    return bank;
+  }
+
+  public void setBank(TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank bank) {
+    this.bank = bank;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,12 +128,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
     TssV2TransactionsPost201ResponseEmbeddedPaymentInformation tssV2TransactionsPost201ResponseEmbeddedPaymentInformation = (TssV2TransactionsPost201ResponseEmbeddedPaymentInformation) o;
     return Objects.equals(this.paymentType, tssV2TransactionsPost201ResponseEmbeddedPaymentInformation.paymentType) &&
         Objects.equals(this.customer, tssV2TransactionsPost201ResponseEmbeddedPaymentInformation.customer) &&
-        Objects.equals(this.card, tssV2TransactionsPost201ResponseEmbeddedPaymentInformation.card);
+        Objects.equals(this.card, tssV2TransactionsPost201ResponseEmbeddedPaymentInformation.card) &&
+        Objects.equals(this.bank, tssV2TransactionsPost201ResponseEmbeddedPaymentInformation.bank);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentType, customer, card);
+    return Objects.hash(paymentType, customer, card, bank);
   }
 
 
@@ -123,6 +146,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("}");
     return sb.toString();
   }

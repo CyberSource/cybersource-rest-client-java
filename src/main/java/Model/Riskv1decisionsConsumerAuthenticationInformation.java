@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Riskv1decisionsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
 public class Riskv1decisionsConsumerAuthenticationInformation {
   @SerializedName("strongAuthentication")
   private Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication strongAuthentication = null;
@@ -52,6 +52,9 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
 
   @SerializedName("authenticationTransactionId")
   private String authenticationTransactionId = null;
+
+  @SerializedName("transactionFlowIndicator")
+  private Integer transactionFlowIndicator = null;
 
   @SerializedName("challengeCancelCode")
   private String challengeCancelCode = null;
@@ -173,10 +176,10 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
   }
 
    /**
-   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
+   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
    * @return authenticationType
   **/
-  @ApiModelProperty(value = "Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. ")
+  @ApiModelProperty(value = "Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. ")
   public String getAuthenticationType() {
     return authenticationType;
   }
@@ -281,16 +284,34 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
   }
 
    /**
-   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. **Note**: Required for Standard integration for enroll service. Required for Hybrid integration for validate service. 
+   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages.For Rupay,this is passed only in Re-Send OTP usecase. **Note**: Required for Standard integration, Rupay Seamless server to server integration for enroll service. Required for Hybrid integration for validate service. 
    * @return authenticationTransactionId
   **/
-  @ApiModelProperty(value = "Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. **Note**: Required for Standard integration for enroll service. Required for Hybrid integration for validate service. ")
+  @ApiModelProperty(value = "Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages.For Rupay,this is passed only in Re-Send OTP usecase. **Note**: Required for Standard integration, Rupay Seamless server to server integration for enroll service. Required for Hybrid integration for validate service. ")
   public String getAuthenticationTransactionId() {
     return authenticationTransactionId;
   }
 
   public void setAuthenticationTransactionId(String authenticationTransactionId) {
     this.authenticationTransactionId = authenticationTransactionId;
+  }
+
+  public Riskv1decisionsConsumerAuthenticationInformation transactionFlowIndicator(Integer transactionFlowIndicator) {
+    this.transactionFlowIndicator = transactionFlowIndicator;
+    return this;
+  }
+
+   /**
+   * This  field is only applicable to Rupay and is optional. Merchant will have to pass a valid value from 01 through 07 which indicates the transaction flow. Below are the possible values. 01:NW – Transaction performed at domestic merchant. 02:TW - Transaction performed at domestic merchant along with Token provisioning. 03:IT – Transaction performed at International merchant. 04:AT- Authentication Transaction Only. 05:AW- Authentication transaction for provisioning. 06:DI- Domestic InApp Transaction. 07:II- International InApp transaction. 
+   * @return transactionFlowIndicator
+  **/
+  @ApiModelProperty(value = "This  field is only applicable to Rupay and is optional. Merchant will have to pass a valid value from 01 through 07 which indicates the transaction flow. Below are the possible values. 01:NW – Transaction performed at domestic merchant. 02:TW - Transaction performed at domestic merchant along with Token provisioning. 03:IT – Transaction performed at International merchant. 04:AT- Authentication Transaction Only. 05:AW- Authentication transaction for provisioning. 06:DI- Domestic InApp Transaction. 07:II- International InApp transaction. ")
+  public Integer getTransactionFlowIndicator() {
+    return transactionFlowIndicator;
+  }
+
+  public void setTransactionFlowIndicator(Integer transactionFlowIndicator) {
+    this.transactionFlowIndicator = transactionFlowIndicator;
   }
 
   public Riskv1decisionsConsumerAuthenticationInformation challengeCancelCode(String challengeCancelCode) {
@@ -887,6 +908,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
         Objects.equals(this.alternateAuthenticationMethod, riskv1decisionsConsumerAuthenticationInformation.alternateAuthenticationMethod) &&
         Objects.equals(this.authenticationDate, riskv1decisionsConsumerAuthenticationInformation.authenticationDate) &&
         Objects.equals(this.authenticationTransactionId, riskv1decisionsConsumerAuthenticationInformation.authenticationTransactionId) &&
+        Objects.equals(this.transactionFlowIndicator, riskv1decisionsConsumerAuthenticationInformation.transactionFlowIndicator) &&
         Objects.equals(this.challengeCancelCode, riskv1decisionsConsumerAuthenticationInformation.challengeCancelCode) &&
         Objects.equals(this.challengeCode, riskv1decisionsConsumerAuthenticationInformation.challengeCode) &&
         Objects.equals(this.challengeStatus, riskv1decisionsConsumerAuthenticationInformation.challengeStatus) &&
@@ -923,7 +945,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(strongAuthentication, authenticationType, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus);
+    return Objects.hash(strongAuthentication, authenticationType, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, transactionFlowIndicator, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus);
   }
 
 
@@ -940,6 +962,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
     sb.append("    alternateAuthenticationMethod: ").append(toIndentedString(alternateAuthenticationMethod)).append("\n");
     sb.append("    authenticationDate: ").append(toIndentedString(authenticationDate)).append("\n");
     sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
+    sb.append("    transactionFlowIndicator: ").append(toIndentedString(transactionFlowIndicator)).append("\n");
     sb.append("    challengeCancelCode: ").append(toIndentedString(challengeCancelCode)).append("\n");
     sb.append("    challengeCode: ").append(toIndentedString(challengeCode)).append("\n");
     sb.append("    challengeStatus: ").append(toIndentedString(challengeStatus)).append("\n");

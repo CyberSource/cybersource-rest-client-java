@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
 public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("accessToken")
   private String accessToken = null;
@@ -270,10 +270,10 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
   }
 
    /**
-   * Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. 
+   * Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case. 
    * @return authenticationTransactionId
   **/
-  @ApiModelProperty(value = "Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. ")
+  @ApiModelProperty(value = "Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case. ")
   public String getAuthenticationTransactionId() {
     return authenticationTransactionId;
   }

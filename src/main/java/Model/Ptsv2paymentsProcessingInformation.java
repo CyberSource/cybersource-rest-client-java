@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-05-12T17:46:06.587+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
 public class Ptsv2paymentsProcessingInformation {
   @SerializedName("actionList")
   private List<String> actionList = null;
@@ -118,6 +118,9 @@ public class Ptsv2paymentsProcessingInformation {
 
   @SerializedName("payByPointsIndicator")
   private Boolean payByPointsIndicator = null;
+
+  @SerializedName("isReturnAuthRecordEnabled")
+  private Boolean isReturnAuthRecordEnabled = null;
 
   public Ptsv2paymentsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
@@ -621,6 +624,24 @@ public class Ptsv2paymentsProcessingInformation {
     this.payByPointsIndicator = payByPointsIndicator;
   }
 
+  public Ptsv2paymentsProcessingInformation isReturnAuthRecordEnabled(Boolean isReturnAuthRecordEnabled) {
+    this.isReturnAuthRecordEnabled = isReturnAuthRecordEnabled;
+    return this;
+  }
+
+   /**
+   * Flag that indicates the functionality we are having for merchants for which auth is done through Cybersource but settlement is done by themselves. true: functionality is supported. Processor should send raw processor auth response to Merchant. false: functionality is not supported. Default: false 
+   * @return isReturnAuthRecordEnabled
+  **/
+  @ApiModelProperty(value = "Flag that indicates the functionality we are having for merchants for which auth is done through Cybersource but settlement is done by themselves. true: functionality is supported. Processor should send raw processor auth response to Merchant. false: functionality is not supported. Default: false ")
+  public Boolean getIsReturnAuthRecordEnabled() {
+    return isReturnAuthRecordEnabled;
+  }
+
+  public void setIsReturnAuthRecordEnabled(Boolean isReturnAuthRecordEnabled) {
+    this.isReturnAuthRecordEnabled = isReturnAuthRecordEnabled;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -657,12 +678,13 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.mobileRemotePaymentType, ptsv2paymentsProcessingInformation.mobileRemotePaymentType) &&
         Objects.equals(this.extendedCreditTotalCount, ptsv2paymentsProcessingInformation.extendedCreditTotalCount) &&
         Objects.equals(this.networkRoutingOrder, ptsv2paymentsProcessingInformation.networkRoutingOrder) &&
-        Objects.equals(this.payByPointsIndicator, ptsv2paymentsProcessingInformation.payByPointsIndicator);
+        Objects.equals(this.payByPointsIndicator, ptsv2paymentsProcessingInformation.payByPointsIndicator) &&
+        Objects.equals(this.isReturnAuthRecordEnabled, ptsv2paymentsProcessingInformation.isReturnAuthRecordEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, actionTokenTypes, capture, processorId, businessApplicationId, commerceIndicator, paymentSolution, reconciliationId, linkId, purchaseLevel, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator);
+    return Objects.hash(actionList, actionTokenTypes, capture, processorId, businessApplicationId, commerceIndicator, paymentSolution, reconciliationId, linkId, purchaseLevel, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled);
   }
 
 
@@ -698,6 +720,7 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    extendedCreditTotalCount: ").append(toIndentedString(extendedCreditTotalCount)).append("\n");
     sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
     sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
+    sb.append("    isReturnAuthRecordEnabled: ").append(toIndentedString(isReturnAuthRecordEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

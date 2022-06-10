@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **representmentCPTime** | [**DateTime**](DateTime.md) | Representment CP Date |  [optional]
 **applications** | **String** | ICS Request Applications |  [optional]
 **eventRequestedTime** | [**DateTime**](DateTime.md) | Event Request Date |  [optional]
+**preDisputeFlag** | **String** | Pre Dispute Flag |  [optional]
 
 
 
