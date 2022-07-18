@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsClientReferenceInformation;
+import Model.Ptsv2paymentsidvoidsOrderInformation;
 import Model.Ptsv2paymentsidvoidsPaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -28,13 +29,16 @@ import java.io.IOException;
 /**
  * MitVoidRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
 public class MitVoidRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("paymentInformation")
   private Ptsv2paymentsidvoidsPaymentInformation paymentInformation = null;
+
+  @SerializedName("orderInformation")
+  private Ptsv2paymentsidvoidsOrderInformation orderInformation = null;
 
   public MitVoidRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -72,6 +76,24 @@ public class MitVoidRequest {
     this.paymentInformation = paymentInformation;
   }
 
+  public MitVoidRequest orderInformation(Ptsv2paymentsidvoidsOrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
+    return this;
+  }
+
+   /**
+   * Get orderInformation
+   * @return orderInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidvoidsOrderInformation getOrderInformation() {
+    return orderInformation;
+  }
+
+  public void setOrderInformation(Ptsv2paymentsidvoidsOrderInformation orderInformation) {
+    this.orderInformation = orderInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +105,13 @@ public class MitVoidRequest {
     }
     MitVoidRequest mitVoidRequest = (MitVoidRequest) o;
     return Objects.equals(this.clientReferenceInformation, mitVoidRequest.clientReferenceInformation) &&
-        Objects.equals(this.paymentInformation, mitVoidRequest.paymentInformation);
+        Objects.equals(this.paymentInformation, mitVoidRequest.paymentInformation) &&
+        Objects.equals(this.orderInformation, mitVoidRequest.orderInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, paymentInformation);
+    return Objects.hash(clientReferenceInformation, paymentInformation, orderInformation);
   }
 
 
@@ -99,6 +122,7 @@ public class MitVoidRequest {
     
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

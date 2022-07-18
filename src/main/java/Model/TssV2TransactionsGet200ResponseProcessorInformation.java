@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
 public class TssV2TransactionsGet200ResponseProcessorInformation {
   @SerializedName("processor")
   private TssV2TransactionsGet200ResponseProcessorInformationProcessor processor = null;
