@@ -30,7 +30,7 @@ import java.math.BigDecimal;
  * Contains all of the amount-related fields in the invoice.
  */
 @ApiModel(description = "Contains all of the amount-related fields in the invoice.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
 public class InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails {
   @SerializedName("totalAmount")
   private String totalAmount = null;

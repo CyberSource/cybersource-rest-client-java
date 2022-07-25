@@ -27,7 +27,7 @@ import java.io.IOException;
  * The public key in JSON Web Key (JWK) format. This format is useful for client side encryption in JavaScript based implementations.
  */
 @ApiModel(description = "The public key in JSON Web Key (JWK) format. This format is useful for client side encryption in JavaScript based implementations.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-06-10T13:11:55.460+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
 public class FlexV1KeysPost200ResponseJwk {
   @SerializedName("kty")
   private String kty = null;
