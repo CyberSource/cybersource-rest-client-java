@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {
   @SerializedName("paymentSolution")
   private String paymentSolution = null;
@@ -36,6 +36,9 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {
 
   @SerializedName("commerceIndicator")
   private String commerceIndicator = null;
+
+  @SerializedName("commerceIndicatorLabel")
+  private String commerceIndicatorLabel = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedProcessingInformation paymentSolution(String paymentSolution) {
     this.paymentSolution = paymentSolution;
@@ -91,6 +94,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {
     this.commerceIndicator = commerceIndicator;
   }
 
+  public TssV2TransactionsPost201ResponseEmbeddedProcessingInformation commerceIndicatorLabel(String commerceIndicatorLabel) {
+    this.commerceIndicatorLabel = commerceIndicatorLabel;
+    return this;
+  }
+
+   /**
+   * Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor. See Appendix I, \&quot;Commerce Indicators,\&quot; on page 441 of the Cybersource Credit Card Guide.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \&quot;Commerce Indicators,\&quot; on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \&quot;Payer Authentication,\&quot; page 195.  #### Card Present You must set this field to &#x60;retail&#x60;. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as “moto\&quot; 
+   * @return commerceIndicatorLabel
+  **/
+  @ApiModelProperty(value = "Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor. See Appendix I, \"Commerce Indicators,\" on page 441 of the Cybersource Credit Card Guide.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \"Commerce Indicators,\" on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication,\" page 195.  #### Card Present You must set this field to `retail`. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as “moto\" ")
+  public String getCommerceIndicatorLabel() {
+    return commerceIndicatorLabel;
+  }
+
+  public void setCommerceIndicatorLabel(String commerceIndicatorLabel) {
+    this.commerceIndicatorLabel = commerceIndicatorLabel;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,12 +124,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {
     TssV2TransactionsPost201ResponseEmbeddedProcessingInformation tssV2TransactionsPost201ResponseEmbeddedProcessingInformation = (TssV2TransactionsPost201ResponseEmbeddedProcessingInformation) o;
     return Objects.equals(this.paymentSolution, tssV2TransactionsPost201ResponseEmbeddedProcessingInformation.paymentSolution) &&
         Objects.equals(this.businessApplicationId, tssV2TransactionsPost201ResponseEmbeddedProcessingInformation.businessApplicationId) &&
-        Objects.equals(this.commerceIndicator, tssV2TransactionsPost201ResponseEmbeddedProcessingInformation.commerceIndicator);
+        Objects.equals(this.commerceIndicator, tssV2TransactionsPost201ResponseEmbeddedProcessingInformation.commerceIndicator) &&
+        Objects.equals(this.commerceIndicatorLabel, tssV2TransactionsPost201ResponseEmbeddedProcessingInformation.commerceIndicatorLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentSolution, businessApplicationId, commerceIndicator);
+    return Objects.hash(paymentSolution, businessApplicationId, commerceIndicator, commerceIndicatorLabel);
   }
 
 
@@ -120,6 +142,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {
     sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
     sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
     sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    sb.append("    commerceIndicatorLabel: ").append(toIndentedString(commerceIndicatorLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

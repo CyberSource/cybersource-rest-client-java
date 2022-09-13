@@ -33,7 +33,7 @@ import org.joda.time.DateTime;
  * Subscription Details
  */
 @ApiModel(description = "Subscription Details")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions {
   @SerializedName("organizationId")
   private String organizationId = null;

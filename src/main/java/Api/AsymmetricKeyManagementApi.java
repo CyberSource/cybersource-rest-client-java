@@ -31,10 +31,10 @@ import java.io.InputStream;
 import Model.CreateP12KeysRequest;
 import Model.DeleteBulkP12KeysRequest;
 import Model.InlineResponse4002;
+import Model.InlineResponse502;
 import Model.KmsV2KeysAsymDeletesPost200Response;
 import Model.KmsV2KeysAsymGet200Response;
 import Model.KmsV2KeysAsymPost201Response;
-import Model.PtsV2PaymentsPost502Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -134,8 +134,8 @@ public class AsymmetricKeyManagementApi {
     }
 
     /**
-     * Create one or more PKCS#12 keys
-     * &#39;Create one or more PKCS#12 keys&#39; 
+     * Create one or more PKCS12 keys
+     * &#39;Create one or more PKCS12 keys&#39; 
      * @param createP12KeysRequest  (required)
      * @return KmsV2KeysAsymPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -149,8 +149,8 @@ public class AsymmetricKeyManagementApi {
     }
 
     /**
-     * Create one or more PKCS#12 keys
-     * &#39;Create one or more PKCS#12 keys&#39; 
+     * Create one or more PKCS12 keys
+     * &#39;Create one or more PKCS12 keys&#39; 
      * @param createP12KeysRequest  (required)
      * @return ApiResponse&lt;KmsV2KeysAsymPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -162,8 +162,8 @@ public class AsymmetricKeyManagementApi {
     }
 
     /**
-     * Create one or more PKCS#12 keys (asynchronously)
-     * &#39;Create one or more PKCS#12 keys&#39; 
+     * Create one or more PKCS12 keys (asynchronously)
+     * &#39;Create one or more PKCS12 keys&#39; 
      * @param createP12KeysRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -264,8 +264,8 @@ public class AsymmetricKeyManagementApi {
     }
 
     /**
-     * Delete one or more PKCS#12 keys
-     * &#39;Delete one or more PKCS#12 keys&#39; 
+     * Delete one or more PKCS12 keys
+     * &#39;Delete one or more PKCS12 keys&#39; 
      * @param deleteBulkP12KeysRequest  (required)
      * @return KmsV2KeysAsymDeletesPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -279,8 +279,8 @@ public class AsymmetricKeyManagementApi {
     }
 
     /**
-     * Delete one or more PKCS#12 keys
-     * &#39;Delete one or more PKCS#12 keys&#39; 
+     * Delete one or more PKCS12 keys
+     * &#39;Delete one or more PKCS12 keys&#39; 
      * @param deleteBulkP12KeysRequest  (required)
      * @return ApiResponse&lt;KmsV2KeysAsymDeletesPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -292,8 +292,8 @@ public class AsymmetricKeyManagementApi {
     }
 
     /**
-     * Delete one or more PKCS#12 keys (asynchronously)
-     * &#39;Delete one or more PKCS#12 keys&#39; 
+     * Delete one or more PKCS12 keys (asynchronously)
+     * &#39;Delete one or more PKCS12 keys&#39; 
      * @param deleteBulkP12KeysRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -398,7 +398,7 @@ public class AsymmetricKeyManagementApi {
     }
 
     /**
-     * Retrieves PKCS#12 key details
+     * Retrieves PKCS12 key details
      * Retrieves keys details by providing the key id.
      * @param keyId Key ID.  (required)
      * @return KmsV2KeysAsymGet200Response
@@ -413,7 +413,7 @@ public class AsymmetricKeyManagementApi {
     }
 
     /**
-     * Retrieves PKCS#12 key details
+     * Retrieves PKCS12 key details
      * Retrieves keys details by providing the key id.
      * @param keyId Key ID.  (required)
      * @return ApiResponse&lt;KmsV2KeysAsymGet200Response&gt;
@@ -426,7 +426,7 @@ public class AsymmetricKeyManagementApi {
     }
 
     /**
-     * Retrieves PKCS#12 key details (asynchronously)
+     * Retrieves PKCS12 key details (asynchronously)
      * Retrieves keys details by providing the key id.
      * @param keyId Key ID.  (required)
      * @param callback The callback to be executed when the API call finishes

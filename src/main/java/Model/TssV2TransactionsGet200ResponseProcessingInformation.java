@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class TssV2TransactionsGet200ResponseProcessingInformation {
   @SerializedName("industryDataType")
   private String industryDataType = null;
@@ -39,6 +39,9 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
 
   @SerializedName("commerceIndicator")
   private String commerceIndicator = null;
+
+  @SerializedName("commerceIndicatorLabel")
+  private String commerceIndicatorLabel = null;
 
   @SerializedName("businessApplicationId")
   private String businessApplicationId = null;
@@ -104,6 +107,24 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
 
   public void setCommerceIndicator(String commerceIndicator) {
     this.commerceIndicator = commerceIndicator;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessingInformation commerceIndicatorLabel(String commerceIndicatorLabel) {
+    this.commerceIndicatorLabel = commerceIndicatorLabel;
+    return this;
+  }
+
+   /**
+   * Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor. See Appendix I, \&quot;Commerce Indicators,\&quot; on page 441 of the Cybersource Credit Card Guide.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \&quot;Commerce Indicators,\&quot; on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \&quot;Payer Authentication,\&quot; page 195.  #### Card Present You must set this field to &#x60;retail&#x60;. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as “moto\&quot; 
+   * @return commerceIndicatorLabel
+  **/
+  @ApiModelProperty(value = "Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor. See Appendix I, \"Commerce Indicators,\" on page 441 of the Cybersource Credit Card Guide.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \"Commerce Indicators,\" on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication,\" page 195.  #### Card Present You must set this field to `retail`. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as “moto\" ")
+  public String getCommerceIndicatorLabel() {
+    return commerceIndicatorLabel;
+  }
+
+  public void setCommerceIndicatorLabel(String commerceIndicatorLabel) {
+    this.commerceIndicatorLabel = commerceIndicatorLabel;
   }
 
   public TssV2TransactionsGet200ResponseProcessingInformation businessApplicationId(String businessApplicationId) {
@@ -191,6 +212,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
     return Objects.equals(this.industryDataType, tssV2TransactionsGet200ResponseProcessingInformation.industryDataType) &&
         Objects.equals(this.paymentSolution, tssV2TransactionsGet200ResponseProcessingInformation.paymentSolution) &&
         Objects.equals(this.commerceIndicator, tssV2TransactionsGet200ResponseProcessingInformation.commerceIndicator) &&
+        Objects.equals(this.commerceIndicatorLabel, tssV2TransactionsGet200ResponseProcessingInformation.commerceIndicatorLabel) &&
         Objects.equals(this.businessApplicationId, tssV2TransactionsGet200ResponseProcessingInformation.businessApplicationId) &&
         Objects.equals(this.authorizationOptions, tssV2TransactionsGet200ResponseProcessingInformation.authorizationOptions) &&
         Objects.equals(this.bankTransferOptions, tssV2TransactionsGet200ResponseProcessingInformation.bankTransferOptions) &&
@@ -199,7 +221,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(industryDataType, paymentSolution, commerceIndicator, businessApplicationId, authorizationOptions, bankTransferOptions, japanPaymentOptions);
+    return Objects.hash(industryDataType, paymentSolution, commerceIndicator, commerceIndicatorLabel, businessApplicationId, authorizationOptions, bankTransferOptions, japanPaymentOptions);
   }
 
 
@@ -211,6 +233,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
     sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
     sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
     sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    sb.append("    commerceIndicatorLabel: ").append(toIndentedString(commerceIndicatorLabel)).append("\n");
     sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
     sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");

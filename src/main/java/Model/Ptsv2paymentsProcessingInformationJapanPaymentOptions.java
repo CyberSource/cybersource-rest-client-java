@@ -26,10 +26,28 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsProcessingInformationJapanPaymentOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
   @SerializedName("paymentMethod")
   private String paymentMethod = null;
+
+  @SerializedName("bonuses")
+  private String bonuses = null;
+
+  @SerializedName("bonusMonth")
+  private String bonusMonth = null;
+
+  @SerializedName("secondBonusMonth")
+  private String secondBonusMonth = null;
+
+  @SerializedName("bonusAmount")
+  private String bonusAmount = null;
+
+  @SerializedName("secondBonusAmount")
+  private String secondBonusAmount = null;
+
+  @SerializedName("preapprovalType")
+  private String preapprovalType = null;
 
   @SerializedName("installments")
   private String installments = null;
@@ -68,6 +86,114 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
 
   public void setPaymentMethod(String paymentMethod) {
     this.paymentMethod = paymentMethod;
+  }
+
+  public Ptsv2paymentsProcessingInformationJapanPaymentOptions bonuses(String bonuses) {
+    this.bonuses = bonuses;
+    return this;
+  }
+
+   /**
+   * This value is a 2-digit code indicating the Number of Bonuses. Valid value from 1 to 6. 
+   * @return bonuses
+  **/
+  @ApiModelProperty(value = "This value is a 2-digit code indicating the Number of Bonuses. Valid value from 1 to 6. ")
+  public String getBonuses() {
+    return bonuses;
+  }
+
+  public void setBonuses(String bonuses) {
+    this.bonuses = bonuses;
+  }
+
+  public Ptsv2paymentsProcessingInformationJapanPaymentOptions bonusMonth(String bonusMonth) {
+    this.bonusMonth = bonusMonth;
+    return this;
+  }
+
+   /**
+   * This value is a 2-digit code indicating the first bonus month. Valid value from 1 to 12. 
+   * @return bonusMonth
+  **/
+  @ApiModelProperty(value = "This value is a 2-digit code indicating the first bonus month. Valid value from 1 to 12. ")
+  public String getBonusMonth() {
+    return bonusMonth;
+  }
+
+  public void setBonusMonth(String bonusMonth) {
+    this.bonusMonth = bonusMonth;
+  }
+
+  public Ptsv2paymentsProcessingInformationJapanPaymentOptions secondBonusMonth(String secondBonusMonth) {
+    this.secondBonusMonth = secondBonusMonth;
+    return this;
+  }
+
+   /**
+   * This value is a 2-digit code indicating the second bonus month. Valid value from 1 to 12. 
+   * @return secondBonusMonth
+  **/
+  @ApiModelProperty(value = "This value is a 2-digit code indicating the second bonus month. Valid value from 1 to 12. ")
+  public String getSecondBonusMonth() {
+    return secondBonusMonth;
+  }
+
+  public void setSecondBonusMonth(String secondBonusMonth) {
+    this.secondBonusMonth = secondBonusMonth;
+  }
+
+  public Ptsv2paymentsProcessingInformationJapanPaymentOptions bonusAmount(String bonusAmount) {
+    this.bonusAmount = bonusAmount;
+    return this;
+  }
+
+   /**
+   * This value contains the bonus amount of the first month. Maximum value without decimal 99999999. 
+   * @return bonusAmount
+  **/
+  @ApiModelProperty(value = "This value contains the bonus amount of the first month. Maximum value without decimal 99999999. ")
+  public String getBonusAmount() {
+    return bonusAmount;
+  }
+
+  public void setBonusAmount(String bonusAmount) {
+    this.bonusAmount = bonusAmount;
+  }
+
+  public Ptsv2paymentsProcessingInformationJapanPaymentOptions secondBonusAmount(String secondBonusAmount) {
+    this.secondBonusAmount = secondBonusAmount;
+    return this;
+  }
+
+   /**
+   * This value contains the bonus amount of the second month. Maximum value without decimal 99999999. 
+   * @return secondBonusAmount
+  **/
+  @ApiModelProperty(value = "This value contains the bonus amount of the second month. Maximum value without decimal 99999999. ")
+  public String getSecondBonusAmount() {
+    return secondBonusAmount;
+  }
+
+  public void setSecondBonusAmount(String secondBonusAmount) {
+    this.secondBonusAmount = secondBonusAmount;
+  }
+
+  public Ptsv2paymentsProcessingInformationJapanPaymentOptions preapprovalType(String preapprovalType) {
+    this.preapprovalType = preapprovalType;
+    return this;
+  }
+
+   /**
+   * This will contain the details of the kind of transaction that has been processe. Used only for Japan. Possible Values: - 0 &#x3D; Normal (authorization with amount and clearing/settlement; data capture or paper draft) - 1 &#x3D; Negative card authorization (authorization-only with 0 or 1 amount) - 2 &#x3D; Reservation of authorization (authorization-only with amount) - 3 &#x3D; Cancel transaction - 4 &#x3D; Merchant-initiated reversal/refund transactions - 5 &#x3D; Cancel reservation of authorization - 6 &#x3D; Post authorization 
+   * @return preapprovalType
+  **/
+  @ApiModelProperty(value = "This will contain the details of the kind of transaction that has been processe. Used only for Japan. Possible Values: - 0 = Normal (authorization with amount and clearing/settlement; data capture or paper draft) - 1 = Negative card authorization (authorization-only with 0 or 1 amount) - 2 = Reservation of authorization (authorization-only with amount) - 3 = Cancel transaction - 4 = Merchant-initiated reversal/refund transactions - 5 = Cancel reservation of authorization - 6 = Post authorization ")
+  public String getPreapprovalType() {
+    return preapprovalType;
+  }
+
+  public void setPreapprovalType(String preapprovalType) {
+    this.preapprovalType = preapprovalType;
   }
 
   public Ptsv2paymentsProcessingInformationJapanPaymentOptions installments(String installments) {
@@ -207,6 +333,12 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
     }
     Ptsv2paymentsProcessingInformationJapanPaymentOptions ptsv2paymentsProcessingInformationJapanPaymentOptions = (Ptsv2paymentsProcessingInformationJapanPaymentOptions) o;
     return Objects.equals(this.paymentMethod, ptsv2paymentsProcessingInformationJapanPaymentOptions.paymentMethod) &&
+        Objects.equals(this.bonuses, ptsv2paymentsProcessingInformationJapanPaymentOptions.bonuses) &&
+        Objects.equals(this.bonusMonth, ptsv2paymentsProcessingInformationJapanPaymentOptions.bonusMonth) &&
+        Objects.equals(this.secondBonusMonth, ptsv2paymentsProcessingInformationJapanPaymentOptions.secondBonusMonth) &&
+        Objects.equals(this.bonusAmount, ptsv2paymentsProcessingInformationJapanPaymentOptions.bonusAmount) &&
+        Objects.equals(this.secondBonusAmount, ptsv2paymentsProcessingInformationJapanPaymentOptions.secondBonusAmount) &&
+        Objects.equals(this.preapprovalType, ptsv2paymentsProcessingInformationJapanPaymentOptions.preapprovalType) &&
         Objects.equals(this.installments, ptsv2paymentsProcessingInformationJapanPaymentOptions.installments) &&
         Objects.equals(this.terminalId, ptsv2paymentsProcessingInformationJapanPaymentOptions.terminalId) &&
         Objects.equals(this.firstBillingMonth, ptsv2paymentsProcessingInformationJapanPaymentOptions.firstBillingMonth) &&
@@ -218,7 +350,7 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentMethod, installments, terminalId, firstBillingMonth, businessName, businessNameKatakana, jis2TrackData, businessNameAlphaNumeric);
+    return Objects.hash(paymentMethod, bonuses, bonusMonth, secondBonusMonth, bonusAmount, secondBonusAmount, preapprovalType, installments, terminalId, firstBillingMonth, businessName, businessNameKatakana, jis2TrackData, businessNameAlphaNumeric);
   }
 
 
@@ -228,6 +360,12 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
     sb.append("class Ptsv2paymentsProcessingInformationJapanPaymentOptions {\n");
     
     sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
+    sb.append("    bonuses: ").append(toIndentedString(bonuses)).append("\n");
+    sb.append("    bonusMonth: ").append(toIndentedString(bonusMonth)).append("\n");
+    sb.append("    secondBonusMonth: ").append(toIndentedString(secondBonusMonth)).append("\n");
+    sb.append("    bonusAmount: ").append(toIndentedString(bonusAmount)).append("\n");
+    sb.append("    secondBonusAmount: ").append(toIndentedString(secondBonusAmount)).append("\n");
+    sb.append("    preapprovalType: ").append(toIndentedString(preapprovalType)).append("\n");
     sb.append("    installments: ").append(toIndentedString(installments)).append("\n");
     sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
     sb.append("    firstBillingMonth: ").append(toIndentedString(firstBillingMonth)).append("\n");

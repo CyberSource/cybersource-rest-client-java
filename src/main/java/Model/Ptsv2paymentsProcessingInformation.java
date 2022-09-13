@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class Ptsv2paymentsProcessingInformation {
   @SerializedName("actionList")
   private List<String> actionList = null;
@@ -56,6 +56,9 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("commerceIndicator")
   private String commerceIndicator = null;
 
+  @SerializedName("commerceIndicatorLabel")
+  private String commerceIndicatorLabel = null;
+
   @SerializedName("paymentSolution")
   private String paymentSolution = null;
 
@@ -67,6 +70,9 @@ public class Ptsv2paymentsProcessingInformation {
 
   @SerializedName("purchaseLevel")
   private String purchaseLevel = null;
+
+  @SerializedName("paymentId")
+  private String paymentId = null;
 
   @SerializedName("reportGroup")
   private String reportGroup = null;
@@ -246,6 +252,24 @@ public class Ptsv2paymentsProcessingInformation {
     this.commerceIndicator = commerceIndicator;
   }
 
+  public Ptsv2paymentsProcessingInformation commerceIndicatorLabel(String commerceIndicatorLabel) {
+    this.commerceIndicatorLabel = commerceIndicatorLabel;
+    return this;
+  }
+
+   /**
+   * Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor. See Appendix I, \&quot;Commerce Indicators,\&quot; on page 441 of the Cybersource Credit Card Guide.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \&quot;Commerce Indicators,\&quot; on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \&quot;Payer Authentication,\&quot; page 195.  #### Card Present You must set this field to &#x60;retail&#x60;. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as “moto\&quot; 
+   * @return commerceIndicatorLabel
+  **/
+  @ApiModelProperty(value = "Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor. See Appendix I, \"Commerce Indicators,\" on page 441 of the Cybersource Credit Card Guide.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \"Commerce Indicators,\" on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication,\" page 195.  #### Card Present You must set this field to `retail`. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as “moto\" ")
+  public String getCommerceIndicatorLabel() {
+    return commerceIndicatorLabel;
+  }
+
+  public void setCommerceIndicatorLabel(String commerceIndicatorLabel) {
+    this.commerceIndicatorLabel = commerceIndicatorLabel;
+  }
+
   public Ptsv2paymentsProcessingInformation paymentSolution(String paymentSolution) {
     this.paymentSolution = paymentSolution;
     return this;
@@ -316,6 +340,24 @@ public class Ptsv2paymentsProcessingInformation {
 
   public void setPurchaseLevel(String purchaseLevel) {
     this.purchaseLevel = purchaseLevel;
+  }
+
+  public Ptsv2paymentsProcessingInformation paymentId(String paymentId) {
+    this.paymentId = paymentId;
+    return this;
+  }
+
+   /**
+   * This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.
+   * @return paymentId
+  **/
+  @ApiModelProperty(value = "This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.")
+  public String getPaymentId() {
+    return paymentId;
+  }
+
+  public void setPaymentId(String paymentId) {
+    this.paymentId = paymentId;
   }
 
   public Ptsv2paymentsProcessingInformation reportGroup(String reportGroup) {
@@ -658,10 +700,12 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.processorId, ptsv2paymentsProcessingInformation.processorId) &&
         Objects.equals(this.businessApplicationId, ptsv2paymentsProcessingInformation.businessApplicationId) &&
         Objects.equals(this.commerceIndicator, ptsv2paymentsProcessingInformation.commerceIndicator) &&
+        Objects.equals(this.commerceIndicatorLabel, ptsv2paymentsProcessingInformation.commerceIndicatorLabel) &&
         Objects.equals(this.paymentSolution, ptsv2paymentsProcessingInformation.paymentSolution) &&
         Objects.equals(this.reconciliationId, ptsv2paymentsProcessingInformation.reconciliationId) &&
         Objects.equals(this.linkId, ptsv2paymentsProcessingInformation.linkId) &&
         Objects.equals(this.purchaseLevel, ptsv2paymentsProcessingInformation.purchaseLevel) &&
+        Objects.equals(this.paymentId, ptsv2paymentsProcessingInformation.paymentId) &&
         Objects.equals(this.reportGroup, ptsv2paymentsProcessingInformation.reportGroup) &&
         Objects.equals(this.visaCheckoutId, ptsv2paymentsProcessingInformation.visaCheckoutId) &&
         Objects.equals(this.industryDataType, ptsv2paymentsProcessingInformation.industryDataType) &&
@@ -684,7 +728,7 @@ public class Ptsv2paymentsProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, actionTokenTypes, capture, processorId, businessApplicationId, commerceIndicator, paymentSolution, reconciliationId, linkId, purchaseLevel, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled);
+    return Objects.hash(actionList, actionTokenTypes, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled);
   }
 
 
@@ -699,10 +743,12 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
     sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
     sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    sb.append("    commerceIndicatorLabel: ").append(toIndentedString(commerceIndicatorLabel)).append("\n");
     sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
     sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
+    sb.append("    paymentId: ").append(toIndentedString(paymentId)).append("\n");
     sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
     sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
     sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");

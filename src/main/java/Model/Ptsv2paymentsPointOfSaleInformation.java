@@ -29,13 +29,16 @@ import java.util.List;
 /**
  * Ptsv2paymentsPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
 
   @SerializedName("terminalSerialNumber")
   private String terminalSerialNumber = null;
+
+  @SerializedName("cardholderVerificationMethodUsed")
+  private Integer cardholderVerificationMethodUsed = null;
 
   @SerializedName("laneNumber")
   private String laneNumber = null;
@@ -146,6 +149,24 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   public void setTerminalSerialNumber(String terminalSerialNumber) {
     this.terminalSerialNumber = terminalSerialNumber;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation cardholderVerificationMethodUsed(Integer cardholderVerificationMethodUsed) {
+    this.cardholderVerificationMethodUsed = cardholderVerificationMethodUsed;
+    return this;
+  }
+
+   /**
+   * Method that was used to verify the cardholder&#39;s identity. Possible values:    - &#x60;0&#x60;: No verification   - &#x60;1&#x60;: Signature   - &#x60;2&#x60;: PIN   - &#x60;3&#x60;: Cardholder device CVM 
+   * @return cardholderVerificationMethodUsed
+  **/
+  @ApiModelProperty(value = "Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM ")
+  public Integer getCardholderVerificationMethodUsed() {
+    return cardholderVerificationMethodUsed;
+  }
+
+  public void setCardholderVerificationMethodUsed(Integer cardholderVerificationMethodUsed) {
+    this.cardholderVerificationMethodUsed = cardholderVerificationMethodUsed;
   }
 
   public Ptsv2paymentsPointOfSaleInformation laneNumber(String laneNumber) {
@@ -631,6 +652,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
     Ptsv2paymentsPointOfSaleInformation ptsv2paymentsPointOfSaleInformation = (Ptsv2paymentsPointOfSaleInformation) o;
     return Objects.equals(this.terminalId, ptsv2paymentsPointOfSaleInformation.terminalId) &&
         Objects.equals(this.terminalSerialNumber, ptsv2paymentsPointOfSaleInformation.terminalSerialNumber) &&
+        Objects.equals(this.cardholderVerificationMethodUsed, ptsv2paymentsPointOfSaleInformation.cardholderVerificationMethodUsed) &&
         Objects.equals(this.laneNumber, ptsv2paymentsPointOfSaleInformation.laneNumber) &&
         Objects.equals(this.catLevel, ptsv2paymentsPointOfSaleInformation.catLevel) &&
         Objects.equals(this.entryMode, ptsv2paymentsPointOfSaleInformation.entryMode) &&
@@ -660,7 +682,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId, terminalSerialNumber, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake, serviceCode);
+    return Objects.hash(terminalId, terminalSerialNumber, cardholderVerificationMethodUsed, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake, serviceCode);
   }
 
 
@@ -671,6 +693,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
     
     sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
     sb.append("    terminalSerialNumber: ").append(toIndentedString(terminalSerialNumber)).append("\n");
+    sb.append("    cardholderVerificationMethodUsed: ").append(toIndentedString(cardholderVerificationMethodUsed)).append("\n");
     sb.append("    laneNumber: ").append(toIndentedString(laneNumber)).append("\n");
     sb.append("    catLevel: ").append(toIndentedString(catLevel)).append("\n");
     sb.append("    entryMode: ").append(toIndentedString(entryMode)).append("\n");

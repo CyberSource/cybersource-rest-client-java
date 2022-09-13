@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
@@ -37,6 +37,9 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
 
   @SerializedName("terminalCapability")
   private Integer terminalCapability = null;
+
+  @SerializedName("cardholderVerificationMethodUsed")
+  private Integer cardholderVerificationMethodUsed = null;
 
   @SerializedName("emv")
   private Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv = null;
@@ -97,6 +100,24 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
     this.terminalCapability = terminalCapability;
   }
 
+  public TssV2TransactionsGet200ResponsePointOfSaleInformation cardholderVerificationMethodUsed(Integer cardholderVerificationMethodUsed) {
+    this.cardholderVerificationMethodUsed = cardholderVerificationMethodUsed;
+    return this;
+  }
+
+   /**
+   * Method that was used to verify the cardholder&#39;s identity. Possible values:    - &#x60;0&#x60;: No verification   - &#x60;1&#x60;: Signature   - &#x60;2&#x60;: PIN   - &#x60;3&#x60;: Cardholder device CVM 
+   * @return cardholderVerificationMethodUsed
+  **/
+  @ApiModelProperty(value = "Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM ")
+  public Integer getCardholderVerificationMethodUsed() {
+    return cardholderVerificationMethodUsed;
+  }
+
+  public void setCardholderVerificationMethodUsed(Integer cardholderVerificationMethodUsed) {
+    this.cardholderVerificationMethodUsed = cardholderVerificationMethodUsed;
+  }
+
   public TssV2TransactionsGet200ResponsePointOfSaleInformation emv(Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv) {
     this.emv = emv;
     return this;
@@ -128,12 +149,13 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
     return Objects.equals(this.terminalId, tssV2TransactionsGet200ResponsePointOfSaleInformation.terminalId) &&
         Objects.equals(this.entryMode, tssV2TransactionsGet200ResponsePointOfSaleInformation.entryMode) &&
         Objects.equals(this.terminalCapability, tssV2TransactionsGet200ResponsePointOfSaleInformation.terminalCapability) &&
+        Objects.equals(this.cardholderVerificationMethodUsed, tssV2TransactionsGet200ResponsePointOfSaleInformation.cardholderVerificationMethodUsed) &&
         Objects.equals(this.emv, tssV2TransactionsGet200ResponsePointOfSaleInformation.emv);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId, entryMode, terminalCapability, emv);
+    return Objects.hash(terminalId, entryMode, terminalCapability, cardholderVerificationMethodUsed, emv);
   }
 
 
@@ -145,6 +167,7 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
     sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
     sb.append("    entryMode: ").append(toIndentedString(entryMode)).append("\n");
     sb.append("    terminalCapability: ").append(toIndentedString(terminalCapability)).append("\n");
+    sb.append("    cardholderVerificationMethodUsed: ").append(toIndentedString(cardholderVerificationMethodUsed)).append("\n");
     sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
     sb.append("}");
     return sb.toString();

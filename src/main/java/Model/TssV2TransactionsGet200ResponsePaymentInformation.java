@@ -20,6 +20,7 @@ import Model.TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationBank;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationCard;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationCustomer;
+import Model.TssV2TransactionsGet200ResponsePaymentInformationFluidData;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationInvoice;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationPaymentType;
@@ -35,7 +36,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponsePaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class TssV2TransactionsGet200ResponsePaymentInformation {
   @SerializedName("paymentType")
   private TssV2TransactionsGet200ResponsePaymentInformationPaymentType paymentType = null;
@@ -63,6 +64,9 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
 
   @SerializedName("shippingAddress")
   private PtsV2PaymentsPost201ResponseTokenInformationShippingAddress shippingAddress = null;
+
+  @SerializedName("fluidData")
+  private TssV2TransactionsGet200ResponsePaymentInformationFluidData fluidData = null;
 
   public TssV2TransactionsGet200ResponsePaymentInformation paymentType(TssV2TransactionsGet200ResponsePaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
@@ -226,6 +230,24 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     this.shippingAddress = shippingAddress;
   }
 
+  public TssV2TransactionsGet200ResponsePaymentInformation fluidData(TssV2TransactionsGet200ResponsePaymentInformationFluidData fluidData) {
+    this.fluidData = fluidData;
+    return this;
+  }
+
+   /**
+   * Get fluidData
+   * @return fluidData
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponsePaymentInformationFluidData getFluidData() {
+    return fluidData;
+  }
+
+  public void setFluidData(TssV2TransactionsGet200ResponsePaymentInformationFluidData fluidData) {
+    this.fluidData = fluidData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -244,12 +266,13 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
         Objects.equals(this.accountFeatures, tssV2TransactionsGet200ResponsePaymentInformation.accountFeatures) &&
         Objects.equals(this.paymentInstrument, tssV2TransactionsGet200ResponsePaymentInformation.paymentInstrument) &&
         Objects.equals(this.instrumentIdentifier, tssV2TransactionsGet200ResponsePaymentInformation.instrumentIdentifier) &&
-        Objects.equals(this.shippingAddress, tssV2TransactionsGet200ResponsePaymentInformation.shippingAddress);
+        Objects.equals(this.shippingAddress, tssV2TransactionsGet200ResponsePaymentInformation.shippingAddress) &&
+        Objects.equals(this.fluidData, tssV2TransactionsGet200ResponsePaymentInformation.fluidData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentType, customer, card, invoice, bank, accountFeatures, paymentInstrument, instrumentIdentifier, shippingAddress);
+    return Objects.hash(paymentType, customer, card, invoice, bank, accountFeatures, paymentInstrument, instrumentIdentifier, shippingAddress, fluidData);
   }
 
 
@@ -267,6 +290,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
     sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
     sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

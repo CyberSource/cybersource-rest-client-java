@@ -17,6 +17,7 @@ import java.util.Objects;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsidvoidsOrderInformation;
 import Model.Ptsv2paymentsidvoidsPaymentInformation;
+import Model.Ptsv2voidsProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +30,7 @@ import java.io.IOException;
 /**
  * MitVoidRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class MitVoidRequest {
   @SerializedName("clientReferenceInformation")
   private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
@@ -39,6 +40,9 @@ public class MitVoidRequest {
 
   @SerializedName("orderInformation")
   private Ptsv2paymentsidvoidsOrderInformation orderInformation = null;
+
+  @SerializedName("processingInformation")
+  private Ptsv2voidsProcessingInformation processingInformation = null;
 
   public MitVoidRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -94,6 +98,24 @@ public class MitVoidRequest {
     this.orderInformation = orderInformation;
   }
 
+  public MitVoidRequest processingInformation(Ptsv2voidsProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2voidsProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(Ptsv2voidsProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,12 +128,13 @@ public class MitVoidRequest {
     MitVoidRequest mitVoidRequest = (MitVoidRequest) o;
     return Objects.equals(this.clientReferenceInformation, mitVoidRequest.clientReferenceInformation) &&
         Objects.equals(this.paymentInformation, mitVoidRequest.paymentInformation) &&
-        Objects.equals(this.orderInformation, mitVoidRequest.orderInformation);
+        Objects.equals(this.orderInformation, mitVoidRequest.orderInformation) &&
+        Objects.equals(this.processingInformation, mitVoidRequest.processingInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, paymentInformation, orderInformation);
+    return Objects.hash(clientReferenceInformation, paymentInformation, orderInformation, processingInformation);
   }
 
 
@@ -123,6 +146,7 @@ public class MitVoidRequest {
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

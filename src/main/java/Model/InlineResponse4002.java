@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * InlineResponse4002
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class InlineResponse4002 {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -39,6 +39,9 @@ public class InlineResponse4002 {
 
   @SerializedName("message")
   private String message = null;
+
+  @SerializedName("statusCode")
+  private String statusCode = null;
 
   public InlineResponse4002 submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -82,10 +85,10 @@ public class InlineResponse4002 {
   }
 
    /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA 
+   * The reason of the status.  Possible values:  - MISSING_FIELD 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD ")
   public String getReason() {
     return reason;
   }
@@ -112,6 +115,24 @@ public class InlineResponse4002 {
     this.message = message;
   }
 
+  public InlineResponse4002 statusCode(String statusCode) {
+    this.statusCode = statusCode;
+    return this;
+  }
+
+   /**
+   * HTTP status code of the submitted request.  Possible values:  - 500 
+   * @return statusCode
+  **/
+  @ApiModelProperty(value = "HTTP status code of the submitted request.  Possible values:  - 500 ")
+  public String getStatusCode() {
+    return statusCode;
+  }
+
+  public void setStatusCode(String statusCode) {
+    this.statusCode = statusCode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +146,13 @@ public class InlineResponse4002 {
     return Objects.equals(this.submitTimeUtc, inlineResponse4002.submitTimeUtc) &&
         Objects.equals(this.status, inlineResponse4002.status) &&
         Objects.equals(this.reason, inlineResponse4002.reason) &&
-        Objects.equals(this.message, inlineResponse4002.message);
+        Objects.equals(this.message, inlineResponse4002.message) &&
+        Objects.equals(this.statusCode, inlineResponse4002.statusCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, reason, message);
+    return Objects.hash(submitTimeUtc, status, reason, message, statusCode);
   }
 
 
@@ -143,6 +165,7 @@ public class InlineResponse4002 {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
