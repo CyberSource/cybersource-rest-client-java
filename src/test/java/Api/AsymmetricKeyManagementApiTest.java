@@ -17,10 +17,10 @@ import Invokers.ApiException;
 import Model.CreateP12KeysRequest;
 import Model.DeleteBulkP12KeysRequest;
 import Model.InlineResponse4002;
+import Model.InlineResponse502;
 import Model.KmsV2KeysAsymDeletesPost200Response;
 import Model.KmsV2KeysAsymGet200Response;
 import Model.KmsV2KeysAsymPost201Response;
-import Model.PtsV2PaymentsPost502Response;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -39,9 +39,9 @@ public class AsymmetricKeyManagementApiTest {
 
     
     /**
-     * Create one or more PKCS#12 keys
+     * Create one or more PKCS12 keys
      *
-     * &#39;Create one or more PKCS#12 keys&#39; 
+     * &#39;Create one or more PKCS12 keys&#39; 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -55,9 +55,9 @@ public class AsymmetricKeyManagementApiTest {
     }
     
     /**
-     * Delete one or more PKCS#12 keys
+     * Delete one or more PKCS12 keys
      *
-     * &#39;Delete one or more PKCS#12 keys&#39; 
+     * &#39;Delete one or more PKCS12 keys&#39; 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -71,7 +71,7 @@ public class AsymmetricKeyManagementApiTest {
     }
     
     /**
-     * Retrieves PKCS#12 key details
+     * Retrieves PKCS12 key details
      *
      * Retrieves keys details by providing the key id.
      *

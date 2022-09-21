@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsProcessingInformationAuthorizationOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("authType")
   private String authType = null;
@@ -84,6 +84,9 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
 
   @SerializedName("deferredAuthIndicator")
   private Boolean deferredAuthIndicator = null;
+
+  @SerializedName("cashAdvanceIndicator")
+  private Boolean cashAdvanceIndicator = null;
 
   public Ptsv2paymentsProcessingInformationAuthorizationOptions authType(String authType) {
     this.authType = authType;
@@ -417,6 +420,24 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     this.deferredAuthIndicator = deferredAuthIndicator;
   }
 
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions cashAdvanceIndicator(Boolean cashAdvanceIndicator) {
+    this.cashAdvanceIndicator = cashAdvanceIndicator;
+    return this;
+  }
+
+   /**
+   * This API field enables the merchant to indicate that a given transaction is Cash Advance.  Cash advance or Cash disbursement functionality allows a merchant to dispense cash at a point of sale. It provides the ability of a POS system to act like an ATM. These terminals are typically seen in bank branches where customers can use their card and withdraw cash or at merchant locations where ATMs are sparse.  Possible values:   - &#x60;true&#x60; (Cash advance is supported)   - &#x60;false&#x60; (default: cash advance is not supported) 
+   * @return cashAdvanceIndicator
+  **/
+  @ApiModelProperty(value = "This API field enables the merchant to indicate that a given transaction is Cash Advance.  Cash advance or Cash disbursement functionality allows a merchant to dispense cash at a point of sale. It provides the ability of a POS system to act like an ATM. These terminals are typically seen in bank branches where customers can use their card and withdraw cash or at merchant locations where ATMs are sparse.  Possible values:   - `true` (Cash advance is supported)   - `false` (default: cash advance is not supported) ")
+  public Boolean getCashAdvanceIndicator() {
+    return cashAdvanceIndicator;
+  }
+
+  public void setCashAdvanceIndicator(Boolean cashAdvanceIndicator) {
+    this.cashAdvanceIndicator = cashAdvanceIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -444,12 +465,13 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
         Objects.equals(this.transportationMode, ptsv2paymentsProcessingInformationAuthorizationOptions.transportationMode) &&
         Objects.equals(this.aggregatedAuthIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.aggregatedAuthIndicator) &&
         Objects.equals(this.debtRecoveryIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.debtRecoveryIndicator) &&
-        Objects.equals(this.deferredAuthIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.deferredAuthIndicator);
+        Objects.equals(this.deferredAuthIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.deferredAuthIndicator) &&
+        Objects.equals(this.cashAdvanceIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.cashAdvanceIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator);
+    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator);
   }
 
 
@@ -476,6 +498,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     sb.append("    aggregatedAuthIndicator: ").append(toIndentedString(aggregatedAuthIndicator)).append("\n");
     sb.append("    debtRecoveryIndicator: ").append(toIndentedString(debtRecoveryIndicator)).append("\n");
     sb.append("    deferredAuthIndicator: ").append(toIndentedString(deferredAuthIndicator)).append("\n");
+    sb.append("    cashAdvanceIndicator: ").append(toIndentedString(cashAdvanceIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

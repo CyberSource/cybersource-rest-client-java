@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * VasV2TaxVoid200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class VasV2TaxVoid200Response {
   @SerializedName("id")
   private String id = null;

@@ -18,10 +18,10 @@ import Model.CreateSharedSecretKeysRequest;
 import Model.CreateSharedSecretKeysVerifiRequest;
 import Model.DeleteBulkSymmetricKeysRequest;
 import Model.InlineResponse4002;
+import Model.InlineResponse502;
 import Model.KmsV2KeysSymDeletesPost200Response;
 import Model.KmsV2KeysSymGet200Response;
 import Model.KmsV2KeysSymPost201Response;
-import Model.PtsV2PaymentsPost502Response;
 import org.junit.Test;
 import org.junit.Ignore;
 

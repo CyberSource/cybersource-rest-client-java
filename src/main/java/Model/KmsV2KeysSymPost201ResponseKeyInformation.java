@@ -28,10 +28,13 @@ import java.io.IOException;
  * key information 
  */
 @ApiModel(description = "key information ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class KmsV2KeysSymPost201ResponseKeyInformation {
   @SerializedName("organizationId")
   private String organizationId = null;
+
+  @SerializedName("externalOrganizationId")
+  private String externalOrganizationId = null;
 
   @SerializedName("referenceNumber")
   private String referenceNumber = null;
@@ -70,6 +73,24 @@ public class KmsV2KeysSymPost201ResponseKeyInformation {
 
   public void setOrganizationId(String organizationId) {
     this.organizationId = organizationId;
+  }
+
+  public KmsV2KeysSymPost201ResponseKeyInformation externalOrganizationId(String externalOrganizationId) {
+    this.externalOrganizationId = externalOrganizationId;
+    return this;
+  }
+
+   /**
+   * Payworks MerchantId for given organizationId. 
+   * @return externalOrganizationId
+  **/
+  @ApiModelProperty(value = "Payworks MerchantId for given organizationId. ")
+  public String getExternalOrganizationId() {
+    return externalOrganizationId;
+  }
+
+  public void setExternalOrganizationId(String externalOrganizationId) {
+    this.externalOrganizationId = externalOrganizationId;
   }
 
   public KmsV2KeysSymPost201ResponseKeyInformation referenceNumber(String referenceNumber) {
@@ -209,6 +230,7 @@ public class KmsV2KeysSymPost201ResponseKeyInformation {
     }
     KmsV2KeysSymPost201ResponseKeyInformation kmsV2KeysSymPost201ResponseKeyInformation = (KmsV2KeysSymPost201ResponseKeyInformation) o;
     return Objects.equals(this.organizationId, kmsV2KeysSymPost201ResponseKeyInformation.organizationId) &&
+        Objects.equals(this.externalOrganizationId, kmsV2KeysSymPost201ResponseKeyInformation.externalOrganizationId) &&
         Objects.equals(this.referenceNumber, kmsV2KeysSymPost201ResponseKeyInformation.referenceNumber) &&
         Objects.equals(this.keyId, kmsV2KeysSymPost201ResponseKeyInformation.keyId) &&
         Objects.equals(this.key, kmsV2KeysSymPost201ResponseKeyInformation.key) &&
@@ -220,7 +242,7 @@ public class KmsV2KeysSymPost201ResponseKeyInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(organizationId, referenceNumber, keyId, key, status, expirationDate, message, errorInformation);
+    return Objects.hash(organizationId, externalOrganizationId, referenceNumber, keyId, key, status, expirationDate, message, errorInformation);
   }
 
 
@@ -230,6 +252,7 @@ public class KmsV2KeysSymPost201ResponseKeyInformation {
     sb.append("class KmsV2KeysSymPost201ResponseKeyInformation {\n");
     
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    externalOrganizationId: ").append(toIndentedString(externalOrganizationId)).append("\n");
     sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
     sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");

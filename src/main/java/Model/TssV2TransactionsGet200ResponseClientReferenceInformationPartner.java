@@ -26,10 +26,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseClientReferenceInformationPartner
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-07-15T14:19:26.508+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
 public class TssV2TransactionsGet200ResponseClientReferenceInformationPartner {
   @SerializedName("solutionId")
   private String solutionId = null;
+
+  @SerializedName("thirdPartyCertificationNumber")
+  private String thirdPartyCertificationNumber = null;
 
   public TssV2TransactionsGet200ResponseClientReferenceInformationPartner solutionId(String solutionId) {
     this.solutionId = solutionId;
@@ -49,6 +52,24 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformationPartner {
     this.solutionId = solutionId;
   }
 
+  public TssV2TransactionsGet200ResponseClientReferenceInformationPartner thirdPartyCertificationNumber(String thirdPartyCertificationNumber) {
+    this.thirdPartyCertificationNumber = thirdPartyCertificationNumber;
+    return this;
+  }
+
+   /**
+   * Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization, Authorization Reversal, Capture, Credit, Incremental Authorization, and Void** Optional field.  #### PIN debit Required field for PIN debit credit, PIN debit purchase, or PIN debit reversal request. 
+   * @return thirdPartyCertificationNumber
+  **/
+  @ApiModelProperty(value = "Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization, Authorization Reversal, Capture, Credit, Incremental Authorization, and Void** Optional field.  #### PIN debit Required field for PIN debit credit, PIN debit purchase, or PIN debit reversal request. ")
+  public String getThirdPartyCertificationNumber() {
+    return thirdPartyCertificationNumber;
+  }
+
+  public void setThirdPartyCertificationNumber(String thirdPartyCertificationNumber) {
+    this.thirdPartyCertificationNumber = thirdPartyCertificationNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +80,13 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformationPartner {
       return false;
     }
     TssV2TransactionsGet200ResponseClientReferenceInformationPartner tssV2TransactionsGet200ResponseClientReferenceInformationPartner = (TssV2TransactionsGet200ResponseClientReferenceInformationPartner) o;
-    return Objects.equals(this.solutionId, tssV2TransactionsGet200ResponseClientReferenceInformationPartner.solutionId);
+    return Objects.equals(this.solutionId, tssV2TransactionsGet200ResponseClientReferenceInformationPartner.solutionId) &&
+        Objects.equals(this.thirdPartyCertificationNumber, tssV2TransactionsGet200ResponseClientReferenceInformationPartner.thirdPartyCertificationNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(solutionId);
+    return Objects.hash(solutionId, thirdPartyCertificationNumber);
   }
 
 
@@ -74,6 +96,7 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformationPartner {
     sb.append("class TssV2TransactionsGet200ResponseClientReferenceInformationPartner {\n");
     
     sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
+    sb.append("    thirdPartyCertificationNumber: ").append(toIndentedString(thirdPartyCertificationNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
