@@ -26,13 +26,22 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-10-17T14:26:30.480+05:30")
 public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation {
   @SerializedName("riskAnalysisExemptionResult")
   private String riskAnalysisExemptionResult = null;
 
   @SerializedName("trustedMerchantExemptionResult")
   private String trustedMerchantExemptionResult = null;
+
+  @SerializedName("lowValueExemptionResult")
+  private String lowValueExemptionResult = null;
+
+  @SerializedName("secureCorporatePaymentResult")
+  private String secureCorporatePaymentResult = null;
+
+  @SerializedName("transactionRiskAnalysisExemptionResult")
+  private String transactionRiskAnalysisExemptionResult = null;
 
   public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation riskAnalysisExemptionResult(String riskAnalysisExemptionResult) {
     this.riskAnalysisExemptionResult = riskAnalysisExemptionResult;
@@ -70,6 +79,60 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrong
     this.trustedMerchantExemptionResult = trustedMerchantExemptionResult;
   }
 
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation lowValueExemptionResult(String lowValueExemptionResult) {
+    this.lowValueExemptionResult = lowValueExemptionResult;
+    return this;
+  }
+
+   /**
+   * This will be the value returned by Visanet when low value exemption has been requested.  Valid values: Visa Platform Connect - &#x60;2&#x60; Low value exemption validated/honored - &#x60;3&#x60; Low value exemption failed validation/not honored 
+   * @return lowValueExemptionResult
+  **/
+  @ApiModelProperty(value = "This will be the value returned by Visanet when low value exemption has been requested.  Valid values: Visa Platform Connect - `2` Low value exemption validated/honored - `3` Low value exemption failed validation/not honored ")
+  public String getLowValueExemptionResult() {
+    return lowValueExemptionResult;
+  }
+
+  public void setLowValueExemptionResult(String lowValueExemptionResult) {
+    this.lowValueExemptionResult = lowValueExemptionResult;
+  }
+
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation secureCorporatePaymentResult(String secureCorporatePaymentResult) {
+    this.secureCorporatePaymentResult = secureCorporatePaymentResult;
+    return this;
+  }
+
+   /**
+   * This will be the value returned by Visanet when secure corporate payment (scp) exemption has been requested.  Valid values: Visa Platform Connect - &#x60;2&#x60; Secure corporate payment exemption validated/honored - &#x60;3&#x60; Secure corporate payment exemption failed validation/not honored 
+   * @return secureCorporatePaymentResult
+  **/
+  @ApiModelProperty(value = "This will be the value returned by Visanet when secure corporate payment (scp) exemption has been requested.  Valid values: Visa Platform Connect - `2` Secure corporate payment exemption validated/honored - `3` Secure corporate payment exemption failed validation/not honored ")
+  public String getSecureCorporatePaymentResult() {
+    return secureCorporatePaymentResult;
+  }
+
+  public void setSecureCorporatePaymentResult(String secureCorporatePaymentResult) {
+    this.secureCorporatePaymentResult = secureCorporatePaymentResult;
+  }
+
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation transactionRiskAnalysisExemptionResult(String transactionRiskAnalysisExemptionResult) {
+    this.transactionRiskAnalysisExemptionResult = transactionRiskAnalysisExemptionResult;
+    return this;
+  }
+
+   /**
+   * This will be the value returned by Visanet when transaction risk analysis (TRA) exemption has been requested.    Valid values: Visa Platform Connect   - &#x60;2&#x60; transaction risk analysis (TRA) exemption validated/honored   - &#x60;3&#x60; transaction risk analysis (TRA) exemption failed validation/not honored 
+   * @return transactionRiskAnalysisExemptionResult
+  **/
+  @ApiModelProperty(value = "This will be the value returned by Visanet when transaction risk analysis (TRA) exemption has been requested.    Valid values: Visa Platform Connect   - `2` transaction risk analysis (TRA) exemption validated/honored   - `3` transaction risk analysis (TRA) exemption failed validation/not honored ")
+  public String getTransactionRiskAnalysisExemptionResult() {
+    return transactionRiskAnalysisExemptionResult;
+  }
+
+  public void setTransactionRiskAnalysisExemptionResult(String transactionRiskAnalysisExemptionResult) {
+    this.transactionRiskAnalysisExemptionResult = transactionRiskAnalysisExemptionResult;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +144,15 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrong
     }
     PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation ptsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation = (PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation) o;
     return Objects.equals(this.riskAnalysisExemptionResult, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation.riskAnalysisExemptionResult) &&
-        Objects.equals(this.trustedMerchantExemptionResult, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation.trustedMerchantExemptionResult);
+        Objects.equals(this.trustedMerchantExemptionResult, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation.trustedMerchantExemptionResult) &&
+        Objects.equals(this.lowValueExemptionResult, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation.lowValueExemptionResult) &&
+        Objects.equals(this.secureCorporatePaymentResult, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation.secureCorporatePaymentResult) &&
+        Objects.equals(this.transactionRiskAnalysisExemptionResult, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation.transactionRiskAnalysisExemptionResult);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(riskAnalysisExemptionResult, trustedMerchantExemptionResult);
+    return Objects.hash(riskAnalysisExemptionResult, trustedMerchantExemptionResult, lowValueExemptionResult, secureCorporatePaymentResult, transactionRiskAnalysisExemptionResult);
   }
 
 
@@ -97,6 +163,9 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrong
     
     sb.append("    riskAnalysisExemptionResult: ").append(toIndentedString(riskAnalysisExemptionResult)).append("\n");
     sb.append("    trustedMerchantExemptionResult: ").append(toIndentedString(trustedMerchantExemptionResult)).append("\n");
+    sb.append("    lowValueExemptionResult: ").append(toIndentedString(lowValueExemptionResult)).append("\n");
+    sb.append("    secureCorporatePaymentResult: ").append(toIndentedString(secureCorporatePaymentResult)).append("\n");
+    sb.append("    transactionRiskAnalysisExemptionResult: ").append(toIndentedString(transactionRiskAnalysisExemptionResult)).append("\n");
     sb.append("}");
     return sb.toString();
   }
