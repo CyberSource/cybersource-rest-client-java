@@ -105,6 +105,13 @@ To Use OAuth, use OAuth enabled URLs
 
 API credentials are different for each environment, so be sure to switch to the appropriate credentials when switching environments.
 
+## Logging
+[![Generic badge](https://img.shields.io/badge/LOGGING-NEW-GREEN.svg)](https://shields.io/)
+
+Logging framework has been introduced in the SDK which makes use of log4j2 and standardizes the logging so that it can be integrated with the logging in the client application.
+
+More information about this new logging framework can be found in this file : [Logging.md](Logging.md)
+
 ## License
 
 This repository is distributed under a proprietary license. See the provided [`LICENSE.txt`](/LICENSE.txt) file.

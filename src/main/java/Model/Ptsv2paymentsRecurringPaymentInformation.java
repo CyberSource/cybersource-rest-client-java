@@ -27,7 +27,7 @@ import java.io.IOException;
  * This object contains recurring payment information.
  */
 @ApiModel(description = "This object contains recurring payment information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-10-17T14:26:30.480+05:30")
 public class Ptsv2paymentsRecurringPaymentInformation {
   @SerializedName("endDate")
   private String endDate = null;
@@ -43,6 +43,24 @@ public class Ptsv2paymentsRecurringPaymentInformation {
 
   @SerializedName("sequenceNumber")
   private Integer sequenceNumber = null;
+
+  @SerializedName("type")
+  private String type = null;
+
+  @SerializedName("occurrence")
+  private String occurrence = null;
+
+  @SerializedName("validationIndicator")
+  private String validationIndicator = null;
+
+  @SerializedName("amountType")
+  private String amountType = null;
+
+  @SerializedName("maximumAmount")
+  private String maximumAmount = null;
+
+  @SerializedName("referenceNumber")
+  private String referenceNumber = null;
 
   public Ptsv2paymentsRecurringPaymentInformation endDate(String endDate) {
     this.endDate = endDate;
@@ -134,6 +152,114 @@ public class Ptsv2paymentsRecurringPaymentInformation {
     this.sequenceNumber = sequenceNumber;
   }
 
+  public Ptsv2paymentsRecurringPaymentInformation type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * This contains the type of recurring payment. Valid Values : 1 - Registration/First transaction 2 - Subsequent transaction 3 - Modification 4 - Cancellation 
+   * @return type
+  **/
+  @ApiModelProperty(value = "This contains the type of recurring payment. Valid Values : 1 - Registration/First transaction 2 - Subsequent transaction 3 - Modification 4 - Cancellation ")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public Ptsv2paymentsRecurringPaymentInformation occurrence(String occurrence) {
+    this.occurrence = occurrence;
+    return this;
+  }
+
+   /**
+   * This value indicates how often a recurring payment occurs. Valid Values : • 01 (Daily) • 02 (Twice weekly) • 03 (Weekly) • 04 (Ten days) • 05 (Fortnightly) • 06 (Monthly) • 07 (Every two months) • 08 (Trimester) • 09 (Quarterly) • 10 (Twice yearly) • 11 (Annually) • 12 (Unscheduled) 
+   * @return occurrence
+  **/
+  @ApiModelProperty(value = "This value indicates how often a recurring payment occurs. Valid Values : • 01 (Daily) • 02 (Twice weekly) • 03 (Weekly) • 04 (Ten days) • 05 (Fortnightly) • 06 (Monthly) • 07 (Every two months) • 08 (Trimester) • 09 (Quarterly) • 10 (Twice yearly) • 11 (Annually) • 12 (Unscheduled) ")
+  public String getOccurrence() {
+    return occurrence;
+  }
+
+  public void setOccurrence(String occurrence) {
+    this.occurrence = occurrence;
+  }
+
+  public Ptsv2paymentsRecurringPaymentInformation validationIndicator(String validationIndicator) {
+    this.validationIndicator = validationIndicator;
+    return this;
+  }
+
+   /**
+   * This tag will contain a value that indicates whether or not the recurring payment transaction has been validated. Valid values : 0- Not validated 1- Validated 
+   * @return validationIndicator
+  **/
+  @ApiModelProperty(value = "This tag will contain a value that indicates whether or not the recurring payment transaction has been validated. Valid values : 0- Not validated 1- Validated ")
+  public String getValidationIndicator() {
+    return validationIndicator;
+  }
+
+  public void setValidationIndicator(String validationIndicator) {
+    this.validationIndicator = validationIndicator;
+  }
+
+  public Ptsv2paymentsRecurringPaymentInformation amountType(String amountType) {
+    this.amountType = amountType;
+    return this;
+  }
+
+   /**
+   * Indicates recurring amount type agreed by the cardholder Valid Values : 1- Fixed amount recurring payment 2- Recurring payment with maximum amount 
+   * @return amountType
+  **/
+  @ApiModelProperty(value = "Indicates recurring amount type agreed by the cardholder Valid Values : 1- Fixed amount recurring payment 2- Recurring payment with maximum amount ")
+  public String getAmountType() {
+    return amountType;
+  }
+
+  public void setAmountType(String amountType) {
+    this.amountType = amountType;
+  }
+
+  public Ptsv2paymentsRecurringPaymentInformation maximumAmount(String maximumAmount) {
+    this.maximumAmount = maximumAmount;
+    return this;
+  }
+
+   /**
+   * This API field will contain the maximum amount agreed to by the cardholder. The currency of this amount will be specified in Field 49—Currency Code,Transaction. 
+   * @return maximumAmount
+  **/
+  @ApiModelProperty(value = "This API field will contain the maximum amount agreed to by the cardholder. The currency of this amount will be specified in Field 49—Currency Code,Transaction. ")
+  public String getMaximumAmount() {
+    return maximumAmount;
+  }
+
+  public void setMaximumAmount(String maximumAmount) {
+    this.maximumAmount = maximumAmount;
+  }
+
+  public Ptsv2paymentsRecurringPaymentInformation referenceNumber(String referenceNumber) {
+    this.referenceNumber = referenceNumber;
+    return this;
+  }
+
+   /**
+   * This will contain a unique reference number for the recurring payment transaction. 
+   * @return referenceNumber
+  **/
+  @ApiModelProperty(value = "This will contain a unique reference number for the recurring payment transaction. ")
+  public String getReferenceNumber() {
+    return referenceNumber;
+  }
+
+  public void setReferenceNumber(String referenceNumber) {
+    this.referenceNumber = referenceNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,12 +274,18 @@ public class Ptsv2paymentsRecurringPaymentInformation {
         Objects.equals(this.frequency, ptsv2paymentsRecurringPaymentInformation.frequency) &&
         Objects.equals(this.numberOfPayments, ptsv2paymentsRecurringPaymentInformation.numberOfPayments) &&
         Objects.equals(this.originalPurchaseDate, ptsv2paymentsRecurringPaymentInformation.originalPurchaseDate) &&
-        Objects.equals(this.sequenceNumber, ptsv2paymentsRecurringPaymentInformation.sequenceNumber);
+        Objects.equals(this.sequenceNumber, ptsv2paymentsRecurringPaymentInformation.sequenceNumber) &&
+        Objects.equals(this.type, ptsv2paymentsRecurringPaymentInformation.type) &&
+        Objects.equals(this.occurrence, ptsv2paymentsRecurringPaymentInformation.occurrence) &&
+        Objects.equals(this.validationIndicator, ptsv2paymentsRecurringPaymentInformation.validationIndicator) &&
+        Objects.equals(this.amountType, ptsv2paymentsRecurringPaymentInformation.amountType) &&
+        Objects.equals(this.maximumAmount, ptsv2paymentsRecurringPaymentInformation.maximumAmount) &&
+        Objects.equals(this.referenceNumber, ptsv2paymentsRecurringPaymentInformation.referenceNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(endDate, frequency, numberOfPayments, originalPurchaseDate, sequenceNumber);
+    return Objects.hash(endDate, frequency, numberOfPayments, originalPurchaseDate, sequenceNumber, type, occurrence, validationIndicator, amountType, maximumAmount, referenceNumber);
   }
 
 
@@ -167,6 +299,12 @@ public class Ptsv2paymentsRecurringPaymentInformation {
     sb.append("    numberOfPayments: ").append(toIndentedString(numberOfPayments)).append("\n");
     sb.append("    originalPurchaseDate: ").append(toIndentedString(originalPurchaseDate)).append("\n");
     sb.append("    sequenceNumber: ").append(toIndentedString(sequenceNumber)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    occurrence: ").append(toIndentedString(occurrence)).append("\n");
+    sb.append("    validationIndicator: ").append(toIndentedString(validationIndicator)).append("\n");
+    sb.append("    amountType: ").append(toIndentedString(amountType)).append("\n");
+    sb.append("    maximumAmount: ").append(toIndentedString(maximumAmount)).append("\n");
+    sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

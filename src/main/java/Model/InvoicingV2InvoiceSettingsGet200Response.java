@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * InvoicingV2InvoiceSettingsGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-11T23:41:38.291+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-10-17T14:26:30.480+05:30")
 public class InvoicingV2InvoiceSettingsGet200Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
