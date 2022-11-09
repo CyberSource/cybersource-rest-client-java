@@ -20,7 +20,7 @@ Have to be replaced by the following values:
 where **`enableLog, logDirectory, logFilename, logMaximumSize`** are variables to be provided
 
 
-# Log4j Configuration
+## Log4j Configuration
 
 ### Sample log4j.xml File
 
