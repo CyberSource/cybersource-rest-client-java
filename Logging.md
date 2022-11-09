@@ -6,21 +6,18 @@ Logging framework has been introduced in the SDK which makes use of log4j2 and s
 ## Setup
 In order to leverage the new logging framework, the following configuration settings may be added to the merchant configuration as part of LogConfiguration:
 
-enableLog
-logDirectory
-logFilename
-logMaximumSize
+* enableLog
+* logDirectory
+* logFilename
+* logMaximumSize
 
-have to be replaced by the following values:
-// Logging to be enabled or not.
-props.setProperty("enableLog", "true");
-// Log directory Path
-props.setProperty("logDirectory", "logs");
-props.setProperty("logFilename", "cybs");
-// Log file size in KB
-props.setProperty("logMaximumSize", "5M");
+Have to be replaced by the following values:
+* props.setProperty("enableLog", "true"); // Logging to be enabled or not.
+* props.setProperty("logDirectory", "logs"); // Log directory Path
+* props.setProperty("logFilename", "cybs");
+* props.setProperty("logMaximumSize", "5M"); // Log file size in KB
 
-where, enableLog, logDirectory, logFilename, logMaximumSize are variables to be provided
+where **`enableLog, logDirectory, logFilename, logMaximumSize`** are variables to be provided
 
 
 # Log4j Configuration
@@ -92,9 +89,12 @@ where, enableLog, logDirectory, logFilename, logMaximumSize are variables to be 
 
 ### Important Notes
 * To enable masking of sensitive data i.e. sensitive data in the request/response should be hidden/masked, then  replace `%m` with `%maskedMessage` in the patterns below -->
-   ```xml <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n"/> ```
+  
+  <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n"/>
+  
                                     replace with
-   ```xml  <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n"/> ```
+  
+  <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n"/>
 
 
 * Sensitive data fields are listed below:
