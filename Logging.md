@@ -44,13 +44,13 @@ where, enableLog, logDirectory, logFilename, logMaximumSize are variables to be 
 	</Properties>
 	<Appenders>
 		<Console name="LogToConsole" target="SYSTEM_OUT">
-			<PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n"/>
+			<PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n"/>
 		</Console>
 		<RollingFile name="RollingFile"
 			fileName="${log-path}/${logFileName}.log"
 			filePattern="${log-path}/${logFileName}-%d{yyyy-MM-dd}-%i.log">
 			<PatternLayout>
-				<pattern>%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n</pattern>
+				<pattern>%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n</pattern>
 			</PatternLayout>
 			<Policies>
 				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
@@ -91,23 +91,23 @@ where, enableLog, logDirectory, logFilename, logMaximumSize are variables to be 
 ```
 
 ### Important Notes
-To enable masking of sensitive data i.e. sensitive data in the request/response should be hidden/masked, then  replace `%m` with `%maskedMessage` in the patterns below -->
-<PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n"/>
-replace with
-<PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n"/>
+* To enable masking of sensitive data i.e. sensitive data in the request/response should be hidden/masked, then  replace `%m` with `%maskedMessage` in the patterns below -->
+  * <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n"/> 
+                                    replace with
+    <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n"/>
 
 
 * Sensitive data fields are listed below:
-Card Security Code
-Card Number
-Any field with number in the name
-Card Expiration Month
-Card Expiration Year
-Account
-Routing Number
-Email
-First Name & Last Name
-Phone Number
-Type
-Token
-Signature
+	* Card Security Code
+	* Card Number
+	* Any field with number in the name
+	* Card Expiration Month
+	* Card Expiration Year
+	* Account
+	* Routing Number
+	* Email
+	* First Name & Last Name
+	* Phone Number
+	* Type
+	* Token
+	* Signature
