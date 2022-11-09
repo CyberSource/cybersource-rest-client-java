@@ -4,20 +4,9 @@
 Logging framework has been introduced in the SDK which makes use of log4j2 and standardizes the logging so that it can be integrated with the logging in the client application.
 
 ## Setup
-In order to leverage the new logging framework, the following configuration settings may be added to the merchant configuration as part of LogConfiguration:
+In order to leverage the new logging framework, all logging configuration settings are entrusted to the log4j2 framework. For this, a new file `log4j.xml` has to be added to contain the configuration properties. A sample file has been provided below.
 
-* enableLog
-* logDirectory
-* logFilename
-* logMaximumSize
-
-Have to be replaced by the following values:
-* props.setProperty("enableLog", "true"); // Logging to be enabled or not.
-* props.setProperty("logDirectory", "logs"); // Log directory Path
-* props.setProperty("logFilename", "cybs");
-* props.setProperty("logMaximumSize", "5M"); // Log file size in KB
-
-where **`enableLog, logDirectory, logFilename, logMaximumSize`** are variables to be provided
+For more detailed information on how to change this configuration file, refer to [Apache Log4j2 Configuration](https://logging.apache.org/log4j/2.x/manual/configuration.html).
 
 
 ## Log4j Configuration
@@ -88,10 +77,13 @@ where **`enableLog, logDirectory, logFilename, logMaximumSize`** are variables t
 ```
 
 ### Important Notes
-* To enable masking of sensitive data i.e. sensitive data in the request/response should be hidden/masked, then  replace `%m` with `%maskedMessage` in the patterns below -->
+* To enable masking of sensitive data i.e. sensitive data in the request/response should be hidden/masked, then replace `%m` with `%maskedMessage` in the pattern below:
+
   ```xml
   <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n"/>
-                                    replace with
+  ```
+  must be replaced with
+  ```xml
   <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n"/>
   ```
 
