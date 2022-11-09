@@ -89,12 +89,11 @@ where **`enableLog, logDirectory, logFilename, logMaximumSize`** are variables t
 
 ### Important Notes
 * To enable masking of sensitive data i.e. sensitive data in the request/response should be hidden/masked, then  replace `%m` with `%maskedMessage` in the patterns below -->
-  
+  ```xml
   <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %m%n"/>
-  
                                     replace with
-  
   <PatternLayout pattern="%d{MM/dd/yy HH:mm:ss,SS:} [%t] %5p (%C{1}:%-1L) - %maskedMessage%n"/>
+  ```
 
 
 * Sensitive data fields are listed below:
