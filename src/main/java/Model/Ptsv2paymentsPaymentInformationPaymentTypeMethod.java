@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationPaymentTypeMethod
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-10-17T14:26:30.480+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
 public class Ptsv2paymentsPaymentInformationPaymentTypeMethod {
   @SerializedName("name")
   private String name = null;
@@ -37,10 +37,10 @@ public class Ptsv2paymentsPaymentInformationPaymentTypeMethod {
   }
 
    /**
-   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data 
+   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal, 7Eleven, alfamart, etc  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data 
    * @return name
   **/
-  @ApiModelProperty(value = "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data ")
+  @ApiModelProperty(value = "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal, 7Eleven, alfamart, etc  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data ")
   public String getName() {
     return name;
   }

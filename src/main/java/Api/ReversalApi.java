@@ -217,7 +217,7 @@ public class ReversalApi {
         Object localVarPostBody = mitReversalRequest;
         
         // create path and map variables
-        String localVarPath = "/pts/v2/reversals/";
+        String localVarPath = "/pts/v2/reversals";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

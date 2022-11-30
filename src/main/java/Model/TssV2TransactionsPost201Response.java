@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-10-17T14:26:30.480+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
 public class TssV2TransactionsPost201Response {
   @SerializedName("searchId")
   private String searchId = null;
@@ -186,10 +186,10 @@ public class TssV2TransactionsPost201Response {
   }
 
    /**
-   * Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2000. 
+   * Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500. 
    * @return limit
   **/
-  @ApiModelProperty(value = "Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2000. ")
+  @ApiModelProperty(value = "Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500. ")
   public Integer getLimit() {
     return limit;
   }

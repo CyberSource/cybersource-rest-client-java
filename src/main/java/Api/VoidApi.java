@@ -79,7 +79,7 @@ public class VoidApi {
         Object localVarPostBody = mitVoidRequest;
         
         // create path and map variables
-        String localVarPath = "/pts/v2/voids/";
+        String localVarPath = "/pts/v2/voids";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

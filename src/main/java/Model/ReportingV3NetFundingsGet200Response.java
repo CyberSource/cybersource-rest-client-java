@@ -31,7 +31,7 @@ import org.joda.time.DateTime;
 /**
  * ReportingV3NetFundingsGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-10-17T14:26:30.480+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
 public class ReportingV3NetFundingsGet200Response {
   @SerializedName("startTime")
   private DateTime startTime = null;
