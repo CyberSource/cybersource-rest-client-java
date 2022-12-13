@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * PayerAuthSetupRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-10-17T14:26:30.480+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
 public class PayerAuthSetupRequest {
   @SerializedName("clientReferenceInformation")
   private Riskv1decisionsClientReferenceInformation clientReferenceInformation = null;

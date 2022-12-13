@@ -17,10 +17,13 @@ import Invokers.ApiException;
 import Model.CreateP12KeysRequest;
 import Model.DeleteBulkP12KeysRequest;
 import Model.InlineResponse4002;
+import Model.InlineResponse4003;
+import Model.InlineResponse500;
 import Model.InlineResponse502;
 import Model.KmsV2KeysAsymDeletesPost200Response;
 import Model.KmsV2KeysAsymGet200Response;
 import Model.KmsV2KeysAsymPost201Response;
+import Model.UpdateAsymKeysRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -82,6 +85,23 @@ public class AsymmetricKeyManagementApiTest {
     public void getP12KeyDetailsTest() throws ApiException {
         String keyId = null;
         KmsV2KeysAsymGet200Response response = api.getP12KeyDetails(keyId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Activate or De-activate Asymmetric Key
+     *
+     * Activate or De-activate Asymmetric Key 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateAsymKeyTest() throws ApiException {
+        String keyId = null;
+        UpdateAsymKeysRequest updateAsymKeysRequest = null;
+        Object response = api.updateAsymKey(keyId, updateAsymKeysRequest);
 
         // TODO: test validations
     }

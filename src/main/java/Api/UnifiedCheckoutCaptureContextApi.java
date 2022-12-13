@@ -29,7 +29,7 @@ import java.io.InputStream;
 
 
 import Model.GenerateUnifiedCheckoutCaptureContextRequest;
-import Model.InlineResponse4003;
+import Model.InlineResponse4004;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

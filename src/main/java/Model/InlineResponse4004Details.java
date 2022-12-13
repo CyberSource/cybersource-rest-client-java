@@ -24,17 +24,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse4003Details
+ * InlineResponse4004Details
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-10-17T14:26:30.480+05:30")
-public class InlineResponse4003Details {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+public class InlineResponse4004Details {
   @SerializedName("location")
   private String location = null;
 
   @SerializedName("message")
   private String message = null;
 
-  public InlineResponse4003Details location(String location) {
+  public InlineResponse4004Details location(String location) {
     this.location = location;
     return this;
   }
@@ -52,7 +52,7 @@ public class InlineResponse4003Details {
     this.location = location;
   }
 
-  public InlineResponse4003Details message(String message) {
+  public InlineResponse4004Details message(String message) {
     this.message = message;
     return this;
   }
@@ -79,9 +79,9 @@ public class InlineResponse4003Details {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse4003Details inlineResponse4003Details = (InlineResponse4003Details) o;
-    return Objects.equals(this.location, inlineResponse4003Details.location) &&
-        Objects.equals(this.message, inlineResponse4003Details.message);
+    InlineResponse4004Details inlineResponse4004Details = (InlineResponse4004Details) o;
+    return Objects.equals(this.location, inlineResponse4004Details.location) &&
+        Objects.equals(this.message, inlineResponse4004Details.message);
   }
 
   @Override
@@ -93,7 +93,7 @@ public class InlineResponse4003Details {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse4003Details {\n");
+    sb.append("class InlineResponse4004Details {\n");
     
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

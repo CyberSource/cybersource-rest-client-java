@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-10-17T14:26:30.480+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
 public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
@@ -628,10 +628,10 @@ public class Ptsv2paymentsPointOfSaleInformation {
   }
 
    /**
-   * #### Visa Platform Connect Mastercard service code that is included in the track data. You can extract the service code from the track data and provide it in this API field. This field is supported only for Mastercard on Visa Platform Connect. 
+   * #### Visa Platform Connect Mastercard service code that is included in the track data.  This field is supported only for Mastercard on Visa Platform Connect.   You can extract the service code from the track data and provide it in this API field.   When not provided it will be extracted from:   - Track2Data for MSR transactions   - EMV tag 5F30 for EMV transactions  To enable this feature please call support. 
    * @return serviceCode
   **/
-  @ApiModelProperty(value = "#### Visa Platform Connect Mastercard service code that is included in the track data. You can extract the service code from the track data and provide it in this API field. This field is supported only for Mastercard on Visa Platform Connect. ")
+  @ApiModelProperty(value = "#### Visa Platform Connect Mastercard service code that is included in the track data.  This field is supported only for Mastercard on Visa Platform Connect.   You can extract the service code from the track data and provide it in this API field.   When not provided it will be extracted from:   - Track2Data for MSR transactions   - EMV tag 5F30 for EMV transactions  To enable this feature please call support. ")
   public String getServiceCode() {
     return serviceCode;
   }

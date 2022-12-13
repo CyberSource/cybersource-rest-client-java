@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createP12Keys**](AsymmetricKeyManagementApi.md#createP12Keys) | **POST** /kms/v2/keys-asym | Create one or more PKCS12 keys
 [**deleteBulkP12Keys**](AsymmetricKeyManagementApi.md#deleteBulkP12Keys) | **POST** /kms/v2/keys-asym/deletes | Delete one or more PKCS12 keys
 [**getP12KeyDetails**](AsymmetricKeyManagementApi.md#getP12KeyDetails) | **GET** /kms/v2/keys-asym/{keyId} | Retrieves PKCS12 key details
+[**updateAsymKey**](AsymmetricKeyManagementApi.md#updateAsymKey) | **PATCH** /kms/v2/keys-asym/{keyId} | Activate or De-activate Asymmetric Key
 
 
 <a name="createP12Keys"></a>
@@ -134,6 +135,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**KmsV2KeysAsymGet200Response**](KmsV2KeysAsymGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+<a name="updateAsymKey"></a>
+# **updateAsymKey**
+> Object updateAsymKey(keyId, updateAsymKeysRequest)
+
+Activate or De-activate Asymmetric Key
+
+Activate or De-activate Asymmetric Key 
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.AsymmetricKeyManagementApi;
+
+
+AsymmetricKeyManagementApi apiInstance = new AsymmetricKeyManagementApi();
+String keyId = "keyId_example"; // String | Key ID. 
+UpdateAsymKeysRequest updateAsymKeysRequest = new UpdateAsymKeysRequest(); // UpdateAsymKeysRequest | 
+try {
+    Object result = apiInstance.updateAsymKey(keyId, updateAsymKeysRequest);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AsymmetricKeyManagementApi#updateAsymKey");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **keyId** | **String**| Key ID.  |
+ **updateAsymKeysRequest** | [**UpdateAsymKeysRequest**](UpdateAsymKeysRequest.md)|  |
+
+### Return type
+
+**Object**
 
 ### Authorization
 
