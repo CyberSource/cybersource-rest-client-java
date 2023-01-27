@@ -15,16 +15,16 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
-import Model.Ptsv2paymentsPaymentInformationEWallet;
 import Model.Ptsv2paymentsPaymentInformationFluidData;
 import Model.Ptsv2paymentsPaymentInformationInstrumentIdentifier;
 import Model.Ptsv2paymentsPaymentInformationLegacyToken;
 import Model.Ptsv2paymentsPaymentInformationPaymentInstrument;
-import Model.Ptsv2paymentsPaymentInformationPaymentType;
 import Model.Ptsv2paymentsPaymentInformationShippingAddress;
 import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
 import Model.Ptsv2paymentsidrefundsPaymentInformationBank;
 import Model.Ptsv2paymentsidrefundsPaymentInformationCard;
+import Model.Ptsv2paymentsidrefundsPaymentInformationEWallet;
+import Model.Ptsv2paymentsidrefundsPaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,7 +37,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidrefundsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsidrefundsPaymentInformation {
   @SerializedName("card")
   private Ptsv2paymentsidrefundsPaymentInformationCard card = null;
@@ -67,10 +67,10 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
   private Ptsv2paymentsPaymentInformationLegacyToken legacyToken = null;
 
   @SerializedName("paymentType")
-  private Ptsv2paymentsPaymentInformationPaymentType paymentType = null;
+  private Ptsv2paymentsidrefundsPaymentInformationPaymentType paymentType = null;
 
   @SerializedName("eWallet")
-  private Ptsv2paymentsPaymentInformationEWallet eWallet = null;
+  private Ptsv2paymentsidrefundsPaymentInformationEWallet eWallet = null;
 
   public Ptsv2paymentsidrefundsPaymentInformation card(Ptsv2paymentsidrefundsPaymentInformationCard card) {
     this.card = card;
@@ -234,7 +234,7 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     this.legacyToken = legacyToken;
   }
 
-  public Ptsv2paymentsidrefundsPaymentInformation paymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
+  public Ptsv2paymentsidrefundsPaymentInformation paymentType(Ptsv2paymentsidrefundsPaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
     return this;
   }
@@ -244,15 +244,15 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
    * @return paymentType
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsPaymentInformationPaymentType getPaymentType() {
+  public Ptsv2paymentsidrefundsPaymentInformationPaymentType getPaymentType() {
     return paymentType;
   }
 
-  public void setPaymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
+  public void setPaymentType(Ptsv2paymentsidrefundsPaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
   }
 
-  public Ptsv2paymentsidrefundsPaymentInformation eWallet(Ptsv2paymentsPaymentInformationEWallet eWallet) {
+  public Ptsv2paymentsidrefundsPaymentInformation eWallet(Ptsv2paymentsidrefundsPaymentInformationEWallet eWallet) {
     this.eWallet = eWallet;
     return this;
   }
@@ -262,11 +262,11 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
    * @return eWallet
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsPaymentInformationEWallet getEWallet() {
+  public Ptsv2paymentsidrefundsPaymentInformationEWallet getEWallet() {
     return eWallet;
   }
 
-  public void setEWallet(Ptsv2paymentsPaymentInformationEWallet eWallet) {
+  public void setEWallet(Ptsv2paymentsidrefundsPaymentInformationEWallet eWallet) {
     this.eWallet = eWallet;
   }
 

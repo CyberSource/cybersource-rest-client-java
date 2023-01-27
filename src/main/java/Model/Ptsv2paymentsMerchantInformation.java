@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsMerchantInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsMerchantInformation {
   @SerializedName("merchantDescriptor")
   private Ptsv2paymentsMerchantInformationMerchantDescriptor merchantDescriptor = null;
@@ -68,6 +68,9 @@ public class Ptsv2paymentsMerchantInformation {
 
   @SerializedName("failureUrl")
   private String failureUrl = null;
+
+  @SerializedName("returnUrl")
+  private String returnUrl = null;
 
   @SerializedName("merchantName")
   private String merchantName = null;
@@ -308,6 +311,24 @@ public class Ptsv2paymentsMerchantInformation {
     this.failureUrl = failureUrl;
   }
 
+  public Ptsv2paymentsMerchantInformation returnUrl(String returnUrl) {
+    this.returnUrl = returnUrl;
+    return this;
+  }
+
+   /**
+   * URL for displaying payment results to the consumer (notifications) after the transaction is processed. Usually this URL belongs to merchant and its behavior is defined by merchant 
+   * @return returnUrl
+  **/
+  @ApiModelProperty(value = "URL for displaying payment results to the consumer (notifications) after the transaction is processed. Usually this URL belongs to merchant and its behavior is defined by merchant ")
+  public String getReturnUrl() {
+    return returnUrl;
+  }
+
+  public void setReturnUrl(String returnUrl) {
+    this.returnUrl = returnUrl;
+  }
+
   public Ptsv2paymentsMerchantInformation merchantName(String merchantName) {
     this.merchantName = merchantName;
     return this;
@@ -349,12 +370,13 @@ public class Ptsv2paymentsMerchantInformation {
         Objects.equals(this.cancelUrl, ptsv2paymentsMerchantInformation.cancelUrl) &&
         Objects.equals(this.successUrl, ptsv2paymentsMerchantInformation.successUrl) &&
         Objects.equals(this.failureUrl, ptsv2paymentsMerchantInformation.failureUrl) &&
+        Objects.equals(this.returnUrl, ptsv2paymentsMerchantInformation.returnUrl) &&
         Objects.equals(this.merchantName, ptsv2paymentsMerchantInformation.merchantName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantDescriptor, domainName, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor, cancelUrl, successUrl, failureUrl, merchantName);
+    return Objects.hash(merchantDescriptor, domainName, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor, cancelUrl, successUrl, failureUrl, returnUrl, merchantName);
   }
 
 
@@ -376,6 +398,7 @@ public class Ptsv2paymentsMerchantInformation {
     sb.append("    cancelUrl: ").append(toIndentedString(cancelUrl)).append("\n");
     sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
     sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
+    sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
     sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
     sb.append("}");
     return sb.toString();

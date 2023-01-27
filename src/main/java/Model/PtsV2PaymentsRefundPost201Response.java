@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation;
-import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
+import Model.PtsV2PaymentsRefundPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseLinks;
 import Model.PtsV2PaymentsRefundPost201ResponseOrderInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseProcessorInformation;
@@ -32,7 +32,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsRefundPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class PtsV2PaymentsRefundPost201Response {
   @SerializedName("_links")
   private PtsV2PaymentsRefundPost201ResponseLinks links = null;
@@ -50,7 +50,7 @@ public class PtsV2PaymentsRefundPost201Response {
   private String reconciliationId = null;
 
   @SerializedName("clientReferenceInformation")
-  private PtsV2PaymentsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
+  private PtsV2PaymentsRefundPost201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("refundAmountDetails")
   private PtsV2PaymentsRefundPost201ResponseRefundAmountDetails refundAmountDetails = null;
@@ -154,7 +154,7 @@ public class PtsV2PaymentsRefundPost201Response {
     this.reconciliationId = reconciliationId;
   }
 
-  public PtsV2PaymentsRefundPost201Response clientReferenceInformation(PtsV2PaymentsPost201ResponseClientReferenceInformation clientReferenceInformation) {
+  public PtsV2PaymentsRefundPost201Response clientReferenceInformation(PtsV2PaymentsRefundPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -164,11 +164,11 @@ public class PtsV2PaymentsRefundPost201Response {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseClientReferenceInformation getClientReferenceInformation() {
+  public PtsV2PaymentsRefundPost201ResponseClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(PtsV2PaymentsPost201ResponseClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(PtsV2PaymentsRefundPost201ResponseClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

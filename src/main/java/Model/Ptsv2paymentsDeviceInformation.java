@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsDeviceInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsDeviceInformation {
   @SerializedName("hostName")
   private String hostName = null;
@@ -48,6 +48,9 @@ public class Ptsv2paymentsDeviceInformation {
 
   @SerializedName("deviceType")
   private String deviceType = null;
+
+  @SerializedName("appUrl")
+  private String appUrl = null;
 
   @SerializedName("rawData")
   private List<Ptsv2paymentsDeviceInformationRawData> rawData = null;
@@ -191,6 +194,24 @@ public class Ptsv2paymentsDeviceInformation {
 
   public void setDeviceType(String deviceType) {
     this.deviceType = deviceType;
+  }
+
+  public Ptsv2paymentsDeviceInformation appUrl(String appUrl) {
+    this.appUrl = appUrl;
+    return this;
+  }
+
+   /**
+   * This field will contain the deep link that would help the Customer App to wake up. 
+   * @return appUrl
+  **/
+  @ApiModelProperty(value = "This field will contain the deep link that would help the Customer App to wake up. ")
+  public String getAppUrl() {
+    return appUrl;
+  }
+
+  public void setAppUrl(String appUrl) {
+    this.appUrl = appUrl;
   }
 
   public Ptsv2paymentsDeviceInformation rawData(List<Ptsv2paymentsDeviceInformationRawData> rawData) {
@@ -433,6 +454,7 @@ public class Ptsv2paymentsDeviceInformation {
         Objects.equals(this.fingerprintSessionId, ptsv2paymentsDeviceInformation.fingerprintSessionId) &&
         Objects.equals(this.useRawFingerprintSessionId, ptsv2paymentsDeviceInformation.useRawFingerprintSessionId) &&
         Objects.equals(this.deviceType, ptsv2paymentsDeviceInformation.deviceType) &&
+        Objects.equals(this.appUrl, ptsv2paymentsDeviceInformation.appUrl) &&
         Objects.equals(this.rawData, ptsv2paymentsDeviceInformation.rawData) &&
         Objects.equals(this.httpAcceptBrowserValue, ptsv2paymentsDeviceInformation.httpAcceptBrowserValue) &&
         Objects.equals(this.httpAcceptContent, ptsv2paymentsDeviceInformation.httpAcceptContent) &&
@@ -449,7 +471,7 @@ public class Ptsv2paymentsDeviceInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hostName, ipAddress, userAgent, fingerprintSessionId, useRawFingerprintSessionId, deviceType, rawData, httpAcceptBrowserValue, httpAcceptContent, httpBrowserEmail, httpBrowserLanguage, httpBrowserJavaEnabled, httpBrowserJavaScriptEnabled, httpBrowserColorDepth, httpBrowserScreenHeight, httpBrowserScreenWidth, httpBrowserTimeDifference, userAgentBrowserValue);
+    return Objects.hash(hostName, ipAddress, userAgent, fingerprintSessionId, useRawFingerprintSessionId, deviceType, appUrl, rawData, httpAcceptBrowserValue, httpAcceptContent, httpBrowserEmail, httpBrowserLanguage, httpBrowserJavaEnabled, httpBrowserJavaScriptEnabled, httpBrowserColorDepth, httpBrowserScreenHeight, httpBrowserScreenWidth, httpBrowserTimeDifference, userAgentBrowserValue);
   }
 
 
@@ -464,6 +486,7 @@ public class Ptsv2paymentsDeviceInformation {
     sb.append("    fingerprintSessionId: ").append(toIndentedString(fingerprintSessionId)).append("\n");
     sb.append("    useRawFingerprintSessionId: ").append(toIndentedString(useRawFingerprintSessionId)).append("\n");
     sb.append("    deviceType: ").append(toIndentedString(deviceType)).append("\n");
+    sb.append("    appUrl: ").append(toIndentedString(appUrl)).append("\n");
     sb.append("    rawData: ").append(toIndentedString(rawData)).append("\n");
     sb.append("    httpAcceptBrowserValue: ").append(toIndentedString(httpAcceptBrowserValue)).append("\n");
     sb.append("    httpAcceptContent: ").append(toIndentedString(httpAcceptContent)).append("\n");

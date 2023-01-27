@@ -33,8 +33,10 @@ import Model.IncrementAuthRequest;
 import Model.PtsV2IncrementalAuthorizationPatch201Response;
 import Model.PtsV2IncrementalAuthorizationPatch400Response;
 import Model.PtsV2PaymentsPost201Response;
+import Model.PtsV2PaymentsPost201Response1;
 import Model.PtsV2PaymentsPost400Response;
 import Model.PtsV2PaymentsPost502Response;
+import Model.RefreshPaymentStatusRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -334,6 +336,147 @@ public class PaymentsApi {
 
         okhttp3.Call call = incrementAuthValidateBeforeCall(id, incrementAuthRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV2IncrementalAuthorizationPatch201Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for refreshPaymentStatus
+     * @param id The payment id whose status needs to be checked and updated. (required)
+     * @param refreshPaymentStatusRequest  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call refreshPaymentStatusCall(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = refreshPaymentStatusRequest;
+        
+        // create path and map variables
+        String localVarPath = "/pts/v2/refresh-payment-status/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call refreshPaymentStatusValidateBeforeCall(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+        	logger.error("Missing the required parameter 'id' when calling refreshPaymentStatus(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling refreshPaymentStatus(Async)");
+        }
+        
+        // verify the required parameter 'refreshPaymentStatusRequest' is set
+        if (refreshPaymentStatusRequest == null) {
+        	logger.error("Missing the required parameter 'refreshPaymentStatusRequest' when calling refreshPaymentStatus(Async)");
+            throw new ApiException("Missing the required parameter 'refreshPaymentStatusRequest' when calling refreshPaymentStatus(Async)");
+        }
+        
+        
+        okhttp3.Call call = refreshPaymentStatusCall(id, refreshPaymentStatusRequest, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Check a Payment Status
+     * Checks and updates the payment status 
+     * @param id The payment id whose status needs to be checked and updated. (required)
+     * @param refreshPaymentStatusRequest  (required)
+     * @return PtsV2PaymentsPost201Response1
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PtsV2PaymentsPost201Response1 refreshPaymentStatus(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException {
+    	logger.info("CALL TO METHOD 'refreshPaymentStatus' STARTED");
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ApiResponse<PtsV2PaymentsPost201Response1> resp = refreshPaymentStatusWithHttpInfo(id, refreshPaymentStatusRequest);
+        logger.info("CALL TO METHOD 'refreshPaymentStatus' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Check a Payment Status
+     * Checks and updates the payment status 
+     * @param id The payment id whose status needs to be checked and updated. (required)
+     * @param refreshPaymentStatusRequest  (required)
+     * @return ApiResponse&lt;PtsV2PaymentsPost201Response1&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PtsV2PaymentsPost201Response1> refreshPaymentStatusWithHttpInfo(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException {
+        okhttp3.Call call = refreshPaymentStatusValidateBeforeCall(id, refreshPaymentStatusRequest, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response1>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Check a Payment Status (asynchronously)
+     * Checks and updates the payment status 
+     * @param id The payment id whose status needs to be checked and updated. (required)
+     * @param refreshPaymentStatusRequest  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call refreshPaymentStatusAsync(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ApiCallback<PtsV2PaymentsPost201Response1> callback) throws ApiException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = refreshPaymentStatusValidateBeforeCall(id, refreshPaymentStatusRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response1>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

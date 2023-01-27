@@ -14,9 +14,9 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2refreshpaymentstatusidPaymentInformationCustomer;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard;
-import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -30,13 +30,13 @@ import java.io.IOException;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
   @SerializedName("paymentType")
   private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType paymentType = null;
 
   @SerializedName("customer")
-  private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer customer = null;
+  private Ptsv2refreshpaymentstatusidPaymentInformationCustomer customer = null;
 
   @SerializedName("card")
   private TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard card = null;
@@ -62,7 +62,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
     this.paymentType = paymentType;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation customer(TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer customer) {
+  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformation customer(Ptsv2refreshpaymentstatusidPaymentInformationCustomer customer) {
     this.customer = customer;
     return this;
   }
@@ -72,11 +72,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer getCustomer() {
+  public Ptsv2refreshpaymentstatusidPaymentInformationCustomer getCustomer() {
     return customer;
   }
 
-  public void setCustomer(TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer customer) {
+  public void setCustomer(Ptsv2refreshpaymentstatusidPaymentInformationCustomer customer) {
     this.customer = customer;
   }
 

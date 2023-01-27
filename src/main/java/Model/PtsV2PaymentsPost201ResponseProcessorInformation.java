@@ -34,7 +34,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("authIndicator")
   private String authIndicator = null;
@@ -125,6 +125,12 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @SerializedName("completeUrl")
   private String completeUrl = null;
+
+  @SerializedName("signature")
+  private String signature = null;
+
+  @SerializedName("publicKey")
+  private String publicKey = null;
 
   public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
     this.authIndicator = authIndicator;
@@ -666,6 +672,42 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.completeUrl = completeUrl;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation signature(String signature) {
+    this.signature = signature;
+    return this;
+  }
+
+   /**
+   * Get signature
+   * @return signature
+  **/
+  @ApiModelProperty(value = "")
+  public String getSignature() {
+    return signature;
+  }
+
+  public void setSignature(String signature) {
+    this.signature = signature;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation publicKey(String publicKey) {
+    this.publicKey = publicKey;
+    return this;
+  }
+
+   /**
+   * Get publicKey
+   * @return publicKey
+  **/
+  @ApiModelProperty(value = "")
+  public String getPublicKey() {
+    return publicKey;
+  }
+
+  public void setPublicKey(String publicKey) {
+    this.publicKey = publicKey;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -705,12 +747,14 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.merchantNumber, ptsV2PaymentsPost201ResponseProcessorInformation.merchantNumber) &&
         Objects.equals(this.retrievalReferenceNumber, ptsV2PaymentsPost201ResponseProcessorInformation.retrievalReferenceNumber) &&
         Objects.equals(this.paymentUrl, ptsV2PaymentsPost201ResponseProcessorInformation.paymentUrl) &&
-        Objects.equals(this.completeUrl, ptsV2PaymentsPost201ResponseProcessorInformation.completeUrl);
+        Objects.equals(this.completeUrl, ptsV2PaymentsPost201ResponseProcessorInformation.completeUrl) &&
+        Objects.equals(this.signature, ptsV2PaymentsPost201ResponseProcessorInformation.signature) &&
+        Objects.equals(this.publicKey, ptsV2PaymentsPost201ResponseProcessorInformation.publicKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey);
   }
 
 
@@ -749,6 +793,8 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
     sb.append("    paymentUrl: ").append(toIndentedString(paymentUrl)).append("\n");
     sb.append("    completeUrl: ").append(toIndentedString(completeUrl)).append("\n");
+    sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
+    sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }

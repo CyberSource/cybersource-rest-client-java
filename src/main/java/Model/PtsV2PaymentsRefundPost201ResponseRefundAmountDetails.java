@@ -26,10 +26,13 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsRefundPost201ResponseRefundAmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails {
   @SerializedName("refundAmount")
   private String refundAmount = null;
+
+  @SerializedName("creditAmount")
+  private String creditAmount = null;
 
   @SerializedName("currency")
   private String currency = null;
@@ -50,6 +53,24 @@ public class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails {
 
   public void setRefundAmount(String refundAmount) {
     this.refundAmount = refundAmount;
+  }
+
+  public PtsV2PaymentsRefundPost201ResponseRefundAmountDetails creditAmount(String creditAmount) {
+    this.creditAmount = creditAmount;
+    return this;
+  }
+
+   /**
+   * Amount that was credited to the cardholder’s account.  Returned by PIN debit credit. 
+   * @return creditAmount
+  **/
+  @ApiModelProperty(value = "Amount that was credited to the cardholder’s account.  Returned by PIN debit credit. ")
+  public String getCreditAmount() {
+    return creditAmount;
+  }
+
+  public void setCreditAmount(String creditAmount) {
+    this.creditAmount = creditAmount;
   }
 
   public PtsV2PaymentsRefundPost201ResponseRefundAmountDetails currency(String currency) {
@@ -81,12 +102,13 @@ public class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails {
     }
     PtsV2PaymentsRefundPost201ResponseRefundAmountDetails ptsV2PaymentsRefundPost201ResponseRefundAmountDetails = (PtsV2PaymentsRefundPost201ResponseRefundAmountDetails) o;
     return Objects.equals(this.refundAmount, ptsV2PaymentsRefundPost201ResponseRefundAmountDetails.refundAmount) &&
+        Objects.equals(this.creditAmount, ptsV2PaymentsRefundPost201ResponseRefundAmountDetails.creditAmount) &&
         Objects.equals(this.currency, ptsV2PaymentsRefundPost201ResponseRefundAmountDetails.currency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(refundAmount, currency);
+    return Objects.hash(refundAmount, creditAmount, currency);
   }
 
 
@@ -96,6 +118,7 @@ public class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails {
     sb.append("class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails {\n");
     
     sb.append("    refundAmount: ").append(toIndentedString(refundAmount)).append("\n");
+    sb.append("    creditAmount: ").append(toIndentedString(creditAmount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("}");
     return sb.toString();

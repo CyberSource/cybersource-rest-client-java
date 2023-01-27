@@ -26,10 +26,13 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationPaymentTypeMethod
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsPaymentInformationPaymentTypeMethod {
   @SerializedName("name")
   private String name = null;
+
+  @SerializedName("type")
+  private String type = null;
 
   public Ptsv2paymentsPaymentInformationPaymentTypeMethod name(String name) {
     this.name = name;
@@ -37,16 +40,34 @@ public class Ptsv2paymentsPaymentInformationPaymentTypeMethod {
   }
 
    /**
-   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal, 7Eleven, alfamart, etc  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data 
+   * A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal, 7Eleven, alfamart, etc  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data  #### Via KCP - &#x60;KCP&#x60; : Local Card, Bank Transfer and Carrier Billing. - &#x60;PAYCO&#x60; - &#x60;KAKAOPAY&#x60; - &#x60;NAVERPAY&#x60; 
    * @return name
   **/
-  @ApiModelProperty(value = "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal, 7Eleven, alfamart, etc  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data ")
+  @ApiModelProperty(value = "A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal, 7Eleven, alfamart, etc  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data  #### Via KCP - `KCP` : Local Card, Bank Transfer and Carrier Billing. - `PAYCO` - `KAKAOPAY` - `NAVERPAY` ")
   public String getName() {
     return name;
   }
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public Ptsv2paymentsPaymentInformationPaymentTypeMethod type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * The payment channel that facilitates the transactions. This parameter can be used if the payment channels are listed on the merchant’s site, and the payment channel is known.  Possible Values:  #### Via PPRO - &#x60;alfaVa&#x60; - &#x60;kredivo&#x60; - &#x60;consumerBarCode&#x60; - &#x60;merchantQrCode&#x60; - &#x60;dokuWallet&#x60; 
+   * @return type
+  **/
+  @ApiModelProperty(value = "The payment channel that facilitates the transactions. This parameter can be used if the payment channels are listed on the merchant’s site, and the payment channel is known.  Possible Values:  #### Via PPRO - `alfaVa` - `kredivo` - `consumerBarCode` - `merchantQrCode` - `dokuWallet` ")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
   }
 
 
@@ -59,12 +80,13 @@ public class Ptsv2paymentsPaymentInformationPaymentTypeMethod {
       return false;
     }
     Ptsv2paymentsPaymentInformationPaymentTypeMethod ptsv2paymentsPaymentInformationPaymentTypeMethod = (Ptsv2paymentsPaymentInformationPaymentTypeMethod) o;
-    return Objects.equals(this.name, ptsv2paymentsPaymentInformationPaymentTypeMethod.name);
+    return Objects.equals(this.name, ptsv2paymentsPaymentInformationPaymentTypeMethod.name) &&
+        Objects.equals(this.type, ptsv2paymentsPaymentInformationPaymentTypeMethod.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(name, type);
   }
 
 
@@ -74,6 +96,7 @@ public class Ptsv2paymentsPaymentInformationPaymentTypeMethod {
     sb.append("class Ptsv2paymentsPaymentInformationPaymentTypeMethod {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationBank
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsPaymentInformationBank {
   @SerializedName("account")
   private Ptsv2paymentsPaymentInformationBankAccount account = null;
@@ -40,6 +40,9 @@ public class Ptsv2paymentsPaymentInformationBank {
 
   @SerializedName("swiftCode")
   private String swiftCode = null;
+
+  @SerializedName("code")
+  private String code = null;
 
   public Ptsv2paymentsPaymentInformationBank account(Ptsv2paymentsPaymentInformationBankAccount account) {
     this.account = account;
@@ -113,6 +116,24 @@ public class Ptsv2paymentsPaymentInformationBank {
     this.swiftCode = swiftCode;
   }
 
+  public Ptsv2paymentsPaymentInformationBank code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * Bank code of the consumer’s account 
+   * @return code
+  **/
+  @ApiModelProperty(value = "Bank code of the consumer’s account ")
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,12 +147,13 @@ public class Ptsv2paymentsPaymentInformationBank {
     return Objects.equals(this.account, ptsv2paymentsPaymentInformationBank.account) &&
         Objects.equals(this.routingNumber, ptsv2paymentsPaymentInformationBank.routingNumber) &&
         Objects.equals(this.iban, ptsv2paymentsPaymentInformationBank.iban) &&
-        Objects.equals(this.swiftCode, ptsv2paymentsPaymentInformationBank.swiftCode);
+        Objects.equals(this.swiftCode, ptsv2paymentsPaymentInformationBank.swiftCode) &&
+        Objects.equals(this.code, ptsv2paymentsPaymentInformationBank.code);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, routingNumber, iban, swiftCode);
+    return Objects.hash(account, routingNumber, iban, swiftCode, code);
   }
 
 
@@ -144,6 +166,7 @@ public class Ptsv2paymentsPaymentInformationBank {
     sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");
     sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
     sb.append("    swiftCode: ").append(toIndentedString(swiftCode)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();
   }

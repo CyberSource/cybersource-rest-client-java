@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2paymentsidrefundsProcessingInformationRecurringOptions;
+import Model.Ptsv2paymentsidrefundsProcessingInformationRefundOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,12 +24,17 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ptsv2paymentsidrefundsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsidrefundsProcessingInformation {
+  @SerializedName("actionList")
+  private List<String> actionList = null;
+
   @SerializedName("paymentSolution")
   private String paymentSolution = null;
 
@@ -52,6 +58,38 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
 
   @SerializedName("industryDataType")
   private String industryDataType = null;
+
+  @SerializedName("paymentType")
+  private String paymentType = null;
+
+  @SerializedName("refundOptions")
+  private Ptsv2paymentsidrefundsProcessingInformationRefundOptions refundOptions = null;
+
+  public Ptsv2paymentsidrefundsProcessingInformation actionList(List<String> actionList) {
+    this.actionList = actionList;
+    return this;
+  }
+
+  public Ptsv2paymentsidrefundsProcessingInformation addActionListItem(String actionListItem) {
+    if (this.actionList == null) {
+      this.actionList = new ArrayList<String>();
+    }
+    this.actionList.add(actionListItem);
+    return this;
+  }
+
+   /**
+   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment status.  Possible values are one or more of follows:   - &#x60;AP_REFUND&#x60;: Use this when Alternative Payment Refund service is requested. 
+   * @return actionList
+  **/
+  @ApiModelProperty(value = "Array of actions (one or more) to be included in the payment to invoke bundled services along with payment status.  Possible values are one or more of follows:   - `AP_REFUND`: Use this when Alternative Payment Refund service is requested. ")
+  public List<String> getActionList() {
+    return actionList;
+  }
+
+  public void setActionList(List<String> actionList) {
+    this.actionList = actionList;
+  }
 
   public Ptsv2paymentsidrefundsProcessingInformation paymentSolution(String paymentSolution) {
     this.paymentSolution = paymentSolution;
@@ -197,6 +235,42 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
     this.industryDataType = industryDataType;
   }
 
+  public Ptsv2paymentsidrefundsProcessingInformation paymentType(String paymentType) {
+    this.paymentType = paymentType;
+    return this;
+  }
+
+   /**
+   * Identifier for the payment type
+   * @return paymentType
+  **/
+  @ApiModelProperty(value = "Identifier for the payment type")
+  public String getPaymentType() {
+    return paymentType;
+  }
+
+  public void setPaymentType(String paymentType) {
+    this.paymentType = paymentType;
+  }
+
+  public Ptsv2paymentsidrefundsProcessingInformation refundOptions(Ptsv2paymentsidrefundsProcessingInformationRefundOptions refundOptions) {
+    this.refundOptions = refundOptions;
+    return this;
+  }
+
+   /**
+   * Get refundOptions
+   * @return refundOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidrefundsProcessingInformationRefundOptions getRefundOptions() {
+    return refundOptions;
+  }
+
+  public void setRefundOptions(Ptsv2paymentsidrefundsProcessingInformationRefundOptions refundOptions) {
+    this.refundOptions = refundOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -207,19 +281,22 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
       return false;
     }
     Ptsv2paymentsidrefundsProcessingInformation ptsv2paymentsidrefundsProcessingInformation = (Ptsv2paymentsidrefundsProcessingInformation) o;
-    return Objects.equals(this.paymentSolution, ptsv2paymentsidrefundsProcessingInformation.paymentSolution) &&
+    return Objects.equals(this.actionList, ptsv2paymentsidrefundsProcessingInformation.actionList) &&
+        Objects.equals(this.paymentSolution, ptsv2paymentsidrefundsProcessingInformation.paymentSolution) &&
         Objects.equals(this.reconciliationId, ptsv2paymentsidrefundsProcessingInformation.reconciliationId) &&
         Objects.equals(this.linkId, ptsv2paymentsidrefundsProcessingInformation.linkId) &&
         Objects.equals(this.reportGroup, ptsv2paymentsidrefundsProcessingInformation.reportGroup) &&
         Objects.equals(this.visaCheckoutId, ptsv2paymentsidrefundsProcessingInformation.visaCheckoutId) &&
         Objects.equals(this.purchaseLevel, ptsv2paymentsidrefundsProcessingInformation.purchaseLevel) &&
         Objects.equals(this.recurringOptions, ptsv2paymentsidrefundsProcessingInformation.recurringOptions) &&
-        Objects.equals(this.industryDataType, ptsv2paymentsidrefundsProcessingInformation.industryDataType);
+        Objects.equals(this.industryDataType, ptsv2paymentsidrefundsProcessingInformation.industryDataType) &&
+        Objects.equals(this.paymentType, ptsv2paymentsidrefundsProcessingInformation.paymentType) &&
+        Objects.equals(this.refundOptions, ptsv2paymentsidrefundsProcessingInformation.refundOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, recurringOptions, industryDataType);
+    return Objects.hash(actionList, paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, recurringOptions, industryDataType, paymentType, refundOptions);
   }
 
 
@@ -228,6 +305,7 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidrefundsProcessingInformation {\n");
     
+    sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
     sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
@@ -236,6 +314,8 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
     sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
     sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
     sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
+    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    sb.append("    refundOptions: ").append(toIndentedString(refundOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
