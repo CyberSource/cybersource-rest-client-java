@@ -24,14 +24,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer
+ * Ptsv2refreshpaymentstatusidPaymentInformationCustomer
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
-public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+public class Ptsv2refreshpaymentstatusidPaymentInformationCustomer {
   @SerializedName("customerId")
   private String customerId = null;
 
-  public TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer customerId(String customerId) {
+  public Ptsv2refreshpaymentstatusidPaymentInformationCustomer customerId(String customerId) {
     this.customerId = customerId;
     return this;
   }
@@ -58,8 +58,8 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer 
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer tssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer = (TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer) o;
-    return Objects.equals(this.customerId, tssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer.customerId);
+    Ptsv2refreshpaymentstatusidPaymentInformationCustomer ptsv2refreshpaymentstatusidPaymentInformationCustomer = (Ptsv2refreshpaymentstatusidPaymentInformationCustomer) o;
+    return Objects.equals(this.customerId, ptsv2refreshpaymentstatusidPaymentInformationCustomer.customerId);
   }
 
   @Override
@@ -71,7 +71,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer {\n");
+    sb.append("class Ptsv2refreshpaymentstatusidPaymentInformationCustomer {\n");
     
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("}");

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,17 +23,31 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ptsv2paymentsidcapturesBuyerInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsidcapturesBuyerInformation {
   @SerializedName("merchantCustomerId")
   private String merchantCustomerId = null;
 
   @SerializedName("vatRegistrationNumber")
   private String vatRegistrationNumber = null;
+
+  @SerializedName("dateOfBirth")
+  private String dateOfBirth = null;
+
+  @SerializedName("gender")
+  private String gender = null;
+
+  @SerializedName("language")
+  private String language = null;
+
+  @SerializedName("personalIdentification")
+  private List<Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification> personalIdentification = null;
 
   public Ptsv2paymentsidcapturesBuyerInformation merchantCustomerId(String merchantCustomerId) {
     this.merchantCustomerId = merchantCustomerId;
@@ -70,6 +85,86 @@ public class Ptsv2paymentsidcapturesBuyerInformation {
     this.vatRegistrationNumber = vatRegistrationNumber;
   }
 
+  public Ptsv2paymentsidcapturesBuyerInformation dateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+    return this;
+  }
+
+   /**
+   * Recipient’s date of birth. **Format**: &#x60;YYYYMMDD&#x60;.  This field is a &#x60;pass-through&#x60;, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see &#x60;recipient_date_of_birth&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * @return dateOfBirth
+  **/
+  @ApiModelProperty(value = "Recipient’s date of birth. **Format**: `YYYYMMDD`.  This field is a `pass-through`, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see `recipient_date_of_birth` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  public String getDateOfBirth() {
+    return dateOfBirth;
+  }
+
+  public void setDateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+  }
+
+  public Ptsv2paymentsidcapturesBuyerInformation gender(String gender) {
+    this.gender = gender;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s gender. Possible values are F (female), M (male),O (other).
+   * @return gender
+  **/
+  @ApiModelProperty(value = "Customer's gender. Possible values are F (female), M (male),O (other).")
+  public String getGender() {
+    return gender;
+  }
+
+  public void setGender(String gender) {
+    this.gender = gender;
+  }
+
+  public Ptsv2paymentsidcapturesBuyerInformation language(String language) {
+    this.language = language;
+    return this;
+  }
+
+   /**
+   * language setting of the user
+   * @return language
+  **/
+  @ApiModelProperty(value = "language setting of the user")
+  public String getLanguage() {
+    return language;
+  }
+
+  public void setLanguage(String language) {
+    this.language = language;
+  }
+
+  public Ptsv2paymentsidcapturesBuyerInformation personalIdentification(List<Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification> personalIdentification) {
+    this.personalIdentification = personalIdentification;
+    return this;
+  }
+
+  public Ptsv2paymentsidcapturesBuyerInformation addPersonalIdentificationItem(Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification personalIdentificationItem) {
+    if (this.personalIdentification == null) {
+      this.personalIdentification = new ArrayList<Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification>();
+    }
+    this.personalIdentification.add(personalIdentificationItem);
+    return this;
+  }
+
+   /**
+   * Get personalIdentification
+   * @return personalIdentification
+  **/
+  @ApiModelProperty(value = "")
+  public List<Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification> getPersonalIdentification() {
+    return personalIdentification;
+  }
+
+  public void setPersonalIdentification(List<Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification> personalIdentification) {
+    this.personalIdentification = personalIdentification;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +176,16 @@ public class Ptsv2paymentsidcapturesBuyerInformation {
     }
     Ptsv2paymentsidcapturesBuyerInformation ptsv2paymentsidcapturesBuyerInformation = (Ptsv2paymentsidcapturesBuyerInformation) o;
     return Objects.equals(this.merchantCustomerId, ptsv2paymentsidcapturesBuyerInformation.merchantCustomerId) &&
-        Objects.equals(this.vatRegistrationNumber, ptsv2paymentsidcapturesBuyerInformation.vatRegistrationNumber);
+        Objects.equals(this.vatRegistrationNumber, ptsv2paymentsidcapturesBuyerInformation.vatRegistrationNumber) &&
+        Objects.equals(this.dateOfBirth, ptsv2paymentsidcapturesBuyerInformation.dateOfBirth) &&
+        Objects.equals(this.gender, ptsv2paymentsidcapturesBuyerInformation.gender) &&
+        Objects.equals(this.language, ptsv2paymentsidcapturesBuyerInformation.language) &&
+        Objects.equals(this.personalIdentification, ptsv2paymentsidcapturesBuyerInformation.personalIdentification);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantCustomerId, vatRegistrationNumber);
+    return Objects.hash(merchantCustomerId, vatRegistrationNumber, dateOfBirth, gender, language, personalIdentification);
   }
 
 
@@ -97,6 +196,10 @@ public class Ptsv2paymentsidcapturesBuyerInformation {
     
     sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
     sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
+    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     sb.append("}");
     return sb.toString();
   }

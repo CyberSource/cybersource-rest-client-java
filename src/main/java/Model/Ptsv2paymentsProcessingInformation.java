@@ -36,10 +36,13 @@ import java.util.List;
 /**
  * Ptsv2paymentsProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsProcessingInformation {
   @SerializedName("actionList")
   private List<String> actionList = null;
+
+  @SerializedName("enableEscrowOption")
+  private Boolean enableEscrowOption = null;
 
   @SerializedName("actionTokenTypes")
   private List<String> actionTokenTypes = null;
@@ -142,16 +145,34 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   * Array of actions (one or more) to be included in the payment to invoke bundled serviecs along with payment.  Possible values are one or more of follows:   - &#x60;DECISION_SKIP&#x60;: Use this when you want to skip Decision Manager service(s).   - &#x60;TOKEN_CREATE&#x60;: Use this when you want to create a token from the card/bank data in your payment request.   - &#x60;CONSUMER_AUTHENTICATION&#x60;: Use this when you want to check if a card is enrolled in Payer Authentioncation along with your payment request.   - &#x60;VALIDATE_CONSUMER_AUTHENTICATION&#x60;: Use this after you acquire a Payer Authentioncation result that needs to be included for your payment request. 
+   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - &#x60;DECISION_SKIP&#x60;: Use this when you want to skip Decision Manager service(s).   - &#x60;TOKEN_CREATE&#x60;: Use this when you want to create a token from the card/bank data in your payment request.   - &#x60;CONSUMER_AUTHENTICATION&#x60;: Use this when you want to check if a card is enrolled in Payer Authentioncation along with your payment request.   - &#x60;VALIDATE_CONSUMER_AUTHENTICATION&#x60;: Use this after you acquire a Payer Authentioncation result that needs to be included for your payment request.    - &#x60;AP_INITIATE&#x60;: Use this when Alternative Payment Initiate service is requested. 
    * @return actionList
   **/
-  @ApiModelProperty(value = "Array of actions (one or more) to be included in the payment to invoke bundled serviecs along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentioncation along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentioncation result that needs to be included for your payment request. ")
+  @ApiModelProperty(value = "Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentioncation along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentioncation result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested. ")
   public List<String> getActionList() {
     return actionList;
   }
 
   public void setActionList(List<String> actionList) {
     this.actionList = actionList;
+  }
+
+  public Ptsv2paymentsProcessingInformation enableEscrowOption(Boolean enableEscrowOption) {
+    this.enableEscrowOption = enableEscrowOption;
+    return this;
+  }
+
+   /**
+   * Indicates whether to use the customer’s escrow agreement. Possible values: - &#x60;true&#x60;: yes, use the customer’s escrow agreement. - &#x60;false&#x60;: no, do not use the customer’s escrow agreement.  
+   * @return enableEscrowOption
+  **/
+  @ApiModelProperty(value = "Indicates whether to use the customer’s escrow agreement. Possible values: - `true`: yes, use the customer’s escrow agreement. - `false`: no, do not use the customer’s escrow agreement.  ")
+  public Boolean getEnableEscrowOption() {
+    return enableEscrowOption;
+  }
+
+  public void setEnableEscrowOption(Boolean enableEscrowOption) {
+    this.enableEscrowOption = enableEscrowOption;
   }
 
   public Ptsv2paymentsProcessingInformation actionTokenTypes(List<String> actionTokenTypes) {
@@ -695,6 +716,7 @@ public class Ptsv2paymentsProcessingInformation {
     }
     Ptsv2paymentsProcessingInformation ptsv2paymentsProcessingInformation = (Ptsv2paymentsProcessingInformation) o;
     return Objects.equals(this.actionList, ptsv2paymentsProcessingInformation.actionList) &&
+        Objects.equals(this.enableEscrowOption, ptsv2paymentsProcessingInformation.enableEscrowOption) &&
         Objects.equals(this.actionTokenTypes, ptsv2paymentsProcessingInformation.actionTokenTypes) &&
         Objects.equals(this.capture, ptsv2paymentsProcessingInformation.capture) &&
         Objects.equals(this.processorId, ptsv2paymentsProcessingInformation.processorId) &&
@@ -728,7 +750,7 @@ public class Ptsv2paymentsProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, actionTokenTypes, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled);
   }
 
 
@@ -738,6 +760,7 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("class Ptsv2paymentsProcessingInformation {\n");
     
     sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
+    sb.append("    enableEscrowOption: ").append(toIndentedString(enableEscrowOption)).append("\n");
     sb.append("    actionTokenTypes: ").append(toIndentedString(actionTokenTypes)).append("\n");
     sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
     sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");

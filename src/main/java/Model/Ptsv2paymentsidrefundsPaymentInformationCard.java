@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidrefundsPaymentInformationCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsidrefundsPaymentInformationCard {
   @SerializedName("number")
   private String number = null;
@@ -57,6 +57,12 @@ public class Ptsv2paymentsidrefundsPaymentInformationCard {
 
   @SerializedName("sourceAccountTypeDetails")
   private String sourceAccountTypeDetails = null;
+
+  @SerializedName("securityCode")
+  private String securityCode = null;
+
+  @SerializedName("useAs")
+  private String useAs = null;
 
   public Ptsv2paymentsidrefundsPaymentInformationCard number(String number) {
     this.number = number;
@@ -238,6 +244,42 @@ public class Ptsv2paymentsidrefundsPaymentInformationCard {
     this.sourceAccountTypeDetails = sourceAccountTypeDetails;
   }
 
+  public Ptsv2paymentsidrefundsPaymentInformationCard securityCode(String securityCode) {
+    this.securityCode = securityCode;
+    return this;
+  }
+
+   /**
+   * Card Verification Number.  #### FDMS Nashville Required for American Express or if swiped; otherwise, optional.  #### Ingenico ePayments Do not include this field when &#x60;commerceIndicator&#x3D;recurring&#x60;. **Note** Ingenico ePayments was previously called _Global Collect_.  #### TSYS Acquiring Solutions Optional if pointOfSaleInformation.entryMode&#x3D;keyed; otherwise, not used.  #### GPX Optional.  #### All other processors: Optional. 
+   * @return securityCode
+  **/
+  @ApiModelProperty(value = "Card Verification Number.  #### FDMS Nashville Required for American Express or if swiped; otherwise, optional.  #### Ingenico ePayments Do not include this field when `commerceIndicator=recurring`. **Note** Ingenico ePayments was previously called _Global Collect_.  #### TSYS Acquiring Solutions Optional if pointOfSaleInformation.entryMode=keyed; otherwise, not used.  #### GPX Optional.  #### All other processors: Optional. ")
+  public String getSecurityCode() {
+    return securityCode;
+  }
+
+  public void setSecurityCode(String securityCode) {
+    this.securityCode = securityCode;
+  }
+
+  public Ptsv2paymentsidrefundsPaymentInformationCard useAs(String useAs) {
+    this.useAs = useAs;
+    return this;
+  }
+
+   /**
+   * Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  Possible values:   - C: Credit transaction  - D: Debit transaction  This field is supported only for all card Types on Visa Platform Connect.  This field is required for:  - Debit transactions on Cielo and Comercio Latino.  - Transactions with Brazilian-issued cards on CyberSource through VisaNet.  **Note** The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR0 - Position: 51 - Field: Combination Card Transaction Identifier 
+   * @return useAs
+  **/
+  @ApiModelProperty(value = "Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  Possible values:   - C: Credit transaction  - D: Debit transaction  This field is supported only for all card Types on Visa Platform Connect.  This field is required for:  - Debit transactions on Cielo and Comercio Latino.  - Transactions with Brazilian-issued cards on CyberSource through VisaNet.  **Note** The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR0 - Position: 51 - Field: Combination Card Transaction Identifier ")
+  public String getUseAs() {
+    return useAs;
+  }
+
+  public void setUseAs(String useAs) {
+    this.useAs = useAs;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -257,12 +299,14 @@ public class Ptsv2paymentsidrefundsPaymentInformationCard {
         Objects.equals(this.startMonth, ptsv2paymentsidrefundsPaymentInformationCard.startMonth) &&
         Objects.equals(this.startYear, ptsv2paymentsidrefundsPaymentInformationCard.startYear) &&
         Objects.equals(this.sourceAccountType, ptsv2paymentsidrefundsPaymentInformationCard.sourceAccountType) &&
-        Objects.equals(this.sourceAccountTypeDetails, ptsv2paymentsidrefundsPaymentInformationCard.sourceAccountTypeDetails);
+        Objects.equals(this.sourceAccountTypeDetails, ptsv2paymentsidrefundsPaymentInformationCard.sourceAccountTypeDetails) &&
+        Objects.equals(this.securityCode, ptsv2paymentsidrefundsPaymentInformationCard.securityCode) &&
+        Objects.equals(this.useAs, ptsv2paymentsidrefundsPaymentInformationCard.useAs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(number, expirationMonth, expirationYear, type, accountEncoderId, issueNumber, startMonth, startYear, sourceAccountType, sourceAccountTypeDetails);
+    return Objects.hash(number, expirationMonth, expirationYear, type, accountEncoderId, issueNumber, startMonth, startYear, sourceAccountType, sourceAccountTypeDetails, securityCode, useAs);
   }
 
 
@@ -281,6 +325,8 @@ public class Ptsv2paymentsidrefundsPaymentInformationCard {
     sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
     sb.append("    sourceAccountType: ").append(toIndentedString(sourceAccountType)).append("\n");
     sb.append("    sourceAccountTypeDetails: ").append(toIndentedString(sourceAccountTypeDetails)).append("\n");
+    sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
+    sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
     sb.append("}");
     return sb.toString();
   }

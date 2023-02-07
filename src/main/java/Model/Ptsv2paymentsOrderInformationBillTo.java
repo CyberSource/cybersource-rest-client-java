@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsOrderInformationBillTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsOrderInformationBillTo {
   @SerializedName("firstName")
   private String firstName = null;
@@ -68,6 +68,9 @@ public class Ptsv2paymentsOrderInformationBillTo {
   @SerializedName("postalCode")
   private String postalCode = null;
 
+  @SerializedName("county")
+  private String county = null;
+
   @SerializedName("country")
   private String country = null;
 
@@ -88,6 +91,9 @@ public class Ptsv2paymentsOrderInformationBillTo {
 
   @SerializedName("phoneType")
   private String phoneType = null;
+
+  @SerializedName("verificationStatus")
+  private String verificationStatus = null;
 
   public Ptsv2paymentsOrderInformationBillTo firstName(String firstName) {
     this.firstName = firstName;
@@ -323,6 +329,24 @@ public class Ptsv2paymentsOrderInformationBillTo {
     this.postalCode = postalCode;
   }
 
+  public Ptsv2paymentsOrderInformationBillTo county(String county) {
+    this.county = county;
+    return this;
+  }
+
+   /**
+   * U.S. county if available.
+   * @return county
+  **/
+  @ApiModelProperty(value = "U.S. county if available.")
+  public String getCounty() {
+    return county;
+  }
+
+  public void setCounty(String county) {
+    this.county = county;
+  }
+
   public Ptsv2paymentsOrderInformationBillTo country(String country) {
     this.country = country;
     return this;
@@ -449,6 +473,24 @@ public class Ptsv2paymentsOrderInformationBillTo {
     this.phoneType = phoneType;
   }
 
+  public Ptsv2paymentsOrderInformationBillTo verificationStatus(String verificationStatus) {
+    this.verificationStatus = verificationStatus;
+    return this;
+  }
+
+   /**
+   * Whether buyer has verified their identity. Used in case of PayPal transactions.  Possible Values: * VERIFIED * UNVERIFIED 
+   * @return verificationStatus
+  **/
+  @ApiModelProperty(value = "Whether buyer has verified their identity. Used in case of PayPal transactions.  Possible Values: * VERIFIED * UNVERIFIED ")
+  public String getVerificationStatus() {
+    return verificationStatus;
+  }
+
+  public void setVerificationStatus(String verificationStatus) {
+    this.verificationStatus = verificationStatus;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -472,18 +514,20 @@ public class Ptsv2paymentsOrderInformationBillTo {
         Objects.equals(this.locality, ptsv2paymentsOrderInformationBillTo.locality) &&
         Objects.equals(this.administrativeArea, ptsv2paymentsOrderInformationBillTo.administrativeArea) &&
         Objects.equals(this.postalCode, ptsv2paymentsOrderInformationBillTo.postalCode) &&
+        Objects.equals(this.county, ptsv2paymentsOrderInformationBillTo.county) &&
         Objects.equals(this.country, ptsv2paymentsOrderInformationBillTo.country) &&
         Objects.equals(this.district, ptsv2paymentsOrderInformationBillTo.district) &&
         Objects.equals(this.buildingNumber, ptsv2paymentsOrderInformationBillTo.buildingNumber) &&
         Objects.equals(this.email, ptsv2paymentsOrderInformationBillTo.email) &&
         Objects.equals(this.emailDomain, ptsv2paymentsOrderInformationBillTo.emailDomain) &&
         Objects.equals(this.phoneNumber, ptsv2paymentsOrderInformationBillTo.phoneNumber) &&
-        Objects.equals(this.phoneType, ptsv2paymentsOrderInformationBillTo.phoneType);
+        Objects.equals(this.phoneType, ptsv2paymentsOrderInformationBillTo.phoneType) &&
+        Objects.equals(this.verificationStatus, ptsv2paymentsOrderInformationBillTo.verificationStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, middleName, nameSuffix, title, company, address1, address2, address3, address4, locality, administrativeArea, postalCode, country, district, buildingNumber, email, emailDomain, phoneNumber, phoneType);
+    return Objects.hash(firstName, lastName, middleName, nameSuffix, title, company, address1, address2, address3, address4, locality, administrativeArea, postalCode, county, country, district, buildingNumber, email, emailDomain, phoneNumber, phoneType, verificationStatus);
   }
 
 
@@ -505,6 +549,7 @@ public class Ptsv2paymentsOrderInformationBillTo {
     sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    sb.append("    county: ").append(toIndentedString(county)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    district: ").append(toIndentedString(district)).append("\n");
     sb.append("    buildingNumber: ").append(toIndentedString(buildingNumber)).append("\n");
@@ -512,6 +557,7 @@ public class Ptsv2paymentsOrderInformationBillTo {
     sb.append("    emailDomain: ").append(toIndentedString(emailDomain)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
+    sb.append("    verificationStatus: ").append(toIndentedString(verificationStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }

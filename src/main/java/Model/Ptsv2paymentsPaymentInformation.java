@@ -37,8 +37,14 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsPaymentInformation {
+  @SerializedName("intent")
+  private String intent = null;
+
+  @SerializedName("countryCode")
+  private String countryCode = null;
+
   @SerializedName("card")
   private Ptsv2paymentsPaymentInformationCard card = null;
 
@@ -74,6 +80,42 @@ public class Ptsv2paymentsPaymentInformation {
 
   @SerializedName("eWallet")
   private Ptsv2paymentsPaymentInformationEWallet eWallet = null;
+
+  public Ptsv2paymentsPaymentInformation intent(String intent) {
+    this.intent = intent;
+    return this;
+  }
+
+   /**
+   * Intent. 
+   * @return intent
+  **/
+  @ApiModelProperty(value = "Intent. ")
+  public String getIntent() {
+    return intent;
+  }
+
+  public void setIntent(String intent) {
+    this.intent = intent;
+  }
+
+  public Ptsv2paymentsPaymentInformation countryCode(String countryCode) {
+    this.countryCode = countryCode;
+    return this;
+  }
+
+   /**
+   * Country code. 
+   * @return countryCode
+  **/
+  @ApiModelProperty(value = "Country code. ")
+  public String getCountryCode() {
+    return countryCode;
+  }
+
+  public void setCountryCode(String countryCode) {
+    this.countryCode = countryCode;
+  }
 
   public Ptsv2paymentsPaymentInformation card(Ptsv2paymentsPaymentInformationCard card) {
     this.card = card;
@@ -301,7 +343,9 @@ public class Ptsv2paymentsPaymentInformation {
       return false;
     }
     Ptsv2paymentsPaymentInformation ptsv2paymentsPaymentInformation = (Ptsv2paymentsPaymentInformation) o;
-    return Objects.equals(this.card, ptsv2paymentsPaymentInformation.card) &&
+    return Objects.equals(this.intent, ptsv2paymentsPaymentInformation.intent) &&
+        Objects.equals(this.countryCode, ptsv2paymentsPaymentInformation.countryCode) &&
+        Objects.equals(this.card, ptsv2paymentsPaymentInformation.card) &&
         Objects.equals(this.tokenizedCard, ptsv2paymentsPaymentInformation.tokenizedCard) &&
         Objects.equals(this.fluidData, ptsv2paymentsPaymentInformation.fluidData) &&
         Objects.equals(this.customer, ptsv2paymentsPaymentInformation.customer) &&
@@ -317,7 +361,7 @@ public class Ptsv2paymentsPaymentInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, paymentType, initiationChannel, eWallet);
+    return Objects.hash(intent, countryCode, card, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, paymentType, initiationChannel, eWallet);
   }
 
 
@@ -326,6 +370,8 @@ public class Ptsv2paymentsPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPaymentInformation {\n");
     
+    sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
+    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
     sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");

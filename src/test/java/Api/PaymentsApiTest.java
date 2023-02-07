@@ -19,8 +19,10 @@ import Model.IncrementAuthRequest;
 import Model.PtsV2IncrementalAuthorizationPatch201Response;
 import Model.PtsV2IncrementalAuthorizationPatch400Response;
 import Model.PtsV2PaymentsPost201Response;
+import Model.PtsV2PaymentsPost201Response1;
 import Model.PtsV2PaymentsPost400Response;
 import Model.PtsV2PaymentsPost502Response;
+import Model.RefreshPaymentStatusRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -67,6 +69,23 @@ public class PaymentsApiTest {
         String id = null;
         IncrementAuthRequest incrementAuthRequest = null;
         PtsV2IncrementalAuthorizationPatch201Response response = api.incrementAuth(id, incrementAuthRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Check a Payment Status
+     *
+     * Checks and updates the payment status 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void refreshPaymentStatusTest() throws ApiException {
+        String id = null;
+        RefreshPaymentStatusRequest refreshPaymentStatusRequest = null;
+        PtsV2PaymentsPost201Response1 response = api.refreshPaymentStatus(id, refreshPaymentStatusRequest);
 
         // TODO: test validations
     }

@@ -1,5 +1,5 @@
 
-# TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCustomer
+# Ptsv2refreshpaymentstatusidPaymentInformationCustomer
 
 ## Properties
 Name | Type | Description | Notes

@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * TssV2TransactionsGet200ResponseLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class TssV2TransactionsGet200ResponseLinks {
   @SerializedName("self")
   private PtsV2PaymentsPost201ResponseLinksSelf self = null;

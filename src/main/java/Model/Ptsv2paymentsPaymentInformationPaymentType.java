@@ -27,13 +27,10 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsPaymentInformationPaymentType
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsPaymentInformationPaymentType {
   @SerializedName("name")
   private String name = null;
-
-  @SerializedName("subTypeName")
-  private String subTypeName = null;
 
   @SerializedName("method")
   private Ptsv2paymentsPaymentInformationPaymentTypeMethod method = null;
@@ -44,34 +41,16 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
   }
 
    /**
-   * A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. Possible values: - &#x60;CARD&#x60; (use this for a PIN debit transaction) - &#x60;CHECK&#x60; (use this for all eCheck payment transactions - ECP Debit, ECP Follow-on Credit, ECP StandAlone Credit) - &#x60;bankTransfer&#x60; (use for Online Bank Transafer for methods such as P24, iDeal, Estonia Bank) 
+   * A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. Possible values: - &#x60;CARD&#x60; (use this for a PIN debit transaction) - &#x60;CHECK&#x60; (use this for all eCheck payment transactions - ECP Debit, ECP Follow-on Credit, ECP StandAlone Credit) - &#x60;bankTransfer&#x60; (use for Online Bank Transafer for methods such as P24, iDeal, Estonia Bank, KCP) - &#x60;localCard&#x60; (KCP Local card via Altpay) - &#x60;carrierBilling&#x60; (KCP Carrier Billing via Altpay) 
    * @return name
   **/
-  @ApiModelProperty(value = "A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. Possible values: - `CARD` (use this for a PIN debit transaction) - `CHECK` (use this for all eCheck payment transactions - ECP Debit, ECP Follow-on Credit, ECP StandAlone Credit) - `bankTransfer` (use for Online Bank Transafer for methods such as P24, iDeal, Estonia Bank) ")
+  @ApiModelProperty(value = "A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit. Possible values: - `CARD` (use this for a PIN debit transaction) - `CHECK` (use this for all eCheck payment transactions - ECP Debit, ECP Follow-on Credit, ECP StandAlone Credit) - `bankTransfer` (use for Online Bank Transafer for methods such as P24, iDeal, Estonia Bank, KCP) - `localCard` (KCP Local card via Altpay) - `carrierBilling` (KCP Carrier Billing via Altpay) ")
   public String getName() {
     return name;
   }
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  public Ptsv2paymentsPaymentInformationPaymentType subTypeName(String subTypeName) {
-    this.subTypeName = subTypeName;
-    return this;
-  }
-
-   /**
-   * Detailed information about the Payment Type. Possible values: - &#x60;DEBIT&#x60;: Use this value to indicate a PIN debit transaction.  Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. 
-   * @return subTypeName
-  **/
-  @ApiModelProperty(value = "Detailed information about the Payment Type. Possible values: - `DEBIT`: Use this value to indicate a PIN debit transaction.  Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. ")
-  public String getSubTypeName() {
-    return subTypeName;
-  }
-
-  public void setSubTypeName(String subTypeName) {
-    this.subTypeName = subTypeName;
   }
 
   public Ptsv2paymentsPaymentInformationPaymentType method(Ptsv2paymentsPaymentInformationPaymentTypeMethod method) {
@@ -103,13 +82,12 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
     }
     Ptsv2paymentsPaymentInformationPaymentType ptsv2paymentsPaymentInformationPaymentType = (Ptsv2paymentsPaymentInformationPaymentType) o;
     return Objects.equals(this.name, ptsv2paymentsPaymentInformationPaymentType.name) &&
-        Objects.equals(this.subTypeName, ptsv2paymentsPaymentInformationPaymentType.subTypeName) &&
         Objects.equals(this.method, ptsv2paymentsPaymentInformationPaymentType.method);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, subTypeName, method);
+    return Objects.hash(name, method);
   }
 
 
@@ -119,7 +97,6 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
     sb.append("class Ptsv2paymentsPaymentInformationPaymentType {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    subTypeName: ").append(toIndentedString(subTypeName)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();

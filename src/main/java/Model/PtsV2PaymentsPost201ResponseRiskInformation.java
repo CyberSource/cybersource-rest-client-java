@@ -17,7 +17,6 @@ import java.util.Objects;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationInfoCodes;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationIpAddress;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationProfile;
-import Model.PtsV2PaymentsPost201ResponseRiskInformationProviders;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationRules;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationScore;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationTravel;
@@ -31,13 +30,15 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Contains the result of risk assessment.
  */
 @ApiModel(description = "Contains the result of risk assessment.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class PtsV2PaymentsPost201ResponseRiskInformation {
   @SerializedName("profile")
   private PtsV2PaymentsPost201ResponseRiskInformationProfile profile = null;
@@ -64,7 +65,7 @@ public class PtsV2PaymentsPost201ResponseRiskInformation {
   private PtsV2PaymentsPost201ResponseRiskInformationIpAddress ipAddress = null;
 
   @SerializedName("providers")
-  private PtsV2PaymentsPost201ResponseRiskInformationProviders providers = null;
+  private Map<String, Map<String, String>> providers = null;
 
   @SerializedName("travel")
   private PtsV2PaymentsPost201ResponseRiskInformationTravel travel = null;
@@ -221,21 +222,29 @@ public class PtsV2PaymentsPost201ResponseRiskInformation {
     this.ipAddress = ipAddress;
   }
 
-  public PtsV2PaymentsPost201ResponseRiskInformation providers(PtsV2PaymentsPost201ResponseRiskInformationProviders providers) {
+  public PtsV2PaymentsPost201ResponseRiskInformation providers(Map<String, Map<String, String>> providers) {
     this.providers = providers;
     return this;
   }
 
+  public PtsV2PaymentsPost201ResponseRiskInformation putProvidersItem(String key, Map<String, String> providersItem) {
+    if (this.providers == null) {
+      this.providers = new HashMap<String, Map<String, String>>();
+    }
+    this.providers.put(key, providersItem);
+    return this;
+  }
+
    /**
-   * Get providers
+   * Name of the 3rd party provider, for example, Emailage. For all possible values, see the &#x60;decision_provider_#_name&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
    * @return providers
   **/
-  @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseRiskInformationProviders getProviders() {
+  @ApiModelProperty(value = "Name of the 3rd party provider, for example, Emailage. For all possible values, see the `decision_provider_#_name` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).")
+  public Map<String, Map<String, String>> getProviders() {
     return providers;
   }
 
-  public void setProviders(PtsV2PaymentsPost201ResponseRiskInformationProviders providers) {
+  public void setProviders(Map<String, Map<String, String>> providers) {
     this.providers = providers;
   }
 

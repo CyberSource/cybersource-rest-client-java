@@ -27,10 +27,16 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsidcapturesOrderInformationBillTo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class Ptsv2paymentsidcapturesOrderInformationBillTo {
+  @SerializedName("title")
+  private String title = null;
+
   @SerializedName("firstName")
   private String firstName = null;
+
+  @SerializedName("middleName")
+  private String middleName = null;
 
   @SerializedName("lastName")
   private String lastName = null;
@@ -47,11 +53,17 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
   @SerializedName("locality")
   private String locality = null;
 
+  @SerializedName("district")
+  private String district = null;
+
   @SerializedName("administrativeArea")
   private String administrativeArea = null;
 
   @SerializedName("postalCode")
   private String postalCode = null;
+
+  @SerializedName("county")
+  private String county = null;
 
   @SerializedName("country")
   private String country = null;
@@ -61,6 +73,24 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
 
   @SerializedName("phoneNumber")
   private String phoneNumber = null;
+
+  public Ptsv2paymentsidcapturesOrderInformationBillTo title(String title) {
+    this.title = title;
+    return this;
+  }
+
+   /**
+   * Title. 
+   * @return title
+  **/
+  @ApiModelProperty(value = "Title. ")
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
   public Ptsv2paymentsidcapturesOrderInformationBillTo firstName(String firstName) {
     this.firstName = firstName;
@@ -78,6 +108,24 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
 
   public void setFirstName(String firstName) {
     this.firstName = firstName;
+  }
+
+  public Ptsv2paymentsidcapturesOrderInformationBillTo middleName(String middleName) {
+    this.middleName = middleName;
+    return this;
+  }
+
+   /**
+   * Customer’s middle name. 
+   * @return middleName
+  **/
+  @ApiModelProperty(value = "Customer’s middle name. ")
+  public String getMiddleName() {
+    return middleName;
+  }
+
+  public void setMiddleName(String middleName) {
+    this.middleName = middleName;
   }
 
   public Ptsv2paymentsidcapturesOrderInformationBillTo lastName(String lastName) {
@@ -170,6 +218,24 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
     this.locality = locality;
   }
 
+  public Ptsv2paymentsidcapturesOrderInformationBillTo district(String district) {
+    this.district = district;
+    return this;
+  }
+
+   /**
+   * Customer’s neighborhood, community, or region (a barrio in Brazil) within the city or municipality. This field is available only on **Cielo**. 
+   * @return district
+  **/
+  @ApiModelProperty(value = "Customer’s neighborhood, community, or region (a barrio in Brazil) within the city or municipality. This field is available only on **Cielo**. ")
+  public String getDistrict() {
+    return district;
+  }
+
+  public void setDistrict(String district) {
+    this.district = district;
+  }
+
   public Ptsv2paymentsidcapturesOrderInformationBillTo administrativeArea(String administrativeArea) {
     this.administrativeArea = administrativeArea;
     return this;
@@ -204,6 +270,24 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
 
   public void setPostalCode(String postalCode) {
     this.postalCode = postalCode;
+  }
+
+  public Ptsv2paymentsidcapturesOrderInformationBillTo county(String county) {
+    this.county = county;
+    return this;
+  }
+
+   /**
+   * U.S. county if available.
+   * @return county
+  **/
+  @ApiModelProperty(value = "U.S. county if available.")
+  public String getCounty() {
+    return county;
+  }
+
+  public void setCounty(String county) {
+    this.county = county;
   }
 
   public Ptsv2paymentsidcapturesOrderInformationBillTo country(String country) {
@@ -270,14 +354,18 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
       return false;
     }
     Ptsv2paymentsidcapturesOrderInformationBillTo ptsv2paymentsidcapturesOrderInformationBillTo = (Ptsv2paymentsidcapturesOrderInformationBillTo) o;
-    return Objects.equals(this.firstName, ptsv2paymentsidcapturesOrderInformationBillTo.firstName) &&
+    return Objects.equals(this.title, ptsv2paymentsidcapturesOrderInformationBillTo.title) &&
+        Objects.equals(this.firstName, ptsv2paymentsidcapturesOrderInformationBillTo.firstName) &&
+        Objects.equals(this.middleName, ptsv2paymentsidcapturesOrderInformationBillTo.middleName) &&
         Objects.equals(this.lastName, ptsv2paymentsidcapturesOrderInformationBillTo.lastName) &&
         Objects.equals(this.company, ptsv2paymentsidcapturesOrderInformationBillTo.company) &&
         Objects.equals(this.address1, ptsv2paymentsidcapturesOrderInformationBillTo.address1) &&
         Objects.equals(this.address2, ptsv2paymentsidcapturesOrderInformationBillTo.address2) &&
         Objects.equals(this.locality, ptsv2paymentsidcapturesOrderInformationBillTo.locality) &&
+        Objects.equals(this.district, ptsv2paymentsidcapturesOrderInformationBillTo.district) &&
         Objects.equals(this.administrativeArea, ptsv2paymentsidcapturesOrderInformationBillTo.administrativeArea) &&
         Objects.equals(this.postalCode, ptsv2paymentsidcapturesOrderInformationBillTo.postalCode) &&
+        Objects.equals(this.county, ptsv2paymentsidcapturesOrderInformationBillTo.county) &&
         Objects.equals(this.country, ptsv2paymentsidcapturesOrderInformationBillTo.country) &&
         Objects.equals(this.email, ptsv2paymentsidcapturesOrderInformationBillTo.email) &&
         Objects.equals(this.phoneNumber, ptsv2paymentsidcapturesOrderInformationBillTo.phoneNumber);
@@ -285,7 +373,7 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, company, address1, address2, locality, administrativeArea, postalCode, country, email, phoneNumber);
+    return Objects.hash(title, firstName, middleName, lastName, company, address1, address2, locality, district, administrativeArea, postalCode, county, country, email, phoneNumber);
   }
 
 
@@ -294,14 +382,18 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesOrderInformationBillTo {\n");
     
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
     sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    sb.append("    district: ").append(toIndentedString(district)).append("\n");
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    sb.append("    county: ").append(toIndentedString(county)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");

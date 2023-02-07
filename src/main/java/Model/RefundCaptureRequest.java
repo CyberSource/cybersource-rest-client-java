@@ -14,13 +14,13 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsTravelInformation;
 import Model.Ptsv2paymentsidcapturesAggregatorInformation;
 import Model.Ptsv2paymentsidcapturesBuyerInformation;
 import Model.Ptsv2paymentsidcapturesDeviceInformation;
+import Model.Ptsv2paymentsidrefundsClientReferenceInformation;
 import Model.Ptsv2paymentsidrefundsMerchantInformation;
 import Model.Ptsv2paymentsidrefundsOrderInformation;
 import Model.Ptsv2paymentsidrefundsPaymentInformation;
@@ -40,10 +40,10 @@ import java.util.List;
 /**
  * RefundCaptureRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-11-30T13:38:58.602+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
 public class RefundCaptureRequest {
   @SerializedName("clientReferenceInformation")
-  private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
+  private Ptsv2paymentsidrefundsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("processingInformation")
   private Ptsv2paymentsidrefundsProcessingInformation processingInformation = null;
@@ -78,7 +78,7 @@ public class RefundCaptureRequest {
   @SerializedName("promotionInformation")
   private Ptsv2paymentsPromotionInformation promotionInformation = null;
 
-  public RefundCaptureRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
+  public RefundCaptureRequest clientReferenceInformation(Ptsv2paymentsidrefundsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -88,11 +88,11 @@ public class RefundCaptureRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsClientReferenceInformation getClientReferenceInformation() {
+  public Ptsv2paymentsidrefundsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Ptsv2paymentsidrefundsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
