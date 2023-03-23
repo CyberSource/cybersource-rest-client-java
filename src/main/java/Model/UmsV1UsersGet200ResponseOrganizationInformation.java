@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * UmsV1UsersGet200ResponseOrganizationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class UmsV1UsersGet200ResponseOrganizationInformation {
   @SerializedName("organizationId")
   private String organizationId = null;

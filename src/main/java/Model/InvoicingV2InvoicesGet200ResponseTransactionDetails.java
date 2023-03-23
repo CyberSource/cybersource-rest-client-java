@@ -27,7 +27,7 @@ import java.io.IOException;
  * These details are only returned when the invoice event is &#x60;payment&#x60;.
  */
 @ApiModel(description = "These details are only returned when the invoice event is `payment`.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class InvoicingV2InvoicesGet200ResponseTransactionDetails {
   @SerializedName("transactionId")
   private String transactionId = null;

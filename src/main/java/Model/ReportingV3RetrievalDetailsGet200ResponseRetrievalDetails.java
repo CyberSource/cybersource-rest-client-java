@@ -27,7 +27,7 @@ import org.joda.time.DateTime;
 /**
  * ReportingV3RetrievalDetailsGet200ResponseRetrievalDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class ReportingV3RetrievalDetailsGet200ResponseRetrievalDetails {
   @SerializedName("processorMerchantId")
   private String processorMerchantId = null;

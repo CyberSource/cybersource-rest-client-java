@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV1TransactionBatchesIdGet200ResponseLinksTransactions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class PtsV1TransactionBatchesIdGet200ResponseLinksTransactions {
   @SerializedName("href")
   private String href = null;

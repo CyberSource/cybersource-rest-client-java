@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TssV2TransactionsGet200ResponseOrderInformationShippingDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class TssV2TransactionsGet200ResponseOrderInformationShippingDetails {
   @SerializedName("giftWrap")
   private Boolean giftWrap = null;

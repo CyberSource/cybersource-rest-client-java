@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination {
   @SerializedName("country")
   private String country = null;

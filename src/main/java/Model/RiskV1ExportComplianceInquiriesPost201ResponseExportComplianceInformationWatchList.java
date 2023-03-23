@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformationWatchList
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformationWatchList {
   @SerializedName("matches")
   private List<RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformationWatchListMatches> matches = null;
