@@ -44,6 +44,7 @@ import javax.net.ssl.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -734,7 +735,9 @@ public class ApiClient {
 	 * @return ApiClient
 	 */
 	public ApiClient addDefaultHeader(String key, String value) {
-		defaultHeaderMap.put(key, value);
+		if (!defaultHeaderMap.containsKey(key)) {
+			defaultHeaderMap.put(key, value);
+		}    
 		return this;
 	}
 
@@ -1323,7 +1326,14 @@ public class ApiClient {
 	 */
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
-			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {	
+		
+		if(merchantConfig.getDefaultHeaders() != null && !merchantConfig.getDefaultHeaders().isEmpty()) {
+			for (Entry<String, String> header : merchantConfig.getDefaultHeaders().entrySet()) {
+				addDefaultHeader(header.getKey(), header.getValue());
+			}
+		}
+		
 		callAuthenticationHeader(method, path, body, queryParams);
 
 		if (merchantConfig.isEnableClientCert()) {
@@ -1338,6 +1348,7 @@ public class ApiClient {
 		}
 
 		headerParams.putAll(defaultHeaderMap);
+		
 		logger.info("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
 		Request request = buildRequest(path, method, queryParams, body, headerParams, formParams, authNames,
 				progressRequestListener);
@@ -1502,7 +1513,17 @@ public class ApiClient {
 	 */
 	public String buildUrl(String path, List<Pair> queryParams) {
 		final StringBuilder url = new StringBuilder();
-		url.append(GlobalLabelParameters.URL_PREFIX).append(merchantConfig.getRequestHost().trim()).append(path);
+		if (StringUtils.isNotBlank(merchantConfig.getIntermediateHost())) {
+			if (merchantConfig.getIntermediateHost().startsWith(GlobalLabelParameters.URL_PREFIX)
+					|| merchantConfig.getIntermediateHost().startsWith("http://")) {
+				url.append(merchantConfig.getIntermediateHost().trim()).append(path);
+			} else {
+				url.append(GlobalLabelParameters.URL_PREFIX).append(merchantConfig.getIntermediateHost().trim())
+						.append(path);
+			}
+		} else {
+			url.append(GlobalLabelParameters.URL_PREFIX).append(merchantConfig.getRequestHost().trim()).append(path);
+		}
 
 		if (queryParams != null && !queryParams.isEmpty()) {
 			// support (constant) query string in `path`, e.g. "/posts?draft=1"
