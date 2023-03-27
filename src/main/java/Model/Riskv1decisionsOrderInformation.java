@@ -34,7 +34,7 @@ import java.util.List;
  * Contains detailed order-level information.
  */
 @ApiModel(description = "Contains detailed order-level information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Riskv1decisionsOrderInformation {
   @SerializedName("amountDetails")
   private Riskv1decisionsOrderInformationAmountDetails amountDetails = null;

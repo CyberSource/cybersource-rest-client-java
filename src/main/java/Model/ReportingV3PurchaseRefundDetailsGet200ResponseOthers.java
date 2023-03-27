@@ -27,7 +27,7 @@ import java.io.IOException;
  * Other Merchant Details Values.
  */
 @ApiModel(description = "Other Merchant Details Values.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class ReportingV3PurchaseRefundDetailsGet200ResponseOthers {
   @SerializedName("requestId")
   private String requestId = null;

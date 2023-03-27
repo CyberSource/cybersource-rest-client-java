@@ -1,5 +1,6 @@
 {
    "modelPackage" : "Model",
    "apiPackage" : "Api",
-   "invokerPackage" : "Invokers"   
+   "invokerPackage" : "Invokers",
+   "hideGenerationTimestamp" : true
 }

@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PushFunds400Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class PushFunds400Response {
   @SerializedName("id")
   private String id = null;
