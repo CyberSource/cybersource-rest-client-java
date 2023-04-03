@@ -28,8 +28,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse4003;
-import Model.InlineResponse500;
+import Model.InlineResponse4005;
+import Model.InlineResponse5001;
 import Model.UpdatePGPKeysRequest1;
 
 import java.lang.reflect.Type;

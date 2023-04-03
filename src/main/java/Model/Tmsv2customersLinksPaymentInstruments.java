@@ -35,7 +35,7 @@ public class Tmsv2customersLinksPaymentInstruments {
    * Link to the Customers Payment Instruments. 
    * @return href
   **/
-  @ApiModelProperty(example = "/tms/v2/customers/1234567890123456789/payment-instruments", value = "Link to the Customers Payment Instruments. ")
+  @ApiModelProperty(example = "/tms/v2/customers/D9F340DD3DB9C276E053A2598D0A41A3/payment-instruments", value = "Link to the Customers Payment Instruments. ")
   public String getHref() {
     return href;
   }

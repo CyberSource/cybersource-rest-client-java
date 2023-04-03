@@ -15,7 +15,7 @@ package Api;
 
 import Invokers.ApiException;
 import Model.GenerateUnifiedCheckoutCaptureContextRequest;
-import Model.InlineResponse4004;
+import Model.InlineResponse4006;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -36,7 +36,7 @@ public class UnifiedCheckoutCaptureContextApiTest {
     /**
      * Generate Unified Checkout Capture Context
      *
-     * Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the paramiters for how Unified Chkcout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initate Unified Checkout within a merchnat web page
+     * Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the parameters for how Unified Checkout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initiate Unified Checkout within a merchant web page
      *
      * @throws ApiException
      *          if the Api call fails
@@ -44,7 +44,7 @@ public class UnifiedCheckoutCaptureContextApiTest {
     @Test
     public void generateUnifiedCheckoutCaptureContextTest() throws ApiException {
         GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest = null;
-        api.generateUnifiedCheckoutCaptureContext(generateUnifiedCheckoutCaptureContextRequest);
+        String response = api.generateUnifiedCheckoutCaptureContext(generateUnifiedCheckoutCaptureContextRequest);
 
         // TODO: test validations
     }

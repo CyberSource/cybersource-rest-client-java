@@ -35,7 +35,7 @@ public class Tmsv2customersEmbeddedDefaultShippingAddressLinksCustomer {
    * Link to the Customer 
    * @return href
   **/
-  @ApiModelProperty(example = "/tms/v2/customers/1234567890123456789", value = "Link to the Customer ")
+  @ApiModelProperty(example = "/tms/v2/customers/D9F340DD3DB9C276E053A2598D0A41A3", value = "Link to the Customer ")
   public String getHref() {
     return href;
   }

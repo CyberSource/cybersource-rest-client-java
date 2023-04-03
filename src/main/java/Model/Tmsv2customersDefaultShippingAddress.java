@@ -37,10 +37,10 @@ public class Tmsv2customersDefaultShippingAddress {
   }
 
    /**
-   * The id of the Customers default Shipping Address 
+   * The Id of the Customers default Shipping Address 
    * @return id
   **/
-  @ApiModelProperty(value = "The id of the Customers default Shipping Address ")
+  @ApiModelProperty(value = "The Id of the Customers default Shipping Address ")
   public String getId() {
     return id;
   }

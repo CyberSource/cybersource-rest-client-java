@@ -37,10 +37,10 @@ public class Tmsv2customersDefaultPaymentInstrument {
   }
 
    /**
-   * The id of the Customers default Payment Instrument 
+   * The Id of the Customers default Payment Instrument 
    * @return id
   **/
-  @ApiModelProperty(value = "The id of the Customers default Payment Instrument ")
+  @ApiModelProperty(value = "The Id of the Customers default Payment Instrument ")
   public String getId() {
     return id;
   }

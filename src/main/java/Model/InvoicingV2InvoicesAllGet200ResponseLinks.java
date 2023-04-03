@@ -32,11 +32,14 @@ public class InvoicingV2InvoicesAllGet200ResponseLinks {
   @SerializedName("self")
   private PtsV2PaymentsPost201ResponseLinksSelf self = null;
 
-  @SerializedName("next")
-  private PtsV2PaymentsPost201ResponseLinksSelf next = null;
+  @SerializedName("update")
+  private PtsV2PaymentsPost201ResponseLinksSelf update = null;
 
-  @SerializedName("previous")
-  private PtsV2PaymentsPost201ResponseLinksSelf previous = null;
+  @SerializedName("deliver")
+  private PtsV2PaymentsPost201ResponseLinksSelf deliver = null;
+
+  @SerializedName("cancel")
+  private PtsV2PaymentsPost201ResponseLinksSelf cancel = null;
 
   public InvoicingV2InvoicesAllGet200ResponseLinks self(PtsV2PaymentsPost201ResponseLinksSelf self) {
     this.self = self;
@@ -56,40 +59,58 @@ public class InvoicingV2InvoicesAllGet200ResponseLinks {
     this.self = self;
   }
 
-  public InvoicingV2InvoicesAllGet200ResponseLinks next(PtsV2PaymentsPost201ResponseLinksSelf next) {
-    this.next = next;
+  public InvoicingV2InvoicesAllGet200ResponseLinks update(PtsV2PaymentsPost201ResponseLinksSelf update) {
+    this.update = update;
     return this;
   }
 
    /**
-   * Get next
-   * @return next
+   * Get update
+   * @return update
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseLinksSelf getNext() {
-    return next;
+  public PtsV2PaymentsPost201ResponseLinksSelf getUpdate() {
+    return update;
   }
 
-  public void setNext(PtsV2PaymentsPost201ResponseLinksSelf next) {
-    this.next = next;
+  public void setUpdate(PtsV2PaymentsPost201ResponseLinksSelf update) {
+    this.update = update;
   }
 
-  public InvoicingV2InvoicesAllGet200ResponseLinks previous(PtsV2PaymentsPost201ResponseLinksSelf previous) {
-    this.previous = previous;
+  public InvoicingV2InvoicesAllGet200ResponseLinks deliver(PtsV2PaymentsPost201ResponseLinksSelf deliver) {
+    this.deliver = deliver;
     return this;
   }
 
    /**
-   * Get previous
-   * @return previous
+   * Get deliver
+   * @return deliver
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseLinksSelf getPrevious() {
-    return previous;
+  public PtsV2PaymentsPost201ResponseLinksSelf getDeliver() {
+    return deliver;
   }
 
-  public void setPrevious(PtsV2PaymentsPost201ResponseLinksSelf previous) {
-    this.previous = previous;
+  public void setDeliver(PtsV2PaymentsPost201ResponseLinksSelf deliver) {
+    this.deliver = deliver;
+  }
+
+  public InvoicingV2InvoicesAllGet200ResponseLinks cancel(PtsV2PaymentsPost201ResponseLinksSelf cancel) {
+    this.cancel = cancel;
+    return this;
+  }
+
+   /**
+   * Get cancel
+   * @return cancel
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseLinksSelf getCancel() {
+    return cancel;
+  }
+
+  public void setCancel(PtsV2PaymentsPost201ResponseLinksSelf cancel) {
+    this.cancel = cancel;
   }
 
 
@@ -103,13 +124,14 @@ public class InvoicingV2InvoicesAllGet200ResponseLinks {
     }
     InvoicingV2InvoicesAllGet200ResponseLinks invoicingV2InvoicesAllGet200ResponseLinks = (InvoicingV2InvoicesAllGet200ResponseLinks) o;
     return Objects.equals(this.self, invoicingV2InvoicesAllGet200ResponseLinks.self) &&
-        Objects.equals(this.next, invoicingV2InvoicesAllGet200ResponseLinks.next) &&
-        Objects.equals(this.previous, invoicingV2InvoicesAllGet200ResponseLinks.previous);
+        Objects.equals(this.update, invoicingV2InvoicesAllGet200ResponseLinks.update) &&
+        Objects.equals(this.deliver, invoicingV2InvoicesAllGet200ResponseLinks.deliver) &&
+        Objects.equals(this.cancel, invoicingV2InvoicesAllGet200ResponseLinks.cancel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self, next, previous);
+    return Objects.hash(self, update, deliver, cancel);
   }
 
 
@@ -119,8 +141,9 @@ public class InvoicingV2InvoicesAllGet200ResponseLinks {
     sb.append("class InvoicingV2InvoicesAllGet200ResponseLinks {\n");
     
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
-    sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
+    sb.append("    update: ").append(toIndentedString(update)).append("\n");
+    sb.append("    deliver: ").append(toIndentedString(deliver)).append("\n");
+    sb.append("    cancel: ").append(toIndentedString(cancel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

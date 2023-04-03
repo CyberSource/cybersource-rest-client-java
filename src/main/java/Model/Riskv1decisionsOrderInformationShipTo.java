@@ -34,6 +34,9 @@ public class Riskv1decisionsOrderInformationShipTo {
   @SerializedName("address2")
   private String address2 = null;
 
+  @SerializedName("address3")
+  private String address3 = null;
+
   @SerializedName("administrativeArea")
   private String administrativeArea = null;
 
@@ -51,6 +54,9 @@ public class Riskv1decisionsOrderInformationShipTo {
 
   @SerializedName("lastName")
   private String lastName = null;
+
+  @SerializedName("middleName")
+  private String middleName = null;
 
   @SerializedName("phoneNumber")
   private String phoneNumber = null;
@@ -100,16 +106,34 @@ public class Riskv1decisionsOrderInformationShipTo {
     this.address2 = address2;
   }
 
+  public Riskv1decisionsOrderInformationShipTo address3(String address3) {
+    this.address3 = address3;
+    return this;
+  }
+
+   /**
+   * Third line of the shipping address.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present. 
+   * @return address3
+  **/
+  @ApiModelProperty(value = "Third line of the shipping address.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present. ")
+  public String getAddress3() {
+    return address3;
+  }
+
+  public void setAddress3(String address3) {
+    this.address3 = address3;
+  }
+
   public Riskv1decisionsOrderInformationShipTo administrativeArea(String administrativeArea) {
     this.administrativeArea = administrativeArea;
     return this;
   }
 
    /**
-   * State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf)  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present. 
+   * State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf) (maximum length: 2)   Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present. 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf)  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present. ")
+  @ApiModelProperty(value = "State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf) (maximum length: 2)   Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present. ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -208,6 +232,24 @@ public class Riskv1decisionsOrderInformationShipTo {
     this.lastName = lastName;
   }
 
+  public Riskv1decisionsOrderInformationShipTo middleName(String middleName) {
+    this.middleName = middleName;
+    return this;
+  }
+
+   /**
+   * Middle name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. 
+   * @return middleName
+  **/
+  @ApiModelProperty(value = "Middle name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. ")
+  public String getMiddleName() {
+    return middleName;
+  }
+
+  public void setMiddleName(String middleName) {
+    this.middleName = middleName;
+  }
+
   public Riskv1decisionsOrderInformationShipTo phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
@@ -292,12 +334,14 @@ public class Riskv1decisionsOrderInformationShipTo {
     Riskv1decisionsOrderInformationShipTo riskv1decisionsOrderInformationShipTo = (Riskv1decisionsOrderInformationShipTo) o;
     return Objects.equals(this.address1, riskv1decisionsOrderInformationShipTo.address1) &&
         Objects.equals(this.address2, riskv1decisionsOrderInformationShipTo.address2) &&
+        Objects.equals(this.address3, riskv1decisionsOrderInformationShipTo.address3) &&
         Objects.equals(this.administrativeArea, riskv1decisionsOrderInformationShipTo.administrativeArea) &&
         Objects.equals(this.country, riskv1decisionsOrderInformationShipTo.country) &&
         Objects.equals(this.destinationTypes, riskv1decisionsOrderInformationShipTo.destinationTypes) &&
         Objects.equals(this.locality, riskv1decisionsOrderInformationShipTo.locality) &&
         Objects.equals(this.firstName, riskv1decisionsOrderInformationShipTo.firstName) &&
         Objects.equals(this.lastName, riskv1decisionsOrderInformationShipTo.lastName) &&
+        Objects.equals(this.middleName, riskv1decisionsOrderInformationShipTo.middleName) &&
         Objects.equals(this.phoneNumber, riskv1decisionsOrderInformationShipTo.phoneNumber) &&
         Objects.equals(this.postalCode, riskv1decisionsOrderInformationShipTo.postalCode) &&
         Objects.equals(this.destinationCode, riskv1decisionsOrderInformationShipTo.destinationCode) &&
@@ -306,7 +350,7 @@ public class Riskv1decisionsOrderInformationShipTo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address1, address2, administrativeArea, country, destinationTypes, locality, firstName, lastName, phoneNumber, postalCode, destinationCode, method);
+    return Objects.hash(address1, address2, address3, administrativeArea, country, destinationTypes, locality, firstName, lastName, middleName, phoneNumber, postalCode, destinationCode, method);
   }
 
 
@@ -317,12 +361,14 @@ public class Riskv1decisionsOrderInformationShipTo {
     
     sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
+    sb.append("    address3: ").append(toIndentedString(address3)).append("\n");
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    destinationTypes: ").append(toIndentedString(destinationTypes)).append("\n");
     sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    destinationCode: ").append(toIndentedString(destinationCode)).append("\n");

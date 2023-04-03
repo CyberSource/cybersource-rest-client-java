@@ -37,10 +37,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier 
   }
 
    /**
-   * The id of the Instrument Identifier token linked to the Payment Instrument. 
+   * The Id of the Instrument Identifier linked to the Payment Instrument. 
    * @return id
   **/
-  @ApiModelProperty(value = "The id of the Instrument Identifier token linked to the Payment Instrument. ")
+  @ApiModelProperty(value = "The Id of the Instrument Identifier linked to the Payment Instrument. ")
   public String getId() {
     return id;
   }

@@ -32,10 +32,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata {
   private String creator = null;
 
    /**
-   * The creator of the Payment Instrument token. 
+   * The creator of the Payment Instrument. 
    * @return creator
   **/
-  @ApiModelProperty(value = "The creator of the Payment Instrument token. ")
+  @ApiModelProperty(value = "The creator of the Payment Instrument. ")
   public String getCreator() {
     return creator;
   }

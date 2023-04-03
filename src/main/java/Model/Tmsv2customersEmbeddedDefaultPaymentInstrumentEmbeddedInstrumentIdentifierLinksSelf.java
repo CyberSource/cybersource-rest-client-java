@@ -35,7 +35,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
    * Link to the Instrument Identifier. 
    * @return href
   **/
-  @ApiModelProperty(example = "tms/v1/instrumentidentifiers/9B8D20D13FF328CCE0539399D30A70N4", value = "Link to the Instrument Identifier. ")
+  @ApiModelProperty(example = "tms/v1/instrumentidentifiers/7010000000016241111", value = "Link to the Instrument Identifier. ")
   public String getHref() {
     return href;
   }

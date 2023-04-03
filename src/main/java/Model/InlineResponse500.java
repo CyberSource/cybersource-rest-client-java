@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.InlineResponse500Errors;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,94 +23,41 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse500
  */
 
 public class InlineResponse500 {
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("errors")
+  private List<InlineResponse500Errors> errors = null;
 
-  @SerializedName("status")
-  private String status = null;
+  public InlineResponse500 errors(List<InlineResponse500Errors> errors) {
+    this.errors = errors;
+    return this;
+  }
 
-  @SerializedName("reason")
-  private String reason = null;
-
-  @SerializedName("message")
-  private String message = null;
-
-  public InlineResponse500 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public InlineResponse500 addErrorsItem(InlineResponse500Errors errorsItem) {
+    if (this.errors == null) {
+      this.errors = new ArrayList<InlineResponse500Errors>();
+    }
+    this.errors.add(errorsItem);
     return this;
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
-   * @return submitTimeUtc
+   * Get errors
+   * @return errors
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
+  @ApiModelProperty(value = "")
+  public List<InlineResponse500Errors> getErrors() {
+    return errors;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
-
-  public InlineResponse500 status(String status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * The status of the submitted request.  Possible values:  - SERVER_ERROR 
-   * @return status
-  **/
-  @ApiModelProperty(value = "The status of the submitted request.  Possible values:  - SERVER_ERROR ")
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public InlineResponse500 reason(String reason) {
-    this.reason = reason;
-    return this;
-  }
-
-   /**
-   * The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT 
-   * @return reason
-  **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT ")
-  public String getReason() {
-    return reason;
-  }
-
-  public void setReason(String reason) {
-    this.reason = reason;
-  }
-
-  public InlineResponse500 message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * The detail message related to the status and reason listed above.
-   * @return message
-  **/
-  @ApiModelProperty(value = "The detail message related to the status and reason listed above.")
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
+  public void setErrors(List<InlineResponse500Errors> errors) {
+    this.errors = errors;
   }
 
 
@@ -122,15 +70,12 @@ public class InlineResponse500 {
       return false;
     }
     InlineResponse500 inlineResponse500 = (InlineResponse500) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse500.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse500.status) &&
-        Objects.equals(this.reason, inlineResponse500.reason) &&
-        Objects.equals(this.message, inlineResponse500.message);
+    return Objects.equals(this.errors, inlineResponse500.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, reason, message);
+    return Objects.hash(errors);
   }
 
 
@@ -139,10 +84,7 @@ public class InlineResponse500 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse500 {\n");
     
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

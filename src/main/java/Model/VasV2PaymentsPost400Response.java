@@ -88,10 +88,10 @@ public class VasV2PaymentsPost400Response {
   }
 
    /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - PROCESSOR_UNAVAILABLE  - AVS_FAILED  - INVALID_MERCHANT_CONFIGURATION 
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - INVALID_MERCHANT_CONFIGURATION  - INVALID_ADDRESS 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - PROCESSOR_UNAVAILABLE  - AVS_FAILED  - INVALID_MERCHANT_CONFIGURATION ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - INVALID_MERCHANT_CONFIGURATION  - INVALID_ADDRESS ")
   public String getReason() {
     return reason;
   }

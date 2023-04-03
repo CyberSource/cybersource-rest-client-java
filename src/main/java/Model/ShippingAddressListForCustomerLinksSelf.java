@@ -35,7 +35,7 @@ public class ShippingAddressListForCustomerLinksSelf {
    * Link to the current page. 
    * @return href
   **/
-  @ApiModelProperty(example = "/tms/v2/customers/1234567890123456789/shipping-addresses?offset=0&limit=1", value = "Link to the current page. ")
+  @ApiModelProperty(example = "/tms/v2/customers/D9F340DD3DB9C276E053A2598D0A41A3/shipping-addresses?offset=0&limit=1", value = "Link to the current page. ")
   public String getHref() {
     return href;
   }

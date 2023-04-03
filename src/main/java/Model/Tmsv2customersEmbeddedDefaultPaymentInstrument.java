@@ -53,6 +53,9 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrument {
   @SerializedName("state")
   private String state = null;
 
+  @SerializedName("type")
+  private String type = null;
+
   @SerializedName("bankAccount")
   private Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount bankAccount = null;
 
@@ -104,10 +107,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrument {
   }
 
    /**
-   * The id of the Payment Instrument Token.
+   * The Id of the Payment Instrument Token.
    * @return id
   **/
-  @ApiModelProperty(value = "The id of the Payment Instrument Token.")
+  @ApiModelProperty(value = "The Id of the Payment Instrument Token.")
   public String getId() {
     return id;
   }
@@ -117,10 +120,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrument {
   }
 
    /**
-   * The type of token.  Valid values: - paymentInstrument 
+   * The type.  Possible Values: - paymentInstrument 
    * @return object
   **/
-  @ApiModelProperty(example = "paymentInstrument", value = "The type of token.  Valid values: - paymentInstrument ")
+  @ApiModelProperty(example = "paymentInstrument", value = "The type.  Possible Values: - paymentInstrument ")
   public String getObject() {
     return object;
   }
@@ -131,10 +134,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrument {
   }
 
    /**
-   * Flag that indicates whether customer payment instrument is the dafault. Valid values:  - &#x60;true&#x60;: Payment instrument is customer&#39;s default.  - &#x60;false&#x60;: Payment instrument is not customer&#39;s default. 
+   * Flag that indicates whether customer payment instrument is the dafault. Possible Values:  - &#x60;true&#x60;: Payment instrument is customer&#39;s default.  - &#x60;false&#x60;: Payment instrument is not customer&#39;s default. 
    * @return _default
   **/
-  @ApiModelProperty(value = "Flag that indicates whether customer payment instrument is the dafault. Valid values:  - `true`: Payment instrument is customer's default.  - `false`: Payment instrument is not customer's default. ")
+  @ApiModelProperty(value = "Flag that indicates whether customer payment instrument is the dafault. Possible Values:  - `true`: Payment instrument is customer's default.  - `false`: Payment instrument is not customer's default. ")
   public Boolean getDefault() {
     return _default;
   }
@@ -144,12 +147,21 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrument {
   }
 
    /**
-   * Issuers state for the card number. Valid values: - ACTIVE - CLOSED : The account has been closed. 
+   * Issuers state for the card number. Possible Values: - ACTIVE - CLOSED : The account has been closed. 
    * @return state
   **/
-  @ApiModelProperty(example = "ACTIVE", value = "Issuers state for the card number. Valid values: - ACTIVE - CLOSED : The account has been closed. ")
+  @ApiModelProperty(example = "ACTIVE", value = "Issuers state for the card number. Possible Values: - ACTIVE - CLOSED : The account has been closed. ")
   public String getState() {
     return state;
+  }
+
+   /**
+   * The type of Payment Instrument. Possible Values: - cardHash 
+   * @return type
+  **/
+  @ApiModelProperty(value = "The type of Payment Instrument. Possible Values: - cardHash ")
+  public String getType() {
+    return type;
   }
 
   public Tmsv2customersEmbeddedDefaultPaymentInstrument bankAccount(Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount bankAccount) {
@@ -329,6 +341,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrument {
         Objects.equals(this.object, tmsv2customersEmbeddedDefaultPaymentInstrument.object) &&
         Objects.equals(this._default, tmsv2customersEmbeddedDefaultPaymentInstrument._default) &&
         Objects.equals(this.state, tmsv2customersEmbeddedDefaultPaymentInstrument.state) &&
+        Objects.equals(this.type, tmsv2customersEmbeddedDefaultPaymentInstrument.type) &&
         Objects.equals(this.bankAccount, tmsv2customersEmbeddedDefaultPaymentInstrument.bankAccount) &&
         Objects.equals(this.card, tmsv2customersEmbeddedDefaultPaymentInstrument.card) &&
         Objects.equals(this.buyerInformation, tmsv2customersEmbeddedDefaultPaymentInstrument.buyerInformation) &&
@@ -342,7 +355,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrument {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, object, _default, state, bankAccount, card, buyerInformation, billTo, processingInformation, merchantInformation, instrumentIdentifier, metadata, embedded);
+    return Objects.hash(links, id, object, _default, state, type, bankAccount, card, buyerInformation, billTo, processingInformation, merchantInformation, instrumentIdentifier, metadata, embedded);
   }
 
 
@@ -356,6 +369,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrument {
     sb.append("    object: ").append(toIndentedString(object)).append("\n");
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");

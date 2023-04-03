@@ -62,10 +62,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPerso
   }
 
    /**
-   * The type of the identification.  Valid values:   - driver license 
+   * The type of the identification.  Possible Values:   - driver license 
    * @return type
   **/
-  @ApiModelProperty(value = "The type of the identification.  Valid values:   - driver license ")
+  @ApiModelProperty(value = "The type of the identification.  Possible Values:   - driver license ")
   public String getType() {
     return type;
   }

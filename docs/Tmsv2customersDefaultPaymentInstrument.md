@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | The id of the Customers default Payment Instrument  |  [optional]
+**id** | **String** | The Id of the Customers default Payment Instrument  |  [optional]
 
 
 

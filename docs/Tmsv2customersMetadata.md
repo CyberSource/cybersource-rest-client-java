@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**creator** | **String** | The creator of the Customer token.  |  [optional]
+**creator** | **String** | The creator of the Customer.  |  [optional]
 
 
 

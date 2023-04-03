@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2paymentsidreversalsPointOfSaleInformationEmv;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -40,6 +41,9 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
 
   @SerializedName("partner")
   private TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner partner = null;
+
+  @SerializedName("emv")
+  private Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv = null;
 
   public TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation terminalId(String terminalId) {
     this.terminalId = terminalId;
@@ -113,6 +117,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
     this.partner = partner;
   }
 
+  public TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation emv(Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv) {
+    this.emv = emv;
+    return this;
+  }
+
+   /**
+   * Get emv
+   * @return emv
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidreversalsPointOfSaleInformationEmv getEmv() {
+    return emv;
+  }
+
+  public void setEmv(Ptsv2paymentsidreversalsPointOfSaleInformationEmv emv) {
+    this.emv = emv;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,12 +148,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
     return Objects.equals(this.terminalId, tssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation.terminalId) &&
         Objects.equals(this.terminalSerialNumber, tssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation.terminalSerialNumber) &&
         Objects.equals(this.deviceId, tssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation.deviceId) &&
-        Objects.equals(this.partner, tssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation.partner);
+        Objects.equals(this.partner, tssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation.partner) &&
+        Objects.equals(this.emv, tssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation.emv);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId, terminalSerialNumber, deviceId, partner);
+    return Objects.hash(terminalId, terminalSerialNumber, deviceId, partner, emv);
   }
 
 
@@ -144,6 +167,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
     sb.append("    terminalSerialNumber: ").append(toIndentedString(terminalSerialNumber)).append("\n");
     sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
     sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
+    sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
     sb.append("}");
     return sb.toString();
   }

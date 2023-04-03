@@ -29,6 +29,12 @@ import java.io.InputStream;
 
 
 import Model.InlineResponse400;
+import Model.InlineResponse403;
+import Model.InlineResponse409;
+import Model.InlineResponse410;
+import Model.InlineResponse412;
+import Model.InlineResponse424;
+import Model.InlineResponse500;
 import Model.PatchCustomerShippingAddressRequest;
 import Model.PostCustomerShippingAddressRequest;
 import Model.ShippingAddressListForCustomer;
@@ -66,24 +72,24 @@ public class CustomerShippingAddressApi {
 
     /**
      * Build call for deleteCustomerShippingAddress
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deleteCustomerShippingAddressCall(String customerTokenId, String shippingAddressTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteCustomerShippingAddressCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
         }
         
         // create path and map variables
-        String localVarPath = "/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}"
-            .replaceAll("\\{" + "customerTokenId" + "\\}", apiClient.escapeString(customerTokenId.toString()))
-            .replaceAll("\\{" + "shippingAddressTokenId" + "\\}", apiClient.escapeString(shippingAddressTokenId.toString()));
+        String localVarPath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}"
+            .replaceAll("\\{" + "customerId" + "\\}", apiClient.escapeString(customerId.toString()))
+            .replaceAll("\\{" + "shippingAddressId" + "\\}", apiClient.escapeString(shippingAddressId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -122,22 +128,22 @@ public class CustomerShippingAddressApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCustomerShippingAddressValidateBeforeCall(String customerTokenId, String shippingAddressTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteCustomerShippingAddressValidateBeforeCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'customerTokenId' is set
-        if (customerTokenId == null) {
-        	logger.error("Missing the required parameter 'customerTokenId' when calling deleteCustomerShippingAddress(Async)");
-            throw new ApiException("Missing the required parameter 'customerTokenId' when calling deleteCustomerShippingAddress(Async)");
+        // verify the required parameter 'customerId' is set
+        if (customerId == null) {
+        	logger.error("Missing the required parameter 'customerId' when calling deleteCustomerShippingAddress(Async)");
+            throw new ApiException("Missing the required parameter 'customerId' when calling deleteCustomerShippingAddress(Async)");
         }
         
-        // verify the required parameter 'shippingAddressTokenId' is set
-        if (shippingAddressTokenId == null) {
-        	logger.error("Missing the required parameter 'shippingAddressTokenId' when calling deleteCustomerShippingAddress(Async)");
-            throw new ApiException("Missing the required parameter 'shippingAddressTokenId' when calling deleteCustomerShippingAddress(Async)");
+        // verify the required parameter 'shippingAddressId' is set
+        if (shippingAddressId == null) {
+        	logger.error("Missing the required parameter 'shippingAddressId' when calling deleteCustomerShippingAddress(Async)");
+            throw new ApiException("Missing the required parameter 'shippingAddressId' when calling deleteCustomerShippingAddress(Async)");
         }
         
         
-        okhttp3.Call call = deleteCustomerShippingAddressCall(customerTokenId, shippingAddressTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteCustomerShippingAddressCall(customerId, shippingAddressId, profileId, progressListener, progressRequestListener);
         return call;
 
         
@@ -148,44 +154,44 @@ public class CustomerShippingAddressApi {
 
     /**
      * Delete a Customer Shipping Address
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Customers Shipping Address**&lt;br&gt;Your system can use this API to delete an existing Shipping Address for a Customer.&lt;br&gt;If a customer has more than one Shipping Address then the default Shipping Address cannot be deleted without first selecting a [new default Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address_samplerequests-dropdown_make-customer-shipping-address-the-default_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteCustomerShippingAddress(String customerTokenId, String shippingAddressTokenId, String profileId) throws ApiException {
+    public void deleteCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException {
     	logger.info("CALL TO METHOD 'deleteCustomerShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        deleteCustomerShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, profileId);
+        deleteCustomerShippingAddressWithHttpInfo(customerId, shippingAddressId, profileId);
 
     }
 
     /**
      * Delete a Customer Shipping Address
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Customers Shipping Address**&lt;br&gt;Your system can use this API to delete an existing Shipping Address for a Customer.&lt;br&gt;If a customer has more than one Shipping Address then the default Shipping Address cannot be deleted without first selecting a [new default Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address_samplerequests-dropdown_make-customer-shipping-address-the-default_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteCustomerShippingAddressWithHttpInfo(String customerTokenId, String shippingAddressTokenId, String profileId) throws ApiException {
-        okhttp3.Call call = deleteCustomerShippingAddressValidateBeforeCall(customerTokenId, shippingAddressTokenId, profileId, null, null);
+    public ApiResponse<Void> deleteCustomerShippingAddressWithHttpInfo(String customerId, String shippingAddressId, String profileId) throws ApiException {
+        okhttp3.Call call = deleteCustomerShippingAddressValidateBeforeCall(customerId, shippingAddressId, profileId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Delete a Customer Shipping Address (asynchronously)
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Customers Shipping Address**&lt;br&gt;Your system can use this API to delete an existing Shipping Address for a Customer.&lt;br&gt;If a customer has more than one Shipping Address then the default Shipping Address cannot be deleted without first selecting a [new default Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address_samplerequests-dropdown_make-customer-shipping-address-the-default_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deleteCustomerShippingAddressAsync(String customerTokenId, String shippingAddressTokenId, String profileId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteCustomerShippingAddressAsync(String customerId, String shippingAddressId, String profileId, final ApiCallback<Void> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -207,30 +213,30 @@ public class CustomerShippingAddressApi {
             };
         }
 
-        okhttp3.Call call = deleteCustomerShippingAddressValidateBeforeCall(customerTokenId, shippingAddressTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteCustomerShippingAddressValidateBeforeCall(customerId, shippingAddressId, profileId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for getCustomerShippingAddress
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getCustomerShippingAddressCall(String customerTokenId, String shippingAddressTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getCustomerShippingAddressCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
         }
         
         // create path and map variables
-        String localVarPath = "/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}"
-            .replaceAll("\\{" + "customerTokenId" + "\\}", apiClient.escapeString(customerTokenId.toString()))
-            .replaceAll("\\{" + "shippingAddressTokenId" + "\\}", apiClient.escapeString(shippingAddressTokenId.toString()));
+        String localVarPath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}"
+            .replaceAll("\\{" + "customerId" + "\\}", apiClient.escapeString(customerId.toString()))
+            .replaceAll("\\{" + "shippingAddressId" + "\\}", apiClient.escapeString(shippingAddressId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -269,22 +275,22 @@ public class CustomerShippingAddressApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomerShippingAddressValidateBeforeCall(String customerTokenId, String shippingAddressTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getCustomerShippingAddressValidateBeforeCall(String customerId, String shippingAddressId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'customerTokenId' is set
-        if (customerTokenId == null) {
-        	logger.error("Missing the required parameter 'customerTokenId' when calling getCustomerShippingAddress(Async)");
-            throw new ApiException("Missing the required parameter 'customerTokenId' when calling getCustomerShippingAddress(Async)");
+        // verify the required parameter 'customerId' is set
+        if (customerId == null) {
+        	logger.error("Missing the required parameter 'customerId' when calling getCustomerShippingAddress(Async)");
+            throw new ApiException("Missing the required parameter 'customerId' when calling getCustomerShippingAddress(Async)");
         }
         
-        // verify the required parameter 'shippingAddressTokenId' is set
-        if (shippingAddressTokenId == null) {
-        	logger.error("Missing the required parameter 'shippingAddressTokenId' when calling getCustomerShippingAddress(Async)");
-            throw new ApiException("Missing the required parameter 'shippingAddressTokenId' when calling getCustomerShippingAddress(Async)");
+        // verify the required parameter 'shippingAddressId' is set
+        if (shippingAddressId == null) {
+        	logger.error("Missing the required parameter 'shippingAddressId' when calling getCustomerShippingAddress(Async)");
+            throw new ApiException("Missing the required parameter 'shippingAddressId' when calling getCustomerShippingAddress(Async)");
         }
         
         
-        okhttp3.Call call = getCustomerShippingAddressCall(customerTokenId, shippingAddressTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = getCustomerShippingAddressCall(customerId, shippingAddressId, profileId, progressListener, progressRequestListener);
         return call;
 
         
@@ -295,47 +301,47 @@ public class CustomerShippingAddressApi {
 
     /**
      * Retrieve a Customer Shipping Address
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Customer Shipping Address**&lt;br&gt;Your system can use this API to retrieve an existing Shipping Address for a Customer.&lt;br&gt;To perform a payment with a particular Shipping Address simply specify the [Shipping Address Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return Tmsv2customersEmbeddedDefaultShippingAddress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultShippingAddress getCustomerShippingAddress(String customerTokenId, String shippingAddressTokenId, String profileId) throws ApiException {
+    public Tmsv2customersEmbeddedDefaultShippingAddress getCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException {
     	logger.info("CALL TO METHOD 'getCustomerShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = getCustomerShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, profileId);
+        ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = getCustomerShippingAddressWithHttpInfo(customerId, shippingAddressId, profileId);
         logger.info("CALL TO METHOD 'getCustomerShippingAddress' ENDED");
         return resp.getData();
     }
 
     /**
      * Retrieve a Customer Shipping Address
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Customer Shipping Address**&lt;br&gt;Your system can use this API to retrieve an existing Shipping Address for a Customer.&lt;br&gt;To perform a payment with a particular Shipping Address simply specify the [Shipping Address Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultShippingAddress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> getCustomerShippingAddressWithHttpInfo(String customerTokenId, String shippingAddressTokenId, String profileId) throws ApiException {
-        okhttp3.Call call = getCustomerShippingAddressValidateBeforeCall(customerTokenId, shippingAddressTokenId, profileId, null, null);
+    public ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> getCustomerShippingAddressWithHttpInfo(String customerId, String shippingAddressId, String profileId) throws ApiException {
+        okhttp3.Call call = getCustomerShippingAddressValidateBeforeCall(customerId, shippingAddressId, profileId, null, null);
         Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Retrieve a Customer Shipping Address (asynchronously)
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Customer Shipping Address**&lt;br&gt;Your system can use this API to retrieve an existing Shipping Address for a Customer.&lt;br&gt;To perform a payment with a particular Shipping Address simply specify the [Shipping Address Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getCustomerShippingAddressAsync(String customerTokenId, String shippingAddressTokenId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
+    public okhttp3.Call getCustomerShippingAddressAsync(String customerId, String shippingAddressId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -357,15 +363,15 @@ public class CustomerShippingAddressApi {
             };
         }
 
-        okhttp3.Call call = getCustomerShippingAddressValidateBeforeCall(customerTokenId, shippingAddressTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = getCustomerShippingAddressValidateBeforeCall(customerId, shippingAddressId, profileId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for getCustomerShippingAddressesList
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @param progressListener Progress listener
@@ -373,15 +379,15 @@ public class CustomerShippingAddressApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getCustomerShippingAddressesListCall(String customerTokenId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getCustomerShippingAddressesListCall(String customerId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
         }
         
         // create path and map variables
-        String localVarPath = "/tms/v2/customers/{customerTokenId}/shipping-addresses"
-            .replaceAll("\\{" + "customerTokenId" + "\\}", apiClient.escapeString(customerTokenId.toString()));
+        String localVarPath = "/tms/v2/customers/{customerId}/shipping-addresses"
+            .replaceAll("\\{" + "customerId" + "\\}", apiClient.escapeString(customerId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (offset != null)
@@ -424,16 +430,16 @@ public class CustomerShippingAddressApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomerShippingAddressesListValidateBeforeCall(String customerTokenId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getCustomerShippingAddressesListValidateBeforeCall(String customerId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'customerTokenId' is set
-        if (customerTokenId == null) {
-        	logger.error("Missing the required parameter 'customerTokenId' when calling getCustomerShippingAddressesList(Async)");
-            throw new ApiException("Missing the required parameter 'customerTokenId' when calling getCustomerShippingAddressesList(Async)");
+        // verify the required parameter 'customerId' is set
+        if (customerId == null) {
+        	logger.error("Missing the required parameter 'customerId' when calling getCustomerShippingAddressesList(Async)");
+            throw new ApiException("Missing the required parameter 'customerId' when calling getCustomerShippingAddressesList(Async)");
         }
         
         
-        okhttp3.Call call = getCustomerShippingAddressesListCall(customerTokenId, profileId, offset, limit, progressListener, progressRequestListener);
+        okhttp3.Call call = getCustomerShippingAddressesListCall(customerId, profileId, offset, limit, progressListener, progressRequestListener);
         return call;
 
         
@@ -444,50 +450,50 @@ public class CustomerShippingAddressApi {
 
     /**
      * List Shipping Addresses for a Customer
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving all Customer Shipping Addresses**&lt;br&gt;Your system can use this API to retrieve all existing Shipping Addresses for a Customer. 
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @return ShippingAddressListForCustomer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ShippingAddressListForCustomer getCustomerShippingAddressesList(String customerTokenId, String profileId, Long offset, Long limit) throws ApiException {
+    public ShippingAddressListForCustomer getCustomerShippingAddressesList(String customerId, String profileId, Long offset, Long limit) throws ApiException {
     	logger.info("CALL TO METHOD 'getCustomerShippingAddressesList' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<ShippingAddressListForCustomer> resp = getCustomerShippingAddressesListWithHttpInfo(customerTokenId, profileId, offset, limit);
+        ApiResponse<ShippingAddressListForCustomer> resp = getCustomerShippingAddressesListWithHttpInfo(customerId, profileId, offset, limit);
         logger.info("CALL TO METHOD 'getCustomerShippingAddressesList' ENDED");
         return resp.getData();
     }
 
     /**
      * List Shipping Addresses for a Customer
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving all Customer Shipping Addresses**&lt;br&gt;Your system can use this API to retrieve all existing Shipping Addresses for a Customer. 
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @return ApiResponse&lt;ShippingAddressListForCustomer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ShippingAddressListForCustomer> getCustomerShippingAddressesListWithHttpInfo(String customerTokenId, String profileId, Long offset, Long limit) throws ApiException {
-        okhttp3.Call call = getCustomerShippingAddressesListValidateBeforeCall(customerTokenId, profileId, offset, limit, null, null);
+    public ApiResponse<ShippingAddressListForCustomer> getCustomerShippingAddressesListWithHttpInfo(String customerId, String profileId, Long offset, Long limit) throws ApiException {
+        okhttp3.Call call = getCustomerShippingAddressesListValidateBeforeCall(customerId, profileId, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<ShippingAddressListForCustomer>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * List Shipping Addresses for a Customer (asynchronously)
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving all Customer Shipping Addresses**&lt;br&gt;Your system can use this API to retrieve all existing Shipping Addresses for a Customer. 
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getCustomerShippingAddressesListAsync(String customerTokenId, String profileId, Long offset, Long limit, final ApiCallback<ShippingAddressListForCustomer> callback) throws ApiException {
+    public okhttp3.Call getCustomerShippingAddressesListAsync(String customerId, String profileId, Long offset, Long limit, final ApiCallback<ShippingAddressListForCustomer> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -509,30 +515,30 @@ public class CustomerShippingAddressApi {
             };
         }
 
-        okhttp3.Call call = getCustomerShippingAddressesListValidateBeforeCall(customerTokenId, profileId, offset, limit, progressListener, progressRequestListener);
+        okhttp3.Call call = getCustomerShippingAddressesListValidateBeforeCall(customerId, profileId, offset, limit, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ShippingAddressListForCustomer>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for patchCustomersShippingAddress
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
      * @param patchCustomerShippingAddressRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call patchCustomersShippingAddressCall(String customerTokenId, String shippingAddressTokenId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call patchCustomersShippingAddressCall(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = patchCustomerShippingAddressRequest;
         
         // create path and map variables
-        String localVarPath = "/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}"
-            .replaceAll("\\{" + "customerTokenId" + "\\}", apiClient.escapeString(customerTokenId.toString()))
-            .replaceAll("\\{" + "shippingAddressTokenId" + "\\}", apiClient.escapeString(shippingAddressTokenId.toString()));
+        String localVarPath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}"
+            .replaceAll("\\{" + "customerId" + "\\}", apiClient.escapeString(customerId.toString()))
+            .replaceAll("\\{" + "shippingAddressId" + "\\}", apiClient.escapeString(shippingAddressId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -573,18 +579,18 @@ public class CustomerShippingAddressApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchCustomersShippingAddressValidateBeforeCall(String customerTokenId, String shippingAddressTokenId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call patchCustomersShippingAddressValidateBeforeCall(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'customerTokenId' is set
-        if (customerTokenId == null) {
-        	logger.error("Missing the required parameter 'customerTokenId' when calling patchCustomersShippingAddress(Async)");
-            throw new ApiException("Missing the required parameter 'customerTokenId' when calling patchCustomersShippingAddress(Async)");
+        // verify the required parameter 'customerId' is set
+        if (customerId == null) {
+        	logger.error("Missing the required parameter 'customerId' when calling patchCustomersShippingAddress(Async)");
+            throw new ApiException("Missing the required parameter 'customerId' when calling patchCustomersShippingAddress(Async)");
         }
         
-        // verify the required parameter 'shippingAddressTokenId' is set
-        if (shippingAddressTokenId == null) {
-        	logger.error("Missing the required parameter 'shippingAddressTokenId' when calling patchCustomersShippingAddress(Async)");
-            throw new ApiException("Missing the required parameter 'shippingAddressTokenId' when calling patchCustomersShippingAddress(Async)");
+        // verify the required parameter 'shippingAddressId' is set
+        if (shippingAddressId == null) {
+        	logger.error("Missing the required parameter 'shippingAddressId' when calling patchCustomersShippingAddress(Async)");
+            throw new ApiException("Missing the required parameter 'shippingAddressId' when calling patchCustomersShippingAddress(Async)");
         }
         
         // verify the required parameter 'patchCustomerShippingAddressRequest' is set
@@ -594,7 +600,7 @@ public class CustomerShippingAddressApi {
         }
         
         
-        okhttp3.Call call = patchCustomersShippingAddressCall(customerTokenId, shippingAddressTokenId, patchCustomerShippingAddressRequest, profileId, ifMatch, progressListener, progressRequestListener);
+        okhttp3.Call call = patchCustomersShippingAddressCall(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -605,53 +611,53 @@ public class CustomerShippingAddressApi {
 
     /**
      * Update a Customer Shipping Address
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Customers Shipping Address**&lt;br&gt;Your system can use this API to update an existing Shipping Addresses for a Customer, including selecting a [default Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address_samplerequests-dropdown_make-customer-shipping-address-the-default_liveconsole-tab-request-body) for use in payments. 
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
      * @param patchCustomerShippingAddressRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return Tmsv2customersEmbeddedDefaultShippingAddress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultShippingAddress patchCustomersShippingAddress(String customerTokenId, String shippingAddressTokenId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
+    public Tmsv2customersEmbeddedDefaultShippingAddress patchCustomersShippingAddress(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
     	logger.info("CALL TO METHOD 'patchCustomersShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = patchCustomersShippingAddressWithHttpInfo(customerTokenId, shippingAddressTokenId, patchCustomerShippingAddressRequest, profileId, ifMatch);
+        ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = patchCustomersShippingAddressWithHttpInfo(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomersShippingAddress' ENDED");
         return resp.getData();
     }
 
     /**
      * Update a Customer Shipping Address
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Customers Shipping Address**&lt;br&gt;Your system can use this API to update an existing Shipping Addresses for a Customer, including selecting a [default Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address_samplerequests-dropdown_make-customer-shipping-address-the-default_liveconsole-tab-request-body) for use in payments. 
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
      * @param patchCustomerShippingAddressRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultShippingAddress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> patchCustomersShippingAddressWithHttpInfo(String customerTokenId, String shippingAddressTokenId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
-        okhttp3.Call call = patchCustomersShippingAddressValidateBeforeCall(customerTokenId, shippingAddressTokenId, patchCustomerShippingAddressRequest, profileId, ifMatch, null, null);
+    public ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> patchCustomersShippingAddressWithHttpInfo(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
+        okhttp3.Call call = patchCustomersShippingAddressValidateBeforeCall(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Update a Customer Shipping Address (asynchronously)
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param shippingAddressTokenId The TokenId of an shipping address. (required)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Customers Shipping Address**&lt;br&gt;Your system can use this API to update an existing Shipping Addresses for a Customer, including selecting a [default Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address_samplerequests-dropdown_make-customer-shipping-address-the-default_liveconsole-tab-request-body) for use in payments. 
+     * @param customerId The Id of a Customer. (required)
+     * @param shippingAddressId The Id of a shipping address. (required)
      * @param patchCustomerShippingAddressRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call patchCustomersShippingAddressAsync(String customerTokenId, String shippingAddressTokenId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
+    public okhttp3.Call patchCustomersShippingAddressAsync(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -673,27 +679,27 @@ public class CustomerShippingAddressApi {
             };
         }
 
-        okhttp3.Call call = patchCustomersShippingAddressValidateBeforeCall(customerTokenId, shippingAddressTokenId, patchCustomerShippingAddressRequest, profileId, ifMatch, progressListener, progressRequestListener);
+        okhttp3.Call call = patchCustomersShippingAddressValidateBeforeCall(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for postCustomerShippingAddress
-     * @param customerTokenId The TokenId of a customer. (required)
+     * @param customerId The Id of a Customer. (required)
      * @param postCustomerShippingAddressRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call postCustomerShippingAddressCall(String customerTokenId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postCustomerShippingAddressCall(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = postCustomerShippingAddressRequest;
         
         // create path and map variables
-        String localVarPath = "/tms/v2/customers/{customerTokenId}/shipping-addresses"
-            .replaceAll("\\{" + "customerTokenId" + "\\}", apiClient.escapeString(customerTokenId.toString()));
+        String localVarPath = "/tms/v2/customers/{customerId}/shipping-addresses"
+            .replaceAll("\\{" + "customerId" + "\\}", apiClient.escapeString(customerId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -732,12 +738,12 @@ public class CustomerShippingAddressApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postCustomerShippingAddressValidateBeforeCall(String customerTokenId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postCustomerShippingAddressValidateBeforeCall(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'customerTokenId' is set
-        if (customerTokenId == null) {
-        	logger.error("Missing the required parameter 'customerTokenId' when calling postCustomerShippingAddress(Async)");
-            throw new ApiException("Missing the required parameter 'customerTokenId' when calling postCustomerShippingAddress(Async)");
+        // verify the required parameter 'customerId' is set
+        if (customerId == null) {
+        	logger.error("Missing the required parameter 'customerId' when calling postCustomerShippingAddress(Async)");
+            throw new ApiException("Missing the required parameter 'customerId' when calling postCustomerShippingAddress(Async)");
         }
         
         // verify the required parameter 'postCustomerShippingAddressRequest' is set
@@ -747,7 +753,7 @@ public class CustomerShippingAddressApi {
         }
         
         
-        okhttp3.Call call = postCustomerShippingAddressCall(customerTokenId, postCustomerShippingAddressRequest, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = postCustomerShippingAddressCall(customerId, postCustomerShippingAddressRequest, profileId, progressListener, progressRequestListener);
         return call;
 
         
@@ -758,47 +764,47 @@ public class CustomerShippingAddressApi {
 
     /**
      * Create a Customer Shipping Address
-     * Include an existing TMS Customer token id in the request URI. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** 
-     * @param customerTokenId The TokenId of a customer. (required)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Creating a Customer Shipping Address**&lt;br&gt;Your system can use this API to create an existing Customers default or non default Shipping Address.&lt;br&gt;You can also create additional Customer Shipping Addresses via the [Payments API](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-create-default-payment-instrument-shipping-address-for-existing-customer_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
      * @param postCustomerShippingAddressRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return Tmsv2customersEmbeddedDefaultShippingAddress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultShippingAddress postCustomerShippingAddress(String customerTokenId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
+    public Tmsv2customersEmbeddedDefaultShippingAddress postCustomerShippingAddress(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
     	logger.info("CALL TO METHOD 'postCustomerShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = postCustomerShippingAddressWithHttpInfo(customerTokenId, postCustomerShippingAddressRequest, profileId);
+        ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = postCustomerShippingAddressWithHttpInfo(customerId, postCustomerShippingAddressRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomerShippingAddress' ENDED");
         return resp.getData();
     }
 
     /**
      * Create a Customer Shipping Address
-     * Include an existing TMS Customer token id in the request URI. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** 
-     * @param customerTokenId The TokenId of a customer. (required)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Creating a Customer Shipping Address**&lt;br&gt;Your system can use this API to create an existing Customers default or non default Shipping Address.&lt;br&gt;You can also create additional Customer Shipping Addresses via the [Payments API](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-create-default-payment-instrument-shipping-address-for-existing-customer_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
      * @param postCustomerShippingAddressRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultShippingAddress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> postCustomerShippingAddressWithHttpInfo(String customerTokenId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
-        okhttp3.Call call = postCustomerShippingAddressValidateBeforeCall(customerTokenId, postCustomerShippingAddressRequest, profileId, null, null);
+    public ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> postCustomerShippingAddressWithHttpInfo(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
+        okhttp3.Call call = postCustomerShippingAddressValidateBeforeCall(customerId, postCustomerShippingAddressRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Create a Customer Shipping Address (asynchronously)
-     * Include an existing TMS Customer token id in the request URI. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** 
-     * @param customerTokenId The TokenId of a customer. (required)
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Creating a Customer Shipping Address**&lt;br&gt;Your system can use this API to create an existing Customers default or non default Shipping Address.&lt;br&gt;You can also create additional Customer Shipping Addresses via the [Payments API](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-create-default-payment-instrument-shipping-address-for-existing-customer_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
      * @param postCustomerShippingAddressRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postCustomerShippingAddressAsync(String customerTokenId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
+    public okhttp3.Call postCustomerShippingAddressAsync(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -820,7 +826,7 @@ public class CustomerShippingAddressApi {
             };
         }
 
-        okhttp3.Call call = postCustomerShippingAddressValidateBeforeCall(customerTokenId, postCustomerShippingAddressRequest, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = postCustomerShippingAddressValidateBeforeCall(customerId, postCustomerShippingAddressRequest, profileId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

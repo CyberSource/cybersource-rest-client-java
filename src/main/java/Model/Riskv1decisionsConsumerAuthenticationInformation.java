@@ -152,6 +152,9 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
   @SerializedName("whiteListStatus")
   private String whiteListStatus = null;
 
+  @SerializedName("scoreRequest")
+  private Integer scoreRequest = null;
+
   public Riskv1decisionsConsumerAuthenticationInformation strongAuthentication(Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication strongAuthentication) {
     this.strongAuthentication = strongAuthentication;
     return this;
@@ -890,6 +893,24 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
     this.whiteListStatus = whiteListStatus;
   }
 
+  public Riskv1decisionsConsumerAuthenticationInformation scoreRequest(Integer scoreRequest) {
+    this.scoreRequest = scoreRequest;
+    return this;
+  }
+
+   /**
+   * Risk Assessment from Mastercard. This is to be sent by merchant if they would like to request a score
+   * @return scoreRequest
+  **/
+  @ApiModelProperty(value = "Risk Assessment from Mastercard. This is to be sent by merchant if they would like to request a score")
+  public Integer getScoreRequest() {
+    return scoreRequest;
+  }
+
+  public void setScoreRequest(Integer scoreRequest) {
+    this.scoreRequest = scoreRequest;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -940,12 +961,13 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
         Objects.equals(this.sdkMaxTimeout, riskv1decisionsConsumerAuthenticationInformation.sdkMaxTimeout) &&
         Objects.equals(this.secureCorporatePaymentIndicator, riskv1decisionsConsumerAuthenticationInformation.secureCorporatePaymentIndicator) &&
         Objects.equals(this.transactionMode, riskv1decisionsConsumerAuthenticationInformation.transactionMode) &&
-        Objects.equals(this.whiteListStatus, riskv1decisionsConsumerAuthenticationInformation.whiteListStatus);
+        Objects.equals(this.whiteListStatus, riskv1decisionsConsumerAuthenticationInformation.whiteListStatus) &&
+        Objects.equals(this.scoreRequest, riskv1decisionsConsumerAuthenticationInformation.scoreRequest);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(strongAuthentication, authenticationType, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, transactionFlowIndicator, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus);
+    return Objects.hash(strongAuthentication, authenticationType, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, transactionFlowIndicator, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, scoreRequest);
   }
 
 
@@ -995,6 +1017,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
     sb.append("    secureCorporatePaymentIndicator: ").append(toIndentedString(secureCorporatePaymentIndicator)).append("\n");
     sb.append("    transactionMode: ").append(toIndentedString(transactionMode)).append("\n");
     sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
+    sb.append("    scoreRequest: ").append(toIndentedString(scoreRequest)).append("\n");
     sb.append("}");
     return sb.toString();
   }

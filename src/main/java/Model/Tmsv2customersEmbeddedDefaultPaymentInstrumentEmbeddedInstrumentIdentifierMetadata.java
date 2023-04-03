@@ -32,10 +32,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
   private String creator = null;
 
    /**
-   * The creator of the Instrument Identifier token.
+   * The creator of the Instrument Identifier.
    * @return creator
   **/
-  @ApiModelProperty(value = "The creator of the Instrument Identifier token.")
+  @ApiModelProperty(value = "The creator of the Instrument Identifier.")
   public String getCreator() {
     return creator;
   }

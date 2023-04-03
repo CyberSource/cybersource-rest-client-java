@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,6 +23,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse4002
@@ -40,8 +43,8 @@ public class InlineResponse4002 {
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("statusCode")
-  private String statusCode = null;
+  @SerializedName("details")
+  private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
 
   public InlineResponse4002 submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -85,10 +88,10 @@ public class InlineResponse4002 {
   }
 
    /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD 
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - CARD_TYPE_NOT_ACCEPTED  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE  - INVALID_CARD_TYPE 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - CARD_TYPE_NOT_ACCEPTED  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE  - INVALID_CARD_TYPE ")
   public String getReason() {
     return reason;
   }
@@ -115,22 +118,30 @@ public class InlineResponse4002 {
     this.message = message;
   }
 
-  public InlineResponse4002 statusCode(String statusCode) {
-    this.statusCode = statusCode;
+  public InlineResponse4002 details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+    this.details = details;
+    return this;
+  }
+
+  public InlineResponse4002 addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
+    if (this.details == null) {
+      this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
+    }
+    this.details.add(detailsItem);
     return this;
   }
 
    /**
-   * HTTP status code of the submitted request.  Possible values:  - 500 
-   * @return statusCode
+   * Get details
+   * @return details
   **/
-  @ApiModelProperty(value = "HTTP status code of the submitted request.  Possible values:  - 500 ")
-  public String getStatusCode() {
-    return statusCode;
+  @ApiModelProperty(value = "")
+  public List<PtsV2PaymentsPost201ResponseErrorInformationDetails> getDetails() {
+    return details;
   }
 
-  public void setStatusCode(String statusCode) {
-    this.statusCode = statusCode;
+  public void setDetails(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+    this.details = details;
   }
 
 
@@ -147,12 +158,12 @@ public class InlineResponse4002 {
         Objects.equals(this.status, inlineResponse4002.status) &&
         Objects.equals(this.reason, inlineResponse4002.reason) &&
         Objects.equals(this.message, inlineResponse4002.message) &&
-        Objects.equals(this.statusCode, inlineResponse4002.statusCode);
+        Objects.equals(this.details, inlineResponse4002.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, reason, message, statusCode);
+    return Objects.hash(submitTimeUtc, status, reason, message, details);
   }
 
 
@@ -165,7 +176,7 @@ public class InlineResponse4002 {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

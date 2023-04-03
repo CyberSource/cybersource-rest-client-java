@@ -29,6 +29,12 @@ import java.io.InputStream;
 
 
 import Model.InlineResponse400;
+import Model.InlineResponse403;
+import Model.InlineResponse409;
+import Model.InlineResponse410;
+import Model.InlineResponse412;
+import Model.InlineResponse424;
+import Model.InlineResponse500;
 import Model.PatchCustomerRequest;
 import Model.PostCustomerRequest;
 import Model.TmsV2CustomersResponse;
@@ -65,22 +71,22 @@ public class CustomerApi {
 
     /**
      * Build call for deleteCustomer
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deleteCustomerCall(String customerTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteCustomerCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
         }
         
         // create path and map variables
-        String localVarPath = "/tms/v2/customers/{customerTokenId}"
-            .replaceAll("\\{" + "customerTokenId" + "\\}", apiClient.escapeString(customerTokenId.toString()));
+        String localVarPath = "/tms/v2/customers/{customerId}"
+            .replaceAll("\\{" + "customerId" + "\\}", apiClient.escapeString(customerId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -119,16 +125,16 @@ public class CustomerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCustomerValidateBeforeCall(String customerTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteCustomerValidateBeforeCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'customerTokenId' is set
-        if (customerTokenId == null) {
-        	logger.error("Missing the required parameter 'customerTokenId' when calling deleteCustomer(Async)");
-            throw new ApiException("Missing the required parameter 'customerTokenId' when calling deleteCustomer(Async)");
+        // verify the required parameter 'customerId' is set
+        if (customerId == null) {
+        	logger.error("Missing the required parameter 'customerId' when calling deleteCustomer(Async)");
+            throw new ApiException("Missing the required parameter 'customerId' when calling deleteCustomer(Async)");
         }
         
         
-        okhttp3.Call call = deleteCustomerCall(customerTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteCustomerCall(customerId, profileId, progressListener, progressRequestListener);
         return call;
 
         
@@ -139,41 +145,41 @@ public class CustomerApi {
 
     /**
      * Delete a Customer
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Customer**&lt;br&gt;Your system can use this API to delete a complete Customer.&lt;br&gt;When a Customer is deleted all associated Payment Instruments &amp; Shipping Addresses are deleted.&lt;br&gt;Any Instrument Identifiers representing the card number will also be deleted if they are not associated with any other Payment Instruments.&lt;br&gt;Note: Individual [Payment Instruments](#token-management_customer-payment-instrument_delete-a-customer-payment-instrument) or [Shipping Addresses](#token-management_customer-shipping-address_delete-a-customer-shipping-address) can be deleted via their own dedicated API resources. 
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteCustomer(String customerTokenId, String profileId) throws ApiException {
+    public void deleteCustomer(String customerId, String profileId) throws ApiException {
     	logger.info("CALL TO METHOD 'deleteCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        deleteCustomerWithHttpInfo(customerTokenId, profileId);
+        deleteCustomerWithHttpInfo(customerId, profileId);
 
     }
 
     /**
      * Delete a Customer
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Customer**&lt;br&gt;Your system can use this API to delete a complete Customer.&lt;br&gt;When a Customer is deleted all associated Payment Instruments &amp; Shipping Addresses are deleted.&lt;br&gt;Any Instrument Identifiers representing the card number will also be deleted if they are not associated with any other Payment Instruments.&lt;br&gt;Note: Individual [Payment Instruments](#token-management_customer-payment-instrument_delete-a-customer-payment-instrument) or [Shipping Addresses](#token-management_customer-shipping-address_delete-a-customer-shipping-address) can be deleted via their own dedicated API resources. 
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteCustomerWithHttpInfo(String customerTokenId, String profileId) throws ApiException {
-        okhttp3.Call call = deleteCustomerValidateBeforeCall(customerTokenId, profileId, null, null);
+    public ApiResponse<Void> deleteCustomerWithHttpInfo(String customerId, String profileId) throws ApiException {
+        okhttp3.Call call = deleteCustomerValidateBeforeCall(customerId, profileId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Delete a Customer (asynchronously)
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Customer**&lt;br&gt;Your system can use this API to delete a complete Customer.&lt;br&gt;When a Customer is deleted all associated Payment Instruments &amp; Shipping Addresses are deleted.&lt;br&gt;Any Instrument Identifiers representing the card number will also be deleted if they are not associated with any other Payment Instruments.&lt;br&gt;Note: Individual [Payment Instruments](#token-management_customer-payment-instrument_delete-a-customer-payment-instrument) or [Shipping Addresses](#token-management_customer-shipping-address_delete-a-customer-shipping-address) can be deleted via their own dedicated API resources. 
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deleteCustomerAsync(String customerTokenId, String profileId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteCustomerAsync(String customerId, String profileId, final ApiCallback<Void> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -195,28 +201,28 @@ public class CustomerApi {
             };
         }
 
-        okhttp3.Call call = deleteCustomerValidateBeforeCall(customerTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteCustomerValidateBeforeCall(customerId, profileId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for getCustomer
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getCustomerCall(String customerTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getCustomerCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
         }
         
         // create path and map variables
-        String localVarPath = "/tms/v2/customers/{customerTokenId}"
-            .replaceAll("\\{" + "customerTokenId" + "\\}", apiClient.escapeString(customerTokenId.toString()));
+        String localVarPath = "/tms/v2/customers/{customerId}"
+            .replaceAll("\\{" + "customerId" + "\\}", apiClient.escapeString(customerId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -255,16 +261,16 @@ public class CustomerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomerValidateBeforeCall(String customerTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getCustomerValidateBeforeCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'customerTokenId' is set
-        if (customerTokenId == null) {
-        	logger.error("Missing the required parameter 'customerTokenId' when calling getCustomer(Async)");
-            throw new ApiException("Missing the required parameter 'customerTokenId' when calling getCustomer(Async)");
+        // verify the required parameter 'customerId' is set
+        if (customerId == null) {
+        	logger.error("Missing the required parameter 'customerId' when calling getCustomer(Async)");
+            throw new ApiException("Missing the required parameter 'customerId' when calling getCustomer(Async)");
         }
         
         
-        okhttp3.Call call = getCustomerCall(customerTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = getCustomerCall(customerId, profileId, progressListener, progressRequestListener);
         return call;
 
         
@@ -275,44 +281,44 @@ public class CustomerApi {
 
     /**
      * Retrieve a Customer
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.&lt;br&gt;&lt;br&gt;**Retrieving a Customer**&lt;br&gt;When your customer signs into their account, your system can use this API to retrieve the Customers default Payment Instrument and Shipping Address.&lt;br&gt;**Note: the actual card data will be masked.**&lt;br&gt;If your customer wants to see other available Payment Instruments, your system can [retrieve all Payment Instruments](#token-management_customer-payment-instrument_list-payment-instruments-for-a-customer) associated with the Customer.&lt;br&gt;The same applies to [Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer).|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Customers**&lt;br&gt;To perform a payment with the Customers default details specify the [Customer Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-token-id_liveconsole-tab-request-body).&lt;br&gt;To perform a payment with a particular Payment Instrument or Shipping Address &lt;br&gt;specify the [Payment Instrument or Shipping Address Ids in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return TmsV2CustomersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV2CustomersResponse getCustomer(String customerTokenId, String profileId) throws ApiException {
+    public TmsV2CustomersResponse getCustomer(String customerId, String profileId) throws ApiException {
     	logger.info("CALL TO METHOD 'getCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<TmsV2CustomersResponse> resp = getCustomerWithHttpInfo(customerTokenId, profileId);
+        ApiResponse<TmsV2CustomersResponse> resp = getCustomerWithHttpInfo(customerId, profileId);
         logger.info("CALL TO METHOD 'getCustomer' ENDED");
         return resp.getData();
     }
 
     /**
      * Retrieve a Customer
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.&lt;br&gt;&lt;br&gt;**Retrieving a Customer**&lt;br&gt;When your customer signs into their account, your system can use this API to retrieve the Customers default Payment Instrument and Shipping Address.&lt;br&gt;**Note: the actual card data will be masked.**&lt;br&gt;If your customer wants to see other available Payment Instruments, your system can [retrieve all Payment Instruments](#token-management_customer-payment-instrument_list-payment-instruments-for-a-customer) associated with the Customer.&lt;br&gt;The same applies to [Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer).|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Customers**&lt;br&gt;To perform a payment with the Customers default details specify the [Customer Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-token-id_liveconsole-tab-request-body).&lt;br&gt;To perform a payment with a particular Payment Instrument or Shipping Address &lt;br&gt;specify the [Payment Instrument or Shipping Address Ids in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;TmsV2CustomersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV2CustomersResponse> getCustomerWithHttpInfo(String customerTokenId, String profileId) throws ApiException {
-        okhttp3.Call call = getCustomerValidateBeforeCall(customerTokenId, profileId, null, null);
+    public ApiResponse<TmsV2CustomersResponse> getCustomerWithHttpInfo(String customerId, String profileId) throws ApiException {
+        okhttp3.Call call = getCustomerValidateBeforeCall(customerId, profileId, null, null);
         Type localVarReturnType = new TypeToken<TmsV2CustomersResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Retrieve a Customer (asynchronously)
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.&lt;br&gt;&lt;br&gt;**Retrieving a Customer**&lt;br&gt;When your customer signs into their account, your system can use this API to retrieve the Customers default Payment Instrument and Shipping Address.&lt;br&gt;**Note: the actual card data will be masked.**&lt;br&gt;If your customer wants to see other available Payment Instruments, your system can [retrieve all Payment Instruments](#token-management_customer-payment-instrument_list-payment-instruments-for-a-customer) associated with the Customer.&lt;br&gt;The same applies to [Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer).|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Customers**&lt;br&gt;To perform a payment with the Customers default details specify the [Customer Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-token-id_liveconsole-tab-request-body).&lt;br&gt;To perform a payment with a particular Payment Instrument or Shipping Address &lt;br&gt;specify the [Payment Instrument or Shipping Address Ids in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param customerId The Id of a Customer. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getCustomerAsync(String customerTokenId, String profileId, final ApiCallback<TmsV2CustomersResponse> callback) throws ApiException {
+    public okhttp3.Call getCustomerAsync(String customerId, String profileId, final ApiCallback<TmsV2CustomersResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -334,28 +340,28 @@ public class CustomerApi {
             };
         }
 
-        okhttp3.Call call = getCustomerValidateBeforeCall(customerTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = getCustomerValidateBeforeCall(customerId, profileId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV2CustomersResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for patchCustomer
-     * @param customerTokenId The TokenId of a customer. (required)
+     * @param customerId The Id of a Customer. (required)
      * @param patchCustomerRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call patchCustomerCall(String customerTokenId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call patchCustomerCall(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = patchCustomerRequest;
         
         // create path and map variables
-        String localVarPath = "/tms/v2/customers/{customerTokenId}"
-            .replaceAll("\\{" + "customerTokenId" + "\\}", apiClient.escapeString(customerTokenId.toString()));
+        String localVarPath = "/tms/v2/customers/{customerId}"
+            .replaceAll("\\{" + "customerId" + "\\}", apiClient.escapeString(customerId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -396,12 +402,12 @@ public class CustomerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchCustomerValidateBeforeCall(String customerTokenId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call patchCustomerValidateBeforeCall(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'customerTokenId' is set
-        if (customerTokenId == null) {
-        	logger.error("Missing the required parameter 'customerTokenId' when calling patchCustomer(Async)");
-            throw new ApiException("Missing the required parameter 'customerTokenId' when calling patchCustomer(Async)");
+        // verify the required parameter 'customerId' is set
+        if (customerId == null) {
+        	logger.error("Missing the required parameter 'customerId' when calling patchCustomer(Async)");
+            throw new ApiException("Missing the required parameter 'customerId' when calling patchCustomer(Async)");
         }
         
         // verify the required parameter 'patchCustomerRequest' is set
@@ -411,7 +417,7 @@ public class CustomerApi {
         }
         
         
-        okhttp3.Call call = patchCustomerCall(customerTokenId, patchCustomerRequest, profileId, ifMatch, progressListener, progressRequestListener);
+        okhttp3.Call call = patchCustomerCall(customerId, patchCustomerRequest, profileId, ifMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -422,50 +428,50 @@ public class CustomerApi {
 
     /**
      * Update a Customer
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Customer**&lt;br&gt;Your system can use this API to update a Customers details including selecting a  [default Payment Instrument](#token-management_customer_update-a-customer_samplerequests-dropdown_update-customers-default-payment-instrument_liveconsole-tab-request-body) or [default Shipping Address](#token-management_customer_update-a-customer_samplerequests-dropdown_update-customers-default-shipping-address_liveconsole-tab-request-body) for use in payments.&lt;br&gt;Note: Updating a Customers [Payment Instrument](#token-management_customer-payment-instrument_update-a-customer-payment-instrument) or [Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address) details is performed using their own dedicated API resources. 
+     * @param customerId The Id of a Customer. (required)
      * @param patchCustomerRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return TmsV2CustomersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TmsV2CustomersResponse patchCustomer(String customerTokenId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
+    public TmsV2CustomersResponse patchCustomer(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
     	logger.info("CALL TO METHOD 'patchCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<TmsV2CustomersResponse> resp = patchCustomerWithHttpInfo(customerTokenId, patchCustomerRequest, profileId, ifMatch);
+        ApiResponse<TmsV2CustomersResponse> resp = patchCustomerWithHttpInfo(customerId, patchCustomerRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomer' ENDED");
         return resp.getData();
     }
 
     /**
      * Update a Customer
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Customer**&lt;br&gt;Your system can use this API to update a Customers details including selecting a  [default Payment Instrument](#token-management_customer_update-a-customer_samplerequests-dropdown_update-customers-default-payment-instrument_liveconsole-tab-request-body) or [default Shipping Address](#token-management_customer_update-a-customer_samplerequests-dropdown_update-customers-default-shipping-address_liveconsole-tab-request-body) for use in payments.&lt;br&gt;Note: Updating a Customers [Payment Instrument](#token-management_customer-payment-instrument_update-a-customer-payment-instrument) or [Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address) details is performed using their own dedicated API resources. 
+     * @param customerId The Id of a Customer. (required)
      * @param patchCustomerRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return ApiResponse&lt;TmsV2CustomersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TmsV2CustomersResponse> patchCustomerWithHttpInfo(String customerTokenId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
-        okhttp3.Call call = patchCustomerValidateBeforeCall(customerTokenId, patchCustomerRequest, profileId, ifMatch, null, null);
+    public ApiResponse<TmsV2CustomersResponse> patchCustomerWithHttpInfo(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
+        okhttp3.Call call = patchCustomerValidateBeforeCall(customerId, patchCustomerRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<TmsV2CustomersResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Update a Customer (asynchronously)
-     * 
-     * @param customerTokenId The TokenId of a customer. (required)
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Customer**&lt;br&gt;Your system can use this API to update a Customers details including selecting a  [default Payment Instrument](#token-management_customer_update-a-customer_samplerequests-dropdown_update-customers-default-payment-instrument_liveconsole-tab-request-body) or [default Shipping Address](#token-management_customer_update-a-customer_samplerequests-dropdown_update-customers-default-shipping-address_liveconsole-tab-request-body) for use in payments.&lt;br&gt;Note: Updating a Customers [Payment Instrument](#token-management_customer-payment-instrument_update-a-customer-payment-instrument) or [Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address) details is performed using their own dedicated API resources. 
+     * @param customerId The Id of a Customer. (required)
      * @param patchCustomerRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call patchCustomerAsync(String customerTokenId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ApiCallback<TmsV2CustomersResponse> callback) throws ApiException {
+    public okhttp3.Call patchCustomerAsync(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ApiCallback<TmsV2CustomersResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -487,7 +493,7 @@ public class CustomerApi {
             };
         }
 
-        okhttp3.Call call = patchCustomerValidateBeforeCall(customerTokenId, patchCustomerRequest, profileId, ifMatch, progressListener, progressRequestListener);
+        okhttp3.Call call = patchCustomerValidateBeforeCall(customerId, patchCustomerRequest, profileId, ifMatch, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TmsV2CustomersResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -495,7 +501,7 @@ public class CustomerApi {
     /**
      * Build call for postCustomer
      * @param postCustomerRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -564,9 +570,9 @@ public class CustomerApi {
 
     /**
      * Create a Customer
-     * 
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.&lt;br&gt;&lt;br&gt;**Creating a Customer**&lt;br&gt;It is recommended you [create a Customer via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;The Customer will be created with a Payment Instrument and Shipping Address.&lt;br&gt;You can also [add additional Payment Instruments to a Customer via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-create-default-payment-instrument-shipping-address-for-existing-customer_liveconsole-tab-request-body).&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Customers**&lt;br&gt;To perform a payment with the Customers default details specify the [Customer Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-token-id_liveconsole-tab-request-body).&lt;br&gt;To perform a payment with a particular Payment Instrument or Shipping Address &lt;br&gt;specify the [Payment Instrument or Shipping Address Ids in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param postCustomerRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return TmsV2CustomersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -580,9 +586,9 @@ public class CustomerApi {
 
     /**
      * Create a Customer
-     * 
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.&lt;br&gt;&lt;br&gt;**Creating a Customer**&lt;br&gt;It is recommended you [create a Customer via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;The Customer will be created with a Payment Instrument and Shipping Address.&lt;br&gt;You can also [add additional Payment Instruments to a Customer via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-create-default-payment-instrument-shipping-address-for-existing-customer_liveconsole-tab-request-body).&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Customers**&lt;br&gt;To perform a payment with the Customers default details specify the [Customer Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-token-id_liveconsole-tab-request-body).&lt;br&gt;To perform a payment with a particular Payment Instrument or Shipping Address &lt;br&gt;specify the [Payment Instrument or Shipping Address Ids in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param postCustomerRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;TmsV2CustomersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -594,9 +600,9 @@ public class CustomerApi {
 
     /**
      * Create a Customer (asynchronously)
-     * 
+     * |  |  |  | | --- | --- | --- | |**Customers**&lt;br&gt;A Customer represents your tokenized customer information.&lt;br&gt;You should associate the Customer Id with the customer account on your systems.&lt;br&gt;A Customer can have one or more [Payment Instruments](#token-management_customer-payment-instrument_create-a-customer-payment-instrumentl) or [Shipping Addresses](#token-management_customer-shipping-address_create-a-customer-shipping-address) with one allocated as the Customers default.&lt;br&gt;&lt;br&gt;**Creating a Customer**&lt;br&gt;It is recommended you [create a Customer via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;The Customer will be created with a Payment Instrument and Shipping Address.&lt;br&gt;You can also [add additional Payment Instruments to a Customer via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-create-default-payment-instrument-shipping-address-for-existing-customer_liveconsole-tab-request-body).&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Customers**&lt;br&gt;To perform a payment with the Customers default details specify the [Customer Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-token-id_liveconsole-tab-request-body).&lt;br&gt;To perform a payment with a particular Payment Instrument or Shipping Address &lt;br&gt;specify the [Payment Instrument or Shipping Address Ids in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param postCustomerRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -32,10 +32,10 @@ public class Tmsv2customersEmbeddedDefaultShippingAddressMetadata {
   private String creator = null;
 
    /**
-   * The creator of the Shipping Address token.
+   * The creator of the Shipping Address.
    * @return creator
   **/
-  @ApiModelProperty(value = "The creator of the Shipping Address token.")
+  @ApiModelProperty(value = "The creator of the Shipping Address.")
   public String getCreator() {
     return creator;
   }

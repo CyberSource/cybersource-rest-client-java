@@ -32,10 +32,10 @@ public class Tmsv2customersMetadata {
   private String creator = null;
 
    /**
-   * The creator of the Customer token. 
+   * The creator of the Customer. 
    * @return creator
   **/
-  @ApiModelProperty(value = "The creator of the Customer token. ")
+  @ApiModelProperty(value = "The creator of the Customer. ")
   public String getCreator() {
     return creator;
   }

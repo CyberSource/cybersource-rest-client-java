@@ -92,10 +92,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   }
 
    /**
-   * verson number of Unified Checkout being used
+   * version number of Unified Checkout being used
    * @return clientVersion
   **/
-  @ApiModelProperty(example = "0.11", value = "verson number of Unified Checkout being used")
+  @ApiModelProperty(example = "0.15", value = "version number of Unified Checkout being used")
   public String getClientVersion() {
     return clientVersion;
   }

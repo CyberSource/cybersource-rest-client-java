@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Tssv2transactionsemvTagDetailsEmvDetailsList;
+import Model.Accountupdaterv1batchesIncluded;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,80 +23,94 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Body
  */
 
 public class Body {
-  @SerializedName("requestor")
-  private String requestor = null;
+  @SerializedName("type")
+  private String type = "oneOff";
 
-  @SerializedName("parsedTagLimit")
-  private Integer parsedTagLimit = null;
+  @SerializedName("included")
+  private Accountupdaterv1batchesIncluded included = null;
 
-  @SerializedName("emvDetailsList")
-  private List<Tssv2transactionsemvTagDetailsEmvDetailsList> emvDetailsList = new ArrayList<Tssv2transactionsemvTagDetailsEmvDetailsList>();
+  @SerializedName("merchantReference")
+  private String merchantReference = null;
 
-  public Body requestor(String requestor) {
-    this.requestor = requestor;
+  @SerializedName("notificationEmail")
+  private String notificationEmail = null;
+
+  public Body type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Identifies the service requesting parsing 
-   * @return requestor
+   * Valid Values:   * oneOff   * amexRegistration 
+   * @return type
   **/
-  @ApiModelProperty(required = true, value = "Identifies the service requesting parsing ")
-  public String getRequestor() {
-    return requestor;
+  @ApiModelProperty(value = "Valid Values:   * oneOff   * amexRegistration ")
+  public String getType() {
+    return type;
   }
 
-  public void setRequestor(String requestor) {
-    this.requestor = requestor;
+  public void setType(String type) {
+    this.type = type;
   }
 
-  public Body parsedTagLimit(Integer parsedTagLimit) {
-    this.parsedTagLimit = parsedTagLimit;
+  public Body included(Accountupdaterv1batchesIncluded included) {
+    this.included = included;
     return this;
   }
 
    /**
-   * Number of tags to parse for each EMV tag string provided. 
-   * @return parsedTagLimit
+   * Get included
+   * @return included
   **/
-  @ApiModelProperty(value = "Number of tags to parse for each EMV tag string provided. ")
-  public Integer getParsedTagLimit() {
-    return parsedTagLimit;
+  @ApiModelProperty(value = "")
+  public Accountupdaterv1batchesIncluded getIncluded() {
+    return included;
   }
 
-  public void setParsedTagLimit(Integer parsedTagLimit) {
-    this.parsedTagLimit = parsedTagLimit;
+  public void setIncluded(Accountupdaterv1batchesIncluded included) {
+    this.included = included;
   }
 
-  public Body emvDetailsList(List<Tssv2transactionsemvTagDetailsEmvDetailsList> emvDetailsList) {
-    this.emvDetailsList = emvDetailsList;
-    return this;
-  }
-
-  public Body addEmvDetailsListItem(Tssv2transactionsemvTagDetailsEmvDetailsList emvDetailsListItem) {
-    this.emvDetailsList.add(emvDetailsListItem);
+  public Body merchantReference(String merchantReference) {
+    this.merchantReference = merchantReference;
     return this;
   }
 
    /**
-   * An array of objects, each containing a requestId and the corresponding emvRequestCombinedTags 
-   * @return emvDetailsList
+   * Reference used by merchant to identify batch.
+   * @return merchantReference
   **/
-  @ApiModelProperty(required = true, value = "An array of objects, each containing a requestId and the corresponding emvRequestCombinedTags ")
-  public List<Tssv2transactionsemvTagDetailsEmvDetailsList> getEmvDetailsList() {
-    return emvDetailsList;
+  @ApiModelProperty(example = "TC50171_3", value = "Reference used by merchant to identify batch.")
+  public String getMerchantReference() {
+    return merchantReference;
   }
 
-  public void setEmvDetailsList(List<Tssv2transactionsemvTagDetailsEmvDetailsList> emvDetailsList) {
-    this.emvDetailsList = emvDetailsList;
+  public void setMerchantReference(String merchantReference) {
+    this.merchantReference = merchantReference;
+  }
+
+  public Body notificationEmail(String notificationEmail) {
+    this.notificationEmail = notificationEmail;
+    return this;
+  }
+
+   /**
+   * Email used to notify the batch status.
+   * @return notificationEmail
+  **/
+  @ApiModelProperty(example = "test@cybs.com", required = true, value = "Email used to notify the batch status.")
+  public String getNotificationEmail() {
+    return notificationEmail;
+  }
+
+  public void setNotificationEmail(String notificationEmail) {
+    this.notificationEmail = notificationEmail;
   }
 
 
@@ -109,14 +123,15 @@ public class Body {
       return false;
     }
     Body body = (Body) o;
-    return Objects.equals(this.requestor, body.requestor) &&
-        Objects.equals(this.parsedTagLimit, body.parsedTagLimit) &&
-        Objects.equals(this.emvDetailsList, body.emvDetailsList);
+    return Objects.equals(this.type, body.type) &&
+        Objects.equals(this.included, body.included) &&
+        Objects.equals(this.merchantReference, body.merchantReference) &&
+        Objects.equals(this.notificationEmail, body.notificationEmail);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestor, parsedTagLimit, emvDetailsList);
+    return Objects.hash(type, included, merchantReference, notificationEmail);
   }
 
 
@@ -125,9 +140,10 @@ public class Body {
     StringBuilder sb = new StringBuilder();
     sb.append("class Body {\n");
     
-    sb.append("    requestor: ").append(toIndentedString(requestor)).append("\n");
-    sb.append("    parsedTagLimit: ").append(toIndentedString(parsedTagLimit)).append("\n");
-    sb.append("    emvDetailsList: ").append(toIndentedString(emvDetailsList)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    included: ").append(toIndentedString(included)).append("\n");
+    sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
+    sb.append("    notificationEmail: ").append(toIndentedString(notificationEmail)).append("\n");
     sb.append("}");
     return sb.toString();
   }

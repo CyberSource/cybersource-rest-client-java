@@ -24,9 +24,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * This information is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier token. 
+ * This information is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier. 
  */
-@ApiModel(description = "This information is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier token. ")
+@ApiModel(description = "This information is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier. ")
 
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBillTo {
   @SerializedName("address1")

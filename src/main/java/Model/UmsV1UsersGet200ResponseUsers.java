@@ -25,6 +25,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * UmsV1UsersGet200ResponseUsers
@@ -39,6 +42,9 @@ public class UmsV1UsersGet200ResponseUsers {
 
   @SerializedName("contactInformation")
   private UmsV1UsersGet200ResponseContactInformation contactInformation = null;
+
+  @SerializedName("customFields")
+  private Map<String, String> customFields = null;
 
   public UmsV1UsersGet200ResponseUsers accountInformation(UmsV1UsersGet200ResponseAccountInformation accountInformation) {
     this.accountInformation = accountInformation;
@@ -94,6 +100,32 @@ public class UmsV1UsersGet200ResponseUsers {
     this.contactInformation = contactInformation;
   }
 
+  public UmsV1UsersGet200ResponseUsers customFields(Map<String, String> customFields) {
+    this.customFields = customFields;
+    return this;
+  }
+
+  public UmsV1UsersGet200ResponseUsers putCustomFieldsItem(String key, String customFieldsItem) {
+    if (this.customFields == null) {
+      this.customFields = new HashMap<String, String>();
+    }
+    this.customFields.put(key, customFieldsItem);
+    return this;
+  }
+
+   /**
+   * Get customFields
+   * @return customFields
+  **/
+  @ApiModelProperty(value = "")
+  public Map<String, String> getCustomFields() {
+    return customFields;
+  }
+
+  public void setCustomFields(Map<String, String> customFields) {
+    this.customFields = customFields;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,12 +138,13 @@ public class UmsV1UsersGet200ResponseUsers {
     UmsV1UsersGet200ResponseUsers umsV1UsersGet200ResponseUsers = (UmsV1UsersGet200ResponseUsers) o;
     return Objects.equals(this.accountInformation, umsV1UsersGet200ResponseUsers.accountInformation) &&
         Objects.equals(this.organizationInformation, umsV1UsersGet200ResponseUsers.organizationInformation) &&
-        Objects.equals(this.contactInformation, umsV1UsersGet200ResponseUsers.contactInformation);
+        Objects.equals(this.contactInformation, umsV1UsersGet200ResponseUsers.contactInformation) &&
+        Objects.equals(this.customFields, umsV1UsersGet200ResponseUsers.customFields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountInformation, organizationInformation, contactInformation);
+    return Objects.hash(accountInformation, organizationInformation, contactInformation, customFields);
   }
 
 
@@ -123,6 +156,7 @@ public class UmsV1UsersGet200ResponseUsers {
     sb.append("    accountInformation: ").append(toIndentedString(accountInformation)).append("\n");
     sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
     sb.append("    contactInformation: ").append(toIndentedString(contactInformation)).append("\n");
+    sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("}");
     return sb.toString();
   }

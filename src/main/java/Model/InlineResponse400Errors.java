@@ -41,19 +41,19 @@ public class InlineResponse400Errors {
   private List<InlineResponse400Details> details = null;
 
    /**
-   * The type of error.
+   * The type of error.  Possible Values:   - invalidHeaders   - missingHeaders   - invalidFields   - missingFields   - unsupportedPaymentMethodModification   - invalidCombination 
    * @return type
   **/
-  @ApiModelProperty(value = "The type of error.")
+  @ApiModelProperty(value = "The type of error.  Possible Values:   - invalidHeaders   - missingHeaders   - invalidFields   - missingFields   - unsupportedPaymentMethodModification   - invalidCombination ")
   public String getType() {
     return type;
   }
 
    /**
-   * The detailed message related to the type stated above.
+   * The detailed message related to the type.
    * @return message
   **/
-  @ApiModelProperty(value = "The detailed message related to the type stated above.")
+  @ApiModelProperty(value = "The detailed message related to the type.")
   public String getMessage() {
     return message;
   }

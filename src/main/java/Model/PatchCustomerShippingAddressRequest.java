@@ -70,10 +70,10 @@ public class PatchCustomerShippingAddressRequest {
   }
 
    /**
-   * The id of the Shipping Address Token.
+   * The Id of the Shipping Address Token.
    * @return id
   **/
-  @ApiModelProperty(value = "The id of the Shipping Address Token.")
+  @ApiModelProperty(value = "The Id of the Shipping Address Token.")
   public String getId() {
     return id;
   }
@@ -88,10 +88,10 @@ public class PatchCustomerShippingAddressRequest {
   }
 
    /**
-   * Flag that indicates whether customer shipping address is the dafault. Valid values:  - &#x60;true&#x60;: Shipping Address is customer&#39;s default.  - &#x60;false&#x60;: Shipping Address is not customer&#39;s default. 
+   * Flag that indicates whether customer shipping address is the dafault. Possible Values:  - &#x60;true&#x60;: Shipping Address is customer&#39;s default.  - &#x60;false&#x60;: Shipping Address is not customer&#39;s default. 
    * @return _default
   **/
-  @ApiModelProperty(value = "Flag that indicates whether customer shipping address is the dafault. Valid values:  - `true`: Shipping Address is customer's default.  - `false`: Shipping Address is not customer's default. ")
+  @ApiModelProperty(value = "Flag that indicates whether customer shipping address is the dafault. Possible Values:  - `true`: Shipping Address is customer's default.  - `false`: Shipping Address is not customer's default. ")
   public Boolean getDefault() {
     return _default;
   }

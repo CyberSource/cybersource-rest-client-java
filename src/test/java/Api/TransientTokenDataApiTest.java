@@ -34,7 +34,7 @@ public class TransientTokenDataApiTest {
     /**
      * Get Transient Token Data
      *
-     * Retrieve the data captured by Unfied Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.
+     * Retrieve the data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.
      *
      * @throws ApiException
      *          if the Api call fails

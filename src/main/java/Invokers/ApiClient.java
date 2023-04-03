@@ -44,7 +44,7 @@ import javax.net.ssl.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -1326,14 +1326,14 @@ public class ApiClient {
 	 */
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
-			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {	
-		
+			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+			
 		if(merchantConfig.getDefaultHeaders() != null && !merchantConfig.getDefaultHeaders().isEmpty()) {
 			for (Entry<String, String> header : merchantConfig.getDefaultHeaders().entrySet()) {
 				addDefaultHeader(header.getKey(), header.getValue());
 			}
 		}
-		
+						
 		callAuthenticationHeader(method, path, body, queryParams);
 
 		if (merchantConfig.isEnableClientCert()) {
@@ -1346,8 +1346,9 @@ public class ApiClient {
 			headerParams.remove("Accept");
 			headerParams.put("Accept", defaultAcceptHeader);
 		}
-
+		
 		headerParams.putAll(defaultHeaderMap);
+
 		
 		logger.info("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
 		Request request = buildRequest(path, method, queryParams, body, headerParams, formParams, authNames,
@@ -1524,7 +1525,7 @@ public class ApiClient {
 		} else {
 			url.append(GlobalLabelParameters.URL_PREFIX).append(merchantConfig.getRequestHost().trim()).append(path);
 		}
-
+		
 		if (queryParams != null && !queryParams.isEmpty()) {
 			// support (constant) query string in `path`, e.g. "/posts?draft=1"
 			String prefix = path.contains("?") ? "&" : "?";

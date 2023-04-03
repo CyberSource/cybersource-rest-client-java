@@ -29,9 +29,9 @@ import java.io.InputStream;
 
 
 import org.joda.time.DateTime;
-import Model.InlineResponse200;
-import Model.InlineResponse4003;
-import Model.InlineResponse500;
+import Model.InlineResponse20011;
+import Model.InlineResponse4005;
+import Model.InlineResponse5001;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -161,13 +161,13 @@ public class KeyManagementApi {
      * @param keyTypes Key Type, Possible values -  certificate, password, pgp and scmp_api. When Key Type is provided atleast one more filter needs to be provided (optional)
      * @param expirationStartDate Expiry Filter Start Date. When Expiration Date filter is provided, atleast one more filter needs to be provided (optional)
      * @param expirationEndDate Expiry Filter End Date. When Expiration Date filter is provided, atleast one more filter needs to be provided (optional)
-     * @return InlineResponse200
+     * @return InlineResponse20011
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse200 searchKeys(Integer offset, Integer limit, String sort, List<String> organizationIds, List<String> keyIds, List<String> keyTypes, DateTime expirationStartDate, DateTime expirationEndDate) throws ApiException {
+    public InlineResponse20011 searchKeys(Integer offset, Integer limit, String sort, List<String> organizationIds, List<String> keyIds, List<String> keyTypes, DateTime expirationStartDate, DateTime expirationEndDate) throws ApiException {
     	logger.info("CALL TO METHOD 'searchKeys' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse200> resp = searchKeysWithHttpInfo(offset, limit, sort, organizationIds, keyIds, keyTypes, expirationStartDate, expirationEndDate);
+        ApiResponse<InlineResponse20011> resp = searchKeysWithHttpInfo(offset, limit, sort, organizationIds, keyIds, keyTypes, expirationStartDate, expirationEndDate);
         logger.info("CALL TO METHOD 'searchKeys' ENDED");
         return resp.getData();
     }
@@ -183,12 +183,12 @@ public class KeyManagementApi {
      * @param keyTypes Key Type, Possible values -  certificate, password, pgp and scmp_api. When Key Type is provided atleast one more filter needs to be provided (optional)
      * @param expirationStartDate Expiry Filter Start Date. When Expiration Date filter is provided, atleast one more filter needs to be provided (optional)
      * @param expirationEndDate Expiry Filter End Date. When Expiration Date filter is provided, atleast one more filter needs to be provided (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;InlineResponse20011&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse200> searchKeysWithHttpInfo(Integer offset, Integer limit, String sort, List<String> organizationIds, List<String> keyIds, List<String> keyTypes, DateTime expirationStartDate, DateTime expirationEndDate) throws ApiException {
+    public ApiResponse<InlineResponse20011> searchKeysWithHttpInfo(Integer offset, Integer limit, String sort, List<String> organizationIds, List<String> keyIds, List<String> keyTypes, DateTime expirationStartDate, DateTime expirationEndDate) throws ApiException {
         okhttp3.Call call = searchKeysValidateBeforeCall(offset, limit, sort, organizationIds, keyIds, keyTypes, expirationStartDate, expirationEndDate, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -207,7 +207,7 @@ public class KeyManagementApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call searchKeysAsync(Integer offset, Integer limit, String sort, List<String> organizationIds, List<String> keyIds, List<String> keyTypes, DateTime expirationStartDate, DateTime expirationEndDate, final ApiCallback<InlineResponse200> callback) throws ApiException {
+    public okhttp3.Call searchKeysAsync(Integer offset, Integer limit, String sort, List<String> organizationIds, List<String> keyIds, List<String> keyTypes, DateTime expirationStartDate, DateTime expirationEndDate, final ApiCallback<InlineResponse20011> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -230,7 +230,7 @@ public class KeyManagementApi {
         }
 
         okhttp3.Call call = searchKeysValidateBeforeCall(offset, limit, sort, organizationIds, keyIds, keyTypes, expirationStartDate, expirationEndDate, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

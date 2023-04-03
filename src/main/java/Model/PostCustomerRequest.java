@@ -93,10 +93,10 @@ public class PostCustomerRequest {
   }
 
    /**
-   * The id of the Customer Token.
+   * The Id of the Customer Token.
    * @return id
   **/
-  @ApiModelProperty(value = "The id of the Customer Token.")
+  @ApiModelProperty(value = "The Id of the Customer Token.")
   public String getId() {
     return id;
   }

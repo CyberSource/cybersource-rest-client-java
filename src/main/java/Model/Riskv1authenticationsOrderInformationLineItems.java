@@ -59,6 +59,36 @@ public class Riskv1authenticationsOrderInformationLineItems {
   @SerializedName("taxAmount")
   private String taxAmount = null;
 
+  @SerializedName("shippingAddress1")
+  private String shippingAddress1 = null;
+
+  @SerializedName("shippingAddress2")
+  private String shippingAddress2 = null;
+
+  @SerializedName("shippingCity")
+  private String shippingCity = null;
+
+  @SerializedName("shippingCountryCode")
+  private String shippingCountryCode = null;
+
+  @SerializedName("shippingFirstName")
+  private String shippingFirstName = null;
+
+  @SerializedName("shippingLastName")
+  private String shippingLastName = null;
+
+  @SerializedName("shippingMiddleName")
+  private String shippingMiddleName = null;
+
+  @SerializedName("shippingPhone")
+  private Integer shippingPhone = null;
+
+  @SerializedName("shippingPostalCode")
+  private Integer shippingPostalCode = null;
+
+  @SerializedName("shippingState")
+  private String shippingState = null;
+
   public Riskv1authenticationsOrderInformationLineItems totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
     return this;
@@ -241,6 +271,186 @@ public class Riskv1authenticationsOrderInformationLineItems {
     this.taxAmount = taxAmount;
   }
 
+  public Riskv1authenticationsOrderInformationLineItems shippingAddress1(String shippingAddress1) {
+    this.shippingAddress1 = shippingAddress1;
+    return this;
+  }
+
+   /**
+   * Address where item will be shipped
+   * @return shippingAddress1
+  **/
+  @ApiModelProperty(value = "Address where item will be shipped")
+  public String getShippingAddress1() {
+    return shippingAddress1;
+  }
+
+  public void setShippingAddress1(String shippingAddress1) {
+    this.shippingAddress1 = shippingAddress1;
+  }
+
+  public Riskv1authenticationsOrderInformationLineItems shippingAddress2(String shippingAddress2) {
+    this.shippingAddress2 = shippingAddress2;
+    return this;
+  }
+
+   /**
+   * Address where item will be shipped
+   * @return shippingAddress2
+  **/
+  @ApiModelProperty(value = "Address where item will be shipped")
+  public String getShippingAddress2() {
+    return shippingAddress2;
+  }
+
+  public void setShippingAddress2(String shippingAddress2) {
+    this.shippingAddress2 = shippingAddress2;
+  }
+
+  public Riskv1authenticationsOrderInformationLineItems shippingCity(String shippingCity) {
+    this.shippingCity = shippingCity;
+    return this;
+  }
+
+   /**
+   * City where item will be shipped
+   * @return shippingCity
+  **/
+  @ApiModelProperty(value = "City where item will be shipped")
+  public String getShippingCity() {
+    return shippingCity;
+  }
+
+  public void setShippingCity(String shippingCity) {
+    this.shippingCity = shippingCity;
+  }
+
+  public Riskv1authenticationsOrderInformationLineItems shippingCountryCode(String shippingCountryCode) {
+    this.shippingCountryCode = shippingCountryCode;
+    return this;
+  }
+
+   /**
+   * Country where item will be shipped
+   * @return shippingCountryCode
+  **/
+  @ApiModelProperty(value = "Country where item will be shipped")
+  public String getShippingCountryCode() {
+    return shippingCountryCode;
+  }
+
+  public void setShippingCountryCode(String shippingCountryCode) {
+    this.shippingCountryCode = shippingCountryCode;
+  }
+
+  public Riskv1authenticationsOrderInformationLineItems shippingFirstName(String shippingFirstName) {
+    this.shippingFirstName = shippingFirstName;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s first name
+   * @return shippingFirstName
+  **/
+  @ApiModelProperty(value = "Customer's first name")
+  public String getShippingFirstName() {
+    return shippingFirstName;
+  }
+
+  public void setShippingFirstName(String shippingFirstName) {
+    this.shippingFirstName = shippingFirstName;
+  }
+
+  public Riskv1authenticationsOrderInformationLineItems shippingLastName(String shippingLastName) {
+    this.shippingLastName = shippingLastName;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s last name
+   * @return shippingLastName
+  **/
+  @ApiModelProperty(value = "Customer's last name")
+  public String getShippingLastName() {
+    return shippingLastName;
+  }
+
+  public void setShippingLastName(String shippingLastName) {
+    this.shippingLastName = shippingLastName;
+  }
+
+  public Riskv1authenticationsOrderInformationLineItems shippingMiddleName(String shippingMiddleName) {
+    this.shippingMiddleName = shippingMiddleName;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s middle name
+   * @return shippingMiddleName
+  **/
+  @ApiModelProperty(value = "Customer's middle name")
+  public String getShippingMiddleName() {
+    return shippingMiddleName;
+  }
+
+  public void setShippingMiddleName(String shippingMiddleName) {
+    this.shippingMiddleName = shippingMiddleName;
+  }
+
+  public Riskv1authenticationsOrderInformationLineItems shippingPhone(Integer shippingPhone) {
+    this.shippingPhone = shippingPhone;
+    return this;
+  }
+
+   /**
+   * Phone number where item will be shipped
+   * @return shippingPhone
+  **/
+  @ApiModelProperty(value = "Phone number where item will be shipped")
+  public Integer getShippingPhone() {
+    return shippingPhone;
+  }
+
+  public void setShippingPhone(Integer shippingPhone) {
+    this.shippingPhone = shippingPhone;
+  }
+
+  public Riskv1authenticationsOrderInformationLineItems shippingPostalCode(Integer shippingPostalCode) {
+    this.shippingPostalCode = shippingPostalCode;
+    return this;
+  }
+
+   /**
+   * Postal code where item will be shipped
+   * @return shippingPostalCode
+  **/
+  @ApiModelProperty(value = "Postal code where item will be shipped")
+  public Integer getShippingPostalCode() {
+    return shippingPostalCode;
+  }
+
+  public void setShippingPostalCode(Integer shippingPostalCode) {
+    this.shippingPostalCode = shippingPostalCode;
+  }
+
+  public Riskv1authenticationsOrderInformationLineItems shippingState(String shippingState) {
+    this.shippingState = shippingState;
+    return this;
+  }
+
+   /**
+   * State where item will be shipped
+   * @return shippingState
+  **/
+  @ApiModelProperty(value = "State where item will be shipped")
+  public String getShippingState() {
+    return shippingState;
+  }
+
+  public void setShippingState(String shippingState) {
+    this.shippingState = shippingState;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -260,12 +470,22 @@ public class Riskv1authenticationsOrderInformationLineItems {
         Objects.equals(this.productName, riskv1authenticationsOrderInformationLineItems.productName) &&
         Objects.equals(this.passenger, riskv1authenticationsOrderInformationLineItems.passenger) &&
         Objects.equals(this.shippingDestinationTypes, riskv1authenticationsOrderInformationLineItems.shippingDestinationTypes) &&
-        Objects.equals(this.taxAmount, riskv1authenticationsOrderInformationLineItems.taxAmount);
+        Objects.equals(this.taxAmount, riskv1authenticationsOrderInformationLineItems.taxAmount) &&
+        Objects.equals(this.shippingAddress1, riskv1authenticationsOrderInformationLineItems.shippingAddress1) &&
+        Objects.equals(this.shippingAddress2, riskv1authenticationsOrderInformationLineItems.shippingAddress2) &&
+        Objects.equals(this.shippingCity, riskv1authenticationsOrderInformationLineItems.shippingCity) &&
+        Objects.equals(this.shippingCountryCode, riskv1authenticationsOrderInformationLineItems.shippingCountryCode) &&
+        Objects.equals(this.shippingFirstName, riskv1authenticationsOrderInformationLineItems.shippingFirstName) &&
+        Objects.equals(this.shippingLastName, riskv1authenticationsOrderInformationLineItems.shippingLastName) &&
+        Objects.equals(this.shippingMiddleName, riskv1authenticationsOrderInformationLineItems.shippingMiddleName) &&
+        Objects.equals(this.shippingPhone, riskv1authenticationsOrderInformationLineItems.shippingPhone) &&
+        Objects.equals(this.shippingPostalCode, riskv1authenticationsOrderInformationLineItems.shippingPostalCode) &&
+        Objects.equals(this.shippingState, riskv1authenticationsOrderInformationLineItems.shippingState);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, unitPrice, quantity, giftCardCurrency, productSKU, productDescription, productName, passenger, shippingDestinationTypes, taxAmount);
+    return Objects.hash(totalAmount, unitPrice, quantity, giftCardCurrency, productSKU, productDescription, productName, passenger, shippingDestinationTypes, taxAmount, shippingAddress1, shippingAddress2, shippingCity, shippingCountryCode, shippingFirstName, shippingLastName, shippingMiddleName, shippingPhone, shippingPostalCode, shippingState);
   }
 
 
@@ -284,6 +504,16 @@ public class Riskv1authenticationsOrderInformationLineItems {
     sb.append("    passenger: ").append(toIndentedString(passenger)).append("\n");
     sb.append("    shippingDestinationTypes: ").append(toIndentedString(shippingDestinationTypes)).append("\n");
     sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    sb.append("    shippingAddress1: ").append(toIndentedString(shippingAddress1)).append("\n");
+    sb.append("    shippingAddress2: ").append(toIndentedString(shippingAddress2)).append("\n");
+    sb.append("    shippingCity: ").append(toIndentedString(shippingCity)).append("\n");
+    sb.append("    shippingCountryCode: ").append(toIndentedString(shippingCountryCode)).append("\n");
+    sb.append("    shippingFirstName: ").append(toIndentedString(shippingFirstName)).append("\n");
+    sb.append("    shippingLastName: ").append(toIndentedString(shippingLastName)).append("\n");
+    sb.append("    shippingMiddleName: ").append(toIndentedString(shippingMiddleName)).append("\n");
+    sb.append("    shippingPhone: ").append(toIndentedString(shippingPhone)).append("\n");
+    sb.append("    shippingPostalCode: ").append(toIndentedString(shippingPostalCode)).append("\n");
+    sb.append("    shippingState: ").append(toIndentedString(shippingState)).append("\n");
     sb.append("}");
     return sb.toString();
   }

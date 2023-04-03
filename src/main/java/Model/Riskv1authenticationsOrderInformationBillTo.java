@@ -34,6 +34,9 @@ public class Riskv1authenticationsOrderInformationBillTo {
   @SerializedName("address2")
   private String address2 = null;
 
+  @SerializedName("address3")
+  private String address3 = null;
+
   @SerializedName("administrativeArea")
   private String administrativeArea = null;
 
@@ -92,6 +95,24 @@ public class Riskv1authenticationsOrderInformationBillTo {
 
   public void setAddress2(String address2) {
     this.address2 = address2;
+  }
+
+  public Riskv1authenticationsOrderInformationBillTo address3(String address3) {
+    this.address3 = address3;
+    return this;
+  }
+
+   /**
+   * Additional address information (third line of the billing address) 
+   * @return address3
+  **/
+  @ApiModelProperty(value = "Additional address information (third line of the billing address) ")
+  public String getAddress3() {
+    return address3;
+  }
+
+  public void setAddress3(String address3) {
+    this.address3 = address3;
   }
 
   public Riskv1authenticationsOrderInformationBillTo administrativeArea(String administrativeArea) {
@@ -250,6 +271,7 @@ public class Riskv1authenticationsOrderInformationBillTo {
     Riskv1authenticationsOrderInformationBillTo riskv1authenticationsOrderInformationBillTo = (Riskv1authenticationsOrderInformationBillTo) o;
     return Objects.equals(this.address1, riskv1authenticationsOrderInformationBillTo.address1) &&
         Objects.equals(this.address2, riskv1authenticationsOrderInformationBillTo.address2) &&
+        Objects.equals(this.address3, riskv1authenticationsOrderInformationBillTo.address3) &&
         Objects.equals(this.administrativeArea, riskv1authenticationsOrderInformationBillTo.administrativeArea) &&
         Objects.equals(this.country, riskv1authenticationsOrderInformationBillTo.country) &&
         Objects.equals(this.locality, riskv1authenticationsOrderInformationBillTo.locality) &&
@@ -262,7 +284,7 @@ public class Riskv1authenticationsOrderInformationBillTo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address1, address2, administrativeArea, country, locality, firstName, lastName, phoneNumber, email, postalCode);
+    return Objects.hash(address1, address2, address3, administrativeArea, country, locality, firstName, lastName, phoneNumber, email, postalCode);
   }
 
 
@@ -273,6 +295,7 @@ public class Riskv1authenticationsOrderInformationBillTo {
     
     sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
+    sb.append("    address3: ").append(toIndentedString(address3)).append("\n");
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
