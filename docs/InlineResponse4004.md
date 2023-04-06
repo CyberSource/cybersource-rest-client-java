@@ -4,32 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**correlationId** | **String** |  |  [optional]
-**details** | [**List&lt;InlineResponse4004Details&gt;**](InlineResponse4004Details.md) |  |  [optional]
-**informationLink** | **String** |  |  [optional]
-**message** | **String** |  | 
-**reason** | [**ReasonEnum**](#ReasonEnum) |  | 
-
-
-<a name="ReasonEnum"></a>
-## Enum: ReasonEnum
-Name | Value
----- | -----
-INVALID_APIKEY | &quot;INVALID_APIKEY&quot;
-INVALID_SHIPPING_INPUT_PARAMS | &quot;INVALID_SHIPPING_INPUT_PARAMS&quot;
-CAPTURE_CONTEXT_INVALID | &quot;CAPTURE_CONTEXT_INVALID&quot;
-CAPTURE_CONTEXT_EXPIRED | &quot;CAPTURE_CONTEXT_EXPIRED&quot;
-SDK_XHR_ERROR | &quot;SDK_XHR_ERROR&quot;
-UNIFIEDPAYMENTS_VALIDATION_PARAMS | &quot;UNIFIEDPAYMENTS_VALIDATION_PARAMS&quot;
-UNIFIEDPAYMENTS_VALIDATION_FIELDS | &quot;UNIFIEDPAYMENTS_VALIDATION_FIELDS&quot;
-UNIFIEDPAYMENT_PAYMENT_PARAMITERS | &quot;UNIFIEDPAYMENT_PAYMENT_PARAMITERS&quot;
-CREATE_TOKEN_TIMEOUT | &quot;CREATE_TOKEN_TIMEOUT&quot;
-CREATE_TOKEN_XHR_ERROR | &quot;CREATE_TOKEN_XHR_ERROR&quot;
-SHOW_LOAD_CONTAINER_SELECTOR | &quot;SHOW_LOAD_CONTAINER_SELECTOR&quot;
-SHOW_LOAD_INVALID_CONTAINER | &quot;SHOW_LOAD_INVALID_CONTAINER&quot;
-SHOW_TOKEN_TIMEOUT | &quot;SHOW_TOKEN_TIMEOUT&quot;
-SHOW_TOKEN_XHR_ERROR | &quot;SHOW_TOKEN_XHR_ERROR&quot;
-SHOW_PAYMENT_TIMEOUT | &quot;SHOW_PAYMENT_TIMEOUT&quot;
+**submitTimeUtc** | **String** | Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services.  |  [optional]
+**status** | **String** | The status of the submitted transaction.  Possible values:  - INVALID_REQUEST  |  [optional]
+**reason** | **String** | The reason of the status.  Possible values:  - MISSING_FIELD  |  [optional]
+**message** | **String** | The detail message related to the status and reason listed above. |  [optional]
+**statusCode** | **String** | HTTP status code of the submitted request.  Possible values:  - 500  |  [optional]
 
 
 

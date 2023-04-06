@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * PtsV2PaymentsPost201Response1PaymentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class PtsV2PaymentsPost201Response1PaymentInformation {
   @SerializedName("paymentType")
   private PtsV2PaymentsPost201Response1PaymentInformationPaymentType paymentType = null;

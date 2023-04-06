@@ -25,10 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Additional resources for the Payment Instrument token. 
+ * Additional resources for the Payment Instrument. 
  */
-@ApiModel(description = "Additional resources for the Payment Instrument token. ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+@ApiModel(description = "Additional resources for the Payment Instrument. ")
+
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded {
   @SerializedName("instrumentIdentifier")
   private Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier instrumentIdentifier = null;

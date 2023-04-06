@@ -132,7 +132,7 @@ public class TransientTokenDataApi {
 
     /**
      * Get Transient Token Data
-     * Retrieve the data captured by Unfied Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.
+     * Retrieve the data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.
      * @param transientToken Transient Token returned by the Unified Checkout application.  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -145,7 +145,7 @@ public class TransientTokenDataApi {
 
     /**
      * Get Transient Token Data
-     * Retrieve the data captured by Unfied Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.
+     * Retrieve the data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.
      * @param transientToken Transient Token returned by the Unified Checkout application.  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -157,7 +157,7 @@ public class TransientTokenDataApi {
 
     /**
      * Get Transient Token Data (asynchronously)
-     * Retrieve the data captured by Unfied Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.
+     * Retrieve the data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.
      * @param transientToken Transient Token returned by the Unified Checkout application.  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

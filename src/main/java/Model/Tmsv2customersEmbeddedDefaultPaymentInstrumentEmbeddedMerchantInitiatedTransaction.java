@@ -26,10 +26,13 @@ import java.io.IOException;
 /**
  * Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantInitiatedTransaction
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantInitiatedTransaction {
   @SerializedName("previousTransactionId")
   private String previousTransactionId = null;
+
+  @SerializedName("originalAuthorizedAmount")
+  private String originalAuthorizedAmount = null;
 
   public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantInitiatedTransaction previousTransactionId(String previousTransactionId) {
     this.previousTransactionId = previousTransactionId;
@@ -49,6 +52,24 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantIniti
     this.previousTransactionId = previousTransactionId;
   }
 
+  public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantInitiatedTransaction originalAuthorizedAmount(String originalAuthorizedAmount) {
+    this.originalAuthorizedAmount = originalAuthorizedAmount;
+    return this;
+  }
+
+   /**
+   * Amount of the original authorization. 
+   * @return originalAuthorizedAmount
+  **/
+  @ApiModelProperty(value = "Amount of the original authorization. ")
+  public String getOriginalAuthorizedAmount() {
+    return originalAuthorizedAmount;
+  }
+
+  public void setOriginalAuthorizedAmount(String originalAuthorizedAmount) {
+    this.originalAuthorizedAmount = originalAuthorizedAmount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +80,13 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantIniti
       return false;
     }
     Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantInitiatedTransaction tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantInitiatedTransaction = (Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantInitiatedTransaction) o;
-    return Objects.equals(this.previousTransactionId, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantInitiatedTransaction.previousTransactionId);
+    return Objects.equals(this.previousTransactionId, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantInitiatedTransaction.previousTransactionId) &&
+        Objects.equals(this.originalAuthorizedAmount, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantInitiatedTransaction.originalAuthorizedAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(previousTransactionId);
+    return Objects.hash(previousTransactionId, originalAuthorizedAmount);
   }
 
 
@@ -74,6 +96,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantIniti
     sb.append("class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedMerchantInitiatedTransaction {\n");
     
     sb.append("    previousTransactionId: ").append(toIndentedString(previousTransactionId)).append("\n");
+    sb.append("    originalAuthorizedAmount: ").append(toIndentedString(originalAuthorizedAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

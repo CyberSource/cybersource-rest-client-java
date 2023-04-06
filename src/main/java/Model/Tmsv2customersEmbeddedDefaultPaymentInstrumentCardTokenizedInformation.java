@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformation {
   @SerializedName("requestorID")
   private String requestorID = null;
@@ -40,10 +40,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformat
   }
 
    /**
-   * Value that identifies your business and indicates that the cardholder’s account number is tokenized. This value is assigned by the token service provider and is unique within the token service provider’s database.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**. 
+   * Value that identifies your business and indicates that the cardholder’s account number is tokenized. This value is assigned by the token service provider and is unique within the token service provider’s database.  **Note** This field is supported only through **VisaNet** and **FDC Nashville Global**. 
    * @return requestorID
   **/
-  @ApiModelProperty(value = "Value that identifies your business and indicates that the cardholder’s account number is tokenized. This value is assigned by the token service provider and is unique within the token service provider’s database.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**. ")
+  @ApiModelProperty(value = "Value that identifies your business and indicates that the cardholder’s account number is tokenized. This value is assigned by the token service provider and is unique within the token service provider’s database.  **Note** This field is supported only through **VisaNet** and **FDC Nashville Global**. ")
   public String getRequestorID() {
     return requestorID;
   }

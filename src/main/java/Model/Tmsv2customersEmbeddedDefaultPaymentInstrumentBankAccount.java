@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount {
   @SerializedName("type")
   private String type = null;
@@ -37,10 +37,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount {
   }
 
    /**
-   * Account type.  Valid values:  - checking : C  - general ledger : G This value is supported only on Wells Fargo ACH  - savings : S (U.S. dollars only)  - corporate checking : X (U.S. dollars only) 
+   * Account type.  Possible Values:  - checking : C  - general ledger : G This value is supported only on Wells Fargo ACH  - savings : S (U.S. dollars only)  - corporate checking : X (U.S. dollars only) 
    * @return type
   **/
-  @ApiModelProperty(value = "Account type.  Valid values:  - checking : C  - general ledger : G This value is supported only on Wells Fargo ACH  - savings : S (U.S. dollars only)  - corporate checking : X (U.S. dollars only) ")
+  @ApiModelProperty(value = "Account type.  Possible Values:  - checking : C  - general ledger : G This value is supported only on Wells Fargo ACH  - savings : S (U.S. dollars only)  - corporate checking : X (U.S. dollars only) ")
   public String getType() {
     return type;
   }

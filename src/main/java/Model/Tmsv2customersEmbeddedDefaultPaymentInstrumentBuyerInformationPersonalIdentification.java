@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification {
   @SerializedName("id")
   private String id = null;
@@ -62,10 +62,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPerso
   }
 
    /**
-   * The type of the identification.  Valid values:   - driver license 
+   * The type of the identification.  Possible Values:   - driver license 
    * @return type
   **/
-  @ApiModelProperty(value = "The type of the identification.  Valid values:   - driver license ")
+  @ApiModelProperty(value = "The type of the identification.  Possible Values:   - driver license ")
   public String getType() {
     return type;
   }

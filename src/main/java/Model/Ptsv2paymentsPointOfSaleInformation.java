@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Ptsv2paymentsPointOfSaleInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("terminalId")
   private String terminalId = null;
@@ -81,6 +81,9 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   @SerializedName("terminalPinCapability")
   private Integer terminalPinCapability = null;
+
+  @SerializedName("pinEntrySolution")
+  private String pinEntrySolution = null;
 
   @SerializedName("deviceId")
   private String deviceId = null;
@@ -429,16 +432,34 @@ public class Ptsv2paymentsPointOfSaleInformation {
   }
 
    /**
-   * Maximum PIN length that the terminal can capture.  Possible values: -  0: No PIN capture capability -  1: PIN capture capability unknown -  4: Four characters -  5: Five characters -  6: Six characters -  7: Seven characters -  8: Eight characters -  9: Nine characters - 10: Ten characters - 11: Eleven characters - 12: Twelve characters  This field is supported for authorizations and credits only on the following processors: - American Express Direct - Credit Mutuel-CIC - OmniPay Direct - SIX  Required field for authorization or credit of PIN transactions. 
+   * Maximum PIN length that the terminal can capture.  Possible values: -  0: No PIN capture capability -  1: PIN capture capability unknown -  2: PIN Pad down -  4: Four characters -  5: Five characters -  6: Six characters -  7: Seven characters -  8: Eight characters -  9: Nine characters - 10: Ten characters - 11: Eleven characters - 12: Twelve characters  This field is supported for authorizations and credits only on the following processors: - American Express Direct - Credit Mutuel-CIC - OmniPay Direct - SIX  Required field for authorization or credit of PIN transactions. 
    * @return terminalPinCapability
   **/
-  @ApiModelProperty(value = "Maximum PIN length that the terminal can capture.  Possible values: -  0: No PIN capture capability -  1: PIN capture capability unknown -  4: Four characters -  5: Five characters -  6: Six characters -  7: Seven characters -  8: Eight characters -  9: Nine characters - 10: Ten characters - 11: Eleven characters - 12: Twelve characters  This field is supported for authorizations and credits only on the following processors: - American Express Direct - Credit Mutuel-CIC - OmniPay Direct - SIX  Required field for authorization or credit of PIN transactions. ")
+  @ApiModelProperty(value = "Maximum PIN length that the terminal can capture.  Possible values: -  0: No PIN capture capability -  1: PIN capture capability unknown -  2: PIN Pad down -  4: Four characters -  5: Five characters -  6: Six characters -  7: Seven characters -  8: Eight characters -  9: Nine characters - 10: Ten characters - 11: Eleven characters - 12: Twelve characters  This field is supported for authorizations and credits only on the following processors: - American Express Direct - Credit Mutuel-CIC - OmniPay Direct - SIX  Required field for authorization or credit of PIN transactions. ")
   public Integer getTerminalPinCapability() {
     return terminalPinCapability;
   }
 
   public void setTerminalPinCapability(Integer terminalPinCapability) {
     this.terminalPinCapability = terminalPinCapability;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation pinEntrySolution(String pinEntrySolution) {
+    this.pinEntrySolution = pinEntrySolution;
+    return this;
+  }
+
+   /**
+   * This field will contain the type of Pin Pad the terminal has.  Possible values: -   PCI-SPoC: Where the pin is being put on screen -   PCI-PTS: Where the pin is being put on actual hardware pin pad 
+   * @return pinEntrySolution
+  **/
+  @ApiModelProperty(value = "This field will contain the type of Pin Pad the terminal has.  Possible values: -   PCI-SPoC: Where the pin is being put on screen -   PCI-PTS: Where the pin is being put on actual hardware pin pad ")
+  public String getPinEntrySolution() {
+    return pinEntrySolution;
+  }
+
+  public void setPinEntrySolution(String pinEntrySolution) {
+    this.pinEntrySolution = pinEntrySolution;
   }
 
   public Ptsv2paymentsPointOfSaleInformation deviceId(String deviceId) {
@@ -667,6 +688,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
         Objects.equals(this.terminalCardCaptureCapability, ptsv2paymentsPointOfSaleInformation.terminalCardCaptureCapability) &&
         Objects.equals(this.terminalOutputCapability, ptsv2paymentsPointOfSaleInformation.terminalOutputCapability) &&
         Objects.equals(this.terminalPinCapability, ptsv2paymentsPointOfSaleInformation.terminalPinCapability) &&
+        Objects.equals(this.pinEntrySolution, ptsv2paymentsPointOfSaleInformation.pinEntrySolution) &&
         Objects.equals(this.deviceId, ptsv2paymentsPointOfSaleInformation.deviceId) &&
         Objects.equals(this.pinBlockEncodingFormat, ptsv2paymentsPointOfSaleInformation.pinBlockEncodingFormat) &&
         Objects.equals(this.encryptedPin, ptsv2paymentsPointOfSaleInformation.encryptedPin) &&
@@ -682,7 +704,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId, terminalSerialNumber, cardholderVerificationMethodUsed, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake, serviceCode);
+    return Objects.hash(terminalId, terminalSerialNumber, cardholderVerificationMethodUsed, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, pinEntrySolution, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake, serviceCode);
   }
 
 
@@ -708,6 +730,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
     sb.append("    terminalCardCaptureCapability: ").append(toIndentedString(terminalCardCaptureCapability)).append("\n");
     sb.append("    terminalOutputCapability: ").append(toIndentedString(terminalOutputCapability)).append("\n");
     sb.append("    terminalPinCapability: ").append(toIndentedString(terminalPinCapability)).append("\n");
+    sb.append("    pinEntrySolution: ").append(toIndentedString(pinEntrySolution)).append("\n");
     sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
     sb.append("    pinBlockEncodingFormat: ").append(toIndentedString(pinBlockEncodingFormat)).append("\n");
     sb.append("    encryptedPin: ").append(toIndentedString(encryptedPin)).append("\n");

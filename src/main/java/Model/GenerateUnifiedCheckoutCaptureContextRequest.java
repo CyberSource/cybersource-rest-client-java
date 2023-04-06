@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * GenerateUnifiedCheckoutCaptureContextRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class GenerateUnifiedCheckoutCaptureContextRequest {
   @SerializedName("targetOrigins")
   private List<String> targetOrigins = null;
@@ -92,10 +92,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   }
 
    /**
-   * verson number of Unified Checkout being used
+   * version number of Unified Checkout being used
    * @return clientVersion
   **/
-  @ApiModelProperty(example = "0.11", value = "verson number of Unified Checkout being used")
+  @ApiModelProperty(example = "0.15", value = "version number of Unified Checkout being used")
   public String getClientVersion() {
     return clientVersion;
   }

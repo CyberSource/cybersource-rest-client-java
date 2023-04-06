@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * The location of the buyer at the time of placing the order.
+ * The Order Origin address fields may be used by the tax service to determine the taxability of the order or applicable taxing jurisdictions. You should consult your tax, legal and/or accounting advisors to determine if you should include an Order Origin address in your tax service request for some or all of your transactions based on your business.
  */
-@ApiModel(description = "The location of the buyer at the time of placing the order.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+@ApiModel(description = "The Order Origin address fields may be used by the tax service to determine the taxability of the order or applicable taxing jurisdictions. You should consult your tax, legal and/or accounting advisors to determine if you should include an Order Origin address in your tax service request for some or all of your transactions based on your business.")
+
 public class Vasv2taxOrderInformationOrderOrigin {
   @SerializedName("locality")
   private String locality = null;
@@ -47,10 +47,10 @@ public class Vasv2taxOrderInformationOrderOrigin {
   }
 
    /**
-   * Order origin city. This field is not used unless the &#x60;orderInformation.orderOrigin.administrativeArea&#x60; and &#x60;orderInformation.orderOrigin.country&#x60; fields are present.  **NOTE** If this field appears in a &#x60;lineItems&#x60; object, then the value of this field in the &#x60;lineItems&#x60; object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. The location of the buyer at the time of placing the order. 
+   * Order origin city. This field is not used unless the &#x60;orderInformation.orderOrigin.administrativeArea&#x60; and &#x60;orderInformation.orderOrigin.country&#x60; fields are present.  **NOTE** If this field appears in a &#x60;lineItems&#x60; object, then the value of this field in the &#x60;lineItems&#x60; object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. 
    * @return locality
   **/
-  @ApiModelProperty(value = "Order origin city. This field is not used unless the `orderInformation.orderOrigin.administrativeArea` and `orderInformation.orderOrigin.country` fields are present.  **NOTE** If this field appears in a `lineItems` object, then the value of this field in the `lineItems` object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. The location of the buyer at the time of placing the order. ")
+  @ApiModelProperty(value = "Order origin city. This field is not used unless the `orderInformation.orderOrigin.administrativeArea` and `orderInformation.orderOrigin.country` fields are present.  **NOTE** If this field appears in a `lineItems` object, then the value of this field in the `lineItems` object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. ")
   public String getLocality() {
     return locality;
   }
@@ -65,10 +65,10 @@ public class Vasv2taxOrderInformationOrderOrigin {
   }
 
    /**
-   * Order origin state. This field is not used unless the &#x60;orderInformation.orderOrigin.locality&#x60; and &#x60;orderInformation.orderOrigin.country&#x60; fields are present. Use the [State, Province, and Territory Codes for the United States and Canada](http://apps.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf).  **NOTE** If this field appears in a &#x60;lineItems&#x60; object, then the value of this field in the &#x60;lineItems&#x60; object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. The location of the buyer at the time of placing the order. 
+   * Order origin state. This field is not used unless the &#x60;orderInformation.orderOrigin.locality&#x60; and &#x60;orderInformation.orderOrigin.country&#x60; fields are present. Use the [State, Province, and Territory Codes for the United States and Canada](http://apps.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf).  **NOTE** If this field appears in a &#x60;lineItems&#x60; object, then the value of this field in the &#x60;lineItems&#x60; object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "Order origin state. This field is not used unless the `orderInformation.orderOrigin.locality` and `orderInformation.orderOrigin.country` fields are present. Use the [State, Province, and Territory Codes for the United States and Canada](http://apps.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf).  **NOTE** If this field appears in a `lineItems` object, then the value of this field in the `lineItems` object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. The location of the buyer at the time of placing the order. ")
+  @ApiModelProperty(value = "Order origin state. This field is not used unless the `orderInformation.orderOrigin.locality` and `orderInformation.orderOrigin.country` fields are present. Use the [State, Province, and Territory Codes for the United States and Canada](http://apps.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf).  **NOTE** If this field appears in a `lineItems` object, then the value of this field in the `lineItems` object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -83,10 +83,10 @@ public class Vasv2taxOrderInformationOrderOrigin {
   }
 
    /**
-   * Order origin postal code. This field is not used unless the &#x60;orderInformation.orderOrigin.locality&#x60;, &#x60;orderInformation.orderOrigin.administrativeArea&#x60; and &#x60;orderInformation.orderOrigin.country&#x60; fields are present. Must be sent at the lineItem level to appear in the Tax Detail Report.  **NOTE** If this field appears in a &#x60;lineItems&#x60; object, then the value of this field in the &#x60;lineItems&#x60; object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. The location of the buyer at the time of placing the order. 
+   * Order origin postal code. This field is not used unless the &#x60;orderInformation.orderOrigin.locality&#x60;, &#x60;orderInformation.orderOrigin.administrativeArea&#x60; and &#x60;orderInformation.orderOrigin.country&#x60; fields are present. Must be sent at the lineItem level to appear in the Tax Detail Report.  **NOTE** If this field appears in a &#x60;lineItems&#x60; object, then the value of this field in the &#x60;lineItems&#x60; object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Order origin postal code. This field is not used unless the `orderInformation.orderOrigin.locality`, `orderInformation.orderOrigin.administrativeArea` and `orderInformation.orderOrigin.country` fields are present. Must be sent at the lineItem level to appear in the Tax Detail Report.  **NOTE** If this field appears in a `lineItems` object, then the value of this field in the `lineItems` object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. The location of the buyer at the time of placing the order. ")
+  @ApiModelProperty(value = "Order origin postal code. This field is not used unless the `orderInformation.orderOrigin.locality`, `orderInformation.orderOrigin.administrativeArea` and `orderInformation.orderOrigin.country` fields are present. Must be sent at the lineItem level to appear in the Tax Detail Report.  **NOTE** If this field appears in a `lineItems` object, then the value of this field in the `lineItems` object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. ")
   public String getPostalCode() {
     return postalCode;
   }
@@ -101,10 +101,10 @@ public class Vasv2taxOrderInformationOrderOrigin {
   }
 
    /**
-   * Order origin country. This field is not used unless the &#x60;orderInformation.orderOrigin.administrativeArea&#x60; and &#x60;orderInformation.orderOrigin.locality&#x60; fields are present. Use the [ISO Standard Country Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  **NOTE** If this field appears in a &#x60;lineItems&#x60; object, then the value of this field in the &#x60;lineItems&#x60; object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. The location of the buyer at the time of placing the order. 
+   * Order origin country. This field is not used unless the &#x60;orderInformation.orderOrigin.administrativeArea&#x60; and &#x60;orderInformation.orderOrigin.locality&#x60; fields are present. Use the [ISO Standard Country Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  **NOTE** If this field appears in a &#x60;lineItems&#x60; object, then the value of this field in the &#x60;lineItems&#x60; object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. 
    * @return country
   **/
-  @ApiModelProperty(value = "Order origin country. This field is not used unless the `orderInformation.orderOrigin.administrativeArea` and `orderInformation.orderOrigin.locality` fields are present. Use the [ISO Standard Country Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  **NOTE** If this field appears in a `lineItems` object, then the value of this field in the `lineItems` object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. The location of the buyer at the time of placing the order. ")
+  @ApiModelProperty(value = "Order origin country. This field is not used unless the `orderInformation.orderOrigin.administrativeArea` and `orderInformation.orderOrigin.locality` fields are present. Use the [ISO Standard Country Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  **NOTE** If this field appears in a `lineItems` object, then the value of this field in the `lineItems` object overrides the value of the corresponding field at the request-level or order-level object.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. ")
   public String getCountry() {
     return country;
   }

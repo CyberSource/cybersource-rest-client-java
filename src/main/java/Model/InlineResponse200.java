@@ -14,7 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse200Keys;
+import Model.InlineResponse200Links;
+import Model.InlineResponse200Plans;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,28 +28,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Successful searchKeysResponse
+ * InlineResponse200
  */
-@ApiModel(description = "Successful searchKeysResponse")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class InlineResponse200 {
+  @SerializedName("_links")
+  private InlineResponse200Links links = null;
+
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
   @SerializedName("totalCount")
   private Integer totalCount = null;
 
-  @SerializedName("offset")
-  private Integer offset = null;
+  @SerializedName("plans")
+  private List<InlineResponse200Plans> plans = null;
 
-  @SerializedName("limit")
-  private Integer limit = null;
+  public InlineResponse200 links(InlineResponse200Links links) {
+    this.links = links;
+    return this;
+  }
 
-  @SerializedName("sort")
-  private String sort = null;
+   /**
+   * Get links
+   * @return links
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse200Links getLinks() {
+    return links;
+  }
 
-  @SerializedName("keys")
-  private List<InlineResponse200Keys> keys = null;
+  public void setLinks(InlineResponse200Links links) {
+    this.links = links;
+  }
 
   public InlineResponse200 submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -56,10 +68,10 @@ public class InlineResponse200 {
   }
 
    /**
-   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(example = "2016-08-11T22:47:57Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
   public String getSubmitTimeUtc() {
     return submitTimeUtc;
   }
@@ -74,10 +86,10 @@ public class InlineResponse200 {
   }
 
    /**
-   * Specifies the total number of items found based on the request
+   * total number of plans created
    * @return totalCount
   **/
-  @ApiModelProperty(value = "Specifies the total number of items found based on the request")
+  @ApiModelProperty(value = "total number of plans created")
   public Integer getTotalCount() {
     return totalCount;
   }
@@ -86,84 +98,30 @@ public class InlineResponse200 {
     this.totalCount = totalCount;
   }
 
-  public InlineResponse200 offset(Integer offset) {
-    this.offset = offset;
+  public InlineResponse200 plans(List<InlineResponse200Plans> plans) {
+    this.plans = plans;
     return this;
   }
 
-   /**
-   * Specifies the record offset from the records are returned part of the response
-   * @return offset
-  **/
-  @ApiModelProperty(value = "Specifies the record offset from the records are returned part of the response")
-  public Integer getOffset() {
-    return offset;
-  }
-
-  public void setOffset(Integer offset) {
-    this.offset = offset;
-  }
-
-  public InlineResponse200 limit(Integer limit) {
-    this.limit = limit;
-    return this;
-  }
-
-   /**
-   * Specifies the maximum number of records requested part of the response
-   * @return limit
-  **/
-  @ApiModelProperty(value = "Specifies the maximum number of records requested part of the response")
-  public Integer getLimit() {
-    return limit;
-  }
-
-  public void setLimit(Integer limit) {
-    this.limit = limit;
-  }
-
-  public InlineResponse200 sort(String sort) {
-    this.sort = sort;
-    return this;
-  }
-
-   /**
-   * Specifies a comma separated list of field names based on which the result is sorted.
-   * @return sort
-  **/
-  @ApiModelProperty(value = "Specifies a comma separated list of field names based on which the result is sorted.")
-  public String getSort() {
-    return sort;
-  }
-
-  public void setSort(String sort) {
-    this.sort = sort;
-  }
-
-  public InlineResponse200 keys(List<InlineResponse200Keys> keys) {
-    this.keys = keys;
-    return this;
-  }
-
-  public InlineResponse200 addKeysItem(InlineResponse200Keys keysItem) {
-    if (this.keys == null) {
-      this.keys = new ArrayList<InlineResponse200Keys>();
+  public InlineResponse200 addPlansItem(InlineResponse200Plans plansItem) {
+    if (this.plans == null) {
+      this.plans = new ArrayList<InlineResponse200Plans>();
     }
-    this.keys.add(keysItem);
+    this.plans.add(plansItem);
     return this;
   }
 
    /**
-   * Get keys
-   * @return keys
+   * Get plans
+   * @return plans
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse200Keys> getKeys() {
-    return keys;
+  public List<InlineResponse200Plans> getPlans() {
+    return plans;
   }
 
-  public void setKeys(List<InlineResponse200Keys> keys) {
-    this.keys = keys;
+  public void setPlans(List<InlineResponse200Plans> plans) {
+    this.plans = plans;
   }
 
 
@@ -176,17 +134,15 @@ public class InlineResponse200 {
       return false;
     }
     InlineResponse200 inlineResponse200 = (InlineResponse200) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse200.submitTimeUtc) &&
+    return Objects.equals(this.links, inlineResponse200.links) &&
+        Objects.equals(this.submitTimeUtc, inlineResponse200.submitTimeUtc) &&
         Objects.equals(this.totalCount, inlineResponse200.totalCount) &&
-        Objects.equals(this.offset, inlineResponse200.offset) &&
-        Objects.equals(this.limit, inlineResponse200.limit) &&
-        Objects.equals(this.sort, inlineResponse200.sort) &&
-        Objects.equals(this.keys, inlineResponse200.keys);
+        Objects.equals(this.plans, inlineResponse200.plans);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, totalCount, offset, limit, sort, keys);
+    return Objects.hash(links, submitTimeUtc, totalCount, plans);
   }
 
 
@@ -195,12 +151,10 @@ public class InlineResponse200 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse200 {\n");
     
+    sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
-    sb.append("    keys: ").append(toIndentedString(keys)).append("\n");
+    sb.append("    plans: ").append(toIndentedString(plans)).append("\n");
     sb.append("}");
     return sb.toString();
   }

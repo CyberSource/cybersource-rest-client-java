@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.InvoicingV2InvoicesAllGet200ResponseLinks1;
+import Model.InvoicingV2InvoicesAllGet200ResponseLinks;
 import Model.InvoicingV2InvoicesPost201ResponseInvoiceInformation;
 import Model.InvoicingV2InvoicesPost201ResponseOrderInformation;
 import Model.Invoicingv2invoicesCustomerInformation;
@@ -30,10 +30,10 @@ import java.io.IOException;
 /**
  * InvoicingV2InvoicesPost201Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class InvoicingV2InvoicesPost201Response {
   @SerializedName("_links")
-  private InvoicingV2InvoicesAllGet200ResponseLinks1 links = null;
+  private InvoicingV2InvoicesAllGet200ResponseLinks links = null;
 
   @SerializedName("id")
   private String id = null;
@@ -53,7 +53,7 @@ public class InvoicingV2InvoicesPost201Response {
   @SerializedName("orderInformation")
   private InvoicingV2InvoicesPost201ResponseOrderInformation orderInformation = null;
 
-  public InvoicingV2InvoicesPost201Response links(InvoicingV2InvoicesAllGet200ResponseLinks1 links) {
+  public InvoicingV2InvoicesPost201Response links(InvoicingV2InvoicesAllGet200ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -63,11 +63,11 @@ public class InvoicingV2InvoicesPost201Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public InvoicingV2InvoicesAllGet200ResponseLinks1 getLinks() {
+  public InvoicingV2InvoicesAllGet200ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(InvoicingV2InvoicesAllGet200ResponseLinks1 links) {
+  public void setLinks(InvoicingV2InvoicesAllGet200ResponseLinks links) {
     this.links = links;
   }
 

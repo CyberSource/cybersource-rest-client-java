@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Riskv1authenticationresultsConsumerAuthenticationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Riskv1authenticationresultsConsumerAuthenticationInformation {
   @SerializedName("authenticationTransactionId")
   private String authenticationTransactionId = null;
@@ -54,6 +54,9 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
 
   @SerializedName("whiteListStatus")
   private String whiteListStatus = null;
+
+  @SerializedName("credentialEncrypted")
+  private String credentialEncrypted = null;
 
   public Riskv1authenticationresultsConsumerAuthenticationInformation authenticationTransactionId(String authenticationTransactionId) {
     this.authenticationTransactionId = authenticationTransactionId;
@@ -217,6 +220,24 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
     this.whiteListStatus = whiteListStatus;
   }
 
+  public Riskv1authenticationresultsConsumerAuthenticationInformation credentialEncrypted(String credentialEncrypted) {
+    this.credentialEncrypted = credentialEncrypted;
+    return this;
+  }
+
+   /**
+   * A flag to indicate if the passed credential has been encrypted by the Merchant.
+   * @return credentialEncrypted
+  **/
+  @ApiModelProperty(value = "A flag to indicate if the passed credential has been encrypted by the Merchant.")
+  public String getCredentialEncrypted() {
+    return credentialEncrypted;
+  }
+
+  public void setCredentialEncrypted(String credentialEncrypted) {
+    this.credentialEncrypted = credentialEncrypted;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -235,12 +256,13 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
         Objects.equals(this.responseAccessToken, riskv1authenticationresultsConsumerAuthenticationInformation.responseAccessToken) &&
         Objects.equals(this.signedParesStatusReason, riskv1authenticationresultsConsumerAuthenticationInformation.signedParesStatusReason) &&
         Objects.equals(this.signedPares, riskv1authenticationresultsConsumerAuthenticationInformation.signedPares) &&
-        Objects.equals(this.whiteListStatus, riskv1authenticationresultsConsumerAuthenticationInformation.whiteListStatus);
+        Objects.equals(this.whiteListStatus, riskv1authenticationresultsConsumerAuthenticationInformation.whiteListStatus) &&
+        Objects.equals(this.credentialEncrypted, riskv1authenticationresultsConsumerAuthenticationInformation.credentialEncrypted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authenticationTransactionId, authenticationTransactionContext, otpToken, authenticationType, effectiveAuthenticationType, responseAccessToken, signedParesStatusReason, signedPares, whiteListStatus);
+    return Objects.hash(authenticationTransactionId, authenticationTransactionContext, otpToken, authenticationType, effectiveAuthenticationType, responseAccessToken, signedParesStatusReason, signedPares, whiteListStatus, credentialEncrypted);
   }
 
 
@@ -258,6 +280,7 @@ public class Riskv1authenticationresultsConsumerAuthenticationInformation {
     sb.append("    signedParesStatusReason: ").append(toIndentedString(signedParesStatusReason)).append("\n");
     sb.append("    signedPares: ").append(toIndentedString(signedPares)).append("\n");
     sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
+    sb.append("    credentialEncrypted: ").append(toIndentedString(credentialEncrypted)).append("\n");
     sb.append("}");
     return sb.toString();
   }

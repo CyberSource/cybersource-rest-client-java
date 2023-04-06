@@ -17,7 +17,7 @@ import Invokers.ApiException;
 import Model.CreateSharedSecretKeysRequest;
 import Model.CreateSharedSecretKeysVerifiRequest;
 import Model.DeleteBulkSymmetricKeysRequest;
-import Model.InlineResponse4002;
+import Model.InlineResponse4004;
 import Model.InlineResponse502;
 import Model.KmsV2KeysSymDeletesPost200Response;
 import Model.KmsV2KeysSymGet200Response;

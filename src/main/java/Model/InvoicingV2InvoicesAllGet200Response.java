@@ -14,8 +14,8 @@
 package Model;
 
 import java.util.Objects;
+import Model.InlineResponse200Links;
 import Model.InvoicingV2InvoicesAllGet200ResponseInvoices;
-import Model.InvoicingV2InvoicesAllGet200ResponseLinks;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,10 +30,10 @@ import java.util.List;
 /**
  * InvoicingV2InvoicesAllGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class InvoicingV2InvoicesAllGet200Response {
   @SerializedName("_links")
-  private InvoicingV2InvoicesAllGet200ResponseLinks links = null;
+  private InlineResponse200Links links = null;
 
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -44,7 +44,7 @@ public class InvoicingV2InvoicesAllGet200Response {
   @SerializedName("invoices")
   private List<InvoicingV2InvoicesAllGet200ResponseInvoices> invoices = null;
 
-  public InvoicingV2InvoicesAllGet200Response links(InvoicingV2InvoicesAllGet200ResponseLinks links) {
+  public InvoicingV2InvoicesAllGet200Response links(InlineResponse200Links links) {
     this.links = links;
     return this;
   }
@@ -54,11 +54,11 @@ public class InvoicingV2InvoicesAllGet200Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public InvoicingV2InvoicesAllGet200ResponseLinks getLinks() {
+  public InlineResponse200Links getLinks() {
     return links;
   }
 
-  public void setLinks(InvoicingV2InvoicesAllGet200ResponseLinks links) {
+  public void setLinks(InlineResponse200Links links) {
     this.links = links;
   }
 

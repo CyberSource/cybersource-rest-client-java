@@ -26,16 +26,16 @@ import java.io.IOException;
 /**
  * Tmsv2customersEmbeddedDefaultShippingAddressMetadata
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Tmsv2customersEmbeddedDefaultShippingAddressMetadata {
   @SerializedName("creator")
   private String creator = null;
 
    /**
-   * The creator of the Shipping Address token.
+   * The creator of the Shipping Address.
    * @return creator
   **/
-  @ApiModelProperty(value = "The creator of the Shipping Address token.")
+  @ApiModelProperty(value = "The creator of the Shipping Address.")
   public String getCreator() {
     return creator;
   }

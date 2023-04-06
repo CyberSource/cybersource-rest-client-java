@@ -34,7 +34,7 @@ import java.io.IOException;
 /**
  * PostInstrumentIdentifierRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class PostInstrumentIdentifierRequest {
   @SerializedName("_links")
   private Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierLinks links = null;
@@ -96,10 +96,10 @@ public class PostInstrumentIdentifierRequest {
   }
 
    /**
-   * The id of the Instrument Identifier Token. 
+   * The Id of the Instrument Identifier Token. 
    * @return id
   **/
-  @ApiModelProperty(value = "The id of the Instrument Identifier Token. ")
+  @ApiModelProperty(value = "The Id of the Instrument Identifier Token. ")
   public String getId() {
     return id;
   }
@@ -109,19 +109,19 @@ public class PostInstrumentIdentifierRequest {
   }
 
    /**
-   * The type of token.  Valid values: - instrumentIdentifier 
+   * The type.  Possible Values: - instrumentIdentifier 
    * @return object
   **/
-  @ApiModelProperty(example = "instrumentIdentifier", value = "The type of token.  Valid values: - instrumentIdentifier ")
+  @ApiModelProperty(example = "instrumentIdentifier", value = "The type.  Possible Values: - instrumentIdentifier ")
   public String getObject() {
     return object;
   }
 
    /**
-   * Issuers state for the card number. Valid values: - ACTIVE - CLOSED : The account has been closed. 
+   * Issuers state for the card number. Possible Values: - ACTIVE - CLOSED : The account has been closed. 
    * @return state
   **/
-  @ApiModelProperty(example = "ACTIVE", value = "Issuers state for the card number. Valid values: - ACTIVE - CLOSED : The account has been closed. ")
+  @ApiModelProperty(example = "ACTIVE", value = "Issuers state for the card number. Possible Values: - ACTIVE - CLOSED : The account has been closed. ")
   public String getState() {
     return state;
   }
@@ -132,10 +132,10 @@ public class PostInstrumentIdentifierRequest {
   }
 
    /**
-   * The type of Instrument Identifier. Valid values: - enrollable card 
+   * The type of Instrument Identifier. Possible Values: - enrollable card 
    * @return type
   **/
-  @ApiModelProperty(value = "The type of Instrument Identifier. Valid values: - enrollable card ")
+  @ApiModelProperty(value = "The type of Instrument Identifier. Possible Values: - enrollable card ")
   public String getType() {
     return type;
   }

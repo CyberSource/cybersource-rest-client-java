@@ -27,7 +27,7 @@ import java.io.IOException;
  * The latest card details associated with the network token
  */
 @ApiModel(description = "The latest card details associated with the network token")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCardCard {
   @SerializedName("suffix")
   private String suffix = null;
@@ -48,10 +48,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
   }
 
    /**
-   *  Two-digit month in which the customer’s latest payment card expires.  Format: &#x60;MM&#x60;.  Valid values: &#x60;01&#x60; through &#x60;12&#x60;. 
+   *  Two-digit month in which the customer’s latest payment card expires.  Format: &#x60;MM&#x60;.  Possible Values: &#x60;01&#x60; through &#x60;12&#x60;. 
    * @return expirationMonth
   **/
-  @ApiModelProperty(value = " Two-digit month in which the customer’s latest payment card expires.  Format: `MM`.  Valid values: `01` through `12`. ")
+  @ApiModelProperty(value = " Two-digit month in which the customer’s latest payment card expires.  Format: `MM`.  Possible Values: `01` through `12`. ")
   public String getExpirationMonth() {
     return expirationMonth;
   }

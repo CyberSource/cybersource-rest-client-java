@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier {
   @SerializedName("id")
   private String id = null;
@@ -37,10 +37,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier 
   }
 
    /**
-   * The id of the Instrument Identifier token linked to the Payment Instrument. 
+   * The Id of the Instrument Identifier linked to the Payment Instrument. 
    * @return id
   **/
-  @ApiModelProperty(value = "The id of the Instrument Identifier token linked to the Payment Instrument. ")
+  @ApiModelProperty(value = "The Id of the Instrument Identifier linked to the Payment Instrument. ")
   public String getId() {
     return id;
   }

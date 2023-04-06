@@ -27,13 +27,16 @@ import java.io.IOException;
 /**
  * Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard {
   @SerializedName("type")
   private String type = null;
 
   @SerializedName("state")
   private String state = null;
+
+  @SerializedName("reason")
+  private String reason = null;
 
   @SerializedName("number")
   private String number = null;
@@ -51,37 +54,46 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
   private Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCardCard card = null;
 
    /**
-   * The network token card association brand Valid values: - visa - mastercard 
+   * The network token card association brand Possible Values: - visa - mastercard 
    * @return type
   **/
-  @ApiModelProperty(example = "visa", value = "The network token card association brand Valid values: - visa - mastercard ")
+  @ApiModelProperty(example = "visa", value = "The network token card association brand Possible Values: - visa - mastercard ")
   public String getType() {
     return type;
   }
 
    /**
-   * Issuers state for the network token Valid values: - ACTIVE - SUSPENDED : This state can change to ACTIVE or DELETED. - DELETED : This is a final state for the network token. 
+   * State of the network token or network token provision Possible Values: - ACTIVE : Network token is active. - SUSPENDED : Network token is suspended. This state can change back to ACTIVE. - DELETED : This is a final state for a network token instance. - UNPROVISIONED : A previous network token provision was unsuccessful. 
    * @return state
   **/
-  @ApiModelProperty(example = "ACTIVE", value = "Issuers state for the network token Valid values: - ACTIVE - SUSPENDED : This state can change to ACTIVE or DELETED. - DELETED : This is a final state for the network token. ")
+  @ApiModelProperty(example = "ACTIVE", value = "State of the network token or network token provision Possible Values: - ACTIVE : Network token is active. - SUSPENDED : Network token is suspended. This state can change back to ACTIVE. - DELETED : This is a final state for a network token instance. - UNPROVISIONED : A previous network token provision was unsuccessful. ")
   public String getState() {
     return state;
   }
 
    /**
-   * The token requestors customer’s payment network token 
+   * Issuers state for the network token Possible Values: - INVALID_REQUEST : The network token provision request contained invalid data. - CARD_VERIFICATION_FAILED : The network token provision request contained data that could not be verified. - CARD_NOT_ELIGIBLE : Card can currently not be used with issuer for tokenization. - CARD_NOT_ALLOWED : Card can currently not be used with card association for tokenization. - DECLINED : Card can currently not be used with issuer for tokenization. - SERVICE_UNAVAILABLE : The network token service was unavailable or timed out. - SYSTEM_ERROR : An unexpected error occurred with network token service, check configuration. 
+   * @return reason
+  **/
+  @ApiModelProperty(example = "ACTIVE", value = "Issuers state for the network token Possible Values: - INVALID_REQUEST : The network token provision request contained invalid data. - CARD_VERIFICATION_FAILED : The network token provision request contained data that could not be verified. - CARD_NOT_ELIGIBLE : Card can currently not be used with issuer for tokenization. - CARD_NOT_ALLOWED : Card can currently not be used with card association for tokenization. - DECLINED : Card can currently not be used with issuer for tokenization. - SERVICE_UNAVAILABLE : The network token service was unavailable or timed out. - SYSTEM_ERROR : An unexpected error occurred with network token service, check configuration. ")
+  public String getReason() {
+    return reason;
+  }
+
+   /**
+   * The token requestors network token 
    * @return number
   **/
-  @ApiModelProperty(value = "The token requestors customer’s payment network token ")
+  @ApiModelProperty(value = "The token requestors network token ")
   public String getNumber() {
     return number;
   }
 
    /**
-   * Two-digit month in which the network token expires.  Format: &#x60;MM&#x60;.  Valid values: &#x60;01&#x60; through &#x60;12&#x60;. 
+   * Two-digit month in which the network token expires.  Format: &#x60;MM&#x60;.  Possible Values: &#x60;01&#x60; through &#x60;12&#x60;. 
    * @return expirationMonth
   **/
-  @ApiModelProperty(value = "Two-digit month in which the network token expires.  Format: `MM`.  Valid values: `01` through `12`. ")
+  @ApiModelProperty(value = "Two-digit month in which the network token expires.  Format: `MM`.  Possible Values: `01` through `12`. ")
   public String getExpirationMonth() {
     return expirationMonth;
   }
@@ -134,6 +146,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
     Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard = (Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard) o;
     return Objects.equals(this.type, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.type) &&
         Objects.equals(this.state, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.state) &&
+        Objects.equals(this.reason, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.reason) &&
         Objects.equals(this.number, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.number) &&
         Objects.equals(this.expirationMonth, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.expirationMonth) &&
         Objects.equals(this.expirationYear, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.expirationYear) &&
@@ -143,7 +156,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, state, number, expirationMonth, expirationYear, cryptogram, card);
+    return Objects.hash(type, state, reason, number, expirationMonth, expirationYear, cryptogram, card);
   }
 
 
@@ -154,6 +167,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
     sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");

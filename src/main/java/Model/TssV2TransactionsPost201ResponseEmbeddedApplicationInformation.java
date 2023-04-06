@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * TssV2TransactionsPost201ResponseEmbeddedApplicationInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
   @SerializedName("reasonCode")
   private String reasonCode = null;

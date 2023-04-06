@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PaymentInstrumentListLinksFirst
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class PaymentInstrumentListLinksFirst {
   @SerializedName("href")
   private String href = null;
@@ -35,7 +35,7 @@ public class PaymentInstrumentListLinksFirst {
    * Link to the first page. 
    * @return href
   **/
-  @ApiModelProperty(example = "/tms/v2/customers/1234567890123456789/payment-instruments?offset=0&limit=1", value = "Link to the first page. ")
+  @ApiModelProperty(example = "/tms/v2/customers/D9F340DD3DB9C276E053A2598D0A41A3/payment-instruments?offset=0&limit=1", value = "Link to the first page. ")
   public String getHref() {
     return href;
   }

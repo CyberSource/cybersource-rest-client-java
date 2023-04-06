@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * Ptsv2refreshpaymentstatusidProcessingInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Ptsv2refreshpaymentstatusidProcessingInformation {
   @SerializedName("actionList")
   private List<String> actionList = null;

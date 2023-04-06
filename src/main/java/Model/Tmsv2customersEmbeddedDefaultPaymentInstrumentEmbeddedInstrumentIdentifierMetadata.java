@@ -26,16 +26,16 @@ import java.io.IOException;
 /**
  * Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierMetadata
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierMetadata {
   @SerializedName("creator")
   private String creator = null;
 
    /**
-   * The creator of the Instrument Identifier token.
+   * The creator of the Instrument Identifier.
    * @return creator
   **/
-  @ApiModelProperty(value = "The creator of the Instrument Identifier token.")
+  @ApiModelProperty(value = "The creator of the Instrument Identifier.")
   public String getCreator() {
     return creator;
   }

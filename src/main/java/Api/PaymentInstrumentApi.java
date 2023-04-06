@@ -29,6 +29,12 @@ import java.io.InputStream;
 
 
 import Model.InlineResponse400;
+import Model.InlineResponse403;
+import Model.InlineResponse409;
+import Model.InlineResponse410;
+import Model.InlineResponse412;
+import Model.InlineResponse424;
+import Model.InlineResponse500;
 import Model.PatchPaymentInstrumentRequest;
 import Model.PostPaymentInstrumentRequest;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrument;
@@ -65,22 +71,22 @@ public class PaymentInstrumentApi {
 
     /**
      * Build call for deletePaymentInstrument
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deletePaymentInstrumentCall(String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deletePaymentInstrumentCall(String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
         }
         
         // create path and map variables
-        String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentTokenId}"
-            .replaceAll("\\{" + "paymentInstrumentTokenId" + "\\}", apiClient.escapeString(paymentInstrumentTokenId.toString()));
+        String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentId}"
+            .replaceAll("\\{" + "paymentInstrumentId" + "\\}", apiClient.escapeString(paymentInstrumentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -119,16 +125,16 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePaymentInstrumentValidateBeforeCall(String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deletePaymentInstrumentValidateBeforeCall(String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'paymentInstrumentTokenId' is set
-        if (paymentInstrumentTokenId == null) {
-        	logger.error("Missing the required parameter 'paymentInstrumentTokenId' when calling deletePaymentInstrument(Async)");
-            throw new ApiException("Missing the required parameter 'paymentInstrumentTokenId' when calling deletePaymentInstrument(Async)");
+        // verify the required parameter 'paymentInstrumentId' is set
+        if (paymentInstrumentId == null) {
+        	logger.error("Missing the required parameter 'paymentInstrumentId' when calling deletePaymentInstrument(Async)");
+            throw new ApiException("Missing the required parameter 'paymentInstrumentId' when calling deletePaymentInstrument(Async)");
         }
         
         
-        okhttp3.Call call = deletePaymentInstrumentCall(paymentInstrumentTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = deletePaymentInstrumentCall(paymentInstrumentId, profileId, progressListener, progressRequestListener);
         return call;
 
         
@@ -139,41 +145,41 @@ public class PaymentInstrumentApi {
 
     /**
      * Delete a Payment Instrument
-     * 
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Payment Instrument**&lt;br&gt;Your system can use this API to delete an existing Payment Instrument.&lt;br&gt;Any Instrument Identifiers representing the card number will also be deleted if they are not associated with any other Payment Instruments. 
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deletePaymentInstrument(String paymentInstrumentTokenId, String profileId) throws ApiException {
+    public void deletePaymentInstrument(String paymentInstrumentId, String profileId) throws ApiException {
     	logger.info("CALL TO METHOD 'deletePaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        deletePaymentInstrumentWithHttpInfo(paymentInstrumentTokenId, profileId);
+        deletePaymentInstrumentWithHttpInfo(paymentInstrumentId, profileId);
 
     }
 
     /**
      * Delete a Payment Instrument
-     * 
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Payment Instrument**&lt;br&gt;Your system can use this API to delete an existing Payment Instrument.&lt;br&gt;Any Instrument Identifiers representing the card number will also be deleted if they are not associated with any other Payment Instruments. 
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String paymentInstrumentTokenId, String profileId) throws ApiException {
-        okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, profileId, null, null);
+    public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId) throws ApiException {
+        okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Delete a Payment Instrument (asynchronously)
-     * 
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Payment Instrument**&lt;br&gt;Your system can use this API to delete an existing Payment Instrument.&lt;br&gt;Any Instrument Identifiers representing the card number will also be deleted if they are not associated with any other Payment Instruments. 
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deletePaymentInstrumentAsync(String paymentInstrumentTokenId, String profileId, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deletePaymentInstrumentAsync(String paymentInstrumentId, String profileId, final ApiCallback<Void> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -195,28 +201,28 @@ public class PaymentInstrumentApi {
             };
         }
 
-        okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for getPaymentInstrument
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getPaymentInstrumentCall(String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getPaymentInstrumentCall(String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
         }
         
         // create path and map variables
-        String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentTokenId}"
-            .replaceAll("\\{" + "paymentInstrumentTokenId" + "\\}", apiClient.escapeString(paymentInstrumentTokenId.toString()));
+        String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentId}"
+            .replaceAll("\\{" + "paymentInstrumentId" + "\\}", apiClient.escapeString(paymentInstrumentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -255,16 +261,16 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPaymentInstrumentValidateBeforeCall(String paymentInstrumentTokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getPaymentInstrumentValidateBeforeCall(String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'paymentInstrumentTokenId' is set
-        if (paymentInstrumentTokenId == null) {
-        	logger.error("Missing the required parameter 'paymentInstrumentTokenId' when calling getPaymentInstrument(Async)");
-            throw new ApiException("Missing the required parameter 'paymentInstrumentTokenId' when calling getPaymentInstrument(Async)");
+        // verify the required parameter 'paymentInstrumentId' is set
+        if (paymentInstrumentId == null) {
+        	logger.error("Missing the required parameter 'paymentInstrumentId' when calling getPaymentInstrument(Async)");
+            throw new ApiException("Missing the required parameter 'paymentInstrumentId' when calling getPaymentInstrument(Async)");
         }
         
         
-        okhttp3.Call call = getPaymentInstrumentCall(paymentInstrumentTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = getPaymentInstrumentCall(paymentInstrumentId, profileId, progressListener, progressRequestListener);
         return call;
 
         
@@ -275,44 +281,44 @@ public class PaymentInstrumentApi {
 
     /**
      * Retrieve a Payment Instrument
-     * 
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Payment Instrument**&lt;br&gt;Your system can use this API to retrieve an existing Payment Instrument.&lt;br&gt;To perform a payment with a particular Payment Instrument simply specify the [Payment Instrument Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return Tmsv2customersEmbeddedDefaultPaymentInstrument
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultPaymentInstrument getPaymentInstrument(String paymentInstrumentTokenId, String profileId) throws ApiException {
+    public Tmsv2customersEmbeddedDefaultPaymentInstrument getPaymentInstrument(String paymentInstrumentId, String profileId) throws ApiException {
     	logger.info("CALL TO METHOD 'getPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = getPaymentInstrumentWithHttpInfo(paymentInstrumentTokenId, profileId);
+        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = getPaymentInstrumentWithHttpInfo(paymentInstrumentId, profileId);
         logger.info("CALL TO METHOD 'getPaymentInstrument' ENDED");
         return resp.getData();
     }
 
     /**
      * Retrieve a Payment Instrument
-     * 
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Payment Instrument**&lt;br&gt;Your system can use this API to retrieve an existing Payment Instrument.&lt;br&gt;To perform a payment with a particular Payment Instrument simply specify the [Payment Instrument Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrument&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> getPaymentInstrumentWithHttpInfo(String paymentInstrumentTokenId, String profileId) throws ApiException {
-        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, profileId, null, null);
+    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> getPaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId) throws ApiException {
+        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, null, null);
         Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Retrieve a Payment Instrument (asynchronously)
-     * 
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Payment Instrument**&lt;br&gt;Your system can use this API to retrieve an existing Payment Instrument.&lt;br&gt;To perform a payment with a particular Payment Instrument simply specify the [Payment Instrument Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getPaymentInstrumentAsync(String paymentInstrumentTokenId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
+    public okhttp3.Call getPaymentInstrumentAsync(String paymentInstrumentId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -334,28 +340,28 @@ public class PaymentInstrumentApi {
             };
         }
 
-        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for patchPaymentInstrument
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param patchPaymentInstrumentRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call patchPaymentInstrumentCall(String paymentInstrumentTokenId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call patchPaymentInstrumentCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = patchPaymentInstrumentRequest;
         
         // create path and map variables
-        String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentTokenId}"
-            .replaceAll("\\{" + "paymentInstrumentTokenId" + "\\}", apiClient.escapeString(paymentInstrumentTokenId.toString()));
+        String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentId}"
+            .replaceAll("\\{" + "paymentInstrumentId" + "\\}", apiClient.escapeString(paymentInstrumentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -396,12 +402,12 @@ public class PaymentInstrumentApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchPaymentInstrumentValidateBeforeCall(String paymentInstrumentTokenId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call patchPaymentInstrumentValidateBeforeCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'paymentInstrumentTokenId' is set
-        if (paymentInstrumentTokenId == null) {
-        	logger.error("Missing the required parameter 'paymentInstrumentTokenId' when calling patchPaymentInstrument(Async)");
-            throw new ApiException("Missing the required parameter 'paymentInstrumentTokenId' when calling patchPaymentInstrument(Async)");
+        // verify the required parameter 'paymentInstrumentId' is set
+        if (paymentInstrumentId == null) {
+        	logger.error("Missing the required parameter 'paymentInstrumentId' when calling patchPaymentInstrument(Async)");
+            throw new ApiException("Missing the required parameter 'paymentInstrumentId' when calling patchPaymentInstrument(Async)");
         }
         
         // verify the required parameter 'patchPaymentInstrumentRequest' is set
@@ -411,7 +417,7 @@ public class PaymentInstrumentApi {
         }
         
         
-        okhttp3.Call call = patchPaymentInstrumentCall(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch, progressListener, progressRequestListener);
+        okhttp3.Call call = patchPaymentInstrumentCall(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -422,50 +428,50 @@ public class PaymentInstrumentApi {
 
     /**
      * Update a Payment Instrument
-     * 
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Payment Instrument**&lt;br&gt;Your system can use this API to update an existing Payment Instrument. 
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param patchPaymentInstrumentRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return Tmsv2customersEmbeddedDefaultPaymentInstrument
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultPaymentInstrument patchPaymentInstrument(String paymentInstrumentTokenId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+    public Tmsv2customersEmbeddedDefaultPaymentInstrument patchPaymentInstrument(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
     	logger.info("CALL TO METHOD 'patchPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = patchPaymentInstrumentWithHttpInfo(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch);
+        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = patchPaymentInstrumentWithHttpInfo(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchPaymentInstrument' ENDED");
         return resp.getData();
     }
 
     /**
      * Update a Payment Instrument
-     * 
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Payment Instrument**&lt;br&gt;Your system can use this API to update an existing Payment Instrument. 
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param patchPaymentInstrumentRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrument&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> patchPaymentInstrumentWithHttpInfo(String paymentInstrumentTokenId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
-        okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch, null, null);
+    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> patchPaymentInstrumentWithHttpInfo(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+        okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Update a Payment Instrument (asynchronously)
-     * 
-     * @param paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Payment Instrument**&lt;br&gt;Your system can use this API to update an existing Payment Instrument. 
+     * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param patchPaymentInstrumentRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call patchPaymentInstrumentAsync(String paymentInstrumentTokenId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
+    public okhttp3.Call patchPaymentInstrumentAsync(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -487,7 +493,7 @@ public class PaymentInstrumentApi {
             };
         }
 
-        okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentTokenId, patchPaymentInstrumentRequest, profileId, ifMatch, progressListener, progressRequestListener);
+        okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -495,7 +501,7 @@ public class PaymentInstrumentApi {
     /**
      * Build call for postPaymentInstrument
      * @param postPaymentInstrumentRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -564,9 +570,9 @@ public class PaymentInstrumentApi {
 
     /**
      * Create a Payment Instrument
-     * Include an existing TMS Instrument Identifier id in the request body. * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**&lt;br&gt;&lt;br&gt;**Creating a Payment Instrument**&lt;br&gt;It is recommended you [create a Payment Instrument via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Payment Instruments**&lt;br&gt;To perform a payment with a particular Payment Instrument specify the [Payment Instrument in the payment request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param postPaymentInstrumentRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return Tmsv2customersEmbeddedDefaultPaymentInstrument
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -580,9 +586,9 @@ public class PaymentInstrumentApi {
 
     /**
      * Create a Payment Instrument
-     * Include an existing TMS Instrument Identifier id in the request body. * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**&lt;br&gt;&lt;br&gt;**Creating a Payment Instrument**&lt;br&gt;It is recommended you [create a Payment Instrument via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Payment Instruments**&lt;br&gt;To perform a payment with a particular Payment Instrument specify the [Payment Instrument in the payment request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param postPaymentInstrumentRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrument&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -594,9 +600,9 @@ public class PaymentInstrumentApi {
 
     /**
      * Create a Payment Instrument (asynchronously)
-     * Include an existing TMS Instrument Identifier id in the request body. * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers*** 
+     * |  |  |  | | --- | --- | --- | |**Standalone Payment Instruments**&lt;br&gt;A Payment Instrument represents tokenized payment information such as expiration date, billing address &amp; card type.&lt;br&gt;A Payment Instrument token does not store the card number. A Payment Instrument is associated with an [Instrument Identifier](#token-management_instrument-identifier_create-an-instrument-identifier) that represents either a payment card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;**Standalone Payment Instruments do not belong to a [Customer](#token-management_customer_create-a-customer).**&lt;br&gt;&lt;br&gt;**Creating a Payment Instrument**&lt;br&gt;It is recommended you [create a Payment Instrument via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Payment Instruments**&lt;br&gt;To perform a payment with a particular Payment Instrument specify the [Payment Instrument in the payment request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      * @param postPaymentInstrumentRequest  (required)
-     * @param profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * UmsV1UsersGet200Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class UmsV1UsersGet200Response {
   @SerializedName("users")
   private List<UmsV1UsersGet200ResponseUsers> users = null;

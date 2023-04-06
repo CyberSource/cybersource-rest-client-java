@@ -9,11 +9,11 @@ Method | HTTP request | Description
 
 <a name="generateUnifiedCheckoutCaptureContext"></a>
 # **generateUnifiedCheckoutCaptureContext**
-> generateUnifiedCheckoutCaptureContext(generateUnifiedCheckoutCaptureContextRequest)
+> String generateUnifiedCheckoutCaptureContext(generateUnifiedCheckoutCaptureContextRequest)
 
 Generate Unified Checkout Capture Context
 
-Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the paramiters for how Unified Chkcout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initate Unified Checkout within a merchnat web page
+Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the parameters for how Unified Checkout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initiate Unified Checkout within a merchant web page
 
 ### Example
 ```java
@@ -25,7 +25,8 @@ Generate a one-time use capture context used for the invocation of Unified Check
 UnifiedCheckoutCaptureContextApi apiInstance = new UnifiedCheckoutCaptureContextApi();
 GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest = new GenerateUnifiedCheckoutCaptureContextRequest(); // GenerateUnifiedCheckoutCaptureContextRequest | 
 try {
-    apiInstance.generateUnifiedCheckoutCaptureContext(generateUnifiedCheckoutCaptureContextRequest);
+    String result = apiInstance.generateUnifiedCheckoutCaptureContext(generateUnifiedCheckoutCaptureContextRequest);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UnifiedCheckoutCaptureContextApi#generateUnifiedCheckoutCaptureContext");
     e.printStackTrace();
@@ -40,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**String**
 
 ### Authorization
 

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Tmsv2customersLinksPaymentInstruments
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Tmsv2customersLinksPaymentInstruments {
   @SerializedName("href")
   private String href = null;
@@ -35,7 +35,7 @@ public class Tmsv2customersLinksPaymentInstruments {
    * Link to the Customers Payment Instruments. 
    * @return href
   **/
-  @ApiModelProperty(example = "/tms/v2/customers/1234567890123456789/payment-instruments", value = "Link to the Customers Payment Instruments. ")
+  @ApiModelProperty(example = "/tms/v2/customers/D9F340DD3DB9C276E053A2598D0A41A3/payment-instruments", value = "Link to the Customers Payment Instruments. ")
   public String getHref() {
     return href;
   }

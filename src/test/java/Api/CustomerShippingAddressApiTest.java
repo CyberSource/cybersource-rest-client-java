@@ -15,6 +15,12 @@ package Api;
 
 import Invokers.ApiException;
 import Model.InlineResponse400;
+import Model.InlineResponse403;
+import Model.InlineResponse409;
+import Model.InlineResponse410;
+import Model.InlineResponse412;
+import Model.InlineResponse424;
+import Model.InlineResponse500;
 import Model.PatchCustomerShippingAddressRequest;
 import Model.PostCustomerShippingAddressRequest;
 import Model.ShippingAddressListForCustomer;
@@ -39,17 +45,17 @@ public class CustomerShippingAddressApiTest {
     /**
      * Delete a Customer Shipping Address
      *
-     * 
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Deleting a Customers Shipping Address**&lt;br&gt;Your system can use this API to delete an existing Shipping Address for a Customer.&lt;br&gt;If a customer has more than one Shipping Address then the default Shipping Address cannot be deleted without first selecting a [new default Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address_samplerequests-dropdown_make-customer-shipping-address-the-default_liveconsole-tab-request-body). 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void deleteCustomerShippingAddressTest() throws ApiException {
-        String customerTokenId = null;
-        String shippingAddressTokenId = null;
+        String customerId = null;
+        String shippingAddressId = null;
         String profileId = null;
-        api.deleteCustomerShippingAddress(customerTokenId, shippingAddressTokenId, profileId);
+        api.deleteCustomerShippingAddress(customerId, shippingAddressId, profileId);
 
         // TODO: test validations
     }
@@ -57,17 +63,17 @@ public class CustomerShippingAddressApiTest {
     /**
      * Retrieve a Customer Shipping Address
      *
-     * 
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving a Customer Shipping Address**&lt;br&gt;Your system can use this API to retrieve an existing Shipping Address for a Customer.&lt;br&gt;To perform a payment with a particular Shipping Address simply specify the [Shipping Address Id in the payments request](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-customer-payment-instrument-and-shipping-address-token-id_liveconsole-tab-request-body). 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void getCustomerShippingAddressTest() throws ApiException {
-        String customerTokenId = null;
-        String shippingAddressTokenId = null;
+        String customerId = null;
+        String shippingAddressId = null;
         String profileId = null;
-        Tmsv2customersEmbeddedDefaultShippingAddress response = api.getCustomerShippingAddress(customerTokenId, shippingAddressTokenId, profileId);
+        Tmsv2customersEmbeddedDefaultShippingAddress response = api.getCustomerShippingAddress(customerId, shippingAddressId, profileId);
 
         // TODO: test validations
     }
@@ -75,18 +81,18 @@ public class CustomerShippingAddressApiTest {
     /**
      * List Shipping Addresses for a Customer
      *
-     * 
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Retrieving all Customer Shipping Addresses**&lt;br&gt;Your system can use this API to retrieve all existing Shipping Addresses for a Customer. 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void getCustomerShippingAddressesListTest() throws ApiException {
-        String customerTokenId = null;
+        String customerId = null;
         String profileId = null;
         Long offset = null;
         Long limit = null;
-        ShippingAddressListForCustomer response = api.getCustomerShippingAddressesList(customerTokenId, profileId, offset, limit);
+        ShippingAddressListForCustomer response = api.getCustomerShippingAddressesList(customerId, profileId, offset, limit);
 
         // TODO: test validations
     }
@@ -94,19 +100,19 @@ public class CustomerShippingAddressApiTest {
     /**
      * Update a Customer Shipping Address
      *
-     * 
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Updating a Customers Shipping Address**&lt;br&gt;Your system can use this API to update an existing Shipping Addresses for a Customer, including selecting a [default Shipping Address](#token-management_customer-shipping-address_update-a-customer-shipping-address_samplerequests-dropdown_make-customer-shipping-address-the-default_liveconsole-tab-request-body) for use in payments. 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void patchCustomersShippingAddressTest() throws ApiException {
-        String customerTokenId = null;
-        String shippingAddressTokenId = null;
+        String customerId = null;
+        String shippingAddressId = null;
         PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest = null;
         String profileId = null;
         String ifMatch = null;
-        Tmsv2customersEmbeddedDefaultShippingAddress response = api.patchCustomersShippingAddress(customerTokenId, shippingAddressTokenId, patchCustomerShippingAddressRequest, profileId, ifMatch);
+        Tmsv2customersEmbeddedDefaultShippingAddress response = api.patchCustomersShippingAddress(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch);
 
         // TODO: test validations
     }
@@ -114,17 +120,17 @@ public class CustomerShippingAddressApiTest {
     /**
      * Create a Customer Shipping Address
      *
-     * Include an existing TMS Customer token id in the request URI. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** 
+     * |  |  |  | | --- | --- | --- | |**Customer Shipping Address**&lt;br&gt;A Customer Shipping Address represents tokenized customer shipping information.&lt;br&gt;A [Customer](#token-management_customer_create-a-customer) can have [one or more Shipping Addresses](#token-management_customer-shipping-address_list-shipping-addresses-for-a-customer), with one allocated as the Customers default for use in payments.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Creating a Customer Shipping Address**&lt;br&gt;Your system can use this API to create an existing Customers default or non default Shipping Address.&lt;br&gt;You can also create additional Customer Shipping Addresses via the [Payments API](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-create-default-payment-instrument-shipping-address-for-existing-customer_liveconsole-tab-request-body). 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void postCustomerShippingAddressTest() throws ApiException {
-        String customerTokenId = null;
+        String customerId = null;
         PostCustomerShippingAddressRequest postCustomerShippingAddressRequest = null;
         String profileId = null;
-        Tmsv2customersEmbeddedDefaultShippingAddress response = api.postCustomerShippingAddress(customerTokenId, postCustomerShippingAddressRequest, profileId);
+        Tmsv2customersEmbeddedDefaultShippingAddress response = api.postCustomerShippingAddress(customerId, postCustomerShippingAddressRequest, profileId);
 
         // TODO: test validations
     }

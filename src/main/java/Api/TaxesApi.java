@@ -135,7 +135,7 @@ public class TaxesApi {
 
     /**
      * Calculate Taxes
-     * Get tax details for a transaction. 
+     * The tax calculation service provides real-time sales tax and VAT calculations for orders placed with your business worldwide.  It enhances your ability to conduct business globally and enables you to avoid the risk and complexity of managing online tax calculation.  The service supports product-based tax rules and exemptions for goods and services.  The tax rates are updated twice a month and calculations include sub-level detail (rates per taxing jurisdiction, names and types of jurisdictions). Implementation guidance, list of supported countries, and information on tax reporting are in the [Tax User Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). 
      * @param taxRequest  (required)
      * @return VasV2PaymentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -150,7 +150,7 @@ public class TaxesApi {
 
     /**
      * Calculate Taxes
-     * Get tax details for a transaction. 
+     * The tax calculation service provides real-time sales tax and VAT calculations for orders placed with your business worldwide.  It enhances your ability to conduct business globally and enables you to avoid the risk and complexity of managing online tax calculation.  The service supports product-based tax rules and exemptions for goods and services.  The tax rates are updated twice a month and calculations include sub-level detail (rates per taxing jurisdiction, names and types of jurisdictions). Implementation guidance, list of supported countries, and information on tax reporting are in the [Tax User Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). 
      * @param taxRequest  (required)
      * @return ApiResponse&lt;VasV2PaymentsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -163,7 +163,7 @@ public class TaxesApi {
 
     /**
      * Calculate Taxes (asynchronously)
-     * Get tax details for a transaction. 
+     * The tax calculation service provides real-time sales tax and VAT calculations for orders placed with your business worldwide.  It enhances your ability to conduct business globally and enables you to avoid the risk and complexity of managing online tax calculation.  The service supports product-based tax rules and exemptions for goods and services.  The tax rates are updated twice a month and calculations include sub-level detail (rates per taxing jurisdiction, names and types of jurisdictions). Implementation guidance, list of supported countries, and information on tax reporting are in the [Tax User Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). 
      * @param taxRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

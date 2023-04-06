@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Riskv1authenticationsBuyerInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Riskv1authenticationsBuyerInformation {
   @SerializedName("merchantCustomerId")
   private String merchantCustomerId = null;
@@ -39,6 +39,9 @@ public class Riskv1authenticationsBuyerInformation {
 
   @SerializedName("mobilePhone")
   private Integer mobilePhone = null;
+
+  @SerializedName("workPhone")
+  private Integer workPhone = null;
 
   public Riskv1authenticationsBuyerInformation merchantCustomerId(String merchantCustomerId) {
     this.merchantCustomerId = merchantCustomerId;
@@ -102,6 +105,24 @@ public class Riskv1authenticationsBuyerInformation {
     this.mobilePhone = mobilePhone;
   }
 
+  public Riskv1authenticationsBuyerInformation workPhone(Integer workPhone) {
+    this.workPhone = workPhone;
+    return this;
+  }
+
+   /**
+   * Cardholder&#39;s work phone number.
+   * @return workPhone
+  **/
+  @ApiModelProperty(value = "Cardholder's work phone number.")
+  public Integer getWorkPhone() {
+    return workPhone;
+  }
+
+  public void setWorkPhone(Integer workPhone) {
+    this.workPhone = workPhone;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -114,12 +135,13 @@ public class Riskv1authenticationsBuyerInformation {
     Riskv1authenticationsBuyerInformation riskv1authenticationsBuyerInformation = (Riskv1authenticationsBuyerInformation) o;
     return Objects.equals(this.merchantCustomerId, riskv1authenticationsBuyerInformation.merchantCustomerId) &&
         Objects.equals(this.personalIdentification, riskv1authenticationsBuyerInformation.personalIdentification) &&
-        Objects.equals(this.mobilePhone, riskv1authenticationsBuyerInformation.mobilePhone);
+        Objects.equals(this.mobilePhone, riskv1authenticationsBuyerInformation.mobilePhone) &&
+        Objects.equals(this.workPhone, riskv1authenticationsBuyerInformation.workPhone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantCustomerId, personalIdentification, mobilePhone);
+    return Objects.hash(merchantCustomerId, personalIdentification, mobilePhone, workPhone);
   }
 
 
@@ -131,6 +153,7 @@ public class Riskv1authenticationsBuyerInformation {
     sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
     sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
+    sb.append("    workPhone: ").append(toIndentedString(workPhone)).append("\n");
     sb.append("}");
     return sb.toString();
   }

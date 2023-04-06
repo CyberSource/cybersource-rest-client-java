@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Ptsv2paymentsTravelInformationLodgingRoom
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class Ptsv2paymentsTravelInformationLodgingRoom {
   @SerializedName("dailyRate")
   private String dailyRate = null;

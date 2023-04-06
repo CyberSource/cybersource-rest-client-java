@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * VasV2PaymentsPost400Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class VasV2PaymentsPost400Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -88,10 +88,10 @@ public class VasV2PaymentsPost400Response {
   }
 
    /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - PROCESSOR_UNAVAILABLE  - AVS_FAILED  - INVALID_MERCHANT_CONFIGURATION 
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - INVALID_MERCHANT_CONFIGURATION  - INVALID_ADDRESS 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - PROCESSOR_UNAVAILABLE  - AVS_FAILED  - INVALID_MERCHANT_CONFIGURATION ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - INVALID_MERCHANT_CONFIGURATION  - INVALID_ADDRESS ")
   public String getReason() {
     return reason;
   }

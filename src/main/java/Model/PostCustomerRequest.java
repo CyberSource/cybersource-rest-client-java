@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * PostCustomerRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class PostCustomerRequest {
   @SerializedName("_links")
   private Tmsv2customersLinks links = null;
@@ -93,10 +93,10 @@ public class PostCustomerRequest {
   }
 
    /**
-   * The id of the Customer Token.
+   * The Id of the Customer Token.
    * @return id
   **/
-  @ApiModelProperty(value = "The id of the Customer Token.")
+  @ApiModelProperty(value = "The Id of the Customer Token.")
   public String getId() {
     return id;
   }

@@ -30,9 +30,9 @@ import java.io.InputStream;
 
 import Model.CreateP12KeysRequest;
 import Model.DeleteBulkP12KeysRequest;
-import Model.InlineResponse4002;
-import Model.InlineResponse4003;
-import Model.InlineResponse500;
+import Model.InlineResponse4004;
+import Model.InlineResponse4005;
+import Model.InlineResponse5001;
 import Model.InlineResponse502;
 import Model.KmsV2KeysAsymDeletesPost200Response;
 import Model.KmsV2KeysAsymGet200Response;

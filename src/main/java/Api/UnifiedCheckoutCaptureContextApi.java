@@ -29,7 +29,7 @@ import java.io.InputStream;
 
 
 import Model.GenerateUnifiedCheckoutCaptureContextRequest;
-import Model.InlineResponse4004;
+import Model.InlineResponse4006;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -130,38 +130,41 @@ public class UnifiedCheckoutCaptureContextApi {
 
     /**
      * Generate Unified Checkout Capture Context
-     * Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the paramiters for how Unified Chkcout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initate Unified Checkout within a merchnat web page
+     * Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the parameters for how Unified Checkout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initiate Unified Checkout within a merchant web page
      * @param generateUnifiedCheckoutCaptureContextRequest  (required)
+     * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void generateUnifiedCheckoutCaptureContext(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest) throws ApiException {
+    public String generateUnifiedCheckoutCaptureContext(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest) throws ApiException {
     	logger.info("CALL TO METHOD 'generateUnifiedCheckoutCaptureContext' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        generateUnifiedCheckoutCaptureContextWithHttpInfo(generateUnifiedCheckoutCaptureContextRequest);
-
+        ApiResponse<String> resp = generateUnifiedCheckoutCaptureContextWithHttpInfo(generateUnifiedCheckoutCaptureContextRequest);
+        logger.info("CALL TO METHOD 'generateUnifiedCheckoutCaptureContext' ENDED");
+        return resp.getData();
     }
 
     /**
      * Generate Unified Checkout Capture Context
-     * Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the paramiters for how Unified Chkcout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initate Unified Checkout within a merchnat web page
+     * Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the parameters for how Unified Checkout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initiate Unified Checkout within a merchant web page
      * @param generateUnifiedCheckoutCaptureContextRequest  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> generateUnifiedCheckoutCaptureContextWithHttpInfo(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest) throws ApiException {
+    public ApiResponse<String> generateUnifiedCheckoutCaptureContextWithHttpInfo(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest) throws ApiException {
         okhttp3.Call call = generateUnifiedCheckoutCaptureContextValidateBeforeCall(generateUnifiedCheckoutCaptureContextRequest, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Generate Unified Checkout Capture Context (asynchronously)
-     * Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the paramiters for how Unified Chkcout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initate Unified Checkout within a merchnat web page
+     * Generate a one-time use capture context used for the invocation of Unified Checkout. The Request wil contain all of the parameters for how Unified Checkout will operate within a client webpage. The resulting payload will be a JWT signed object that can be used to initiate Unified Checkout within a merchant web page
      * @param generateUnifiedCheckoutCaptureContextRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call generateUnifiedCheckoutCaptureContextAsync(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call generateUnifiedCheckoutCaptureContextAsync(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest, final ApiCallback<String> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -184,7 +187,8 @@ public class UnifiedCheckoutCaptureContextApi {
         }
 
         okhttp3.Call call = generateUnifiedCheckoutCaptureContextValidateBeforeCall(generateUnifiedCheckoutCaptureContextRequest, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }

@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PtsV2PaymentsVoidsPost400Response
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+
 public class PtsV2PaymentsVoidsPost400Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -88,10 +88,10 @@ public class PtsV2PaymentsVoidsPost400Response {
   }
 
    /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - NOT_VOIDABLE 
+   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - NOT_VOIDABLE  - NOT_SUPPORTED 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - NOT_VOIDABLE ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - NOT_VOIDABLE  - NOT_SUPPORTED ")
   public String getReason() {
     return reason;
   }

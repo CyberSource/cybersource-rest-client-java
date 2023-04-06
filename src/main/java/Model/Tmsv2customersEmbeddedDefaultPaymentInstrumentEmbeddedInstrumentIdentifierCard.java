@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * The expirationMonth, expirationYear and securityCode is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier token. 
+ * The expirationMonth, expirationYear and securityCode is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier. 
  */
-@ApiModel(description = "The expirationMonth, expirationYear and securityCode is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier token. ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-01-27T11:49:34.253+05:30")
+@ApiModel(description = "The expirationMonth, expirationYear and securityCode is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier. ")
+
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard {
   @SerializedName("number")
   private String number = null;
@@ -65,10 +65,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
   }
 
    /**
-   * Two-digit month in which the payment card expires.  Format: &#x60;MM&#x60;.  Valid values: &#x60;01&#x60; through &#x60;12&#x60;. 
+   * Two-digit month in which the payment card expires.  Format: &#x60;MM&#x60;.  Possible Values: &#x60;01&#x60; through &#x60;12&#x60;. 
    * @return expirationMonth
   **/
-  @ApiModelProperty(value = "Two-digit month in which the payment card expires.  Format: `MM`.  Valid values: `01` through `12`. ")
+  @ApiModelProperty(value = "Two-digit month in which the payment card expires.  Format: `MM`.  Possible Values: `01` through `12`. ")
   public String getExpirationMonth() {
     return expirationMonth;
   }
@@ -101,10 +101,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
   }
 
    /**
-   * Card Verification Number. 
+   * Card Verification Code.  This value is sent to the issuer to support the approval of a network token provision. It is not persisted against the Instrument Identifier. 
    * @return securityCode
   **/
-  @ApiModelProperty(value = "Card Verification Number. ")
+  @ApiModelProperty(value = "Card Verification Code.  This value is sent to the issuer to support the approval of a network token provision. It is not persisted against the Instrument Identifier. ")
   public String getSecurityCode() {
     return securityCode;
   }
