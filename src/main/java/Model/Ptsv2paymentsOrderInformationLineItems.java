@@ -125,6 +125,12 @@ public class Ptsv2paymentsOrderInformationLineItems {
   @SerializedName("passenger")
   private Ptsv2paymentsOrderInformationPassenger passenger = null;
 
+  @SerializedName("allowedExportCountries")
+  private List<String> allowedExportCountries = null;
+
+  @SerializedName("restrictedExportCountries")
+  private List<String> restrictedExportCountries = null;
+
   public Ptsv2paymentsOrderInformationLineItems productCode(String productCode) {
     this.productCode = productCode;
     return this;
@@ -693,6 +699,58 @@ public class Ptsv2paymentsOrderInformationLineItems {
     this.passenger = passenger;
   }
 
+  public Ptsv2paymentsOrderInformationLineItems allowedExportCountries(List<String> allowedExportCountries) {
+    this.allowedExportCountries = allowedExportCountries;
+    return this;
+  }
+
+  public Ptsv2paymentsOrderInformationLineItems addAllowedExportCountriesItem(String allowedExportCountriesItem) {
+    if (this.allowedExportCountries == null) {
+      this.allowedExportCountries = new ArrayList<String>();
+    }
+    this.allowedExportCountries.add(allowedExportCountriesItem);
+    return this;
+  }
+
+   /**
+   * Get allowedExportCountries
+   * @return allowedExportCountries
+  **/
+  @ApiModelProperty(value = "")
+  public List<String> getAllowedExportCountries() {
+    return allowedExportCountries;
+  }
+
+  public void setAllowedExportCountries(List<String> allowedExportCountries) {
+    this.allowedExportCountries = allowedExportCountries;
+  }
+
+  public Ptsv2paymentsOrderInformationLineItems restrictedExportCountries(List<String> restrictedExportCountries) {
+    this.restrictedExportCountries = restrictedExportCountries;
+    return this;
+  }
+
+  public Ptsv2paymentsOrderInformationLineItems addRestrictedExportCountriesItem(String restrictedExportCountriesItem) {
+    if (this.restrictedExportCountries == null) {
+      this.restrictedExportCountries = new ArrayList<String>();
+    }
+    this.restrictedExportCountries.add(restrictedExportCountriesItem);
+    return this;
+  }
+
+   /**
+   * Get restrictedExportCountries
+   * @return restrictedExportCountries
+  **/
+  @ApiModelProperty(value = "")
+  public List<String> getRestrictedExportCountries() {
+    return restrictedExportCountries;
+  }
+
+  public void setRestrictedExportCountries(List<String> restrictedExportCountries) {
+    this.restrictedExportCountries = restrictedExportCountries;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -733,12 +791,14 @@ public class Ptsv2paymentsOrderInformationLineItems {
         Objects.equals(this.giftCardCurrency, ptsv2paymentsOrderInformationLineItems.giftCardCurrency) &&
         Objects.equals(this.shippingDestinationTypes, ptsv2paymentsOrderInformationLineItems.shippingDestinationTypes) &&
         Objects.equals(this.gift, ptsv2paymentsOrderInformationLineItems.gift) &&
-        Objects.equals(this.passenger, ptsv2paymentsOrderInformationLineItems.passenger);
+        Objects.equals(this.passenger, ptsv2paymentsOrderInformationLineItems.passenger) &&
+        Objects.equals(this.allowedExportCountries, ptsv2paymentsOrderInformationLineItems.allowedExportCountries) &&
+        Objects.equals(this.restrictedExportCountries, ptsv2paymentsOrderInformationLineItems.restrictedExportCountries);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productCode, productName, productSku, quantity, unitPrice, unitOfMeasure, totalAmount, taxAmount, taxRate, taxAppliedAfterDiscount, taxStatusIndicator, taxTypeCode, amountIncludesTax, typeOfSupply, commodityCode, discountAmount, discountApplied, discountRate, invoiceNumber, taxDetails, fulfillmentType, weight, weightIdentifier, weightUnit, referenceDataCode, referenceDataNumber, productDescription, giftCardCurrency, shippingDestinationTypes, gift, passenger);
+    return Objects.hash(productCode, productName, productSku, quantity, unitPrice, unitOfMeasure, totalAmount, taxAmount, taxRate, taxAppliedAfterDiscount, taxStatusIndicator, taxTypeCode, amountIncludesTax, typeOfSupply, commodityCode, discountAmount, discountApplied, discountRate, invoiceNumber, taxDetails, fulfillmentType, weight, weightIdentifier, weightUnit, referenceDataCode, referenceDataNumber, productDescription, giftCardCurrency, shippingDestinationTypes, gift, passenger, allowedExportCountries, restrictedExportCountries);
   }
 
 
@@ -778,6 +838,8 @@ public class Ptsv2paymentsOrderInformationLineItems {
     sb.append("    shippingDestinationTypes: ").append(toIndentedString(shippingDestinationTypes)).append("\n");
     sb.append("    gift: ").append(toIndentedString(gift)).append("\n");
     sb.append("    passenger: ").append(toIndentedString(passenger)).append("\n");
+    sb.append("    allowedExportCountries: ").append(toIndentedString(allowedExportCountries)).append("\n");
+    sb.append("    restrictedExportCountries: ").append(toIndentedString(restrictedExportCountries)).append("\n");
     sb.append("}");
     return sb.toString();
   }

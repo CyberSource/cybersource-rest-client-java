@@ -100,10 +100,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer’s name. 
+   * #### Visa Platform Connect Mapped Electronic Verification response code for the customer’s name.  Valid values :  &#39;Y&#39;   Yes, the data Matches &#39;N&#39;   No Match &#39;O&#39;   Partial Match 
    * @return name
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s name. ")
+  @ApiModelProperty(value = "#### Visa Platform Connect Mapped Electronic Verification response code for the customer’s name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match ")
   public String getName() {
     return name;
   }
@@ -118,10 +118,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Raw Electronic Verification response code from the processor for the customer’s name. 
+   * #### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer’s name.  Valid values :  &#39;01&#39;     Match &#39;50&#39;     Partial Match &#39;99&#39;     No Match 
    * @return nameRaw
   **/
-  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s name. ")
+  @ApiModelProperty(value = "#### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer’s name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match ")
   public String getNameRaw() {
     return nameRaw;
   }

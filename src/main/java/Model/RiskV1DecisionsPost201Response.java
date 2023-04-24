@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.PtsV2PaymentsPost201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseRiskInformation;
+import Model.PtsV2PaymentsPost201ResponseWatchlistScreeningInformation;
 import Model.RiskV1DecisionsPost201ResponseClientReferenceInformation;
 import Model.RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation;
 import Model.RiskV1DecisionsPost201ResponseErrorInformation;
@@ -64,6 +65,9 @@ public class RiskV1DecisionsPost201Response {
 
   @SerializedName("consumerAuthenticationInformation")
   private RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation = null;
+
+  @SerializedName("watchlistScreeningInformation")
+  private PtsV2PaymentsPost201ResponseWatchlistScreeningInformation watchlistScreeningInformation = null;
 
   @SerializedName("errorInformation")
   private RiskV1DecisionsPost201ResponseErrorInformation errorInformation = null;
@@ -248,6 +252,24 @@ public class RiskV1DecisionsPost201Response {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
   }
 
+  public RiskV1DecisionsPost201Response watchlistScreeningInformation(PtsV2PaymentsPost201ResponseWatchlistScreeningInformation watchlistScreeningInformation) {
+    this.watchlistScreeningInformation = watchlistScreeningInformation;
+    return this;
+  }
+
+   /**
+   * Get watchlistScreeningInformation
+   * @return watchlistScreeningInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseWatchlistScreeningInformation getWatchlistScreeningInformation() {
+    return watchlistScreeningInformation;
+  }
+
+  public void setWatchlistScreeningInformation(PtsV2PaymentsPost201ResponseWatchlistScreeningInformation watchlistScreeningInformation) {
+    this.watchlistScreeningInformation = watchlistScreeningInformation;
+  }
+
   public RiskV1DecisionsPost201Response errorInformation(RiskV1DecisionsPost201ResponseErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
     return this;
@@ -286,12 +308,13 @@ public class RiskV1DecisionsPost201Response {
         Objects.equals(this.clientReferenceInformation, riskV1DecisionsPost201Response.clientReferenceInformation) &&
         Objects.equals(this.orderInformation, riskV1DecisionsPost201Response.orderInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, riskV1DecisionsPost201Response.consumerAuthenticationInformation) &&
+        Objects.equals(this.watchlistScreeningInformation, riskV1DecisionsPost201Response.watchlistScreeningInformation) &&
         Objects.equals(this.errorInformation, riskV1DecisionsPost201Response.errorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, riskInformation, paymentInformation, clientReferenceInformation, orderInformation, consumerAuthenticationInformation, errorInformation);
+    return Objects.hash(links, id, submitTimeUtc, submitTimeLocal, status, riskInformation, paymentInformation, clientReferenceInformation, orderInformation, consumerAuthenticationInformation, watchlistScreeningInformation, errorInformation);
   }
 
 
@@ -310,6 +333,7 @@ public class RiskV1DecisionsPost201Response {
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
+    sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
     sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -26,9 +26,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Decides whether to call Payer Authentication along with DM or not
+ * Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not
  */
-@ApiModel(description = "Decides whether to call Payer Authentication along with DM or not")
+@ApiModel(description = "Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not")
 
 public class Riskv1decisionsProcessingInformation {
   @SerializedName("actionList")
@@ -48,10 +48,10 @@ public class Riskv1decisionsProcessingInformation {
   }
 
    /**
-   * Use CONSUMER_AUTHENTICATION to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. 
+   * - Use &#x60;CONSUMER_AUTHENTICATION&#x60; to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. - Use &#x60;WATCHLIST_SCREENING&#x60;  when you want to call Watchlist Screening service. 
    * @return actionList
   **/
-  @ApiModelProperty(value = "Use CONSUMER_AUTHENTICATION to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. ")
+  @ApiModelProperty(value = "- Use `CONSUMER_AUTHENTICATION` to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. - Use `WATCHLIST_SCREENING`  when you want to call Watchlist Screening service. ")
   public List<String> getActionList() {
     return actionList;
   }

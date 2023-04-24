@@ -49,6 +49,9 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard {
   @SerializedName("requestorId")
   private String requestorId = null;
 
+  @SerializedName("assuranceMethod")
+  private String assuranceMethod = null;
+
   public PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard prefix(String prefix) {
     this.prefix = prefix;
     return this;
@@ -109,10 +112,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard {
   }
 
    /**
-   * Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase. 
+   * Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase.  **Note** Merchants supported for **CyberSource through VisaNet**_/_**Visa Platform Connect** are advised not to use this field. 
    * @return assuranceLevel
   **/
-  @ApiModelProperty(value = "Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase. ")
+  @ApiModelProperty(value = "Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase.  **Note** Merchants supported for **CyberSource through VisaNet**_/_**Visa Platform Connect** are advised not to use this field. ")
   public String getAssuranceLevel() {
     return assuranceLevel;
   }
@@ -175,6 +178,24 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard {
     this.requestorId = requestorId;
   }
 
+  public PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard assuranceMethod(String assuranceMethod) {
+    this.assuranceMethod = assuranceMethod;
+    return this;
+  }
+
+   /**
+   * Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **Visa Platform Connect** 
+   * @return assuranceMethod
+  **/
+  @ApiModelProperty(value = "Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **Visa Platform Connect** ")
+  public String getAssuranceMethod() {
+    return assuranceMethod;
+  }
+
+  public void setAssuranceMethod(String assuranceMethod) {
+    this.assuranceMethod = assuranceMethod;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -191,12 +212,13 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard {
         Objects.equals(this.assuranceLevel, ptsV2PaymentsPost201ResponsePaymentInformationTokenizedCard.assuranceLevel) &&
         Objects.equals(this.expirationMonth, ptsV2PaymentsPost201ResponsePaymentInformationTokenizedCard.expirationMonth) &&
         Objects.equals(this.expirationYear, ptsV2PaymentsPost201ResponsePaymentInformationTokenizedCard.expirationYear) &&
-        Objects.equals(this.requestorId, ptsV2PaymentsPost201ResponsePaymentInformationTokenizedCard.requestorId);
+        Objects.equals(this.requestorId, ptsV2PaymentsPost201ResponsePaymentInformationTokenizedCard.requestorId) &&
+        Objects.equals(this.assuranceMethod, ptsV2PaymentsPost201ResponsePaymentInformationTokenizedCard.assuranceMethod);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(prefix, suffix, type, assuranceLevel, expirationMonth, expirationYear, requestorId);
+    return Objects.hash(prefix, suffix, type, assuranceLevel, expirationMonth, expirationYear, requestorId, assuranceMethod);
   }
 
 
@@ -212,6 +234,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard {
     sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
     sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
     sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
+    sb.append("    assuranceMethod: ").append(toIndentedString(assuranceMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

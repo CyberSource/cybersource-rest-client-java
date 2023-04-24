@@ -23,6 +23,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Riskv1decisionsOrderInformationLineItems
@@ -70,6 +72,12 @@ public class Riskv1decisionsOrderInformationLineItems {
 
   @SerializedName("taxAmount")
   private String taxAmount = null;
+
+  @SerializedName("allowedExportCountries")
+  private List<String> allowedExportCountries = null;
+
+  @SerializedName("restrictedExportCountries")
+  private List<String> restrictedExportCountries = null;
 
   public Riskv1decisionsOrderInformationLineItems totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
@@ -325,6 +333,58 @@ public class Riskv1decisionsOrderInformationLineItems {
     this.taxAmount = taxAmount;
   }
 
+  public Riskv1decisionsOrderInformationLineItems allowedExportCountries(List<String> allowedExportCountries) {
+    this.allowedExportCountries = allowedExportCountries;
+    return this;
+  }
+
+  public Riskv1decisionsOrderInformationLineItems addAllowedExportCountriesItem(String allowedExportCountriesItem) {
+    if (this.allowedExportCountries == null) {
+      this.allowedExportCountries = new ArrayList<String>();
+    }
+    this.allowedExportCountries.add(allowedExportCountriesItem);
+    return this;
+  }
+
+   /**
+   * Get allowedExportCountries
+   * @return allowedExportCountries
+  **/
+  @ApiModelProperty(value = "")
+  public List<String> getAllowedExportCountries() {
+    return allowedExportCountries;
+  }
+
+  public void setAllowedExportCountries(List<String> allowedExportCountries) {
+    this.allowedExportCountries = allowedExportCountries;
+  }
+
+  public Riskv1decisionsOrderInformationLineItems restrictedExportCountries(List<String> restrictedExportCountries) {
+    this.restrictedExportCountries = restrictedExportCountries;
+    return this;
+  }
+
+  public Riskv1decisionsOrderInformationLineItems addRestrictedExportCountriesItem(String restrictedExportCountriesItem) {
+    if (this.restrictedExportCountries == null) {
+      this.restrictedExportCountries = new ArrayList<String>();
+    }
+    this.restrictedExportCountries.add(restrictedExportCountriesItem);
+    return this;
+  }
+
+   /**
+   * Get restrictedExportCountries
+   * @return restrictedExportCountries
+  **/
+  @ApiModelProperty(value = "")
+  public List<String> getRestrictedExportCountries() {
+    return restrictedExportCountries;
+  }
+
+  public void setRestrictedExportCountries(List<String> restrictedExportCountries) {
+    this.restrictedExportCountries = restrictedExportCountries;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -348,12 +408,14 @@ public class Riskv1decisionsOrderInformationLineItems {
         Objects.equals(this.distributorProductSku, riskv1decisionsOrderInformationLineItems.distributorProductSku) &&
         Objects.equals(this.passenger, riskv1decisionsOrderInformationLineItems.passenger) &&
         Objects.equals(this.shippingDestinationTypes, riskv1decisionsOrderInformationLineItems.shippingDestinationTypes) &&
-        Objects.equals(this.taxAmount, riskv1decisionsOrderInformationLineItems.taxAmount);
+        Objects.equals(this.taxAmount, riskv1decisionsOrderInformationLineItems.taxAmount) &&
+        Objects.equals(this.allowedExportCountries, riskv1decisionsOrderInformationLineItems.allowedExportCountries) &&
+        Objects.equals(this.restrictedExportCountries, riskv1decisionsOrderInformationLineItems.restrictedExportCountries);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, unitPrice, quantity, giftCardCurrency, productSKU, productRisk, productDescription, productName, productCode, gift, distributorProductSku, passenger, shippingDestinationTypes, taxAmount);
+    return Objects.hash(totalAmount, unitPrice, quantity, giftCardCurrency, productSKU, productRisk, productDescription, productName, productCode, gift, distributorProductSku, passenger, shippingDestinationTypes, taxAmount, allowedExportCountries, restrictedExportCountries);
   }
 
 
@@ -376,6 +438,8 @@ public class Riskv1decisionsOrderInformationLineItems {
     sb.append("    passenger: ").append(toIndentedString(passenger)).append("\n");
     sb.append("    shippingDestinationTypes: ").append(toIndentedString(shippingDestinationTypes)).append("\n");
     sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    sb.append("    allowedExportCountries: ").append(toIndentedString(allowedExportCountries)).append("\n");
+    sb.append("    restrictedExportCountries: ").append(toIndentedString(restrictedExportCountries)).append("\n");
     sb.append("}");
     return sb.toString();
   }
