@@ -95,6 +95,12 @@ public class Ptsv2paymentsOrderInformationBillTo {
   @SerializedName("verificationStatus")
   private String verificationStatus = null;
 
+  @SerializedName("alternatePhoneNumber")
+  private String alternatePhoneNumber = null;
+
+  @SerializedName("alternateEmail")
+  private String alternateEmail = null;
+
   public Ptsv2paymentsOrderInformationBillTo firstName(String firstName) {
     this.firstName = firstName;
     return this;
@@ -491,6 +497,42 @@ public class Ptsv2paymentsOrderInformationBillTo {
     this.verificationStatus = verificationStatus;
   }
 
+  public Ptsv2paymentsOrderInformationBillTo alternatePhoneNumber(String alternatePhoneNumber) {
+    this.alternatePhoneNumber = alternatePhoneNumber;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect contains customer’s alternate phone number. 
+   * @return alternatePhoneNumber
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect contains customer’s alternate phone number. ")
+  public String getAlternatePhoneNumber() {
+    return alternatePhoneNumber;
+  }
+
+  public void setAlternatePhoneNumber(String alternatePhoneNumber) {
+    this.alternatePhoneNumber = alternatePhoneNumber;
+  }
+
+  public Ptsv2paymentsOrderInformationBillTo alternateEmail(String alternateEmail) {
+    this.alternateEmail = alternateEmail;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect contains customer’s alternate email address. 
+   * @return alternateEmail
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect contains customer’s alternate email address. ")
+  public String getAlternateEmail() {
+    return alternateEmail;
+  }
+
+  public void setAlternateEmail(String alternateEmail) {
+    this.alternateEmail = alternateEmail;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -522,12 +564,14 @@ public class Ptsv2paymentsOrderInformationBillTo {
         Objects.equals(this.emailDomain, ptsv2paymentsOrderInformationBillTo.emailDomain) &&
         Objects.equals(this.phoneNumber, ptsv2paymentsOrderInformationBillTo.phoneNumber) &&
         Objects.equals(this.phoneType, ptsv2paymentsOrderInformationBillTo.phoneType) &&
-        Objects.equals(this.verificationStatus, ptsv2paymentsOrderInformationBillTo.verificationStatus);
+        Objects.equals(this.verificationStatus, ptsv2paymentsOrderInformationBillTo.verificationStatus) &&
+        Objects.equals(this.alternatePhoneNumber, ptsv2paymentsOrderInformationBillTo.alternatePhoneNumber) &&
+        Objects.equals(this.alternateEmail, ptsv2paymentsOrderInformationBillTo.alternateEmail);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, lastName, middleName, nameSuffix, title, company, address1, address2, address3, address4, locality, administrativeArea, postalCode, county, country, district, buildingNumber, email, emailDomain, phoneNumber, phoneType, verificationStatus);
+    return Objects.hash(firstName, lastName, middleName, nameSuffix, title, company, address1, address2, address3, address4, locality, administrativeArea, postalCode, county, country, district, buildingNumber, email, emailDomain, phoneNumber, phoneType, verificationStatus, alternatePhoneNumber, alternateEmail);
   }
 
 
@@ -558,6 +602,8 @@ public class Ptsv2paymentsOrderInformationBillTo {
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
     sb.append("    verificationStatus: ").append(toIndentedString(verificationStatus)).append("\n");
+    sb.append("    alternatePhoneNumber: ").append(toIndentedString(alternatePhoneNumber)).append("\n");
+    sb.append("    alternateEmail: ").append(toIndentedString(alternateEmail)).append("\n");
     sb.append("}");
     return sb.toString();
   }

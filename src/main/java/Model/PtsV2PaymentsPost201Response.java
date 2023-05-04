@@ -30,6 +30,7 @@ import Model.PtsV2PaymentsPost201ResponseProcessingInformation;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformation;
 import Model.PtsV2PaymentsPost201ResponseRiskInformation;
 import Model.PtsV2PaymentsPost201ResponseTokenInformation;
+import Model.PtsV2PaymentsPost201ResponseWatchlistScreeningInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -103,6 +104,9 @@ public class PtsV2PaymentsPost201Response {
 
   @SerializedName("consumerAuthenticationInformation")
   private PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation = null;
+
+  @SerializedName("watchlistScreeningInformation")
+  private PtsV2PaymentsPost201ResponseWatchlistScreeningInformation watchlistScreeningInformation = null;
 
   public PtsV2PaymentsPost201Response links(PtsV2PaymentsPost201ResponseLinks links) {
     this.links = links;
@@ -464,6 +468,24 @@ public class PtsV2PaymentsPost201Response {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
   }
 
+  public PtsV2PaymentsPost201Response watchlistScreeningInformation(PtsV2PaymentsPost201ResponseWatchlistScreeningInformation watchlistScreeningInformation) {
+    this.watchlistScreeningInformation = watchlistScreeningInformation;
+    return this;
+  }
+
+   /**
+   * Get watchlistScreeningInformation
+   * @return watchlistScreeningInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseWatchlistScreeningInformation getWatchlistScreeningInformation() {
+    return watchlistScreeningInformation;
+  }
+
+  public void setWatchlistScreeningInformation(PtsV2PaymentsPost201ResponseWatchlistScreeningInformation watchlistScreeningInformation) {
+    this.watchlistScreeningInformation = watchlistScreeningInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -493,12 +515,13 @@ public class PtsV2PaymentsPost201Response {
         Objects.equals(this.tokenInformation, ptsV2PaymentsPost201Response.tokenInformation) &&
         Objects.equals(this.buyerInformation, ptsV2PaymentsPost201Response.buyerInformation) &&
         Objects.equals(this.riskInformation, ptsV2PaymentsPost201Response.riskInformation) &&
-        Objects.equals(this.consumerAuthenticationInformation, ptsV2PaymentsPost201Response.consumerAuthenticationInformation);
+        Objects.equals(this.consumerAuthenticationInformation, ptsV2PaymentsPost201Response.consumerAuthenticationInformation) &&
+        Objects.equals(this.watchlistScreeningInformation, ptsV2PaymentsPost201Response.watchlistScreeningInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation, watchlistScreeningInformation);
   }
 
 
@@ -527,6 +550,7 @@ public class PtsV2PaymentsPost201Response {
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
+    sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

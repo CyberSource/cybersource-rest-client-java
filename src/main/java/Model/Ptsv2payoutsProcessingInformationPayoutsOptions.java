@@ -40,6 +40,9 @@ public class Ptsv2payoutsProcessingInformationPayoutsOptions {
   @SerializedName("accountFundingReferenceId")
   private String accountFundingReferenceId = null;
 
+  @SerializedName("deferredDateTime")
+  private String deferredDateTime = null;
+
   public Ptsv2payoutsProcessingInformationPayoutsOptions acquirerMerchantId(String acquirerMerchantId) {
     this.acquirerMerchantId = acquirerMerchantId;
     return this;
@@ -112,6 +115,24 @@ public class Ptsv2payoutsProcessingInformationPayoutsOptions {
     this.accountFundingReferenceId = accountFundingReferenceId;
   }
 
+  public Ptsv2payoutsProcessingInformationPayoutsOptions deferredDateTime(String deferredDateTime) {
+    this.deferredDateTime = deferredDateTime;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect  Contains date and time value indicating scheduled deferred OCT.  Format is : &#39;yyyyMMddHHmm&#39;, where  &#39;YYYY&#39; &#x3D; year &#39;MM&#39; &#x3D; month &#39;DD&#39; &#x3D; day &#39;hh&#39; &#x3D; hour &#39;mm&#39; &#x3D; minutes 
+   * @return deferredDateTime
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect  Contains date and time value indicating scheduled deferred OCT.  Format is : 'yyyyMMddHHmm', where  'YYYY' = year 'MM' = month 'DD' = day 'hh' = hour 'mm' = minutes ")
+  public String getDeferredDateTime() {
+    return deferredDateTime;
+  }
+
+  public void setDeferredDateTime(String deferredDateTime) {
+    this.deferredDateTime = deferredDateTime;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +146,13 @@ public class Ptsv2payoutsProcessingInformationPayoutsOptions {
     return Objects.equals(this.acquirerMerchantId, ptsv2payoutsProcessingInformationPayoutsOptions.acquirerMerchantId) &&
         Objects.equals(this.acquirerBin, ptsv2payoutsProcessingInformationPayoutsOptions.acquirerBin) &&
         Objects.equals(this.retrievalReferenceNumber, ptsv2payoutsProcessingInformationPayoutsOptions.retrievalReferenceNumber) &&
-        Objects.equals(this.accountFundingReferenceId, ptsv2payoutsProcessingInformationPayoutsOptions.accountFundingReferenceId);
+        Objects.equals(this.accountFundingReferenceId, ptsv2payoutsProcessingInformationPayoutsOptions.accountFundingReferenceId) &&
+        Objects.equals(this.deferredDateTime, ptsv2payoutsProcessingInformationPayoutsOptions.deferredDateTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(acquirerMerchantId, acquirerBin, retrievalReferenceNumber, accountFundingReferenceId);
+    return Objects.hash(acquirerMerchantId, acquirerBin, retrievalReferenceNumber, accountFundingReferenceId, deferredDateTime);
   }
 
 
@@ -143,6 +165,7 @@ public class Ptsv2payoutsProcessingInformationPayoutsOptions {
     sb.append("    acquirerBin: ").append(toIndentedString(acquirerBin)).append("\n");
     sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
     sb.append("    accountFundingReferenceId: ").append(toIndentedString(accountFundingReferenceId)).append("\n");
+    sb.append("    deferredDateTime: ").append(toIndentedString(deferredDateTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

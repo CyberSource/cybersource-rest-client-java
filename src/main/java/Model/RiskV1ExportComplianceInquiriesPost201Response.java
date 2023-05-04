@@ -15,9 +15,9 @@ package Model;
 
 import java.util.Objects;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
+import Model.PtsV2PaymentsPost201ResponseWatchlistScreeningInformation;
 import Model.RiskV1DecisionsPost201ResponseClientReferenceInformation;
 import Model.RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation;
-import Model.RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -54,7 +54,7 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
   private RiskV1DecisionsPost201ResponseClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("exportComplianceInformation")
-  private RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation exportComplianceInformation = null;
+  private PtsV2PaymentsPost201ResponseWatchlistScreeningInformation exportComplianceInformation = null;
 
   @SerializedName("errorInformation")
   private RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation errorInformation = null;
@@ -185,7 +185,7 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
-  public RiskV1ExportComplianceInquiriesPost201Response exportComplianceInformation(RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation exportComplianceInformation) {
+  public RiskV1ExportComplianceInquiriesPost201Response exportComplianceInformation(PtsV2PaymentsPost201ResponseWatchlistScreeningInformation exportComplianceInformation) {
     this.exportComplianceInformation = exportComplianceInformation;
     return this;
   }
@@ -195,11 +195,11 @@ public class RiskV1ExportComplianceInquiriesPost201Response {
    * @return exportComplianceInformation
   **/
   @ApiModelProperty(value = "")
-  public RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation getExportComplianceInformation() {
+  public PtsV2PaymentsPost201ResponseWatchlistScreeningInformation getExportComplianceInformation() {
     return exportComplianceInformation;
   }
 
-  public void setExportComplianceInformation(RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation exportComplianceInformation) {
+  public void setExportComplianceInformation(PtsV2PaymentsPost201ResponseWatchlistScreeningInformation exportComplianceInformation) {
     this.exportComplianceInformation = exportComplianceInformation;
   }
 

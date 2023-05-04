@@ -64,6 +64,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
   @SerializedName("nameRaw")
   private String nameRaw = null;
 
+  @SerializedName("firstNameRaw")
+  private String firstNameRaw = null;
+
+  @SerializedName("firstName")
+  private String firstName = null;
+
+  @SerializedName("middleNameRaw")
+  private String middleNameRaw = null;
+
+  @SerializedName("middleName")
+  private String middleName = null;
+
+  @SerializedName("lastNameRaw")
+  private String lastNameRaw = null;
+
+  @SerializedName("lastName")
+  private String lastName = null;
+
   public PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults code(String code) {
     this.code = code;
     return this;
@@ -250,10 +268,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer’s name. 
+   * #### Visa Platform Connect Mapped Electronic Verification response code for the customer’s name.  Valid values :  &#39;Y&#39;   Yes, the data Matches &#39;N&#39;   No Match &#39;O&#39;   Partial Match 
    * @return name
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s name. ")
+  @ApiModelProperty(value = "#### Visa Platform Connect Mapped Electronic Verification response code for the customer’s name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match ")
   public String getName() {
     return name;
   }
@@ -268,16 +286,124 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
   }
 
    /**
-   * Raw Electronic Verification response code from the processor for the customer’s name. 
+   * #### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer’s name.  Valid values :  &#39;01&#39;     Match &#39;50&#39;     Partial Match &#39;99&#39;     No Match 
    * @return nameRaw
   **/
-  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s name. ")
+  @ApiModelProperty(value = "#### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer’s name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match ")
   public String getNameRaw() {
     return nameRaw;
   }
 
   public void setNameRaw(String nameRaw) {
     this.nameRaw = nameRaw;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults firstNameRaw(String firstNameRaw) {
+    this.firstNameRaw = firstNameRaw;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s first name.  Valid values :  &#39;01&#39;     Match &#39;50&#39;     Partial Match &#39;99&#39;     No Match 
+   * @return firstNameRaw
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s first name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match ")
+  public String getFirstNameRaw() {
+    return firstNameRaw;
+  }
+
+  public void setFirstNameRaw(String firstNameRaw) {
+    this.firstNameRaw = firstNameRaw;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults firstName(String firstName) {
+    this.firstName = firstName;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s first name.  Valid values :  &#39;Y&#39;   Yes, the data Matches &#39;N&#39;   No Match &#39;O&#39;   Partial Match 
+   * @return firstName
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s first name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match ")
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults middleNameRaw(String middleNameRaw) {
+    this.middleNameRaw = middleNameRaw;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s middle name.  Valid values :  &#39;01&#39;     Match &#39;50&#39;     Partial Match &#39;99&#39;     No Match 
+   * @return middleNameRaw
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s middle name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match ")
+  public String getMiddleNameRaw() {
+    return middleNameRaw;
+  }
+
+  public void setMiddleNameRaw(String middleNameRaw) {
+    this.middleNameRaw = middleNameRaw;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults middleName(String middleName) {
+    this.middleName = middleName;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s middle name.  Valid values :  &#39;Y&#39;   Yes, the data Matches &#39;N&#39;   No Match &#39;O&#39;   Partial Match 
+   * @return middleName
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s middle name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match ")
+  public String getMiddleName() {
+    return middleName;
+  }
+
+  public void setMiddleName(String middleName) {
+    this.middleName = middleName;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults lastNameRaw(String lastNameRaw) {
+    this.lastNameRaw = lastNameRaw;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s last name.  Valid values :  &#39;01&#39;     Match &#39;50&#39;     Partial Match &#39;99&#39;     No Match 
+   * @return lastNameRaw
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s last name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match ")
+  public String getLastNameRaw() {
+    return lastNameRaw;
+  }
+
+  public void setLastNameRaw(String lastNameRaw) {
+    this.lastNameRaw = lastNameRaw;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults lastName(String lastName) {
+    this.lastName = lastName;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s last name.  Valid values :  &#39;Y&#39;   Yes, the data Matches &#39;N&#39;   No Match &#39;O&#39;   Partial Match 
+   * @return lastName
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s last name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match ")
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
   }
 
 
@@ -301,12 +427,18 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
         Objects.equals(this.street, ptsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults.street) &&
         Objects.equals(this.streetRaw, ptsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults.streetRaw) &&
         Objects.equals(this.name, ptsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults.name) &&
-        Objects.equals(this.nameRaw, ptsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults.nameRaw);
+        Objects.equals(this.nameRaw, ptsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults.nameRaw) &&
+        Objects.equals(this.firstNameRaw, ptsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults.firstNameRaw) &&
+        Objects.equals(this.firstName, ptsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults.firstName) &&
+        Objects.equals(this.middleNameRaw, ptsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults.middleNameRaw) &&
+        Objects.equals(this.middleName, ptsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults.middleName) &&
+        Objects.equals(this.lastNameRaw, ptsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults.lastNameRaw) &&
+        Objects.equals(this.lastName, ptsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults.lastName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, codeRaw, email, emailRaw, phoneNumber, phoneNumberRaw, postalCode, postalCodeRaw, street, streetRaw, name, nameRaw);
+    return Objects.hash(code, codeRaw, email, emailRaw, phoneNumber, phoneNumberRaw, postalCode, postalCodeRaw, street, streetRaw, name, nameRaw, firstNameRaw, firstName, middleNameRaw, middleName, lastNameRaw, lastName);
   }
 
 
@@ -327,6 +459,12 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificat
     sb.append("    streetRaw: ").append(toIndentedString(streetRaw)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    nameRaw: ").append(toIndentedString(nameRaw)).append("\n");
+    sb.append("    firstNameRaw: ").append(toIndentedString(firstNameRaw)).append("\n");
+    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    middleNameRaw: ").append(toIndentedString(middleNameRaw)).append("\n");
+    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    sb.append("    lastNameRaw: ").append(toIndentedString(lastNameRaw)).append("\n");
+    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

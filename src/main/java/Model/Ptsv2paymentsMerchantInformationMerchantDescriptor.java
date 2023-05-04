@@ -61,6 +61,9 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
   @SerializedName("countryOfOrigin")
   private String countryOfOrigin = null;
 
+  @SerializedName("customerServicePhoneNumber")
+  private String customerServicePhoneNumber = null;
+
   public Ptsv2paymentsMerchantInformationMerchantDescriptor name(String name) {
     this.name = name;
     return this;
@@ -259,6 +262,24 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
     this.countryOfOrigin = countryOfOrigin;
   }
 
+  public Ptsv2paymentsMerchantInformationMerchantDescriptor customerServicePhoneNumber(String customerServicePhoneNumber) {
+    this.customerServicePhoneNumber = customerServicePhoneNumber;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect Indicates customer service phone number of Merchant. 
+   * @return customerServicePhoneNumber
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect Indicates customer service phone number of Merchant. ")
+  public String getCustomerServicePhoneNumber() {
+    return customerServicePhoneNumber;
+  }
+
+  public void setCustomerServicePhoneNumber(String customerServicePhoneNumber) {
+    this.customerServicePhoneNumber = customerServicePhoneNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -279,12 +300,13 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
         Objects.equals(this.administrativeArea, ptsv2paymentsMerchantInformationMerchantDescriptor.administrativeArea) &&
         Objects.equals(this.phone, ptsv2paymentsMerchantInformationMerchantDescriptor.phone) &&
         Objects.equals(this.url, ptsv2paymentsMerchantInformationMerchantDescriptor.url) &&
-        Objects.equals(this.countryOfOrigin, ptsv2paymentsMerchantInformationMerchantDescriptor.countryOfOrigin);
+        Objects.equals(this.countryOfOrigin, ptsv2paymentsMerchantInformationMerchantDescriptor.countryOfOrigin) &&
+        Objects.equals(this.customerServicePhoneNumber, ptsv2paymentsMerchantInformationMerchantDescriptor.customerServicePhoneNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, alternateName, contact, address1, locality, country, postalCode, administrativeArea, phone, url, countryOfOrigin);
+    return Objects.hash(name, alternateName, contact, address1, locality, country, postalCode, administrativeArea, phone, url, countryOfOrigin, customerServicePhoneNumber);
   }
 
 
@@ -304,6 +326,7 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    countryOfOrigin: ").append(toIndentedString(countryOfOrigin)).append("\n");
+    sb.append("    customerServicePhoneNumber: ").append(toIndentedString(customerServicePhoneNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

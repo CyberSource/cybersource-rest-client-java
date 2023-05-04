@@ -37,6 +37,7 @@ import Model.Ptsv2paymentsRecurringPaymentInformation;
 import Model.Ptsv2paymentsRiskInformation;
 import Model.Ptsv2paymentsTokenInformation;
 import Model.Ptsv2paymentsTravelInformation;
+import Model.Ptsv2paymentsWatchlistScreeningInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -121,6 +122,9 @@ public class CreatePaymentRequest {
 
   @SerializedName("recurringPaymentInformation")
   private Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation = null;
+
+  @SerializedName("watchlistScreeningInformation")
+  private Ptsv2paymentsWatchlistScreeningInformation watchlistScreeningInformation = null;
 
   public CreatePaymentRequest clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -544,6 +548,24 @@ public class CreatePaymentRequest {
     this.recurringPaymentInformation = recurringPaymentInformation;
   }
 
+  public CreatePaymentRequest watchlistScreeningInformation(Ptsv2paymentsWatchlistScreeningInformation watchlistScreeningInformation) {
+    this.watchlistScreeningInformation = watchlistScreeningInformation;
+    return this;
+  }
+
+   /**
+   * Get watchlistScreeningInformation
+   * @return watchlistScreeningInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsWatchlistScreeningInformation getWatchlistScreeningInformation() {
+    return watchlistScreeningInformation;
+  }
+
+  public void setWatchlistScreeningInformation(Ptsv2paymentsWatchlistScreeningInformation watchlistScreeningInformation) {
+    this.watchlistScreeningInformation = watchlistScreeningInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -576,12 +598,13 @@ public class CreatePaymentRequest {
         Objects.equals(this.processorInformation, createPaymentRequest.processorInformation) &&
         Objects.equals(this.riskInformation, createPaymentRequest.riskInformation) &&
         Objects.equals(this.acquirerInformation, createPaymentRequest.acquirerInformation) &&
-        Objects.equals(this.recurringPaymentInformation, createPaymentRequest.recurringPaymentInformation);
+        Objects.equals(this.recurringPaymentInformation, createPaymentRequest.recurringPaymentInformation) &&
+        Objects.equals(this.watchlistScreeningInformation, createPaymentRequest.watchlistScreeningInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, riskInformation, acquirerInformation, recurringPaymentInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, riskInformation, acquirerInformation, recurringPaymentInformation, watchlistScreeningInformation);
   }
 
 
@@ -613,6 +636,7 @@ public class CreatePaymentRequest {
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    acquirerInformation: ").append(toIndentedString(acquirerInformation)).append("\n");
     sb.append("    recurringPaymentInformation: ").append(toIndentedString(recurringPaymentInformation)).append("\n");
+    sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

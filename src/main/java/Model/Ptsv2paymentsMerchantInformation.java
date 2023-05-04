@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.Ptsv2paymentsMerchantInformationMerchantDescriptor;
 import Model.Ptsv2paymentsMerchantInformationServiceFeeDescriptor;
+import Model.Ptsv2paymentsMerchantInformationServiceLocation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -71,6 +72,12 @@ public class Ptsv2paymentsMerchantInformation {
 
   @SerializedName("returnUrl")
   private String returnUrl = null;
+
+  @SerializedName("partnerIdCode")
+  private String partnerIdCode = null;
+
+  @SerializedName("serviceLocation")
+  private Ptsv2paymentsMerchantInformationServiceLocation serviceLocation = null;
 
   @SerializedName("merchantName")
   private String merchantName = null;
@@ -329,6 +336,42 @@ public class Ptsv2paymentsMerchantInformation {
     this.returnUrl = returnUrl;
   }
 
+  public Ptsv2paymentsMerchantInformation partnerIdCode(String partnerIdCode) {
+    this.partnerIdCode = partnerIdCode;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect This field may be used for transactions on accounts issued under co-branding agreements when one of the co-branding partners. 
+   * @return partnerIdCode
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect This field may be used for transactions on accounts issued under co-branding agreements when one of the co-branding partners. ")
+  public String getPartnerIdCode() {
+    return partnerIdCode;
+  }
+
+  public void setPartnerIdCode(String partnerIdCode) {
+    this.partnerIdCode = partnerIdCode;
+  }
+
+  public Ptsv2paymentsMerchantInformation serviceLocation(Ptsv2paymentsMerchantInformationServiceLocation serviceLocation) {
+    this.serviceLocation = serviceLocation;
+    return this;
+  }
+
+   /**
+   * Get serviceLocation
+   * @return serviceLocation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsMerchantInformationServiceLocation getServiceLocation() {
+    return serviceLocation;
+  }
+
+  public void setServiceLocation(Ptsv2paymentsMerchantInformationServiceLocation serviceLocation) {
+    this.serviceLocation = serviceLocation;
+  }
+
   public Ptsv2paymentsMerchantInformation merchantName(String merchantName) {
     this.merchantName = merchantName;
     return this;
@@ -371,12 +414,14 @@ public class Ptsv2paymentsMerchantInformation {
         Objects.equals(this.successUrl, ptsv2paymentsMerchantInformation.successUrl) &&
         Objects.equals(this.failureUrl, ptsv2paymentsMerchantInformation.failureUrl) &&
         Objects.equals(this.returnUrl, ptsv2paymentsMerchantInformation.returnUrl) &&
+        Objects.equals(this.partnerIdCode, ptsv2paymentsMerchantInformation.partnerIdCode) &&
+        Objects.equals(this.serviceLocation, ptsv2paymentsMerchantInformation.serviceLocation) &&
         Objects.equals(this.merchantName, ptsv2paymentsMerchantInformation.merchantName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantDescriptor, domainName, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor, cancelUrl, successUrl, failureUrl, returnUrl, merchantName);
+    return Objects.hash(merchantDescriptor, domainName, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor, cancelUrl, successUrl, failureUrl, returnUrl, partnerIdCode, serviceLocation, merchantName);
   }
 
 
@@ -399,6 +444,8 @@ public class Ptsv2paymentsMerchantInformation {
     sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
     sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
     sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
+    sb.append("    partnerIdCode: ").append(toIndentedString(partnerIdCode)).append("\n");
+    sb.append("    serviceLocation: ").append(toIndentedString(serviceLocation)).append("\n");
     sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
     sb.append("}");
     return sb.toString();

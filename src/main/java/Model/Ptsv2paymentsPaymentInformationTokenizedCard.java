@@ -61,6 +61,9 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
   @SerializedName("securityCodeIndicator")
   private String securityCodeIndicator = null;
 
+  @SerializedName("assuranceMethod")
+  private String assuranceMethod = null;
+
   public Ptsv2paymentsPaymentInformationTokenizedCard number(String number) {
     this.number = number;
     return this;
@@ -193,10 +196,10 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
   }
 
    /**
-   * Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase. 
+   * Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase.  **Note** Merchants supported for **CyberSource through VisaNet**_/_**Visa Platform Connect** are advised not to use this field. 
    * @return assuranceLevel
   **/
-  @ApiModelProperty(value = "Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase. ")
+  @ApiModelProperty(value = "Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase.  **Note** Merchants supported for **CyberSource through VisaNet**_/_**Visa Platform Connect** are advised not to use this field. ")
   public String getAssuranceLevel() {
     return assuranceLevel;
   }
@@ -259,6 +262,24 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
     this.securityCodeIndicator = securityCodeIndicator;
   }
 
+  public Ptsv2paymentsPaymentInformationTokenizedCard assuranceMethod(String assuranceMethod) {
+    this.assuranceMethod = assuranceMethod;
+    return this;
+  }
+
+   /**
+   * Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **Visa Platform Connect** 
+   * @return assuranceMethod
+  **/
+  @ApiModelProperty(value = "Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **Visa Platform Connect** ")
+  public String getAssuranceMethod() {
+    return assuranceMethod;
+  }
+
+  public void setAssuranceMethod(String assuranceMethod) {
+    this.assuranceMethod = assuranceMethod;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -279,12 +300,13 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
         Objects.equals(this.assuranceLevel, ptsv2paymentsPaymentInformationTokenizedCard.assuranceLevel) &&
         Objects.equals(this.storageMethod, ptsv2paymentsPaymentInformationTokenizedCard.storageMethod) &&
         Objects.equals(this.securityCode, ptsv2paymentsPaymentInformationTokenizedCard.securityCode) &&
-        Objects.equals(this.securityCodeIndicator, ptsv2paymentsPaymentInformationTokenizedCard.securityCodeIndicator);
+        Objects.equals(this.securityCodeIndicator, ptsv2paymentsPaymentInformationTokenizedCard.securityCodeIndicator) &&
+        Objects.equals(this.assuranceMethod, ptsv2paymentsPaymentInformationTokenizedCard.assuranceMethod);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(number, expirationMonth, expirationYear, type, cryptogram, requestorId, transactionType, assuranceLevel, storageMethod, securityCode, securityCodeIndicator);
+    return Objects.hash(number, expirationMonth, expirationYear, type, cryptogram, requestorId, transactionType, assuranceLevel, storageMethod, securityCode, securityCodeIndicator, assuranceMethod);
   }
 
 
@@ -304,6 +326,7 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
     sb.append("    storageMethod: ").append(toIndentedString(storageMethod)).append("\n");
     sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
     sb.append("    securityCodeIndicator: ").append(toIndentedString(securityCodeIndicator)).append("\n");
+    sb.append("    assuranceMethod: ").append(toIndentedString(assuranceMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

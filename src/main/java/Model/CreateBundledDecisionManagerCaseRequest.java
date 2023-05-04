@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.Ptsv2paymentsAcquirerInformation;
 import Model.Ptsv2paymentsRecurringPaymentInformation;
+import Model.Ptsv2paymentsWatchlistScreeningInformation;
 import Model.Riskv1decisionsBuyerInformation;
 import Model.Riskv1decisionsClientReferenceInformation;
 import Model.Riskv1decisionsConsumerAuthenticationInformation;
@@ -85,6 +86,9 @@ public class CreateBundledDecisionManagerCaseRequest {
 
   @SerializedName("consumerAuthenticationInformation")
   private Riskv1decisionsConsumerAuthenticationInformation consumerAuthenticationInformation = null;
+
+  @SerializedName("watchlistScreeningInformation")
+  private Ptsv2paymentsWatchlistScreeningInformation watchlistScreeningInformation = null;
 
   public CreateBundledDecisionManagerCaseRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -346,6 +350,24 @@ public class CreateBundledDecisionManagerCaseRequest {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
   }
 
+  public CreateBundledDecisionManagerCaseRequest watchlistScreeningInformation(Ptsv2paymentsWatchlistScreeningInformation watchlistScreeningInformation) {
+    this.watchlistScreeningInformation = watchlistScreeningInformation;
+    return this;
+  }
+
+   /**
+   * Get watchlistScreeningInformation
+   * @return watchlistScreeningInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsWatchlistScreeningInformation getWatchlistScreeningInformation() {
+    return watchlistScreeningInformation;
+  }
+
+  public void setWatchlistScreeningInformation(Ptsv2paymentsWatchlistScreeningInformation watchlistScreeningInformation) {
+    this.watchlistScreeningInformation = watchlistScreeningInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -369,12 +391,13 @@ public class CreateBundledDecisionManagerCaseRequest {
         Objects.equals(this.merchantInformation, createBundledDecisionManagerCaseRequest.merchantInformation) &&
         Objects.equals(this.acquirerInformation, createBundledDecisionManagerCaseRequest.acquirerInformation) &&
         Objects.equals(this.recurringPaymentInformation, createBundledDecisionManagerCaseRequest.recurringPaymentInformation) &&
-        Objects.equals(this.consumerAuthenticationInformation, createBundledDecisionManagerCaseRequest.consumerAuthenticationInformation);
+        Objects.equals(this.consumerAuthenticationInformation, createBundledDecisionManagerCaseRequest.consumerAuthenticationInformation) &&
+        Objects.equals(this.watchlistScreeningInformation, createBundledDecisionManagerCaseRequest.watchlistScreeningInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processorInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, riskInformation, travelInformation, merchantDefinedInformation, merchantInformation, acquirerInformation, recurringPaymentInformation, consumerAuthenticationInformation);
+    return Objects.hash(clientReferenceInformation, processorInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, riskInformation, travelInformation, merchantDefinedInformation, merchantInformation, acquirerInformation, recurringPaymentInformation, consumerAuthenticationInformation, watchlistScreeningInformation);
   }
 
 
@@ -397,6 +420,7 @@ public class CreateBundledDecisionManagerCaseRequest {
     sb.append("    acquirerInformation: ").append(toIndentedString(acquirerInformation)).append("\n");
     sb.append("    recurringPaymentInformation: ").append(toIndentedString(recurringPaymentInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
+    sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

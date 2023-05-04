@@ -88,6 +88,9 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("cashAdvanceIndicator")
   private Boolean cashAdvanceIndicator = null;
 
+  @SerializedName("splitPaymentTransaction")
+  private Boolean splitPaymentTransaction = null;
+
   public Ptsv2paymentsProcessingInformationAuthorizationOptions authType(String authType) {
     this.authType = authType;
     return this;
@@ -438,6 +441,24 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     this.cashAdvanceIndicator = cashAdvanceIndicator;
   }
 
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions splitPaymentTransaction(Boolean splitPaymentTransaction) {
+    this.splitPaymentTransaction = splitPaymentTransaction;
+    return this;
+  }
+
+   /**
+   * #### Visa Platform Connect Indicates split payment transaction. A split payment allows the use of two payment methods for a single transaction.  Possible values:   - &#x60;true&#x60; (split payment transaction is supported)   - &#x60;false&#x60; (default: split payment transaction is not supported) 
+   * @return splitPaymentTransaction
+  **/
+  @ApiModelProperty(value = "#### Visa Platform Connect Indicates split payment transaction. A split payment allows the use of two payment methods for a single transaction.  Possible values:   - `true` (split payment transaction is supported)   - `false` (default: split payment transaction is not supported) ")
+  public Boolean getSplitPaymentTransaction() {
+    return splitPaymentTransaction;
+  }
+
+  public void setSplitPaymentTransaction(Boolean splitPaymentTransaction) {
+    this.splitPaymentTransaction = splitPaymentTransaction;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -466,12 +487,13 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
         Objects.equals(this.aggregatedAuthIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.aggregatedAuthIndicator) &&
         Objects.equals(this.debtRecoveryIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.debtRecoveryIndicator) &&
         Objects.equals(this.deferredAuthIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.deferredAuthIndicator) &&
-        Objects.equals(this.cashAdvanceIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.cashAdvanceIndicator);
+        Objects.equals(this.cashAdvanceIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.cashAdvanceIndicator) &&
+        Objects.equals(this.splitPaymentTransaction, ptsv2paymentsProcessingInformationAuthorizationOptions.splitPaymentTransaction);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator);
+    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator, splitPaymentTransaction);
   }
 
 
@@ -499,6 +521,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     sb.append("    debtRecoveryIndicator: ").append(toIndentedString(debtRecoveryIndicator)).append("\n");
     sb.append("    deferredAuthIndicator: ").append(toIndentedString(deferredAuthIndicator)).append("\n");
     sb.append("    cashAdvanceIndicator: ").append(toIndentedString(cashAdvanceIndicator)).append("\n");
+    sb.append("    splitPaymentTransaction: ").append(toIndentedString(splitPaymentTransaction)).append("\n");
     sb.append("}");
     return sb.toString();
   }

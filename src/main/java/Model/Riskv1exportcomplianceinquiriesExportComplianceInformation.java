@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Riskv1exportcomplianceinquiriesExportComplianceInformationWeights;
+import Model.Ptsv2paymentsWatchlistScreeningInformationWeights;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,7 +35,7 @@ public class Riskv1exportcomplianceinquiriesExportComplianceInformation {
   private String addressOperator = null;
 
   @SerializedName("weights")
-  private Riskv1exportcomplianceinquiriesExportComplianceInformationWeights weights = null;
+  private Ptsv2paymentsWatchlistScreeningInformationWeights weights = null;
 
   @SerializedName("sanctionLists")
   private List<String> sanctionLists = null;
@@ -58,7 +58,7 @@ public class Riskv1exportcomplianceinquiriesExportComplianceInformation {
     this.addressOperator = addressOperator;
   }
 
-  public Riskv1exportcomplianceinquiriesExportComplianceInformation weights(Riskv1exportcomplianceinquiriesExportComplianceInformationWeights weights) {
+  public Riskv1exportcomplianceinquiriesExportComplianceInformation weights(Ptsv2paymentsWatchlistScreeningInformationWeights weights) {
     this.weights = weights;
     return this;
   }
@@ -68,11 +68,11 @@ public class Riskv1exportcomplianceinquiriesExportComplianceInformation {
    * @return weights
   **/
   @ApiModelProperty(value = "")
-  public Riskv1exportcomplianceinquiriesExportComplianceInformationWeights getWeights() {
+  public Ptsv2paymentsWatchlistScreeningInformationWeights getWeights() {
     return weights;
   }
 
-  public void setWeights(Riskv1exportcomplianceinquiriesExportComplianceInformationWeights weights) {
+  public void setWeights(Ptsv2paymentsWatchlistScreeningInformationWeights weights) {
     this.weights = weights;
   }
 
