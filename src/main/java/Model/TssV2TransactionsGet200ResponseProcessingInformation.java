@@ -31,6 +31,9 @@ import java.io.IOException;
  */
 
 public class TssV2TransactionsGet200ResponseProcessingInformation {
+  @SerializedName("binSource")
+  private String binSource = null;
+
   @SerializedName("industryDataType")
   private String industryDataType = null;
 
@@ -54,6 +57,24 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
 
   @SerializedName("japanPaymentOptions")
   private TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions japanPaymentOptions = null;
+
+  public TssV2TransactionsGet200ResponseProcessingInformation binSource(String binSource) {
+    this.binSource = binSource;
+    return this;
+  }
+
+   /**
+   * Bin Source File Identifier. Possible values: - itmx - rupay 
+   * @return binSource
+  **/
+  @ApiModelProperty(value = "Bin Source File Identifier. Possible values: - itmx - rupay ")
+  public String getBinSource() {
+    return binSource;
+  }
+
+  public void setBinSource(String binSource) {
+    this.binSource = binSource;
+  }
 
   public TssV2TransactionsGet200ResponseProcessingInformation industryDataType(String industryDataType) {
     this.industryDataType = industryDataType;
@@ -209,7 +230,8 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
       return false;
     }
     TssV2TransactionsGet200ResponseProcessingInformation tssV2TransactionsGet200ResponseProcessingInformation = (TssV2TransactionsGet200ResponseProcessingInformation) o;
-    return Objects.equals(this.industryDataType, tssV2TransactionsGet200ResponseProcessingInformation.industryDataType) &&
+    return Objects.equals(this.binSource, tssV2TransactionsGet200ResponseProcessingInformation.binSource) &&
+        Objects.equals(this.industryDataType, tssV2TransactionsGet200ResponseProcessingInformation.industryDataType) &&
         Objects.equals(this.paymentSolution, tssV2TransactionsGet200ResponseProcessingInformation.paymentSolution) &&
         Objects.equals(this.commerceIndicator, tssV2TransactionsGet200ResponseProcessingInformation.commerceIndicator) &&
         Objects.equals(this.commerceIndicatorLabel, tssV2TransactionsGet200ResponseProcessingInformation.commerceIndicatorLabel) &&
@@ -221,7 +243,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(industryDataType, paymentSolution, commerceIndicator, commerceIndicatorLabel, businessApplicationId, authorizationOptions, bankTransferOptions, japanPaymentOptions);
+    return Objects.hash(binSource, industryDataType, paymentSolution, commerceIndicator, commerceIndicatorLabel, businessApplicationId, authorizationOptions, bankTransferOptions, japanPaymentOptions);
   }
 
 
@@ -230,6 +252,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessingInformation {\n");
     
+    sb.append("    binSource: ").append(toIndentedString(binSource)).append("\n");
     sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
     sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
     sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");

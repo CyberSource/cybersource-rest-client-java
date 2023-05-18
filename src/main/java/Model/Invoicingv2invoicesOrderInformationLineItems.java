@@ -41,6 +41,21 @@ public class Invoicingv2invoicesOrderInformationLineItems {
   @SerializedName("unitPrice")
   private String unitPrice = null;
 
+  @SerializedName("discountAmount")
+  private String discountAmount = null;
+
+  @SerializedName("discountRate")
+  private String discountRate = null;
+
+  @SerializedName("taxAmount")
+  private String taxAmount = null;
+
+  @SerializedName("taxRate")
+  private String taxRate = null;
+
+  @SerializedName("totalAmount")
+  private String totalAmount = null;
+
   public Invoicingv2invoicesOrderInformationLineItems productSku(String productSku) {
     this.productSku = productSku;
     return this;
@@ -115,6 +130,96 @@ public class Invoicingv2invoicesOrderInformationLineItems {
     this.unitPrice = unitPrice;
   }
 
+  public Invoicingv2invoicesOrderInformationLineItems discountAmount(String discountAmount) {
+    this.discountAmount = discountAmount;
+    return this;
+  }
+
+   /**
+   * Discount applied to the item.
+   * @return discountAmount
+  **/
+  @ApiModelProperty(value = "Discount applied to the item.")
+  public String getDiscountAmount() {
+    return discountAmount;
+  }
+
+  public void setDiscountAmount(String discountAmount) {
+    this.discountAmount = discountAmount;
+  }
+
+  public Invoicingv2invoicesOrderInformationLineItems discountRate(String discountRate) {
+    this.discountRate = discountRate;
+    return this;
+  }
+
+   /**
+   * Rate the item is discounted. Maximum of 2 decimal places.  Example 5.25 (&#x3D;5.25%) 
+   * @return discountRate
+  **/
+  @ApiModelProperty(value = "Rate the item is discounted. Maximum of 2 decimal places.  Example 5.25 (=5.25%) ")
+  public String getDiscountRate() {
+    return discountRate;
+  }
+
+  public void setDiscountRate(String discountRate) {
+    this.discountRate = discountRate;
+  }
+
+  public Invoicingv2invoicesOrderInformationLineItems taxAmount(String taxAmount) {
+    this.taxAmount = taxAmount;
+    return this;
+  }
+
+   /**
+   * Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount&#x3D;10.00, quantity&#x3D;1, and taxAmount&#x3D;0.80  ..- 2nd line item has amount&#x3D;20.00, quantity&#x3D;1, and taxAmount&#x3D;1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  Optional field.  #### Airlines processing Tax portion of the order amount. This value cannot exceed 99999999999999 (fourteen 9s). Format: English characters only. Optional request field for a line item.  #### Tax Calculation Optional field for U.S., Canadian, international tax, and value added taxes.  Note if you send this field in your tax request, the value in the field will override the tax engine 
+   * @return taxAmount
+  **/
+  @ApiModelProperty(value = "Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount=10.00, quantity=1, and taxAmount=0.80  ..- 2nd line item has amount=20.00, quantity=1, and taxAmount=1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  Optional field.  #### Airlines processing Tax portion of the order amount. This value cannot exceed 99999999999999 (fourteen 9s). Format: English characters only. Optional request field for a line item.  #### Tax Calculation Optional field for U.S., Canadian, international tax, and value added taxes.  Note if you send this field in your tax request, the value in the field will override the tax engine ")
+  public String getTaxAmount() {
+    return taxAmount;
+  }
+
+  public void setTaxAmount(String taxAmount) {
+    this.taxAmount = taxAmount;
+  }
+
+  public Invoicingv2invoicesOrderInformationLineItems taxRate(String taxRate) {
+    this.taxRate = taxRate;
+    return this;
+  }
+
+   /**
+   * Tax rate applied to the item.  For details, see &#x60;tax_rate&#x60; field description in the [Level II and Level III Processing Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/)  **Visa**: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  **Mastercard**: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%). 
+   * @return taxRate
+  **/
+  @ApiModelProperty(value = "Tax rate applied to the item.  For details, see `tax_rate` field description in the [Level II and Level III Processing Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/)  **Visa**: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  **Mastercard**: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%). ")
+  public String getTaxRate() {
+    return taxRate;
+  }
+
+  public void setTaxRate(String taxRate) {
+    this.taxRate = taxRate;
+  }
+
+  public Invoicingv2invoicesOrderInformationLineItems totalAmount(String totalAmount) {
+    this.totalAmount = totalAmount;
+    return this;
+  }
+
+   /**
+   * Total amount for the item. Normally calculated as the unit price times quantity.  When &#x60;orderInformation.lineItems[].productCode&#x60; is \&quot;gift_card\&quot;, this is the purchase amount total for prepaid gift cards in major units.  Example: 123.45 USD &#x3D; 123 
+   * @return totalAmount
+  **/
+  @ApiModelProperty(value = "Total amount for the item. Normally calculated as the unit price times quantity.  When `orderInformation.lineItems[].productCode` is \"gift_card\", this is the purchase amount total for prepaid gift cards in major units.  Example: 123.45 USD = 123 ")
+  public String getTotalAmount() {
+    return totalAmount;
+  }
+
+  public void setTotalAmount(String totalAmount) {
+    this.totalAmount = totalAmount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,12 +233,17 @@ public class Invoicingv2invoicesOrderInformationLineItems {
     return Objects.equals(this.productSku, invoicingv2invoicesOrderInformationLineItems.productSku) &&
         Objects.equals(this.productName, invoicingv2invoicesOrderInformationLineItems.productName) &&
         Objects.equals(this.quantity, invoicingv2invoicesOrderInformationLineItems.quantity) &&
-        Objects.equals(this.unitPrice, invoicingv2invoicesOrderInformationLineItems.unitPrice);
+        Objects.equals(this.unitPrice, invoicingv2invoicesOrderInformationLineItems.unitPrice) &&
+        Objects.equals(this.discountAmount, invoicingv2invoicesOrderInformationLineItems.discountAmount) &&
+        Objects.equals(this.discountRate, invoicingv2invoicesOrderInformationLineItems.discountRate) &&
+        Objects.equals(this.taxAmount, invoicingv2invoicesOrderInformationLineItems.taxAmount) &&
+        Objects.equals(this.taxRate, invoicingv2invoicesOrderInformationLineItems.taxRate) &&
+        Objects.equals(this.totalAmount, invoicingv2invoicesOrderInformationLineItems.totalAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productSku, productName, quantity, unitPrice);
+    return Objects.hash(productSku, productName, quantity, unitPrice, discountAmount, discountRate, taxAmount, taxRate, totalAmount);
   }
 
 
@@ -146,6 +256,11 @@ public class Invoicingv2invoicesOrderInformationLineItems {
     sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
     sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    sb.append("    discountRate: ").append(toIndentedString(discountRate)).append("\n");
+    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

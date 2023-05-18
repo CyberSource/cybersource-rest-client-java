@@ -18,11 +18,15 @@ import Model.PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationShippingAddress;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationBank;
+import Model.TssV2TransactionsGet200ResponsePaymentInformationBrands;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationCard;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationCustomer;
+import Model.TssV2TransactionsGet200ResponsePaymentInformationFeatures;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationFluidData;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationInvoice;
+import Model.TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation;
+import Model.TssV2TransactionsGet200ResponsePaymentInformationNetwork;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -32,6 +36,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * TssV2TransactionsGet200ResponsePaymentInformation
@@ -47,8 +53,20 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
   @SerializedName("card")
   private TssV2TransactionsGet200ResponsePaymentInformationCard card = null;
 
+  @SerializedName("brands")
+  private List<TssV2TransactionsGet200ResponsePaymentInformationBrands> brands = null;
+
+  @SerializedName("features")
+  private TssV2TransactionsGet200ResponsePaymentInformationFeatures features = null;
+
   @SerializedName("invoice")
   private TssV2TransactionsGet200ResponsePaymentInformationInvoice invoice = null;
+
+  @SerializedName("network")
+  private TssV2TransactionsGet200ResponsePaymentInformationNetwork network = null;
+
+  @SerializedName("issuerInformation")
+  private TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation issuerInformation = null;
 
   @SerializedName("bank")
   private TssV2TransactionsGet200ResponsePaymentInformationBank bank = null;
@@ -122,6 +140,50 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     this.card = card;
   }
 
+  public TssV2TransactionsGet200ResponsePaymentInformation brands(List<TssV2TransactionsGet200ResponsePaymentInformationBrands> brands) {
+    this.brands = brands;
+    return this;
+  }
+
+  public TssV2TransactionsGet200ResponsePaymentInformation addBrandsItem(TssV2TransactionsGet200ResponsePaymentInformationBrands brandsItem) {
+    if (this.brands == null) {
+      this.brands = new ArrayList<TssV2TransactionsGet200ResponsePaymentInformationBrands>();
+    }
+    this.brands.add(brandsItem);
+    return this;
+  }
+
+   /**
+   * This array contains the supported brands. 
+   * @return brands
+  **/
+  @ApiModelProperty(value = "This array contains the supported brands. ")
+  public List<TssV2TransactionsGet200ResponsePaymentInformationBrands> getBrands() {
+    return brands;
+  }
+
+  public void setBrands(List<TssV2TransactionsGet200ResponsePaymentInformationBrands> brands) {
+    this.brands = brands;
+  }
+
+  public TssV2TransactionsGet200ResponsePaymentInformation features(TssV2TransactionsGet200ResponsePaymentInformationFeatures features) {
+    this.features = features;
+    return this;
+  }
+
+   /**
+   * Get features
+   * @return features
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponsePaymentInformationFeatures getFeatures() {
+    return features;
+  }
+
+  public void setFeatures(TssV2TransactionsGet200ResponsePaymentInformationFeatures features) {
+    this.features = features;
+  }
+
   public TssV2TransactionsGet200ResponsePaymentInformation invoice(TssV2TransactionsGet200ResponsePaymentInformationInvoice invoice) {
     this.invoice = invoice;
     return this;
@@ -138,6 +200,42 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
 
   public void setInvoice(TssV2TransactionsGet200ResponsePaymentInformationInvoice invoice) {
     this.invoice = invoice;
+  }
+
+  public TssV2TransactionsGet200ResponsePaymentInformation network(TssV2TransactionsGet200ResponsePaymentInformationNetwork network) {
+    this.network = network;
+    return this;
+  }
+
+   /**
+   * Get network
+   * @return network
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponsePaymentInformationNetwork getNetwork() {
+    return network;
+  }
+
+  public void setNetwork(TssV2TransactionsGet200ResponsePaymentInformationNetwork network) {
+    this.network = network;
+  }
+
+  public TssV2TransactionsGet200ResponsePaymentInformation issuerInformation(TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+    return this;
+  }
+
+   /**
+   * Get issuerInformation
+   * @return issuerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation getIssuerInformation() {
+    return issuerInformation;
+  }
+
+  public void setIssuerInformation(TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
   }
 
   public TssV2TransactionsGet200ResponsePaymentInformation bank(TssV2TransactionsGet200ResponsePaymentInformationBank bank) {
@@ -261,7 +359,11 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     return Objects.equals(this.paymentType, tssV2TransactionsGet200ResponsePaymentInformation.paymentType) &&
         Objects.equals(this.customer, tssV2TransactionsGet200ResponsePaymentInformation.customer) &&
         Objects.equals(this.card, tssV2TransactionsGet200ResponsePaymentInformation.card) &&
+        Objects.equals(this.brands, tssV2TransactionsGet200ResponsePaymentInformation.brands) &&
+        Objects.equals(this.features, tssV2TransactionsGet200ResponsePaymentInformation.features) &&
         Objects.equals(this.invoice, tssV2TransactionsGet200ResponsePaymentInformation.invoice) &&
+        Objects.equals(this.network, tssV2TransactionsGet200ResponsePaymentInformation.network) &&
+        Objects.equals(this.issuerInformation, tssV2TransactionsGet200ResponsePaymentInformation.issuerInformation) &&
         Objects.equals(this.bank, tssV2TransactionsGet200ResponsePaymentInformation.bank) &&
         Objects.equals(this.accountFeatures, tssV2TransactionsGet200ResponsePaymentInformation.accountFeatures) &&
         Objects.equals(this.paymentInstrument, tssV2TransactionsGet200ResponsePaymentInformation.paymentInstrument) &&
@@ -272,7 +374,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentType, customer, card, invoice, bank, accountFeatures, paymentInstrument, instrumentIdentifier, shippingAddress, fluidData);
+    return Objects.hash(paymentType, customer, card, brands, features, invoice, network, issuerInformation, bank, accountFeatures, paymentInstrument, instrumentIdentifier, shippingAddress, fluidData);
   }
 
 
@@ -284,7 +386,11 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    brands: ").append(toIndentedString(brands)).append("\n");
+    sb.append("    features: ").append(toIndentedString(features)).append("\n");
     sb.append("    invoice: ").append(toIndentedString(invoice)).append("\n");
+    sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
     sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("    accountFeatures: ").append(toIndentedString(accountFeatures)).append("\n");
     sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");

@@ -66,6 +66,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("forwardedAcquirerCode")
   private String forwardedAcquirerCode = null;
 
+  @SerializedName("settlementDate")
+  private String settlementDate = null;
+
   @SerializedName("avs")
   private PtsV2PaymentsPost201ResponseProcessorInformationAvs avs = null;
 
@@ -310,6 +313,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   public void setForwardedAcquirerCode(String forwardedAcquirerCode) {
     this.forwardedAcquirerCode = forwardedAcquirerCode;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation settlementDate(String settlementDate) {
+    this.settlementDate = settlementDate;
+    return this;
+  }
+
+   /**
+   * Field contains a settlement date. The date is in mmdd format, where: mm &#x3D; month and dd &#x3D; day. 
+   * @return settlementDate
+  **/
+  @ApiModelProperty(value = "Field contains a settlement date. The date is in mmdd format, where: mm = month and dd = day. ")
+  public String getSettlementDate() {
+    return settlementDate;
+  }
+
+  public void setSettlementDate(String settlementDate) {
+    this.settlementDate = settlementDate;
   }
 
   public PtsV2PaymentsPost201ResponseProcessorInformation avs(PtsV2PaymentsPost201ResponseProcessorInformationAvs avs) {
@@ -728,6 +749,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.responseDetails, ptsV2PaymentsPost201ResponseProcessorInformation.responseDetails) &&
         Objects.equals(this.responseCategoryCode, ptsV2PaymentsPost201ResponseProcessorInformation.responseCategoryCode) &&
         Objects.equals(this.forwardedAcquirerCode, ptsV2PaymentsPost201ResponseProcessorInformation.forwardedAcquirerCode) &&
+        Objects.equals(this.settlementDate, ptsV2PaymentsPost201ResponseProcessorInformation.settlementDate) &&
         Objects.equals(this.avs, ptsV2PaymentsPost201ResponseProcessorInformation.avs) &&
         Objects.equals(this.cardVerification, ptsV2PaymentsPost201ResponseProcessorInformation.cardVerification) &&
         Objects.equals(this.merchantAdvice, ptsV2PaymentsPost201ResponseProcessorInformation.merchantAdvice) &&
@@ -754,7 +776,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey);
   }
 
 
@@ -773,6 +795,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
     sb.append("    responseCategoryCode: ").append(toIndentedString(responseCategoryCode)).append("\n");
     sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
+    sb.append("    settlementDate: ").append(toIndentedString(settlementDate)).append("\n");
     sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
     sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
     sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");

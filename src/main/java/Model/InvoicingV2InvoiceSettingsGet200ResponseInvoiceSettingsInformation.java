@@ -51,7 +51,13 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
   private String defaultCurrencyCode = null;
 
   @SerializedName("payerAuthentication3DSVersion")
-  private String payerAuthentication3DSVersion = null;
+  private Boolean payerAuthentication3DSVersion = false;
+
+  @SerializedName("showVatNumber")
+  private Boolean showVatNumber = false;
+
+  @SerializedName("vatRegistrationNumber")
+  private String vatRegistrationNumber = null;
 
   public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation merchantLogo(String merchantLogo) {
     this.merchantLogo = merchantLogo;
@@ -179,22 +185,58 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
     this.defaultCurrencyCode = defaultCurrencyCode;
   }
 
-  public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation payerAuthentication3DSVersion(String payerAuthentication3DSVersion) {
+  public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation payerAuthentication3DSVersion(Boolean payerAuthentication3DSVersion) {
     this.payerAuthentication3DSVersion = payerAuthentication3DSVersion;
     return this;
   }
 
    /**
-   * The 3D Secure payer authentication version or status for a merchant&#39;s invoice payments. Possible values are: - &#x60;1&#x60; - &#x60;2&#x60; - &#x60;None&#x60; - &#x60;Disabled&#x60; 
+   * The 3D Secure payer authentication status for a merchant&#39;s invoice payments.
    * @return payerAuthentication3DSVersion
   **/
-  @ApiModelProperty(value = "The 3D Secure payer authentication version or status for a merchant's invoice payments. Possible values are: - `1` - `2` - `None` - `Disabled` ")
-  public String getPayerAuthentication3DSVersion() {
+  @ApiModelProperty(value = "The 3D Secure payer authentication status for a merchant's invoice payments.")
+  public Boolean getPayerAuthentication3DSVersion() {
     return payerAuthentication3DSVersion;
   }
 
-  public void setPayerAuthentication3DSVersion(String payerAuthentication3DSVersion) {
+  public void setPayerAuthentication3DSVersion(Boolean payerAuthentication3DSVersion) {
     this.payerAuthentication3DSVersion = payerAuthentication3DSVersion;
+  }
+
+  public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation showVatNumber(Boolean showVatNumber) {
+    this.showVatNumber = showVatNumber;
+    return this;
+  }
+
+   /**
+   * Display VAT number on Invoice.
+   * @return showVatNumber
+  **/
+  @ApiModelProperty(value = "Display VAT number on Invoice.")
+  public Boolean getShowVatNumber() {
+    return showVatNumber;
+  }
+
+  public void setShowVatNumber(Boolean showVatNumber) {
+    this.showVatNumber = showVatNumber;
+  }
+
+  public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation vatRegistrationNumber(String vatRegistrationNumber) {
+    this.vatRegistrationNumber = vatRegistrationNumber;
+    return this;
+  }
+
+   /**
+   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.       
+   * @return vatRegistrationNumber
+  **/
+  @ApiModelProperty(value = "Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.       ")
+  public String getVatRegistrationNumber() {
+    return vatRegistrationNumber;
+  }
+
+  public void setVatRegistrationNumber(String vatRegistrationNumber) {
+    this.vatRegistrationNumber = vatRegistrationNumber;
   }
 
 
@@ -214,12 +256,14 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
         Objects.equals(this.headerStyle, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.headerStyle) &&
         Objects.equals(this.deliveryLanguage, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.deliveryLanguage) &&
         Objects.equals(this.defaultCurrencyCode, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.defaultCurrencyCode) &&
-        Objects.equals(this.payerAuthentication3DSVersion, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.payerAuthentication3DSVersion);
+        Objects.equals(this.payerAuthentication3DSVersion, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.payerAuthentication3DSVersion) &&
+        Objects.equals(this.showVatNumber, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.showVatNumber) &&
+        Objects.equals(this.vatRegistrationNumber, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.vatRegistrationNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthentication3DSVersion);
+    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthentication3DSVersion, showVatNumber, vatRegistrationNumber);
   }
 
 
@@ -236,6 +280,8 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
     sb.append("    deliveryLanguage: ").append(toIndentedString(deliveryLanguage)).append("\n");
     sb.append("    defaultCurrencyCode: ").append(toIndentedString(defaultCurrencyCode)).append("\n");
     sb.append("    payerAuthentication3DSVersion: ").append(toIndentedString(payerAuthentication3DSVersion)).append("\n");
+    sb.append("    showVatNumber: ").append(toIndentedString(showVatNumber)).append("\n");
+    sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

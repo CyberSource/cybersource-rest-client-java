@@ -47,6 +47,9 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("actionTokenTypes")
   private List<String> actionTokenTypes = null;
 
+  @SerializedName("binSource")
+  private String binSource = null;
+
   @SerializedName("capture")
   private Boolean capture = false;
 
@@ -199,6 +202,24 @@ public class Ptsv2paymentsProcessingInformation {
 
   public void setActionTokenTypes(List<String> actionTokenTypes) {
     this.actionTokenTypes = actionTokenTypes;
+  }
+
+  public Ptsv2paymentsProcessingInformation binSource(String binSource) {
+    this.binSource = binSource;
+    return this;
+  }
+
+   /**
+   * Bin Source File Identifier. Possible values: - itmx - rupay 
+   * @return binSource
+  **/
+  @ApiModelProperty(value = "Bin Source File Identifier. Possible values: - itmx - rupay ")
+  public String getBinSource() {
+    return binSource;
+  }
+
+  public void setBinSource(String binSource) {
+    this.binSource = binSource;
   }
 
   public Ptsv2paymentsProcessingInformation capture(Boolean capture) {
@@ -718,6 +739,7 @@ public class Ptsv2paymentsProcessingInformation {
     return Objects.equals(this.actionList, ptsv2paymentsProcessingInformation.actionList) &&
         Objects.equals(this.enableEscrowOption, ptsv2paymentsProcessingInformation.enableEscrowOption) &&
         Objects.equals(this.actionTokenTypes, ptsv2paymentsProcessingInformation.actionTokenTypes) &&
+        Objects.equals(this.binSource, ptsv2paymentsProcessingInformation.binSource) &&
         Objects.equals(this.capture, ptsv2paymentsProcessingInformation.capture) &&
         Objects.equals(this.processorId, ptsv2paymentsProcessingInformation.processorId) &&
         Objects.equals(this.businessApplicationId, ptsv2paymentsProcessingInformation.businessApplicationId) &&
@@ -750,7 +772,7 @@ public class Ptsv2paymentsProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled);
   }
 
 
@@ -762,6 +784,7 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
     sb.append("    enableEscrowOption: ").append(toIndentedString(enableEscrowOption)).append("\n");
     sb.append("    actionTokenTypes: ").append(toIndentedString(actionTokenTypes)).append("\n");
+    sb.append("    binSource: ").append(toIndentedString(binSource)).append("\n");
     sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
     sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
     sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");

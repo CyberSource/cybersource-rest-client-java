@@ -53,6 +53,12 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
   @SerializedName("payerAuthenticationInInvoicing")
   private String payerAuthenticationInInvoicing = null;
 
+  @SerializedName("showVatNumber")
+  private Boolean showVatNumber = false;
+
+  @SerializedName("vatRegistrationNumber")
+  private String vatRegistrationNumber = null;
+
   public Invoicingv2invoiceSettingsInvoiceSettingsInformation merchantLogo(String merchantLogo) {
     this.merchantLogo = merchantLogo;
     return this;
@@ -197,6 +203,42 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
     this.payerAuthenticationInInvoicing = payerAuthenticationInInvoicing;
   }
 
+  public Invoicingv2invoiceSettingsInvoiceSettingsInformation showVatNumber(Boolean showVatNumber) {
+    this.showVatNumber = showVatNumber;
+    return this;
+  }
+
+   /**
+   * Display VAT number on Invoice.
+   * @return showVatNumber
+  **/
+  @ApiModelProperty(value = "Display VAT number on Invoice.")
+  public Boolean getShowVatNumber() {
+    return showVatNumber;
+  }
+
+  public void setShowVatNumber(Boolean showVatNumber) {
+    this.showVatNumber = showVatNumber;
+  }
+
+  public Invoicingv2invoiceSettingsInvoiceSettingsInformation vatRegistrationNumber(String vatRegistrationNumber) {
+    this.vatRegistrationNumber = vatRegistrationNumber;
+    return this;
+  }
+
+   /**
+   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes. 
+   * @return vatRegistrationNumber
+  **/
+  @ApiModelProperty(value = "Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes. ")
+  public String getVatRegistrationNumber() {
+    return vatRegistrationNumber;
+  }
+
+  public void setVatRegistrationNumber(String vatRegistrationNumber) {
+    this.vatRegistrationNumber = vatRegistrationNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -214,12 +256,14 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
         Objects.equals(this.headerStyle, invoicingv2invoiceSettingsInvoiceSettingsInformation.headerStyle) &&
         Objects.equals(this.deliveryLanguage, invoicingv2invoiceSettingsInvoiceSettingsInformation.deliveryLanguage) &&
         Objects.equals(this.defaultCurrencyCode, invoicingv2invoiceSettingsInvoiceSettingsInformation.defaultCurrencyCode) &&
-        Objects.equals(this.payerAuthenticationInInvoicing, invoicingv2invoiceSettingsInvoiceSettingsInformation.payerAuthenticationInInvoicing);
+        Objects.equals(this.payerAuthenticationInInvoicing, invoicingv2invoiceSettingsInvoiceSettingsInformation.payerAuthenticationInInvoicing) &&
+        Objects.equals(this.showVatNumber, invoicingv2invoiceSettingsInvoiceSettingsInformation.showVatNumber) &&
+        Objects.equals(this.vatRegistrationNumber, invoicingv2invoiceSettingsInvoiceSettingsInformation.vatRegistrationNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthenticationInInvoicing);
+    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthenticationInInvoicing, showVatNumber, vatRegistrationNumber);
   }
 
 
@@ -236,6 +280,8 @@ public class Invoicingv2invoiceSettingsInvoiceSettingsInformation {
     sb.append("    deliveryLanguage: ").append(toIndentedString(deliveryLanguage)).append("\n");
     sb.append("    defaultCurrencyCode: ").append(toIndentedString(defaultCurrencyCode)).append("\n");
     sb.append("    payerAuthenticationInInvoicing: ").append(toIndentedString(payerAuthenticationInInvoicing)).append("\n");
+    sb.append("    showVatNumber: ").append(toIndentedString(showVatNumber)).append("\n");
+    sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

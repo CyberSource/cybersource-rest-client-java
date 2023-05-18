@@ -35,6 +35,9 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsFreight {
   @SerializedName("taxable")
   private Boolean taxable = null;
 
+  @SerializedName("taxRate")
+  private String taxRate = null;
+
   public Invoicingv2invoicesOrderInformationAmountDetailsFreight amount(String amount) {
     this.amount = amount;
     return this;
@@ -71,6 +74,24 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsFreight {
     this.taxable = taxable;
   }
 
+  public Invoicingv2invoicesOrderInformationAmountDetailsFreight taxRate(String taxRate) {
+    this.taxRate = taxRate;
+    return this;
+  }
+
+   /**
+   * Shipping Tax rate applied to the freight amount.  **Visa**: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  **Mastercard**: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%). 
+   * @return taxRate
+  **/
+  @ApiModelProperty(value = "Shipping Tax rate applied to the freight amount.  **Visa**: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  **Mastercard**: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%). ")
+  public String getTaxRate() {
+    return taxRate;
+  }
+
+  public void setTaxRate(String taxRate) {
+    this.taxRate = taxRate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,12 +103,13 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsFreight {
     }
     Invoicingv2invoicesOrderInformationAmountDetailsFreight invoicingv2invoicesOrderInformationAmountDetailsFreight = (Invoicingv2invoicesOrderInformationAmountDetailsFreight) o;
     return Objects.equals(this.amount, invoicingv2invoicesOrderInformationAmountDetailsFreight.amount) &&
-        Objects.equals(this.taxable, invoicingv2invoicesOrderInformationAmountDetailsFreight.taxable);
+        Objects.equals(this.taxable, invoicingv2invoicesOrderInformationAmountDetailsFreight.taxable) &&
+        Objects.equals(this.taxRate, invoicingv2invoicesOrderInformationAmountDetailsFreight.taxRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, taxable);
+    return Objects.hash(amount, taxable, taxRate);
   }
 
 
@@ -98,6 +120,7 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsFreight {
     
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    taxable: ").append(toIndentedString(taxable)).append("\n");
+    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
