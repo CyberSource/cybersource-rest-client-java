@@ -52,6 +52,12 @@ public class TssV2TransactionsGet200ResponsePaymentInformationCard {
   @SerializedName("type")
   private String type = null;
 
+  @SerializedName("brandName")
+  private String brandName = null;
+
+  @SerializedName("currency")
+  private String currency = null;
+
   @SerializedName("accountEncoderId")
   private String accountEncoderId = null;
 
@@ -202,6 +208,42 @@ public class TssV2TransactionsGet200ResponsePaymentInformationCard {
     this.type = type;
   }
 
+  public TssV2TransactionsGet200ResponsePaymentInformationCard brandName(String brandName) {
+    this.brandName = brandName;
+    return this;
+  }
+
+   /**
+   * This field contains the card brand name.   Some of the possible values (not an exhaustive list) are -    - VISA   - MASTERCARD   - AMERICAN EXPRESS   - DISCOVER   - DINERS CLUB   - CARTE BLANCHE   - JCB   - OPTIMA   - TWINPAY CREDIT CARD   - TWINPAY DEBIT CARD   - WALMART   - ENROUTE   - LOWES CONSUMER   - HOME DEPOT CONSUMER   - MBNA   - DICKS SPORTWEAR   - CASUAL CORNER   - SEARS   - JAL   - DISNEY CARD   - SWITCH/SOLO   - SAMS CLUB CONSUMER   - SAMS CLUB BUSINESS   - NICOS HOUSE CARD   - BEBE   - RESTORATION HARDWARE   - DELTA ONLINE   - SOLO   - VISA ELECTRON   - DANKORT   - LASER   - CARTE BANCAIRE   - CARTA SI   - ENCODED ACCOUNT   - UATP   - HOUSEHOLD   - MAESTRO   - GE CAPITAL   - KOREAN CARDS   - STYLE CARDS   - JCREW   - MEIJER   - HIPERCARD   - AURA   - REDECARD   - ORICO HOUSE CARD   - ELO   - CAPITAL ONE PRIVATE LABEL   - CARNET   - RUPAY   - CHINA UNION PAY   - FALABELLA PRIVATE LABEL   - PROMPTCARD   - KOREAN DOMESTIC   - BANRICOMPRAS 
+   * @return brandName
+  **/
+  @ApiModelProperty(value = "This field contains the card brand name.   Some of the possible values (not an exhaustive list) are -    - VISA   - MASTERCARD   - AMERICAN EXPRESS   - DISCOVER   - DINERS CLUB   - CARTE BLANCHE   - JCB   - OPTIMA   - TWINPAY CREDIT CARD   - TWINPAY DEBIT CARD   - WALMART   - ENROUTE   - LOWES CONSUMER   - HOME DEPOT CONSUMER   - MBNA   - DICKS SPORTWEAR   - CASUAL CORNER   - SEARS   - JAL   - DISNEY CARD   - SWITCH/SOLO   - SAMS CLUB CONSUMER   - SAMS CLUB BUSINESS   - NICOS HOUSE CARD   - BEBE   - RESTORATION HARDWARE   - DELTA ONLINE   - SOLO   - VISA ELECTRON   - DANKORT   - LASER   - CARTE BANCAIRE   - CARTA SI   - ENCODED ACCOUNT   - UATP   - HOUSEHOLD   - MAESTRO   - GE CAPITAL   - KOREAN CARDS   - STYLE CARDS   - JCREW   - MEIJER   - HIPERCARD   - AURA   - REDECARD   - ORICO HOUSE CARD   - ELO   - CAPITAL ONE PRIVATE LABEL   - CARNET   - RUPAY   - CHINA UNION PAY   - FALABELLA PRIVATE LABEL   - PROMPTCARD   - KOREAN DOMESTIC   - BANRICOMPRAS ")
+  public String getBrandName() {
+    return brandName;
+  }
+
+  public void setBrandName(String brandName) {
+    this.brandName = brandName;
+  }
+
+  public TssV2TransactionsGet200ResponsePaymentInformationCard currency(String currency) {
+    this.currency = currency;
+    return this;
+  }
+
+   /**
+   * This field indicates the 3-letter [ISO Standard Currency Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) for the card currency. 
+   * @return currency
+  **/
+  @ApiModelProperty(value = "This field indicates the 3-letter [ISO Standard Currency Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) for the card currency. ")
+  public String getCurrency() {
+    return currency;
+  }
+
+  public void setCurrency(String currency) {
+    this.currency = currency;
+  }
+
   public TssV2TransactionsGet200ResponsePaymentInformationCard accountEncoderId(String accountEncoderId) {
     this.accountEncoderId = accountEncoderId;
     return this;
@@ -256,13 +298,15 @@ public class TssV2TransactionsGet200ResponsePaymentInformationCard {
         Objects.equals(this.startYear, tssV2TransactionsGet200ResponsePaymentInformationCard.startYear) &&
         Objects.equals(this.issueNumber, tssV2TransactionsGet200ResponsePaymentInformationCard.issueNumber) &&
         Objects.equals(this.type, tssV2TransactionsGet200ResponsePaymentInformationCard.type) &&
+        Objects.equals(this.brandName, tssV2TransactionsGet200ResponsePaymentInformationCard.brandName) &&
+        Objects.equals(this.currency, tssV2TransactionsGet200ResponsePaymentInformationCard.currency) &&
         Objects.equals(this.accountEncoderId, tssV2TransactionsGet200ResponsePaymentInformationCard.accountEncoderId) &&
         Objects.equals(this.useAs, tssV2TransactionsGet200ResponsePaymentInformationCard.useAs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(suffix, prefix, expirationMonth, expirationYear, startMonth, startYear, issueNumber, type, accountEncoderId, useAs);
+    return Objects.hash(suffix, prefix, expirationMonth, expirationYear, startMonth, startYear, issueNumber, type, brandName, currency, accountEncoderId, useAs);
   }
 
 
@@ -279,6 +323,8 @@ public class TssV2TransactionsGet200ResponsePaymentInformationCard {
     sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
     sb.append("    issueNumber: ").append(toIndentedString(issueNumber)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    brandName: ").append(toIndentedString(brandName)).append("\n");
+    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    accountEncoderId: ").append(toIndentedString(accountEncoderId)).append("\n");
     sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
     sb.append("}");

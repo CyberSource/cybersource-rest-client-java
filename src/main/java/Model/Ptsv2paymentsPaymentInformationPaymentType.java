@@ -32,6 +32,9 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
   @SerializedName("name")
   private String name = null;
 
+  @SerializedName("subTypeName")
+  private String subTypeName = null;
+
   @SerializedName("method")
   private Ptsv2paymentsPaymentInformationPaymentTypeMethod method = null;
 
@@ -51,6 +54,24 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public Ptsv2paymentsPaymentInformationPaymentType subTypeName(String subTypeName) {
+    this.subTypeName = subTypeName;
+    return this;
+  }
+
+   /**
+   * Detailed information about the Payment Type. Possible values: - &#x60;DEBIT&#x60;: Use this value to indicate a PIN debit transaction.  Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. 
+   * @return subTypeName
+  **/
+  @ApiModelProperty(value = "Detailed information about the Payment Type. Possible values: - `DEBIT`: Use this value to indicate a PIN debit transaction.  Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. ")
+  public String getSubTypeName() {
+    return subTypeName;
+  }
+
+  public void setSubTypeName(String subTypeName) {
+    this.subTypeName = subTypeName;
   }
 
   public Ptsv2paymentsPaymentInformationPaymentType method(Ptsv2paymentsPaymentInformationPaymentTypeMethod method) {
@@ -82,12 +103,13 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
     }
     Ptsv2paymentsPaymentInformationPaymentType ptsv2paymentsPaymentInformationPaymentType = (Ptsv2paymentsPaymentInformationPaymentType) o;
     return Objects.equals(this.name, ptsv2paymentsPaymentInformationPaymentType.name) &&
+        Objects.equals(this.subTypeName, ptsv2paymentsPaymentInformationPaymentType.subTypeName) &&
         Objects.equals(this.method, ptsv2paymentsPaymentInformationPaymentType.method);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, method);
+    return Objects.hash(name, subTypeName, method);
   }
 
 
@@ -97,6 +119,7 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
     sb.append("class Ptsv2paymentsPaymentInformationPaymentType {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    subTypeName: ").append(toIndentedString(subTypeName)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();

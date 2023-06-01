@@ -58,10 +58,10 @@ public class PtsV2PayoutsPost201ResponseRecipientInformationCard {
   }
 
    /**
-   * This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer. 
+   * This field indicates the 3-letter [ISO Standard Currency Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) for the card currency. 
    * @return currency
   **/
-  @ApiModelProperty(value = "This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer. ")
+  @ApiModelProperty(value = "This field indicates the 3-letter [ISO Standard Currency Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) for the card currency. ")
   public String getCurrency() {
     return currency;
   }

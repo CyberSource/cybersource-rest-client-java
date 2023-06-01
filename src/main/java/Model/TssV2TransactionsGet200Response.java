@@ -29,6 +29,7 @@ import Model.TssV2TransactionsGet200ResponseLinks;
 import Model.TssV2TransactionsGet200ResponseMerchantInformation;
 import Model.TssV2TransactionsGet200ResponseOrderInformation;
 import Model.TssV2TransactionsGet200ResponsePaymentInformation;
+import Model.TssV2TransactionsGet200ResponsePayoutOptions;
 import Model.TssV2TransactionsGet200ResponsePointOfSaleInformation;
 import Model.TssV2TransactionsGet200ResponseProcessingInformation;
 import Model.TssV2TransactionsGet200ResponseProcessorInformation;
@@ -107,6 +108,9 @@ public class TssV2TransactionsGet200Response {
 
   @SerializedName("paymentInsightsInformation")
   private PtsV2PaymentsPost201ResponsePaymentInsightsInformation paymentInsightsInformation = null;
+
+  @SerializedName("payoutOptions")
+  private TssV2TransactionsGet200ResponsePayoutOptions payoutOptions = null;
 
   @SerializedName("processingInformation")
   private TssV2TransactionsGet200ResponseProcessingInformation processingInformation = null;
@@ -479,6 +483,24 @@ public class TssV2TransactionsGet200Response {
     this.paymentInsightsInformation = paymentInsightsInformation;
   }
 
+  public TssV2TransactionsGet200Response payoutOptions(TssV2TransactionsGet200ResponsePayoutOptions payoutOptions) {
+    this.payoutOptions = payoutOptions;
+    return this;
+  }
+
+   /**
+   * Get payoutOptions
+   * @return payoutOptions
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponsePayoutOptions getPayoutOptions() {
+    return payoutOptions;
+  }
+
+  public void setPayoutOptions(TssV2TransactionsGet200ResponsePayoutOptions payoutOptions) {
+    this.payoutOptions = payoutOptions;
+  }
+
   public TssV2TransactionsGet200Response processingInformation(TssV2TransactionsGet200ResponseProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
@@ -634,6 +656,7 @@ public class TssV2TransactionsGet200Response {
         Objects.equals(this.orderInformation, tssV2TransactionsGet200Response.orderInformation) &&
         Objects.equals(this.paymentInformation, tssV2TransactionsGet200Response.paymentInformation) &&
         Objects.equals(this.paymentInsightsInformation, tssV2TransactionsGet200Response.paymentInsightsInformation) &&
+        Objects.equals(this.payoutOptions, tssV2TransactionsGet200Response.payoutOptions) &&
         Objects.equals(this.processingInformation, tssV2TransactionsGet200Response.processingInformation) &&
         Objects.equals(this.processorInformation, tssV2TransactionsGet200Response.processorInformation) &&
         Objects.equals(this.pointOfSaleInformation, tssV2TransactionsGet200Response.pointOfSaleInformation) &&
@@ -645,7 +668,7 @@ public class TssV2TransactionsGet200Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, rootId, reconciliationId, merchantId, submitTimeUTC, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, paymentInsightsInformation, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, senderInformation, tokenInformation, links);
+    return Objects.hash(id, rootId, reconciliationId, merchantId, submitTimeUTC, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, paymentInsightsInformation, payoutOptions, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, senderInformation, tokenInformation, links);
   }
 
 
@@ -673,6 +696,7 @@ public class TssV2TransactionsGet200Response {
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    paymentInsightsInformation: ").append(toIndentedString(paymentInsightsInformation)).append("\n");
+    sb.append("    payoutOptions: ").append(toIndentedString(payoutOptions)).append("\n");
     sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");

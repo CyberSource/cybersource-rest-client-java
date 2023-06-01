@@ -44,6 +44,12 @@ public class TssV2TransactionsGet200ResponseTokenInformation {
   @SerializedName("instrumentIdentifier")
   private TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier instrumentIdentifier = null;
 
+  @SerializedName("jti")
+  private String jti = null;
+
+  @SerializedName("transientTokenJwt")
+  private String transientTokenJwt = null;
+
   public TssV2TransactionsGet200ResponseTokenInformation customer(PtsV2PaymentsPost201ResponseTokenInformationCustomer customer) {
     this.customer = customer;
     return this;
@@ -116,6 +122,42 @@ public class TssV2TransactionsGet200ResponseTokenInformation {
     this.instrumentIdentifier = instrumentIdentifier;
   }
 
+  public TssV2TransactionsGet200ResponseTokenInformation jti(String jti) {
+    this.jti = jti;
+    return this;
+  }
+
+   /**
+   * TMS Transient Token, 64 hexadecimal id value representing captured payment credentials (including Sensitive Authentication Data, e.g. CVV). 
+   * @return jti
+  **/
+  @ApiModelProperty(value = "TMS Transient Token, 64 hexadecimal id value representing captured payment credentials (including Sensitive Authentication Data, e.g. CVV). ")
+  public String getJti() {
+    return jti;
+  }
+
+  public void setJti(String jti) {
+    this.jti = jti;
+  }
+
+  public TssV2TransactionsGet200ResponseTokenInformation transientTokenJwt(String transientTokenJwt) {
+    this.transientTokenJwt = transientTokenJwt;
+    return this;
+  }
+
+   /**
+   * Flex API Transient Token encoded as JWT (JSON Web Token), e.g. Flex microform or Unified Payment checkout result. 
+   * @return transientTokenJwt
+  **/
+  @ApiModelProperty(value = "Flex API Transient Token encoded as JWT (JSON Web Token), e.g. Flex microform or Unified Payment checkout result. ")
+  public String getTransientTokenJwt() {
+    return transientTokenJwt;
+  }
+
+  public void setTransientTokenJwt(String transientTokenJwt) {
+    this.transientTokenJwt = transientTokenJwt;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -129,12 +171,14 @@ public class TssV2TransactionsGet200ResponseTokenInformation {
     return Objects.equals(this.customer, tssV2TransactionsGet200ResponseTokenInformation.customer) &&
         Objects.equals(this.paymentInstrument, tssV2TransactionsGet200ResponseTokenInformation.paymentInstrument) &&
         Objects.equals(this.shippingAddress, tssV2TransactionsGet200ResponseTokenInformation.shippingAddress) &&
-        Objects.equals(this.instrumentIdentifier, tssV2TransactionsGet200ResponseTokenInformation.instrumentIdentifier);
+        Objects.equals(this.instrumentIdentifier, tssV2TransactionsGet200ResponseTokenInformation.instrumentIdentifier) &&
+        Objects.equals(this.jti, tssV2TransactionsGet200ResponseTokenInformation.jti) &&
+        Objects.equals(this.transientTokenJwt, tssV2TransactionsGet200ResponseTokenInformation.transientTokenJwt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customer, paymentInstrument, shippingAddress, instrumentIdentifier);
+    return Objects.hash(customer, paymentInstrument, shippingAddress, instrumentIdentifier, jti, transientTokenJwt);
   }
 
 
@@ -147,6 +191,8 @@ public class TssV2TransactionsGet200ResponseTokenInformation {
     sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
     sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
     sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    sb.append("    jti: ").append(toIndentedString(jti)).append("\n");
+    sb.append("    transientTokenJwt: ").append(toIndentedString(transientTokenJwt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

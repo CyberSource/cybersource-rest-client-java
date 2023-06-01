@@ -50,6 +50,9 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
   @SerializedName("networkTransactionId")
   private String networkTransactionId = null;
 
+  @SerializedName("settlementDate")
+  private String settlementDate = null;
+
   public PtsV2PaymentsRefundPost201ResponseProcessorInformation approvalCode(String approvalCode) {
     this.approvalCode = approvalCode;
     return this;
@@ -176,6 +179,24 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     this.networkTransactionId = networkTransactionId;
   }
 
+  public PtsV2PaymentsRefundPost201ResponseProcessorInformation settlementDate(String settlementDate) {
+    this.settlementDate = settlementDate;
+    return this;
+  }
+
+   /**
+   * Field contains a settlement date. The date is in mmdd format, where: mm &#x3D; month and dd &#x3D; day. 
+   * @return settlementDate
+  **/
+  @ApiModelProperty(value = "Field contains a settlement date. The date is in mmdd format, where: mm = month and dd = day. ")
+  public String getSettlementDate() {
+    return settlementDate;
+  }
+
+  public void setSettlementDate(String settlementDate) {
+    this.settlementDate = settlementDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -192,12 +213,13 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
         Objects.equals(this.merchantNumber, ptsV2PaymentsRefundPost201ResponseProcessorInformation.merchantNumber) &&
         Objects.equals(this.responseCode, ptsV2PaymentsRefundPost201ResponseProcessorInformation.responseCode) &&
         Objects.equals(this.achVerification, ptsV2PaymentsRefundPost201ResponseProcessorInformation.achVerification) &&
-        Objects.equals(this.networkTransactionId, ptsV2PaymentsRefundPost201ResponseProcessorInformation.networkTransactionId);
+        Objects.equals(this.networkTransactionId, ptsV2PaymentsRefundPost201ResponseProcessorInformation.networkTransactionId) &&
+        Objects.equals(this.settlementDate, ptsV2PaymentsRefundPost201ResponseProcessorInformation.settlementDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalCode, transactionId, forwardedAcquirerCode, merchantNumber, responseCode, achVerification, networkTransactionId);
+    return Objects.hash(approvalCode, transactionId, forwardedAcquirerCode, merchantNumber, responseCode, achVerification, networkTransactionId, settlementDate);
   }
 
 
@@ -213,6 +235,7 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
     sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
     sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
+    sb.append("    settlementDate: ").append(toIndentedString(settlementDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

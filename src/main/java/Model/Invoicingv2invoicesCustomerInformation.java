@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.Invoicingv2invoicesCustomerInformationCompany;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,6 +38,9 @@ public class Invoicingv2invoicesCustomerInformation {
 
   @SerializedName("merchantCustomerId")
   private String merchantCustomerId = null;
+
+  @SerializedName("company")
+  private Invoicingv2invoicesCustomerInformationCompany company = null;
 
   public Invoicingv2invoicesCustomerInformation name(String name) {
     this.name = name;
@@ -92,6 +96,24 @@ public class Invoicingv2invoicesCustomerInformation {
     this.merchantCustomerId = merchantCustomerId;
   }
 
+  public Invoicingv2invoicesCustomerInformation company(Invoicingv2invoicesCustomerInformationCompany company) {
+    this.company = company;
+    return this;
+  }
+
+   /**
+   * Get company
+   * @return company
+  **/
+  @ApiModelProperty(value = "")
+  public Invoicingv2invoicesCustomerInformationCompany getCompany() {
+    return company;
+  }
+
+  public void setCompany(Invoicingv2invoicesCustomerInformationCompany company) {
+    this.company = company;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,12 +126,13 @@ public class Invoicingv2invoicesCustomerInformation {
     Invoicingv2invoicesCustomerInformation invoicingv2invoicesCustomerInformation = (Invoicingv2invoicesCustomerInformation) o;
     return Objects.equals(this.name, invoicingv2invoicesCustomerInformation.name) &&
         Objects.equals(this.email, invoicingv2invoicesCustomerInformation.email) &&
-        Objects.equals(this.merchantCustomerId, invoicingv2invoicesCustomerInformation.merchantCustomerId);
+        Objects.equals(this.merchantCustomerId, invoicingv2invoicesCustomerInformation.merchantCustomerId) &&
+        Objects.equals(this.company, invoicingv2invoicesCustomerInformation.company);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, email, merchantCustomerId);
+    return Objects.hash(name, email, merchantCustomerId, company);
   }
 
 
@@ -121,6 +144,7 @@ public class Invoicingv2invoicesCustomerInformation {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
+    sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("}");
     return sb.toString();
   }
