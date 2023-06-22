@@ -56,8 +56,7 @@ public class SubscriptionsApiTest {
     @Test
     public void activateSubscriptionTest() throws ApiException {
         String id = null;
-        Object activateSubscriptionRequest = null;
-        InlineResponse2009 response = api.activateSubscription(id, activateSubscriptionRequest);
+        InlineResponse2009 response = api.activateSubscription(id);
 
         // TODO: test validations
     }
@@ -73,8 +72,7 @@ public class SubscriptionsApiTest {
     @Test
     public void cancelSubscriptionTest() throws ApiException {
         String id = null;
-        Object cancelSubscriptionRequest = null;
-        InlineResponse202 response = api.cancelSubscription(id, cancelSubscriptionRequest);
+        InlineResponse202 response = api.cancelSubscription(id);
 
         // TODO: test validations
     }
@@ -156,8 +154,7 @@ public class SubscriptionsApiTest {
     @Test
     public void suspendSubscriptionTest() throws ApiException {
         String id = null;
-        Object suspendSubscriptionRequest = null;
-        InlineResponse2021 response = api.suspendSubscription(id, suspendSubscriptionRequest);
+        InlineResponse2021 response = api.suspendSubscription(id);
 
         // TODO: test validations
     }

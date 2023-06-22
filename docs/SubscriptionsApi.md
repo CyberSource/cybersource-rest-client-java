@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="activateSubscription"></a>
 # **activateSubscription**
-> InlineResponse2009 activateSubscription(id, activateSubscriptionRequest)
+> InlineResponse2009 activateSubscription(id)
 
 Activate a Subscription
 
@@ -31,9 +31,8 @@ Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription
 
 SubscriptionsApi apiInstance = new SubscriptionsApi();
 String id = "id_example"; // String | Subscription Id
-Object activateSubscriptionRequest = null; // Object | 
 try {
-    InlineResponse2009 result = apiInstance.activateSubscription(id, activateSubscriptionRequest);
+    InlineResponse2009 result = apiInstance.activateSubscription(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#activateSubscription");
@@ -46,7 +45,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Subscription Id |
- **activateSubscriptionRequest** | **Object**|  | [optional]
 
 ### Return type
 
@@ -63,7 +61,7 @@ No authorization required
 
 <a name="cancelSubscription"></a>
 # **cancelSubscription**
-> InlineResponse202 cancelSubscription(id, cancelSubscriptionRequest)
+> InlineResponse202 cancelSubscription(id)
 
 Cancel a Subscription
 
@@ -78,9 +76,8 @@ Cancel a Subscription
 
 SubscriptionsApi apiInstance = new SubscriptionsApi();
 String id = "id_example"; // String | Subscription Id
-Object cancelSubscriptionRequest = null; // Object | 
 try {
-    InlineResponse202 result = apiInstance.cancelSubscription(id, cancelSubscriptionRequest);
+    InlineResponse202 result = apiInstance.cancelSubscription(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#cancelSubscription");
@@ -93,7 +90,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Subscription Id |
- **cancelSubscriptionRequest** | **Object**|  | [optional]
 
 ### Return type
 
@@ -292,7 +288,7 @@ No authorization required
 
 <a name="suspendSubscription"></a>
 # **suspendSubscription**
-> InlineResponse2021 suspendSubscription(id, suspendSubscriptionRequest)
+> InlineResponse2021 suspendSubscription(id)
 
 Suspend a Subscription
 
@@ -307,9 +303,8 @@ Suspend a Subscription
 
 SubscriptionsApi apiInstance = new SubscriptionsApi();
 String id = "id_example"; // String | Subscription Id
-Object suspendSubscriptionRequest = null; // Object | 
 try {
-    InlineResponse2021 result = apiInstance.suspendSubscription(id, suspendSubscriptionRequest);
+    InlineResponse2021 result = apiInstance.suspendSubscription(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#suspendSubscription");
@@ -322,7 +317,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Subscription Id |
- **suspendSubscriptionRequest** | **Object**|  | [optional]
 
 ### Return type
 

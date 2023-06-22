@@ -34,6 +34,12 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationAppli
   @SerializedName("reasonCode")
   private String reasonCode = null;
 
+  @SerializedName("status")
+  private String status = null;
+
+  @SerializedName("reason")
+  private String reason = null;
+
   @SerializedName("rCode")
   private String rCode = null;
 
@@ -83,6 +89,42 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationAppli
 
   public void setReasonCode(String reasonCode) {
     this.reasonCode = reasonCode;
+  }
+
+  public TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * The status of the submitted transaction. Note: This field may not be returned for all transactions. 
+   * @return status
+  **/
+  @ApiModelProperty(value = "The status of the submitted transaction. Note: This field may not be returned for all transactions. ")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications reason(String reason) {
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * Description of why a request failed. Note: This field may not be returned for all transactions. 
+   * @return reason
+  **/
+  @ApiModelProperty(value = "Description of why a request failed. Note: This field may not be returned for all transactions. ")
+  public String getReason() {
+    return reason;
+  }
+
+  public void setReason(String reason) {
+    this.reason = reason;
   }
 
   public TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications rCode(String rCode) {
@@ -187,6 +229,8 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationAppli
     TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications tssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications = (TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications) o;
     return Objects.equals(this.name, tssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications.name) &&
         Objects.equals(this.reasonCode, tssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications.reasonCode) &&
+        Objects.equals(this.status, tssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications.status) &&
+        Objects.equals(this.reason, tssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications.reason) &&
         Objects.equals(this.rCode, tssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications.rCode) &&
         Objects.equals(this.rFlag, tssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications.rFlag) &&
         Objects.equals(this.reconciliationId, tssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications.reconciliationId) &&
@@ -196,7 +240,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationAppli
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, reasonCode, rCode, rFlag, reconciliationId, rMessage, returnCode);
+    return Objects.hash(name, reasonCode, status, reason, rCode, rFlag, reconciliationId, rMessage, returnCode);
   }
 
 
@@ -207,6 +251,8 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationAppli
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    rCode: ").append(toIndentedString(rCode)).append("\n");
     sb.append("    rFlag: ").append(toIndentedString(rFlag)).append("\n");
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");

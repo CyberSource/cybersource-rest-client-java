@@ -40,6 +40,9 @@ public class Ptsv2paymentsRecipientInformation {
   @SerializedName("postalCode")
   private String postalCode = null;
 
+  @SerializedName("dateOfBirth")
+  private String dateOfBirth = null;
+
   public Ptsv2paymentsRecipientInformation accountId(String accountId) {
     this.accountId = accountId;
     return this;
@@ -112,6 +115,24 @@ public class Ptsv2paymentsRecipientInformation {
     this.postalCode = postalCode;
   }
 
+  public Ptsv2paymentsRecipientInformation dateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+    return this;
+  }
+
+   /**
+   * Recipient’s date of birth. **Format**: &#x60;YYYYMMDD&#x60;.  This field is a &#x60;pass-through&#x60;, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see &#x60;recipient_date_of_birth&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * @return dateOfBirth
+  **/
+  @ApiModelProperty(value = "Recipient’s date of birth. **Format**: `YYYYMMDD`.  This field is a `pass-through`, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see `recipient_date_of_birth` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  public String getDateOfBirth() {
+    return dateOfBirth;
+  }
+
+  public void setDateOfBirth(String dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +146,13 @@ public class Ptsv2paymentsRecipientInformation {
     return Objects.equals(this.accountId, ptsv2paymentsRecipientInformation.accountId) &&
         Objects.equals(this.lastName, ptsv2paymentsRecipientInformation.lastName) &&
         Objects.equals(this.middleName, ptsv2paymentsRecipientInformation.middleName) &&
-        Objects.equals(this.postalCode, ptsv2paymentsRecipientInformation.postalCode);
+        Objects.equals(this.postalCode, ptsv2paymentsRecipientInformation.postalCode) &&
+        Objects.equals(this.dateOfBirth, ptsv2paymentsRecipientInformation.dateOfBirth);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, lastName, middleName, postalCode);
+    return Objects.hash(accountId, lastName, middleName, postalCode, dateOfBirth);
   }
 
 
@@ -143,6 +165,7 @@ public class Ptsv2paymentsRecipientInformation {
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("}");
     return sb.toString();
   }

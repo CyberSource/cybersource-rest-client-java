@@ -21,6 +21,7 @@ import Model.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation;
+import Model.TssV2TransactionsPost201ResponseEmbeddedErrorInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedLinks;
 import Model.TssV2TransactionsPost201ResponseEmbeddedMerchantInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedOrderInformation;
@@ -54,6 +55,9 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
   @SerializedName("merchantId")
   private String merchantId = null;
 
+  @SerializedName("status")
+  private String status = null;
+
   @SerializedName("applicationInformation")
   private TssV2TransactionsPost201ResponseEmbeddedApplicationInformation applicationInformation = null;
 
@@ -68,6 +72,9 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
 
   @SerializedName("deviceInformation")
   private Riskv1authenticationresultsDeviceInformation deviceInformation = null;
+
+  @SerializedName("errorInformation")
+  private TssV2TransactionsPost201ResponseEmbeddedErrorInformation errorInformation = null;
 
   @SerializedName("fraudMarkingInformation")
   private TssV2TransactionsGet200ResponseFraudMarkingInformation fraudMarkingInformation = null;
@@ -151,6 +158,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
 
   public void setMerchantId(String merchantId) {
     this.merchantId = merchantId;
+  }
+
+  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * The status of the submitted transaction. Note: This field may not be returned for all transactions. 
+   * @return status
+  **/
+  @ApiModelProperty(value = "The status of the submitted transaction. Note: This field may not be returned for all transactions. ")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries applicationInformation(TssV2TransactionsPost201ResponseEmbeddedApplicationInformation applicationInformation) {
@@ -241,6 +266,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
 
   public void setDeviceInformation(Riskv1authenticationresultsDeviceInformation deviceInformation) {
     this.deviceInformation = deviceInformation;
+  }
+
+  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries errorInformation(TssV2TransactionsPost201ResponseEmbeddedErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
+    return this;
+  }
+
+   /**
+   * Get errorInformation
+   * @return errorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsPost201ResponseEmbeddedErrorInformation getErrorInformation() {
+    return errorInformation;
+  }
+
+  public void setErrorInformation(TssV2TransactionsPost201ResponseEmbeddedErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
   }
 
   public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries fraudMarkingInformation(TssV2TransactionsGet200ResponseFraudMarkingInformation fraudMarkingInformation) {
@@ -444,11 +487,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
     return Objects.equals(this.id, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.id) &&
         Objects.equals(this.submitTimeUtc, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.submitTimeUtc) &&
         Objects.equals(this.merchantId, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.merchantId) &&
+        Objects.equals(this.status, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.status) &&
         Objects.equals(this.applicationInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.applicationInformation) &&
         Objects.equals(this.buyerInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.buyerInformation) &&
         Objects.equals(this.clientReferenceInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.clientReferenceInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.consumerAuthenticationInformation) &&
         Objects.equals(this.deviceInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.deviceInformation) &&
+        Objects.equals(this.errorInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.errorInformation) &&
         Objects.equals(this.fraudMarkingInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.fraudMarkingInformation) &&
         Objects.equals(this.merchantDefinedInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.merchantDefinedInformation) &&
         Objects.equals(this.merchantInformation, tssV2TransactionsPost201ResponseEmbeddedTransactionSummaries.merchantInformation) &&
@@ -463,7 +508,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, submitTimeUtc, merchantId, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, fraudMarkingInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, links);
+    return Objects.hash(id, submitTimeUtc, merchantId, status, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, fraudMarkingInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, links);
   }
 
 
@@ -475,11 +520,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    applicationInformation: ").append(toIndentedString(applicationInformation)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
     sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
+    sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("    fraudMarkingInformation: ").append(toIndentedString(fraudMarkingInformation)).append("\n");
     sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
     sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");

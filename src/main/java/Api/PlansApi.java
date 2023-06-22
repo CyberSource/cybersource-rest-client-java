@@ -74,14 +74,16 @@ public class PlansApi {
     /**
      * Build call for activatePlan
      * @param id Plan Id (required)
-     * @param activatePlanRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call activatePlanCall(String id, Object activatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = activatePlanRequest;
+    public okhttp3.Call activatePlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        if ("POST".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/rbs/v1/plans/{id}/activate"
@@ -122,7 +124,7 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call activatePlanValidateBeforeCall(String id, Object activatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call activatePlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -131,7 +133,7 @@ public class PlansApi {
         }
         
         
-        okhttp3.Call call = activatePlanCall(id, activatePlanRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = activatePlanCall(id, progressListener, progressRequestListener);
         return call;
 
         
@@ -144,14 +146,13 @@ public class PlansApi {
      * Activate a Plan
      * Activate a Plan
      * @param id Plan Id (required)
-     * @param activatePlanRequest  (optional)
      * @return InlineResponse2004
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2004 activatePlan(String id, Object activatePlanRequest) throws ApiException {
+    public InlineResponse2004 activatePlan(String id) throws ApiException {
     	logger.info("CALL TO METHOD 'activatePlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2004> resp = activatePlanWithHttpInfo(id, activatePlanRequest);
+        ApiResponse<InlineResponse2004> resp = activatePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'activatePlan' ENDED");
         return resp.getData();
     }
@@ -160,12 +161,11 @@ public class PlansApi {
      * Activate a Plan
      * Activate a Plan
      * @param id Plan Id (required)
-     * @param activatePlanRequest  (optional)
      * @return ApiResponse&lt;InlineResponse2004&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2004> activatePlanWithHttpInfo(String id, Object activatePlanRequest) throws ApiException {
-        okhttp3.Call call = activatePlanValidateBeforeCall(id, activatePlanRequest, null, null);
+    public ApiResponse<InlineResponse2004> activatePlanWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call call = activatePlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -174,12 +174,11 @@ public class PlansApi {
      * Activate a Plan (asynchronously)
      * Activate a Plan
      * @param id Plan Id (required)
-     * @param activatePlanRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call activatePlanAsync(String id, Object activatePlanRequest, final ApiCallback<InlineResponse2004> callback) throws ApiException {
+    public okhttp3.Call activatePlanAsync(String id, final ApiCallback<InlineResponse2004> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -201,7 +200,7 @@ public class PlansApi {
             };
         }
 
-        okhttp3.Call call = activatePlanValidateBeforeCall(id, activatePlanRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = activatePlanValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -339,14 +338,16 @@ public class PlansApi {
     /**
      * Build call for deactivatePlan
      * @param id Plan Id (required)
-     * @param deactivatePlanRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deactivatePlanCall(String id, Object deactivatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = deactivatePlanRequest;
+    public okhttp3.Call deactivatePlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        if ("POST".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/rbs/v1/plans/{id}/deactivate"
@@ -387,7 +388,7 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deactivatePlanValidateBeforeCall(String id, Object deactivatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deactivatePlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -396,7 +397,7 @@ public class PlansApi {
         }
         
         
-        okhttp3.Call call = deactivatePlanCall(id, deactivatePlanRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = deactivatePlanCall(id, progressListener, progressRequestListener);
         return call;
 
         
@@ -409,14 +410,13 @@ public class PlansApi {
      * Deactivate a Plan
      * Deactivate a Plan
      * @param id Plan Id (required)
-     * @param deactivatePlanRequest  (optional)
      * @return InlineResponse2004
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2004 deactivatePlan(String id, Object deactivatePlanRequest) throws ApiException {
+    public InlineResponse2004 deactivatePlan(String id) throws ApiException {
     	logger.info("CALL TO METHOD 'deactivatePlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2004> resp = deactivatePlanWithHttpInfo(id, deactivatePlanRequest);
+        ApiResponse<InlineResponse2004> resp = deactivatePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'deactivatePlan' ENDED");
         return resp.getData();
     }
@@ -425,12 +425,11 @@ public class PlansApi {
      * Deactivate a Plan
      * Deactivate a Plan
      * @param id Plan Id (required)
-     * @param deactivatePlanRequest  (optional)
      * @return ApiResponse&lt;InlineResponse2004&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2004> deactivatePlanWithHttpInfo(String id, Object deactivatePlanRequest) throws ApiException {
-        okhttp3.Call call = deactivatePlanValidateBeforeCall(id, deactivatePlanRequest, null, null);
+    public ApiResponse<InlineResponse2004> deactivatePlanWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call call = deactivatePlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -439,12 +438,11 @@ public class PlansApi {
      * Deactivate a Plan (asynchronously)
      * Deactivate a Plan
      * @param id Plan Id (required)
-     * @param deactivatePlanRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deactivatePlanAsync(String id, Object deactivatePlanRequest, final ApiCallback<InlineResponse2004> callback) throws ApiException {
+    public okhttp3.Call deactivatePlanAsync(String id, final ApiCallback<InlineResponse2004> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -466,7 +464,7 @@ public class PlansApi {
             };
         }
 
-        okhttp3.Call call = deactivatePlanValidateBeforeCall(id, deactivatePlanRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = deactivatePlanValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
