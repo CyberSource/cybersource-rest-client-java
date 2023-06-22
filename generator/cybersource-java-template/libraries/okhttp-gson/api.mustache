@@ -45,6 +45,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 {{#operations}}
 public class {{classname}} {
@@ -78,8 +79,9 @@ public class {{classname}} {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call {{operationId}}Call({{#allParams}}{{{dataType}}} {{paramName}}, {{/allParams}}final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object {{localVariablePrefix}}localVarPostBody = {{#bodyParam}}{{paramName}}{{/bodyParam}}{{^bodyParam}}null{{/bodyParam}};
-        {{^bodyParam}}
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(capturePaymentRequest, CapturePaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());;
+{{^bodyParam}}
         if ("{{httpMethod}}".equalsIgnoreCase("POST")) {
             {{localVariablePrefix}}localVarPostBody = "{}";
         }
@@ -135,7 +137,7 @@ public class {{classname}} {
         {{#allParams}}{{#required}}
         // verify the required parameter '{{paramName}}' is set
         if ({{paramName}} == null) {
-        	logger.error("Missing the required parameter '{{paramName}}' when calling {{operationId}}(Async)");
+            logger.error("Missing the required parameter '{{paramName}}' when calling {{operationId}}(Async)");
             throw new ApiException("Missing the required parameter '{{paramName}}' when calling {{operationId}}(Async)");
         }
         {{/required}}{{/allParams}}
@@ -184,10 +186,10 @@ public class {{classname}} {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public {{#returnType}}{{{returnType}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{operationId}}({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
-    	logger.info("CALL TO METHOD '{{operationId}}' STARTED");
+        logger.info("CALL TO METHOD '{{operationId}}' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         {{#returnType}}ApiResponse<{{{returnType}}}> {{localVariablePrefix}}resp = {{/returnType}}{{operationId}}WithHttpInfo({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
-		{{#returnType}}
+        {{#returnType}}
         logger.info("CALL TO METHOD '{{operationId}}' ENDED");
         return {{localVariablePrefix}}resp.getData();{{/returnType}}
     }
