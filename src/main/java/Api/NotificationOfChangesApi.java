@@ -40,6 +40,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class NotificationOfChangesApi {
     private static Logger logger = LogManager.getLogger(NotificationOfChangesApi.class);
@@ -72,6 +73,7 @@ public class NotificationOfChangesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getNotificationOfChangeReportCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -123,13 +125,13 @@ public class NotificationOfChangesApi {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
-        	logger.error("Missing the required parameter 'startTime' when calling getNotificationOfChangeReport(Async)");
+            logger.error("Missing the required parameter 'startTime' when calling getNotificationOfChangeReport(Async)");
             throw new ApiException("Missing the required parameter 'startTime' when calling getNotificationOfChangeReport(Async)");
         }
         
         // verify the required parameter 'endTime' is set
         if (endTime == null) {
-        	logger.error("Missing the required parameter 'endTime' when calling getNotificationOfChangeReport(Async)");
+            logger.error("Missing the required parameter 'endTime' when calling getNotificationOfChangeReport(Async)");
             throw new ApiException("Missing the required parameter 'endTime' when calling getNotificationOfChangeReport(Async)");
         }
         
@@ -152,7 +154,7 @@ public class NotificationOfChangesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3NotificationofChangesGet200Response getNotificationOfChangeReport(DateTime startTime, DateTime endTime) throws ApiException {
-    	logger.info("CALL TO METHOD 'getNotificationOfChangeReport' STARTED");
+        logger.info("CALL TO METHOD 'getNotificationOfChangeReport' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3NotificationofChangesGet200Response> resp = getNotificationOfChangeReportWithHttpInfo(startTime, endTime);
         logger.info("CALL TO METHOD 'getNotificationOfChangeReport' ENDED");

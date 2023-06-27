@@ -41,6 +41,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class SearchTransactionsApi {
     private static Logger logger = LogManager.getLogger(SearchTransactionsApi.class);
@@ -72,7 +73,8 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call createSearchCall(CreateSearchRequest createSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createSearchRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSearchRequest, CreateSearchRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/tss/v2/searches";
@@ -116,7 +118,7 @@ public class SearchTransactionsApi {
         
         // verify the required parameter 'createSearchRequest' is set
         if (createSearchRequest == null) {
-        	logger.error("Missing the required parameter 'createSearchRequest' when calling createSearch(Async)");
+            logger.error("Missing the required parameter 'createSearchRequest' when calling createSearch(Async)");
             throw new ApiException("Missing the required parameter 'createSearchRequest' when calling createSearch(Async)");
         }
         
@@ -138,7 +140,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TssV2TransactionsPost201Response createSearch(CreateSearchRequest createSearchRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'createSearch' STARTED");
+        logger.info("CALL TO METHOD 'createSearch' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = createSearchWithHttpInfo(createSearchRequest);
         logger.info("CALL TO METHOD 'createSearch' ENDED");
@@ -202,6 +204,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getSearchCall(String searchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -250,7 +253,7 @@ public class SearchTransactionsApi {
         
         // verify the required parameter 'searchId' is set
         if (searchId == null) {
-        	logger.error("Missing the required parameter 'searchId' when calling getSearch(Async)");
+            logger.error("Missing the required parameter 'searchId' when calling getSearch(Async)");
             throw new ApiException("Missing the required parameter 'searchId' when calling getSearch(Async)");
         }
         
@@ -272,7 +275,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TssV2TransactionsPost201Response getSearch(String searchId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getSearch' STARTED");
+        logger.info("CALL TO METHOD 'getSearch' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = getSearchWithHttpInfo(searchId);
         logger.info("CALL TO METHOD 'getSearch' ENDED");

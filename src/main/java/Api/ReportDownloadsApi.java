@@ -39,6 +39,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class ReportDownloadsApi {
     private static Logger logger = LogManager.getLogger(ReportDownloadsApi.class);
@@ -72,6 +73,7 @@ public class ReportDownloadsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call downloadReportCall(LocalDate reportDate, String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -125,13 +127,13 @@ public class ReportDownloadsApi {
         
         // verify the required parameter 'reportDate' is set
         if (reportDate == null) {
-        	logger.error("Missing the required parameter 'reportDate' when calling downloadReport(Async)");
+            logger.error("Missing the required parameter 'reportDate' when calling downloadReport(Async)");
             throw new ApiException("Missing the required parameter 'reportDate' when calling downloadReport(Async)");
         }
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
-        	logger.error("Missing the required parameter 'reportName' when calling downloadReport(Async)");
+            logger.error("Missing the required parameter 'reportName' when calling downloadReport(Async)");
             throw new ApiException("Missing the required parameter 'reportName' when calling downloadReport(Async)");
         }
         
@@ -154,7 +156,7 @@ public class ReportDownloadsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void downloadReport(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
-    	logger.info("CALL TO METHOD 'downloadReport' STARTED");
+        logger.info("CALL TO METHOD 'downloadReport' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         downloadReportWithHttpInfo(reportDate, reportName, organizationId);
 

@@ -46,6 +46,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class PaymentsApi {
     private static Logger logger = LogManager.getLogger(PaymentsApi.class);
@@ -77,7 +78,8 @@ public class PaymentsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call createPaymentCall(CreatePaymentRequest createPaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createPaymentRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createPaymentRequest, CreatePaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/payments";
@@ -121,7 +123,7 @@ public class PaymentsApi {
         
         // verify the required parameter 'createPaymentRequest' is set
         if (createPaymentRequest == null) {
-        	logger.error("Missing the required parameter 'createPaymentRequest' when calling createPayment(Async)");
+            logger.error("Missing the required parameter 'createPaymentRequest' when calling createPayment(Async)");
             throw new ApiException("Missing the required parameter 'createPaymentRequest' when calling createPayment(Async)");
         }
         
@@ -143,7 +145,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsPost201Response createPayment(CreatePaymentRequest createPaymentRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'createPayment' STARTED");
+        logger.info("CALL TO METHOD 'createPayment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsPost201Response> resp = createPaymentWithHttpInfo(createPaymentRequest);
         logger.info("CALL TO METHOD 'createPayment' ENDED");
@@ -208,7 +210,8 @@ public class PaymentsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call incrementAuthCall(String id, IncrementAuthRequest incrementAuthRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = incrementAuthRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(incrementAuthRequest, IncrementAuthRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/payments/{id}"
@@ -253,13 +256,13 @@ public class PaymentsApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling incrementAuth(Async)");
+            logger.error("Missing the required parameter 'id' when calling incrementAuth(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling incrementAuth(Async)");
         }
         
         // verify the required parameter 'incrementAuthRequest' is set
         if (incrementAuthRequest == null) {
-        	logger.error("Missing the required parameter 'incrementAuthRequest' when calling incrementAuth(Async)");
+            logger.error("Missing the required parameter 'incrementAuthRequest' when calling incrementAuth(Async)");
             throw new ApiException("Missing the required parameter 'incrementAuthRequest' when calling incrementAuth(Async)");
         }
         
@@ -282,7 +285,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2IncrementalAuthorizationPatch201Response incrementAuth(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'incrementAuth' STARTED");
+        logger.info("CALL TO METHOD 'incrementAuth' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2IncrementalAuthorizationPatch201Response> resp = incrementAuthWithHttpInfo(id, incrementAuthRequest);
         logger.info("CALL TO METHOD 'incrementAuth' ENDED");
@@ -349,7 +352,8 @@ public class PaymentsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call refreshPaymentStatusCall(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = refreshPaymentStatusRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(refreshPaymentStatusRequest, RefreshPaymentStatusRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/refresh-payment-status/{id}"
@@ -394,13 +398,13 @@ public class PaymentsApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling refreshPaymentStatus(Async)");
+            logger.error("Missing the required parameter 'id' when calling refreshPaymentStatus(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling refreshPaymentStatus(Async)");
         }
         
         // verify the required parameter 'refreshPaymentStatusRequest' is set
         if (refreshPaymentStatusRequest == null) {
-        	logger.error("Missing the required parameter 'refreshPaymentStatusRequest' when calling refreshPaymentStatus(Async)");
+            logger.error("Missing the required parameter 'refreshPaymentStatusRequest' when calling refreshPaymentStatus(Async)");
             throw new ApiException("Missing the required parameter 'refreshPaymentStatusRequest' when calling refreshPaymentStatus(Async)");
         }
         
@@ -423,7 +427,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsPost201Response1 refreshPaymentStatus(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'refreshPaymentStatus' STARTED");
+        logger.info("CALL TO METHOD 'refreshPaymentStatus' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsPost201Response1> resp = refreshPaymentStatusWithHttpInfo(id, refreshPaymentStatusRequest);
         logger.info("CALL TO METHOD 'refreshPaymentStatus' ENDED");

@@ -39,6 +39,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class UserManagementApi {
     private static Logger logger = LogManager.getLogger(UserManagementApi.class);
@@ -73,6 +74,7 @@ public class UserManagementApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getUsersCall(String organizationId, String userName, String permissionId, String roleId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -147,7 +149,7 @@ public class UserManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public UmsV1UsersGet200Response getUsers(String organizationId, String userName, String permissionId, String roleId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getUsers' STARTED");
+        logger.info("CALL TO METHOD 'getUsers' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<UmsV1UsersGet200Response> resp = getUsersWithHttpInfo(organizationId, userName, permissionId, roleId);
         logger.info("CALL TO METHOD 'getUsers' ENDED");

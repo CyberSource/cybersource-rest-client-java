@@ -40,6 +40,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class KeyManagementScmpApi {
     private static Logger logger = LogManager.getLogger(KeyManagementScmpApi.class);
@@ -72,7 +73,8 @@ public class KeyManagementScmpApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call updateSCMPCall(String keyId, UpdatePGPKeysRequest1 updatePGPKeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = updatePGPKeysRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePGPKeysRequest, UpdatePGPKeysRequest1.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-scmp/{keyId}"
@@ -117,13 +119,13 @@ public class KeyManagementScmpApi {
         
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
-        	logger.error("Missing the required parameter 'keyId' when calling updateSCMP(Async)");
+            logger.error("Missing the required parameter 'keyId' when calling updateSCMP(Async)");
             throw new ApiException("Missing the required parameter 'keyId' when calling updateSCMP(Async)");
         }
         
         // verify the required parameter 'updatePGPKeysRequest' is set
         if (updatePGPKeysRequest == null) {
-        	logger.error("Missing the required parameter 'updatePGPKeysRequest' when calling updateSCMP(Async)");
+            logger.error("Missing the required parameter 'updatePGPKeysRequest' when calling updateSCMP(Async)");
             throw new ApiException("Missing the required parameter 'updatePGPKeysRequest' when calling updateSCMP(Async)");
         }
         
@@ -146,7 +148,7 @@ public class KeyManagementScmpApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Object updateSCMP(String keyId, UpdatePGPKeysRequest1 updatePGPKeysRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'updateSCMP' STARTED");
+        logger.info("CALL TO METHOD 'updateSCMP' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Object> resp = updateSCMPWithHttpInfo(keyId, updatePGPKeysRequest);
         logger.info("CALL TO METHOD 'updateSCMP' ENDED");

@@ -47,6 +47,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class CustomerApi {
     private static Logger logger = LogManager.getLogger(CustomerApi.class);
@@ -79,6 +80,7 @@ public class CustomerApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call deleteCustomerCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -129,7 +131,7 @@ public class CustomerApi {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
-        	logger.error("Missing the required parameter 'customerId' when calling deleteCustomer(Async)");
+            logger.error("Missing the required parameter 'customerId' when calling deleteCustomer(Async)");
             throw new ApiException("Missing the required parameter 'customerId' when calling deleteCustomer(Async)");
         }
         
@@ -151,7 +153,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteCustomer(String customerId, String profileId) throws ApiException {
-    	logger.info("CALL TO METHOD 'deleteCustomer' STARTED");
+        logger.info("CALL TO METHOD 'deleteCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerWithHttpInfo(customerId, profileId);
 
@@ -215,6 +217,7 @@ public class CustomerApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getCustomerCall(String customerId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -265,7 +268,7 @@ public class CustomerApi {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
-        	logger.error("Missing the required parameter 'customerId' when calling getCustomer(Async)");
+            logger.error("Missing the required parameter 'customerId' when calling getCustomer(Async)");
             throw new ApiException("Missing the required parameter 'customerId' when calling getCustomer(Async)");
         }
         
@@ -288,7 +291,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TmsV2CustomersResponse getCustomer(String customerId, String profileId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getCustomer' STARTED");
+        logger.info("CALL TO METHOD 'getCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = getCustomerWithHttpInfo(customerId, profileId);
         logger.info("CALL TO METHOD 'getCustomer' ENDED");
@@ -357,7 +360,8 @@ public class CustomerApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call patchCustomerCall(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = patchCustomerRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerRequest, PatchCustomerRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}"
@@ -406,13 +410,13 @@ public class CustomerApi {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
-        	logger.error("Missing the required parameter 'customerId' when calling patchCustomer(Async)");
+            logger.error("Missing the required parameter 'customerId' when calling patchCustomer(Async)");
             throw new ApiException("Missing the required parameter 'customerId' when calling patchCustomer(Async)");
         }
         
         // verify the required parameter 'patchCustomerRequest' is set
         if (patchCustomerRequest == null) {
-        	logger.error("Missing the required parameter 'patchCustomerRequest' when calling patchCustomer(Async)");
+            logger.error("Missing the required parameter 'patchCustomerRequest' when calling patchCustomer(Async)");
             throw new ApiException("Missing the required parameter 'patchCustomerRequest' when calling patchCustomer(Async)");
         }
         
@@ -437,7 +441,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TmsV2CustomersResponse patchCustomer(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
-    	logger.info("CALL TO METHOD 'patchCustomer' STARTED");
+        logger.info("CALL TO METHOD 'patchCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = patchCustomerWithHttpInfo(customerId, patchCustomerRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomer' ENDED");
@@ -508,7 +512,8 @@ public class CustomerApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call postCustomerCall(PostCustomerRequest postCustomerRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = postCustomerRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerRequest, PostCustomerRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers";
@@ -554,7 +559,7 @@ public class CustomerApi {
         
         // verify the required parameter 'postCustomerRequest' is set
         if (postCustomerRequest == null) {
-        	logger.error("Missing the required parameter 'postCustomerRequest' when calling postCustomer(Async)");
+            logger.error("Missing the required parameter 'postCustomerRequest' when calling postCustomer(Async)");
             throw new ApiException("Missing the required parameter 'postCustomerRequest' when calling postCustomer(Async)");
         }
         
@@ -577,7 +582,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TmsV2CustomersResponse postCustomer(PostCustomerRequest postCustomerRequest, String profileId) throws ApiException {
-    	logger.info("CALL TO METHOD 'postCustomer' STARTED");
+        logger.info("CALL TO METHOD 'postCustomer' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TmsV2CustomersResponse> resp = postCustomerWithHttpInfo(postCustomerRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomer' ENDED");

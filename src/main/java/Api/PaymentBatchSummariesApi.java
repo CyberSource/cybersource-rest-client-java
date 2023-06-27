@@ -40,6 +40,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class PaymentBatchSummariesApi {
     private static Logger logger = LogManager.getLogger(PaymentBatchSummariesApi.class);
@@ -76,6 +77,7 @@ public class PaymentBatchSummariesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getPaymentBatchSummaryCall(DateTime startTime, DateTime endTime, String organizationId, String rollUp, String breakdown, Integer startDayOfWeek, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -135,13 +137,13 @@ public class PaymentBatchSummariesApi {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
-        	logger.error("Missing the required parameter 'startTime' when calling getPaymentBatchSummary(Async)");
+            logger.error("Missing the required parameter 'startTime' when calling getPaymentBatchSummary(Async)");
             throw new ApiException("Missing the required parameter 'startTime' when calling getPaymentBatchSummary(Async)");
         }
         
         // verify the required parameter 'endTime' is set
         if (endTime == null) {
-        	logger.error("Missing the required parameter 'endTime' when calling getPaymentBatchSummary(Async)");
+            logger.error("Missing the required parameter 'endTime' when calling getPaymentBatchSummary(Async)");
             throw new ApiException("Missing the required parameter 'endTime' when calling getPaymentBatchSummary(Async)");
         }
         
@@ -168,7 +170,7 @@ public class PaymentBatchSummariesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3PaymentBatchSummariesGet200Response getPaymentBatchSummary(DateTime startTime, DateTime endTime, String organizationId, String rollUp, String breakdown, Integer startDayOfWeek) throws ApiException {
-    	logger.info("CALL TO METHOD 'getPaymentBatchSummary' STARTED");
+        logger.info("CALL TO METHOD 'getPaymentBatchSummary' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3PaymentBatchSummariesGet200Response> resp = getPaymentBatchSummaryWithHttpInfo(startTime, endTime, organizationId, rollUp, breakdown, startDayOfWeek);
         logger.info("CALL TO METHOD 'getPaymentBatchSummary' ENDED");

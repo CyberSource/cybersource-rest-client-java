@@ -42,6 +42,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class ReversalApi {
     private static Logger logger = LogManager.getLogger(ReversalApi.class);
@@ -74,7 +75,8 @@ public class ReversalApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call authReversalCall(String id, AuthReversalRequest authReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = authReversalRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(authReversalRequest, AuthReversalRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/payments/{id}/reversals"
@@ -119,13 +121,13 @@ public class ReversalApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling authReversal(Async)");
+            logger.error("Missing the required parameter 'id' when calling authReversal(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling authReversal(Async)");
         }
         
         // verify the required parameter 'authReversalRequest' is set
         if (authReversalRequest == null) {
-        	logger.error("Missing the required parameter 'authReversalRequest' when calling authReversal(Async)");
+            logger.error("Missing the required parameter 'authReversalRequest' when calling authReversal(Async)");
             throw new ApiException("Missing the required parameter 'authReversalRequest' when calling authReversal(Async)");
         }
         
@@ -148,7 +150,7 @@ public class ReversalApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsReversalsPost201Response authReversal(String id, AuthReversalRequest authReversalRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'authReversal' STARTED");
+        logger.info("CALL TO METHOD 'authReversal' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = authReversalWithHttpInfo(id, authReversalRequest);
         logger.info("CALL TO METHOD 'authReversal' ENDED");
@@ -214,7 +216,8 @@ public class ReversalApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call mitReversalCall(MitReversalRequest mitReversalRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = mitReversalRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(mitReversalRequest, MitReversalRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/reversals";
@@ -258,7 +261,7 @@ public class ReversalApi {
         
         // verify the required parameter 'mitReversalRequest' is set
         if (mitReversalRequest == null) {
-        	logger.error("Missing the required parameter 'mitReversalRequest' when calling mitReversal(Async)");
+            logger.error("Missing the required parameter 'mitReversalRequest' when calling mitReversal(Async)");
             throw new ApiException("Missing the required parameter 'mitReversalRequest' when calling mitReversal(Async)");
         }
         
@@ -280,7 +283,7 @@ public class ReversalApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsReversalsPost201Response mitReversal(MitReversalRequest mitReversalRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'mitReversal' STARTED");
+        logger.info("CALL TO METHOD 'mitReversal' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsReversalsPost201Response> resp = mitReversalWithHttpInfo(mitReversalRequest);
         logger.info("CALL TO METHOD 'mitReversal' ENDED");

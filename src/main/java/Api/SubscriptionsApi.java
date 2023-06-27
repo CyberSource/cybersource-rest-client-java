@@ -51,6 +51,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class SubscriptionsApi {
     private static Logger logger = LogManager.getLogger(SubscriptionsApi.class);
@@ -82,6 +83,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call activateSubscriptionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -98,7 +100,7 @@ public class SubscriptionsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -130,7 +132,7 @@ public class SubscriptionsApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling activateSubscription(Async)");
+            logger.error("Missing the required parameter 'id' when calling activateSubscription(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling activateSubscription(Async)");
         }
         
@@ -152,7 +154,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2009 activateSubscription(String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'activateSubscription' STARTED");
+        logger.info("CALL TO METHOD 'activateSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2009> resp = activateSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'activateSubscription' ENDED");
@@ -216,6 +218,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call cancelSubscriptionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -232,7 +235,7 @@ public class SubscriptionsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -264,7 +267,7 @@ public class SubscriptionsApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling cancelSubscription(Async)");
+            logger.error("Missing the required parameter 'id' when calling cancelSubscription(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling cancelSubscription(Async)");
         }
         
@@ -286,7 +289,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse202 cancelSubscription(String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'cancelSubscription' STARTED");
+        logger.info("CALL TO METHOD 'cancelSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse202> resp = cancelSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'cancelSubscription' ENDED");
@@ -350,7 +353,8 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call createSubscriptionCall(CreateSubscriptionRequest createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createSubscriptionRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSubscriptionRequest, CreateSubscriptionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/rbs/v1/subscriptions";
@@ -362,7 +366,7 @@ public class SubscriptionsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -394,7 +398,7 @@ public class SubscriptionsApi {
         
         // verify the required parameter 'createSubscriptionRequest' is set
         if (createSubscriptionRequest == null) {
-        	logger.error("Missing the required parameter 'createSubscriptionRequest' when calling createSubscription(Async)");
+            logger.error("Missing the required parameter 'createSubscriptionRequest' when calling createSubscription(Async)");
             throw new ApiException("Missing the required parameter 'createSubscriptionRequest' when calling createSubscription(Async)");
         }
         
@@ -416,7 +420,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2011 createSubscription(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'createSubscription' STARTED");
+        logger.info("CALL TO METHOD 'createSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2011> resp = createSubscriptionWithHttpInfo(createSubscriptionRequest);
         logger.info("CALL TO METHOD 'createSubscription' ENDED");
@@ -483,6 +487,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getAllSubscriptionsCall(Integer offset, Integer limit, String code, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -506,7 +511,7 @@ public class SubscriptionsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -557,7 +562,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2006 getAllSubscriptions(Integer offset, Integer limit, String code, String status) throws ApiException {
-    	logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
+        logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2006> resp = getAllSubscriptionsWithHttpInfo(offset, limit, code, status);
         logger.info("CALL TO METHOD 'getAllSubscriptions' ENDED");
@@ -627,6 +632,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getSubscriptionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -643,7 +649,7 @@ public class SubscriptionsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -675,7 +681,7 @@ public class SubscriptionsApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling getSubscription(Async)");
+            logger.error("Missing the required parameter 'id' when calling getSubscription(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling getSubscription(Async)");
         }
         
@@ -697,7 +703,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2007 getSubscription(String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'getSubscription' STARTED");
+        logger.info("CALL TO METHOD 'getSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2007> resp = getSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getSubscription' ENDED");
@@ -760,6 +766,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getSubscriptionCodeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -775,7 +782,7 @@ public class SubscriptionsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -822,7 +829,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse20010 getSubscriptionCode() throws ApiException {
-    	logger.info("CALL TO METHOD 'getSubscriptionCode' STARTED");
+        logger.info("CALL TO METHOD 'getSubscriptionCode' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse20010> resp = getSubscriptionCodeWithHttpInfo();
         logger.info("CALL TO METHOD 'getSubscriptionCode' ENDED");
@@ -884,6 +891,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call suspendSubscriptionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -900,7 +908,7 @@ public class SubscriptionsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -932,7 +940,7 @@ public class SubscriptionsApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling suspendSubscription(Async)");
+            logger.error("Missing the required parameter 'id' when calling suspendSubscription(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling suspendSubscription(Async)");
         }
         
@@ -954,7 +962,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2021 suspendSubscription(String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'suspendSubscription' STARTED");
+        logger.info("CALL TO METHOD 'suspendSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2021> resp = suspendSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'suspendSubscription' ENDED");
@@ -1019,7 +1027,8 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call updateSubscriptionCall(String id, UpdateSubscription updateSubscription, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = updateSubscription;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateSubscription, UpdateSubscription.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/rbs/v1/subscriptions/{id}"
@@ -1032,7 +1041,7 @@ public class SubscriptionsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -1064,13 +1073,13 @@ public class SubscriptionsApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling updateSubscription(Async)");
+            logger.error("Missing the required parameter 'id' when calling updateSubscription(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling updateSubscription(Async)");
         }
         
         // verify the required parameter 'updateSubscription' is set
         if (updateSubscription == null) {
-        	logger.error("Missing the required parameter 'updateSubscription' when calling updateSubscription(Async)");
+            logger.error("Missing the required parameter 'updateSubscription' when calling updateSubscription(Async)");
             throw new ApiException("Missing the required parameter 'updateSubscription' when calling updateSubscription(Async)");
         }
         
@@ -1093,7 +1102,7 @@ public class SubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2008 updateSubscription(String id, UpdateSubscription updateSubscription) throws ApiException {
-    	logger.info("CALL TO METHOD 'updateSubscription' STARTED");
+        logger.info("CALL TO METHOD 'updateSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2008> resp = updateSubscriptionWithHttpInfo(id, updateSubscription);
         logger.info("CALL TO METHOD 'updateSubscription' ENDED");

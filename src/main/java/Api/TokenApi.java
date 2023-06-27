@@ -42,6 +42,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class TokenApi {
     private static Logger logger = LogManager.getLogger(TokenApi.class);
@@ -74,6 +75,7 @@ public class TokenApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call postTokenPaymentCredentialsCall(String tokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -124,7 +126,7 @@ public class TokenApi {
         
         // verify the required parameter 'tokenId' is set
         if (tokenId == null) {
-        	logger.error("Missing the required parameter 'tokenId' when calling postTokenPaymentCredentials(Async)");
+            logger.error("Missing the required parameter 'tokenId' when calling postTokenPaymentCredentials(Async)");
             throw new ApiException("Missing the required parameter 'tokenId' when calling postTokenPaymentCredentials(Async)");
         }
         
@@ -147,7 +149,7 @@ public class TokenApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public String postTokenPaymentCredentials(String tokenId, String profileId) throws ApiException {
-    	logger.info("CALL TO METHOD 'postTokenPaymentCredentials' STARTED");
+        logger.info("CALL TO METHOD 'postTokenPaymentCredentials' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<String> resp = postTokenPaymentCredentialsWithHttpInfo(tokenId, profileId);
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' ENDED");

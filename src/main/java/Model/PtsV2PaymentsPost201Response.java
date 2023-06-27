@@ -17,6 +17,7 @@ import java.util.Objects;
 import Model.PtsV2PaymentsPost201ResponseBuyerInformation;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation;
+import Model.PtsV2PaymentsPost201ResponseEmbeddedActions;
 import Model.PtsV2PaymentsPost201ResponseErrorInformation;
 import Model.PtsV2PaymentsPost201ResponseInstallmentInformation;
 import Model.PtsV2PaymentsPost201ResponseIssuerInformation;
@@ -104,6 +105,9 @@ public class PtsV2PaymentsPost201Response {
 
   @SerializedName("consumerAuthenticationInformation")
   private PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation = null;
+
+  @SerializedName("embeddedActions")
+  private PtsV2PaymentsPost201ResponseEmbeddedActions embeddedActions = null;
 
   @SerializedName("watchlistScreeningInformation")
   private PtsV2PaymentsPost201ResponseWatchlistScreeningInformation watchlistScreeningInformation = null;
@@ -468,6 +472,24 @@ public class PtsV2PaymentsPost201Response {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
   }
 
+  public PtsV2PaymentsPost201Response embeddedActions(PtsV2PaymentsPost201ResponseEmbeddedActions embeddedActions) {
+    this.embeddedActions = embeddedActions;
+    return this;
+  }
+
+   /**
+   * Get embeddedActions
+   * @return embeddedActions
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseEmbeddedActions getEmbeddedActions() {
+    return embeddedActions;
+  }
+
+  public void setEmbeddedActions(PtsV2PaymentsPost201ResponseEmbeddedActions embeddedActions) {
+    this.embeddedActions = embeddedActions;
+  }
+
   public PtsV2PaymentsPost201Response watchlistScreeningInformation(PtsV2PaymentsPost201ResponseWatchlistScreeningInformation watchlistScreeningInformation) {
     this.watchlistScreeningInformation = watchlistScreeningInformation;
     return this;
@@ -516,12 +538,13 @@ public class PtsV2PaymentsPost201Response {
         Objects.equals(this.buyerInformation, ptsV2PaymentsPost201Response.buyerInformation) &&
         Objects.equals(this.riskInformation, ptsV2PaymentsPost201Response.riskInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, ptsV2PaymentsPost201Response.consumerAuthenticationInformation) &&
+        Objects.equals(this.embeddedActions, ptsV2PaymentsPost201Response.embeddedActions) &&
         Objects.equals(this.watchlistScreeningInformation, ptsV2PaymentsPost201Response.watchlistScreeningInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation, watchlistScreeningInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation, embeddedActions, watchlistScreeningInformation);
   }
 
 
@@ -550,6 +573,7 @@ public class PtsV2PaymentsPost201Response {
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
+    sb.append("    embeddedActions: ").append(toIndentedString(embeddedActions)).append("\n");
     sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
     sb.append("}");
     return sb.toString();

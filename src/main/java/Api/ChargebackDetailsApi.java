@@ -39,6 +39,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class ChargebackDetailsApi {
     private static Logger logger = LogManager.getLogger(ChargebackDetailsApi.class);
@@ -72,6 +73,7 @@ public class ChargebackDetailsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getChargebackDetailsCall(DateTime startTime, DateTime endTime, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -125,13 +127,13 @@ public class ChargebackDetailsApi {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
-        	logger.error("Missing the required parameter 'startTime' when calling getChargebackDetails(Async)");
+            logger.error("Missing the required parameter 'startTime' when calling getChargebackDetails(Async)");
             throw new ApiException("Missing the required parameter 'startTime' when calling getChargebackDetails(Async)");
         }
         
         // verify the required parameter 'endTime' is set
         if (endTime == null) {
-        	logger.error("Missing the required parameter 'endTime' when calling getChargebackDetails(Async)");
+            logger.error("Missing the required parameter 'endTime' when calling getChargebackDetails(Async)");
             throw new ApiException("Missing the required parameter 'endTime' when calling getChargebackDetails(Async)");
         }
         
@@ -155,7 +157,7 @@ public class ChargebackDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ChargebackDetailsGet200Response getChargebackDetails(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getChargebackDetails' STARTED");
+        logger.info("CALL TO METHOD 'getChargebackDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ChargebackDetailsGet200Response> resp = getChargebackDetailsWithHttpInfo(startTime, endTime, organizationId);
         logger.info("CALL TO METHOD 'getChargebackDetails' ENDED");

@@ -40,6 +40,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class NetFundingsApi {
     private static Logger logger = LogManager.getLogger(NetFundingsApi.class);
@@ -74,6 +75,7 @@ public class NetFundingsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getNetFundingDetailsCall(DateTime startTime, DateTime endTime, String organizationId, String groupName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -129,13 +131,13 @@ public class NetFundingsApi {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
-        	logger.error("Missing the required parameter 'startTime' when calling getNetFundingDetails(Async)");
+            logger.error("Missing the required parameter 'startTime' when calling getNetFundingDetails(Async)");
             throw new ApiException("Missing the required parameter 'startTime' when calling getNetFundingDetails(Async)");
         }
         
         // verify the required parameter 'endTime' is set
         if (endTime == null) {
-        	logger.error("Missing the required parameter 'endTime' when calling getNetFundingDetails(Async)");
+            logger.error("Missing the required parameter 'endTime' when calling getNetFundingDetails(Async)");
             throw new ApiException("Missing the required parameter 'endTime' when calling getNetFundingDetails(Async)");
         }
         
@@ -160,7 +162,7 @@ public class NetFundingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3NetFundingsGet200Response getNetFundingDetails(DateTime startTime, DateTime endTime, String organizationId, String groupName) throws ApiException {
-    	logger.info("CALL TO METHOD 'getNetFundingDetails' STARTED");
+        logger.info("CALL TO METHOD 'getNetFundingDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3NetFundingsGet200Response> resp = getNetFundingDetailsWithHttpInfo(startTime, endTime, organizationId, groupName);
         logger.info("CALL TO METHOD 'getNetFundingDetails' ENDED");

@@ -40,6 +40,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class KeyManagementPasswordApi {
     private static Logger logger = LogManager.getLogger(KeyManagementPasswordApi.class);
@@ -72,7 +73,8 @@ public class KeyManagementPasswordApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call updatePasswordCall(String keyId, UpdatePasswordKeysRequest updatePasswordKeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = updatePasswordKeysRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePasswordKeysRequest, UpdatePasswordKeysRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-password/{keyId}"
@@ -117,13 +119,13 @@ public class KeyManagementPasswordApi {
         
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
-        	logger.error("Missing the required parameter 'keyId' when calling updatePassword(Async)");
+            logger.error("Missing the required parameter 'keyId' when calling updatePassword(Async)");
             throw new ApiException("Missing the required parameter 'keyId' when calling updatePassword(Async)");
         }
         
         // verify the required parameter 'updatePasswordKeysRequest' is set
         if (updatePasswordKeysRequest == null) {
-        	logger.error("Missing the required parameter 'updatePasswordKeysRequest' when calling updatePassword(Async)");
+            logger.error("Missing the required parameter 'updatePasswordKeysRequest' when calling updatePassword(Async)");
             throw new ApiException("Missing the required parameter 'updatePasswordKeysRequest' when calling updatePassword(Async)");
         }
         
@@ -146,7 +148,7 @@ public class KeyManagementPasswordApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Object updatePassword(String keyId, UpdatePasswordKeysRequest updatePasswordKeysRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'updatePassword' STARTED");
+        logger.info("CALL TO METHOD 'updatePassword' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Object> resp = updatePasswordWithHttpInfo(keyId, updatePasswordKeysRequest);
         logger.info("CALL TO METHOD 'updatePassword' ENDED");

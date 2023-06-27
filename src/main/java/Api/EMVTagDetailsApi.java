@@ -40,6 +40,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class EMVTagDetailsApi {
     private static Logger logger = LogManager.getLogger(EMVTagDetailsApi.class);
@@ -70,6 +71,7 @@ public class EMVTagDetailsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getEmvTagsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -132,7 +134,7 @@ public class EMVTagDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TssV2GetEmvTags200Response getEmvTags() throws ApiException {
-    	logger.info("CALL TO METHOD 'getEmvTags' STARTED");
+        logger.info("CALL TO METHOD 'getEmvTags' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2GetEmvTags200Response> resp = getEmvTagsWithHttpInfo();
         logger.info("CALL TO METHOD 'getEmvTags' ENDED");
@@ -194,7 +196,8 @@ public class EMVTagDetailsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call parseEmvTagsCall(Body body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(body, Body.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/tss/v2/transactions/emvTagDetails";
@@ -238,7 +241,7 @@ public class EMVTagDetailsApi {
         
         // verify the required parameter 'body' is set
         if (body == null) {
-        	logger.error("Missing the required parameter 'body' when calling parseEmvTags(Async)");
+            logger.error("Missing the required parameter 'body' when calling parseEmvTags(Async)");
             throw new ApiException("Missing the required parameter 'body' when calling parseEmvTags(Async)");
         }
         
@@ -260,7 +263,7 @@ public class EMVTagDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TssV2PostEmvTags200Response parseEmvTags(Body body) throws ApiException {
-    	logger.info("CALL TO METHOD 'parseEmvTags' STARTED");
+        logger.info("CALL TO METHOD 'parseEmvTags' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2PostEmvTags200Response> resp = parseEmvTagsWithHttpInfo(body);
         logger.info("CALL TO METHOD 'parseEmvTags' ENDED");

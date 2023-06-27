@@ -43,6 +43,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class BatchesApi {
     private static Logger logger = LogManager.getLogger(BatchesApi.class);
@@ -74,6 +75,7 @@ public class BatchesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getBatchReportCall(String batchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -122,7 +124,7 @@ public class BatchesApi {
         
         // verify the required parameter 'batchId' is set
         if (batchId == null) {
-        	logger.error("Missing the required parameter 'batchId' when calling getBatchReport(Async)");
+            logger.error("Missing the required parameter 'batchId' when calling getBatchReport(Async)");
             throw new ApiException("Missing the required parameter 'batchId' when calling getBatchReport(Async)");
         }
         
@@ -144,7 +146,7 @@ public class BatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse20014 getBatchReport(String batchId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getBatchReport' STARTED");
+        logger.info("CALL TO METHOD 'getBatchReport' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse20014> resp = getBatchReportWithHttpInfo(batchId);
         logger.info("CALL TO METHOD 'getBatchReport' ENDED");
@@ -208,6 +210,7 @@ public class BatchesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getBatchStatusCall(String batchId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -256,7 +259,7 @@ public class BatchesApi {
         
         // verify the required parameter 'batchId' is set
         if (batchId == null) {
-        	logger.error("Missing the required parameter 'batchId' when calling getBatchStatus(Async)");
+            logger.error("Missing the required parameter 'batchId' when calling getBatchStatus(Async)");
             throw new ApiException("Missing the required parameter 'batchId' when calling getBatchStatus(Async)");
         }
         
@@ -278,7 +281,7 @@ public class BatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse20013 getBatchStatus(String batchId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getBatchStatus' STARTED");
+        logger.info("CALL TO METHOD 'getBatchStatus' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse20013> resp = getBatchStatusWithHttpInfo(batchId);
         logger.info("CALL TO METHOD 'getBatchStatus' ENDED");
@@ -345,6 +348,7 @@ public class BatchesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getBatchesListCall(Long offset, Long limit, String fromDate, String toDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -419,7 +423,7 @@ public class BatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse20012 getBatchesList(Long offset, Long limit, String fromDate, String toDate) throws ApiException {
-    	logger.info("CALL TO METHOD 'getBatchesList' STARTED");
+        logger.info("CALL TO METHOD 'getBatchesList' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse20012> resp = getBatchesListWithHttpInfo(offset, limit, fromDate, toDate);
         logger.info("CALL TO METHOD 'getBatchesList' ENDED");
@@ -489,7 +493,8 @@ public class BatchesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call postBatchCall(Body body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(body, Body.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/accountupdater/v1/batches";
@@ -533,7 +538,7 @@ public class BatchesApi {
         
         // verify the required parameter 'body' is set
         if (body == null) {
-        	logger.error("Missing the required parameter 'body' when calling postBatch(Async)");
+            logger.error("Missing the required parameter 'body' when calling postBatch(Async)");
             throw new ApiException("Missing the required parameter 'body' when calling postBatch(Async)");
         }
         
@@ -555,7 +560,7 @@ public class BatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2022 postBatch(Body body) throws ApiException {
-    	logger.info("CALL TO METHOD 'postBatch' STARTED");
+        logger.info("CALL TO METHOD 'postBatch' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2022> resp = postBatchWithHttpInfo(body);
         logger.info("CALL TO METHOD 'postBatch' ENDED");

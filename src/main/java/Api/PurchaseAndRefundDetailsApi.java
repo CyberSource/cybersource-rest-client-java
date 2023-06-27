@@ -40,6 +40,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class PurchaseAndRefundDetailsApi {
     private static Logger logger = LogManager.getLogger(PurchaseAndRefundDetailsApi.class);
@@ -78,6 +79,7 @@ public class PurchaseAndRefundDetailsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getPurchaseAndRefundDetailsCall(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -141,13 +143,13 @@ public class PurchaseAndRefundDetailsApi {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
-        	logger.error("Missing the required parameter 'startTime' when calling getPurchaseAndRefundDetails(Async)");
+            logger.error("Missing the required parameter 'startTime' when calling getPurchaseAndRefundDetails(Async)");
             throw new ApiException("Missing the required parameter 'startTime' when calling getPurchaseAndRefundDetails(Async)");
         }
         
         // verify the required parameter 'endTime' is set
         if (endTime == null) {
-        	logger.error("Missing the required parameter 'endTime' when calling getPurchaseAndRefundDetails(Async)");
+            logger.error("Missing the required parameter 'endTime' when calling getPurchaseAndRefundDetails(Async)");
             throw new ApiException("Missing the required parameter 'endTime' when calling getPurchaseAndRefundDetails(Async)");
         }
         
@@ -176,7 +178,7 @@ public class PurchaseAndRefundDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3PurchaseRefundDetailsGet200Response getPurchaseAndRefundDetails(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
-    	logger.info("CALL TO METHOD 'getPurchaseAndRefundDetails' STARTED");
+        logger.info("CALL TO METHOD 'getPurchaseAndRefundDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3PurchaseRefundDetailsGet200Response> resp = getPurchaseAndRefundDetailsWithHttpInfo(startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit);
         logger.info("CALL TO METHOD 'getPurchaseAndRefundDetails' ENDED");

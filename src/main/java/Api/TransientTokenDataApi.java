@@ -37,6 +37,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class TransientTokenDataApi {
     private static Logger logger = LogManager.getLogger(TransientTokenDataApi.class);
@@ -68,6 +69,7 @@ public class TransientTokenDataApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getTransactionForTransientTokenCall(String transientToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -116,7 +118,7 @@ public class TransientTokenDataApi {
         
         // verify the required parameter 'transientToken' is set
         if (transientToken == null) {
-        	logger.error("Missing the required parameter 'transientToken' when calling getTransactionForTransientToken(Async)");
+            logger.error("Missing the required parameter 'transientToken' when calling getTransactionForTransientToken(Async)");
             throw new ApiException("Missing the required parameter 'transientToken' when calling getTransactionForTransientToken(Async)");
         }
         
@@ -137,7 +139,7 @@ public class TransientTokenDataApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void getTransactionForTransientToken(String transientToken) throws ApiException {
-    	logger.info("CALL TO METHOD 'getTransactionForTransientToken' STARTED");
+        logger.info("CALL TO METHOD 'getTransactionForTransientToken' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getTransactionForTransientTokenWithHttpInfo(transientToken);
 

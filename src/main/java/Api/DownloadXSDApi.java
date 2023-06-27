@@ -37,6 +37,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class DownloadXSDApi {
     private static Logger logger = LogManager.getLogger(DownloadXSDApi.class);
@@ -68,6 +69,7 @@ public class DownloadXSDApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getXSDV2Call(String reportDefinitionNameVersion, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -116,7 +118,7 @@ public class DownloadXSDApi {
         
         // verify the required parameter 'reportDefinitionNameVersion' is set
         if (reportDefinitionNameVersion == null) {
-        	logger.error("Missing the required parameter 'reportDefinitionNameVersion' when calling getXSDV2(Async)");
+            logger.error("Missing the required parameter 'reportDefinitionNameVersion' when calling getXSDV2(Async)");
             throw new ApiException("Missing the required parameter 'reportDefinitionNameVersion' when calling getXSDV2(Async)");
         }
         
@@ -137,7 +139,7 @@ public class DownloadXSDApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void getXSDV2(String reportDefinitionNameVersion) throws ApiException {
-    	logger.info("CALL TO METHOD 'getXSDV2' STARTED");
+        logger.info("CALL TO METHOD 'getXSDV2' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getXSDV2WithHttpInfo(reportDefinitionNameVersion);
 

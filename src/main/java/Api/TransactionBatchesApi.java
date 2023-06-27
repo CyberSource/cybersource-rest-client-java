@@ -43,6 +43,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class TransactionBatchesApi {
     private static Logger logger = LogManager.getLogger(TransactionBatchesApi.class);
@@ -76,6 +77,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getTransactionBatchDetailsCall(String id, LocalDate uploadDate, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -128,7 +130,7 @@ public class TransactionBatchesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling getTransactionBatchDetails(Async)");
+            logger.error("Missing the required parameter 'id' when calling getTransactionBatchDetails(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling getTransactionBatchDetails(Async)");
         }
         
@@ -151,7 +153,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void getTransactionBatchDetails(String id, LocalDate uploadDate, String status) throws ApiException {
-    	logger.info("CALL TO METHOD 'getTransactionBatchDetails' STARTED");
+        logger.info("CALL TO METHOD 'getTransactionBatchDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getTransactionBatchDetailsWithHttpInfo(id, uploadDate, status);
 
@@ -216,6 +218,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getTransactionBatchIdCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -264,7 +267,7 @@ public class TransactionBatchesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling getTransactionBatchId(Async)");
+            logger.error("Missing the required parameter 'id' when calling getTransactionBatchId(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling getTransactionBatchId(Async)");
         }
         
@@ -286,7 +289,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV1TransactionBatchesIdGet200Response getTransactionBatchId(String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'getTransactionBatchId' STARTED");
+        logger.info("CALL TO METHOD 'getTransactionBatchId' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV1TransactionBatchesIdGet200Response> resp = getTransactionBatchIdWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getTransactionBatchId' ENDED");
@@ -351,6 +354,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getTransactionBatchesCall(DateTime startTime, DateTime endTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -402,13 +406,13 @@ public class TransactionBatchesApi {
         
         // verify the required parameter 'startTime' is set
         if (startTime == null) {
-        	logger.error("Missing the required parameter 'startTime' when calling getTransactionBatches(Async)");
+            logger.error("Missing the required parameter 'startTime' when calling getTransactionBatches(Async)");
             throw new ApiException("Missing the required parameter 'startTime' when calling getTransactionBatches(Async)");
         }
         
         // verify the required parameter 'endTime' is set
         if (endTime == null) {
-        	logger.error("Missing the required parameter 'endTime' when calling getTransactionBatches(Async)");
+            logger.error("Missing the required parameter 'endTime' when calling getTransactionBatches(Async)");
             throw new ApiException("Missing the required parameter 'endTime' when calling getTransactionBatches(Async)");
         }
         
@@ -431,7 +435,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV1TransactionBatchesGet200Response getTransactionBatches(DateTime startTime, DateTime endTime) throws ApiException {
-    	logger.info("CALL TO METHOD 'getTransactionBatches' STARTED");
+        logger.info("CALL TO METHOD 'getTransactionBatches' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV1TransactionBatchesGet200Response> resp = getTransactionBatchesWithHttpInfo(startTime, endTime);
         logger.info("CALL TO METHOD 'getTransactionBatches' ENDED");

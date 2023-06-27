@@ -41,6 +41,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class PayoutsApi {
     private static Logger logger = LogManager.getLogger(PayoutsApi.class);
@@ -72,7 +73,8 @@ public class PayoutsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call octCreatePaymentCall(OctCreatePaymentRequest octCreatePaymentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = octCreatePaymentRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(octCreatePaymentRequest, OctCreatePaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/payouts";
@@ -116,7 +118,7 @@ public class PayoutsApi {
         
         // verify the required parameter 'octCreatePaymentRequest' is set
         if (octCreatePaymentRequest == null) {
-        	logger.error("Missing the required parameter 'octCreatePaymentRequest' when calling octCreatePayment(Async)");
+            logger.error("Missing the required parameter 'octCreatePaymentRequest' when calling octCreatePayment(Async)");
             throw new ApiException("Missing the required parameter 'octCreatePaymentRequest' when calling octCreatePayment(Async)");
         }
         
@@ -138,7 +140,7 @@ public class PayoutsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PayoutsPost201Response octCreatePayment(OctCreatePaymentRequest octCreatePaymentRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'octCreatePayment' STARTED");
+        logger.info("CALL TO METHOD 'octCreatePayment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PayoutsPost201Response> resp = octCreatePaymentWithHttpInfo(octCreatePaymentRequest);
         logger.info("CALL TO METHOD 'octCreatePayment' ENDED");

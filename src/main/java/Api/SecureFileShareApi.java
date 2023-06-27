@@ -40,6 +40,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class SecureFileShareApi {
     private static Logger logger = LogManager.getLogger(SecureFileShareApi.class);
@@ -72,6 +73,7 @@ public class SecureFileShareApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getFileCall(String fileId, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -122,7 +124,7 @@ public class SecureFileShareApi {
         
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
-        	logger.error("Missing the required parameter 'fileId' when calling getFile(Async)");
+            logger.error("Missing the required parameter 'fileId' when calling getFile(Async)");
             throw new ApiException("Missing the required parameter 'fileId' when calling getFile(Async)");
         }
         
@@ -144,7 +146,7 @@ public class SecureFileShareApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void getFile(String fileId, String organizationId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getFile' STARTED");
+        logger.info("CALL TO METHOD 'getFile' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         getFileWithHttpInfo(fileId, organizationId);
 
@@ -210,6 +212,7 @@ public class SecureFileShareApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getFileDetailCall(LocalDate startDate, LocalDate endDate, String organizationId, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -265,13 +268,13 @@ public class SecureFileShareApi {
         
         // verify the required parameter 'startDate' is set
         if (startDate == null) {
-        	logger.error("Missing the required parameter 'startDate' when calling getFileDetail(Async)");
+            logger.error("Missing the required parameter 'startDate' when calling getFileDetail(Async)");
             throw new ApiException("Missing the required parameter 'startDate' when calling getFileDetail(Async)");
         }
         
         // verify the required parameter 'endDate' is set
         if (endDate == null) {
-        	logger.error("Missing the required parameter 'endDate' when calling getFileDetail(Async)");
+            logger.error("Missing the required parameter 'endDate' when calling getFileDetail(Async)");
             throw new ApiException("Missing the required parameter 'endDate' when calling getFileDetail(Async)");
         }
         
@@ -296,7 +299,7 @@ public class SecureFileShareApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public V1FileDetailsGet200Response getFileDetail(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
-    	logger.info("CALL TO METHOD 'getFileDetail' STARTED");
+        logger.info("CALL TO METHOD 'getFileDetail' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailWithHttpInfo(startDate, endDate, organizationId, name);
         logger.info("CALL TO METHOD 'getFileDetail' ENDED");
