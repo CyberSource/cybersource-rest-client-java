@@ -39,6 +39,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class UnifiedCheckoutCaptureContextApi {
     private static Logger logger = LogManager.getLogger(UnifiedCheckoutCaptureContextApi.class);
@@ -70,7 +71,8 @@ public class UnifiedCheckoutCaptureContextApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call generateUnifiedCheckoutCaptureContextCall(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = generateUnifiedCheckoutCaptureContextRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(generateUnifiedCheckoutCaptureContextRequest, GenerateUnifiedCheckoutCaptureContextRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/up/v1/capture-contexts";
@@ -114,7 +116,7 @@ public class UnifiedCheckoutCaptureContextApi {
         
         // verify the required parameter 'generateUnifiedCheckoutCaptureContextRequest' is set
         if (generateUnifiedCheckoutCaptureContextRequest == null) {
-        	logger.error("Missing the required parameter 'generateUnifiedCheckoutCaptureContextRequest' when calling generateUnifiedCheckoutCaptureContext(Async)");
+            logger.error("Missing the required parameter 'generateUnifiedCheckoutCaptureContextRequest' when calling generateUnifiedCheckoutCaptureContext(Async)");
             throw new ApiException("Missing the required parameter 'generateUnifiedCheckoutCaptureContextRequest' when calling generateUnifiedCheckoutCaptureContext(Async)");
         }
         
@@ -136,7 +138,7 @@ public class UnifiedCheckoutCaptureContextApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public String generateUnifiedCheckoutCaptureContext(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'generateUnifiedCheckoutCaptureContext' STARTED");
+        logger.info("CALL TO METHOD 'generateUnifiedCheckoutCaptureContext' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<String> resp = generateUnifiedCheckoutCaptureContextWithHttpInfo(generateUnifiedCheckoutCaptureContextRequest);
         logger.info("CALL TO METHOD 'generateUnifiedCheckoutCaptureContext' ENDED");

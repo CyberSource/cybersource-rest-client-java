@@ -38,6 +38,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class TransactionDetailsApi {
     private static Logger logger = LogManager.getLogger(TransactionDetailsApi.class);
@@ -69,6 +70,7 @@ public class TransactionDetailsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getTransactionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -117,7 +119,7 @@ public class TransactionDetailsApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling getTransaction(Async)");
+            logger.error("Missing the required parameter 'id' when calling getTransaction(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling getTransaction(Async)");
         }
         
@@ -139,7 +141,7 @@ public class TransactionDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public TssV2TransactionsGet200Response getTransaction(String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'getTransaction' STARTED");
+        logger.info("CALL TO METHOD 'getTransaction' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsGet200Response> resp = getTransactionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getTransaction' ENDED");

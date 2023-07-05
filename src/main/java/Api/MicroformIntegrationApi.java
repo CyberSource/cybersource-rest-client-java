@@ -39,6 +39,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class MicroformIntegrationApi {
     private static Logger logger = LogManager.getLogger(MicroformIntegrationApi.class);
@@ -70,7 +71,8 @@ public class MicroformIntegrationApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call generateCaptureContextCall(GenerateCaptureContextRequest generateCaptureContextRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = generateCaptureContextRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(generateCaptureContextRequest, GenerateCaptureContextRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/microform/v2/sessions";
@@ -114,7 +116,7 @@ public class MicroformIntegrationApi {
         
         // verify the required parameter 'generateCaptureContextRequest' is set
         if (generateCaptureContextRequest == null) {
-        	logger.error("Missing the required parameter 'generateCaptureContextRequest' when calling generateCaptureContext(Async)");
+            logger.error("Missing the required parameter 'generateCaptureContextRequest' when calling generateCaptureContext(Async)");
             throw new ApiException("Missing the required parameter 'generateCaptureContextRequest' when calling generateCaptureContext(Async)");
         }
         
@@ -136,7 +138,7 @@ public class MicroformIntegrationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public String generateCaptureContext(GenerateCaptureContextRequest generateCaptureContextRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'generateCaptureContext' STARTED");
+        logger.info("CALL TO METHOD 'generateCaptureContext' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<String> resp = generateCaptureContextWithHttpInfo(generateCaptureContextRequest);
         logger.info("CALL TO METHOD 'generateCaptureContext' ENDED");

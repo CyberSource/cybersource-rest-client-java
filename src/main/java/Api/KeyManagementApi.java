@@ -41,6 +41,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class KeyManagementApi {
     private static Logger logger = LogManager.getLogger(KeyManagementApi.class);
@@ -79,6 +80,7 @@ public class KeyManagementApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call searchKeysCall(Integer offset, Integer limit, String sort, List<String> organizationIds, List<String> keyIds, List<String> keyTypes, DateTime expirationStartDate, DateTime expirationEndDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -165,7 +167,7 @@ public class KeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse20011 searchKeys(Integer offset, Integer limit, String sort, List<String> organizationIds, List<String> keyIds, List<String> keyTypes, DateTime expirationStartDate, DateTime expirationEndDate) throws ApiException {
-    	logger.info("CALL TO METHOD 'searchKeys' STARTED");
+        logger.info("CALL TO METHOD 'searchKeys' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse20011> resp = searchKeysWithHttpInfo(offset, limit, sort, organizationIds, keyIds, keyTypes, expirationStartDate, expirationEndDate);
         logger.info("CALL TO METHOD 'searchKeys' ENDED");

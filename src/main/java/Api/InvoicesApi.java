@@ -46,6 +46,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class InvoicesApi {
     private static Logger logger = LogManager.getLogger(InvoicesApi.class);
@@ -77,7 +78,8 @@ public class InvoicesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call createInvoiceCall(CreateInvoiceRequest createInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createInvoiceRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createInvoiceRequest, CreateInvoiceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/invoices";
@@ -121,7 +123,7 @@ public class InvoicesApi {
         
         // verify the required parameter 'createInvoiceRequest' is set
         if (createInvoiceRequest == null) {
-        	logger.error("Missing the required parameter 'createInvoiceRequest' when calling createInvoice(Async)");
+            logger.error("Missing the required parameter 'createInvoiceRequest' when calling createInvoice(Async)");
             throw new ApiException("Missing the required parameter 'createInvoiceRequest' when calling createInvoice(Async)");
         }
         
@@ -143,7 +145,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response createInvoice(CreateInvoiceRequest createInvoiceRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'createInvoice' STARTED");
+        logger.info("CALL TO METHOD 'createInvoice' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = createInvoiceWithHttpInfo(createInvoiceRequest);
         logger.info("CALL TO METHOD 'createInvoice' ENDED");
@@ -209,6 +211,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getAllInvoicesCall(Integer offset, Integer limit, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -262,13 +265,13 @@ public class InvoicesApi {
         
         // verify the required parameter 'offset' is set
         if (offset == null) {
-        	logger.error("Missing the required parameter 'offset' when calling getAllInvoices(Async)");
+            logger.error("Missing the required parameter 'offset' when calling getAllInvoices(Async)");
             throw new ApiException("Missing the required parameter 'offset' when calling getAllInvoices(Async)");
         }
         
         // verify the required parameter 'limit' is set
         if (limit == null) {
-        	logger.error("Missing the required parameter 'limit' when calling getAllInvoices(Async)");
+            logger.error("Missing the required parameter 'limit' when calling getAllInvoices(Async)");
             throw new ApiException("Missing the required parameter 'limit' when calling getAllInvoices(Async)");
         }
         
@@ -292,7 +295,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesAllGet200Response getAllInvoices(Integer offset, Integer limit, String status) throws ApiException {
-    	logger.info("CALL TO METHOD 'getAllInvoices' STARTED");
+        logger.info("CALL TO METHOD 'getAllInvoices' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesAllGet200Response> resp = getAllInvoicesWithHttpInfo(offset, limit, status);
         logger.info("CALL TO METHOD 'getAllInvoices' ENDED");
@@ -360,6 +363,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getInvoiceCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -408,7 +412,7 @@ public class InvoicesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling getInvoice(Async)");
+            logger.error("Missing the required parameter 'id' when calling getInvoice(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling getInvoice(Async)");
         }
         
@@ -430,7 +434,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesGet200Response getInvoice(String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'getInvoice' STARTED");
+        logger.info("CALL TO METHOD 'getInvoice' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesGet200Response> resp = getInvoiceWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getInvoice' ENDED");
@@ -494,6 +498,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call performCancelActionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -542,7 +547,7 @@ public class InvoicesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling performCancelAction(Async)");
+            logger.error("Missing the required parameter 'id' when calling performCancelAction(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling performCancelAction(Async)");
         }
         
@@ -564,7 +569,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response performCancelAction(String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'performCancelAction' STARTED");
+        logger.info("CALL TO METHOD 'performCancelAction' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = performCancelActionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'performCancelAction' ENDED");
@@ -628,6 +633,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call performSendActionCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("POST".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -676,7 +682,7 @@ public class InvoicesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling performSendAction(Async)");
+            logger.error("Missing the required parameter 'id' when calling performSendAction(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling performSendAction(Async)");
         }
         
@@ -698,7 +704,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response performSendAction(String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'performSendAction' STARTED");
+        logger.info("CALL TO METHOD 'performSendAction' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = performSendActionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'performSendAction' ENDED");
@@ -763,7 +769,8 @@ public class InvoicesApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call updateInvoiceCall(String id, UpdateInvoiceRequest updateInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = updateInvoiceRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateInvoiceRequest, UpdateInvoiceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/invoices/{id}"
@@ -808,13 +815,13 @@ public class InvoicesApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling updateInvoice(Async)");
+            logger.error("Missing the required parameter 'id' when calling updateInvoice(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling updateInvoice(Async)");
         }
         
         // verify the required parameter 'updateInvoiceRequest' is set
         if (updateInvoiceRequest == null) {
-        	logger.error("Missing the required parameter 'updateInvoiceRequest' when calling updateInvoice(Async)");
+            logger.error("Missing the required parameter 'updateInvoiceRequest' when calling updateInvoice(Async)");
             throw new ApiException("Missing the required parameter 'updateInvoiceRequest' when calling updateInvoice(Async)");
         }
         
@@ -837,7 +844,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoicesPost201Response updateInvoice(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'updateInvoice' STARTED");
+        logger.info("CALL TO METHOD 'updateInvoice' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = updateInvoiceWithHttpInfo(id, updateInvoiceRequest);
         logger.info("CALL TO METHOD 'updateInvoice' ENDED");

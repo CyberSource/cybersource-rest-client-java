@@ -41,6 +41,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class InvoiceSettingsApi {
     private static Logger logger = LogManager.getLogger(InvoiceSettingsApi.class);
@@ -71,6 +72,7 @@ public class InvoiceSettingsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getInvoiceSettingsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -133,7 +135,7 @@ public class InvoiceSettingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings() throws ApiException {
-    	logger.info("CALL TO METHOD 'getInvoiceSettings' STARTED");
+        logger.info("CALL TO METHOD 'getInvoiceSettings' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = getInvoiceSettingsWithHttpInfo();
         logger.info("CALL TO METHOD 'getInvoiceSettings' ENDED");
@@ -195,7 +197,8 @@ public class InvoiceSettingsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call updateInvoiceSettingsCall(InvoiceSettingsRequest invoiceSettingsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = invoiceSettingsRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(invoiceSettingsRequest, InvoiceSettingsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/invoiceSettings";
@@ -239,7 +242,7 @@ public class InvoiceSettingsApi {
         
         // verify the required parameter 'invoiceSettingsRequest' is set
         if (invoiceSettingsRequest == null) {
-        	logger.error("Missing the required parameter 'invoiceSettingsRequest' when calling updateInvoiceSettings(Async)");
+            logger.error("Missing the required parameter 'invoiceSettingsRequest' when calling updateInvoiceSettings(Async)");
             throw new ApiException("Missing the required parameter 'invoiceSettingsRequest' when calling updateInvoiceSettings(Async)");
         }
         
@@ -261,7 +264,7 @@ public class InvoiceSettingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(InvoiceSettingsRequest invoiceSettingsRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'updateInvoiceSettings' STARTED");
+        logger.info("CALL TO METHOD 'updateInvoiceSettings' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = updateInvoiceSettingsWithHttpInfo(invoiceSettingsRequest);
         logger.info("CALL TO METHOD 'updateInvoiceSettings' ENDED");

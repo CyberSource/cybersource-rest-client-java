@@ -54,8 +54,7 @@ public class PlansApiTest {
     @Test
     public void activatePlanTest() throws ApiException {
         String id = null;
-        Object activatePlanRequest = null;
-        InlineResponse2004 response = api.activatePlan(id, activatePlanRequest);
+        InlineResponse2004 response = api.activatePlan(id);
 
         // TODO: test validations
     }
@@ -87,8 +86,7 @@ public class PlansApiTest {
     @Test
     public void deactivatePlanTest() throws ApiException {
         String id = null;
-        Object deactivatePlanRequest = null;
-        InlineResponse2004 response = api.deactivatePlan(id, deactivatePlanRequest);
+        InlineResponse2004 response = api.deactivatePlan(id);
 
         // TODO: test validations
     }

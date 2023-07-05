@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="activatePlan"></a>
 # **activatePlan**
-> InlineResponse2004 activatePlan(id, activatePlanRequest)
+> InlineResponse2004 activatePlan(id)
 
 Activate a Plan
 
@@ -31,9 +31,8 @@ Activate a Plan
 
 PlansApi apiInstance = new PlansApi();
 String id = "id_example"; // String | Plan Id
-Object activatePlanRequest = null; // Object | 
 try {
-    InlineResponse2004 result = apiInstance.activatePlan(id, activatePlanRequest);
+    InlineResponse2004 result = apiInstance.activatePlan(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#activatePlan");
@@ -46,7 +45,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Plan Id |
- **activatePlanRequest** | **Object**|  | [optional]
 
 ### Return type
 
@@ -59,7 +57,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="createPlan"></a>
 # **createPlan**
@@ -104,11 +102,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="deactivatePlan"></a>
 # **deactivatePlan**
-> InlineResponse2004 deactivatePlan(id, deactivatePlanRequest)
+> InlineResponse2004 deactivatePlan(id)
 
 Deactivate a Plan
 
@@ -123,9 +121,8 @@ Deactivate a Plan
 
 PlansApi apiInstance = new PlansApi();
 String id = "id_example"; // String | Plan Id
-Object deactivatePlanRequest = null; // Object | 
 try {
-    InlineResponse2004 result = apiInstance.deactivatePlan(id, deactivatePlanRequest);
+    InlineResponse2004 result = apiInstance.deactivatePlan(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#deactivatePlan");
@@ -138,7 +135,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Plan Id |
- **deactivatePlanRequest** | **Object**|  | [optional]
 
 ### Return type
 
@@ -151,7 +147,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="deletePlan"></a>
 # **deletePlan**
@@ -196,7 +192,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="getPlan"></a>
 # **getPlan**
@@ -241,7 +237,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="getPlanCode"></a>
 # **getPlanCode**
@@ -282,7 +278,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="getPlans"></a>
 # **getPlans**
@@ -335,7 +331,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="updatePlan"></a>
 # **updatePlan**
@@ -382,5 +378,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 

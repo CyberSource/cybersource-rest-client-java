@@ -49,6 +49,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class PlansApi {
     private static Logger logger = LogManager.getLogger(PlansApi.class);
@@ -74,14 +75,17 @@ public class PlansApi {
     /**
      * Build call for activatePlan
      * @param id Plan Id (required)
-     * @param activatePlanRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call activatePlanCall(String id, Object activatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = activatePlanRequest;
+    public okhttp3.Call activatePlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("POST".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/rbs/v1/plans/{id}/activate"
@@ -94,7 +98,7 @@ public class PlansApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -122,16 +126,16 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call activatePlanValidateBeforeCall(String id, Object activatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call activatePlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling activatePlan(Async)");
+            logger.error("Missing the required parameter 'id' when calling activatePlan(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling activatePlan(Async)");
         }
         
         
-        okhttp3.Call call = activatePlanCall(id, activatePlanRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = activatePlanCall(id, progressListener, progressRequestListener);
         return call;
 
         
@@ -144,14 +148,13 @@ public class PlansApi {
      * Activate a Plan
      * Activate a Plan
      * @param id Plan Id (required)
-     * @param activatePlanRequest  (optional)
      * @return InlineResponse2004
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2004 activatePlan(String id, Object activatePlanRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'activatePlan' STARTED");
+    public InlineResponse2004 activatePlan(String id) throws ApiException {
+        logger.info("CALL TO METHOD 'activatePlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2004> resp = activatePlanWithHttpInfo(id, activatePlanRequest);
+        ApiResponse<InlineResponse2004> resp = activatePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'activatePlan' ENDED");
         return resp.getData();
     }
@@ -160,12 +163,11 @@ public class PlansApi {
      * Activate a Plan
      * Activate a Plan
      * @param id Plan Id (required)
-     * @param activatePlanRequest  (optional)
      * @return ApiResponse&lt;InlineResponse2004&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2004> activatePlanWithHttpInfo(String id, Object activatePlanRequest) throws ApiException {
-        okhttp3.Call call = activatePlanValidateBeforeCall(id, activatePlanRequest, null, null);
+    public ApiResponse<InlineResponse2004> activatePlanWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call call = activatePlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -174,12 +176,11 @@ public class PlansApi {
      * Activate a Plan (asynchronously)
      * Activate a Plan
      * @param id Plan Id (required)
-     * @param activatePlanRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call activatePlanAsync(String id, Object activatePlanRequest, final ApiCallback<InlineResponse2004> callback) throws ApiException {
+    public okhttp3.Call activatePlanAsync(String id, final ApiCallback<InlineResponse2004> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -201,7 +202,7 @@ public class PlansApi {
             };
         }
 
-        okhttp3.Call call = activatePlanValidateBeforeCall(id, activatePlanRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = activatePlanValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -215,7 +216,8 @@ public class PlansApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call createPlanCall(CreatePlanRequest createPlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createPlanRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createPlanRequest, CreatePlanRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/rbs/v1/plans";
@@ -227,7 +229,7 @@ public class PlansApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -259,7 +261,7 @@ public class PlansApi {
         
         // verify the required parameter 'createPlanRequest' is set
         if (createPlanRequest == null) {
-        	logger.error("Missing the required parameter 'createPlanRequest' when calling createPlan(Async)");
+            logger.error("Missing the required parameter 'createPlanRequest' when calling createPlan(Async)");
             throw new ApiException("Missing the required parameter 'createPlanRequest' when calling createPlan(Async)");
         }
         
@@ -281,7 +283,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse201 createPlan(CreatePlanRequest createPlanRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'createPlan' STARTED");
+        logger.info("CALL TO METHOD 'createPlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse201> resp = createPlanWithHttpInfo(createPlanRequest);
         logger.info("CALL TO METHOD 'createPlan' ENDED");
@@ -339,14 +341,17 @@ public class PlansApi {
     /**
      * Build call for deactivatePlan
      * @param id Plan Id (required)
-     * @param deactivatePlanRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deactivatePlanCall(String id, Object deactivatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = deactivatePlanRequest;
+    public okhttp3.Call deactivatePlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("POST".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
         
         // create path and map variables
         String localVarPath = "/rbs/v1/plans/{id}/deactivate"
@@ -359,7 +364,7 @@ public class PlansApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -387,16 +392,16 @@ public class PlansApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deactivatePlanValidateBeforeCall(String id, Object deactivatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deactivatePlanValidateBeforeCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling deactivatePlan(Async)");
+            logger.error("Missing the required parameter 'id' when calling deactivatePlan(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling deactivatePlan(Async)");
         }
         
         
-        okhttp3.Call call = deactivatePlanCall(id, deactivatePlanRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = deactivatePlanCall(id, progressListener, progressRequestListener);
         return call;
 
         
@@ -409,14 +414,13 @@ public class PlansApi {
      * Deactivate a Plan
      * Deactivate a Plan
      * @param id Plan Id (required)
-     * @param deactivatePlanRequest  (optional)
      * @return InlineResponse2004
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2004 deactivatePlan(String id, Object deactivatePlanRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'deactivatePlan' STARTED");
+    public InlineResponse2004 deactivatePlan(String id) throws ApiException {
+        logger.info("CALL TO METHOD 'deactivatePlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2004> resp = deactivatePlanWithHttpInfo(id, deactivatePlanRequest);
+        ApiResponse<InlineResponse2004> resp = deactivatePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'deactivatePlan' ENDED");
         return resp.getData();
     }
@@ -425,12 +429,11 @@ public class PlansApi {
      * Deactivate a Plan
      * Deactivate a Plan
      * @param id Plan Id (required)
-     * @param deactivatePlanRequest  (optional)
      * @return ApiResponse&lt;InlineResponse2004&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2004> deactivatePlanWithHttpInfo(String id, Object deactivatePlanRequest) throws ApiException {
-        okhttp3.Call call = deactivatePlanValidateBeforeCall(id, deactivatePlanRequest, null, null);
+    public ApiResponse<InlineResponse2004> deactivatePlanWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call call = deactivatePlanValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -439,12 +442,11 @@ public class PlansApi {
      * Deactivate a Plan (asynchronously)
      * Deactivate a Plan
      * @param id Plan Id (required)
-     * @param deactivatePlanRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deactivatePlanAsync(String id, Object deactivatePlanRequest, final ApiCallback<InlineResponse2004> callback) throws ApiException {
+    public okhttp3.Call deactivatePlanAsync(String id, final ApiCallback<InlineResponse2004> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -466,7 +468,7 @@ public class PlansApi {
             };
         }
 
-        okhttp3.Call call = deactivatePlanValidateBeforeCall(id, deactivatePlanRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = deactivatePlanValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -480,6 +482,7 @@ public class PlansApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call deletePlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -496,7 +499,7 @@ public class PlansApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -528,7 +531,7 @@ public class PlansApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling deletePlan(Async)");
+            logger.error("Missing the required parameter 'id' when calling deletePlan(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling deletePlan(Async)");
         }
         
@@ -550,7 +553,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2002 deletePlan(String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'deletePlan' STARTED");
+        logger.info("CALL TO METHOD 'deletePlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2002> resp = deletePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'deletePlan' ENDED");
@@ -614,6 +617,7 @@ public class PlansApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getPlanCall(String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -630,7 +634,7 @@ public class PlansApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -662,7 +666,7 @@ public class PlansApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling getPlan(Async)");
+            logger.error("Missing the required parameter 'id' when calling getPlan(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling getPlan(Async)");
         }
         
@@ -684,7 +688,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2001 getPlan(String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'getPlan' STARTED");
+        logger.info("CALL TO METHOD 'getPlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2001> resp = getPlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getPlan' ENDED");
@@ -747,6 +751,7 @@ public class PlansApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getPlanCodeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -762,7 +767,7 @@ public class PlansApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -809,7 +814,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2005 getPlanCode() throws ApiException {
-    	logger.info("CALL TO METHOD 'getPlanCode' STARTED");
+        logger.info("CALL TO METHOD 'getPlanCode' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2005> resp = getPlanCodeWithHttpInfo();
         logger.info("CALL TO METHOD 'getPlanCode' ENDED");
@@ -875,6 +880,7 @@ public class PlansApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getPlansCall(Integer offset, Integer limit, String code, String status, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -900,7 +906,7 @@ public class PlansApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -952,7 +958,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse200 getPlans(Integer offset, Integer limit, String code, String status, String name) throws ApiException {
-    	logger.info("CALL TO METHOD 'getPlans' STARTED");
+        logger.info("CALL TO METHOD 'getPlans' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse200> resp = getPlansWithHttpInfo(offset, limit, code, status, name);
         logger.info("CALL TO METHOD 'getPlans' ENDED");
@@ -1025,7 +1031,8 @@ public class PlansApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call updatePlanCall(String id, UpdatePlanRequest updatePlanRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = updatePlanRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePlanRequest, UpdatePlanRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/rbs/v1/plans/{id}"
@@ -1038,7 +1045,7 @@ public class PlansApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -1070,13 +1077,13 @@ public class PlansApi {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling updatePlan(Async)");
+            logger.error("Missing the required parameter 'id' when calling updatePlan(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling updatePlan(Async)");
         }
         
         // verify the required parameter 'updatePlanRequest' is set
         if (updatePlanRequest == null) {
-        	logger.error("Missing the required parameter 'updatePlanRequest' when calling updatePlan(Async)");
+            logger.error("Missing the required parameter 'updatePlanRequest' when calling updatePlan(Async)");
             throw new ApiException("Missing the required parameter 'updatePlanRequest' when calling updatePlan(Async)");
         }
         
@@ -1099,7 +1106,7 @@ public class PlansApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public InlineResponse2003 updatePlan(String id, UpdatePlanRequest updatePlanRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'updatePlan' STARTED");
+        logger.info("CALL TO METHOD 'updatePlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2003> resp = updatePlanWithHttpInfo(id, updatePlanRequest);
         logger.info("CALL TO METHOD 'updatePlan' ENDED");

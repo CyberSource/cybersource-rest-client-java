@@ -40,6 +40,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class KeyManagementPgpApi {
     private static Logger logger = LogManager.getLogger(KeyManagementPgpApi.class);
@@ -72,7 +73,8 @@ public class KeyManagementPgpApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call updatePGPCall(String keyId, UpdatePGPKeysRequest updatePGPKeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = updatePGPKeysRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updatePGPKeysRequest, UpdatePGPKeysRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-pgp/{keyId}"
@@ -117,13 +119,13 @@ public class KeyManagementPgpApi {
         
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
-        	logger.error("Missing the required parameter 'keyId' when calling updatePGP(Async)");
+            logger.error("Missing the required parameter 'keyId' when calling updatePGP(Async)");
             throw new ApiException("Missing the required parameter 'keyId' when calling updatePGP(Async)");
         }
         
         // verify the required parameter 'updatePGPKeysRequest' is set
         if (updatePGPKeysRequest == null) {
-        	logger.error("Missing the required parameter 'updatePGPKeysRequest' when calling updatePGP(Async)");
+            logger.error("Missing the required parameter 'updatePGPKeysRequest' when calling updatePGP(Async)");
             throw new ApiException("Missing the required parameter 'updatePGPKeysRequest' when calling updatePGP(Async)");
         }
         
@@ -146,7 +148,7 @@ public class KeyManagementPgpApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Object updatePGP(String keyId, UpdatePGPKeysRequest updatePGPKeysRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'updatePGP' STARTED");
+        logger.info("CALL TO METHOD 'updatePGP' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Object> resp = updatePGPWithHttpInfo(keyId, updatePGPKeysRequest);
         logger.info("CALL TO METHOD 'updatePGP' ENDED");

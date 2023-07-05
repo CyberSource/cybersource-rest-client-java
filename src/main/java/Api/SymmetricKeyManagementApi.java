@@ -45,6 +45,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class SymmetricKeyManagementApi {
     private static Logger logger = LogManager.getLogger(SymmetricKeyManagementApi.class);
@@ -76,7 +77,8 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call createV2SharedSecretKeysCall(CreateSharedSecretKeysRequest createSharedSecretKeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createSharedSecretKeysRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSharedSecretKeysRequest, CreateSharedSecretKeysRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-sym";
@@ -120,7 +122,7 @@ public class SymmetricKeyManagementApi {
         
         // verify the required parameter 'createSharedSecretKeysRequest' is set
         if (createSharedSecretKeysRequest == null) {
-        	logger.error("Missing the required parameter 'createSharedSecretKeysRequest' when calling createV2SharedSecretKeys(Async)");
+            logger.error("Missing the required parameter 'createSharedSecretKeysRequest' when calling createV2SharedSecretKeys(Async)");
             throw new ApiException("Missing the required parameter 'createSharedSecretKeysRequest' when calling createV2SharedSecretKeys(Async)");
         }
         
@@ -142,7 +144,7 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysSymPost201Response createV2SharedSecretKeys(CreateSharedSecretKeysRequest createSharedSecretKeysRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'createV2SharedSecretKeys' STARTED");
+        logger.info("CALL TO METHOD 'createV2SharedSecretKeys' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysSymPost201Response> resp = createV2SharedSecretKeysWithHttpInfo(createSharedSecretKeysRequest);
         logger.info("CALL TO METHOD 'createV2SharedSecretKeys' ENDED");
@@ -207,7 +209,8 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call createV2SharedSecretKeysVerifiCall(String vIcDomain, CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createSharedSecretKeysVerifiRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSharedSecretKeysVerifiRequest, CreateSharedSecretKeysVerifiRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-sym/verifi";
@@ -253,13 +256,13 @@ public class SymmetricKeyManagementApi {
         
         // verify the required parameter 'vIcDomain' is set
         if (vIcDomain == null) {
-        	logger.error("Missing the required parameter 'vIcDomain' when calling createV2SharedSecretKeysVerifi(Async)");
+            logger.error("Missing the required parameter 'vIcDomain' when calling createV2SharedSecretKeysVerifi(Async)");
             throw new ApiException("Missing the required parameter 'vIcDomain' when calling createV2SharedSecretKeysVerifi(Async)");
         }
         
         // verify the required parameter 'createSharedSecretKeysVerifiRequest' is set
         if (createSharedSecretKeysVerifiRequest == null) {
-        	logger.error("Missing the required parameter 'createSharedSecretKeysVerifiRequest' when calling createV2SharedSecretKeysVerifi(Async)");
+            logger.error("Missing the required parameter 'createSharedSecretKeysVerifiRequest' when calling createV2SharedSecretKeysVerifi(Async)");
             throw new ApiException("Missing the required parameter 'createSharedSecretKeysVerifiRequest' when calling createV2SharedSecretKeysVerifi(Async)");
         }
         
@@ -282,7 +285,7 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysSymPost201Response createV2SharedSecretKeysVerifi(String vIcDomain, CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'createV2SharedSecretKeysVerifi' STARTED");
+        logger.info("CALL TO METHOD 'createV2SharedSecretKeysVerifi' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysSymPost201Response> resp = createV2SharedSecretKeysVerifiWithHttpInfo(vIcDomain, createSharedSecretKeysVerifiRequest);
         logger.info("CALL TO METHOD 'createV2SharedSecretKeysVerifi' ENDED");
@@ -348,7 +351,8 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call deleteBulkSymmetricKeysCall(DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = deleteBulkSymmetricKeysRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(deleteBulkSymmetricKeysRequest, DeleteBulkSymmetricKeysRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-sym/deletes";
@@ -392,7 +396,7 @@ public class SymmetricKeyManagementApi {
         
         // verify the required parameter 'deleteBulkSymmetricKeysRequest' is set
         if (deleteBulkSymmetricKeysRequest == null) {
-        	logger.error("Missing the required parameter 'deleteBulkSymmetricKeysRequest' when calling deleteBulkSymmetricKeys(Async)");
+            logger.error("Missing the required parameter 'deleteBulkSymmetricKeysRequest' when calling deleteBulkSymmetricKeys(Async)");
             throw new ApiException("Missing the required parameter 'deleteBulkSymmetricKeysRequest' when calling deleteBulkSymmetricKeys(Async)");
         }
         
@@ -414,7 +418,7 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysSymDeletesPost200Response deleteBulkSymmetricKeys(DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'deleteBulkSymmetricKeys' STARTED");
+        logger.info("CALL TO METHOD 'deleteBulkSymmetricKeys' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysSymDeletesPost200Response> resp = deleteBulkSymmetricKeysWithHttpInfo(deleteBulkSymmetricKeysRequest);
         logger.info("CALL TO METHOD 'deleteBulkSymmetricKeys' ENDED");
@@ -478,6 +482,7 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getKeyDetailsCall(String keyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -526,7 +531,7 @@ public class SymmetricKeyManagementApi {
         
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
-        	logger.error("Missing the required parameter 'keyId' when calling getKeyDetails(Async)");
+            logger.error("Missing the required parameter 'keyId' when calling getKeyDetails(Async)");
             throw new ApiException("Missing the required parameter 'keyId' when calling getKeyDetails(Async)");
         }
         
@@ -548,7 +553,7 @@ public class SymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysSymGet200Response getKeyDetails(String keyId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getKeyDetails' STARTED");
+        logger.info("CALL TO METHOD 'getKeyDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysSymGet200Response> resp = getKeyDetailsWithHttpInfo(keyId);
         logger.info("CALL TO METHOD 'getKeyDetails' ENDED");

@@ -48,6 +48,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class CustomerPaymentInstrumentApi {
     private static Logger logger = LogManager.getLogger(CustomerPaymentInstrumentApi.class);
@@ -81,6 +82,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call deleteCustomerPaymentInstrumentCall(String customerId, String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -132,13 +134,13 @@ public class CustomerPaymentInstrumentApi {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
-        	logger.error("Missing the required parameter 'customerId' when calling deleteCustomerPaymentInstrument(Async)");
+            logger.error("Missing the required parameter 'customerId' when calling deleteCustomerPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'customerId' when calling deleteCustomerPaymentInstrument(Async)");
         }
         
         // verify the required parameter 'paymentInstrumentId' is set
         if (paymentInstrumentId == null) {
-        	logger.error("Missing the required parameter 'paymentInstrumentId' when calling deleteCustomerPaymentInstrument(Async)");
+            logger.error("Missing the required parameter 'paymentInstrumentId' when calling deleteCustomerPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'paymentInstrumentId' when calling deleteCustomerPaymentInstrument(Async)");
         }
         
@@ -161,7 +163,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteCustomerPaymentInstrument(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
-    	logger.info("CALL TO METHOD 'deleteCustomerPaymentInstrument' STARTED");
+        logger.info("CALL TO METHOD 'deleteCustomerPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerPaymentInstrumentWithHttpInfo(customerId, paymentInstrumentId, profileId);
 
@@ -228,6 +230,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getCustomerPaymentInstrumentCall(String customerId, String paymentInstrumentId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -279,13 +282,13 @@ public class CustomerPaymentInstrumentApi {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
-        	logger.error("Missing the required parameter 'customerId' when calling getCustomerPaymentInstrument(Async)");
+            logger.error("Missing the required parameter 'customerId' when calling getCustomerPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'customerId' when calling getCustomerPaymentInstrument(Async)");
         }
         
         // verify the required parameter 'paymentInstrumentId' is set
         if (paymentInstrumentId == null) {
-        	logger.error("Missing the required parameter 'paymentInstrumentId' when calling getCustomerPaymentInstrument(Async)");
+            logger.error("Missing the required parameter 'paymentInstrumentId' when calling getCustomerPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'paymentInstrumentId' when calling getCustomerPaymentInstrument(Async)");
         }
         
@@ -309,7 +312,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrument getCustomerPaymentInstrument(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getCustomerPaymentInstrument' STARTED");
+        logger.info("CALL TO METHOD 'getCustomerPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = getCustomerPaymentInstrumentWithHttpInfo(customerId, paymentInstrumentId, profileId);
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrument' ENDED");
@@ -380,6 +383,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getCustomerPaymentInstrumentsListCall(String customerId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -434,7 +438,7 @@ public class CustomerPaymentInstrumentApi {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
-        	logger.error("Missing the required parameter 'customerId' when calling getCustomerPaymentInstrumentsList(Async)");
+            logger.error("Missing the required parameter 'customerId' when calling getCustomerPaymentInstrumentsList(Async)");
             throw new ApiException("Missing the required parameter 'customerId' when calling getCustomerPaymentInstrumentsList(Async)");
         }
         
@@ -459,7 +463,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PaymentInstrumentList getCustomerPaymentInstrumentsList(String customerId, String profileId, Long offset, Long limit) throws ApiException {
-    	logger.info("CALL TO METHOD 'getCustomerPaymentInstrumentsList' STARTED");
+        logger.info("CALL TO METHOD 'getCustomerPaymentInstrumentsList' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PaymentInstrumentList> resp = getCustomerPaymentInstrumentsListWithHttpInfo(customerId, profileId, offset, limit);
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrumentsList' ENDED");
@@ -533,7 +537,8 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call patchCustomersPaymentInstrumentCall(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = patchCustomerPaymentInstrumentRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerPaymentInstrumentRequest, PatchCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}"
@@ -583,19 +588,19 @@ public class CustomerPaymentInstrumentApi {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
-        	logger.error("Missing the required parameter 'customerId' when calling patchCustomersPaymentInstrument(Async)");
+            logger.error("Missing the required parameter 'customerId' when calling patchCustomersPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'customerId' when calling patchCustomersPaymentInstrument(Async)");
         }
         
         // verify the required parameter 'paymentInstrumentId' is set
         if (paymentInstrumentId == null) {
-        	logger.error("Missing the required parameter 'paymentInstrumentId' when calling patchCustomersPaymentInstrument(Async)");
+            logger.error("Missing the required parameter 'paymentInstrumentId' when calling patchCustomersPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'paymentInstrumentId' when calling patchCustomersPaymentInstrument(Async)");
         }
         
         // verify the required parameter 'patchCustomerPaymentInstrumentRequest' is set
         if (patchCustomerPaymentInstrumentRequest == null) {
-        	logger.error("Missing the required parameter 'patchCustomerPaymentInstrumentRequest' when calling patchCustomersPaymentInstrument(Async)");
+            logger.error("Missing the required parameter 'patchCustomerPaymentInstrumentRequest' when calling patchCustomersPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'patchCustomerPaymentInstrumentRequest' when calling patchCustomersPaymentInstrument(Async)");
         }
         
@@ -621,7 +626,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrument patchCustomersPaymentInstrument(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
-    	logger.info("CALL TO METHOD 'patchCustomersPaymentInstrument' STARTED");
+        logger.info("CALL TO METHOD 'patchCustomersPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = patchCustomersPaymentInstrumentWithHttpInfo(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomersPaymentInstrument' ENDED");
@@ -695,7 +700,8 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call postCustomerPaymentInstrumentCall(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = postCustomerPaymentInstrumentRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerPaymentInstrumentRequest, PostCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments"
@@ -742,13 +748,13 @@ public class CustomerPaymentInstrumentApi {
         
         // verify the required parameter 'customerId' is set
         if (customerId == null) {
-        	logger.error("Missing the required parameter 'customerId' when calling postCustomerPaymentInstrument(Async)");
+            logger.error("Missing the required parameter 'customerId' when calling postCustomerPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'customerId' when calling postCustomerPaymentInstrument(Async)");
         }
         
         // verify the required parameter 'postCustomerPaymentInstrumentRequest' is set
         if (postCustomerPaymentInstrumentRequest == null) {
-        	logger.error("Missing the required parameter 'postCustomerPaymentInstrumentRequest' when calling postCustomerPaymentInstrument(Async)");
+            logger.error("Missing the required parameter 'postCustomerPaymentInstrumentRequest' when calling postCustomerPaymentInstrument(Async)");
             throw new ApiException("Missing the required parameter 'postCustomerPaymentInstrumentRequest' when calling postCustomerPaymentInstrument(Async)");
         }
         
@@ -772,7 +778,7 @@ public class CustomerPaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrument postCustomerPaymentInstrument(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException {
-    	logger.info("CALL TO METHOD 'postCustomerPaymentInstrument' STARTED");
+        logger.info("CALL TO METHOD 'postCustomerPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = postCustomerPaymentInstrumentWithHttpInfo(customerId, postCustomerPaymentInstrumentRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomerPaymentInstrument' ENDED");

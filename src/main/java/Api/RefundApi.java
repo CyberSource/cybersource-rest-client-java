@@ -42,6 +42,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class RefundApi {
     private static Logger logger = LogManager.getLogger(RefundApi.class);
@@ -74,7 +75,8 @@ public class RefundApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call refundCaptureCall(RefundCaptureRequest refundCaptureRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = refundCaptureRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(refundCaptureRequest, RefundCaptureRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/captures/{id}/refunds"
@@ -119,13 +121,13 @@ public class RefundApi {
         
         // verify the required parameter 'refundCaptureRequest' is set
         if (refundCaptureRequest == null) {
-        	logger.error("Missing the required parameter 'refundCaptureRequest' when calling refundCapture(Async)");
+            logger.error("Missing the required parameter 'refundCaptureRequest' when calling refundCapture(Async)");
             throw new ApiException("Missing the required parameter 'refundCaptureRequest' when calling refundCapture(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling refundCapture(Async)");
+            logger.error("Missing the required parameter 'id' when calling refundCapture(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling refundCapture(Async)");
         }
         
@@ -148,7 +150,7 @@ public class RefundApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsRefundPost201Response refundCapture(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'refundCapture' STARTED");
+        logger.info("CALL TO METHOD 'refundCapture' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundCaptureWithHttpInfo(refundCaptureRequest, id);
         logger.info("CALL TO METHOD 'refundCapture' ENDED");
@@ -215,7 +217,8 @@ public class RefundApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call refundPaymentCall(RefundPaymentRequest refundPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = refundPaymentRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(refundPaymentRequest, RefundPaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/payments/{id}/refunds"
@@ -260,13 +263,13 @@ public class RefundApi {
         
         // verify the required parameter 'refundPaymentRequest' is set
         if (refundPaymentRequest == null) {
-        	logger.error("Missing the required parameter 'refundPaymentRequest' when calling refundPayment(Async)");
+            logger.error("Missing the required parameter 'refundPaymentRequest' when calling refundPayment(Async)");
             throw new ApiException("Missing the required parameter 'refundPaymentRequest' when calling refundPayment(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling refundPayment(Async)");
+            logger.error("Missing the required parameter 'id' when calling refundPayment(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling refundPayment(Async)");
         }
         
@@ -289,7 +292,7 @@ public class RefundApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsRefundPost201Response refundPayment(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'refundPayment' STARTED");
+        logger.info("CALL TO METHOD 'refundPayment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundPaymentWithHttpInfo(refundPaymentRequest, id);
         logger.info("CALL TO METHOD 'refundPayment' ENDED");

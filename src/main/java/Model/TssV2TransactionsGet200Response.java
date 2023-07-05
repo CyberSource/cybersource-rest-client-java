@@ -67,6 +67,9 @@ public class TssV2TransactionsGet200Response {
   @SerializedName("submitTimeUTC")
   private String submitTimeUTC = null;
 
+  @SerializedName("status")
+  private String status = null;
+
   @SerializedName("applicationInformation")
   private TssV2TransactionsGet200ResponseApplicationInformation applicationInformation = null;
 
@@ -221,6 +224,24 @@ public class TssV2TransactionsGet200Response {
 
   public void setSubmitTimeUTC(String submitTimeUTC) {
     this.submitTimeUTC = submitTimeUTC;
+  }
+
+  public TssV2TransactionsGet200Response status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * The status of the submitted transaction.
+   * @return status
+  **/
+  @ApiModelProperty(value = "The status of the submitted transaction.")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   public TssV2TransactionsGet200Response applicationInformation(TssV2TransactionsGet200ResponseApplicationInformation applicationInformation) {
@@ -642,6 +663,7 @@ public class TssV2TransactionsGet200Response {
         Objects.equals(this.reconciliationId, tssV2TransactionsGet200Response.reconciliationId) &&
         Objects.equals(this.merchantId, tssV2TransactionsGet200Response.merchantId) &&
         Objects.equals(this.submitTimeUTC, tssV2TransactionsGet200Response.submitTimeUTC) &&
+        Objects.equals(this.status, tssV2TransactionsGet200Response.status) &&
         Objects.equals(this.applicationInformation, tssV2TransactionsGet200Response.applicationInformation) &&
         Objects.equals(this.buyerInformation, tssV2TransactionsGet200Response.buyerInformation) &&
         Objects.equals(this.clientReferenceInformation, tssV2TransactionsGet200Response.clientReferenceInformation) &&
@@ -668,7 +690,7 @@ public class TssV2TransactionsGet200Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, rootId, reconciliationId, merchantId, submitTimeUTC, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, paymentInsightsInformation, payoutOptions, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, senderInformation, tokenInformation, links);
+    return Objects.hash(id, rootId, reconciliationId, merchantId, submitTimeUTC, status, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, paymentInsightsInformation, payoutOptions, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, senderInformation, tokenInformation, links);
   }
 
 
@@ -682,6 +704,7 @@ public class TssV2TransactionsGet200Response {
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
     sb.append("    submitTimeUTC: ").append(toIndentedString(submitTimeUTC)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    applicationInformation: ").append(toIndentedString(applicationInformation)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");

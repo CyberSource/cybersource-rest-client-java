@@ -47,6 +47,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class AsymmetricKeyManagementApi {
     private static Logger logger = LogManager.getLogger(AsymmetricKeyManagementApi.class);
@@ -78,7 +79,8 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call createP12KeysCall(CreateP12KeysRequest createP12KeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createP12KeysRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createP12KeysRequest, CreateP12KeysRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-asym";
@@ -122,7 +124,7 @@ public class AsymmetricKeyManagementApi {
         
         // verify the required parameter 'createP12KeysRequest' is set
         if (createP12KeysRequest == null) {
-        	logger.error("Missing the required parameter 'createP12KeysRequest' when calling createP12Keys(Async)");
+            logger.error("Missing the required parameter 'createP12KeysRequest' when calling createP12Keys(Async)");
             throw new ApiException("Missing the required parameter 'createP12KeysRequest' when calling createP12Keys(Async)");
         }
         
@@ -144,7 +146,7 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysAsymPost201Response createP12Keys(CreateP12KeysRequest createP12KeysRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'createP12Keys' STARTED");
+        logger.info("CALL TO METHOD 'createP12Keys' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysAsymPost201Response> resp = createP12KeysWithHttpInfo(createP12KeysRequest);
         logger.info("CALL TO METHOD 'createP12Keys' ENDED");
@@ -208,7 +210,8 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call deleteBulkP12KeysCall(DeleteBulkP12KeysRequest deleteBulkP12KeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = deleteBulkP12KeysRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(deleteBulkP12KeysRequest, DeleteBulkP12KeysRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-asym/deletes";
@@ -252,7 +255,7 @@ public class AsymmetricKeyManagementApi {
         
         // verify the required parameter 'deleteBulkP12KeysRequest' is set
         if (deleteBulkP12KeysRequest == null) {
-        	logger.error("Missing the required parameter 'deleteBulkP12KeysRequest' when calling deleteBulkP12Keys(Async)");
+            logger.error("Missing the required parameter 'deleteBulkP12KeysRequest' when calling deleteBulkP12Keys(Async)");
             throw new ApiException("Missing the required parameter 'deleteBulkP12KeysRequest' when calling deleteBulkP12Keys(Async)");
         }
         
@@ -274,7 +277,7 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysAsymDeletesPost200Response deleteBulkP12Keys(DeleteBulkP12KeysRequest deleteBulkP12KeysRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'deleteBulkP12Keys' STARTED");
+        logger.info("CALL TO METHOD 'deleteBulkP12Keys' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysAsymDeletesPost200Response> resp = deleteBulkP12KeysWithHttpInfo(deleteBulkP12KeysRequest);
         logger.info("CALL TO METHOD 'deleteBulkP12Keys' ENDED");
@@ -338,6 +341,7 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getP12KeyDetailsCall(String keyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -386,7 +390,7 @@ public class AsymmetricKeyManagementApi {
         
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
-        	logger.error("Missing the required parameter 'keyId' when calling getP12KeyDetails(Async)");
+            logger.error("Missing the required parameter 'keyId' when calling getP12KeyDetails(Async)");
             throw new ApiException("Missing the required parameter 'keyId' when calling getP12KeyDetails(Async)");
         }
         
@@ -408,7 +412,7 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public KmsV2KeysAsymGet200Response getP12KeyDetails(String keyId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getP12KeyDetails' STARTED");
+        logger.info("CALL TO METHOD 'getP12KeyDetails' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<KmsV2KeysAsymGet200Response> resp = getP12KeyDetailsWithHttpInfo(keyId);
         logger.info("CALL TO METHOD 'getP12KeyDetails' ENDED");
@@ -473,7 +477,8 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call updateAsymKeyCall(String keyId, UpdateAsymKeysRequest updateAsymKeysRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = updateAsymKeysRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateAsymKeysRequest, UpdateAsymKeysRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/kms/v2/keys-asym/{keyId}"
@@ -518,13 +523,13 @@ public class AsymmetricKeyManagementApi {
         
         // verify the required parameter 'keyId' is set
         if (keyId == null) {
-        	logger.error("Missing the required parameter 'keyId' when calling updateAsymKey(Async)");
+            logger.error("Missing the required parameter 'keyId' when calling updateAsymKey(Async)");
             throw new ApiException("Missing the required parameter 'keyId' when calling updateAsymKey(Async)");
         }
         
         // verify the required parameter 'updateAsymKeysRequest' is set
         if (updateAsymKeysRequest == null) {
-        	logger.error("Missing the required parameter 'updateAsymKeysRequest' when calling updateAsymKey(Async)");
+            logger.error("Missing the required parameter 'updateAsymKeysRequest' when calling updateAsymKey(Async)");
             throw new ApiException("Missing the required parameter 'updateAsymKeysRequest' when calling updateAsymKey(Async)");
         }
         
@@ -547,7 +552,7 @@ public class AsymmetricKeyManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Object updateAsymKey(String keyId, UpdateAsymKeysRequest updateAsymKeysRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'updateAsymKey' STARTED");
+        logger.info("CALL TO METHOD 'updateAsymKey' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Object> resp = updateAsymKeyWithHttpInfo(keyId, updateAsymKeysRequest);
         logger.info("CALL TO METHOD 'updateAsymKey' ENDED");

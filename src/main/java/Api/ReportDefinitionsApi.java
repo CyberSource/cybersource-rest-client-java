@@ -40,6 +40,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class ReportDefinitionsApi {
     private static Logger logger = LogManager.getLogger(ReportDefinitionsApi.class);
@@ -74,6 +75,7 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getResourceInfoByReportDefinitionCall(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -128,7 +130,7 @@ public class ReportDefinitionsApi {
         
         // verify the required parameter 'reportDefinitionName' is set
         if (reportDefinitionName == null) {
-        	logger.error("Missing the required parameter 'reportDefinitionName' when calling getResourceInfoByReportDefinition(Async)");
+            logger.error("Missing the required parameter 'reportDefinitionName' when calling getResourceInfoByReportDefinition(Async)");
             throw new ApiException("Missing the required parameter 'reportDefinitionName' when calling getResourceInfoByReportDefinition(Async)");
         }
         
@@ -153,7 +155,7 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getResourceInfoByReportDefinition' STARTED");
+        logger.info("CALL TO METHOD 'getResourceInfoByReportDefinition' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportDefinitionsNameGet200Response> resp = getResourceInfoByReportDefinitionWithHttpInfo(reportDefinitionName, subscriptionType, reportMimeType, organizationId);
         logger.info("CALL TO METHOD 'getResourceInfoByReportDefinition' ENDED");
@@ -224,6 +226,7 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getResourceV2InfoCall(String subscriptionType, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -292,7 +295,7 @@ public class ReportDefinitionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportDefinitionsGet200Response getResourceV2Info(String subscriptionType, String organizationId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getResourceV2Info' STARTED");
+        logger.info("CALL TO METHOD 'getResourceV2Info' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportDefinitionsGet200Response> resp = getResourceV2InfoWithHttpInfo(subscriptionType, organizationId);
         logger.info("CALL TO METHOD 'getResourceV2Info' ENDED");

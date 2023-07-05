@@ -45,6 +45,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class VoidApi {
     private static Logger logger = LogManager.getLogger(VoidApi.class);
@@ -76,7 +77,8 @@ public class VoidApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call mitVoidCall(MitVoidRequest mitVoidRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = mitVoidRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(mitVoidRequest, MitVoidRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/voids";
@@ -120,7 +122,7 @@ public class VoidApi {
         
         // verify the required parameter 'mitVoidRequest' is set
         if (mitVoidRequest == null) {
-        	logger.error("Missing the required parameter 'mitVoidRequest' when calling mitVoid(Async)");
+            logger.error("Missing the required parameter 'mitVoidRequest' when calling mitVoid(Async)");
             throw new ApiException("Missing the required parameter 'mitVoidRequest' when calling mitVoid(Async)");
         }
         
@@ -142,7 +144,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response mitVoid(MitVoidRequest mitVoidRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'mitVoid' STARTED");
+        logger.info("CALL TO METHOD 'mitVoid' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = mitVoidWithHttpInfo(mitVoidRequest);
         logger.info("CALL TO METHOD 'mitVoid' ENDED");
@@ -207,7 +209,8 @@ public class VoidApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call voidCaptureCall(VoidCaptureRequest voidCaptureRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = voidCaptureRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidCaptureRequest, VoidCaptureRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/captures/{id}/voids"
@@ -252,13 +255,13 @@ public class VoidApi {
         
         // verify the required parameter 'voidCaptureRequest' is set
         if (voidCaptureRequest == null) {
-        	logger.error("Missing the required parameter 'voidCaptureRequest' when calling voidCapture(Async)");
+            logger.error("Missing the required parameter 'voidCaptureRequest' when calling voidCapture(Async)");
             throw new ApiException("Missing the required parameter 'voidCaptureRequest' when calling voidCapture(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling voidCapture(Async)");
+            logger.error("Missing the required parameter 'id' when calling voidCapture(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling voidCapture(Async)");
         }
         
@@ -281,7 +284,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidCapture(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'voidCapture' STARTED");
+        logger.info("CALL TO METHOD 'voidCapture' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCaptureWithHttpInfo(voidCaptureRequest, id);
         logger.info("CALL TO METHOD 'voidCapture' ENDED");
@@ -348,7 +351,8 @@ public class VoidApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call voidCreditCall(VoidCreditRequest voidCreditRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = voidCreditRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidCreditRequest, VoidCreditRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/credits/{id}/voids"
@@ -393,13 +397,13 @@ public class VoidApi {
         
         // verify the required parameter 'voidCreditRequest' is set
         if (voidCreditRequest == null) {
-        	logger.error("Missing the required parameter 'voidCreditRequest' when calling voidCredit(Async)");
+            logger.error("Missing the required parameter 'voidCreditRequest' when calling voidCredit(Async)");
             throw new ApiException("Missing the required parameter 'voidCreditRequest' when calling voidCredit(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling voidCredit(Async)");
+            logger.error("Missing the required parameter 'id' when calling voidCredit(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling voidCredit(Async)");
         }
         
@@ -422,7 +426,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidCredit(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'voidCredit' STARTED");
+        logger.info("CALL TO METHOD 'voidCredit' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCreditWithHttpInfo(voidCreditRequest, id);
         logger.info("CALL TO METHOD 'voidCredit' ENDED");
@@ -489,7 +493,8 @@ public class VoidApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call voidPaymentCall(VoidPaymentRequest voidPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = voidPaymentRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidPaymentRequest, VoidPaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/payments/{id}/voids"
@@ -534,13 +539,13 @@ public class VoidApi {
         
         // verify the required parameter 'voidPaymentRequest' is set
         if (voidPaymentRequest == null) {
-        	logger.error("Missing the required parameter 'voidPaymentRequest' when calling voidPayment(Async)");
+            logger.error("Missing the required parameter 'voidPaymentRequest' when calling voidPayment(Async)");
             throw new ApiException("Missing the required parameter 'voidPaymentRequest' when calling voidPayment(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling voidPayment(Async)");
+            logger.error("Missing the required parameter 'id' when calling voidPayment(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling voidPayment(Async)");
         }
         
@@ -563,7 +568,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidPayment(VoidPaymentRequest voidPaymentRequest, String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'voidPayment' STARTED");
+        logger.info("CALL TO METHOD 'voidPayment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidPaymentWithHttpInfo(voidPaymentRequest, id);
         logger.info("CALL TO METHOD 'voidPayment' ENDED");
@@ -630,7 +635,8 @@ public class VoidApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call voidRefundCall(VoidRefundRequest voidRefundRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = voidRefundRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidRefundRequest, VoidRefundRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/refunds/{id}/voids"
@@ -675,13 +681,13 @@ public class VoidApi {
         
         // verify the required parameter 'voidRefundRequest' is set
         if (voidRefundRequest == null) {
-        	logger.error("Missing the required parameter 'voidRefundRequest' when calling voidRefund(Async)");
+            logger.error("Missing the required parameter 'voidRefundRequest' when calling voidRefund(Async)");
             throw new ApiException("Missing the required parameter 'voidRefundRequest' when calling voidRefund(Async)");
         }
         
         // verify the required parameter 'id' is set
         if (id == null) {
-        	logger.error("Missing the required parameter 'id' when calling voidRefund(Async)");
+            logger.error("Missing the required parameter 'id' when calling voidRefund(Async)");
             throw new ApiException("Missing the required parameter 'id' when calling voidRefund(Async)");
         }
         
@@ -704,7 +710,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2PaymentsVoidsPost201Response voidRefund(VoidRefundRequest voidRefundRequest, String id) throws ApiException {
-    	logger.info("CALL TO METHOD 'voidRefund' STARTED");
+        logger.info("CALL TO METHOD 'voidRefund' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidRefundWithHttpInfo(voidRefundRequest, id);
         logger.info("CALL TO METHOD 'voidRefund' ENDED");

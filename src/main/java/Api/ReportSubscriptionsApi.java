@@ -43,6 +43,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class ReportSubscriptionsApi {
     private static Logger logger = LogManager.getLogger(ReportSubscriptionsApi.class);
@@ -75,7 +76,8 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call createStandardOrClassicSubscriptionCall(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = predefinedSubscriptionRequestBean;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(predefinedSubscriptionRequestBean, PredefinedSubscriptionRequestBean.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/reporting/v3/predefined-report-subscriptions";
@@ -121,7 +123,7 @@ public class ReportSubscriptionsApi {
         
         // verify the required parameter 'predefinedSubscriptionRequestBean' is set
         if (predefinedSubscriptionRequestBean == null) {
-        	logger.error("Missing the required parameter 'predefinedSubscriptionRequestBean' when calling createStandardOrClassicSubscription(Async)");
+            logger.error("Missing the required parameter 'predefinedSubscriptionRequestBean' when calling createStandardOrClassicSubscription(Async)");
             throw new ApiException("Missing the required parameter 'predefinedSubscriptionRequestBean' when calling createStandardOrClassicSubscription(Async)");
         }
         
@@ -143,7 +145,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void createStandardOrClassicSubscription(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
-    	logger.info("CALL TO METHOD 'createStandardOrClassicSubscription' STARTED");
+        logger.info("CALL TO METHOD 'createStandardOrClassicSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         createStandardOrClassicSubscriptionWithHttpInfo(predefinedSubscriptionRequestBean, organizationId);
 
@@ -207,7 +209,8 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call createSubscriptionCall(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createReportSubscriptionRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createReportSubscriptionRequest, CreateReportSubscriptionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions";
@@ -253,7 +256,7 @@ public class ReportSubscriptionsApi {
         
         // verify the required parameter 'createReportSubscriptionRequest' is set
         if (createReportSubscriptionRequest == null) {
-        	logger.error("Missing the required parameter 'createReportSubscriptionRequest' when calling createSubscription(Async)");
+            logger.error("Missing the required parameter 'createReportSubscriptionRequest' when calling createSubscription(Async)");
             throw new ApiException("Missing the required parameter 'createReportSubscriptionRequest' when calling createSubscription(Async)");
         }
         
@@ -275,7 +278,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void createSubscription(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException {
-    	logger.info("CALL TO METHOD 'createSubscription' STARTED");
+        logger.info("CALL TO METHOD 'createSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         createSubscriptionWithHttpInfo(createReportSubscriptionRequest, organizationId);
 
@@ -339,6 +342,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call deleteSubscriptionCall(String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -389,7 +393,7 @@ public class ReportSubscriptionsApi {
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
-        	logger.error("Missing the required parameter 'reportName' when calling deleteSubscription(Async)");
+            logger.error("Missing the required parameter 'reportName' when calling deleteSubscription(Async)");
             throw new ApiException("Missing the required parameter 'reportName' when calling deleteSubscription(Async)");
         }
         
@@ -411,7 +415,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteSubscription(String reportName, String organizationId) throws ApiException {
-    	logger.info("CALL TO METHOD 'deleteSubscription' STARTED");
+        logger.info("CALL TO METHOD 'deleteSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteSubscriptionWithHttpInfo(reportName, organizationId);
 
@@ -474,6 +478,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getAllSubscriptionsCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -539,7 +544,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions(String organizationId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
+        logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getAllSubscriptionsWithHttpInfo(organizationId);
         logger.info("CALL TO METHOD 'getAllSubscriptions' ENDED");
@@ -604,6 +609,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getSubscriptionCall(String reportName, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -654,7 +660,7 @@ public class ReportSubscriptionsApi {
         
         // verify the required parameter 'reportName' is set
         if (reportName == null) {
-        	logger.error("Missing the required parameter 'reportName' when calling getSubscription(Async)");
+            logger.error("Missing the required parameter 'reportName' when calling getSubscription(Async)");
             throw new ApiException("Missing the required parameter 'reportName' when calling getSubscription(Async)");
         }
         
@@ -677,7 +683,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(String reportName, String organizationId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getSubscription' STARTED");
+        logger.info("CALL TO METHOD 'getSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> resp = getSubscriptionWithHttpInfo(reportName, organizationId);
         logger.info("CALL TO METHOD 'getSubscription' ENDED");

@@ -43,6 +43,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class VerificationApi {
     private static Logger logger = LogManager.getLogger(VerificationApi.class);
@@ -74,7 +75,8 @@ public class VerificationApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call validateExportComplianceCall(ValidateExportComplianceRequest validateExportComplianceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = validateExportComplianceRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(validateExportComplianceRequest, ValidateExportComplianceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/risk/v1/export-compliance-inquiries";
@@ -118,7 +120,7 @@ public class VerificationApi {
         
         // verify the required parameter 'validateExportComplianceRequest' is set
         if (validateExportComplianceRequest == null) {
-        	logger.error("Missing the required parameter 'validateExportComplianceRequest' when calling validateExportCompliance(Async)");
+            logger.error("Missing the required parameter 'validateExportComplianceRequest' when calling validateExportCompliance(Async)");
             throw new ApiException("Missing the required parameter 'validateExportComplianceRequest' when calling validateExportCompliance(Async)");
         }
         
@@ -140,7 +142,7 @@ public class VerificationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1ExportComplianceInquiriesPost201Response validateExportCompliance(ValidateExportComplianceRequest validateExportComplianceRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'validateExportCompliance' STARTED");
+        logger.info("CALL TO METHOD 'validateExportCompliance' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1ExportComplianceInquiriesPost201Response> resp = validateExportComplianceWithHttpInfo(validateExportComplianceRequest);
         logger.info("CALL TO METHOD 'validateExportCompliance' ENDED");
@@ -204,7 +206,8 @@ public class VerificationApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call verifyCustomerAddressCall(VerifyCustomerAddressRequest verifyCustomerAddressRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = verifyCustomerAddressRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(verifyCustomerAddressRequest, VerifyCustomerAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/risk/v1/address-verifications";
@@ -248,7 +251,7 @@ public class VerificationApi {
         
         // verify the required parameter 'verifyCustomerAddressRequest' is set
         if (verifyCustomerAddressRequest == null) {
-        	logger.error("Missing the required parameter 'verifyCustomerAddressRequest' when calling verifyCustomerAddress(Async)");
+            logger.error("Missing the required parameter 'verifyCustomerAddressRequest' when calling verifyCustomerAddress(Async)");
             throw new ApiException("Missing the required parameter 'verifyCustomerAddressRequest' when calling verifyCustomerAddress(Async)");
         }
         
@@ -270,7 +273,7 @@ public class VerificationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public RiskV1AddressVerificationsPost201Response verifyCustomerAddress(VerifyCustomerAddressRequest verifyCustomerAddressRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'verifyCustomerAddress' STARTED");
+        logger.info("CALL TO METHOD 'verifyCustomerAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AddressVerificationsPost201Response> resp = verifyCustomerAddressWithHttpInfo(verifyCustomerAddressRequest);
         logger.info("CALL TO METHOD 'verifyCustomerAddress' ENDED");

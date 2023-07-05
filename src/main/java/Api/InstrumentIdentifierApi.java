@@ -49,6 +49,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class InstrumentIdentifierApi {
     private static Logger logger = LogManager.getLogger(InstrumentIdentifierApi.class);
@@ -81,6 +82,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call deleteInstrumentIdentifierCall(String instrumentIdentifierId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -131,7 +133,7 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'instrumentIdentifierId' is set
         if (instrumentIdentifierId == null) {
-        	logger.error("Missing the required parameter 'instrumentIdentifierId' when calling deleteInstrumentIdentifier(Async)");
+            logger.error("Missing the required parameter 'instrumentIdentifierId' when calling deleteInstrumentIdentifier(Async)");
             throw new ApiException("Missing the required parameter 'instrumentIdentifierId' when calling deleteInstrumentIdentifier(Async)");
         }
         
@@ -153,7 +155,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteInstrumentIdentifier(String instrumentIdentifierId, String profileId) throws ApiException {
-    	logger.info("CALL TO METHOD 'deleteInstrumentIdentifier' STARTED");
+        logger.info("CALL TO METHOD 'deleteInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         deleteInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, profileId);
 
@@ -217,6 +219,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getInstrumentIdentifierCall(String instrumentIdentifierId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -267,7 +270,7 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'instrumentIdentifierId' is set
         if (instrumentIdentifierId == null) {
-        	logger.error("Missing the required parameter 'instrumentIdentifierId' when calling getInstrumentIdentifier(Async)");
+            logger.error("Missing the required parameter 'instrumentIdentifierId' when calling getInstrumentIdentifier(Async)");
             throw new ApiException("Missing the required parameter 'instrumentIdentifierId' when calling getInstrumentIdentifier(Async)");
         }
         
@@ -290,7 +293,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier getInstrumentIdentifier(String instrumentIdentifierId, String profileId) throws ApiException {
-    	logger.info("CALL TO METHOD 'getInstrumentIdentifier' STARTED");
+        logger.info("CALL TO METHOD 'getInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = getInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, profileId);
         logger.info("CALL TO METHOD 'getInstrumentIdentifier' ENDED");
@@ -359,6 +362,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call getInstrumentIdentifierPaymentInstrumentsListCall(String instrumentIdentifierId, String profileId, Long offset, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
@@ -413,7 +417,7 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'instrumentIdentifierId' is set
         if (instrumentIdentifierId == null) {
-        	logger.error("Missing the required parameter 'instrumentIdentifierId' when calling getInstrumentIdentifierPaymentInstrumentsList(Async)");
+            logger.error("Missing the required parameter 'instrumentIdentifierId' when calling getInstrumentIdentifierPaymentInstrumentsList(Async)");
             throw new ApiException("Missing the required parameter 'instrumentIdentifierId' when calling getInstrumentIdentifierPaymentInstrumentsList(Async)");
         }
         
@@ -438,7 +442,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PaymentInstrumentList getInstrumentIdentifierPaymentInstrumentsList(String instrumentIdentifierId, String profileId, Long offset, Long limit) throws ApiException {
-    	logger.info("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' STARTED");
+        logger.info("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PaymentInstrumentList> resp = getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(instrumentIdentifierId, profileId, offset, limit);
         logger.info("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' ENDED");
@@ -511,7 +515,8 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call patchInstrumentIdentifierCall(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = patchInstrumentIdentifierRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchInstrumentIdentifierRequest, PatchInstrumentIdentifierRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}"
@@ -560,13 +565,13 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'instrumentIdentifierId' is set
         if (instrumentIdentifierId == null) {
-        	logger.error("Missing the required parameter 'instrumentIdentifierId' when calling patchInstrumentIdentifier(Async)");
+            logger.error("Missing the required parameter 'instrumentIdentifierId' when calling patchInstrumentIdentifier(Async)");
             throw new ApiException("Missing the required parameter 'instrumentIdentifierId' when calling patchInstrumentIdentifier(Async)");
         }
         
         // verify the required parameter 'patchInstrumentIdentifierRequest' is set
         if (patchInstrumentIdentifierRequest == null) {
-        	logger.error("Missing the required parameter 'patchInstrumentIdentifierRequest' when calling patchInstrumentIdentifier(Async)");
+            logger.error("Missing the required parameter 'patchInstrumentIdentifierRequest' when calling patchInstrumentIdentifier(Async)");
             throw new ApiException("Missing the required parameter 'patchInstrumentIdentifierRequest' when calling patchInstrumentIdentifier(Async)");
         }
         
@@ -591,7 +596,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier patchInstrumentIdentifier(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch) throws ApiException {
-    	logger.info("CALL TO METHOD 'patchInstrumentIdentifier' STARTED");
+        logger.info("CALL TO METHOD 'patchInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = patchInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchInstrumentIdentifier' ENDED");
@@ -662,7 +667,8 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call postInstrumentIdentifierCall(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = postInstrumentIdentifierRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postInstrumentIdentifierRequest, PostInstrumentIdentifierRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers";
@@ -708,7 +714,7 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'postInstrumentIdentifierRequest' is set
         if (postInstrumentIdentifierRequest == null) {
-        	logger.error("Missing the required parameter 'postInstrumentIdentifierRequest' when calling postInstrumentIdentifier(Async)");
+            logger.error("Missing the required parameter 'postInstrumentIdentifierRequest' when calling postInstrumentIdentifier(Async)");
             throw new ApiException("Missing the required parameter 'postInstrumentIdentifierRequest' when calling postInstrumentIdentifier(Async)");
         }
         
@@ -731,7 +737,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier postInstrumentIdentifier(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId) throws ApiException {
-    	logger.info("CALL TO METHOD 'postInstrumentIdentifier' STARTED");
+        logger.info("CALL TO METHOD 'postInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = postInstrumentIdentifierWithHttpInfo(postInstrumentIdentifierRequest, profileId);
         logger.info("CALL TO METHOD 'postInstrumentIdentifier' ENDED");
@@ -799,7 +805,8 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call postInstrumentIdentifierEnrollmentCall(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = postInstrumentIdentifierEnrollmentRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierEnrollmentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/enrollment"
@@ -846,13 +853,13 @@ public class InstrumentIdentifierApi {
         
         // verify the required parameter 'instrumentIdentifierId' is set
         if (instrumentIdentifierId == null) {
-        	logger.error("Missing the required parameter 'instrumentIdentifierId' when calling postInstrumentIdentifierEnrollment(Async)");
+            logger.error("Missing the required parameter 'instrumentIdentifierId' when calling postInstrumentIdentifierEnrollment(Async)");
             throw new ApiException("Missing the required parameter 'instrumentIdentifierId' when calling postInstrumentIdentifierEnrollment(Async)");
         }
         
         // verify the required parameter 'postInstrumentIdentifierEnrollmentRequest' is set
         if (postInstrumentIdentifierEnrollmentRequest == null) {
-        	logger.error("Missing the required parameter 'postInstrumentIdentifierEnrollmentRequest' when calling postInstrumentIdentifierEnrollment(Async)");
+            logger.error("Missing the required parameter 'postInstrumentIdentifierEnrollmentRequest' when calling postInstrumentIdentifierEnrollment(Async)");
             throw new ApiException("Missing the required parameter 'postInstrumentIdentifierEnrollmentRequest' when calling postInstrumentIdentifierEnrollment(Async)");
         }
         
@@ -875,7 +882,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void postInstrumentIdentifierEnrollment(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException {
-    	logger.info("CALL TO METHOD 'postInstrumentIdentifierEnrollment' STARTED");
+        logger.info("CALL TO METHOD 'postInstrumentIdentifierEnrollment' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         postInstrumentIdentifierEnrollmentWithHttpInfo(instrumentIdentifierId, postInstrumentIdentifierEnrollmentRequest, profileId);
 

@@ -41,6 +41,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import utilities.tracking.SdkTracker;
 
 public class CreditApi {
     private static Logger logger = LogManager.getLogger(CreditApi.class);
@@ -72,7 +73,8 @@ public class CreditApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public okhttp3.Call createCreditCall(CreateCreditRequest createCreditRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = createCreditRequest;
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createCreditRequest, CreateCreditRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/pts/v2/credits";
@@ -116,7 +118,7 @@ public class CreditApi {
         
         // verify the required parameter 'createCreditRequest' is set
         if (createCreditRequest == null) {
-        	logger.error("Missing the required parameter 'createCreditRequest' when calling createCredit(Async)");
+            logger.error("Missing the required parameter 'createCreditRequest' when calling createCredit(Async)");
             throw new ApiException("Missing the required parameter 'createCreditRequest' when calling createCredit(Async)");
         }
         
@@ -138,7 +140,7 @@ public class CreditApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public PtsV2CreditsPost201Response createCredit(CreateCreditRequest createCreditRequest) throws ApiException {
-    	logger.info("CALL TO METHOD 'createCredit' STARTED");
+        logger.info("CALL TO METHOD 'createCredit' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2CreditsPost201Response> resp = createCreditWithHttpInfo(createCreditRequest);
         logger.info("CALL TO METHOD 'createCredit' ENDED");
