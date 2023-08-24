@@ -31,6 +31,9 @@ public class Riskv1authenticationsetupsTokenInformation {
   @SerializedName("transientToken")
   private String transientToken = null;
 
+  @SerializedName("jti")
+  private String jti = null;
+
   public Riskv1authenticationsetupsTokenInformation transientToken(String transientToken) {
     this.transientToken = transientToken;
     return this;
@@ -49,6 +52,24 @@ public class Riskv1authenticationsetupsTokenInformation {
     this.transientToken = transientToken;
   }
 
+  public Riskv1authenticationsetupsTokenInformation jti(String jti) {
+    this.jti = jti;
+    return this;
+  }
+
+   /**
+   * TMS Transient Token, 64 hexadecimal id value representing captured payment credentials (including Sensitive Authentication Data, e.g. CVV). 
+   * @return jti
+  **/
+  @ApiModelProperty(value = "TMS Transient Token, 64 hexadecimal id value representing captured payment credentials (including Sensitive Authentication Data, e.g. CVV). ")
+  public String getJti() {
+    return jti;
+  }
+
+  public void setJti(String jti) {
+    this.jti = jti;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +80,13 @@ public class Riskv1authenticationsetupsTokenInformation {
       return false;
     }
     Riskv1authenticationsetupsTokenInformation riskv1authenticationsetupsTokenInformation = (Riskv1authenticationsetupsTokenInformation) o;
-    return Objects.equals(this.transientToken, riskv1authenticationsetupsTokenInformation.transientToken);
+    return Objects.equals(this.transientToken, riskv1authenticationsetupsTokenInformation.transientToken) &&
+        Objects.equals(this.jti, riskv1authenticationsetupsTokenInformation.jti);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transientToken);
+    return Objects.hash(transientToken, jti);
   }
 
 
@@ -74,6 +96,7 @@ public class Riskv1authenticationsetupsTokenInformation {
     sb.append("class Riskv1authenticationsetupsTokenInformation {\n");
     
     sb.append("    transientToken: ").append(toIndentedString(transientToken)).append("\n");
+    sb.append("    jti: ").append(toIndentedString(jti)).append("\n");
     sb.append("}");
     return sb.toString();
   }

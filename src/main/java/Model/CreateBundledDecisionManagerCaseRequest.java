@@ -28,6 +28,7 @@ import Model.Riskv1decisionsPaymentInformation;
 import Model.Riskv1decisionsProcessingInformation;
 import Model.Riskv1decisionsProcessorInformation;
 import Model.Riskv1decisionsRiskInformation;
+import Model.Riskv1decisionsTokenInformation;
 import Model.Riskv1decisionsTravelInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -89,6 +90,9 @@ public class CreateBundledDecisionManagerCaseRequest {
 
   @SerializedName("watchlistScreeningInformation")
   private Ptsv2paymentsWatchlistScreeningInformation watchlistScreeningInformation = null;
+
+  @SerializedName("tokenInformation")
+  private Riskv1decisionsTokenInformation tokenInformation = null;
 
   public CreateBundledDecisionManagerCaseRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -368,6 +372,24 @@ public class CreateBundledDecisionManagerCaseRequest {
     this.watchlistScreeningInformation = watchlistScreeningInformation;
   }
 
+  public CreateBundledDecisionManagerCaseRequest tokenInformation(Riskv1decisionsTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+    return this;
+  }
+
+   /**
+   * Get tokenInformation
+   * @return tokenInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsTokenInformation getTokenInformation() {
+    return tokenInformation;
+  }
+
+  public void setTokenInformation(Riskv1decisionsTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -392,12 +414,13 @@ public class CreateBundledDecisionManagerCaseRequest {
         Objects.equals(this.acquirerInformation, createBundledDecisionManagerCaseRequest.acquirerInformation) &&
         Objects.equals(this.recurringPaymentInformation, createBundledDecisionManagerCaseRequest.recurringPaymentInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, createBundledDecisionManagerCaseRequest.consumerAuthenticationInformation) &&
-        Objects.equals(this.watchlistScreeningInformation, createBundledDecisionManagerCaseRequest.watchlistScreeningInformation);
+        Objects.equals(this.watchlistScreeningInformation, createBundledDecisionManagerCaseRequest.watchlistScreeningInformation) &&
+        Objects.equals(this.tokenInformation, createBundledDecisionManagerCaseRequest.tokenInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processorInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, riskInformation, travelInformation, merchantDefinedInformation, merchantInformation, acquirerInformation, recurringPaymentInformation, consumerAuthenticationInformation, watchlistScreeningInformation);
+    return Objects.hash(clientReferenceInformation, processorInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, riskInformation, travelInformation, merchantDefinedInformation, merchantInformation, acquirerInformation, recurringPaymentInformation, consumerAuthenticationInformation, watchlistScreeningInformation, tokenInformation);
   }
 
 
@@ -421,6 +444,7 @@ public class CreateBundledDecisionManagerCaseRequest {
     sb.append("    recurringPaymentInformation: ").append(toIndentedString(recurringPaymentInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
     sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
+    sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

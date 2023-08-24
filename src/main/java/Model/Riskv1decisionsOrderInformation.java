@@ -45,6 +45,9 @@ public class Riskv1decisionsOrderInformation {
   @SerializedName("preOrderDate")
   private String preOrderDate = null;
 
+  @SerializedName("cutoffDateTime")
+  private String cutoffDateTime = null;
+
   @SerializedName("reordered")
   private Boolean reordered = null;
 
@@ -118,6 +121,24 @@ public class Riskv1decisionsOrderInformation {
 
   public void setPreOrderDate(String preOrderDate) {
     this.preOrderDate = preOrderDate;
+  }
+
+  public Riskv1decisionsOrderInformation cutoffDateTime(String cutoffDateTime) {
+    this.cutoffDateTime = cutoffDateTime;
+    return this;
+  }
+
+   /**
+   * Starting date and time for an event or a journey that is independent of which transportation mechanism, in UTC. The cutoffDateTime will supersede travelInformation.departureTime if both are supplied in the request. Format: YYYY-MM-DDThh:mm:ssZ. Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return cutoffDateTime
+  **/
+  @ApiModelProperty(value = "Starting date and time for an event or a journey that is independent of which transportation mechanism, in UTC. The cutoffDateTime will supersede travelInformation.departureTime if both are supplied in the request. Format: YYYY-MM-DDThh:mm:ssZ. Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getCutoffDateTime() {
+    return cutoffDateTime;
+  }
+
+  public void setCutoffDateTime(String cutoffDateTime) {
+    this.cutoffDateTime = cutoffDateTime;
   }
 
   public Riskv1decisionsOrderInformation reordered(Boolean reordered) {
@@ -267,6 +288,7 @@ public class Riskv1decisionsOrderInformation {
     return Objects.equals(this.amountDetails, riskv1decisionsOrderInformation.amountDetails) &&
         Objects.equals(this.preOrder, riskv1decisionsOrderInformation.preOrder) &&
         Objects.equals(this.preOrderDate, riskv1decisionsOrderInformation.preOrderDate) &&
+        Objects.equals(this.cutoffDateTime, riskv1decisionsOrderInformation.cutoffDateTime) &&
         Objects.equals(this.reordered, riskv1decisionsOrderInformation.reordered) &&
         Objects.equals(this.shippingDetails, riskv1decisionsOrderInformation.shippingDetails) &&
         Objects.equals(this.shipTo, riskv1decisionsOrderInformation.shipTo) &&
@@ -278,7 +300,7 @@ public class Riskv1decisionsOrderInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, preOrder, preOrderDate, reordered, shippingDetails, shipTo, returnsAccepted, lineItems, billTo, totalOffersCount);
+    return Objects.hash(amountDetails, preOrder, preOrderDate, cutoffDateTime, reordered, shippingDetails, shipTo, returnsAccepted, lineItems, billTo, totalOffersCount);
   }
 
 
@@ -290,6 +312,7 @@ public class Riskv1decisionsOrderInformation {
     sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
     sb.append("    preOrder: ").append(toIndentedString(preOrder)).append("\n");
     sb.append("    preOrderDate: ").append(toIndentedString(preOrderDate)).append("\n");
+    sb.append("    cutoffDateTime: ").append(toIndentedString(cutoffDateTime)).append("\n");
     sb.append("    reordered: ").append(toIndentedString(reordered)).append("\n");
     sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");

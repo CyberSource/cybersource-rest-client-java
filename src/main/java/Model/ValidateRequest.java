@@ -20,6 +20,7 @@ import Model.Riskv1authenticationresultsOrderInformation;
 import Model.Riskv1authenticationresultsPaymentInformation;
 import Model.Riskv1authenticationsetupsProcessingInformation;
 import Model.Riskv1decisionsClientReferenceInformation;
+import Model.Riskv1decisionsTokenInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -51,6 +52,9 @@ public class ValidateRequest {
 
   @SerializedName("deviceInformation")
   private Riskv1authenticationresultsDeviceInformation deviceInformation = null;
+
+  @SerializedName("tokenInformation")
+  private Riskv1decisionsTokenInformation tokenInformation = null;
 
   public ValidateRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -160,6 +164,24 @@ public class ValidateRequest {
     this.deviceInformation = deviceInformation;
   }
 
+  public ValidateRequest tokenInformation(Riskv1decisionsTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+    return this;
+  }
+
+   /**
+   * Get tokenInformation
+   * @return tokenInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Riskv1decisionsTokenInformation getTokenInformation() {
+    return tokenInformation;
+  }
+
+  public void setTokenInformation(Riskv1decisionsTokenInformation tokenInformation) {
+    this.tokenInformation = tokenInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -175,12 +197,13 @@ public class ValidateRequest {
         Objects.equals(this.orderInformation, validateRequest.orderInformation) &&
         Objects.equals(this.paymentInformation, validateRequest.paymentInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, validateRequest.consumerAuthenticationInformation) &&
-        Objects.equals(this.deviceInformation, validateRequest.deviceInformation);
+        Objects.equals(this.deviceInformation, validateRequest.deviceInformation) &&
+        Objects.equals(this.tokenInformation, validateRequest.tokenInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, orderInformation, paymentInformation, consumerAuthenticationInformation, deviceInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, orderInformation, paymentInformation, consumerAuthenticationInformation, deviceInformation, tokenInformation);
   }
 
 
@@ -195,6 +218,7 @@ public class ValidateRequest {
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
     sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
+    sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
