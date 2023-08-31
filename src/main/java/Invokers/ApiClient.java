@@ -27,16 +27,8 @@ import java.security.cert.X509Certificate;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Properties;
-import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -1393,7 +1385,15 @@ public class ApiClient {
 
 			Authorization authorization = new Authorization();
 
-			String requestBody = json.serialize(body);
+			String requestBody = null;
+			if ((method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT") ||
+					method.equalsIgnoreCase("PATCH"))
+					&& body.equals("{}")) {
+				requestBody = "{}";
+			} else {
+				requestBody = json.serialize(body);
+			}
+
 			logger.debug("HTTP Request Body:\n" + requestBody);
 			merchantConfig.setRequestData(requestBody);
 			authorization.setJWTRequestBody(requestBody);
@@ -1489,7 +1489,11 @@ public class ApiClient {
 				reqBody = RequestBody.create(MediaType.parse(contentType), "");
 			}
 		} else {
-			reqBody = serialize(body, contentType);
+			if (body.equals("{}")) {
+				reqBody = RequestBody.create("{}", MediaType.parse(contentType));
+			} else {
+				reqBody = serialize(body, contentType);
+			}
 		}
 
 		Request request = null;
