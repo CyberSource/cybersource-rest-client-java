@@ -88,7 +88,7 @@ public class InvoiceSettingsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
+            "application/json", "application/hal+json", "application/json;charset=utf-8", "application/hal+json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -210,7 +210,7 @@ public class InvoiceSettingsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json;charset=utf-8"
+            "application/json", "application/hal+json", "application/json;charset=utf-8", "application/hal+json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
