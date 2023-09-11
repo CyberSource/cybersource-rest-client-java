@@ -60,6 +60,9 @@ public class Ptsv2paymentsOrderInformation {
   @SerializedName("isCryptocurrencyPurchase")
   private String isCryptocurrencyPurchase = null;
 
+  @SerializedName("cutoffDateTime")
+  private String cutoffDateTime = null;
+
   @SerializedName("preOrder")
   private String preOrder = null;
 
@@ -224,6 +227,24 @@ public class Ptsv2paymentsOrderInformation {
     this.isCryptocurrencyPurchase = isCryptocurrencyPurchase;
   }
 
+  public Ptsv2paymentsOrderInformation cutoffDateTime(String cutoffDateTime) {
+    this.cutoffDateTime = cutoffDateTime;
+    return this;
+  }
+
+   /**
+   * Starting date and time for an event or a journey that is independent of which transportation mechanism, in UTC. The cutoffDateTime will supersede travelInformation.transit.airline.legs[].departureDate and travelInformation.transit.airline.legs[].departureTime if these fields are supplied in the request. Format: YYYY-MM-DDThh:mm:ssZ. Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return cutoffDateTime
+  **/
+  @ApiModelProperty(value = "Starting date and time for an event or a journey that is independent of which transportation mechanism, in UTC. The cutoffDateTime will supersede travelInformation.transit.airline.legs[].departureDate and travelInformation.transit.airline.legs[].departureTime if these fields are supplied in the request. Format: YYYY-MM-DDThh:mm:ssZ. Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getCutoffDateTime() {
+    return cutoffDateTime;
+  }
+
+  public void setCutoffDateTime(String cutoffDateTime) {
+    this.cutoffDateTime = cutoffDateTime;
+  }
+
   public Ptsv2paymentsOrderInformation preOrder(String preOrder) {
     this.preOrder = preOrder;
     return this;
@@ -314,6 +335,7 @@ public class Ptsv2paymentsOrderInformation {
         Objects.equals(this.shippingDetails, ptsv2paymentsOrderInformation.shippingDetails) &&
         Objects.equals(this.returnsAccepted, ptsv2paymentsOrderInformation.returnsAccepted) &&
         Objects.equals(this.isCryptocurrencyPurchase, ptsv2paymentsOrderInformation.isCryptocurrencyPurchase) &&
+        Objects.equals(this.cutoffDateTime, ptsv2paymentsOrderInformation.cutoffDateTime) &&
         Objects.equals(this.preOrder, ptsv2paymentsOrderInformation.preOrder) &&
         Objects.equals(this.preOrderDate, ptsv2paymentsOrderInformation.preOrderDate) &&
         Objects.equals(this.reordered, ptsv2paymentsOrderInformation.reordered) &&
@@ -322,7 +344,7 @@ public class Ptsv2paymentsOrderInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails, returnsAccepted, isCryptocurrencyPurchase, preOrder, preOrderDate, reordered, totalOffersCount);
+    return Objects.hash(amountDetails, billTo, shipTo, lineItems, invoiceDetails, shippingDetails, returnsAccepted, isCryptocurrencyPurchase, cutoffDateTime, preOrder, preOrderDate, reordered, totalOffersCount);
   }
 
 
@@ -339,6 +361,7 @@ public class Ptsv2paymentsOrderInformation {
     sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
     sb.append("    returnsAccepted: ").append(toIndentedString(returnsAccepted)).append("\n");
     sb.append("    isCryptocurrencyPurchase: ").append(toIndentedString(isCryptocurrencyPurchase)).append("\n");
+    sb.append("    cutoffDateTime: ").append(toIndentedString(cutoffDateTime)).append("\n");
     sb.append("    preOrder: ").append(toIndentedString(preOrder)).append("\n");
     sb.append("    preOrderDate: ").append(toIndentedString(preOrderDate)).append("\n");
     sb.append("    reordered: ").append(toIndentedString(reordered)).append("\n");
