@@ -14,8 +14,9 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse2003PlanInformation;
-import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
+import Model.InlineResponse2002EmbeddedTotals;
+import Model.InlineResponse2003Billing;
+import Model.InlineResponse2004Records;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,115 +25,230 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse2004
  */
 
 public class InlineResponse2004 {
-  @SerializedName("_links")
-  private PtsV2IncrementalAuthorizationPatch201ResponseLinks links = null;
+  @SerializedName("version")
+  private String version = null;
 
-  @SerializedName("id")
-  private String id = null;
+  @SerializedName("reportCreatedDate")
+  private String reportCreatedDate = null;
 
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("batchId")
+  private String batchId = null;
 
-  @SerializedName("status")
-  private String status = null;
+  @SerializedName("batchSource")
+  private String batchSource = null;
 
-  @SerializedName("planInformation")
-  private InlineResponse2003PlanInformation planInformation = null;
+  @SerializedName("batchCaEndpoints")
+  private String batchCaEndpoints = null;
 
-  public InlineResponse2004 links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
-    this.links = links;
+  @SerializedName("batchCreatedDate")
+  private String batchCreatedDate = null;
+
+  @SerializedName("merchantReference")
+  private String merchantReference = null;
+
+  @SerializedName("totals")
+  private InlineResponse2002EmbeddedTotals totals = null;
+
+  @SerializedName("billing")
+  private InlineResponse2003Billing billing = null;
+
+  @SerializedName("records")
+  private List<InlineResponse2004Records> records = null;
+
+  public InlineResponse2004 version(String version) {
+    this.version = version;
     return this;
   }
 
    /**
-   * Get links
-   * @return links
+   * Get version
+   * @return version
+  **/
+  @ApiModelProperty(example = "1.0", value = "")
+  public String getVersion() {
+    return version;
+  }
+
+  public void setVersion(String version) {
+    this.version = version;
+  }
+
+  public InlineResponse2004 reportCreatedDate(String reportCreatedDate) {
+    this.reportCreatedDate = reportCreatedDate;
+    return this;
+  }
+
+   /**
+   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+   * @return reportCreatedDate
+  **/
+  @ApiModelProperty(example = "2018-05-22T14.38.57Z", value = "ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ")
+  public String getReportCreatedDate() {
+    return reportCreatedDate;
+  }
+
+  public void setReportCreatedDate(String reportCreatedDate) {
+    this.reportCreatedDate = reportCreatedDate;
+  }
+
+  public InlineResponse2004 batchId(String batchId) {
+    this.batchId = batchId;
+    return this;
+  }
+
+   /**
+   * Unique identification number assigned to the submitted request.
+   * @return batchId
+  **/
+  @ApiModelProperty(example = "16188390061150001062041064", value = "Unique identification number assigned to the submitted request.")
+  public String getBatchId() {
+    return batchId;
+  }
+
+  public void setBatchId(String batchId) {
+    this.batchId = batchId;
+  }
+
+  public InlineResponse2004 batchSource(String batchSource) {
+    this.batchSource = batchSource;
+    return this;
+  }
+
+   /**
+   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
+   * @return batchSource
+  **/
+  @ApiModelProperty(value = "Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE ")
+  public String getBatchSource() {
+    return batchSource;
+  }
+
+  public void setBatchSource(String batchSource) {
+    this.batchSource = batchSource;
+  }
+
+  public InlineResponse2004 batchCaEndpoints(String batchCaEndpoints) {
+    this.batchCaEndpoints = batchCaEndpoints;
+    return this;
+  }
+
+   /**
+   * Get batchCaEndpoints
+   * @return batchCaEndpoints
+  **/
+  @ApiModelProperty(example = "VISA,MASTERCARD", value = "")
+  public String getBatchCaEndpoints() {
+    return batchCaEndpoints;
+  }
+
+  public void setBatchCaEndpoints(String batchCaEndpoints) {
+    this.batchCaEndpoints = batchCaEndpoints;
+  }
+
+  public InlineResponse2004 batchCreatedDate(String batchCreatedDate) {
+    this.batchCreatedDate = batchCreatedDate;
+    return this;
+  }
+
+   /**
+   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+   * @return batchCreatedDate
+  **/
+  @ApiModelProperty(example = "2018-05-22T14.38.57Z", value = "ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ")
+  public String getBatchCreatedDate() {
+    return batchCreatedDate;
+  }
+
+  public void setBatchCreatedDate(String batchCreatedDate) {
+    this.batchCreatedDate = batchCreatedDate;
+  }
+
+  public InlineResponse2004 merchantReference(String merchantReference) {
+    this.merchantReference = merchantReference;
+    return this;
+  }
+
+   /**
+   * Reference used by merchant to identify batch.
+   * @return merchantReference
+  **/
+  @ApiModelProperty(example = "TC50171_3", value = "Reference used by merchant to identify batch.")
+  public String getMerchantReference() {
+    return merchantReference;
+  }
+
+  public void setMerchantReference(String merchantReference) {
+    this.merchantReference = merchantReference;
+  }
+
+  public InlineResponse2004 totals(InlineResponse2002EmbeddedTotals totals) {
+    this.totals = totals;
+    return this;
+  }
+
+   /**
+   * Get totals
+   * @return totals
   **/
   @ApiModelProperty(value = "")
-  public PtsV2IncrementalAuthorizationPatch201ResponseLinks getLinks() {
-    return links;
+  public InlineResponse2002EmbeddedTotals getTotals() {
+    return totals;
   }
 
-  public void setLinks(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
-    this.links = links;
+  public void setTotals(InlineResponse2002EmbeddedTotals totals) {
+    this.totals = totals;
   }
 
-  public InlineResponse2004 id(String id) {
-    this.id = id;
+  public InlineResponse2004 billing(InlineResponse2003Billing billing) {
+    this.billing = billing;
     return this;
   }
 
    /**
-   * An unique identification number generated by Cybersource to identify the submitted request. Returned by all services. It is also appended to the endpoint of the resource. On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. 
-   * @return id
-  **/
-  @ApiModelProperty(value = "An unique identification number generated by Cybersource to identify the submitted request. Returned by all services. It is also appended to the endpoint of the resource. On incremental authorizations, this value with be the same as the identification number returned in the original authorization response. ")
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public InlineResponse2004 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
-   /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
-   * @return submitTimeUtc
-  **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
-
-  public InlineResponse2004 status(String status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * The status of the submitted transaction.  Possible values:  - COMPLETED 
-   * @return status
-  **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - COMPLETED ")
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public InlineResponse2004 planInformation(InlineResponse2003PlanInformation planInformation) {
-    this.planInformation = planInformation;
-    return this;
-  }
-
-   /**
-   * Get planInformation
-   * @return planInformation
+   * Get billing
+   * @return billing
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2003PlanInformation getPlanInformation() {
-    return planInformation;
+  public InlineResponse2003Billing getBilling() {
+    return billing;
   }
 
-  public void setPlanInformation(InlineResponse2003PlanInformation planInformation) {
-    this.planInformation = planInformation;
+  public void setBilling(InlineResponse2003Billing billing) {
+    this.billing = billing;
+  }
+
+  public InlineResponse2004 records(List<InlineResponse2004Records> records) {
+    this.records = records;
+    return this;
+  }
+
+  public InlineResponse2004 addRecordsItem(InlineResponse2004Records recordsItem) {
+    if (this.records == null) {
+      this.records = new ArrayList<InlineResponse2004Records>();
+    }
+    this.records.add(recordsItem);
+    return this;
+  }
+
+   /**
+   * Get records
+   * @return records
+  **/
+  @ApiModelProperty(value = "")
+  public List<InlineResponse2004Records> getRecords() {
+    return records;
+  }
+
+  public void setRecords(List<InlineResponse2004Records> records) {
+    this.records = records;
   }
 
 
@@ -145,16 +261,21 @@ public class InlineResponse2004 {
       return false;
     }
     InlineResponse2004 inlineResponse2004 = (InlineResponse2004) o;
-    return Objects.equals(this.links, inlineResponse2004.links) &&
-        Objects.equals(this.id, inlineResponse2004.id) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse2004.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2004.status) &&
-        Objects.equals(this.planInformation, inlineResponse2004.planInformation);
+    return Objects.equals(this.version, inlineResponse2004.version) &&
+        Objects.equals(this.reportCreatedDate, inlineResponse2004.reportCreatedDate) &&
+        Objects.equals(this.batchId, inlineResponse2004.batchId) &&
+        Objects.equals(this.batchSource, inlineResponse2004.batchSource) &&
+        Objects.equals(this.batchCaEndpoints, inlineResponse2004.batchCaEndpoints) &&
+        Objects.equals(this.batchCreatedDate, inlineResponse2004.batchCreatedDate) &&
+        Objects.equals(this.merchantReference, inlineResponse2004.merchantReference) &&
+        Objects.equals(this.totals, inlineResponse2004.totals) &&
+        Objects.equals(this.billing, inlineResponse2004.billing) &&
+        Objects.equals(this.records, inlineResponse2004.records);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, planInformation);
+    return Objects.hash(version, reportCreatedDate, batchId, batchSource, batchCaEndpoints, batchCreatedDate, merchantReference, totals, billing, records);
   }
 
 
@@ -163,11 +284,16 @@ public class InlineResponse2004 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2004 {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    planInformation: ").append(toIndentedString(planInformation)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    reportCreatedDate: ").append(toIndentedString(reportCreatedDate)).append("\n");
+    sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
+    sb.append("    batchSource: ").append(toIndentedString(batchSource)).append("\n");
+    sb.append("    batchCaEndpoints: ").append(toIndentedString(batchCaEndpoints)).append("\n");
+    sb.append("    batchCreatedDate: ").append(toIndentedString(batchCreatedDate)).append("\n");
+    sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
+    sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
+    sb.append("    billing: ").append(toIndentedString(billing)).append("\n");
+    sb.append("    records: ").append(toIndentedString(records)).append("\n");
     sb.append("}");
     return sb.toString();
   }

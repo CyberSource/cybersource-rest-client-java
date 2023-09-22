@@ -91,6 +91,9 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("splitPaymentTransaction")
   private Boolean splitPaymentTransaction = null;
 
+  @SerializedName("cardVerificationIndicator")
+  private Boolean cardVerificationIndicator = null;
+
   public Ptsv2paymentsProcessingInformationAuthorizationOptions authType(String authType) {
     this.authType = authType;
     return this;
@@ -459,6 +462,24 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     this.splitPaymentTransaction = splitPaymentTransaction;
   }
 
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions cardVerificationIndicator(Boolean cardVerificationIndicator) {
+    this.cardVerificationIndicator = cardVerificationIndicator;
+    return this;
+  }
+
+   /**
+   * This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - &#x60;true&#x60;   - &#x60;false&#x60; (default value) 
+   * @return cardVerificationIndicator
+  **/
+  @ApiModelProperty(value = "This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - `true`   - `false` (default value) ")
+  public Boolean getCardVerificationIndicator() {
+    return cardVerificationIndicator;
+  }
+
+  public void setCardVerificationIndicator(Boolean cardVerificationIndicator) {
+    this.cardVerificationIndicator = cardVerificationIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -488,12 +509,13 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
         Objects.equals(this.debtRecoveryIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.debtRecoveryIndicator) &&
         Objects.equals(this.deferredAuthIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.deferredAuthIndicator) &&
         Objects.equals(this.cashAdvanceIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.cashAdvanceIndicator) &&
-        Objects.equals(this.splitPaymentTransaction, ptsv2paymentsProcessingInformationAuthorizationOptions.splitPaymentTransaction);
+        Objects.equals(this.splitPaymentTransaction, ptsv2paymentsProcessingInformationAuthorizationOptions.splitPaymentTransaction) &&
+        Objects.equals(this.cardVerificationIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.cardVerificationIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator, splitPaymentTransaction);
+    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator, splitPaymentTransaction, cardVerificationIndicator);
   }
 
 
@@ -522,6 +544,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     sb.append("    deferredAuthIndicator: ").append(toIndentedString(deferredAuthIndicator)).append("\n");
     sb.append("    cashAdvanceIndicator: ").append(toIndentedString(cashAdvanceIndicator)).append("\n");
     sb.append("    splitPaymentTransaction: ").append(toIndentedString(splitPaymentTransaction)).append("\n");
+    sb.append("    cardVerificationIndicator: ").append(toIndentedString(cardVerificationIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

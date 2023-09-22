@@ -14,20 +14,20 @@
 package Api;
 
 import Invokers.ApiException;
+import Model.ActivateSubscriptionResponse;
+import Model.CancelSubscriptionResponse;
 import Model.CreateSubscriptionRequest;
-import Model.InlineResponse20010;
-import Model.InlineResponse2006;
-import Model.InlineResponse2007;
-import Model.InlineResponse2008;
-import Model.InlineResponse2009;
-import Model.InlineResponse2011;
-import Model.InlineResponse202;
-import Model.InlineResponse2021;
-import Model.InlineResponse4001;
+import Model.CreateSubscriptionResponse;
+import Model.GetAllSubscriptionsResponse;
+import Model.GetSubscriptionCodeResponse;
+import Model.GetSubscriptionResponse;
 import Model.InlineResponse4002;
+import Model.InlineResponse4003;
 import Model.InlineResponse404;
 import Model.PtsV2PaymentsPost502Response;
+import Model.SuspendSubscriptionResponse;
 import Model.UpdateSubscription;
+import Model.UpdateSubscriptionResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -56,7 +56,7 @@ public class SubscriptionsApiTest {
     @Test
     public void activateSubscriptionTest() throws ApiException {
         String id = null;
-        InlineResponse2009 response = api.activateSubscription(id);
+        ActivateSubscriptionResponse response = api.activateSubscription(id);
 
         // TODO: test validations
     }
@@ -72,7 +72,7 @@ public class SubscriptionsApiTest {
     @Test
     public void cancelSubscriptionTest() throws ApiException {
         String id = null;
-        InlineResponse202 response = api.cancelSubscription(id);
+        CancelSubscriptionResponse response = api.cancelSubscription(id);
 
         // TODO: test validations
     }
@@ -88,7 +88,7 @@ public class SubscriptionsApiTest {
     @Test
     public void createSubscriptionTest() throws ApiException {
         CreateSubscriptionRequest createSubscriptionRequest = null;
-        InlineResponse2011 response = api.createSubscription(createSubscriptionRequest);
+        CreateSubscriptionResponse response = api.createSubscription(createSubscriptionRequest);
 
         // TODO: test validations
     }
@@ -107,7 +107,7 @@ public class SubscriptionsApiTest {
         Integer limit = null;
         String code = null;
         String status = null;
-        InlineResponse2006 response = api.getAllSubscriptions(offset, limit, code, status);
+        GetAllSubscriptionsResponse response = api.getAllSubscriptions(offset, limit, code, status);
 
         // TODO: test validations
     }
@@ -123,7 +123,7 @@ public class SubscriptionsApiTest {
     @Test
     public void getSubscriptionTest() throws ApiException {
         String id = null;
-        InlineResponse2007 response = api.getSubscription(id);
+        GetSubscriptionResponse response = api.getSubscription(id);
 
         // TODO: test validations
     }
@@ -138,7 +138,7 @@ public class SubscriptionsApiTest {
      */
     @Test
     public void getSubscriptionCodeTest() throws ApiException {
-        InlineResponse20010 response = api.getSubscriptionCode();
+        GetSubscriptionCodeResponse response = api.getSubscriptionCode();
 
         // TODO: test validations
     }
@@ -154,7 +154,7 @@ public class SubscriptionsApiTest {
     @Test
     public void suspendSubscriptionTest() throws ApiException {
         String id = null;
-        InlineResponse2021 response = api.suspendSubscription(id);
+        SuspendSubscriptionResponse response = api.suspendSubscription(id);
 
         // TODO: test validations
     }
@@ -171,7 +171,7 @@ public class SubscriptionsApiTest {
     public void updateSubscriptionTest() throws ApiException {
         String id = null;
         UpdateSubscription updateSubscription = null;
-        InlineResponse2008 response = api.updateSubscription(id, updateSubscription);
+        UpdateSubscriptionResponse response = api.updateSubscription(id, updateSubscription);
 
         // TODO: test validations
     }

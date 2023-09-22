@@ -15,9 +15,9 @@ package Api;
 
 import Invokers.ApiException;
 import org.joda.time.DateTime;
-import Model.InlineResponse20011;
-import Model.InlineResponse4005;
-import Model.InlineResponse5001;
+import Model.InlineResponse2001;
+import Model.InlineResponse4006;
+import Model.InlineResponse5002;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -53,7 +53,7 @@ public class KeyManagementApiTest {
         List<String> keyTypes = null;
         DateTime expirationStartDate = null;
         DateTime expirationEndDate = null;
-        InlineResponse20011 response = api.searchKeys(offset, limit, sort, organizationIds, keyIds, keyTypes, expirationStartDate, expirationEndDate);
+        InlineResponse2001 response = api.searchKeys(offset, limit, sort, organizationIds, keyIds, keyTypes, expirationStartDate, expirationEndDate);
 
         // TODO: test validations
     }

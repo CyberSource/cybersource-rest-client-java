@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse200OrderInformation;
+import Model.GetAllPlansResponseOrderInformation;
 import Model.Rbsv1plansidPlanInformation;
 import Model.Rbsv1plansidProcessingInformation;
 import com.google.gson.TypeAdapter;
@@ -38,7 +38,7 @@ public class UpdatePlanRequest {
   private Rbsv1plansidProcessingInformation processingInformation = null;
 
   @SerializedName("orderInformation")
-  private InlineResponse200OrderInformation orderInformation = null;
+  private GetAllPlansResponseOrderInformation orderInformation = null;
 
   public UpdatePlanRequest planInformation(Rbsv1plansidPlanInformation planInformation) {
     this.planInformation = planInformation;
@@ -76,7 +76,7 @@ public class UpdatePlanRequest {
     this.processingInformation = processingInformation;
   }
 
-  public UpdatePlanRequest orderInformation(InlineResponse200OrderInformation orderInformation) {
+  public UpdatePlanRequest orderInformation(GetAllPlansResponseOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
   }
@@ -86,11 +86,11 @@ public class UpdatePlanRequest {
    * @return orderInformation
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse200OrderInformation getOrderInformation() {
+  public GetAllPlansResponseOrderInformation getOrderInformation() {
     return orderInformation;
   }
 
-  public void setOrderInformation(InlineResponse200OrderInformation orderInformation) {
+  public void setOrderInformation(GetAllPlansResponseOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
   }
 

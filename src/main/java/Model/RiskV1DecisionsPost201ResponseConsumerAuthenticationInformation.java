@@ -147,7 +147,7 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
   private String directoryServerTransactionId = null;
 
   @SerializedName("acsOperatorID")
-  private Integer acsOperatorID = null;
+  private String acsOperatorID = null;
 
   @SerializedName("acsReferenceNumber")
   private String acsReferenceNumber = null;
@@ -866,7 +866,7 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
     this.directoryServerTransactionId = directoryServerTransactionId;
   }
 
-  public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation acsOperatorID(Integer acsOperatorID) {
+  public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation acsOperatorID(String acsOperatorID) {
     this.acsOperatorID = acsOperatorID;
     return this;
   }
@@ -876,11 +876,11 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
    * @return acsOperatorID
   **/
   @ApiModelProperty(value = "Directory Server assigned ACS identifier.")
-  public Integer getAcsOperatorID() {
+  public String getAcsOperatorID() {
     return acsOperatorID;
   }
 
-  public void setAcsOperatorID(Integer acsOperatorID) {
+  public void setAcsOperatorID(String acsOperatorID) {
     this.acsOperatorID = acsOperatorID;
   }
 

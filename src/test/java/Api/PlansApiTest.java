@@ -14,18 +14,18 @@
 package Api;
 
 import Invokers.ApiException;
+import Model.ActivateDeactivatePlanResponse;
 import Model.CreatePlanRequest;
-import Model.InlineResponse200;
-import Model.InlineResponse2001;
-import Model.InlineResponse2002;
-import Model.InlineResponse2003;
-import Model.InlineResponse2004;
-import Model.InlineResponse2005;
-import Model.InlineResponse201;
-import Model.InlineResponse4001;
+import Model.CreatePlanResponse;
+import Model.DeletePlanResponse;
+import Model.GetAllPlansResponse;
+import Model.GetPlanCodeResponse;
+import Model.GetPlanResponse;
+import Model.InlineResponse4002;
 import Model.InlineResponse404;
 import Model.PtsV2PaymentsPost502Response;
 import Model.UpdatePlanRequest;
+import Model.UpdatePlanResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -54,7 +54,7 @@ public class PlansApiTest {
     @Test
     public void activatePlanTest() throws ApiException {
         String id = null;
-        InlineResponse2004 response = api.activatePlan(id);
+        ActivateDeactivatePlanResponse response = api.activatePlan(id);
 
         // TODO: test validations
     }
@@ -70,7 +70,7 @@ public class PlansApiTest {
     @Test
     public void createPlanTest() throws ApiException {
         CreatePlanRequest createPlanRequest = null;
-        InlineResponse201 response = api.createPlan(createPlanRequest);
+        CreatePlanResponse response = api.createPlan(createPlanRequest);
 
         // TODO: test validations
     }
@@ -86,7 +86,7 @@ public class PlansApiTest {
     @Test
     public void deactivatePlanTest() throws ApiException {
         String id = null;
-        InlineResponse2004 response = api.deactivatePlan(id);
+        ActivateDeactivatePlanResponse response = api.deactivatePlan(id);
 
         // TODO: test validations
     }
@@ -102,7 +102,7 @@ public class PlansApiTest {
     @Test
     public void deletePlanTest() throws ApiException {
         String id = null;
-        InlineResponse2002 response = api.deletePlan(id);
+        DeletePlanResponse response = api.deletePlan(id);
 
         // TODO: test validations
     }
@@ -118,7 +118,7 @@ public class PlansApiTest {
     @Test
     public void getPlanTest() throws ApiException {
         String id = null;
-        InlineResponse2001 response = api.getPlan(id);
+        GetPlanResponse response = api.getPlan(id);
 
         // TODO: test validations
     }
@@ -133,7 +133,7 @@ public class PlansApiTest {
      */
     @Test
     public void getPlanCodeTest() throws ApiException {
-        InlineResponse2005 response = api.getPlanCode();
+        GetPlanCodeResponse response = api.getPlanCode();
 
         // TODO: test validations
     }
@@ -153,7 +153,7 @@ public class PlansApiTest {
         String code = null;
         String status = null;
         String name = null;
-        InlineResponse200 response = api.getPlans(offset, limit, code, status, name);
+        GetAllPlansResponse response = api.getPlans(offset, limit, code, status, name);
 
         // TODO: test validations
     }
@@ -170,7 +170,7 @@ public class PlansApiTest {
     public void updatePlanTest() throws ApiException {
         String id = null;
         UpdatePlanRequest updatePlanRequest = null;
-        InlineResponse2003 response = api.updatePlan(id, updatePlanRequest);
+        UpdatePlanResponse response = api.updatePlan(id, updatePlanRequest);
 
         // TODO: test validations
     }

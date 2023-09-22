@@ -14,8 +14,8 @@
 package Api;
 
 import Invokers.ApiException;
-import Model.InlineResponse4005;
-import Model.InlineResponse5001;
+import Model.InlineResponse4006;
+import Model.InlineResponse5002;
 import Model.UpdatePGPKeysRequest1;
 import org.junit.Test;
 import org.junit.Ignore;

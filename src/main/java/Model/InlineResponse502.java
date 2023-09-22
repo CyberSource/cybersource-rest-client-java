@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,6 +23,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse502
@@ -40,8 +43,8 @@ public class InlineResponse502 {
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("statusCode")
-  private String statusCode = null;
+  @SerializedName("details")
+  private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
 
   public InlineResponse502 submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -67,10 +70,10 @@ public class InlineResponse502 {
   }
 
    /**
-   * The status of the submitted transaction.  Possible values:  - SERVER_ERROR 
+   * The status of the submitted transaction. Possible values: - &#x60;SERVER_ERROR&#x60; 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - SERVER_ERROR ")
+  @ApiModelProperty(value = "The status of the submitted transaction. Possible values: - `SERVER_ERROR` ")
   public String getStatus() {
     return status;
   }
@@ -85,10 +88,10 @@ public class InlineResponse502 {
   }
 
    /**
-   * The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT 
+   * The reason of the status. Possible Values: - &#x60;INTERNAL_SERVICE_ERROR&#x60; 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT ")
+  @ApiModelProperty(value = "The reason of the status. Possible Values: - `INTERNAL_SERVICE_ERROR` ")
   public String getReason() {
     return reason;
   }
@@ -103,10 +106,10 @@ public class InlineResponse502 {
   }
 
    /**
-   * The detail message related to the status and reason listed above.
+   * Application failed.
    * @return message
   **/
-  @ApiModelProperty(value = "The detail message related to the status and reason listed above.")
+  @ApiModelProperty(value = "Application failed.")
   public String getMessage() {
     return message;
   }
@@ -115,22 +118,30 @@ public class InlineResponse502 {
     this.message = message;
   }
 
-  public InlineResponse502 statusCode(String statusCode) {
-    this.statusCode = statusCode;
+  public InlineResponse502 details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+    this.details = details;
+    return this;
+  }
+
+  public InlineResponse502 addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
+    if (this.details == null) {
+      this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
+    }
+    this.details.add(detailsItem);
     return this;
   }
 
    /**
-   * HTTP status code of the submitted request.  Possible values:  - 500 
-   * @return statusCode
+   * Get details
+   * @return details
   **/
-  @ApiModelProperty(value = "HTTP status code of the submitted request.  Possible values:  - 500 ")
-  public String getStatusCode() {
-    return statusCode;
+  @ApiModelProperty(value = "")
+  public List<PtsV2PaymentsPost201ResponseErrorInformationDetails> getDetails() {
+    return details;
   }
 
-  public void setStatusCode(String statusCode) {
-    this.statusCode = statusCode;
+  public void setDetails(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+    this.details = details;
   }
 
 
@@ -147,12 +158,12 @@ public class InlineResponse502 {
         Objects.equals(this.status, inlineResponse502.status) &&
         Objects.equals(this.reason, inlineResponse502.reason) &&
         Objects.equals(this.message, inlineResponse502.message) &&
-        Objects.equals(this.statusCode, inlineResponse502.statusCode);
+        Objects.equals(this.details, inlineResponse502.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, reason, message, statusCode);
+    return Objects.hash(submitTimeUtc, status, reason, message, details);
   }
 
 
@@ -165,7 +176,7 @@ public class InlineResponse502 {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

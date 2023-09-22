@@ -28,18 +28,18 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
+import Model.ActivateDeactivatePlanResponse;
 import Model.CreatePlanRequest;
-import Model.InlineResponse200;
-import Model.InlineResponse2001;
-import Model.InlineResponse2002;
-import Model.InlineResponse2003;
-import Model.InlineResponse2004;
-import Model.InlineResponse2005;
-import Model.InlineResponse201;
-import Model.InlineResponse4001;
+import Model.CreatePlanResponse;
+import Model.DeletePlanResponse;
+import Model.GetAllPlansResponse;
+import Model.GetPlanCodeResponse;
+import Model.GetPlanResponse;
+import Model.InlineResponse4002;
 import Model.InlineResponse404;
 import Model.PtsV2PaymentsPost502Response;
 import Model.UpdatePlanRequest;
+import Model.UpdatePlanResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -148,13 +148,13 @@ public class PlansApi {
      * Activate a Plan
      * Activate a Plan
      * @param id Plan Id (required)
-     * @return InlineResponse2004
+     * @return ActivateDeactivatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2004 activatePlan(String id) throws ApiException {
+    public ActivateDeactivatePlanResponse activatePlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'activatePlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2004> resp = activatePlanWithHttpInfo(id);
+        ApiResponse<ActivateDeactivatePlanResponse> resp = activatePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'activatePlan' ENDED");
         return resp.getData();
     }
@@ -163,12 +163,12 @@ public class PlansApi {
      * Activate a Plan
      * Activate a Plan
      * @param id Plan Id (required)
-     * @return ApiResponse&lt;InlineResponse2004&gt;
+     * @return ApiResponse&lt;ActivateDeactivatePlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2004> activatePlanWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<ActivateDeactivatePlanResponse> activatePlanWithHttpInfo(String id) throws ApiException {
         okhttp3.Call call = activatePlanValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<ActivateDeactivatePlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -180,7 +180,7 @@ public class PlansApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call activatePlanAsync(String id, final ApiCallback<InlineResponse2004> callback) throws ApiException {
+    public okhttp3.Call activatePlanAsync(String id, final ApiCallback<ActivateDeactivatePlanResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -203,7 +203,7 @@ public class PlansApi {
         }
 
         okhttp3.Call call = activatePlanValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<ActivateDeactivatePlanResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -279,13 +279,13 @@ public class PlansApi {
      * Create a Plan
      * The recurring billing service enables you to manage payment plans and subscriptions for recurring payment schedules. It securely stores your customer&#39;s payment information and personal data within secure Visa data centers, reducing storage risks and PCI DSS scope through the use of *Token Management* (*TMS*).  The three key elements of *Cybersource* Recurring Billing are:  -  **Token**: stores customer billing, shipping, and payment details.  -  **Plan**: stores the billing schedule.  -  **Subscription**: combines the token and plan, and defines the subscription start date, name, and description.  The APIs in this section demonstrate the management of the Plans and Subscriptions. For Tokens please refer to [Token Management](#token-management) 
      * @param createPlanRequest  (required)
-     * @return InlineResponse201
+     * @return CreatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse201 createPlan(CreatePlanRequest createPlanRequest) throws ApiException {
+    public CreatePlanResponse createPlan(CreatePlanRequest createPlanRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createPlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse201> resp = createPlanWithHttpInfo(createPlanRequest);
+        ApiResponse<CreatePlanResponse> resp = createPlanWithHttpInfo(createPlanRequest);
         logger.info("CALL TO METHOD 'createPlan' ENDED");
         return resp.getData();
     }
@@ -294,12 +294,12 @@ public class PlansApi {
      * Create a Plan
      * The recurring billing service enables you to manage payment plans and subscriptions for recurring payment schedules. It securely stores your customer&#39;s payment information and personal data within secure Visa data centers, reducing storage risks and PCI DSS scope through the use of *Token Management* (*TMS*).  The three key elements of *Cybersource* Recurring Billing are:  -  **Token**: stores customer billing, shipping, and payment details.  -  **Plan**: stores the billing schedule.  -  **Subscription**: combines the token and plan, and defines the subscription start date, name, and description.  The APIs in this section demonstrate the management of the Plans and Subscriptions. For Tokens please refer to [Token Management](#token-management) 
      * @param createPlanRequest  (required)
-     * @return ApiResponse&lt;InlineResponse201&gt;
+     * @return ApiResponse&lt;CreatePlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse201> createPlanWithHttpInfo(CreatePlanRequest createPlanRequest) throws ApiException {
+    public ApiResponse<CreatePlanResponse> createPlanWithHttpInfo(CreatePlanRequest createPlanRequest) throws ApiException {
         okhttp3.Call call = createPlanValidateBeforeCall(createPlanRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreatePlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -311,7 +311,7 @@ public class PlansApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createPlanAsync(CreatePlanRequest createPlanRequest, final ApiCallback<InlineResponse201> callback) throws ApiException {
+    public okhttp3.Call createPlanAsync(CreatePlanRequest createPlanRequest, final ApiCallback<CreatePlanResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -334,7 +334,7 @@ public class PlansApi {
         }
 
         okhttp3.Call call = createPlanValidateBeforeCall(createPlanRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreatePlanResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -414,13 +414,13 @@ public class PlansApi {
      * Deactivate a Plan
      * Deactivate a Plan
      * @param id Plan Id (required)
-     * @return InlineResponse2004
+     * @return ActivateDeactivatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2004 deactivatePlan(String id) throws ApiException {
+    public ActivateDeactivatePlanResponse deactivatePlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'deactivatePlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2004> resp = deactivatePlanWithHttpInfo(id);
+        ApiResponse<ActivateDeactivatePlanResponse> resp = deactivatePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'deactivatePlan' ENDED");
         return resp.getData();
     }
@@ -429,12 +429,12 @@ public class PlansApi {
      * Deactivate a Plan
      * Deactivate a Plan
      * @param id Plan Id (required)
-     * @return ApiResponse&lt;InlineResponse2004&gt;
+     * @return ApiResponse&lt;ActivateDeactivatePlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2004> deactivatePlanWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<ActivateDeactivatePlanResponse> deactivatePlanWithHttpInfo(String id) throws ApiException {
         okhttp3.Call call = deactivatePlanValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<ActivateDeactivatePlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -446,7 +446,7 @@ public class PlansApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deactivatePlanAsync(String id, final ApiCallback<InlineResponse2004> callback) throws ApiException {
+    public okhttp3.Call deactivatePlanAsync(String id, final ApiCallback<ActivateDeactivatePlanResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -469,7 +469,7 @@ public class PlansApi {
         }
 
         okhttp3.Call call = deactivatePlanValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<ActivateDeactivatePlanResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -549,13 +549,13 @@ public class PlansApi {
      * Delete a Plan
      * Delete a Plan is only allowed: - plan status is in &#x60;DRAFT&#x60; - plan status is in &#x60;ACTIVE&#x60;, and &#x60;INACTIVE&#x60; only allowed when no subscriptions attached to a plan in the lifetime of a plan 
      * @param id Plan Id (required)
-     * @return InlineResponse2002
+     * @return DeletePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2002 deletePlan(String id) throws ApiException {
+    public DeletePlanResponse deletePlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'deletePlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2002> resp = deletePlanWithHttpInfo(id);
+        ApiResponse<DeletePlanResponse> resp = deletePlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'deletePlan' ENDED");
         return resp.getData();
     }
@@ -564,12 +564,12 @@ public class PlansApi {
      * Delete a Plan
      * Delete a Plan is only allowed: - plan status is in &#x60;DRAFT&#x60; - plan status is in &#x60;ACTIVE&#x60;, and &#x60;INACTIVE&#x60; only allowed when no subscriptions attached to a plan in the lifetime of a plan 
      * @param id Plan Id (required)
-     * @return ApiResponse&lt;InlineResponse2002&gt;
+     * @return ApiResponse&lt;DeletePlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2002> deletePlanWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<DeletePlanResponse> deletePlanWithHttpInfo(String id) throws ApiException {
         okhttp3.Call call = deletePlanValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<DeletePlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -581,7 +581,7 @@ public class PlansApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deletePlanAsync(String id, final ApiCallback<InlineResponse2002> callback) throws ApiException {
+    public okhttp3.Call deletePlanAsync(String id, final ApiCallback<DeletePlanResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -604,7 +604,7 @@ public class PlansApi {
         }
 
         okhttp3.Call call = deletePlanValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<DeletePlanResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -684,13 +684,13 @@ public class PlansApi {
      * Get a Plan
      * Retrieve a Plan details by Plan Id.
      * @param id Plan Id (required)
-     * @return InlineResponse2001
+     * @return GetPlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2001 getPlan(String id) throws ApiException {
+    public GetPlanResponse getPlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getPlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2001> resp = getPlanWithHttpInfo(id);
+        ApiResponse<GetPlanResponse> resp = getPlanWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getPlan' ENDED");
         return resp.getData();
     }
@@ -699,12 +699,12 @@ public class PlansApi {
      * Get a Plan
      * Retrieve a Plan details by Plan Id.
      * @param id Plan Id (required)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;GetPlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2001> getPlanWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<GetPlanResponse> getPlanWithHttpInfo(String id) throws ApiException {
         okhttp3.Call call = getPlanValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetPlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -716,7 +716,7 @@ public class PlansApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getPlanAsync(String id, final ApiCallback<InlineResponse2001> callback) throws ApiException {
+    public okhttp3.Call getPlanAsync(String id, final ApiCallback<GetPlanResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -739,7 +739,7 @@ public class PlansApi {
         }
 
         okhttp3.Call call = getPlanValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetPlanResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -810,13 +810,13 @@ public class PlansApi {
     /**
      * Get a Plan Code
      * Get a Unique Plan Code
-     * @return InlineResponse2005
+     * @return GetPlanCodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2005 getPlanCode() throws ApiException {
+    public GetPlanCodeResponse getPlanCode() throws ApiException {
         logger.info("CALL TO METHOD 'getPlanCode' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2005> resp = getPlanCodeWithHttpInfo();
+        ApiResponse<GetPlanCodeResponse> resp = getPlanCodeWithHttpInfo();
         logger.info("CALL TO METHOD 'getPlanCode' ENDED");
         return resp.getData();
     }
@@ -824,12 +824,12 @@ public class PlansApi {
     /**
      * Get a Plan Code
      * Get a Unique Plan Code
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;GetPlanCodeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2005> getPlanCodeWithHttpInfo() throws ApiException {
+    public ApiResponse<GetPlanCodeResponse> getPlanCodeWithHttpInfo() throws ApiException {
         okhttp3.Call call = getPlanCodeValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetPlanCodeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -840,7 +840,7 @@ public class PlansApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getPlanCodeAsync(final ApiCallback<InlineResponse2005> callback) throws ApiException {
+    public okhttp3.Call getPlanCodeAsync(final ApiCallback<GetPlanCodeResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -863,7 +863,7 @@ public class PlansApi {
         }
 
         okhttp3.Call call = getPlanCodeValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetPlanCodeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -954,13 +954,13 @@ public class PlansApi {
      * @param code Filter by Plan Code (optional)
      * @param status Filter by Plan Status (optional)
      * @param name Filter by Plan Name. (First sub string or full string) **[Not Recommended]**  (optional)
-     * @return InlineResponse200
+     * @return GetAllPlansResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse200 getPlans(Integer offset, Integer limit, String code, String status, String name) throws ApiException {
+    public GetAllPlansResponse getPlans(Integer offset, Integer limit, String code, String status, String name) throws ApiException {
         logger.info("CALL TO METHOD 'getPlans' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse200> resp = getPlansWithHttpInfo(offset, limit, code, status, name);
+        ApiResponse<GetAllPlansResponse> resp = getPlansWithHttpInfo(offset, limit, code, status, name);
         logger.info("CALL TO METHOD 'getPlans' ENDED");
         return resp.getData();
     }
@@ -973,12 +973,12 @@ public class PlansApi {
      * @param code Filter by Plan Code (optional)
      * @param status Filter by Plan Status (optional)
      * @param name Filter by Plan Name. (First sub string or full string) **[Not Recommended]**  (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;GetAllPlansResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse200> getPlansWithHttpInfo(Integer offset, Integer limit, String code, String status, String name) throws ApiException {
+    public ApiResponse<GetAllPlansResponse> getPlansWithHttpInfo(Integer offset, Integer limit, String code, String status, String name) throws ApiException {
         okhttp3.Call call = getPlansValidateBeforeCall(offset, limit, code, status, name, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllPlansResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -994,7 +994,7 @@ public class PlansApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getPlansAsync(Integer offset, Integer limit, String code, String status, String name, final ApiCallback<InlineResponse200> callback) throws ApiException {
+    public okhttp3.Call getPlansAsync(Integer offset, Integer limit, String code, String status, String name, final ApiCallback<GetAllPlansResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1017,7 +1017,7 @@ public class PlansApi {
         }
 
         okhttp3.Call call = getPlansValidateBeforeCall(offset, limit, code, status, name, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllPlansResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1102,13 +1102,13 @@ public class PlansApi {
      * Update a Plan  Plan in &#x60;DRAFT&#x60; status - All updates are allowed on Plan with &#x60;DRAFT&#x60; status  Plan in &#x60;ACTIVE&#x60; status [Following fields are **Not Updatable**] - &#x60;planInformation.billingPeriod&#x60; - &#x60;planInformation.billingCycles&#x60; [Update is only allowed to **increase** billingCycles] - &#x60;orderInformation.amountDetails.currency&#x60; 
      * @param id Plan Id (required)
      * @param updatePlanRequest  (required)
-     * @return InlineResponse2003
+     * @return UpdatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2003 updatePlan(String id, UpdatePlanRequest updatePlanRequest) throws ApiException {
+    public UpdatePlanResponse updatePlan(String id, UpdatePlanRequest updatePlanRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updatePlan' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2003> resp = updatePlanWithHttpInfo(id, updatePlanRequest);
+        ApiResponse<UpdatePlanResponse> resp = updatePlanWithHttpInfo(id, updatePlanRequest);
         logger.info("CALL TO METHOD 'updatePlan' ENDED");
         return resp.getData();
     }
@@ -1118,12 +1118,12 @@ public class PlansApi {
      * Update a Plan  Plan in &#x60;DRAFT&#x60; status - All updates are allowed on Plan with &#x60;DRAFT&#x60; status  Plan in &#x60;ACTIVE&#x60; status [Following fields are **Not Updatable**] - &#x60;planInformation.billingPeriod&#x60; - &#x60;planInformation.billingCycles&#x60; [Update is only allowed to **increase** billingCycles] - &#x60;orderInformation.amountDetails.currency&#x60; 
      * @param id Plan Id (required)
      * @param updatePlanRequest  (required)
-     * @return ApiResponse&lt;InlineResponse2003&gt;
+     * @return ApiResponse&lt;UpdatePlanResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2003> updatePlanWithHttpInfo(String id, UpdatePlanRequest updatePlanRequest) throws ApiException {
+    public ApiResponse<UpdatePlanResponse> updatePlanWithHttpInfo(String id, UpdatePlanRequest updatePlanRequest) throws ApiException {
         okhttp3.Call call = updatePlanValidateBeforeCall(id, updatePlanRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdatePlanResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1136,7 +1136,7 @@ public class PlansApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call updatePlanAsync(String id, UpdatePlanRequest updatePlanRequest, final ApiCallback<InlineResponse2003> callback) throws ApiException {
+    public okhttp3.Call updatePlanAsync(String id, UpdatePlanRequest updatePlanRequest, final ApiCallback<UpdatePlanResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1159,7 +1159,7 @@ public class PlansApi {
         }
 
         okhttp3.Call call = updatePlanValidateBeforeCall(id, updatePlanRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdatePlanResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

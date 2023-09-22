@@ -15,10 +15,10 @@ package Api;
 
 import Invokers.ApiException;
 import Model.Body;
-import Model.InlineResponse20012;
-import Model.InlineResponse20013;
-import Model.InlineResponse20014;
-import Model.InlineResponse2022;
+import Model.InlineResponse2002;
+import Model.InlineResponse2003;
+import Model.InlineResponse2004;
+import Model.InlineResponse202;
 import Model.InlineResponse401;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -48,7 +48,7 @@ public class BatchesApiTest {
     @Test
     public void getBatchReportTest() throws ApiException {
         String batchId = null;
-        InlineResponse20014 response = api.getBatchReport(batchId);
+        InlineResponse2004 response = api.getBatchReport(batchId);
 
         // TODO: test validations
     }
@@ -64,7 +64,7 @@ public class BatchesApiTest {
     @Test
     public void getBatchStatusTest() throws ApiException {
         String batchId = null;
-        InlineResponse20013 response = api.getBatchStatus(batchId);
+        InlineResponse2003 response = api.getBatchStatus(batchId);
 
         // TODO: test validations
     }
@@ -83,7 +83,7 @@ public class BatchesApiTest {
         Long limit = null;
         String fromDate = null;
         String toDate = null;
-        InlineResponse20012 response = api.getBatchesList(offset, limit, fromDate, toDate);
+        InlineResponse2002 response = api.getBatchesList(offset, limit, fromDate, toDate);
 
         // TODO: test validations
     }
@@ -99,7 +99,7 @@ public class BatchesApiTest {
     @Test
     public void postBatchTest() throws ApiException {
         Body body = null;
-        InlineResponse2022 response = api.postBatch(body);
+        InlineResponse202 response = api.postBatch(body);
 
         // TODO: test validations
     }

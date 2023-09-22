@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** | Plan name  | 
 **description** | **String** | Plan description  |  [optional]
 **status** | **String** | Plan Status:  - &#x60;DRAFT&#x60;  - &#x60;ACTIVE&#x60; (default)  |  [optional]
-**billingPeriod** | [**InlineResponse200PlanInformationBillingPeriod**](InlineResponse200PlanInformationBillingPeriod.md) |  |  [optional]
+**billingPeriod** | [**GetAllPlansResponsePlanInformationBillingPeriod**](GetAllPlansResponsePlanInformationBillingPeriod.md) |  |  [optional]
 **billingCycles** | [**Rbsv1plansPlanInformationBillingCycles**](Rbsv1plansPlanInformationBillingCycles.md) |  |  [optional]
 
 
