@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="searchKeys"></a>
 # **searchKeys**
-> InlineResponse20011 searchKeys(offset, limit, sort, organizationIds, keyIds, keyTypes, expirationStartDate, expirationEndDate)
+> InlineResponse2001 searchKeys(offset, limit, sort, organizationIds, keyIds, keyTypes, expirationStartDate, expirationEndDate)
 
 Search Keys
 
@@ -32,7 +32,7 @@ List<String> keyTypes = Arrays.asList("keyTypes_example"); // List<String> | Key
 DateTime expirationStartDate = new DateTime(); // DateTime | Expiry Filter Start Date. When Expiration Date filter is provided, atleast one more filter needs to be provided
 DateTime expirationEndDate = new DateTime(); // DateTime | Expiry Filter End Date. When Expiration Date filter is provided, atleast one more filter needs to be provided
 try {
-    InlineResponse20011 result = apiInstance.searchKeys(offset, limit, sort, organizationIds, keyIds, keyTypes, expirationStartDate, expirationEndDate);
+    InlineResponse2001 result = apiInstance.searchKeys(offset, limit, sort, organizationIds, keyIds, keyTypes, expirationStartDate, expirationEndDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KeyManagementApi#searchKeys");
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 

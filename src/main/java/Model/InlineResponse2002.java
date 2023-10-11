@@ -14,6 +14,8 @@
 package Model;
 
 import java.util.Objects;
+import Model.InlineResponse2002Embedded;
+import Model.InlineResponse2002Links;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,52 +24,167 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse2002
  */
 
 public class InlineResponse2002 {
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("_links")
+  private List<InlineResponse2002Links> links = null;
 
-  @SerializedName("status")
-  private String status = null;
+  @SerializedName("object")
+  private String object = null;
 
-  public InlineResponse2002 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  @SerializedName("offset")
+  private Integer offset = null;
+
+  @SerializedName("limit")
+  private Integer limit = null;
+
+  @SerializedName("count")
+  private Integer count = null;
+
+  @SerializedName("total")
+  private Integer total = null;
+
+  @SerializedName("_embedded")
+  private InlineResponse2002Embedded embedded = null;
+
+  public InlineResponse2002 links(List<InlineResponse2002Links> links) {
+    this.links = links;
+    return this;
+  }
+
+  public InlineResponse2002 addLinksItem(InlineResponse2002Links linksItem) {
+    if (this.links == null) {
+      this.links = new ArrayList<InlineResponse2002Links>();
+    }
+    this.links.add(linksItem);
     return this;
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
-   * @return submitTimeUtc
+   * Get links
+   * @return links
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
+  @ApiModelProperty(value = "")
+  public List<InlineResponse2002Links> getLinks() {
+    return links;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  public void setLinks(List<InlineResponse2002Links> links) {
+    this.links = links;
   }
 
-  public InlineResponse2002 status(String status) {
-    this.status = status;
+  public InlineResponse2002 object(String object) {
+    this.object = object;
     return this;
   }
 
    /**
-   * The status of the submitted transaction.  Possible values:  - COMPLETED 
-   * @return status
+   * Get object
+   * @return object
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - COMPLETED ")
-  public String getStatus() {
-    return status;
+  @ApiModelProperty(example = "collection", value = "")
+  public String getObject() {
+    return object;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
+  public void setObject(String object) {
+    this.object = object;
+  }
+
+  public InlineResponse2002 offset(Integer offset) {
+    this.offset = offset;
+    return this;
+  }
+
+   /**
+   * Get offset
+   * @return offset
+  **/
+  @ApiModelProperty(example = "0", value = "")
+  public Integer getOffset() {
+    return offset;
+  }
+
+  public void setOffset(Integer offset) {
+    this.offset = offset;
+  }
+
+  public InlineResponse2002 limit(Integer limit) {
+    this.limit = limit;
+    return this;
+  }
+
+   /**
+   * Get limit
+   * @return limit
+  **/
+  @ApiModelProperty(example = "20", value = "")
+  public Integer getLimit() {
+    return limit;
+  }
+
+  public void setLimit(Integer limit) {
+    this.limit = limit;
+  }
+
+  public InlineResponse2002 count(Integer count) {
+    this.count = count;
+    return this;
+  }
+
+   /**
+   * Get count
+   * @return count
+  **/
+  @ApiModelProperty(example = "1", value = "")
+  public Integer getCount() {
+    return count;
+  }
+
+  public void setCount(Integer count) {
+    this.count = count;
+  }
+
+  public InlineResponse2002 total(Integer total) {
+    this.total = total;
+    return this;
+  }
+
+   /**
+   * Get total
+   * @return total
+  **/
+  @ApiModelProperty(example = "1", value = "")
+  public Integer getTotal() {
+    return total;
+  }
+
+  public void setTotal(Integer total) {
+    this.total = total;
+  }
+
+  public InlineResponse2002 embedded(InlineResponse2002Embedded embedded) {
+    this.embedded = embedded;
+    return this;
+  }
+
+   /**
+   * Get embedded
+   * @return embedded
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2002Embedded getEmbedded() {
+    return embedded;
+  }
+
+  public void setEmbedded(InlineResponse2002Embedded embedded) {
+    this.embedded = embedded;
   }
 
 
@@ -80,13 +197,18 @@ public class InlineResponse2002 {
       return false;
     }
     InlineResponse2002 inlineResponse2002 = (InlineResponse2002) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse2002.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2002.status);
+    return Objects.equals(this.links, inlineResponse2002.links) &&
+        Objects.equals(this.object, inlineResponse2002.object) &&
+        Objects.equals(this.offset, inlineResponse2002.offset) &&
+        Objects.equals(this.limit, inlineResponse2002.limit) &&
+        Objects.equals(this.count, inlineResponse2002.count) &&
+        Objects.equals(this.total, inlineResponse2002.total) &&
+        Objects.equals(this.embedded, inlineResponse2002.embedded);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status);
+    return Objects.hash(links, object, offset, limit, count, total, embedded);
   }
 
 
@@ -95,8 +217,13 @@ public class InlineResponse2002 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2002 {\n");
     
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    object: ").append(toIndentedString(object)).append("\n");
+    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+    sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("}");
     return sb.toString();
   }

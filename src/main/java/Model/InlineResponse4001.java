@@ -70,10 +70,10 @@ public class InlineResponse4001 {
   }
 
    /**
-   * The status of the submitted transaction.  Possible values:  - INVALID_REQUEST 
+   * The status of the submitted transaction. Possible values: - &#x60;INVALID_REQUEST&#x60; 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - INVALID_REQUEST ")
+  @ApiModelProperty(value = "The status of the submitted transaction. Possible values: - `INVALID_REQUEST` ")
   public String getStatus() {
     return status;
   }
@@ -88,10 +88,10 @@ public class InlineResponse4001 {
   }
 
    /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION 
+   * The reason of the status. Possible Values: - &#x60;INVALID_DATA&#x60; 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION ")
+  @ApiModelProperty(value = "The reason of the status. Possible Values: - `INVALID_DATA` ")
   public String getReason() {
     return reason;
   }
@@ -106,10 +106,10 @@ public class InlineResponse4001 {
   }
 
    /**
-   * The detail message related to the status and reason listed above.
+   * Input request error.
    * @return message
   **/
-  @ApiModelProperty(value = "The detail message related to the status and reason listed above.")
+  @ApiModelProperty(value = "Input request error.")
   public String getMessage() {
     return message;
   }

@@ -14,8 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse200Links;
-import Model.InlineResponse200Plans;
+import Model.InlineResponse200Embedded;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,42 +23,40 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * InlineResponse200
  */
 
 public class InlineResponse200 {
-  @SerializedName("_links")
-  private InlineResponse200Links links = null;
+  @SerializedName("id")
+  private String id = null;
 
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
-  @SerializedName("totalCount")
-  private Integer totalCount = null;
+  @SerializedName("status")
+  private String status = null;
 
-  @SerializedName("plans")
-  private List<InlineResponse200Plans> plans = null;
+  @SerializedName("_embedded")
+  private InlineResponse200Embedded embedded = null;
 
-  public InlineResponse200 links(InlineResponse200Links links) {
-    this.links = links;
+  public InlineResponse200 id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get links
-   * @return links
+   * UUID uniquely generated for this comments. 
+   * @return id
   **/
-  @ApiModelProperty(value = "")
-  public InlineResponse200Links getLinks() {
-    return links;
+  @ApiModelProperty(value = "UUID uniquely generated for this comments. ")
+  public String getId() {
+    return id;
   }
 
-  public void setLinks(InlineResponse200Links links) {
-    this.links = links;
+  public void setId(String id) {
+    this.id = id;
   }
 
   public InlineResponse200 submitTimeUtc(String submitTimeUtc) {
@@ -80,48 +77,40 @@ public class InlineResponse200 {
     this.submitTimeUtc = submitTimeUtc;
   }
 
-  public InlineResponse200 totalCount(Integer totalCount) {
-    this.totalCount = totalCount;
+  public InlineResponse200 status(String status) {
+    this.status = status;
     return this;
   }
 
    /**
-   * total number of plans created
-   * @return totalCount
+   * The status of the submitted transaction. Possible values are: - &#x60;ACCEPTED&#x60; - &#x60;REJECTED&#x60; 
+   * @return status
   **/
-  @ApiModelProperty(value = "total number of plans created")
-  public Integer getTotalCount() {
-    return totalCount;
+  @ApiModelProperty(value = "The status of the submitted transaction. Possible values are: - `ACCEPTED` - `REJECTED` ")
+  public String getStatus() {
+    return status;
   }
 
-  public void setTotalCount(Integer totalCount) {
-    this.totalCount = totalCount;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
-  public InlineResponse200 plans(List<InlineResponse200Plans> plans) {
-    this.plans = plans;
-    return this;
-  }
-
-  public InlineResponse200 addPlansItem(InlineResponse200Plans plansItem) {
-    if (this.plans == null) {
-      this.plans = new ArrayList<InlineResponse200Plans>();
-    }
-    this.plans.add(plansItem);
+  public InlineResponse200 embedded(InlineResponse200Embedded embedded) {
+    this.embedded = embedded;
     return this;
   }
 
    /**
-   * Get plans
-   * @return plans
+   * Get embedded
+   * @return embedded
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse200Plans> getPlans() {
-    return plans;
+  public InlineResponse200Embedded getEmbedded() {
+    return embedded;
   }
 
-  public void setPlans(List<InlineResponse200Plans> plans) {
-    this.plans = plans;
+  public void setEmbedded(InlineResponse200Embedded embedded) {
+    this.embedded = embedded;
   }
 
 
@@ -134,15 +123,15 @@ public class InlineResponse200 {
       return false;
     }
     InlineResponse200 inlineResponse200 = (InlineResponse200) o;
-    return Objects.equals(this.links, inlineResponse200.links) &&
+    return Objects.equals(this.id, inlineResponse200.id) &&
         Objects.equals(this.submitTimeUtc, inlineResponse200.submitTimeUtc) &&
-        Objects.equals(this.totalCount, inlineResponse200.totalCount) &&
-        Objects.equals(this.plans, inlineResponse200.plans);
+        Objects.equals(this.status, inlineResponse200.status) &&
+        Objects.equals(this.embedded, inlineResponse200.embedded);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, submitTimeUtc, totalCount, plans);
+    return Objects.hash(id, submitTimeUtc, status, embedded);
   }
 
 
@@ -151,10 +140,10 @@ public class InlineResponse200 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse200 {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-    sb.append("    plans: ").append(toIndentedString(plans)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("}");
     return sb.toString();
   }

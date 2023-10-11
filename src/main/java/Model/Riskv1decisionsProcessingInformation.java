@@ -26,9 +26,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not
+ * Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not.
  */
-@ApiModel(description = "Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not")
+@ApiModel(description = "Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not.")
 
 public class Riskv1decisionsProcessingInformation {
   @SerializedName("actionList")

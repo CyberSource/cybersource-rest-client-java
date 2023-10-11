@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="activatePlan"></a>
 # **activatePlan**
-> InlineResponse2004 activatePlan(id)
+> ActivateDeactivatePlanResponse activatePlan(id)
 
 Activate a Plan
 
@@ -32,7 +32,7 @@ Activate a Plan
 PlansApi apiInstance = new PlansApi();
 String id = "id_example"; // String | Plan Id
 try {
-    InlineResponse2004 result = apiInstance.activatePlan(id);
+    ActivateDeactivatePlanResponse result = apiInstance.activatePlan(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#activatePlan");
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**ActivateDeactivatePlanResponse**](ActivateDeactivatePlanResponse.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ No authorization required
 
 <a name="createPlan"></a>
 # **createPlan**
-> InlineResponse201 createPlan(createPlanRequest)
+> CreatePlanResponse createPlan(createPlanRequest)
 
 Create a Plan
 
@@ -77,7 +77,7 @@ The recurring billing service enables you to manage payment plans and subscripti
 PlansApi apiInstance = new PlansApi();
 CreatePlanRequest createPlanRequest = new CreatePlanRequest(); // CreatePlanRequest | 
 try {
-    InlineResponse201 result = apiInstance.createPlan(createPlanRequest);
+    CreatePlanResponse result = apiInstance.createPlan(createPlanRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#createPlan");
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**CreatePlanResponse**](CreatePlanResponse.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ No authorization required
 
 <a name="deactivatePlan"></a>
 # **deactivatePlan**
-> InlineResponse2004 deactivatePlan(id)
+> ActivateDeactivatePlanResponse deactivatePlan(id)
 
 Deactivate a Plan
 
@@ -122,7 +122,7 @@ Deactivate a Plan
 PlansApi apiInstance = new PlansApi();
 String id = "id_example"; // String | Plan Id
 try {
-    InlineResponse2004 result = apiInstance.deactivatePlan(id);
+    ActivateDeactivatePlanResponse result = apiInstance.deactivatePlan(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#deactivatePlan");
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**ActivateDeactivatePlanResponse**](ActivateDeactivatePlanResponse.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ No authorization required
 
 <a name="deletePlan"></a>
 # **deletePlan**
-> InlineResponse2002 deletePlan(id)
+> DeletePlanResponse deletePlan(id)
 
 Delete a Plan
 
@@ -167,7 +167,7 @@ Delete a Plan is only allowed: - plan status is in &#x60;DRAFT&#x60; - plan stat
 PlansApi apiInstance = new PlansApi();
 String id = "id_example"; // String | Plan Id
 try {
-    InlineResponse2002 result = apiInstance.deletePlan(id);
+    DeletePlanResponse result = apiInstance.deletePlan(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#deletePlan");
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**DeletePlanResponse**](DeletePlanResponse.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ No authorization required
 
 <a name="getPlan"></a>
 # **getPlan**
-> InlineResponse2001 getPlan(id)
+> GetPlanResponse getPlan(id)
 
 Get a Plan
 
@@ -212,7 +212,7 @@ Retrieve a Plan details by Plan Id.
 PlansApi apiInstance = new PlansApi();
 String id = "id_example"; // String | Plan Id
 try {
-    InlineResponse2001 result = apiInstance.getPlan(id);
+    GetPlanResponse result = apiInstance.getPlan(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#getPlan");
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**GetPlanResponse**](GetPlanResponse.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ No authorization required
 
 <a name="getPlanCode"></a>
 # **getPlanCode**
-> InlineResponse2005 getPlanCode()
+> GetPlanCodeResponse getPlanCode()
 
 Get a Plan Code
 
@@ -256,7 +256,7 @@ Get a Unique Plan Code
 
 PlansApi apiInstance = new PlansApi();
 try {
-    InlineResponse2005 result = apiInstance.getPlanCode();
+    GetPlanCodeResponse result = apiInstance.getPlanCode();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#getPlanCode");
@@ -269,7 +269,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**GetPlanCodeResponse**](GetPlanCodeResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ No authorization required
 
 <a name="getPlans"></a>
 # **getPlans**
-> InlineResponse200 getPlans(offset, limit, code, status, name)
+> GetAllPlansResponse getPlans(offset, limit, code, status, name)
 
 Get a List of Plans
 
@@ -302,7 +302,7 @@ String code = "code_example"; // String | Filter by Plan Code
 String status = "status_example"; // String | Filter by Plan Status
 String name = "name_example"; // String | Filter by Plan Name. (First sub string or full string) **[Not Recommended]** 
 try {
-    InlineResponse200 result = apiInstance.getPlans(offset, limit, code, status, name);
+    GetAllPlansResponse result = apiInstance.getPlans(offset, limit, code, status, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#getPlans");
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**GetAllPlansResponse**](GetAllPlansResponse.md)
 
 ### Authorization
 
@@ -335,7 +335,7 @@ No authorization required
 
 <a name="updatePlan"></a>
 # **updatePlan**
-> InlineResponse2003 updatePlan(id, updatePlanRequest)
+> UpdatePlanResponse updatePlan(id, updatePlanRequest)
 
 Update a Plan
 
@@ -352,7 +352,7 @@ PlansApi apiInstance = new PlansApi();
 String id = "id_example"; // String | Plan Id
 UpdatePlanRequest updatePlanRequest = new UpdatePlanRequest(); // UpdatePlanRequest | 
 try {
-    InlineResponse2003 result = apiInstance.updatePlan(id, updatePlanRequest);
+    UpdatePlanResponse result = apiInstance.updatePlan(id, updatePlanRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#updatePlan");
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**UpdatePlanResponse**](UpdatePlanResponse.md)
 
 ### Authorization
 

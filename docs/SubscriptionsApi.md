@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="activateSubscription"></a>
 # **activateSubscription**
-> InlineResponse2009 activateSubscription(id)
+> ActivateSubscriptionResponse activateSubscription(id)
 
 Activate a Subscription
 
@@ -32,7 +32,7 @@ Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription
 SubscriptionsApi apiInstance = new SubscriptionsApi();
 String id = "id_example"; // String | Subscription Id
 try {
-    InlineResponse2009 result = apiInstance.activateSubscription(id);
+    ActivateSubscriptionResponse result = apiInstance.activateSubscription(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#activateSubscription");
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**ActivateSubscriptionResponse**](ActivateSubscriptionResponse.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ No authorization required
 
 <a name="cancelSubscription"></a>
 # **cancelSubscription**
-> InlineResponse202 cancelSubscription(id)
+> CancelSubscriptionResponse cancelSubscription(id)
 
 Cancel a Subscription
 
@@ -77,7 +77,7 @@ Cancel a Subscription
 SubscriptionsApi apiInstance = new SubscriptionsApi();
 String id = "id_example"; // String | Subscription Id
 try {
-    InlineResponse202 result = apiInstance.cancelSubscription(id);
+    CancelSubscriptionResponse result = apiInstance.cancelSubscription(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#cancelSubscription");
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse202**](InlineResponse202.md)
+[**CancelSubscriptionResponse**](CancelSubscriptionResponse.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ No authorization required
 
 <a name="createSubscription"></a>
 # **createSubscription**
-> InlineResponse2011 createSubscription(createSubscriptionRequest)
+> CreateSubscriptionResponse createSubscription(createSubscriptionRequest)
 
 Create a Subscription
 
@@ -122,7 +122,7 @@ Create a Recurring Billing Subscription
 SubscriptionsApi apiInstance = new SubscriptionsApi();
 CreateSubscriptionRequest createSubscriptionRequest = new CreateSubscriptionRequest(); // CreateSubscriptionRequest | 
 try {
-    InlineResponse2011 result = apiInstance.createSubscription(createSubscriptionRequest);
+    CreateSubscriptionResponse result = apiInstance.createSubscription(createSubscriptionRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#createSubscription");
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**CreateSubscriptionResponse**](CreateSubscriptionResponse.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ No authorization required
 
 <a name="getAllSubscriptions"></a>
 # **getAllSubscriptions**
-> InlineResponse2006 getAllSubscriptions(offset, limit, code, status)
+> GetAllSubscriptionsResponse getAllSubscriptions(offset, limit, code, status)
 
 Get a List of Subscriptions
 
@@ -170,7 +170,7 @@ Integer limit = 56; // Integer | Number of items to be returned. Default - `20`,
 String code = "code_example"; // String | Filter by Subscription Code
 String status = "status_example"; // String | Filter by Subscription Status
 try {
-    InlineResponse2006 result = apiInstance.getAllSubscriptions(offset, limit, code, status);
+    GetAllSubscriptionsResponse result = apiInstance.getAllSubscriptions(offset, limit, code, status);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#getAllSubscriptions");
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**GetAllSubscriptionsResponse**](GetAllSubscriptionsResponse.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ No authorization required
 
 <a name="getSubscription"></a>
 # **getSubscription**
-> InlineResponse2007 getSubscription(id)
+> GetSubscriptionResponse getSubscription(id)
 
 Get a Subscription
 
@@ -218,7 +218,7 @@ Get a Subscription by Subscription Id
 SubscriptionsApi apiInstance = new SubscriptionsApi();
 String id = "id_example"; // String | Subscription Id
 try {
-    InlineResponse2007 result = apiInstance.getSubscription(id);
+    GetSubscriptionResponse result = apiInstance.getSubscription(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#getSubscription");
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**GetSubscriptionResponse**](GetSubscriptionResponse.md)
 
 ### Authorization
 
@@ -247,7 +247,7 @@ No authorization required
 
 <a name="getSubscriptionCode"></a>
 # **getSubscriptionCode**
-> InlineResponse20010 getSubscriptionCode()
+> GetSubscriptionCodeResponse getSubscriptionCode()
 
 Get a Subscription Code
 
@@ -262,7 +262,7 @@ Get a Unique Subscription Code
 
 SubscriptionsApi apiInstance = new SubscriptionsApi();
 try {
-    InlineResponse20010 result = apiInstance.getSubscriptionCode();
+    GetSubscriptionCodeResponse result = apiInstance.getSubscriptionCode();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#getSubscriptionCode");
@@ -275,7 +275,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**GetSubscriptionCodeResponse**](GetSubscriptionCodeResponse.md)
 
 ### Authorization
 
@@ -288,7 +288,7 @@ No authorization required
 
 <a name="suspendSubscription"></a>
 # **suspendSubscription**
-> InlineResponse2021 suspendSubscription(id)
+> SuspendSubscriptionResponse suspendSubscription(id)
 
 Suspend a Subscription
 
@@ -304,7 +304,7 @@ Suspend a Subscription
 SubscriptionsApi apiInstance = new SubscriptionsApi();
 String id = "id_example"; // String | Subscription Id
 try {
-    InlineResponse2021 result = apiInstance.suspendSubscription(id);
+    SuspendSubscriptionResponse result = apiInstance.suspendSubscription(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#suspendSubscription");
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2021**](InlineResponse2021.md)
+[**SuspendSubscriptionResponse**](SuspendSubscriptionResponse.md)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ No authorization required
 
 <a name="updateSubscription"></a>
 # **updateSubscription**
-> InlineResponse2008 updateSubscription(id, updateSubscription)
+> UpdateSubscriptionResponse updateSubscription(id, updateSubscription)
 
 Update a Subscription
 
@@ -350,7 +350,7 @@ SubscriptionsApi apiInstance = new SubscriptionsApi();
 String id = "id_example"; // String | Subscription Id
 UpdateSubscription updateSubscription = new UpdateSubscription(); // UpdateSubscription | Update Subscription
 try {
-    InlineResponse2008 result = apiInstance.updateSubscription(id, updateSubscription);
+    UpdateSubscriptionResponse result = apiInstance.updateSubscription(id, updateSubscription);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubscriptionsApi#updateSubscription");
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**UpdateSubscriptionResponse**](UpdateSubscriptionResponse.md)
 
 ### Authorization
 

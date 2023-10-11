@@ -28,20 +28,20 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
+import Model.ActivateSubscriptionResponse;
+import Model.CancelSubscriptionResponse;
 import Model.CreateSubscriptionRequest;
-import Model.InlineResponse20010;
-import Model.InlineResponse2006;
-import Model.InlineResponse2007;
-import Model.InlineResponse2008;
-import Model.InlineResponse2009;
-import Model.InlineResponse2011;
-import Model.InlineResponse202;
-import Model.InlineResponse2021;
-import Model.InlineResponse4001;
+import Model.CreateSubscriptionResponse;
+import Model.GetAllSubscriptionsResponse;
+import Model.GetSubscriptionCodeResponse;
+import Model.GetSubscriptionResponse;
 import Model.InlineResponse4002;
+import Model.InlineResponse4003;
 import Model.InlineResponse404;
 import Model.PtsV2PaymentsPost502Response;
+import Model.SuspendSubscriptionResponse;
 import Model.UpdateSubscription;
+import Model.UpdateSubscriptionResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -150,13 +150,13 @@ public class SubscriptionsApi {
      * Activate a Subscription
      * Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription 
      * @param id Subscription Id (required)
-     * @return InlineResponse2009
+     * @return ActivateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2009 activateSubscription(String id) throws ApiException {
+    public ActivateSubscriptionResponse activateSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'activateSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2009> resp = activateSubscriptionWithHttpInfo(id);
+        ApiResponse<ActivateSubscriptionResponse> resp = activateSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'activateSubscription' ENDED");
         return resp.getData();
     }
@@ -165,12 +165,12 @@ public class SubscriptionsApi {
      * Activate a Subscription
      * Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription 
      * @param id Subscription Id (required)
-     * @return ApiResponse&lt;InlineResponse2009&gt;
+     * @return ApiResponse&lt;ActivateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2009> activateSubscriptionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<ActivateSubscriptionResponse> activateSubscriptionWithHttpInfo(String id) throws ApiException {
         okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
+        Type localVarReturnType = new TypeToken<ActivateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -182,7 +182,7 @@ public class SubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call activateSubscriptionAsync(String id, final ApiCallback<InlineResponse2009> callback) throws ApiException {
+    public okhttp3.Call activateSubscriptionAsync(String id, final ApiCallback<ActivateSubscriptionResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -205,7 +205,7 @@ public class SubscriptionsApi {
         }
 
         okhttp3.Call call = activateSubscriptionValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
+        Type localVarReturnType = new TypeToken<ActivateSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -285,13 +285,13 @@ public class SubscriptionsApi {
      * Cancel a Subscription
      * Cancel a Subscription
      * @param id Subscription Id (required)
-     * @return InlineResponse202
+     * @return CancelSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse202 cancelSubscription(String id) throws ApiException {
+    public CancelSubscriptionResponse cancelSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'cancelSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse202> resp = cancelSubscriptionWithHttpInfo(id);
+        ApiResponse<CancelSubscriptionResponse> resp = cancelSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'cancelSubscription' ENDED");
         return resp.getData();
     }
@@ -300,12 +300,12 @@ public class SubscriptionsApi {
      * Cancel a Subscription
      * Cancel a Subscription
      * @param id Subscription Id (required)
-     * @return ApiResponse&lt;InlineResponse202&gt;
+     * @return ApiResponse&lt;CancelSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse202> cancelSubscriptionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<CancelSubscriptionResponse> cancelSubscriptionWithHttpInfo(String id) throws ApiException {
         okhttp3.Call call = cancelSubscriptionValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse202>(){}.getType();
+        Type localVarReturnType = new TypeToken<CancelSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -317,7 +317,7 @@ public class SubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call cancelSubscriptionAsync(String id, final ApiCallback<InlineResponse202> callback) throws ApiException {
+    public okhttp3.Call cancelSubscriptionAsync(String id, final ApiCallback<CancelSubscriptionResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -340,7 +340,7 @@ public class SubscriptionsApi {
         }
 
         okhttp3.Call call = cancelSubscriptionValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse202>(){}.getType();
+        Type localVarReturnType = new TypeToken<CancelSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -416,13 +416,13 @@ public class SubscriptionsApi {
      * Create a Subscription
      * Create a Recurring Billing Subscription
      * @param createSubscriptionRequest  (required)
-     * @return InlineResponse2011
+     * @return CreateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2011 createSubscription(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException {
+    public CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2011> resp = createSubscriptionWithHttpInfo(createSubscriptionRequest);
+        ApiResponse<CreateSubscriptionResponse> resp = createSubscriptionWithHttpInfo(createSubscriptionRequest);
         logger.info("CALL TO METHOD 'createSubscription' ENDED");
         return resp.getData();
     }
@@ -431,12 +431,12 @@ public class SubscriptionsApi {
      * Create a Subscription
      * Create a Recurring Billing Subscription
      * @param createSubscriptionRequest  (required)
-     * @return ApiResponse&lt;InlineResponse2011&gt;
+     * @return ApiResponse&lt;CreateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2011> createSubscriptionWithHttpInfo(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException {
+    public ApiResponse<CreateSubscriptionResponse> createSubscriptionWithHttpInfo(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException {
         okhttp3.Call call = createSubscriptionValidateBeforeCall(createSubscriptionRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -448,7 +448,7 @@ public class SubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createSubscriptionAsync(CreateSubscriptionRequest createSubscriptionRequest, final ApiCallback<InlineResponse2011> callback) throws ApiException {
+    public okhttp3.Call createSubscriptionAsync(CreateSubscriptionRequest createSubscriptionRequest, final ApiCallback<CreateSubscriptionResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -471,7 +471,7 @@ public class SubscriptionsApi {
         }
 
         okhttp3.Call call = createSubscriptionValidateBeforeCall(createSubscriptionRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -558,13 +558,13 @@ public class SubscriptionsApi {
      * @param limit Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  (optional)
      * @param code Filter by Subscription Code (optional)
      * @param status Filter by Subscription Status (optional)
-     * @return InlineResponse2006
+     * @return GetAllSubscriptionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2006 getAllSubscriptions(Integer offset, Integer limit, String code, String status) throws ApiException {
+    public GetAllSubscriptionsResponse getAllSubscriptions(Integer offset, Integer limit, String code, String status) throws ApiException {
         logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2006> resp = getAllSubscriptionsWithHttpInfo(offset, limit, code, status);
+        ApiResponse<GetAllSubscriptionsResponse> resp = getAllSubscriptionsWithHttpInfo(offset, limit, code, status);
         logger.info("CALL TO METHOD 'getAllSubscriptions' ENDED");
         return resp.getData();
     }
@@ -576,12 +576,12 @@ public class SubscriptionsApi {
      * @param limit Number of items to be returned. Default - &#x60;20&#x60;, Max - &#x60;100&#x60;  (optional)
      * @param code Filter by Subscription Code (optional)
      * @param status Filter by Subscription Status (optional)
-     * @return ApiResponse&lt;InlineResponse2006&gt;
+     * @return ApiResponse&lt;GetAllSubscriptionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2006> getAllSubscriptionsWithHttpInfo(Integer offset, Integer limit, String code, String status) throws ApiException {
+    public ApiResponse<GetAllSubscriptionsResponse> getAllSubscriptionsWithHttpInfo(Integer offset, Integer limit, String code, String status) throws ApiException {
         okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllSubscriptionsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -596,7 +596,7 @@ public class SubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getAllSubscriptionsAsync(Integer offset, Integer limit, String code, String status, final ApiCallback<InlineResponse2006> callback) throws ApiException {
+    public okhttp3.Call getAllSubscriptionsAsync(Integer offset, Integer limit, String code, String status, final ApiCallback<GetAllSubscriptionsResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -619,7 +619,7 @@ public class SubscriptionsApi {
         }
 
         okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(offset, limit, code, status, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllSubscriptionsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -699,13 +699,13 @@ public class SubscriptionsApi {
      * Get a Subscription
      * Get a Subscription by Subscription Id
      * @param id Subscription Id (required)
-     * @return InlineResponse2007
+     * @return GetSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2007 getSubscription(String id) throws ApiException {
+    public GetSubscriptionResponse getSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2007> resp = getSubscriptionWithHttpInfo(id);
+        ApiResponse<GetSubscriptionResponse> resp = getSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getSubscription' ENDED");
         return resp.getData();
     }
@@ -714,12 +714,12 @@ public class SubscriptionsApi {
      * Get a Subscription
      * Get a Subscription by Subscription Id
      * @param id Subscription Id (required)
-     * @return ApiResponse&lt;InlineResponse2007&gt;
+     * @return ApiResponse&lt;GetSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2007> getSubscriptionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<GetSubscriptionResponse> getSubscriptionWithHttpInfo(String id) throws ApiException {
         okhttp3.Call call = getSubscriptionValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -731,7 +731,7 @@ public class SubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getSubscriptionAsync(String id, final ApiCallback<InlineResponse2007> callback) throws ApiException {
+    public okhttp3.Call getSubscriptionAsync(String id, final ApiCallback<GetSubscriptionResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -754,7 +754,7 @@ public class SubscriptionsApi {
         }
 
         okhttp3.Call call = getSubscriptionValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -825,13 +825,13 @@ public class SubscriptionsApi {
     /**
      * Get a Subscription Code
      * Get a Unique Subscription Code
-     * @return InlineResponse20010
+     * @return GetSubscriptionCodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse20010 getSubscriptionCode() throws ApiException {
+    public GetSubscriptionCodeResponse getSubscriptionCode() throws ApiException {
         logger.info("CALL TO METHOD 'getSubscriptionCode' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse20010> resp = getSubscriptionCodeWithHttpInfo();
+        ApiResponse<GetSubscriptionCodeResponse> resp = getSubscriptionCodeWithHttpInfo();
         logger.info("CALL TO METHOD 'getSubscriptionCode' ENDED");
         return resp.getData();
     }
@@ -839,12 +839,12 @@ public class SubscriptionsApi {
     /**
      * Get a Subscription Code
      * Get a Unique Subscription Code
-     * @return ApiResponse&lt;InlineResponse20010&gt;
+     * @return ApiResponse&lt;GetSubscriptionCodeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse20010> getSubscriptionCodeWithHttpInfo() throws ApiException {
+    public ApiResponse<GetSubscriptionCodeResponse> getSubscriptionCodeWithHttpInfo() throws ApiException {
         okhttp3.Call call = getSubscriptionCodeValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20010>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetSubscriptionCodeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -855,7 +855,7 @@ public class SubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getSubscriptionCodeAsync(final ApiCallback<InlineResponse20010> callback) throws ApiException {
+    public okhttp3.Call getSubscriptionCodeAsync(final ApiCallback<GetSubscriptionCodeResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -878,7 +878,7 @@ public class SubscriptionsApi {
         }
 
         okhttp3.Call call = getSubscriptionCodeValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse20010>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetSubscriptionCodeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -958,13 +958,13 @@ public class SubscriptionsApi {
      * Suspend a Subscription
      * Suspend a Subscription
      * @param id Subscription Id (required)
-     * @return InlineResponse2021
+     * @return SuspendSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2021 suspendSubscription(String id) throws ApiException {
+    public SuspendSubscriptionResponse suspendSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'suspendSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2021> resp = suspendSubscriptionWithHttpInfo(id);
+        ApiResponse<SuspendSubscriptionResponse> resp = suspendSubscriptionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'suspendSubscription' ENDED");
         return resp.getData();
     }
@@ -973,12 +973,12 @@ public class SubscriptionsApi {
      * Suspend a Subscription
      * Suspend a Subscription
      * @param id Subscription Id (required)
-     * @return ApiResponse&lt;InlineResponse2021&gt;
+     * @return ApiResponse&lt;SuspendSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2021> suspendSubscriptionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<SuspendSubscriptionResponse> suspendSubscriptionWithHttpInfo(String id) throws ApiException {
         okhttp3.Call call = suspendSubscriptionValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2021>(){}.getType();
+        Type localVarReturnType = new TypeToken<SuspendSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -990,7 +990,7 @@ public class SubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call suspendSubscriptionAsync(String id, final ApiCallback<InlineResponse2021> callback) throws ApiException {
+    public okhttp3.Call suspendSubscriptionAsync(String id, final ApiCallback<SuspendSubscriptionResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1013,7 +1013,7 @@ public class SubscriptionsApi {
         }
 
         okhttp3.Call call = suspendSubscriptionValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2021>(){}.getType();
+        Type localVarReturnType = new TypeToken<SuspendSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1098,13 +1098,13 @@ public class SubscriptionsApi {
      * Update a Subscription by Subscription Id
      * @param id Subscription Id (required)
      * @param updateSubscription Update Subscription (required)
-     * @return InlineResponse2008
+     * @return UpdateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2008 updateSubscription(String id, UpdateSubscription updateSubscription) throws ApiException {
+    public UpdateSubscriptionResponse updateSubscription(String id, UpdateSubscription updateSubscription) throws ApiException {
         logger.info("CALL TO METHOD 'updateSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2008> resp = updateSubscriptionWithHttpInfo(id, updateSubscription);
+        ApiResponse<UpdateSubscriptionResponse> resp = updateSubscriptionWithHttpInfo(id, updateSubscription);
         logger.info("CALL TO METHOD 'updateSubscription' ENDED");
         return resp.getData();
     }
@@ -1114,12 +1114,12 @@ public class SubscriptionsApi {
      * Update a Subscription by Subscription Id
      * @param id Subscription Id (required)
      * @param updateSubscription Update Subscription (required)
-     * @return ApiResponse&lt;InlineResponse2008&gt;
+     * @return ApiResponse&lt;UpdateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2008> updateSubscriptionWithHttpInfo(String id, UpdateSubscription updateSubscription) throws ApiException {
+    public ApiResponse<UpdateSubscriptionResponse> updateSubscriptionWithHttpInfo(String id, UpdateSubscription updateSubscription) throws ApiException {
         okhttp3.Call call = updateSubscriptionValidateBeforeCall(id, updateSubscription, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1132,7 +1132,7 @@ public class SubscriptionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call updateSubscriptionAsync(String id, UpdateSubscription updateSubscription, final ApiCallback<InlineResponse2008> callback) throws ApiException {
+    public okhttp3.Call updateSubscriptionAsync(String id, UpdateSubscription updateSubscription, final ApiCallback<UpdateSubscriptionResponse> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -1155,7 +1155,7 @@ public class SubscriptionsApi {
         }
 
         okhttp3.Call call = updateSubscriptionValidateBeforeCall(id, updateSubscription, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
+        Type localVarReturnType = new TypeToken<UpdateSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

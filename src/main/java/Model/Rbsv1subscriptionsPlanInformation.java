@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse200PlanInformationBillingPeriod;
+import Model.GetAllPlansResponsePlanInformationBillingPeriod;
 import Model.Rbsv1plansPlanInformationBillingCycles;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -31,12 +31,12 @@ import java.io.IOException;
 
 public class Rbsv1subscriptionsPlanInformation {
   @SerializedName("billingPeriod")
-  private InlineResponse200PlanInformationBillingPeriod billingPeriod = null;
+  private GetAllPlansResponsePlanInformationBillingPeriod billingPeriod = null;
 
   @SerializedName("billingCycles")
   private Rbsv1plansPlanInformationBillingCycles billingCycles = null;
 
-  public Rbsv1subscriptionsPlanInformation billingPeriod(InlineResponse200PlanInformationBillingPeriod billingPeriod) {
+  public Rbsv1subscriptionsPlanInformation billingPeriod(GetAllPlansResponsePlanInformationBillingPeriod billingPeriod) {
     this.billingPeriod = billingPeriod;
     return this;
   }
@@ -46,11 +46,11 @@ public class Rbsv1subscriptionsPlanInformation {
    * @return billingPeriod
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse200PlanInformationBillingPeriod getBillingPeriod() {
+  public GetAllPlansResponsePlanInformationBillingPeriod getBillingPeriod() {
     return billingPeriod;
   }
 
-  public void setBillingPeriod(InlineResponse200PlanInformationBillingPeriod billingPeriod) {
+  public void setBillingPeriod(GetAllPlansResponsePlanInformationBillingPeriod billingPeriod) {
     this.billingPeriod = billingPeriod;
   }
 

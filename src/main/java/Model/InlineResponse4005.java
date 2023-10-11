@@ -14,7 +14,6 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,8 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * InlineResponse4005
@@ -43,8 +40,8 @@ public class InlineResponse4005 {
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("details")
-  private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
+  @SerializedName("statusCode")
+  private String statusCode = null;
 
   public InlineResponse4005 submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -88,10 +85,10 @@ public class InlineResponse4005 {
   }
 
    /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA 
+   * The reason of the status.  Possible values:  - MISSING_FIELD 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD ")
   public String getReason() {
     return reason;
   }
@@ -118,30 +115,22 @@ public class InlineResponse4005 {
     this.message = message;
   }
 
-  public InlineResponse4005 details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
-    this.details = details;
-    return this;
-  }
-
-  public InlineResponse4005 addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
-    }
-    this.details.add(detailsItem);
+  public InlineResponse4005 statusCode(String statusCode) {
+    this.statusCode = statusCode;
     return this;
   }
 
    /**
-   * Get details
-   * @return details
+   * HTTP status code of the submitted request.  Possible values:  - 500 
+   * @return statusCode
   **/
-  @ApiModelProperty(value = "")
-  public List<PtsV2PaymentsPost201ResponseErrorInformationDetails> getDetails() {
-    return details;
+  @ApiModelProperty(value = "HTTP status code of the submitted request.  Possible values:  - 500 ")
+  public String getStatusCode() {
+    return statusCode;
   }
 
-  public void setDetails(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
-    this.details = details;
+  public void setStatusCode(String statusCode) {
+    this.statusCode = statusCode;
   }
 
 
@@ -158,12 +147,12 @@ public class InlineResponse4005 {
         Objects.equals(this.status, inlineResponse4005.status) &&
         Objects.equals(this.reason, inlineResponse4005.reason) &&
         Objects.equals(this.message, inlineResponse4005.message) &&
-        Objects.equals(this.details, inlineResponse4005.details);
+        Objects.equals(this.statusCode, inlineResponse4005.statusCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, reason, message, details);
+    return Objects.hash(submitTimeUtc, status, reason, message, statusCode);
   }
 
 
@@ -176,7 +165,7 @@ public class InlineResponse4005 {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

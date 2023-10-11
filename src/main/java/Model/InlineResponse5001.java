@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,6 +23,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse5001
@@ -39,6 +42,9 @@ public class InlineResponse5001 {
 
   @SerializedName("message")
   private String message = null;
+
+  @SerializedName("details")
+  private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
 
   public InlineResponse5001 submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -64,10 +70,10 @@ public class InlineResponse5001 {
   }
 
    /**
-   * The status of the submitted request.  Possible values:  - SERVER_ERROR 
+   * The status of the submitted transaction. Possible values: - &#x60;SERVER_ERROR&#x60; 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted request.  Possible values:  - SERVER_ERROR ")
+  @ApiModelProperty(value = "The status of the submitted transaction. Possible values: - `SERVER_ERROR` ")
   public String getStatus() {
     return status;
   }
@@ -82,10 +88,10 @@ public class InlineResponse5001 {
   }
 
    /**
-   * The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT 
+   * The reason of the status. Possible Values: - &#x60;SYSTEM_ERROR&#x60; 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT ")
+  @ApiModelProperty(value = "The reason of the status. Possible Values: - `SYSTEM_ERROR` ")
   public String getReason() {
     return reason;
   }
@@ -100,16 +106,42 @@ public class InlineResponse5001 {
   }
 
    /**
-   * The detail message related to the status and reason listed above.
+   * Underlying service error with exception.
    * @return message
   **/
-  @ApiModelProperty(value = "The detail message related to the status and reason listed above.")
+  @ApiModelProperty(value = "Underlying service error with exception.")
   public String getMessage() {
     return message;
   }
 
   public void setMessage(String message) {
     this.message = message;
+  }
+
+  public InlineResponse5001 details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+    this.details = details;
+    return this;
+  }
+
+  public InlineResponse5001 addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
+    if (this.details == null) {
+      this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
+    }
+    this.details.add(detailsItem);
+    return this;
+  }
+
+   /**
+   * Get details
+   * @return details
+  **/
+  @ApiModelProperty(value = "")
+  public List<PtsV2PaymentsPost201ResponseErrorInformationDetails> getDetails() {
+    return details;
+  }
+
+  public void setDetails(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+    this.details = details;
   }
 
 
@@ -125,12 +157,13 @@ public class InlineResponse5001 {
     return Objects.equals(this.submitTimeUtc, inlineResponse5001.submitTimeUtc) &&
         Objects.equals(this.status, inlineResponse5001.status) &&
         Objects.equals(this.reason, inlineResponse5001.reason) &&
-        Objects.equals(this.message, inlineResponse5001.message);
+        Objects.equals(this.message, inlineResponse5001.message) &&
+        Objects.equals(this.details, inlineResponse5001.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, reason, message);
+    return Objects.hash(submitTimeUtc, status, reason, message, details);
   }
 
 
@@ -143,6 +176,7 @@ public class InlineResponse5001 {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

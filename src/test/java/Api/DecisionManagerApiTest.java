@@ -15,8 +15,18 @@ package Api;
 
 import Invokers.ApiException;
 import Model.AddNegativeListRequest;
+import Model.CaseManagementActionsRequest;
+import Model.CaseManagementCommentsRequest;
 import Model.CreateBundledDecisionManagerCaseRequest;
 import Model.FraudMarkingActionRequest;
+import Model.InlineResponse200;
+import Model.InlineResponse201;
+import Model.InlineResponse4001;
+import Model.InlineResponse4031;
+import Model.InlineResponse422;
+import Model.InlineResponse5001;
+import Model.InlineResponse502;
+import Model.InlineResponse503;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RiskV1DecisionsPost201Response;
 import Model.RiskV1DecisionsPost400Response;
@@ -40,6 +50,23 @@ public class DecisionManagerApiTest {
 
     
     /**
+     * Take action on a DM post-transactional case
+     *
+     * Take action on a DM post-transactional case
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void actionDecisionManagerCaseTest() throws ApiException {
+        String id = null;
+        CaseManagementActionsRequest caseManagementActionsRequest = null;
+        InlineResponse200 response = api.actionDecisionManagerCase(id, caseManagementActionsRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
      * List Management
      *
      * This call adds/deletes/converts the request information in the negative list.  Provide the list to be updated as the path parameter. This value can be &#39;postiive&#39;, &#39;negative&#39; or &#39;review&#39;. 
@@ -52,6 +79,23 @@ public class DecisionManagerApiTest {
         String type = null;
         AddNegativeListRequest addNegativeListRequest = null;
         RiskV1UpdatePost201Response response = api.addNegative(type, addNegativeListRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Add a comment to a DM post-transactional case
+     *
+     * Add a comment to a DM post-transactional case
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void commentDecisionManagerCaseTest() throws ApiException {
+        String id = null;
+        CaseManagementCommentsRequest caseManagementCommentsRequest = null;
+        InlineResponse201 response = api.commentDecisionManagerCase(id, caseManagementCommentsRequest);
 
         // TODO: test validations
     }
