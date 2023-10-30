@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
+import Model.Ptsv2paymentsMerchantDefinedSecureInformation;
 import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsTravelInformation;
 import Model.Ptsv2paymentsidcapturesAggregatorInformation;
@@ -72,6 +73,9 @@ public class CapturePaymentRequest {
 
   @SerializedName("merchantDefinedInformation")
   private List<Ptsv2paymentsMerchantDefinedInformation> merchantDefinedInformation = null;
+
+  @SerializedName("merchantDefinedSecureInformation")
+  private Ptsv2paymentsMerchantDefinedSecureInformation merchantDefinedSecureInformation = null;
 
   @SerializedName("installmentInformation")
   private Ptsv2paymentsidcapturesInstallmentInformation installmentInformation = null;
@@ -270,6 +274,24 @@ public class CapturePaymentRequest {
     this.merchantDefinedInformation = merchantDefinedInformation;
   }
 
+  public CapturePaymentRequest merchantDefinedSecureInformation(Ptsv2paymentsMerchantDefinedSecureInformation merchantDefinedSecureInformation) {
+    this.merchantDefinedSecureInformation = merchantDefinedSecureInformation;
+    return this;
+  }
+
+   /**
+   * Get merchantDefinedSecureInformation
+   * @return merchantDefinedSecureInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsMerchantDefinedSecureInformation getMerchantDefinedSecureInformation() {
+    return merchantDefinedSecureInformation;
+  }
+
+  public void setMerchantDefinedSecureInformation(Ptsv2paymentsMerchantDefinedSecureInformation merchantDefinedSecureInformation) {
+    this.merchantDefinedSecureInformation = merchantDefinedSecureInformation;
+  }
+
   public CapturePaymentRequest installmentInformation(Ptsv2paymentsidcapturesInstallmentInformation installmentInformation) {
     this.installmentInformation = installmentInformation;
     return this;
@@ -344,6 +366,7 @@ public class CapturePaymentRequest {
         Objects.equals(this.aggregatorInformation, capturePaymentRequest.aggregatorInformation) &&
         Objects.equals(this.pointOfSaleInformation, capturePaymentRequest.pointOfSaleInformation) &&
         Objects.equals(this.merchantDefinedInformation, capturePaymentRequest.merchantDefinedInformation) &&
+        Objects.equals(this.merchantDefinedSecureInformation, capturePaymentRequest.merchantDefinedSecureInformation) &&
         Objects.equals(this.installmentInformation, capturePaymentRequest.installmentInformation) &&
         Objects.equals(this.travelInformation, capturePaymentRequest.travelInformation) &&
         Objects.equals(this.promotionInformation, capturePaymentRequest.promotionInformation);
@@ -351,7 +374,7 @@ public class CapturePaymentRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation, installmentInformation, travelInformation, promotionInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, promotionInformation);
   }
 
 
@@ -370,6 +393,7 @@ public class CapturePaymentRequest {
     sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
+    sb.append("    merchantDefinedSecureInformation: ").append(toIndentedString(merchantDefinedSecureInformation)).append("\n");
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
     sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");

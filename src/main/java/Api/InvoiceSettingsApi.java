@@ -130,7 +130,7 @@ public class InvoiceSettingsApi {
 
     /**
      * Get Invoice Settings
-     * Get the invoice settings for the invoice payment page.
+     * Allows you to retrieve the invoice settings for the payment page.
      * @return InvoicingV2InvoiceSettingsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -144,7 +144,7 @@ public class InvoiceSettingsApi {
 
     /**
      * Get Invoice Settings
-     * Get the invoice settings for the invoice payment page.
+     * Allows you to retrieve the invoice settings for the payment page.
      * @return ApiResponse&lt;InvoicingV2InvoiceSettingsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -156,7 +156,7 @@ public class InvoiceSettingsApi {
 
     /**
      * Get Invoice Settings (asynchronously)
-     * Get the invoice settings for the invoice payment page.
+     * Allows you to retrieve the invoice settings for the payment page.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -258,7 +258,7 @@ public class InvoiceSettingsApi {
 
     /**
      * Update Invoice Settings
-     * Update invoice settings for the invoice payment page.
+     * Allows you to customize the payment page, the checkout experience, email communication and payer authentication. You can customize the invoice to match your brand with your business name, logo and brand colors, and a VAT Tax number. You can choose to capture the payers shipping details, phone number and email during the checkout process. You can add a custom message to all invoice emails and enable or disable payer authentication for invoice payments.
      * @param invoiceSettingsRequest  (required)
      * @return InvoicingV2InvoiceSettingsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -273,7 +273,7 @@ public class InvoiceSettingsApi {
 
     /**
      * Update Invoice Settings
-     * Update invoice settings for the invoice payment page.
+     * Allows you to customize the payment page, the checkout experience, email communication and payer authentication. You can customize the invoice to match your brand with your business name, logo and brand colors, and a VAT Tax number. You can choose to capture the payers shipping details, phone number and email during the checkout process. You can add a custom message to all invoice emails and enable or disable payer authentication for invoice payments.
      * @param invoiceSettingsRequest  (required)
      * @return ApiResponse&lt;InvoicingV2InvoiceSettingsGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -286,7 +286,7 @@ public class InvoiceSettingsApi {
 
     /**
      * Update Invoice Settings (asynchronously)
-     * Update invoice settings for the invoice payment page.
+     * Allows you to customize the payment page, the checkout experience, email communication and payer authentication. You can customize the invoice to match your brand with your business name, logo and brand colors, and a VAT Tax number. You can choose to capture the payers shipping details, phone number and email during the checkout process. You can add a custom message to all invoice emails and enable or disable payer authentication for invoice payments.
      * @param invoiceSettingsRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

@@ -14,9 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse2002EmbeddedTotals;
-import Model.InlineResponse2003Billing;
-import Model.InlineResponse2003Links;
+import Model.Notificationsubscriptionsv1productsorganizationIdEventTypes;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,220 +23,83 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InlineResponse2003
  */
 
 public class InlineResponse2003 {
-  @SerializedName("_links")
-  private InlineResponse2003Links links = null;
+  @SerializedName("productId")
+  private String productId = null;
 
-  @SerializedName("batchId")
-  private String batchId = null;
+  @SerializedName("productName")
+  private String productName = null;
 
-  @SerializedName("batchCreatedDate")
-  private String batchCreatedDate = null;
+  @SerializedName("eventTypes")
+  private List<Notificationsubscriptionsv1productsorganizationIdEventTypes> eventTypes = null;
 
-  @SerializedName("batchSource")
-  private String batchSource = null;
-
-  @SerializedName("merchantReference")
-  private String merchantReference = null;
-
-  @SerializedName("batchCaEndpoints")
-  private String batchCaEndpoints = null;
-
-  @SerializedName("status")
-  private String status = null;
-
-  @SerializedName("totals")
-  private InlineResponse2002EmbeddedTotals totals = null;
-
-  @SerializedName("billing")
-  private InlineResponse2003Billing billing = null;
-
-  @SerializedName("description")
-  private String description = null;
-
-  public InlineResponse2003 links(InlineResponse2003Links links) {
-    this.links = links;
+  public InlineResponse2003 productId(String productId) {
+    this.productId = productId;
     return this;
   }
 
    /**
-   * Get links
-   * @return links
+   * Product ID.
+   * @return productId
+  **/
+  @ApiModelProperty(value = "Product ID.")
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(String productId) {
+    this.productId = productId;
+  }
+
+  public InlineResponse2003 productName(String productName) {
+    this.productName = productName;
+    return this;
+  }
+
+   /**
+   * Product Name.
+   * @return productName
+  **/
+  @ApiModelProperty(value = "Product Name.")
+  public String getProductName() {
+    return productName;
+  }
+
+  public void setProductName(String productName) {
+    this.productName = productName;
+  }
+
+  public InlineResponse2003 eventTypes(List<Notificationsubscriptionsv1productsorganizationIdEventTypes> eventTypes) {
+    this.eventTypes = eventTypes;
+    return this;
+  }
+
+  public InlineResponse2003 addEventTypesItem(Notificationsubscriptionsv1productsorganizationIdEventTypes eventTypesItem) {
+    if (this.eventTypes == null) {
+      this.eventTypes = new ArrayList<Notificationsubscriptionsv1productsorganizationIdEventTypes>();
+    }
+    this.eventTypes.add(eventTypesItem);
+    return this;
+  }
+
+   /**
+   * Get eventTypes
+   * @return eventTypes
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2003Links getLinks() {
-    return links;
+  public List<Notificationsubscriptionsv1productsorganizationIdEventTypes> getEventTypes() {
+    return eventTypes;
   }
 
-  public void setLinks(InlineResponse2003Links links) {
-    this.links = links;
-  }
-
-  public InlineResponse2003 batchId(String batchId) {
-    this.batchId = batchId;
-    return this;
-  }
-
-   /**
-   * Unique identification number assigned to the submitted request.
-   * @return batchId
-  **/
-  @ApiModelProperty(example = "16188390061150001062041064", value = "Unique identification number assigned to the submitted request.")
-  public String getBatchId() {
-    return batchId;
-  }
-
-  public void setBatchId(String batchId) {
-    this.batchId = batchId;
-  }
-
-  public InlineResponse2003 batchCreatedDate(String batchCreatedDate) {
-    this.batchCreatedDate = batchCreatedDate;
-    return this;
-  }
-
-   /**
-   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
-   * @return batchCreatedDate
-  **/
-  @ApiModelProperty(example = "2018-05-22T14.38.57Z", value = "ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ")
-  public String getBatchCreatedDate() {
-    return batchCreatedDate;
-  }
-
-  public void setBatchCreatedDate(String batchCreatedDate) {
-    this.batchCreatedDate = batchCreatedDate;
-  }
-
-  public InlineResponse2003 batchSource(String batchSource) {
-    this.batchSource = batchSource;
-    return this;
-  }
-
-   /**
-   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
-   * @return batchSource
-  **/
-  @ApiModelProperty(value = "Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE ")
-  public String getBatchSource() {
-    return batchSource;
-  }
-
-  public void setBatchSource(String batchSource) {
-    this.batchSource = batchSource;
-  }
-
-  public InlineResponse2003 merchantReference(String merchantReference) {
-    this.merchantReference = merchantReference;
-    return this;
-  }
-
-   /**
-   * Reference used by merchant to identify batch.
-   * @return merchantReference
-  **/
-  @ApiModelProperty(example = "TC50171_3", value = "Reference used by merchant to identify batch.")
-  public String getMerchantReference() {
-    return merchantReference;
-  }
-
-  public void setMerchantReference(String merchantReference) {
-    this.merchantReference = merchantReference;
-  }
-
-  public InlineResponse2003 batchCaEndpoints(String batchCaEndpoints) {
-    this.batchCaEndpoints = batchCaEndpoints;
-    return this;
-  }
-
-   /**
-   * Get batchCaEndpoints
-   * @return batchCaEndpoints
-  **/
-  @ApiModelProperty(example = "VISA,MASTERCARD", value = "")
-  public String getBatchCaEndpoints() {
-    return batchCaEndpoints;
-  }
-
-  public void setBatchCaEndpoints(String batchCaEndpoints) {
-    this.batchCaEndpoints = batchCaEndpoints;
-  }
-
-  public InlineResponse2003 status(String status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED 
-   * @return status
-  **/
-  @ApiModelProperty(value = "Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED ")
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public InlineResponse2003 totals(InlineResponse2002EmbeddedTotals totals) {
-    this.totals = totals;
-    return this;
-  }
-
-   /**
-   * Get totals
-   * @return totals
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2002EmbeddedTotals getTotals() {
-    return totals;
-  }
-
-  public void setTotals(InlineResponse2002EmbeddedTotals totals) {
-    this.totals = totals;
-  }
-
-  public InlineResponse2003 billing(InlineResponse2003Billing billing) {
-    this.billing = billing;
-    return this;
-  }
-
-   /**
-   * Get billing
-   * @return billing
-  **/
-  @ApiModelProperty(value = "")
-  public InlineResponse2003Billing getBilling() {
-    return billing;
-  }
-
-  public void setBilling(InlineResponse2003Billing billing) {
-    this.billing = billing;
-  }
-
-  public InlineResponse2003 description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Get description
-   * @return description
-  **/
-  @ApiModelProperty(example = "Your batch has been received, and is being checked for errors.", value = "")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
+  public void setEventTypes(List<Notificationsubscriptionsv1productsorganizationIdEventTypes> eventTypes) {
+    this.eventTypes = eventTypes;
   }
 
 
@@ -251,21 +112,14 @@ public class InlineResponse2003 {
       return false;
     }
     InlineResponse2003 inlineResponse2003 = (InlineResponse2003) o;
-    return Objects.equals(this.links, inlineResponse2003.links) &&
-        Objects.equals(this.batchId, inlineResponse2003.batchId) &&
-        Objects.equals(this.batchCreatedDate, inlineResponse2003.batchCreatedDate) &&
-        Objects.equals(this.batchSource, inlineResponse2003.batchSource) &&
-        Objects.equals(this.merchantReference, inlineResponse2003.merchantReference) &&
-        Objects.equals(this.batchCaEndpoints, inlineResponse2003.batchCaEndpoints) &&
-        Objects.equals(this.status, inlineResponse2003.status) &&
-        Objects.equals(this.totals, inlineResponse2003.totals) &&
-        Objects.equals(this.billing, inlineResponse2003.billing) &&
-        Objects.equals(this.description, inlineResponse2003.description);
+    return Objects.equals(this.productId, inlineResponse2003.productId) &&
+        Objects.equals(this.productName, inlineResponse2003.productName) &&
+        Objects.equals(this.eventTypes, inlineResponse2003.eventTypes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, batchId, batchCreatedDate, batchSource, merchantReference, batchCaEndpoints, status, totals, billing, description);
+    return Objects.hash(productId, productName, eventTypes);
   }
 
 
@@ -274,16 +128,9 @@ public class InlineResponse2003 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2003 {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
-    sb.append("    batchCreatedDate: ").append(toIndentedString(batchCreatedDate)).append("\n");
-    sb.append("    batchSource: ").append(toIndentedString(batchSource)).append("\n");
-    sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
-    sb.append("    batchCaEndpoints: ").append(toIndentedString(batchCaEndpoints)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
-    sb.append("    billing: ").append(toIndentedString(billing)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    sb.append("    eventTypes: ").append(toIndentedString(eventTypes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -134,6 +134,9 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("isReturnAuthRecordEnabled")
   private Boolean isReturnAuthRecordEnabled = null;
 
+  @SerializedName("networkPartnerId")
+  private String networkPartnerId = null;
+
   public Ptsv2paymentsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
     return this;
@@ -726,6 +729,24 @@ public class Ptsv2paymentsProcessingInformation {
     this.isReturnAuthRecordEnabled = isReturnAuthRecordEnabled;
   }
 
+  public Ptsv2paymentsProcessingInformation networkPartnerId(String networkPartnerId) {
+    this.networkPartnerId = networkPartnerId;
+    return this;
+  }
+
+   /**
+   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.  This field is supported for Visa Platform Connect. 
+   * @return networkPartnerId
+  **/
+  @ApiModelProperty(value = "Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.  This field is supported for Visa Platform Connect. ")
+  public String getNetworkPartnerId() {
+    return networkPartnerId;
+  }
+
+  public void setNetworkPartnerId(String networkPartnerId) {
+    this.networkPartnerId = networkPartnerId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -767,12 +788,13 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.extendedCreditTotalCount, ptsv2paymentsProcessingInformation.extendedCreditTotalCount) &&
         Objects.equals(this.networkRoutingOrder, ptsv2paymentsProcessingInformation.networkRoutingOrder) &&
         Objects.equals(this.payByPointsIndicator, ptsv2paymentsProcessingInformation.payByPointsIndicator) &&
-        Objects.equals(this.isReturnAuthRecordEnabled, ptsv2paymentsProcessingInformation.isReturnAuthRecordEnabled);
+        Objects.equals(this.isReturnAuthRecordEnabled, ptsv2paymentsProcessingInformation.isReturnAuthRecordEnabled) &&
+        Objects.equals(this.networkPartnerId, ptsv2paymentsProcessingInformation.networkPartnerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled, networkPartnerId);
   }
 
 
@@ -813,6 +835,7 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
     sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
     sb.append("    isReturnAuthRecordEnabled: ").append(toIndentedString(isReturnAuthRecordEnabled)).append("\n");
+    sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

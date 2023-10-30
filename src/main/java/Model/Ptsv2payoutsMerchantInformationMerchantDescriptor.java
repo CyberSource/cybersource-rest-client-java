@@ -46,6 +46,9 @@ public class Ptsv2payoutsMerchantInformationMerchantDescriptor {
   @SerializedName("contact")
   private String contact = null;
 
+  @SerializedName("address1")
+  private String address1 = null;
+
   public Ptsv2payoutsMerchantInformationMerchantDescriptor name(String name) {
     this.name = name;
     return this;
@@ -154,6 +157,24 @@ public class Ptsv2payoutsMerchantInformationMerchantDescriptor {
     this.contact = contact;
   }
 
+  public Ptsv2payoutsMerchantInformationMerchantDescriptor address1(String address1) {
+    this.address1 = address1;
+    return this;
+  }
+
+   /**
+   * First line of merchant&#39;s address. For the descriptions, used-by information, data types, and lengths for these fields, see &#x60;merchant_descriptor_street&#x60; field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * @return address1
+  **/
+  @ApiModelProperty(value = "First line of merchant's address. For the descriptions, used-by information, data types, and lengths for these fields, see `merchant_descriptor_street` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  public String getAddress1() {
+    return address1;
+  }
+
+  public void setAddress1(String address1) {
+    this.address1 = address1;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -169,12 +190,13 @@ public class Ptsv2payoutsMerchantInformationMerchantDescriptor {
         Objects.equals(this.country, ptsv2payoutsMerchantInformationMerchantDescriptor.country) &&
         Objects.equals(this.administrativeArea, ptsv2payoutsMerchantInformationMerchantDescriptor.administrativeArea) &&
         Objects.equals(this.postalCode, ptsv2payoutsMerchantInformationMerchantDescriptor.postalCode) &&
-        Objects.equals(this.contact, ptsv2payoutsMerchantInformationMerchantDescriptor.contact);
+        Objects.equals(this.contact, ptsv2payoutsMerchantInformationMerchantDescriptor.contact) &&
+        Objects.equals(this.address1, ptsv2payoutsMerchantInformationMerchantDescriptor.address1);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, locality, country, administrativeArea, postalCode, contact);
+    return Objects.hash(name, locality, country, administrativeArea, postalCode, contact, address1);
   }
 
 
@@ -189,6 +211,7 @@ public class Ptsv2payoutsMerchantInformationMerchantDescriptor {
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
+    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("}");
     return sb.toString();
   }

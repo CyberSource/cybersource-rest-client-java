@@ -4,32 +4,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**correlationId** | **String** |  |  [optional]
+**submitTimeUtc** | [**LocalDate**](LocalDate.md) | Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.  |  [optional]
+**status** | **String** | The http status description of the submitted request. |  [optional]
+**reason** | [**ReasonEnum**](#ReasonEnum) | Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;INVALID_DATA&#39;   - &#39;SYSTEM_ERROR&#39;   - &#39;RESOURCE_NOT_FOUND&#39;  |  [optional]
+**message** | **String** | Descriptive message for the error. |  [optional]
 **details** | [**List&lt;InlineResponse4007Details&gt;**](InlineResponse4007Details.md) |  |  [optional]
-**informationLink** | **String** |  |  [optional]
-**message** | **String** |  | 
-**reason** | [**ReasonEnum**](#ReasonEnum) |  | 
 
 
 <a name="ReasonEnum"></a>
 ## Enum: ReasonEnum
 Name | Value
 ---- | -----
-INVALID_APIKEY | &quot;INVALID_APIKEY&quot;
-INVALID_SHIPPING_INPUT_PARAMS | &quot;INVALID_SHIPPING_INPUT_PARAMS&quot;
-CAPTURE_CONTEXT_INVALID | &quot;CAPTURE_CONTEXT_INVALID&quot;
-CAPTURE_CONTEXT_EXPIRED | &quot;CAPTURE_CONTEXT_EXPIRED&quot;
-SDK_XHR_ERROR | &quot;SDK_XHR_ERROR&quot;
-UNIFIEDPAYMENTS_VALIDATION_PARAMS | &quot;UNIFIEDPAYMENTS_VALIDATION_PARAMS&quot;
-UNIFIEDPAYMENTS_VALIDATION_FIELDS | &quot;UNIFIEDPAYMENTS_VALIDATION_FIELDS&quot;
-UNIFIEDPAYMENT_PAYMENT_PARAMITERS | &quot;UNIFIEDPAYMENT_PAYMENT_PARAMITERS&quot;
-CREATE_TOKEN_TIMEOUT | &quot;CREATE_TOKEN_TIMEOUT&quot;
-CREATE_TOKEN_XHR_ERROR | &quot;CREATE_TOKEN_XHR_ERROR&quot;
-SHOW_LOAD_CONTAINER_SELECTOR | &quot;SHOW_LOAD_CONTAINER_SELECTOR&quot;
-SHOW_LOAD_INVALID_CONTAINER | &quot;SHOW_LOAD_INVALID_CONTAINER&quot;
-SHOW_TOKEN_TIMEOUT | &quot;SHOW_TOKEN_TIMEOUT&quot;
-SHOW_TOKEN_XHR_ERROR | &quot;SHOW_TOKEN_XHR_ERROR&quot;
-SHOW_PAYMENT_TIMEOUT | &quot;SHOW_PAYMENT_TIMEOUT&quot;
+INVALID_DATA | &quot;INVALID_DATA&quot;
+SYSTEM_ERROR | &quot;SYSTEM_ERROR&quot;
+RESOURCE_NOT_FOUND | &quot;RESOURCE_NOT_FOUND&quot;
 
 
 

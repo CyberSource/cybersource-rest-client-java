@@ -32,8 +32,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ReportingV3PurchaseRefundDetailsGet200Response
+ * PurchaseAndRefundDetails
  */
+@ApiModel(description = "PurchaseAndRefundDetails")
 
 public class ReportingV3PurchaseRefundDetailsGet200Response {
   @SerializedName("offset")
