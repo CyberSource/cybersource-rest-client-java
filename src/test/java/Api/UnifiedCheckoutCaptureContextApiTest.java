@@ -15,7 +15,7 @@ package Api;
 
 import Invokers.ApiException;
 import Model.GenerateUnifiedCheckoutCaptureContextRequest;
-import Model.InlineResponse4007;
+import Model.InlineResponse4008;
 import org.junit.Test;
 import org.junit.Ignore;
 

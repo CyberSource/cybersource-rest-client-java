@@ -40,6 +40,9 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
   @SerializedName("responseCode")
   private String responseCode = null;
 
+  @SerializedName("pinRequestIndicator")
+  private String pinRequestIndicator = null;
+
   public PtsV2PaymentsPost201ResponseIssuerInformation country(String country) {
     this.country = country;
     return this;
@@ -112,6 +115,24 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
     this.responseCode = responseCode;
   }
 
+  public PtsV2PaymentsPost201ResponseIssuerInformation pinRequestIndicator(String pinRequestIndicator) {
+    this.pinRequestIndicator = pinRequestIndicator;
+    return this;
+  }
+
+   /**
+   * This field contains value ‘1’ which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect. 
+   * @return pinRequestIndicator
+  **/
+  @ApiModelProperty(value = "This field contains value ‘1’ which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect. ")
+  public String getPinRequestIndicator() {
+    return pinRequestIndicator;
+  }
+
+  public void setPinRequestIndicator(String pinRequestIndicator) {
+    this.pinRequestIndicator = pinRequestIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +146,13 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
     return Objects.equals(this.country, ptsV2PaymentsPost201ResponseIssuerInformation.country) &&
         Objects.equals(this.discretionaryData, ptsV2PaymentsPost201ResponseIssuerInformation.discretionaryData) &&
         Objects.equals(this.countrySpecificDiscretionaryData, ptsV2PaymentsPost201ResponseIssuerInformation.countrySpecificDiscretionaryData) &&
-        Objects.equals(this.responseCode, ptsV2PaymentsPost201ResponseIssuerInformation.responseCode);
+        Objects.equals(this.responseCode, ptsV2PaymentsPost201ResponseIssuerInformation.responseCode) &&
+        Objects.equals(this.pinRequestIndicator, ptsV2PaymentsPost201ResponseIssuerInformation.pinRequestIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(country, discretionaryData, countrySpecificDiscretionaryData, responseCode);
+    return Objects.hash(country, discretionaryData, countrySpecificDiscretionaryData, responseCode, pinRequestIndicator);
   }
 
 
@@ -143,6 +165,7 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
     sb.append("    discretionaryData: ").append(toIndentedString(discretionaryData)).append("\n");
     sb.append("    countrySpecificDiscretionaryData: ").append(toIndentedString(countrySpecificDiscretionaryData)).append("\n");
     sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    sb.append("    pinRequestIndicator: ").append(toIndentedString(pinRequestIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

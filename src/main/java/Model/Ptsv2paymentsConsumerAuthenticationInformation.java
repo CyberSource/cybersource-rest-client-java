@@ -32,6 +32,9 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   @SerializedName("cavv")
   private String cavv = null;
 
+  @SerializedName("transactionFlowIndicator")
+  private String transactionFlowIndicator = null;
+
   @SerializedName("cavvAlgorithm")
   private String cavvAlgorithm = null;
 
@@ -213,6 +216,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   public void setCavv(String cavv) {
     this.cavv = cavv;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation transactionFlowIndicator(String transactionFlowIndicator) {
+    this.transactionFlowIndicator = transactionFlowIndicator;
+    return this;
+  }
+
+   /**
+   * This field details out the type of transaction. Below are the possible values. 08:GC- Guest Checkout. 
+   * @return transactionFlowIndicator
+  **/
+  @ApiModelProperty(value = "This field details out the type of transaction. Below are the possible values. 08:GC- Guest Checkout. ")
+  public String getTransactionFlowIndicator() {
+    return transactionFlowIndicator;
+  }
+
+  public void setTransactionFlowIndicator(String transactionFlowIndicator) {
+    this.transactionFlowIndicator = transactionFlowIndicator;
   }
 
   public Ptsv2paymentsConsumerAuthenticationInformation cavvAlgorithm(String cavvAlgorithm) {
@@ -1216,6 +1237,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     }
     Ptsv2paymentsConsumerAuthenticationInformation ptsv2paymentsConsumerAuthenticationInformation = (Ptsv2paymentsConsumerAuthenticationInformation) o;
     return Objects.equals(this.cavv, ptsv2paymentsConsumerAuthenticationInformation.cavv) &&
+        Objects.equals(this.transactionFlowIndicator, ptsv2paymentsConsumerAuthenticationInformation.transactionFlowIndicator) &&
         Objects.equals(this.cavvAlgorithm, ptsv2paymentsConsumerAuthenticationInformation.cavvAlgorithm) &&
         Objects.equals(this.eciRaw, ptsv2paymentsConsumerAuthenticationInformation.eciRaw) &&
         Objects.equals(this.paresStatus, ptsv2paymentsConsumerAuthenticationInformation.paresStatus) &&
@@ -1275,7 +1297,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cavv, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, responseAccessToken, acsTransactionId, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, networkScore, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, effectiveAuthenticationType, signedParesStatusReason, signedPares);
+    return Objects.hash(cavv, transactionFlowIndicator, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, responseAccessToken, acsTransactionId, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, networkScore, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, effectiveAuthenticationType, signedParesStatusReason, signedPares);
   }
 
 
@@ -1285,6 +1307,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     sb.append("class Ptsv2paymentsConsumerAuthenticationInformation {\n");
     
     sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
+    sb.append("    transactionFlowIndicator: ").append(toIndentedString(transactionFlowIndicator)).append("\n");
     sb.append("    cavvAlgorithm: ").append(toIndentedString(cavvAlgorithm)).append("\n");
     sb.append("    eciRaw: ").append(toIndentedString(eciRaw)).append("\n");
     sb.append("    paresStatus: ").append(toIndentedString(paresStatus)).append("\n");
