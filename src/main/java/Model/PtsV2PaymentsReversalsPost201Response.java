@@ -128,10 +128,10 @@ public class PtsV2PaymentsReversalsPost201Response {
   }
 
    /**
-   * The status of the submitted transaction.  Possible values:  - REVERSED 
+   * The status of the submitted transaction.  Possible values:  - REVERSED  - PARTIALLY_REVERSED 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - REVERSED ")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - REVERSED  - PARTIALLY_REVERSED ")
   public String getStatus() {
     return status;
   }

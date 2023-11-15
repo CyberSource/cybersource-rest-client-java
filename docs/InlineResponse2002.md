@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**List&lt;InlineResponse2002Links&gt;**](InlineResponse2002Links.md) |  |  [optional]
-**object** | **String** |  |  [optional]
-**offset** | **Integer** |  |  [optional]
-**limit** | **Integer** |  |  [optional]
-**count** | **Integer** |  |  [optional]
-**total** | **Integer** |  |  [optional]
-**embedded** | [**InlineResponse2002Embedded**](InlineResponse2002Embedded.md) |  |  [optional]
+**registrationInformation** | [**Boardingv1registrationsRegistrationInformation**](Boardingv1registrationsRegistrationInformation.md) |  |  [optional]
+**integrationInformation** | [**InlineResponse2002IntegrationInformation**](InlineResponse2002IntegrationInformation.md) |  |  [optional]
+**organizationInformation** | [**Boardingv1registrationsOrganizationInformation**](Boardingv1registrationsOrganizationInformation.md) |  |  [optional]
+**productInformation** | [**Boardingv1registrationsProductInformation**](Boardingv1registrationsProductInformation.md) |  |  [optional]
+**productInformationSetups** | [**List&lt;InlineResponse2011ProductInformationSetups&gt;**](InlineResponse2011ProductInformationSetups.md) |  |  [optional]
+**documentInformation** | [**Boardingv1registrationsDocumentInformation**](Boardingv1registrationsDocumentInformation.md) |  |  [optional]
+**details** | [**Map&lt;String, List&lt;Object&gt;&gt;**](List.md) |  |  [optional]
 
 
 
