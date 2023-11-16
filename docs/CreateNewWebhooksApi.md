@@ -4,59 +4,14 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**notificationSubscriptionsV1ProductsOrganizationIdGet**](CreateNewWebhooksApi.md#notificationSubscriptionsV1ProductsOrganizationIdGet) | **GET** /notification-subscriptions/v1/products/{organizationId} | Find Products You Can Subscribe To
-[**notificationSubscriptionsV1WebhooksPost**](CreateNewWebhooksApi.md#notificationSubscriptionsV1WebhooksPost) | **POST** /notification-subscriptions/v1/webhooks | Create a Webhook
+[**createWebhook**](CreateNewWebhooksApi.md#createWebhook) | **POST** /notification-subscriptions/v1/webhooks | Create a Webhook
+[**findProductToSubscribe**](CreateNewWebhooksApi.md#findProductToSubscribe) | **GET** /notification-subscriptions/v1/products/{organizationId} | Find Products You Can Subscribe To
 [**saveSymEgressKey**](CreateNewWebhooksApi.md#saveSymEgressKey) | **POST** /kms/egress/v2/keys-sym | Create Webhook Security Keys
 
 
-<a name="notificationSubscriptionsV1ProductsOrganizationIdGet"></a>
-# **notificationSubscriptionsV1ProductsOrganizationIdGet**
-> List&lt;InlineResponse2003&gt; notificationSubscriptionsV1ProductsOrganizationIdGet(organizationId)
-
-Find Products You Can Subscribe To
-
-Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.CreateNewWebhooksApi;
-
-
-CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
-String organizationId = "organizationId_example"; // String | The Organization Identifier.
-try {
-    List<InlineResponse2003> result = apiInstance.notificationSubscriptionsV1ProductsOrganizationIdGet(organizationId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreateNewWebhooksApi#notificationSubscriptionsV1ProductsOrganizationIdGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| The Organization Identifier. |
-
-### Return type
-
-[**List&lt;InlineResponse2003&gt;**](InlineResponse2003.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
-
-<a name="notificationSubscriptionsV1WebhooksPost"></a>
-# **notificationSubscriptionsV1WebhooksPost**
-> InlineResponse2013 notificationSubscriptionsV1WebhooksPost(createWebhook)
+<a name="createWebhook"></a>
+# **createWebhook**
+> InlineResponse2013 createWebhook(createWebhook)
 
 Create a Webhook
 
@@ -72,10 +27,10 @@ Create a new webhook subscription. Before creating a webhook, ensure that a secu
 CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
 CreateWebhook createWebhook = new CreateWebhook(); // CreateWebhook | The webhook payload
 try {
-    InlineResponse2013 result = apiInstance.notificationSubscriptionsV1WebhooksPost(createWebhook);
+    InlineResponse2013 result = apiInstance.createWebhook(createWebhook);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling CreateNewWebhooksApi#notificationSubscriptionsV1WebhooksPost");
+    System.err.println("Exception when calling CreateNewWebhooksApi#createWebhook");
     e.printStackTrace();
 }
 ```
@@ -89,6 +44,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse2013**](InlineResponse2013.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+<a name="findProductToSubscribe"></a>
+# **findProductToSubscribe**
+> List&lt;InlineResponse2003&gt; findProductToSubscribe(organizationId)
+
+Find Products You Can Subscribe To
+
+Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.CreateNewWebhooksApi;
+
+
+CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
+String organizationId = "organizationId_example"; // String | The Organization Identifier.
+try {
+    List<InlineResponse2003> result = apiInstance.findProductToSubscribe(organizationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CreateNewWebhooksApi#findProductToSubscribe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **String**| The Organization Identifier. |
+
+### Return type
+
+[**List&lt;InlineResponse2003&gt;**](InlineResponse2003.md)
 
 ### Authorization
 

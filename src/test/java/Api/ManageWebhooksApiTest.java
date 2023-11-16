@@ -38,24 +38,6 @@ public class ManageWebhooksApiTest {
 
     
     /**
-     * Get Details On All Created Webhooks
-     *
-     * Retrieve a list of all previously created webhooks.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void notificationSubscriptionsV1WebhooksGetTest() throws ApiException {
-        String organizationId = null;
-        String productId = null;
-        String eventType = null;
-        List<InlineResponse2004> response = api.notificationSubscriptionsV1WebhooksGet(organizationId, productId, eventType);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Delete a Webhook Subscription
      *
      * Delete the webhook. Please note that deleting a particular webhook does not delete the history of the webhook notifications.
@@ -64,9 +46,27 @@ public class ManageWebhooksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void notificationSubscriptionsV1WebhooksWebhookIdDeleteTest() throws ApiException {
+    public void deleteWebhookSubscriptionTest() throws ApiException {
         String webhookId = null;
-        api.notificationSubscriptionsV1WebhooksWebhookIdDelete(webhookId);
+        api.deleteWebhookSubscription(webhookId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get Details On All Created Webhooks
+     *
+     * Retrieve a list of all previously created webhooks.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAllWebhooksTest() throws ApiException {
+        String organizationId = null;
+        String productId = null;
+        String eventType = null;
+        List<InlineResponse2004> response = api.getAllWebhooks(organizationId, productId, eventType);
 
         // TODO: test validations
     }
@@ -80,26 +80,9 @@ public class ManageWebhooksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void notificationSubscriptionsV1WebhooksWebhookIdGetTest() throws ApiException {
+    public void getWebhookDetailsTest() throws ApiException {
         String webhookId = null;
-        InlineResponse2004 response = api.notificationSubscriptionsV1WebhooksWebhookIdGet(webhookId);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Update a Webhook Subscription
-     *
-     * Update the webhook subscription using PATCH.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void notificationSubscriptionsV1WebhooksWebhookIdPatchTest() throws ApiException {
-        String webhookId = null;
-        UpdateWebhook updateWebhook = null;
-        api.notificationSubscriptionsV1WebhooksWebhookIdPatch(webhookId, updateWebhook);
+        InlineResponse2004 response = api.getWebhookDetails(webhookId);
 
         // TODO: test validations
     }
@@ -113,10 +96,10 @@ public class ManageWebhooksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void nrtfV1WebhooksWebhookIdReplaysPostTest() throws ApiException {
+    public void replayPreviousWebhookTest() throws ApiException {
         String webhookId = null;
         ReplayWebhooks replayWebhooks = null;
-        api.nrtfV1WebhooksWebhookIdReplaysPost(webhookId, replayWebhooks);
+        api.replayPreviousWebhook(webhookId, replayWebhooks);
 
         // TODO: test validations
     }
@@ -136,6 +119,23 @@ public class ManageWebhooksApiTest {
         SaveAsymEgressKey saveAsymEgressKey = null;
         String vCCorrelationId = null;
         InlineResponse2014 response = api.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a Webhook Subscription
+     *
+     * Update the webhook subscription using PATCH.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateWebhookSubscriptionTest() throws ApiException {
+        String webhookId = null;
+        UpdateWebhook updateWebhook = null;
+        api.updateWebhookSubscription(webhookId, updateWebhook);
 
         // TODO: test validations
     }

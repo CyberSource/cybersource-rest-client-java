@@ -14,10 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import Model.Boardingv1registrationsProductInformationSelectedProductsCommerceSolutions;
-import Model.Boardingv1registrationsProductInformationSelectedProductsPayments;
-import Model.Boardingv1registrationsProductInformationSelectedProductsRisk;
-import Model.Boardingv1registrationsProductInformationSelectedProductsValueAddedServices;
+import Model.CommerceSolutionsProducts;
+import Model.PaymentProducts;
+import Model.RiskProducts;
+import Model.ValueAddedServicesProducts;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -33,18 +33,18 @@ import java.io.IOException;
 
 public class Boardingv1registrationsProductInformationSelectedProducts {
   @SerializedName("payments")
-  private Boardingv1registrationsProductInformationSelectedProductsPayments payments = null;
+  private PaymentProducts payments = null;
 
   @SerializedName("risk")
-  private Boardingv1registrationsProductInformationSelectedProductsRisk risk = null;
+  private RiskProducts risk = null;
 
   @SerializedName("commerceSolutions")
-  private Boardingv1registrationsProductInformationSelectedProductsCommerceSolutions commerceSolutions = null;
+  private CommerceSolutionsProducts commerceSolutions = null;
 
   @SerializedName("valueAddedServices")
-  private Boardingv1registrationsProductInformationSelectedProductsValueAddedServices valueAddedServices = null;
+  private ValueAddedServicesProducts valueAddedServices = null;
 
-  public Boardingv1registrationsProductInformationSelectedProducts payments(Boardingv1registrationsProductInformationSelectedProductsPayments payments) {
+  public Boardingv1registrationsProductInformationSelectedProducts payments(PaymentProducts payments) {
     this.payments = payments;
     return this;
   }
@@ -54,15 +54,15 @@ public class Boardingv1registrationsProductInformationSelectedProducts {
    * @return payments
   **/
   @ApiModelProperty(value = "")
-  public Boardingv1registrationsProductInformationSelectedProductsPayments getPayments() {
+  public PaymentProducts getPayments() {
     return payments;
   }
 
-  public void setPayments(Boardingv1registrationsProductInformationSelectedProductsPayments payments) {
+  public void setPayments(PaymentProducts payments) {
     this.payments = payments;
   }
 
-  public Boardingv1registrationsProductInformationSelectedProducts risk(Boardingv1registrationsProductInformationSelectedProductsRisk risk) {
+  public Boardingv1registrationsProductInformationSelectedProducts risk(RiskProducts risk) {
     this.risk = risk;
     return this;
   }
@@ -72,15 +72,15 @@ public class Boardingv1registrationsProductInformationSelectedProducts {
    * @return risk
   **/
   @ApiModelProperty(value = "")
-  public Boardingv1registrationsProductInformationSelectedProductsRisk getRisk() {
+  public RiskProducts getRisk() {
     return risk;
   }
 
-  public void setRisk(Boardingv1registrationsProductInformationSelectedProductsRisk risk) {
+  public void setRisk(RiskProducts risk) {
     this.risk = risk;
   }
 
-  public Boardingv1registrationsProductInformationSelectedProducts commerceSolutions(Boardingv1registrationsProductInformationSelectedProductsCommerceSolutions commerceSolutions) {
+  public Boardingv1registrationsProductInformationSelectedProducts commerceSolutions(CommerceSolutionsProducts commerceSolutions) {
     this.commerceSolutions = commerceSolutions;
     return this;
   }
@@ -90,15 +90,15 @@ public class Boardingv1registrationsProductInformationSelectedProducts {
    * @return commerceSolutions
   **/
   @ApiModelProperty(value = "")
-  public Boardingv1registrationsProductInformationSelectedProductsCommerceSolutions getCommerceSolutions() {
+  public CommerceSolutionsProducts getCommerceSolutions() {
     return commerceSolutions;
   }
 
-  public void setCommerceSolutions(Boardingv1registrationsProductInformationSelectedProductsCommerceSolutions commerceSolutions) {
+  public void setCommerceSolutions(CommerceSolutionsProducts commerceSolutions) {
     this.commerceSolutions = commerceSolutions;
   }
 
-  public Boardingv1registrationsProductInformationSelectedProducts valueAddedServices(Boardingv1registrationsProductInformationSelectedProductsValueAddedServices valueAddedServices) {
+  public Boardingv1registrationsProductInformationSelectedProducts valueAddedServices(ValueAddedServicesProducts valueAddedServices) {
     this.valueAddedServices = valueAddedServices;
     return this;
   }
@@ -108,11 +108,11 @@ public class Boardingv1registrationsProductInformationSelectedProducts {
    * @return valueAddedServices
   **/
   @ApiModelProperty(value = "")
-  public Boardingv1registrationsProductInformationSelectedProductsValueAddedServices getValueAddedServices() {
+  public ValueAddedServicesProducts getValueAddedServices() {
     return valueAddedServices;
   }
 
-  public void setValueAddedServices(Boardingv1registrationsProductInformationSelectedProductsValueAddedServices valueAddedServices) {
+  public void setValueAddedServices(ValueAddedServicesProducts valueAddedServices) {
     this.valueAddedServices = valueAddedServices;
   }
 

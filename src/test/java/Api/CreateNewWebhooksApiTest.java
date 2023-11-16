@@ -37,22 +37,6 @@ public class CreateNewWebhooksApiTest {
 
     
     /**
-     * Find Products You Can Subscribe To
-     *
-     * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void notificationSubscriptionsV1ProductsOrganizationIdGetTest() throws ApiException {
-        String organizationId = null;
-        List<InlineResponse2003> response = api.notificationSubscriptionsV1ProductsOrganizationIdGet(organizationId);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Create a Webhook
      *
      * Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file. 
@@ -61,9 +45,25 @@ public class CreateNewWebhooksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void notificationSubscriptionsV1WebhooksPostTest() throws ApiException {
+    public void createWebhookTest() throws ApiException {
         CreateWebhook createWebhook = null;
-        InlineResponse2013 response = api.notificationSubscriptionsV1WebhooksPost(createWebhook);
+        InlineResponse2013 response = api.createWebhook(createWebhook);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Find Products You Can Subscribe To
+     *
+     * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void findProductToSubscribeTest() throws ApiException {
+        String organizationId = null;
+        List<InlineResponse2003> response = api.findProductToSubscribe(organizationId);
 
         // TODO: test validations
     }

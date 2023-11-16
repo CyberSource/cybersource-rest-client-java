@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payments** | [**Boardingv1registrationsProductInformationSelectedProductsPayments**](Boardingv1registrationsProductInformationSelectedProductsPayments.md) |  |  [optional]
-**risk** | [**Boardingv1registrationsProductInformationSelectedProductsRisk**](Boardingv1registrationsProductInformationSelectedProductsRisk.md) |  |  [optional]
-**commerceSolutions** | [**Boardingv1registrationsProductInformationSelectedProductsCommerceSolutions**](Boardingv1registrationsProductInformationSelectedProductsCommerceSolutions.md) |  |  [optional]
-**valueAddedServices** | [**Boardingv1registrationsProductInformationSelectedProductsValueAddedServices**](Boardingv1registrationsProductInformationSelectedProductsValueAddedServices.md) |  |  [optional]
+**payments** | [**PaymentProducts**](PaymentProducts.md) |  |  [optional]
+**risk** | [**RiskProducts**](RiskProducts.md) |  |  [optional]
+**commerceSolutions** | [**CommerceSolutionsProducts**](CommerceSolutionsProducts.md) |  |  [optional]
+**valueAddedServices** | [**ValueAddedServicesProducts**](ValueAddedServicesProducts.md) |  |  [optional]
 
 
 
