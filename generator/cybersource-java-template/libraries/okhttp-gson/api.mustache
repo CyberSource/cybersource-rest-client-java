@@ -180,7 +180,8 @@ public class {{classname}} {
 
     /**
      * {{summary}}
-     * {{notes}}{{#allParams}}
+     * {{notes}}
+     DESCRIPTION_PLACEHOLDER_{{#vendorExtensions.x-devcenter-metaData.apiLifeCycle}}{{.}}{{/vendorExtensions.x-devcenter-metaData.apiLifeCycle}}{{#allParams}}
      * @param {{paramName}} {{description}}{{#required}} (required){{/required}}{{^required}} (optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}{{/allParams}}{{#returnType}}
      * @return {{returnType}}{{/returnType}}
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
