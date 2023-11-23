@@ -106,10 +106,10 @@ public class Ptsv1pushfundstransferSenderInformationPaymentInformationCard {
   }
 
    /**
-   * The customer’s payment card number, also known as the Primary Account Number (PAN).  This field is supported in Mastercard Send. 
+   * The customer&#39;s payment card number, also known as the Primary Account Number (PAN).  This field is supported in Mastercard Send. 
    * @return number
   **/
-  @ApiModelProperty(value = "The customer’s payment card number, also known as the Primary Account Number (PAN).  This field is supported in Mastercard Send. ")
+  @ApiModelProperty(value = "The customer's payment card number, also known as the Primary Account Number (PAN).  This field is supported in Mastercard Send. ")
   public String getNumber() {
     return number;
   }

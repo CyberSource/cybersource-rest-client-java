@@ -116,10 +116,10 @@ public class PaymentProductsCardProcessingConfigurationInformationConfigurations
   }
 
    /**
-   * Advice addendum field. It is used to display descriptive information about a transaction on customer’s American Express card statement. Applicable for TSYS (tsys), FDI Global (fdiglobal) and American Express Direct (amexdirect) processors.
+   * Advice addendum field. It is used to display descriptive information about a transaction on customer&#39;s American Express card statement. Applicable for TSYS (tsys), FDI Global (fdiglobal) and American Express Direct (amexdirect) processors.
    * @return amexTransactionAdviceAddendum1
   **/
-  @ApiModelProperty(value = "Advice addendum field. It is used to display descriptive information about a transaction on customer’s American Express card statement. Applicable for TSYS (tsys), FDI Global (fdiglobal) and American Express Direct (amexdirect) processors.")
+  @ApiModelProperty(value = "Advice addendum field. It is used to display descriptive information about a transaction on customer's American Express card statement. Applicable for TSYS (tsys), FDI Global (fdiglobal) and American Express Direct (amexdirect) processors.")
   public String getAmexTransactionAdviceAddendum1() {
     return amexTransactionAdviceAddendum1;
   }

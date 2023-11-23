@@ -39,28 +39,28 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
   private String expirationYear = null;
 
    /**
-   * The customer’s latest payment card number suffix 
+   * The customer&#39;s latest payment card number suffix 
    * @return suffix
   **/
-  @ApiModelProperty(example = "1111", value = "The customer’s latest payment card number suffix ")
+  @ApiModelProperty(example = "1111", value = "The customer's latest payment card number suffix ")
   public String getSuffix() {
     return suffix;
   }
 
    /**
-   *  Two-digit month in which the customer’s latest payment card expires.  Format: &#x60;MM&#x60;.  Possible Values: &#x60;01&#x60; through &#x60;12&#x60;. 
+   *  Two-digit month in which the customer&#39;s latest payment card expires.  Format: &#x60;MM&#x60;.  Possible Values: &#x60;01&#x60; through &#x60;12&#x60;. 
    * @return expirationMonth
   **/
-  @ApiModelProperty(value = " Two-digit month in which the customer’s latest payment card expires.  Format: `MM`.  Possible Values: `01` through `12`. ")
+  @ApiModelProperty(value = " Two-digit month in which the customer's latest payment card expires.  Format: `MM`.  Possible Values: `01` through `12`. ")
   public String getExpirationMonth() {
     return expirationMonth;
   }
 
    /**
-   * Four-digit year in which the customer’s latest payment card expires.  Format: &#x60;YYYY&#x60;. 
+   * Four-digit year in which the customer&#39;s latest payment card expires.  Format: &#x60;YYYY&#x60;. 
    * @return expirationYear
   **/
-  @ApiModelProperty(value = "Four-digit year in which the customer’s latest payment card expires.  Format: `YYYY`. ")
+  @ApiModelProperty(value = "Four-digit year in which the customer's latest payment card expires.  Format: `YYYY`. ")
   public String getExpirationYear() {
     return expirationYear;
   }

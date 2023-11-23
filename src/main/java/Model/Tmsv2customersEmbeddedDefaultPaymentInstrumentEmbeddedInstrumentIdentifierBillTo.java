@@ -53,10 +53,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
   }
 
    /**
-   * Payment card billing street address as it appears on the credit card issuer’s records. 
+   * Payment card billing street address as it appears on the credit card issuer&#39;s records. 
    * @return address1
   **/
-  @ApiModelProperty(value = "Payment card billing street address as it appears on the credit card issuer’s records. ")
+  @ApiModelProperty(value = "Payment card billing street address as it appears on the credit card issuer's records. ")
   public String getAddress1() {
     return address1;
   }

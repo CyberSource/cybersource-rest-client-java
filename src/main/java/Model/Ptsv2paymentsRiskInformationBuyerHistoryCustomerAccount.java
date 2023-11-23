@@ -52,10 +52,10 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount {
   }
 
    /**
-   * Date the cardholder’s account was last changed. This includes changes to the billing or shipping address, new payment accounts or new users added. Recommended for Discover ProtectBuy. 
+   * Date the cardholder&#39;s account was last changed. This includes changes to the billing or shipping address, new payment accounts or new users added. Recommended for Discover ProtectBuy. 
    * @return lastChangeDate
   **/
-  @ApiModelProperty(value = "Date the cardholder’s account was last changed. This includes changes to the billing or shipping address, new payment accounts or new users added. Recommended for Discover ProtectBuy. ")
+  @ApiModelProperty(value = "Date the cardholder's account was last changed. This includes changes to the billing or shipping address, new payment accounts or new users added. Recommended for Discover ProtectBuy. ")
   public String getLastChangeDate() {
     return lastChangeDate;
   }

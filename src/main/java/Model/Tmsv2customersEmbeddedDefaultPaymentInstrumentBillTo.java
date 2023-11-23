@@ -67,10 +67,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo {
   }
 
    /**
-   * Customer’s first name. This name must be the same as the name on the card. 
+   * Customer&#39;s first name. This name must be the same as the name on the card. 
    * @return firstName
   **/
-  @ApiModelProperty(value = "Customer’s first name. This name must be the same as the name on the card. ")
+  @ApiModelProperty(value = "Customer's first name. This name must be the same as the name on the card. ")
   public String getFirstName() {
     return firstName;
   }
@@ -85,10 +85,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo {
   }
 
    /**
-   * Customer’s last name. This name must be the same as the name on the card. 
+   * Customer&#39;s last name. This name must be the same as the name on the card. 
    * @return lastName
   **/
-  @ApiModelProperty(value = "Customer’s last name. This name must be the same as the name on the card. ")
+  @ApiModelProperty(value = "Customer's last name. This name must be the same as the name on the card. ")
   public String getLastName() {
     return lastName;
   }
@@ -103,10 +103,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo {
   }
 
    /**
-   * Name of the customer’s company. 
+   * Name of the customer&#39;s company. 
    * @return company
   **/
-  @ApiModelProperty(value = "Name of the customer’s company. ")
+  @ApiModelProperty(value = "Name of the customer's company. ")
   public String getCompany() {
     return company;
   }
@@ -121,10 +121,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo {
   }
 
    /**
-   * Payment card billing street address as it appears on the credit card issuer’s records. 
+   * Payment card billing street address as it appears on the credit card issuer&#39;s records. 
    * @return address1
   **/
-  @ApiModelProperty(value = "Payment card billing street address as it appears on the credit card issuer’s records. ")
+  @ApiModelProperty(value = "Payment card billing street address as it appears on the credit card issuer's records. ")
   public String getAddress1() {
     return address1;
   }
@@ -247,10 +247,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo {
   }
 
    /**
-   * Customer’s phone number. 
+   * Customer&#39;s phone number. 
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Customer’s phone number. ")
+  @ApiModelProperty(value = "Customer's phone number. ")
   public String getPhoneNumber() {
     return phoneNumber;
   }

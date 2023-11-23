@@ -37,10 +37,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationIssue
   }
 
    /**
-   * The State or province where the customer’s driver’s license was issued.  Use the two-character State, Province, and Territory Codes for the United States and Canada. 
+   * The State or province where the customer&#39;s driver&#39;s license was issued.  Use the two-character State, Province, and Territory Codes for the United States and Canada. 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "The State or province where the customer’s driver’s license was issued.  Use the two-character State, Province, and Territory Codes for the United States and Canada. ")
+  @ApiModelProperty(value = "The State or province where the customer's driver's license was issued.  Use the two-character State, Province, and Territory Codes for the United States and Canada. ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }

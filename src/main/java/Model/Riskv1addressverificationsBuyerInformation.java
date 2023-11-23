@@ -37,10 +37,10 @@ public class Riskv1addressverificationsBuyerInformation {
   }
 
    /**
-   * Optional customer’s account ID, tracking number, reward number, or other unique number that you assign to the customer for the purpose that you choose 
+   * Optional customer&#39;s account ID, tracking number, reward number, or other unique number that you assign to the customer for the purpose that you choose 
    * @return merchantCustomerId
   **/
-  @ApiModelProperty(value = "Optional customer’s account ID, tracking number, reward number, or other unique number that you assign to the customer for the purpose that you choose ")
+  @ApiModelProperty(value = "Optional customer's account ID, tracking number, reward number, or other unique number that you assign to the customer for the purpose that you choose ")
   public String getMerchantCustomerId() {
     return merchantCustomerId;
   }

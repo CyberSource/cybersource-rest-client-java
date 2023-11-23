@@ -58,10 +58,10 @@ public class Ptsv1pushfundstransferSenderInformationAccount {
   }
 
    /**
-   * The account number of the entity funding the transaction. It is the sender’s account number. It can be a debit/credit card account number or bank account number.  Funds disbursements  This field is optional.  All other transactions  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length:  FDC Compass (&lt;&#x3D; 19) Chase Paymentech (&lt;&#x3D; 16) 
+   * The account number of the entity funding the transaction. It is the sender&#39;s account number. It can be a debit/credit card account number or bank account number.  Funds disbursements  This field is optional.  All other transactions  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length:  FDC Compass (&lt;&#x3D; 19) Chase Paymentech (&lt;&#x3D; 16) 
    * @return number
   **/
-  @ApiModelProperty(value = "The account number of the entity funding the transaction. It is the sender’s account number. It can be a debit/credit card account number or bank account number.  Funds disbursements  This field is optional.  All other transactions  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length:  FDC Compass (<= 19) Chase Paymentech (<= 16) ")
+  @ApiModelProperty(value = "The account number of the entity funding the transaction. It is the sender's account number. It can be a debit/credit card account number or bank account number.  Funds disbursements  This field is optional.  All other transactions  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length:  FDC Compass (<= 19) Chase Paymentech (<= 16) ")
   public String getNumber() {
     return number;
   }
