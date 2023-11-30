@@ -727,7 +727,7 @@ public class ApiClient {
 	 * @return ApiClient
 	 */
 	public ApiClient addDefaultHeader(String key, String value) {
-			defaultHeaderMap.put(key, value); 
+		defaultHeaderMap.put(key, value);    
 		return this;
 	}
 
@@ -1322,7 +1322,7 @@ public class ApiClient {
 			for (Entry<String, String> header : merchantConfig.getDefaultHeaders().entrySet()) {
 				if(!header.getKey().equalsIgnoreCase("Authorization") && !header.getKey().equalsIgnoreCase("Signature")){
 					addDefaultHeader(header.getKey(), header.getValue());
-				}	
+				}
 			}
 		}
 						
