@@ -727,9 +727,7 @@ public class ApiClient {
 	 * @return ApiClient
 	 */
 	public ApiClient addDefaultHeader(String key, String value) {
-		if (!defaultHeaderMap.containsKey(key)) {
-			defaultHeaderMap.put(key, value);
-		}    
+		defaultHeaderMap.put(key, value);    
 		return this;
 	}
 
@@ -1322,7 +1320,9 @@ public class ApiClient {
 			
 		if(merchantConfig.getDefaultHeaders() != null && !merchantConfig.getDefaultHeaders().isEmpty()) {
 			for (Entry<String, String> header : merchantConfig.getDefaultHeaders().entrySet()) {
-				addDefaultHeader(header.getKey(), header.getValue());
+				if(!header.getKey().equalsIgnoreCase("Authorization") && !header.getKey().equalsIgnoreCase("Signature")){
+					addDefaultHeader(header.getKey(), header.getValue());
+				}
 			}
 		}
 						
