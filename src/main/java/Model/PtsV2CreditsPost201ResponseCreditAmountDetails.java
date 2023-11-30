@@ -40,10 +40,10 @@ public class PtsV2CreditsPost201ResponseCreditAmountDetails {
   }
 
    /**
-   * Amount that was credited to the cardholder&#39;s account.  Returned by PIN debit credit. 
+   * Amount that was credited to the cardholder’s account.  Returned by PIN debit credit. 
    * @return creditAmount
   **/
-  @ApiModelProperty(value = "Amount that was credited to the cardholder's account.  Returned by PIN debit credit. ")
+  @ApiModelProperty(value = "Amount that was credited to the cardholder’s account.  Returned by PIN debit credit. ")
   public String getCreditAmount() {
     return creditAmount;
   }

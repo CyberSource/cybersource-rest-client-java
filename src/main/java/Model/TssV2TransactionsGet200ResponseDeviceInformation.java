@@ -79,10 +79,10 @@ public class TssV2TransactionsGet200ResponseDeviceInformation {
   }
 
    /**
-   * Whether the customer&#39;s browser accepts cookies. This field can contain one of the following values: - &#x60;yes&#x60;: The customer&#39;s browser accepts cookies. - &#x60;no&#x60;: The customer&#39;s browser does not accept cookies. 
+   * Whether the customer’s browser accepts cookies. This field can contain one of the following values: - &#x60;yes&#x60;: The customer’s browser accepts cookies. - &#x60;no&#x60;: The customer’s browser does not accept cookies. 
    * @return cookiesAccepted
   **/
-  @ApiModelProperty(value = "Whether the customer's browser accepts cookies. This field can contain one of the following values: - `yes`: The customer's browser accepts cookies. - `no`: The customer's browser does not accept cookies. ")
+  @ApiModelProperty(value = "Whether the customer’s browser accepts cookies. This field can contain one of the following values: - `yes`: The customer’s browser accepts cookies. - `no`: The customer’s browser does not accept cookies. ")
   public String getCookiesAccepted() {
     return cookiesAccepted;
   }

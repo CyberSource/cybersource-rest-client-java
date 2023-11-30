@@ -549,10 +549,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
   }
 
    /**
-   * Airline process identifier. This value is the airline&#39;s three-digit IATA1 code which is used to process extended payment airline tickets. 
+   * Airline process identifier. This value is the airline’s three-digit IATA1 code which is used to process extended payment airline tickets. 
    * @return processIdentifier
   **/
-  @ApiModelProperty(value = "Airline process identifier. This value is the airline's three-digit IATA1 code which is used to process extended payment airline tickets. ")
+  @ApiModelProperty(value = "Airline process identifier. This value is the airline’s three-digit IATA1 code which is used to process extended payment airline tickets. ")
   public String getProcessIdentifier() {
     return processIdentifier;
   }

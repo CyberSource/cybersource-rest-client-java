@@ -97,10 +97,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates a mismatch between the customer&#39;s billing and shipping addresses. 
+   * Indicates a mismatch between the customer’s billing and shipping addresses. 
    * @return address
   **/
-  @ApiModelProperty(value = "Indicates a mismatch between the customer's billing and shipping addresses. ")
+  @ApiModelProperty(value = "Indicates a mismatch between the customer’s billing and shipping addresses. ")
   public List<String> getAddress() {
     return address;
   }
@@ -201,10 +201,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates a problem with the customer&#39;s email address, IP address, or billing address. 
+   * Indicates a problem with the customer’s email address, IP address, or billing address. 
    * @return internet
   **/
-  @ApiModelProperty(value = "Indicates a problem with the customer's email address, IP address, or billing address. ")
+  @ApiModelProperty(value = "Indicates a problem with the customer’s email address, IP address, or billing address. ")
   public List<String> getInternet() {
     return internet;
   }
@@ -227,10 +227,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes {
   }
 
    /**
-   * Indicates a problem with the customer&#39;s phone number. 
+   * Indicates a problem with the customer’s phone number. 
    * @return phone
   **/
-  @ApiModelProperty(value = "Indicates a problem with the customer's phone number. ")
+  @ApiModelProperty(value = "Indicates a problem with the customer’s phone number. ")
   public List<String> getPhone() {
     return phone;
   }

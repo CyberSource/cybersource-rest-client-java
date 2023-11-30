@@ -67,10 +67,10 @@ public class Upv1capturecontextsOrderInformationBillToCompany {
   }
 
    /**
-   * Name of the customer&#39;s company.
+   * Name of the customer’s company.
    * @return name
   **/
-  @ApiModelProperty(example = "Visa Inc", value = "Name of the customer's company.")
+  @ApiModelProperty(example = "Visa Inc", value = "Name of the customer’s company.")
   public String getName() {
     return name;
   }
@@ -85,10 +85,10 @@ public class Upv1capturecontextsOrderInformationBillToCompany {
   }
 
    /**
-   * Payment card billing street address as it appears on the credit card issuer&#39;s records. 
+   * Payment card billing street address as it appears on the credit card issuer’s records. 
    * @return address1
   **/
-  @ApiModelProperty(example = "277 Park Avenue", value = "Payment card billing street address as it appears on the credit card issuer's records. ")
+  @ApiModelProperty(example = "277 Park Avenue", value = "Payment card billing street address as it appears on the credit card issuer’s records. ")
   public String getAddress1() {
     return address1;
   }
@@ -211,10 +211,10 @@ public class Upv1capturecontextsOrderInformationBillToCompany {
   }
 
    /**
-   * Customer&#39;s neighborhood, community, or region (a barrio in Brazil) within the city or municipality 
+   * Customer’s neighborhood, community, or region (a barrio in Brazil) within the city or municipality 
    * @return district
   **/
-  @ApiModelProperty(example = "district", value = "Customer's neighborhood, community, or region (a barrio in Brazil) within the city or municipality ")
+  @ApiModelProperty(example = "district", value = "Customer’s neighborhood, community, or region (a barrio in Brazil) within the city or municipality ")
   public String getDistrict() {
     return district;
   }

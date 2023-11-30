@@ -379,10 +379,10 @@ public class Ptsv2paymentsTravelInformationAutoRental {
   }
 
    /**
-   * Auto rental agency&#39;s agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember&#39;s statement. 
+   * Auto rental agency’s agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember&#39;s statement. 
    * @return agreementNumber
   **/
-  @ApiModelProperty(value = "Auto rental agency's agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember's statement. ")
+  @ApiModelProperty(value = "Auto rental agency’s agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember's statement. ")
   public String getAgreementNumber() {
     return agreementNumber;
   }

@@ -59,10 +59,10 @@ public class Riskv1decisionsMerchantInformation {
   }
 
    /**
-   * Your company&#39;s name as you want it to appear to the customer in the issuing bank&#39;s authentication form. This value overrides the value specified by your merchant bank. 
+   * Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank. 
    * @return merchantName
   **/
-  @ApiModelProperty(value = "Your company's name as you want it to appear to the customer in the issuing bank's authentication form. This value overrides the value specified by your merchant bank. ")
+  @ApiModelProperty(value = "Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank. ")
   public String getMerchantName() {
     return merchantName;
   }

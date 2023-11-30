@@ -24,9 +24,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * A merchant descriptor is the line of copy that identifies transactions on a cardholder&#39;s account activity and statement. If this information is not populated, the data will be retrieved from OMS.
+ * A merchant descriptor is the line of copy that identifies transactions on a cardholder’s account activity and statement. If this information is not populated, the data will be retrieved from OMS.
  */
-@ApiModel(description = "A merchant descriptor is the line of copy that identifies transactions on a cardholder's account activity and statement. If this information is not populated, the data will be retrieved from OMS.")
+@ApiModel(description = "A merchant descriptor is the line of copy that identifies transactions on a cardholder’s account activity and statement. If this information is not populated, the data will be retrieved from OMS.")
 
 public class PaymentProductsCardProcessingConfigurationInformationConfigurationsCommonMerchantDescriptorInformation {
   @SerializedName("name")

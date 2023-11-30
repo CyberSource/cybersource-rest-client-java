@@ -97,10 +97,10 @@ public class Ptsv1pushfundstransferRecipientInformationPaymentInformationCard {
   }
 
    /**
-   * The customer&#39;s payment card number, also known as the Primary Account Number (PAN).  Conditional: this field is required if not using tokens. 
+   * The customer’s payment card number, also known as the Primary Account Number (PAN).  Conditional: this field is required if not using tokens. 
    * @return number
   **/
-  @ApiModelProperty(value = "The customer's payment card number, also known as the Primary Account Number (PAN).  Conditional: this field is required if not using tokens. ")
+  @ApiModelProperty(value = "The customer’s payment card number, also known as the Primary Account Number (PAN).  Conditional: this field is required if not using tokens. ")
   public String getNumber() {
     return number;
   }

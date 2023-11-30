@@ -46,10 +46,10 @@ public class Ptsv2paymentsMerchantInformationServiceLocation {
   }
 
    /**
-   * #### Visa Platform Connect  Merchant&#39;s service location city name. When merchant provides services from a location other than the location identified as merchant location. 
+   * #### Visa Platform Connect  Merchant’s service location city name. When merchant provides services from a location other than the location identified as merchant location. 
    * @return locality
   **/
-  @ApiModelProperty(value = "#### Visa Platform Connect  Merchant's service location city name. When merchant provides services from a location other than the location identified as merchant location. ")
+  @ApiModelProperty(value = "#### Visa Platform Connect  Merchant’s service location city name. When merchant provides services from a location other than the location identified as merchant location. ")
   public String getLocality() {
     return locality;
   }
@@ -64,10 +64,10 @@ public class Ptsv2paymentsMerchantInformationServiceLocation {
   }
 
    /**
-   * #### Visa Platform Connect  Merchant&#39;s service location country subdivision code. When merchant provides services from a location other than the location identified as merchant location. 
+   * #### Visa Platform Connect  Merchant’s service location country subdivision code. When merchant provides services from a location other than the location identified as merchant location. 
    * @return countrySubdivisionCode
   **/
-  @ApiModelProperty(value = "#### Visa Platform Connect  Merchant's service location country subdivision code. When merchant provides services from a location other than the location identified as merchant location. ")
+  @ApiModelProperty(value = "#### Visa Platform Connect  Merchant’s service location country subdivision code. When merchant provides services from a location other than the location identified as merchant location. ")
   public String getCountrySubdivisionCode() {
     return countrySubdivisionCode;
   }
@@ -82,10 +82,10 @@ public class Ptsv2paymentsMerchantInformationServiceLocation {
   }
 
    /**
-   * #### Visa Platform Connect  Merchant&#39;s service location country code. When merchant provides services from a location other than the location identified as merchant location. 
+   * #### Visa Platform Connect  Merchant’s service location country code. When merchant provides services from a location other than the location identified as merchant location. 
    * @return countryCode
   **/
-  @ApiModelProperty(value = "#### Visa Platform Connect  Merchant's service location country code. When merchant provides services from a location other than the location identified as merchant location. ")
+  @ApiModelProperty(value = "#### Visa Platform Connect  Merchant’s service location country code. When merchant provides services from a location other than the location identified as merchant location. ")
   public String getCountryCode() {
     return countryCode;
   }
@@ -100,10 +100,10 @@ public class Ptsv2paymentsMerchantInformationServiceLocation {
   }
 
    /**
-   * #### Visa Platform Connect  Merchant&#39;s service location postal code. When merchant provides services from a location other than the location identified as merchant location. 
+   * #### Visa Platform Connect  Merchant’s service location postal code. When merchant provides services from a location other than the location identified as merchant location. 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "#### Visa Platform Connect  Merchant's service location postal code. When merchant provides services from a location other than the location identified as merchant location. ")
+  @ApiModelProperty(value = "#### Visa Platform Connect  Merchant’s service location postal code. When merchant provides services from a location other than the location identified as merchant location. ")
   public String getPostalCode() {
     return postalCode;
   }

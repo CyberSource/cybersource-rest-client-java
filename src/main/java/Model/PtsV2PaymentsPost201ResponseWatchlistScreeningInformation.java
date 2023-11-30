@@ -46,12 +46,12 @@ public class PtsV2PaymentsPost201ResponseWatchlistScreeningInformation {
   }
 
    /**
-   * Likelihood that the country associated with the customer&#39;s IP address was identified correctly. Returns a value from 1–100, where 100 indicates the highest likelihood. If the country cannot be determined, the value is –1. 
+   * Likelihood that the country associated with the customer’s IP address was identified correctly. Returns a value from 1–100, where 100 indicates the highest likelihood. If the country cannot be determined, the value is –1. 
    * minimum: -1
    * maximum: 100
    * @return ipCountryConfidence
   **/
-  @ApiModelProperty(value = "Likelihood that the country associated with the customer's IP address was identified correctly. Returns a value from 1–100, where 100 indicates the highest likelihood. If the country cannot be determined, the value is –1. ")
+  @ApiModelProperty(value = "Likelihood that the country associated with the customer’s IP address was identified correctly. Returns a value from 1–100, where 100 indicates the highest likelihood. If the country cannot be determined, the value is –1. ")
   public Integer getIpCountryConfidence() {
     return ipCountryConfidence;
   }

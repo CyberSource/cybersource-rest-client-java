@@ -88,10 +88,10 @@ public class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor {
   }
 
    /**
-   * Merchant&#39;s country.  Country code for your business location. Use the ISO Standard Alpha Country Codes This value might be displayed on the cardholder&#39;s statement.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Note If your business is located in the U.S. or Canada and you include this field in a request, you must also include merchantInformation.merchantDescriptor.administrativeArea. 
+   * Merchant&#39;s country.  Country code for your business location. Use the ISO Standard Alpha Country Codes This value might be displayed on the cardholder’s statement.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Note If your business is located in the U.S. or Canada and you include this field in a request, you must also include merchantInformation.merchantDescriptor.administrativeArea. 
    * @return country
   **/
-  @ApiModelProperty(value = "Merchant's country.  Country code for your business location. Use the ISO Standard Alpha Country Codes This value might be displayed on the cardholder's statement.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Note If your business is located in the U.S. or Canada and you include this field in a request, you must also include merchantInformation.merchantDescriptor.administrativeArea. ")
+  @ApiModelProperty(value = "Merchant's country.  Country code for your business location. Use the ISO Standard Alpha Country Codes This value might be displayed on the cardholder’s statement.  See https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Note If your business is located in the U.S. or Canada and you include this field in a request, you must also include merchantInformation.merchantDescriptor.administrativeArea. ")
   public String getCountry() {
     return country;
   }
@@ -106,10 +106,10 @@ public class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor {
   }
 
    /**
-   * Merchant&#39;s City.  City for your business location. This value might be displayed on the cardholder&#39;s statement. 
+   * Merchant&#39;s City.  City for your business location. This value might be displayed on the cardholder’s statement. 
    * @return locality
   **/
-  @ApiModelProperty(value = "Merchant's City.  City for your business location. This value might be displayed on the cardholder's statement. ")
+  @ApiModelProperty(value = "Merchant's City.  City for your business location. This value might be displayed on the cardholder’s statement. ")
   public String getLocality() {
     return locality;
   }
@@ -124,10 +124,10 @@ public class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor {
   }
 
    /**
-   * Merchant&#39;s business name. This name is displayed on the cardholder&#39;s statement.  Chase Paymentech, Visa Platform Connect: length 22 
+   * Merchant&#39;s business name. This name is displayed on the cardholder’s statement.  Chase Paymentech, Visa Platform Connect: length 22 
    * @return name
   **/
-  @ApiModelProperty(value = "Merchant's business name. This name is displayed on the cardholder's statement.  Chase Paymentech, Visa Platform Connect: length 22 ")
+  @ApiModelProperty(value = "Merchant's business name. This name is displayed on the cardholder’s statement.  Chase Paymentech, Visa Platform Connect: length 22 ")
   public String getName() {
     return name;
   }
@@ -142,10 +142,10 @@ public class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor {
   }
 
    /**
-   * Merchant&#39;s postal code. This value might be displayed on the cardholder&#39;s statement.  If your business is domiciled in the U.S., you can use a 5-digit or 9-digit postal code. A 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789  If your business is domiciled in Canada, you can use a 6-digit or 9-digit postal code. A 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 
+   * Merchant&#39;s postal code. This value might be displayed on the cardholder’s statement.  If your business is domiciled in the U.S., you can use a 5-digit or 9-digit postal code. A 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789  If your business is domiciled in Canada, you can use a 6-digit or 9-digit postal code. A 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Merchant's postal code. This value might be displayed on the cardholder's statement.  If your business is domiciled in the U.S., you can use a 5-digit or 9-digit postal code. A 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789  If your business is domiciled in Canada, you can use a 6-digit or 9-digit postal code. A 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 ")
+  @ApiModelProperty(value = "Merchant's postal code. This value might be displayed on the cardholder’s statement.  If your business is domiciled in the U.S., you can use a 5-digit or 9-digit postal code. A 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789  If your business is domiciled in Canada, you can use a 6-digit or 9-digit postal code. A 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 ")
   public String getPostalCode() {
     return postalCode;
   }

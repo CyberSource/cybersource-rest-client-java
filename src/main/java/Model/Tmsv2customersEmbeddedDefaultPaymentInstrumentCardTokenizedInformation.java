@@ -40,10 +40,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformat
   }
 
    /**
-   * Value that identifies your business and indicates that the cardholder&#39;s account number is tokenized. This value is assigned by the token service provider and is unique within the token service provider&#39;s database.  **Note** This field is supported only through **VisaNet** and **FDC Nashville Global**. 
+   * Value that identifies your business and indicates that the cardholder’s account number is tokenized. This value is assigned by the token service provider and is unique within the token service provider’s database.  **Note** This field is supported only through **VisaNet** and **FDC Nashville Global**. 
    * @return requestorID
   **/
-  @ApiModelProperty(value = "Value that identifies your business and indicates that the cardholder's account number is tokenized. This value is assigned by the token service provider and is unique within the token service provider's database.  **Note** This field is supported only through **VisaNet** and **FDC Nashville Global**. ")
+  @ApiModelProperty(value = "Value that identifies your business and indicates that the cardholder’s account number is tokenized. This value is assigned by the token service provider and is unique within the token service provider’s database.  **Note** This field is supported only through **VisaNet** and **FDC Nashville Global**. ")
   public String getRequestorID() {
     return requestorID;
   }
@@ -58,10 +58,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformat
   }
 
    /**
-   * Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Set the value for this field to 1. An application on the customer&#39;s mobile device provided the token data. 
+   * Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Set the value for this field to 1. An application on the customer’s mobile device provided the token data. 
    * @return transactionType
   **/
-  @ApiModelProperty(value = "Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Set the value for this field to 1. An application on the customer's mobile device provided the token data. ")
+  @ApiModelProperty(value = "Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Set the value for this field to 1. An application on the customer’s mobile device provided the token data. ")
   public String getTransactionType() {
     return transactionType;
   }

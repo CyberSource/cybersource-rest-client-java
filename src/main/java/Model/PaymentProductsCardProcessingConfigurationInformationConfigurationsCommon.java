@@ -339,10 +339,10 @@ public class PaymentProductsCardProcessingConfigurationInformationConfigurations
   }
 
    /**
-   * Identifier provided to merchants who opt for Visa&#39;s delegated authorization program. Applicable for VPC processors.
+   * Identifier provided to merchants who opt for Visa’s delegated authorization program. Applicable for VPC processors.
    * @return visaDelegatedAuthenticationId
   **/
-  @ApiModelProperty(value = "Identifier provided to merchants who opt for Visa's delegated authorization program. Applicable for VPC processors.")
+  @ApiModelProperty(value = "Identifier provided to merchants who opt for Visa’s delegated authorization program. Applicable for VPC processors.")
   public String getVisaDelegatedAuthenticationId() {
     return visaDelegatedAuthenticationId;
   }

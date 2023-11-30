@@ -40,10 +40,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBankAccou
   }
 
    /**
-   * Last four digits of the customer&#39;s payment account number. 
+   * Last four digits of the customer’s payment account number. 
    * @return suffix
   **/
-  @ApiModelProperty(value = "Last four digits of the customer's payment account number. ")
+  @ApiModelProperty(value = "Last four digits of the customer’s payment account number. ")
   public String getSuffix() {
     return suffix;
   }

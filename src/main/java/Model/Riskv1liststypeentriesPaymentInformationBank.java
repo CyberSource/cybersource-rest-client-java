@@ -65,10 +65,10 @@ public class Riskv1liststypeentriesPaymentInformationBank {
   }
 
    /**
-   * Country-specific code used to identify the customer&#39;s bank. Required for some countries if you do not or are not allowed to provide the IBAN instead. You can use this field only when scoring a direct debit transaction. For specific requirements, see \&quot;Required Bank Account Information by Country,\&quot; 
+   * Country-specific code used to identify the customer’s bank. Required for some countries if you do not or are not allowed to provide the IBAN instead. You can use this field only when scoring a direct debit transaction. For specific requirements, see \&quot;Required Bank Account Information by Country,\&quot; 
    * @return code
   **/
-  @ApiModelProperty(value = "Country-specific code used to identify the customer's bank. Required for some countries if you do not or are not allowed to provide the IBAN instead. You can use this field only when scoring a direct debit transaction. For specific requirements, see \"Required Bank Account Information by Country,\" ")
+  @ApiModelProperty(value = "Country-specific code used to identify the customer’s bank. Required for some countries if you do not or are not allowed to provide the IBAN instead. You can use this field only when scoring a direct debit transaction. For specific requirements, see \"Required Bank Account Information by Country,\" ")
   public String getCode() {
     return code;
   }

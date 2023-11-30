@@ -222,10 +222,10 @@ public class Ptsv1pushfundstransferRecipientInformation {
   }
 
    /**
-   * Sender&#39;s middle name. This field is a passthrough, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
+   * Sender’s middle name. This field is a passthrough, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
    * @return middleName
   **/
-  @ApiModelProperty(value = "Sender's middle name. This field is a passthrough, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. ")
+  @ApiModelProperty(value = "Sender’s middle name. This field is a passthrough, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. ")
   public String getMiddleName() {
     return middleName;
   }

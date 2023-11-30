@@ -55,10 +55,10 @@ public class Ptsv2creditsProcessingInformationBankTransferOptions {
   }
 
    /**
-   * Payment related information.  This information is included on the customer&#39;s statement. 
+   * Payment related information.  This information is included on the customer’s statement. 
    * @return customerMemo
   **/
-  @ApiModelProperty(value = "Payment related information.  This information is included on the customer's statement. ")
+  @ApiModelProperty(value = "Payment related information.  This information is included on the customer’s statement. ")
   public String getCustomerMemo() {
     return customerMemo;
   }

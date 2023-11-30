@@ -79,10 +79,10 @@ public class Ptsv2paymentsidcapturesDeviceInformation {
   }
 
    /**
-   * Customer&#39;s browser as identified from the HTTP header data. For example, &#x60;Mozilla&#x60; is the value that identifies the Netscape browser. 
+   * Customer’s browser as identified from the HTTP header data. For example, &#x60;Mozilla&#x60; is the value that identifies the Netscape browser. 
    * @return userAgent
   **/
-  @ApiModelProperty(value = "Customer's browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser. ")
+  @ApiModelProperty(value = "Customer’s browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser. ")
   public String getUserAgent() {
     return userAgent;
   }

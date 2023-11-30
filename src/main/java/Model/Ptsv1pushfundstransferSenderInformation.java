@@ -160,10 +160,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * Sender&#39;s postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example &#39;63368&#39;, &#39;63368-5555&#39;. For other regions, this can be alphanumeric, length 1-10.  Required for FDCCompass. 
+   * Sender’s postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example &#39;63368&#39;, &#39;63368-5555&#39;. For other regions, this can be alphanumeric, length 1-10.  Required for FDCCompass. 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Sender's postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Required for FDCCompass. ")
+  @ApiModelProperty(value = "Sender’s postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Required for FDCCompass. ")
   public String getPostalCode() {
     return postalCode;
   }
@@ -232,10 +232,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * Sender&#39;s state. Use the State, Province, and Territory Codes for the United States and Canada.The sender&#39;s province, state or territory. Conditional, required if sender&#39;s country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf 
+   * Sender’s state. Use the State, Province, and Territory Codes for the United States and Canada.The sender&#39;s province, state or territory. Conditional, required if sender&#39;s country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "Sender's state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf ")
+  @ApiModelProperty(value = "Sender’s state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -286,10 +286,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * Sender&#39;s date of birth in YYYYMMDD format. 
+   * Sender’s date of birth in YYYYMMDD format. 
    * @return dateOfBirth
   **/
-  @ApiModelProperty(value = "Sender's date of birth in YYYYMMDD format. ")
+  @ApiModelProperty(value = "Sender’s date of birth in YYYYMMDD format. ")
   public String getDateOfBirth() {
     return dateOfBirth;
   }
@@ -304,10 +304,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * Sender&#39;s phone number. 
+   * Sender’s phone number. 
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Sender's phone number. ")
+  @ApiModelProperty(value = "Sender’s phone number. ")
   public String getPhoneNumber() {
     return phoneNumber;
   }
