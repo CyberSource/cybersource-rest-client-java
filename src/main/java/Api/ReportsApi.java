@@ -275,7 +275,7 @@ public class ReportsApi {
 
     /**
      * Get Report Based on Report Id
-     * Download a report using the reportId value. If you don't already know this value, you can obtain it using the Retrieve available reports call. 
+     * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
      * @param reportId Valid Report Id (required)
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportsIdGet200Response
@@ -291,7 +291,7 @@ public class ReportsApi {
 
     /**
      * Get Report Based on Report Id
-     * Download a report using the reportId value. If you don't already know this value, you can obtain it using the Retrieve available reports call. 
+     * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
      * @param reportId Valid Report Id (required)
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportsIdGet200Response&gt;
@@ -305,7 +305,7 @@ public class ReportsApi {
 
     /**
      * Get Report Based on Report Id (asynchronously)
-     * Download a report using the reportId value. If you don't already know this value, you can obtain it using the Retrieve available reports call. 
+     * Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call. 
      * @param reportId Valid Report Id (required)
      * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes
