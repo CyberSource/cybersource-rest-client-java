@@ -117,10 +117,10 @@ public class Riskv1authenticationsDeviceInformation {
   }
 
    /**
-   * Value of the Accept header sent by the customer’s web browser. **Note** If the customer’s browser provides a value, you must include it in your request. 
+   * Value of the Accept header sent by the customer&#39;s web browser. **Note** If the customer&#39;s browser provides a value, you must include it in your request. 
    * @return httpAcceptBrowserValue
   **/
-  @ApiModelProperty(value = "Value of the Accept header sent by the customer’s web browser. **Note** If the customer’s browser provides a value, you must include it in your request. ")
+  @ApiModelProperty(value = "Value of the Accept header sent by the customer's web browser. **Note** If the customer's browser provides a value, you must include it in your request. ")
   public String getHttpAcceptBrowserValue() {
     return httpAcceptBrowserValue;
   }
@@ -279,10 +279,10 @@ public class Riskv1authenticationsDeviceInformation {
   }
 
    /**
-   * Value of the User-Agent header sent by the customer’s web browser. Note If the customer’s browser provides a value, you must include it in your request. 
+   * Value of the User-Agent header sent by the customer&#39;s web browser. Note If the customer&#39;s browser provides a value, you must include it in your request. 
    * @return userAgentBrowserValue
   **/
-  @ApiModelProperty(value = "Value of the User-Agent header sent by the customer’s web browser. Note If the customer’s browser provides a value, you must include it in your request. ")
+  @ApiModelProperty(value = "Value of the User-Agent header sent by the customer's web browser. Note If the customer's browser provides a value, you must include it in your request. ")
   public String getUserAgentBrowserValue() {
     return userAgentBrowserValue;
   }

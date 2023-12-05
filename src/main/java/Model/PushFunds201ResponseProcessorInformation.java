@@ -106,10 +106,10 @@ public class PushFunds201ResponseProcessorInformation {
   }
 
    /**
-   * System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer’s receipt. 
+   * System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer&#39;s receipt. 
    * @return systemTraceAuditNumber
   **/
-  @ApiModelProperty(value = "System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer’s receipt. ")
+  @ApiModelProperty(value = "System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer's receipt. ")
   public String getSystemTraceAuditNumber() {
     return systemTraceAuditNumber;
   }

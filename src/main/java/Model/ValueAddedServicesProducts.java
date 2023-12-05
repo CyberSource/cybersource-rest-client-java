@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PaymentProductsTax;
+import Model.PaymentsProductsTax;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,12 +30,12 @@ import java.io.IOException;
 
 public class ValueAddedServicesProducts {
   @SerializedName("reporting")
-  private PaymentProductsTax reporting = null;
+  private PaymentsProductsTax reporting = null;
 
   @SerializedName("transactionSearch")
-  private PaymentProductsTax transactionSearch = null;
+  private PaymentsProductsTax transactionSearch = null;
 
-  public ValueAddedServicesProducts reporting(PaymentProductsTax reporting) {
+  public ValueAddedServicesProducts reporting(PaymentsProductsTax reporting) {
     this.reporting = reporting;
     return this;
   }
@@ -45,15 +45,15 @@ public class ValueAddedServicesProducts {
    * @return reporting
   **/
   @ApiModelProperty(value = "")
-  public PaymentProductsTax getReporting() {
+  public PaymentsProductsTax getReporting() {
     return reporting;
   }
 
-  public void setReporting(PaymentProductsTax reporting) {
+  public void setReporting(PaymentsProductsTax reporting) {
     this.reporting = reporting;
   }
 
-  public ValueAddedServicesProducts transactionSearch(PaymentProductsTax transactionSearch) {
+  public ValueAddedServicesProducts transactionSearch(PaymentsProductsTax transactionSearch) {
     this.transactionSearch = transactionSearch;
     return this;
   }
@@ -63,11 +63,11 @@ public class ValueAddedServicesProducts {
    * @return transactionSearch
   **/
   @ApiModelProperty(value = "")
-  public PaymentProductsTax getTransactionSearch() {
+  public PaymentsProductsTax getTransactionSearch() {
     return transactionSearch;
   }
 
-  public void setTransactionSearch(PaymentProductsTax transactionSearch) {
+  public void setTransactionSearch(PaymentsProductsTax transactionSearch) {
     this.transactionSearch = transactionSearch;
   }
 

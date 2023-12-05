@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.CommerceSolutionsProducts;
-import Model.PaymentProducts;
+import Model.PaymentsProducts;
 import Model.RiskProducts;
 import Model.ValueAddedServicesProducts;
 import com.google.gson.TypeAdapter;
@@ -33,7 +33,7 @@ import java.io.IOException;
 
 public class Boardingv1registrationsProductInformationSelectedProducts {
   @SerializedName("payments")
-  private PaymentProducts payments = null;
+  private PaymentsProducts payments = null;
 
   @SerializedName("risk")
   private RiskProducts risk = null;
@@ -44,7 +44,7 @@ public class Boardingv1registrationsProductInformationSelectedProducts {
   @SerializedName("valueAddedServices")
   private ValueAddedServicesProducts valueAddedServices = null;
 
-  public Boardingv1registrationsProductInformationSelectedProducts payments(PaymentProducts payments) {
+  public Boardingv1registrationsProductInformationSelectedProducts payments(PaymentsProducts payments) {
     this.payments = payments;
     return this;
   }
@@ -54,11 +54,11 @@ public class Boardingv1registrationsProductInformationSelectedProducts {
    * @return payments
   **/
   @ApiModelProperty(value = "")
-  public PaymentProducts getPayments() {
+  public PaymentsProducts getPayments() {
     return payments;
   }
 
-  public void setPayments(PaymentProducts payments) {
+  public void setPayments(PaymentsProducts payments) {
     this.payments = payments;
   }
 

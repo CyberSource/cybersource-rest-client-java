@@ -40,10 +40,10 @@ public class GetAllSubscriptionsResponseOrderInformationBillTo {
   }
 
    /**
-   * Customer’s first name. 
+   * Customer&#39;s first name. 
    * @return firstName
   **/
-  @ApiModelProperty(value = "Customer’s first name. ")
+  @ApiModelProperty(value = "Customer's first name. ")
   public String getFirstName() {
     return firstName;
   }
@@ -58,10 +58,10 @@ public class GetAllSubscriptionsResponseOrderInformationBillTo {
   }
 
    /**
-   * Customer’s last name. 
+   * Customer&#39;s last name. 
    * @return lastName
   **/
-  @ApiModelProperty(value = "Customer’s last name. ")
+  @ApiModelProperty(value = "Customer's last name. ")
   public String getLastName() {
     return lastName;
   }

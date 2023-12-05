@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.CreateWebhook;
+import Model.CreateWebhookRequest;
 import Model.InlineResponse2003;
 import Model.InlineResponse2012;
 import Model.InlineResponse2013;
@@ -66,16 +66,16 @@ public class CreateNewWebhooksApi {
     }
 
     /**
-     * Build call for createWebhook
-     * @param createWebhook The webhook payload (optional)
+     * Build call for createWebhookSubscription
+     * @param createWebhookRequest The webhook payload (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call createWebhookCall(CreateWebhook createWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createWebhookSubscriptionCall(CreateWebhookRequest createWebhookRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createWebhook, CreateWebhook.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createWebhookRequest, CreateWebhookRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/notification-subscriptions/v1/webhooks";
@@ -87,7 +87,7 @@ public class CreateNewWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -115,10 +115,10 @@ public class CreateNewWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWebhookValidateBeforeCall(CreateWebhook createWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createWebhookSubscriptionValidateBeforeCall(CreateWebhookRequest createWebhookRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        okhttp3.Call call = createWebhookCall(createWebhook, progressListener, progressRequestListener);
+        okhttp3.Call call = createWebhookSubscriptionCall(createWebhookRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -131,27 +131,27 @@ public class CreateNewWebhooksApi {
      * Create a Webhook
      * Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file. 
      * <p>DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.</p>
-     * @param createWebhook The webhook payload (optional)
+     * @param createWebhookRequest The webhook payload (optional)
      * @return InlineResponse2013
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2013 createWebhook(CreateWebhook createWebhook) throws ApiException {
-        logger.info("CALL TO METHOD 'createWebhook' STARTED");
+    public InlineResponse2013 createWebhookSubscription(CreateWebhookRequest createWebhookRequest) throws ApiException {
+        logger.info("CALL TO METHOD 'createWebhookSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2013> resp = createWebhookWithHttpInfo(createWebhook);
-        logger.info("CALL TO METHOD 'createWebhook' ENDED");
+        ApiResponse<InlineResponse2013> resp = createWebhookSubscriptionWithHttpInfo(createWebhookRequest);
+        logger.info("CALL TO METHOD 'createWebhookSubscription' ENDED");
         return resp.getData();
     }
 
     /**
      * Create a Webhook
      * Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file. 
-     * @param createWebhook The webhook payload (optional)
+     * @param createWebhookRequest The webhook payload (optional)
      * @return ApiResponse&lt;InlineResponse2013&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2013> createWebhookWithHttpInfo(CreateWebhook createWebhook) throws ApiException {
-        okhttp3.Call call = createWebhookValidateBeforeCall(createWebhook, null, null);
+    public ApiResponse<InlineResponse2013> createWebhookSubscriptionWithHttpInfo(CreateWebhookRequest createWebhookRequest) throws ApiException {
+        okhttp3.Call call = createWebhookSubscriptionValidateBeforeCall(createWebhookRequest, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -159,12 +159,12 @@ public class CreateNewWebhooksApi {
     /**
      * Create a Webhook (asynchronously)
      * Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file. 
-     * @param createWebhook The webhook payload (optional)
+     * @param createWebhookRequest The webhook payload (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createWebhookAsync(CreateWebhook createWebhook, final ApiCallback<InlineResponse2013> callback) throws ApiException {
+    public okhttp3.Call createWebhookSubscriptionAsync(CreateWebhookRequest createWebhookRequest, final ApiCallback<InlineResponse2013> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -186,20 +186,20 @@ public class CreateNewWebhooksApi {
             };
         }
 
-        okhttp3.Call call = createWebhookValidateBeforeCall(createWebhook, progressListener, progressRequestListener);
+        okhttp3.Call call = createWebhookSubscriptionValidateBeforeCall(createWebhookRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for findProductToSubscribe
+     * Build call for findProductsToSubscribe
      * @param organizationId The Organization Identifier. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call findProductToSubscribeCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call findProductsToSubscribeCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -217,7 +217,7 @@ public class CreateNewWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -245,16 +245,16 @@ public class CreateNewWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call findProductToSubscribeValidateBeforeCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call findProductsToSubscribeValidateBeforeCall(String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
-            logger.error("Missing the required parameter 'organizationId' when calling findProductToSubscribe(Async)");
-            throw new ApiException("Missing the required parameter 'organizationId' when calling findProductToSubscribe(Async)");
+            logger.error("Missing the required parameter 'organizationId' when calling findProductsToSubscribe(Async)");
+            throw new ApiException("Missing the required parameter 'organizationId' when calling findProductsToSubscribe(Async)");
         }
         
         
-        okhttp3.Call call = findProductToSubscribeCall(organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = findProductsToSubscribeCall(organizationId, progressListener, progressRequestListener);
         return call;
 
         
@@ -271,11 +271,11 @@ public class CreateNewWebhooksApi {
      * @return List&lt;InlineResponse2003&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<InlineResponse2003> findProductToSubscribe(String organizationId) throws ApiException {
-        logger.info("CALL TO METHOD 'findProductToSubscribe' STARTED");
+    public List<InlineResponse2003> findProductsToSubscribe(String organizationId) throws ApiException {
+        logger.info("CALL TO METHOD 'findProductsToSubscribe' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<List<InlineResponse2003>> resp = findProductToSubscribeWithHttpInfo(organizationId);
-        logger.info("CALL TO METHOD 'findProductToSubscribe' ENDED");
+        ApiResponse<List<InlineResponse2003>> resp = findProductsToSubscribeWithHttpInfo(organizationId);
+        logger.info("CALL TO METHOD 'findProductsToSubscribe' ENDED");
         return resp.getData();
     }
 
@@ -286,8 +286,8 @@ public class CreateNewWebhooksApi {
      * @return ApiResponse&lt;List&lt;InlineResponse2003&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<InlineResponse2003>> findProductToSubscribeWithHttpInfo(String organizationId) throws ApiException {
-        okhttp3.Call call = findProductToSubscribeValidateBeforeCall(organizationId, null, null);
+    public ApiResponse<List<InlineResponse2003>> findProductsToSubscribeWithHttpInfo(String organizationId) throws ApiException {
+        okhttp3.Call call = findProductsToSubscribeValidateBeforeCall(organizationId, null, null);
         Type localVarReturnType = new TypeToken<List<InlineResponse2003>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -300,7 +300,7 @@ public class CreateNewWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call findProductToSubscribeAsync(String organizationId, final ApiCallback<List<InlineResponse2003>> callback) throws ApiException {
+    public okhttp3.Call findProductsToSubscribeAsync(String organizationId, final ApiCallback<List<InlineResponse2003>> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -322,7 +322,7 @@ public class CreateNewWebhooksApi {
             };
         }
 
-        okhttp3.Call call = findProductToSubscribeValidateBeforeCall(organizationId, progressListener, progressRequestListener);
+        okhttp3.Call call = findProductsToSubscribeValidateBeforeCall(organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<InlineResponse2003>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -358,7 +358,7 @@ public class CreateNewWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);

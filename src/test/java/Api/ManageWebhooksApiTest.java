@@ -17,9 +17,9 @@ import Invokers.ApiException;
 import Model.InlineResponse2004;
 import Model.InlineResponse2014;
 import Model.InlineResponse4042;
-import Model.ReplayWebhooks;
+import Model.ReplayWebhooksRequest;
 import Model.SaveAsymEgressKey;
-import Model.UpdateWebhook;
+import Model.UpdateWebhookRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -54,24 +54,6 @@ public class ManageWebhooksApiTest {
     }
     
     /**
-     * Get Details On All Created Webhooks
-     *
-     * Retrieve a list of all previously created webhooks.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getAllWebhooksTest() throws ApiException {
-        String organizationId = null;
-        String productId = null;
-        String eventType = null;
-        List<InlineResponse2004> response = api.getAllWebhooks(organizationId, productId, eventType);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Get Details On a Single Webhook
      *
      * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
@@ -80,9 +62,27 @@ public class ManageWebhooksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getWebhookDetailsTest() throws ApiException {
+    public void getWebhookSubscriptionByIdTest() throws ApiException {
         String webhookId = null;
-        InlineResponse2004 response = api.getWebhookDetails(webhookId);
+        InlineResponse2004 response = api.getWebhookSubscriptionById(webhookId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get Details On All Created Webhooks
+     *
+     * Retrieve a list of all previously created webhooks.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getWebhookSubscriptionsByOrgTest() throws ApiException {
+        String organizationId = null;
+        String productId = null;
+        String eventType = null;
+        List<InlineResponse2004> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
 
         // TODO: test validations
     }
@@ -96,10 +96,10 @@ public class ManageWebhooksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void replayPreviousWebhookTest() throws ApiException {
+    public void replayPreviousWebhooksTest() throws ApiException {
         String webhookId = null;
-        ReplayWebhooks replayWebhooks = null;
-        api.replayPreviousWebhook(webhookId, replayWebhooks);
+        ReplayWebhooksRequest replayWebhooksRequest = null;
+        api.replayPreviousWebhooks(webhookId, replayWebhooksRequest);
 
         // TODO: test validations
     }
@@ -134,8 +134,8 @@ public class ManageWebhooksApiTest {
     @Test
     public void updateWebhookSubscriptionTest() throws ApiException {
         String webhookId = null;
-        UpdateWebhook updateWebhook = null;
-        api.updateWebhookSubscription(webhookId, updateWebhook);
+        UpdateWebhookRequest updateWebhookRequest = null;
+        api.updateWebhookSubscription(webhookId, updateWebhookRequest);
 
         // TODO: test validations
     }

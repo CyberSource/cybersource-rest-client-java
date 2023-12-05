@@ -91,10 +91,10 @@ public class CreateSearchRequest {
   }
 
    /**
-   * Merchant’s time zone in ISO standard, using the TZ database format. For example: &#x60;America/Chicago&#x60; 
+   * Merchant&#39;s time zone in ISO standard, using the TZ database format. For example: &#x60;America/Chicago&#x60; 
    * @return timezone
   **/
-  @ApiModelProperty(value = "Merchant’s time zone in ISO standard, using the TZ database format. For example: `America/Chicago` ")
+  @ApiModelProperty(value = "Merchant's time zone in ISO standard, using the TZ database format. For example: `America/Chicago` ")
   public String getTimezone() {
     return timezone;
   }

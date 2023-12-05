@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.CommerceSolutionsProductsAccountUpdaterConfigurationInformation;
-import Model.PaymentProductsPayerAuthenticationSubscriptionInformation;
+import Model.PaymentsProductsPayerAuthenticationSubscriptionInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,12 +31,12 @@ import java.io.IOException;
 
 public class CommerceSolutionsProductsAccountUpdater {
   @SerializedName("subscriptionInformation")
-  private PaymentProductsPayerAuthenticationSubscriptionInformation subscriptionInformation = null;
+  private PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation = null;
 
   @SerializedName("configurationInformation")
   private CommerceSolutionsProductsAccountUpdaterConfigurationInformation configurationInformation = null;
 
-  public CommerceSolutionsProductsAccountUpdater subscriptionInformation(PaymentProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public CommerceSolutionsProductsAccountUpdater subscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
     return this;
   }
@@ -46,11 +46,11 @@ public class CommerceSolutionsProductsAccountUpdater {
    * @return subscriptionInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentProductsPayerAuthenticationSubscriptionInformation getSubscriptionInformation() {
+  public PaymentsProductsPayerAuthenticationSubscriptionInformation getSubscriptionInformation() {
     return subscriptionInformation;
   }
 
-  public void setSubscriptionInformation(PaymentProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public void setSubscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
   }
 
