@@ -47,10 +47,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
   }
 
    /**
-   * The customer’s payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers. 
+   * The customer&#39;s payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers. 
    * @return number
   **/
-  @ApiModelProperty(value = "The customer’s payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers. ")
+  @ApiModelProperty(value = "The customer's payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers. ")
   public String getNumber() {
     return number;
   }

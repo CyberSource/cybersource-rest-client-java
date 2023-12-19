@@ -50,10 +50,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation {
   }
 
    /**
-   * Company’s tax identifier. This is only used for eCheck service. 
+   * Company&#39;s tax identifier. This is only used for eCheck service. 
    * @return companyTaxID
   **/
-  @ApiModelProperty(value = "Company’s tax identifier. This is only used for eCheck service. ")
+  @ApiModelProperty(value = "Company's tax identifier. This is only used for eCheck service. ")
   public String getCompanyTaxID() {
     return companyTaxID;
   }

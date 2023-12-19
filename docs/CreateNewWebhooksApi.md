@@ -4,14 +4,14 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWebhook**](CreateNewWebhooksApi.md#createWebhook) | **POST** /notification-subscriptions/v1/webhooks | Create a Webhook
-[**findProductToSubscribe**](CreateNewWebhooksApi.md#findProductToSubscribe) | **GET** /notification-subscriptions/v1/products/{organizationId} | Find Products You Can Subscribe To
+[**createWebhookSubscription**](CreateNewWebhooksApi.md#createWebhookSubscription) | **POST** /notification-subscriptions/v1/webhooks | Create a Webhook
+[**findProductsToSubscribe**](CreateNewWebhooksApi.md#findProductsToSubscribe) | **GET** /notification-subscriptions/v1/products/{organizationId} | Find Products You Can Subscribe To
 [**saveSymEgressKey**](CreateNewWebhooksApi.md#saveSymEgressKey) | **POST** /kms/egress/v2/keys-sym | Create Webhook Security Keys
 
 
-<a name="createWebhook"></a>
-# **createWebhook**
-> InlineResponse2013 createWebhook(createWebhook)
+<a name="createWebhookSubscription"></a>
+# **createWebhookSubscription**
+> InlineResponse2013 createWebhookSubscription(createWebhookRequest)
 
 Create a Webhook
 
@@ -25,12 +25,12 @@ Create a new webhook subscription. Before creating a webhook, ensure that a secu
 
 
 CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
-CreateWebhook createWebhook = new CreateWebhook(); // CreateWebhook | The webhook payload
+CreateWebhookRequest createWebhookRequest = new CreateWebhookRequest(); // CreateWebhookRequest | The webhook payload
 try {
-    InlineResponse2013 result = apiInstance.createWebhook(createWebhook);
+    InlineResponse2013 result = apiInstance.createWebhookSubscription(createWebhookRequest);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling CreateNewWebhooksApi#createWebhook");
+    System.err.println("Exception when calling CreateNewWebhooksApi#createWebhookSubscription");
     e.printStackTrace();
 }
 ```
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createWebhook** | [**CreateWebhook**](CreateWebhook.md)| The webhook payload | [optional]
+ **createWebhookRequest** | [**CreateWebhookRequest**](CreateWebhookRequest.md)| The webhook payload | [optional]
 
 ### Return type
 
@@ -52,11 +52,11 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
-<a name="findProductToSubscribe"></a>
-# **findProductToSubscribe**
-> List&lt;InlineResponse2003&gt; findProductToSubscribe(organizationId)
+<a name="findProductsToSubscribe"></a>
+# **findProductsToSubscribe**
+> List&lt;InlineResponse2003&gt; findProductsToSubscribe(organizationId)
 
 Find Products You Can Subscribe To
 
@@ -72,10 +72,10 @@ Retrieve a list of products and event types that your account is eligible for. T
 CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
 String organizationId = "organizationId_example"; // String | The Organization Identifier.
 try {
-    List<InlineResponse2003> result = apiInstance.findProductToSubscribe(organizationId);
+    List<InlineResponse2003> result = apiInstance.findProductsToSubscribe(organizationId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling CreateNewWebhooksApi#findProductToSubscribe");
+    System.err.println("Exception when calling CreateNewWebhooksApi#findProductsToSubscribe");
     e.printStackTrace();
 }
 ```
@@ -97,7 +97,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
@@ -148,5 +148,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 

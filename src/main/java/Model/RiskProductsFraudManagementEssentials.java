@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PaymentProductsPayerAuthenticationSubscriptionInformation;
+import Model.PaymentsProductsPayerAuthenticationSubscriptionInformation;
 import Model.RiskProductsFraudManagementEssentialsConfigurationInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -31,12 +31,12 @@ import java.io.IOException;
 
 public class RiskProductsFraudManagementEssentials {
   @SerializedName("subscriptionInformation")
-  private PaymentProductsPayerAuthenticationSubscriptionInformation subscriptionInformation = null;
+  private PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation = null;
 
   @SerializedName("configurationInformation")
   private RiskProductsFraudManagementEssentialsConfigurationInformation configurationInformation = null;
 
-  public RiskProductsFraudManagementEssentials subscriptionInformation(PaymentProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public RiskProductsFraudManagementEssentials subscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
     return this;
   }
@@ -46,11 +46,11 @@ public class RiskProductsFraudManagementEssentials {
    * @return subscriptionInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentProductsPayerAuthenticationSubscriptionInformation getSubscriptionInformation() {
+  public PaymentsProductsPayerAuthenticationSubscriptionInformation getSubscriptionInformation() {
     return subscriptionInformation;
   }
 
-  public void setSubscriptionInformation(PaymentProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public void setSubscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
   }
 

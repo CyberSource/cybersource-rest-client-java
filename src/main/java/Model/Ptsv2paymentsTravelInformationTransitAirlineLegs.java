@@ -166,10 +166,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineLegs {
   }
 
    /**
-   * Code that indicates whether a stopover is allowed on this leg of the trip. Possible values: - &#x60;O&#x60; (capital letter “O”) (default): Stopover allowed - &#x60;X&#x60; (capital letter “X”): Stopover not allowed Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. 
+   * Code that indicates whether a stopover is allowed on this leg of the trip. Possible values: - &#x60;O&#x60; (capital letter \&quot;O\&quot;) (default): Stopover allowed - &#x60;X&#x60; (capital letter \&quot;X\&quot;): Stopover not allowed Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. 
    * @return stopoverIndicator
   **/
-  @ApiModelProperty(value = "Code that indicates whether a stopover is allowed on this leg of the trip. Possible values: - `O` (capital letter “O”) (default): Stopover allowed - `X` (capital letter “X”): Stopover not allowed Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
+  @ApiModelProperty(value = "Code that indicates whether a stopover is allowed on this leg of the trip. Possible values: - `O` (capital letter \"O\") (default): Stopover allowed - `X` (capital letter \"X\"): Stopover not allowed Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs. ")
   public Integer getStopoverIndicator() {
     return stopoverIndicator;
   }

@@ -14,7 +14,7 @@
 package Api;
 
 import Invokers.ApiException;
-import Model.CreateWebhook;
+import Model.CreateWebhookRequest;
 import Model.InlineResponse2003;
 import Model.InlineResponse2012;
 import Model.InlineResponse2013;
@@ -45,9 +45,9 @@ public class CreateNewWebhooksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createWebhookTest() throws ApiException {
-        CreateWebhook createWebhook = null;
-        InlineResponse2013 response = api.createWebhook(createWebhook);
+    public void createWebhookSubscriptionTest() throws ApiException {
+        CreateWebhookRequest createWebhookRequest = null;
+        InlineResponse2013 response = api.createWebhookSubscription(createWebhookRequest);
 
         // TODO: test validations
     }
@@ -61,9 +61,9 @@ public class CreateNewWebhooksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void findProductToSubscribeTest() throws ApiException {
+    public void findProductsToSubscribeTest() throws ApiException {
         String organizationId = null;
-        List<InlineResponse2003> response = api.findProductToSubscribe(organizationId);
+        List<InlineResponse2003> response = api.findProductsToSubscribe(organizationId);
 
         // TODO: test validations
     }

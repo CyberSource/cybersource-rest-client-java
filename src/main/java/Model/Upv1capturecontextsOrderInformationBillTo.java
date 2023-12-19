@@ -92,10 +92,10 @@ public class Upv1capturecontextsOrderInformationBillTo {
   }
 
    /**
-   * Payment card billing street address as it appears on the credit card issuer’s records. 
+   * Payment card billing street address as it appears on the credit card issuer&#39;s records. 
    * @return address1
   **/
-  @ApiModelProperty(example = "277 Park Avenue", value = "Payment card billing street address as it appears on the credit card issuer’s records. ")
+  @ApiModelProperty(example = "277 Park Avenue", value = "Payment card billing street address as it appears on the credit card issuer's records. ")
   public String getAddress1() {
     return address1;
   }
@@ -218,10 +218,10 @@ public class Upv1capturecontextsOrderInformationBillTo {
   }
 
    /**
-   * Customer’s neighborhood, community, or region (a barrio in Brazil) within the city or municipality 
+   * Customer&#39;s neighborhood, community, or region (a barrio in Brazil) within the city or municipality 
    * @return district
   **/
-  @ApiModelProperty(example = "district", value = "Customer’s neighborhood, community, or region (a barrio in Brazil) within the city or municipality ")
+  @ApiModelProperty(example = "district", value = "Customer's neighborhood, community, or region (a barrio in Brazil) within the city or municipality ")
   public String getDistrict() {
     return district;
   }
@@ -308,10 +308,10 @@ public class Upv1capturecontextsOrderInformationBillTo {
   }
 
    /**
-   * Customer’s first name. This name must be the same as the name on the card
+   * Customer&#39;s first name. This name must be the same as the name on the card
    * @return firstName
   **/
-  @ApiModelProperty(example = "John", value = "Customer’s first name. This name must be the same as the name on the card")
+  @ApiModelProperty(example = "John", value = "Customer's first name. This name must be the same as the name on the card")
   public String getFirstName() {
     return firstName;
   }
@@ -326,10 +326,10 @@ public class Upv1capturecontextsOrderInformationBillTo {
   }
 
    /**
-   * Customer’s last name. This name must be the same as the name on the card. 
+   * Customer&#39;s last name. This name must be the same as the name on the card. 
    * @return lastName
   **/
-  @ApiModelProperty(example = "Doe", value = "Customer’s last name. This name must be the same as the name on the card. ")
+  @ApiModelProperty(example = "Doe", value = "Customer's last name. This name must be the same as the name on the card. ")
   public String getLastName() {
     return lastName;
   }
@@ -344,10 +344,10 @@ public class Upv1capturecontextsOrderInformationBillTo {
   }
 
    /**
-   * Customer’s middle name. 
+   * Customer&#39;s middle name. 
    * @return middleName
   **/
-  @ApiModelProperty(example = "F", value = "Customer’s middle name. ")
+  @ApiModelProperty(example = "F", value = "Customer's middle name. ")
   public String getMiddleName() {
     return middleName;
   }
@@ -362,10 +362,10 @@ public class Upv1capturecontextsOrderInformationBillTo {
   }
 
    /**
-   * Customer’s name suffix. 
+   * Customer&#39;s name suffix. 
    * @return nameSuffix
   **/
-  @ApiModelProperty(example = "Jr", value = "Customer’s name suffix. ")
+  @ApiModelProperty(example = "Jr", value = "Customer's name suffix. ")
   public String getNameSuffix() {
     return nameSuffix;
   }
@@ -398,10 +398,10 @@ public class Upv1capturecontextsOrderInformationBillTo {
   }
 
    /**
-   * Customer’s phone number. 
+   * Customer&#39;s phone number. 
    * @return phoneNumber
   **/
-  @ApiModelProperty(example = "1234567890", value = "Customer’s phone number. ")
+  @ApiModelProperty(example = "1234567890", value = "Customer's phone number. ")
   public String getPhoneNumber() {
     return phoneNumber;
   }

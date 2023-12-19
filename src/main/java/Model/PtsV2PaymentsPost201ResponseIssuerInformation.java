@@ -121,10 +121,10 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
   }
 
    /**
-   * This field contains value ‘1’ which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect. 
+   * This field contains value &#39;1&#39; which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect. 
    * @return pinRequestIndicator
   **/
-  @ApiModelProperty(value = "This field contains value ‘1’ which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect. ")
+  @ApiModelProperty(value = "This field contains value '1' which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect. ")
   public String getPinRequestIndicator() {
     return pinRequestIndicator;
   }

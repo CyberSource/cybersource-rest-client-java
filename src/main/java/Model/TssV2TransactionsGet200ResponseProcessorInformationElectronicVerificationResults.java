@@ -64,10 +64,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer’s email address.  For details, see &#x60;auth_ev_email&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer&#39;s email address.  For details, see &#x60;auth_ev_email&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @return email
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s email address.  For details, see `auth_ev_email` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's email address.  For details, see `auth_ev_email` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
   public String getEmail() {
     return email;
   }
@@ -82,10 +82,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Raw Electronic Verification response code from the processor for the customer’s email address.
+   * Raw Electronic Verification response code from the processor for the customer&#39;s email address.
    * @return emailRaw
   **/
-  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s email address.")
+  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer's email address.")
   public String getEmailRaw() {
     return emailRaw;
   }
@@ -100,10 +100,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * #### Visa Platform Connect Mapped Electronic Verification response code for the customer’s name.  Valid values :  &#39;Y&#39;   Yes, the data Matches &#39;N&#39;   No Match &#39;O&#39;   Partial Match 
+   * #### Visa Platform Connect Mapped Electronic Verification response code for the customer&#39;s name.  Valid values :  &#39;Y&#39;   Yes, the data Matches &#39;N&#39;   No Match &#39;O&#39;   Partial Match 
    * @return name
   **/
-  @ApiModelProperty(value = "#### Visa Platform Connect Mapped Electronic Verification response code for the customer’s name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match ")
+  @ApiModelProperty(value = "#### Visa Platform Connect Mapped Electronic Verification response code for the customer's name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match ")
   public String getName() {
     return name;
   }
@@ -118,10 +118,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * #### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer’s name.  Valid values :  &#39;01&#39;     Match &#39;50&#39;     Partial Match &#39;99&#39;     No Match 
+   * #### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer&#39;s name.  Valid values :  &#39;01&#39;     Match &#39;50&#39;     Partial Match &#39;99&#39;     No Match 
    * @return nameRaw
   **/
-  @ApiModelProperty(value = "#### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer’s name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match ")
+  @ApiModelProperty(value = "#### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer's name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match ")
   public String getNameRaw() {
     return nameRaw;
   }
@@ -136,10 +136,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer’s phone number.  For details, see &#x60;auth_ev_phone_number&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer&#39;s phone number.  For details, see &#x60;auth_ev_phone_number&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s phone number.  For details, see `auth_ev_phone_number` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's phone number.  For details, see `auth_ev_phone_number` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
   public String getPhoneNumber() {
     return phoneNumber;
   }
@@ -154,10 +154,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Raw Electronic Verification response code from the processor for the customer’s phone number.
+   * Raw Electronic Verification response code from the processor for the customer&#39;s phone number.
    * @return phoneNumberRaw
   **/
-  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s phone number.")
+  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer's phone number.")
   public String getPhoneNumberRaw() {
     return phoneNumberRaw;
   }
@@ -172,10 +172,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer’s street address.  For details, see &#x60;auth_ev_street&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer&#39;s street address.  For details, see &#x60;auth_ev_street&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @return street
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s street address.  For details, see `auth_ev_street` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's street address.  For details, see `auth_ev_street` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
   public String getStreet() {
     return street;
   }
@@ -190,10 +190,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Raw Electronic Verification response code from the processor for the customer’s street address.
+   * Raw Electronic Verification response code from the processor for the customer&#39;s street address.
    * @return streetRaw
   **/
-  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s street address.")
+  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer's street address.")
   public String getStreetRaw() {
     return streetRaw;
   }
@@ -208,10 +208,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer’s postal code.  For details, see &#x60;auth_ev_postal_code&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer&#39;s postal code.  For details, see &#x60;auth_ev_postal_code&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer’s postal code.  For details, see `auth_ev_postal_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's postal code.  For details, see `auth_ev_postal_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
   public String getPostalCode() {
     return postalCode;
   }
@@ -226,10 +226,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Raw Electronic Verification response code from the processor for the customer’s postal code.
+   * Raw Electronic Verification response code from the processor for the customer&#39;s postal code.
    * @return postalCodeRaw
   **/
-  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer’s postal code.")
+  @ApiModelProperty(value = "Raw Electronic Verification response code from the processor for the customer's postal code.")
   public String getPostalCodeRaw() {
     return postalCodeRaw;
   }

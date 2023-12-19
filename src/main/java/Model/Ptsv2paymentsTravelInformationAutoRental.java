@@ -235,10 +235,10 @@ public class Ptsv2paymentsTravelInformationAutoRental {
   }
 
    /**
-   * Miles/Kilometers Indicator shows whether the “miles” fields are expressed in miles or kilometers.  Allowed values: - &#x60;K&#x60; - Kilometers - &#x60;M&#x60; - Miles 
+   * Miles/Kilometers Indicator shows whether the \&quot;miles\&quot; fields are expressed in miles or kilometers.  Allowed values: - &#x60;K&#x60; - Kilometers - &#x60;M&#x60; - Miles 
    * @return distanceUnit
   **/
-  @ApiModelProperty(value = "Miles/Kilometers Indicator shows whether the “miles” fields are expressed in miles or kilometers.  Allowed values: - `K` - Kilometers - `M` - Miles ")
+  @ApiModelProperty(value = "Miles/Kilometers Indicator shows whether the \"miles\" fields are expressed in miles or kilometers.  Allowed values: - `K` - Kilometers - `M` - Miles ")
   public String getDistanceUnit() {
     return distanceUnit;
   }
@@ -325,10 +325,10 @@ public class Ptsv2paymentsTravelInformationAutoRental {
   }
 
    /**
-   * Used to identify special circumstances applicable to the Card Transaction or Cardholder, such as \&quot;renter” or ”show”.  This code is &#x60;2 digit&#x60; value agreed by Merchant and processor. 
+   * Used to identify special circumstances applicable to the Card Transaction or Cardholder, such as \&quot;renter\&quot; or \&quot;show\&quot;.  This code is &#x60;2 digit&#x60; value agreed by Merchant and processor. 
    * @return programCode
   **/
-  @ApiModelProperty(value = "Used to identify special circumstances applicable to the Card Transaction or Cardholder, such as \"renter” or ”show”.  This code is `2 digit` value agreed by Merchant and processor. ")
+  @ApiModelProperty(value = "Used to identify special circumstances applicable to the Card Transaction or Cardholder, such as \"renter\" or \"show\".  This code is `2 digit` value agreed by Merchant and processor. ")
   public String getProgramCode() {
     return programCode;
   }
@@ -379,10 +379,10 @@ public class Ptsv2paymentsTravelInformationAutoRental {
   }
 
    /**
-   * Auto rental agency’s agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember&#39;s statement. 
+   * Auto rental agency&#39;s agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember&#39;s statement. 
    * @return agreementNumber
   **/
-  @ApiModelProperty(value = "Auto rental agency’s agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember's statement. ")
+  @ApiModelProperty(value = "Auto rental agency's agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember's statement. ")
   public String getAgreementNumber() {
     return agreementNumber;
   }
@@ -487,10 +487,10 @@ public class Ptsv2paymentsTravelInformationAutoRental {
   }
 
    /**
-   * Program code used to identify special circumstances, such as “frequent renter” or “no show” status for the renter. Possible values: - &#x60;0&#x60;: not applicable (default) - &#x60;1&#x60;: frequent renter - &#x60;2&#x60;: no show  For authorizations, this field is supported only for Visa.  For captures, this field is supported for Visa, MasterCard, and American Express.  Code for special programs applicable to the Card Transaction or the Cardholder. 
+   * Program code used to identify special circumstances, such as \&quot;frequent renter\&quot; or \&quot;no show\&quot; status for the renter. Possible values: - &#x60;0&#x60;: not applicable (default) - &#x60;1&#x60;: frequent renter - &#x60;2&#x60;: no show  For authorizations, this field is supported only for Visa.  For captures, this field is supported for Visa, MasterCard, and American Express.  Code for special programs applicable to the Card Transaction or the Cardholder. 
    * @return specialProgramCode
   **/
-  @ApiModelProperty(value = "Program code used to identify special circumstances, such as “frequent renter” or “no show” status for the renter. Possible values: - `0`: not applicable (default) - `1`: frequent renter - `2`: no show  For authorizations, this field is supported only for Visa.  For captures, this field is supported for Visa, MasterCard, and American Express.  Code for special programs applicable to the Card Transaction or the Cardholder. ")
+  @ApiModelProperty(value = "Program code used to identify special circumstances, such as \"frequent renter\" or \"no show\" status for the renter. Possible values: - `0`: not applicable (default) - `1`: frequent renter - `2`: no show  For authorizations, this field is supported only for Visa.  For captures, this field is supported for Visa, MasterCard, and American Express.  Code for special programs applicable to the Card Transaction or the Cardholder. ")
   public String getSpecialProgramCode() {
     return specialProgramCode;
   }

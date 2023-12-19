@@ -676,7 +676,7 @@ public class ReportSubscriptionsApi {
 
     /**
      * Get Subscription for Report Name
-     * View the details of a report subscription, such as the report format or report frequency, using the report's unique name. 
+     * View the details of a report subscription, such as the report format or report frequency, using the report&#39;s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
@@ -692,7 +692,7 @@ public class ReportSubscriptionsApi {
 
     /**
      * Get Subscription for Report Name
-     * View the details of a report subscription, such as the report format or report frequency, using the report's unique name. 
+     * View the details of a report subscription, such as the report format or report frequency, using the report&#39;s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
      * @param organizationId Valid Organization Id (optional)
      * @return ApiResponse&lt;ReportingV3ReportSubscriptionsGet200ResponseSubscriptions&gt;
@@ -706,7 +706,7 @@ public class ReportSubscriptionsApi {
 
     /**
      * Get Subscription for Report Name (asynchronously)
-     * View the details of a report subscription, such as the report format or report frequency, using the report's unique name. 
+     * View the details of a report subscription, such as the report format or report frequency, using the report&#39;s unique name. 
      * @param reportName Name of the Report to Retrieve (required)
      * @param organizationId Valid Organization Id (optional)
      * @param callback The callback to be executed when the API call finishes

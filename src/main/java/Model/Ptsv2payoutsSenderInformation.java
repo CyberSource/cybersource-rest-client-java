@@ -161,10 +161,10 @@ public class Ptsv2payoutsSenderInformation {
   }
 
    /**
-   * Sender’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
+   * Sender&#39;s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
    * @return middleName
   **/
-  @ApiModelProperty(value = "Sender’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. ")
+  @ApiModelProperty(value = "Sender's middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. ")
   public String getMiddleName() {
     return middleName;
   }
@@ -251,10 +251,10 @@ public class Ptsv2payoutsSenderInformation {
   }
 
    /**
-   * Sender’s state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf). 
+   * Sender&#39;s state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf). 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "Sender’s state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf). ")
+  @ApiModelProperty(value = "Sender's state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf). ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -287,10 +287,10 @@ public class Ptsv2payoutsSenderInformation {
   }
 
    /**
-   * Sender’s postal code. Required only for FDCCompass.
+   * Sender&#39;s postal code. Required only for FDCCompass.
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Sender’s postal code. Required only for FDCCompass.")
+  @ApiModelProperty(value = "Sender's postal code. Required only for FDCCompass.")
   public String getPostalCode() {
     return postalCode;
   }
@@ -305,10 +305,10 @@ public class Ptsv2payoutsSenderInformation {
   }
 
    /**
-   * Sender’s phone number. Required only for FDCCompass.
+   * Sender&#39;s phone number. Required only for FDCCompass.
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Sender’s phone number. Required only for FDCCompass.")
+  @ApiModelProperty(value = "Sender's phone number. Required only for FDCCompass.")
   public String getPhoneNumber() {
     return phoneNumber;
   }
@@ -323,10 +323,10 @@ public class Ptsv2payoutsSenderInformation {
   }
 
    /**
-   * Sender’s date of birth in YYYYMMDD format. Required only for FDCCompass.
+   * Sender&#39;s date of birth in YYYYMMDD format. Required only for FDCCompass.
    * @return dateOfBirth
   **/
-  @ApiModelProperty(value = "Sender’s date of birth in YYYYMMDD format. Required only for FDCCompass.")
+  @ApiModelProperty(value = "Sender's date of birth in YYYYMMDD format. Required only for FDCCompass.")
   public String getDateOfBirth() {
     return dateOfBirth;
   }

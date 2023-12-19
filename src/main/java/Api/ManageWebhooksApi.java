@@ -31,9 +31,9 @@ import java.io.InputStream;
 import Model.InlineResponse2004;
 import Model.InlineResponse2014;
 import Model.InlineResponse4042;
-import Model.ReplayWebhooks;
+import Model.ReplayWebhooksRequest;
 import Model.SaveAsymEgressKey;
-import Model.UpdateWebhook;
+import Model.UpdateWebhookRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -92,7 +92,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -199,7 +199,143 @@ public class ManageWebhooksApi {
         return call;
     }
     /**
-     * Build call for getAllWebhooks
+     * Build call for getWebhookSubscriptionById
+     * @param webhookId The webhook Identifier (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call getWebhookSubscriptionByIdCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = null;
+        if ("GET".equalsIgnoreCase("POST")) {
+            localVarPostBody = "{}";
+        }
+        
+        // create path and map variables
+        String localVarPath = "/notification-subscriptions/v1/webhooks/{webhookId}"
+            .replaceAll("\\{" + "webhookId" + "\\}", apiClient.escapeString(webhookId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getWebhookSubscriptionByIdValidateBeforeCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'webhookId' is set
+        if (webhookId == null) {
+            logger.error("Missing the required parameter 'webhookId' when calling getWebhookSubscriptionById(Async)");
+            throw new ApiException("Missing the required parameter 'webhookId' when calling getWebhookSubscriptionById(Async)");
+        }
+        
+        
+        okhttp3.Call call = getWebhookSubscriptionByIdCall(webhookId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get Details On a Single Webhook
+     * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
+     * <p>DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.</p>
+     * @param webhookId The webhook Identifier (required)
+     * @return InlineResponse2004
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public InlineResponse2004 getWebhookSubscriptionById(String webhookId) throws ApiException {
+        logger.info("CALL TO METHOD 'getWebhookSubscriptionById' STARTED");
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ApiResponse<InlineResponse2004> resp = getWebhookSubscriptionByIdWithHttpInfo(webhookId);
+        logger.info("CALL TO METHOD 'getWebhookSubscriptionById' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Get Details On a Single Webhook
+     * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
+     * @param webhookId The webhook Identifier (required)
+     * @return ApiResponse&lt;InlineResponse2004&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<InlineResponse2004> getWebhookSubscriptionByIdWithHttpInfo(String webhookId) throws ApiException {
+        okhttp3.Call call = getWebhookSubscriptionByIdValidateBeforeCall(webhookId, null, null);
+        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get Details On a Single Webhook (asynchronously)
+     * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
+     * @param webhookId The webhook Identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call getWebhookSubscriptionByIdAsync(String webhookId, final ApiCallback<InlineResponse2004> callback) throws ApiException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = getWebhookSubscriptionByIdValidateBeforeCall(webhookId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getWebhookSubscriptionsByOrg
      * @param organizationId The Organization Identifier. (required)
      * @param productId The Product Identifier. (required)
      * @param eventType The Event Type. (required)
@@ -208,7 +344,7 @@ public class ManageWebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getAllWebhooksCall(String organizationId, String productId, String eventType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getWebhookSubscriptionsByOrgCall(String organizationId, String productId, String eventType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -231,7 +367,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -259,28 +395,28 @@ public class ManageWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAllWebhooksValidateBeforeCall(String organizationId, String productId, String eventType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getWebhookSubscriptionsByOrgValidateBeforeCall(String organizationId, String productId, String eventType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
-            logger.error("Missing the required parameter 'organizationId' when calling getAllWebhooks(Async)");
-            throw new ApiException("Missing the required parameter 'organizationId' when calling getAllWebhooks(Async)");
+            logger.error("Missing the required parameter 'organizationId' when calling getWebhookSubscriptionsByOrg(Async)");
+            throw new ApiException("Missing the required parameter 'organizationId' when calling getWebhookSubscriptionsByOrg(Async)");
         }
         
         // verify the required parameter 'productId' is set
         if (productId == null) {
-            logger.error("Missing the required parameter 'productId' when calling getAllWebhooks(Async)");
-            throw new ApiException("Missing the required parameter 'productId' when calling getAllWebhooks(Async)");
+            logger.error("Missing the required parameter 'productId' when calling getWebhookSubscriptionsByOrg(Async)");
+            throw new ApiException("Missing the required parameter 'productId' when calling getWebhookSubscriptionsByOrg(Async)");
         }
         
         // verify the required parameter 'eventType' is set
         if (eventType == null) {
-            logger.error("Missing the required parameter 'eventType' when calling getAllWebhooks(Async)");
-            throw new ApiException("Missing the required parameter 'eventType' when calling getAllWebhooks(Async)");
+            logger.error("Missing the required parameter 'eventType' when calling getWebhookSubscriptionsByOrg(Async)");
+            throw new ApiException("Missing the required parameter 'eventType' when calling getWebhookSubscriptionsByOrg(Async)");
         }
         
         
-        okhttp3.Call call = getAllWebhooksCall(organizationId, productId, eventType, progressListener, progressRequestListener);
+        okhttp3.Call call = getWebhookSubscriptionsByOrgCall(organizationId, productId, eventType, progressListener, progressRequestListener);
         return call;
 
         
@@ -299,11 +435,11 @@ public class ManageWebhooksApi {
      * @return List&lt;InlineResponse2004&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<InlineResponse2004> getAllWebhooks(String organizationId, String productId, String eventType) throws ApiException {
-        logger.info("CALL TO METHOD 'getAllWebhooks' STARTED");
+    public List<InlineResponse2004> getWebhookSubscriptionsByOrg(String organizationId, String productId, String eventType) throws ApiException {
+        logger.info("CALL TO METHOD 'getWebhookSubscriptionsByOrg' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<List<InlineResponse2004>> resp = getAllWebhooksWithHttpInfo(organizationId, productId, eventType);
-        logger.info("CALL TO METHOD 'getAllWebhooks' ENDED");
+        ApiResponse<List<InlineResponse2004>> resp = getWebhookSubscriptionsByOrgWithHttpInfo(organizationId, productId, eventType);
+        logger.info("CALL TO METHOD 'getWebhookSubscriptionsByOrg' ENDED");
         return resp.getData();
     }
 
@@ -316,8 +452,8 @@ public class ManageWebhooksApi {
      * @return ApiResponse&lt;List&lt;InlineResponse2004&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<InlineResponse2004>> getAllWebhooksWithHttpInfo(String organizationId, String productId, String eventType) throws ApiException {
-        okhttp3.Call call = getAllWebhooksValidateBeforeCall(organizationId, productId, eventType, null, null);
+    public ApiResponse<List<InlineResponse2004>> getWebhookSubscriptionsByOrgWithHttpInfo(String organizationId, String productId, String eventType) throws ApiException {
+        okhttp3.Call call = getWebhookSubscriptionsByOrgValidateBeforeCall(organizationId, productId, eventType, null, null);
         Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -332,7 +468,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getAllWebhooksAsync(String organizationId, String productId, String eventType, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException {
+    public okhttp3.Call getWebhookSubscriptionsByOrgAsync(String organizationId, String productId, String eventType, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -354,159 +490,23 @@ public class ManageWebhooksApi {
             };
         }
 
-        okhttp3.Call call = getAllWebhooksValidateBeforeCall(organizationId, productId, eventType, progressListener, progressRequestListener);
+        okhttp3.Call call = getWebhookSubscriptionsByOrgValidateBeforeCall(organizationId, productId, eventType, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for getWebhookDetails
-     * @param webhookId The webhook Identifier (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public okhttp3.Call getWebhookDetailsCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = null;
-        if ("GET".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
-        }
-        
-        // create path and map variables
-        String localVarPath = "/notification-subscriptions/v1/webhooks/{webhookId}"
-            .replaceAll("\\{" + "webhookId" + "\\}", apiClient.escapeString(webhookId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json;charset=utf-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
-                @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhookDetailsValidateBeforeCall(String webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'webhookId' is set
-        if (webhookId == null) {
-            logger.error("Missing the required parameter 'webhookId' when calling getWebhookDetails(Async)");
-            throw new ApiException("Missing the required parameter 'webhookId' when calling getWebhookDetails(Async)");
-        }
-        
-        
-        okhttp3.Call call = getWebhookDetailsCall(webhookId, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Get Details On a Single Webhook
-     * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
-     * <p>DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.</p>
-     * @param webhookId The webhook Identifier (required)
-     * @return InlineResponse2004
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public InlineResponse2004 getWebhookDetails(String webhookId) throws ApiException {
-        logger.info("CALL TO METHOD 'getWebhookDetails' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2004> resp = getWebhookDetailsWithHttpInfo(webhookId);
-        logger.info("CALL TO METHOD 'getWebhookDetails' ENDED");
-        return resp.getData();
-    }
-
-    /**
-     * Get Details On a Single Webhook
-     * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
-     * @param webhookId The webhook Identifier (required)
-     * @return ApiResponse&lt;InlineResponse2004&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<InlineResponse2004> getWebhookDetailsWithHttpInfo(String webhookId) throws ApiException {
-        okhttp3.Call call = getWebhookDetailsValidateBeforeCall(webhookId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Get Details On a Single Webhook (asynchronously)
-     * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
-     * @param webhookId The webhook Identifier (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public okhttp3.Call getWebhookDetailsAsync(String webhookId, final ApiCallback<InlineResponse2004> callback) throws ApiException {
-
-        this.apiClient.setComputationStartTime(System.nanoTime());
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        okhttp3.Call call = getWebhookDetailsValidateBeforeCall(webhookId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for replayPreviousWebhook
+     * Build call for replayPreviousWebhooks
      * @param webhookId The webhook uuid identifier. (required)
-     * @param replayWebhooks The request query (optional)
+     * @param replayWebhooksRequest The request query (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call replayPreviousWebhookCall(String webhookId, ReplayWebhooks replayWebhooks, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call replayPreviousWebhooksCall(String webhookId, ReplayWebhooksRequest replayWebhooksRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(replayWebhooks, ReplayWebhooks.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(replayWebhooksRequest, ReplayWebhooksRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/nrtf/v1/webhooks/{webhookId}/replays"
@@ -519,7 +519,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -547,16 +547,16 @@ public class ManageWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replayPreviousWebhookValidateBeforeCall(String webhookId, ReplayWebhooks replayWebhooks, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call replayPreviousWebhooksValidateBeforeCall(String webhookId, ReplayWebhooksRequest replayWebhooksRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
-            logger.error("Missing the required parameter 'webhookId' when calling replayPreviousWebhook(Async)");
-            throw new ApiException("Missing the required parameter 'webhookId' when calling replayPreviousWebhook(Async)");
+            logger.error("Missing the required parameter 'webhookId' when calling replayPreviousWebhooks(Async)");
+            throw new ApiException("Missing the required parameter 'webhookId' when calling replayPreviousWebhooks(Async)");
         }
         
         
-        okhttp3.Call call = replayPreviousWebhookCall(webhookId, replayWebhooks, progressListener, progressRequestListener);
+        okhttp3.Call call = replayPreviousWebhooksCall(webhookId, replayWebhooksRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -570,13 +570,13 @@ public class ManageWebhooksApi {
      * Initiate a webhook replay request to replay transactions that happened in the past.  Cannot execute more than 1 replay request at a time. While one request is processing, you will not be allowed to execute another replay.  The difference between Start and End time cannot exceed a 24 hour window, and 1 month is the farthest date back that is eligible for replay. 
      * <p>DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.</p>
      * @param webhookId The webhook uuid identifier. (required)
-     * @param replayWebhooks The request query (optional)
+     * @param replayWebhooksRequest The request query (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void replayPreviousWebhook(String webhookId, ReplayWebhooks replayWebhooks) throws ApiException {
-        logger.info("CALL TO METHOD 'replayPreviousWebhook' STARTED");
+    public void replayPreviousWebhooks(String webhookId, ReplayWebhooksRequest replayWebhooksRequest) throws ApiException {
+        logger.info("CALL TO METHOD 'replayPreviousWebhooks' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        replayPreviousWebhookWithHttpInfo(webhookId, replayWebhooks);
+        replayPreviousWebhooksWithHttpInfo(webhookId, replayWebhooksRequest);
 
     }
 
@@ -584,12 +584,12 @@ public class ManageWebhooksApi {
      * Replay Previous Webhooks
      * Initiate a webhook replay request to replay transactions that happened in the past.  Cannot execute more than 1 replay request at a time. While one request is processing, you will not be allowed to execute another replay.  The difference between Start and End time cannot exceed a 24 hour window, and 1 month is the farthest date back that is eligible for replay. 
      * @param webhookId The webhook uuid identifier. (required)
-     * @param replayWebhooks The request query (optional)
+     * @param replayWebhooksRequest The request query (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> replayPreviousWebhookWithHttpInfo(String webhookId, ReplayWebhooks replayWebhooks) throws ApiException {
-        okhttp3.Call call = replayPreviousWebhookValidateBeforeCall(webhookId, replayWebhooks, null, null);
+    public ApiResponse<Void> replayPreviousWebhooksWithHttpInfo(String webhookId, ReplayWebhooksRequest replayWebhooksRequest) throws ApiException {
+        okhttp3.Call call = replayPreviousWebhooksValidateBeforeCall(webhookId, replayWebhooksRequest, null, null);
         return apiClient.execute(call);
     }
 
@@ -597,12 +597,12 @@ public class ManageWebhooksApi {
      * Replay Previous Webhooks (asynchronously)
      * Initiate a webhook replay request to replay transactions that happened in the past.  Cannot execute more than 1 replay request at a time. While one request is processing, you will not be allowed to execute another replay.  The difference between Start and End time cannot exceed a 24 hour window, and 1 month is the farthest date back that is eligible for replay. 
      * @param webhookId The webhook uuid identifier. (required)
-     * @param replayWebhooks The request query (optional)
+     * @param replayWebhooksRequest The request query (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call replayPreviousWebhookAsync(String webhookId, ReplayWebhooks replayWebhooks, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call replayPreviousWebhooksAsync(String webhookId, ReplayWebhooksRequest replayWebhooksRequest, final ApiCallback<Void> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -624,7 +624,7 @@ public class ManageWebhooksApi {
             };
         }
 
-        okhttp3.Call call = replayPreviousWebhookValidateBeforeCall(webhookId, replayWebhooks, progressListener, progressRequestListener);
+        okhttp3.Call call = replayPreviousWebhooksValidateBeforeCall(webhookId, replayWebhooksRequest, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -659,7 +659,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -793,15 +793,15 @@ public class ManageWebhooksApi {
     /**
      * Build call for updateWebhookSubscription
      * @param webhookId The Webhook Identifier. (required)
-     * @param updateWebhook The webhook payload or changes to apply. (optional)
+     * @param updateWebhookRequest The webhook payload or changes to apply. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call updateWebhookSubscriptionCall(String webhookId, UpdateWebhook updateWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call updateWebhookSubscriptionCall(String webhookId, UpdateWebhookRequest updateWebhookRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateWebhook, UpdateWebhook.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateWebhookRequest, UpdateWebhookRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/notification-subscriptions/v1/webhooks/{webhookId}"
@@ -814,7 +814,7 @@ public class ManageWebhooksApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/hal+json;charset=utf-8"
+            "application/json;charset=utf-8"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -842,7 +842,7 @@ public class ManageWebhooksApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateWebhookSubscriptionValidateBeforeCall(String webhookId, UpdateWebhook updateWebhook, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call updateWebhookSubscriptionValidateBeforeCall(String webhookId, UpdateWebhookRequest updateWebhookRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
@@ -851,7 +851,7 @@ public class ManageWebhooksApi {
         }
         
         
-        okhttp3.Call call = updateWebhookSubscriptionCall(webhookId, updateWebhook, progressListener, progressRequestListener);
+        okhttp3.Call call = updateWebhookSubscriptionCall(webhookId, updateWebhookRequest, progressListener, progressRequestListener);
         return call;
 
         
@@ -865,13 +865,13 @@ public class ManageWebhooksApi {
      * Update the webhook subscription using PATCH.
      * <p>DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.</p>
      * @param webhookId The Webhook Identifier. (required)
-     * @param updateWebhook The webhook payload or changes to apply. (optional)
+     * @param updateWebhookRequest The webhook payload or changes to apply. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void updateWebhookSubscription(String webhookId, UpdateWebhook updateWebhook) throws ApiException {
+    public void updateWebhookSubscription(String webhookId, UpdateWebhookRequest updateWebhookRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updateWebhookSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        updateWebhookSubscriptionWithHttpInfo(webhookId, updateWebhook);
+        updateWebhookSubscriptionWithHttpInfo(webhookId, updateWebhookRequest);
 
     }
 
@@ -879,12 +879,12 @@ public class ManageWebhooksApi {
      * Update a Webhook Subscription
      * Update the webhook subscription using PATCH.
      * @param webhookId The Webhook Identifier. (required)
-     * @param updateWebhook The webhook payload or changes to apply. (optional)
+     * @param updateWebhookRequest The webhook payload or changes to apply. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> updateWebhookSubscriptionWithHttpInfo(String webhookId, UpdateWebhook updateWebhook) throws ApiException {
-        okhttp3.Call call = updateWebhookSubscriptionValidateBeforeCall(webhookId, updateWebhook, null, null);
+    public ApiResponse<Void> updateWebhookSubscriptionWithHttpInfo(String webhookId, UpdateWebhookRequest updateWebhookRequest) throws ApiException {
+        okhttp3.Call call = updateWebhookSubscriptionValidateBeforeCall(webhookId, updateWebhookRequest, null, null);
         return apiClient.execute(call);
     }
 
@@ -892,12 +892,12 @@ public class ManageWebhooksApi {
      * Update a Webhook Subscription (asynchronously)
      * Update the webhook subscription using PATCH.
      * @param webhookId The Webhook Identifier. (required)
-     * @param updateWebhook The webhook payload or changes to apply. (optional)
+     * @param updateWebhookRequest The webhook payload or changes to apply. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call updateWebhookSubscriptionAsync(String webhookId, UpdateWebhook updateWebhook, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call updateWebhookSubscriptionAsync(String webhookId, UpdateWebhookRequest updateWebhookRequest, final ApiCallback<Void> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -919,7 +919,7 @@ public class ManageWebhooksApi {
             };
         }
 
-        okhttp3.Call call = updateWebhookSubscriptionValidateBeforeCall(webhookId, updateWebhook, progressListener, progressRequestListener);
+        okhttp3.Call call = updateWebhookSubscriptionValidateBeforeCall(webhookId, updateWebhookRequest, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
