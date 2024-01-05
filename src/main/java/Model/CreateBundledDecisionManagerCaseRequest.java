@@ -14,9 +14,9 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsAcquirerInformation;
 import Model.Ptsv2paymentsRecurringPaymentInformation;
 import Model.Ptsv2paymentsWatchlistScreeningInformation;
+import Model.Riskv1decisionsAcquirerInformation;
 import Model.Riskv1decisionsBuyerInformation;
 import Model.Riskv1decisionsClientReferenceInformation;
 import Model.Riskv1decisionsConsumerAuthenticationInformation;
@@ -80,7 +80,7 @@ public class CreateBundledDecisionManagerCaseRequest {
   private Riskv1decisionsMerchantInformation merchantInformation = null;
 
   @SerializedName("acquirerInformation")
-  private Ptsv2paymentsAcquirerInformation acquirerInformation = null;
+  private Riskv1decisionsAcquirerInformation acquirerInformation = null;
 
   @SerializedName("recurringPaymentInformation")
   private Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation = null;
@@ -300,7 +300,7 @@ public class CreateBundledDecisionManagerCaseRequest {
     this.merchantInformation = merchantInformation;
   }
 
-  public CreateBundledDecisionManagerCaseRequest acquirerInformation(Ptsv2paymentsAcquirerInformation acquirerInformation) {
+  public CreateBundledDecisionManagerCaseRequest acquirerInformation(Riskv1decisionsAcquirerInformation acquirerInformation) {
     this.acquirerInformation = acquirerInformation;
     return this;
   }
@@ -310,11 +310,11 @@ public class CreateBundledDecisionManagerCaseRequest {
    * @return acquirerInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsAcquirerInformation getAcquirerInformation() {
+  public Riskv1decisionsAcquirerInformation getAcquirerInformation() {
     return acquirerInformation;
   }
 
-  public void setAcquirerInformation(Ptsv2paymentsAcquirerInformation acquirerInformation) {
+  public void setAcquirerInformation(Riskv1decisionsAcquirerInformation acquirerInformation) {
     this.acquirerInformation = acquirerInformation;
   }
 

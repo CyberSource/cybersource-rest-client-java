@@ -14,7 +14,6 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsAcquirerInformation;
 import Model.Ptsv2paymentsRecurringPaymentInformation;
 import Model.Riskv1authenticationsBuyerInformation;
 import Model.Riskv1authenticationsDeviceInformation;
@@ -24,6 +23,7 @@ import Model.Riskv1authenticationsRiskInformation;
 import Model.Riskv1authenticationsTravelInformation;
 import Model.Riskv1authenticationsetupsProcessingInformation;
 import Model.Riskv1authenticationsetupsTokenInformation;
+import Model.Riskv1decisionsAcquirerInformation;
 import Model.Riskv1decisionsClientReferenceInformation;
 import Model.Riskv1decisionsConsumerAuthenticationInformation;
 import Model.Riskv1decisionsMerchantDefinedInformation;
@@ -69,7 +69,7 @@ public class CheckPayerAuthEnrollmentRequest {
   private Riskv1decisionsMerchantInformation merchantInformation = null;
 
   @SerializedName("acquirerInformation")
-  private Ptsv2paymentsAcquirerInformation acquirerInformation = null;
+  private Riskv1decisionsAcquirerInformation acquirerInformation = null;
 
   @SerializedName("recurringPaymentInformation")
   private Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation = null;
@@ -230,7 +230,7 @@ public class CheckPayerAuthEnrollmentRequest {
     this.merchantInformation = merchantInformation;
   }
 
-  public CheckPayerAuthEnrollmentRequest acquirerInformation(Ptsv2paymentsAcquirerInformation acquirerInformation) {
+  public CheckPayerAuthEnrollmentRequest acquirerInformation(Riskv1decisionsAcquirerInformation acquirerInformation) {
     this.acquirerInformation = acquirerInformation;
     return this;
   }
@@ -240,11 +240,11 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return acquirerInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsAcquirerInformation getAcquirerInformation() {
+  public Riskv1decisionsAcquirerInformation getAcquirerInformation() {
     return acquirerInformation;
   }
 
-  public void setAcquirerInformation(Ptsv2paymentsAcquirerInformation acquirerInformation) {
+  public void setAcquirerInformation(Riskv1decisionsAcquirerInformation acquirerInformation) {
     this.acquirerInformation = acquirerInformation;
   }
 

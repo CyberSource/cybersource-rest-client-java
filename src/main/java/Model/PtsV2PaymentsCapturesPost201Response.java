@@ -124,10 +124,10 @@ public class PtsV2PaymentsCapturesPost201Response {
   }
 
    /**
-   * The status of the submitted transaction.  Possible values:  - PENDING 
+   * The status of the submitted transaction.  Possible values:  - PENDING  - TRANSMITTED (Only for Online Capture enabled merchants) 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - PENDING ")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - PENDING  - TRANSMITTED (Only for Online Capture enabled merchants) ")
   public String getStatus() {
     return status;
   }

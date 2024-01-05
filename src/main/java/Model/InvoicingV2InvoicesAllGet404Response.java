@@ -70,10 +70,10 @@ public class InvoicingV2InvoicesAllGet404Response {
   }
 
    /**
-   * The status of the invoice.  Possible values:  - NOTFOUND     
+   * The status of the invoice.  Possible values:  - NOTFOUND 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the invoice.  Possible values:  - NOTFOUND     ")
+  @ApiModelProperty(value = "The status of the invoice.  Possible values:  - NOTFOUND ")
   public String getStatus() {
     return status;
   }
