@@ -31,6 +31,9 @@ public class PtsV2PaymentsCapturesPost201ResponseProcessorInformation {
   @SerializedName("transactionId")
   private String transactionId = null;
 
+  @SerializedName("networkTransactionId")
+  private String networkTransactionId = null;
+
   public PtsV2PaymentsCapturesPost201ResponseProcessorInformation transactionId(String transactionId) {
     this.transactionId = transactionId;
     return this;
@@ -49,6 +52,24 @@ public class PtsV2PaymentsCapturesPost201ResponseProcessorInformation {
     this.transactionId = transactionId;
   }
 
+  public PtsV2PaymentsCapturesPost201ResponseProcessorInformation networkTransactionId(String networkTransactionId) {
+    this.networkTransactionId = networkTransactionId;
+    return this;
+  }
+
+   /**
+   * Network Transaction Identifier Applicable for online capture transactions only. 
+   * @return networkTransactionId
+  **/
+  @ApiModelProperty(value = "Network Transaction Identifier Applicable for online capture transactions only. ")
+  public String getNetworkTransactionId() {
+    return networkTransactionId;
+  }
+
+  public void setNetworkTransactionId(String networkTransactionId) {
+    this.networkTransactionId = networkTransactionId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +80,13 @@ public class PtsV2PaymentsCapturesPost201ResponseProcessorInformation {
       return false;
     }
     PtsV2PaymentsCapturesPost201ResponseProcessorInformation ptsV2PaymentsCapturesPost201ResponseProcessorInformation = (PtsV2PaymentsCapturesPost201ResponseProcessorInformation) o;
-    return Objects.equals(this.transactionId, ptsV2PaymentsCapturesPost201ResponseProcessorInformation.transactionId);
+    return Objects.equals(this.transactionId, ptsV2PaymentsCapturesPost201ResponseProcessorInformation.transactionId) &&
+        Objects.equals(this.networkTransactionId, ptsV2PaymentsCapturesPost201ResponseProcessorInformation.networkTransactionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId);
+    return Objects.hash(transactionId, networkTransactionId);
   }
 
 
@@ -74,6 +96,7 @@ public class PtsV2PaymentsCapturesPost201ResponseProcessorInformation {
     sb.append("class PtsV2PaymentsCapturesPost201ResponseProcessorInformation {\n");
     
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

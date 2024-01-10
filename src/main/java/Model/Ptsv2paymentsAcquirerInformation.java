@@ -40,6 +40,9 @@ public class Ptsv2paymentsAcquirerInformation {
   @SerializedName("merchantId")
   private String merchantId = null;
 
+  @SerializedName("acquirerMerchantId")
+  private String acquirerMerchantId = null;
+
   public Ptsv2paymentsAcquirerInformation acquirerBin(String acquirerBin) {
     this.acquirerBin = acquirerBin;
     return this;
@@ -112,6 +115,24 @@ public class Ptsv2paymentsAcquirerInformation {
     this.merchantId = merchantId;
   }
 
+  public Ptsv2paymentsAcquirerInformation acquirerMerchantId(String acquirerMerchantId) {
+    this.acquirerMerchantId = acquirerMerchantId;
+    return this;
+  }
+
+   /**
+   * Acquirer assigned merchant id. Check if your processor supports this field. 
+   * @return acquirerMerchantId
+  **/
+  @ApiModelProperty(value = "Acquirer assigned merchant id. Check if your processor supports this field. ")
+  public String getAcquirerMerchantId() {
+    return acquirerMerchantId;
+  }
+
+  public void setAcquirerMerchantId(String acquirerMerchantId) {
+    this.acquirerMerchantId = acquirerMerchantId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +146,13 @@ public class Ptsv2paymentsAcquirerInformation {
     return Objects.equals(this.acquirerBin, ptsv2paymentsAcquirerInformation.acquirerBin) &&
         Objects.equals(this.country, ptsv2paymentsAcquirerInformation.country) &&
         Objects.equals(this.password, ptsv2paymentsAcquirerInformation.password) &&
-        Objects.equals(this.merchantId, ptsv2paymentsAcquirerInformation.merchantId);
+        Objects.equals(this.merchantId, ptsv2paymentsAcquirerInformation.merchantId) &&
+        Objects.equals(this.acquirerMerchantId, ptsv2paymentsAcquirerInformation.acquirerMerchantId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(acquirerBin, country, password, merchantId);
+    return Objects.hash(acquirerBin, country, password, merchantId, acquirerMerchantId);
   }
 
 
@@ -143,6 +165,7 @@ public class Ptsv2paymentsAcquirerInformation {
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    sb.append("    acquirerMerchantId: ").append(toIndentedString(acquirerMerchantId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
