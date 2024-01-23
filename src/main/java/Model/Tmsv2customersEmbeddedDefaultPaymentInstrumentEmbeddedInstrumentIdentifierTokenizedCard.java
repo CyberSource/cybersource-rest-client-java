@@ -35,6 +35,12 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
   @SerializedName("state")
   private String state = null;
 
+  @SerializedName("enrollmentId")
+  private String enrollmentId = null;
+
+  @SerializedName("tokenReferenceId")
+  private String tokenReferenceId = null;
+
   @SerializedName("reason")
   private String reason = null;
 
@@ -54,10 +60,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
   private Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCardCard card = null;
 
    /**
-   * The network token card association brand Possible Values: - visa - mastercard 
+   * The network token card association brand Possible Values: - visa - mastercard - americanexpress 
    * @return type
   **/
-  @ApiModelProperty(example = "visa", value = "The network token card association brand Possible Values: - visa - mastercard ")
+  @ApiModelProperty(example = "visa", value = "The network token card association brand Possible Values: - visa - mastercard - americanexpress ")
   public String getType() {
     return type;
   }
@@ -69,6 +75,24 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
   @ApiModelProperty(example = "ACTIVE", value = "State of the network token or network token provision Possible Values: - ACTIVE : Network token is active. - SUSPENDED : Network token is suspended. This state can change back to ACTIVE. - DELETED : This is a final state for a network token instance. - UNPROVISIONED : A previous network token provision was unsuccessful. ")
   public String getState() {
     return state;
+  }
+
+   /**
+   * Unique Identifier for the enrolled PAN. This Id is provided by the card association when a network token is provisioned successfully. 
+   * @return enrollmentId
+  **/
+  @ApiModelProperty(value = "Unique Identifier for the enrolled PAN. This Id is provided by the card association when a network token is provisioned successfully. ")
+  public String getEnrollmentId() {
+    return enrollmentId;
+  }
+
+   /**
+   * Unique Identifier for the network token. This Id is provided by the card association when a network token is provisioned successfully. 
+   * @return tokenReferenceId
+  **/
+  @ApiModelProperty(value = "Unique Identifier for the network token. This Id is provided by the card association when a network token is provisioned successfully. ")
+  public String getTokenReferenceId() {
+    return tokenReferenceId;
   }
 
    /**
@@ -146,6 +170,8 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
     Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard = (Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard) o;
     return Objects.equals(this.type, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.type) &&
         Objects.equals(this.state, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.state) &&
+        Objects.equals(this.enrollmentId, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.enrollmentId) &&
+        Objects.equals(this.tokenReferenceId, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.tokenReferenceId) &&
         Objects.equals(this.reason, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.reason) &&
         Objects.equals(this.number, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.number) &&
         Objects.equals(this.expirationMonth, tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierTokenizedCard.expirationMonth) &&
@@ -156,7 +182,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, state, reason, number, expirationMonth, expirationYear, cryptogram, card);
+    return Objects.hash(type, state, enrollmentId, tokenReferenceId, reason, number, expirationMonth, expirationYear, cryptogram, card);
   }
 
 
@@ -167,6 +193,8 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIde
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    enrollmentId: ").append(toIndentedString(enrollmentId)).append("\n");
+    sb.append("    tokenReferenceId: ").append(toIndentedString(tokenReferenceId)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");

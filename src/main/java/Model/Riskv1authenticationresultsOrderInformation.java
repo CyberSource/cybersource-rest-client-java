@@ -15,7 +15,6 @@ package Model;
 
 import java.util.Objects;
 import Model.Riskv1authenticationresultsOrderInformationAmountDetails;
-import Model.Riskv1authenticationresultsOrderInformationLineItems;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,8 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Riskv1authenticationresultsOrderInformation
@@ -34,9 +31,6 @@ import java.util.List;
 public class Riskv1authenticationresultsOrderInformation {
   @SerializedName("amountDetails")
   private Riskv1authenticationresultsOrderInformationAmountDetails amountDetails = null;
-
-  @SerializedName("lineItems")
-  private List<Riskv1authenticationresultsOrderInformationLineItems> lineItems = null;
 
   public Riskv1authenticationresultsOrderInformation amountDetails(Riskv1authenticationresultsOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -56,32 +50,6 @@ public class Riskv1authenticationresultsOrderInformation {
     this.amountDetails = amountDetails;
   }
 
-  public Riskv1authenticationresultsOrderInformation lineItems(List<Riskv1authenticationresultsOrderInformationLineItems> lineItems) {
-    this.lineItems = lineItems;
-    return this;
-  }
-
-  public Riskv1authenticationresultsOrderInformation addLineItemsItem(Riskv1authenticationresultsOrderInformationLineItems lineItemsItem) {
-    if (this.lineItems == null) {
-      this.lineItems = new ArrayList<Riskv1authenticationresultsOrderInformationLineItems>();
-    }
-    this.lineItems.add(lineItemsItem);
-    return this;
-  }
-
-   /**
-   * Get lineItems
-   * @return lineItems
-  **/
-  @ApiModelProperty(value = "")
-  public List<Riskv1authenticationresultsOrderInformationLineItems> getLineItems() {
-    return lineItems;
-  }
-
-  public void setLineItems(List<Riskv1authenticationresultsOrderInformationLineItems> lineItems) {
-    this.lineItems = lineItems;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,13 +60,12 @@ public class Riskv1authenticationresultsOrderInformation {
       return false;
     }
     Riskv1authenticationresultsOrderInformation riskv1authenticationresultsOrderInformation = (Riskv1authenticationresultsOrderInformation) o;
-    return Objects.equals(this.amountDetails, riskv1authenticationresultsOrderInformation.amountDetails) &&
-        Objects.equals(this.lineItems, riskv1authenticationresultsOrderInformation.lineItems);
+    return Objects.equals(this.amountDetails, riskv1authenticationresultsOrderInformation.amountDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, lineItems);
+    return Objects.hash(amountDetails);
   }
 
 
@@ -108,7 +75,6 @@ public class Riskv1authenticationresultsOrderInformation {
     sb.append("class Riskv1authenticationresultsOrderInformation {\n");
     
     sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
-    sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("}");
     return sb.toString();
   }

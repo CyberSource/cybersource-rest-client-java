@@ -33,6 +33,7 @@ import Model.InlineResponse403;
 import Model.InlineResponse410;
 import Model.InlineResponse424;
 import Model.InlineResponse500;
+import Model.PostPaymentCredentialsRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -68,18 +69,16 @@ public class TokenApi {
     /**
      * Build call for postTokenPaymentCredentials
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
+     * @param postPaymentCredentialsRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call postTokenPaymentCredentialsCall(String tokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call postTokenPaymentCredentialsCall(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = null;
-        if ("POST".equalsIgnoreCase("POST")) {
-            localVarPostBody = "{}";
-        }
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentCredentialsRequest, PostPaymentCredentialsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
         
         // create path and map variables
         String localVarPath = "/tms/v2/tokens/{tokenId}/payment-credentials"
@@ -122,7 +121,7 @@ public class TokenApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postTokenPaymentCredentialsValidateBeforeCall(String tokenId, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call postTokenPaymentCredentialsValidateBeforeCall(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'tokenId' is set
         if (tokenId == null) {
@@ -130,8 +129,14 @@ public class TokenApi {
             throw new ApiException("Missing the required parameter 'tokenId' when calling postTokenPaymentCredentials(Async)");
         }
         
+        // verify the required parameter 'postPaymentCredentialsRequest' is set
+        if (postPaymentCredentialsRequest == null) {
+            logger.error("Missing the required parameter 'postPaymentCredentialsRequest' when calling postTokenPaymentCredentials(Async)");
+            throw new ApiException("Missing the required parameter 'postPaymentCredentialsRequest' when calling postTokenPaymentCredentials(Async)");
+        }
         
-        okhttp3.Call call = postTokenPaymentCredentialsCall(tokenId, profileId, progressListener, progressRequestListener);
+        
+        okhttp3.Call call = postTokenPaymentCredentialsCall(tokenId, postPaymentCredentialsRequest, profileId, progressListener, progressRequestListener);
         return call;
 
         
@@ -144,14 +149,15 @@ public class TokenApi {
      * Generate Payment Credentials for a TMS Token
      * |  |  |  |     | --- | --- | --- |     |**Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument or Instrument Identifier information.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument or Instrument Identifier. 
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
+     * @param postPaymentCredentialsRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public String postTokenPaymentCredentials(String tokenId, String profileId) throws ApiException {
+    public String postTokenPaymentCredentials(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<String> resp = postTokenPaymentCredentialsWithHttpInfo(tokenId, profileId);
+        ApiResponse<String> resp = postTokenPaymentCredentialsWithHttpInfo(tokenId, postPaymentCredentialsRequest, profileId);
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' ENDED");
         return resp.getData();
     }
@@ -160,12 +166,13 @@ public class TokenApi {
      * Generate Payment Credentials for a TMS Token
      * |  |  |  |     | --- | --- | --- |     |**Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument or Instrument Identifier information.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument or Instrument Identifier. 
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
+     * @param postPaymentCredentialsRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<String> postTokenPaymentCredentialsWithHttpInfo(String tokenId, String profileId) throws ApiException {
-        okhttp3.Call call = postTokenPaymentCredentialsValidateBeforeCall(tokenId, profileId, null, null);
+    public ApiResponse<String> postTokenPaymentCredentialsWithHttpInfo(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException {
+        okhttp3.Call call = postTokenPaymentCredentialsValidateBeforeCall(tokenId, postPaymentCredentialsRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -174,12 +181,13 @@ public class TokenApi {
      * Generate Payment Credentials for a TMS Token (asynchronously)
      * |  |  |  |     | --- | --- | --- |     |**Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument or Instrument Identifier information.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument or Instrument Identifier. 
      * @param tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
+     * @param postPaymentCredentialsRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postTokenPaymentCredentialsAsync(String tokenId, String profileId, final ApiCallback<String> callback) throws ApiException {
+    public okhttp3.Call postTokenPaymentCredentialsAsync(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId, final ApiCallback<String> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -201,7 +209,7 @@ public class TokenApi {
             };
         }
 
-        okhttp3.Call call = postTokenPaymentCredentialsValidateBeforeCall(tokenId, profileId, progressListener, progressRequestListener);
+        okhttp3.Call call = postTokenPaymentCredentialsValidateBeforeCall(tokenId, postPaymentCredentialsRequest, profileId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

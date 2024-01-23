@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="postTokenPaymentCredentials"></a>
 # **postTokenPaymentCredentials**
-> String postTokenPaymentCredentials(tokenId, profileId)
+> String postTokenPaymentCredentials(tokenId, postPaymentCredentialsRequest, profileId)
 
 Generate Payment Credentials for a TMS Token
 
@@ -24,9 +24,10 @@ Generate Payment Credentials for a TMS Token
 
 TokenApi apiInstance = new TokenApi();
 String tokenId = "tokenId_example"; // String | The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
+PostPaymentCredentialsRequest postPaymentCredentialsRequest = new PostPaymentCredentialsRequest(); // PostPaymentCredentialsRequest | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    String result = apiInstance.postTokenPaymentCredentials(tokenId, profileId);
+    String result = apiInstance.postTokenPaymentCredentials(tokenId, postPaymentCredentialsRequest, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TokenApi#postTokenPaymentCredentials");
@@ -39,6 +40,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | **String**| The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. |
+ **postPaymentCredentialsRequest** | [**PostPaymentCredentialsRequest**](PostPaymentCredentialsRequest.md)|  |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
