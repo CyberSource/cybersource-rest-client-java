@@ -19,6 +19,7 @@ import Model.InlineResponse403;
 import Model.InlineResponse410;
 import Model.InlineResponse424;
 import Model.InlineResponse500;
+import Model.PostPaymentCredentialsRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -47,8 +48,9 @@ public class TokenApiTest {
     @Test
     public void postTokenPaymentCredentialsTest() throws ApiException {
         String tokenId = null;
+        PostPaymentCredentialsRequest postPaymentCredentialsRequest = null;
         String profileId = null;
-        String response = api.postTokenPaymentCredentials(tokenId, profileId);
+        String response = api.postTokenPaymentCredentials(tokenId, postPaymentCredentialsRequest, profileId);
 
         // TODO: test validations
     }
