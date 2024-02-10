@@ -56,7 +56,7 @@ public class Ptsv2paymentsBuyerInformation {
   private String language = null;
 
   @SerializedName("mobilePhone")
-  private Integer mobilePhone = null;
+  private String mobilePhone = null;
 
   public Ptsv2paymentsBuyerInformation merchantCustomerId(String merchantCustomerId) {
     this.merchantCustomerId = merchantCustomerId;
@@ -210,7 +210,7 @@ public class Ptsv2paymentsBuyerInformation {
     this.language = language;
   }
 
-  public Ptsv2paymentsBuyerInformation mobilePhone(Integer mobilePhone) {
+  public Ptsv2paymentsBuyerInformation mobilePhone(String mobilePhone) {
     this.mobilePhone = mobilePhone;
     return this;
   }
@@ -220,11 +220,11 @@ public class Ptsv2paymentsBuyerInformation {
    * @return mobilePhone
   **/
   @ApiModelProperty(value = "Cardholder's mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. ")
-  public Integer getMobilePhone() {
+  public String getMobilePhone() {
     return mobilePhone;
   }
 
-  public void setMobilePhone(Integer mobilePhone) {
+  public void setMobilePhone(String mobilePhone) {
     this.mobilePhone = mobilePhone;
   }
 
