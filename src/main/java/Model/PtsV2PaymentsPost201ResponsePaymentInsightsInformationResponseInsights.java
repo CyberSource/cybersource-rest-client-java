@@ -34,6 +34,9 @@ public class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsig
   @SerializedName("categoryCode")
   private String categoryCode = null;
 
+  @SerializedName("processorRawName")
+  private String processorRawName = null;
+
   public PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights category(String category) {
     this.category = category;
     return this;
@@ -70,6 +73,24 @@ public class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsig
     this.categoryCode = categoryCode;
   }
 
+  public PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights processorRawName(String processorRawName) {
+    this.processorRawName = processorRawName;
+    return this;
+  }
+
+   /**
+   * Raw name of the processor used for the transaction processing, especially useful during acquirer swing to see which processor transaction settled with 
+   * @return processorRawName
+  **/
+  @ApiModelProperty(value = "Raw name of the processor used for the transaction processing, especially useful during acquirer swing to see which processor transaction settled with ")
+  public String getProcessorRawName() {
+    return processorRawName;
+  }
+
+  public void setProcessorRawName(String processorRawName) {
+    this.processorRawName = processorRawName;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,12 +102,13 @@ public class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsig
     }
     PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights ptsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights = (PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights) o;
     return Objects.equals(this.category, ptsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights.category) &&
-        Objects.equals(this.categoryCode, ptsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights.categoryCode);
+        Objects.equals(this.categoryCode, ptsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights.categoryCode) &&
+        Objects.equals(this.processorRawName, ptsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights.processorRawName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(category, categoryCode);
+    return Objects.hash(category, categoryCode, processorRawName);
   }
 
 
@@ -97,6 +119,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsig
     
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
+    sb.append("    processorRawName: ").append(toIndentedString(processorRawName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

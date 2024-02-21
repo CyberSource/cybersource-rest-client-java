@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations;
+import Model.SAConfig;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ public class PaymentsProductsSecureAcceptanceConfigurationInformation {
   private UUID templateId = null;
 
   @SerializedName("configurations")
-  private PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations configurations = null;
+  private SAConfig configurations = null;
 
   public PaymentsProductsSecureAcceptanceConfigurationInformation templateId(UUID templateId) {
     this.templateId = templateId;
@@ -54,7 +54,7 @@ public class PaymentsProductsSecureAcceptanceConfigurationInformation {
     this.templateId = templateId;
   }
 
-  public PaymentsProductsSecureAcceptanceConfigurationInformation configurations(PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations configurations) {
+  public PaymentsProductsSecureAcceptanceConfigurationInformation configurations(SAConfig configurations) {
     this.configurations = configurations;
     return this;
   }
@@ -64,11 +64,11 @@ public class PaymentsProductsSecureAcceptanceConfigurationInformation {
    * @return configurations
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations getConfigurations() {
+  public SAConfig getConfigurations() {
     return configurations;
   }
 
-  public void setConfigurations(PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations configurations) {
+  public void setConfigurations(SAConfig configurations) {
     this.configurations = configurations;
   }
 

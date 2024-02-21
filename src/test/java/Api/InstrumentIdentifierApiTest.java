@@ -25,7 +25,7 @@ import Model.PatchInstrumentIdentifierRequest;
 import Model.PaymentInstrumentList;
 import Model.PostInstrumentIdentifierEnrollmentRequest;
 import Model.PostInstrumentIdentifierRequest;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
+import Model.TmsEmbeddedInstrumentIdentifier;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -72,7 +72,7 @@ public class InstrumentIdentifierApiTest {
     public void getInstrumentIdentifierTest() throws ApiException {
         String instrumentIdentifierId = null;
         String profileId = null;
-        Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier response = api.getInstrumentIdentifier(instrumentIdentifierId, profileId);
+        TmsEmbeddedInstrumentIdentifier response = api.getInstrumentIdentifier(instrumentIdentifierId, profileId);
 
         // TODO: test validations
     }
@@ -110,7 +110,7 @@ public class InstrumentIdentifierApiTest {
         PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest = null;
         String profileId = null;
         String ifMatch = null;
-        Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier response = api.patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
+        TmsEmbeddedInstrumentIdentifier response = api.patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
 
         // TODO: test validations
     }
@@ -127,7 +127,7 @@ public class InstrumentIdentifierApiTest {
     public void postInstrumentIdentifierTest() throws ApiException {
         PostInstrumentIdentifierRequest postInstrumentIdentifierRequest = null;
         String profileId = null;
-        Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier response = api.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId);
+        TmsEmbeddedInstrumentIdentifier response = api.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId);
 
         // TODO: test validations
     }

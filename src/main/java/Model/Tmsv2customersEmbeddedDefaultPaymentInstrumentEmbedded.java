@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
+import Model.TmsEmbeddedInstrumentIdentifier;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,9 +31,9 @@ import java.io.IOException;
 
 public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded {
   @SerializedName("instrumentIdentifier")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier instrumentIdentifier = null;
+  private TmsEmbeddedInstrumentIdentifier instrumentIdentifier = null;
 
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded instrumentIdentifier(Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier instrumentIdentifier) {
+  public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded instrumentIdentifier(TmsEmbeddedInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
     return this;
   }
@@ -43,11 +43,11 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded {
    * @return instrumentIdentifier
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier getInstrumentIdentifier() {
+  public TmsEmbeddedInstrumentIdentifier getInstrumentIdentifier() {
     return instrumentIdentifier;
   }
 
-  public void setInstrumentIdentifier(Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier instrumentIdentifier) {
+  public void setInstrumentIdentifier(TmsEmbeddedInstrumentIdentifier instrumentIdentifier) {
     this.instrumentIdentifier = instrumentIdentifier;
   }
 

@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation;
+import Model.PaymentsStrongAuthIssuerInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,9 +30,9 @@ import java.io.IOException;
 
 public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication {
   @SerializedName("issuerInformation")
-  private PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation issuerInformation = null;
+  private PaymentsStrongAuthIssuerInformation issuerInformation = null;
 
-  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication issuerInformation(PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation issuerInformation) {
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication issuerInformation(PaymentsStrongAuthIssuerInformation issuerInformation) {
     this.issuerInformation = issuerInformation;
     return this;
   }
@@ -42,11 +42,11 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrong
    * @return issuerInformation
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation getIssuerInformation() {
+  public PaymentsStrongAuthIssuerInformation getIssuerInformation() {
     return issuerInformation;
   }
 
-  public void setIssuerInformation(PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation issuerInformation) {
+  public void setIssuerInformation(PaymentsStrongAuthIssuerInformation issuerInformation) {
     this.issuerInformation = issuerInformation;
   }
 

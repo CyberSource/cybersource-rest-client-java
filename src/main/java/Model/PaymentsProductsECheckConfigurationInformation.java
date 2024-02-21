@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PaymentsProductsECheckConfigurationInformationConfigurations;
+import Model.ECheckConfig;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ public class PaymentsProductsECheckConfigurationInformation {
   private UUID templateId = null;
 
   @SerializedName("configurations")
-  private PaymentsProductsECheckConfigurationInformationConfigurations configurations = null;
+  private ECheckConfig configurations = null;
 
   public PaymentsProductsECheckConfigurationInformation templateId(UUID templateId) {
     this.templateId = templateId;
@@ -54,7 +54,7 @@ public class PaymentsProductsECheckConfigurationInformation {
     this.templateId = templateId;
   }
 
-  public PaymentsProductsECheckConfigurationInformation configurations(PaymentsProductsECheckConfigurationInformationConfigurations configurations) {
+  public PaymentsProductsECheckConfigurationInformation configurations(ECheckConfig configurations) {
     this.configurations = configurations;
     return this;
   }
@@ -64,11 +64,11 @@ public class PaymentsProductsECheckConfigurationInformation {
    * @return configurations
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsECheckConfigurationInformationConfigurations getConfigurations() {
+  public ECheckConfig getConfigurations() {
     return configurations;
   }
 
-  public void setConfigurations(PaymentsProductsECheckConfigurationInformationConfigurations configurations) {
+  public void setConfigurations(ECheckConfig configurations) {
     this.configurations = configurations;
   }
 

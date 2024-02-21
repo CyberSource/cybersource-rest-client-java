@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import Model.TmsPaymentInstrumentProcessingInfo;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation;
@@ -23,7 +24,6 @@ import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -69,7 +69,7 @@ public class PostCustomerPaymentInstrumentRequest {
   private Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo billTo = null;
 
   @SerializedName("processingInformation")
-  private Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation processingInformation = null;
+  private TmsPaymentInstrumentProcessingInfo processingInformation = null;
 
   @SerializedName("merchantInformation")
   private Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation merchantInformation = null;
@@ -236,7 +236,7 @@ public class PostCustomerPaymentInstrumentRequest {
     this.billTo = billTo;
   }
 
-  public PostCustomerPaymentInstrumentRequest processingInformation(Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation processingInformation) {
+  public PostCustomerPaymentInstrumentRequest processingInformation(TmsPaymentInstrumentProcessingInfo processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
@@ -246,11 +246,11 @@ public class PostCustomerPaymentInstrumentRequest {
    * @return processingInformation
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation getProcessingInformation() {
+  public TmsPaymentInstrumentProcessingInfo getProcessingInformation() {
     return processingInformation;
   }
 
-  public void setProcessingInformation(Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation processingInformation) {
+  public void setProcessingInformation(TmsPaymentInstrumentProcessingInfo processingInformation) {
     this.processingInformation = processingInformation;
   }
 

@@ -16,6 +16,8 @@ package Model;
 import java.util.Objects;
 import Model.Ptsv2creditsInstallmentInformation;
 import Model.Ptsv2creditsProcessingInformation;
+import Model.Ptsv2creditsRecipientInformation;
+import Model.Ptsv2creditsSenderInformation;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsMerchantDefinedSecureInformation;
@@ -82,6 +84,12 @@ public class CreateCreditRequest {
 
   @SerializedName("travelInformation")
   private Ptsv2paymentsTravelInformation travelInformation = null;
+
+  @SerializedName("recipientInformation")
+  private Ptsv2creditsRecipientInformation recipientInformation = null;
+
+  @SerializedName("senderInformation")
+  private Ptsv2creditsSenderInformation senderInformation = null;
 
   @SerializedName("promotionInformation")
   private Ptsv2paymentsPromotionInformation promotionInformation = null;
@@ -328,6 +336,42 @@ public class CreateCreditRequest {
     this.travelInformation = travelInformation;
   }
 
+  public CreateCreditRequest recipientInformation(Ptsv2creditsRecipientInformation recipientInformation) {
+    this.recipientInformation = recipientInformation;
+    return this;
+  }
+
+   /**
+   * Get recipientInformation
+   * @return recipientInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2creditsRecipientInformation getRecipientInformation() {
+    return recipientInformation;
+  }
+
+  public void setRecipientInformation(Ptsv2creditsRecipientInformation recipientInformation) {
+    this.recipientInformation = recipientInformation;
+  }
+
+  public CreateCreditRequest senderInformation(Ptsv2creditsSenderInformation senderInformation) {
+    this.senderInformation = senderInformation;
+    return this;
+  }
+
+   /**
+   * Get senderInformation
+   * @return senderInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2creditsSenderInformation getSenderInformation() {
+    return senderInformation;
+  }
+
+  public void setSenderInformation(Ptsv2creditsSenderInformation senderInformation) {
+    this.senderInformation = senderInformation;
+  }
+
   public CreateCreditRequest promotionInformation(Ptsv2paymentsPromotionInformation promotionInformation) {
     this.promotionInformation = promotionInformation;
     return this;
@@ -369,12 +413,14 @@ public class CreateCreditRequest {
         Objects.equals(this.merchantDefinedSecureInformation, createCreditRequest.merchantDefinedSecureInformation) &&
         Objects.equals(this.installmentInformation, createCreditRequest.installmentInformation) &&
         Objects.equals(this.travelInformation, createCreditRequest.travelInformation) &&
+        Objects.equals(this.recipientInformation, createCreditRequest.recipientInformation) &&
+        Objects.equals(this.senderInformation, createCreditRequest.senderInformation) &&
         Objects.equals(this.promotionInformation, createCreditRequest.promotionInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, promotionInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, paymentInformation, orderInformation, buyerInformation, deviceInformation, merchantInformation, aggregatorInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, recipientInformation, senderInformation, promotionInformation);
   }
 
 
@@ -396,6 +442,8 @@ public class CreateCreditRequest {
     sb.append("    merchantDefinedSecureInformation: ").append(toIndentedString(merchantDefinedSecureInformation)).append("\n");
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
+    sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
+    sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
     sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");
     sb.append("}");
     return sb.toString();

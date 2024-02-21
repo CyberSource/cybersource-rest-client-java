@@ -33,9 +33,11 @@ import Model.TssV2TransactionsGet200ResponsePayoutOptions;
 import Model.TssV2TransactionsGet200ResponsePointOfSaleInformation;
 import Model.TssV2TransactionsGet200ResponseProcessingInformation;
 import Model.TssV2TransactionsGet200ResponseProcessorInformation;
+import Model.TssV2TransactionsGet200ResponseRecurringPaymentInformation;
 import Model.TssV2TransactionsGet200ResponseRiskInformation;
 import Model.TssV2TransactionsGet200ResponseSenderInformation;
 import Model.TssV2TransactionsGet200ResponseTokenInformation;
+import Model.TssV2TransactionsGet200ResponseUnscheduledPaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -115,11 +117,17 @@ public class TssV2TransactionsGet200Response {
   @SerializedName("payoutOptions")
   private TssV2TransactionsGet200ResponsePayoutOptions payoutOptions = null;
 
+  @SerializedName("unscheduledPaymentInformation")
+  private TssV2TransactionsGet200ResponseUnscheduledPaymentInformation unscheduledPaymentInformation = null;
+
   @SerializedName("processingInformation")
   private TssV2TransactionsGet200ResponseProcessingInformation processingInformation = null;
 
   @SerializedName("processorInformation")
   private TssV2TransactionsGet200ResponseProcessorInformation processorInformation = null;
+
+  @SerializedName("recurringPaymentInformation")
+  private TssV2TransactionsGet200ResponseRecurringPaymentInformation recurringPaymentInformation = null;
 
   @SerializedName("pointOfSaleInformation")
   private TssV2TransactionsGet200ResponsePointOfSaleInformation pointOfSaleInformation = null;
@@ -522,6 +530,24 @@ public class TssV2TransactionsGet200Response {
     this.payoutOptions = payoutOptions;
   }
 
+  public TssV2TransactionsGet200Response unscheduledPaymentInformation(TssV2TransactionsGet200ResponseUnscheduledPaymentInformation unscheduledPaymentInformation) {
+    this.unscheduledPaymentInformation = unscheduledPaymentInformation;
+    return this;
+  }
+
+   /**
+   * Get unscheduledPaymentInformation
+   * @return unscheduledPaymentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponseUnscheduledPaymentInformation getUnscheduledPaymentInformation() {
+    return unscheduledPaymentInformation;
+  }
+
+  public void setUnscheduledPaymentInformation(TssV2TransactionsGet200ResponseUnscheduledPaymentInformation unscheduledPaymentInformation) {
+    this.unscheduledPaymentInformation = unscheduledPaymentInformation;
+  }
+
   public TssV2TransactionsGet200Response processingInformation(TssV2TransactionsGet200ResponseProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
@@ -556,6 +582,24 @@ public class TssV2TransactionsGet200Response {
 
   public void setProcessorInformation(TssV2TransactionsGet200ResponseProcessorInformation processorInformation) {
     this.processorInformation = processorInformation;
+  }
+
+  public TssV2TransactionsGet200Response recurringPaymentInformation(TssV2TransactionsGet200ResponseRecurringPaymentInformation recurringPaymentInformation) {
+    this.recurringPaymentInformation = recurringPaymentInformation;
+    return this;
+  }
+
+   /**
+   * Get recurringPaymentInformation
+   * @return recurringPaymentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public TssV2TransactionsGet200ResponseRecurringPaymentInformation getRecurringPaymentInformation() {
+    return recurringPaymentInformation;
+  }
+
+  public void setRecurringPaymentInformation(TssV2TransactionsGet200ResponseRecurringPaymentInformation recurringPaymentInformation) {
+    this.recurringPaymentInformation = recurringPaymentInformation;
   }
 
   public TssV2TransactionsGet200Response pointOfSaleInformation(TssV2TransactionsGet200ResponsePointOfSaleInformation pointOfSaleInformation) {
@@ -679,8 +723,10 @@ public class TssV2TransactionsGet200Response {
         Objects.equals(this.paymentInformation, tssV2TransactionsGet200Response.paymentInformation) &&
         Objects.equals(this.paymentInsightsInformation, tssV2TransactionsGet200Response.paymentInsightsInformation) &&
         Objects.equals(this.payoutOptions, tssV2TransactionsGet200Response.payoutOptions) &&
+        Objects.equals(this.unscheduledPaymentInformation, tssV2TransactionsGet200Response.unscheduledPaymentInformation) &&
         Objects.equals(this.processingInformation, tssV2TransactionsGet200Response.processingInformation) &&
         Objects.equals(this.processorInformation, tssV2TransactionsGet200Response.processorInformation) &&
+        Objects.equals(this.recurringPaymentInformation, tssV2TransactionsGet200Response.recurringPaymentInformation) &&
         Objects.equals(this.pointOfSaleInformation, tssV2TransactionsGet200Response.pointOfSaleInformation) &&
         Objects.equals(this.riskInformation, tssV2TransactionsGet200Response.riskInformation) &&
         Objects.equals(this.senderInformation, tssV2TransactionsGet200Response.senderInformation) &&
@@ -690,7 +736,7 @@ public class TssV2TransactionsGet200Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, rootId, reconciliationId, merchantId, submitTimeUTC, status, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, paymentInsightsInformation, payoutOptions, processingInformation, processorInformation, pointOfSaleInformation, riskInformation, senderInformation, tokenInformation, links);
+    return Objects.hash(id, rootId, reconciliationId, merchantId, submitTimeUTC, status, applicationInformation, buyerInformation, clientReferenceInformation, consumerAuthenticationInformation, deviceInformation, errorInformation, installmentInformation, fraudMarkingInformation, healthCareInformation, merchantDefinedInformation, merchantInformation, orderInformation, paymentInformation, paymentInsightsInformation, payoutOptions, unscheduledPaymentInformation, processingInformation, processorInformation, recurringPaymentInformation, pointOfSaleInformation, riskInformation, senderInformation, tokenInformation, links);
   }
 
 
@@ -720,8 +766,10 @@ public class TssV2TransactionsGet200Response {
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    paymentInsightsInformation: ").append(toIndentedString(paymentInsightsInformation)).append("\n");
     sb.append("    payoutOptions: ").append(toIndentedString(payoutOptions)).append("\n");
+    sb.append("    unscheduledPaymentInformation: ").append(toIndentedString(unscheduledPaymentInformation)).append("\n");
     sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    sb.append("    recurringPaymentInformation: ").append(toIndentedString(recurringPaymentInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");

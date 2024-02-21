@@ -91,6 +91,9 @@ public class PaymentsProducts {
   @SerializedName("unifiedCheckout")
   private PaymentsProductsTax unifiedCheckout = null;
 
+  @SerializedName("receivablesManager")
+  private PaymentsProductsTax receivablesManager = null;
+
   public PaymentsProducts cardProcessing(PaymentsProductsCardProcessing cardProcessing) {
     this.cardProcessing = cardProcessing;
     return this;
@@ -397,6 +400,24 @@ public class PaymentsProducts {
     this.unifiedCheckout = unifiedCheckout;
   }
 
+  public PaymentsProducts receivablesManager(PaymentsProductsTax receivablesManager) {
+    this.receivablesManager = receivablesManager;
+    return this;
+  }
+
+   /**
+   * Get receivablesManager
+   * @return receivablesManager
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsTax getReceivablesManager() {
+    return receivablesManager;
+  }
+
+  public void setReceivablesManager(PaymentsProductsTax receivablesManager) {
+    this.receivablesManager = receivablesManager;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -423,12 +444,13 @@ public class PaymentsProducts {
         Objects.equals(this.payouts, paymentsProducts.payouts) &&
         Objects.equals(this.differentialFee, paymentsProducts.differentialFee) &&
         Objects.equals(this.payByLink, paymentsProducts.payByLink) &&
-        Objects.equals(this.unifiedCheckout, paymentsProducts.unifiedCheckout);
+        Objects.equals(this.unifiedCheckout, paymentsProducts.unifiedCheckout) &&
+        Objects.equals(this.receivablesManager, paymentsProducts.receivablesManager);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardProcessing, cardPresentConnect, cybsReadyTerminal, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, paymentOrchestration, payouts, differentialFee, payByLink, unifiedCheckout);
+    return Objects.hash(cardProcessing, cardPresentConnect, cybsReadyTerminal, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, paymentOrchestration, payouts, differentialFee, payByLink, unifiedCheckout, receivablesManager);
   }
 
 
@@ -454,6 +476,7 @@ public class PaymentsProducts {
     sb.append("    differentialFee: ").append(toIndentedString(differentialFee)).append("\n");
     sb.append("    payByLink: ").append(toIndentedString(payByLink)).append("\n");
     sb.append("    unifiedCheckout: ").append(toIndentedString(unifiedCheckout)).append("\n");
+    sb.append("    receivablesManager: ").append(toIndentedString(receivablesManager)).append("\n");
     sb.append("}");
     return sb.toString();
   }
