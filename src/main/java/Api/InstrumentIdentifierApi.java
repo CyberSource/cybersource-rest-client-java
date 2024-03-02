@@ -39,7 +39,7 @@ import Model.PatchInstrumentIdentifierRequest;
 import Model.PaymentInstrumentList;
 import Model.PostInstrumentIdentifierEnrollmentRequest;
 import Model.PostInstrumentIdentifierRequest;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier;
+import Model.TmsEmbeddedInstrumentIdentifier;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -289,13 +289,13 @@ public class InstrumentIdentifierApi {
      * |  |  |  | | --- | --- | --- | |**Instrument Identifiers**&lt;br&gt;An Instrument Identifier represents either a card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;The same token Id is returned for a specific card number or bank account &amp; routing number allowing the Instrument Identifier Id to be used for cross-channel payment tracking.&lt;br&gt;An Instrument Identifier can exist independently but also be associated with a [Customer Payment Instrument](#token-management_customer-payment-instrument_create-a-customer-payment-instrument) or [Standalone Payment Instrument](#token-management_payment-instrument_create-a-payment-instrument).&lt;br&gt;&lt;br&gt;**Retrieving an Instrument Identifier**&lt;br&gt;Your system can use this API to retrieve an Instrument Identifier.&lt;br&gt;**Note: the actual card data will be masked.**&lt;br&gt;The Instrument Identifier will also be returned when retrieving a [Customer](#token-management_customer_retrieve-a-customer), [Customer Payment Instrument](#token-management_customer-payment-instrument_retrieve-a-customer-payment-instrument) or [Standalone Payment Instrument](#token-management_payment-instrument_retrieve-a-payment-instrument).|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Instrument Identifiers**&lt;br&gt;To perform a payment with an Instrument Identifier simply specify the [Instrument Identifier Id in the payments request along with the expiration date, card type, &amp; billing address](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-instrument-identifier-token-id_liveconsole-tab-request-body).&lt;br&gt;When an Instrument Identifier is used in a payment the **_previousTransactionId_** and **_originalAuthorizedAmount_** values are automatically recorded.&lt;br&gt;These values will be added for you to future Merchant Initiated Transaction payments. 
      * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
+     * @return TmsEmbeddedInstrumentIdentifier
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier getInstrumentIdentifier(String instrumentIdentifierId, String profileId) throws ApiException {
+    public TmsEmbeddedInstrumentIdentifier getInstrumentIdentifier(String instrumentIdentifierId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'getInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = getInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, profileId);
+        ApiResponse<TmsEmbeddedInstrumentIdentifier> resp = getInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, profileId);
         logger.info("CALL TO METHOD 'getInstrumentIdentifier' ENDED");
         return resp.getData();
     }
@@ -305,12 +305,12 @@ public class InstrumentIdentifierApi {
      * |  |  |  | | --- | --- | --- | |**Instrument Identifiers**&lt;br&gt;An Instrument Identifier represents either a card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;The same token Id is returned for a specific card number or bank account &amp; routing number allowing the Instrument Identifier Id to be used for cross-channel payment tracking.&lt;br&gt;An Instrument Identifier can exist independently but also be associated with a [Customer Payment Instrument](#token-management_customer-payment-instrument_create-a-customer-payment-instrument) or [Standalone Payment Instrument](#token-management_payment-instrument_create-a-payment-instrument).&lt;br&gt;&lt;br&gt;**Retrieving an Instrument Identifier**&lt;br&gt;Your system can use this API to retrieve an Instrument Identifier.&lt;br&gt;**Note: the actual card data will be masked.**&lt;br&gt;The Instrument Identifier will also be returned when retrieving a [Customer](#token-management_customer_retrieve-a-customer), [Customer Payment Instrument](#token-management_customer-payment-instrument_retrieve-a-customer-payment-instrument) or [Standalone Payment Instrument](#token-management_payment-instrument_retrieve-a-payment-instrument).|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Instrument Identifiers**&lt;br&gt;To perform a payment with an Instrument Identifier simply specify the [Instrument Identifier Id in the payments request along with the expiration date, card type, &amp; billing address](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-instrument-identifier-token-id_liveconsole-tab-request-body).&lt;br&gt;When an Instrument Identifier is used in a payment the **_previousTransactionId_** and **_originalAuthorizedAmount_** values are automatically recorded.&lt;br&gt;These values will be added for you to future Merchant Initiated Transaction payments. 
      * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier&gt;
+     * @return ApiResponse&lt;TmsEmbeddedInstrumentIdentifier&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> getInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, String profileId) throws ApiException {
+    public ApiResponse<TmsEmbeddedInstrumentIdentifier> getInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, String profileId) throws ApiException {
         okhttp3.Call call = getInstrumentIdentifierValidateBeforeCall(instrumentIdentifierId, profileId, null, null);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsEmbeddedInstrumentIdentifier>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -323,7 +323,7 @@ public class InstrumentIdentifierApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getInstrumentIdentifierAsync(String instrumentIdentifierId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> callback) throws ApiException {
+    public okhttp3.Call getInstrumentIdentifierAsync(String instrumentIdentifierId, String profileId, final ApiCallback<TmsEmbeddedInstrumentIdentifier> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -346,7 +346,7 @@ public class InstrumentIdentifierApi {
         }
 
         okhttp3.Call call = getInstrumentIdentifierValidateBeforeCall(instrumentIdentifierId, profileId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsEmbeddedInstrumentIdentifier>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -592,13 +592,13 @@ public class InstrumentIdentifierApi {
      * @param patchInstrumentIdentifierRequest Specify the previous transaction Id to update. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
-     * @return Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
+     * @return TmsEmbeddedInstrumentIdentifier
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier patchInstrumentIdentifier(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch) throws ApiException {
+    public TmsEmbeddedInstrumentIdentifier patchInstrumentIdentifier(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = patchInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
+        ApiResponse<TmsEmbeddedInstrumentIdentifier> resp = patchInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchInstrumentIdentifier' ENDED");
         return resp.getData();
     }
@@ -610,12 +610,12 @@ public class InstrumentIdentifierApi {
      * @param patchInstrumentIdentifierRequest Specify the previous transaction Id to update. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
-     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier&gt;
+     * @return ApiResponse&lt;TmsEmbeddedInstrumentIdentifier&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> patchInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch) throws ApiException {
+    public ApiResponse<TmsEmbeddedInstrumentIdentifier> patchInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch) throws ApiException {
         okhttp3.Call call = patchInstrumentIdentifierValidateBeforeCall(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch, null, null);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsEmbeddedInstrumentIdentifier>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -630,7 +630,7 @@ public class InstrumentIdentifierApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call patchInstrumentIdentifierAsync(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> callback) throws ApiException {
+    public okhttp3.Call patchInstrumentIdentifierAsync(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch, final ApiCallback<TmsEmbeddedInstrumentIdentifier> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -653,7 +653,7 @@ public class InstrumentIdentifierApi {
         }
 
         okhttp3.Call call = patchInstrumentIdentifierValidateBeforeCall(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsEmbeddedInstrumentIdentifier>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -733,13 +733,13 @@ public class InstrumentIdentifierApi {
      * |  |  |  | | --- | --- | --- | |**Instrument Identifiers**&lt;br&gt;An Instrument Identifier represents either a card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;The same token Id is returned for a specific card number or bank account &amp; routing number allowing the Instrument Identifier Id to be used for cross-channel payment tracking.&lt;br&gt;An Instrument Identifier can exist independently but also be associated with a [Customer Payment Instrument](#token-management_customer-payment-instrument_create-a-customer-payment-instrument) or [Standalone Payment Instrument](#token-management_payment-instrument_create-a-payment-instrument).&lt;br&gt;&lt;br&gt;**Creating an Instrument Identifier**&lt;br&gt;It is recommended you [create an Instrument Identifier via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-instrument-identifier-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;An Instrument Identifier will also be created if you [create a Customer via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body)&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Instrument Identifiers**&lt;br&gt;To perform a payment with an Instrument Identifier simply specify the [Instrument Identifier Id in the payments request along with the expiration date, card type, &amp; billing address](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-instrument-identifier-token-id_liveconsole-tab-request-body).&lt;br&gt;When an Instrument Identifier is used in a payment the **_previousTransactionId_** and **_originalAuthorizedAmount_** values are automatically recorded.&lt;br&gt;These values will be added for you to future Merchant Initiated Transaction payments. 
      * @param postInstrumentIdentifierRequest Specify either a Card, Bank Account or Enrollable Card (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
+     * @return TmsEmbeddedInstrumentIdentifier
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier postInstrumentIdentifier(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId) throws ApiException {
+    public TmsEmbeddedInstrumentIdentifier postInstrumentIdentifier(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postInstrumentIdentifier' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> resp = postInstrumentIdentifierWithHttpInfo(postInstrumentIdentifierRequest, profileId);
+        ApiResponse<TmsEmbeddedInstrumentIdentifier> resp = postInstrumentIdentifierWithHttpInfo(postInstrumentIdentifierRequest, profileId);
         logger.info("CALL TO METHOD 'postInstrumentIdentifier' ENDED");
         return resp.getData();
     }
@@ -749,12 +749,12 @@ public class InstrumentIdentifierApi {
      * |  |  |  | | --- | --- | --- | |**Instrument Identifiers**&lt;br&gt;An Instrument Identifier represents either a card number, or in the case of an ACH bank account, the routing and account number.&lt;br&gt;The same token Id is returned for a specific card number or bank account &amp; routing number allowing the Instrument Identifier Id to be used for cross-channel payment tracking.&lt;br&gt;An Instrument Identifier can exist independently but also be associated with a [Customer Payment Instrument](#token-management_customer-payment-instrument_create-a-customer-payment-instrument) or [Standalone Payment Instrument](#token-management_payment-instrument_create-a-payment-instrument).&lt;br&gt;&lt;br&gt;**Creating an Instrument Identifier**&lt;br&gt;It is recommended you [create an Instrument Identifier via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-instrument-identifier-token-creation_liveconsole-tab-request-body), this can be for a zero amount.&lt;br&gt;An Instrument Identifier will also be created if you [create a Customer via a Payment Authorization](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-with-token-create_authorization-with-customer-token-creation_liveconsole-tab-request-body)&lt;br&gt;In Europe: You should perform Payer Authentication alongside the Authorization.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Network Tokens**&lt;br&gt;Network tokens perform better than regular card numbers and they are not necessarily invalidated when a cardholder loses their card, or it expires.&lt;br&gt;A Payment Network Token will be automatically created and used in future payments if you are enabled for the service.&lt;br&gt;A Payment Network Token can also be [provisioned for an existing Instrument Identifier](#token-management_instrument-identifier_enroll-an-instrument-identifier-for-payment-network-token).&lt;br&gt;For more information about Payment Network Tokens see the Developer Guide.&lt;br&gt;&lt;br&gt;**Payments with Instrument Identifiers**&lt;br&gt;To perform a payment with an Instrument Identifier simply specify the [Instrument Identifier Id in the payments request along with the expiration date, card type, &amp; billing address](#payments_payments_process-a-payment_samplerequests-dropdown_authorization-using-tokens_authorization-with-instrument-identifier-token-id_liveconsole-tab-request-body).&lt;br&gt;When an Instrument Identifier is used in a payment the **_previousTransactionId_** and **_originalAuthorizedAmount_** values are automatically recorded.&lt;br&gt;These values will be added for you to future Merchant Initiated Transaction payments. 
      * @param postInstrumentIdentifierRequest Specify either a Card, Bank Account or Enrollable Card (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier&gt;
+     * @return ApiResponse&lt;TmsEmbeddedInstrumentIdentifier&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> postInstrumentIdentifierWithHttpInfo(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId) throws ApiException {
+    public ApiResponse<TmsEmbeddedInstrumentIdentifier> postInstrumentIdentifierWithHttpInfo(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId) throws ApiException {
         okhttp3.Call call = postInstrumentIdentifierValidateBeforeCall(postInstrumentIdentifierRequest, profileId, null, null);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsEmbeddedInstrumentIdentifier>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -767,7 +767,7 @@ public class InstrumentIdentifierApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postInstrumentIdentifierAsync(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier> callback) throws ApiException {
+    public okhttp3.Call postInstrumentIdentifierAsync(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, final ApiCallback<TmsEmbeddedInstrumentIdentifier> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -790,7 +790,7 @@ public class InstrumentIdentifierApi {
         }
 
         okhttp3.Call call = postInstrumentIdentifierValidateBeforeCall(postInstrumentIdentifierRequest, profileId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier>(){}.getType();
+        Type localVarReturnType = new TypeToken<TmsEmbeddedInstrumentIdentifier>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

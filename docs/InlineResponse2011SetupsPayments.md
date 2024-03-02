@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **payouts** | [**InlineResponse2011SetupsPaymentsCardProcessing**](InlineResponse2011SetupsPaymentsCardProcessing.md) |  |  [optional]
 **payByLink** | [**InlineResponse2011SetupsPaymentsDigitalPayments**](InlineResponse2011SetupsPaymentsDigitalPayments.md) |  |  [optional]
 **unifiedCheckout** | [**InlineResponse2011SetupsPaymentsDigitalPayments**](InlineResponse2011SetupsPaymentsDigitalPayments.md) |  |  [optional]
+**receivablesManager** | [**InlineResponse2011SetupsPaymentsDigitalPayments**](InlineResponse2011SetupsPaymentsDigitalPayments.md) |  |  [optional]
 
 
 

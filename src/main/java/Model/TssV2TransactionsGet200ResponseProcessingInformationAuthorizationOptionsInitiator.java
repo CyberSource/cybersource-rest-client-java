@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction;
+import Model.MerchantInitiatedTransactionObject;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -39,7 +39,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
   private String storedCredentialUsed = null;
 
   @SerializedName("merchantInitiatedTransaction")
-  private Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction merchantInitiatedTransaction = null;
+  private MerchantInitiatedTransactionObject merchantInitiatedTransaction = null;
 
   public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator type(String type) {
     this.type = type;
@@ -95,7 +95,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     this.storedCredentialUsed = storedCredentialUsed;
   }
 
-  public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator merchantInitiatedTransaction(Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction merchantInitiatedTransaction) {
+  public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator merchantInitiatedTransaction(MerchantInitiatedTransactionObject merchantInitiatedTransaction) {
     this.merchantInitiatedTransaction = merchantInitiatedTransaction;
     return this;
   }
@@ -105,11 +105,11 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
    * @return merchantInitiatedTransaction
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction getMerchantInitiatedTransaction() {
+  public MerchantInitiatedTransactionObject getMerchantInitiatedTransaction() {
     return merchantInitiatedTransaction;
   }
 
-  public void setMerchantInitiatedTransaction(Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction merchantInitiatedTransaction) {
+  public void setMerchantInitiatedTransaction(MerchantInitiatedTransactionObject merchantInitiatedTransaction) {
     this.merchantInitiatedTransaction = merchantInitiatedTransaction;
   }
 

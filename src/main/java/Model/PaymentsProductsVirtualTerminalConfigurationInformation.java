@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PaymentsProductsVirtualTerminalConfigurationInformationConfigurations;
+import Model.VTConfig;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ public class PaymentsProductsVirtualTerminalConfigurationInformation {
   private UUID templateId = null;
 
   @SerializedName("configurations")
-  private PaymentsProductsVirtualTerminalConfigurationInformationConfigurations configurations = null;
+  private VTConfig configurations = null;
 
   public PaymentsProductsVirtualTerminalConfigurationInformation templateId(UUID templateId) {
     this.templateId = templateId;
@@ -54,7 +54,7 @@ public class PaymentsProductsVirtualTerminalConfigurationInformation {
     this.templateId = templateId;
   }
 
-  public PaymentsProductsVirtualTerminalConfigurationInformation configurations(PaymentsProductsVirtualTerminalConfigurationInformationConfigurations configurations) {
+  public PaymentsProductsVirtualTerminalConfigurationInformation configurations(VTConfig configurations) {
     this.configurations = configurations;
     return this;
   }
@@ -64,11 +64,11 @@ public class PaymentsProductsVirtualTerminalConfigurationInformation {
    * @return configurations
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsVirtualTerminalConfigurationInformationConfigurations getConfigurations() {
+  public VTConfig getConfigurations() {
     return configurations;
   }
 
-  public void setConfigurations(PaymentsProductsVirtualTerminalConfigurationInformationConfigurations configurations) {
+  public void setConfigurations(VTConfig configurations) {
     this.configurations = configurations;
   }
 

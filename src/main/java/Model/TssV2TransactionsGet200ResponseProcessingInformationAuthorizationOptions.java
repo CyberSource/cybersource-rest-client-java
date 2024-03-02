@@ -32,6 +32,15 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
   @SerializedName("authType")
   private String authType = null;
 
+  @SerializedName("authIndicator")
+  private String authIndicator = null;
+
+  @SerializedName("extendAuthIndicator")
+  private String extendAuthIndicator = null;
+
+  @SerializedName("cardVerificationIndicator")
+  private Boolean cardVerificationIndicator = null;
+
   @SerializedName("initiator")
   private TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator initiator = null;
 
@@ -51,6 +60,60 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
 
   public void setAuthType(String authType) {
     this.authType = authType;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions authIndicator(String authIndicator) {
+    this.authIndicator = authIndicator;
+    return this;
+  }
+
+   /**
+   * Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support.  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file. 
+   * @return authIndicator
+  **/
+  @ApiModelProperty(value = "Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support.  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file. ")
+  public String getAuthIndicator() {
+    return authIndicator;
+  }
+
+  public void setAuthIndicator(String authIndicator) {
+    this.authIndicator = authIndicator;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions extendAuthIndicator(String extendAuthIndicator) {
+    this.extendAuthIndicator = extendAuthIndicator;
+    return this;
+  }
+
+   /**
+   * Flag that indicates whether the transaction is an extended authorization. 
+   * @return extendAuthIndicator
+  **/
+  @ApiModelProperty(value = "Flag that indicates whether the transaction is an extended authorization. ")
+  public String getExtendAuthIndicator() {
+    return extendAuthIndicator;
+  }
+
+  public void setExtendAuthIndicator(String extendAuthIndicator) {
+    this.extendAuthIndicator = extendAuthIndicator;
+  }
+
+  public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions cardVerificationIndicator(Boolean cardVerificationIndicator) {
+    this.cardVerificationIndicator = cardVerificationIndicator;
+    return this;
+  }
+
+   /**
+   * This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - &#x60;true&#x60;   - &#x60;false&#x60; (default value) 
+   * @return cardVerificationIndicator
+  **/
+  @ApiModelProperty(value = "This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - `true`   - `false` (default value) ")
+  public Boolean getCardVerificationIndicator() {
+    return cardVerificationIndicator;
+  }
+
+  public void setCardVerificationIndicator(Boolean cardVerificationIndicator) {
+    this.cardVerificationIndicator = cardVerificationIndicator;
   }
 
   public TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions initiator(TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator initiator) {
@@ -82,12 +145,15 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     }
     TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions = (TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions) o;
     return Objects.equals(this.authType, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.authType) &&
+        Objects.equals(this.authIndicator, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.authIndicator) &&
+        Objects.equals(this.extendAuthIndicator, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.extendAuthIndicator) &&
+        Objects.equals(this.cardVerificationIndicator, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.cardVerificationIndicator) &&
         Objects.equals(this.initiator, tssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions.initiator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, initiator);
+    return Objects.hash(authType, authIndicator, extendAuthIndicator, cardVerificationIndicator, initiator);
   }
 
 
@@ -97,6 +163,9 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     sb.append("class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions {\n");
     
     sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
+    sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
+    sb.append("    extendAuthIndicator: ").append(toIndentedString(extendAuthIndicator)).append("\n");
+    sb.append("    cardVerificationIndicator: ").append(toIndentedString(cardVerificationIndicator)).append("\n");
     sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
     sb.append("}");
     return sb.toString();

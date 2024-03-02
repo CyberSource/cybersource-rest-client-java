@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.PaymentsProductsCardProcessingConfigurationInformationConfigurations;
+import Model.CardProcessingConfig;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ public class PaymentsProductsCardProcessingConfigurationInformation {
   private UUID templateId = null;
 
   @SerializedName("configurations")
-  private PaymentsProductsCardProcessingConfigurationInformationConfigurations configurations = null;
+  private CardProcessingConfig configurations = null;
 
   public PaymentsProductsCardProcessingConfigurationInformation templateId(UUID templateId) {
     this.templateId = templateId;
@@ -54,7 +54,7 @@ public class PaymentsProductsCardProcessingConfigurationInformation {
     this.templateId = templateId;
   }
 
-  public PaymentsProductsCardProcessingConfigurationInformation configurations(PaymentsProductsCardProcessingConfigurationInformationConfigurations configurations) {
+  public PaymentsProductsCardProcessingConfigurationInformation configurations(CardProcessingConfig configurations) {
     this.configurations = configurations;
     return this;
   }
@@ -64,11 +64,11 @@ public class PaymentsProductsCardProcessingConfigurationInformation {
    * @return configurations
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsCardProcessingConfigurationInformationConfigurations getConfigurations() {
+  public CardProcessingConfig getConfigurations() {
     return configurations;
   }
 
-  public void setConfigurations(PaymentsProductsCardProcessingConfigurationInformationConfigurations configurations) {
+  public void setConfigurations(CardProcessingConfig configurations) {
     this.configurations = configurations;
   }
 

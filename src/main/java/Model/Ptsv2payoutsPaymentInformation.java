@@ -14,7 +14,10 @@
 package Model;
 
 import java.util.Objects;
+import Model.PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.Ptsv2paymentsPaymentInformationPaymentInstrument;
+import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
 import Model.Ptsv2payoutsPaymentInformationCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -35,6 +38,15 @@ public class Ptsv2payoutsPaymentInformation {
 
   @SerializedName("customer")
   private Ptsv2paymentsPaymentInformationCustomer customer = null;
+
+  @SerializedName("paymentInstrument")
+  private Ptsv2paymentsPaymentInformationPaymentInstrument paymentInstrument = null;
+
+  @SerializedName("instrumentIdentifier")
+  private PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier instrumentIdentifier = null;
+
+  @SerializedName("tokenizedCard")
+  private Ptsv2paymentsPaymentInformationTokenizedCard tokenizedCard = null;
 
   public Ptsv2payoutsPaymentInformation card(Ptsv2payoutsPaymentInformationCard card) {
     this.card = card;
@@ -72,6 +84,60 @@ public class Ptsv2payoutsPaymentInformation {
     this.customer = customer;
   }
 
+  public Ptsv2payoutsPaymentInformation paymentInstrument(Ptsv2paymentsPaymentInformationPaymentInstrument paymentInstrument) {
+    this.paymentInstrument = paymentInstrument;
+    return this;
+  }
+
+   /**
+   * Get paymentInstrument
+   * @return paymentInstrument
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationPaymentInstrument getPaymentInstrument() {
+    return paymentInstrument;
+  }
+
+  public void setPaymentInstrument(Ptsv2paymentsPaymentInformationPaymentInstrument paymentInstrument) {
+    this.paymentInstrument = paymentInstrument;
+  }
+
+  public Ptsv2payoutsPaymentInformation instrumentIdentifier(PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier instrumentIdentifier) {
+    this.instrumentIdentifier = instrumentIdentifier;
+    return this;
+  }
+
+   /**
+   * Get instrumentIdentifier
+   * @return instrumentIdentifier
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier getInstrumentIdentifier() {
+    return instrumentIdentifier;
+  }
+
+  public void setInstrumentIdentifier(PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier instrumentIdentifier) {
+    this.instrumentIdentifier = instrumentIdentifier;
+  }
+
+  public Ptsv2payoutsPaymentInformation tokenizedCard(Ptsv2paymentsPaymentInformationTokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
+    return this;
+  }
+
+   /**
+   * Get tokenizedCard
+   * @return tokenizedCard
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationTokenizedCard getTokenizedCard() {
+    return tokenizedCard;
+  }
+
+  public void setTokenizedCard(Ptsv2paymentsPaymentInformationTokenizedCard tokenizedCard) {
+    this.tokenizedCard = tokenizedCard;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +149,15 @@ public class Ptsv2payoutsPaymentInformation {
     }
     Ptsv2payoutsPaymentInformation ptsv2payoutsPaymentInformation = (Ptsv2payoutsPaymentInformation) o;
     return Objects.equals(this.card, ptsv2payoutsPaymentInformation.card) &&
-        Objects.equals(this.customer, ptsv2payoutsPaymentInformation.customer);
+        Objects.equals(this.customer, ptsv2payoutsPaymentInformation.customer) &&
+        Objects.equals(this.paymentInstrument, ptsv2payoutsPaymentInformation.paymentInstrument) &&
+        Objects.equals(this.instrumentIdentifier, ptsv2payoutsPaymentInformation.instrumentIdentifier) &&
+        Objects.equals(this.tokenizedCard, ptsv2payoutsPaymentInformation.tokenizedCard);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, customer);
+    return Objects.hash(card, customer, paymentInstrument, instrumentIdentifier, tokenizedCard);
   }
 
 
@@ -99,6 +168,9 @@ public class Ptsv2payoutsPaymentInformation {
     
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
     sb.append("}");
     return sb.toString();
   }

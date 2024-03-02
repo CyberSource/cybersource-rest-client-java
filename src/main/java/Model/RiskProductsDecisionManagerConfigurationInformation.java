@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.RiskProductsDecisionManagerConfigurationInformationConfigurations;
+import Model.DmConfig;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ public class RiskProductsDecisionManagerConfigurationInformation {
   private UUID templateId = null;
 
   @SerializedName("configurations")
-  private RiskProductsDecisionManagerConfigurationInformationConfigurations configurations = null;
+  private DmConfig configurations = null;
 
   public RiskProductsDecisionManagerConfigurationInformation templateId(UUID templateId) {
     this.templateId = templateId;
@@ -54,7 +54,7 @@ public class RiskProductsDecisionManagerConfigurationInformation {
     this.templateId = templateId;
   }
 
-  public RiskProductsDecisionManagerConfigurationInformation configurations(RiskProductsDecisionManagerConfigurationInformationConfigurations configurations) {
+  public RiskProductsDecisionManagerConfigurationInformation configurations(DmConfig configurations) {
     this.configurations = configurations;
     return this;
   }
@@ -64,11 +64,11 @@ public class RiskProductsDecisionManagerConfigurationInformation {
    * @return configurations
   **/
   @ApiModelProperty(value = "")
-  public RiskProductsDecisionManagerConfigurationInformationConfigurations getConfigurations() {
+  public DmConfig getConfigurations() {
     return configurations;
   }
 
-  public void setConfigurations(RiskProductsDecisionManagerConfigurationInformationConfigurations configurations) {
+  public void setConfigurations(DmConfig configurations) {
     this.configurations = configurations;
   }
 

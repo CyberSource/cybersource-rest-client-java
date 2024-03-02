@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **templateId** | [**UUID**](UUID.md) |  |  [optional]
-**configurations** | [**PaymentsProductsVirtualTerminalConfigurationInformationConfigurations**](PaymentsProductsVirtualTerminalConfigurationInformationConfigurations.md) |  |  [optional]
+**configurations** | [**VTConfig**](VTConfig.md) |  |  [optional]
 
 
 

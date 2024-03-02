@@ -60,7 +60,7 @@ No authorization required
 
 <a name="getInstrumentIdentifier"></a>
 # **getInstrumentIdentifier**
-> Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier getInstrumentIdentifier(instrumentIdentifierId, profileId)
+> TmsEmbeddedInstrumentIdentifier getInstrumentIdentifier(instrumentIdentifierId, profileId)
 
 Retrieve an Instrument Identifier
 
@@ -77,7 +77,7 @@ InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
 String instrumentIdentifierId = "instrumentIdentifierId_example"; // String | The Id of an Instrument Identifier.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier result = apiInstance.getInstrumentIdentifier(instrumentIdentifierId, profileId);
+    TmsEmbeddedInstrumentIdentifier result = apiInstance.getInstrumentIdentifier(instrumentIdentifierId, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#getInstrumentIdentifier");
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+[**TmsEmbeddedInstrumentIdentifier**](TmsEmbeddedInstrumentIdentifier.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ No authorization required
 
 <a name="patchInstrumentIdentifier"></a>
 # **patchInstrumentIdentifier**
-> Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch)
+> TmsEmbeddedInstrumentIdentifier patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch)
 
 Update an Instrument Identifier
 
@@ -177,7 +177,7 @@ PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest = new PatchIns
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 String ifMatch = "ifMatch_example"; // String | Contains an ETag value from a GET request to make the request conditional.
 try {
-    Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier result = apiInstance.patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
+    TmsEmbeddedInstrumentIdentifier result = apiInstance.patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#patchInstrumentIdentifier");
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+[**TmsEmbeddedInstrumentIdentifier**](TmsEmbeddedInstrumentIdentifier.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ No authorization required
 
 <a name="postInstrumentIdentifier"></a>
 # **postInstrumentIdentifier**
-> Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId)
+> TmsEmbeddedInstrumentIdentifier postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId)
 
 Create an Instrument Identifier
 
@@ -226,7 +226,7 @@ InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
 PostInstrumentIdentifierRequest postInstrumentIdentifierRequest = new PostInstrumentIdentifierRequest(); // PostInstrumentIdentifierRequest | Specify either a Card, Bank Account or Enrollable Card
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier result = apiInstance.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId);
+    TmsEmbeddedInstrumentIdentifier result = apiInstance.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#postInstrumentIdentifier");
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+[**TmsEmbeddedInstrumentIdentifier**](TmsEmbeddedInstrumentIdentifier.md)
 
 ### Authorization
 

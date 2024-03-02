@@ -49,6 +49,9 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("partialAuthIndicator")
   private Boolean partialAuthIndicator = null;
 
+  @SerializedName("extendAuthIndicator")
+  private String extendAuthIndicator = null;
+
   @SerializedName("balanceInquiry")
   private Boolean balanceInquiry = null;
 
@@ -200,6 +203,24 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
 
   public void setPartialAuthIndicator(Boolean partialAuthIndicator) {
     this.partialAuthIndicator = partialAuthIndicator;
+  }
+
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions extendAuthIndicator(String extendAuthIndicator) {
+    this.extendAuthIndicator = extendAuthIndicator;
+    return this;
+  }
+
+   /**
+   * Flag that indicates whether the transaction is an extended authorization. 
+   * @return extendAuthIndicator
+  **/
+  @ApiModelProperty(value = "Flag that indicates whether the transaction is an extended authorization. ")
+  public String getExtendAuthIndicator() {
+    return extendAuthIndicator;
+  }
+
+  public void setExtendAuthIndicator(String extendAuthIndicator) {
+    this.extendAuthIndicator = extendAuthIndicator;
   }
 
   public Ptsv2paymentsProcessingInformationAuthorizationOptions balanceInquiry(Boolean balanceInquiry) {
@@ -496,6 +517,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
         Objects.equals(this.verbalAuthTransactionId, ptsv2paymentsProcessingInformationAuthorizationOptions.verbalAuthTransactionId) &&
         Objects.equals(this.authIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.authIndicator) &&
         Objects.equals(this.partialAuthIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.partialAuthIndicator) &&
+        Objects.equals(this.extendAuthIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.extendAuthIndicator) &&
         Objects.equals(this.balanceInquiry, ptsv2paymentsProcessingInformationAuthorizationOptions.balanceInquiry) &&
         Objects.equals(this.ignoreAvsResult, ptsv2paymentsProcessingInformationAuthorizationOptions.ignoreAvsResult) &&
         Objects.equals(this.declineAvsFlags, ptsv2paymentsProcessingInformationAuthorizationOptions.declineAvsFlags) &&
@@ -515,7 +537,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator, splitPaymentTransaction, cardVerificationIndicator);
+    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, extendAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator, splitPaymentTransaction, cardVerificationIndicator);
   }
 
 
@@ -530,6 +552,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     sb.append("    verbalAuthTransactionId: ").append(toIndentedString(verbalAuthTransactionId)).append("\n");
     sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
     sb.append("    partialAuthIndicator: ").append(toIndentedString(partialAuthIndicator)).append("\n");
+    sb.append("    extendAuthIndicator: ").append(toIndentedString(extendAuthIndicator)).append("\n");
     sb.append("    balanceInquiry: ").append(toIndentedString(balanceInquiry)).append("\n");
     sb.append("    ignoreAvsResult: ").append(toIndentedString(ignoreAvsResult)).append("\n");
     sb.append("    declineAvsFlags: ").append(toIndentedString(declineAvsFlags)).append("\n");
