@@ -38,10 +38,10 @@ public class Riskv1authenticationsBuyerInformation {
   private List<Ptsv2paymentsBuyerInformationPersonalIdentification> personalIdentification = null;
 
   @SerializedName("mobilePhone")
-  private Integer mobilePhone = null;
+  private String mobilePhone = null;
 
   @SerializedName("workPhone")
-  private Integer workPhone = null;
+  private String workPhone = null;
 
   public Riskv1authenticationsBuyerInformation merchantCustomerId(String merchantCustomerId) {
     this.merchantCustomerId = merchantCustomerId;
@@ -87,25 +87,25 @@ public class Riskv1authenticationsBuyerInformation {
     this.personalIdentification = personalIdentification;
   }
 
-  public Riskv1authenticationsBuyerInformation mobilePhone(Integer mobilePhone) {
+  public Riskv1authenticationsBuyerInformation mobilePhone(String mobilePhone) {
     this.mobilePhone = mobilePhone;
     return this;
   }
 
    /**
-   * Cardholder&#39;s mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. 
+   * Cardholder&#39;s mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions.
    * @return mobilePhone
   **/
   @ApiModelProperty(required = true, value = "Cardholder's mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. ")
-  public Integer getMobilePhone() {
+  public String getMobilePhone() {
     return mobilePhone;
   }
 
-  public void setMobilePhone(Integer mobilePhone) {
+  public void setMobilePhone(String mobilePhone) {
     this.mobilePhone = mobilePhone;
   }
 
-  public Riskv1authenticationsBuyerInformation workPhone(Integer workPhone) {
+  public Riskv1authenticationsBuyerInformation workPhone(String workPhone) {
     this.workPhone = workPhone;
     return this;
   }
@@ -115,11 +115,11 @@ public class Riskv1authenticationsBuyerInformation {
    * @return workPhone
   **/
   @ApiModelProperty(value = "Cardholder's work phone number.")
-  public Integer getWorkPhone() {
+  public String getWorkPhone() {
     return workPhone;
   }
 
-  public void setWorkPhone(Integer workPhone) {
+  public void setWorkPhone(String workPhone) {
     this.workPhone = workPhone;
   }
 
