@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Enum: SelfServiceabilityEnum
 Name | Value
 ---- | -----
-SERVICEABLE | &quot;NOT_SELF_SERVICEABLE&quot;
+NOT_SELF_SERVICEABLE | &quot;NOT_SELF_SERVICEABLE&quot;
 
 
 

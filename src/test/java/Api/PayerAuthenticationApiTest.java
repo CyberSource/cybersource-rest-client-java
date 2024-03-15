@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.CheckPayerAuthEnrollmentRequest;
 import Model.PayerAuthSetupRequest;
 import Model.PtsV2PaymentsPost502Response;
@@ -25,6 +24,7 @@ import Model.RiskV1AuthenticationsPost400Response1;
 import Model.ValidateRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,11 +45,11 @@ public class PayerAuthenticationApiTest {
      *
      * This call verifies that the card is enrolled in a card authentication program.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void checkPayerAuthEnrollmentTest() throws ApiException {
+    public void checkPayerAuthEnrollmentTest() throws Exception {
         CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest = null;
         RiskV1AuthenticationsPost201Response response = api.checkPayerAuthEnrollment(checkPayerAuthEnrollmentRequest);
 
@@ -61,11 +61,11 @@ public class PayerAuthenticationApiTest {
      *
      * A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void payerAuthSetupTest() throws ApiException {
+    public void payerAuthSetupTest() throws Exception {
         PayerAuthSetupRequest payerAuthSetupRequest = null;
         RiskV1AuthenticationSetupsPost201Response response = api.payerAuthSetup(payerAuthSetupRequest);
 
@@ -77,11 +77,11 @@ public class PayerAuthenticationApiTest {
      *
      * This call retrieves and validates the authentication results from issuer and allows the merchant to proceed with processing the payment. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void validateAuthenticationResultsTest() throws ApiException {
+    public void validateAuthenticationResultsTest() throws Exception {
         ValidateRequest validateRequest = null;
         RiskV1AuthenticationResultsPost201Response response = api.validateAuthenticationResults(validateRequest);
 

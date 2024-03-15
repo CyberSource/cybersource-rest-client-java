@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse4004Fields;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -215,6 +216,6 @@ public class InlineResponse4004 {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

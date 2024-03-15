@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Tmsv2customersLinksPaymentInstruments;
 import Model.Tmsv2customersLinksSelf;
 import Model.Tmsv2customersLinksShippingAddress;
@@ -137,6 +138,6 @@ public class Tmsv2customersLinks {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

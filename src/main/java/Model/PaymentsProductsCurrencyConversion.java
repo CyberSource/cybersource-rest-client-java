@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PaymentsProductsCurrencyConversionConfigurationInformation;
 import Model.PaymentsProductsPayerAuthenticationSubscriptionInformation;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class PaymentsProductsCurrencyConversion {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

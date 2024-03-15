@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsidreversalsClientReferenceInformation;
 import Model.Ptsv2paymentsidvoidsOrderInformation;
 import Model.Ptsv2paymentsidvoidsPaymentInformation;
@@ -137,6 +138,6 @@ public class VoidRefundRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

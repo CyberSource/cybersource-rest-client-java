@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.GetAllPlansResponseOrderInformationAmountDetails;
 import Model.GetAllSubscriptionsResponseOrderInformationBillTo;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class GetAllSubscriptionsResponseOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

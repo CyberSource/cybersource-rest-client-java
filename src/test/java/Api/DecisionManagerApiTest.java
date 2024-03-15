@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.AddNegativeListRequest;
 import Model.CaseManagementActionsRequest;
 import Model.CaseManagementCommentsRequest;
@@ -35,6 +34,7 @@ import Model.RiskV1UpdatePost201Response;
 import org.junit.Test;
 import org.junit.Ignore;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,11 +54,11 @@ public class DecisionManagerApiTest {
      *
      * Take action on a DM post-transactional case
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void actionDecisionManagerCaseTest() throws ApiException {
+    public void actionDecisionManagerCaseTest() throws Exception {
         String id = null;
         CaseManagementActionsRequest caseManagementActionsRequest = null;
         InlineResponse200 response = api.actionDecisionManagerCase(id, caseManagementActionsRequest);
@@ -71,11 +71,11 @@ public class DecisionManagerApiTest {
      *
      * This call adds/deletes/converts the request information in the negative list.  Provide the list to be updated as the path parameter. This value can be &#39;postiive&#39;, &#39;negative&#39; or &#39;review&#39;. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void addNegativeTest() throws ApiException {
+    public void addNegativeTest() throws Exception {
         String type = null;
         AddNegativeListRequest addNegativeListRequest = null;
         RiskV1UpdatePost201Response response = api.addNegative(type, addNegativeListRequest);
@@ -88,11 +88,11 @@ public class DecisionManagerApiTest {
      *
      * Add a comment to a DM post-transactional case
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void commentDecisionManagerCaseTest() throws ApiException {
+    public void commentDecisionManagerCaseTest() throws Exception {
         String id = null;
         CaseManagementCommentsRequest caseManagementCommentsRequest = null;
         InlineResponse201 response = api.commentDecisionManagerCase(id, caseManagementCommentsRequest);
@@ -105,11 +105,11 @@ public class DecisionManagerApiTest {
      *
      * Decision Manager can help you automate and streamline your fraud operations. Decision Manager will return a decision based on the request values.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createBundledDecisionManagerCaseTest() throws ApiException {
+    public void createBundledDecisionManagerCaseTest() throws Exception {
         CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest = null;
         RiskV1DecisionsPost201Response response = api.createBundledDecisionManagerCase(createBundledDecisionManagerCaseRequest);
 
@@ -121,11 +121,11 @@ public class DecisionManagerApiTest {
      *
      * This can be used to - 1. Add known fraudulent data to the fraud history 2. Remove data added to history with Transaction Marking Tool or by uploading chargeback files 3. Remove chargeback data from history that was automatically added. For detailed information, contact your Cybersource representative  Place the request ID of the transaction you want to mark as suspect (or remove from history) as the path parameter in this request. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void fraudUpdateTest() throws ApiException {
+    public void fraudUpdateTest() throws Exception {
         String id = null;
         FraudMarkingActionRequest fraudMarkingActionRequest = null;
         RiskV1UpdatePost201Response response = api.fraudUpdate(id, fraudMarkingActionRequest);

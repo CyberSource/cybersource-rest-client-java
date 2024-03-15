@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.CreatePaymentRequest;
 import Model.IncrementAuthRequest;
 import Model.PtsV2IncrementalAuthorizationPatch201Response;
@@ -25,6 +24,7 @@ import Model.PtsV2PaymentsPost502Response;
 import Model.RefreshPaymentStatusRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,11 +45,11 @@ public class PaymentsApiTest {
      *
      * A payment authorizes the amount for the transaction. There are a number of supported payment features, such as E-commerce and Card Present - Credit Card/Debit Card, Echeck, e-Wallets, Level II/III Data, etc..  A payment response includes the status of the request. It also includes processor-specific information when the request is successful and errors if unsuccessful. See the [Payments Developer Guides Page](https://developer.cybersource.com/docs/cybs/en-us/payments/developer/ctv/rest/payments/payments-intro.html).  Authorization can be requested with Capture, Decision Manager, Payer Authentication(3ds), and Token Creation. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createPaymentTest() throws ApiException {
+    public void createPaymentTest() throws Exception {
         CreatePaymentRequest createPaymentRequest = null;
         PtsV2PaymentsPost201Response response = api.createPayment(createPaymentRequest);
 
@@ -61,11 +61,11 @@ public class PaymentsApiTest {
      *
      * Use this service to authorize additional charges in a lodging or autorental transaction. Include the ID returned from the original authorization in the PATCH request to add additional charges to that authorization. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void incrementAuthTest() throws ApiException {
+    public void incrementAuthTest() throws Exception {
         String id = null;
         IncrementAuthRequest incrementAuthRequest = null;
         PtsV2IncrementalAuthorizationPatch201Response response = api.incrementAuth(id, incrementAuthRequest);
@@ -78,11 +78,11 @@ public class PaymentsApiTest {
      *
      * Checks and updates the payment status 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void refreshPaymentStatusTest() throws ApiException {
+    public void refreshPaymentStatusTest() throws Exception {
         String id = null;
         RefreshPaymentStatusRequest refreshPaymentStatusRequest = null;
         PtsV2PaymentsPost201Response1 response = api.refreshPaymentStatus(id, refreshPaymentStatusRequest);

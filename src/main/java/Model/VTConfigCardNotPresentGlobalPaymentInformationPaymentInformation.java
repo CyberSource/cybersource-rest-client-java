@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -112,7 +113,6 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
       }
     }
   }
-
   @SerializedName("displayCardVerificationValue")
   private List<DisplayCardVerificationValueEnum> displayCardVerificationValue = null;
 
@@ -198,7 +198,6 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
       }
     }
   }
-
   @SerializedName("requireCardVerificationValue")
   private List<RequireCardVerificationValueEnum> requireCardVerificationValue = null;
 
@@ -284,7 +283,6 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
       }
     }
   }
-
   @SerializedName("acceptedCardTypes")
   private List<AcceptedCardTypesEnum> acceptedCardTypes = null;
 
@@ -406,7 +404,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayCreditCards
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayCreditCards() {
+  public Boolean isDisplayCreditCards() {
     return displayCreditCards;
   }
 
@@ -424,7 +422,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayEchecks
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayEchecks() {
+  public Boolean isDisplayEchecks() {
     return displayEchecks;
   }
 
@@ -442,7 +440,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayDebtIndicator
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayDebtIndicator() {
+  public Boolean isDisplayDebtIndicator() {
     return displayDebtIndicator;
   }
 
@@ -460,7 +458,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayBillPayment
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayBillPayment() {
+  public Boolean isDisplayBillPayment() {
     return displayBillPayment;
   }
 
@@ -478,7 +476,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return enableEchecks
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEnableEchecks() {
+  public Boolean isEnableEchecks() {
     return enableEchecks;
   }
 
@@ -496,7 +494,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayIgnoreECheckAvsCheckbox
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayIgnoreECheckAvsCheckbox() {
+  public Boolean isDisplayIgnoreECheckAvsCheckbox() {
     return displayIgnoreECheckAvsCheckbox;
   }
 
@@ -514,7 +512,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return firstNameRequired
   **/
   @ApiModelProperty(value = "")
-  public Boolean getFirstNameRequired() {
+  public Boolean isFirstNameRequired() {
     return firstNameRequired;
   }
 
@@ -532,7 +530,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return lastNameRequired
   **/
   @ApiModelProperty(value = "")
-  public Boolean getLastNameRequired() {
+  public Boolean isLastNameRequired() {
     return lastNameRequired;
   }
 
@@ -550,7 +548,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayFirstName
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayFirstName() {
+  public Boolean isDisplayFirstName() {
     return displayFirstName;
   }
 
@@ -568,7 +566,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayLastName
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayLastName() {
+  public Boolean isDisplayLastName() {
     return displayLastName;
   }
 
@@ -639,6 +637,6 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

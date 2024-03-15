@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationShippingAddress;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures;
@@ -411,6 +412,6 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

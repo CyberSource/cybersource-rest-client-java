@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PaymentsProductsCurrencyConversionConfigurationInformationConfigurationsProcessors;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -100,6 +101,6 @@ public class PaymentsProductsCurrencyConversionConfigurationInformationConfigura
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

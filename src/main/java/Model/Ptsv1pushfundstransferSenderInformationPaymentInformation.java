@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv1pushfundstransferSenderInformationPaymentInformationCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -89,6 +90,6 @@ public class Ptsv1pushfundstransferSenderInformationPaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PaymentsProductsECheckConfigurationInformation;
 import Model.PaymentsProductsECheckSubscriptionInformation;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class PaymentsProductsECheck {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

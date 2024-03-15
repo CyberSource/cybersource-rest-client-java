@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -60,7 +61,7 @@ public class SAConfigService {
    * @return decisionManagerVerboseEnabled
   **/
   @ApiModelProperty(value = "Toggles whether verbose Decision Manager results should be present in the Secure Acceptance response. As this response passes through the browser, it is recommended to set this to \"false\" outside of debugging.")
-  public Boolean getDecisionManagerVerboseEnabled() {
+  public Boolean isDecisionManagerVerboseEnabled() {
     return decisionManagerVerboseEnabled;
   }
 
@@ -96,7 +97,7 @@ public class SAConfigService {
    * @return decisionManagerEnabled
   **/
   @ApiModelProperty(value = "Toggles whether Decision Manager is enabled or not for Secure Acceptance transactions. Requires the transacting MID to be enabled and configured for Decicion Manager.")
-  public Boolean getDecisionManagerEnabled() {
+  public Boolean isDecisionManagerEnabled() {
     return decisionManagerEnabled;
   }
 
@@ -114,7 +115,7 @@ public class SAConfigService {
    * @return tokenizationEnabled
   **/
   @ApiModelProperty(value = "Toggles whether Tokenization is enabled or not for Secure Acceptance transactions. Requires the transacting MID to be enabled and configured for Tokenization.")
-  public Boolean getTokenizationEnabled() {
+  public Boolean isTokenizationEnabled() {
     return tokenizationEnabled;
   }
 
@@ -132,7 +133,7 @@ public class SAConfigService {
    * @return reverseAuthOnAddressVerificationSystemFailure
   **/
   @ApiModelProperty(value = "Toggles whether or not an approved Authorization that fails AVS should be automatically reversed.")
-  public Boolean getReverseAuthOnAddressVerificationSystemFailure() {
+  public Boolean isReverseAuthOnAddressVerificationSystemFailure() {
     return reverseAuthOnAddressVerificationSystemFailure;
   }
 
@@ -150,7 +151,7 @@ public class SAConfigService {
    * @return deviceFingerprintEnabled
   **/
   @ApiModelProperty(value = "Toggles whether or not fraud Device Fingerprinting is enabled on the Hosted Checkout. This simplifies enablement for Decision Manager.")
-  public Boolean getDeviceFingerprintEnabled() {
+  public Boolean isDeviceFingerprintEnabled() {
     return deviceFingerprintEnabled;
   }
 
@@ -168,7 +169,7 @@ public class SAConfigService {
    * @return reverseAuthOnCardVerificationNumberFailure
   **/
   @ApiModelProperty(value = "Toggles whether or not an approved Authorization that fails CVN check that should be automatically reversed.")
-  public Boolean getReverseAuthOnCardVerificationNumberFailure() {
+  public Boolean isReverseAuthOnCardVerificationNumberFailure() {
     return reverseAuthOnCardVerificationNumberFailure;
   }
 
@@ -227,6 +228,6 @@ public class SAConfigService {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

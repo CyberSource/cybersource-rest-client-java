@@ -61,7 +61,7 @@ No authorization required
 
 <a name="getCustomerPaymentInstrument"></a>
 # **getCustomerPaymentInstrument**
-> Tmsv2customersEmbeddedDefaultPaymentInstrument getCustomerPaymentInstrument(customerId, paymentInstrumentId, profileId)
+> PostCustomerPaymentInstrumentRequest getCustomerPaymentInstrument(customerId, paymentInstrumentId, profileId)
 
 Retrieve a Customer Payment Instrument
 
@@ -79,7 +79,7 @@ String customerId = "customerId_example"; // String | The Id of a Customer.
 String paymentInstrumentId = "paymentInstrumentId_example"; // String | The Id of a payment instrument.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    Tmsv2customersEmbeddedDefaultPaymentInstrument result = apiInstance.getCustomerPaymentInstrument(customerId, paymentInstrumentId, profileId);
+    PostCustomerPaymentInstrumentRequest result = apiInstance.getCustomerPaymentInstrument(customerId, paymentInstrumentId, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomerPaymentInstrumentApi#getCustomerPaymentInstrument");
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrument**](Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
+[**PostCustomerPaymentInstrumentRequest**](PostCustomerPaymentInstrumentRequest.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ No authorization required
 
 <a name="patchCustomersPaymentInstrument"></a>
 # **patchCustomersPaymentInstrument**
-> Tmsv2customersEmbeddedDefaultPaymentInstrument patchCustomersPaymentInstrument(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch)
+> PatchCustomerPaymentInstrumentRequest patchCustomersPaymentInstrument(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch)
 
 Update a Customer Payment Instrument
 
@@ -181,7 +181,7 @@ PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest = ne
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 String ifMatch = "ifMatch_example"; // String | Contains an ETag value from a GET request to make the request conditional.
 try {
-    Tmsv2customersEmbeddedDefaultPaymentInstrument result = apiInstance.patchCustomersPaymentInstrument(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch);
+    PatchCustomerPaymentInstrumentRequest result = apiInstance.patchCustomersPaymentInstrument(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomerPaymentInstrumentApi#patchCustomersPaymentInstrument");
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrument**](Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
+[**PatchCustomerPaymentInstrumentRequest**](PatchCustomerPaymentInstrumentRequest.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ No authorization required
 
 <a name="postCustomerPaymentInstrument"></a>
 # **postCustomerPaymentInstrument**
-> Tmsv2customersEmbeddedDefaultPaymentInstrument postCustomerPaymentInstrument(customerId, postCustomerPaymentInstrumentRequest, profileId)
+> PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrument(customerId, postCustomerPaymentInstrumentRequest, profileId)
 
 Create a Customer Payment Instrument
 
@@ -232,7 +232,7 @@ String customerId = "customerId_example"; // String | The Id of a Customer.
 PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest = new PostCustomerPaymentInstrumentRequest(); // PostCustomerPaymentInstrumentRequest | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    Tmsv2customersEmbeddedDefaultPaymentInstrument result = apiInstance.postCustomerPaymentInstrument(customerId, postCustomerPaymentInstrumentRequest, profileId);
+    PostCustomerPaymentInstrumentRequest result = apiInstance.postCustomerPaymentInstrument(customerId, postCustomerPaymentInstrumentRequest, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomerPaymentInstrumentApi#postCustomerPaymentInstrument");
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrument**](Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
+[**PostCustomerPaymentInstrumentRequest**](PostCustomerPaymentInstrumentRequest.md)
 
 ### Authorization
 

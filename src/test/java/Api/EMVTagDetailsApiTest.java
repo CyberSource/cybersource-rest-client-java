@@ -13,12 +13,12 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.Body;
 import Model.TssV2GetEmvTags200Response;
 import Model.TssV2PostEmvTags200Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,12 +26,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for EMVTagDetailsApi
+ * API tests for EmvTagDetailsApi
  */
 @Ignore
-public class EMVTagDetailsApiTest {
+public class EmvTagDetailsApiTest {
 
-    private final EMVTagDetailsApi api = new EMVTagDetailsApi();
+    private final EmvTagDetailsApi api = new EmvTagDetailsApi();
 
     
     /**
@@ -39,11 +39,11 @@ public class EMVTagDetailsApiTest {
      *
      * Returns the entire EMV tag dictionary
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getEmvTagsTest() throws ApiException {
+    public void getEmvTagsTest() throws Exception {
         TssV2GetEmvTags200Response response = api.getEmvTags();
 
         // TODO: test validations
@@ -54,11 +54,11 @@ public class EMVTagDetailsApiTest {
      *
      * Pass an EMV Tag-Length-Value (TLV) string for parsing.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void parseEmvTagsTest() throws ApiException {
+    public void parseEmvTagsTest() throws Exception {
         Body body = null;
         TssV2PostEmvTags200Response response = api.parseEmvTags(body);
 

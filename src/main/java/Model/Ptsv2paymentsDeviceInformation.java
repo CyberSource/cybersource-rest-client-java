@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsDeviceInformationRawData;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -170,7 +171,7 @@ public class Ptsv2paymentsDeviceInformation {
    * @return useRawFingerprintSessionId
   **/
   @ApiModelProperty(value = "Boolean that indicates whether request contains the device fingerprint information. Values: - `true`: Use raw fingerprintSessionId when looking up device details. - `false` (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection. ")
-  public Boolean getUseRawFingerprintSessionId() {
+  public Boolean isUseRawFingerprintSessionId() {
     return useRawFingerprintSessionId;
   }
 
@@ -322,7 +323,7 @@ public class Ptsv2paymentsDeviceInformation {
    * @return httpBrowserJavaEnabled
   **/
   @ApiModelProperty(value = "A Boolean value that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property. Possible Values:True/False ")
-  public Boolean getHttpBrowserJavaEnabled() {
+  public Boolean isHttpBrowserJavaEnabled() {
     return httpBrowserJavaEnabled;
   }
 
@@ -340,7 +341,7 @@ public class Ptsv2paymentsDeviceInformation {
    * @return httpBrowserJavaScriptEnabled
   **/
   @ApiModelProperty(value = "A Boolean value that represents the ability of the cardholder browser to execute JavaScript. Possible Values:True/False. **Note**: Merchants should be able to know the values from fingerprint details of cardholder's browser. ")
-  public Boolean getHttpBrowserJavaScriptEnabled() {
+  public Boolean isHttpBrowserJavaScriptEnabled() {
     return httpBrowserJavaScriptEnabled;
   }
 
@@ -513,6 +514,6 @@ public class Ptsv2paymentsDeviceInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

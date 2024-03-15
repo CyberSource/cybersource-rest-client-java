@@ -58,7 +58,7 @@ No authorization required
 
 <a name="getPaymentInstrument"></a>
 # **getPaymentInstrument**
-> Tmsv2customersEmbeddedDefaultPaymentInstrument getPaymentInstrument(paymentInstrumentId, profileId)
+> PostPaymentInstrumentRequest getPaymentInstrument(paymentInstrumentId, profileId)
 
 Retrieve a Payment Instrument
 
@@ -75,7 +75,7 @@ PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
 String paymentInstrumentId = "paymentInstrumentId_example"; // String | The Id of a payment instrument.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    Tmsv2customersEmbeddedDefaultPaymentInstrument result = apiInstance.getPaymentInstrument(paymentInstrumentId, profileId);
+    PostPaymentInstrumentRequest result = apiInstance.getPaymentInstrument(paymentInstrumentId, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#getPaymentInstrument");
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrument**](Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
+[**PostPaymentInstrumentRequest**](PostPaymentInstrumentRequest.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ No authorization required
 
 <a name="patchPaymentInstrument"></a>
 # **patchPaymentInstrument**
-> Tmsv2customersEmbeddedDefaultPaymentInstrument patchPaymentInstrument(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch)
+> PatchPaymentInstrumentRequest patchPaymentInstrument(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch)
 
 Update a Payment Instrument
 
@@ -124,7 +124,7 @@ PatchPaymentInstrumentRequest patchPaymentInstrumentRequest = new PatchPaymentIn
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 String ifMatch = "ifMatch_example"; // String | Contains an ETag value from a GET request to make the request conditional.
 try {
-    Tmsv2customersEmbeddedDefaultPaymentInstrument result = apiInstance.patchPaymentInstrument(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch);
+    PatchPaymentInstrumentRequest result = apiInstance.patchPaymentInstrument(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#patchPaymentInstrument");
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrument**](Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
+[**PatchPaymentInstrumentRequest**](PatchPaymentInstrumentRequest.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ No authorization required
 
 <a name="postPaymentInstrument"></a>
 # **postPaymentInstrument**
-> Tmsv2customersEmbeddedDefaultPaymentInstrument postPaymentInstrument(postPaymentInstrumentRequest, profileId)
+> PostPaymentInstrumentRequest postPaymentInstrument(postPaymentInstrumentRequest, profileId)
 
 Create a Payment Instrument
 
@@ -173,7 +173,7 @@ PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
 PostPaymentInstrumentRequest postPaymentInstrumentRequest = new PostPaymentInstrumentRequest(); // PostPaymentInstrumentRequest | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    Tmsv2customersEmbeddedDefaultPaymentInstrument result = apiInstance.postPaymentInstrument(postPaymentInstrumentRequest, profileId);
+    PostPaymentInstrumentRequest result = apiInstance.postPaymentInstrument(postPaymentInstrumentRequest, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#postPaymentInstrument");
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultPaymentInstrument**](Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
+[**PostPaymentInstrumentRequest**](PostPaymentInstrumentRequest.md)
 
 ### Authorization
 

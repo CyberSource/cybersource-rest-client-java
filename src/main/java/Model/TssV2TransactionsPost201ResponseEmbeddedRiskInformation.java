@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.TssV2TransactionsPost201ResponseEmbeddedRiskInformationProviders;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -89,6 +90,6 @@ public class TssV2TransactionsPost201ResponseEmbeddedRiskInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

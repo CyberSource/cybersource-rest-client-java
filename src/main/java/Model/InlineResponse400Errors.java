@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse400Details;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -58,19 +59,6 @@ public class InlineResponse400Errors {
     return message;
   }
 
-  public InlineResponse400Errors details(List<InlineResponse400Details> details) {
-    this.details = details;
-    return this;
-  }
-
-  public InlineResponse400Errors addDetailsItem(InlineResponse400Details detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<InlineResponse400Details>();
-    }
-    this.details.add(detailsItem);
-    return this;
-  }
-
    /**
    * Get details
    * @return details
@@ -78,10 +66,6 @@ public class InlineResponse400Errors {
   @ApiModelProperty(value = "")
   public List<InlineResponse400Details> getDetails() {
     return details;
-  }
-
-  public void setDetails(List<InlineResponse400Details> details) {
-    this.details = details;
   }
 
 
@@ -127,6 +111,6 @@ public class InlineResponse400Errors {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

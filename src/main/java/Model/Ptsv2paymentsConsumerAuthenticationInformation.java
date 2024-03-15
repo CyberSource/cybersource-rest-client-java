@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -696,7 +697,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
    * @return defaultCard
   **/
   @ApiModelProperty(value = "Indicates that the card being used is the one designated as the primary payment card for purchase. Recommended for Discover ProtectBuy. ")
-  public Boolean getDefaultCard() {
+  public Boolean isDefaultCard() {
     return defaultCard;
   }
 
@@ -768,7 +769,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
    * @return marketingOptIn
   **/
   @ApiModelProperty(value = "Indicates whether the customer has opted in for marketing offers. Recommended for Discover ProtectBuy. ")
-  public Boolean getMarketingOptIn() {
+  public Boolean isMarketingOptIn() {
     return marketingOptIn;
   }
 
@@ -1377,6 +1378,6 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

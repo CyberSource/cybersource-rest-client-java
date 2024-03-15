@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.CardProcessingConfigCommonAcquirer;
 import Model.CardProcessingConfigCommonCurrencies1;
 import Model.CardProcessingConfigCommonPaymentTypes;
@@ -176,7 +177,6 @@ public class CardProcessingConfigCommonProcessors {
       }
     }
   }
-
   @SerializedName("industryCode")
   private IndustryCodeEnum industryCode = null;
 
@@ -437,7 +437,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return allowMultipleBills
   **/
   @ApiModelProperty(value = "Allows multiple captures for a single authorization transaction. Applicable for Paymentech Tampa (paymentechtampa), VPC, American Express Direct (amexdirect) and GPX (gpx) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, hybrid</td><td>Yes</td><td>No</td></tr> <tr><td>American Express Direct</td><td>cnp</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean getAllowMultipleBills() {
+  public Boolean isAllowMultipleBills() {
     return allowMultipleBills;
   }
 
@@ -455,7 +455,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return allowMerchantDescriptorOverride
   **/
   @ApiModelProperty(value = "Enables partner to enable/disable merchant descriptors values. Applicable for VPC, EFTPOS and CUP processors.")
-  public Boolean getAllowMerchantDescriptorOverride() {
+  public Boolean isAllowMerchantDescriptorOverride() {
     return allowMerchantDescriptorOverride;
   }
 
@@ -491,7 +491,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return fireSafetyIndicator
   **/
   @ApiModelProperty(value = "Indicates whether the merchant is compliant with Hotel and Motel Fire Safety Act of 1990. Applicable for GPX (gpx) and VPC processors.")
-  public Boolean getFireSafetyIndicator() {
+  public Boolean isFireSafetyIndicator() {
     return fireSafetyIndicator;
   }
 
@@ -509,7 +509,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return quasiCash
   **/
   @ApiModelProperty(value = "To enable quasi-cash transactions. A quasi-cash transaction is a cash-like transaction for the sale of items that are directly convertible to cash, such as:- Casino gaming chips, Money orders, Wire transfers.  Applicable for GPX (gpx), TSYS (tsys), Barclays (barclays2) and VPC processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays</td><td>cnp, cp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean getQuasiCash() {
+  public Boolean isQuasiCash() {
     return quasiCash;
   }
 
@@ -563,7 +563,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableLongTransRefNo
   **/
   @ApiModelProperty(value = "Amex Direct specific merchant config value which determines what length (either 9 or Unique 12-char reference number) of reference number will be CYBS generated if the merchant does not pass in a trans_ref_no. Can be any combination of alpha, numeric and special characters, and/or binary data in hexadecimal.  Applicable for American Express Direct (amexdirect) processor.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, cnp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean getEnableLongTransRefNo() {
+  public Boolean isEnableLongTransRefNo() {
     return enableLongTransRefNo;
   }
 
@@ -581,7 +581,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableLevel2
   **/
   @ApiModelProperty(value = "Field that indicates whether merchant will send level 2 data for Amex cards. Applicable for American Express Direct (amexdirect) processor.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, cnp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean getEnableLevel2() {
+  public Boolean isEnableLevel2() {
     return enableLevel2;
   }
 
@@ -599,7 +599,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableMultipleTransactionAdviceAddendum
   **/
   @ApiModelProperty(value = "This flag related to multiple transaction advice addendum field. It is used to display descriptive information about a transaction on customer's American Express card statement. Applicable for American Express Direct (amexdirect) processor.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, cnp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean getEnableMultipleTransactionAdviceAddendum() {
+  public Boolean isEnableMultipleTransactionAdviceAddendum() {
     return enableMultipleTransactionAdviceAddendum;
   }
 
@@ -635,7 +635,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableMultiLineItems
   **/
   @ApiModelProperty(value = "This flag is related to offer/line item details to be included instead of sending one line item, and a grand total. Example, offer0, offer 1...offer n. Applicable for American Express Direct (amexdirect) and Elavon Americas (elavonamericas) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, cnp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean getEnableMultiLineItems() {
+  public Boolean isEnableMultiLineItems() {
     return enableMultiLineItems;
   }
 
@@ -653,7 +653,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableTransactionReferenceNumber
   **/
   @ApiModelProperty(value = "To enable merchant to send in transaction reference number (unique reconciliation ID). Applicable for VPC, Vero (vero), FDI Global (fdiglobal), Six (six), CB2A, CUP, VPC, Chase Paymentech Salem (chasepaymentechsalem), Fiserv (fiserv), Elavon Americas (elavonamericas) and EFTPOS processors.")
-  public Boolean getEnableTransactionReferenceNumber() {
+  public Boolean isEnableTransactionReferenceNumber() {
     return enableTransactionReferenceNumber;
   }
 
@@ -671,7 +671,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableAutoAuthReversalAfterVoid
   **/
   @ApiModelProperty(value = "Enables to meet the Visa mandate requirements to reverse unused authorizations, benefitting the customer by releasing the hold on unused credit card funds. Applicable for CB2A, Elavon Americas (elavonamericas), Six (six), VPC and American Express Direct (amexdirect) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, cnp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean getEnableAutoAuthReversalAfterVoid() {
+  public Boolean isEnableAutoAuthReversalAfterVoid() {
     return enableAutoAuthReversalAfterVoid;
   }
 
@@ -689,7 +689,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableExpresspayPanTranslation
   **/
   @ApiModelProperty(value = "When this is enabled, authorization responses from American Express expresspay transactions include the Primary Account Number (PAN) and expiration date of the card. Applicable for American Express Direct (amexdirect) processor.")
-  public Boolean getEnableExpresspayPanTranslation() {
+  public Boolean isEnableExpresspayPanTranslation() {
     return enableExpresspayPanTranslation;
   }
 
@@ -707,7 +707,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableCreditAuth
   **/
   @ApiModelProperty(value = "Authorizes a credit. Reduces refund chargebacks and prevents customers from seeing the online update for credits which are otherwise offline settlements.")
-  public Boolean getEnableCreditAuth() {
+  public Boolean isEnableCreditAuth() {
     return enableCreditAuth;
   }
 
@@ -743,7 +743,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return sendAmexLevel2Data
   **/
   @ApiModelProperty(value = "Field that indicates whether merchant will send level 2 data for Amex cards. Applicable for TSYS (tsys) processor.")
-  public Boolean getSendAmexLevel2Data() {
+  public Boolean isSendAmexLevel2Data() {
     return sendAmexLevel2Data;
   }
 
@@ -941,7 +941,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableLeastCostRouting
   **/
   @ApiModelProperty(value = "Indicates whether Least Cost Routing is enabled. Applicable for EFTPOS and CUP processors.")
-  public Boolean getEnableLeastCostRouting() {
+  public Boolean isEnableLeastCostRouting() {
     return enableLeastCostRouting;
   }
 
@@ -959,7 +959,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableCVVResponseIndicator
   **/
   @ApiModelProperty(value = "This field denotes EFTPOS Merchant's choice of receiving CVV Processing Response in return. Applicable for EFTPOS processors.")
-  public Boolean getEnableCVVResponseIndicator() {
+  public Boolean isEnableCVVResponseIndicator() {
     return enableCVVResponseIndicator;
   }
 
@@ -995,7 +995,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enablePosNetworkSwitching
   **/
   @ApiModelProperty(value = "'POS Network Switching' or 'Alternate Routing' means merchant can process PIN Debit transactions without a PIN. Set the value to 'Yes' if it is supported. Applicable for FDI Global (fdiglobal) processor.")
-  public Boolean getEnablePosNetworkSwitching() {
+  public Boolean isEnablePosNetworkSwitching() {
     return enablePosNetworkSwitching;
   }
 
@@ -1013,7 +1013,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableDynamicCurrencyConversion
   **/
   @ApiModelProperty(value = "Enable dynamic currency conversion for a merchant.")
-  public Boolean getEnableDynamicCurrencyConversion() {
+  public Boolean isEnableDynamicCurrencyConversion() {
     return enableDynamicCurrencyConversion;
   }
 
@@ -1164,6 +1164,6 @@ public class CardProcessingConfigCommonProcessors {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

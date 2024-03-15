@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse500Errors;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -34,19 +35,6 @@ public class InlineResponse500 {
   @SerializedName("errors")
   private List<InlineResponse500Errors> errors = null;
 
-  public InlineResponse500 errors(List<InlineResponse500Errors> errors) {
-    this.errors = errors;
-    return this;
-  }
-
-  public InlineResponse500 addErrorsItem(InlineResponse500Errors errorsItem) {
-    if (this.errors == null) {
-      this.errors = new ArrayList<InlineResponse500Errors>();
-    }
-    this.errors.add(errorsItem);
-    return this;
-  }
-
    /**
    * Get errors
    * @return errors
@@ -54,10 +42,6 @@ public class InlineResponse500 {
   @ApiModelProperty(value = "")
   public List<InlineResponse500Errors> getErrors() {
     return errors;
-  }
-
-  public void setErrors(List<InlineResponse500Errors> errors) {
-    this.errors = errors;
   }
 
 
@@ -99,6 +83,6 @@ public class InlineResponse500 {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

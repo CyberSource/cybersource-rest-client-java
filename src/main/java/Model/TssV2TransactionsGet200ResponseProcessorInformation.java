@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAvs;
 import Model.Riskv1decisionsProcessorInformationCardVerification;
@@ -426,6 +427,6 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

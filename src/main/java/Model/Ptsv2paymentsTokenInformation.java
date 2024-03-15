@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsTokenInformationPaymentInstrument;
 import Model.Ptsv2paymentsTokenInformationShippingAddress;
 import com.google.gson.TypeAdapter;
@@ -182,6 +183,6 @@ public class Ptsv2paymentsTokenInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

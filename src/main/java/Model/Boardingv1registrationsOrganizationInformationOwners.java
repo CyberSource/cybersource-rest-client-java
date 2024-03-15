@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Boardingv1registrationsOrganizationInformationBusinessInformationAddress;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -155,7 +156,7 @@ public class Boardingv1registrationsOrganizationInformationOwners {
    * @return isPrimary
   **/
   @ApiModelProperty(example = "true", required = true, value = "Determines whether the owner is the Primary owner of the organization")
-  public Boolean getIsPrimary() {
+  public Boolean isIsPrimary() {
     return isPrimary;
   }
 
@@ -245,7 +246,7 @@ public class Boardingv1registrationsOrganizationInformationOwners {
    * @return hasSignificantResponsability
   **/
   @ApiModelProperty(example = "true", required = true, value = "Determines whether owner has significant responsibility to control, manage or direct the company")
-  public Boolean getHasSignificantResponsability() {
+  public Boolean isHasSignificantResponsability() {
     return hasSignificantResponsability;
   }
 
@@ -316,7 +317,7 @@ public class Boardingv1registrationsOrganizationInformationOwners {
    * Get address
    * @return address
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Boardingv1registrationsOrganizationInformationBusinessInformationAddress getAddress() {
     return address;
   }
@@ -390,6 +391,6 @@ public class Boardingv1registrationsOrganizationInformationOwners {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

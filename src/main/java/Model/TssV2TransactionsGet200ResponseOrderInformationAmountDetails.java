@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2payoutsOrderInformationAmountDetailsSurcharge;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -227,6 +228,6 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

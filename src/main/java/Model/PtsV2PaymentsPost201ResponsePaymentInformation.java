@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponsePaymentAccountInformationCard;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationBank;
@@ -372,6 +373,6 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

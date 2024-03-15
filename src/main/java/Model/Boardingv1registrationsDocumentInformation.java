@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Boardingv1registrationsDocumentInformationSignedDocuments;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -99,6 +100,6 @@ public class Boardingv1registrationsDocumentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse2012KeyInformationErrorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -320,6 +321,6 @@ public class InlineResponse2012KeyInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

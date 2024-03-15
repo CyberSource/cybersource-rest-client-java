@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -149,7 +150,7 @@ public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
    * @return applied
   **/
   @ApiModelProperty(value = "Flag that indicates whether the alternate tax amount (`orderInformation.amountDetails.taxDetails[].amount`) is included in the request.  Possible values: - `false`: alternate tax amount is not included in the request. - `true`: alternate tax amount is included in the request.  For processor-specific details, see `alternate_tax_amount_indicator` field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/) ")
-  public Boolean getApplied() {
+  public Boolean isApplied() {
     return applied;
   }
 
@@ -226,6 +227,6 @@ public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

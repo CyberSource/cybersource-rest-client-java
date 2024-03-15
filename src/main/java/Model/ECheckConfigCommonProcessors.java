@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,6 +41,9 @@ public class ECheckConfigCommonProcessors {
 
   @SerializedName("enableAccuityForAvs")
   private Boolean enableAccuityForAvs = true;
+
+  @SerializedName("accuityCheckType")
+  private Object accuityCheckType = null;
 
   @SerializedName("setCompletedState")
   private Boolean setCompletedState = false;
@@ -108,12 +112,30 @@ public class ECheckConfigCommonProcessors {
    * @return enableAccuityForAvs
   **/
   @ApiModelProperty(value = "*NEW* Accuity is the original validation service that checks the account/routing number for formatting issues. Used by WF and set to \"Yes\" unless told otherwise")
-  public Boolean getEnableAccuityForAvs() {
+  public Boolean isEnableAccuityForAvs() {
     return enableAccuityForAvs;
   }
 
   public void setEnableAccuityForAvs(Boolean enableAccuityForAvs) {
     this.enableAccuityForAvs = enableAccuityForAvs;
+  }
+
+  public ECheckConfigCommonProcessors accuityCheckType(Object accuityCheckType) {
+    this.accuityCheckType = accuityCheckType;
+    return this;
+  }
+
+   /**
+   * *NEW*
+   * @return accuityCheckType
+  **/
+  @ApiModelProperty(value = "*NEW*")
+  public Object getAccuityCheckType() {
+    return accuityCheckType;
+  }
+
+  public void setAccuityCheckType(Object accuityCheckType) {
+    this.accuityCheckType = accuityCheckType;
   }
 
   public ECheckConfigCommonProcessors setCompletedState(Boolean setCompletedState) {
@@ -126,7 +148,7 @@ public class ECheckConfigCommonProcessors {
    * @return setCompletedState
   **/
   @ApiModelProperty(value = "*Moved* When set to Yes we will automatically update transactions to a completed status X-number of days after the transaction comes through; if no failure notification is received. When set to No means we will not update transaction status in this manner. For BAMS/Bank of America merchants, they should be set to No unless we are explicitly asked to set a merchant to YES.")
-  public Boolean getSetCompletedState() {
+  public Boolean isSetCompletedState() {
     return setCompletedState;
   }
 
@@ -148,12 +170,13 @@ public class ECheckConfigCommonProcessors {
         Objects.equals(this.companyId, echeckConfigCommonProcessors.companyId) &&
         Objects.equals(this.batchGroup, echeckConfigCommonProcessors.batchGroup) &&
         Objects.equals(this.enableAccuityForAvs, echeckConfigCommonProcessors.enableAccuityForAvs) &&
+        Objects.equals(this.accuityCheckType, echeckConfigCommonProcessors.accuityCheckType) &&
         Objects.equals(this.setCompletedState, echeckConfigCommonProcessors.setCompletedState);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(companyEntryDescription, companyId, batchGroup, enableAccuityForAvs, setCompletedState);
+    return Objects.hash(companyEntryDescription, companyId, batchGroup, enableAccuityForAvs, accuityCheckType, setCompletedState);
   }
 
 
@@ -166,6 +189,7 @@ public class ECheckConfigCommonProcessors {
     sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
     sb.append("    batchGroup: ").append(toIndentedString(batchGroup)).append("\n");
     sb.append("    enableAccuityForAvs: ").append(toIndentedString(enableAccuityForAvs)).append("\n");
+    sb.append("    accuityCheckType: ").append(toIndentedString(accuityCheckType)).append("\n");
     sb.append("    setCompletedState: ").append(toIndentedString(setCompletedState)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -181,6 +205,6 @@ public class ECheckConfigCommonProcessors {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

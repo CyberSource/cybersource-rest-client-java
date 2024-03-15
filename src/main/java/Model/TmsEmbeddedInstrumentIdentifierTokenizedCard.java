@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.TmsEmbeddedInstrumentIdentifierTokenizedCardCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -215,6 +216,6 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ECheckConfigCommon;
 import Model.ECheckConfigFeatures;
 import Model.ECheckConfigUnderwriting;
@@ -137,6 +138,6 @@ public class ECheckConfig {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

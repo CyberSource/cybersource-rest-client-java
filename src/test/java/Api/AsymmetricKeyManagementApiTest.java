@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.CreateP12KeysRequest;
 import Model.DeleteBulkP12KeysRequest;
 import Model.InlineResponse4005;
@@ -26,6 +25,7 @@ import Model.KmsV2KeysAsymPost201Response;
 import Model.UpdateAsymKeysRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,11 +46,11 @@ public class AsymmetricKeyManagementApiTest {
      *
      * &#39;Create one or more PKCS12 keys&#39; 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createP12KeysTest() throws ApiException {
+    public void createP12KeysTest() throws Exception {
         CreateP12KeysRequest createP12KeysRequest = null;
         KmsV2KeysAsymPost201Response response = api.createP12Keys(createP12KeysRequest);
 
@@ -62,11 +62,11 @@ public class AsymmetricKeyManagementApiTest {
      *
      * &#39;Delete one or more PKCS12 keys&#39; 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void deleteBulkP12KeysTest() throws ApiException {
+    public void deleteBulkP12KeysTest() throws Exception {
         DeleteBulkP12KeysRequest deleteBulkP12KeysRequest = null;
         KmsV2KeysAsymDeletesPost200Response response = api.deleteBulkP12Keys(deleteBulkP12KeysRequest);
 
@@ -78,11 +78,11 @@ public class AsymmetricKeyManagementApiTest {
      *
      * Retrieves keys details by providing the key id.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getP12KeyDetailsTest() throws ApiException {
+    public void getP12KeyDetailsTest() throws Exception {
         String keyId = null;
         KmsV2KeysAsymGet200Response response = api.getP12KeyDetails(keyId);
 
@@ -94,11 +94,11 @@ public class AsymmetricKeyManagementApiTest {
      *
      * Activate or De-activate Asymmetric Key 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void updateAsymKeyTest() throws ApiException {
+    public void updateAsymKeyTest() throws Exception {
         String keyId = null;
         UpdateAsymKeysRequest updateAsymKeysRequest = null;
         Object response = api.updateAsymKey(keyId, updateAsymKeysRequest);

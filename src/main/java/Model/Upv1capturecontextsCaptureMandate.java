@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -76,7 +77,7 @@ public class Upv1capturecontextsCaptureMandate {
    * @return requestEmail
   **/
   @ApiModelProperty(value = "Capture email contact information in the manual card acceptance screens.")
-  public Boolean getRequestEmail() {
+  public Boolean isRequestEmail() {
     return requestEmail;
   }
 
@@ -94,7 +95,7 @@ public class Upv1capturecontextsCaptureMandate {
    * @return requestPhone
   **/
   @ApiModelProperty(value = "Capture email contact information in the manual card acceptance screens.")
-  public Boolean getRequestPhone() {
+  public Boolean isRequestPhone() {
     return requestPhone;
   }
 
@@ -112,7 +113,7 @@ public class Upv1capturecontextsCaptureMandate {
    * @return requestShipping
   **/
   @ApiModelProperty(value = "Capture email contact information in the manual card acceptance screens.")
-  public Boolean getRequestShipping() {
+  public Boolean isRequestShipping() {
     return requestShipping;
   }
 
@@ -156,7 +157,7 @@ public class Upv1capturecontextsCaptureMandate {
    * @return showAcceptedNetworkIcons
   **/
   @ApiModelProperty(value = "Show the list of accepted payment icons in the payment button")
-  public Boolean getShowAcceptedNetworkIcons() {
+  public Boolean isShowAcceptedNetworkIcons() {
     return showAcceptedNetworkIcons;
   }
 
@@ -213,6 +214,6 @@ public class Upv1capturecontextsCaptureMandate {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

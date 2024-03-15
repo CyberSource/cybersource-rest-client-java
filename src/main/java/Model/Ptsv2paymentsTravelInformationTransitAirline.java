@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation;
 import Model.Ptsv2paymentsTravelInformationTransitAirlineLegs;
 import Model.Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer;
@@ -589,7 +590,7 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
    * @return electronicTicketIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates whether an electronic ticket was issued. Possible values: - `true` - `false` Optional request field. ")
-  public Boolean getElectronicTicketIndicator() {
+  public Boolean isElectronicTicketIndicator() {
     return electronicTicketIndicator;
   }
 
@@ -952,6 +953,6 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

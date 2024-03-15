@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PushFunds201ResponseClientReferenceInformation;
 import Model.PushFunds201ResponseErrorInformation;
 import Model.PushFunds201ResponseLinks;
@@ -325,6 +326,6 @@ public class PushFunds201Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -13,12 +13,12 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.PtsV2PaymentsRefundPost400Response;
 import Model.SearchRequest;
 import Model.UmsV1UsersGet200Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,11 +39,11 @@ public class UserManagementSearchApiTest {
      *
      * This endpoint is to get all the user information depending on the filter criteria passed in request body.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void searchUsersTest() throws ApiException {
+    public void searchUsersTest() throws Exception {
         SearchRequest searchRequest = null;
         UmsV1UsersGet200Response response = api.searchUsers(searchRequest);
 

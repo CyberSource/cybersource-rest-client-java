@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RiskV1AddressVerificationsPost201Response;
 import Model.RiskV1DecisionsPost400Response1;
@@ -22,6 +21,7 @@ import Model.ValidateExportComplianceRequest;
 import Model.VerifyCustomerAddressRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,11 +42,11 @@ public class VerificationApiTest {
      *
      * This call checks customer data against specified watch lists to ensure export compliance. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void validateExportComplianceTest() throws ApiException {
+    public void validateExportComplianceTest() throws Exception {
         ValidateExportComplianceRequest validateExportComplianceRequest = null;
         RiskV1ExportComplianceInquiriesPost201Response response = api.validateExportCompliance(validateExportComplianceRequest);
 
@@ -58,11 +58,11 @@ public class VerificationApiTest {
      *
      * This call verifies that the customer address submitted is valid.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void verifyCustomerAddressTest() throws ApiException {
+    public void verifyCustomerAddressTest() throws Exception {
         VerifyCustomerAddressRequest verifyCustomerAddressRequest = null;
         RiskV1AddressVerificationsPost201Response response = api.verifyCustomerAddress(verifyCustomerAddressRequest);
 

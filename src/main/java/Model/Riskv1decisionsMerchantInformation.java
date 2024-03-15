@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1decisionsMerchantInformationMerchantDescriptor;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -112,6 +113,6 @@ public class Riskv1decisionsMerchantInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

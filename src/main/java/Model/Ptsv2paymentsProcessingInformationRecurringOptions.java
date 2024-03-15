@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,7 +45,7 @@ public class Ptsv2paymentsProcessingInformationRecurringOptions {
    * @return loanPayment
   **/
   @ApiModelProperty(value = "Flag that indicates whether this is a payment towards an existing contractual loan.  Possible values: - `true`: Loan payment - `false`: (default) Not a loan payment  For processor-specific details, see `debt_indicator` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
-  public Boolean getLoanPayment() {
+  public Boolean isLoanPayment() {
     return loanPayment;
   }
 
@@ -62,7 +63,7 @@ public class Ptsv2paymentsProcessingInformationRecurringOptions {
    * @return firstRecurringPayment
   **/
   @ApiModelProperty(value = "Flag that indicates whether this transaction is the first in a series of recurring payments.  This field is supported only for **Atos**, **FDC Nashville Global**, and **OmniPay Direct**.  Possible values:  - `true` Indicates this is the first payment in a series of recurring payments  - `false` (default) Indicates this is not the first payment in a series of recurring payments.  For details, see `auth_first_recurring_payment` field description and \"Recurring Payments\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
-  public Boolean getFirstRecurringPayment() {
+  public Boolean isFirstRecurringPayment() {
     return firstRecurringPayment;
   }
 
@@ -111,6 +112,6 @@ public class Ptsv2paymentsProcessingInformationRecurringOptions {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

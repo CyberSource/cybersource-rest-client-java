@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,7 +42,7 @@ public class Ptsv2paymentsidProcessingInformationAuthorizationOptionsInitiator {
    * @return storedCredentialUsed
   **/
   @ApiModelProperty(value = "Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **true** means the merchant-initiated transaction came from a card that was already stored on file. - **false**  means the merchant-initiated transaction came from a card that was not stored on file. ")
-  public Boolean getStoredCredentialUsed() {
+  public Boolean isStoredCredentialUsed() {
     return storedCredentialUsed;
   }
 
@@ -88,6 +89,6 @@ public class Ptsv2paymentsidProcessingInformationAuthorizationOptionsInitiator {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

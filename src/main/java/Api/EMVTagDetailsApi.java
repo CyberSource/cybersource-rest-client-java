@@ -42,16 +42,16 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
 
-public class EMVTagDetailsApi {
-    private static Logger logger = LogManager.getLogger(EMVTagDetailsApi.class);
+public class EmvTagDetailsApi {
+    private static Logger logger = LogManager.getLogger(EmvTagDetailsApi.class);
     
     private ApiClient apiClient;
 
-    public EMVTagDetailsApi() {
+    public EmvTagDetailsApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public EMVTagDetailsApi(ApiClient apiClient) {
+    public EmvTagDetailsApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 

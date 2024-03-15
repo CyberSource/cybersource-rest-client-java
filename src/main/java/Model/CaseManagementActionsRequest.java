@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1decisionsidactionsDecisionInformation;
 import Model.Riskv1decisionsidactionsProcessingInformation;
 import com.google.gson.TypeAdapter;
@@ -45,7 +46,7 @@ public class CaseManagementActionsRequest {
    * Get decisionInformation
    * @return decisionInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Riskv1decisionsidactionsDecisionInformation getDecisionInformation() {
     return decisionInformation;
   }
@@ -113,6 +114,6 @@ public class CaseManagementActionsRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

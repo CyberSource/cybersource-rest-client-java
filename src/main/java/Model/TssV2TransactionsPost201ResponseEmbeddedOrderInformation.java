@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsidreversalsReversalInformationAmountDetails;
 import Model.TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo;
 import Model.TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo;
@@ -137,6 +138,6 @@ public class TssV2TransactionsPost201ResponseEmbeddedOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

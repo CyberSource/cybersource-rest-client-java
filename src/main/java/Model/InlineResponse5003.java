@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,7 +41,7 @@ public class InlineResponse5003 {
    */
   @JsonAdapter(ReasonEnum.Adapter.class)
   public enum ReasonEnum {
-    ERROR("SYSTEM_ERROR");
+    SYSTEM_ERROR("SYSTEM_ERROR");
 
     private String value;
 
@@ -79,7 +80,6 @@ public class InlineResponse5003 {
       }
     }
   }
-
   @SerializedName("reason")
   private ReasonEnum reason = null;
 
@@ -203,6 +203,6 @@ public class InlineResponse5003 {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

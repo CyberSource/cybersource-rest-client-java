@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsMerchantDefinedSecureInformation;
@@ -411,6 +412,6 @@ public class CapturePaymentRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

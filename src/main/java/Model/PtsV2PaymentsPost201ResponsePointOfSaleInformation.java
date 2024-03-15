@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -135,6 +136,6 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -18,7 +18,6 @@ import Invokers.Pair;
 import java.util.Map;
 import java.util.List;
 
-
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;

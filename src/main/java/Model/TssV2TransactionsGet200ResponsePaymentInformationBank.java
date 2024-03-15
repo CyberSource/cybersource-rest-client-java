@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationBankAccount;
 import Model.TssV2TransactionsGet200ResponsePaymentInformationBankMandate;
 import com.google.gson.TypeAdapter;
@@ -228,6 +229,6 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBank {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

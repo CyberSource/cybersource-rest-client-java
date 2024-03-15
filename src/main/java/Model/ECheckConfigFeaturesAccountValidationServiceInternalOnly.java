@@ -14,6 +14,8 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
+import Model.ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,16 +34,16 @@ import java.util.Map;
 
 public class ECheckConfigFeaturesAccountValidationServiceInternalOnly {
   @SerializedName("processors")
-  private Map<String, Object> processors = null;
+  private Map<String, ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors> processors = null;
 
-  public ECheckConfigFeaturesAccountValidationServiceInternalOnly processors(Map<String, Object> processors) {
+  public ECheckConfigFeaturesAccountValidationServiceInternalOnly processors(Map<String, ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors> processors) {
     this.processors = processors;
     return this;
   }
 
-  public ECheckConfigFeaturesAccountValidationServiceInternalOnly putProcessorsItem(String key, Object processorsItem) {
+  public ECheckConfigFeaturesAccountValidationServiceInternalOnly putProcessorsItem(String key, ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors processorsItem) {
     if (this.processors == null) {
-      this.processors = new HashMap<String, Object>();
+      this.processors = new HashMap<String, ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors>();
     }
     this.processors.put(key, processorsItem);
     return this;
@@ -52,11 +54,11 @@ public class ECheckConfigFeaturesAccountValidationServiceInternalOnly {
    * @return processors
   **/
   @ApiModelProperty(value = "*NEW* Payment Processing connection used to support eCheck, aka ACH, payment methods. Example * \"bofaach\" * \"wellsfargoach\" ")
-  public Map<String, Object> getProcessors() {
+  public Map<String, ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors> getProcessors() {
     return processors;
   }
 
-  public void setProcessors(Map<String, Object> processors) {
+  public void setProcessors(Map<String, ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors> processors) {
     this.processors = processors;
   }
 
@@ -99,6 +101,6 @@ public class ECheckConfigFeaturesAccountValidationServiceInternalOnly {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

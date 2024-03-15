@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationInfoCodes;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationIpAddress;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationProfile;
@@ -323,6 +324,6 @@ public class PtsV2PaymentsPost201ResponseRiskInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

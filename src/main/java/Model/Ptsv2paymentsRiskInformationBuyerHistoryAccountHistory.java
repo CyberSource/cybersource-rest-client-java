@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,7 +45,7 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory {
    * @return firstUseOfShippingAddress
   **/
   @ApiModelProperty(value = "Applicable when this is not a guest account. ")
-  public Boolean getFirstUseOfShippingAddress() {
+  public Boolean isFirstUseOfShippingAddress() {
     return firstUseOfShippingAddress;
   }
 
@@ -111,6 +112,6 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.CardProcessingConfigFeaturesCardPresentProcessors;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -74,7 +75,7 @@ public class CardProcessingConfigFeaturesCardPresent {
    * @return enableTerminalIdLookup
   **/
   @ApiModelProperty(value = "Used for Card Present and Virtual Terminal Transactions for Terminal ID lookup. Applicable for GPX (gpx) processor.")
-  public Boolean getEnableTerminalIdLookup() {
+  public Boolean isEnableTerminalIdLookup() {
     return enableTerminalIdLookup;
   }
 
@@ -123,6 +124,6 @@ public class CardProcessingConfigFeaturesCardPresent {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

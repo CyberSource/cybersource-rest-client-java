@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ECheckConfigCommonInternalOnlyProcessors;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -48,7 +49,7 @@ public class ECheckConfigCommonInternalOnly {
    * @return displayEcheckInfo
   **/
   @ApiModelProperty(value = "*NEW* Used by EBC UI always set to true")
-  public Boolean getDisplayEcheckInfo() {
+  public Boolean isDisplayEcheckInfo() {
     return displayEcheckInfo;
   }
 
@@ -123,6 +124,6 @@ public class ECheckConfigCommonInternalOnly {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

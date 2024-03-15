@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -83,7 +84,7 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConf
    * @return active
   **/
   @ApiModelProperty(value = "")
-  public Boolean getActive() {
+  public Boolean isActive() {
     return active;
   }
 
@@ -134,6 +135,6 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConf
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

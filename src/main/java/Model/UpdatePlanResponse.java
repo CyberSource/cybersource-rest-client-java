@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.UpdatePlanResponsePlanInformation;
 import com.google.gson.TypeAdapter;
@@ -182,6 +183,6 @@ public class UpdatePlanResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.PtsV2PaymentsPost502Response;
 import Model.PtsV2PaymentsRefundPost201Response;
 import Model.PtsV2PaymentsRefundPost400Response;
@@ -21,6 +20,7 @@ import Model.RefundCaptureRequest;
 import Model.RefundPaymentRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,11 +41,11 @@ public class RefundApiTest {
      *
      * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call. Include the capture ID in the POST request to refund the captured amount. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void refundCaptureTest() throws ApiException {
+    public void refundCaptureTest() throws Exception {
         RefundCaptureRequest refundCaptureRequest = null;
         String id = null;
         PtsV2PaymentsRefundPost201Response response = api.refundCapture(refundCaptureRequest, id);
@@ -58,11 +58,11 @@ public class RefundApiTest {
      *
      * Refund a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call. Include the payment ID in the POST request to refund the payment amount. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void refundPaymentTest() throws ApiException {
+    public void refundPaymentTest() throws Exception {
         RefundPaymentRequest refundPaymentRequest = null;
         String id = null;
         PtsV2PaymentsRefundPost201Response response = api.refundPayment(refundPaymentRequest, id);

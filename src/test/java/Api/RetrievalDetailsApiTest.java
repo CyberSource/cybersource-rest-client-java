@@ -13,11 +13,11 @@
 
 package Api;
 
-import Invokers.ApiException;
 import org.joda.time.DateTime;
 import Model.ReportingV3RetrievalDetailsGet200Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,11 +38,11 @@ public class RetrievalDetailsApiTest {
      *
      * Retrieval Detail Report Description
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getRetrievalDetailsTest() throws ApiException {
+    public void getRetrievalDetailsTest() throws Exception {
         DateTime startTime = null;
         DateTime endTime = null;
         String organizationId = null;

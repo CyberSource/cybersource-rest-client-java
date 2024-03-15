@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV1TransactionBatchesGet400ResponseErrorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -112,6 +113,6 @@ public class PtsV1TransactionBatchesGet400Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.PushFunds201Response;
 import Model.PushFunds400Response;
 import Model.PushFunds401Response;
@@ -22,6 +21,7 @@ import Model.PushFunds502Response;
 import Model.PushFundsRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,11 +42,11 @@ public class PushFundsApiTest {
      *
      * Receive funds using an Original Credit Transaction (OCT). 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createPushFundsTransferTest() throws ApiException {
+    public void createPushFundsTransferTest() throws Exception {
         PushFundsRequest pushFundsRequest = null;
         String contentType = null;
         String xRequestid = null;
