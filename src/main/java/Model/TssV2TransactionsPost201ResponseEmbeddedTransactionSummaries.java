@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Riskv1authenticationresultsDeviceInformation;
 import Model.TssV2TransactionsGet200ResponseFraudMarkingInformation;
@@ -551,6 +552,6 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Boardingv1registrationsIntegrationInformationOauth2;
 import Model.InlineResponse2002IntegrationInformationTenantConfigurations;
 import com.google.gson.TypeAdapter;
@@ -131,6 +132,6 @@ public class InlineResponse2002IntegrationInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PaymentsProductsPayerAuthenticationSubscriptionInformation;
 import Model.PaymentsProductsSecureAcceptanceConfigurationInformation;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class PaymentsProductsSecureAcceptance {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

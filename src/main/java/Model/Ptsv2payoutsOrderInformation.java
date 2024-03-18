@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2payoutsOrderInformationAmountDetails;
 import Model.Ptsv2payoutsOrderInformationBillTo;
 import com.google.gson.TypeAdapter;
@@ -136,6 +137,6 @@ public class Ptsv2payoutsOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,7 +49,7 @@ public class Ptsv2paymentsOrderInformationShippingDetails {
    * @return giftWrap
   **/
   @ApiModelProperty(value = "Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values: - true: The customer requested gift wrapping. - false: The customer did not request gift wrapping. ")
-  public Boolean getGiftWrap() {
+  public Boolean isGiftWrap() {
     return giftWrap;
   }
 
@@ -135,6 +136,6 @@ public class Ptsv2paymentsOrderInformationShippingDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

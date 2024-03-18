@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds;
 import Model.PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds;
 import com.google.gson.TypeAdapter;
@@ -132,6 +133,6 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurations {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

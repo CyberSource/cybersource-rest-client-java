@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.V1FileDetailsGet200ResponseLinksFiles;
 import Model.V1FileDetailsGet200ResponseLinksSelf;
 import com.google.gson.TypeAdapter;
@@ -123,6 +124,6 @@ public class V1FileDetailsGet200ResponseLinks {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

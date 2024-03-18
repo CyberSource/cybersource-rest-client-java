@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.RiskV1AuthenticationsPost201ResponseErrorInformation;
 import Model.RiskV1DecisionsPost201ResponseClientReferenceInformation;
@@ -300,6 +301,6 @@ public class RiskV1AuthenticationsPost201Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

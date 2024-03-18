@@ -13,9 +13,9 @@
 
 package Api;
 
-import Invokers.ApiException;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,12 +23,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for DownloadDTDApi
+ * API tests for DownloadDtdApi
  */
 @Ignore
-public class DownloadDTDApiTest {
+public class DownloadDtdApiTest {
 
-    private final DownloadDTDApi api = new DownloadDTDApi();
+    private final DownloadDtdApi api = new DownloadDtdApi();
 
     
     /**
@@ -36,11 +36,11 @@ public class DownloadDTDApiTest {
      *
      * Used to download DTDs for reports on no-auth.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getDTDV2Test() throws ApiException {
+    public void getDTDV2Test() throws Exception {
         String reportDefinitionNameVersion = null;
         api.getDTDV2(reportDefinitionNameVersion);
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsTravelInformation;
@@ -363,6 +364,6 @@ public class RefundCaptureRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

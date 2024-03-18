@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Tmsv2customersEmbeddedDefaultShippingAddressLinksCustomer;
 import Model.Tmsv2customersEmbeddedDefaultShippingAddressLinksSelf;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class Tmsv2customersEmbeddedDefaultShippingAddressLinks {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

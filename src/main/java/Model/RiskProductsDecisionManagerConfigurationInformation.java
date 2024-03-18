@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.DmConfig;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -113,6 +114,6 @@ public class RiskProductsDecisionManagerConfigurationInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

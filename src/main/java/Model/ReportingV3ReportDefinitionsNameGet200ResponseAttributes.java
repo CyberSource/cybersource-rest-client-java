@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -131,7 +132,7 @@ public class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {
    * @return _default
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDefault() {
+  public Boolean isDefault() {
     return _default;
   }
 
@@ -149,7 +150,7 @@ public class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {
    * @return required
   **/
   @ApiModelProperty(value = "")
-  public Boolean getRequired() {
+  public Boolean isRequired() {
     return required;
   }
 
@@ -226,6 +227,6 @@ public class ReportingV3ReportDefinitionsNameGet200ResponseAttributes {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

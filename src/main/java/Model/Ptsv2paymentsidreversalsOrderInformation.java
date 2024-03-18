@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsidreversalsOrderInformationAmountDetails;
 import Model.Ptsv2paymentsidreversalsOrderInformationLineItems;
 import com.google.gson.TypeAdapter;
@@ -123,6 +124,6 @@ public class Ptsv2paymentsidreversalsOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

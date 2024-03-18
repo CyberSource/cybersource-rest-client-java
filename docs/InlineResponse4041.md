@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Enum: ReasonEnum
 Name | Value
 ---- | -----
-FOUND | &quot;RESOURCE_NOT_FOUND&quot;
+RESOURCE_NOT_FOUND | &quot;RESOURCE_NOT_FOUND&quot;
 
 
 

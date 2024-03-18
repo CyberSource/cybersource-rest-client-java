@@ -13,13 +13,13 @@
 
 package Api;
 
-import Invokers.ApiException;
 import org.joda.time.DateTime;
 import Model.InlineResponse2001;
 import Model.InlineResponse4006;
 import Model.InlineResponse5002;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,11 +40,11 @@ public class KeyManagementApiTest {
      *
      * Search one or more Keys
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void searchKeysTest() throws ApiException {
+    public void searchKeysTest() throws Exception {
         Integer offset = null;
         Integer limit = null;
         String sort = null;

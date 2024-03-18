@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,7 +45,7 @@ public class CommerceSolutionsProductsBinLookupConfigurationInformationConfigura
    * @return isPayoutOptionsEnabled
   **/
   @ApiModelProperty(value = "This flag indicates if the merchant is configured to make payout calls")
-  public Boolean getIsPayoutOptionsEnabled() {
+  public Boolean isIsPayoutOptionsEnabled() {
     return isPayoutOptionsEnabled;
   }
 
@@ -62,7 +63,7 @@ public class CommerceSolutionsProductsBinLookupConfigurationInformationConfigura
    * @return isAccountPrefixEnabled
   **/
   @ApiModelProperty(value = "This flag indicates if the merchant is configured to receive account prefix")
-  public Boolean getIsAccountPrefixEnabled() {
+  public Boolean isIsAccountPrefixEnabled() {
     return isAccountPrefixEnabled;
   }
 
@@ -111,6 +112,6 @@ public class CommerceSolutionsProductsBinLookupConfigurationInformationConfigura
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

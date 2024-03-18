@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,7 +42,7 @@ public class Ptsv2paymentsidrefundsProcessingInformationRecurringOptions {
    * @return loanPayment
   **/
   @ApiModelProperty(value = "Flag that indicates whether this is a payment towards an existing contractual loan.  Possible values: - `true`: Loan payment - `false`: (default) Not a loan payment  For processor-specific details, see `debt_indicator` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
-  public Boolean getLoanPayment() {
+  public Boolean isLoanPayment() {
     return loanPayment;
   }
 
@@ -88,6 +89,6 @@ public class Ptsv2paymentsidrefundsProcessingInformationRecurringOptions {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

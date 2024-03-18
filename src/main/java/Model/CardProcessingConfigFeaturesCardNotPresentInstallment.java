@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,7 +45,7 @@ public class CardProcessingConfigFeaturesCardNotPresentInstallment {
    * @return enableInstallment
   **/
   @ApiModelProperty(value = "This flag is to enable for installment plan programs. Applicable for Fiserv (fiserv), Vero (vero) and American Express Direct (amexdirect) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cnp</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean getEnableInstallment() {
+  public Boolean isEnableInstallment() {
     return enableInstallment;
   }
 
@@ -111,6 +112,6 @@ public class CardProcessingConfigFeaturesCardNotPresentInstallment {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

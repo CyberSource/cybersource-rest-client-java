@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.CreateInvoiceRequest;
 import Model.InvoicingV2InvoicesAllGet200Response;
 import Model.InvoicingV2InvoicesAllGet400Response;
@@ -25,6 +24,7 @@ import Model.InvoicingV2InvoicesPost202Response;
 import Model.UpdateInvoiceRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,11 +45,11 @@ public class InvoicesApiTest {
      *
      * The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createInvoiceTest() throws ApiException {
+    public void createInvoiceTest() throws Exception {
         CreateInvoiceRequest createInvoiceRequest = null;
         InvoicingV2InvoicesPost201Response response = api.createInvoice(createInvoiceRequest);
 
@@ -61,11 +61,11 @@ public class InvoicesApiTest {
      *
      * Provides a (filtered) list of invoices that have been created in your account. You can filter the list based on Invoice Status by setting the status query parameter to one of DRAFT, CREATED, SENT, PARTIAL, PAID or CANCELED.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getAllInvoicesTest() throws ApiException {
+    public void getAllInvoicesTest() throws Exception {
         Integer offset = null;
         Integer limit = null;
         String status = null;
@@ -79,11 +79,11 @@ public class InvoicesApiTest {
      *
      * You can retrieve details of a specific invoice. This can be used to check the Invoice status and get a list of invoice payments in the invoice history section of the response. For each payment transaction you can use the Transaction Details API to get more details on the payment transaction.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getInvoiceTest() throws ApiException {
+    public void getInvoiceTest() throws Exception {
         String id = null;
         InvoicingV2InvoicesGet200Response response = api.getInvoice(id);
 
@@ -95,11 +95,11 @@ public class InvoicesApiTest {
      *
      * You can cancel an invoice if no payment is made to it. You cannot cancel partially or fully paid invoices.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void performCancelActionTest() throws ApiException {
+    public void performCancelActionTest() throws Exception {
         String id = null;
         InvoicingV2InvoicesPost201Response response = api.performCancelAction(id);
 
@@ -111,11 +111,11 @@ public class InvoicesApiTest {
      *
      * You can send an invoice in draft or created state or resend a sent or partially paid invoice. Fully paid or canceled invoices cannot be resent.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void performSendActionTest() throws ApiException {
+    public void performSendActionTest() throws Exception {
         String id = null;
         InvoicingV2InvoicesPost201Response response = api.performSendAction(id);
 
@@ -127,11 +127,11 @@ public class InvoicesApiTest {
      *
      * You can update all information except the invoice number till any payment is received for an invoice. Invoices that are partially or fully paid or cancelled cannot be updated.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void updateInvoiceTest() throws ApiException {
+    public void updateInvoiceTest() throws Exception {
         String id = null;
         UpdateInvoiceRequest updateInvoiceRequest = null;
         InvoicingV2InvoicesPost201Response response = api.updateInvoice(id, updateInvoiceRequest);

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PayerAuthConfigCardTypesCB;
 import Model.PayerAuthConfigCardTypesJCBJSecure;
 import Model.PayerAuthConfigCardTypesVerifiedByVisa;
@@ -252,6 +253,6 @@ public class PayerAuthConfigCardTypes {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

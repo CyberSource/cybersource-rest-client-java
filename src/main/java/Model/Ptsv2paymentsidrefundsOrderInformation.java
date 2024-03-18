@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsidcapturesOrderInformationAmountDetails;
 import Model.Ptsv2paymentsidcapturesOrderInformationBillTo;
 import Model.Ptsv2paymentsidcapturesOrderInformationInvoiceDetails;
@@ -219,6 +220,6 @@ public class Ptsv2paymentsidrefundsOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

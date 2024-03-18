@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InvoicingV2InvoicesAllGet200ResponseLinks;
 import Model.InvoicingV2InvoicesPost201ResponseInvoiceInformation;
 import Model.InvoicingV2InvoicesPost201ResponseOrderInformation;
@@ -230,6 +231,6 @@ public class InvoicingV2InvoicesPost201Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

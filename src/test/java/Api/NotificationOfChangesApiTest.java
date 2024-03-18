@@ -13,12 +13,12 @@
 
 package Api;
 
-import Invokers.ApiException;
 import org.joda.time.DateTime;
 import Model.ReportingV3NotificationofChangesGet200Response;
 import Model.Reportingv3ReportDownloadsGet400Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,11 +39,11 @@ public class NotificationOfChangesApiTest {
      *
      * Download the Notification of Change report. This report shows eCheck-related fields updated as a result of a response to an eCheck settlement transaction. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getNotificationOfChangeReportTest() throws ApiException {
+    public void getNotificationOfChangeReportTest() throws Exception {
         DateTime startTime = null;
         DateTime endTime = null;
         ReportingV3NotificationofChangesGet200Response response = api.getNotificationOfChangeReport(startTime, endTime);

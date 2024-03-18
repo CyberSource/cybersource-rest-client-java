@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Invoicingv2invoicesCustomerInformation;
 import Model.Invoicingv2invoicesInvoiceInformation;
 import Model.Invoicingv2invoicesOrderInformation;
@@ -137,6 +138,6 @@ public class CreateInvoiceRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

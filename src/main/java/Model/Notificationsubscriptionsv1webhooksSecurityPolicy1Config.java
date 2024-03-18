@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Notificationsubscriptionsv1webhooksSecurityPolicy1ConfigAdditionalConfig;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -159,6 +160,6 @@ public class Notificationsubscriptionsv1webhooksSecurityPolicy1Config {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

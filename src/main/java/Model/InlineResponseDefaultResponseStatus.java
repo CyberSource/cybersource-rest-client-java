@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponseDefaultResponseStatusDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -192,6 +193,6 @@ public class InlineResponseDefaultResponseStatus {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

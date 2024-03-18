@@ -13,9 +13,9 @@
 
 package Api;
 
-import Invokers.ApiException;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,12 +23,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for DownloadXSDApi
+ * API tests for DownloadXsdApi
  */
 @Ignore
-public class DownloadXSDApiTest {
+public class DownloadXsdApiTest {
 
-    private final DownloadXSDApi api = new DownloadXSDApi();
+    private final DownloadXsdApi api = new DownloadXsdApi();
 
     
     /**
@@ -36,11 +36,11 @@ public class DownloadXSDApiTest {
      *
      * Used to download XSDs for reports on no-auth.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getXSDV2Test() throws ApiException {
+    public void getXSDV2Test() throws Exception {
         String reportDefinitionNameVersion = null;
         api.getXSDV2(reportDefinitionNameVersion);
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ReportingV3ReportDefinitionsNameGet200ResponseAttributes;
 import Model.ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings;
 import com.google.gson.TypeAdapter;
@@ -269,6 +270,6 @@ public class ReportingV3ReportDefinitionsNameGet200Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

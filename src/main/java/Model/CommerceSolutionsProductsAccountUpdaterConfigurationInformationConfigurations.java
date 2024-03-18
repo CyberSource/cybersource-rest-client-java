@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurationsAmex;
 import Model.CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurationsMasterCard;
 import Model.CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurationsVisa;
@@ -188,6 +189,6 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConf
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

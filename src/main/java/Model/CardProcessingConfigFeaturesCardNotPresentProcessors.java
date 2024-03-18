@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.CardProcessingConfigFeaturesCardNotPresentPayouts;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -57,7 +58,7 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
    * @return relaxAddressVerificationSystem
   **/
   @ApiModelProperty(value = "Enables you to submit the payment transaction without one or more of the fields for the billTo or card_expiration. Applicable for Elavon Americas (elavonamericas), CB2A, Six (six), CMCIC (cmcic), GPX (gpx), GPN (gpn), VPC, Vero (vero), Fiserv (fiserv), American Express Direct (amexdirect), Chase Paymentech Salem (chasepaymentechsalem), RUPAY, FDI Global (fdiglobal) and Barclays HISO (barclayshiso) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays HISO</td><td>cp, cnp, hybrid</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>cnp</td><td>No</td><td>No</td></tr> <tr><td>American Express Direct</td><td>cp</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>hybrid</td><td>Yes</td><td>Yes</td></tr> </table> ")
-  public Boolean getRelaxAddressVerificationSystem() {
+  public Boolean isRelaxAddressVerificationSystem() {
     return relaxAddressVerificationSystem;
   }
 
@@ -75,7 +76,7 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
    * @return relaxAddressVerificationSystemAllowZipWithoutCountry
   **/
   @ApiModelProperty(value = "Allows Zip code without country. Applicable for American Express Direct (amexdirect), GPX (gpx), VPC, FDI Global (fdiglobal), Elavon Americas (elavonamericas), Chase Paymentech Salem (chasepaymentechsalem), RUPAY, GPN (gpn) and Barclays HISO (barclayshiso) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays HISO</td><td>cp, cnp, both</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>cp, hybrid</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>cnp</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean getRelaxAddressVerificationSystemAllowZipWithoutCountry() {
+  public Boolean isRelaxAddressVerificationSystemAllowZipWithoutCountry() {
     return relaxAddressVerificationSystemAllowZipWithoutCountry;
   }
 
@@ -93,7 +94,7 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
    * @return relaxAddressVerificationSystemAllowExpiredCard
   **/
   @ApiModelProperty(value = "Allows transactions that use an expired card. Applicable for American Express Direct (amexdirect), GPN (gpn), Barclays HISO (barclayshiso), Elavon Americas (elavonamericas), VPC, FDI Global (fdiglobal), GPX (gpx), RUPAY, Six (six), Chase Paymentech Salem (chasepaymentechsalem) and CB2A processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays HISO</td><td>cp, cnp, hybrid</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>cp, hybrid</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>cnp</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean getRelaxAddressVerificationSystemAllowExpiredCard() {
+  public Boolean isRelaxAddressVerificationSystemAllowExpiredCard() {
     return relaxAddressVerificationSystemAllowExpiredCard;
   }
 
@@ -111,7 +112,7 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
    * @return enableEmsTransactionRiskScore
   **/
   @ApiModelProperty(value = "MasterCard Expert Monitoring Solutions (EMS) provides a predictive, behavior-based fraud score in real time during authorizations for card-not-present (CNP) transactions on cards issued in the U.S. Applicable for GPX (gpx) and VPC processors.")
-  public Boolean getEnableEmsTransactionRiskScore() {
+  public Boolean isEnableEmsTransactionRiskScore() {
     return enableEmsTransactionRiskScore;
   }
 
@@ -204,6 +205,6 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Vasv2taxidClientReferenceInformationPartner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -135,6 +136,6 @@ public class Vasv2taxidClientReferenceInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

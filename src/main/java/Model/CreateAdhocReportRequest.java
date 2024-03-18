@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Reportingv3reportsReportFilters;
 import Model.Reportingv3reportsReportPreferences;
 import com.google.gson.TypeAdapter;
@@ -331,6 +332,6 @@ public class CreateAdhocReportRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

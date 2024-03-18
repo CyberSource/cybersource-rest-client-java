@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ReportingV3ReportsGet200ResponseLink;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -436,6 +437,6 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

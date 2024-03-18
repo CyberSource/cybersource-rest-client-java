@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsSurcharge;
@@ -685,6 +686,6 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

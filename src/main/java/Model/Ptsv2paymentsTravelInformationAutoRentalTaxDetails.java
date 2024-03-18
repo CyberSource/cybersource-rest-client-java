@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -92,7 +93,7 @@ public class Ptsv2paymentsTravelInformationAutoRentalTaxDetails {
    * @return applied
   **/
   @ApiModelProperty(value = "Flag that indicates whether the tax amount (`travelInformation.autoRental.taxDetails.amount`) is included in the request.  Possible values: - `false`: tax amount is not included in the request. - `true`:  tax amount is included in the request. ")
-  public Boolean getApplied() {
+  public Boolean isApplied() {
     return applied;
   }
 
@@ -203,6 +204,6 @@ public class Ptsv2paymentsTravelInformationAutoRentalTaxDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

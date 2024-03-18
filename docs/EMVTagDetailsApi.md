@@ -1,11 +1,11 @@
-# EMVTagDetailsApi
+# EmvTagDetailsApi
 
 All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getEmvTags**](EMVTagDetailsApi.md#getEmvTags) | **GET** /tss/v2/transactions/emvTagDetails | Retrieve the EMV Dictionary
-[**parseEmvTags**](EMVTagDetailsApi.md#parseEmvTags) | **POST** /tss/v2/transactions/emvTagDetails | Parse an EMV String
+[**getEmvTags**](EmvTagDetailsApi.md#getEmvTags) | **GET** /tss/v2/transactions/emvTagDetails | Retrieve the EMV Dictionary
+[**parseEmvTags**](EmvTagDetailsApi.md#parseEmvTags) | **POST** /tss/v2/transactions/emvTagDetails | Parse an EMV String
 
 
 <a name="getEmvTags"></a>
@@ -20,15 +20,15 @@ Returns the entire EMV tag dictionary
 ```java
 // Import classes:
 //import Invokers.ApiException;
-//import Api.EMVTagDetailsApi;
+//import Api.EmvTagDetailsApi;
 
 
-EMVTagDetailsApi apiInstance = new EMVTagDetailsApi();
+EmvTagDetailsApi apiInstance = new EmvTagDetailsApi();
 try {
     TssV2GetEmvTags200Response result = apiInstance.getEmvTags();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling EMVTagDetailsApi#getEmvTags");
+    System.err.println("Exception when calling EmvTagDetailsApi#getEmvTags");
     e.printStackTrace();
 }
 ```
@@ -61,16 +61,16 @@ Pass an EMV Tag-Length-Value (TLV) string for parsing.
 ```java
 // Import classes:
 //import Invokers.ApiException;
-//import Api.EMVTagDetailsApi;
+//import Api.EmvTagDetailsApi;
 
 
-EMVTagDetailsApi apiInstance = new EMVTagDetailsApi();
+EmvTagDetailsApi apiInstance = new EmvTagDetailsApi();
 Body body = new Body(); // Body | 
 try {
     TssV2PostEmvTags200Response result = apiInstance.parseEmvTags(body);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling EMVTagDetailsApi#parseEmvTags");
+    System.err.println("Exception when calling EmvTagDetailsApi#parseEmvTags");
     e.printStackTrace();
 }
 ```

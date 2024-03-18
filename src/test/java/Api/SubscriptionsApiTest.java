@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.ActivateSubscriptionResponse;
 import Model.CancelSubscriptionResponse;
 import Model.CreateSubscriptionRequest;
@@ -30,6 +29,7 @@ import Model.UpdateSubscription;
 import Model.UpdateSubscriptionResponse;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,11 +50,11 @@ public class SubscriptionsApiTest {
      *
      * Activate a &#x60;CANCELLED&#x60; Or &#x60;SUSPENDED&#x60; Subscription 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void activateSubscriptionTest() throws ApiException {
+    public void activateSubscriptionTest() throws Exception {
         String id = null;
         ActivateSubscriptionResponse response = api.activateSubscription(id);
 
@@ -66,11 +66,11 @@ public class SubscriptionsApiTest {
      *
      * Cancel a Subscription
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void cancelSubscriptionTest() throws ApiException {
+    public void cancelSubscriptionTest() throws Exception {
         String id = null;
         CancelSubscriptionResponse response = api.cancelSubscription(id);
 
@@ -82,11 +82,11 @@ public class SubscriptionsApiTest {
      *
      * Create a Recurring Billing Subscription
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createSubscriptionTest() throws ApiException {
+    public void createSubscriptionTest() throws Exception {
         CreateSubscriptionRequest createSubscriptionRequest = null;
         CreateSubscriptionResponse response = api.createSubscription(createSubscriptionRequest);
 
@@ -98,11 +98,11 @@ public class SubscriptionsApiTest {
      *
      * Retrieve Subscriptions by Subscription Code &amp; Subscription Status. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getAllSubscriptionsTest() throws ApiException {
+    public void getAllSubscriptionsTest() throws Exception {
         Integer offset = null;
         Integer limit = null;
         String code = null;
@@ -117,11 +117,11 @@ public class SubscriptionsApiTest {
      *
      * Get a Subscription by Subscription Id
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getSubscriptionTest() throws ApiException {
+    public void getSubscriptionTest() throws Exception {
         String id = null;
         GetSubscriptionResponse response = api.getSubscription(id);
 
@@ -133,11 +133,11 @@ public class SubscriptionsApiTest {
      *
      * Get a Unique Subscription Code
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getSubscriptionCodeTest() throws ApiException {
+    public void getSubscriptionCodeTest() throws Exception {
         GetSubscriptionCodeResponse response = api.getSubscriptionCode();
 
         // TODO: test validations
@@ -148,11 +148,11 @@ public class SubscriptionsApiTest {
      *
      * Suspend a Subscription
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void suspendSubscriptionTest() throws ApiException {
+    public void suspendSubscriptionTest() throws Exception {
         String id = null;
         SuspendSubscriptionResponse response = api.suspendSubscription(id);
 
@@ -164,11 +164,11 @@ public class SubscriptionsApiTest {
      *
      * Update a Subscription by Subscription Id
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void updateSubscriptionTest() throws ApiException {
+    public void updateSubscriptionTest() throws Exception {
         String id = null;
         UpdateSubscription updateSubscription = null;
         UpdateSubscriptionResponse response = api.updateSubscription(id, updateSubscription);

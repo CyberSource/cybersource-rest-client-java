@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PushFunds400ResponseDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -214,6 +215,6 @@ public class PushFunds400Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse2011SetupsPaymentsCardProcessing;
 import Model.InlineResponse2011SetupsPaymentsDigitalPayments;
 import com.google.gson.TypeAdapter;
@@ -458,6 +459,6 @@ public class InlineResponse2011SetupsPayments {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

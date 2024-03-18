@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsOrderInformationPassenger;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -528,6 +529,6 @@ public class Riskv1authenticationsOrderInformationLineItems {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

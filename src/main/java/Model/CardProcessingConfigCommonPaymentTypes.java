@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.CardProcessingConfigCommonCurrencies;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -48,7 +49,7 @@ public class CardProcessingConfigCommonPaymentTypes {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEnabled() {
+  public Boolean isEnabled() {
     return enabled;
   }
 
@@ -123,6 +124,6 @@ public class CardProcessingConfigCommonPaymentTypes {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

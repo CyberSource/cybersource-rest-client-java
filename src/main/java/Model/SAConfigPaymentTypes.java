@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.SAConfigPaymentTypesCardTypes;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -90,6 +91,6 @@ public class SAConfigPaymentTypes {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

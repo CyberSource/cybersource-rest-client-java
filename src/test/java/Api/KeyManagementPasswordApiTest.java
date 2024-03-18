@@ -13,12 +13,12 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.InlineResponse4006;
 import Model.InlineResponse5002;
 import Model.UpdatePasswordKeysRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,11 +39,11 @@ public class KeyManagementPasswordApiTest {
      *
      * Activate or De-activate key of type password 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void updatePasswordTest() throws ApiException {
+    public void updatePasswordTest() throws Exception {
         String keyId = null;
         UpdatePasswordKeysRequest updatePasswordKeysRequest = null;
         Object response = api.updatePassword(keyId, updatePasswordKeysRequest);

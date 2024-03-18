@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory;
 import Model.Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount;
 import com.google.gson.TypeAdapter;
@@ -139,7 +140,7 @@ public class Ptsv2paymentsRiskInformationBuyerHistory {
    * @return priorSuspiciousActivity
   **/
   @ApiModelProperty(value = "Indicates whether the merchant experienced suspicious activity (including previous fraud) on the account. Recommended for Discover ProtectBuy. ")
-  public Boolean getPriorSuspiciousActivity() {
+  public Boolean isPriorSuspiciousActivity() {
     return priorSuspiciousActivity;
   }
 
@@ -274,6 +275,6 @@ public class Ptsv2paymentsRiskInformationBuyerHistory {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

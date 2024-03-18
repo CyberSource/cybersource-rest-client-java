@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.CommerceSolutionsProducts;
 import Model.PaymentsProducts;
 import Model.RiskProducts;
@@ -161,6 +162,6 @@ public class Boardingv1registrationsProductInformationSelectedProducts {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

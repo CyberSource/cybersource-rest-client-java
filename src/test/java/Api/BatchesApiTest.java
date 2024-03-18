@@ -13,15 +13,15 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.Body;
-import Model.InlineResponse2005;
 import Model.InlineResponse2006;
 import Model.InlineResponse2007;
+import Model.InlineResponse2008;
 import Model.InlineResponse202;
 import Model.InlineResponse401;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,13 +42,13 @@ public class BatchesApiTest {
      *
      * **Get Batch Report**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) - Source record information including token ids, masked card number, expiration dates &amp; card type. - Response record information including response code, reason, token ids, masked card number, expiration dates &amp; card type. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getBatchReportTest() throws ApiException {
+    public void getBatchReportTest() throws Exception {
         String batchId = null;
-        InlineResponse2007 response = api.getBatchReport(batchId);
+        InlineResponse2008 response = api.getBatchReport(batchId);
 
         // TODO: test validations
     }
@@ -58,13 +58,13 @@ public class BatchesApiTest {
      *
      * **Get Batch Status**&lt;br&gt;This resource accepts a batch id and returns: - The batch status. - The total number of accepted, rejected, updated records. - The total number of card association responses. - The billable quantities of:   - New Account Numbers (NAN)   - New Expiry Dates (NED)   - Account Closures (ACL)   - Contact Card Holders (CCH) 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getBatchStatusTest() throws ApiException {
+    public void getBatchStatusTest() throws Exception {
         String batchId = null;
-        InlineResponse2006 response = api.getBatchStatus(batchId);
+        InlineResponse2007 response = api.getBatchStatus(batchId);
 
         // TODO: test validations
     }
@@ -74,16 +74,16 @@ public class BatchesApiTest {
      *
      * **List Batches**&lt;br&gt;This resource accepts a optional date range, record offset and limit, returning a paginated response of batches containing: - The batch id. - The batch status. - The batch created / modified dates. - The total number of accepted, rejected, updated records. - The total number of card association responses. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getBatchesListTest() throws ApiException {
+    public void getBatchesListTest() throws Exception {
         Long offset = null;
         Long limit = null;
         String fromDate = null;
         String toDate = null;
-        InlineResponse2005 response = api.getBatchesList(offset, limit, fromDate, toDate);
+        InlineResponse2006 response = api.getBatchesList(offset, limit, fromDate, toDate);
 
         // TODO: test validations
     }
@@ -93,11 +93,11 @@ public class BatchesApiTest {
      *
      * **Create a Batch**&lt;br&gt;This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. &lt;br&gt; The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.&lt;br&gt;The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void postBatchTest() throws ApiException {
+    public void postBatchTest() throws Exception {
         Body body = null;
         InlineResponse202 response = api.postBatch(body);
 

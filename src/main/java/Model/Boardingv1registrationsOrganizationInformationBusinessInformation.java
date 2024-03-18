@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Boardingv1registrationsOrganizationInformationBusinessInformationAddress;
 import Model.Boardingv1registrationsOrganizationInformationBusinessInformationBusinessContact;
 import com.google.gson.TypeAdapter;
@@ -268,7 +269,6 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
       }
     }
   }
-
   @SerializedName("timeZone")
   private TimeZoneEnum timeZone = null;
 
@@ -329,7 +329,6 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
       }
     }
   }
-
   @SerializedName("type")
   private TypeEnum type = null;
 
@@ -668,6 +667,6 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

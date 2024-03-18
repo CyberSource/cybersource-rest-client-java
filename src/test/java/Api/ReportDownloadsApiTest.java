@@ -13,11 +13,11 @@
 
 package Api;
 
-import Invokers.ApiException;
 import org.joda.time.LocalDate;
 import Model.Reportingv3ReportDownloadsGet400Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,11 +38,11 @@ public class ReportDownloadsApiTest {
      *
      * Download a report using the unique report name and date. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void downloadReportTest() throws ApiException {
+    public void downloadReportTest() throws Exception {
         LocalDate reportDate = null;
         String reportName = null;
         String organizationId = null;

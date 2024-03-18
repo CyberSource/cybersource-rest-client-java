@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Vasv2taxOrderInformationOrderAcceptance;
 import Model.Vasv2taxOrderInformationOrderOrigin;
 import com.google.gson.TypeAdapter;
@@ -391,6 +392,6 @@ public class Vasv2taxOrderInformationLineItems {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

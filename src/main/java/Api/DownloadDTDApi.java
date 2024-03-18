@@ -39,16 +39,16 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
 
-public class DownloadDTDApi {
-    private static Logger logger = LogManager.getLogger(DownloadDTDApi.class);
+public class DownloadDtdApi {
+    private static Logger logger = LogManager.getLogger(DownloadDtdApi.class);
     
     private ApiClient apiClient;
 
-    public DownloadDTDApi() {
+    public DownloadDtdApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public DownloadDTDApi(ApiClient apiClient) {
+    public DownloadDtdApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 

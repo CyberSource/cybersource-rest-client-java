@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1authenticationsetupsPaymentInformation;
 import Model.Riskv1authenticationsetupsProcessingInformation;
 import Model.Riskv1authenticationsetupsTokenInformation;
@@ -161,6 +162,6 @@ public class PayerAuthSetupRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse2011Setups;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -112,6 +113,6 @@ public class InlineResponse2011ProductInformationSetups {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

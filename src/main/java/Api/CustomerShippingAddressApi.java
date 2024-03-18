@@ -38,7 +38,6 @@ import Model.InlineResponse500;
 import Model.PatchCustomerShippingAddressRequest;
 import Model.PostCustomerShippingAddressRequest;
 import Model.ShippingAddressListForCustomer;
-import Model.Tmsv2customersEmbeddedDefaultShippingAddress;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -308,13 +307,13 @@ public class CustomerShippingAddressApi {
      * @param customerId The Id of a Customer. (required)
      * @param shippingAddressId The Id of a shipping address. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return Tmsv2customersEmbeddedDefaultShippingAddress
+     * @return PostCustomerShippingAddressRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultShippingAddress getCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException {
+    public PostCustomerShippingAddressRequest getCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'getCustomerShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = getCustomerShippingAddressWithHttpInfo(customerId, shippingAddressId, profileId);
+        ApiResponse<PostCustomerShippingAddressRequest> resp = getCustomerShippingAddressWithHttpInfo(customerId, shippingAddressId, profileId);
         logger.info("CALL TO METHOD 'getCustomerShippingAddress' ENDED");
         return resp.getData();
     }
@@ -325,12 +324,12 @@ public class CustomerShippingAddressApi {
      * @param customerId The Id of a Customer. (required)
      * @param shippingAddressId The Id of a shipping address. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultShippingAddress&gt;
+     * @return ApiResponse&lt;PostCustomerShippingAddressRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> getCustomerShippingAddressWithHttpInfo(String customerId, String shippingAddressId, String profileId) throws ApiException {
+    public ApiResponse<PostCustomerShippingAddressRequest> getCustomerShippingAddressWithHttpInfo(String customerId, String shippingAddressId, String profileId) throws ApiException {
         okhttp3.Call call = getCustomerShippingAddressValidateBeforeCall(customerId, shippingAddressId, profileId, null, null);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
+        Type localVarReturnType = new TypeToken<PostCustomerShippingAddressRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -344,7 +343,7 @@ public class CustomerShippingAddressApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getCustomerShippingAddressAsync(String customerId, String shippingAddressId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
+    public okhttp3.Call getCustomerShippingAddressAsync(String customerId, String shippingAddressId, String profileId, final ApiCallback<PostCustomerShippingAddressRequest> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -367,7 +366,7 @@ public class CustomerShippingAddressApi {
         }
 
         okhttp3.Call call = getCustomerShippingAddressValidateBeforeCall(customerId, shippingAddressId, profileId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
+        Type localVarReturnType = new TypeToken<PostCustomerShippingAddressRequest>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -622,13 +621,13 @@ public class CustomerShippingAddressApi {
      * @param patchCustomerShippingAddressRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
-     * @return Tmsv2customersEmbeddedDefaultShippingAddress
+     * @return PatchCustomerShippingAddressRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultShippingAddress patchCustomersShippingAddress(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
+    public PatchCustomerShippingAddressRequest patchCustomersShippingAddress(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchCustomersShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = patchCustomersShippingAddressWithHttpInfo(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch);
+        ApiResponse<PatchCustomerShippingAddressRequest> resp = patchCustomersShippingAddressWithHttpInfo(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomersShippingAddress' ENDED");
         return resp.getData();
     }
@@ -641,12 +640,12 @@ public class CustomerShippingAddressApi {
      * @param patchCustomerShippingAddressRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
-     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultShippingAddress&gt;
+     * @return ApiResponse&lt;PatchCustomerShippingAddressRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> patchCustomersShippingAddressWithHttpInfo(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
+    public ApiResponse<PatchCustomerShippingAddressRequest> patchCustomersShippingAddressWithHttpInfo(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
         okhttp3.Call call = patchCustomersShippingAddressValidateBeforeCall(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch, null, null);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
+        Type localVarReturnType = new TypeToken<PatchCustomerShippingAddressRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -662,7 +661,7 @@ public class CustomerShippingAddressApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call patchCustomersShippingAddressAsync(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
+    public okhttp3.Call patchCustomersShippingAddressAsync(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ApiCallback<PatchCustomerShippingAddressRequest> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -685,7 +684,7 @@ public class CustomerShippingAddressApi {
         }
 
         okhttp3.Call call = patchCustomersShippingAddressValidateBeforeCall(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
+        Type localVarReturnType = new TypeToken<PatchCustomerShippingAddressRequest>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -774,13 +773,13 @@ public class CustomerShippingAddressApi {
      * @param customerId The Id of a Customer. (required)
      * @param postCustomerShippingAddressRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return Tmsv2customersEmbeddedDefaultShippingAddress
+     * @return PostCustomerShippingAddressRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultShippingAddress postCustomerShippingAddress(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
+    public PostCustomerShippingAddressRequest postCustomerShippingAddress(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postCustomerShippingAddress' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> resp = postCustomerShippingAddressWithHttpInfo(customerId, postCustomerShippingAddressRequest, profileId);
+        ApiResponse<PostCustomerShippingAddressRequest> resp = postCustomerShippingAddressWithHttpInfo(customerId, postCustomerShippingAddressRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomerShippingAddress' ENDED");
         return resp.getData();
     }
@@ -791,12 +790,12 @@ public class CustomerShippingAddressApi {
      * @param customerId The Id of a Customer. (required)
      * @param postCustomerShippingAddressRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultShippingAddress&gt;
+     * @return ApiResponse&lt;PostCustomerShippingAddressRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultShippingAddress> postCustomerShippingAddressWithHttpInfo(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
+    public ApiResponse<PostCustomerShippingAddressRequest> postCustomerShippingAddressWithHttpInfo(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
         okhttp3.Call call = postCustomerShippingAddressValidateBeforeCall(customerId, postCustomerShippingAddressRequest, profileId, null, null);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
+        Type localVarReturnType = new TypeToken<PostCustomerShippingAddressRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -810,7 +809,7 @@ public class CustomerShippingAddressApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postCustomerShippingAddressAsync(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultShippingAddress> callback) throws ApiException {
+    public okhttp3.Call postCustomerShippingAddressAsync(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ApiCallback<PostCustomerShippingAddressRequest> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -833,7 +832,7 @@ public class CustomerShippingAddressApi {
         }
 
         okhttp3.Call call = postCustomerShippingAddressValidateBeforeCall(customerId, postCustomerShippingAddressRequest, profileId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultShippingAddress>(){}.getType();
+        Type localVarReturnType = new TypeToken<PostCustomerShippingAddressRequest>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -39,16 +39,16 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
 
-public class DownloadXSDApi {
-    private static Logger logger = LogManager.getLogger(DownloadXSDApi.class);
+public class DownloadXsdApi {
+    private static Logger logger = LogManager.getLogger(DownloadXsdApi.class);
     
     private ApiClient apiClient;
 
-    public DownloadXSDApi() {
+    public DownloadXsdApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public DownloadXSDApi(ApiClient apiClient) {
+    public DownloadXsdApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 

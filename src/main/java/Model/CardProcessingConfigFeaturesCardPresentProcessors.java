@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -105,7 +106,7 @@ public class CardProcessingConfigFeaturesCardPresentProcessors {
    * @return disablePointOfSaleTerminalIdValidation
   **/
   @ApiModelProperty(value = "Disables terminal ID validation. Applicable for VPC processors.")
-  public Boolean getDisablePointOfSaleTerminalIdValidation() {
+  public Boolean isDisablePointOfSaleTerminalIdValidation() {
     return disablePointOfSaleTerminalIdValidation;
   }
 
@@ -177,7 +178,7 @@ public class CardProcessingConfigFeaturesCardPresentProcessors {
    * @return enablePinTranslation
   **/
   @ApiModelProperty(value = "Enables CyberSource PIN Translation for Online PIN Transactions. Please ensure you have exchanged PIN keys with CyberSource to use this feature. Applicable for VPC processors.")
-  public Boolean getEnablePinTranslation() {
+  public Boolean isEnablePinTranslation() {
     return enablePinTranslation;
   }
 
@@ -236,6 +237,6 @@ public class CardProcessingConfigFeaturesCardPresentProcessors {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

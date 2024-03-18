@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse4007Details;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -43,7 +44,7 @@ public class InlineResponse4221 {
    */
   @JsonAdapter(ReasonEnum.Adapter.class)
   public enum ReasonEnum {
-    DATA("INVALID_DATA");
+    INVALID_DATA("INVALID_DATA");
 
     private String value;
 
@@ -82,7 +83,6 @@ public class InlineResponse4221 {
       }
     }
   }
-
   @SerializedName("reason")
   private ReasonEnum reason = null;
 
@@ -237,6 +237,6 @@ public class InlineResponse4221 {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

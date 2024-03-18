@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,6 +39,9 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
   @SerializedName("avsSignedAgreement")
   private Boolean avsSignedAgreement = null;
 
+  @SerializedName("avsCalculatedResponseBehavior")
+  private Object avsCalculatedResponseBehavior = null;
+
   @SerializedName("avsAdditionalId")
   private String avsAdditionalId = null;
 
@@ -46,6 +50,9 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
 
   @SerializedName("avsEntityId")
   private String avsEntityId = null;
+
+  @SerializedName("avsResultMode")
+  private Object avsResultMode = null;
 
   @SerializedName("enableAvsTokenCreation")
   private Boolean enableAvsTokenCreation = false;
@@ -60,7 +67,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
    * @return avsAccountOwnershipService
   **/
   @ApiModelProperty(value = "*NEW* Determined in WF eTicket if account has opted into the Account Ownership Service.")
-  public Boolean getAvsAccountOwnershipService() {
+  public Boolean isAvsAccountOwnershipService() {
     return avsAccountOwnershipService;
   }
 
@@ -78,7 +85,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
    * @return avsAccountStatusService
   **/
   @ApiModelProperty(value = "*NEW* Determined in WF eTicket if account has opted into the Account Status Service.")
-  public Boolean getAvsAccountStatusService() {
+  public Boolean isAvsAccountStatusService() {
     return avsAccountStatusService;
   }
 
@@ -96,12 +103,30 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
    * @return avsSignedAgreement
   **/
   @ApiModelProperty(value = "*NEW* Taken from Addendum Agreement Column in boarding form.")
-  public Boolean getAvsSignedAgreement() {
+  public Boolean isAvsSignedAgreement() {
     return avsSignedAgreement;
   }
 
   public void setAvsSignedAgreement(Boolean avsSignedAgreement) {
     this.avsSignedAgreement = avsSignedAgreement;
+  }
+
+  public ECheckConfigFeaturesAccountValidationServiceProcessors avsCalculatedResponseBehavior(Object avsCalculatedResponseBehavior) {
+    this.avsCalculatedResponseBehavior = avsCalculatedResponseBehavior;
+    return this;
+  }
+
+   /**
+   * *NEW*
+   * @return avsCalculatedResponseBehavior
+  **/
+  @ApiModelProperty(value = "*NEW*")
+  public Object getAvsCalculatedResponseBehavior() {
+    return avsCalculatedResponseBehavior;
+  }
+
+  public void setAvsCalculatedResponseBehavior(Object avsCalculatedResponseBehavior) {
+    this.avsCalculatedResponseBehavior = avsCalculatedResponseBehavior;
   }
 
   public ECheckConfigFeaturesAccountValidationServiceProcessors avsAdditionalId(String avsAdditionalId) {
@@ -132,7 +157,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
    * @return enableAvs
   **/
   @ApiModelProperty(value = "*NEW*")
-  public Boolean getEnableAvs() {
+  public Boolean isEnableAvs() {
     return enableAvs;
   }
 
@@ -158,6 +183,24 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
     this.avsEntityId = avsEntityId;
   }
 
+  public ECheckConfigFeaturesAccountValidationServiceProcessors avsResultMode(Object avsResultMode) {
+    this.avsResultMode = avsResultMode;
+    return this;
+  }
+
+   /**
+   * *NEW*
+   * @return avsResultMode
+  **/
+  @ApiModelProperty(value = "*NEW*")
+  public Object getAvsResultMode() {
+    return avsResultMode;
+  }
+
+  public void setAvsResultMode(Object avsResultMode) {
+    this.avsResultMode = avsResultMode;
+  }
+
   public ECheckConfigFeaturesAccountValidationServiceProcessors enableAvsTokenCreation(Boolean enableAvsTokenCreation) {
     this.enableAvsTokenCreation = enableAvsTokenCreation;
     return this;
@@ -168,7 +211,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
    * @return enableAvsTokenCreation
   **/
   @ApiModelProperty(value = "*NEW* Applicable if the merchant wants to run AVS on token creation requests only.")
-  public Boolean getEnableAvsTokenCreation() {
+  public Boolean isEnableAvsTokenCreation() {
     return enableAvsTokenCreation;
   }
 
@@ -189,15 +232,17 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
     return Objects.equals(this.avsAccountOwnershipService, echeckConfigFeaturesAccountValidationServiceProcessors.avsAccountOwnershipService) &&
         Objects.equals(this.avsAccountStatusService, echeckConfigFeaturesAccountValidationServiceProcessors.avsAccountStatusService) &&
         Objects.equals(this.avsSignedAgreement, echeckConfigFeaturesAccountValidationServiceProcessors.avsSignedAgreement) &&
+        Objects.equals(this.avsCalculatedResponseBehavior, echeckConfigFeaturesAccountValidationServiceProcessors.avsCalculatedResponseBehavior) &&
         Objects.equals(this.avsAdditionalId, echeckConfigFeaturesAccountValidationServiceProcessors.avsAdditionalId) &&
         Objects.equals(this.enableAvs, echeckConfigFeaturesAccountValidationServiceProcessors.enableAvs) &&
         Objects.equals(this.avsEntityId, echeckConfigFeaturesAccountValidationServiceProcessors.avsEntityId) &&
+        Objects.equals(this.avsResultMode, echeckConfigFeaturesAccountValidationServiceProcessors.avsResultMode) &&
         Objects.equals(this.enableAvsTokenCreation, echeckConfigFeaturesAccountValidationServiceProcessors.enableAvsTokenCreation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(avsAccountOwnershipService, avsAccountStatusService, avsSignedAgreement, avsAdditionalId, enableAvs, avsEntityId, enableAvsTokenCreation);
+    return Objects.hash(avsAccountOwnershipService, avsAccountStatusService, avsSignedAgreement, avsCalculatedResponseBehavior, avsAdditionalId, enableAvs, avsEntityId, avsResultMode, enableAvsTokenCreation);
   }
 
 
@@ -209,9 +254,11 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
     sb.append("    avsAccountOwnershipService: ").append(toIndentedString(avsAccountOwnershipService)).append("\n");
     sb.append("    avsAccountStatusService: ").append(toIndentedString(avsAccountStatusService)).append("\n");
     sb.append("    avsSignedAgreement: ").append(toIndentedString(avsSignedAgreement)).append("\n");
+    sb.append("    avsCalculatedResponseBehavior: ").append(toIndentedString(avsCalculatedResponseBehavior)).append("\n");
     sb.append("    avsAdditionalId: ").append(toIndentedString(avsAdditionalId)).append("\n");
     sb.append("    enableAvs: ").append(toIndentedString(enableAvs)).append("\n");
     sb.append("    avsEntityId: ").append(toIndentedString(avsEntityId)).append("\n");
+    sb.append("    avsResultMode: ").append(toIndentedString(avsResultMode)).append("\n");
     sb.append("    enableAvsTokenCreation: ").append(toIndentedString(enableAvsTokenCreation)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -227,6 +274,6 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

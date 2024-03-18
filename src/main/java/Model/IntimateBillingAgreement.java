@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2billingagreementsInstallmentInformation;
 import Model.Ptsv2billingagreementsMerchantInformation;
 import Model.Ptsv2billingagreementsOrderInformation;
@@ -185,6 +186,6 @@ public class IntimateBillingAgreement {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

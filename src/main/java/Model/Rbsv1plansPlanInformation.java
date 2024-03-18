@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.GetAllPlansResponsePlanInformationBillingPeriod;
 import Model.Rbsv1plansPlanInformationBillingCycles;
 import com.google.gson.TypeAdapter;
@@ -129,7 +130,7 @@ public class Rbsv1plansPlanInformation {
    * Get billingPeriod
    * @return billingPeriod
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public GetAllPlansResponsePlanInformationBillingPeriod getBillingPeriod() {
     return billingPeriod;
   }
@@ -205,6 +206,6 @@ public class Rbsv1plansPlanInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

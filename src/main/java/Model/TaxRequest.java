@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Vasv2taxBuyerInformation;
 import Model.Vasv2taxClientReferenceInformation;
 import Model.Vasv2taxMerchantInformation;
@@ -185,6 +186,6 @@ public class TaxRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

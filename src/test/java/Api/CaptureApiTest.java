@@ -13,13 +13,13 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.CapturePaymentRequest;
 import Model.PtsV2PaymentsCapturesPost201Response;
 import Model.PtsV2PaymentsCapturesPost400Response;
 import Model.PtsV2PaymentsPost502Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,11 +40,11 @@ public class CaptureApiTest {
      *
      * Include the payment ID in the POST request to capture the payment amount.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void capturePaymentTest() throws ApiException {
+    public void capturePaymentTest() throws Exception {
         CapturePaymentRequest capturePaymentRequest = null;
         String id = null;
         PtsV2PaymentsCapturesPost201Response response = api.capturePayment(capturePaymentRequest, id);

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ShippingAddressListForCustomerLinksFirst;
 import Model.ShippingAddressListForCustomerLinksLast;
 import Model.ShippingAddressListForCustomerLinksNext;
@@ -185,6 +186,6 @@ public class ShippingAddressListForCustomerLinks {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.CardProcessingConfigCommonMerchantDescriptorInformation;
 import Model.CardProcessingConfigCommonProcessors;
 import com.google.gson.TypeAdapter;
@@ -87,7 +88,6 @@ public class CardProcessingConfigCommon {
       }
     }
   }
-
   @SerializedName("defaultAuthTypeCode")
   private DefaultAuthTypeCodeEnum defaultAuthTypeCode = null;
 
@@ -235,7 +235,7 @@ public class CardProcessingConfigCommon {
    * @return enablePartialAuth
   **/
   @ApiModelProperty(value = "Allow merchants to accept partial authorization approvals. Applicable for Elavon Americas (elavonamericas), VPC, GPX (gpx), FDI Global (fdiglobal), FDC Nashville (smartfdc), GPN (gpn), TSYS (tsys), American Express Direct (amexdirect), Paymentech Tampa (paymentechtampa) and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cnp, cp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean getEnablePartialAuth() {
+  public Boolean isEnablePartialAuth() {
     return enablePartialAuth;
   }
 
@@ -307,7 +307,7 @@ public class CardProcessingConfigCommon {
    * @return enableSplitShipment
   **/
   @ApiModelProperty(value = "Enables you to split an order into multiple shipments with multiple captures. This feature is provided by CyberSource and supports three different scenarios:  * multiple authorizations * multiple captures * multiple authorizations with multiple captures  Applicable for VPC processors. ")
-  public Boolean getEnableSplitShipment() {
+  public Boolean isEnableSplitShipment() {
     return enableSplitShipment;
   }
 
@@ -325,7 +325,7 @@ public class CardProcessingConfigCommon {
    * @return enableInterchangeOptimization
   **/
   @ApiModelProperty(value = "Reduces your interchange fees by using automatic authorization refresh and automatic partial authorization reversal. Applicable for VPC processors.")
-  public Boolean getEnableInterchangeOptimization() {
+  public Boolean isEnableInterchangeOptimization() {
     return enableInterchangeOptimization;
   }
 
@@ -397,7 +397,7 @@ public class CardProcessingConfigCommon {
    * @return allowCapturesGreaterThanAuthorizations
   **/
   @ApiModelProperty(value = "Enables this merchant account to capture amounts greater than the authorization amount. Applicable for GPX (gpx), VPC, Paymentech Tampa (paymentechtampa) and Chase Paymentech Salem (chasepaymentechsalem) processors.")
-  public Boolean getAllowCapturesGreaterThanAuthorizations() {
+  public Boolean isAllowCapturesGreaterThanAuthorizations() {
     return allowCapturesGreaterThanAuthorizations;
   }
 
@@ -415,7 +415,7 @@ public class CardProcessingConfigCommon {
    * @return enableDuplicateMerchantReferenceNumberBlocking
   **/
   @ApiModelProperty(value = "Helps prevent duplicate transactions. Applicable for VPC, GPX (gpx) and Chase Paymentech Salem (chasepaymentechsalem) processors.")
-  public Boolean getEnableDuplicateMerchantReferenceNumberBlocking() {
+  public Boolean isEnableDuplicateMerchantReferenceNumberBlocking() {
     return enableDuplicateMerchantReferenceNumberBlocking;
   }
 
@@ -433,7 +433,7 @@ public class CardProcessingConfigCommon {
    * @return domesticMerchantId
   **/
   @ApiModelProperty(value = "This is a local merchant ID used by merchants in addition to the conventional merchant ID. This value is sent to the issuer. Applicable for VPC and Prisma (prisma) processors.")
-  public Boolean getDomesticMerchantId() {
+  public Boolean isDomesticMerchantId() {
     return domesticMerchantId;
   }
 
@@ -505,7 +505,7 @@ public class CardProcessingConfigCommon {
    * @return preferCobadgedSecondaryBrand
   **/
   @ApiModelProperty(value = "It denotes merchant's preference on secondary brand for routing in case of co-branded cards. Applicable for EFTPOS processors.")
-  public Boolean getPreferCobadgedSecondaryBrand() {
+  public Boolean isPreferCobadgedSecondaryBrand() {
     return preferCobadgedSecondaryBrand;
   }
 
@@ -610,6 +610,6 @@ public class CardProcessingConfigCommon {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

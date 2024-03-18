@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.CreateBillingAgreement;
 import Model.IntimateBillingAgreement;
 import Model.ModifyBillingAgreement;
@@ -22,6 +21,7 @@ import Model.PtsV2PaymentsPost502Response;
 import Model.PtsV2PaymentsRefundPost400Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,11 +42,11 @@ public class BillingAgreementsApiTest {
      *
      * Standing Instruction with or without Token
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void billingAgreementsDeRegistrationTest() throws ApiException {
+    public void billingAgreementsDeRegistrationTest() throws Exception {
         ModifyBillingAgreement modifyBillingAgreement = null;
         String id = null;
         PtsV2CreditsPost201Response1 response = api.billingAgreementsDeRegistration(modifyBillingAgreement, id);
@@ -59,11 +59,11 @@ public class BillingAgreementsApiTest {
      *
      * Standing Instruction with or without Token.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void billingAgreementsIntimationTest() throws ApiException {
+    public void billingAgreementsIntimationTest() throws Exception {
         IntimateBillingAgreement intimateBillingAgreement = null;
         String id = null;
         PtsV2CreditsPost201Response1 response = api.billingAgreementsIntimation(intimateBillingAgreement, id);
@@ -76,11 +76,11 @@ public class BillingAgreementsApiTest {
      *
      * Standing Instruction with or without Token. Transaction amount in case First payment is coming along with registration. Only 2 decimal places allowed
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void billingAgreementsRegistrationTest() throws ApiException {
+    public void billingAgreementsRegistrationTest() throws Exception {
         CreateBillingAgreement createBillingAgreement = null;
         PtsV2CreditsPost201Response1 response = api.billingAgreementsRegistration(createBillingAgreement);
 

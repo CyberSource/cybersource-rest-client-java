@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PaymentsProductsDifferentialFeeSubscriptionInformationFeatures;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -80,7 +81,6 @@ public class PaymentsProductsDifferentialFeeSubscriptionInformation {
       }
     }
   }
-
   @SerializedName("selfServiceability")
   private SelfServiceabilityEnum selfServiceability = SelfServiceabilityEnum.NOT_SELF_SERVICEABLE;
 
@@ -97,7 +97,7 @@ public class PaymentsProductsDifferentialFeeSubscriptionInformation {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEnabled() {
+  public Boolean isEnabled() {
     return enabled;
   }
 
@@ -184,6 +184,6 @@ public class PaymentsProductsDifferentialFeeSubscriptionInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

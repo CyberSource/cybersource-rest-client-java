@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationCustomer;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier;
 import Model.PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument;
@@ -57,7 +58,7 @@ public class PtsV2PaymentsPost201ResponseTokenInformation {
    * @return instrumentidentifierNew
   **/
   @ApiModelProperty(value = "A value of true means the card number or bank account used to create an Instrument Identifier was new and did not already exist in the token vault. A value of false means the card number or bank account used to create an Instrument Identifier already existed in the token vault. ")
-  public Boolean getInstrumentidentifierNew() {
+  public Boolean isInstrumentidentifierNew() {
     return instrumentidentifierNew;
   }
 
@@ -184,6 +185,6 @@ public class PtsV2PaymentsPost201ResponseTokenInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

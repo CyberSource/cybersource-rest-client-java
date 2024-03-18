@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.ActivateDeactivatePlanResponse;
 import Model.CreatePlanRequest;
 import Model.CreatePlanResponse;
@@ -28,6 +27,7 @@ import Model.UpdatePlanRequest;
 import Model.UpdatePlanResponse;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,11 +48,11 @@ public class PlansApiTest {
      *
      * Activate a Plan
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void activatePlanTest() throws ApiException {
+    public void activatePlanTest() throws Exception {
         String id = null;
         ActivateDeactivatePlanResponse response = api.activatePlan(id);
 
@@ -64,11 +64,11 @@ public class PlansApiTest {
      *
      * The recurring billing service enables you to manage payment plans and subscriptions for recurring payment schedules. It securely stores your customer&#39;s payment information and personal data within secure Visa data centers, reducing storage risks and PCI DSS scope through the use of *Token Management* (*TMS*).  The three key elements of *Cybersource* Recurring Billing are:  -  **Token**: stores customer billing, shipping, and payment details.  -  **Plan**: stores the billing schedule.  -  **Subscription**: combines the token and plan, and defines the subscription start date, name, and description.  The APIs in this section demonstrate the management of the Plans and Subscriptions. For Tokens please refer to [Token Management](#token-management) 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createPlanTest() throws ApiException {
+    public void createPlanTest() throws Exception {
         CreatePlanRequest createPlanRequest = null;
         CreatePlanResponse response = api.createPlan(createPlanRequest);
 
@@ -80,11 +80,11 @@ public class PlansApiTest {
      *
      * Deactivate a Plan
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void deactivatePlanTest() throws ApiException {
+    public void deactivatePlanTest() throws Exception {
         String id = null;
         ActivateDeactivatePlanResponse response = api.deactivatePlan(id);
 
@@ -96,11 +96,11 @@ public class PlansApiTest {
      *
      * Delete a Plan is only allowed: - plan status is in &#x60;DRAFT&#x60; - plan status is in &#x60;ACTIVE&#x60;, and &#x60;INACTIVE&#x60; only allowed when no subscriptions attached to a plan in the lifetime of a plan 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void deletePlanTest() throws ApiException {
+    public void deletePlanTest() throws Exception {
         String id = null;
         DeletePlanResponse response = api.deletePlan(id);
 
@@ -112,11 +112,11 @@ public class PlansApiTest {
      *
      * Retrieve a Plan details by Plan Id.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getPlanTest() throws ApiException {
+    public void getPlanTest() throws Exception {
         String id = null;
         GetPlanResponse response = api.getPlan(id);
 
@@ -128,11 +128,11 @@ public class PlansApiTest {
      *
      * Get a Unique Plan Code
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getPlanCodeTest() throws ApiException {
+    public void getPlanCodeTest() throws Exception {
         GetPlanCodeResponse response = api.getPlanCode();
 
         // TODO: test validations
@@ -143,11 +143,11 @@ public class PlansApiTest {
      *
      * Retrieve Plans by Plan Code &amp; Plan Status. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getPlansTest() throws ApiException {
+    public void getPlansTest() throws Exception {
         Integer offset = null;
         Integer limit = null;
         String code = null;
@@ -163,11 +163,11 @@ public class PlansApiTest {
      *
      * Update a Plan  Plan in &#x60;DRAFT&#x60; status - All updates are allowed on Plan with &#x60;DRAFT&#x60; status  Plan in &#x60;ACTIVE&#x60; status [Following fields are **Not Updatable**] - &#x60;planInformation.billingPeriod&#x60; - &#x60;planInformation.billingCycles&#x60; [Update is only allowed to **increase** billingCycles] - &#x60;orderInformation.amountDetails.currency&#x60; 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void updatePlanTest() throws ApiException {
+    public void updatePlanTest() throws Exception {
         String id = null;
         UpdatePlanRequest updatePlanRequest = null;
         UpdatePlanResponse response = api.updatePlan(id, updatePlanRequest);

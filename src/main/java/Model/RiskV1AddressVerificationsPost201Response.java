@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation;
 import Model.RiskV1AddressVerificationsPost201ResponseErrorInformation;
@@ -276,6 +277,6 @@ public class RiskV1AddressVerificationsPost201Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

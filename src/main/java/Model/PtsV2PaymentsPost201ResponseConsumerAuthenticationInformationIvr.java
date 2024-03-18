@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -59,7 +60,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr {
    * @return enabledMessage
   **/
   @ApiModelProperty(value = "Flag to indicate if a valid IVR transaction was detected. ")
-  public Boolean getEnabledMessage() {
+  public Boolean isEnabledMessage() {
     return enabledMessage;
   }
 
@@ -95,7 +96,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr {
    * @return encryptionMandatory
   **/
   @ApiModelProperty(value = "Flag to indicate if the ACS requires the credential to be encrypted. ")
-  public Boolean getEncryptionMandatory() {
+  public Boolean isEncryptionMandatory() {
     return encryptionMandatory;
   }
 
@@ -226,6 +227,6 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

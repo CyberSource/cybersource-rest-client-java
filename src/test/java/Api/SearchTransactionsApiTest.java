@@ -13,13 +13,13 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.CreateSearchRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.TssV2TransactionsPost201Response;
 import Model.TssV2TransactionsPost400Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,11 +40,11 @@ public class SearchTransactionsApiTest {
      *
      * Create a search request. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createSearchTest() throws ApiException {
+    public void createSearchTest() throws Exception {
         CreateSearchRequest createSearchRequest = null;
         TssV2TransactionsPost201Response response = api.createSearch(createSearchRequest);
 
@@ -56,11 +56,11 @@ public class SearchTransactionsApiTest {
      *
      * Include the Search ID in the GET request to retrieve the search results.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getSearchTest() throws ApiException {
+    public void getSearchTest() throws Exception {
         String searchId = null;
         TssV2TransactionsPost201Response response = api.getSearch(searchId);
 

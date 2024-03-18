@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -66,7 +67,7 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsFreight {
    * @return taxable
   **/
   @ApiModelProperty(value = "Flag that indicates whether an order is taxable. This value must be true if the sum of all _lineItems[].taxAmount_ values > 0.  If you do not include any `lineItems[].taxAmount` values in your request, CyberSource does not include `invoiceDetails.taxable` in the data it sends to the processor.  For processor-specific information, see the `tax_indicator` field in [Level II and Level III Processing Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html)  Possible values:  - **true**  - **false** ")
-  public Boolean getTaxable() {
+  public Boolean isTaxable() {
     return taxable;
   }
 
@@ -135,6 +136,6 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsFreight {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

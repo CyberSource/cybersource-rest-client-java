@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv1pushfundstransferOrderInformationAmountDetails;
 import Model.Ptsv1pushfundstransferOrderInformationSurcharge;
 import com.google.gson.TypeAdapter;
@@ -48,7 +49,7 @@ public class Ptsv1pushfundstransferOrderInformation {
    * Get amountDetails
    * @return amountDetails
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Ptsv1pushfundstransferOrderInformationAmountDetails getAmountDetails() {
     return amountDetails;
   }
@@ -136,6 +137,6 @@ public class Ptsv1pushfundstransferOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

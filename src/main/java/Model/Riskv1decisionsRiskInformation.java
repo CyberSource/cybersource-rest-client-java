@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsRiskInformationAuxiliaryData;
 import Model.Ptsv2paymentsRiskInformationBuyerHistory;
 import Model.Ptsv2paymentsRiskInformationProfile;
@@ -170,6 +171,6 @@ public class Riskv1decisionsRiskInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

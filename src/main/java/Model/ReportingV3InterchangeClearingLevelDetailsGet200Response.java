@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ReportingV3InterchangeClearingLevelDetailsGet200ResponseInterchangeClearingLevelDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -146,6 +147,6 @@ public class ReportingV3InterchangeClearingLevelDetailsGet200Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

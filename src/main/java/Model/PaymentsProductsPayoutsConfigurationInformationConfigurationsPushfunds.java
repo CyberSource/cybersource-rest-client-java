@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PaymentsProductsPayoutsConfigurationInformationConfigurationsProcessorAccount;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -105,7 +106,7 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfu
    * @return allowCryptoCurrencyPurchase
   **/
   @ApiModelProperty(value = "This configuration allows a transaction to be flagged for cryptocurrency funds transfer.")
-  public Boolean getAllowCryptoCurrencyPurchase() {
+  public Boolean isAllowCryptoCurrencyPurchase() {
     return allowCryptoCurrencyPurchase;
   }
 
@@ -281,6 +282,6 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfu
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

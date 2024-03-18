@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1addressverificationsBuyerInformation;
 import Model.Riskv1exportcomplianceinquiriesDeviceInformation;
 import Model.Riskv1exportcomplianceinquiriesExportComplianceInformation;
@@ -185,6 +186,6 @@ public class ValidateExportComplianceRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.PtsV2PaymentsPost502Response;
 import Model.TaxRequest;
 import Model.VasV2PaymentsPost201Response;
@@ -23,6 +22,7 @@ import Model.VasV2TaxVoidsPost400Response;
 import Model.VoidTaxRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,11 +43,11 @@ public class TaxesApiTest {
      *
      * The tax calculation service provides real-time sales tax and VAT calculations for orders placed with your business worldwide.  It enhances your ability to conduct business globally and enables you to avoid the risk and complexity of managing online tax calculation.  The service supports product-based tax rules and exemptions for goods and services.  The tax rates are updated twice a month and calculations include sub-level detail (rates per taxing jurisdiction, names and types of jurisdictions). Implementation guidance, list of supported countries, and information on tax reporting are in the [Tax User Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void calculateTaxTest() throws ApiException {
+    public void calculateTaxTest() throws Exception {
         TaxRequest taxRequest = null;
         VasV2PaymentsPost201Response response = api.calculateTax(taxRequest);
 
@@ -59,11 +59,11 @@ public class TaxesApiTest {
      *
      * Pass the Tax Request ID in the PATCH request to void the committed tax calculation.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void voidTaxTest() throws ApiException {
+    public void voidTaxTest() throws Exception {
         VoidTaxRequest voidTaxRequest = null;
         String id = null;
         VasV2TaxVoid200Response response = api.voidTax(voidTaxRequest, id);

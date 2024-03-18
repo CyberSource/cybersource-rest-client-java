@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2creditsInstallmentInformation;
 import Model.Ptsv2creditsProcessingInformation;
 import Model.Ptsv2creditsRecipientInformation;
@@ -459,6 +460,6 @@ public class CreateCreditRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

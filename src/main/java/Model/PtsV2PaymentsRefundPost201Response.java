@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseLinks;
@@ -301,6 +302,6 @@ public class PtsV2PaymentsRefundPost201Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

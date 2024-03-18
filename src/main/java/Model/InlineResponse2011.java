@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse2011IntegrationInformation;
 import Model.InlineResponse2011OrganizationInformation;
 import Model.InlineResponse2011ProductInformationSetups;
@@ -97,7 +98,6 @@ public class InlineResponse2011 {
       }
     }
   }
-
   @SerializedName("status")
   private StatusEnum status = null;
 
@@ -343,6 +343,6 @@ public class InlineResponse2011 {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

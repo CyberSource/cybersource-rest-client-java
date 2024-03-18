@@ -58,7 +58,7 @@ No authorization required
 
 <a name="getCustomer"></a>
 # **getCustomer**
-> TmsV2CustomersResponse getCustomer(customerId, profileId)
+> PostCustomerRequest getCustomer(customerId, profileId)
 
 Retrieve a Customer
 
@@ -75,7 +75,7 @@ CustomerApi apiInstance = new CustomerApi();
 String customerId = "customerId_example"; // String | The Id of a Customer.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    TmsV2CustomersResponse result = apiInstance.getCustomer(customerId, profileId);
+    PostCustomerRequest result = apiInstance.getCustomer(customerId, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomerApi#getCustomer");
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TmsV2CustomersResponse**](TmsV2CustomersResponse.md)
+[**PostCustomerRequest**](PostCustomerRequest.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ No authorization required
 
 <a name="patchCustomer"></a>
 # **patchCustomer**
-> TmsV2CustomersResponse patchCustomer(customerId, patchCustomerRequest, profileId, ifMatch)
+> PatchCustomerRequest patchCustomer(customerId, patchCustomerRequest, profileId, ifMatch)
 
 Update a Customer
 
@@ -124,7 +124,7 @@ PatchCustomerRequest patchCustomerRequest = new PatchCustomerRequest(); // Patch
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 String ifMatch = "ifMatch_example"; // String | Contains an ETag value from a GET request to make the request conditional.
 try {
-    TmsV2CustomersResponse result = apiInstance.patchCustomer(customerId, patchCustomerRequest, profileId, ifMatch);
+    PatchCustomerRequest result = apiInstance.patchCustomer(customerId, patchCustomerRequest, profileId, ifMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomerApi#patchCustomer");
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TmsV2CustomersResponse**](TmsV2CustomersResponse.md)
+[**PatchCustomerRequest**](PatchCustomerRequest.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ No authorization required
 
 <a name="postCustomer"></a>
 # **postCustomer**
-> TmsV2CustomersResponse postCustomer(postCustomerRequest, profileId)
+> PostCustomerRequest postCustomer(postCustomerRequest, profileId)
 
 Create a Customer
 
@@ -173,7 +173,7 @@ CustomerApi apiInstance = new CustomerApi();
 PostCustomerRequest postCustomerRequest = new PostCustomerRequest(); // PostCustomerRequest | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    TmsV2CustomersResponse result = apiInstance.postCustomer(postCustomerRequest, profileId);
+    PostCustomerRequest result = apiInstance.postCustomer(postCustomerRequest, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomerApi#postCustomer");
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TmsV2CustomersResponse**](TmsV2CustomersResponse.md)
+[**PostCustomerRequest**](PostCustomerRequest.md)
 
 ### Authorization
 

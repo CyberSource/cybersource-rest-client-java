@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsProcessingInformationAuthorizationOptions;
 import Model.Ptsv2paymentsProcessingInformationBankTransferOptions;
 import Model.Ptsv2paymentsProcessingInformationCaptureOptions;
@@ -173,7 +174,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return enableEscrowOption
   **/
   @ApiModelProperty(value = "Indicates whether to use the customer's escrow agreement. Possible values: - `true`: yes, use the customer's escrow agreement. - `false`: no, do not use the customer's escrow agreement.  ")
-  public Boolean getEnableEscrowOption() {
+  public Boolean isEnableEscrowOption() {
     return enableEscrowOption;
   }
 
@@ -235,7 +236,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return capture
   **/
   @ApiModelProperty(value = "Indicates whether to also include a capture  in the submitted authorization request or not.  Possible values: - `true`: Include a capture with an authorization request. - `false`: (default) Do not include a capture with an authorization request.  #### Used by **Authorization and Capture** Optional field. ")
-  public Boolean getCapture() {
+  public Boolean isCapture() {
     return capture;
   }
 
@@ -703,7 +704,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return payByPointsIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates if the transaction is pay by points transaction true: Transaction uses loyalty points false: Transaction does not use loyalty points Default: false ")
-  public Boolean getPayByPointsIndicator() {
+  public Boolean isPayByPointsIndicator() {
     return payByPointsIndicator;
   }
 
@@ -721,7 +722,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return isReturnAuthRecordEnabled
   **/
   @ApiModelProperty(value = "Flag that indicates the functionality we are having for merchants for which auth is done through Cybersource but settlement is done by themselves. true: functionality is supported. Processor should send raw processor auth response to Merchant. false: functionality is not supported. Default: false ")
-  public Boolean getIsReturnAuthRecordEnabled() {
+  public Boolean isIsReturnAuthRecordEnabled() {
     return isReturnAuthRecordEnabled;
   }
 
@@ -850,6 +851,6 @@ public class Ptsv2paymentsProcessingInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

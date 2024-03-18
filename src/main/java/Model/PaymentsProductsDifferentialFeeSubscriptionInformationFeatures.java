@@ -14,7 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.PaymentsProductsCardProcessingSubscriptionInformationFeatures;
+import java.util.Arrays;
+import Model.PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,9 +31,9 @@ import java.io.IOException;
 
 public class PaymentsProductsDifferentialFeeSubscriptionInformationFeatures {
   @SerializedName("surcharge")
-  private PaymentsProductsCardProcessingSubscriptionInformationFeatures surcharge = null;
+  private PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge surcharge = null;
 
-  public PaymentsProductsDifferentialFeeSubscriptionInformationFeatures surcharge(PaymentsProductsCardProcessingSubscriptionInformationFeatures surcharge) {
+  public PaymentsProductsDifferentialFeeSubscriptionInformationFeatures surcharge(PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge surcharge) {
     this.surcharge = surcharge;
     return this;
   }
@@ -42,11 +43,11 @@ public class PaymentsProductsDifferentialFeeSubscriptionInformationFeatures {
    * @return surcharge
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsCardProcessingSubscriptionInformationFeatures getSurcharge() {
+  public PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge getSurcharge() {
     return surcharge;
   }
 
-  public void setSurcharge(PaymentsProductsCardProcessingSubscriptionInformationFeatures surcharge) {
+  public void setSurcharge(PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge surcharge) {
     this.surcharge = surcharge;
   }
 
@@ -89,6 +90,6 @@ public class PaymentsProductsDifferentialFeeSubscriptionInformationFeatures {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

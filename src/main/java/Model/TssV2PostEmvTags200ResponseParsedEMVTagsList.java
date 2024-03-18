@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.TssV2PostEmvTags200ResponseEmvTagBreakdownList;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -145,6 +146,6 @@ public class TssV2PostEmvTags200ResponseParsedEMVTagsList {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

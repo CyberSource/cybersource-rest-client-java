@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsTravelInformationAgency;
 import Model.Ptsv2paymentsTravelInformationAutoRental;
 import Model.Ptsv2paymentsTravelInformationLodging;
@@ -208,6 +209,6 @@ public class Ptsv2paymentsTravelInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,7 +42,7 @@ public class Ptsv2paymentsTokenInformationPaymentInstrument {
    * @return _default
   **/
   @ApiModelProperty(value = "Flag that specifies if the Payment Instrument should be made the Customers default. Possible values: - true - false : (default) ")
-  public Boolean getDefault() {
+  public Boolean isDefault() {
     return _default;
   }
 
@@ -88,6 +89,6 @@ public class Ptsv2paymentsTokenInformationPaymentInstrument {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

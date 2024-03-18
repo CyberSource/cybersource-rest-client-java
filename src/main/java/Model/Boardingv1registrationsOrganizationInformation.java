@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Boardingv1registrationsOrganizationInformationBusinessInformation;
 import Model.Boardingv1registrationsOrganizationInformationKYC;
 import Model.Boardingv1registrationsOrganizationInformationOwners;
@@ -90,7 +91,6 @@ public class Boardingv1registrationsOrganizationInformation {
       }
     }
   }
-
   @SerializedName("type")
   private TypeEnum type = null;
 
@@ -142,7 +142,6 @@ public class Boardingv1registrationsOrganizationInformation {
       }
     }
   }
-
   @SerializedName("status")
   private StatusEnum status = null;
 
@@ -194,19 +193,6 @@ public class Boardingv1registrationsOrganizationInformation {
     this.parentOrganizationId = parentOrganizationId;
   }
 
-  public Boardingv1registrationsOrganizationInformation childOrganizations(List<String> childOrganizations) {
-    this.childOrganizations = childOrganizations;
-    return this;
-  }
-
-  public Boardingv1registrationsOrganizationInformation addChildOrganizationsItem(String childOrganizationsItem) {
-    if (this.childOrganizations == null) {
-      this.childOrganizations = new ArrayList<String>();
-    }
-    this.childOrganizations.add(childOrganizationsItem);
-    return this;
-  }
-
    /**
    * Get childOrganizations
    * @return childOrganizations
@@ -214,10 +200,6 @@ public class Boardingv1registrationsOrganizationInformation {
   @ApiModelProperty(value = "")
   public List<String> getChildOrganizations() {
     return childOrganizations;
-  }
-
-  public void setChildOrganizations(List<String> childOrganizations) {
-    this.childOrganizations = childOrganizations;
   }
 
   public Boardingv1registrationsOrganizationInformation type(TypeEnum type) {
@@ -266,7 +248,7 @@ public class Boardingv1registrationsOrganizationInformation {
    * @return configurable
   **/
   @ApiModelProperty(example = "false", value = "This denotes the one organization, with exception to the TRANSACTING types, that is allowed to be used for configuration purposes against products.  Eventually this field will be deprecated and all organizations will be allowed for product configuration.")
-  public Boolean getConfigurable() {
+  public Boolean isConfigurable() {
     return configurable;
   }
 
@@ -283,7 +265,7 @@ public class Boardingv1registrationsOrganizationInformation {
    * Get businessInformation
    * @return businessInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Boardingv1registrationsOrganizationInformationBusinessInformation getBusinessInformation() {
     return businessInformation;
   }
@@ -391,6 +373,6 @@ public class Boardingv1registrationsOrganizationInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

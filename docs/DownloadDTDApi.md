@@ -1,10 +1,10 @@
-# DownloadDTDApi
+# DownloadDtdApi
 
 All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDTDV2**](DownloadDTDApi.md#getDTDV2) | **GET** /reporting/v3/dtds/{reportDefinitionNameVersion} | Download DTD for Report
+[**getDTDV2**](DownloadDtdApi.md#getDTDV2) | **GET** /reporting/v3/dtds/{reportDefinitionNameVersion} | Download DTD for Report
 
 
 <a name="getDTDV2"></a>
@@ -19,15 +19,15 @@ Used to download DTDs for reports on no-auth.
 ```java
 // Import classes:
 //import Invokers.ApiException;
-//import Api.DownloadDTDApi;
+//import Api.DownloadDtdApi;
 
 
-DownloadDTDApi apiInstance = new DownloadDTDApi();
+DownloadDtdApi apiInstance = new DownloadDtdApi();
 String reportDefinitionNameVersion = "reportDefinitionNameVersion_example"; // String | Name and version of DTD file to download. Some DTDs only have one version. In that case version name is not needed. Some example values are ctdr-1.0, tdr, pbdr-1.1
 try {
     apiInstance.getDTDV2(reportDefinitionNameVersion);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DownloadDTDApi#getDTDV2");
+    System.err.println("Exception when calling DownloadDtdApi#getDTDV2");
     e.printStackTrace();
 }
 ```

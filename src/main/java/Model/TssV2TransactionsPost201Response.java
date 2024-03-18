@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.TssV2TransactionsPost201ResponseEmbedded;
 import com.google.gson.TypeAdapter;
@@ -97,7 +98,7 @@ public class TssV2TransactionsPost201Response {
    * @return save
   **/
   @ApiModelProperty(value = "Indicates whether or not you want to save this search request for future use. The options are:  * `true` * `false` (default value)  If set to `true`, this field returns `searchID` in the response. You can use this value to retrieve the details of the saved search. ")
-  public Boolean getSave() {
+  public Boolean isSave() {
     return save;
   }
 
@@ -366,6 +367,6 @@ public class TssV2TransactionsPost201Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

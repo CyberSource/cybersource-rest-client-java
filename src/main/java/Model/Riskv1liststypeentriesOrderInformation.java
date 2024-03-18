@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1liststypeentriesOrderInformationAddress;
 import Model.Riskv1liststypeentriesOrderInformationBillTo;
 import Model.Riskv1liststypeentriesOrderInformationLineItems;
@@ -171,6 +172,6 @@ public class Riskv1liststypeentriesOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

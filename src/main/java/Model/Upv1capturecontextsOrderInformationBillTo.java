@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Upv1capturecontextsOrderInformationBillToCompany;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -503,6 +504,6 @@ public class Upv1capturecontextsOrderInformationBillTo {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseLinksSelf;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -158,6 +159,6 @@ public class InvoicingV2InvoicesAllGet200ResponseLinks {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

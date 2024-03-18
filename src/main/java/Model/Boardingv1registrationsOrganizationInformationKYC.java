@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Boardingv1registrationsOrganizationInformationKYCDepositBankAccount;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -78,7 +79,6 @@ public class Boardingv1registrationsOrganizationInformationKYC {
       }
     }
   }
-
   @SerializedName("whenIsCustomerCharged")
   private WhenIsCustomerChargedEnum whenIsCustomerCharged = null;
 
@@ -152,7 +152,6 @@ public class Boardingv1registrationsOrganizationInformationKYC {
       }
     }
   }
-
   @SerializedName("timeToProductDelivery")
   private TimeToProductDeliveryEnum timeToProductDelivery = null;
 
@@ -214,7 +213,7 @@ public class Boardingv1registrationsOrganizationInformationKYC {
    * @return offerSubscriptions
   **/
   @ApiModelProperty(example = "true", required = true, value = "")
-  public Boolean getOfferSubscriptions() {
+  public Boolean isOfferSubscriptions() {
     return offerSubscriptions;
   }
 
@@ -445,6 +444,6 @@ public class Boardingv1registrationsOrganizationInformationKYC {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

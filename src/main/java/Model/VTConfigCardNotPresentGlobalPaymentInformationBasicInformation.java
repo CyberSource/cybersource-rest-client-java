@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -83,7 +84,6 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
       }
     }
   }
-
   @SerializedName("defaultTransactionType")
   private DefaultTransactionTypeEnum defaultTransactionType = null;
 
@@ -133,7 +133,6 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
       }
     }
   }
-
   @SerializedName("defaultPaymentType")
   private DefaultPaymentTypeEnum defaultPaymentType = null;
 
@@ -267,7 +266,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
    * @return displayRetail
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayRetail() {
+  public Boolean isDisplayRetail() {
     return displayRetail;
   }
 
@@ -285,7 +284,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
    * @return displayMoto
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayMoto() {
+  public Boolean isDisplayMoto() {
     return displayMoto;
   }
 
@@ -303,7 +302,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
    * @return displayInternet
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayInternet() {
+  public Boolean isDisplayInternet() {
     return displayInternet;
   }
 
@@ -366,6 +365,6 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

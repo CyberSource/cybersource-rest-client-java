@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -108,7 +109,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
    * @return cardVerificationIndicator
   **/
   @ApiModelProperty(value = "This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - `true`   - `false` (default value) ")
-  public Boolean getCardVerificationIndicator() {
+  public Boolean isCardVerificationIndicator() {
     return cardVerificationIndicator;
   }
 
@@ -181,6 +182,6 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

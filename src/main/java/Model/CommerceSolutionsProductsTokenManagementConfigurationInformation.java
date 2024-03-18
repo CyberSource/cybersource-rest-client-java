@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -113,6 +114,6 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

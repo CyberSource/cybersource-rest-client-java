@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -77,7 +78,6 @@ public class InlineResponse2011RegistrationInformation {
       }
     }
   }
-
   @SerializedName("mode")
   private ModeEnum mode = null;
 
@@ -172,6 +172,6 @@ public class InlineResponse2011RegistrationInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

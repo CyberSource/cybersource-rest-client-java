@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrument;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -35,19 +36,6 @@ public class PaymentInstrumentListEmbedded {
   @SerializedName("paymentInstruments")
   private List<Tmsv2customersEmbeddedDefaultPaymentInstrument> paymentInstruments = null;
 
-  public PaymentInstrumentListEmbedded paymentInstruments(List<Tmsv2customersEmbeddedDefaultPaymentInstrument> paymentInstruments) {
-    this.paymentInstruments = paymentInstruments;
-    return this;
-  }
-
-  public PaymentInstrumentListEmbedded addPaymentInstrumentsItem(Tmsv2customersEmbeddedDefaultPaymentInstrument paymentInstrumentsItem) {
-    if (this.paymentInstruments == null) {
-      this.paymentInstruments = new ArrayList<Tmsv2customersEmbeddedDefaultPaymentInstrument>();
-    }
-    this.paymentInstruments.add(paymentInstrumentsItem);
-    return this;
-  }
-
    /**
    * Get paymentInstruments
    * @return paymentInstruments
@@ -55,10 +43,6 @@ public class PaymentInstrumentListEmbedded {
   @ApiModelProperty(value = "")
   public List<Tmsv2customersEmbeddedDefaultPaymentInstrument> getPaymentInstruments() {
     return paymentInstruments;
-  }
-
-  public void setPaymentInstruments(List<Tmsv2customersEmbeddedDefaultPaymentInstrument> paymentInstruments) {
-    this.paymentInstruments = paymentInstruments;
   }
 
 
@@ -100,6 +84,6 @@ public class PaymentInstrumentListEmbedded {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

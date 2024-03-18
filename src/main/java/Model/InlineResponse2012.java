@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse2012KeyInformation;
 import Model.Kmsegressv2keyssymClientReferenceInformation;
 import com.google.gson.TypeAdapter;
@@ -160,6 +161,6 @@ public class InlineResponse2012 {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

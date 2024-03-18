@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsWatchlistScreeningInformationWeights;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -115,7 +116,7 @@ public class Ptsv2paymentsWatchlistScreeningInformation {
    * @return proceedOnMatch
   **/
   @ApiModelProperty(value = "Indicates whether the transaction should proceed if there is a match. Possible values: - `true`: Transaction proceeds even when match is found in the Denied Parties List. The match is noted in the response. - `false`: Normal watchlist screening behavior occurs. (Transaction stops if a match to DPL occurs. Transaction proceeds if no match.) ")
-  public Boolean getProceedOnMatch() {
+  public Boolean isProceedOnMatch() {
     return proceedOnMatch;
   }
 
@@ -168,6 +169,6 @@ public class Ptsv2paymentsWatchlistScreeningInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

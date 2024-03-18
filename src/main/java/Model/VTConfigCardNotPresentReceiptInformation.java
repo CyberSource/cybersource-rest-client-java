@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.VTConfigCardNotPresentReceiptInformationEmailReceipt;
 import Model.VTConfigCardNotPresentReceiptInformationHeader;
 import Model.VTConfigCardNotPresentReceiptInformationOrderInformation;
@@ -137,6 +138,6 @@ public class VTConfigCardNotPresentReceiptInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

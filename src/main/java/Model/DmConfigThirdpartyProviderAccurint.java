@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.DmConfigThirdpartyProviderAccurintCredentials;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -45,7 +46,7 @@ public class DmConfigThirdpartyProviderAccurint {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEnabled() {
+  public Boolean isEnabled() {
     return enabled;
   }
 
@@ -112,6 +113,6 @@ public class DmConfigThirdpartyProviderAccurint {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

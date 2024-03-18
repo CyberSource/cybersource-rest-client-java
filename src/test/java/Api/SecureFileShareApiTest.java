@@ -13,12 +13,12 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.InlineResponse4004;
 import org.joda.time.LocalDate;
 import Model.V1FileDetailsGet200Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,11 +39,11 @@ public class SecureFileShareApiTest {
      *
      * Download a file for the given file identifier
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getFileTest() throws ApiException {
+    public void getFileTest() throws Exception {
         String fileId = null;
         String organizationId = null;
         api.getFile(fileId, organizationId);
@@ -56,11 +56,11 @@ public class SecureFileShareApiTest {
      *
      * Get list of files and it&#39;s information of them available inside the report directory
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getFileDetailTest() throws ApiException {
+    public void getFileDetailTest() throws Exception {
         LocalDate startDate = null;
         LocalDate endDate = null;
         String organizationId = null;

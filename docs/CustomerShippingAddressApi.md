@@ -61,7 +61,7 @@ No authorization required
 
 <a name="getCustomerShippingAddress"></a>
 # **getCustomerShippingAddress**
-> Tmsv2customersEmbeddedDefaultShippingAddress getCustomerShippingAddress(customerId, shippingAddressId, profileId)
+> PostCustomerShippingAddressRequest getCustomerShippingAddress(customerId, shippingAddressId, profileId)
 
 Retrieve a Customer Shipping Address
 
@@ -79,7 +79,7 @@ String customerId = "customerId_example"; // String | The Id of a Customer.
 String shippingAddressId = "shippingAddressId_example"; // String | The Id of a shipping address.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    Tmsv2customersEmbeddedDefaultShippingAddress result = apiInstance.getCustomerShippingAddress(customerId, shippingAddressId, profileId);
+    PostCustomerShippingAddressRequest result = apiInstance.getCustomerShippingAddress(customerId, shippingAddressId, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomerShippingAddressApi#getCustomerShippingAddress");
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultShippingAddress**](Tmsv2customersEmbeddedDefaultShippingAddress.md)
+[**PostCustomerShippingAddressRequest**](PostCustomerShippingAddressRequest.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ No authorization required
 
 <a name="patchCustomersShippingAddress"></a>
 # **patchCustomersShippingAddress**
-> Tmsv2customersEmbeddedDefaultShippingAddress patchCustomersShippingAddress(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch)
+> PatchCustomerShippingAddressRequest patchCustomersShippingAddress(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch)
 
 Update a Customer Shipping Address
 
@@ -181,7 +181,7 @@ PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest = new Pa
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 String ifMatch = "ifMatch_example"; // String | Contains an ETag value from a GET request to make the request conditional.
 try {
-    Tmsv2customersEmbeddedDefaultShippingAddress result = apiInstance.patchCustomersShippingAddress(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch);
+    PatchCustomerShippingAddressRequest result = apiInstance.patchCustomersShippingAddress(customerId, shippingAddressId, patchCustomerShippingAddressRequest, profileId, ifMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomerShippingAddressApi#patchCustomersShippingAddress");
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultShippingAddress**](Tmsv2customersEmbeddedDefaultShippingAddress.md)
+[**PatchCustomerShippingAddressRequest**](PatchCustomerShippingAddressRequest.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ No authorization required
 
 <a name="postCustomerShippingAddress"></a>
 # **postCustomerShippingAddress**
-> Tmsv2customersEmbeddedDefaultShippingAddress postCustomerShippingAddress(customerId, postCustomerShippingAddressRequest, profileId)
+> PostCustomerShippingAddressRequest postCustomerShippingAddress(customerId, postCustomerShippingAddressRequest, profileId)
 
 Create a Customer Shipping Address
 
@@ -232,7 +232,7 @@ String customerId = "customerId_example"; // String | The Id of a Customer.
 PostCustomerShippingAddressRequest postCustomerShippingAddressRequest = new PostCustomerShippingAddressRequest(); // PostCustomerShippingAddressRequest | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    Tmsv2customersEmbeddedDefaultShippingAddress result = apiInstance.postCustomerShippingAddress(customerId, postCustomerShippingAddressRequest, profileId);
+    PostCustomerShippingAddressRequest result = apiInstance.postCustomerShippingAddress(customerId, postCustomerShippingAddressRequest, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomerShippingAddressApi#postCustomerShippingAddress");
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tmsv2customersEmbeddedDefaultShippingAddress**](Tmsv2customersEmbeddedDefaultShippingAddress.md)
+[**PostCustomerShippingAddressRequest**](PostCustomerShippingAddressRequest.md)
 
 ### Authorization
 

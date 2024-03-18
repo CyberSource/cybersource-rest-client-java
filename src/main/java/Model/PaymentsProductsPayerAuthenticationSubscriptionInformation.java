@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -79,7 +80,6 @@ public class PaymentsProductsPayerAuthenticationSubscriptionInformation {
       }
     }
   }
-
   @SerializedName("selfServiceability")
   private SelfServiceabilityEnum selfServiceability = SelfServiceabilityEnum.NOT_SELF_SERVICEABLE;
 
@@ -93,7 +93,7 @@ public class PaymentsProductsPayerAuthenticationSubscriptionInformation {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEnabled() {
+  public Boolean isEnabled() {
     return enabled;
   }
 
@@ -160,6 +160,6 @@ public class PaymentsProductsPayerAuthenticationSubscriptionInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

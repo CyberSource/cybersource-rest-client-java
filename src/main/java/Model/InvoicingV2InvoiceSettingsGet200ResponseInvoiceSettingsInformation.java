@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -123,7 +124,7 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
    * @return enableReminders
   **/
   @ApiModelProperty(value = "Whether you would like us to send an auto-generated reminder email to your invoice recipients. Currently, this reminder email is sent five days before the invoice is due and one day after it is past due.")
-  public Boolean getEnableReminders() {
+  public Boolean isEnableReminders() {
     return enableReminders;
   }
 
@@ -195,7 +196,7 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
    * @return payerAuthentication3DSVersion
   **/
   @ApiModelProperty(value = "The 3D Secure payer authentication status for a merchant's invoice payments.")
-  public Boolean getPayerAuthentication3DSVersion() {
+  public Boolean isPayerAuthentication3DSVersion() {
     return payerAuthentication3DSVersion;
   }
 
@@ -213,7 +214,7 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
    * @return showVatNumber
   **/
   @ApiModelProperty(value = "Display VAT number on Invoice.")
-  public Boolean getShowVatNumber() {
+  public Boolean isShowVatNumber() {
     return showVatNumber;
   }
 
@@ -296,6 +297,6 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

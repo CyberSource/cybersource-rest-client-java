@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Notificationsubscriptionsv1webhooksRetryPolicy;
 import Model.Notificationsubscriptionsv1webhooksSecurityPolicy1;
 import com.google.gson.TypeAdapter;
@@ -307,6 +308,6 @@ public class CreateWebhookRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

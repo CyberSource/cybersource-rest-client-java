@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2refreshpaymentstatusidPaymentInformationCustomer;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank;
 import Model.TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard;
@@ -161,6 +162,6 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

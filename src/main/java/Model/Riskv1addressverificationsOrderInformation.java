@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1addressverificationsOrderInformationBillTo;
 import Model.Riskv1addressverificationsOrderInformationLineItems;
 import Model.Riskv1addressverificationsOrderInformationShipTo;
@@ -147,6 +148,6 @@ public class Riskv1addressverificationsOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

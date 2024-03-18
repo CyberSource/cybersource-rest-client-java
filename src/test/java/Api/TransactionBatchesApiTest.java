@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import Model.PtsV1TransactionBatchesGet200Response;
@@ -22,6 +21,7 @@ import Model.PtsV1TransactionBatchesGet500Response;
 import Model.PtsV1TransactionBatchesIdGet200Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,11 +42,11 @@ public class TransactionBatchesApiTest {
      *
      * Provides real-time detailed status information about the transactions that you previously uploaded in the Business Center or processed with the Offline Transaction File Submission service. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getTransactionBatchDetailsTest() throws ApiException {
+    public void getTransactionBatchDetailsTest() throws Exception {
         String id = null;
         LocalDate uploadDate = null;
         String status = null;
@@ -60,11 +60,11 @@ public class TransactionBatchesApiTest {
      *
      * Provide the search range
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getTransactionBatchIdTest() throws ApiException {
+    public void getTransactionBatchIdTest() throws Exception {
         String id = null;
         PtsV1TransactionBatchesIdGet200Response response = api.getTransactionBatchId(id);
 
@@ -76,11 +76,11 @@ public class TransactionBatchesApiTest {
      *
      * Provide the search range
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getTransactionBatchesTest() throws ApiException {
+    public void getTransactionBatchesTest() throws Exception {
         DateTime startTime = null;
         DateTime endTime = null;
         PtsV1TransactionBatchesGet200Response response = api.getTransactionBatches(startTime, endTime);

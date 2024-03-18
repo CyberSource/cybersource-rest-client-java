@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ReportingV3ChargebackDetailsGet200ResponseChargebackDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -169,6 +170,6 @@ public class ReportingV3ChargebackDetailsGet200Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

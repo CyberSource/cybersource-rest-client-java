@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsMerchantInformationMerchantDescriptor;
 import Model.Ptsv2paymentsMerchantInformationServiceFeeDescriptor;
 import Model.Ptsv2paymentsMerchantInformationServiceLocation;
@@ -461,6 +462,6 @@ public class Ptsv2paymentsMerchantInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

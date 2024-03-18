@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Kmsv2keyssymClientReferenceInformation;
 import Model.Kmsv2keyssymverifiKeyInformation;
 import com.google.gson.TypeAdapter;
@@ -123,6 +124,6 @@ public class CreateSharedSecretKeysVerifiRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

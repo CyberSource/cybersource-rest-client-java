@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.DmConfigThirdpartyProviderAccurintCredentials;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -51,7 +52,7 @@ public class DmConfigThirdpartyProviderEmailage {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEnabled() {
+  public Boolean isEnabled() {
     return enabled;
   }
 
@@ -69,7 +70,7 @@ public class DmConfigThirdpartyProviderEmailage {
    * @return enableRealTime
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEnableRealTime() {
+  public Boolean isEnableRealTime() {
     return enableRealTime;
   }
 
@@ -87,7 +88,7 @@ public class DmConfigThirdpartyProviderEmailage {
    * @return useCybsCredentials
   **/
   @ApiModelProperty(value = "")
-  public Boolean getUseCybsCredentials() {
+  public Boolean isUseCybsCredentials() {
     return useCybsCredentials;
   }
 
@@ -158,6 +159,6 @@ public class DmConfigThirdpartyProviderEmailage {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1decisionsidmarkingRiskInformation;
 import Model.Riskv1liststypeentriesClientReferenceInformation;
 import com.google.gson.TypeAdapter;
@@ -45,7 +46,7 @@ public class FraudMarkingActionRequest {
    * Get riskInformation
    * @return riskInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Riskv1decisionsidmarkingRiskInformation getRiskInformation() {
     return riskInformation;
   }
@@ -113,6 +114,6 @@ public class FraudMarkingActionRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

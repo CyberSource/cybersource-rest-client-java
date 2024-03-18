@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -63,7 +64,7 @@ public class PtsV2CreditsPost201ResponseProcessingInformation {
    * @return enhancedDataEnabled
   **/
   @ApiModelProperty(value = "The possible values for the reply field are: - `true` : the airline data was included in the request to the processor. - `false` : the airline data was not included in the request to the processor.  Returned by authorization, capture, or credit services. ")
-  public Boolean getEnhancedDataEnabled() {
+  public Boolean isEnhancedDataEnabled() {
     return enhancedDataEnabled;
   }
 
@@ -112,6 +113,6 @@ public class PtsV2CreditsPost201ResponseProcessingInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

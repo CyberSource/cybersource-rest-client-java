@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PaymentsProductsCardPresentConnect;
 import Model.PaymentsProductsCardProcessing;
 import Model.PaymentsProductsCurrencyConversion;
@@ -491,6 +492,6 @@ public class PaymentsProducts {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.DmConfigThirdpartyProviderTargusCredentials;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -48,7 +49,7 @@ public class DmConfigThirdpartyProviderTargus {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEnabled() {
+  public Boolean isEnabled() {
     return enabled;
   }
 
@@ -66,7 +67,7 @@ public class DmConfigThirdpartyProviderTargus {
    * @return useCybsCredentials
   **/
   @ApiModelProperty(value = "")
-  public Boolean getUseCybsCredentials() {
+  public Boolean isUseCybsCredentials() {
     return useCybsCredentials;
   }
 
@@ -135,6 +136,6 @@ public class DmConfigThirdpartyProviderTargus {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

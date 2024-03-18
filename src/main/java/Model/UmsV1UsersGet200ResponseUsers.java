@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.UmsV1UsersGet200ResponseAccountInformation;
 import Model.UmsV1UsersGet200ResponseContactInformation;
 import Model.UmsV1UsersGet200ResponseOrganizationInformation;
@@ -171,6 +172,6 @@ public class UmsV1UsersGet200ResponseUsers {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

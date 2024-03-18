@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsidvoidsOrderInformation;
 import Model.Ptsv2paymentsidvoidsPaymentInformation;
@@ -161,6 +162,6 @@ public class MitVoidRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

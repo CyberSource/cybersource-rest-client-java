@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsidClientReferenceInformation;
 import Model.Ptsv2paymentsidMerchantInformation;
 import Model.Ptsv2paymentsidOrderInformation;
@@ -185,6 +186,6 @@ public class IncrementAuthRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201Response1PaymentInformationBank;
 import Model.PtsV2PaymentsPost201Response1PaymentInformationPaymentType;
 import Model.Ptsv2refreshpaymentstatusidPaymentInformationCustomer;
@@ -137,6 +138,6 @@ public class PtsV2PaymentsPost201Response1PaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

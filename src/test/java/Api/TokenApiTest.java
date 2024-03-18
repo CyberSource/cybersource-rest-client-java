@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.InlineResponse400;
 import Model.InlineResponse403;
 import Model.InlineResponse410;
@@ -22,6 +21,7 @@ import Model.InlineResponse500;
 import Model.PostPaymentCredentialsRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,11 +42,11 @@ public class TokenApiTest {
      *
      * |  |  |  |     | --- | --- | --- |     |**Token**&lt;br&gt;A Token can represent your tokenized Customer, Payment Instrument or Instrument Identifier information.|&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|**Payment Credentials**&lt;br&gt;Contains payment information such as the network token, generated cryptogram for Visa &amp; MasterCard or dynamic CVV for Amex in a JSON Web Encryption (JWE) response.&lt;br&gt;Your system can use this API to retrieve the Payment Credentials for an existing Customer, Payment Instrument or Instrument Identifier. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void postTokenPaymentCredentialsTest() throws ApiException {
+    public void postTokenPaymentCredentialsTest() throws Exception {
         String tokenId = null;
         PostPaymentCredentialsRequest postPaymentCredentialsRequest = null;
         String profileId = null;

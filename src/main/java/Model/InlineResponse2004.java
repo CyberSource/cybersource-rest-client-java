@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Notificationsubscriptionsv1webhooksNotificationScope;
 import Model.Notificationsubscriptionsv1webhooksProducts;
 import Model.Notificationsubscriptionsv1webhooksRetryPolicy;
@@ -410,6 +411,6 @@ public class InlineResponse2004 {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

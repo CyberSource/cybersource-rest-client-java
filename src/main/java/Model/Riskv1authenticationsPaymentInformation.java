@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Riskv1authenticationsPaymentInformationCard;
 import Model.Riskv1authenticationsPaymentInformationTokenizedCard;
@@ -161,6 +162,6 @@ public class Riskv1authenticationsPaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

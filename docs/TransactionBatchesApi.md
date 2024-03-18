@@ -26,7 +26,7 @@ Provides real-time detailed status information about the transactions that you p
 
 TransactionBatchesApi apiInstance = new TransactionBatchesApi();
 String id = "id_example"; // String | The batch id assigned for the template.
-LocalDate uploadDate = new LocalDate(); // LocalDate | Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd 
+LocalDate uploadDate = LocalDate.now(); // LocalDate | Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd 
 String status = "status_example"; // String | Allows you to filter by rejected response.  Valid values: - Rejected 
 try {
     apiInstance.getTransactionBatchDetails(id, uploadDate, status);

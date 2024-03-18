@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -53,7 +54,7 @@ public class SAConfigNotificationsMerchantNotifications {
    * @return backofficePostEnabled
   **/
   @ApiModelProperty(value = "Enables Webhook transaction confirmation messages sent to URL defined in backofficePostUrl. Usually enabled by web developers integrating to Secure Acceptance.")
-  public Boolean getBackofficePostEnabled() {
+  public Boolean isBackofficePostEnabled() {
     return backofficePostEnabled;
   }
 
@@ -89,7 +90,7 @@ public class SAConfigNotificationsMerchantNotifications {
    * @return backofficeEmailEnabled
   **/
   @ApiModelProperty(value = "Enables email transaction confirmation messages, sent to the address specified in backofficeEmailAddress.")
-  public Boolean getBackofficeEmailEnabled() {
+  public Boolean isBackofficeEmailEnabled() {
     return backofficeEmailEnabled;
   }
 
@@ -180,6 +181,6 @@ public class SAConfigNotificationsMerchantNotifications {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

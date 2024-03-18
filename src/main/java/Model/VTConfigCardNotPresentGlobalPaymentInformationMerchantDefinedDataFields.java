@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -113,7 +114,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return displayMerchantDefinedData1
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayMerchantDefinedData1() {
+  public Boolean isDisplayMerchantDefinedData1() {
     return displayMerchantDefinedData1;
   }
 
@@ -131,7 +132,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return displayMerchantDefinedData2
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayMerchantDefinedData2() {
+  public Boolean isDisplayMerchantDefinedData2() {
     return displayMerchantDefinedData2;
   }
 
@@ -149,7 +150,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return displayMerchantDefinedData3
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayMerchantDefinedData3() {
+  public Boolean isDisplayMerchantDefinedData3() {
     return displayMerchantDefinedData3;
   }
 
@@ -167,7 +168,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return displayMerchantDefinedData4
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayMerchantDefinedData4() {
+  public Boolean isDisplayMerchantDefinedData4() {
     return displayMerchantDefinedData4;
   }
 
@@ -185,7 +186,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return displayMerchantDefinedData5
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDisplayMerchantDefinedData5() {
+  public Boolean isDisplayMerchantDefinedData5() {
     return displayMerchantDefinedData5;
   }
 
@@ -239,7 +240,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return requireMerchantDefinedData1
   **/
   @ApiModelProperty(value = "")
-  public Boolean getRequireMerchantDefinedData1() {
+  public Boolean isRequireMerchantDefinedData1() {
     return requireMerchantDefinedData1;
   }
 
@@ -293,7 +294,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return requireMerchantDefinedData2
   **/
   @ApiModelProperty(value = "")
-  public Boolean getRequireMerchantDefinedData2() {
+  public Boolean isRequireMerchantDefinedData2() {
     return requireMerchantDefinedData2;
   }
 
@@ -347,7 +348,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return requireMerchantDefinedData3
   **/
   @ApiModelProperty(value = "")
-  public Boolean getRequireMerchantDefinedData3() {
+  public Boolean isRequireMerchantDefinedData3() {
     return requireMerchantDefinedData3;
   }
 
@@ -401,7 +402,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return requireMerchantDefinedData4
   **/
   @ApiModelProperty(value = "")
-  public Boolean getRequireMerchantDefinedData4() {
+  public Boolean isRequireMerchantDefinedData4() {
     return requireMerchantDefinedData4;
   }
 
@@ -455,7 +456,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return requireMerchantDefinedData5
   **/
   @ApiModelProperty(value = "")
-  public Boolean getRequireMerchantDefinedData5() {
+  public Boolean isRequireMerchantDefinedData5() {
     return requireMerchantDefinedData5;
   }
 
@@ -473,7 +474,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return merchantDefinedData1DisplayOnReceipt
   **/
   @ApiModelProperty(value = "")
-  public Boolean getMerchantDefinedData1DisplayOnReceipt() {
+  public Boolean isMerchantDefinedData1DisplayOnReceipt() {
     return merchantDefinedData1DisplayOnReceipt;
   }
 
@@ -491,7 +492,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return merchantDefinedData2DisplayOnReceipt
   **/
   @ApiModelProperty(value = "")
-  public Boolean getMerchantDefinedData2DisplayOnReceipt() {
+  public Boolean isMerchantDefinedData2DisplayOnReceipt() {
     return merchantDefinedData2DisplayOnReceipt;
   }
 
@@ -509,7 +510,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return merchantDefinedData3DisplayOnReceipt
   **/
   @ApiModelProperty(value = "")
-  public Boolean getMerchantDefinedData3DisplayOnReceipt() {
+  public Boolean isMerchantDefinedData3DisplayOnReceipt() {
     return merchantDefinedData3DisplayOnReceipt;
   }
 
@@ -527,7 +528,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return merchantDefinedData4DisplayOnReceipt
   **/
   @ApiModelProperty(value = "")
-  public Boolean getMerchantDefinedData4DisplayOnReceipt() {
+  public Boolean isMerchantDefinedData4DisplayOnReceipt() {
     return merchantDefinedData4DisplayOnReceipt;
   }
 
@@ -545,7 +546,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return merchantDefinedData5DisplayOnReceipt
   **/
   @ApiModelProperty(value = "")
-  public Boolean getMerchantDefinedData5DisplayOnReceipt() {
+  public Boolean isMerchantDefinedData5DisplayOnReceipt() {
     return merchantDefinedData5DisplayOnReceipt;
   }
 
@@ -640,6 +641,6 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

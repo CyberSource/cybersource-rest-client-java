@@ -13,12 +13,12 @@
 
 package Api;
 
-import Invokers.ApiException;
 import org.joda.time.DateTime;
 import Model.ReportingV3ConversionDetailsGet200Response;
 import Model.Reportingv3ReportDownloadsGet400Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,11 +39,11 @@ public class ConversionDetailsApiTest {
      *
      * Get conversion detail of transactions for a merchant.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getConversionDetailTest() throws ApiException {
+    public void getConversionDetailTest() throws Exception {
         DateTime startTime = null;
         DateTime endTime = null;
         String organizationId = null;

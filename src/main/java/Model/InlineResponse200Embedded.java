@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse200EmbeddedCapture;
 import Model.InlineResponse200EmbeddedReversal;
 import com.google.gson.TypeAdapter;
@@ -114,6 +115,6 @@ public class InlineResponse200Embedded {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.GetAllPlansResponseOrderInformation;
 import Model.Rbsv1plansidPlanInformation;
 import Model.Rbsv1plansidProcessingInformation;
@@ -137,6 +138,6 @@ public class UpdatePlanRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

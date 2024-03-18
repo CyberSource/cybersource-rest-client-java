@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2refreshpaymentstatusidAgreementInformation;
 import Model.Ptsv2refreshpaymentstatusidClientReferenceInformation;
 import Model.Ptsv2refreshpaymentstatusidPaymentInformation;
@@ -161,6 +162,6 @@ public class RefreshPaymentStatusRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

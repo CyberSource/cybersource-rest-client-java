@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,7 +42,7 @@ public class DmConfigProcessingOptions {
    * @return stepUpAuthEnabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean getStepUpAuthEnabled() {
+  public Boolean isStepUpAuthEnabled() {
     return stepUpAuthEnabled;
   }
 
@@ -88,6 +89,6 @@ public class DmConfigProcessingOptions {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

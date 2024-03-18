@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Tmsv2customersBuyerInformation;
 import Model.Tmsv2customersClientReferenceInformation;
 import Model.Tmsv2customersDefaultPaymentInstrument;
@@ -314,6 +315,6 @@ public class PostCustomerRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

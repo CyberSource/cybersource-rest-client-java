@@ -13,11 +13,11 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.PtsV2PaymentsRefundPost400Response;
 import Model.UmsV1UsersGet200Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,11 +38,11 @@ public class UserManagementApiTest {
      *
      * This endpoint is deprecated. Please use the search end point.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getUsersTest() throws ApiException {
+    public void getUsersTest() throws Exception {
         String organizationId = null;
         String userName = null;
         String permissionId = null;

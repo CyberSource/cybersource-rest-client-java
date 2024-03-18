@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -157,6 +158,6 @@ public class Ptsv1pushfundstransferClientReferenceInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

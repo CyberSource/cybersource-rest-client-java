@@ -38,7 +38,6 @@ import Model.InlineResponse500;
 import Model.PatchCustomerPaymentInstrumentRequest;
 import Model.PaymentInstrumentList;
 import Model.PostCustomerPaymentInstrumentRequest;
-import Model.Tmsv2customersEmbeddedDefaultPaymentInstrument;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -308,13 +307,13 @@ public class CustomerPaymentInstrumentApi {
      * @param customerId The Id of a Customer. (required)
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return Tmsv2customersEmbeddedDefaultPaymentInstrument
+     * @return PostCustomerPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultPaymentInstrument getCustomerPaymentInstrument(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
+    public PostCustomerPaymentInstrumentRequest getCustomerPaymentInstrument(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = getCustomerPaymentInstrumentWithHttpInfo(customerId, paymentInstrumentId, profileId);
+        ApiResponse<PostCustomerPaymentInstrumentRequest> resp = getCustomerPaymentInstrumentWithHttpInfo(customerId, paymentInstrumentId, profileId);
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrument' ENDED");
         return resp.getData();
     }
@@ -325,12 +324,12 @@ public class CustomerPaymentInstrumentApi {
      * @param customerId The Id of a Customer. (required)
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrument&gt;
+     * @return ApiResponse&lt;PostCustomerPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> getCustomerPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
+    public ApiResponse<PostCustomerPaymentInstrumentRequest> getCustomerPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
         okhttp3.Call call = getCustomerPaymentInstrumentValidateBeforeCall(customerId, paymentInstrumentId, profileId, null, null);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
+        Type localVarReturnType = new TypeToken<PostCustomerPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -344,7 +343,7 @@ public class CustomerPaymentInstrumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getCustomerPaymentInstrumentAsync(String customerId, String paymentInstrumentId, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
+    public okhttp3.Call getCustomerPaymentInstrumentAsync(String customerId, String paymentInstrumentId, String profileId, final ApiCallback<PostCustomerPaymentInstrumentRequest> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -367,7 +366,7 @@ public class CustomerPaymentInstrumentApi {
         }
 
         okhttp3.Call call = getCustomerPaymentInstrumentValidateBeforeCall(customerId, paymentInstrumentId, profileId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
+        Type localVarReturnType = new TypeToken<PostCustomerPaymentInstrumentRequest>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -622,13 +621,13 @@ public class CustomerPaymentInstrumentApi {
      * @param patchCustomerPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
-     * @return Tmsv2customersEmbeddedDefaultPaymentInstrument
+     * @return PatchCustomerPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultPaymentInstrument patchCustomersPaymentInstrument(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+    public PatchCustomerPaymentInstrumentRequest patchCustomersPaymentInstrument(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchCustomersPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = patchCustomersPaymentInstrumentWithHttpInfo(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch);
+        ApiResponse<PatchCustomerPaymentInstrumentRequest> resp = patchCustomersPaymentInstrumentWithHttpInfo(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomersPaymentInstrument' ENDED");
         return resp.getData();
     }
@@ -641,12 +640,12 @@ public class CustomerPaymentInstrumentApi {
      * @param patchCustomerPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
-     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrument&gt;
+     * @return ApiResponse&lt;PatchCustomerPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> patchCustomersPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+    public ApiResponse<PatchCustomerPaymentInstrumentRequest> patchCustomersPaymentInstrumentWithHttpInfo(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
         okhttp3.Call call = patchCustomersPaymentInstrumentValidateBeforeCall(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch, null, null);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
+        Type localVarReturnType = new TypeToken<PatchCustomerPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -662,7 +661,7 @@ public class CustomerPaymentInstrumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call patchCustomersPaymentInstrumentAsync(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
+    public okhttp3.Call patchCustomersPaymentInstrumentAsync(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ApiCallback<PatchCustomerPaymentInstrumentRequest> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -685,7 +684,7 @@ public class CustomerPaymentInstrumentApi {
         }
 
         okhttp3.Call call = patchCustomersPaymentInstrumentValidateBeforeCall(customerId, paymentInstrumentId, patchCustomerPaymentInstrumentRequest, profileId, ifMatch, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
+        Type localVarReturnType = new TypeToken<PatchCustomerPaymentInstrumentRequest>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -774,13 +773,13 @@ public class CustomerPaymentInstrumentApi {
      * @param customerId The Id of a Customer. (required)
      * @param postCustomerPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return Tmsv2customersEmbeddedDefaultPaymentInstrument
+     * @return PostCustomerPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Tmsv2customersEmbeddedDefaultPaymentInstrument postCustomerPaymentInstrument(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException {
+    public PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrument(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postCustomerPaymentInstrument' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> resp = postCustomerPaymentInstrumentWithHttpInfo(customerId, postCustomerPaymentInstrumentRequest, profileId);
+        ApiResponse<PostCustomerPaymentInstrumentRequest> resp = postCustomerPaymentInstrumentWithHttpInfo(customerId, postCustomerPaymentInstrumentRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomerPaymentInstrument' ENDED");
         return resp.getData();
     }
@@ -791,12 +790,12 @@ public class CustomerPaymentInstrumentApi {
      * @param customerId The Id of a Customer. (required)
      * @param postCustomerPaymentInstrumentRequest  (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
-     * @return ApiResponse&lt;Tmsv2customersEmbeddedDefaultPaymentInstrument&gt;
+     * @return ApiResponse&lt;PostCustomerPaymentInstrumentRequest&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Tmsv2customersEmbeddedDefaultPaymentInstrument> postCustomerPaymentInstrumentWithHttpInfo(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException {
+    public ApiResponse<PostCustomerPaymentInstrumentRequest> postCustomerPaymentInstrumentWithHttpInfo(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException {
         okhttp3.Call call = postCustomerPaymentInstrumentValidateBeforeCall(customerId, postCustomerPaymentInstrumentRequest, profileId, null, null);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
+        Type localVarReturnType = new TypeToken<PostCustomerPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -810,7 +809,7 @@ public class CustomerPaymentInstrumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call postCustomerPaymentInstrumentAsync(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ApiCallback<Tmsv2customersEmbeddedDefaultPaymentInstrument> callback) throws ApiException {
+    public okhttp3.Call postCustomerPaymentInstrumentAsync(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ApiCallback<PostCustomerPaymentInstrumentRequest> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -833,7 +832,7 @@ public class CustomerPaymentInstrumentApi {
         }
 
         okhttp3.Call call = postCustomerPaymentInstrumentValidateBeforeCall(customerId, postCustomerPaymentInstrumentRequest, profileId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Tmsv2customersEmbeddedDefaultPaymentInstrument>(){}.getType();
+        Type localVarReturnType = new TypeToken<PostCustomerPaymentInstrumentRequest>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.CreateWebhookRequest;
 import Model.InlineResponse2003;
 import Model.InlineResponse2012;
@@ -21,6 +20,7 @@ import Model.InlineResponse2013;
 import Model.SaveSymEgressKey;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,11 +41,11 @@ public class CreateNewWebhooksApiTest {
      *
      * Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createWebhookSubscriptionTest() throws ApiException {
+    public void createWebhookSubscriptionTest() throws Exception {
         CreateWebhookRequest createWebhookRequest = null;
         InlineResponse2013 response = api.createWebhookSubscription(createWebhookRequest);
 
@@ -57,11 +57,11 @@ public class CreateNewWebhooksApiTest {
      *
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void findProductsToSubscribeTest() throws ApiException {
+    public void findProductsToSubscribeTest() throws Exception {
         String organizationId = null;
         List<InlineResponse2003> response = api.findProductsToSubscribe(organizationId);
 
@@ -73,11 +73,11 @@ public class CreateNewWebhooksApiTest {
      *
      * Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remeber to save the key in the API response, so that you can use it to validate messages later. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void saveSymEgressKeyTest() throws ApiException {
+    public void saveSymEgressKeyTest() throws Exception {
         String vCSenderOrganizationId = null;
         String vCPermissions = null;
         String vCCorrelationId = null;

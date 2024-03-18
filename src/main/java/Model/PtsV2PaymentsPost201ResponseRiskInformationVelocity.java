@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -130,6 +131,6 @@ public class PtsV2PaymentsPost201ResponseRiskInformationVelocity {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

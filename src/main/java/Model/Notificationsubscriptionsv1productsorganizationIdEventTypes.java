@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -107,7 +108,7 @@ public class Notificationsubscriptionsv1productsorganizationIdEventTypes {
    * @return timeSensitivity
   **/
   @ApiModelProperty(value = "")
-  public Boolean getTimeSensitivity() {
+  public Boolean isTimeSensitivity() {
     return timeSensitivity;
   }
 
@@ -125,7 +126,7 @@ public class Notificationsubscriptionsv1productsorganizationIdEventTypes {
    * @return payloadEncryption
   **/
   @ApiModelProperty(value = "")
-  public Boolean getPayloadEncryption() {
+  public Boolean isPayloadEncryption() {
     return payloadEncryption;
   }
 
@@ -180,6 +181,6 @@ public class Notificationsubscriptionsv1productsorganizationIdEventTypes {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

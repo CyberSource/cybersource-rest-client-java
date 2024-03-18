@@ -13,13 +13,13 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.OctCreatePaymentRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.PtsV2PayoutsPost201Response;
 import Model.PtsV2PayoutsPost400Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,11 +40,11 @@ public class PayoutsApiTest {
      *
      * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void octCreatePaymentTest() throws ApiException {
+    public void octCreatePaymentTest() throws Exception {
         OctCreatePaymentRequest octCreatePaymentRequest = null;
         PtsV2PayoutsPost201Response response = api.octCreatePayment(octCreatePaymentRequest);
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PaymentInstrumentListEmbedded;
 import Model.PaymentInstrumentListLinks;
 import com.google.gson.TypeAdapter;
@@ -169,6 +170,6 @@ public class PaymentInstrumentList {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

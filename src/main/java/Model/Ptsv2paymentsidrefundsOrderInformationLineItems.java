@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsTaxDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -319,7 +320,7 @@ public class Ptsv2paymentsidrefundsOrderInformationLineItems {
    * @return amountIncludesTax
   **/
   @ApiModelProperty(value = "Flag that indicates whether the tax amount is included in the Line Item Total.  Possible values:  - **true**  - **false** ")
-  public Boolean getAmountIncludesTax() {
+  public Boolean isAmountIncludesTax() {
     return amountIncludesTax;
   }
 
@@ -391,7 +392,7 @@ public class Ptsv2paymentsidrefundsOrderInformationLineItems {
    * @return discountApplied
   **/
   @ApiModelProperty(value = "Flag that indicates whether the amount is discounted.  If you do not provide a value but you set Discount Amount to a value greater than zero, then CyberSource sets this field to **true**.  Possible values:  - **true**  - **false** ")
-  public Boolean getDiscountApplied() {
+  public Boolean isDiscountApplied() {
     return discountApplied;
   }
 
@@ -538,6 +539,6 @@ public class Ptsv2paymentsidrefundsOrderInformationLineItems {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

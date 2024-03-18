@@ -13,9 +13,9 @@
 
 package Api;
 
-import Invokers.ApiException;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,11 +36,11 @@ public class TransientTokenDataApiTest {
      *
      * Retrieve the data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getTransactionForTransientTokenTest() throws ApiException {
+    public void getTransactionForTransientTokenTest() throws Exception {
         String transientToken = null;
         api.getTransactionForTransientToken(transientToken);
 

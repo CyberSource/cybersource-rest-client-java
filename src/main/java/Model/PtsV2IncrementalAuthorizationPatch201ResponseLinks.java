@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseLinksSelf;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -89,6 +90,6 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseLinks {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

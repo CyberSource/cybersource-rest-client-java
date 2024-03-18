@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PushFunds201ResponseLinksCustomer;
 import Model.PushFunds201ResponseLinksInstrumentIdentifier;
 import Model.PushFunds201ResponseLinksPaymentInstrument;
@@ -161,6 +162,6 @@ public class PushFunds201ResponseLinks {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

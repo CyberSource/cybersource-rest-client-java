@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.CreateAdhocReportRequest;
 import org.joda.time.DateTime;
 import Model.ReportingV3ReportsGet200Response;
@@ -21,6 +20,7 @@ import Model.ReportingV3ReportsIdGet200Response;
 import Model.Reportingv3ReportDownloadsGet400Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,11 +41,11 @@ public class ReportsApiTest {
      *
      * Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation) 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createReportTest() throws ApiException {
+    public void createReportTest() throws Exception {
         CreateAdhocReportRequest createAdhocReportRequest = null;
         String organizationId = null;
         api.createReport(createAdhocReportRequest, organizationId);
@@ -58,11 +58,11 @@ public class ReportsApiTest {
      *
      * Download a report using the reportId value. If you don&#39;t already know this value, you can obtain it using the Retrieve available reports call. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getReportByReportIdTest() throws ApiException {
+    public void getReportByReportIdTest() throws Exception {
         String reportId = null;
         String organizationId = null;
         ReportingV3ReportsIdGet200Response response = api.getReportByReportId(reportId, organizationId);
@@ -75,11 +75,11 @@ public class ReportsApiTest {
      *
      * Retrieve a list of the available reports to which you are subscribed. This will also give you the reportId value, which you can also use to download a report. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void searchReportsTest() throws ApiException {
+    public void searchReportsTest() throws Exception {
         DateTime startTime = null;
         DateTime endTime = null;
         String timeQueryType = null;

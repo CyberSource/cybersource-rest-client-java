@@ -1,10 +1,10 @@
-# DownloadXSDApi
+# DownloadXsdApi
 
 All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getXSDV2**](DownloadXSDApi.md#getXSDV2) | **GET** /reporting/v3/xsds/{reportDefinitionNameVersion} | Download XSD for Report
+[**getXSDV2**](DownloadXsdApi.md#getXSDV2) | **GET** /reporting/v3/xsds/{reportDefinitionNameVersion} | Download XSD for Report
 
 
 <a name="getXSDV2"></a>
@@ -19,15 +19,15 @@ Used to download XSDs for reports on no-auth.
 ```java
 // Import classes:
 //import Invokers.ApiException;
-//import Api.DownloadXSDApi;
+//import Api.DownloadXsdApi;
 
 
-DownloadXSDApi apiInstance = new DownloadXSDApi();
+DownloadXsdApi apiInstance = new DownloadXsdApi();
 String reportDefinitionNameVersion = "reportDefinitionNameVersion_example"; // String | Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes
 try {
     apiInstance.getXSDV2(reportDefinitionNameVersion);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DownloadXSDApi#getXSDV2");
+    System.err.println("Exception when calling DownloadXsdApi#getXSDV2");
     e.printStackTrace();
 }
 ```

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv1pushfundstransferAggregatorInformation;
 import Model.Ptsv1pushfundstransferClientReferenceInformation;
 import Model.Ptsv1pushfundstransferMerchantDefinedInformation;
@@ -95,7 +96,7 @@ public class PushFundsRequest {
    * Get orderInformation
    * @return orderInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Ptsv1pushfundstransferOrderInformation getOrderInformation() {
     return orderInformation;
   }
@@ -113,7 +114,7 @@ public class PushFundsRequest {
    * Get processingInformation
    * @return processingInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Ptsv1pushfundstransferProcessingInformation getProcessingInformation() {
     return processingInformation;
   }
@@ -167,7 +168,7 @@ public class PushFundsRequest {
    * Get senderInformation
    * @return senderInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Ptsv1pushfundstransferSenderInformation getSenderInformation() {
     return senderInformation;
   }
@@ -305,6 +306,6 @@ public class PushFundsRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

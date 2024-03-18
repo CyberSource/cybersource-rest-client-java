@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -112,7 +113,7 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
    * @return allowPartialPayments
   **/
   @ApiModelProperty(value = "If set to `true`, the payer can make a partial invoice payment.")
-  public Boolean getAllowPartialPayments() {
+  public Boolean isAllowPartialPayments() {
     return allowPartialPayments;
   }
 
@@ -205,6 +206,6 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

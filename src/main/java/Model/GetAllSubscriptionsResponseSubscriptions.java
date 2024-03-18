@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.GetAllSubscriptionsResponseLinks;
 import Model.GetAllSubscriptionsResponseOrderInformation;
 import Model.GetAllSubscriptionsResponsePaymentInformation;
@@ -209,6 +210,6 @@ public class GetAllSubscriptionsResponseSubscriptions {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

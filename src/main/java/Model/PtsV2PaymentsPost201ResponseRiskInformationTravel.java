@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationTravelActualFinalDestination;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDeparture;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination;
@@ -161,6 +162,6 @@ public class PtsV2PaymentsPost201ResponseRiskInformationTravel {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

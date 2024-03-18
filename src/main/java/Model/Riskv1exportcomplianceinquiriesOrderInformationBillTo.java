@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1exportcomplianceinquiriesOrderInformationBillToCompany;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -342,6 +343,6 @@ public class Riskv1exportcomplianceinquiriesOrderInformationBillTo {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

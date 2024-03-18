@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.VTConfigCardNotPresentGlobalPaymentInformationBasicInformation;
 import Model.VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFields;
 import Model.VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation;
@@ -137,6 +138,6 @@ public class VTConfigCardNotPresentGlobalPaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

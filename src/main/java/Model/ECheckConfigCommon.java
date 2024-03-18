@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ECheckConfigCommonInternalOnly;
 import Model.ECheckConfigCommonProcessors;
 import com.google.gson.TypeAdapter;
@@ -216,6 +217,6 @@ public class ECheckConfigCommon {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Enum: ReasonEnum
 Name | Value
 ---- | -----
-DATA | &quot;INVALID_DATA&quot;
+INVALID_DATA | &quot;INVALID_DATA&quot;
 
 
 

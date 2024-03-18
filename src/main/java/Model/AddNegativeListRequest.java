@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1liststypeentriesBuyerInformation;
 import Model.Riskv1liststypeentriesClientReferenceInformation;
 import Model.Riskv1liststypeentriesDeviceInformation;
@@ -209,6 +210,6 @@ public class AddNegativeListRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

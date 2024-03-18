@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2refreshpaymentstatusidPaymentInformationCustomer;
 import Model.Ptsv2refreshpaymentstatusidPaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class Ptsv2refreshpaymentstatusidPaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

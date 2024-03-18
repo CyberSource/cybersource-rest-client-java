@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ReportingV3PurchaseRefundDetailsGet200ResponseAuthorizations;
 import Model.ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails;
 import Model.ReportingV3PurchaseRefundDetailsGet200ResponseOthers;
@@ -329,6 +330,6 @@ public class ReportingV3PurchaseRefundDetailsGet200Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

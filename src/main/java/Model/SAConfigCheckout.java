@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,7 +48,7 @@ public class SAConfigCheckout {
    * @return displayTaxAmount
   **/
   @ApiModelProperty(value = "Toggles whether or not the tax amount is displayed on the Hosted Checkout.")
-  public Boolean getDisplayTaxAmount() {
+  public Boolean isDisplayTaxAmount() {
     return displayTaxAmount;
   }
 
@@ -134,6 +135,6 @@ public class SAConfigCheckout {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1authenticationresultsConsumerAuthenticationInformation;
 import Model.Riskv1authenticationresultsDeviceInformation;
 import Model.Riskv1authenticationresultsOrderInformation;
@@ -233,6 +234,6 @@ public class ValidateRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

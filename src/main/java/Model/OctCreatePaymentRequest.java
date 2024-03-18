@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2payoutsClientReferenceInformation;
 import Model.Ptsv2payoutsMerchantInformation;
 import Model.Ptsv2payoutsOrderInformation;
@@ -233,6 +234,6 @@ public class OctCreatePaymentRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

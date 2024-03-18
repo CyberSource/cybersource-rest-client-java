@@ -13,12 +13,12 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.InlineResponse4006;
 import Model.InlineResponse5002;
 import Model.UpdatePGPKeysRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,11 +39,11 @@ public class KeyManagementPgpApiTest {
      *
      * Activate or De-activate PGP Key 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void updatePGPTest() throws ApiException {
+    public void updatePGPTest() throws Exception {
         String keyId = null;
         UpdatePGPKeysRequest updatePGPKeysRequest = null;
         Object response = api.updatePGP(keyId, updatePGPKeysRequest);

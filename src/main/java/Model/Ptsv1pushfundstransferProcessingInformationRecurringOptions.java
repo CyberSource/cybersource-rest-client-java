@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,7 +42,7 @@ public class Ptsv1pushfundstransferProcessingInformationRecurringOptions {
    * @return loanPayment
   **/
   @ApiModelProperty(value = "boolean Default: false Flag that indicates whether this is a payment towards an existing contractual loan.  Possible values:  true: Loan payment false: (default) Not a loan payment  This field applies only to FDC Compass ")
-  public Boolean getLoanPayment() {
+  public Boolean isLoanPayment() {
     return loanPayment;
   }
 
@@ -88,6 +89,6 @@ public class Ptsv1pushfundstransferProcessingInformationRecurringOptions {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

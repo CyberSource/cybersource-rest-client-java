@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -85,7 +86,6 @@ public class Boardingv1registrationsRegistrationInformation {
       }
     }
   }
-
   @SerializedName("status")
   private StatusEnum status = null;
 
@@ -140,7 +140,6 @@ public class Boardingv1registrationsRegistrationInformation {
       }
     }
   }
-
   @SerializedName("boardingFlow")
   private BoardingFlowEnum boardingFlow = null;
 
@@ -190,7 +189,6 @@ public class Boardingv1registrationsRegistrationInformation {
       }
     }
   }
-
   @SerializedName("mode")
   private ModeEnum mode = null;
 
@@ -347,6 +345,6 @@ public class Boardingv1registrationsRegistrationInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 
