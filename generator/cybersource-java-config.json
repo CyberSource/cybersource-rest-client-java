@@ -3,5 +3,5 @@
    "apiPackage" : "Api",
    "invokerPackage" : "Invokers",
    "hideGenerationTimestamp" : true,
-   "dateLibrary": "joda"
+   "dateLibrary" : "joda"
 }
