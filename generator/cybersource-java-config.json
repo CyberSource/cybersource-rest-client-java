@@ -2,5 +2,6 @@
    "modelPackage" : "Model",
    "apiPackage" : "Api",
    "invokerPackage" : "Invokers",
-   "hideGenerationTimestamp" : true
+   "hideGenerationTimestamp" : true,
+   "dateLibrary": "joda"
 }
