@@ -110,6 +110,9 @@ public class Ptsv2paymentsOrderInformationLineItems {
   @SerializedName("referenceDataNumber")
   private String referenceDataNumber = null;
 
+  @SerializedName("unitTaxAmount")
+  private String unitTaxAmount = null;
+
   @SerializedName("productDescription")
   private String productDescription = null;
 
@@ -609,6 +612,24 @@ public class Ptsv2paymentsOrderInformationLineItems {
     this.referenceDataNumber = referenceDataNumber;
   }
 
+  public Ptsv2paymentsOrderInformationLineItems unitTaxAmount(String unitTaxAmount) {
+    this.unitTaxAmount = unitTaxAmount;
+    return this;
+  }
+
+   /**
+   * Per-item tax amount of the product. Note The amount value must be a non-negative number containing 2 decimal places and limited to 7 digits before the decimal point. 
+   * @return unitTaxAmount
+  **/
+  @ApiModelProperty(value = "Per-item tax amount of the product. Note The amount value must be a non-negative number containing 2 decimal places and limited to 7 digits before the decimal point. ")
+  public String getUnitTaxAmount() {
+    return unitTaxAmount;
+  }
+
+  public void setUnitTaxAmount(String unitTaxAmount) {
+    this.unitTaxAmount = unitTaxAmount;
+  }
+
   public Ptsv2paymentsOrderInformationLineItems productDescription(String productDescription) {
     this.productDescription = productDescription;
     return this;
@@ -787,6 +808,7 @@ public class Ptsv2paymentsOrderInformationLineItems {
         Objects.equals(this.weightUnit, ptsv2paymentsOrderInformationLineItems.weightUnit) &&
         Objects.equals(this.referenceDataCode, ptsv2paymentsOrderInformationLineItems.referenceDataCode) &&
         Objects.equals(this.referenceDataNumber, ptsv2paymentsOrderInformationLineItems.referenceDataNumber) &&
+        Objects.equals(this.unitTaxAmount, ptsv2paymentsOrderInformationLineItems.unitTaxAmount) &&
         Objects.equals(this.productDescription, ptsv2paymentsOrderInformationLineItems.productDescription) &&
         Objects.equals(this.giftCardCurrency, ptsv2paymentsOrderInformationLineItems.giftCardCurrency) &&
         Objects.equals(this.shippingDestinationTypes, ptsv2paymentsOrderInformationLineItems.shippingDestinationTypes) &&
@@ -798,7 +820,7 @@ public class Ptsv2paymentsOrderInformationLineItems {
 
   @Override
   public int hashCode() {
-    return Objects.hash(productCode, productName, productSku, quantity, unitPrice, unitOfMeasure, totalAmount, taxAmount, taxRate, taxAppliedAfterDiscount, taxStatusIndicator, taxTypeCode, amountIncludesTax, typeOfSupply, commodityCode, discountAmount, discountApplied, discountRate, invoiceNumber, taxDetails, fulfillmentType, weight, weightIdentifier, weightUnit, referenceDataCode, referenceDataNumber, productDescription, giftCardCurrency, shippingDestinationTypes, gift, passenger, allowedExportCountries, restrictedExportCountries);
+    return Objects.hash(productCode, productName, productSku, quantity, unitPrice, unitOfMeasure, totalAmount, taxAmount, taxRate, taxAppliedAfterDiscount, taxStatusIndicator, taxTypeCode, amountIncludesTax, typeOfSupply, commodityCode, discountAmount, discountApplied, discountRate, invoiceNumber, taxDetails, fulfillmentType, weight, weightIdentifier, weightUnit, referenceDataCode, referenceDataNumber, unitTaxAmount, productDescription, giftCardCurrency, shippingDestinationTypes, gift, passenger, allowedExportCountries, restrictedExportCountries);
   }
 
 
@@ -833,6 +855,7 @@ public class Ptsv2paymentsOrderInformationLineItems {
     sb.append("    weightUnit: ").append(toIndentedString(weightUnit)).append("\n");
     sb.append("    referenceDataCode: ").append(toIndentedString(referenceDataCode)).append("\n");
     sb.append("    referenceDataNumber: ").append(toIndentedString(referenceDataNumber)).append("\n");
+    sb.append("    unitTaxAmount: ").append(toIndentedString(unitTaxAmount)).append("\n");
     sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
     sb.append("    giftCardCurrency: ").append(toIndentedString(giftCardCurrency)).append("\n");
     sb.append("    shippingDestinationTypes: ").append(toIndentedString(shippingDestinationTypes)).append("\n");

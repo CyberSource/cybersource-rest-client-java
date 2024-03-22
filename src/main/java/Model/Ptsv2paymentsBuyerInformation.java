@@ -55,6 +55,9 @@ public class Ptsv2paymentsBuyerInformation {
   @SerializedName("language")
   private String language = null;
 
+  @SerializedName("noteToSeller")
+  private String noteToSeller = null;
+
   @SerializedName("mobilePhone")
   private Integer mobilePhone = null;
 
@@ -210,6 +213,24 @@ public class Ptsv2paymentsBuyerInformation {
     this.language = language;
   }
 
+  public Ptsv2paymentsBuyerInformation noteToSeller(String noteToSeller) {
+    this.noteToSeller = noteToSeller;
+    return this;
+  }
+
+   /**
+   * Note to the recipient of the funds in this transaction
+   * @return noteToSeller
+  **/
+  @ApiModelProperty(value = "Note to the recipient of the funds in this transaction")
+  public String getNoteToSeller() {
+    return noteToSeller;
+  }
+
+  public void setNoteToSeller(String noteToSeller) {
+    this.noteToSeller = noteToSeller;
+  }
+
   public Ptsv2paymentsBuyerInformation mobilePhone(Integer mobilePhone) {
     this.mobilePhone = mobilePhone;
     return this;
@@ -246,12 +267,13 @@ public class Ptsv2paymentsBuyerInformation {
         Objects.equals(this.hashedPassword, ptsv2paymentsBuyerInformation.hashedPassword) &&
         Objects.equals(this.gender, ptsv2paymentsBuyerInformation.gender) &&
         Objects.equals(this.language, ptsv2paymentsBuyerInformation.language) &&
+        Objects.equals(this.noteToSeller, ptsv2paymentsBuyerInformation.noteToSeller) &&
         Objects.equals(this.mobilePhone, ptsv2paymentsBuyerInformation.mobilePhone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, companyTaxId, personalIdentification, hashedPassword, gender, language, mobilePhone);
+    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, companyTaxId, personalIdentification, hashedPassword, gender, language, noteToSeller, mobilePhone);
   }
 
 
@@ -268,6 +290,7 @@ public class Ptsv2paymentsBuyerInformation {
     sb.append("    hashedPassword: ").append(toIndentedString(hashedPassword)).append("\n");
     sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    noteToSeller: ").append(toIndentedString(noteToSeller)).append("\n");
     sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
     sb.append("}");
     return sb.toString();

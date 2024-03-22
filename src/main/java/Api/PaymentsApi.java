@@ -29,11 +29,16 @@ import java.io.InputStream;
 
 
 import Model.CreatePaymentRequest;
+import Model.CreateSessionReq;
+import Model.CreateSessionRequest;
 import Model.IncrementAuthRequest;
+import Model.OrderPaymentRequest;
 import Model.PtsV2IncrementalAuthorizationPatch201Response;
 import Model.PtsV2IncrementalAuthorizationPatch400Response;
+import Model.PtsV2PaymentsOrderPost201Response;
 import Model.PtsV2PaymentsPost201Response;
 import Model.PtsV2PaymentsPost201Response1;
+import Model.PtsV2PaymentsPost201Response2;
 import Model.PtsV2PaymentsPost400Response;
 import Model.PtsV2PaymentsPost502Response;
 import Model.RefreshPaymentStatusRequest;
@@ -69,6 +74,148 @@ public class PaymentsApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for createOrderRequest
+     * @param orderPaymentRequest  (required)
+     * @param id Request identifier number for the order request.  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call createOrderRequestCall(OrderPaymentRequest orderPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(orderPaymentRequest, OrderPaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        
+        // create path and map variables
+        String localVarPath = "/pts/v2/payment-references/{id}/intents"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createOrderRequestValidateBeforeCall(OrderPaymentRequest orderPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'orderPaymentRequest' is set
+        if (orderPaymentRequest == null) {
+            logger.error("Missing the required parameter 'orderPaymentRequest' when calling createOrderRequest(Async)");
+            throw new ApiException("Missing the required parameter 'orderPaymentRequest' when calling createOrderRequest(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            logger.error("Missing the required parameter 'id' when calling createOrderRequest(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling createOrderRequest(Async)");
+        }
+        
+        
+        okhttp3.Call call = createOrderRequestCall(orderPaymentRequest, id, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Create a Payment Order Request
+     * Create a Payment Order Request
+     * @param orderPaymentRequest  (required)
+     * @param id Request identifier number for the order request.  (required)
+     * @return PtsV2PaymentsOrderPost201Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PtsV2PaymentsOrderPost201Response createOrderRequest(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException {
+        logger.info("CALL TO METHOD 'createOrderRequest' STARTED");
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ApiResponse<PtsV2PaymentsOrderPost201Response> resp = createOrderRequestWithHttpInfo(orderPaymentRequest, id);
+        logger.info("CALL TO METHOD 'createOrderRequest' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Create a Payment Order Request
+     * Create a Payment Order Request
+     * @param orderPaymentRequest  (required)
+     * @param id Request identifier number for the order request.  (required)
+     * @return ApiResponse&lt;PtsV2PaymentsOrderPost201Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PtsV2PaymentsOrderPost201Response> createOrderRequestWithHttpInfo(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException {
+        okhttp3.Call call = createOrderRequestValidateBeforeCall(orderPaymentRequest, id, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsOrderPost201Response>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a Payment Order Request (asynchronously)
+     * Create a Payment Order Request
+     * @param orderPaymentRequest  (required)
+     * @param id Request identifier number for the order request.  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call createOrderRequestAsync(OrderPaymentRequest orderPaymentRequest, String id, final ApiCallback<PtsV2PaymentsOrderPost201Response> callback) throws ApiException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = createOrderRequestValidateBeforeCall(orderPaymentRequest, id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsOrderPost201Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /**
      * Build call for createPayment
      * @param createPaymentRequest  (required)
@@ -197,6 +344,137 @@ public class PaymentsApi {
 
         okhttp3.Call call = createPaymentValidateBeforeCall(createPaymentRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for createSessionRequest
+     * @param createSessionReq  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call createSessionRequestCall(CreateSessionReq createSessionReq, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSessionReq, CreateSessionReq.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        
+        // create path and map variables
+        String localVarPath = "/pts/v2/payment-references";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createSessionRequestValidateBeforeCall(CreateSessionReq createSessionReq, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'createSessionReq' is set
+        if (createSessionReq == null) {
+            logger.error("Missing the required parameter 'createSessionReq' when calling createSessionRequest(Async)");
+            throw new ApiException("Missing the required parameter 'createSessionReq' when calling createSessionRequest(Async)");
+        }
+        
+        
+        okhttp3.Call call = createSessionRequestCall(createSessionReq, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Create Alternative Payments Sessions Request
+     * Create Alternative Payments Sessions Request
+     * @param createSessionReq  (required)
+     * @return PtsV2PaymentsPost201Response2
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PtsV2PaymentsPost201Response2 createSessionRequest(CreateSessionReq createSessionReq) throws ApiException {
+        logger.info("CALL TO METHOD 'createSessionRequest' STARTED");
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ApiResponse<PtsV2PaymentsPost201Response2> resp = createSessionRequestWithHttpInfo(createSessionReq);
+        logger.info("CALL TO METHOD 'createSessionRequest' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Create Alternative Payments Sessions Request
+     * Create Alternative Payments Sessions Request
+     * @param createSessionReq  (required)
+     * @return ApiResponse&lt;PtsV2PaymentsPost201Response2&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PtsV2PaymentsPost201Response2> createSessionRequestWithHttpInfo(CreateSessionReq createSessionReq) throws ApiException {
+        okhttp3.Call call = createSessionRequestValidateBeforeCall(createSessionReq, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create Alternative Payments Sessions Request (asynchronously)
+     * Create Alternative Payments Sessions Request
+     * @param createSessionReq  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call createSessionRequestAsync(CreateSessionReq createSessionReq, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = createSessionRequestValidateBeforeCall(createSessionReq, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -481,6 +759,148 @@ public class PaymentsApi {
 
         okhttp3.Call call = refreshPaymentStatusValidateBeforeCall(id, refreshPaymentStatusRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response1>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateSessionReq
+     * @param createSessionRequest  (required)
+     * @param id The payment ID. This ID is returned from a previous payment request. (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call updateSessionReqCall(CreateSessionRequest createSessionRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        SdkTracker sdkTracker = new SdkTracker();
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSessionRequest, CreateSessionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        
+        // create path and map variables
+        String localVarPath = "/pts/v2/payment-references/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/hal+json;charset=utf-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json;charset=utf-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateSessionReqValidateBeforeCall(CreateSessionRequest createSessionRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'createSessionRequest' is set
+        if (createSessionRequest == null) {
+            logger.error("Missing the required parameter 'createSessionRequest' when calling updateSessionReq(Async)");
+            throw new ApiException("Missing the required parameter 'createSessionRequest' when calling updateSessionReq(Async)");
+        }
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            logger.error("Missing the required parameter 'id' when calling updateSessionReq(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling updateSessionReq(Async)");
+        }
+        
+        
+        okhttp3.Call call = updateSessionReqCall(createSessionRequest, id, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update Alternative Payments Sessions Request
+     * Update Alternative Payments Sessions Request
+     * @param createSessionRequest  (required)
+     * @param id The payment ID. This ID is returned from a previous payment request. (required)
+     * @return PtsV2PaymentsPost201Response2
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PtsV2PaymentsPost201Response2 updateSessionReq(CreateSessionRequest createSessionRequest, String id) throws ApiException {
+        logger.info("CALL TO METHOD 'updateSessionReq' STARTED");
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ApiResponse<PtsV2PaymentsPost201Response2> resp = updateSessionReqWithHttpInfo(createSessionRequest, id);
+        logger.info("CALL TO METHOD 'updateSessionReq' ENDED");
+        return resp.getData();
+    }
+
+    /**
+     * Update Alternative Payments Sessions Request
+     * Update Alternative Payments Sessions Request
+     * @param createSessionRequest  (required)
+     * @param id The payment ID. This ID is returned from a previous payment request. (required)
+     * @return ApiResponse&lt;PtsV2PaymentsPost201Response2&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PtsV2PaymentsPost201Response2> updateSessionReqWithHttpInfo(CreateSessionRequest createSessionRequest, String id) throws ApiException {
+        okhttp3.Call call = updateSessionReqValidateBeforeCall(createSessionRequest, id, null, null);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update Alternative Payments Sessions Request (asynchronously)
+     * Update Alternative Payments Sessions Request
+     * @param createSessionRequest  (required)
+     * @param id The payment ID. This ID is returned from a previous payment request. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call updateSessionReqAsync(CreateSessionRequest createSessionRequest, String id, final ApiCallback<PtsV2PaymentsPost201Response2> callback) throws ApiException {
+
+        this.apiClient.setComputationStartTime(System.nanoTime());
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = updateSessionReqValidateBeforeCall(createSessionRequest, id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

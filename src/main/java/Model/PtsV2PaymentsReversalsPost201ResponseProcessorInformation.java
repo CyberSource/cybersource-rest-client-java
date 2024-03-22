@@ -46,6 +46,12 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
   @SerializedName("masterCardServiceReplyCode")
   private String masterCardServiceReplyCode = null;
 
+  @SerializedName("responseDetails")
+  private String responseDetails = null;
+
+  @SerializedName("providerResponse")
+  private String providerResponse = null;
+
   public PtsV2PaymentsReversalsPost201ResponseProcessorInformation transactionId(String transactionId) {
     this.transactionId = transactionId;
     return this;
@@ -154,6 +160,42 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
     this.masterCardServiceReplyCode = masterCardServiceReplyCode;
   }
 
+  public PtsV2PaymentsReversalsPost201ResponseProcessorInformation responseDetails(String responseDetails) {
+    this.responseDetails = responseDetails;
+    return this;
+  }
+
+   /**
+   * This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. 
+   * @return responseDetails
+  **/
+  @ApiModelProperty(value = "This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**. ")
+  public String getResponseDetails() {
+    return responseDetails;
+  }
+
+  public void setResponseDetails(String responseDetails) {
+    this.responseDetails = responseDetails;
+  }
+
+  public PtsV2PaymentsReversalsPost201ResponseProcessorInformation providerResponse(String providerResponse) {
+    this.providerResponse = providerResponse;
+    return this;
+  }
+
+   /**
+   * Processor response to the API request. 
+   * @return providerResponse
+  **/
+  @ApiModelProperty(value = "Processor response to the API request. ")
+  public String getProviderResponse() {
+    return providerResponse;
+  }
+
+  public void setProviderResponse(String providerResponse) {
+    this.providerResponse = providerResponse;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -169,12 +211,14 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
         Objects.equals(this.responseCategoryCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.responseCategoryCode) &&
         Objects.equals(this.forwardedAcquirerCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.forwardedAcquirerCode) &&
         Objects.equals(this.masterCardServiceCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.masterCardServiceCode) &&
-        Objects.equals(this.masterCardServiceReplyCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.masterCardServiceReplyCode);
+        Objects.equals(this.masterCardServiceReplyCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.masterCardServiceReplyCode) &&
+        Objects.equals(this.responseDetails, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.responseDetails) &&
+        Objects.equals(this.providerResponse, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.providerResponse);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, responseCode, responseCategoryCode, forwardedAcquirerCode, masterCardServiceCode, masterCardServiceReplyCode);
+    return Objects.hash(transactionId, responseCode, responseCategoryCode, forwardedAcquirerCode, masterCardServiceCode, masterCardServiceReplyCode, responseDetails, providerResponse);
   }
 
 
@@ -189,6 +233,8 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
     sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
     sb.append("    masterCardServiceCode: ").append(toIndentedString(masterCardServiceCode)).append("\n");
     sb.append("    masterCardServiceReplyCode: ").append(toIndentedString(masterCardServiceReplyCode)).append("\n");
+    sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
+    sb.append("    providerResponse: ").append(toIndentedString(providerResponse)).append("\n");
     sb.append("}");
     return sb.toString();
   }

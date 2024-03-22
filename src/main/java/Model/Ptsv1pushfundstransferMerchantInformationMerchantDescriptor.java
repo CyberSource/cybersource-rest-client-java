@@ -43,6 +43,9 @@ public class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor {
   @SerializedName("name")
   private String name = null;
 
+  @SerializedName("storeId")
+  private String storeId = null;
+
   @SerializedName("postalCode")
   private String postalCode = null;
 
@@ -136,6 +139,24 @@ public class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor {
     this.name = name;
   }
 
+  public Ptsv1pushfundstransferMerchantInformationMerchantDescriptor storeId(String storeId) {
+    this.storeId = storeId;
+    return this;
+  }
+
+   /**
+   * The unique id of the merchant&#39;s shop which assigned by the merchant. 
+   * @return storeId
+  **/
+  @ApiModelProperty(value = "The unique id of the merchant's shop which assigned by the merchant. ")
+  public String getStoreId() {
+    return storeId;
+  }
+
+  public void setStoreId(String storeId) {
+    this.storeId = storeId;
+  }
+
   public Ptsv1pushfundstransferMerchantInformationMerchantDescriptor postalCode(String postalCode) {
     this.postalCode = postalCode;
     return this;
@@ -169,12 +190,13 @@ public class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor {
         Objects.equals(this.country, ptsv1pushfundstransferMerchantInformationMerchantDescriptor.country) &&
         Objects.equals(this.locality, ptsv1pushfundstransferMerchantInformationMerchantDescriptor.locality) &&
         Objects.equals(this.name, ptsv1pushfundstransferMerchantInformationMerchantDescriptor.name) &&
+        Objects.equals(this.storeId, ptsv1pushfundstransferMerchantInformationMerchantDescriptor.storeId) &&
         Objects.equals(this.postalCode, ptsv1pushfundstransferMerchantInformationMerchantDescriptor.postalCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(administrativeArea, contact, country, locality, name, postalCode);
+    return Objects.hash(administrativeArea, contact, country, locality, name, storeId, postalCode);
   }
 
 
@@ -188,6 +210,7 @@ public class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor {
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("}");
     return sb.toString();
