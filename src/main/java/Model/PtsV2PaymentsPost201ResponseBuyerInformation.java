@@ -46,6 +46,9 @@ public class PtsV2PaymentsPost201ResponseBuyerInformation {
   @SerializedName("taxId")
   private String taxId = null;
 
+  @SerializedName("loginId")
+  private String loginId = null;
+
   public PtsV2PaymentsPost201ResponseBuyerInformation merchantCustomerId(String merchantCustomerId) {
     this.merchantCustomerId = merchantCustomerId;
     return this;
@@ -144,6 +147,24 @@ public class PtsV2PaymentsPost201ResponseBuyerInformation {
     this.taxId = taxId;
   }
 
+  public PtsV2PaymentsPost201ResponseBuyerInformation loginId(String loginId) {
+    this.loginId = loginId;
+    return this;
+  }
+
+   /**
+   * The buyer&#39;s Alipay login Id, the id might be an email or mobile number. The id is partially masked for privacy. cao***@126.com  or 186***22156 
+   * @return loginId
+  **/
+  @ApiModelProperty(value = "The buyer's Alipay login Id, the id might be an email or mobile number. The id is partially masked for privacy. cao***@126.com  or 186***22156 ")
+  public String getLoginId() {
+    return loginId;
+  }
+
+  public void setLoginId(String loginId) {
+    this.loginId = loginId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -158,12 +179,13 @@ public class PtsV2PaymentsPost201ResponseBuyerInformation {
         Objects.equals(this.dateOfBirth, ptsV2PaymentsPost201ResponseBuyerInformation.dateOfBirth) &&
         Objects.equals(this.vatRegistrationNumber, ptsV2PaymentsPost201ResponseBuyerInformation.vatRegistrationNumber) &&
         Objects.equals(this.personalIdentification, ptsV2PaymentsPost201ResponseBuyerInformation.personalIdentification) &&
-        Objects.equals(this.taxId, ptsV2PaymentsPost201ResponseBuyerInformation.taxId);
+        Objects.equals(this.taxId, ptsV2PaymentsPost201ResponseBuyerInformation.taxId) &&
+        Objects.equals(this.loginId, ptsV2PaymentsPost201ResponseBuyerInformation.loginId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, personalIdentification, taxId);
+    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, personalIdentification, taxId, loginId);
   }
 
 
@@ -177,6 +199,7 @@ public class PtsV2PaymentsPost201ResponseBuyerInformation {
     sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
     sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
+    sb.append("    loginId: ").append(toIndentedString(loginId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

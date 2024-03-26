@@ -14,7 +14,9 @@
 package Model;
 
 import java.util.Objects;
+import Model.Ptsv2billingagreementsPaymentInformationBank;
 import Model.Ptsv2billingagreementsPaymentInformationCard;
+import Model.Ptsv2billingagreementsPaymentInformationPaymentType;
 import Model.Ptsv2billingagreementsPaymentInformationTokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -35,6 +37,12 @@ public class Ptsv2billingagreementsPaymentInformation {
 
   @SerializedName("tokenizedCard")
   private Ptsv2billingagreementsPaymentInformationTokenizedCard tokenizedCard = null;
+
+  @SerializedName("paymentType")
+  private Ptsv2billingagreementsPaymentInformationPaymentType paymentType = null;
+
+  @SerializedName("bank")
+  private Ptsv2billingagreementsPaymentInformationBank bank = null;
 
   public Ptsv2billingagreementsPaymentInformation card(Ptsv2billingagreementsPaymentInformationCard card) {
     this.card = card;
@@ -72,6 +80,42 @@ public class Ptsv2billingagreementsPaymentInformation {
     this.tokenizedCard = tokenizedCard;
   }
 
+  public Ptsv2billingagreementsPaymentInformation paymentType(Ptsv2billingagreementsPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
+    return this;
+  }
+
+   /**
+   * Get paymentType
+   * @return paymentType
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2billingagreementsPaymentInformationPaymentType getPaymentType() {
+    return paymentType;
+  }
+
+  public void setPaymentType(Ptsv2billingagreementsPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
+  }
+
+  public Ptsv2billingagreementsPaymentInformation bank(Ptsv2billingagreementsPaymentInformationBank bank) {
+    this.bank = bank;
+    return this;
+  }
+
+   /**
+   * Get bank
+   * @return bank
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2billingagreementsPaymentInformationBank getBank() {
+    return bank;
+  }
+
+  public void setBank(Ptsv2billingagreementsPaymentInformationBank bank) {
+    this.bank = bank;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +127,14 @@ public class Ptsv2billingagreementsPaymentInformation {
     }
     Ptsv2billingagreementsPaymentInformation ptsv2billingagreementsPaymentInformation = (Ptsv2billingagreementsPaymentInformation) o;
     return Objects.equals(this.card, ptsv2billingagreementsPaymentInformation.card) &&
-        Objects.equals(this.tokenizedCard, ptsv2billingagreementsPaymentInformation.tokenizedCard);
+        Objects.equals(this.tokenizedCard, ptsv2billingagreementsPaymentInformation.tokenizedCard) &&
+        Objects.equals(this.paymentType, ptsv2billingagreementsPaymentInformation.paymentType) &&
+        Objects.equals(this.bank, ptsv2billingagreementsPaymentInformation.bank);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard);
+    return Objects.hash(card, tokenizedCard, paymentType, bank);
   }
 
 
@@ -99,6 +145,8 @@ public class Ptsv2billingagreementsPaymentInformation {
     
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("}");
     return sb.toString();
   }

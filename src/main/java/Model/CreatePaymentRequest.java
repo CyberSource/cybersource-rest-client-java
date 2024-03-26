@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import Model.Ptsv2paymentsAcquirerInformation;
 import Model.Ptsv2paymentsAggregatorInformation;
+import Model.Ptsv2paymentsAgreementInformation;
 import Model.Ptsv2paymentsBuyerInformation;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsConsumerAuthenticationInformation;
@@ -117,6 +118,9 @@ public class CreatePaymentRequest {
 
   @SerializedName("processorInformation")
   private Ptsv2paymentsProcessorInformation processorInformation = null;
+
+  @SerializedName("agreementInformation")
+  private Ptsv2paymentsAgreementInformation agreementInformation = null;
 
   @SerializedName("riskInformation")
   private Ptsv2paymentsRiskInformation riskInformation = null;
@@ -516,6 +520,24 @@ public class CreatePaymentRequest {
     this.processorInformation = processorInformation;
   }
 
+  public CreatePaymentRequest agreementInformation(Ptsv2paymentsAgreementInformation agreementInformation) {
+    this.agreementInformation = agreementInformation;
+    return this;
+  }
+
+   /**
+   * Get agreementInformation
+   * @return agreementInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsAgreementInformation getAgreementInformation() {
+    return agreementInformation;
+  }
+
+  public void setAgreementInformation(Ptsv2paymentsAgreementInformation agreementInformation) {
+    this.agreementInformation = agreementInformation;
+  }
+
   public CreatePaymentRequest riskInformation(Ptsv2paymentsRiskInformation riskInformation) {
     this.riskInformation = riskInformation;
     return this;
@@ -619,6 +641,7 @@ public class CreatePaymentRequest {
         Objects.equals(this.tokenInformation, createPaymentRequest.tokenInformation) &&
         Objects.equals(this.invoiceDetails, createPaymentRequest.invoiceDetails) &&
         Objects.equals(this.processorInformation, createPaymentRequest.processorInformation) &&
+        Objects.equals(this.agreementInformation, createPaymentRequest.agreementInformation) &&
         Objects.equals(this.riskInformation, createPaymentRequest.riskInformation) &&
         Objects.equals(this.acquirerInformation, createPaymentRequest.acquirerInformation) &&
         Objects.equals(this.recurringPaymentInformation, createPaymentRequest.recurringPaymentInformation) &&
@@ -627,7 +650,7 @@ public class CreatePaymentRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, riskInformation, acquirerInformation, recurringPaymentInformation, watchlistScreeningInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, agreementInformation, riskInformation, acquirerInformation, recurringPaymentInformation, watchlistScreeningInformation);
   }
 
 
@@ -657,6 +680,7 @@ public class CreatePaymentRequest {
     sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
     sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    sb.append("    agreementInformation: ").append(toIndentedString(agreementInformation)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    acquirerInformation: ").append(toIndentedString(acquirerInformation)).append("\n");
     sb.append("    recurringPaymentInformation: ").append(toIndentedString(recurringPaymentInformation)).append("\n");

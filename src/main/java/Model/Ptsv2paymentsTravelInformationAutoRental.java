@@ -157,6 +157,12 @@ public class Ptsv2paymentsTravelInformationAutoRental {
   @SerializedName("otherCharges")
   private String otherCharges = null;
 
+  @SerializedName("companyName")
+  private String companyName = null;
+
+  @SerializedName("affiliateName")
+  private String affiliateName = null;
+
   public Ptsv2paymentsTravelInformationAutoRental noShowIndicator(Boolean noShowIndicator) {
     this.noShowIndicator = noShowIndicator;
     return this;
@@ -913,6 +919,42 @@ public class Ptsv2paymentsTravelInformationAutoRental {
     this.otherCharges = otherCharges;
   }
 
+  public Ptsv2paymentsTravelInformationAutoRental companyName(String companyName) {
+    this.companyName = companyName;
+    return this;
+  }
+
+   /**
+   * Merchant to send their auto rental company name 
+   * @return companyName
+  **/
+  @ApiModelProperty(value = "Merchant to send their auto rental company name ")
+  public String getCompanyName() {
+    return companyName;
+  }
+
+  public void setCompanyName(String companyName) {
+    this.companyName = companyName;
+  }
+
+  public Ptsv2paymentsTravelInformationAutoRental affiliateName(String affiliateName) {
+    this.affiliateName = affiliateName;
+    return this;
+  }
+
+   /**
+   * When merchant wants to send the affiliate name. 
+   * @return affiliateName
+  **/
+  @ApiModelProperty(value = "When merchant wants to send the affiliate name. ")
+  public String getAffiliateName() {
+    return affiliateName;
+  }
+
+  public void setAffiliateName(String affiliateName) {
+    this.affiliateName = affiliateName;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -964,12 +1006,14 @@ public class Ptsv2paymentsTravelInformationAutoRental {
         Objects.equals(this.gpsCharge, ptsv2paymentsTravelInformationAutoRental.gpsCharge) &&
         Objects.equals(this.phoneCharge, ptsv2paymentsTravelInformationAutoRental.phoneCharge) &&
         Objects.equals(this.parkingViolationCharge, ptsv2paymentsTravelInformationAutoRental.parkingViolationCharge) &&
-        Objects.equals(this.otherCharges, ptsv2paymentsTravelInformationAutoRental.otherCharges);
+        Objects.equals(this.otherCharges, ptsv2paymentsTravelInformationAutoRental.otherCharges) &&
+        Objects.equals(this.companyName, ptsv2paymentsTravelInformationAutoRental.companyName) &&
+        Objects.equals(this.affiliateName, ptsv2paymentsTravelInformationAutoRental.affiliateName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(noShowIndicator, customerName, vehicleClass, distanceTravelled, distanceUnit, returnDateTime, rentalDateTime, maxFreeDistance, insuranceIndicator, programCode, returnAddress, rentalAddress, agreementNumber, odometerReading, vehicleIdentificationNumber, companyId, numberOfAdditionalDrivers, driverAge, specialProgramCode, vehicleMake, vehicleModel, timePeriod, commodityCode, customerServicePhoneNumber, taxDetails, insuranceAmount, oneWayDropOffAmount, adjustedAmountIndicator, adjustedAmount, fuelCharges, weeklyRentalRate, dailyRentalRate, ratePerMile, mileageCharge, extraMileageCharge, lateFeeAmount, towingCharge, extraCharge, gpsCharge, phoneCharge, parkingViolationCharge, otherCharges);
+    return Objects.hash(noShowIndicator, customerName, vehicleClass, distanceTravelled, distanceUnit, returnDateTime, rentalDateTime, maxFreeDistance, insuranceIndicator, programCode, returnAddress, rentalAddress, agreementNumber, odometerReading, vehicleIdentificationNumber, companyId, numberOfAdditionalDrivers, driverAge, specialProgramCode, vehicleMake, vehicleModel, timePeriod, commodityCode, customerServicePhoneNumber, taxDetails, insuranceAmount, oneWayDropOffAmount, adjustedAmountIndicator, adjustedAmount, fuelCharges, weeklyRentalRate, dailyRentalRate, ratePerMile, mileageCharge, extraMileageCharge, lateFeeAmount, towingCharge, extraCharge, gpsCharge, phoneCharge, parkingViolationCharge, otherCharges, companyName, affiliateName);
   }
 
 
@@ -1020,6 +1064,8 @@ public class Ptsv2paymentsTravelInformationAutoRental {
     sb.append("    phoneCharge: ").append(toIndentedString(phoneCharge)).append("\n");
     sb.append("    parkingViolationCharge: ").append(toIndentedString(parkingViolationCharge)).append("\n");
     sb.append("    otherCharges: ").append(toIndentedString(otherCharges)).append("\n");
+    sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
+    sb.append("    affiliateName: ").append(toIndentedString(affiliateName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,6 +26,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ptsv2paymentsidcapturesProcessingInformation
@@ -67,6 +69,9 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
 
   @SerializedName("payByPointsIndicator")
   private Boolean payByPointsIndicator = null;
+
+  @SerializedName("actionList")
+  private List<String> actionList = null;
 
   public Ptsv2paymentsidcapturesProcessingInformation paymentSolution(String paymentSolution) {
     this.paymentSolution = paymentSolution;
@@ -284,6 +289,32 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     this.payByPointsIndicator = payByPointsIndicator;
   }
 
+  public Ptsv2paymentsidcapturesProcessingInformation actionList(List<String> actionList) {
+    this.actionList = actionList;
+    return this;
+  }
+
+  public Ptsv2paymentsidcapturesProcessingInformation addActionListItem(String actionListItem) {
+    if (this.actionList == null) {
+      this.actionList = new ArrayList<String>();
+    }
+    this.actionList.add(actionListItem);
+    return this;
+  }
+
+   /**
+   * Array of actions (one or more) to be included in the capture to invoke bundled services along with capture.  Possible values :   - &#x60;AP_CAPTURE&#x60;: Use this when Alternative Payment Capture service is requested. 
+   * @return actionList
+  **/
+  @ApiModelProperty(value = "Array of actions (one or more) to be included in the capture to invoke bundled services along with capture.  Possible values :   - `AP_CAPTURE`: Use this when Alternative Payment Capture service is requested. ")
+  public List<String> getActionList() {
+    return actionList;
+  }
+
+  public void setActionList(List<String> actionList) {
+    this.actionList = actionList;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -305,12 +336,13 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
         Objects.equals(this.authorizationOptions, ptsv2paymentsidcapturesProcessingInformation.authorizationOptions) &&
         Objects.equals(this.captureOptions, ptsv2paymentsidcapturesProcessingInformation.captureOptions) &&
         Objects.equals(this.loanOptions, ptsv2paymentsidcapturesProcessingInformation.loanOptions) &&
-        Objects.equals(this.payByPointsIndicator, ptsv2paymentsidcapturesProcessingInformation.payByPointsIndicator);
+        Objects.equals(this.payByPointsIndicator, ptsv2paymentsidcapturesProcessingInformation.payByPointsIndicator) &&
+        Objects.equals(this.actionList, ptsv2paymentsidcapturesProcessingInformation.actionList);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, issuer, authorizationOptions, captureOptions, loanOptions, payByPointsIndicator);
+    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, purchaseLevel, industryDataType, issuer, authorizationOptions, captureOptions, loanOptions, payByPointsIndicator, actionList);
   }
 
 
@@ -331,6 +363,7 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
     sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
     sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
+    sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
     sb.append("}");
     return sb.toString();
   }

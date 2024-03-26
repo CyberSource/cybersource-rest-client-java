@@ -15,6 +15,9 @@ package Model;
 
 import java.util.Objects;
 import Model.Ptsv2billingagreementsAggregatorInformation;
+import Model.Ptsv2billingagreementsAgreementInformation;
+import Model.Ptsv2billingagreementsBuyerInformation;
+import Model.Ptsv2billingagreementsClientReferenceInformation;
 import Model.Ptsv2billingagreementsConsumerAuthenticationInformation;
 import Model.Ptsv2billingagreementsDeviceInformation;
 import Model.Ptsv2billingagreementsInstallmentInformation;
@@ -22,7 +25,6 @@ import Model.Ptsv2billingagreementsMerchantInformation;
 import Model.Ptsv2billingagreementsOrderInformation;
 import Model.Ptsv2billingagreementsPaymentInformation;
 import Model.Ptsv2billingagreementsProcessingInformation;
-import Model.Ptsv2paymentsClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,8 +39,11 @@ import java.io.IOException;
  */
 
 public class CreateBillingAgreement {
+  @SerializedName("agreementInformation")
+  private Ptsv2billingagreementsAgreementInformation agreementInformation = null;
+
   @SerializedName("clientReferenceInformation")
-  private Ptsv2paymentsClientReferenceInformation clientReferenceInformation = null;
+  private Ptsv2billingagreementsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("aggregatorInformation")
   private Ptsv2billingagreementsAggregatorInformation aggregatorInformation = null;
@@ -64,7 +69,28 @@ public class CreateBillingAgreement {
   @SerializedName("processingInformation")
   private Ptsv2billingagreementsProcessingInformation processingInformation = null;
 
-  public CreateBillingAgreement clientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
+  @SerializedName("buyerInformation")
+  private Ptsv2billingagreementsBuyerInformation buyerInformation = null;
+
+  public CreateBillingAgreement agreementInformation(Ptsv2billingagreementsAgreementInformation agreementInformation) {
+    this.agreementInformation = agreementInformation;
+    return this;
+  }
+
+   /**
+   * Get agreementInformation
+   * @return agreementInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2billingagreementsAgreementInformation getAgreementInformation() {
+    return agreementInformation;
+  }
+
+  public void setAgreementInformation(Ptsv2billingagreementsAgreementInformation agreementInformation) {
+    this.agreementInformation = agreementInformation;
+  }
+
+  public CreateBillingAgreement clientReferenceInformation(Ptsv2billingagreementsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -74,11 +100,11 @@ public class CreateBillingAgreement {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsClientReferenceInformation getClientReferenceInformation() {
+  public Ptsv2billingagreementsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Ptsv2paymentsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Ptsv2billingagreementsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
@@ -226,6 +252,24 @@ public class CreateBillingAgreement {
     this.processingInformation = processingInformation;
   }
 
+  public CreateBillingAgreement buyerInformation(Ptsv2billingagreementsBuyerInformation buyerInformation) {
+    this.buyerInformation = buyerInformation;
+    return this;
+  }
+
+   /**
+   * Get buyerInformation
+   * @return buyerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2billingagreementsBuyerInformation getBuyerInformation() {
+    return buyerInformation;
+  }
+
+  public void setBuyerInformation(Ptsv2billingagreementsBuyerInformation buyerInformation) {
+    this.buyerInformation = buyerInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -236,7 +280,8 @@ public class CreateBillingAgreement {
       return false;
     }
     CreateBillingAgreement createBillingAgreement = (CreateBillingAgreement) o;
-    return Objects.equals(this.clientReferenceInformation, createBillingAgreement.clientReferenceInformation) &&
+    return Objects.equals(this.agreementInformation, createBillingAgreement.agreementInformation) &&
+        Objects.equals(this.clientReferenceInformation, createBillingAgreement.clientReferenceInformation) &&
         Objects.equals(this.aggregatorInformation, createBillingAgreement.aggregatorInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, createBillingAgreement.consumerAuthenticationInformation) &&
         Objects.equals(this.deviceInformation, createBillingAgreement.deviceInformation) &&
@@ -244,12 +289,13 @@ public class CreateBillingAgreement {
         Objects.equals(this.merchantInformation, createBillingAgreement.merchantInformation) &&
         Objects.equals(this.orderInformation, createBillingAgreement.orderInformation) &&
         Objects.equals(this.paymentInformation, createBillingAgreement.paymentInformation) &&
-        Objects.equals(this.processingInformation, createBillingAgreement.processingInformation);
+        Objects.equals(this.processingInformation, createBillingAgreement.processingInformation) &&
+        Objects.equals(this.buyerInformation, createBillingAgreement.buyerInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, aggregatorInformation, consumerAuthenticationInformation, deviceInformation, installmentInformation, merchantInformation, orderInformation, paymentInformation, processingInformation);
+    return Objects.hash(agreementInformation, clientReferenceInformation, aggregatorInformation, consumerAuthenticationInformation, deviceInformation, installmentInformation, merchantInformation, orderInformation, paymentInformation, processingInformation, buyerInformation);
   }
 
 
@@ -258,6 +304,7 @@ public class CreateBillingAgreement {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateBillingAgreement {\n");
     
+    sb.append("    agreementInformation: ").append(toIndentedString(agreementInformation)).append("\n");
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
@@ -267,6 +314,7 @@ public class CreateBillingAgreement {
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

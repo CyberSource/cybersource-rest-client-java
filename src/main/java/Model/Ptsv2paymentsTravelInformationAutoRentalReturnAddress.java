@@ -40,6 +40,12 @@ public class Ptsv2paymentsTravelInformationAutoRentalReturnAddress {
   @SerializedName("locationId")
   private String locationId = null;
 
+  @SerializedName("address1")
+  private String address1 = null;
+
+  @SerializedName("postalCode")
+  private String postalCode = null;
+
   @SerializedName("location")
   private String location = null;
 
@@ -115,6 +121,42 @@ public class Ptsv2paymentsTravelInformationAutoRentalReturnAddress {
     this.locationId = locationId;
   }
 
+  public Ptsv2paymentsTravelInformationAutoRentalReturnAddress address1(String address1) {
+    this.address1 = address1;
+    return this;
+  }
+
+   /**
+   * When merchant wants to send the rental address&#39;s street address. 
+   * @return address1
+  **/
+  @ApiModelProperty(value = "When merchant wants to send the rental address's street address. ")
+  public String getAddress1() {
+    return address1;
+  }
+
+  public void setAddress1(String address1) {
+    this.address1 = address1;
+  }
+
+  public Ptsv2paymentsTravelInformationAutoRentalReturnAddress postalCode(String postalCode) {
+    this.postalCode = postalCode;
+    return this;
+  }
+
+   /**
+   * When merchant wants to send the return address&#39;s postal code. 
+   * @return postalCode
+  **/
+  @ApiModelProperty(value = "When merchant wants to send the return address's postal code. ")
+  public String getPostalCode() {
+    return postalCode;
+  }
+
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
+  }
+
   public Ptsv2paymentsTravelInformationAutoRentalReturnAddress location(String location) {
     this.location = location;
     return this;
@@ -147,12 +189,14 @@ public class Ptsv2paymentsTravelInformationAutoRentalReturnAddress {
         Objects.equals(this.state, ptsv2paymentsTravelInformationAutoRentalReturnAddress.state) &&
         Objects.equals(this.country, ptsv2paymentsTravelInformationAutoRentalReturnAddress.country) &&
         Objects.equals(this.locationId, ptsv2paymentsTravelInformationAutoRentalReturnAddress.locationId) &&
+        Objects.equals(this.address1, ptsv2paymentsTravelInformationAutoRentalReturnAddress.address1) &&
+        Objects.equals(this.postalCode, ptsv2paymentsTravelInformationAutoRentalReturnAddress.postalCode) &&
         Objects.equals(this.location, ptsv2paymentsTravelInformationAutoRentalReturnAddress.location);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(city, state, country, locationId, location);
+    return Objects.hash(city, state, country, locationId, address1, postalCode, location);
   }
 
 
@@ -165,6 +209,8 @@ public class Ptsv2paymentsTravelInformationAutoRentalReturnAddress {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    locationId: ").append(toIndentedString(locationId)).append("\n");
+    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
+    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import Model.PtsV2PaymentsPost201Response1ProcessorInformationAvs;
-import Model.PtsV2PaymentsPost201Response1ProcessorInformationSellerProtection;
+import Model.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,7 +43,7 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
   private String responseCode = null;
 
   @SerializedName("sellerProtection")
-  private PtsV2PaymentsPost201Response1ProcessorInformationSellerProtection sellerProtection = null;
+  private PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection = null;
 
   @SerializedName("avs")
   private PtsV2PaymentsPost201Response1ProcessorInformationAvs avs = null;
@@ -120,7 +120,7 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
     this.responseCode = responseCode;
   }
 
-  public PtsV2PaymentsPost201Response1ProcessorInformation sellerProtection(PtsV2PaymentsPost201Response1ProcessorInformationSellerProtection sellerProtection) {
+  public PtsV2PaymentsPost201Response1ProcessorInformation sellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
     this.sellerProtection = sellerProtection;
     return this;
   }
@@ -130,11 +130,11 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
    * @return sellerProtection
   **/
   @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201Response1ProcessorInformationSellerProtection getSellerProtection() {
+  public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection getSellerProtection() {
     return sellerProtection;
   }
 
-  public void setSellerProtection(PtsV2PaymentsPost201Response1ProcessorInformationSellerProtection sellerProtection) {
+  public void setSellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
     this.sellerProtection = sellerProtection;
   }
 

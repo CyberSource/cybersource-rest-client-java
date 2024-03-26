@@ -14,7 +14,7 @@
 package Model;
 
 import java.util.Objects;
-import Model.Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod;
+import Model.Ptsv2paymentsidcapturesPaymentInformationPaymentTypeMethod;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,7 +36,7 @@ public class Ptsv2paymentsidrefundsPaymentInformationPaymentType {
   private String subTypeName = null;
 
   @SerializedName("method")
-  private Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod method = null;
+  private Ptsv2paymentsidcapturesPaymentInformationPaymentTypeMethod method = null;
 
   public Ptsv2paymentsidrefundsPaymentInformationPaymentType name(String name) {
     this.name = name;
@@ -74,7 +74,7 @@ public class Ptsv2paymentsidrefundsPaymentInformationPaymentType {
     this.subTypeName = subTypeName;
   }
 
-  public Ptsv2paymentsidrefundsPaymentInformationPaymentType method(Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod method) {
+  public Ptsv2paymentsidrefundsPaymentInformationPaymentType method(Ptsv2paymentsidcapturesPaymentInformationPaymentTypeMethod method) {
     this.method = method;
     return this;
   }
@@ -84,11 +84,11 @@ public class Ptsv2paymentsidrefundsPaymentInformationPaymentType {
    * @return method
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod getMethod() {
+  public Ptsv2paymentsidcapturesPaymentInformationPaymentTypeMethod getMethod() {
     return method;
   }
 
-  public void setMethod(Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod method) {
+  public void setMethod(Ptsv2paymentsidcapturesPaymentInformationPaymentTypeMethod method) {
     this.method = method;
   }
 

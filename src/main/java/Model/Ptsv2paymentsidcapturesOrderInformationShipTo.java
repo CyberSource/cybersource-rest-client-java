@@ -37,6 +37,12 @@ public class Ptsv2paymentsidcapturesOrderInformationShipTo {
   @SerializedName("postalCode")
   private String postalCode = null;
 
+  @SerializedName("email")
+  private String email = null;
+
+  @SerializedName("county")
+  private String county = null;
+
   public Ptsv2paymentsidcapturesOrderInformationShipTo administrativeArea(String administrativeArea) {
     this.administrativeArea = administrativeArea;
     return this;
@@ -91,6 +97,42 @@ public class Ptsv2paymentsidcapturesOrderInformationShipTo {
     this.postalCode = postalCode;
   }
 
+  public Ptsv2paymentsidcapturesOrderInformationShipTo email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Email of the recipient.
+   * @return email
+  **/
+  @ApiModelProperty(value = "Email of the recipient.")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public Ptsv2paymentsidcapturesOrderInformationShipTo county(String county) {
+    this.county = county;
+    return this;
+  }
+
+   /**
+   * U.S. county if available.
+   * @return county
+  **/
+  @ApiModelProperty(value = "U.S. county if available.")
+  public String getCounty() {
+    return county;
+  }
+
+  public void setCounty(String county) {
+    this.county = county;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,12 +145,14 @@ public class Ptsv2paymentsidcapturesOrderInformationShipTo {
     Ptsv2paymentsidcapturesOrderInformationShipTo ptsv2paymentsidcapturesOrderInformationShipTo = (Ptsv2paymentsidcapturesOrderInformationShipTo) o;
     return Objects.equals(this.administrativeArea, ptsv2paymentsidcapturesOrderInformationShipTo.administrativeArea) &&
         Objects.equals(this.country, ptsv2paymentsidcapturesOrderInformationShipTo.country) &&
-        Objects.equals(this.postalCode, ptsv2paymentsidcapturesOrderInformationShipTo.postalCode);
+        Objects.equals(this.postalCode, ptsv2paymentsidcapturesOrderInformationShipTo.postalCode) &&
+        Objects.equals(this.email, ptsv2paymentsidcapturesOrderInformationShipTo.email) &&
+        Objects.equals(this.county, ptsv2paymentsidcapturesOrderInformationShipTo.county);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(administrativeArea, country, postalCode);
+    return Objects.hash(administrativeArea, country, postalCode, email, county);
   }
 
 
@@ -120,6 +164,8 @@ public class Ptsv2paymentsidcapturesOrderInformationShipTo {
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    county: ").append(toIndentedString(county)).append("\n");
     sb.append("}");
     return sb.toString();
   }

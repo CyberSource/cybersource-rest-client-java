@@ -53,6 +53,9 @@ public class PtsV2PaymentsVoidsPost201Response {
   @SerializedName("processorInformation")
   private PtsV2PaymentsVoidsPost201ResponseProcessorInformation processorInformation = null;
 
+  @SerializedName("reconciliationId")
+  private String reconciliationId = null;
+
   public PtsV2PaymentsVoidsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
     return this;
@@ -113,10 +116,10 @@ public class PtsV2PaymentsVoidsPost201Response {
   }
 
    /**
-   * The status of the submitted transaction.  Possible values:  - VOIDED 
+   * The status of the submitted transaction.  Possible values:  - VOIDED  - CANCELLED  - FAILED 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - VOIDED ")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - VOIDED  - CANCELLED  - FAILED ")
   public String getStatus() {
     return status;
   }
@@ -179,6 +182,24 @@ public class PtsV2PaymentsVoidsPost201Response {
     this.processorInformation = processorInformation;
   }
 
+  public PtsV2PaymentsVoidsPost201Response reconciliationId(String reconciliationId) {
+    this.reconciliationId = reconciliationId;
+    return this;
+  }
+
+   /**
+   * Reference number that you use to reconcile CyberSource reports with your reports. 
+   * @return reconciliationId
+  **/
+  @ApiModelProperty(value = "Reference number that you use to reconcile CyberSource reports with your reports. ")
+  public String getReconciliationId() {
+    return reconciliationId;
+  }
+
+  public void setReconciliationId(String reconciliationId) {
+    this.reconciliationId = reconciliationId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -195,12 +216,13 @@ public class PtsV2PaymentsVoidsPost201Response {
         Objects.equals(this.status, ptsV2PaymentsVoidsPost201Response.status) &&
         Objects.equals(this.clientReferenceInformation, ptsV2PaymentsVoidsPost201Response.clientReferenceInformation) &&
         Objects.equals(this.voidAmountDetails, ptsV2PaymentsVoidsPost201Response.voidAmountDetails) &&
-        Objects.equals(this.processorInformation, ptsV2PaymentsVoidsPost201Response.processorInformation);
+        Objects.equals(this.processorInformation, ptsV2PaymentsVoidsPost201Response.processorInformation) &&
+        Objects.equals(this.reconciliationId, ptsV2PaymentsVoidsPost201Response.reconciliationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, clientReferenceInformation, voidAmountDetails, processorInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, clientReferenceInformation, voidAmountDetails, processorInformation, reconciliationId);
   }
 
 
@@ -216,6 +238,7 @@ public class PtsV2PaymentsVoidsPost201Response {
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    voidAmountDetails: ").append(toIndentedString(voidAmountDetails)).append("\n");
     sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
