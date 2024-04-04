@@ -17,10 +17,12 @@ import java.util.Objects;
 import Model.Ptsv2paymentsPaymentInformationBank;
 import Model.Ptsv2paymentsPaymentInformationCard;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.Ptsv2paymentsPaymentInformationDirectDebit;
 import Model.Ptsv2paymentsPaymentInformationEWallet;
 import Model.Ptsv2paymentsPaymentInformationFluidData;
 import Model.Ptsv2paymentsPaymentInformationInstrumentIdentifier;
 import Model.Ptsv2paymentsPaymentInformationLegacyToken;
+import Model.Ptsv2paymentsPaymentInformationOptions;
 import Model.Ptsv2paymentsPaymentInformationPaymentInstrument;
 import Model.Ptsv2paymentsPaymentInformationPaymentType;
 import Model.Ptsv2paymentsPaymentInformationShippingAddress;
@@ -45,6 +47,9 @@ public class Ptsv2paymentsPaymentInformation {
   @SerializedName("tokenizedCard")
   private Ptsv2paymentsPaymentInformationTokenizedCard tokenizedCard = null;
 
+  @SerializedName("directDebit")
+  private Ptsv2paymentsPaymentInformationDirectDebit directDebit = null;
+
   @SerializedName("fluidData")
   private Ptsv2paymentsPaymentInformationFluidData fluidData = null;
 
@@ -65,6 +70,9 @@ public class Ptsv2paymentsPaymentInformation {
 
   @SerializedName("bank")
   private Ptsv2paymentsPaymentInformationBank bank = null;
+
+  @SerializedName("options")
+  private Ptsv2paymentsPaymentInformationOptions options = null;
 
   @SerializedName("paymentType")
   private Ptsv2paymentsPaymentInformationPaymentType paymentType = null;
@@ -109,6 +117,24 @@ public class Ptsv2paymentsPaymentInformation {
 
   public void setTokenizedCard(Ptsv2paymentsPaymentInformationTokenizedCard tokenizedCard) {
     this.tokenizedCard = tokenizedCard;
+  }
+
+  public Ptsv2paymentsPaymentInformation directDebit(Ptsv2paymentsPaymentInformationDirectDebit directDebit) {
+    this.directDebit = directDebit;
+    return this;
+  }
+
+   /**
+   * Get directDebit
+   * @return directDebit
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationDirectDebit getDirectDebit() {
+    return directDebit;
+  }
+
+  public void setDirectDebit(Ptsv2paymentsPaymentInformationDirectDebit directDebit) {
+    this.directDebit = directDebit;
   }
 
   public Ptsv2paymentsPaymentInformation fluidData(Ptsv2paymentsPaymentInformationFluidData fluidData) {
@@ -237,6 +263,24 @@ public class Ptsv2paymentsPaymentInformation {
     this.bank = bank;
   }
 
+  public Ptsv2paymentsPaymentInformation options(Ptsv2paymentsPaymentInformationOptions options) {
+    this.options = options;
+    return this;
+  }
+
+   /**
+   * Get options
+   * @return options
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationOptions getOptions() {
+    return options;
+  }
+
+  public void setOptions(Ptsv2paymentsPaymentInformationOptions options) {
+    this.options = options;
+  }
+
   public Ptsv2paymentsPaymentInformation paymentType(Ptsv2paymentsPaymentInformationPaymentType paymentType) {
     this.paymentType = paymentType;
     return this;
@@ -303,6 +347,7 @@ public class Ptsv2paymentsPaymentInformation {
     Ptsv2paymentsPaymentInformation ptsv2paymentsPaymentInformation = (Ptsv2paymentsPaymentInformation) o;
     return Objects.equals(this.card, ptsv2paymentsPaymentInformation.card) &&
         Objects.equals(this.tokenizedCard, ptsv2paymentsPaymentInformation.tokenizedCard) &&
+        Objects.equals(this.directDebit, ptsv2paymentsPaymentInformation.directDebit) &&
         Objects.equals(this.fluidData, ptsv2paymentsPaymentInformation.fluidData) &&
         Objects.equals(this.customer, ptsv2paymentsPaymentInformation.customer) &&
         Objects.equals(this.paymentInstrument, ptsv2paymentsPaymentInformation.paymentInstrument) &&
@@ -310,6 +355,7 @@ public class Ptsv2paymentsPaymentInformation {
         Objects.equals(this.shippingAddress, ptsv2paymentsPaymentInformation.shippingAddress) &&
         Objects.equals(this.legacyToken, ptsv2paymentsPaymentInformation.legacyToken) &&
         Objects.equals(this.bank, ptsv2paymentsPaymentInformation.bank) &&
+        Objects.equals(this.options, ptsv2paymentsPaymentInformation.options) &&
         Objects.equals(this.paymentType, ptsv2paymentsPaymentInformation.paymentType) &&
         Objects.equals(this.initiationChannel, ptsv2paymentsPaymentInformation.initiationChannel) &&
         Objects.equals(this.eWallet, ptsv2paymentsPaymentInformation.eWallet);
@@ -317,7 +363,7 @@ public class Ptsv2paymentsPaymentInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, paymentType, initiationChannel, eWallet);
+    return Objects.hash(card, tokenizedCard, directDebit, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, options, paymentType, initiationChannel, eWallet);
   }
 
 
@@ -328,6 +374,7 @@ public class Ptsv2paymentsPaymentInformation {
     
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    sb.append("    directDebit: ").append(toIndentedString(directDebit)).append("\n");
     sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
@@ -335,6 +382,7 @@ public class Ptsv2paymentsPaymentInformation {
     sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
     sb.append("    legacyToken: ").append(toIndentedString(legacyToken)).append("\n");
     sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    sb.append("    options: ").append(toIndentedString(options)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("    initiationChannel: ").append(toIndentedString(initiationChannel)).append("\n");
     sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");

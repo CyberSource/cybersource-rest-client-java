@@ -46,6 +46,9 @@ public class Ptsv2paymentsTravelInformationAutoRentalRentalAddress {
   @SerializedName("address2")
   private String address2 = null;
 
+  @SerializedName("postalCode")
+  private String postalCode = null;
+
   @SerializedName("location")
   private String location = null;
 
@@ -157,6 +160,24 @@ public class Ptsv2paymentsTravelInformationAutoRentalRentalAddress {
     this.address2 = address2;
   }
 
+  public Ptsv2paymentsTravelInformationAutoRentalRentalAddress postalCode(String postalCode) {
+    this.postalCode = postalCode;
+    return this;
+  }
+
+   /**
+   * When merchant wants to send the rental address&#39;s postal code. 
+   * @return postalCode
+  **/
+  @ApiModelProperty(value = "When merchant wants to send the rental address's postal code. ")
+  public String getPostalCode() {
+    return postalCode;
+  }
+
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
+  }
+
   public Ptsv2paymentsTravelInformationAutoRentalRentalAddress location(String location) {
     this.location = location;
     return this;
@@ -191,12 +212,13 @@ public class Ptsv2paymentsTravelInformationAutoRentalRentalAddress {
         Objects.equals(this.locationId, ptsv2paymentsTravelInformationAutoRentalRentalAddress.locationId) &&
         Objects.equals(this.address1, ptsv2paymentsTravelInformationAutoRentalRentalAddress.address1) &&
         Objects.equals(this.address2, ptsv2paymentsTravelInformationAutoRentalRentalAddress.address2) &&
+        Objects.equals(this.postalCode, ptsv2paymentsTravelInformationAutoRentalRentalAddress.postalCode) &&
         Objects.equals(this.location, ptsv2paymentsTravelInformationAutoRentalRentalAddress.location);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(city, state, country, locationId, address1, address2, location);
+    return Objects.hash(city, state, country, locationId, address1, address2, postalCode, location);
   }
 
 
@@ -211,6 +233,7 @@ public class Ptsv2paymentsTravelInformationAutoRentalRentalAddress {
     sb.append("    locationId: ").append(toIndentedString(locationId)).append("\n");
     sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
+    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("}");
     return sb.toString();

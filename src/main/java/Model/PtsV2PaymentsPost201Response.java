@@ -22,6 +22,7 @@ import Model.PtsV2PaymentsPost201ResponseErrorInformation;
 import Model.PtsV2PaymentsPost201ResponseInstallmentInformation;
 import Model.PtsV2PaymentsPost201ResponseIssuerInformation;
 import Model.PtsV2PaymentsPost201ResponseLinks;
+import Model.PtsV2PaymentsPost201ResponseMerchantInformation;
 import Model.PtsV2PaymentsPost201ResponseOrderInformation;
 import Model.PtsV2PaymentsPost201ResponsePaymentAccountInformation;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformation;
@@ -51,6 +52,9 @@ public class PtsV2PaymentsPost201Response {
 
   @SerializedName("id")
   private String id = null;
+
+  @SerializedName("message")
+  private String message = null;
 
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -100,6 +104,9 @@ public class PtsV2PaymentsPost201Response {
   @SerializedName("buyerInformation")
   private PtsV2PaymentsPost201ResponseBuyerInformation buyerInformation = null;
 
+  @SerializedName("merchantInformation")
+  private PtsV2PaymentsPost201ResponseMerchantInformation merchantInformation = null;
+
   @SerializedName("riskInformation")
   private PtsV2PaymentsPost201ResponseRiskInformation riskInformation = null;
 
@@ -146,6 +153,24 @@ public class PtsV2PaymentsPost201Response {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+  public PtsV2PaymentsPost201Response message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * More information about the transaction response. 
+   * @return message
+  **/
+  @ApiModelProperty(value = "More information about the transaction response. ")
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
   }
 
   public PtsV2PaymentsPost201Response submitTimeUtc(String submitTimeUtc) {
@@ -436,6 +461,24 @@ public class PtsV2PaymentsPost201Response {
     this.buyerInformation = buyerInformation;
   }
 
+  public PtsV2PaymentsPost201Response merchantInformation(PtsV2PaymentsPost201ResponseMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
+    return this;
+  }
+
+   /**
+   * Get merchantInformation
+   * @return merchantInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseMerchantInformation getMerchantInformation() {
+    return merchantInformation;
+  }
+
+  public void setMerchantInformation(PtsV2PaymentsPost201ResponseMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
+  }
+
   public PtsV2PaymentsPost201Response riskInformation(PtsV2PaymentsPost201ResponseRiskInformation riskInformation) {
     this.riskInformation = riskInformation;
     return this;
@@ -520,6 +563,7 @@ public class PtsV2PaymentsPost201Response {
     PtsV2PaymentsPost201Response ptsV2PaymentsPost201Response = (PtsV2PaymentsPost201Response) o;
     return Objects.equals(this.links, ptsV2PaymentsPost201Response.links) &&
         Objects.equals(this.id, ptsV2PaymentsPost201Response.id) &&
+        Objects.equals(this.message, ptsV2PaymentsPost201Response.message) &&
         Objects.equals(this.submitTimeUtc, ptsV2PaymentsPost201Response.submitTimeUtc) &&
         Objects.equals(this.status, ptsV2PaymentsPost201Response.status) &&
         Objects.equals(this.reconciliationId, ptsV2PaymentsPost201Response.reconciliationId) &&
@@ -536,6 +580,7 @@ public class PtsV2PaymentsPost201Response {
         Objects.equals(this.installmentInformation, ptsV2PaymentsPost201Response.installmentInformation) &&
         Objects.equals(this.tokenInformation, ptsV2PaymentsPost201Response.tokenInformation) &&
         Objects.equals(this.buyerInformation, ptsV2PaymentsPost201Response.buyerInformation) &&
+        Objects.equals(this.merchantInformation, ptsV2PaymentsPost201Response.merchantInformation) &&
         Objects.equals(this.riskInformation, ptsV2PaymentsPost201Response.riskInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, ptsV2PaymentsPost201Response.consumerAuthenticationInformation) &&
         Objects.equals(this.embeddedActions, ptsV2PaymentsPost201Response.embeddedActions) &&
@@ -544,7 +589,7 @@ public class PtsV2PaymentsPost201Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation, embeddedActions, watchlistScreeningInformation);
+    return Objects.hash(links, id, message, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, merchantInformation, riskInformation, consumerAuthenticationInformation, embeddedActions, watchlistScreeningInformation);
   }
 
 
@@ -555,6 +600,7 @@ public class PtsV2PaymentsPost201Response {
     
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
@@ -571,6 +617,7 @@ public class PtsV2PaymentsPost201Response {
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
+    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
     sb.append("    embeddedActions: ").append(toIndentedString(embeddedActions)).append("\n");

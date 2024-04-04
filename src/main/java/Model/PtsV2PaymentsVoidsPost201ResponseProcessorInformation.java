@@ -31,6 +31,12 @@ public class PtsV2PaymentsVoidsPost201ResponseProcessorInformation {
   @SerializedName("responseCode")
   private String responseCode = null;
 
+  @SerializedName("responseDetails")
+  private String responseDetails = null;
+
+  @SerializedName("transactionId")
+  private String transactionId = null;
+
   public PtsV2PaymentsVoidsPost201ResponseProcessorInformation responseCode(String responseCode) {
     this.responseCode = responseCode;
     return this;
@@ -49,6 +55,42 @@ public class PtsV2PaymentsVoidsPost201ResponseProcessorInformation {
     this.responseCode = responseCode;
   }
 
+  public PtsV2PaymentsVoidsPost201ResponseProcessorInformation responseDetails(String responseDetails) {
+    this.responseDetails = responseDetails;
+    return this;
+  }
+
+   /**
+   * The reason for when the transaction status is Pending or Reversed. Possible values: - &#x60;PAYER_SHIPPING_UNCONFIRMED&#x60; - &#x60;MULTI_CURRENCY&#x60; - &#x60;RISK_REVIEW&#x60; - &#x60;REGULATORY_REVIEW&#x60; - &#x60;VERIFICATION_REQUIRED&#x60; - &#x60;ORDER&#x60; - &#x60;OTHER&#x60; 
+   * @return responseDetails
+  **/
+  @ApiModelProperty(value = "The reason for when the transaction status is Pending or Reversed. Possible values: - `PAYER_SHIPPING_UNCONFIRMED` - `MULTI_CURRENCY` - `RISK_REVIEW` - `REGULATORY_REVIEW` - `VERIFICATION_REQUIRED` - `ORDER` - `OTHER` ")
+  public String getResponseDetails() {
+    return responseDetails;
+  }
+
+  public void setResponseDetails(String responseDetails) {
+    this.responseDetails = responseDetails;
+  }
+
+  public PtsV2PaymentsVoidsPost201ResponseProcessorInformation transactionId(String transactionId) {
+    this.transactionId = transactionId;
+    return this;
+  }
+
+   /**
+   * Identifier of the order transaction. 
+   * @return transactionId
+  **/
+  @ApiModelProperty(value = "Identifier of the order transaction. ")
+  public String getTransactionId() {
+    return transactionId;
+  }
+
+  public void setTransactionId(String transactionId) {
+    this.transactionId = transactionId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +101,14 @@ public class PtsV2PaymentsVoidsPost201ResponseProcessorInformation {
       return false;
     }
     PtsV2PaymentsVoidsPost201ResponseProcessorInformation ptsV2PaymentsVoidsPost201ResponseProcessorInformation = (PtsV2PaymentsVoidsPost201ResponseProcessorInformation) o;
-    return Objects.equals(this.responseCode, ptsV2PaymentsVoidsPost201ResponseProcessorInformation.responseCode);
+    return Objects.equals(this.responseCode, ptsV2PaymentsVoidsPost201ResponseProcessorInformation.responseCode) &&
+        Objects.equals(this.responseDetails, ptsV2PaymentsVoidsPost201ResponseProcessorInformation.responseDetails) &&
+        Objects.equals(this.transactionId, ptsV2PaymentsVoidsPost201ResponseProcessorInformation.transactionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseCode);
+    return Objects.hash(responseCode, responseDetails, transactionId);
   }
 
 
@@ -74,6 +118,8 @@ public class PtsV2PaymentsVoidsPost201ResponseProcessorInformation {
     sb.append("class PtsV2PaymentsVoidsPost201ResponseProcessorInformation {\n");
     
     sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
+    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
