@@ -69,10 +69,10 @@ public class Ptsv2billingagreementsProcessingInformation {
   }
 
    /**
-   * - Use &#x60;CONSUMER_AUTHENTICATION&#x60; to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. - Use &#x60;WATCHLIST_SCREENING&#x60;  when you want to call Watchlist Screening service. - Use &#x60;UPDATE_AGREEMENT&#x60; - Use &#x60;BILLING_AGREEMENT_CREATE&#x60; - Use &#x60;CANCEL_AGREEMENT&#x60; 
+   * - Use &#x60;CONSUMER_AUTHENTICATION&#x60; to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. - Use &#x60;WATCHLIST_SCREENING&#x60;  when you want to call Watchlist Screening service. - Use &#x60;UPDATE_AGREEMENT&#x60; - Use &#x60;BILLING_AGREEMENT_CREATE&#x60; when Alternative Payment create mandate service is requested - Use &#x60;CANCEL_AGREEMENT&#x60; - Use &#x60;AP_IMPORT_AGREEMENT&#x60; when Alternative Payment import mandate service is requested. 
    * @return actionList
   **/
-  @ApiModelProperty(value = "- Use `CONSUMER_AUTHENTICATION` to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. - Use `WATCHLIST_SCREENING`  when you want to call Watchlist Screening service. - Use `UPDATE_AGREEMENT` - Use `BILLING_AGREEMENT_CREATE` - Use `CANCEL_AGREEMENT` ")
+  @ApiModelProperty(value = "- Use `CONSUMER_AUTHENTICATION` to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. - Use `WATCHLIST_SCREENING`  when you want to call Watchlist Screening service. - Use `UPDATE_AGREEMENT` - Use `BILLING_AGREEMENT_CREATE` when Alternative Payment create mandate service is requested - Use `CANCEL_AGREEMENT` - Use `AP_IMPORT_AGREEMENT` when Alternative Payment import mandate service is requested. ")
   public List<String> getActionList() {
     return actionList;
   }

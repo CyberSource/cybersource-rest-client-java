@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice;
+import Model.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,6 +48,9 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
 
   @SerializedName("merchantAdvice")
   private PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice merchantAdvice = null;
+
+  @SerializedName("sellerProtection")
+  private PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection = null;
 
   public PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation approvalCode(String approvalCode) {
     this.approvalCode = approvalCode;
@@ -156,6 +160,24 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
     this.merchantAdvice = merchantAdvice;
   }
 
+  public PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation sellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
+    this.sellerProtection = sellerProtection;
+    return this;
+  }
+
+   /**
+   * Get sellerProtection
+   * @return sellerProtection
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection getSellerProtection() {
+    return sellerProtection;
+  }
+
+  public void setSellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
+    this.sellerProtection = sellerProtection;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -171,12 +193,13 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
         Objects.equals(this.responseCode, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.responseCode) &&
         Objects.equals(this.systemTraceAuditNumber, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.systemTraceAuditNumber) &&
         Objects.equals(this.responseDetails, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.responseDetails) &&
-        Objects.equals(this.merchantAdvice, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.merchantAdvice);
+        Objects.equals(this.merchantAdvice, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.merchantAdvice) &&
+        Objects.equals(this.sellerProtection, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.sellerProtection);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalCode, transactionId, responseCode, systemTraceAuditNumber, responseDetails, merchantAdvice);
+    return Objects.hash(approvalCode, transactionId, responseCode, systemTraceAuditNumber, responseDetails, merchantAdvice, sellerProtection);
   }
 
 
@@ -191,6 +214,7 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
     sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
     sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
     sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");
+    sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
     sb.append("}");
     return sb.toString();
   }

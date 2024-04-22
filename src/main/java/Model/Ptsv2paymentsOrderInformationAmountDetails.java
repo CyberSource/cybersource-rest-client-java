@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion;
+import Model.Ptsv2paymentsOrderInformationAmountDetailsOrder;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsSurcharge;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsTaxDetails;
 import com.google.gson.TypeAdapter;
@@ -35,6 +36,9 @@ import java.util.List;
  */
 
 public class Ptsv2paymentsOrderInformationAmountDetails {
+  @SerializedName("giftWrapAmount")
+  private String giftWrapAmount = null;
+
   @SerializedName("totalAmount")
   private String totalAmount = null;
 
@@ -112,6 +116,27 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
 
   @SerializedName("currencyConversion")
   private Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion currencyConversion = null;
+
+  @SerializedName("order")
+  private Ptsv2paymentsOrderInformationAmountDetailsOrder order = null;
+
+  public Ptsv2paymentsOrderInformationAmountDetails giftWrapAmount(String giftWrapAmount) {
+    this.giftWrapAmount = giftWrapAmount;
+    return this;
+  }
+
+   /**
+   * Amount being charged as gift wrap fee. 
+   * @return giftWrapAmount
+  **/
+  @ApiModelProperty(value = "Amount being charged as gift wrap fee. ")
+  public String getGiftWrapAmount() {
+    return giftWrapAmount;
+  }
+
+  public void setGiftWrapAmount(String giftWrapAmount) {
+    this.giftWrapAmount = giftWrapAmount;
+  }
 
   public Ptsv2paymentsOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
@@ -597,6 +622,24 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     this.currencyConversion = currencyConversion;
   }
 
+  public Ptsv2paymentsOrderInformationAmountDetails order(Ptsv2paymentsOrderInformationAmountDetailsOrder order) {
+    this.order = order;
+    return this;
+  }
+
+   /**
+   * Get order
+   * @return order
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsOrderInformationAmountDetailsOrder getOrder() {
+    return order;
+  }
+
+  public void setOrder(Ptsv2paymentsOrderInformationAmountDetailsOrder order) {
+    this.order = order;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -607,7 +650,8 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
       return false;
     }
     Ptsv2paymentsOrderInformationAmountDetails ptsv2paymentsOrderInformationAmountDetails = (Ptsv2paymentsOrderInformationAmountDetails) o;
-    return Objects.equals(this.totalAmount, ptsv2paymentsOrderInformationAmountDetails.totalAmount) &&
+    return Objects.equals(this.giftWrapAmount, ptsv2paymentsOrderInformationAmountDetails.giftWrapAmount) &&
+        Objects.equals(this.totalAmount, ptsv2paymentsOrderInformationAmountDetails.totalAmount) &&
         Objects.equals(this.subTotalAmount, ptsv2paymentsOrderInformationAmountDetails.subTotalAmount) &&
         Objects.equals(this.currency, ptsv2paymentsOrderInformationAmountDetails.currency) &&
         Objects.equals(this.discountAmount, ptsv2paymentsOrderInformationAmountDetails.discountAmount) &&
@@ -632,12 +676,13 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
         Objects.equals(this.originalAmount, ptsv2paymentsOrderInformationAmountDetails.originalAmount) &&
         Objects.equals(this.originalCurrency, ptsv2paymentsOrderInformationAmountDetails.originalCurrency) &&
         Objects.equals(this.cashbackAmount, ptsv2paymentsOrderInformationAmountDetails.cashbackAmount) &&
-        Objects.equals(this.currencyConversion, ptsv2paymentsOrderInformationAmountDetails.currencyConversion);
+        Objects.equals(this.currencyConversion, ptsv2paymentsOrderInformationAmountDetails.currencyConversion) &&
+        Objects.equals(this.order, ptsv2paymentsOrderInformationAmountDetails.order);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, subTotalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount, currencyConversion);
+    return Objects.hash(giftWrapAmount, totalAmount, subTotalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount, currencyConversion, order);
   }
 
 
@@ -646,6 +691,7 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformationAmountDetails {\n");
     
+    sb.append("    giftWrapAmount: ").append(toIndentedString(giftWrapAmount)).append("\n");
     sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("    subTotalAmount: ").append(toIndentedString(subTotalAmount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
@@ -672,6 +718,7 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     sb.append("    originalCurrency: ").append(toIndentedString(originalCurrency)).append("\n");
     sb.append("    cashbackAmount: ").append(toIndentedString(cashbackAmount)).append("\n");
     sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("}");
     return sb.toString();
   }

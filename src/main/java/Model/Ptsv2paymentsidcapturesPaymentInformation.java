@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Ptsv2paymentsidcapturesPaymentInformationCard;
+import Model.Ptsv2paymentsidcapturesPaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,6 +37,9 @@ public class Ptsv2paymentsidcapturesPaymentInformation {
 
   @SerializedName("card")
   private Ptsv2paymentsidcapturesPaymentInformationCard card = null;
+
+  @SerializedName("paymentType")
+  private Ptsv2paymentsidcapturesPaymentInformationPaymentType paymentType = null;
 
   public Ptsv2paymentsidcapturesPaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
     this.customer = customer;
@@ -73,6 +77,24 @@ public class Ptsv2paymentsidcapturesPaymentInformation {
     this.card = card;
   }
 
+  public Ptsv2paymentsidcapturesPaymentInformation paymentType(Ptsv2paymentsidcapturesPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
+    return this;
+  }
+
+   /**
+   * Get paymentType
+   * @return paymentType
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidcapturesPaymentInformationPaymentType getPaymentType() {
+    return paymentType;
+  }
+
+  public void setPaymentType(Ptsv2paymentsidcapturesPaymentInformationPaymentType paymentType) {
+    this.paymentType = paymentType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,12 +106,13 @@ public class Ptsv2paymentsidcapturesPaymentInformation {
     }
     Ptsv2paymentsidcapturesPaymentInformation ptsv2paymentsidcapturesPaymentInformation = (Ptsv2paymentsidcapturesPaymentInformation) o;
     return Objects.equals(this.customer, ptsv2paymentsidcapturesPaymentInformation.customer) &&
-        Objects.equals(this.card, ptsv2paymentsidcapturesPaymentInformation.card);
+        Objects.equals(this.card, ptsv2paymentsidcapturesPaymentInformation.card) &&
+        Objects.equals(this.paymentType, ptsv2paymentsidcapturesPaymentInformation.paymentType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customer, card);
+    return Objects.hash(customer, card, paymentType);
   }
 
 
@@ -100,6 +123,7 @@ public class Ptsv2paymentsidcapturesPaymentInformation {
     
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

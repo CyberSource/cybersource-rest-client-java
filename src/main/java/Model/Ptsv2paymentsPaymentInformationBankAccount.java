@@ -44,6 +44,9 @@ public class Ptsv2paymentsPaymentInformationBankAccount {
   @SerializedName("checkImageReferenceNumber")
   private String checkImageReferenceNumber = null;
 
+  @SerializedName("iban")
+  private String iban = null;
+
   public Ptsv2paymentsPaymentInformationBankAccount type(String type) {
     this.type = type;
     return this;
@@ -134,6 +137,24 @@ public class Ptsv2paymentsPaymentInformationBankAccount {
     this.checkImageReferenceNumber = checkImageReferenceNumber;
   }
 
+  public Ptsv2paymentsPaymentInformationBankAccount iban(String iban) {
+    this.iban = iban;
+    return this;
+  }
+
+   /**
+   * International Bank Account Number (IBAN) for the bank account. For some countries you can provide this number instead of the traditional bank account information. You can use this field only when scoring a direct debit transaction.  For all possible values, see the &#x60;bank_iban&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). 
+   * @return iban
+  **/
+  @ApiModelProperty(value = "International Bank Account Number (IBAN) for the bank account. For some countries you can provide this number instead of the traditional bank account information. You can use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_iban` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link). ")
+  public String getIban() {
+    return iban;
+  }
+
+  public void setIban(String iban) {
+    this.iban = iban;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,12 +169,13 @@ public class Ptsv2paymentsPaymentInformationBankAccount {
         Objects.equals(this.number, ptsv2paymentsPaymentInformationBankAccount.number) &&
         Objects.equals(this.encoderId, ptsv2paymentsPaymentInformationBankAccount.encoderId) &&
         Objects.equals(this.checkNumber, ptsv2paymentsPaymentInformationBankAccount.checkNumber) &&
-        Objects.equals(this.checkImageReferenceNumber, ptsv2paymentsPaymentInformationBankAccount.checkImageReferenceNumber);
+        Objects.equals(this.checkImageReferenceNumber, ptsv2paymentsPaymentInformationBankAccount.checkImageReferenceNumber) &&
+        Objects.equals(this.iban, ptsv2paymentsPaymentInformationBankAccount.iban);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, number, encoderId, checkNumber, checkImageReferenceNumber);
+    return Objects.hash(type, number, encoderId, checkNumber, checkImageReferenceNumber, iban);
   }
 
 
@@ -167,6 +189,7 @@ public class Ptsv2paymentsPaymentInformationBankAccount {
     sb.append("    encoderId: ").append(toIndentedString(encoderId)).append("\n");
     sb.append("    checkNumber: ").append(toIndentedString(checkNumber)).append("\n");
     sb.append("    checkImageReferenceNumber: ").append(toIndentedString(checkImageReferenceNumber)).append("\n");
+    sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
     sb.append("}");
     return sb.toString();
   }

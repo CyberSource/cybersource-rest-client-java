@@ -38,6 +38,21 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
   @SerializedName("currency")
   private String currency = null;
 
+  @SerializedName("processorTransactionFee")
+  private String processorTransactionFee = null;
+
+  @SerializedName("exchangeRate")
+  private String exchangeRate = null;
+
+  @SerializedName("foreignCurrency")
+  private String foreignCurrency = null;
+
+  @SerializedName("foreignAmount")
+  private String foreignAmount = null;
+
+  @SerializedName("discountAmount")
+  private String discountAmount = null;
+
   public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
     return this;
@@ -92,6 +107,96 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
     this.currency = currency;
   }
 
+  public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails processorTransactionFee(String processorTransactionFee) {
+    this.processorTransactionFee = processorTransactionFee;
+    return this;
+  }
+
+   /**
+   * Amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code. 
+   * @return processorTransactionFee
+  **/
+  @ApiModelProperty(value = "Amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code. ")
+  public String getProcessorTransactionFee() {
+    return processorTransactionFee;
+  }
+
+  public void setProcessorTransactionFee(String processorTransactionFee) {
+    this.processorTransactionFee = processorTransactionFee;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails exchangeRate(String exchangeRate) {
+    this.exchangeRate = exchangeRate;
+    return this;
+  }
+
+   /**
+   * The rate of conversion of the currency given in the request to CNY. The conversion happens at the time when Alipay&#39;s trade order is created 
+   * @return exchangeRate
+  **/
+  @ApiModelProperty(value = "The rate of conversion of the currency given in the request to CNY. The conversion happens at the time when Alipay's trade order is created ")
+  public String getExchangeRate() {
+    return exchangeRate;
+  }
+
+  public void setExchangeRate(String exchangeRate) {
+    this.exchangeRate = exchangeRate;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails foreignCurrency(String foreignCurrency) {
+    this.foreignCurrency = foreignCurrency;
+    return this;
+  }
+
+   /**
+   * Currency code for the transaction performed in cross border currency. 
+   * @return foreignCurrency
+  **/
+  @ApiModelProperty(value = "Currency code for the transaction performed in cross border currency. ")
+  public String getForeignCurrency() {
+    return foreignCurrency;
+  }
+
+  public void setForeignCurrency(String foreignCurrency) {
+    this.foreignCurrency = foreignCurrency;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails foreignAmount(String foreignAmount) {
+    this.foreignAmount = foreignAmount;
+    return this;
+  }
+
+   /**
+   * The transaction amount in CNY. 
+   * @return foreignAmount
+  **/
+  @ApiModelProperty(value = "The transaction amount in CNY. ")
+  public String getForeignAmount() {
+    return foreignAmount;
+  }
+
+  public void setForeignAmount(String foreignAmount) {
+    this.foreignAmount = foreignAmount;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails discountAmount(String discountAmount) {
+    this.discountAmount = discountAmount;
+    return this;
+  }
+
+   /**
+   * If coupons/vouchers are used in the transaction, the discount amount redeemed in the settlement currency will be returned. Otherwise, no return. 
+   * @return discountAmount
+  **/
+  @ApiModelProperty(value = "If coupons/vouchers are used in the transaction, the discount amount redeemed in the settlement currency will be returned. Otherwise, no return. ")
+  public String getDiscountAmount() {
+    return discountAmount;
+  }
+
+  public void setDiscountAmount(String discountAmount) {
+    this.discountAmount = discountAmount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,12 +209,17 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
     PtsV2PaymentsPost201ResponseOrderInformationAmountDetails ptsV2PaymentsPost201ResponseOrderInformationAmountDetails = (PtsV2PaymentsPost201ResponseOrderInformationAmountDetails) o;
     return Objects.equals(this.totalAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.totalAmount) &&
         Objects.equals(this.authorizedAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.authorizedAmount) &&
-        Objects.equals(this.currency, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.currency);
+        Objects.equals(this.currency, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.currency) &&
+        Objects.equals(this.processorTransactionFee, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.processorTransactionFee) &&
+        Objects.equals(this.exchangeRate, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.exchangeRate) &&
+        Objects.equals(this.foreignCurrency, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.foreignCurrency) &&
+        Objects.equals(this.foreignAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.foreignAmount) &&
+        Objects.equals(this.discountAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.discountAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, authorizedAmount, currency);
+    return Objects.hash(totalAmount, authorizedAmount, currency, processorTransactionFee, exchangeRate, foreignCurrency, foreignAmount, discountAmount);
   }
 
 
@@ -121,6 +231,11 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
     sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("    authorizedAmount: ").append(toIndentedString(authorizedAmount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    processorTransactionFee: ").append(toIndentedString(processorTransactionFee)).append("\n");
+    sb.append("    exchangeRate: ").append(toIndentedString(exchangeRate)).append("\n");
+    sb.append("    foreignCurrency: ").append(toIndentedString(foreignCurrency)).append("\n");
+    sb.append("    foreignAmount: ").append(toIndentedString(foreignAmount)).append("\n");
+    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

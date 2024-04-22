@@ -32,6 +32,22 @@ public class TransientTokenDataApiTest {
 
     
     /**
+     * Get Payment Credentials
+     *
+     * Retrieve the Payment data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will return PCI payment data captured by the Unified Checkout platform.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void getPaymentCredentialsForTransientTokenTest() throws Exception {
+        String jti = null;
+        String response = api.getPaymentCredentialsForTransientToken(jti);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get Transient Token Data
      *
      * Retrieve the data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.

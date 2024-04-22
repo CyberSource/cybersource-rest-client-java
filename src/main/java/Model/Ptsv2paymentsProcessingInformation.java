@@ -78,6 +78,12 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("purchaseLevel")
   private String purchaseLevel = null;
 
+  @SerializedName("transactionTimeout")
+  private Integer transactionTimeout = null;
+
+  @SerializedName("intentsId")
+  private String intentsId = null;
+
   @SerializedName("paymentId")
   private String paymentId = null;
 
@@ -138,6 +144,9 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("networkPartnerId")
   private String networkPartnerId = null;
 
+  @SerializedName("paymentType")
+  private String paymentType = null;
+
   public Ptsv2paymentsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
     return this;
@@ -152,10 +161,10 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - &#x60;DECISION_SKIP&#x60;: Use this when you want to skip Decision Manager service(s).   - &#x60;TOKEN_CREATE&#x60;: Use this when you want to create a token from the card/bank data in your payment request.   - &#x60;CONSUMER_AUTHENTICATION&#x60;: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - &#x60;VALIDATE_CONSUMER_AUTHENTICATION&#x60;: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - &#x60;AP_INITIATE&#x60;: Use this when Alternative Payment Initiate service is requested.   - &#x60;WATCHLIST_SCREENING&#x60; : Use this when you want to call Watchlist Screening service. 
+   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - &#x60;DECISION_SKIP&#x60;: Use this when you want to skip Decision Manager service(s).   - &#x60;TOKEN_CREATE&#x60;: Use this when you want to create a token from the card/bank data in your payment request.   - &#x60;CONSUMER_AUTHENTICATION&#x60;: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - &#x60;VALIDATE_CONSUMER_AUTHENTICATION&#x60;: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - &#x60;AP_INITIATE&#x60;: Use this when Alternative Payment Initiate service is requested.   - &#x60;WATCHLIST_SCREENING&#x60; : Use this when you want to call Watchlist Screening service.   - &#x60;AP_SALE&#x60; : Use this when Alternative Payment Sale service is requested.    - &#x60;AP_AUTH&#x60; : Use this when Alternative Payment Authorize service is requested. 
    * @return actionList
   **/
-  @ApiModelProperty(value = "Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service. ")
+  @ApiModelProperty(value = "Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service.   - `AP_SALE` : Use this when Alternative Payment Sale service is requested.    - `AP_AUTH` : Use this when Alternative Payment Authorize service is requested. ")
   public List<String> getActionList() {
     return actionList;
   }
@@ -386,6 +395,43 @@ public class Ptsv2paymentsProcessingInformation {
 
   public void setPurchaseLevel(String purchaseLevel) {
     this.purchaseLevel = purchaseLevel;
+  }
+
+  public Ptsv2paymentsProcessingInformation transactionTimeout(Integer transactionTimeout) {
+    this.transactionTimeout = transactionTimeout;
+    return this;
+  }
+
+   /**
+   * The time-out limit in seconds for the transaction. The time-out limit starts when the customer is directed to the merchant URL that is included in the sale service response. The maximum value is 99999 (about 27 hours). When the transaction times out, the payment system changes the status to abandoned.
+   * maximum: 99999
+   * @return transactionTimeout
+  **/
+  @ApiModelProperty(value = "The time-out limit in seconds for the transaction. The time-out limit starts when the customer is directed to the merchant URL that is included in the sale service response. The maximum value is 99999 (about 27 hours). When the transaction times out, the payment system changes the status to abandoned.")
+  public Integer getTransactionTimeout() {
+    return transactionTimeout;
+  }
+
+  public void setTransactionTimeout(Integer transactionTimeout) {
+    this.transactionTimeout = transactionTimeout;
+  }
+
+  public Ptsv2paymentsProcessingInformation intentsId(String intentsId) {
+    this.intentsId = intentsId;
+    return this;
+  }
+
+   /**
+   * Set to the value of the requestID field returned in the order service response.
+   * @return intentsId
+  **/
+  @ApiModelProperty(value = "Set to the value of the requestID field returned in the order service response.")
+  public String getIntentsId() {
+    return intentsId;
+  }
+
+  public void setIntentsId(String intentsId) {
+    this.intentsId = intentsId;
   }
 
   public Ptsv2paymentsProcessingInformation paymentId(String paymentId) {
@@ -748,6 +794,24 @@ public class Ptsv2paymentsProcessingInformation {
     this.networkPartnerId = networkPartnerId;
   }
 
+  public Ptsv2paymentsProcessingInformation paymentType(String paymentType) {
+    this.paymentType = paymentType;
+    return this;
+  }
+
+   /**
+   * Identifier for the payment type. 
+   * @return paymentType
+  **/
+  @ApiModelProperty(value = "Identifier for the payment type. ")
+  public String getPaymentType() {
+    return paymentType;
+  }
+
+  public void setPaymentType(String paymentType) {
+    this.paymentType = paymentType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -771,6 +835,8 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.reconciliationId, ptsv2paymentsProcessingInformation.reconciliationId) &&
         Objects.equals(this.linkId, ptsv2paymentsProcessingInformation.linkId) &&
         Objects.equals(this.purchaseLevel, ptsv2paymentsProcessingInformation.purchaseLevel) &&
+        Objects.equals(this.transactionTimeout, ptsv2paymentsProcessingInformation.transactionTimeout) &&
+        Objects.equals(this.intentsId, ptsv2paymentsProcessingInformation.intentsId) &&
         Objects.equals(this.paymentId, ptsv2paymentsProcessingInformation.paymentId) &&
         Objects.equals(this.reportGroup, ptsv2paymentsProcessingInformation.reportGroup) &&
         Objects.equals(this.visaCheckoutId, ptsv2paymentsProcessingInformation.visaCheckoutId) &&
@@ -790,12 +856,13 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.networkRoutingOrder, ptsv2paymentsProcessingInformation.networkRoutingOrder) &&
         Objects.equals(this.payByPointsIndicator, ptsv2paymentsProcessingInformation.payByPointsIndicator) &&
         Objects.equals(this.isReturnAuthRecordEnabled, ptsv2paymentsProcessingInformation.isReturnAuthRecordEnabled) &&
-        Objects.equals(this.networkPartnerId, ptsv2paymentsProcessingInformation.networkPartnerId);
+        Objects.equals(this.networkPartnerId, ptsv2paymentsProcessingInformation.networkPartnerId) &&
+        Objects.equals(this.paymentType, ptsv2paymentsProcessingInformation.paymentType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled, networkPartnerId);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled, networkPartnerId, paymentType);
   }
 
 
@@ -817,6 +884,8 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
     sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
+    sb.append("    transactionTimeout: ").append(toIndentedString(transactionTimeout)).append("\n");
+    sb.append("    intentsId: ").append(toIndentedString(intentsId)).append("\n");
     sb.append("    paymentId: ").append(toIndentedString(paymentId)).append("\n");
     sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
     sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
@@ -837,6 +906,7 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
     sb.append("    isReturnAuthRecordEnabled: ").append(toIndentedString(isReturnAuthRecordEnabled)).append("\n");
     sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
+    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

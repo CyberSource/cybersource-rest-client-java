@@ -35,6 +35,9 @@ public class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions {
   @SerializedName("totalCaptureCount")
   private Integer totalCaptureCount = null;
 
+  @SerializedName("isFinal")
+  private String isFinal = null;
+
   public Ptsv2paymentsidcapturesProcessingInformationCaptureOptions captureSequenceNumber(Integer captureSequenceNumber) {
     this.captureSequenceNumber = captureSequenceNumber;
     return this;
@@ -75,6 +78,24 @@ public class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions {
     this.totalCaptureCount = totalCaptureCount;
   }
 
+  public Ptsv2paymentsidcapturesProcessingInformationCaptureOptions isFinal(String isFinal) {
+    this.isFinal = isFinal;
+    return this;
+  }
+
+   /**
+   * Indicates whether to release the authorization hold on the remaining funds.   Possible Values: - &#x60;true&#x60; - &#x60;false&#x60; 
+   * @return isFinal
+  **/
+  @ApiModelProperty(value = "Indicates whether to release the authorization hold on the remaining funds.   Possible Values: - `true` - `false` ")
+  public String getIsFinal() {
+    return isFinal;
+  }
+
+  public void setIsFinal(String isFinal) {
+    this.isFinal = isFinal;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -86,12 +107,13 @@ public class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions {
     }
     Ptsv2paymentsidcapturesProcessingInformationCaptureOptions ptsv2paymentsidcapturesProcessingInformationCaptureOptions = (Ptsv2paymentsidcapturesProcessingInformationCaptureOptions) o;
     return Objects.equals(this.captureSequenceNumber, ptsv2paymentsidcapturesProcessingInformationCaptureOptions.captureSequenceNumber) &&
-        Objects.equals(this.totalCaptureCount, ptsv2paymentsidcapturesProcessingInformationCaptureOptions.totalCaptureCount);
+        Objects.equals(this.totalCaptureCount, ptsv2paymentsidcapturesProcessingInformationCaptureOptions.totalCaptureCount) &&
+        Objects.equals(this.isFinal, ptsv2paymentsidcapturesProcessingInformationCaptureOptions.isFinal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(captureSequenceNumber, totalCaptureCount);
+    return Objects.hash(captureSequenceNumber, totalCaptureCount, isFinal);
   }
 
 
@@ -102,6 +124,7 @@ public class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions {
     
     sb.append("    captureSequenceNumber: ").append(toIndentedString(captureSequenceNumber)).append("\n");
     sb.append("    totalCaptureCount: ").append(toIndentedString(totalCaptureCount)).append("\n");
+    sb.append("    isFinal: ").append(toIndentedString(isFinal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

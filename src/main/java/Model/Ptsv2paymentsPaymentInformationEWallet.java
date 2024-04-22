@@ -32,6 +32,9 @@ public class Ptsv2paymentsPaymentInformationEWallet {
   @SerializedName("accountId")
   private String accountId = null;
 
+  @SerializedName("fundingSource")
+  private String fundingSource = null;
+
   public Ptsv2paymentsPaymentInformationEWallet accountId(String accountId) {
     this.accountId = accountId;
     return this;
@@ -50,6 +53,24 @@ public class Ptsv2paymentsPaymentInformationEWallet {
     this.accountId = accountId;
   }
 
+  public Ptsv2paymentsPaymentInformationEWallet fundingSource(String fundingSource) {
+    this.fundingSource = fundingSource;
+    return this;
+  }
+
+   /**
+   * Payment method for the unit purchase. Possible values: - &#x60;UNRESTRICTED (default)—this value is only available if configured by PayPal for the merchant.&#x60; - &#x60;INSTANT&#x60; 
+   * @return fundingSource
+  **/
+  @ApiModelProperty(value = "Payment method for the unit purchase. Possible values: - `UNRESTRICTED (default)—this value is only available if configured by PayPal for the merchant.` - `INSTANT` ")
+  public String getFundingSource() {
+    return fundingSource;
+  }
+
+  public void setFundingSource(String fundingSource) {
+    this.fundingSource = fundingSource;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +81,13 @@ public class Ptsv2paymentsPaymentInformationEWallet {
       return false;
     }
     Ptsv2paymentsPaymentInformationEWallet ptsv2paymentsPaymentInformationEWallet = (Ptsv2paymentsPaymentInformationEWallet) o;
-    return Objects.equals(this.accountId, ptsv2paymentsPaymentInformationEWallet.accountId);
+    return Objects.equals(this.accountId, ptsv2paymentsPaymentInformationEWallet.accountId) &&
+        Objects.equals(this.fundingSource, ptsv2paymentsPaymentInformationEWallet.fundingSource);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId);
+    return Objects.hash(accountId, fundingSource);
   }
 
 
@@ -75,6 +97,7 @@ public class Ptsv2paymentsPaymentInformationEWallet {
     sb.append("class Ptsv2paymentsPaymentInformationEWallet {\n");
     
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    fundingSource: ").append(toIndentedString(fundingSource)).append("\n");
     sb.append("}");
     return sb.toString();
   }

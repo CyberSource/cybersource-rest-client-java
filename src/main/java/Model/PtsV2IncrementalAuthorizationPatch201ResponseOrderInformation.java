@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails;
 import Model.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -32,6 +33,9 @@ import java.io.IOException;
 public class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation {
   @SerializedName("amountDetails")
   private PtsV2PaymentsPost201ResponseOrderInformationAmountDetails amountDetails = null;
+
+  @SerializedName("invoiceDetails")
+  private PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails invoiceDetails = null;
 
   public PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation amountDetails(PtsV2PaymentsPost201ResponseOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -51,6 +55,24 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation {
     this.amountDetails = amountDetails;
   }
 
+  public PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation invoiceDetails(PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails invoiceDetails) {
+    this.invoiceDetails = invoiceDetails;
+    return this;
+  }
+
+   /**
+   * Get invoiceDetails
+   * @return invoiceDetails
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails getInvoiceDetails() {
+    return invoiceDetails;
+  }
+
+  public void setInvoiceDetails(PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails invoiceDetails) {
+    this.invoiceDetails = invoiceDetails;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +83,13 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation {
       return false;
     }
     PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation ptsV2IncrementalAuthorizationPatch201ResponseOrderInformation = (PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation) o;
-    return Objects.equals(this.amountDetails, ptsV2IncrementalAuthorizationPatch201ResponseOrderInformation.amountDetails);
+    return Objects.equals(this.amountDetails, ptsV2IncrementalAuthorizationPatch201ResponseOrderInformation.amountDetails) &&
+        Objects.equals(this.invoiceDetails, ptsV2IncrementalAuthorizationPatch201ResponseOrderInformation.invoiceDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails);
+    return Objects.hash(amountDetails, invoiceDetails);
   }
 
 
@@ -76,6 +99,7 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation {
     sb.append("class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation {\n");
     
     sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

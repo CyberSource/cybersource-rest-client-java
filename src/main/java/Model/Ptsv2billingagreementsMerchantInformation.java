@@ -42,6 +42,15 @@ public class Ptsv2billingagreementsMerchantInformation {
   @SerializedName("transactionLocalDateTime")
   private String transactionLocalDateTime = null;
 
+  @SerializedName("cancelUrl")
+  private String cancelUrl = null;
+
+  @SerializedName("successUrl")
+  private String successUrl = null;
+
+  @SerializedName("failureUrl")
+  private String failureUrl = null;
+
   public Ptsv2billingagreementsMerchantInformation merchantDescriptor(Ptsv2billingagreementsMerchantInformationMerchantDescriptor merchantDescriptor) {
     this.merchantDescriptor = merchantDescriptor;
     return this;
@@ -115,6 +124,60 @@ public class Ptsv2billingagreementsMerchantInformation {
     this.transactionLocalDateTime = transactionLocalDateTime;
   }
 
+  public Ptsv2billingagreementsMerchantInformation cancelUrl(String cancelUrl) {
+    this.cancelUrl = cancelUrl;
+    return this;
+  }
+
+   /**
+   * URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate 
+   * @return cancelUrl
+  **/
+  @ApiModelProperty(value = "URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate ")
+  public String getCancelUrl() {
+    return cancelUrl;
+  }
+
+  public void setCancelUrl(String cancelUrl) {
+    this.cancelUrl = cancelUrl;
+  }
+
+  public Ptsv2billingagreementsMerchantInformation successUrl(String successUrl) {
+    this.successUrl = successUrl;
+    return this;
+  }
+
+   /**
+   * URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate 
+   * @return successUrl
+  **/
+  @ApiModelProperty(value = "URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate ")
+  public String getSuccessUrl() {
+    return successUrl;
+  }
+
+  public void setSuccessUrl(String successUrl) {
+    this.successUrl = successUrl;
+  }
+
+  public Ptsv2billingagreementsMerchantInformation failureUrl(String failureUrl) {
+    this.failureUrl = failureUrl;
+    return this;
+  }
+
+   /**
+   * URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate 
+   * @return failureUrl
+  **/
+  @ApiModelProperty(value = "URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate ")
+  public String getFailureUrl() {
+    return failureUrl;
+  }
+
+  public void setFailureUrl(String failureUrl) {
+    this.failureUrl = failureUrl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,12 +191,15 @@ public class Ptsv2billingagreementsMerchantInformation {
     return Objects.equals(this.merchantDescriptor, ptsv2billingagreementsMerchantInformation.merchantDescriptor) &&
         Objects.equals(this.categoryCode, ptsv2billingagreementsMerchantInformation.categoryCode) &&
         Objects.equals(this.administrativeArea, ptsv2billingagreementsMerchantInformation.administrativeArea) &&
-        Objects.equals(this.transactionLocalDateTime, ptsv2billingagreementsMerchantInformation.transactionLocalDateTime);
+        Objects.equals(this.transactionLocalDateTime, ptsv2billingagreementsMerchantInformation.transactionLocalDateTime) &&
+        Objects.equals(this.cancelUrl, ptsv2billingagreementsMerchantInformation.cancelUrl) &&
+        Objects.equals(this.successUrl, ptsv2billingagreementsMerchantInformation.successUrl) &&
+        Objects.equals(this.failureUrl, ptsv2billingagreementsMerchantInformation.failureUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantDescriptor, categoryCode, administrativeArea, transactionLocalDateTime);
+    return Objects.hash(merchantDescriptor, categoryCode, administrativeArea, transactionLocalDateTime, cancelUrl, successUrl, failureUrl);
   }
 
 
@@ -146,6 +212,9 @@ public class Ptsv2billingagreementsMerchantInformation {
     sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    transactionLocalDateTime: ").append(toIndentedString(transactionLocalDateTime)).append("\n");
+    sb.append("    cancelUrl: ").append(toIndentedString(cancelUrl)).append("\n");
+    sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
+    sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

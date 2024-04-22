@@ -16,8 +16,11 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsidreversalsClientReferenceInformation;
+import Model.Ptsv2paymentsidvoidsAgreementInformation;
+import Model.Ptsv2paymentsidvoidsMerchantInformation;
 import Model.Ptsv2paymentsidvoidsOrderInformation;
 import Model.Ptsv2paymentsidvoidsPaymentInformation;
+import Model.Ptsv2paymentsidvoidsProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,6 +43,15 @@ public class VoidRefundRequest {
 
   @SerializedName("orderInformation")
   private Ptsv2paymentsidvoidsOrderInformation orderInformation = null;
+
+  @SerializedName("agreementInformation")
+  private Ptsv2paymentsidvoidsAgreementInformation agreementInformation = null;
+
+  @SerializedName("merchantInformation")
+  private Ptsv2paymentsidvoidsMerchantInformation merchantInformation = null;
+
+  @SerializedName("processingInformation")
+  private Ptsv2paymentsidvoidsProcessingInformation processingInformation = null;
 
   public VoidRefundRequest clientReferenceInformation(Ptsv2paymentsidreversalsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -95,6 +107,60 @@ public class VoidRefundRequest {
     this.orderInformation = orderInformation;
   }
 
+  public VoidRefundRequest agreementInformation(Ptsv2paymentsidvoidsAgreementInformation agreementInformation) {
+    this.agreementInformation = agreementInformation;
+    return this;
+  }
+
+   /**
+   * Get agreementInformation
+   * @return agreementInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidvoidsAgreementInformation getAgreementInformation() {
+    return agreementInformation;
+  }
+
+  public void setAgreementInformation(Ptsv2paymentsidvoidsAgreementInformation agreementInformation) {
+    this.agreementInformation = agreementInformation;
+  }
+
+  public VoidRefundRequest merchantInformation(Ptsv2paymentsidvoidsMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
+    return this;
+  }
+
+   /**
+   * Get merchantInformation
+   * @return merchantInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidvoidsMerchantInformation getMerchantInformation() {
+    return merchantInformation;
+  }
+
+  public void setMerchantInformation(Ptsv2paymentsidvoidsMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
+  }
+
+  public VoidRefundRequest processingInformation(Ptsv2paymentsidvoidsProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsidvoidsProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(Ptsv2paymentsidvoidsProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -107,12 +173,15 @@ public class VoidRefundRequest {
     VoidRefundRequest voidRefundRequest = (VoidRefundRequest) o;
     return Objects.equals(this.clientReferenceInformation, voidRefundRequest.clientReferenceInformation) &&
         Objects.equals(this.paymentInformation, voidRefundRequest.paymentInformation) &&
-        Objects.equals(this.orderInformation, voidRefundRequest.orderInformation);
+        Objects.equals(this.orderInformation, voidRefundRequest.orderInformation) &&
+        Objects.equals(this.agreementInformation, voidRefundRequest.agreementInformation) &&
+        Objects.equals(this.merchantInformation, voidRefundRequest.merchantInformation) &&
+        Objects.equals(this.processingInformation, voidRefundRequest.processingInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, paymentInformation, orderInformation);
+    return Objects.hash(clientReferenceInformation, paymentInformation, orderInformation, agreementInformation, merchantInformation, processingInformation);
   }
 
 
@@ -124,6 +193,9 @@ public class VoidRefundRequest {
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    sb.append("    agreementInformation: ").append(toIndentedString(agreementInformation)).append("\n");
+    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

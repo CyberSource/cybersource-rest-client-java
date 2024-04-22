@@ -83,6 +83,9 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
   @SerializedName("issuerMessage")
   private String issuerMessage = null;
 
+  @SerializedName("productDescription")
+  private String productDescription = null;
+
   public Ptsv2paymentsOrderInformationInvoiceDetails invoiceNumber(String invoiceNumber) {
     this.invoiceNumber = invoiceNumber;
     return this;
@@ -398,6 +401,24 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     this.issuerMessage = issuerMessage;
   }
 
+  public Ptsv2paymentsOrderInformationInvoiceDetails productDescription(String productDescription) {
+    this.productDescription = productDescription;
+    return this;
+  }
+
+   /**
+   * Brief description of item.
+   * @return productDescription
+  **/
+  @ApiModelProperty(value = "Brief description of item.")
+  public String getProductDescription() {
+    return productDescription;
+  }
+
+  public void setProductDescription(String productDescription) {
+    this.productDescription = productDescription;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -424,12 +445,13 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
         Objects.equals(this.salesSlipNumber, ptsv2paymentsOrderInformationInvoiceDetails.salesSlipNumber) &&
         Objects.equals(this.invoiceDate, ptsv2paymentsOrderInformationInvoiceDetails.invoiceDate) &&
         Objects.equals(this.costCenter, ptsv2paymentsOrderInformationInvoiceDetails.costCenter) &&
-        Objects.equals(this.issuerMessage, ptsv2paymentsOrderInformationInvoiceDetails.issuerMessage);
+        Objects.equals(this.issuerMessage, ptsv2paymentsOrderInformationInvoiceDetails.issuerMessage) &&
+        Objects.equals(this.productDescription, ptsv2paymentsOrderInformationInvoiceDetails.productDescription);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum, referenceDataCode, referenceDataNumber, salesSlipNumber, invoiceDate, costCenter, issuerMessage);
+    return Objects.hash(invoiceNumber, barcodeNumber, expirationDate, purchaseOrderNumber, purchaseOrderDate, purchaseContactName, taxable, vatInvoiceReferenceNumber, commodityCode, merchandiseCode, transactionAdviceAddendum, referenceDataCode, referenceDataNumber, salesSlipNumber, invoiceDate, costCenter, issuerMessage, productDescription);
   }
 
 
@@ -455,6 +477,7 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     sb.append("    invoiceDate: ").append(toIndentedString(invoiceDate)).append("\n");
     sb.append("    costCenter: ").append(toIndentedString(costCenter)).append("\n");
     sb.append("    issuerMessage: ").append(toIndentedString(issuerMessage)).append("\n");
+    sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
     sb.append("}");
     return sb.toString();
   }

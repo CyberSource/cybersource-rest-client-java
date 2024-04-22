@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PtsV2CreditsPost201Response1InstallmentInformation;
+import Model.PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation;
 import Model.PtsV2CreditsPost201Response1ProcessorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -44,7 +44,7 @@ public class PtsV2CreditsPost201Response1 {
   private PtsV2CreditsPost201Response1ProcessorInformation processorInformation = null;
 
   @SerializedName("installmentInformation")
-  private PtsV2CreditsPost201Response1InstallmentInformation installmentInformation = null;
+  private PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation installmentInformation = null;
 
   public PtsV2CreditsPost201Response1 id(String id) {
     this.id = id;
@@ -118,7 +118,7 @@ public class PtsV2CreditsPost201Response1 {
     this.processorInformation = processorInformation;
   }
 
-  public PtsV2CreditsPost201Response1 installmentInformation(PtsV2CreditsPost201Response1InstallmentInformation installmentInformation) {
+  public PtsV2CreditsPost201Response1 installmentInformation(PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation installmentInformation) {
     this.installmentInformation = installmentInformation;
     return this;
   }
@@ -128,11 +128,11 @@ public class PtsV2CreditsPost201Response1 {
    * @return installmentInformation
   **/
   @ApiModelProperty(value = "")
-  public PtsV2CreditsPost201Response1InstallmentInformation getInstallmentInformation() {
+  public PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation getInstallmentInformation() {
     return installmentInformation;
   }
 
-  public void setInstallmentInformation(PtsV2CreditsPost201Response1InstallmentInformation installmentInformation) {
+  public void setInstallmentInformation(PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation installmentInformation) {
     this.installmentInformation = installmentInformation;
   }
 

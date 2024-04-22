@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationInfoCodes;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationIpAddress;
+import Model.PtsV2PaymentsPost201ResponseRiskInformationProcessorResults;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationProfile;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationRules;
 import Model.PtsV2PaymentsPost201ResponseRiskInformationScore;
@@ -70,6 +71,9 @@ public class PtsV2PaymentsPost201ResponseRiskInformation {
 
   @SerializedName("travel")
   private PtsV2PaymentsPost201ResponseRiskInformationTravel travel = null;
+
+  @SerializedName("processorResults")
+  private PtsV2PaymentsPost201ResponseRiskInformationProcessorResults processorResults = null;
 
   public PtsV2PaymentsPost201ResponseRiskInformation profile(PtsV2PaymentsPost201ResponseRiskInformationProfile profile) {
     this.profile = profile;
@@ -267,6 +271,24 @@ public class PtsV2PaymentsPost201ResponseRiskInformation {
     this.travel = travel;
   }
 
+  public PtsV2PaymentsPost201ResponseRiskInformation processorResults(PtsV2PaymentsPost201ResponseRiskInformationProcessorResults processorResults) {
+    this.processorResults = processorResults;
+    return this;
+  }
+
+   /**
+   * Get processorResults
+   * @return processorResults
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseRiskInformationProcessorResults getProcessorResults() {
+    return processorResults;
+  }
+
+  public void setProcessorResults(PtsV2PaymentsPost201ResponseRiskInformationProcessorResults processorResults) {
+    this.processorResults = processorResults;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -286,12 +308,13 @@ public class PtsV2PaymentsPost201ResponseRiskInformation {
         Objects.equals(this.score, ptsV2PaymentsPost201ResponseRiskInformation.score) &&
         Objects.equals(this.ipAddress, ptsV2PaymentsPost201ResponseRiskInformation.ipAddress) &&
         Objects.equals(this.providers, ptsV2PaymentsPost201ResponseRiskInformation.providers) &&
-        Objects.equals(this.travel, ptsV2PaymentsPost201ResponseRiskInformation.travel);
+        Objects.equals(this.travel, ptsV2PaymentsPost201ResponseRiskInformation.travel) &&
+        Objects.equals(this.processorResults, ptsV2PaymentsPost201ResponseRiskInformation.processorResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profile, rules, infoCodes, velocity, casePriority, localTime, score, ipAddress, providers, travel);
+    return Objects.hash(profile, rules, infoCodes, velocity, casePriority, localTime, score, ipAddress, providers, travel, processorResults);
   }
 
 
@@ -310,6 +333,7 @@ public class PtsV2PaymentsPost201ResponseRiskInformation {
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
     sb.append("    travel: ").append(toIndentedString(travel)).append("\n");
+    sb.append("    processorResults: ").append(toIndentedString(processorResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }

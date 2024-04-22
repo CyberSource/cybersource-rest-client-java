@@ -80,6 +80,9 @@ public class Ptsv2paymentsMerchantInformation {
   @SerializedName("serviceLocation")
   private Ptsv2paymentsMerchantInformationServiceLocation serviceLocation = null;
 
+  @SerializedName("noteToBuyer")
+  private String noteToBuyer = null;
+
   @SerializedName("merchantName")
   private String merchantName = null;
 
@@ -373,6 +376,24 @@ public class Ptsv2paymentsMerchantInformation {
     this.serviceLocation = serviceLocation;
   }
 
+  public Ptsv2paymentsMerchantInformation noteToBuyer(String noteToBuyer) {
+    this.noteToBuyer = noteToBuyer;
+    return this;
+  }
+
+   /**
+   * Free-form text field. 
+   * @return noteToBuyer
+  **/
+  @ApiModelProperty(value = "Free-form text field. ")
+  public String getNoteToBuyer() {
+    return noteToBuyer;
+  }
+
+  public void setNoteToBuyer(String noteToBuyer) {
+    this.noteToBuyer = noteToBuyer;
+  }
+
   public Ptsv2paymentsMerchantInformation merchantName(String merchantName) {
     this.merchantName = merchantName;
     return this;
@@ -417,12 +438,13 @@ public class Ptsv2paymentsMerchantInformation {
         Objects.equals(this.returnUrl, ptsv2paymentsMerchantInformation.returnUrl) &&
         Objects.equals(this.partnerIdCode, ptsv2paymentsMerchantInformation.partnerIdCode) &&
         Objects.equals(this.serviceLocation, ptsv2paymentsMerchantInformation.serviceLocation) &&
+        Objects.equals(this.noteToBuyer, ptsv2paymentsMerchantInformation.noteToBuyer) &&
         Objects.equals(this.merchantName, ptsv2paymentsMerchantInformation.merchantName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantDescriptor, domainName, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor, cancelUrl, successUrl, failureUrl, returnUrl, partnerIdCode, serviceLocation, merchantName);
+    return Objects.hash(merchantDescriptor, domainName, salesOrganizationId, categoryCode, categoryCodeDomestic, taxId, vatRegistrationNumber, cardAcceptorReferenceNumber, transactionLocalDateTime, serviceFeeDescriptor, cancelUrl, successUrl, failureUrl, returnUrl, partnerIdCode, serviceLocation, noteToBuyer, merchantName);
   }
 
 
@@ -447,6 +469,7 @@ public class Ptsv2paymentsMerchantInformation {
     sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
     sb.append("    partnerIdCode: ").append(toIndentedString(partnerIdCode)).append("\n");
     sb.append("    serviceLocation: ").append(toIndentedString(serviceLocation)).append("\n");
+    sb.append("    noteToBuyer: ").append(toIndentedString(noteToBuyer)).append("\n");
     sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
     sb.append("}");
     return sb.toString();

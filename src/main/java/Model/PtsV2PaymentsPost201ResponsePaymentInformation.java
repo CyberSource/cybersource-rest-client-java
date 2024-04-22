@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponsePaymentAccountInformationCard;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationBank;
+import Model.PtsV2PaymentsPost201ResponsePaymentInformationEWallet;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier;
 import Model.PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
@@ -75,6 +76,9 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
 
   @SerializedName("binCountry")
   private String binCountry = null;
+
+  @SerializedName("eWallet")
+  private PtsV2PaymentsPost201ResponsePaymentInformationEWallet eWallet = null;
 
   public PtsV2PaymentsPost201ResponsePaymentInformation card(PtsV2PaymentsPost201ResponsePaymentAccountInformationCard card) {
     this.card = card;
@@ -310,6 +314,24 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
     this.binCountry = binCountry;
   }
 
+  public PtsV2PaymentsPost201ResponsePaymentInformation eWallet(PtsV2PaymentsPost201ResponsePaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
+    return this;
+  }
+
+   /**
+   * Get eWallet
+   * @return eWallet
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponsePaymentInformationEWallet getEWallet() {
+    return eWallet;
+  }
+
+  public void setEWallet(PtsV2PaymentsPost201ResponsePaymentInformationEWallet eWallet) {
+    this.eWallet = eWallet;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -332,12 +354,13 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
         Objects.equals(this.bin, ptsV2PaymentsPost201ResponsePaymentInformation.bin) &&
         Objects.equals(this.accountType, ptsV2PaymentsPost201ResponsePaymentInformation.accountType) &&
         Objects.equals(this.issuer, ptsV2PaymentsPost201ResponsePaymentInformation.issuer) &&
-        Objects.equals(this.binCountry, ptsV2PaymentsPost201ResponsePaymentInformation.binCountry);
+        Objects.equals(this.binCountry, ptsV2PaymentsPost201ResponsePaymentInformation.binCountry) &&
+        Objects.equals(this.eWallet, ptsV2PaymentsPost201ResponsePaymentInformation.eWallet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, accountFeatures, bank, customer, paymentInstrument, instrumentIdentifier, shippingAddress, scheme, bin, accountType, issuer, binCountry);
+    return Objects.hash(card, tokenizedCard, accountFeatures, bank, customer, paymentInstrument, instrumentIdentifier, shippingAddress, scheme, bin, accountType, issuer, binCountry, eWallet);
   }
 
 
@@ -359,6 +382,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
     sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
     sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     sb.append("    binCountry: ").append(toIndentedString(binCountry)).append("\n");
+    sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
     sb.append("}");
     return sb.toString();
   }

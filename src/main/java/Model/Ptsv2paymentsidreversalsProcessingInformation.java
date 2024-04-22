@@ -24,6 +24,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ptsv2paymentsidreversalsProcessingInformation
@@ -47,6 +49,9 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
 
   @SerializedName("issuer")
   private Ptsv2paymentsIssuerInformation issuer = null;
+
+  @SerializedName("actionList")
+  private List<String> actionList = null;
 
   public Ptsv2paymentsidreversalsProcessingInformation paymentSolution(String paymentSolution) {
     this.paymentSolution = paymentSolution;
@@ -156,6 +161,32 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
     this.issuer = issuer;
   }
 
+  public Ptsv2paymentsidreversalsProcessingInformation actionList(List<String> actionList) {
+    this.actionList = actionList;
+    return this;
+  }
+
+  public Ptsv2paymentsidreversalsProcessingInformation addActionListItem(String actionListItem) {
+    if (this.actionList == null) {
+      this.actionList = new ArrayList<String>();
+    }
+    this.actionList.add(actionListItem);
+    return this;
+  }
+
+   /**
+   * Array of actions (one or more) to be included in the reversal Possible value: - &#x60;AP_AUTH_REVERSAL&#x60;: Use this when you want to reverse an Alternative Payment Authorization. 
+   * @return actionList
+  **/
+  @ApiModelProperty(value = "Array of actions (one or more) to be included in the reversal Possible value: - `AP_AUTH_REVERSAL`: Use this when you want to reverse an Alternative Payment Authorization. ")
+  public List<String> getActionList() {
+    return actionList;
+  }
+
+  public void setActionList(List<String> actionList) {
+    this.actionList = actionList;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -171,12 +202,13 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
         Objects.equals(this.linkId, ptsv2paymentsidreversalsProcessingInformation.linkId) &&
         Objects.equals(this.reportGroup, ptsv2paymentsidreversalsProcessingInformation.reportGroup) &&
         Objects.equals(this.visaCheckoutId, ptsv2paymentsidreversalsProcessingInformation.visaCheckoutId) &&
-        Objects.equals(this.issuer, ptsv2paymentsidreversalsProcessingInformation.issuer);
+        Objects.equals(this.issuer, ptsv2paymentsidreversalsProcessingInformation.issuer) &&
+        Objects.equals(this.actionList, ptsv2paymentsidreversalsProcessingInformation.actionList);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, issuer);
+    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, issuer, actionList);
   }
 
 
@@ -191,6 +223,7 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
     sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
     sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
     sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
+    sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
     sb.append("}");
     return sb.toString();
   }

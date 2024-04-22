@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsProcessorInformationAuthorizationOptions;
+import Model.Ptsv2paymentsProcessorInformationReversal;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,6 +37,9 @@ public class Ptsv2paymentsProcessorInformation {
 
   @SerializedName("authorizationOptions")
   private Ptsv2paymentsProcessorInformationAuthorizationOptions authorizationOptions = null;
+
+  @SerializedName("reversal")
+  private Ptsv2paymentsProcessorInformationReversal reversal = null;
 
   public Ptsv2paymentsProcessorInformation preApprovalToken(String preApprovalToken) {
     this.preApprovalToken = preApprovalToken;
@@ -73,6 +77,24 @@ public class Ptsv2paymentsProcessorInformation {
     this.authorizationOptions = authorizationOptions;
   }
 
+  public Ptsv2paymentsProcessorInformation reversal(Ptsv2paymentsProcessorInformationReversal reversal) {
+    this.reversal = reversal;
+    return this;
+  }
+
+   /**
+   * Get reversal
+   * @return reversal
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsProcessorInformationReversal getReversal() {
+    return reversal;
+  }
+
+  public void setReversal(Ptsv2paymentsProcessorInformationReversal reversal) {
+    this.reversal = reversal;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,12 +106,13 @@ public class Ptsv2paymentsProcessorInformation {
     }
     Ptsv2paymentsProcessorInformation ptsv2paymentsProcessorInformation = (Ptsv2paymentsProcessorInformation) o;
     return Objects.equals(this.preApprovalToken, ptsv2paymentsProcessorInformation.preApprovalToken) &&
-        Objects.equals(this.authorizationOptions, ptsv2paymentsProcessorInformation.authorizationOptions);
+        Objects.equals(this.authorizationOptions, ptsv2paymentsProcessorInformation.authorizationOptions) &&
+        Objects.equals(this.reversal, ptsv2paymentsProcessorInformation.reversal);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(preApprovalToken, authorizationOptions);
+    return Objects.hash(preApprovalToken, authorizationOptions, reversal);
   }
 
 
@@ -100,6 +123,7 @@ public class Ptsv2paymentsProcessorInformation {
     
     sb.append("    preApprovalToken: ").append(toIndentedString(preApprovalToken)).append("\n");
     sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    sb.append("    reversal: ").append(toIndentedString(reversal)).append("\n");
     sb.append("}");
     return sb.toString();
   }

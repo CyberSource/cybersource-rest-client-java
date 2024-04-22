@@ -56,6 +56,9 @@ public class Ptsv2paymentsOrderInformationShipTo {
   @SerializedName("postalCode")
   private String postalCode = null;
 
+  @SerializedName("county")
+  private String county = null;
+
   @SerializedName("country")
   private String country = null;
 
@@ -67,6 +70,9 @@ public class Ptsv2paymentsOrderInformationShipTo {
 
   @SerializedName("phoneNumber")
   private String phoneNumber = null;
+
+  @SerializedName("email")
+  private String email = null;
 
   @SerializedName("company")
   private String company = null;
@@ -242,6 +248,24 @@ public class Ptsv2paymentsOrderInformationShipTo {
     this.postalCode = postalCode;
   }
 
+  public Ptsv2paymentsOrderInformationShipTo county(String county) {
+    this.county = county;
+    return this;
+  }
+
+   /**
+   * U.S. county if available.
+   * @return county
+  **/
+  @ApiModelProperty(value = "U.S. county if available.")
+  public String getCounty() {
+    return county;
+  }
+
+  public void setCounty(String county) {
+    this.county = county;
+  }
+
   public Ptsv2paymentsOrderInformationShipTo country(String country) {
     this.country = country;
     return this;
@@ -312,6 +336,24 @@ public class Ptsv2paymentsOrderInformationShipTo {
 
   public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
+  }
+
+  public Ptsv2paymentsOrderInformationShipTo email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Email of the recipient. 
+   * @return email
+  **/
+  @ApiModelProperty(value = "Email of the recipient. ")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
   }
 
   public Ptsv2paymentsOrderInformationShipTo company(String company) {
@@ -405,10 +447,12 @@ public class Ptsv2paymentsOrderInformationShipTo {
         Objects.equals(this.locality, ptsv2paymentsOrderInformationShipTo.locality) &&
         Objects.equals(this.administrativeArea, ptsv2paymentsOrderInformationShipTo.administrativeArea) &&
         Objects.equals(this.postalCode, ptsv2paymentsOrderInformationShipTo.postalCode) &&
+        Objects.equals(this.county, ptsv2paymentsOrderInformationShipTo.county) &&
         Objects.equals(this.country, ptsv2paymentsOrderInformationShipTo.country) &&
         Objects.equals(this.district, ptsv2paymentsOrderInformationShipTo.district) &&
         Objects.equals(this.buildingNumber, ptsv2paymentsOrderInformationShipTo.buildingNumber) &&
         Objects.equals(this.phoneNumber, ptsv2paymentsOrderInformationShipTo.phoneNumber) &&
+        Objects.equals(this.email, ptsv2paymentsOrderInformationShipTo.email) &&
         Objects.equals(this.company, ptsv2paymentsOrderInformationShipTo.company) &&
         Objects.equals(this.destinationTypes, ptsv2paymentsOrderInformationShipTo.destinationTypes) &&
         Objects.equals(this.destinationCode, ptsv2paymentsOrderInformationShipTo.destinationCode) &&
@@ -417,7 +461,7 @@ public class Ptsv2paymentsOrderInformationShipTo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, firstName, middleName, lastName, address1, address2, locality, administrativeArea, postalCode, country, district, buildingNumber, phoneNumber, company, destinationTypes, destinationCode, method);
+    return Objects.hash(title, firstName, middleName, lastName, address1, address2, locality, administrativeArea, postalCode, county, country, district, buildingNumber, phoneNumber, email, company, destinationTypes, destinationCode, method);
   }
 
 
@@ -435,10 +479,12 @@ public class Ptsv2paymentsOrderInformationShipTo {
     sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    sb.append("    county: ").append(toIndentedString(county)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    district: ").append(toIndentedString(district)).append("\n");
     sb.append("    buildingNumber: ").append(toIndentedString(buildingNumber)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("    destinationTypes: ").append(toIndentedString(destinationTypes)).append("\n");
     sb.append("    destinationCode: ").append(toIndentedString(destinationCode)).append("\n");

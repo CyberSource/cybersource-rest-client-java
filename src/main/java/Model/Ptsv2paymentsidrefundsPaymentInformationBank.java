@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv2paymentsPaymentInformationBankAccount;
+import Model.Ptsv2paymentsidrefundsPaymentInformationBankAccount;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,7 +31,7 @@ import java.io.IOException;
 
 public class Ptsv2paymentsidrefundsPaymentInformationBank {
   @SerializedName("account")
-  private Ptsv2paymentsPaymentInformationBankAccount account = null;
+  private Ptsv2paymentsidrefundsPaymentInformationBankAccount account = null;
 
   @SerializedName("routingNumber")
   private String routingNumber = null;
@@ -42,7 +42,7 @@ public class Ptsv2paymentsidrefundsPaymentInformationBank {
   @SerializedName("swiftCode")
   private String swiftCode = null;
 
-  public Ptsv2paymentsidrefundsPaymentInformationBank account(Ptsv2paymentsPaymentInformationBankAccount account) {
+  public Ptsv2paymentsidrefundsPaymentInformationBank account(Ptsv2paymentsidrefundsPaymentInformationBankAccount account) {
     this.account = account;
     return this;
   }
@@ -52,11 +52,11 @@ public class Ptsv2paymentsidrefundsPaymentInformationBank {
    * @return account
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsPaymentInformationBankAccount getAccount() {
+  public Ptsv2paymentsidrefundsPaymentInformationBankAccount getAccount() {
     return account;
   }
 
-  public void setAccount(Ptsv2paymentsPaymentInformationBankAccount account) {
+  public void setAccount(Ptsv2paymentsidrefundsPaymentInformationBankAccount account) {
     this.account = account;
   }
 

@@ -19,6 +19,7 @@ import Model.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails;
 import Model.PtsV2PaymentsPost201ResponseOrderInformationBillTo;
 import Model.PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails;
 import Model.PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails;
+import Model.PtsV2PaymentsPost201ResponseOrderInformationShipTo;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,6 +45,9 @@ public class PtsV2PaymentsPost201ResponseOrderInformation {
 
   @SerializedName("billTo")
   private PtsV2PaymentsPost201ResponseOrderInformationBillTo billTo = null;
+
+  @SerializedName("shipTo")
+  private PtsV2PaymentsPost201ResponseOrderInformationShipTo shipTo = null;
 
   public PtsV2PaymentsPost201ResponseOrderInformation amountDetails(PtsV2PaymentsPost201ResponseOrderInformationAmountDetails amountDetails) {
     this.amountDetails = amountDetails;
@@ -117,6 +121,24 @@ public class PtsV2PaymentsPost201ResponseOrderInformation {
     this.billTo = billTo;
   }
 
+  public PtsV2PaymentsPost201ResponseOrderInformation shipTo(PtsV2PaymentsPost201ResponseOrderInformationShipTo shipTo) {
+    this.shipTo = shipTo;
+    return this;
+  }
+
+   /**
+   * Get shipTo
+   * @return shipTo
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseOrderInformationShipTo getShipTo() {
+    return shipTo;
+  }
+
+  public void setShipTo(PtsV2PaymentsPost201ResponseOrderInformationShipTo shipTo) {
+    this.shipTo = shipTo;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,12 +152,13 @@ public class PtsV2PaymentsPost201ResponseOrderInformation {
     return Objects.equals(this.amountDetails, ptsV2PaymentsPost201ResponseOrderInformation.amountDetails) &&
         Objects.equals(this.invoiceDetails, ptsV2PaymentsPost201ResponseOrderInformation.invoiceDetails) &&
         Objects.equals(this.rewardPointsDetails, ptsV2PaymentsPost201ResponseOrderInformation.rewardPointsDetails) &&
-        Objects.equals(this.billTo, ptsV2PaymentsPost201ResponseOrderInformation.billTo);
+        Objects.equals(this.billTo, ptsV2PaymentsPost201ResponseOrderInformation.billTo) &&
+        Objects.equals(this.shipTo, ptsV2PaymentsPost201ResponseOrderInformation.shipTo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountDetails, invoiceDetails, rewardPointsDetails, billTo);
+    return Objects.hash(amountDetails, invoiceDetails, rewardPointsDetails, billTo, shipTo);
   }
 
 
@@ -148,6 +171,7 @@ public class PtsV2PaymentsPost201ResponseOrderInformation {
     sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     sb.append("    rewardPointsDetails: ").append(toIndentedString(rewardPointsDetails)).append("\n");
     sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
+    sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

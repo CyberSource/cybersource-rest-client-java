@@ -32,6 +32,9 @@ import java.util.List;
  */
 
 public class Ptsv2paymentsDeviceInformation {
+  @SerializedName("id")
+  private String id = null;
+
   @SerializedName("hostName")
   private String hostName = null;
 
@@ -52,6 +55,9 @@ public class Ptsv2paymentsDeviceInformation {
 
   @SerializedName("appUrl")
   private String appUrl = null;
+
+  @SerializedName("metadata")
+  private String metadata = null;
 
   @SerializedName("rawData")
   private List<Ptsv2paymentsDeviceInformationRawData> rawData = null;
@@ -88,6 +94,24 @@ public class Ptsv2paymentsDeviceInformation {
 
   @SerializedName("userAgentBrowserValue")
   private String userAgentBrowserValue = null;
+
+  public Ptsv2paymentsDeviceInformation id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Value created by the client software that uniquely identifies the POS device. CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only for authorizations and credits on these processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX  Optional field. String (32) 
+   * @return id
+  **/
+  @ApiModelProperty(value = "Value created by the client software that uniquely identifies the POS device. CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only for authorizations and credits on these processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX  Optional field. String (32) ")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
 
   public Ptsv2paymentsDeviceInformation hostName(String hostName) {
     this.hostName = hostName;
@@ -213,6 +237,24 @@ public class Ptsv2paymentsDeviceInformation {
 
   public void setAppUrl(String appUrl) {
     this.appUrl = appUrl;
+  }
+
+  public Ptsv2paymentsDeviceInformation metadata(String metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Verifies that the payment is originating from a valid, user-approved application and device. Sending this field helps reduce fraud and declined transactions. Note The length is set for a hexadecimal representation of the GUID/UUID. This field accepts a 36-character string (with hyphens) or a 32-character string (without hyphens). Example 123e4567-e89b-12d3-a456-426655440000 Example 123e4567e89b12d3a456426655440000 
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "Verifies that the payment is originating from a valid, user-approved application and device. Sending this field helps reduce fraud and declined transactions. Note The length is set for a hexadecimal representation of the GUID/UUID. This field accepts a 36-character string (with hyphens) or a 32-character string (without hyphens). Example 123e4567-e89b-12d3-a456-426655440000 Example 123e4567e89b12d3a456426655440000 ")
+  public String getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(String metadata) {
+    this.metadata = metadata;
   }
 
   public Ptsv2paymentsDeviceInformation rawData(List<Ptsv2paymentsDeviceInformationRawData> rawData) {
@@ -449,13 +491,15 @@ public class Ptsv2paymentsDeviceInformation {
       return false;
     }
     Ptsv2paymentsDeviceInformation ptsv2paymentsDeviceInformation = (Ptsv2paymentsDeviceInformation) o;
-    return Objects.equals(this.hostName, ptsv2paymentsDeviceInformation.hostName) &&
+    return Objects.equals(this.id, ptsv2paymentsDeviceInformation.id) &&
+        Objects.equals(this.hostName, ptsv2paymentsDeviceInformation.hostName) &&
         Objects.equals(this.ipAddress, ptsv2paymentsDeviceInformation.ipAddress) &&
         Objects.equals(this.userAgent, ptsv2paymentsDeviceInformation.userAgent) &&
         Objects.equals(this.fingerprintSessionId, ptsv2paymentsDeviceInformation.fingerprintSessionId) &&
         Objects.equals(this.useRawFingerprintSessionId, ptsv2paymentsDeviceInformation.useRawFingerprintSessionId) &&
         Objects.equals(this.deviceType, ptsv2paymentsDeviceInformation.deviceType) &&
         Objects.equals(this.appUrl, ptsv2paymentsDeviceInformation.appUrl) &&
+        Objects.equals(this.metadata, ptsv2paymentsDeviceInformation.metadata) &&
         Objects.equals(this.rawData, ptsv2paymentsDeviceInformation.rawData) &&
         Objects.equals(this.httpAcceptBrowserValue, ptsv2paymentsDeviceInformation.httpAcceptBrowserValue) &&
         Objects.equals(this.httpAcceptContent, ptsv2paymentsDeviceInformation.httpAcceptContent) &&
@@ -472,7 +516,7 @@ public class Ptsv2paymentsDeviceInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hostName, ipAddress, userAgent, fingerprintSessionId, useRawFingerprintSessionId, deviceType, appUrl, rawData, httpAcceptBrowserValue, httpAcceptContent, httpBrowserEmail, httpBrowserLanguage, httpBrowserJavaEnabled, httpBrowserJavaScriptEnabled, httpBrowserColorDepth, httpBrowserScreenHeight, httpBrowserScreenWidth, httpBrowserTimeDifference, userAgentBrowserValue);
+    return Objects.hash(id, hostName, ipAddress, userAgent, fingerprintSessionId, useRawFingerprintSessionId, deviceType, appUrl, metadata, rawData, httpAcceptBrowserValue, httpAcceptContent, httpBrowserEmail, httpBrowserLanguage, httpBrowserJavaEnabled, httpBrowserJavaScriptEnabled, httpBrowserColorDepth, httpBrowserScreenHeight, httpBrowserScreenWidth, httpBrowserTimeDifference, userAgentBrowserValue);
   }
 
 
@@ -481,6 +525,7 @@ public class Ptsv2paymentsDeviceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsDeviceInformation {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
@@ -488,6 +533,7 @@ public class Ptsv2paymentsDeviceInformation {
     sb.append("    useRawFingerprintSessionId: ").append(toIndentedString(useRawFingerprintSessionId)).append("\n");
     sb.append("    deviceType: ").append(toIndentedString(deviceType)).append("\n");
     sb.append("    appUrl: ").append(toIndentedString(appUrl)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    rawData: ").append(toIndentedString(rawData)).append("\n");
     sb.append("    httpAcceptBrowserValue: ").append(toIndentedString(httpAcceptBrowserValue)).append("\n");
     sb.append("    httpAcceptContent: ").append(toIndentedString(httpAcceptContent)).append("\n");

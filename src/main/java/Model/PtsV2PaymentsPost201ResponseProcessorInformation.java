@@ -23,6 +23,7 @@ import Model.PtsV2PaymentsPost201ResponseProcessorInformationCustomer;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationRouting;
+import Model.PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -135,6 +136,12 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @SerializedName("publicKey")
   private String publicKey = null;
+
+  @SerializedName("sellerProtection")
+  private PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection = null;
+
+  @SerializedName("transactionExpiryDate")
+  private String transactionExpiryDate = null;
 
   public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
     this.authIndicator = authIndicator;
@@ -730,6 +737,42 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.publicKey = publicKey;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation sellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
+    this.sellerProtection = sellerProtection;
+    return this;
+  }
+
+   /**
+   * Get sellerProtection
+   * @return sellerProtection
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection getSellerProtection() {
+    return sellerProtection;
+  }
+
+  public void setSellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
+    this.sellerProtection = sellerProtection;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation transactionExpiryDate(String transactionExpiryDate) {
+    this.transactionExpiryDate = transactionExpiryDate;
+    return this;
+  }
+
+   /**
+   * The date on which the transaction expires and payment cannot be made. 
+   * @return transactionExpiryDate
+  **/
+  @ApiModelProperty(value = "The date on which the transaction expires and payment cannot be made. ")
+  public String getTransactionExpiryDate() {
+    return transactionExpiryDate;
+  }
+
+  public void setTransactionExpiryDate(String transactionExpiryDate) {
+    this.transactionExpiryDate = transactionExpiryDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -772,12 +815,14 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.paymentUrl, ptsV2PaymentsPost201ResponseProcessorInformation.paymentUrl) &&
         Objects.equals(this.completeUrl, ptsV2PaymentsPost201ResponseProcessorInformation.completeUrl) &&
         Objects.equals(this.signature, ptsV2PaymentsPost201ResponseProcessorInformation.signature) &&
-        Objects.equals(this.publicKey, ptsV2PaymentsPost201ResponseProcessorInformation.publicKey);
+        Objects.equals(this.publicKey, ptsV2PaymentsPost201ResponseProcessorInformation.publicKey) &&
+        Objects.equals(this.sellerProtection, ptsV2PaymentsPost201ResponseProcessorInformation.sellerProtection) &&
+        Objects.equals(this.transactionExpiryDate, ptsV2PaymentsPost201ResponseProcessorInformation.transactionExpiryDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate);
   }
 
 
@@ -819,6 +864,8 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    completeUrl: ").append(toIndentedString(completeUrl)).append("\n");
     sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
     sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
+    sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
+    sb.append("    transactionExpiryDate: ").append(toIndentedString(transactionExpiryDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

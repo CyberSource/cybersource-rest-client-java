@@ -88,10 +88,10 @@ public class VasV2TaxVoid200Response {
   }
 
    /**
-   * The status of the submitted transaction.  Possible values:  - VOIDED 
+   * The status of the submitted transaction.  Possible values:  - VOIDED  - CANCELLED  - FAILED 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - VOIDED ")
+  @ApiModelProperty(value = "The status of the submitted transaction.  Possible values:  - VOIDED  - CANCELLED  - FAILED ")
   public String getStatus() {
     return status;
   }

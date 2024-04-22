@@ -29,11 +29,206 @@ import java.io.IOException;
  */
 
 public class PtsV2PaymentsPost201ResponseOrderInformationBillTo {
+  @SerializedName("firstName")
+  private String firstName = null;
+
+  @SerializedName("lastName")
+  private String lastName = null;
+
+  @SerializedName("address1")
+  private String address1 = null;
+
+  @SerializedName("address2")
+  private String address2 = null;
+
+  @SerializedName("locality")
+  private String locality = null;
+
+  @SerializedName("postalCode")
+  private String postalCode = null;
+
+  @SerializedName("administrativeArea")
+  private String administrativeArea = null;
+
+  @SerializedName("country")
+  private String country = null;
+
+  @SerializedName("email")
+  private String email = null;
+
   @SerializedName("alternatePhoneNumberVerificationStatus")
   private String alternatePhoneNumberVerificationStatus = null;
 
   @SerializedName("alternateEmailVerificationStatus")
   private String alternateEmailVerificationStatus = null;
+
+  @SerializedName("phoneNumber")
+  private String phoneNumber = null;
+
+  @SerializedName("nameSuffix")
+  private String nameSuffix = null;
+
+  public PtsV2PaymentsPost201ResponseOrderInformationBillTo firstName(String firstName) {
+    this.firstName = firstName;
+    return this;
+  }
+
+   /**
+   * Get firstName
+   * @return firstName
+  **/
+  @ApiModelProperty(value = "")
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationBillTo lastName(String lastName) {
+    this.lastName = lastName;
+    return this;
+  }
+
+   /**
+   * Get lastName
+   * @return lastName
+  **/
+  @ApiModelProperty(value = "")
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationBillTo address1(String address1) {
+    this.address1 = address1;
+    return this;
+  }
+
+   /**
+   * First line of the billing street address. 
+   * @return address1
+  **/
+  @ApiModelProperty(value = "First line of the billing street address. ")
+  public String getAddress1() {
+    return address1;
+  }
+
+  public void setAddress1(String address1) {
+    this.address1 = address1;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationBillTo address2(String address2) {
+    this.address2 = address2;
+    return this;
+  }
+
+   /**
+   * Second line of the billing street address. 
+   * @return address2
+  **/
+  @ApiModelProperty(value = "Second line of the billing street address. ")
+  public String getAddress2() {
+    return address2;
+  }
+
+  public void setAddress2(String address2) {
+    this.address2 = address2;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationBillTo locality(String locality) {
+    this.locality = locality;
+    return this;
+  }
+
+   /**
+   * City of the billing address. 
+   * @return locality
+  **/
+  @ApiModelProperty(value = "City of the billing address. ")
+  public String getLocality() {
+    return locality;
+  }
+
+  public void setLocality(String locality) {
+    this.locality = locality;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationBillTo postalCode(String postalCode) {
+    this.postalCode = postalCode;
+    return this;
+  }
+
+   /**
+   * Postal code for the billing address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789 When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 
+   * @return postalCode
+  **/
+  @ApiModelProperty(value = "Postal code for the billing address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789 When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3 ")
+  public String getPostalCode() {
+    return postalCode;
+  }
+
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationBillTo administrativeArea(String administrativeArea) {
+    this.administrativeArea = administrativeArea;
+    return this;
+  }
+
+   /**
+   * State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada. 
+   * @return administrativeArea
+  **/
+  @ApiModelProperty(value = "State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada. ")
+  public String getAdministrativeArea() {
+    return administrativeArea;
+  }
+
+  public void setAdministrativeArea(String administrativeArea) {
+    this.administrativeArea = administrativeArea;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationBillTo country(String country) {
+    this.country = country;
+    return this;
+  }
+
+   /**
+   * Country of the billing address. Use the two-character ISO Standard Country Codes. 
+   * @return country
+  **/
+  @ApiModelProperty(value = "Country of the billing address. Use the two-character ISO Standard Country Codes. ")
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationBillTo email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Email address of the customer. 
+   * @return email
+  **/
+  @ApiModelProperty(value = "Email address of the customer. ")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
   public PtsV2PaymentsPost201ResponseOrderInformationBillTo alternatePhoneNumberVerificationStatus(String alternatePhoneNumberVerificationStatus) {
     this.alternatePhoneNumberVerificationStatus = alternatePhoneNumberVerificationStatus;
@@ -71,6 +266,42 @@ public class PtsV2PaymentsPost201ResponseOrderInformationBillTo {
     this.alternateEmailVerificationStatus = alternateEmailVerificationStatus;
   }
 
+  public PtsV2PaymentsPost201ResponseOrderInformationBillTo phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s phone number.  It is recommended that you include the country code when the order is from outside the U.S.  #### Chase Paymentech Solutions Optional field.  ####  Credit Mutuel-CIC Optional field.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### For Payouts: This field may be sent only for FDC Compass.  #### OmniPay Direct Optional field.  #### SIX Optional field.  #### TSYS Acquiring Solutions Optional field.  #### Worldpay VAP Optional field.  #### All other processors Not used. 
+   * @return phoneNumber
+  **/
+  @ApiModelProperty(value = "Customer's phone number.  It is recommended that you include the country code when the order is from outside the U.S.  #### Chase Paymentech Solutions Optional field.  ####  Credit Mutuel-CIC Optional field.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### For Payouts: This field may be sent only for FDC Compass.  #### OmniPay Direct Optional field.  #### SIX Optional field.  #### TSYS Acquiring Solutions Optional field.  #### Worldpay VAP Optional field.  #### All other processors Not used. ")
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationBillTo nameSuffix(String nameSuffix) {
+    this.nameSuffix = nameSuffix;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s name suffix. 
+   * @return nameSuffix
+  **/
+  @ApiModelProperty(value = "Customer's name suffix. ")
+  public String getNameSuffix() {
+    return nameSuffix;
+  }
+
+  public void setNameSuffix(String nameSuffix) {
+    this.nameSuffix = nameSuffix;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,13 +312,24 @@ public class PtsV2PaymentsPost201ResponseOrderInformationBillTo {
       return false;
     }
     PtsV2PaymentsPost201ResponseOrderInformationBillTo ptsV2PaymentsPost201ResponseOrderInformationBillTo = (PtsV2PaymentsPost201ResponseOrderInformationBillTo) o;
-    return Objects.equals(this.alternatePhoneNumberVerificationStatus, ptsV2PaymentsPost201ResponseOrderInformationBillTo.alternatePhoneNumberVerificationStatus) &&
-        Objects.equals(this.alternateEmailVerificationStatus, ptsV2PaymentsPost201ResponseOrderInformationBillTo.alternateEmailVerificationStatus);
+    return Objects.equals(this.firstName, ptsV2PaymentsPost201ResponseOrderInformationBillTo.firstName) &&
+        Objects.equals(this.lastName, ptsV2PaymentsPost201ResponseOrderInformationBillTo.lastName) &&
+        Objects.equals(this.address1, ptsV2PaymentsPost201ResponseOrderInformationBillTo.address1) &&
+        Objects.equals(this.address2, ptsV2PaymentsPost201ResponseOrderInformationBillTo.address2) &&
+        Objects.equals(this.locality, ptsV2PaymentsPost201ResponseOrderInformationBillTo.locality) &&
+        Objects.equals(this.postalCode, ptsV2PaymentsPost201ResponseOrderInformationBillTo.postalCode) &&
+        Objects.equals(this.administrativeArea, ptsV2PaymentsPost201ResponseOrderInformationBillTo.administrativeArea) &&
+        Objects.equals(this.country, ptsV2PaymentsPost201ResponseOrderInformationBillTo.country) &&
+        Objects.equals(this.email, ptsV2PaymentsPost201ResponseOrderInformationBillTo.email) &&
+        Objects.equals(this.alternatePhoneNumberVerificationStatus, ptsV2PaymentsPost201ResponseOrderInformationBillTo.alternatePhoneNumberVerificationStatus) &&
+        Objects.equals(this.alternateEmailVerificationStatus, ptsV2PaymentsPost201ResponseOrderInformationBillTo.alternateEmailVerificationStatus) &&
+        Objects.equals(this.phoneNumber, ptsV2PaymentsPost201ResponseOrderInformationBillTo.phoneNumber) &&
+        Objects.equals(this.nameSuffix, ptsV2PaymentsPost201ResponseOrderInformationBillTo.nameSuffix);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(alternatePhoneNumberVerificationStatus, alternateEmailVerificationStatus);
+    return Objects.hash(firstName, lastName, address1, address2, locality, postalCode, administrativeArea, country, email, alternatePhoneNumberVerificationStatus, alternateEmailVerificationStatus, phoneNumber, nameSuffix);
   }
 
 
@@ -96,8 +338,19 @@ public class PtsV2PaymentsPost201ResponseOrderInformationBillTo {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseOrderInformationBillTo {\n");
     
+    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
+    sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
+    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    alternatePhoneNumberVerificationStatus: ").append(toIndentedString(alternatePhoneNumberVerificationStatus)).append("\n");
     sb.append("    alternateEmailVerificationStatus: ").append(toIndentedString(alternateEmailVerificationStatus)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    nameSuffix: ").append(toIndentedString(nameSuffix)).append("\n");
     sb.append("}");
     return sb.toString();
   }
