@@ -13,10 +13,10 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.TssV2TransactionsGet200Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,11 +37,11 @@ public class TransactionDetailsApiTest {
      *
      * Include the Request ID in the GET request to retrieve the transaction details.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getTransactionTest() throws ApiException {
+    public void getTransactionTest() throws Exception {
         String id = null;
         TssV2TransactionsGet200Response response = api.getTransaction(id);
 

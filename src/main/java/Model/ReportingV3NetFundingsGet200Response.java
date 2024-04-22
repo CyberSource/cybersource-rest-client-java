@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ReportingV3NetFundingsGet200ResponseNetFundingSummaries;
 import Model.ReportingV3NetFundingsGet200ResponseTotalPurchases;
 import com.google.gson.TypeAdapter;
@@ -302,6 +303,6 @@ public class ReportingV3NetFundingsGet200Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

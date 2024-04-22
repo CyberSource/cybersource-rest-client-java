@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -81,7 +82,6 @@ public class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount
       }
     }
   }
-
   @SerializedName("accountType")
   private AccountTypeEnum accountType = null;
 
@@ -208,6 +208,6 @@ public class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

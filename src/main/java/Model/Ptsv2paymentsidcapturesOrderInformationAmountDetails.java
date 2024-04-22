@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsTaxDetails;
 import com.google.gson.TypeAdapter;
@@ -545,6 +546,6 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

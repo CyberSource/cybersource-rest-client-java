@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsTravelInformationAutoRentalRentalAddress;
 import Model.Ptsv2paymentsTravelInformationAutoRentalReturnAddress;
 import Model.Ptsv2paymentsTravelInformationAutoRentalTaxDetails;
@@ -173,7 +174,7 @@ public class Ptsv2paymentsTravelInformationAutoRental {
    * @return noShowIndicator
   **/
   @ApiModelProperty(value = "No Show Indicator provides an indicator noting that the individual did not show up after making a reservation for a vehicle. Possible values: - true - false ")
-  public Boolean getNoShowIndicator() {
+  public Boolean isNoShowIndicator() {
     return noShowIndicator;
   }
 
@@ -317,7 +318,7 @@ public class Ptsv2paymentsTravelInformationAutoRental {
    * @return insuranceIndicator
   **/
   @ApiModelProperty(value = "Used for MC and Discover  Valid values: - `true` - Yes (insurance was purchased) - `false` - No (insurance was not purchased) ")
-  public Boolean getInsuranceIndicator() {
+  public Boolean isInsuranceIndicator() {
     return insuranceIndicator;
   }
 
@@ -1080,6 +1081,6 @@ public class Ptsv2paymentsTravelInformationAutoRental {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

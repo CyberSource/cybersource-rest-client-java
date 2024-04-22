@@ -60,7 +60,7 @@ No authorization required
 
 <a name="getInstrumentIdentifier"></a>
 # **getInstrumentIdentifier**
-> TmsEmbeddedInstrumentIdentifier getInstrumentIdentifier(instrumentIdentifierId, profileId)
+> PostInstrumentIdentifierRequest getInstrumentIdentifier(instrumentIdentifierId, profileId)
 
 Retrieve an Instrument Identifier
 
@@ -77,7 +77,7 @@ InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
 String instrumentIdentifierId = "instrumentIdentifierId_example"; // String | The Id of an Instrument Identifier.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    TmsEmbeddedInstrumentIdentifier result = apiInstance.getInstrumentIdentifier(instrumentIdentifierId, profileId);
+    PostInstrumentIdentifierRequest result = apiInstance.getInstrumentIdentifier(instrumentIdentifierId, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#getInstrumentIdentifier");
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TmsEmbeddedInstrumentIdentifier**](TmsEmbeddedInstrumentIdentifier.md)
+[**PostInstrumentIdentifierRequest**](PostInstrumentIdentifierRequest.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ No authorization required
 
 <a name="getInstrumentIdentifierPaymentInstrumentsList"></a>
 # **getInstrumentIdentifierPaymentInstrumentsList**
-> PaymentInstrumentList getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, offset, limit)
+> PaymentInstrumentList1 getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, offset, limit)
 
 List Payment Instruments for an Instrument Identifier
 
@@ -126,7 +126,7 @@ String profileId = "profileId_example"; // String | The Id of a profile containi
 Long offset = 0L; // Long | Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0.
 Long limit = 20L; // Long | The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100.
 try {
-    PaymentInstrumentList result = apiInstance.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, offset, limit);
+    PaymentInstrumentList1 result = apiInstance.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#getInstrumentIdentifierPaymentInstrumentsList");
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentInstrumentList**](PaymentInstrumentList.md)
+[**PaymentInstrumentList1**](PaymentInstrumentList1.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ No authorization required
 
 <a name="patchInstrumentIdentifier"></a>
 # **patchInstrumentIdentifier**
-> TmsEmbeddedInstrumentIdentifier patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch)
+> PatchInstrumentIdentifierRequest patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch)
 
 Update an Instrument Identifier
 
@@ -177,7 +177,7 @@ PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest = new PatchIns
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 String ifMatch = "ifMatch_example"; // String | Contains an ETag value from a GET request to make the request conditional.
 try {
-    TmsEmbeddedInstrumentIdentifier result = apiInstance.patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
+    PatchInstrumentIdentifierRequest result = apiInstance.patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#patchInstrumentIdentifier");
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TmsEmbeddedInstrumentIdentifier**](TmsEmbeddedInstrumentIdentifier.md)
+[**PatchInstrumentIdentifierRequest**](PatchInstrumentIdentifierRequest.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ No authorization required
 
 <a name="postInstrumentIdentifier"></a>
 # **postInstrumentIdentifier**
-> TmsEmbeddedInstrumentIdentifier postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId)
+> PostInstrumentIdentifierRequest postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId)
 
 Create an Instrument Identifier
 
@@ -226,7 +226,7 @@ InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
 PostInstrumentIdentifierRequest postInstrumentIdentifierRequest = new PostInstrumentIdentifierRequest(); // PostInstrumentIdentifierRequest | Specify either a Card, Bank Account or Enrollable Card
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
 try {
-    TmsEmbeddedInstrumentIdentifier result = apiInstance.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId);
+    PostInstrumentIdentifierRequest result = apiInstance.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#postInstrumentIdentifier");
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TmsEmbeddedInstrumentIdentifier**](TmsEmbeddedInstrumentIdentifier.md)
+[**PostInstrumentIdentifierRequest**](PostInstrumentIdentifierRequest.md)
 
 ### Authorization
 

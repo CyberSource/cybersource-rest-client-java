@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions;
 import Model.TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions;
 import Model.TssV2TransactionsGet200ResponseProcessingInformationCaptureOptions;
@@ -322,6 +323,6 @@ public class TssV2TransactionsGet200ResponseProcessingInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

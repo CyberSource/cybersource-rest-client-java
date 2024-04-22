@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.TmsEmbeddedInstrumentIdentifierBankAccount;
 import Model.TmsEmbeddedInstrumentIdentifierBillTo;
 import Model.TmsEmbeddedInstrumentIdentifierCard;
@@ -331,6 +332,6 @@ public class PostInstrumentIdentifierRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

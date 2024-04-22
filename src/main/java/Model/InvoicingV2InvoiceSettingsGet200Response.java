@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -112,6 +113,6 @@ public class InvoicingV2InvoiceSettingsGet200Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

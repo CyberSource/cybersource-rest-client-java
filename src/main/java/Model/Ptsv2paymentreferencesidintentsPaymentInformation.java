@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentreferencesidintentsPaymentInformationEWallet;
 import Model.Ptsv2paymentsidreversalsPaymentInformationPaymentType;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class Ptsv2paymentreferencesidintentsPaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

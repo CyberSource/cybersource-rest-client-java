@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Ptsv2paymentsidcapturesPaymentInformationCard;
 import Model.Ptsv2paymentsidcapturesPaymentInformationPaymentType;
@@ -137,6 +138,6 @@ public class Ptsv2paymentsidcapturesPaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

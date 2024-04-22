@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1addressverificationsBuyerInformation;
 import Model.Riskv1addressverificationsOrderInformation;
 import Model.Riskv1liststypeentriesClientReferenceInformation;
@@ -137,6 +138,6 @@ public class VerifyCustomerAddressRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

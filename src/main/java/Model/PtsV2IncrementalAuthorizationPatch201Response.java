@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseErrorInformation;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
@@ -301,6 +302,6 @@ public class PtsV2IncrementalAuthorizationPatch201Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

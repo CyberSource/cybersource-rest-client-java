@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Invoicingv2invoicesOrderInformationAmountDetails;
 import Model.Invoicingv2invoicesOrderInformationLineItems;
 import com.google.gson.TypeAdapter;
@@ -124,6 +125,6 @@ public class Invoicingv2invoicesOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

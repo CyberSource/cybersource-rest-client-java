@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseRiskInformation;
 import Model.PtsV2PaymentsPost201ResponseWatchlistScreeningInformation;
@@ -349,6 +350,6 @@ public class RiskV1DecisionsPost201Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

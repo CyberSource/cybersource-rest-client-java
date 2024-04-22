@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Upv1capturecontextsCaptureMandate;
 import Model.Upv1capturecontextsCheckoutApiInitialization;
 import Model.Upv1capturecontextsOrderInformation;
@@ -301,6 +302,6 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

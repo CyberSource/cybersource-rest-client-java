@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsidreversalsReversalInformationAmountDetails;
 import Model.VasV2PaymentsPost201ResponseOrderInformationLineItems;
 import Model.VasV2PaymentsPost201ResponseOrderInformationTaxDetails;
@@ -224,6 +225,6 @@ public class VasV2PaymentsPost201ResponseOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -13,11 +13,11 @@
 
 package Api;
 
-import Invokers.ApiException;
 import org.joda.time.DateTime;
 import Model.ReportingV3InterchangeClearingLevelDetailsGet200Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,11 +38,11 @@ public class InterchangeClearingLevelDetailsApiTest {
      *
      * Interchange Clearing Level data for an account or a merchant
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getInterchangeClearingLevelDetailsTest() throws ApiException {
+    public void getInterchangeClearingLevelDetailsTest() throws Exception {
         DateTime startTime = null;
         DateTime endTime = null;
         String organizationId = null;

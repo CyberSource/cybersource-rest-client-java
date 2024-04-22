@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Rbsv1plansClientReferenceInformation;
 import Model.Rbsv1plansOrderInformation;
 import Model.Rbsv1plansPlanInformation;
@@ -137,6 +138,6 @@ public class CreatePlanRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

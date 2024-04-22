@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.CreateReportSubscriptionRequest;
 import Model.InlineResponse4004;
 import Model.PredefinedSubscriptionRequestBean;
@@ -22,6 +21,7 @@ import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;
 import Model.Reportingv3ReportDownloadsGet400Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,11 +42,11 @@ public class ReportSubscriptionsApiTest {
      *
      * Create or update an already existing classic or standard subscription. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createStandardOrClassicSubscriptionTest() throws ApiException {
+    public void createStandardOrClassicSubscriptionTest() throws Exception {
         PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean = null;
         String organizationId = null;
         api.createStandardOrClassicSubscription(predefinedSubscriptionRequestBean, organizationId);
@@ -59,11 +59,11 @@ public class ReportSubscriptionsApiTest {
      *
      * Create a report subscription for your organization. The report name must be unique. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void createSubscriptionTest() throws ApiException {
+    public void createSubscriptionTest() throws Exception {
         CreateReportSubscriptionRequest createReportSubscriptionRequest = null;
         String organizationId = null;
         api.createSubscription(createReportSubscriptionRequest, organizationId);
@@ -76,11 +76,11 @@ public class ReportSubscriptionsApiTest {
      *
      * Delete a report subscription for your organization. You must know the unique name of the report you want to delete. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void deleteSubscriptionTest() throws ApiException {
+    public void deleteSubscriptionTest() throws Exception {
         String reportName = null;
         String organizationId = null;
         api.deleteSubscription(reportName, organizationId);
@@ -93,11 +93,11 @@ public class ReportSubscriptionsApiTest {
      *
      * View a summary of all report subscriptions. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getAllSubscriptionsTest() throws ApiException {
+    public void getAllSubscriptionsTest() throws Exception {
         String organizationId = null;
         ReportingV3ReportSubscriptionsGet200Response response = api.getAllSubscriptions(organizationId);
 
@@ -109,11 +109,11 @@ public class ReportSubscriptionsApiTest {
      *
      * View the details of a report subscription, such as the report format or report frequency, using the report&#39;s unique name. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getSubscriptionTest() throws ApiException {
+    public void getSubscriptionTest() throws Exception {
         String reportName = null;
         String organizationId = null;
         ReportingV3ReportSubscriptionsGet200ResponseSubscriptions response = api.getSubscription(reportName, organizationId);

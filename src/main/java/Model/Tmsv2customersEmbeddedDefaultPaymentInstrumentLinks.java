@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentLinksSelf;
 import Model.Tmsv2customersLinksSelf;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

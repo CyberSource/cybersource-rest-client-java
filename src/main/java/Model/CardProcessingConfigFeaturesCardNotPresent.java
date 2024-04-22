@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.CardProcessingConfigFeaturesCardNotPresentInstallment;
 import Model.CardProcessingConfigFeaturesCardNotPresentProcessors;
 import com.google.gson.TypeAdapter;
@@ -84,7 +85,7 @@ public class CardProcessingConfigFeaturesCardNotPresent {
    * @return ignoreAddressVerificationSystem
   **/
   @ApiModelProperty(value = "Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives an AVS decline. Applicable for VPC, FDI Global (fdiglobal), GPX (gpx) and GPN (gpn) processors.")
-  public Boolean getIgnoreAddressVerificationSystem() {
+  public Boolean isIgnoreAddressVerificationSystem() {
     return ignoreAddressVerificationSystem;
   }
 
@@ -102,7 +103,7 @@ public class CardProcessingConfigFeaturesCardNotPresent {
    * @return visaStraightThroughProcessingOnly
   **/
   @ApiModelProperty(value = "Indicates if a merchant is enabled for Straight Through Processing - B2B invoice payments. Applicable for FDI Global (fdiglobal), TSYS (tsys), VPC and GPX (gpx) processors.")
-  public Boolean getVisaStraightThroughProcessingOnly() {
+  public Boolean isVisaStraightThroughProcessingOnly() {
     return visaStraightThroughProcessingOnly;
   }
 
@@ -193,6 +194,6 @@ public class CardProcessingConfigFeaturesCardNotPresent {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

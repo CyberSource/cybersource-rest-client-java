@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus;
 import Model.InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class InlineResponse2011SetupsPaymentsCardProcessing {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

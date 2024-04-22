@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2billingagreementsMerchantInformationMerchantDescriptor;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -228,6 +229,6 @@ public class Ptsv2billingagreementsMerchantInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.TmsPaymentInstrumentProcessingInfo;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount;
 import Model.Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo;
@@ -138,7 +139,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrument {
    * @return _default
   **/
   @ApiModelProperty(value = "Flag that indicates whether customer payment instrument is the dafault. Possible Values:  - `true`: Payment instrument is customer's default.  - `false`: Payment instrument is not customer's default. ")
-  public Boolean getDefault() {
+  public Boolean isDefault() {
     return _default;
   }
 
@@ -393,6 +394,6 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrument {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

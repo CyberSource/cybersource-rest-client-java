@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsidreversalsClientReferenceInformation;
 import Model.Ptsv2paymentsidvoidsAgreementInformation;
 import Model.Ptsv2paymentsidvoidsMerchantInformation;
@@ -209,6 +210,6 @@ public class VoidCaptureRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

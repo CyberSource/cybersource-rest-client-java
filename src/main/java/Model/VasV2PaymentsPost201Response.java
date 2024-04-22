@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.VasV2PaymentsPost201ResponseLinks;
 import Model.VasV2PaymentsPost201ResponseOrderInformation;
@@ -230,6 +231,6 @@ public class VasV2PaymentsPost201Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

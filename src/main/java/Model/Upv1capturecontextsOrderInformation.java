@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Upv1capturecontextsOrderInformationAmountDetails;
 import Model.Upv1capturecontextsOrderInformationBillTo;
 import Model.Upv1capturecontextsOrderInformationShipTo;
@@ -137,6 +138,6 @@ public class Upv1capturecontextsOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

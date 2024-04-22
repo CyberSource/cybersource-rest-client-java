@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsRecurringPaymentInformation;
 import Model.Riskv1authenticationsBuyerInformation;
 import Model.Riskv1authenticationsDeviceInformation;
@@ -411,6 +412,6 @@ public class CheckPayerAuthEnrollmentRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Nrtfv1webhookswebhookIdreplaysByDeliveryStatus;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -122,6 +123,6 @@ public class ReplayWebhooksRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -62,7 +63,7 @@ public class SAConfigPaymentTypesCardTypesDiscover {
    * @return cardVerificationNumberSupported
   **/
   @ApiModelProperty(value = "Dictates whether or Card Verification Number is supported by the card type. Usually this is set at system level.")
-  public Boolean getCardVerificationNumberSupported() {
+  public Boolean isCardVerificationNumberSupported() {
     return cardVerificationNumberSupported;
   }
 
@@ -80,7 +81,7 @@ public class SAConfigPaymentTypesCardTypesDiscover {
    * @return cardVerificationNumberDisplay
   **/
   @ApiModelProperty(value = "Toggles whether or Card Verification Number is displayed on the Hosted Checkout.")
-  public Boolean getCardVerificationNumberDisplay() {
+  public Boolean isCardVerificationNumberDisplay() {
     return cardVerificationNumberDisplay;
   }
 
@@ -98,7 +99,7 @@ public class SAConfigPaymentTypesCardTypesDiscover {
    * @return payerAuthenticationSupported
   **/
   @ApiModelProperty(value = "Dictates whether or Payer Authentication is supported by the card type. Usually this is set at system level.")
-  public Boolean getPayerAuthenticationSupported() {
+  public Boolean isPayerAuthenticationSupported() {
     return payerAuthenticationSupported;
   }
 
@@ -160,7 +161,7 @@ public class SAConfigPaymentTypesCardTypesDiscover {
    * @return cardVerificationNumberRequired
   **/
   @ApiModelProperty(value = "")
-  public Boolean getCardVerificationNumberRequired() {
+  public Boolean isCardVerificationNumberRequired() {
     return cardVerificationNumberRequired;
   }
 
@@ -178,7 +179,7 @@ public class SAConfigPaymentTypesCardTypesDiscover {
    * @return payerAuthenticationEnabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean getPayerAuthenticationEnabled() {
+  public Boolean isPayerAuthenticationEnabled() {
     return payerAuthenticationEnabled;
   }
 
@@ -237,6 +238,6 @@ public class SAConfigPaymentTypesCardTypesDiscover {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

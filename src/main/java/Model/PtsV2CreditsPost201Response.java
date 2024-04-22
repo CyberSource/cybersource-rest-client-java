@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2CreditsPost201ResponseCreditAmountDetails;
 import Model.PtsV2CreditsPost201ResponsePaymentInformation;
 import Model.PtsV2CreditsPost201ResponseProcessingInformation;
@@ -349,6 +350,6 @@ public class PtsV2CreditsPost201Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

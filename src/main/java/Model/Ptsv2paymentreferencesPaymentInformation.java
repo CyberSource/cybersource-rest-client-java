@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentreferencesPaymentInformationBank;
 import Model.Ptsv2paymentreferencesPaymentInformationCard;
 import Model.Ptsv2paymentreferencesPaymentInformationEWallet;
@@ -185,6 +186,6 @@ public class Ptsv2paymentreferencesPaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

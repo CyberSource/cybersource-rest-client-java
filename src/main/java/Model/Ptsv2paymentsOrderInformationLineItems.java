@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsTaxDetails;
 import Model.Ptsv2paymentsOrderInformationPassenger;
 import com.google.gson.TypeAdapter;
@@ -362,7 +363,7 @@ public class Ptsv2paymentsOrderInformationLineItems {
    * @return amountIncludesTax
   **/
   @ApiModelProperty(value = "Flag that indicates whether the tax amount is included in the Line Item Total.  Possible values:  - **true**  - **false** ")
-  public Boolean getAmountIncludesTax() {
+  public Boolean isAmountIncludesTax() {
     return amountIncludesTax;
   }
 
@@ -434,7 +435,7 @@ public class Ptsv2paymentsOrderInformationLineItems {
    * @return discountApplied
   **/
   @ApiModelProperty(value = "Flag that indicates whether the amount is discounted.  If you do not provide a value but you set Discount Amount to a value greater than zero, then CyberSource sets this field to **true**.  Possible values:  - **true**  - **false** ")
-  public Boolean getDiscountApplied() {
+  public Boolean isDiscountApplied() {
     return discountApplied;
   }
 
@@ -694,7 +695,7 @@ public class Ptsv2paymentsOrderInformationLineItems {
    * @return gift
   **/
   @ApiModelProperty(value = "This field is only used in DM service.  Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different. ")
-  public Boolean getGift() {
+  public Boolean isGift() {
     return gift;
   }
 
@@ -877,6 +878,6 @@ public class Ptsv2paymentsOrderInformationLineItems {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsAcquirerInformation;
 import Model.Ptsv2paymentsAggregatorInformation;
 import Model.Ptsv2paymentsAgreementInformation;
@@ -699,6 +700,6 @@ public class CreatePaymentRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

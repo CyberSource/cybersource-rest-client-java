@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.RiskV1DecisionsPost201ResponseOrderInformationAmountDetails;
 import Model.Vasv2taxOrderInformationBillTo;
 import Model.Vasv2taxOrderInformationInvoiceDetails;
@@ -267,6 +268,6 @@ public class Vasv2taxOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

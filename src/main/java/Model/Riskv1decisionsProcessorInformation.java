@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1decisionsProcessorInformationAvs;
 import Model.Riskv1decisionsProcessorInformationCardVerification;
 import com.google.gson.TypeAdapter;
@@ -114,6 +115,6 @@ public class Riskv1decisionsProcessorInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

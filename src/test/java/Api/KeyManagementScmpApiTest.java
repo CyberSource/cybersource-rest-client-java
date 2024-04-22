@@ -13,12 +13,12 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.InlineResponse4006;
 import Model.InlineResponse5002;
 import Model.UpdatePGPKeysRequest1;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,11 +39,11 @@ public class KeyManagementScmpApiTest {
      *
      * Update or Deactivate scmp api Key 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void updateSCMPTest() throws ApiException {
+    public void updateSCMPTest() throws Exception {
         String keyId = null;
         UpdatePGPKeysRequest1 updatePGPKeysRequest = null;
         Object response = api.updateSCMP(keyId, updatePGPKeysRequest);

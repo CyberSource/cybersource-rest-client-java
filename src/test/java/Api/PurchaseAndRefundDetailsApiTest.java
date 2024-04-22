@@ -13,12 +13,12 @@
 
 package Api;
 
-import Invokers.ApiException;
 import org.joda.time.DateTime;
 import Model.ReportingV3PurchaseRefundDetailsGet200Response;
 import Model.Reportingv3ReportDownloadsGet400Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,11 +39,11 @@ public class PurchaseAndRefundDetailsApiTest {
      *
      * Download the Purchase and Refund Details report. This report report includes all purchases and refund transactions, as well as all activities related to transactions resulting in an adjustment to the net proceeds. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getPurchaseAndRefundDetailsTest() throws ApiException {
+    public void getPurchaseAndRefundDetailsTest() throws Exception {
         DateTime startTime = null;
         DateTime endTime = null;
         String organizationId = null;

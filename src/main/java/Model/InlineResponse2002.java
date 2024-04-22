@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Boardingv1registrationsDocumentInformation;
 import Model.Boardingv1registrationsOrganizationInformation;
 import Model.Boardingv1registrationsProductInformation;
@@ -252,6 +253,6 @@ public class InlineResponse2002 {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

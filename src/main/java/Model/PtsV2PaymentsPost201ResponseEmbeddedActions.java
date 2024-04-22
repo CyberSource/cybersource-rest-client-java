@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseEmbeddedActionsCAPTURE;
 import Model.PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION;
 import Model.PtsV2PaymentsPost201ResponseEmbeddedActionsDECISION;
@@ -185,6 +186,6 @@ public class PtsV2PaymentsPost201ResponseEmbeddedActions {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

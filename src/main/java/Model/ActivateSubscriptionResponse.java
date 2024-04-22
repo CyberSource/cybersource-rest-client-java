@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ActivateSubscriptionResponseSubscriptionInformation;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import com.google.gson.TypeAdapter;
@@ -182,6 +183,6 @@ public class ActivateSubscriptionResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

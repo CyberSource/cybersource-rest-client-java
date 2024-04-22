@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsidrefundsProcessingInformationRecurringOptions;
 import Model.Ptsv2paymentsidrefundsProcessingInformationRefundOptions;
 import com.google.gson.TypeAdapter;
@@ -330,6 +331,6 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

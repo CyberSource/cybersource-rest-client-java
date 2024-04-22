@@ -13,7 +13,6 @@
 
 package Invokers;
 
-
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -62,7 +63,7 @@ public class Ptsv2paymentsidcapturesPointOfSaleInformationEmv {
    * @return fallback
   **/
   @ApiModelProperty(value = "Indicates whether a fallback method was used to enter credit card information into the POS terminal. When a technical problem prevents a successful exchange of information between a chip card and a chip-capable terminal:   1. Swipe the card or key the credit card information into the POS terminal.  2. Use the pointOfSaleInformation.entryMode field to indicate whether the information was swiped or keyed.   Possible values: - `true`: Fallback method was used. - `false` (default): Fallback method was not used.  This field is supported only on American Express Direct, Chase Paymentech Solutions, CyberSource through VisaNet, FDC Nashville Global, GPN, JCN Gateway, OmniPay Direct, and SIX. ")
-  public Boolean getFallback() {
+  public Boolean isFallback() {
     return fallback;
   }
 
@@ -111,6 +112,6 @@ public class Ptsv2paymentsidcapturesPointOfSaleInformationEmv {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

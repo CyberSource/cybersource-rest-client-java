@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -87,7 +88,7 @@ public class ECheckConfigUnderwriting {
    * @return enableHold
   **/
   @ApiModelProperty(required = true, value = "Mandatory  Determines whether CYBS has placed the merchant on a funding hold This will often be set to True for new merchants until the risk team has completed additional verification of their first transaction. It will be switched to \"false\" once underwriting review is completed and we are ready to start funding the merchant. ")
-  public Boolean getEnableHold() {
+  public Boolean isEnableHold() {
     return enableHold;
   }
 
@@ -141,7 +142,7 @@ public class ECheckConfigUnderwriting {
    * @return enableCredits
   **/
   @ApiModelProperty(value = "Optional  Allow Credits (True/False) ")
-  public Boolean getEnableCredits() {
+  public Boolean isEnableCredits() {
     return enableCredits;
   }
 
@@ -296,6 +297,6 @@ public class ECheckConfigUnderwriting {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

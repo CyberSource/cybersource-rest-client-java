@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
 import Model.PtsV2PaymentsPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsPost201ResponseTokenInformation;
@@ -373,6 +374,6 @@ public class PtsV2PayoutsPost201Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

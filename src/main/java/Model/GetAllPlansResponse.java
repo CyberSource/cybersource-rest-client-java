@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.GetAllPlansResponseLinks;
 import Model.GetAllPlansResponsePlans;
 import com.google.gson.TypeAdapter;
@@ -169,6 +170,6 @@ public class GetAllPlansResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -81,7 +82,6 @@ public class Kmsv2keyssymverifiKeyInformation {
       }
     }
   }
-
   @SerializedName("digestAlgorithm")
   private DigestAlgorithmEnum digestAlgorithm = DigestAlgorithmEnum.HMACSHA2;
 
@@ -182,6 +182,6 @@ public class Kmsv2keyssymverifiKeyInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

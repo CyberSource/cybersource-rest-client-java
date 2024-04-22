@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV1TransactionBatchesIdGet200ResponseLinksTransactions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -99,6 +100,6 @@ public class PtsV1TransactionBatchesIdGet200ResponseLinks {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

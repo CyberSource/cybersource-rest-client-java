@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1decisionsOrderInformationAmountDetails;
 import Model.Riskv1decisionsOrderInformationBillTo;
 import Model.Riskv1decisionsOrderInformationLineItems;
@@ -151,7 +152,7 @@ public class Riskv1decisionsOrderInformation {
    * @return reordered
   **/
   @ApiModelProperty(value = "Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered ")
-  public Boolean getReordered() {
+  public Boolean isReordered() {
     return reordered;
   }
 
@@ -205,7 +206,7 @@ public class Riskv1decisionsOrderInformation {
    * @return returnsAccepted
   **/
   @ApiModelProperty(value = "Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order. ")
-  public Boolean getReturnsAccepted() {
+  public Boolean isReturnsAccepted() {
     return returnsAccepted;
   }
 
@@ -334,6 +335,6 @@ public class Riskv1decisionsOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

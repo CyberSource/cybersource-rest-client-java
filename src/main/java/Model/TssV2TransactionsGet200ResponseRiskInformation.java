@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.TssV2TransactionsGet200ResponseRiskInformationProfile;
 import Model.TssV2TransactionsGet200ResponseRiskInformationRules;
 import Model.TssV2TransactionsGet200ResponseRiskInformationScore;
@@ -224,6 +225,6 @@ public class TssV2TransactionsGet200ResponseRiskInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

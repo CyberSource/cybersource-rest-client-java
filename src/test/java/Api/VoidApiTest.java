@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.MitVoidRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.PtsV2PaymentsVoidsPost201Response;
@@ -24,6 +23,7 @@ import Model.VoidPaymentRequest;
 import Model.VoidRefundRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,11 +44,11 @@ public class VoidApiTest {
      *
      * This is to void a previous payment, capture, refund, or credit that merchant does not receive a reply(Mostly due to timeout). To use this feature/API, make sure to pass unique value to field - clientReferenceInformation -&gt; transactionId in your payment, capture, refund, or credit API call and use same transactionId in this API request payload to reverse the payment.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void mitVoidTest() throws ApiException {
+    public void mitVoidTest() throws Exception {
         MitVoidRequest mitVoidRequest = null;
         PtsV2PaymentsVoidsPost201Response response = api.mitVoid(mitVoidRequest);
 
@@ -60,11 +60,11 @@ public class VoidApiTest {
      *
      * Refund a capture API is only used, if you have requested Capture independenlty using [/pts/v2/payments/{id}/captures](https://developer.cybersource.com/api-reference-assets/index.html#payments_capture) API call. Include the capture ID in the POST request to cancel the capture. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void voidCaptureTest() throws ApiException {
+    public void voidCaptureTest() throws Exception {
         VoidCaptureRequest voidCaptureRequest = null;
         String id = null;
         PtsV2PaymentsVoidsPost201Response response = api.voidCapture(voidCaptureRequest, id);
@@ -77,11 +77,11 @@ public class VoidApiTest {
      *
      * Include the credit ID in the POST request to cancel the credit.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void voidCreditTest() throws ApiException {
+    public void voidCreditTest() throws Exception {
         VoidCreditRequest voidCreditRequest = null;
         String id = null;
         PtsV2PaymentsVoidsPost201Response response = api.voidCredit(voidCreditRequest, id);
@@ -94,11 +94,11 @@ public class VoidApiTest {
      *
      * Void a Payment API is only used, if you have requested Authorization and Capture together in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call. Include the payment ID in the POST request to cancel the payment. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void voidPaymentTest() throws ApiException {
+    public void voidPaymentTest() throws Exception {
         VoidPaymentRequest voidPaymentRequest = null;
         String id = null;
         PtsV2PaymentsVoidsPost201Response response = api.voidPayment(voidPaymentRequest, id);
@@ -111,11 +111,11 @@ public class VoidApiTest {
      *
      * Include the refund ID in the POST request to cancel the refund.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void voidRefundTest() throws ApiException {
+    public void voidRefundTest() throws Exception {
         VoidRefundRequest voidRefundRequest = null;
         String id = null;
         PtsV2PaymentsVoidsPost201Response response = api.voidRefund(voidRefundRequest, id);

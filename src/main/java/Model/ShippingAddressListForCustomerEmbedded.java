@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Tmsv2customersEmbeddedDefaultShippingAddress;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -35,19 +36,6 @@ public class ShippingAddressListForCustomerEmbedded {
   @SerializedName("shippingAddresses")
   private List<Tmsv2customersEmbeddedDefaultShippingAddress> shippingAddresses = null;
 
-  public ShippingAddressListForCustomerEmbedded shippingAddresses(List<Tmsv2customersEmbeddedDefaultShippingAddress> shippingAddresses) {
-    this.shippingAddresses = shippingAddresses;
-    return this;
-  }
-
-  public ShippingAddressListForCustomerEmbedded addShippingAddressesItem(Tmsv2customersEmbeddedDefaultShippingAddress shippingAddressesItem) {
-    if (this.shippingAddresses == null) {
-      this.shippingAddresses = new ArrayList<Tmsv2customersEmbeddedDefaultShippingAddress>();
-    }
-    this.shippingAddresses.add(shippingAddressesItem);
-    return this;
-  }
-
    /**
    * Get shippingAddresses
    * @return shippingAddresses
@@ -55,10 +43,6 @@ public class ShippingAddressListForCustomerEmbedded {
   @ApiModelProperty(value = "")
   public List<Tmsv2customersEmbeddedDefaultShippingAddress> getShippingAddresses() {
     return shippingAddresses;
-  }
-
-  public void setShippingAddresses(List<Tmsv2customersEmbeddedDefaultShippingAddress> shippingAddresses) {
-    this.shippingAddresses = shippingAddresses;
   }
 
 
@@ -100,6 +84,6 @@ public class ShippingAddressListForCustomerEmbedded {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

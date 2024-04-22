@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1decisionsTravelInformationLegs;
 import Model.Riskv1decisionsTravelInformationPassengers;
 import com.google.gson.TypeAdapter;
@@ -154,6 +155,6 @@ public class Riskv1authenticationsTravelInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

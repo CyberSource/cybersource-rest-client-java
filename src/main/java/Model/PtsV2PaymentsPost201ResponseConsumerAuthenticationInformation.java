@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr;
 import Model.PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication;
 import com.google.gson.TypeAdapter;
@@ -1033,6 +1034,6 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

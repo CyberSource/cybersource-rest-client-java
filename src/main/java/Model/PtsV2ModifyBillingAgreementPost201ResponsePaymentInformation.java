@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2ModifyBillingAgreementPost201ResponsePaymentInformationBank;
 import Model.PtsV2ModifyBillingAgreementPost201ResponsePaymentInformationEWallet;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

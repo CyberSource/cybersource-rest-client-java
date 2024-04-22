@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.DmConfigOrganization;
 import Model.DmConfigPortfolioControls;
 import Model.DmConfigProcessingOptions;
@@ -161,6 +162,6 @@ public class DmConfig {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 
