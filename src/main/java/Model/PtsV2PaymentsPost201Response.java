@@ -105,14 +105,14 @@ public class PtsV2PaymentsPost201Response {
   @SerializedName("buyerInformation")
   private PtsV2PaymentsPost201ResponseBuyerInformation buyerInformation = null;
 
-  @SerializedName("merchantInformation")
-  private PtsV2PaymentsPost201ResponseMerchantInformation merchantInformation = null;
-
   @SerializedName("riskInformation")
   private PtsV2PaymentsPost201ResponseRiskInformation riskInformation = null;
 
   @SerializedName("consumerAuthenticationInformation")
   private PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation = null;
+
+  @SerializedName("merchantInformation")
+  private PtsV2PaymentsPost201ResponseMerchantInformation merchantInformation = null;
 
   @SerializedName("embeddedActions")
   private PtsV2PaymentsPost201ResponseEmbeddedActions embeddedActions = null;
@@ -462,24 +462,6 @@ public class PtsV2PaymentsPost201Response {
     this.buyerInformation = buyerInformation;
   }
 
-  public PtsV2PaymentsPost201Response merchantInformation(PtsV2PaymentsPost201ResponseMerchantInformation merchantInformation) {
-    this.merchantInformation = merchantInformation;
-    return this;
-  }
-
-   /**
-   * Get merchantInformation
-   * @return merchantInformation
-  **/
-  @ApiModelProperty(value = "")
-  public PtsV2PaymentsPost201ResponseMerchantInformation getMerchantInformation() {
-    return merchantInformation;
-  }
-
-  public void setMerchantInformation(PtsV2PaymentsPost201ResponseMerchantInformation merchantInformation) {
-    this.merchantInformation = merchantInformation;
-  }
-
   public PtsV2PaymentsPost201Response riskInformation(PtsV2PaymentsPost201ResponseRiskInformation riskInformation) {
     this.riskInformation = riskInformation;
     return this;
@@ -514,6 +496,24 @@ public class PtsV2PaymentsPost201Response {
 
   public void setConsumerAuthenticationInformation(PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation consumerAuthenticationInformation) {
     this.consumerAuthenticationInformation = consumerAuthenticationInformation;
+  }
+
+  public PtsV2PaymentsPost201Response merchantInformation(PtsV2PaymentsPost201ResponseMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
+    return this;
+  }
+
+   /**
+   * Get merchantInformation
+   * @return merchantInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseMerchantInformation getMerchantInformation() {
+    return merchantInformation;
+  }
+
+  public void setMerchantInformation(PtsV2PaymentsPost201ResponseMerchantInformation merchantInformation) {
+    this.merchantInformation = merchantInformation;
   }
 
   public PtsV2PaymentsPost201Response embeddedActions(PtsV2PaymentsPost201ResponseEmbeddedActions embeddedActions) {
@@ -581,16 +581,16 @@ public class PtsV2PaymentsPost201Response {
         Objects.equals(this.installmentInformation, ptsV2PaymentsPost201Response.installmentInformation) &&
         Objects.equals(this.tokenInformation, ptsV2PaymentsPost201Response.tokenInformation) &&
         Objects.equals(this.buyerInformation, ptsV2PaymentsPost201Response.buyerInformation) &&
-        Objects.equals(this.merchantInformation, ptsV2PaymentsPost201Response.merchantInformation) &&
         Objects.equals(this.riskInformation, ptsV2PaymentsPost201Response.riskInformation) &&
         Objects.equals(this.consumerAuthenticationInformation, ptsV2PaymentsPost201Response.consumerAuthenticationInformation) &&
+        Objects.equals(this.merchantInformation, ptsV2PaymentsPost201Response.merchantInformation) &&
         Objects.equals(this.embeddedActions, ptsV2PaymentsPost201Response.embeddedActions) &&
         Objects.equals(this.watchlistScreeningInformation, ptsV2PaymentsPost201Response.watchlistScreeningInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, message, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, merchantInformation, riskInformation, consumerAuthenticationInformation, embeddedActions, watchlistScreeningInformation);
+    return Objects.hash(links, id, message, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, processingInformation, processorInformation, issuerInformation, paymentAccountInformation, paymentInformation, paymentInsightsInformation, orderInformation, pointOfSaleInformation, installmentInformation, tokenInformation, buyerInformation, riskInformation, consumerAuthenticationInformation, merchantInformation, embeddedActions, watchlistScreeningInformation);
   }
 
 
@@ -618,9 +618,9 @@ public class PtsV2PaymentsPost201Response {
     sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
     sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
-    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
+    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
     sb.append("    embeddedActions: ").append(toIndentedString(embeddedActions)).append("\n");
     sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
     sb.append("}");

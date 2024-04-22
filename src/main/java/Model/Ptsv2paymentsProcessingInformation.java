@@ -138,6 +138,9 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("payByPointsIndicator")
   private Boolean payByPointsIndicator = null;
 
+  @SerializedName("timeout")
+  private Integer timeout = null;
+
   @SerializedName("isReturnAuthRecordEnabled")
   private Boolean isReturnAuthRecordEnabled = null;
 
@@ -758,6 +761,24 @@ public class Ptsv2paymentsProcessingInformation {
     this.payByPointsIndicator = payByPointsIndicator;
   }
 
+  public Ptsv2paymentsProcessingInformation timeout(Integer timeout) {
+    this.timeout = timeout;
+    return this;
+  }
+
+   /**
+   * Minutes until a pending MyBank transaction will be timed out. Value must be between 5 and 30. Default is 5. 
+   * @return timeout
+  **/
+  @ApiModelProperty(value = "Minutes until a pending MyBank transaction will be timed out. Value must be between 5 and 30. Default is 5. ")
+  public Integer getTimeout() {
+    return timeout;
+  }
+
+  public void setTimeout(Integer timeout) {
+    this.timeout = timeout;
+  }
+
   public Ptsv2paymentsProcessingInformation isReturnAuthRecordEnabled(Boolean isReturnAuthRecordEnabled) {
     this.isReturnAuthRecordEnabled = isReturnAuthRecordEnabled;
     return this;
@@ -855,6 +876,7 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.extendedCreditTotalCount, ptsv2paymentsProcessingInformation.extendedCreditTotalCount) &&
         Objects.equals(this.networkRoutingOrder, ptsv2paymentsProcessingInformation.networkRoutingOrder) &&
         Objects.equals(this.payByPointsIndicator, ptsv2paymentsProcessingInformation.payByPointsIndicator) &&
+        Objects.equals(this.timeout, ptsv2paymentsProcessingInformation.timeout) &&
         Objects.equals(this.isReturnAuthRecordEnabled, ptsv2paymentsProcessingInformation.isReturnAuthRecordEnabled) &&
         Objects.equals(this.networkPartnerId, ptsv2paymentsProcessingInformation.networkPartnerId) &&
         Objects.equals(this.paymentType, ptsv2paymentsProcessingInformation.paymentType);
@@ -862,7 +884,7 @@ public class Ptsv2paymentsProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled, networkPartnerId, paymentType);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType);
   }
 
 
@@ -904,6 +926,7 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    extendedCreditTotalCount: ").append(toIndentedString(extendedCreditTotalCount)).append("\n");
     sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
     sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
+    sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
     sb.append("    isReturnAuthRecordEnabled: ").append(toIndentedString(isReturnAuthRecordEnabled)).append("\n");
     sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");

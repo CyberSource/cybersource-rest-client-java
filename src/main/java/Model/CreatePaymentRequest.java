@@ -23,6 +23,7 @@ import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsConsumerAuthenticationInformation;
 import Model.Ptsv2paymentsDeviceInformation;
 import Model.Ptsv2paymentsHealthCareInformation;
+import Model.Ptsv2paymentsHostedPaymentInformation;
 import Model.Ptsv2paymentsInstallmentInformation;
 import Model.Ptsv2paymentsInvoiceDetails;
 import Model.Ptsv2paymentsIssuerInformation;
@@ -131,6 +132,9 @@ public class CreatePaymentRequest {
 
   @SerializedName("recurringPaymentInformation")
   private Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation = null;
+
+  @SerializedName("hostedPaymentInformation")
+  private Ptsv2paymentsHostedPaymentInformation hostedPaymentInformation = null;
 
   @SerializedName("watchlistScreeningInformation")
   private Ptsv2paymentsWatchlistScreeningInformation watchlistScreeningInformation = null;
@@ -593,6 +597,24 @@ public class CreatePaymentRequest {
     this.recurringPaymentInformation = recurringPaymentInformation;
   }
 
+  public CreatePaymentRequest hostedPaymentInformation(Ptsv2paymentsHostedPaymentInformation hostedPaymentInformation) {
+    this.hostedPaymentInformation = hostedPaymentInformation;
+    return this;
+  }
+
+   /**
+   * Get hostedPaymentInformation
+   * @return hostedPaymentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsHostedPaymentInformation getHostedPaymentInformation() {
+    return hostedPaymentInformation;
+  }
+
+  public void setHostedPaymentInformation(Ptsv2paymentsHostedPaymentInformation hostedPaymentInformation) {
+    this.hostedPaymentInformation = hostedPaymentInformation;
+  }
+
   public CreatePaymentRequest watchlistScreeningInformation(Ptsv2paymentsWatchlistScreeningInformation watchlistScreeningInformation) {
     this.watchlistScreeningInformation = watchlistScreeningInformation;
     return this;
@@ -646,12 +668,13 @@ public class CreatePaymentRequest {
         Objects.equals(this.riskInformation, createPaymentRequest.riskInformation) &&
         Objects.equals(this.acquirerInformation, createPaymentRequest.acquirerInformation) &&
         Objects.equals(this.recurringPaymentInformation, createPaymentRequest.recurringPaymentInformation) &&
+        Objects.equals(this.hostedPaymentInformation, createPaymentRequest.hostedPaymentInformation) &&
         Objects.equals(this.watchlistScreeningInformation, createPaymentRequest.watchlistScreeningInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, agreementInformation, riskInformation, acquirerInformation, recurringPaymentInformation, watchlistScreeningInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, agreementInformation, riskInformation, acquirerInformation, recurringPaymentInformation, hostedPaymentInformation, watchlistScreeningInformation);
   }
 
 
@@ -685,6 +708,7 @@ public class CreatePaymentRequest {
     sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("    acquirerInformation: ").append(toIndentedString(acquirerInformation)).append("\n");
     sb.append("    recurringPaymentInformation: ").append(toIndentedString(recurringPaymentInformation)).append("\n");
+    sb.append("    hostedPaymentInformation: ").append(toIndentedString(hostedPaymentInformation)).append("\n");
     sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -26,6 +26,7 @@ import Model.Ptsv2paymentsPaymentInformationLegacyToken;
 import Model.Ptsv2paymentsPaymentInformationOptions;
 import Model.Ptsv2paymentsPaymentInformationPaymentInstrument;
 import Model.Ptsv2paymentsPaymentInformationPaymentType;
+import Model.Ptsv2paymentsPaymentInformationSepa;
 import Model.Ptsv2paymentsPaymentInformationShippingAddress;
 import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
 import com.google.gson.TypeAdapter;
@@ -80,6 +81,9 @@ public class Ptsv2paymentsPaymentInformation {
 
   @SerializedName("initiationChannel")
   private String initiationChannel = null;
+
+  @SerializedName("sepa")
+  private Ptsv2paymentsPaymentInformationSepa sepa = null;
 
   @SerializedName("eWallet")
   private Ptsv2paymentsPaymentInformationEWallet eWallet = null;
@@ -318,6 +322,24 @@ public class Ptsv2paymentsPaymentInformation {
     this.initiationChannel = initiationChannel;
   }
 
+  public Ptsv2paymentsPaymentInformation sepa(Ptsv2paymentsPaymentInformationSepa sepa) {
+    this.sepa = sepa;
+    return this;
+  }
+
+   /**
+   * Get sepa
+   * @return sepa
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationSepa getSepa() {
+    return sepa;
+  }
+
+  public void setSepa(Ptsv2paymentsPaymentInformationSepa sepa) {
+    this.sepa = sepa;
+  }
+
   public Ptsv2paymentsPaymentInformation eWallet(Ptsv2paymentsPaymentInformationEWallet eWallet) {
     this.eWallet = eWallet;
     return this;
@@ -359,12 +381,13 @@ public class Ptsv2paymentsPaymentInformation {
         Objects.equals(this.options, ptsv2paymentsPaymentInformation.options) &&
         Objects.equals(this.paymentType, ptsv2paymentsPaymentInformation.paymentType) &&
         Objects.equals(this.initiationChannel, ptsv2paymentsPaymentInformation.initiationChannel) &&
+        Objects.equals(this.sepa, ptsv2paymentsPaymentInformation.sepa) &&
         Objects.equals(this.eWallet, ptsv2paymentsPaymentInformation.eWallet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, tokenizedCard, directDebit, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, options, paymentType, initiationChannel, eWallet);
+    return Objects.hash(card, tokenizedCard, directDebit, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, bank, options, paymentType, initiationChannel, sepa, eWallet);
   }
 
 
@@ -386,6 +409,7 @@ public class Ptsv2paymentsPaymentInformation {
     sb.append("    options: ").append(toIndentedString(options)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("    initiationChannel: ").append(toIndentedString(initiationChannel)).append("\n");
+    sb.append("    sepa: ").append(toIndentedString(sepa)).append("\n");
     sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
     sb.append("}");
     return sb.toString();

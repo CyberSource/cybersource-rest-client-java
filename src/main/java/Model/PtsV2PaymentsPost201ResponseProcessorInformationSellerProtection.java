@@ -32,8 +32,8 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {
   @SerializedName("type")
   private String type = null;
 
-  @SerializedName("eligibilty")
-  private String eligibilty = null;
+  @SerializedName("eligibility")
+  private String eligibility = null;
 
   @SerializedName("eligibilityType")
   private String eligibilityType = null;
@@ -56,22 +56,22 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {
     this.type = type;
   }
 
-  public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection eligibilty(String eligibilty) {
-    this.eligibilty = eligibilty;
+  public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection eligibility(String eligibility) {
+    this.eligibility = eligibility;
     return this;
   }
 
    /**
    * The level of seller protection in force for the transaction. Possible values: - &#x60;ELIGIBLE&#x60; - &#x60;PARTIALLY_ELIGIBLE&#x60; - &#x60;INELIGIBLE&#x60; 
-   * @return eligibilty
+   * @return eligibility
   **/
   @ApiModelProperty(value = "The level of seller protection in force for the transaction. Possible values: - `ELIGIBLE` - `PARTIALLY_ELIGIBLE` - `INELIGIBLE` ")
-  public String getEligibilty() {
-    return eligibilty;
+  public String getEligibility() {
+    return eligibility;
   }
 
-  public void setEligibilty(String eligibilty) {
-    this.eligibilty = eligibilty;
+  public void setEligibility(String eligibility) {
+    this.eligibility = eligibility;
   }
 
   public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection eligibilityType(String eligibilityType) {
@@ -103,13 +103,13 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {
     }
     PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection ptsV2PaymentsPost201ResponseProcessorInformationSellerProtection = (PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection) o;
     return Objects.equals(this.type, ptsV2PaymentsPost201ResponseProcessorInformationSellerProtection.type) &&
-        Objects.equals(this.eligibilty, ptsV2PaymentsPost201ResponseProcessorInformationSellerProtection.eligibilty) &&
+        Objects.equals(this.eligibility, ptsV2PaymentsPost201ResponseProcessorInformationSellerProtection.eligibility) &&
         Objects.equals(this.eligibilityType, ptsV2PaymentsPost201ResponseProcessorInformationSellerProtection.eligibilityType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, eligibilty, eligibilityType);
+    return Objects.hash(type, eligibility, eligibilityType);
   }
 
 
@@ -119,7 +119,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {
     sb.append("class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    eligibilty: ").append(toIndentedString(eligibilty)).append("\n");
+    sb.append("    eligibility: ").append(toIndentedString(eligibility)).append("\n");
     sb.append("    eligibilityType: ").append(toIndentedString(eligibilityType)).append("\n");
     sb.append("}");
     return sb.toString();

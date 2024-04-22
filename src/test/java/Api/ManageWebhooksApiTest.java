@@ -17,7 +17,6 @@ import Model.InlineResponse2004;
 import Model.InlineResponse2005;
 import Model.InlineResponse2014;
 import Model.InlineResponse4042;
-import Model.ReplayWebhooksRequest;
 import Model.SaveAsymEgressKey;
 import Model.UpdateWebhookRequest;
 import org.junit.Test;
@@ -84,23 +83,6 @@ public class ManageWebhooksApiTest {
         String productId = null;
         String eventType = null;
         List<InlineResponse2004> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Replay Previous Webhooks
-     *
-     * Initiate a webhook replay request to replay transactions that happened in the past.  Cannot execute more than 1 replay request at a time. While one request is processing, you will not be allowed to execute another replay.  The difference between Start and End time cannot exceed a 24 hour window, and 1 month is the farthest date back that is eligible for replay. 
-     *
-     * @throws Exception
-     *          if the Api call fails
-     */
-    @Test
-    public void replayPreviousWebhooksTest() throws Exception {
-        String webhookId = null;
-        ReplayWebhooksRequest replayWebhooksRequest = null;
-        api.replayPreviousWebhooks(webhookId, replayWebhooksRequest);
 
         // TODO: test validations
     }

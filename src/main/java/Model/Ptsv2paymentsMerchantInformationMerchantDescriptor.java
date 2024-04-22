@@ -62,11 +62,14 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
   @SerializedName("countryOfOrigin")
   private String countryOfOrigin = null;
 
-  @SerializedName("customerServicePhoneNumber")
-  private String customerServicePhoneNumber = null;
-
   @SerializedName("storeId")
   private String storeId = null;
+
+  @SerializedName("storeName")
+  private String storeName = null;
+
+  @SerializedName("customerServicePhoneNumber")
+  private String customerServicePhoneNumber = null;
 
   public Ptsv2paymentsMerchantInformationMerchantDescriptor name(String name) {
     this.name = name;
@@ -266,6 +269,42 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
     this.countryOfOrigin = countryOfOrigin;
   }
 
+  public Ptsv2paymentsMerchantInformationMerchantDescriptor storeId(String storeId) {
+    this.storeId = storeId;
+    return this;
+  }
+
+   /**
+   * The identifier of the store. 
+   * @return storeId
+  **/
+  @ApiModelProperty(value = "The identifier of the store. ")
+  public String getStoreId() {
+    return storeId;
+  }
+
+  public void setStoreId(String storeId) {
+    this.storeId = storeId;
+  }
+
+  public Ptsv2paymentsMerchantInformationMerchantDescriptor storeName(String storeName) {
+    this.storeName = storeName;
+    return this;
+  }
+
+   /**
+   * The name of the store. 
+   * @return storeName
+  **/
+  @ApiModelProperty(value = "The name of the store. ")
+  public String getStoreName() {
+    return storeName;
+  }
+
+  public void setStoreName(String storeName) {
+    this.storeName = storeName;
+  }
+
   public Ptsv2paymentsMerchantInformationMerchantDescriptor customerServicePhoneNumber(String customerServicePhoneNumber) {
     this.customerServicePhoneNumber = customerServicePhoneNumber;
     return this;
@@ -282,24 +321,6 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
 
   public void setCustomerServicePhoneNumber(String customerServicePhoneNumber) {
     this.customerServicePhoneNumber = customerServicePhoneNumber;
-  }
-
-  public Ptsv2paymentsMerchantInformationMerchantDescriptor storeId(String storeId) {
-    this.storeId = storeId;
-    return this;
-  }
-
-   /**
-   * The unique id of the merchant&#39;s shop which assigned by the merchant 
-   * @return storeId
-  **/
-  @ApiModelProperty(value = "The unique id of the merchant's shop which assigned by the merchant ")
-  public String getStoreId() {
-    return storeId;
-  }
-
-  public void setStoreId(String storeId) {
-    this.storeId = storeId;
   }
 
 
@@ -323,13 +344,14 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
         Objects.equals(this.phone, ptsv2paymentsMerchantInformationMerchantDescriptor.phone) &&
         Objects.equals(this.url, ptsv2paymentsMerchantInformationMerchantDescriptor.url) &&
         Objects.equals(this.countryOfOrigin, ptsv2paymentsMerchantInformationMerchantDescriptor.countryOfOrigin) &&
-        Objects.equals(this.customerServicePhoneNumber, ptsv2paymentsMerchantInformationMerchantDescriptor.customerServicePhoneNumber) &&
-        Objects.equals(this.storeId, ptsv2paymentsMerchantInformationMerchantDescriptor.storeId);
+        Objects.equals(this.storeId, ptsv2paymentsMerchantInformationMerchantDescriptor.storeId) &&
+        Objects.equals(this.storeName, ptsv2paymentsMerchantInformationMerchantDescriptor.storeName) &&
+        Objects.equals(this.customerServicePhoneNumber, ptsv2paymentsMerchantInformationMerchantDescriptor.customerServicePhoneNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, alternateName, contact, address1, locality, country, postalCode, administrativeArea, phone, url, countryOfOrigin, customerServicePhoneNumber, storeId);
+    return Objects.hash(name, alternateName, contact, address1, locality, country, postalCode, administrativeArea, phone, url, countryOfOrigin, storeId, storeName, customerServicePhoneNumber);
   }
 
 
@@ -349,8 +371,9 @@ public class Ptsv2paymentsMerchantInformationMerchantDescriptor {
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    countryOfOrigin: ").append(toIndentedString(countryOfOrigin)).append("\n");
-    sb.append("    customerServicePhoneNumber: ").append(toIndentedString(customerServicePhoneNumber)).append("\n");
     sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
+    sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
+    sb.append("    customerServicePhoneNumber: ").append(toIndentedString(customerServicePhoneNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

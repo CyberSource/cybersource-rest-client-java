@@ -22,6 +22,7 @@ import Model.TmsEmbeddedInstrumentIdentifierIssuer;
 import Model.TmsEmbeddedInstrumentIdentifierLinks;
 import Model.TmsEmbeddedInstrumentIdentifierMetadata;
 import Model.TmsEmbeddedInstrumentIdentifierProcessingInformation;
+import Model.TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation;
 import Model.TmsEmbeddedInstrumentIdentifierTokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -51,6 +52,9 @@ public class PostInstrumentIdentifierEnrollmentRequest {
 
   @SerializedName("type")
   private String type = null;
+
+  @SerializedName("tokenProvisioningInformation")
+  private TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation tokenProvisioningInformation = null;
 
   @SerializedName("card")
   private TmsEmbeddedInstrumentIdentifierCard card = null;
@@ -143,6 +147,24 @@ public class PostInstrumentIdentifierEnrollmentRequest {
 
   public void setType(String type) {
     this.type = type;
+  }
+
+  public PostInstrumentIdentifierEnrollmentRequest tokenProvisioningInformation(TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation tokenProvisioningInformation) {
+    this.tokenProvisioningInformation = tokenProvisioningInformation;
+    return this;
+  }
+
+   /**
+   * Get tokenProvisioningInformation
+   * @return tokenProvisioningInformation
+  **/
+  @ApiModelProperty(value = "")
+  public TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation getTokenProvisioningInformation() {
+    return tokenProvisioningInformation;
+  }
+
+  public void setTokenProvisioningInformation(TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation tokenProvisioningInformation) {
+    this.tokenProvisioningInformation = tokenProvisioningInformation;
   }
 
   public PostInstrumentIdentifierEnrollmentRequest card(TmsEmbeddedInstrumentIdentifierCard card) {
@@ -286,6 +308,7 @@ public class PostInstrumentIdentifierEnrollmentRequest {
         Objects.equals(this.object, postInstrumentIdentifierEnrollmentRequest.object) &&
         Objects.equals(this.state, postInstrumentIdentifierEnrollmentRequest.state) &&
         Objects.equals(this.type, postInstrumentIdentifierEnrollmentRequest.type) &&
+        Objects.equals(this.tokenProvisioningInformation, postInstrumentIdentifierEnrollmentRequest.tokenProvisioningInformation) &&
         Objects.equals(this.card, postInstrumentIdentifierEnrollmentRequest.card) &&
         Objects.equals(this.bankAccount, postInstrumentIdentifierEnrollmentRequest.bankAccount) &&
         Objects.equals(this.tokenizedCard, postInstrumentIdentifierEnrollmentRequest.tokenizedCard) &&
@@ -297,7 +320,7 @@ public class PostInstrumentIdentifierEnrollmentRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, object, state, type, card, bankAccount, tokenizedCard, issuer, processingInformation, billTo, metadata);
+    return Objects.hash(links, id, object, state, type, tokenProvisioningInformation, card, bankAccount, tokenizedCard, issuer, processingInformation, billTo, metadata);
   }
 
 
@@ -311,6 +334,7 @@ public class PostInstrumentIdentifierEnrollmentRequest {
     sb.append("    object: ").append(toIndentedString(object)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    tokenProvisioningInformation: ").append(toIndentedString(tokenProvisioningInformation)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
     sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");

@@ -34,6 +34,9 @@ import java.util.List;
  */
 
 public class Ptsv2paymentsTravelInformationTransitAirline {
+  @SerializedName("isDomestic")
+  private String isDomestic = null;
+
   @SerializedName("bookingReferenceNumber")
   private String bookingReferenceNumber = null;
 
@@ -147,6 +150,42 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
 
   @SerializedName("ancillaryInformation")
   private Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation ancillaryInformation = null;
+
+  @SerializedName("flightType")
+  private String flightType = null;
+
+  @SerializedName("insuranceAmount")
+  private String insuranceAmount = null;
+
+  @SerializedName("frequentFlyerNumber")
+  private String frequentFlyerNumber = null;
+
+  @SerializedName("thirdPartyStatus")
+  private String thirdPartyStatus = null;
+
+  @SerializedName("passengerType")
+  private String passengerType = null;
+
+  @SerializedName("totalInsuranceAmount")
+  private String totalInsuranceAmount = null;
+
+  public Ptsv2paymentsTravelInformationTransitAirline isDomestic(String isDomestic) {
+    this.isDomestic = isDomestic;
+    return this;
+  }
+
+   /**
+   * Specifies if the flight is: Domestic (01) International (02) If Y then 01 else 02 
+   * @return isDomestic
+  **/
+  @ApiModelProperty(value = "Specifies if the flight is: Domestic (01) International (02) If Y then 01 else 02 ")
+  public String getIsDomestic() {
+    return isDomestic;
+  }
+
+  public void setIsDomestic(String isDomestic) {
+    this.isDomestic = isDomestic;
+  }
 
   public Ptsv2paymentsTravelInformationTransitAirline bookingReferenceNumber(String bookingReferenceNumber) {
     this.bookingReferenceNumber = bookingReferenceNumber;
@@ -840,6 +879,114 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
     this.ancillaryInformation = ancillaryInformation;
   }
 
+  public Ptsv2paymentsTravelInformationTransitAirline flightType(String flightType) {
+    this.flightType = flightType;
+    return this;
+  }
+
+   /**
+   * Specifies the type of flight. One way (0) Return (1) Transit (2) Transit &amp; Return (3) Multi-City (4) 
+   * @return flightType
+  **/
+  @ApiModelProperty(value = "Specifies the type of flight. One way (0) Return (1) Transit (2) Transit & Return (3) Multi-City (4) ")
+  public String getFlightType() {
+    return flightType;
+  }
+
+  public void setFlightType(String flightType) {
+    this.flightType = flightType;
+  }
+
+  public Ptsv2paymentsTravelInformationTransitAirline insuranceAmount(String insuranceAmount) {
+    this.insuranceAmount = insuranceAmount;
+    return this;
+  }
+
+   /**
+   * The total cost of the flight insurance. Example: 10000.00 
+   * @return insuranceAmount
+  **/
+  @ApiModelProperty(value = "The total cost of the flight insurance. Example: 10000.00 ")
+  public String getInsuranceAmount() {
+    return insuranceAmount;
+  }
+
+  public void setInsuranceAmount(String insuranceAmount) {
+    this.insuranceAmount = insuranceAmount;
+  }
+
+  public Ptsv2paymentsTravelInformationTransitAirline frequentFlyerNumber(String frequentFlyerNumber) {
+    this.frequentFlyerNumber = frequentFlyerNumber;
+    return this;
+  }
+
+   /**
+   * The consumer&#39;s frequent flyer number. Leave 0 if there is no frequent flyer number 
+   * @return frequentFlyerNumber
+  **/
+  @ApiModelProperty(value = "The consumer's frequent flyer number. Leave 0 if there is no frequent flyer number ")
+  public String getFrequentFlyerNumber() {
+    return frequentFlyerNumber;
+  }
+
+  public void setFrequentFlyerNumber(String frequentFlyerNumber) {
+    this.frequentFlyerNumber = frequentFlyerNumber;
+  }
+
+  public Ptsv2paymentsTravelInformationTransitAirline thirdPartyStatus(String thirdPartyStatus) {
+    this.thirdPartyStatus = thirdPartyStatus;
+    return this;
+  }
+
+   /**
+   * Specifies if the travel agent joins the flight (0) or not (1) 
+   * @return thirdPartyStatus
+  **/
+  @ApiModelProperty(value = "Specifies if the travel agent joins the flight (0) or not (1) ")
+  public String getThirdPartyStatus() {
+    return thirdPartyStatus;
+  }
+
+  public void setThirdPartyStatus(String thirdPartyStatus) {
+    this.thirdPartyStatus = thirdPartyStatus;
+  }
+
+  public Ptsv2paymentsTravelInformationTransitAirline passengerType(String passengerType) {
+    this.passengerType = passengerType;
+    return this;
+  }
+
+   /**
+   * List of passenger types in a booking code: A (Adult) C (Child) Comma separated values for total number of passenger 
+   * @return passengerType
+  **/
+  @ApiModelProperty(value = "List of passenger types in a booking code: A (Adult) C (Child) Comma separated values for total number of passenger ")
+  public String getPassengerType() {
+    return passengerType;
+  }
+
+  public void setPassengerType(String passengerType) {
+    this.passengerType = passengerType;
+  }
+
+  public Ptsv2paymentsTravelInformationTransitAirline totalInsuranceAmount(String totalInsuranceAmount) {
+    this.totalInsuranceAmount = totalInsuranceAmount;
+    return this;
+  }
+
+   /**
+   * Total insurance amount. We have per leg and not total 
+   * @return totalInsuranceAmount
+  **/
+  @ApiModelProperty(value = "Total insurance amount. We have per leg and not total ")
+  public String getTotalInsuranceAmount() {
+    return totalInsuranceAmount;
+  }
+
+  public void setTotalInsuranceAmount(String totalInsuranceAmount) {
+    this.totalInsuranceAmount = totalInsuranceAmount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -850,7 +997,8 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
       return false;
     }
     Ptsv2paymentsTravelInformationTransitAirline ptsv2paymentsTravelInformationTransitAirline = (Ptsv2paymentsTravelInformationTransitAirline) o;
-    return Objects.equals(this.bookingReferenceNumber, ptsv2paymentsTravelInformationTransitAirline.bookingReferenceNumber) &&
+    return Objects.equals(this.isDomestic, ptsv2paymentsTravelInformationTransitAirline.isDomestic) &&
+        Objects.equals(this.bookingReferenceNumber, ptsv2paymentsTravelInformationTransitAirline.bookingReferenceNumber) &&
         Objects.equals(this.carrierName, ptsv2paymentsTravelInformationTransitAirline.carrierName) &&
         Objects.equals(this.ticketIssuer, ptsv2paymentsTravelInformationTransitAirline.ticketIssuer) &&
         Objects.equals(this.ticketNumber, ptsv2paymentsTravelInformationTransitAirline.ticketNumber) &&
@@ -887,12 +1035,18 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
         Objects.equals(this.reservationType, ptsv2paymentsTravelInformationTransitAirline.reservationType) &&
         Objects.equals(this.boardingFeeAmount, ptsv2paymentsTravelInformationTransitAirline.boardingFeeAmount) &&
         Objects.equals(this.legs, ptsv2paymentsTravelInformationTransitAirline.legs) &&
-        Objects.equals(this.ancillaryInformation, ptsv2paymentsTravelInformationTransitAirline.ancillaryInformation);
+        Objects.equals(this.ancillaryInformation, ptsv2paymentsTravelInformationTransitAirline.ancillaryInformation) &&
+        Objects.equals(this.flightType, ptsv2paymentsTravelInformationTransitAirline.flightType) &&
+        Objects.equals(this.insuranceAmount, ptsv2paymentsTravelInformationTransitAirline.insuranceAmount) &&
+        Objects.equals(this.frequentFlyerNumber, ptsv2paymentsTravelInformationTransitAirline.frequentFlyerNumber) &&
+        Objects.equals(this.thirdPartyStatus, ptsv2paymentsTravelInformationTransitAirline.thirdPartyStatus) &&
+        Objects.equals(this.passengerType, ptsv2paymentsTravelInformationTransitAirline.passengerType) &&
+        Objects.equals(this.totalInsuranceAmount, ptsv2paymentsTravelInformationTransitAirline.totalInsuranceAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bookingReferenceNumber, carrierName, ticketIssuer, ticketNumber, checkDigit, restrictedTicketIndicator, transactionType, extendedPaymentCode, passengerName, customerCode, documentType, documentNumber, documentNumberOfParts, invoiceNumber, invoiceDate, additionalCharges, totalFeeAmount, clearingSequence, clearingCount, totalClearingAmount, numberOfPassengers, reservationSystemCode, processIdentifier, ticketIssueDate, electronicTicketIndicator, originalTicketNumber, purchaseType, creditReasonIndicator, ticketChangeIndicator, planNumber, arrivalDate, restrictedTicketDesciption, exchangeTicketAmount, exchangeTicketFeeAmount, reservationType, boardingFeeAmount, legs, ancillaryInformation);
+    return Objects.hash(isDomestic, bookingReferenceNumber, carrierName, ticketIssuer, ticketNumber, checkDigit, restrictedTicketIndicator, transactionType, extendedPaymentCode, passengerName, customerCode, documentType, documentNumber, documentNumberOfParts, invoiceNumber, invoiceDate, additionalCharges, totalFeeAmount, clearingSequence, clearingCount, totalClearingAmount, numberOfPassengers, reservationSystemCode, processIdentifier, ticketIssueDate, electronicTicketIndicator, originalTicketNumber, purchaseType, creditReasonIndicator, ticketChangeIndicator, planNumber, arrivalDate, restrictedTicketDesciption, exchangeTicketAmount, exchangeTicketFeeAmount, reservationType, boardingFeeAmount, legs, ancillaryInformation, flightType, insuranceAmount, frequentFlyerNumber, thirdPartyStatus, passengerType, totalInsuranceAmount);
   }
 
 
@@ -901,6 +1055,7 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationTransitAirline {\n");
     
+    sb.append("    isDomestic: ").append(toIndentedString(isDomestic)).append("\n");
     sb.append("    bookingReferenceNumber: ").append(toIndentedString(bookingReferenceNumber)).append("\n");
     sb.append("    carrierName: ").append(toIndentedString(carrierName)).append("\n");
     sb.append("    ticketIssuer: ").append(toIndentedString(ticketIssuer)).append("\n");
@@ -939,6 +1094,12 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
     sb.append("    boardingFeeAmount: ").append(toIndentedString(boardingFeeAmount)).append("\n");
     sb.append("    legs: ").append(toIndentedString(legs)).append("\n");
     sb.append("    ancillaryInformation: ").append(toIndentedString(ancillaryInformation)).append("\n");
+    sb.append("    flightType: ").append(toIndentedString(flightType)).append("\n");
+    sb.append("    insuranceAmount: ").append(toIndentedString(insuranceAmount)).append("\n");
+    sb.append("    frequentFlyerNumber: ").append(toIndentedString(frequentFlyerNumber)).append("\n");
+    sb.append("    thirdPartyStatus: ").append(toIndentedString(thirdPartyStatus)).append("\n");
+    sb.append("    passengerType: ").append(toIndentedString(passengerType)).append("\n");
+    sb.append("    totalInsuranceAmount: ").append(toIndentedString(totalInsuranceAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

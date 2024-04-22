@@ -62,6 +62,9 @@ public class Ptsv2paymentsBuyerInformation {
   @SerializedName("mobilePhone")
   private Integer mobilePhone = null;
 
+  @SerializedName("walletId")
+  private String walletId = null;
+
   public Ptsv2paymentsBuyerInformation merchantCustomerId(String merchantCustomerId) {
     this.merchantCustomerId = merchantCustomerId;
     return this;
@@ -250,6 +253,24 @@ public class Ptsv2paymentsBuyerInformation {
     this.mobilePhone = mobilePhone;
   }
 
+  public Ptsv2paymentsBuyerInformation walletId(String walletId) {
+    this.walletId = walletId;
+    return this;
+  }
+
+   /**
+   * The one-time identification code of the Alipay wallet user.  It is scanned from the barcode that is shown by the mobile application. 
+   * @return walletId
+  **/
+  @ApiModelProperty(value = "The one-time identification code of the Alipay wallet user.  It is scanned from the barcode that is shown by the mobile application. ")
+  public String getWalletId() {
+    return walletId;
+  }
+
+  public void setWalletId(String walletId) {
+    this.walletId = walletId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -269,12 +290,13 @@ public class Ptsv2paymentsBuyerInformation {
         Objects.equals(this.gender, ptsv2paymentsBuyerInformation.gender) &&
         Objects.equals(this.language, ptsv2paymentsBuyerInformation.language) &&
         Objects.equals(this.noteToSeller, ptsv2paymentsBuyerInformation.noteToSeller) &&
-        Objects.equals(this.mobilePhone, ptsv2paymentsBuyerInformation.mobilePhone);
+        Objects.equals(this.mobilePhone, ptsv2paymentsBuyerInformation.mobilePhone) &&
+        Objects.equals(this.walletId, ptsv2paymentsBuyerInformation.walletId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, companyTaxId, personalIdentification, hashedPassword, gender, language, noteToSeller, mobilePhone);
+    return Objects.hash(merchantCustomerId, dateOfBirth, vatRegistrationNumber, companyTaxId, personalIdentification, hashedPassword, gender, language, noteToSeller, mobilePhone, walletId);
   }
 
 
@@ -293,6 +315,7 @@ public class Ptsv2paymentsBuyerInformation {
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    noteToSeller: ").append(toIndentedString(noteToSeller)).append("\n");
     sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
+    sb.append("    walletId: ").append(toIndentedString(walletId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

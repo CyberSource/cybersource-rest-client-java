@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,8 +30,50 @@ import java.io.IOException;
  */
 
 public class PtsV2PaymentsPost201ResponseMerchantInformation {
+  @SerializedName("merchantName")
+  private String merchantName = null;
+
+  @SerializedName("merchantDescriptor")
+  private PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor merchantDescriptor = null;
+
   @SerializedName("returnUrl")
   private String returnUrl = null;
+
+  public PtsV2PaymentsPost201ResponseMerchantInformation merchantName(String merchantName) {
+    this.merchantName = merchantName;
+    return this;
+  }
+
+   /**
+   * Use this field only if you are requesting payment with Payer Authentication serice together.  Your company&#39;s name as you want it to appear to the customer in the issuing bank&#39;s authentication form. This value overrides the value specified by your merchant bank. 
+   * @return merchantName
+  **/
+  @ApiModelProperty(value = "Use this field only if you are requesting payment with Payer Authentication serice together.  Your company's name as you want it to appear to the customer in the issuing bank's authentication form. This value overrides the value specified by your merchant bank. ")
+  public String getMerchantName() {
+    return merchantName;
+  }
+
+  public void setMerchantName(String merchantName) {
+    this.merchantName = merchantName;
+  }
+
+  public PtsV2PaymentsPost201ResponseMerchantInformation merchantDescriptor(PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor merchantDescriptor) {
+    this.merchantDescriptor = merchantDescriptor;
+    return this;
+  }
+
+   /**
+   * Get merchantDescriptor
+   * @return merchantDescriptor
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor getMerchantDescriptor() {
+    return merchantDescriptor;
+  }
+
+  public void setMerchantDescriptor(PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor merchantDescriptor) {
+    this.merchantDescriptor = merchantDescriptor;
+  }
 
   public PtsV2PaymentsPost201ResponseMerchantInformation returnUrl(String returnUrl) {
     this.returnUrl = returnUrl;
@@ -60,12 +103,14 @@ public class PtsV2PaymentsPost201ResponseMerchantInformation {
       return false;
     }
     PtsV2PaymentsPost201ResponseMerchantInformation ptsV2PaymentsPost201ResponseMerchantInformation = (PtsV2PaymentsPost201ResponseMerchantInformation) o;
-    return Objects.equals(this.returnUrl, ptsV2PaymentsPost201ResponseMerchantInformation.returnUrl);
+    return Objects.equals(this.merchantName, ptsV2PaymentsPost201ResponseMerchantInformation.merchantName) &&
+        Objects.equals(this.merchantDescriptor, ptsV2PaymentsPost201ResponseMerchantInformation.merchantDescriptor) &&
+        Objects.equals(this.returnUrl, ptsV2PaymentsPost201ResponseMerchantInformation.returnUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(returnUrl);
+    return Objects.hash(merchantName, merchantDescriptor, returnUrl);
   }
 
 
@@ -74,6 +119,8 @@ public class PtsV2PaymentsPost201ResponseMerchantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseMerchantInformation {\n");
     
+    sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
+    sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
     sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
     sb.append("}");
     return sb.toString();
