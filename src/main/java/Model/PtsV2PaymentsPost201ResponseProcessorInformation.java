@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAchVerification;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationAvs;
 import Model.PtsV2PaymentsPost201ResponseProcessorInformationCardVerification;
@@ -141,6 +142,15 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @SerializedName("transactionExpiryDate")
   private String transactionExpiryDate = null;
+
+  @SerializedName("customUrl")
+  private String customUrl = null;
+
+  @SerializedName("schemeAssignedId")
+  private String schemeAssignedId = null;
+
+  @SerializedName("deviceUrl")
+  private String deviceUrl = null;
 
   public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
     this.authIndicator = authIndicator;
@@ -772,6 +782,60 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.transactionExpiryDate = transactionExpiryDate;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation customUrl(String customUrl) {
+    this.customUrl = customUrl;
+    return this;
+  }
+
+   /**
+   * For merchants to declare customs Customs declaration service URL. 
+   * @return customUrl
+  **/
+  @ApiModelProperty(value = "For merchants to declare customs Customs declaration service URL. ")
+  public String getCustomUrl() {
+    return customUrl;
+  }
+
+  public void setCustomUrl(String customUrl) {
+    this.customUrl = customUrl;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation schemeAssignedId(String schemeAssignedId) {
+    this.schemeAssignedId = schemeAssignedId;
+    return this;
+  }
+
+   /**
+   * Unique id assigned to a merchant by the APM and not PSP The merchant ID, as boarded with Alipay 
+   * @return schemeAssignedId
+  **/
+  @ApiModelProperty(value = "Unique id assigned to a merchant by the APM and not PSP The merchant ID, as boarded with Alipay ")
+  public String getSchemeAssignedId() {
+    return schemeAssignedId;
+  }
+
+  public void setSchemeAssignedId(String schemeAssignedId) {
+    this.schemeAssignedId = schemeAssignedId;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation deviceUrl(String deviceUrl) {
+    this.deviceUrl = deviceUrl;
+    return this;
+  }
+
+   /**
+   * The QR code value. Convert this value into an image and send it to the POS terminal to be displayed. The terminal can also perform the conversion. The value is a URL like in the example below: https://qr.alipay.com/pmxabcka1ts5grar12. 
+   * @return deviceUrl
+  **/
+  @ApiModelProperty(value = "The QR code value. Convert this value into an image and send it to the POS terminal to be displayed. The terminal can also perform the conversion. The value is a URL like in the example below: https://qr.alipay.com/pmxabcka1ts5grar12. ")
+  public String getDeviceUrl() {
+    return deviceUrl;
+  }
+
+  public void setDeviceUrl(String deviceUrl) {
+    this.deviceUrl = deviceUrl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -816,12 +880,15 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.signature, ptsV2PaymentsPost201ResponseProcessorInformation.signature) &&
         Objects.equals(this.publicKey, ptsV2PaymentsPost201ResponseProcessorInformation.publicKey) &&
         Objects.equals(this.sellerProtection, ptsV2PaymentsPost201ResponseProcessorInformation.sellerProtection) &&
-        Objects.equals(this.transactionExpiryDate, ptsV2PaymentsPost201ResponseProcessorInformation.transactionExpiryDate);
+        Objects.equals(this.transactionExpiryDate, ptsV2PaymentsPost201ResponseProcessorInformation.transactionExpiryDate) &&
+        Objects.equals(this.customUrl, ptsV2PaymentsPost201ResponseProcessorInformation.customUrl) &&
+        Objects.equals(this.schemeAssignedId, ptsV2PaymentsPost201ResponseProcessorInformation.schemeAssignedId) &&
+        Objects.equals(this.deviceUrl, ptsV2PaymentsPost201ResponseProcessorInformation.deviceUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl);
   }
 
 
@@ -865,6 +932,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
     sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
     sb.append("    transactionExpiryDate: ").append(toIndentedString(transactionExpiryDate)).append("\n");
+    sb.append("    customUrl: ").append(toIndentedString(customUrl)).append("\n");
+    sb.append("    schemeAssignedId: ").append(toIndentedString(schemeAssignedId)).append("\n");
+    sb.append("    deviceUrl: ").append(toIndentedString(deviceUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -879,6 +949,6 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

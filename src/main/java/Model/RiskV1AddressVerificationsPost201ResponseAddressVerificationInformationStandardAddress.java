@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.RiskV1AddressVerificationsPost201ResponseAddressVerificationInformationStandardAddressAddress1;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -319,6 +320,6 @@ public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInforma
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

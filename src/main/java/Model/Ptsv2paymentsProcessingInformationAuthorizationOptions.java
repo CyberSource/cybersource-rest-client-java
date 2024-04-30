@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -197,7 +198,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return partialAuthIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates whether the transaction is enabled for partial authorization. When the request includes this field, this value overrides the information in your account. Possible values: - `true`: Enable the transaction for partial authorization. - `false`: Do not enable the transaction for partial authorization.  #### PIN debit Required field for partial authorizations that use PIN debit purchase; otherwise, not used.  #### Used by **Authorization** Optional field.  #### CyberSource through VisaNet To set the default for this field, contact CyberSource Customer Support. The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 164 - Field: Additional Authorization Indicators ")
-  public Boolean getPartialAuthIndicator() {
+  public Boolean isPartialAuthIndicator() {
     return partialAuthIndicator;
   }
 
@@ -233,7 +234,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return balanceInquiry
   **/
   @ApiModelProperty(value = "Flag that indicates whether to return balance information.  Possible values: - `true`: Return balance information. - `false`: Do not return balance information.  #### Used by **Authorization** Required for a balance inquiry; otherwise, not used.  #### PIN debit Required for a balance inquiry request of a PIN debit purchase; otherwise, not used. ")
-  public Boolean getBalanceInquiry() {
+  public Boolean isBalanceInquiry() {
     return balanceInquiry;
   }
 
@@ -251,7 +252,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return ignoreAvsResult
   **/
   @ApiModelProperty(value = "Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives an AVS decline, as indicated by a reply flag value of DAVSNO.  Possible values: - `true`: Ignore the results of AVS checking and run the capture service. - `false` (default): If the authorization receives an AVS decline, do not run the capture service. When the value of this field is `true`, the list in the `processingInformation.authorizationOptions.declineAvsFlags` field is ignored.  #### Used by **Authorization** Optional field. String (3) ")
-  public Boolean getIgnoreAvsResult() {
+  public Boolean isIgnoreAvsResult() {
     return ignoreAvsResult;
   }
 
@@ -295,7 +296,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return ignoreCvResult
   **/
   @ApiModelProperty(value = "Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives a CVN decline, as indicated by an `processorInformation.cardVerification.resultCode` value of `D` or `N`. Possible values: - `true`: Ignore the results of CVN checking and run the capture service. - `false` (default): If the authorization receives a CVN decline, do not run the capture service.  #### Used by **Authorization** Optional field. ")
-  public Boolean getIgnoreCvResult() {
+  public Boolean isIgnoreCvResult() {
     return ignoreCvResult;
   }
 
@@ -331,7 +332,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return billPayment
   **/
   @ApiModelProperty(value = "Indicates payment for bill or payment towards existing contractual loan.  Possible values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment.  Optional request field. ")
-  public Boolean getBillPayment() {
+  public Boolean isBillPayment() {
     return billPayment;
   }
 
@@ -367,7 +368,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return redemptionInquiry
   **/
   @ApiModelProperty(value = "Flag that indicates the payment request is a redemption inquiry.  Possible values:   - `true`   - `false` ")
-  public Boolean getRedemptionInquiry() {
+  public Boolean isRedemptionInquiry() {
     return redemptionInquiry;
   }
 
@@ -439,7 +440,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return deferredAuthIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates whether the authorization request was delayed because connectivity was interrupted.  Possible values:   - `true` (Deferred authorization)   - `false` (default: Not a deferred authorization) ")
-  public Boolean getDeferredAuthIndicator() {
+  public Boolean isDeferredAuthIndicator() {
     return deferredAuthIndicator;
   }
 
@@ -457,7 +458,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return cashAdvanceIndicator
   **/
   @ApiModelProperty(value = "This API field enables the merchant to indicate that a given transaction is Cash Advance.  Cash advance or Cash disbursement functionality allows a merchant to dispense cash at a point of sale. It provides the ability of a POS system to act like an ATM. These terminals are typically seen in bank branches where customers can use their card and withdraw cash or at merchant locations where ATMs are sparse.  Possible values:   - `true` (Cash advance is supported)   - `false` (default: cash advance is not supported) ")
-  public Boolean getCashAdvanceIndicator() {
+  public Boolean isCashAdvanceIndicator() {
     return cashAdvanceIndicator;
   }
 
@@ -475,7 +476,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return splitPaymentTransaction
   **/
   @ApiModelProperty(value = "#### Visa Platform Connect Indicates split payment transaction. A split payment allows the use of two payment methods for a single transaction.  Possible values:   - `true` (split payment transaction is supported)   - `false` (default: split payment transaction is not supported) ")
-  public Boolean getSplitPaymentTransaction() {
+  public Boolean isSplitPaymentTransaction() {
     return splitPaymentTransaction;
   }
 
@@ -493,7 +494,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return cardVerificationIndicator
   **/
   @ApiModelProperty(value = "This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - `true`   - `false` (default value) ")
-  public Boolean getCardVerificationIndicator() {
+  public Boolean isCardVerificationIndicator() {
     return cardVerificationIndicator;
   }
 
@@ -582,6 +583,6 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

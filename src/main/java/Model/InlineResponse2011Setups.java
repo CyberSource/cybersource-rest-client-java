@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponse2011SetupsCommerceSolutions;
 import Model.InlineResponse2011SetupsPayments;
 import Model.InlineResponse2011SetupsRisk;
@@ -161,6 +162,6 @@ public class InlineResponse2011Setups {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

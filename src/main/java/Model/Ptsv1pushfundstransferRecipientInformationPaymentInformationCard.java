@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv1pushfundstransferRecipientInformationPaymentInformationCardCustomer;
 import Model.Ptsv1pushfundstransferRecipientInformationPaymentInformationCardInstrumentIdentifier;
 import Model.Ptsv1pushfundstransferRecipientInformationPaymentInformationCardPaymentInstrument;
@@ -252,6 +253,6 @@ public class Ptsv1pushfundstransferRecipientInformationPaymentInformationCard {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

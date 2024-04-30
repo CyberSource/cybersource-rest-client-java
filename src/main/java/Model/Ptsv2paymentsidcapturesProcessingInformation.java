@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsIssuerInformation;
 import Model.Ptsv2paymentsProcessingInformationLoanOptions;
 import Model.Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions;
@@ -281,7 +282,7 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
    * @return payByPointsIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates if the transaction is pay by points transaction true: Transaction uses loyalty points false: Transaction does not use loyalty points Default: false ")
-  public Boolean getPayByPointsIndicator() {
+  public Boolean isPayByPointsIndicator() {
     return payByPointsIndicator;
   }
 
@@ -378,6 +379,6 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

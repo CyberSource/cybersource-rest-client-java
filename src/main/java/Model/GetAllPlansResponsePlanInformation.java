@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.GetAllPlansResponsePlanInformationBillingCycles;
 import Model.GetAllPlansResponsePlanInformationBillingPeriod;
 import com.google.gson.TypeAdapter;
@@ -205,6 +206,6 @@ public class GetAllPlansResponsePlanInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

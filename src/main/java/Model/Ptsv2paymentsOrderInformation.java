@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsOrderInformationAmountDetails;
 import Model.Ptsv2paymentsOrderInformationBillTo;
 import Model.Ptsv2paymentsOrderInformationInvoiceDetails;
@@ -201,7 +202,7 @@ public class Ptsv2paymentsOrderInformation {
    * @return returnsAccepted
   **/
   @ApiModelProperty(value = "This is only needed when you are requesting both payment and DM service at same time.  Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order. ")
-  public Boolean getReturnsAccepted() {
+  public Boolean isReturnsAccepted() {
     return returnsAccepted;
   }
 
@@ -291,7 +292,7 @@ public class Ptsv2paymentsOrderInformation {
    * @return reordered
   **/
   @ApiModelProperty(value = "Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered ")
-  public Boolean getReordered() {
+  public Boolean isReordered() {
     return reordered;
   }
 
@@ -380,6 +381,6 @@ public class Ptsv2paymentsOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

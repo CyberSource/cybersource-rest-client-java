@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ReportingV3PaymentBatchSummariesGet200ResponsePaymentBatchSummaries;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -146,6 +147,6 @@ public class ReportingV3PaymentBatchSummariesGet200Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

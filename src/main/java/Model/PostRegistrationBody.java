@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Boardingv1registrationsDocumentInformation;
 import Model.Boardingv1registrationsIntegrationInformation;
 import Model.Boardingv1registrationsOrganizationInformation;
@@ -93,7 +94,7 @@ public class PostRegistrationBody {
    * Get organizationInformation
    * @return organizationInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Boardingv1registrationsOrganizationInformation getOrganizationInformation() {
     return organizationInformation;
   }
@@ -185,6 +186,6 @@ public class PostRegistrationBody {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

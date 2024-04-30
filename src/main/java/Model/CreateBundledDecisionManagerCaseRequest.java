@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsRecurringPaymentInformation;
 import Model.Ptsv2paymentsWatchlistScreeningInformation;
 import Model.Riskv1decisionsAcquirerInformation;
@@ -175,7 +176,7 @@ public class CreateBundledDecisionManagerCaseRequest {
    * Get orderInformation
    * @return orderInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Riskv1decisionsOrderInformation getOrderInformation() {
     return orderInformation;
   }
@@ -459,6 +460,6 @@ public class CreateBundledDecisionManagerCaseRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

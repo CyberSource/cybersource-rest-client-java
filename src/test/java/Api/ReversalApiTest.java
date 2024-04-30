@@ -13,7 +13,6 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.AuthReversalRequest;
 import Model.MitReversalRequest;
 import Model.PtsV2PaymentsPost502Response;
@@ -21,6 +20,7 @@ import Model.PtsV2PaymentsReversalsPost201Response;
 import Model.PtsV2PaymentsReversalsPost400Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,11 +41,11 @@ public class ReversalApiTest {
      *
      * Include the payment ID in the POST request to reverse the payment amount.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void authReversalTest() throws ApiException {
+    public void authReversalTest() throws Exception {
         String id = null;
         AuthReversalRequest authReversalRequest = null;
         PtsV2PaymentsReversalsPost201Response response = api.authReversal(id, authReversalRequest);
@@ -58,11 +58,11 @@ public class ReversalApiTest {
      *
      * This is to reverse a previous payment that merchant does not receive a reply(Mostly due to Timeout). To use this feature/API, make sure to pass unique value to field - clientReferenceInformation -&gt; transactionId in [/pts/v2/payments](https://developer.cybersource.com/api-reference-assets/index.html#payments_payments) API call and use same transactionId in this API request payload to reverse the payment.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void mitReversalTest() throws ApiException {
+    public void mitReversalTest() throws Exception {
         MitReversalRequest mitReversalRequest = null;
         PtsV2PaymentsReversalsPost201Response response = api.mitReversal(mitReversalRequest);
 

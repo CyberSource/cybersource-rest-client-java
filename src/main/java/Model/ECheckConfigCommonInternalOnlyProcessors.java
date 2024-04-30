@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,6 +42,12 @@ public class ECheckConfigCommonInternalOnlyProcessors {
   @SerializedName("portalSupportedPaytypes")
   private String portalSupportedPaytypes = "CHECK";
 
+  @SerializedName("settlementMethod")
+  private Object settlementMethod = null;
+
+  @SerializedName("verificationLevel")
+  private Object verificationLevel = null;
+
   @SerializedName("setCompletedState")
   private Boolean setCompletedState = false;
 
@@ -54,7 +61,7 @@ public class ECheckConfigCommonInternalOnlyProcessors {
    * @return enableCCS
   **/
   @ApiModelProperty(value = "*NEW* Flag to indicate whether the processor is migrated to the Common Connectivity Services Platform. Applicable for VPC and amexdirect processors. ")
-  public Boolean getEnableCCS() {
+  public Boolean isEnableCCS() {
     return enableCCS;
   }
 
@@ -90,7 +97,7 @@ public class ECheckConfigCommonInternalOnlyProcessors {
    * @return enable15anTransactionReferenceNumber
   **/
   @ApiModelProperty(value = "*NEW* This ensures the transaction reference # contains an identifier that can be viewed in CYBS")
-  public Boolean getEnable15anTransactionReferenceNumber() {
+  public Boolean isEnable15anTransactionReferenceNumber() {
     return enable15anTransactionReferenceNumber;
   }
 
@@ -116,6 +123,42 @@ public class ECheckConfigCommonInternalOnlyProcessors {
     this.portalSupportedPaytypes = portalSupportedPaytypes;
   }
 
+  public ECheckConfigCommonInternalOnlyProcessors settlementMethod(Object settlementMethod) {
+    this.settlementMethod = settlementMethod;
+    return this;
+  }
+
+   /**
+   * *NEW*
+   * @return settlementMethod
+  **/
+  @ApiModelProperty(value = "*NEW*")
+  public Object getSettlementMethod() {
+    return settlementMethod;
+  }
+
+  public void setSettlementMethod(Object settlementMethod) {
+    this.settlementMethod = settlementMethod;
+  }
+
+  public ECheckConfigCommonInternalOnlyProcessors verificationLevel(Object verificationLevel) {
+    this.verificationLevel = verificationLevel;
+    return this;
+  }
+
+   /**
+   * *NEW*
+   * @return verificationLevel
+  **/
+  @ApiModelProperty(value = "*NEW*")
+  public Object getVerificationLevel() {
+    return verificationLevel;
+  }
+
+  public void setVerificationLevel(Object verificationLevel) {
+    this.verificationLevel = verificationLevel;
+  }
+
   public ECheckConfigCommonInternalOnlyProcessors setCompletedState(Boolean setCompletedState) {
     this.setCompletedState = setCompletedState;
     return this;
@@ -126,7 +169,7 @@ public class ECheckConfigCommonInternalOnlyProcessors {
    * @return setCompletedState
   **/
   @ApiModelProperty(value = "*Moved* When set to Yes we will automatically update transactions to a completed status X-number of days after the transaction comes through; if no failure notification is received. When set to No means we will not update transaction status in this manner. For BAMS/Bank of America merchants, they should be set to No unless we are explicitly asked to set a merchant to YES.")
-  public Boolean getSetCompletedState() {
+  public Boolean isSetCompletedState() {
     return setCompletedState;
   }
 
@@ -148,12 +191,14 @@ public class ECheckConfigCommonInternalOnlyProcessors {
         Objects.equals(this.terminalId, echeckConfigCommonInternalOnlyProcessors.terminalId) &&
         Objects.equals(this.enable15anTransactionReferenceNumber, echeckConfigCommonInternalOnlyProcessors.enable15anTransactionReferenceNumber) &&
         Objects.equals(this.portalSupportedPaytypes, echeckConfigCommonInternalOnlyProcessors.portalSupportedPaytypes) &&
+        Objects.equals(this.settlementMethod, echeckConfigCommonInternalOnlyProcessors.settlementMethod) &&
+        Objects.equals(this.verificationLevel, echeckConfigCommonInternalOnlyProcessors.verificationLevel) &&
         Objects.equals(this.setCompletedState, echeckConfigCommonInternalOnlyProcessors.setCompletedState);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableCCS, terminalId, enable15anTransactionReferenceNumber, portalSupportedPaytypes, setCompletedState);
+    return Objects.hash(enableCCS, terminalId, enable15anTransactionReferenceNumber, portalSupportedPaytypes, settlementMethod, verificationLevel, setCompletedState);
   }
 
 
@@ -166,6 +211,8 @@ public class ECheckConfigCommonInternalOnlyProcessors {
     sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
     sb.append("    enable15anTransactionReferenceNumber: ").append(toIndentedString(enable15anTransactionReferenceNumber)).append("\n");
     sb.append("    portalSupportedPaytypes: ").append(toIndentedString(portalSupportedPaytypes)).append("\n");
+    sb.append("    settlementMethod: ").append(toIndentedString(settlementMethod)).append("\n");
+    sb.append("    verificationLevel: ").append(toIndentedString(verificationLevel)).append("\n");
     sb.append("    setCompletedState: ").append(toIndentedString(setCompletedState)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -181,6 +228,6 @@ public class ECheckConfigCommonInternalOnlyProcessors {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

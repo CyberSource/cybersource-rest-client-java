@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.TssV2PostEmvTags200ResponseParsedEMVTagsList;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -99,6 +100,6 @@ public class TssV2PostEmvTags200Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Kmsegressv2keyssymClientReferenceInformation;
 import Model.Kmsegressv2keyssymKeyInformation;
 import com.google.gson.TypeAdapter;
@@ -84,7 +85,7 @@ public class SaveSymEgressKey {
    * Get keyInformation
    * @return keyInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Kmsegressv2keyssymKeyInformation getKeyInformation() {
     return keyInformation;
   }
@@ -136,6 +137,6 @@ public class SaveSymEgressKey {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

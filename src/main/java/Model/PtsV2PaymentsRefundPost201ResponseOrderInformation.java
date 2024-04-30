@@ -14,7 +14,9 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails;
+import Model.PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,8 +31,29 @@ import java.io.IOException;
  */
 
 public class PtsV2PaymentsRefundPost201ResponseOrderInformation {
+  @SerializedName("amountDetails")
+  private PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails amountDetails = null;
+
   @SerializedName("invoiceDetails")
   private PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails invoiceDetails = null;
+
+  public PtsV2PaymentsRefundPost201ResponseOrderInformation amountDetails(PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails amountDetails) {
+    this.amountDetails = amountDetails;
+    return this;
+  }
+
+   /**
+   * Get amountDetails
+   * @return amountDetails
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails getAmountDetails() {
+    return amountDetails;
+  }
+
+  public void setAmountDetails(PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails amountDetails) {
+    this.amountDetails = amountDetails;
+  }
 
   public PtsV2PaymentsRefundPost201ResponseOrderInformation invoiceDetails(PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails invoiceDetails) {
     this.invoiceDetails = invoiceDetails;
@@ -60,12 +83,13 @@ public class PtsV2PaymentsRefundPost201ResponseOrderInformation {
       return false;
     }
     PtsV2PaymentsRefundPost201ResponseOrderInformation ptsV2PaymentsRefundPost201ResponseOrderInformation = (PtsV2PaymentsRefundPost201ResponseOrderInformation) o;
-    return Objects.equals(this.invoiceDetails, ptsV2PaymentsRefundPost201ResponseOrderInformation.invoiceDetails);
+    return Objects.equals(this.amountDetails, ptsV2PaymentsRefundPost201ResponseOrderInformation.amountDetails) &&
+        Objects.equals(this.invoiceDetails, ptsV2PaymentsRefundPost201ResponseOrderInformation.invoiceDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceDetails);
+    return Objects.hash(amountDetails, invoiceDetails);
   }
 
 
@@ -74,6 +98,7 @@ public class PtsV2PaymentsRefundPost201ResponseOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsRefundPost201ResponseOrderInformation {\n");
     
+    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
     sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -89,6 +114,6 @@ public class PtsV2PaymentsRefundPost201ResponseOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

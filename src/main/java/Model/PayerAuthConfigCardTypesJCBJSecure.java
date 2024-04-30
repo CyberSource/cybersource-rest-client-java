@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PayerAuthConfigCardTypesVerifiedByVisaCurrencies;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -68,7 +69,7 @@ public class PayerAuthConfigCardTypesJCBJSecure {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEnabled() {
+  public Boolean isEnabled() {
     return enabled;
   }
 
@@ -145,6 +146,6 @@ public class PayerAuthConfigCardTypesJCBJSecure {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

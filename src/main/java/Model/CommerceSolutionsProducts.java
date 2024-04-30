@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.CommerceSolutionsProductsAccountUpdater;
 import Model.CommerceSolutionsProductsBinLookup;
 import Model.CommerceSolutionsProductsTokenManagement;
@@ -137,6 +138,6 @@ public class CommerceSolutionsProducts {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

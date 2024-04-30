@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Boardingv1registrationsIntegrationInformationOauth2;
 import Model.Boardingv1registrationsIntegrationInformationTenantConfigurations;
 import com.google.gson.TypeAdapter;
@@ -131,6 +132,6 @@ public class Boardingv1registrationsIntegrationInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

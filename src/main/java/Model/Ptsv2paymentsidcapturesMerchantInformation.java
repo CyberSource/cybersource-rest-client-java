@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsMerchantInformationMerchantDescriptor;
 import Model.Ptsv2paymentsMerchantInformationServiceFeeDescriptor;
 import com.google.gson.TypeAdapter;
@@ -206,6 +207,6 @@ public class Ptsv2paymentsidcapturesMerchantInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

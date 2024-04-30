@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponsePaymentInsightsInformation;
 import Model.Ptsv2paymentsHealthCareInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
@@ -789,6 +790,6 @@ public class TssV2TransactionsGet200Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

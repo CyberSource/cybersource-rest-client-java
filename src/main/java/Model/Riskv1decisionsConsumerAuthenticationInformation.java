@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -435,7 +436,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
    * @return defaultCard
   **/
   @ApiModelProperty(value = "Indicates that the card being used is the one designated as the primary payment card for purchase. Recommended for Discover ProtectBuy. ")
-  public Boolean getDefaultCard() {
+  public Boolean isDefaultCard() {
     return defaultCard;
   }
 
@@ -507,7 +508,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
    * @return marketingOptIn
   **/
   @ApiModelProperty(value = "Indicates whether the customer has opted in for marketing offers. Recommended for Discover ProtectBuy. ")
-  public Boolean getMarketingOptIn() {
+  public Boolean isMarketingOptIn() {
     return marketingOptIn;
   }
 
@@ -1032,6 +1033,6 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.VasV2PaymentsPost201ResponseOrderInformationJurisdiction;
 import Model.VasV2PaymentsPost201ResponseOrderInformationTaxDetails;
 import com.google.gson.TypeAdapter;
@@ -200,6 +201,6 @@ public class VasV2PaymentsPost201ResponseOrderInformationLineItems {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

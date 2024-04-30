@@ -13,12 +13,12 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.ReportingV3ReportDefinitionsGet200Response;
 import Model.ReportingV3ReportDefinitionsNameGet200Response;
 import Model.Reportingv3ReportDownloadsGet400Response;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,11 +39,11 @@ public class ReportDefinitionsApiTest {
      *
      * View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/) 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getResourceInfoByReportDefinitionTest() throws ApiException {
+    public void getResourceInfoByReportDefinitionTest() throws Exception {
         String reportDefinitionName = null;
         String subscriptionType = null;
         String reportMimeType = null;
@@ -58,11 +58,11 @@ public class ReportDefinitionsApiTest {
      *
      * View a list of supported reports and their attributes before subscribing to them. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getResourceV2InfoTest() throws ApiException {
+    public void getResourceV2InfoTest() throws Exception {
         String subscriptionType = null;
         String organizationId = null;
         ReportingV3ReportDefinitionsGet200Response response = api.getResourceV2Info(subscriptionType, organizationId);

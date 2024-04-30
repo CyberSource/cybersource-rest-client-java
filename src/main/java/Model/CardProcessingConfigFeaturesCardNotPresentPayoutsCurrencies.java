@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -61,7 +62,7 @@ public class CardProcessingConfigFeaturesCardNotPresentPayoutsCurrencies {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEnabled() {
+  public Boolean isEnabled() {
     return enabled;
   }
 
@@ -79,7 +80,7 @@ public class CardProcessingConfigFeaturesCardNotPresentPayoutsCurrencies {
    * @return enabledCardPresent
   **/
   @ApiModelProperty(value = "Indicates whether the card-present transaction is activated for the selected currency. If both enabledCardPresent and enabledCardNotPresent are set to null, then enabledCardPresent will have the value of enabled. ")
-  public Boolean getEnabledCardPresent() {
+  public Boolean isEnabledCardPresent() {
     return enabledCardPresent;
   }
 
@@ -97,7 +98,7 @@ public class CardProcessingConfigFeaturesCardNotPresentPayoutsCurrencies {
    * @return enabledCardNotPresent
   **/
   @ApiModelProperty(value = "Indicates whether the card-present transaction is activated for the selected currency. If both enabledCardPresent and enabledCardNotPresent are set to null, then enabledCardNotPresent will have the value of enabled. ")
-  public Boolean getEnabledCardNotPresent() {
+  public Boolean isEnabledCardNotPresent() {
     return enabledCardNotPresent;
   }
 
@@ -236,6 +237,6 @@ public class CardProcessingConfigFeaturesCardNotPresentPayoutsCurrencies {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

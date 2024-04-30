@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsPaymentInformationPaymentTypeMethod;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -62,10 +63,10 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
   }
 
    /**
-   * Detailed information about the Payment Type. Possible values: - &#x60;DEBIT&#x60;: Use this value to indicate a PIN debit transaction.  Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. 
+   * In case the APM supports multiple modes of initiation (e.g. Alipay via QR Code or Barcode) 
    * @return subTypeName
   **/
-  @ApiModelProperty(value = "Detailed information about the Payment Type. Possible values: - `DEBIT`: Use this value to indicate a PIN debit transaction.  Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers. ")
+  @ApiModelProperty(value = "In case the APM supports multiple modes of initiation (e.g. Alipay via QR Code or Barcode) ")
   public String getSubTypeName() {
     return subTypeName;
   }
@@ -135,6 +136,6 @@ public class Ptsv2paymentsPaymentInformationPaymentType {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

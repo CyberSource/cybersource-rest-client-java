@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,7 +45,7 @@ public class DmConfigPortfolioControls {
    * @return hideRiskMenus
   **/
   @ApiModelProperty(value = "")
-  public Boolean getHideRiskMenus() {
+  public Boolean isHideRiskMenus() {
     return hideRiskMenus;
   }
 
@@ -62,7 +63,7 @@ public class DmConfigPortfolioControls {
    * @return hideRiskTransactionData
   **/
   @ApiModelProperty(value = "")
-  public Boolean getHideRiskTransactionData() {
+  public Boolean isHideRiskTransactionData() {
     return hideRiskTransactionData;
   }
 
@@ -111,6 +112,6 @@ public class DmConfigPortfolioControls {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

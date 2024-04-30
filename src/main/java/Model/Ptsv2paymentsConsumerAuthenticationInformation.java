@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -404,10 +405,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * This field contains 3DS version that was used for Secured Consumer Authentication (SCA). For example 3DS secure version 1.0.2 or 2.0.0 is used for Secured Consumer Authentication. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 113 , Field: MC AVV Verification—Program Protocol It will contain one of the following values: - &#x60;1&#x60; (3D Secure Version 1.0 (3DS 1.0)) - &#x60;2&#x60; (EMV 3-D Secure (3DS 2.0)) 
+   * This field contains 3DS version that was used for Secured Consumer Authentication (SCA). For example 3DS secure version 1.0.2 or 2.0.0 is used for Secured Consumer Authentication. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 113 , Field: MC AVV Verification—Program Protocol It will contain one of the following values: - &#x60;1&#x60; (3D Secure Version 1.0 (3DS 1.0)) - &#x60;2&#x60; (EMV 3-D Secure (3DS 2.0))  For Cybersource connection through Visanet, below are additional values to be supported.  - &#x60;2.1.0&#x60; (EMV 3D Secure Version 2.1) - &#x60;2.2.0&#x60; (EMV 3D Secure Version 2.2) - &#x60;2.3.0&#x60; (EMV 3D Secure Version 2.3) - &#x60;2.4.0&#x60; (EMV 3D Secure Version 2.4) - &#x60;2.5.0&#x60; (EMV 3D Secure Version 2.5) - &#x60;2.6.0&#x60; (EMV 3D Secure Version 2.6) - &#x60;2.7.0&#x60; (EMV 3D Secure Version 2.7) - &#x60;2.8.0&#x60; (EMV 3D Secure Version 2.8) - &#x60;2.9.0&#x60; (EMV 3D Secure Version 2.9) 
    * @return paSpecificationVersion
   **/
-  @ApiModelProperty(value = "This field contains 3DS version that was used for Secured Consumer Authentication (SCA). For example 3DS secure version 1.0.2 or 2.0.0 is used for Secured Consumer Authentication. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 113 , Field: MC AVV Verification—Program Protocol It will contain one of the following values: - `1` (3D Secure Version 1.0 (3DS 1.0)) - `2` (EMV 3-D Secure (3DS 2.0)) ")
+  @ApiModelProperty(value = "This field contains 3DS version that was used for Secured Consumer Authentication (SCA). For example 3DS secure version 1.0.2 or 2.0.0 is used for Secured Consumer Authentication. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 113 , Field: MC AVV Verification—Program Protocol It will contain one of the following values: - `1` (3D Secure Version 1.0 (3DS 1.0)) - `2` (EMV 3-D Secure (3DS 2.0))  For Cybersource connection through Visanet, below are additional values to be supported.  - `2.1.0` (EMV 3D Secure Version 2.1) - `2.2.0` (EMV 3D Secure Version 2.2) - `2.3.0` (EMV 3D Secure Version 2.3) - `2.4.0` (EMV 3D Secure Version 2.4) - `2.5.0` (EMV 3D Secure Version 2.5) - `2.6.0` (EMV 3D Secure Version 2.6) - `2.7.0` (EMV 3D Secure Version 2.7) - `2.8.0` (EMV 3D Secure Version 2.8) - `2.9.0` (EMV 3D Secure Version 2.9) ")
   public String getPaSpecificationVersion() {
     return paSpecificationVersion;
   }
@@ -696,7 +697,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
    * @return defaultCard
   **/
   @ApiModelProperty(value = "Indicates that the card being used is the one designated as the primary payment card for purchase. Recommended for Discover ProtectBuy. ")
-  public Boolean getDefaultCard() {
+  public Boolean isDefaultCard() {
     return defaultCard;
   }
 
@@ -768,7 +769,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
    * @return marketingOptIn
   **/
   @ApiModelProperty(value = "Indicates whether the customer has opted in for marketing offers. Recommended for Discover ProtectBuy. ")
-  public Boolean getMarketingOptIn() {
+  public Boolean isMarketingOptIn() {
     return marketingOptIn;
   }
 
@@ -1377,6 +1378,6 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

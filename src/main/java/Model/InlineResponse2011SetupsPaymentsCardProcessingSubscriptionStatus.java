@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -84,7 +85,6 @@ public class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {
       }
     }
   }
-
   @SerializedName("status")
   private StatusEnum status = null;
 
@@ -140,7 +140,6 @@ public class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {
       }
     }
   }
-
   @SerializedName("reason")
   private ReasonEnum reason = null;
 
@@ -295,6 +294,6 @@ public class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

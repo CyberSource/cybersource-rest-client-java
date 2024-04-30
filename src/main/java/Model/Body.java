@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Accountupdaterv1batchesIncluded;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -68,7 +69,7 @@ public class Body {
    * Get included
    * @return included
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Accountupdaterv1batchesIncluded getIncluded() {
     return included;
   }
@@ -158,6 +159,6 @@ public class Body {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

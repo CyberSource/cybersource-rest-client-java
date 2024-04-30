@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,6 +43,15 @@ public class Ptsv2paymentsRecipientInformation {
 
   @SerializedName("dateOfBirth")
   private String dateOfBirth = null;
+
+  @SerializedName("beneficiaryId")
+  private String beneficiaryId = null;
+
+  @SerializedName("beneficiaryName")
+  private String beneficiaryName = null;
+
+  @SerializedName("beneficiaryAddress")
+  private String beneficiaryAddress = null;
 
   public Ptsv2paymentsRecipientInformation accountId(String accountId) {
     this.accountId = accountId;
@@ -133,6 +143,60 @@ public class Ptsv2paymentsRecipientInformation {
     this.dateOfBirth = dateOfBirth;
   }
 
+  public Ptsv2paymentsRecipientInformation beneficiaryId(String beneficiaryId) {
+    this.beneficiaryId = beneficiaryId;
+    return this;
+  }
+
+   /**
+   * Only for e-wallets: ID, username, hash or anything uniquely identifying the ultimate beneficiary. 
+   * @return beneficiaryId
+  **/
+  @ApiModelProperty(value = "Only for e-wallets: ID, username, hash or anything uniquely identifying the ultimate beneficiary. ")
+  public String getBeneficiaryId() {
+    return beneficiaryId;
+  }
+
+  public void setBeneficiaryId(String beneficiaryId) {
+    this.beneficiaryId = beneficiaryId;
+  }
+
+  public Ptsv2paymentsRecipientInformation beneficiaryName(String beneficiaryName) {
+    this.beneficiaryName = beneficiaryName;
+    return this;
+  }
+
+   /**
+   * Only for e-wallets: The ultimate beneficiary&#39;s full name. 
+   * @return beneficiaryName
+  **/
+  @ApiModelProperty(value = "Only for e-wallets: The ultimate beneficiary's full name. ")
+  public String getBeneficiaryName() {
+    return beneficiaryName;
+  }
+
+  public void setBeneficiaryName(String beneficiaryName) {
+    this.beneficiaryName = beneficiaryName;
+  }
+
+  public Ptsv2paymentsRecipientInformation beneficiaryAddress(String beneficiaryAddress) {
+    this.beneficiaryAddress = beneficiaryAddress;
+    return this;
+  }
+
+   /**
+   * Only for e-wallets: The ultimate beneficiary&#39;s street address (street, zip code, city), excluding the country. Example: \&quot;Main street 1, 12345, Barcelona 
+   * @return beneficiaryAddress
+  **/
+  @ApiModelProperty(value = "Only for e-wallets: The ultimate beneficiary's street address (street, zip code, city), excluding the country. Example: \"Main street 1, 12345, Barcelona ")
+  public String getBeneficiaryAddress() {
+    return beneficiaryAddress;
+  }
+
+  public void setBeneficiaryAddress(String beneficiaryAddress) {
+    this.beneficiaryAddress = beneficiaryAddress;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,12 +211,15 @@ public class Ptsv2paymentsRecipientInformation {
         Objects.equals(this.lastName, ptsv2paymentsRecipientInformation.lastName) &&
         Objects.equals(this.middleName, ptsv2paymentsRecipientInformation.middleName) &&
         Objects.equals(this.postalCode, ptsv2paymentsRecipientInformation.postalCode) &&
-        Objects.equals(this.dateOfBirth, ptsv2paymentsRecipientInformation.dateOfBirth);
+        Objects.equals(this.dateOfBirth, ptsv2paymentsRecipientInformation.dateOfBirth) &&
+        Objects.equals(this.beneficiaryId, ptsv2paymentsRecipientInformation.beneficiaryId) &&
+        Objects.equals(this.beneficiaryName, ptsv2paymentsRecipientInformation.beneficiaryName) &&
+        Objects.equals(this.beneficiaryAddress, ptsv2paymentsRecipientInformation.beneficiaryAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, lastName, middleName, postalCode, dateOfBirth);
+    return Objects.hash(accountId, lastName, middleName, postalCode, dateOfBirth, beneficiaryId, beneficiaryName, beneficiaryAddress);
   }
 
 
@@ -166,6 +233,9 @@ public class Ptsv2paymentsRecipientInformation {
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    sb.append("    beneficiaryId: ").append(toIndentedString(beneficiaryId)).append("\n");
+    sb.append("    beneficiaryName: ").append(toIndentedString(beneficiaryName)).append("\n");
+    sb.append("    beneficiaryAddress: ").append(toIndentedString(beneficiaryAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -180,6 +250,6 @@ public class Ptsv2paymentsRecipientInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

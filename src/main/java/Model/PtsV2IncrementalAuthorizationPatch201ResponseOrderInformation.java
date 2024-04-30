@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails;
 import Model.PtsV2PaymentsPost201ResponseOrderInformationAmountDetails;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

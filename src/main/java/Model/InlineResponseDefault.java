@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.InlineResponseDefaultLinks;
 import Model.InlineResponseDefaultResponseStatus;
 import com.google.gson.TypeAdapter;
@@ -113,6 +114,6 @@ public class InlineResponseDefault {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

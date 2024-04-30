@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsProcessorInformationReversal;
 import Model.Ptsv2paymentsidreversalsClientReferenceInformation;
 import Model.Ptsv2paymentsidreversalsOrderInformation;
@@ -233,6 +234,6 @@ public class AuthReversalRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

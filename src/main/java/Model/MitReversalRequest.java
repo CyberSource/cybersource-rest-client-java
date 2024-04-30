@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsClientReferenceInformation;
 import Model.Ptsv2paymentsidreversalsOrderInformation;
 import Model.Ptsv2paymentsidreversalsPointOfSaleInformation;
@@ -185,6 +186,6 @@ public class MitReversalRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

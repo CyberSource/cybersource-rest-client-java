@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsProcessingInformationAuthorizationOptions;
 import Model.Ptsv2paymentsProcessingInformationBankTransferOptions;
 import Model.Ptsv2paymentsProcessingInformationCaptureOptions;
@@ -137,6 +138,9 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("payByPointsIndicator")
   private Boolean payByPointsIndicator = null;
 
+  @SerializedName("timeout")
+  private Integer timeout = null;
+
   @SerializedName("isReturnAuthRecordEnabled")
   private Boolean isReturnAuthRecordEnabled = null;
 
@@ -182,7 +186,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return enableEscrowOption
   **/
   @ApiModelProperty(value = "Indicates whether to use the customer's escrow agreement. Possible values: - `true`: yes, use the customer's escrow agreement. - `false`: no, do not use the customer's escrow agreement.  ")
-  public Boolean getEnableEscrowOption() {
+  public Boolean isEnableEscrowOption() {
     return enableEscrowOption;
   }
 
@@ -244,7 +248,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return capture
   **/
   @ApiModelProperty(value = "Indicates whether to also include a capture  in the submitted authorization request or not.  Possible values: - `true`: Include a capture with an authorization request. - `false`: (default) Do not include a capture with an authorization request.  #### Used by **Authorization and Capture** Optional field. ")
-  public Boolean getCapture() {
+  public Boolean isCapture() {
     return capture;
   }
 
@@ -749,12 +753,30 @@ public class Ptsv2paymentsProcessingInformation {
    * @return payByPointsIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates if the transaction is pay by points transaction true: Transaction uses loyalty points false: Transaction does not use loyalty points Default: false ")
-  public Boolean getPayByPointsIndicator() {
+  public Boolean isPayByPointsIndicator() {
     return payByPointsIndicator;
   }
 
   public void setPayByPointsIndicator(Boolean payByPointsIndicator) {
     this.payByPointsIndicator = payByPointsIndicator;
+  }
+
+  public Ptsv2paymentsProcessingInformation timeout(Integer timeout) {
+    this.timeout = timeout;
+    return this;
+  }
+
+   /**
+   * Minutes until a pending MyBank transaction will be timed out. Value must be between 5 and 30. Default is 5. 
+   * @return timeout
+  **/
+  @ApiModelProperty(value = "Minutes until a pending MyBank transaction will be timed out. Value must be between 5 and 30. Default is 5. ")
+  public Integer getTimeout() {
+    return timeout;
+  }
+
+  public void setTimeout(Integer timeout) {
+    this.timeout = timeout;
   }
 
   public Ptsv2paymentsProcessingInformation isReturnAuthRecordEnabled(Boolean isReturnAuthRecordEnabled) {
@@ -767,7 +789,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return isReturnAuthRecordEnabled
   **/
   @ApiModelProperty(value = "Flag that indicates the functionality we are having for merchants for which auth is done through Cybersource but settlement is done by themselves. true: functionality is supported. Processor should send raw processor auth response to Merchant. false: functionality is not supported. Default: false ")
-  public Boolean getIsReturnAuthRecordEnabled() {
+  public Boolean isIsReturnAuthRecordEnabled() {
     return isReturnAuthRecordEnabled;
   }
 
@@ -854,6 +876,7 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.extendedCreditTotalCount, ptsv2paymentsProcessingInformation.extendedCreditTotalCount) &&
         Objects.equals(this.networkRoutingOrder, ptsv2paymentsProcessingInformation.networkRoutingOrder) &&
         Objects.equals(this.payByPointsIndicator, ptsv2paymentsProcessingInformation.payByPointsIndicator) &&
+        Objects.equals(this.timeout, ptsv2paymentsProcessingInformation.timeout) &&
         Objects.equals(this.isReturnAuthRecordEnabled, ptsv2paymentsProcessingInformation.isReturnAuthRecordEnabled) &&
         Objects.equals(this.networkPartnerId, ptsv2paymentsProcessingInformation.networkPartnerId) &&
         Objects.equals(this.paymentType, ptsv2paymentsProcessingInformation.paymentType);
@@ -861,7 +884,7 @@ public class Ptsv2paymentsProcessingInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, isReturnAuthRecordEnabled, networkPartnerId, paymentType);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType);
   }
 
 
@@ -903,6 +926,7 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    extendedCreditTotalCount: ").append(toIndentedString(extendedCreditTotalCount)).append("\n");
     sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
     sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
+    sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
     sb.append("    isReturnAuthRecordEnabled: ").append(toIndentedString(isReturnAuthRecordEnabled)).append("\n");
     sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
@@ -920,6 +944,6 @@ public class Ptsv2paymentsProcessingInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsBuyerInformationPersonalIdentification;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -214,6 +215,6 @@ public class PtsV2PaymentsPost201ResponseBuyerInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.TssV2TransactionsGet200ResponseOrderInformationAmountDetails;
 import Model.TssV2TransactionsGet200ResponseOrderInformationBillTo;
 import Model.TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails;
@@ -219,6 +220,6 @@ public class TssV2TransactionsGet200ResponseOrderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

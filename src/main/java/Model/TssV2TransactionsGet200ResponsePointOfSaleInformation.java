@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsidreversalsPointOfSaleInformationEmv;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -183,6 +184,6 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

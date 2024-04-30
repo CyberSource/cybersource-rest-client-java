@@ -14,7 +14,8 @@
 package Model;
 
 import java.util.Objects;
-import Model.PaymentsProductsCardProcessingSubscriptionInformationFeatures;
+import java.util.Arrays;
+import Model.PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -83,12 +84,11 @@ public class PaymentsProductsDigitalPaymentsSubscriptionInformation {
       }
     }
   }
-
   @SerializedName("selfServiceability")
   private SelfServiceabilityEnum selfServiceability = SelfServiceabilityEnum.NOT_SELF_SERVICEABLE;
 
   @SerializedName("features")
-  private Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> features = null;
+  private Map<String, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures> features = null;
 
   public PaymentsProductsDigitalPaymentsSubscriptionInformation enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -100,7 +100,7 @@ public class PaymentsProductsDigitalPaymentsSubscriptionInformation {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEnabled() {
+  public Boolean isEnabled() {
     return enabled;
   }
 
@@ -126,14 +126,14 @@ public class PaymentsProductsDigitalPaymentsSubscriptionInformation {
     this.selfServiceability = selfServiceability;
   }
 
-  public PaymentsProductsDigitalPaymentsSubscriptionInformation features(Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> features) {
+  public PaymentsProductsDigitalPaymentsSubscriptionInformation features(Map<String, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures> features) {
     this.features = features;
     return this;
   }
 
-  public PaymentsProductsDigitalPaymentsSubscriptionInformation putFeaturesItem(String key, PaymentsProductsCardProcessingSubscriptionInformationFeatures featuresItem) {
+  public PaymentsProductsDigitalPaymentsSubscriptionInformation putFeaturesItem(String key, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures featuresItem) {
     if (this.features == null) {
-      this.features = new HashMap<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures>();
+      this.features = new HashMap<String, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures>();
     }
     this.features.put(key, featuresItem);
     return this;
@@ -144,11 +144,11 @@ public class PaymentsProductsDigitalPaymentsSubscriptionInformation {
    * @return features
   **/
   @ApiModelProperty(value = "Allowed values are; <table>    <tr>       <td>visaCheckout</td>    </tr>    <tr>       <td>applePay</td>    </tr>    <tr>       <td>samsungPay</td>    </tr>    <tr>        <td>googlePay</td>     </tr> </table> ")
-  public Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> getFeatures() {
+  public Map<String, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures> getFeatures() {
     return features;
   }
 
-  public void setFeatures(Map<String, PaymentsProductsCardProcessingSubscriptionInformationFeatures> features) {
+  public void setFeatures(Map<String, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures> features) {
     this.features = features;
   }
 
@@ -195,6 +195,6 @@ public class PaymentsProductsDigitalPaymentsSubscriptionInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

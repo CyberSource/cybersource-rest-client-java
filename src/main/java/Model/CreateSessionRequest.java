@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentreferencesAgreementInformation;
 import Model.Ptsv2paymentreferencesBuyerInformation;
 import Model.Ptsv2paymentreferencesDeviceInformation;
@@ -339,6 +340,6 @@ public class CreateSessionRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

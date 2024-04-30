@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsTravelInformationLodgingRoom;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -156,6 +157,18 @@ public class Ptsv2paymentsTravelInformationLodging {
 
   @SerializedName("internetAccessCost")
   private String internetAccessCost = null;
+
+  @SerializedName("name")
+  private String name = null;
+
+  @SerializedName("hotelName")
+  private String hotelName = null;
+
+  @SerializedName("checkInDateTime")
+  private String checkInDateTime = null;
+
+  @SerializedName("checkOutDateTime")
+  private String checkOutDateTime = null;
 
   public Ptsv2paymentsTravelInformationLodging checkInDate(String checkInDate) {
     this.checkInDate = checkInDate;
@@ -925,6 +938,78 @@ public class Ptsv2paymentsTravelInformationLodging {
     this.internetAccessCost = internetAccessCost;
   }
 
+  public Ptsv2paymentsTravelInformationLodging name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Name of the hotel for which the reservation is for. Mandatory in case the merchant&#39;s business type is Hotel. 
+   * @return name
+  **/
+  @ApiModelProperty(value = "Name of the hotel for which the reservation is for. Mandatory in case the merchant's business type is Hotel. ")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Ptsv2paymentsTravelInformationLodging hotelName(String hotelName) {
+    this.hotelName = hotelName;
+    return this;
+  }
+
+   /**
+   * The name of the hotel for which the reservation was made. 
+   * @return hotelName
+  **/
+  @ApiModelProperty(value = "The name of the hotel for which the reservation was made. ")
+  public String getHotelName() {
+    return hotelName;
+  }
+
+  public void setHotelName(String hotelName) {
+    this.hotelName = hotelName;
+  }
+
+  public Ptsv2paymentsTravelInformationLodging checkInDateTime(String checkInDateTime) {
+    this.checkInDateTime = checkInDateTime;
+    return this;
+  }
+
+   /**
+   * The date of the check-in in GMT+8 offset. 
+   * @return checkInDateTime
+  **/
+  @ApiModelProperty(value = "The date of the check-in in GMT+8 offset. ")
+  public String getCheckInDateTime() {
+    return checkInDateTime;
+  }
+
+  public void setCheckInDateTime(String checkInDateTime) {
+    this.checkInDateTime = checkInDateTime;
+  }
+
+  public Ptsv2paymentsTravelInformationLodging checkOutDateTime(String checkOutDateTime) {
+    this.checkOutDateTime = checkOutDateTime;
+    return this;
+  }
+
+   /**
+   * The date of the check-out in GMT+8 offset. 
+   * @return checkOutDateTime
+  **/
+  @ApiModelProperty(value = "The date of the check-out in GMT+8 offset. ")
+  public String getCheckOutDateTime() {
+    return checkOutDateTime;
+  }
+
+  public void setCheckOutDateTime(String checkOutDateTime) {
+    this.checkOutDateTime = checkOutDateTime;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -976,12 +1061,16 @@ public class Ptsv2paymentsTravelInformationLodging {
         Objects.equals(this.banquestCost, ptsv2paymentsTravelInformationLodging.banquestCost) &&
         Objects.equals(this.nonRoomTaxAmount, ptsv2paymentsTravelInformationLodging.nonRoomTaxAmount) &&
         Objects.equals(this.earlyCheckOutCost, ptsv2paymentsTravelInformationLodging.earlyCheckOutCost) &&
-        Objects.equals(this.internetAccessCost, ptsv2paymentsTravelInformationLodging.internetAccessCost);
+        Objects.equals(this.internetAccessCost, ptsv2paymentsTravelInformationLodging.internetAccessCost) &&
+        Objects.equals(this.name, ptsv2paymentsTravelInformationLodging.name) &&
+        Objects.equals(this.hotelName, ptsv2paymentsTravelInformationLodging.hotelName) &&
+        Objects.equals(this.checkInDateTime, ptsv2paymentsTravelInformationLodging.checkInDateTime) &&
+        Objects.equals(this.checkOutDateTime, ptsv2paymentsTravelInformationLodging.checkOutDateTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(checkInDate, checkOutDate, room, smokingPreference, numberOfRooms, numberOfGuests, roomBedType, roomTaxType, roomRateType, guestName, customerServicePhoneNumber, corporateClientCode, additionalDiscountAmount, roomLocation, specialProgramCode, totalTaxAmount, prepaidCost, foodAndBeverageCost, roomTaxAmount, adjustmentAmount, phoneCost, restaurantCost, roomServiceCost, miniBarCost, laundryCost, miscellaneousCost, giftShopCost, movieCost, healthClubCost, valetParkingCost, cashDisbursementCost, nonRoomCost, businessCenterCost, loungeBarCost, transportationCost, gratuityAmount, conferenceRoomCost, audioVisualCost, banquestCost, nonRoomTaxAmount, earlyCheckOutCost, internetAccessCost);
+    return Objects.hash(checkInDate, checkOutDate, room, smokingPreference, numberOfRooms, numberOfGuests, roomBedType, roomTaxType, roomRateType, guestName, customerServicePhoneNumber, corporateClientCode, additionalDiscountAmount, roomLocation, specialProgramCode, totalTaxAmount, prepaidCost, foodAndBeverageCost, roomTaxAmount, adjustmentAmount, phoneCost, restaurantCost, roomServiceCost, miniBarCost, laundryCost, miscellaneousCost, giftShopCost, movieCost, healthClubCost, valetParkingCost, cashDisbursementCost, nonRoomCost, businessCenterCost, loungeBarCost, transportationCost, gratuityAmount, conferenceRoomCost, audioVisualCost, banquestCost, nonRoomTaxAmount, earlyCheckOutCost, internetAccessCost, name, hotelName, checkInDateTime, checkOutDateTime);
   }
 
 
@@ -1032,6 +1121,10 @@ public class Ptsv2paymentsTravelInformationLodging {
     sb.append("    nonRoomTaxAmount: ").append(toIndentedString(nonRoomTaxAmount)).append("\n");
     sb.append("    earlyCheckOutCost: ").append(toIndentedString(earlyCheckOutCost)).append("\n");
     sb.append("    internetAccessCost: ").append(toIndentedString(internetAccessCost)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    hotelName: ").append(toIndentedString(hotelName)).append("\n");
+    sb.append("    checkInDateTime: ").append(toIndentedString(checkInDateTime)).append("\n");
+    sb.append("    checkOutDateTime: ").append(toIndentedString(checkOutDateTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1046,6 +1139,6 @@ public class Ptsv2paymentsTravelInformationLodging {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

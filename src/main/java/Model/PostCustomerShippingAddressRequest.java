@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Tmsv2customersEmbeddedDefaultShippingAddressLinks;
 import Model.Tmsv2customersEmbeddedDefaultShippingAddressMetadata;
 import Model.Tmsv2customersEmbeddedDefaultShippingAddressShipTo;
@@ -92,7 +93,7 @@ public class PostCustomerShippingAddressRequest {
    * @return _default
   **/
   @ApiModelProperty(value = "Flag that indicates whether customer shipping address is the dafault. Possible Values:  - `true`: Shipping Address is customer's default.  - `false`: Shipping Address is not customer's default. ")
-  public Boolean getDefault() {
+  public Boolean isDefault() {
     return _default;
   }
 
@@ -183,6 +184,6 @@ public class PostCustomerShippingAddressRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

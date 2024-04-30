@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Enum: ReasonEnum
 Name | Value
 ---- | -----
-ERROR | &quot;SYSTEM_ERROR&quot;
+SYSTEM_ERROR | &quot;SYSTEM_ERROR&quot;
 
 
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.CreateSubscriptionResponseSubscriptionInformation;
 import Model.GetAllSubscriptionsResponseLinks;
 import com.google.gson.TypeAdapter;
@@ -182,6 +183,6 @@ public class UpdateSubscriptionResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

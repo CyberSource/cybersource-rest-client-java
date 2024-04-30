@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.ShippingAddressListForCustomerEmbedded;
 import Model.ShippingAddressListForCustomerLinks;
 import com.google.gson.TypeAdapter;
@@ -170,6 +171,6 @@ public class ShippingAddressListForCustomer {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

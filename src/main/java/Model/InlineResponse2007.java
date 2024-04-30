@@ -14,9 +14,10 @@
 package Model;
 
 import java.util.Objects;
-import Model.InlineResponse2005EmbeddedTotals;
-import Model.InlineResponse2006Billing;
-import Model.InlineResponse2007Records;
+import java.util.Arrays;
+import Model.InlineResponse2006EmbeddedTotals;
+import Model.InlineResponse2007Billing;
+import Model.InlineResponse2007Links;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,78 +26,58 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * InlineResponse2007
  */
 
 public class InlineResponse2007 {
-  @SerializedName("version")
-  private String version = null;
-
-  @SerializedName("reportCreatedDate")
-  private String reportCreatedDate = null;
+  @SerializedName("_links")
+  private InlineResponse2007Links links = null;
 
   @SerializedName("batchId")
   private String batchId = null;
 
-  @SerializedName("batchSource")
-  private String batchSource = null;
-
-  @SerializedName("batchCaEndpoints")
-  private String batchCaEndpoints = null;
-
   @SerializedName("batchCreatedDate")
   private String batchCreatedDate = null;
+
+  @SerializedName("batchSource")
+  private String batchSource = null;
 
   @SerializedName("merchantReference")
   private String merchantReference = null;
 
+  @SerializedName("batchCaEndpoints")
+  private String batchCaEndpoints = null;
+
+  @SerializedName("status")
+  private String status = null;
+
   @SerializedName("totals")
-  private InlineResponse2005EmbeddedTotals totals = null;
+  private InlineResponse2006EmbeddedTotals totals = null;
 
   @SerializedName("billing")
-  private InlineResponse2006Billing billing = null;
+  private InlineResponse2007Billing billing = null;
 
-  @SerializedName("records")
-  private List<InlineResponse2007Records> records = null;
+  @SerializedName("description")
+  private String description = null;
 
-  public InlineResponse2007 version(String version) {
-    this.version = version;
+  public InlineResponse2007 links(InlineResponse2007Links links) {
+    this.links = links;
     return this;
   }
 
    /**
-   * Get version
-   * @return version
+   * Get links
+   * @return links
   **/
-  @ApiModelProperty(example = "1.0", value = "")
-  public String getVersion() {
-    return version;
+  @ApiModelProperty(value = "")
+  public InlineResponse2007Links getLinks() {
+    return links;
   }
 
-  public void setVersion(String version) {
-    this.version = version;
-  }
-
-  public InlineResponse2007 reportCreatedDate(String reportCreatedDate) {
-    this.reportCreatedDate = reportCreatedDate;
-    return this;
-  }
-
-   /**
-   * ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
-   * @return reportCreatedDate
-  **/
-  @ApiModelProperty(example = "2018-05-22T14.38.57Z", value = "ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ")
-  public String getReportCreatedDate() {
-    return reportCreatedDate;
-  }
-
-  public void setReportCreatedDate(String reportCreatedDate) {
-    this.reportCreatedDate = reportCreatedDate;
+  public void setLinks(InlineResponse2007Links links) {
+    this.links = links;
   }
 
   public InlineResponse2007 batchId(String batchId) {
@@ -117,42 +98,6 @@ public class InlineResponse2007 {
     this.batchId = batchId;
   }
 
-  public InlineResponse2007 batchSource(String batchSource) {
-    this.batchSource = batchSource;
-    return this;
-  }
-
-   /**
-   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
-   * @return batchSource
-  **/
-  @ApiModelProperty(value = "Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE ")
-  public String getBatchSource() {
-    return batchSource;
-  }
-
-  public void setBatchSource(String batchSource) {
-    this.batchSource = batchSource;
-  }
-
-  public InlineResponse2007 batchCaEndpoints(String batchCaEndpoints) {
-    this.batchCaEndpoints = batchCaEndpoints;
-    return this;
-  }
-
-   /**
-   * Get batchCaEndpoints
-   * @return batchCaEndpoints
-  **/
-  @ApiModelProperty(example = "VISA,MASTERCARD", value = "")
-  public String getBatchCaEndpoints() {
-    return batchCaEndpoints;
-  }
-
-  public void setBatchCaEndpoints(String batchCaEndpoints) {
-    this.batchCaEndpoints = batchCaEndpoints;
-  }
-
   public InlineResponse2007 batchCreatedDate(String batchCreatedDate) {
     this.batchCreatedDate = batchCreatedDate;
     return this;
@@ -169,6 +114,24 @@ public class InlineResponse2007 {
 
   public void setBatchCreatedDate(String batchCreatedDate) {
     this.batchCreatedDate = batchCreatedDate;
+  }
+
+  public InlineResponse2007 batchSource(String batchSource) {
+    this.batchSource = batchSource;
+    return this;
+  }
+
+   /**
+   * Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE 
+   * @return batchSource
+  **/
+  @ApiModelProperty(value = "Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE ")
+  public String getBatchSource() {
+    return batchSource;
+  }
+
+  public void setBatchSource(String batchSource) {
+    this.batchSource = batchSource;
   }
 
   public InlineResponse2007 merchantReference(String merchantReference) {
@@ -189,7 +152,43 @@ public class InlineResponse2007 {
     this.merchantReference = merchantReference;
   }
 
-  public InlineResponse2007 totals(InlineResponse2005EmbeddedTotals totals) {
+  public InlineResponse2007 batchCaEndpoints(String batchCaEndpoints) {
+    this.batchCaEndpoints = batchCaEndpoints;
+    return this;
+  }
+
+   /**
+   * Get batchCaEndpoints
+   * @return batchCaEndpoints
+  **/
+  @ApiModelProperty(example = "VISA,MASTERCARD", value = "")
+  public String getBatchCaEndpoints() {
+    return batchCaEndpoints;
+  }
+
+  public void setBatchCaEndpoints(String batchCaEndpoints) {
+    this.batchCaEndpoints = batchCaEndpoints;
+  }
+
+  public InlineResponse2007 status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED 
+   * @return status
+  **/
+  @ApiModelProperty(value = "Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED ")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public InlineResponse2007 totals(InlineResponse2006EmbeddedTotals totals) {
     this.totals = totals;
     return this;
   }
@@ -199,15 +198,15 @@ public class InlineResponse2007 {
    * @return totals
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2005EmbeddedTotals getTotals() {
+  public InlineResponse2006EmbeddedTotals getTotals() {
     return totals;
   }
 
-  public void setTotals(InlineResponse2005EmbeddedTotals totals) {
+  public void setTotals(InlineResponse2006EmbeddedTotals totals) {
     this.totals = totals;
   }
 
-  public InlineResponse2007 billing(InlineResponse2006Billing billing) {
+  public InlineResponse2007 billing(InlineResponse2007Billing billing) {
     this.billing = billing;
     return this;
   }
@@ -217,38 +216,30 @@ public class InlineResponse2007 {
    * @return billing
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2006Billing getBilling() {
+  public InlineResponse2007Billing getBilling() {
     return billing;
   }
 
-  public void setBilling(InlineResponse2006Billing billing) {
+  public void setBilling(InlineResponse2007Billing billing) {
     this.billing = billing;
   }
 
-  public InlineResponse2007 records(List<InlineResponse2007Records> records) {
-    this.records = records;
-    return this;
-  }
-
-  public InlineResponse2007 addRecordsItem(InlineResponse2007Records recordsItem) {
-    if (this.records == null) {
-      this.records = new ArrayList<InlineResponse2007Records>();
-    }
-    this.records.add(recordsItem);
+  public InlineResponse2007 description(String description) {
+    this.description = description;
     return this;
   }
 
    /**
-   * Get records
-   * @return records
+   * Get description
+   * @return description
   **/
-  @ApiModelProperty(value = "")
-  public List<InlineResponse2007Records> getRecords() {
-    return records;
+  @ApiModelProperty(example = "Your batch has been received, and is being checked for errors.", value = "")
+  public String getDescription() {
+    return description;
   }
 
-  public void setRecords(List<InlineResponse2007Records> records) {
-    this.records = records;
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 
@@ -261,21 +252,21 @@ public class InlineResponse2007 {
       return false;
     }
     InlineResponse2007 inlineResponse2007 = (InlineResponse2007) o;
-    return Objects.equals(this.version, inlineResponse2007.version) &&
-        Objects.equals(this.reportCreatedDate, inlineResponse2007.reportCreatedDate) &&
+    return Objects.equals(this.links, inlineResponse2007.links) &&
         Objects.equals(this.batchId, inlineResponse2007.batchId) &&
-        Objects.equals(this.batchSource, inlineResponse2007.batchSource) &&
-        Objects.equals(this.batchCaEndpoints, inlineResponse2007.batchCaEndpoints) &&
         Objects.equals(this.batchCreatedDate, inlineResponse2007.batchCreatedDate) &&
+        Objects.equals(this.batchSource, inlineResponse2007.batchSource) &&
         Objects.equals(this.merchantReference, inlineResponse2007.merchantReference) &&
+        Objects.equals(this.batchCaEndpoints, inlineResponse2007.batchCaEndpoints) &&
+        Objects.equals(this.status, inlineResponse2007.status) &&
         Objects.equals(this.totals, inlineResponse2007.totals) &&
         Objects.equals(this.billing, inlineResponse2007.billing) &&
-        Objects.equals(this.records, inlineResponse2007.records);
+        Objects.equals(this.description, inlineResponse2007.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, reportCreatedDate, batchId, batchSource, batchCaEndpoints, batchCreatedDate, merchantReference, totals, billing, records);
+    return Objects.hash(links, batchId, batchCreatedDate, batchSource, merchantReference, batchCaEndpoints, status, totals, billing, description);
   }
 
 
@@ -284,16 +275,16 @@ public class InlineResponse2007 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2007 {\n");
     
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    reportCreatedDate: ").append(toIndentedString(reportCreatedDate)).append("\n");
+    sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
-    sb.append("    batchSource: ").append(toIndentedString(batchSource)).append("\n");
-    sb.append("    batchCaEndpoints: ").append(toIndentedString(batchCaEndpoints)).append("\n");
     sb.append("    batchCreatedDate: ").append(toIndentedString(batchCreatedDate)).append("\n");
+    sb.append("    batchSource: ").append(toIndentedString(batchSource)).append("\n");
     sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
+    sb.append("    batchCaEndpoints: ").append(toIndentedString(batchCaEndpoints)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
     sb.append("    billing: ").append(toIndentedString(billing)).append("\n");
-    sb.append("    records: ").append(toIndentedString(records)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -308,6 +299,6 @@ public class InlineResponse2007 {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

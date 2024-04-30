@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -60,7 +61,7 @@ public class SAConfigNotificationsCustomerNotifications {
    * @return customReceiptPageEnabled
   **/
   @ApiModelProperty(value = "Toggles the custom receipt page, where merchants can receive the results of the transaction and display appropriate messaging. Usually set by web developers integrating to Secure Acceptance.")
-  public Boolean getCustomReceiptPageEnabled() {
+  public Boolean isCustomReceiptPageEnabled() {
     return customReceiptPageEnabled;
   }
 
@@ -96,7 +97,7 @@ public class SAConfigNotificationsCustomerNotifications {
    * @return customerReceiptEmailEnabled
   **/
   @ApiModelProperty(value = "Toggles an email receipt sent to the payer's email address on payment success.")
-  public Boolean getCustomerReceiptEmailEnabled() {
+  public Boolean isCustomerReceiptEmailEnabled() {
     return customerReceiptEmailEnabled;
   }
 
@@ -150,7 +151,7 @@ public class SAConfigNotificationsCustomerNotifications {
    * @return customCancelPageEnabled
   **/
   @ApiModelProperty(value = "Toggles the custom cancel page, where merchants can receive notice that the payer has canceled, and display appropriate messaging and direction. Usually set by web developers integrating to Secure Acceptance.")
-  public Boolean getCustomCancelPageEnabled() {
+  public Boolean isCustomCancelPageEnabled() {
     return customCancelPageEnabled;
   }
 
@@ -168,7 +169,7 @@ public class SAConfigNotificationsCustomerNotifications {
    * @return notificationReceiptEmailEnabled
   **/
   @ApiModelProperty(value = "Toggles whether merchant receives a copy of the payer's receipt email.")
-  public Boolean getNotificationReceiptEmailEnabled() {
+  public Boolean isNotificationReceiptEmailEnabled() {
     return notificationReceiptEmailEnabled;
   }
 
@@ -227,6 +228,6 @@ public class SAConfigNotificationsCustomerNotifications {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

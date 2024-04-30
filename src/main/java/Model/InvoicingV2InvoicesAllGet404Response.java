@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -191,6 +192,6 @@ public class InvoicingV2InvoicesAllGet404Response {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

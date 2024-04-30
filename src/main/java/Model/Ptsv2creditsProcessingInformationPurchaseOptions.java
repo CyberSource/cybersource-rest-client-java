@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -41,7 +42,7 @@ public class Ptsv2creditsProcessingInformationPurchaseOptions {
    * @return isElectronicBenefitsTransfer
   **/
   @ApiModelProperty(value = "Flag that indicates whether this transaction is an EBT transaction. Possible values: - `true` - `false`  #### PIN debit Required field for EBT and EBT voucher transactions that use PIN debit credit or PIN debit purchase; otherwise, not used. ")
-  public Boolean getIsElectronicBenefitsTransfer() {
+  public Boolean isIsElectronicBenefitsTransfer() {
     return isElectronicBenefitsTransfer;
   }
 
@@ -88,6 +89,6 @@ public class Ptsv2creditsProcessingInformationPurchaseOptions {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv1pushfundstransferSenderInformationAccount;
 import Model.Ptsv1pushfundstransferSenderInformationPaymentInformation;
 import Model.Ptsv1pushfundstransferSenderInformationPersonalIdentification;
@@ -459,6 +460,6 @@ public class Ptsv1pushfundstransferSenderInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

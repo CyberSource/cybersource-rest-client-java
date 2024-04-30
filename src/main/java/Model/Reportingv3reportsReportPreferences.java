@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,7 +46,7 @@ public class Reportingv3reportsReportPreferences {
    * @return signedAmounts
   **/
   @ApiModelProperty(value = "Indicator to determine whether negative sign infront of amount for all refunded transaction")
-  public Boolean getSignedAmounts() {
+  public Boolean isSignedAmounts() {
     return signedAmounts;
   }
 
@@ -112,6 +113,6 @@ public class Reportingv3reportsReportPreferences {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

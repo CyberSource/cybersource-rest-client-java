@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -36,6 +37,18 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
 
   @SerializedName("currency")
   private String currency = null;
+
+  @SerializedName("settlementAmount")
+  private String settlementAmount = null;
+
+  @SerializedName("settlementCurrency")
+  private String settlementCurrency = null;
+
+  @SerializedName("originalAmount")
+  private String originalAmount = null;
+
+  @SerializedName("originalCurrency")
+  private String originalCurrency = null;
 
   @SerializedName("processorTransactionFee")
   private String processorTransactionFee = null;
@@ -104,6 +117,78 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
 
   public void setCurrency(String currency) {
     this.currency = currency;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails settlementAmount(String settlementAmount) {
+    this.settlementAmount = settlementAmount;
+    return this;
+  }
+
+   /**
+   * This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder&#39;s account. This field is returned for OCT transactions. 
+   * @return settlementAmount
+  **/
+  @ApiModelProperty(value = "This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder's account. This field is returned for OCT transactions. ")
+  public String getSettlementAmount() {
+    return settlementAmount;
+  }
+
+  public void setSettlementAmount(String settlementAmount) {
+    this.settlementAmount = settlementAmount;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails settlementCurrency(String settlementCurrency) {
+    this.settlementCurrency = settlementCurrency;
+    return this;
+  }
+
+   /**
+   * This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder&#39;s account. This field is returned for OCT transactions. 
+   * @return settlementCurrency
+  **/
+  @ApiModelProperty(value = "This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder's account. This field is returned for OCT transactions. ")
+  public String getSettlementCurrency() {
+    return settlementCurrency;
+  }
+
+  public void setSettlementCurrency(String settlementCurrency) {
+    this.settlementCurrency = settlementCurrency;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails originalAmount(String originalAmount) {
+    this.originalAmount = originalAmount;
+    return this;
+  }
+
+   /**
+   * Amount in your original local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places. 
+   * @return originalAmount
+  **/
+  @ApiModelProperty(value = "Amount in your original local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places. ")
+  public String getOriginalAmount() {
+    return originalAmount;
+  }
+
+  public void setOriginalAmount(String originalAmount) {
+    this.originalAmount = originalAmount;
+  }
+
+  public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails originalCurrency(String originalCurrency) {
+    this.originalCurrency = originalCurrency;
+    return this;
+  }
+
+   /**
+   * Your local pricing currency code.  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) 
+   * @return originalCurrency
+  **/
+  @ApiModelProperty(value = "Your local pricing currency code.  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) ")
+  public String getOriginalCurrency() {
+    return originalCurrency;
+  }
+
+  public void setOriginalCurrency(String originalCurrency) {
+    this.originalCurrency = originalCurrency;
   }
 
   public PtsV2PaymentsPost201ResponseOrderInformationAmountDetails processorTransactionFee(String processorTransactionFee) {
@@ -209,6 +294,10 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
     return Objects.equals(this.totalAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.totalAmount) &&
         Objects.equals(this.authorizedAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.authorizedAmount) &&
         Objects.equals(this.currency, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.currency) &&
+        Objects.equals(this.settlementAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.settlementAmount) &&
+        Objects.equals(this.settlementCurrency, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.settlementCurrency) &&
+        Objects.equals(this.originalAmount, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.originalAmount) &&
+        Objects.equals(this.originalCurrency, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.originalCurrency) &&
         Objects.equals(this.processorTransactionFee, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.processorTransactionFee) &&
         Objects.equals(this.exchangeRate, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.exchangeRate) &&
         Objects.equals(this.foreignCurrency, ptsV2PaymentsPost201ResponseOrderInformationAmountDetails.foreignCurrency) &&
@@ -218,7 +307,7 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, authorizedAmount, currency, processorTransactionFee, exchangeRate, foreignCurrency, foreignAmount, discountAmount);
+    return Objects.hash(totalAmount, authorizedAmount, currency, settlementAmount, settlementCurrency, originalAmount, originalCurrency, processorTransactionFee, exchangeRate, foreignCurrency, foreignAmount, discountAmount);
   }
 
 
@@ -230,6 +319,10 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
     sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("    authorizedAmount: ").append(toIndentedString(authorizedAmount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
+    sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
+    sb.append("    originalAmount: ").append(toIndentedString(originalAmount)).append("\n");
+    sb.append("    originalCurrency: ").append(toIndentedString(originalCurrency)).append("\n");
     sb.append("    processorTransactionFee: ").append(toIndentedString(processorTransactionFee)).append("\n");
     sb.append("    exchangeRate: ").append(toIndentedString(exchangeRate)).append("\n");
     sb.append("    foreignCurrency: ").append(toIndentedString(foreignCurrency)).append("\n");
@@ -249,6 +342,6 @@ public class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

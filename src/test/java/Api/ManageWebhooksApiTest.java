@@ -13,15 +13,15 @@
 
 package Api;
 
-import Invokers.ApiException;
 import Model.InlineResponse2004;
+import Model.InlineResponse2005;
 import Model.InlineResponse2014;
 import Model.InlineResponse4042;
-import Model.ReplayWebhooksRequest;
 import Model.SaveAsymEgressKey;
 import Model.UpdateWebhookRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,11 +42,11 @@ public class ManageWebhooksApiTest {
      *
      * Delete the webhook. Please note that deleting a particular webhook does not delete the history of the webhook notifications.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void deleteWebhookSubscriptionTest() throws ApiException {
+    public void deleteWebhookSubscriptionTest() throws Exception {
         String webhookId = null;
         api.deleteWebhookSubscription(webhookId);
 
@@ -58,13 +58,13 @@ public class ManageWebhooksApiTest {
      *
      * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getWebhookSubscriptionByIdTest() throws ApiException {
+    public void getWebhookSubscriptionByIdTest() throws Exception {
         String webhookId = null;
-        InlineResponse2004 response = api.getWebhookSubscriptionById(webhookId);
+        InlineResponse2005 response = api.getWebhookSubscriptionById(webhookId);
 
         // TODO: test validations
     }
@@ -74,11 +74,11 @@ public class ManageWebhooksApiTest {
      *
      * Retrieve a list of all previously created webhooks.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void getWebhookSubscriptionsByOrgTest() throws ApiException {
+    public void getWebhookSubscriptionsByOrgTest() throws Exception {
         String organizationId = null;
         String productId = null;
         String eventType = null;
@@ -88,32 +88,15 @@ public class ManageWebhooksApiTest {
     }
     
     /**
-     * Replay Previous Webhooks
-     *
-     * Initiate a webhook replay request to replay transactions that happened in the past.  Cannot execute more than 1 replay request at a time. While one request is processing, you will not be allowed to execute another replay.  The difference between Start and End time cannot exceed a 24 hour window, and 1 month is the farthest date back that is eligible for replay. 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void replayPreviousWebhooksTest() throws ApiException {
-        String webhookId = null;
-        ReplayWebhooksRequest replayWebhooksRequest = null;
-        api.replayPreviousWebhooks(webhookId, replayWebhooksRequest);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Message Level Encryption
      *
      * Store and manage certificates that will be used to preform Message Level Encryption (MLE). Each new webhook will need its own unique asymmetric certificate. You can either use a digital certificate issued/signed by a CA or self-sign your own using the documentation available on the Developer Guide. 
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void saveAsymEgressKeyTest() throws ApiException {
+    public void saveAsymEgressKeyTest() throws Exception {
         String vCSenderOrganizationId = null;
         String vCPermissions = null;
         SaveAsymEgressKey saveAsymEgressKey = null;
@@ -128,11 +111,11 @@ public class ManageWebhooksApiTest {
      *
      * Update the webhook subscription using PATCH.
      *
-     * @throws ApiException
+     * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void updateWebhookSubscriptionTest() throws ApiException {
+    public void updateWebhookSubscriptionTest() throws Exception {
         String webhookId = null;
         UpdateWebhookRequest updateWebhookRequest = null;
         api.updateWebhookSubscription(webhookId, updateWebhookRequest);

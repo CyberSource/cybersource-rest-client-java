@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.Ptsv2paymentsProcessorInformationAuthorizationOptions;
 import Model.Ptsv2paymentsProcessorInformationReversal;
 import com.google.gson.TypeAdapter;
@@ -137,6 +138,6 @@ public class Ptsv2paymentsProcessorInformation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

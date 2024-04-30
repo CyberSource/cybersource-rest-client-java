@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.GetAllPlansResponseOrderInformation;
 import Model.GetAllPlansResponsePlanInformation;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseLinks;
@@ -161,6 +162,6 @@ public class GetAllPlansResponsePlans {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

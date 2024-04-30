@@ -14,6 +14,7 @@
 package Model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import Model.SAConfigCheckout;
 import Model.SAConfigContactInformation;
 import Model.SAConfigNotifications;
@@ -232,6 +233,6 @@ public class SAConfig {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 
