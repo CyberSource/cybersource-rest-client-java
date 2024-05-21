@@ -62,13 +62,13 @@ public class TransientTokenDataApi {
 
     /**
      * Build call for getPaymentCredentialsForTransientToken
-     * @param jti The jti field contained within the Transient token returned from a successful Unified Checkout transaction  (required)
+     * @param paymentCredentialsReference The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getPaymentCredentialsForTransientTokenCall(String jti, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getPaymentCredentialsForTransientTokenCall(String paymentCredentialsReference, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
@@ -76,8 +76,8 @@ public class TransientTokenDataApi {
         }
         
         // create path and map variables
-        String localVarPath = "/up/v1/payment-credentials/{jti}"
-            .replaceAll("\\{" + "jti" + "\\}", apiClient.escapeString(jti.toString()));
+        String localVarPath = "/flex/v2/payment-credentials/{paymentCredentialsReference}"
+            .replaceAll("\\{" + "paymentCredentialsReference" + "\\}", apiClient.escapeString(paymentCredentialsReference.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -114,16 +114,16 @@ public class TransientTokenDataApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPaymentCredentialsForTransientTokenValidateBeforeCall(String jti, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getPaymentCredentialsForTransientTokenValidateBeforeCall(String paymentCredentialsReference, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'jti' is set
-        if (jti == null) {
-            logger.error("Missing the required parameter 'jti' when calling getPaymentCredentialsForTransientToken(Async)");
-            throw new ApiException("Missing the required parameter 'jti' when calling getPaymentCredentialsForTransientToken(Async)");
+        // verify the required parameter 'paymentCredentialsReference' is set
+        if (paymentCredentialsReference == null) {
+            logger.error("Missing the required parameter 'paymentCredentialsReference' when calling getPaymentCredentialsForTransientToken(Async)");
+            throw new ApiException("Missing the required parameter 'paymentCredentialsReference' when calling getPaymentCredentialsForTransientToken(Async)");
         }
         
         
-        okhttp3.Call call = getPaymentCredentialsForTransientTokenCall(jti, progressListener, progressRequestListener);
+        okhttp3.Call call = getPaymentCredentialsForTransientTokenCall(paymentCredentialsReference, progressListener, progressRequestListener);
         return call;
 
         
@@ -135,14 +135,14 @@ public class TransientTokenDataApi {
     /**
      * Get Payment Credentials
      * Retrieve the Payment data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will return PCI payment data captured by the Unified Checkout platform.
-     * @param jti The jti field contained within the Transient token returned from a successful Unified Checkout transaction  (required)
+     * @param paymentCredentialsReference The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction  (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public String getPaymentCredentialsForTransientToken(String jti) throws ApiException {
+    public String getPaymentCredentialsForTransientToken(String paymentCredentialsReference) throws ApiException {
         logger.info("CALL TO METHOD 'getPaymentCredentialsForTransientToken' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<String> resp = getPaymentCredentialsForTransientTokenWithHttpInfo(jti);
+        ApiResponse<String> resp = getPaymentCredentialsForTransientTokenWithHttpInfo(paymentCredentialsReference);
         logger.info("CALL TO METHOD 'getPaymentCredentialsForTransientToken' ENDED");
         return resp.getData();
     }
@@ -150,12 +150,12 @@ public class TransientTokenDataApi {
     /**
      * Get Payment Credentials
      * Retrieve the Payment data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will return PCI payment data captured by the Unified Checkout platform.
-     * @param jti The jti field contained within the Transient token returned from a successful Unified Checkout transaction  (required)
+     * @param paymentCredentialsReference The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction  (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<String> getPaymentCredentialsForTransientTokenWithHttpInfo(String jti) throws ApiException {
-        okhttp3.Call call = getPaymentCredentialsForTransientTokenValidateBeforeCall(jti, null, null);
+    public ApiResponse<String> getPaymentCredentialsForTransientTokenWithHttpInfo(String paymentCredentialsReference) throws ApiException {
+        okhttp3.Call call = getPaymentCredentialsForTransientTokenValidateBeforeCall(paymentCredentialsReference, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -163,12 +163,12 @@ public class TransientTokenDataApi {
     /**
      * Get Payment Credentials (asynchronously)
      * Retrieve the Payment data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will return PCI payment data captured by the Unified Checkout platform.
-     * @param jti The jti field contained within the Transient token returned from a successful Unified Checkout transaction  (required)
+     * @param paymentCredentialsReference The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getPaymentCredentialsForTransientTokenAsync(String jti, final ApiCallback<String> callback) throws ApiException {
+    public okhttp3.Call getPaymentCredentialsForTransientTokenAsync(String paymentCredentialsReference, final ApiCallback<String> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -190,7 +190,7 @@ public class TransientTokenDataApi {
             };
         }
 
-        okhttp3.Call call = getPaymentCredentialsForTransientTokenValidateBeforeCall(jti, progressListener, progressRequestListener);
+        okhttp3.Call call = getPaymentCredentialsForTransientTokenValidateBeforeCall(paymentCredentialsReference, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

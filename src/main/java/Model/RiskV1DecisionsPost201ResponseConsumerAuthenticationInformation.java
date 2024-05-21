@@ -96,6 +96,9 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("effectiveAuthenticationType")
   private String effectiveAuthenticationType = null;
 
+  @SerializedName("exemptionDataRaw")
+  private String exemptionDataRaw = null;
+
   @SerializedName("ivr")
   private PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr ivr = null;
 
@@ -561,6 +564,24 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
     this.effectiveAuthenticationType = effectiveAuthenticationType;
   }
 
+  public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation exemptionDataRaw(String exemptionDataRaw) {
+    this.exemptionDataRaw = exemptionDataRaw;
+    return this;
+  }
+
+   /**
+   * Payer authentication exemption indicator for Carte Bancaire exemptions.  This is used with unbundled authentication and authorizations calls, for example: \&quot;low fraud merchant program\&quot;. The value returned in this field should be passed in the authorization request under the field - &#x60;consumerAuthenticationInformation.strongAuthentication.issuerInformation.exemptionDataRaw&#x60;. 
+   * @return exemptionDataRaw
+  **/
+  @ApiModelProperty(value = "Payer authentication exemption indicator for Carte Bancaire exemptions.  This is used with unbundled authentication and authorizations calls, for example: \"low fraud merchant program\". The value returned in this field should be passed in the authorization request under the field - `consumerAuthenticationInformation.strongAuthentication.issuerInformation.exemptionDataRaw`. ")
+  public String getExemptionDataRaw() {
+    return exemptionDataRaw;
+  }
+
+  public void setExemptionDataRaw(String exemptionDataRaw) {
+    this.exemptionDataRaw = exemptionDataRaw;
+  }
+
   public RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation ivr(PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr ivr) {
     this.ivr = ivr;
     return this;
@@ -1007,6 +1028,7 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
         Objects.equals(this.eci, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.eci) &&
         Objects.equals(this.eciRaw, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.eciRaw) &&
         Objects.equals(this.effectiveAuthenticationType, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.effectiveAuthenticationType) &&
+        Objects.equals(this.exemptionDataRaw, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.exemptionDataRaw) &&
         Objects.equals(this.ivr, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.ivr) &&
         Objects.equals(this.networkScore, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.networkScore) &&
         Objects.equals(this.pareq, riskV1DecisionsPost201ResponseConsumerAuthenticationInformation.pareq) &&
@@ -1034,7 +1056,7 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationType, authenticationTransactionId, authenticationTransactionContextId, validityPeriod, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId, acsOperatorID, acsReferenceNumber, idciDecision, idciReasonCode1, idciReasonCode2, idciScore);
+    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationType, authenticationTransactionId, authenticationTransactionContextId, validityPeriod, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, exemptionDataRaw, ivr, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId, acsOperatorID, acsReferenceNumber, idciDecision, idciReasonCode1, idciReasonCode2, idciScore);
   }
 
 
@@ -1065,6 +1087,7 @@ public class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation {
     sb.append("    eci: ").append(toIndentedString(eci)).append("\n");
     sb.append("    eciRaw: ").append(toIndentedString(eciRaw)).append("\n");
     sb.append("    effectiveAuthenticationType: ").append(toIndentedString(effectiveAuthenticationType)).append("\n");
+    sb.append("    exemptionDataRaw: ").append(toIndentedString(exemptionDataRaw)).append("\n");
     sb.append("    ivr: ").append(toIndentedString(ivr)).append("\n");
     sb.append("    networkScore: ").append(toIndentedString(networkScore)).append("\n");
     sb.append("    pareq: ").append(toIndentedString(pareq)).append("\n");

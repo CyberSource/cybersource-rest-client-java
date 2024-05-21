@@ -120,10 +120,10 @@ public class InvoicingV2InvoicesGet200Response {
   }
 
    /**
-   * The status of the invoice.  Possible values: - DRAFT - CREATED - SENT - PARTIAL - PAID - CANCELED 
+   * The status of the invoice.  Possible values: - DRAFT - CREATED - SENT - PARTIAL - PAID - CANCELED - PENDING 
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the invoice.  Possible values: - DRAFT - CREATED - SENT - PARTIAL - PAID - CANCELED ")
+  @ApiModelProperty(value = "The status of the invoice.  Possible values: - DRAFT - CREATED - SENT - PARTIAL - PAID - CANCELED - PENDING ")
   public String getStatus() {
     return status;
   }

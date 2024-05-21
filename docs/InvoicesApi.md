@@ -75,7 +75,7 @@ Provides a (filtered) list of invoices that have been created in your account. Y
 InvoicesApi apiInstance = new InvoicesApi();
 Integer offset = 56; // Integer | Page offset number.
 Integer limit = 56; // Integer | Maximum number of items you would like returned.
-String status = "status_example"; // String | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED 
+String status = "status_example"; // String | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING 
 try {
     InvoicingV2InvoicesAllGet200Response result = apiInstance.getAllInvoices(offset, limit, status);
     System.out.println(result);
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **Integer**| Page offset number. |
  **limit** | **Integer**| Maximum number of items you would like returned. |
- **status** | **String**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED  | [optional]
+ **status** | **String**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING  | [optional]
 
 ### Return type
 
