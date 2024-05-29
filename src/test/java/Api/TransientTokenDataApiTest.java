@@ -41,8 +41,8 @@ public class TransientTokenDataApiTest {
      */
     @Test
     public void getPaymentCredentialsForTransientTokenTest() throws Exception {
-        String jti = null;
-        String response = api.getPaymentCredentialsForTransientToken(jti);
+        String paymentCredentialsReference = null;
+        String response = api.getPaymentCredentialsForTransientToken(paymentCredentialsReference);
 
         // TODO: test validations
     }

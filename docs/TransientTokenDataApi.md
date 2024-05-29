@@ -4,13 +4,13 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPaymentCredentialsForTransientToken**](TransientTokenDataApi.md#getPaymentCredentialsForTransientToken) | **GET** /up/v1/payment-credentials/{jti} | Get Payment Credentials
+[**getPaymentCredentialsForTransientToken**](TransientTokenDataApi.md#getPaymentCredentialsForTransientToken) | **GET** /flex/v2/payment-credentials/{paymentCredentialsReference} | Get Payment Credentials
 [**getTransactionForTransientToken**](TransientTokenDataApi.md#getTransactionForTransientToken) | **GET** /up/v1/payment-details/{transientToken} | Get Transient Token Data
 
 
 <a name="getPaymentCredentialsForTransientToken"></a>
 # **getPaymentCredentialsForTransientToken**
-> String getPaymentCredentialsForTransientToken(jti)
+> String getPaymentCredentialsForTransientToken(paymentCredentialsReference)
 
 Get Payment Credentials
 
@@ -24,9 +24,9 @@ Retrieve the Payment data captured by Unified Checkout. This API is used to retr
 
 
 TransientTokenDataApi apiInstance = new TransientTokenDataApi();
-String jti = "jti_example"; // String | The jti field contained within the Transient token returned from a successful Unified Checkout transaction 
+String paymentCredentialsReference = "paymentCredentialsReference_example"; // String | The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction 
 try {
-    String result = apiInstance.getPaymentCredentialsForTransientToken(jti);
+    String result = apiInstance.getPaymentCredentialsForTransientToken(paymentCredentialsReference);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TransientTokenDataApi#getPaymentCredentialsForTransientToken");
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **jti** | **String**| The jti field contained within the Transient token returned from a successful Unified Checkout transaction  |
+ **paymentCredentialsReference** | **String**| The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction  |
 
 ### Return type
 

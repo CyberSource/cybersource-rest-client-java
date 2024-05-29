@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,6 +30,9 @@ import java.io.IOException;
  */
 
 public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication {
+  @SerializedName("issuerInformation")
+  private Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation issuerInformation = null;
+
   @SerializedName("lowValueExemptionIndicator")
   private String lowValueExemptionIndicator = null;
 
@@ -49,6 +53,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
 
   @SerializedName("authenticationIndicator")
   private String authenticationIndicator = null;
+
+  public Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication issuerInformation(Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+    return this;
+  }
+
+   /**
+   * Get issuerInformation
+   * @return issuerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation getIssuerInformation() {
+    return issuerInformation;
+  }
+
+  public void setIssuerInformation(Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+  }
 
   public Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication lowValueExemptionIndicator(String lowValueExemptionIndicator) {
     this.lowValueExemptionIndicator = lowValueExemptionIndicator;
@@ -186,7 +208,8 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
       return false;
     }
     Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication = (Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication) o;
-    return Objects.equals(this.lowValueExemptionIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.lowValueExemptionIndicator) &&
+    return Objects.equals(this.issuerInformation, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.issuerInformation) &&
+        Objects.equals(this.lowValueExemptionIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.lowValueExemptionIndicator) &&
         Objects.equals(this.riskAnalysisExemptionIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.riskAnalysisExemptionIndicator) &&
         Objects.equals(this.trustedMerchantExemptionIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.trustedMerchantExemptionIndicator) &&
         Objects.equals(this.secureCorporatePaymentIndicator, ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication.secureCorporatePaymentIndicator) &&
@@ -197,7 +220,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
 
   @Override
   public int hashCode() {
-    return Objects.hash(lowValueExemptionIndicator, riskAnalysisExemptionIndicator, trustedMerchantExemptionIndicator, secureCorporatePaymentIndicator, delegatedAuthenticationExemptionIndicator, outageExemptionIndicator, authenticationIndicator);
+    return Objects.hash(issuerInformation, lowValueExemptionIndicator, riskAnalysisExemptionIndicator, trustedMerchantExemptionIndicator, secureCorporatePaymentIndicator, delegatedAuthenticationExemptionIndicator, outageExemptionIndicator, authenticationIndicator);
   }
 
 
@@ -206,6 +229,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication {\n");
     
+    sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
     sb.append("    lowValueExemptionIndicator: ").append(toIndentedString(lowValueExemptionIndicator)).append("\n");
     sb.append("    riskAnalysisExemptionIndicator: ").append(toIndentedString(riskAnalysisExemptionIndicator)).append("\n");
     sb.append("    trustedMerchantExemptionIndicator: ").append(toIndentedString(trustedMerchantExemptionIndicator)).append("\n");
