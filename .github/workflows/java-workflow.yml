@@ -49,9 +49,9 @@ jobs:
                 path: ${{env.SAMPLE_FOLDER}}
             - name: Building the Projects
               run: |
-                cd '$CLIENT_FOLDER'
+                cd $CLIENT_FOLDER
                 mvn clean install
                 cd ..
-                cd '$SAMPLE_FOLDER'
+                cd $SAMPLE_FOLDER
                 mvn clean install
                 echo "Done Building"
