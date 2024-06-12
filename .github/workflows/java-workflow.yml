@@ -41,7 +41,7 @@ jobs:
                 mvn clean install
                 echo "Done Building"
             - name: Upload the log files and report pdf
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v3
               with:
                 name: log-files
                 path: |
