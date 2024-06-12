@@ -12,23 +12,6 @@ jobs:
         strategy:
             matrix:
               operating-system: [ubuntu-latest,macos-latest,windows-latest]
-            #   java-version: ['3.6','3.7','3.8','3.9','3.10','3.11','3.12']
-            #   include:
-            #     - operating-system: ubuntu-20.04
-            #       pyth-version: '3.6'
-            #     - operating-system: macos-13
-            #       pyth-version: '3.6'
-            #     - operating-system: macos-13
-            #       pyth-version: '3.7'
-            #   exclude:
-            #     - operating-system: macos-latest
-            #       pyth-version: '3.6'
-            #     - operating-system: macos-latest
-            #       pyth-version: '3.7'
-            #     - operating-system: ubuntu-latest
-            #       pyth-version: '3.6'
-            #     - operating-system: windows-latest
-            #       pyth-version: '3.6'
         runs-on: ${{matrix.operating-system}}
         continue-on-error: true
         steps:
@@ -57,3 +40,10 @@ jobs:
                 cd $SAMPLE_FOLDER
                 mvn clean install
                 echo "Done Building"
+            - name: Upload the log files and report pdf
+              uses: actions/upload-artifact@v4
+              with:
+                name: log-files
+                path: |
+                  ${{env.SAMPLE_FOLDER}}
+                  ${{env.CLIENT_FOLDER}}
