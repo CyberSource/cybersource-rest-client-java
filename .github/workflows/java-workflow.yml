@@ -49,6 +49,7 @@ jobs:
                 path: ${{env.SAMPLE_FOLDER}}
             - name: Building the Projects
               run: |
+                mvn -version
                 cd $CLIENT_FOLDER
                 mvn clean install
                 cd ..
