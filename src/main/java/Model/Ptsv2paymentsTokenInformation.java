@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsTokenInformationPaymentInstrument;
 import Model.Ptsv2paymentsTokenInformationShippingAddress;
+import Model.Ptsv2paymentsTokenInformationTokenProvisioningInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,6 +46,9 @@ public class Ptsv2paymentsTokenInformation {
 
   @SerializedName("networkTokenOption")
   private String networkTokenOption = null;
+
+  @SerializedName("tokenProvisioningInformation")
+  private Ptsv2paymentsTokenInformationTokenProvisioningInformation tokenProvisioningInformation = null;
 
   public Ptsv2paymentsTokenInformation jti(String jti) {
     this.jti = jti;
@@ -136,6 +140,24 @@ public class Ptsv2paymentsTokenInformation {
     this.networkTokenOption = networkTokenOption;
   }
 
+  public Ptsv2paymentsTokenInformation tokenProvisioningInformation(Ptsv2paymentsTokenInformationTokenProvisioningInformation tokenProvisioningInformation) {
+    this.tokenProvisioningInformation = tokenProvisioningInformation;
+    return this;
+  }
+
+   /**
+   * Get tokenProvisioningInformation
+   * @return tokenProvisioningInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsTokenInformationTokenProvisioningInformation getTokenProvisioningInformation() {
+    return tokenProvisioningInformation;
+  }
+
+  public void setTokenProvisioningInformation(Ptsv2paymentsTokenInformationTokenProvisioningInformation tokenProvisioningInformation) {
+    this.tokenProvisioningInformation = tokenProvisioningInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -150,12 +172,13 @@ public class Ptsv2paymentsTokenInformation {
         Objects.equals(this.transientTokenJwt, ptsv2paymentsTokenInformation.transientTokenJwt) &&
         Objects.equals(this.paymentInstrument, ptsv2paymentsTokenInformation.paymentInstrument) &&
         Objects.equals(this.shippingAddress, ptsv2paymentsTokenInformation.shippingAddress) &&
-        Objects.equals(this.networkTokenOption, ptsv2paymentsTokenInformation.networkTokenOption);
+        Objects.equals(this.networkTokenOption, ptsv2paymentsTokenInformation.networkTokenOption) &&
+        Objects.equals(this.tokenProvisioningInformation, ptsv2paymentsTokenInformation.tokenProvisioningInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(jti, transientTokenJwt, paymentInstrument, shippingAddress, networkTokenOption);
+    return Objects.hash(jti, transientTokenJwt, paymentInstrument, shippingAddress, networkTokenOption, tokenProvisioningInformation);
   }
 
 
@@ -169,6 +192,7 @@ public class Ptsv2paymentsTokenInformation {
     sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
     sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
     sb.append("    networkTokenOption: ").append(toIndentedString(networkTokenOption)).append("\n");
+    sb.append("    tokenProvisioningInformation: ").append(toIndentedString(tokenProvisioningInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

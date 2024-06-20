@@ -261,10 +261,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Raw electronic commerce indicator (ECI).  For details, see &#x60;eci_raw&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Raw electronic commerce indicator (ECI). 
    * @return eciRaw
   **/
-  @ApiModelProperty(value = "Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Raw electronic commerce indicator (ECI). ")
   public String getEciRaw() {
     return eciRaw;
   }
@@ -279,10 +279,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Payer authentication response status.  For details, see &#x60;pares_status&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Payer authentication response status. 
    * @return paresStatus
   **/
-  @ApiModelProperty(value = "Payer authentication response status.  For details, see `pares_status` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Payer authentication response status. ")
   public String getParesStatus() {
     return paresStatus;
   }
@@ -297,10 +297,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Verification response enrollment status.  For details, see &#x60;veres_enrolled&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Verification response enrollment status. 
    * @return veresEnrolled
   **/
-  @ApiModelProperty(value = "Verification response enrollment status.  For details, see `veres_enrolled` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Verification response enrollment status. ")
   public String getVeresEnrolled() {
     return veresEnrolled;
   }
@@ -315,10 +315,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Transaction identifier.  For details, see &#x60;xid&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Transaction identifier. 
    * @return xid
   **/
-  @ApiModelProperty(value = "Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Transaction identifier. ")
   public String getXid() {
     return xid;
   }
@@ -333,10 +333,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Universal cardholder authentication field (UCAF) collection indicator.  For details, see &#x60;ucaf_collection_indicator&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator 
+   * Universal cardholder authentication field (UCAF) collection indicator.  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator 
    * @return ucafCollectionIndicator
   **/
-  @ApiModelProperty(value = "Universal cardholder authentication field (UCAF) collection indicator.  For details, see `ucaf_collection_indicator` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator ")
+  @ApiModelProperty(value = "Universal cardholder authentication field (UCAF) collection indicator.  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator ")
   public String getUcafCollectionIndicator() {
     return ucafCollectionIndicator;
   }
@@ -351,10 +351,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Universal cardholder authentication field (UCAF) data.  For details, see &#x60;ucaf_authentication_data&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Universal cardholder authentication field (UCAF) data. 
    * @return ucafAuthenticationData
   **/
-  @ApiModelProperty(value = "Universal cardholder authentication field (UCAF) data.  For details, see `ucaf_authentication_data` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Universal cardholder authentication field (UCAF) data. ")
   public String getUcafAuthenticationData() {
     return ucafAuthenticationData;
   }
@@ -603,10 +603,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   }
 
    /**
-   * Possible values: - &#x60;01&#x60;: No preference - &#x60;02&#x60;: No challenge request - &#x60;03&#x60;: Challenge requested (3D Secure requestor preference) - &#x60;04&#x60;: Challenge requested (mandate) - &#x60;05&#x60;: No challenge requested (transactional risk analysis is already performed) - &#x60;06&#x60;: No challenge requested (Data share only) - &#x60;07&#x60;: No challenge requested (strong consumer authentication is already performed) - &#x60;08&#x60;: No challenge requested (utilize whitelist exemption if no challenge required) - &#x60;09&#x60;: Challenge requested (whitelist prompt requested if challenge required) **Note** This field will default to &#x60;01&#x60; on merchant configuration and can be overridden by the merchant. EMV 3D Secure version 2.1.0 supports values &#x60;01-04&#x60;. Version 2.2.0 supports values &#x60;01-09&#x60;.  For details, see &#x60;pa_challenge_code&#x60; field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html) 
+   * Possible values: - &#x60;01&#x60;: No preference - &#x60;02&#x60;: No challenge request - &#x60;03&#x60;: Challenge requested (3D Secure requestor preference) - &#x60;04&#x60;: Challenge requested (mandate) - &#x60;05&#x60;: No challenge requested (transactional risk analysis is already performed) - &#x60;06&#x60;: No challenge requested (Data share only) - &#x60;07&#x60;: No challenge requested (strong consumer authentication is already performed) - &#x60;08&#x60;: No challenge requested (utilize whitelist exemption if no challenge required) - &#x60;09&#x60;: Challenge requested (whitelist prompt requested if challenge required) **Note** This field will default to &#x60;01&#x60; on merchant configuration and can be overridden by the merchant. EMV 3D Secure version 2.1.0 supports values &#x60;01-04&#x60;. Version 2.2.0 supports values &#x60;01-09&#x60;. 
    * @return challengeCode
   **/
-  @ApiModelProperty(value = "Possible values: - `01`: No preference - `02`: No challenge request - `03`: Challenge requested (3D Secure requestor preference) - `04`: Challenge requested (mandate) - `05`: No challenge requested (transactional risk analysis is already performed) - `06`: No challenge requested (Data share only) - `07`: No challenge requested (strong consumer authentication is already performed) - `08`: No challenge requested (utilize whitelist exemption if no challenge required) - `09`: Challenge requested (whitelist prompt requested if challenge required) **Note** This field will default to `01` on merchant configuration and can be overridden by the merchant. EMV 3D Secure version 2.1.0 supports values `01-04`. Version 2.2.0 supports values `01-09`.  For details, see `pa_challenge_code` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html) ")
+  @ApiModelProperty(value = "Possible values: - `01`: No preference - `02`: No challenge request - `03`: Challenge requested (3D Secure requestor preference) - `04`: Challenge requested (mandate) - `05`: No challenge requested (transactional risk analysis is already performed) - `06`: No challenge requested (Data share only) - `07`: No challenge requested (strong consumer authentication is already performed) - `08`: No challenge requested (utilize whitelist exemption if no challenge required) - `09`: Challenge requested (whitelist prompt requested if challenge required) **Note** This field will default to `01` on merchant configuration and can be overridden by the merchant. EMV 3D Secure version 2.1.0 supports values `01-04`. Version 2.2.0 supports values `01-09`. ")
   public String getChallengeCode() {
     return challengeCode;
   }

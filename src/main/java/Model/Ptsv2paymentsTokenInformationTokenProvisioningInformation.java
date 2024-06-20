@@ -25,17 +25,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation
+ * Ptsv2paymentsTokenInformationTokenProvisioningInformation
  */
 
-public class TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation {
+public class Ptsv2paymentsTokenInformationTokenProvisioningInformation {
   @SerializedName("consumerConsentObtained")
   private Boolean consumerConsentObtained = null;
 
   @SerializedName("multiFactorAuthenticated")
   private Boolean multiFactorAuthenticated = null;
 
-  public TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation consumerConsentObtained(Boolean consumerConsentObtained) {
+  public Ptsv2paymentsTokenInformationTokenProvisioningInformation consumerConsentObtained(Boolean consumerConsentObtained) {
     this.consumerConsentObtained = consumerConsentObtained;
     return this;
   }
@@ -53,7 +53,7 @@ public class TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation {
     this.consumerConsentObtained = consumerConsentObtained;
   }
 
-  public TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation multiFactorAuthenticated(Boolean multiFactorAuthenticated) {
+  public Ptsv2paymentsTokenInformationTokenProvisioningInformation multiFactorAuthenticated(Boolean multiFactorAuthenticated) {
     this.multiFactorAuthenticated = multiFactorAuthenticated;
     return this;
   }
@@ -80,9 +80,9 @@ public class TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation tmsEmbeddedInstrumentIdentifierTokenProvisioningInformation = (TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation) o;
-    return Objects.equals(this.consumerConsentObtained, tmsEmbeddedInstrumentIdentifierTokenProvisioningInformation.consumerConsentObtained) &&
-        Objects.equals(this.multiFactorAuthenticated, tmsEmbeddedInstrumentIdentifierTokenProvisioningInformation.multiFactorAuthenticated);
+    Ptsv2paymentsTokenInformationTokenProvisioningInformation ptsv2paymentsTokenInformationTokenProvisioningInformation = (Ptsv2paymentsTokenInformationTokenProvisioningInformation) o;
+    return Objects.equals(this.consumerConsentObtained, ptsv2paymentsTokenInformationTokenProvisioningInformation.consumerConsentObtained) &&
+        Objects.equals(this.multiFactorAuthenticated, ptsv2paymentsTokenInformationTokenProvisioningInformation.multiFactorAuthenticated);
   }
 
   @Override
@@ -94,7 +94,7 @@ public class TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation {\n");
+    sb.append("class Ptsv2paymentsTokenInformationTokenProvisioningInformation {\n");
     
     sb.append("    consumerConsentObtained: ").append(toIndentedString(consumerConsentObtained)).append("\n");
     sb.append("    multiFactorAuthenticated: ").append(toIndentedString(multiFactorAuthenticated)).append("\n");

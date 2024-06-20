@@ -41,10 +41,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationCardVerification {
   }
 
    /**
-   * CVN result code.  For details, see the &#x60;auth_cv_result&#x60; reply field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * CVN result code. 
    * @return resultCode
   **/
-  @ApiModelProperty(value = "CVN result code.  For details, see the `auth_cv_result` reply field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "CVN result code. ")
   public String getResultCode() {
     return resultCode;
   }
