@@ -60,10 +60,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationBank {
   }
 
    /**
-   * Corrected account number from the ACH verification service.  For details, see &#x60;ecp_debit_corrected_routing_number&#x60; or &#x60;ecp_credit_corrected_routing_number&#x60; reply field descriptions in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) 
+   * Corrected account number from the ACH verification service. 
    * @return correctedRoutingNumber
   **/
-  @ApiModelProperty(value = "Corrected account number from the ACH verification service.  For details, see `ecp_debit_corrected_routing_number` or `ecp_credit_corrected_routing_number` reply field descriptions in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Corrected account number from the ACH verification service. ")
   public String getCorrectedRoutingNumber() {
     return correctedRoutingNumber;
   }

@@ -283,7 +283,7 @@ public class TransactionBatchesApi {
 
     /**
      * Get Individual Batch File
-     * Provide the search range
+     * This API provides details like upload date, completion date, transaction count and accepted and rejected transaction count of the individual batch file using the batch id
      * @param id The batch id assigned for the template. (required)
      * @return PtsV1TransactionBatchesIdGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -298,7 +298,7 @@ public class TransactionBatchesApi {
 
     /**
      * Get Individual Batch File
-     * Provide the search range
+     * This API provides details like upload date, completion date, transaction count and accepted and rejected transaction count of the individual batch file using the batch id
      * @param id The batch id assigned for the template. (required)
      * @return ApiResponse&lt;PtsV1TransactionBatchesIdGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -311,7 +311,7 @@ public class TransactionBatchesApi {
 
     /**
      * Get Individual Batch File (asynchronously)
-     * Provide the search range
+     * This API provides details like upload date, completion date, transaction count and accepted and rejected transaction count of the individual batch file using the batch id
      * @param id The batch id assigned for the template. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -428,7 +428,7 @@ public class TransactionBatchesApi {
 
     /**
      * Get a List of Batch Files
-     * Provide the search range
+     * Provide the date and time search range to get a list of Batch Files ready for settlement
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @return PtsV1TransactionBatchesGet200Response
@@ -444,7 +444,7 @@ public class TransactionBatchesApi {
 
     /**
      * Get a List of Batch Files
-     * Provide the search range
+     * Provide the date and time search range to get a list of Batch Files ready for settlement
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @return ApiResponse&lt;PtsV1TransactionBatchesGet200Response&gt;
@@ -458,7 +458,7 @@ public class TransactionBatchesApi {
 
     /**
      * Get a List of Batch Files (asynchronously)
-     * Provide the search range
+     * Provide the date and time search range to get a list of Batch Files ready for settlement
      * @param startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @param callback The callback to be executed when the API call finishes

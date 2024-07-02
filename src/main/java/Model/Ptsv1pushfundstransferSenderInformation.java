@@ -62,9 +62,6 @@ public class Ptsv1pushfundstransferSenderInformation {
   @SerializedName("country")
   private String country = null;
 
-  @SerializedName("vatRegistrationNumber")
-  private String vatRegistrationNumber = null;
-
   @SerializedName("dateOfBirth")
   private String dateOfBirth = null;
 
@@ -107,10 +104,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * This field contains the first name of the entity funding the transaction. 
+   * This field contains the first name of the entity funding the transaction Mandatory for card payments 
    * @return firstName
   **/
-  @ApiModelProperty(value = "This field contains the first name of the entity funding the transaction. ")
+  @ApiModelProperty(value = "This field contains the first name of the entity funding the transaction Mandatory for card payments ")
   public String getFirstName() {
     return firstName;
   }
@@ -125,10 +122,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * This field contains the last name of the entity funding the transaction. 
+   * This field contains the last name of the entity funding the transaction Mandatory for card payments 
    * @return lastName
   **/
-  @ApiModelProperty(value = "This field contains the last name of the entity funding the transaction. ")
+  @ApiModelProperty(value = "This field contains the last name of the entity funding the transaction Mandatory for card payments ")
   public String getLastName() {
     return lastName;
   }
@@ -143,10 +140,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * Supported only for Mastercard  transactions. This field contains the  middle name of the entity funding the transaction 
+   * This field contains the  middle name of the entity funding the transaction 
    * @return middleName
   **/
-  @ApiModelProperty(value = "Supported only for Mastercard  transactions. This field contains the  middle name of the entity funding the transaction ")
+  @ApiModelProperty(value = "This field contains the  middle name of the entity funding the transaction ")
   public String getMiddleName() {
     return middleName;
   }
@@ -179,10 +176,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * Street address of sender.  Funds Disbursement  This value is the address of the originator sending the funds disbursement.  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT. 
+   * Street address of sender.  Funds Disbursement  This value is the address of the originator sending the funds disbursement.  Required for card transactions 
    * @return address1
   **/
-  @ApiModelProperty(value = "Street address of sender.  Funds Disbursement  This value is the address of the originator sending the funds disbursement.  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT. ")
+  @ApiModelProperty(value = "Street address of sender.  Funds Disbursement  This value is the address of the originator sending the funds disbursement.  Required for card transactions ")
   public String getAddress1() {
     return address1;
   }
@@ -197,10 +194,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * Used for additional address information. For example: Attention: Accounts Payable Optional field.  This field is supported for only Mastercard Send. 
+   * Used for additional address information. For example: Attention: Accounts Payable  Optional field. 
    * @return address2
   **/
-  @ApiModelProperty(value = "Used for additional address information. For example: Attention: Accounts Payable Optional field.  This field is supported for only Mastercard Send. ")
+  @ApiModelProperty(value = "Used for additional address information. For example: Attention: Accounts Payable  Optional field. ")
   public String getAddress2() {
     return address2;
   }
@@ -215,10 +212,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * The sender&#39;s city  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT. 
+   * The sender&#39;s city Mandatory for card payments 
    * @return locality
   **/
-  @ApiModelProperty(value = "The sender's city  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT. ")
+  @ApiModelProperty(value = "The sender's city Mandatory for card payments ")
   public String getLocality() {
     return locality;
   }
@@ -233,10 +230,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * Sender&#39;s state. Use the State, Province, and Territory Codes for the United States and Canada.The sender&#39;s province, state or territory. Conditional, required if sender&#39;s country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf 
+   * Sender&#39;s state. Use the State, Province, and Territory Codes for the United States and Canada.The sender&#39;s province, state or territory. Conditional, required if sender&#39;s country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf  Mandatory for card payments 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "Sender's state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf ")
+  @ApiModelProperty(value = "Sender's state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf  Mandatory for card payments ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -251,34 +248,16 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * Sender&#39;s country code. Use ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT.  Required for Mastercard Send 
+   * Sender&#39;s country code. Use ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf 
    * @return country
   **/
-  @ApiModelProperty(value = "Sender's country code. Use ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT.  Required for Mastercard Send ")
+  @ApiModelProperty(value = "Sender's country code. Use ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf ")
   public String getCountry() {
     return country;
   }
 
   public void setCountry(String country) {
     this.country = country;
-  }
-
-  public Ptsv1pushfundstransferSenderInformation vatRegistrationNumber(String vatRegistrationNumber) {
-    this.vatRegistrationNumber = vatRegistrationNumber;
-    return this;
-  }
-
-   /**
-   * Customer&#39;s government-assigned tax identification number. 
-   * @return vatRegistrationNumber
-  **/
-  @ApiModelProperty(value = "Customer's government-assigned tax identification number. ")
-  public String getVatRegistrationNumber() {
-    return vatRegistrationNumber;
-  }
-
-  public void setVatRegistrationNumber(String vatRegistrationNumber) {
-    this.vatRegistrationNumber = vatRegistrationNumber;
   }
 
   public Ptsv1pushfundstransferSenderInformation dateOfBirth(String dateOfBirth) {
@@ -409,7 +388,6 @@ public class Ptsv1pushfundstransferSenderInformation {
         Objects.equals(this.locality, ptsv1pushfundstransferSenderInformation.locality) &&
         Objects.equals(this.administrativeArea, ptsv1pushfundstransferSenderInformation.administrativeArea) &&
         Objects.equals(this.country, ptsv1pushfundstransferSenderInformation.country) &&
-        Objects.equals(this.vatRegistrationNumber, ptsv1pushfundstransferSenderInformation.vatRegistrationNumber) &&
         Objects.equals(this.dateOfBirth, ptsv1pushfundstransferSenderInformation.dateOfBirth) &&
         Objects.equals(this.phoneNumber, ptsv1pushfundstransferSenderInformation.phoneNumber) &&
         Objects.equals(this.paymentInformation, ptsv1pushfundstransferSenderInformation.paymentInformation) &&
@@ -420,7 +398,7 @@ public class Ptsv1pushfundstransferSenderInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, firstName, lastName, middleName, postalCode, address1, address2, locality, administrativeArea, country, vatRegistrationNumber, dateOfBirth, phoneNumber, paymentInformation, referenceNumber, account, personalIdentification);
+    return Objects.hash(name, firstName, lastName, middleName, postalCode, address1, address2, locality, administrativeArea, country, dateOfBirth, phoneNumber, paymentInformation, referenceNumber, account, personalIdentification);
   }
 
 
@@ -439,7 +417,6 @@ public class Ptsv1pushfundstransferSenderInformation {
     sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");

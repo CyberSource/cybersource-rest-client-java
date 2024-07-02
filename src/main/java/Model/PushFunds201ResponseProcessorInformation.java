@@ -35,14 +35,8 @@ public class PushFunds201ResponseProcessorInformation {
   @SerializedName("responseCode")
   private String responseCode = null;
 
-  @SerializedName("approvalCode")
-  private String approvalCode = null;
-
   @SerializedName("systemTraceAuditNumber")
   private String systemTraceAuditNumber = null;
-
-  @SerializedName("responseCodeSource")
-  private String responseCodeSource = null;
 
   @SerializedName("retrievalReferenceNumber")
   private String retrievalReferenceNumber = null;
@@ -83,34 +77,16 @@ public class PushFunds201ResponseProcessorInformation {
     this.responseCode = responseCode;
   }
 
-  public PushFunds201ResponseProcessorInformation approvalCode(String approvalCode) {
-    this.approvalCode = approvalCode;
-    return this;
-  }
-
-   /**
-   * Issuer-generated approval code for the transaction. 
-   * @return approvalCode
-  **/
-  @ApiModelProperty(value = "Issuer-generated approval code for the transaction. ")
-  public String getApprovalCode() {
-    return approvalCode;
-  }
-
-  public void setApprovalCode(String approvalCode) {
-    this.approvalCode = approvalCode;
-  }
-
   public PushFunds201ResponseProcessorInformation systemTraceAuditNumber(String systemTraceAuditNumber) {
     this.systemTraceAuditNumber = systemTraceAuditNumber;
     return this;
   }
 
    /**
-   * System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer&#39;s receipt. 
+   * System audit number. Returned by authorization and incremental authorization services. 
    * @return systemTraceAuditNumber
   **/
-  @ApiModelProperty(value = "System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer's receipt. ")
+  @ApiModelProperty(value = "System audit number. Returned by authorization and incremental authorization services. ")
   public String getSystemTraceAuditNumber() {
     return systemTraceAuditNumber;
   }
@@ -119,34 +95,16 @@ public class PushFunds201ResponseProcessorInformation {
     this.systemTraceAuditNumber = systemTraceAuditNumber;
   }
 
-  public PushFunds201ResponseProcessorInformation responseCodeSource(String responseCodeSource) {
-    this.responseCodeSource = responseCodeSource;
-    return this;
-  }
-
-   /**
-   * Used by Visa only and contains the response source/reason code that identifies the source of the response decision. 
-   * @return responseCodeSource
-  **/
-  @ApiModelProperty(value = "Used by Visa only and contains the response source/reason code that identifies the source of the response decision. ")
-  public String getResponseCodeSource() {
-    return responseCodeSource;
-  }
-
-  public void setResponseCodeSource(String responseCodeSource) {
-    this.responseCodeSource = responseCodeSource;
-  }
-
   public PushFunds201ResponseProcessorInformation retrievalReferenceNumber(String retrievalReferenceNumber) {
     this.retrievalReferenceNumber = retrievalReferenceNumber;
     return this;
   }
 
    /**
-   * Unique reference number returned by the processor that identifies the transaction at the network.  Supported by Mastercard Send 
+   * Unique reference number returned by the processor that identifies the transaction at the network. 
    * @return retrievalReferenceNumber
   **/
-  @ApiModelProperty(value = "Unique reference number returned by the processor that identifies the transaction at the network.  Supported by Mastercard Send ")
+  @ApiModelProperty(value = "Unique reference number returned by the processor that identifies the transaction at the network. ")
   public String getRetrievalReferenceNumber() {
     return retrievalReferenceNumber;
   }
@@ -167,15 +125,13 @@ public class PushFunds201ResponseProcessorInformation {
     PushFunds201ResponseProcessorInformation pushFunds201ResponseProcessorInformation = (PushFunds201ResponseProcessorInformation) o;
     return Objects.equals(this.transactionId, pushFunds201ResponseProcessorInformation.transactionId) &&
         Objects.equals(this.responseCode, pushFunds201ResponseProcessorInformation.responseCode) &&
-        Objects.equals(this.approvalCode, pushFunds201ResponseProcessorInformation.approvalCode) &&
         Objects.equals(this.systemTraceAuditNumber, pushFunds201ResponseProcessorInformation.systemTraceAuditNumber) &&
-        Objects.equals(this.responseCodeSource, pushFunds201ResponseProcessorInformation.responseCodeSource) &&
         Objects.equals(this.retrievalReferenceNumber, pushFunds201ResponseProcessorInformation.retrievalReferenceNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, responseCode, approvalCode, systemTraceAuditNumber, responseCodeSource, retrievalReferenceNumber);
+    return Objects.hash(transactionId, responseCode, systemTraceAuditNumber, retrievalReferenceNumber);
   }
 
 
@@ -186,9 +142,7 @@ public class PushFunds201ResponseProcessorInformation {
     
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
-    sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
     sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
-    sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
     sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();

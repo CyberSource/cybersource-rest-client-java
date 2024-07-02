@@ -33,6 +33,9 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
   @SerializedName("type")
   private String type = null;
 
+  @SerializedName("source")
+  private String source = null;
+
   @SerializedName("state")
   private String state = null;
 
@@ -67,6 +70,15 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
   @ApiModelProperty(example = "visa", value = "The network token card association brand Possible Values: - visa - mastercard - americanexpress ")
   public String getType() {
     return type;
+  }
+
+   /**
+   * This enumeration value indicates the origin of the payment instrument (PAN) and the technique employed to supply the payment instrument data. Possible Values: - TOKEN - ISSUER - ONFILE 
+   * @return source
+  **/
+  @ApiModelProperty(example = "ONFILE", value = "This enumeration value indicates the origin of the payment instrument (PAN) and the technique employed to supply the payment instrument data. Possible Values: - TOKEN - ISSUER - ONFILE ")
+  public String getSource() {
+    return source;
   }
 
    /**
@@ -170,6 +182,7 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
     }
     TmsEmbeddedInstrumentIdentifierTokenizedCard tmsEmbeddedInstrumentIdentifierTokenizedCard = (TmsEmbeddedInstrumentIdentifierTokenizedCard) o;
     return Objects.equals(this.type, tmsEmbeddedInstrumentIdentifierTokenizedCard.type) &&
+        Objects.equals(this.source, tmsEmbeddedInstrumentIdentifierTokenizedCard.source) &&
         Objects.equals(this.state, tmsEmbeddedInstrumentIdentifierTokenizedCard.state) &&
         Objects.equals(this.enrollmentId, tmsEmbeddedInstrumentIdentifierTokenizedCard.enrollmentId) &&
         Objects.equals(this.tokenReferenceId, tmsEmbeddedInstrumentIdentifierTokenizedCard.tokenReferenceId) &&
@@ -183,7 +196,7 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, state, enrollmentId, tokenReferenceId, reason, number, expirationMonth, expirationYear, cryptogram, card);
+    return Objects.hash(type, source, state, enrollmentId, tokenReferenceId, reason, number, expirationMonth, expirationYear, cryptogram, card);
   }
 
 
@@ -193,6 +206,7 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
     sb.append("class TmsEmbeddedInstrumentIdentifierTokenizedCard {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    enrollmentId: ").append(toIndentedString(enrollmentId)).append("\n");
     sb.append("    tokenReferenceId: ").append(toIndentedString(tokenReferenceId)).append("\n");

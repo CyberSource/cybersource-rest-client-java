@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsTokenInformationTokenProvisioningInformation;
 import Model.TmsEmbeddedInstrumentIdentifierBankAccount;
 import Model.TmsEmbeddedInstrumentIdentifierBillTo;
 import Model.TmsEmbeddedInstrumentIdentifierCard;
@@ -22,7 +23,6 @@ import Model.TmsEmbeddedInstrumentIdentifierIssuer;
 import Model.TmsEmbeddedInstrumentIdentifierLinks;
 import Model.TmsEmbeddedInstrumentIdentifierMetadata;
 import Model.TmsEmbeddedInstrumentIdentifierProcessingInformation;
-import Model.TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation;
 import Model.TmsEmbeddedInstrumentIdentifierTokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -54,7 +54,7 @@ public class PostInstrumentIdentifierEnrollmentRequest {
   private String type = null;
 
   @SerializedName("tokenProvisioningInformation")
-  private TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation tokenProvisioningInformation = null;
+  private Ptsv2paymentsTokenInformationTokenProvisioningInformation tokenProvisioningInformation = null;
 
   @SerializedName("card")
   private TmsEmbeddedInstrumentIdentifierCard card = null;
@@ -137,10 +137,10 @@ public class PostInstrumentIdentifierEnrollmentRequest {
   }
 
    /**
-   * The type of Instrument Identifier. Possible Values: - enrollable card 
+   * The type of Instrument Identifier. Possible Values: - enrollable card - enrollable token 
    * @return type
   **/
-  @ApiModelProperty(value = "The type of Instrument Identifier. Possible Values: - enrollable card ")
+  @ApiModelProperty(value = "The type of Instrument Identifier. Possible Values: - enrollable card - enrollable token ")
   public String getType() {
     return type;
   }
@@ -149,7 +149,7 @@ public class PostInstrumentIdentifierEnrollmentRequest {
     this.type = type;
   }
 
-  public PostInstrumentIdentifierEnrollmentRequest tokenProvisioningInformation(TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation tokenProvisioningInformation) {
+  public PostInstrumentIdentifierEnrollmentRequest tokenProvisioningInformation(Ptsv2paymentsTokenInformationTokenProvisioningInformation tokenProvisioningInformation) {
     this.tokenProvisioningInformation = tokenProvisioningInformation;
     return this;
   }
@@ -159,11 +159,11 @@ public class PostInstrumentIdentifierEnrollmentRequest {
    * @return tokenProvisioningInformation
   **/
   @ApiModelProperty(value = "")
-  public TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation getTokenProvisioningInformation() {
+  public Ptsv2paymentsTokenInformationTokenProvisioningInformation getTokenProvisioningInformation() {
     return tokenProvisioningInformation;
   }
 
-  public void setTokenProvisioningInformation(TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation tokenProvisioningInformation) {
+  public void setTokenProvisioningInformation(Ptsv2paymentsTokenInformationTokenProvisioningInformation tokenProvisioningInformation) {
     this.tokenProvisioningInformation = tokenProvisioningInformation;
   }
 

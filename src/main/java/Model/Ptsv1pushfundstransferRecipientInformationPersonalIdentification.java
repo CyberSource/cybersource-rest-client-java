@@ -35,16 +35,19 @@ public class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {
   @SerializedName("type")
   private String type = null;
 
+  @SerializedName("issuingCountry")
+  private String issuingCountry = null;
+
   public Ptsv1pushfundstransferRecipientInformationPersonalIdentification id(String id) {
     this.id = id;
     return this;
   }
 
    /**
-   * The ID number/value.  Visa Platform Connect This tag will contain an acquirer-populated value associated with the API : senderInformation.personalIdType which will identify the personal ID type of the sender.  Mastercard Send(80) 
+   * The ID number/value. Processor(35) 
    * @return id
   **/
-  @ApiModelProperty(value = "The ID number/value.  Visa Platform Connect This tag will contain an acquirer-populated value associated with the API : senderInformation.personalIdType which will identify the personal ID type of the sender.  Mastercard Send(80) ")
+  @ApiModelProperty(value = "The ID number/value. Processor(35) ")
   public String getId() {
     return id;
   }
@@ -59,16 +62,34 @@ public class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {
   }
 
    /**
-   * This tag will contain the type of sender identification. The valid values are:  Visa Platform Connect: - &#x60;BTHD&#x60;: (Date of birth) - &#x60;CUID&#x60;: (Customer identification (unspecified)) - &#x60;NTID&#x60;: (National identification) - &#x60;PASN&#x60;: (Passport number) - &#x60;DRLN&#x60;: (Driver license) - &#x60;TXIN&#x60;: (Tax identification) - &#x60;CPNY&#x60;: (Company registration number) - &#x60;PRXY&#x60;: (Proxy identification) - &#x60;SSNB&#x60;: (Social security number) - &#x60;ARNB&#x60;: (Alien registration number) - &#x60;LAWE&#x60;: (Law enforcement identification) - &#x60;MILI&#x60;: (Military identification) - &#x60;TRVL&#x60;: (Travel identification (non-passport)) - &#x60;EMAL&#x60;: (Email) - &#x60;PHON&#x60;: (Phone number)  Mastercard Send: - &#x60;CUID&#x60;: (Customer identification (unspecified)) - &#x60;NTID&#x60;: (National identification) - &#x60;PASN&#x60;: (Passport number) - &#x60;DRLN&#x60;: (Driver license) - &#x60;TXIN&#x60;: (Tax identification) - &#x60;SSNB&#x60;: (Social security number) - &#x60;ARNB&#x60;: (Alien registration number) - &#x60;EIDN&#x60;: (Employer Identification Number) - &#x60;IDNB&#x60;: (Identity Card Number) 
+   * This tag will contain the type of sender identification. 
    * @return type
   **/
-  @ApiModelProperty(value = "This tag will contain the type of sender identification. The valid values are:  Visa Platform Connect: - `BTHD`: (Date of birth) - `CUID`: (Customer identification (unspecified)) - `NTID`: (National identification) - `PASN`: (Passport number) - `DRLN`: (Driver license) - `TXIN`: (Tax identification) - `CPNY`: (Company registration number) - `PRXY`: (Proxy identification) - `SSNB`: (Social security number) - `ARNB`: (Alien registration number) - `LAWE`: (Law enforcement identification) - `MILI`: (Military identification) - `TRVL`: (Travel identification (non-passport)) - `EMAL`: (Email) - `PHON`: (Phone number)  Mastercard Send: - `CUID`: (Customer identification (unspecified)) - `NTID`: (National identification) - `PASN`: (Passport number) - `DRLN`: (Driver license) - `TXIN`: (Tax identification) - `SSNB`: (Social security number) - `ARNB`: (Alien registration number) - `EIDN`: (Employer Identification Number) - `IDNB`: (Identity Card Number) ")
+  @ApiModelProperty(value = "This tag will contain the type of sender identification. ")
   public String getType() {
     return type;
   }
 
   public void setType(String type) {
     this.type = type;
+  }
+
+  public Ptsv1pushfundstransferRecipientInformationPersonalIdentification issuingCountry(String issuingCountry) {
+    this.issuingCountry = issuingCountry;
+    return this;
+  }
+
+   /**
+   * Issuing country of the identification. The field format should be a 2 character ISO 3166-1 alpha-2 country code. 
+   * @return issuingCountry
+  **/
+  @ApiModelProperty(value = "Issuing country of the identification. The field format should be a 2 character ISO 3166-1 alpha-2 country code. ")
+  public String getIssuingCountry() {
+    return issuingCountry;
+  }
+
+  public void setIssuingCountry(String issuingCountry) {
+    this.issuingCountry = issuingCountry;
   }
 
 
@@ -82,12 +103,13 @@ public class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {
     }
     Ptsv1pushfundstransferRecipientInformationPersonalIdentification ptsv1pushfundstransferRecipientInformationPersonalIdentification = (Ptsv1pushfundstransferRecipientInformationPersonalIdentification) o;
     return Objects.equals(this.id, ptsv1pushfundstransferRecipientInformationPersonalIdentification.id) &&
-        Objects.equals(this.type, ptsv1pushfundstransferRecipientInformationPersonalIdentification.type);
+        Objects.equals(this.type, ptsv1pushfundstransferRecipientInformationPersonalIdentification.type) &&
+        Objects.equals(this.issuingCountry, ptsv1pushfundstransferRecipientInformationPersonalIdentification.issuingCountry);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type);
+    return Objects.hash(id, type, issuingCountry);
   }
 
 
@@ -98,6 +120,7 @@ public class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    issuingCountry: ").append(toIndentedString(issuingCountry)).append("\n");
     sb.append("}");
     return sb.toString();
   }
