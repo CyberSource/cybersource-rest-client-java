@@ -12,6 +12,7 @@ jobs:
         strategy:
             matrix:
               operating-system: [ubuntu-latest,macos-latest,windows-latest]
+              java-version: ['8','11','16','17','21']
         runs-on: ${{matrix.operating-system}}
         continue-on-error: true
         steps:
@@ -20,30 +21,51 @@ jobs:
                 rm -rf $CLIENT_FOLDER
                 rm -rf $SAMPLE_FOLDER
                 mkdir $CLIENT_FOLDER $SAMPLE_FOLDER
-            - name: Adding client
+            - name: Adding client repo
               uses: actions/checkout@v4
               with:
                 path: ${{env.CLIENT_FOLDER}}
-                ref: 'adding-workflows'
-            - name: Adding sample
+            - name: Adding sample repo
               uses: actions/checkout@v4
               with:
                 repository: 'CyberSource/cybersource-rest-samples-java'
                 ref: 'testing-branch'
                 path: ${{env.SAMPLE_FOLDER}}
+            - name: Setup Java 8 for building the client
+              uses: actions/setup-java@v2
+              with:
+                distribution: 'temurin'
+                java-version: '8'
+            - name: Building the Java Client
+              run:
+                mvn -version
+                java -version
+                cd $CLIENT_FOLDER
+                mvn clean install
+            - name: Setup Java version for building the samples
+              uses: actions/setup-java@v2
+              with:
+                distribution: 'temurin'
+                java-version: ${{matrix.java-version}}
             - name: Building the Projects
               run: |
                 mvn -version
-                cd $CLIENT_FOLDER
-                mvn clean install
-                cd ..
+                java -version
                 cd $SAMPLE_FOLDER
                 mvn clean install
-                echo "Done Building"
-            - name: Upload the log files and report pdf
-              uses: actions/upload-artifact@v3
+                cd target
+                # java -jar SampleCode.jar > ../output.log
+                echo HI > ../output.log
+            - name: Using Report Generation Action
+              id: report-generation
+              uses: ./cybersource-rest-client-java/.github/actions/generate-report
               with:
-                name: log-files
+                lang: java
+                sample-folder-name: ${{env.SAMPLE_FOLDER}}
+                log-file-name: output.log
+            - name: Upload Test Reports
+              uses: actions/upload-artifact@v4
+              with:
+                name: sample-run-report-${{matrix.operating-system}}-java-ver-${{matrix.java-version}}
                 path: |
-                  ${{env.SAMPLE_FOLDER}}
-                  ${{env.CLIENT_FOLDER}}
+                  ${{env.SAMPLE_FOLDER}}/${{steps.report-generation.outputs.result-pdf-name}}
