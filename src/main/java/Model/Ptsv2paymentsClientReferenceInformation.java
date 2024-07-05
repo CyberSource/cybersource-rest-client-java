@@ -135,10 +135,10 @@ public class Ptsv2paymentsClientReferenceInformation {
   }
 
    /**
-   * Comments
+   * Brief description of the order or any comment you wish to add to the order.
    * @return comments
   **/
-  @ApiModelProperty(value = "Comments")
+  @ApiModelProperty(value = "Brief description of the order or any comment you wish to add to the order.")
   public String getComments() {
     return comments;
   }

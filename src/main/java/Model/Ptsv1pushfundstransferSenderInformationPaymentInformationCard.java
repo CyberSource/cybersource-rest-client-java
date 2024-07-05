@@ -71,10 +71,10 @@ public class Ptsv1pushfundstransferSenderInformationPaymentInformationCard {
   }
 
    /**
-   * 3-digit value that indicates the card Cvv2Value. Values can be 0-9.  This field is supported in Mastercard Send. 
+   * 3-digit value that indicates the card Cvv2Value. Values can be 0-9. 
    * @return securityCode
   **/
-  @ApiModelProperty(value = "3-digit value that indicates the card Cvv2Value. Values can be 0-9.  This field is supported in Mastercard Send. ")
+  @ApiModelProperty(value = "3-digit value that indicates the card Cvv2Value. Values can be 0-9. ")
   public String getSecurityCode() {
     return securityCode;
   }
@@ -89,10 +89,10 @@ public class Ptsv1pushfundstransferSenderInformationPaymentInformationCard {
   }
 
    /**
-   * Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  Valid values for Visa Platform Connect: - &#x60;CHECKING&#x60;: Checking account - &#x60;CREDIT&#x60;: Credit card account - &#x60;SAVING&#x60;: Saving account - &#x60;LINE_OF_CREDIT&#x60;: Line of credit or credit portion of combo card - &#x60;PREPAID&#x60;: Prepaid card account or prepaid portion of combo card - &#x60;UNIVERSAL&#x60;: Universal account  Valid values for Mastercard Send: - &#x60;00&#x60;: Other, - &#x60;01&#x60;: RTN + Bank Account, - &#x60;02&#x60;: IBAN, - &#x60;03&#x60;: Card Account, - &#x60;04&#x60;: Email, - &#x60;05&#x60;: Phone Number, - &#x60;06&#x60;: Bank account number (BAN) + Bank Identification Сode (BIC), - &#x60;07&#x60;: Wallet ID, - &#x60;08&#x60;: Social Network ID. Numeric, 2 characters.  This field is supported in Mastercard Send. 
+   * Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process. 
    * @return sourceAccountType
   **/
-  @ApiModelProperty(value = "Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  Valid values for Visa Platform Connect: - `CHECKING`: Checking account - `CREDIT`: Credit card account - `SAVING`: Saving account - `LINE_OF_CREDIT`: Line of credit or credit portion of combo card - `PREPAID`: Prepaid card account or prepaid portion of combo card - `UNIVERSAL`: Universal account  Valid values for Mastercard Send: - `00`: Other, - `01`: RTN + Bank Account, - `02`: IBAN, - `03`: Card Account, - `04`: Email, - `05`: Phone Number, - `06`: Bank account number (BAN) + Bank Identification Сode (BIC), - `07`: Wallet ID, - `08`: Social Network ID. Numeric, 2 characters.  This field is supported in Mastercard Send. ")
+  @ApiModelProperty(value = "Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process. ")
   public String getSourceAccountType() {
     return sourceAccountType;
   }
@@ -107,10 +107,10 @@ public class Ptsv1pushfundstransferSenderInformationPaymentInformationCard {
   }
 
    /**
-   * The customer&#39;s payment card number, also known as the Primary Account Number (PAN).  This field is supported in Mastercard Send. 
+   * The customer&#39;s payment card number, also known as the Primary Account Number (PAN). 
    * @return number
   **/
-  @ApiModelProperty(value = "The customer's payment card number, also known as the Primary Account Number (PAN).  This field is supported in Mastercard Send. ")
+  @ApiModelProperty(value = "The customer's payment card number, also known as the Primary Account Number (PAN). ")
   public String getNumber() {
     return number;
   }
@@ -125,10 +125,10 @@ public class Ptsv1pushfundstransferSenderInformationPaymentInformationCard {
   }
 
    /**
-   * Two-digit month in which the payment card expires.  Format: MM.  Valid values: 01 through 12. Leading 0 is required.  This field is supported for Mastercard Send. 
+   * Two-digit month in which the payment card expires.  Format: MM.  Valid values: 01 through 12. Leading 0 is required. 
    * @return expirationMonth
   **/
-  @ApiModelProperty(value = "Two-digit month in which the payment card expires.  Format: MM.  Valid values: 01 through 12. Leading 0 is required.  This field is supported for Mastercard Send. ")
+  @ApiModelProperty(value = "Two-digit month in which the payment card expires.  Format: MM.  Valid values: 01 through 12. Leading 0 is required. ")
   public String getExpirationMonth() {
     return expirationMonth;
   }
@@ -143,10 +143,10 @@ public class Ptsv1pushfundstransferSenderInformationPaymentInformationCard {
   }
 
    /**
-   * Four-digit year in which the payment card expires.  This field is supported for Mastercard Send. 
+   * Four-digit year in which the payment card expires. 
    * @return expirationYear
   **/
-  @ApiModelProperty(value = "Four-digit year in which the payment card expires.  This field is supported for Mastercard Send. ")
+  @ApiModelProperty(value = "Four-digit year in which the payment card expires. ")
   public String getExpirationYear() {
     return expirationYear;
   }

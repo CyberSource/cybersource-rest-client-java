@@ -35,16 +35,22 @@ public class Ptsv1pushfundstransferOrderInformationAmountDetails {
   @SerializedName("currency")
   private String currency = null;
 
+  @SerializedName("sourceCurrency")
+  private String sourceCurrency = null;
+
+  @SerializedName("destinationCurrency")
+  private String destinationCurrency = null;
+
   public Ptsv1pushfundstransferOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
     return this;
   }
 
    /**
-   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  The disbursement amount. Numeric integer, 1-999999999999. The decimal point is implied based on the relevant currency exponent. For example, a US Dollar $53 amount is a value of 5300.  Processor Amount Ranges: Visa Platform Connect: .01-9999999999.99  Mastercard Send: 1-9999999999.99  FDC Compass: .01- 9999999999.99  Chase Paymentech: .01-9999999999.99 
+   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places. 
    * @return totalAmount
   **/
-  @ApiModelProperty(required = true, value = "Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  The disbursement amount. Numeric integer, 1-999999999999. The decimal point is implied based on the relevant currency exponent. For example, a US Dollar $53 amount is a value of 5300.  Processor Amount Ranges: Visa Platform Connect: .01-9999999999.99  Mastercard Send: 1-9999999999.99  FDC Compass: .01- 9999999999.99  Chase Paymentech: .01-9999999999.99 ")
+  @ApiModelProperty(required = true, value = "Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places. ")
   public String getTotalAmount() {
     return totalAmount;
   }
@@ -59,16 +65,52 @@ public class Ptsv1pushfundstransferOrderInformationAmountDetails {
   }
 
    /**
-   * Use a 3-character alpha currency code for currency of the sender.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf  Currency must be supported by the processor. 
+   * Use a 3-character alpha currency code for currency of the funds transfer.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf  Currency must be supported by the processor. 
    * @return currency
   **/
-  @ApiModelProperty(required = true, value = "Use a 3-character alpha currency code for currency of the sender.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf  Currency must be supported by the processor. ")
+  @ApiModelProperty(required = true, value = "Use a 3-character alpha currency code for currency of the funds transfer.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf  Currency must be supported by the processor. ")
   public String getCurrency() {
     return currency;
   }
 
   public void setCurrency(String currency) {
     this.currency = currency;
+  }
+
+  public Ptsv1pushfundstransferOrderInformationAmountDetails sourceCurrency(String sourceCurrency) {
+    this.sourceCurrency = sourceCurrency;
+    return this;
+  }
+
+   /**
+   * Use a 3-character alpha currency code for source currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
+   * @return sourceCurrency
+  **/
+  @ApiModelProperty(value = "Use a 3-character alpha currency code for source currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf ")
+  public String getSourceCurrency() {
+    return sourceCurrency;
+  }
+
+  public void setSourceCurrency(String sourceCurrency) {
+    this.sourceCurrency = sourceCurrency;
+  }
+
+  public Ptsv1pushfundstransferOrderInformationAmountDetails destinationCurrency(String destinationCurrency) {
+    this.destinationCurrency = destinationCurrency;
+    return this;
+  }
+
+   /**
+   * Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf NOTE: This field is supported only for Visa Platform Connect 
+   * @return destinationCurrency
+  **/
+  @ApiModelProperty(value = "Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf NOTE: This field is supported only for Visa Platform Connect ")
+  public String getDestinationCurrency() {
+    return destinationCurrency;
+  }
+
+  public void setDestinationCurrency(String destinationCurrency) {
+    this.destinationCurrency = destinationCurrency;
   }
 
 
@@ -82,12 +124,14 @@ public class Ptsv1pushfundstransferOrderInformationAmountDetails {
     }
     Ptsv1pushfundstransferOrderInformationAmountDetails ptsv1pushfundstransferOrderInformationAmountDetails = (Ptsv1pushfundstransferOrderInformationAmountDetails) o;
     return Objects.equals(this.totalAmount, ptsv1pushfundstransferOrderInformationAmountDetails.totalAmount) &&
-        Objects.equals(this.currency, ptsv1pushfundstransferOrderInformationAmountDetails.currency);
+        Objects.equals(this.currency, ptsv1pushfundstransferOrderInformationAmountDetails.currency) &&
+        Objects.equals(this.sourceCurrency, ptsv1pushfundstransferOrderInformationAmountDetails.sourceCurrency) &&
+        Objects.equals(this.destinationCurrency, ptsv1pushfundstransferOrderInformationAmountDetails.destinationCurrency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency);
+    return Objects.hash(totalAmount, currency, sourceCurrency, destinationCurrency);
   }
 
 
@@ -98,6 +142,8 @@ public class Ptsv1pushfundstransferOrderInformationAmountDetails {
     
     sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    sourceCurrency: ").append(toIndentedString(sourceCurrency)).append("\n");
+    sb.append("    destinationCurrency: ").append(toIndentedString(destinationCurrency)).append("\n");
     sb.append("}");
     return sb.toString();
   }

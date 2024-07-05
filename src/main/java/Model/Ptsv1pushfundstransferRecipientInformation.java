@@ -58,14 +58,8 @@ public class Ptsv1pushfundstransferRecipientInformation {
   @SerializedName("middleName")
   private String middleName = null;
 
-  @SerializedName("middleInitial")
-  private String middleInitial = null;
-
   @SerializedName("lastName")
   private String lastName = null;
-
-  @SerializedName("dateOfBirth")
-  private String dateOfBirth = null;
 
   @SerializedName("phoneNumber")
   private String phoneNumber = null;
@@ -97,10 +91,10 @@ public class Ptsv1pushfundstransferRecipientInformation {
   }
 
    /**
-   * First line of the recipient&#39;s address.  Required for Mastercard Send. This field is not supported for Visa Platform Connect. 
+   * First line of the recipient&#39;s address. Required for card payments 
    * @return address1
   **/
-  @ApiModelProperty(value = "First line of the recipient's address.  Required for Mastercard Send. This field is not supported for Visa Platform Connect. ")
+  @ApiModelProperty(value = "First line of the recipient's address. Required for card payments ")
   public String getAddress1() {
     return address1;
   }
@@ -115,10 +109,10 @@ public class Ptsv1pushfundstransferRecipientInformation {
   }
 
    /**
-   * Second line of the recipient&#39;s address  Optional for Mastercard Send. This field is not supported for Visa Platform Connect. 
+   * Second line of the recipient&#39;s address 
    * @return address2
   **/
-  @ApiModelProperty(value = "Second line of the recipient's address  Optional for Mastercard Send. This field is not supported for Visa Platform Connect. ")
+  @ApiModelProperty(value = "Second line of the recipient's address ")
   public String getAddress2() {
     return address2;
   }
@@ -133,10 +127,10 @@ public class Ptsv1pushfundstransferRecipientInformation {
   }
 
    /**
-   * Recipient city.  Required for Mastercard Send. 
+   * Recipient city. 
    * @return locality
   **/
-  @ApiModelProperty(value = "Recipient city.  Required for Mastercard Send. ")
+  @ApiModelProperty(value = "Recipient city. ")
   public String getLocality() {
     return locality;
   }
@@ -151,10 +145,10 @@ public class Ptsv1pushfundstransferRecipientInformation {
   }
 
    /**
-   * Recipient postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example &#39;63368&#39;, &#39;63368-5555&#39;. For other regions, this can be alphanumeric, length 1-10.  Mastercard Send: Required for recipients in Canada and Canadian issued cards. 
+   * Recipient postal code.   For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example &#39;63368&#39;, &#39;63368-5555&#39;. For other regions, this can be alphanumeric, length 1-10.  Mandatory for card payments. 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Recipient postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Mastercard Send: Required for recipients in Canada and Canadian issued cards. ")
+  @ApiModelProperty(value = "Recipient postal code.   For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Mandatory for card payments. ")
   public String getPostalCode() {
     return postalCode;
   }
@@ -169,10 +163,10 @@ public class Ptsv1pushfundstransferRecipientInformation {
   }
 
    /**
-   * The recipient&#39;s province, state or territory. Conditional, required if recipient&#39;s country is USA or CAN. Must be an ISO 3166-2 uppercase alpha 2 or 3 character country subdivision code. For example, Missouri is MO.  Required only for FDCCompass.  This field is not supported for Visa Platform Connect. 
+   * The recipient&#39;s province, state or territory. Conditional, required if recipient&#39;s country is USA or CAN. Must be an ISO 3166-2 uppercase alpha 2 or 3 character country subdivision code. For example, Missouri is MO.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf  Required for card payments. 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "The recipient's province, state or territory. Conditional, required if recipient's country is USA or CAN. Must be an ISO 3166-2 uppercase alpha 2 or 3 character country subdivision code. For example, Missouri is MO.  Required only for FDCCompass.  This field is not supported for Visa Platform Connect. ")
+  @ApiModelProperty(value = "The recipient's province, state or territory. Conditional, required if recipient's country is USA or CAN. Must be an ISO 3166-2 uppercase alpha 2 or 3 character country subdivision code. For example, Missouri is MO.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf  Required for card payments. ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -187,10 +181,10 @@ public class Ptsv1pushfundstransferRecipientInformation {
   }
 
    /**
-   * Recipient country code. Use the ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Required for Mastercard Send. 
+   * Recipient country code. Use the ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf 
    * @return country
   **/
-  @ApiModelProperty(value = "Recipient country code. Use the ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Required for Mastercard Send. ")
+  @ApiModelProperty(value = "Recipient country code. Use the ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf ")
   public String getCountry() {
     return country;
   }
@@ -205,10 +199,10 @@ public class Ptsv1pushfundstransferRecipientInformation {
   }
 
    /**
-   * First name of recipient.  Visa Platform Connect (14) Chase Paymentech (30) Mastercard Send (40)  This field is required for Mastercard Send. 
+   * First name of recipient. 
    * @return firstName
   **/
-  @ApiModelProperty(value = "First name of recipient.  Visa Platform Connect (14) Chase Paymentech (30) Mastercard Send (40)  This field is required for Mastercard Send. ")
+  @ApiModelProperty(value = "First name of recipient. ")
   public String getFirstName() {
     return firstName;
   }
@@ -235,58 +229,22 @@ public class Ptsv1pushfundstransferRecipientInformation {
     this.middleName = middleName;
   }
 
-  public Ptsv1pushfundstransferRecipientInformation middleInitial(String middleInitial) {
-    this.middleInitial = middleInitial;
-    return this;
-  }
-
-   /**
-   * Middle Initial of recipient.  This field is supported by FDC Compass. 
-   * @return middleInitial
-  **/
-  @ApiModelProperty(value = "Middle Initial of recipient.  This field is supported by FDC Compass. ")
-  public String getMiddleInitial() {
-    return middleInitial;
-  }
-
-  public void setMiddleInitial(String middleInitial) {
-    this.middleInitial = middleInitial;
-  }
-
   public Ptsv1pushfundstransferRecipientInformation lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
 
    /**
-   * Last name of recipient.  Visa Platform Connect (14) Paymentech (30) Mastercard Send (40)  This field is required for Mastercard Send. 
+   * Last name of recipient. 
    * @return lastName
   **/
-  @ApiModelProperty(value = "Last name of recipient.  Visa Platform Connect (14) Paymentech (30) Mastercard Send (40)  This field is required for Mastercard Send. ")
+  @ApiModelProperty(value = "Last name of recipient. ")
   public String getLastName() {
     return lastName;
   }
 
   public void setLastName(String lastName) {
     this.lastName = lastName;
-  }
-
-  public Ptsv1pushfundstransferRecipientInformation dateOfBirth(String dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
-    return this;
-  }
-
-   /**
-   * Recipient date of birth in YYYYMMDD format. 
-   * @return dateOfBirth
-  **/
-  @ApiModelProperty(value = "Recipient date of birth in YYYYMMDD format. ")
-  public String getDateOfBirth() {
-    return dateOfBirth;
-  }
-
-  public void setDateOfBirth(String dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
   }
 
   public Ptsv1pushfundstransferRecipientInformation phoneNumber(String phoneNumber) {
@@ -344,16 +302,14 @@ public class Ptsv1pushfundstransferRecipientInformation {
         Objects.equals(this.country, ptsv1pushfundstransferRecipientInformation.country) &&
         Objects.equals(this.firstName, ptsv1pushfundstransferRecipientInformation.firstName) &&
         Objects.equals(this.middleName, ptsv1pushfundstransferRecipientInformation.middleName) &&
-        Objects.equals(this.middleInitial, ptsv1pushfundstransferRecipientInformation.middleInitial) &&
         Objects.equals(this.lastName, ptsv1pushfundstransferRecipientInformation.lastName) &&
-        Objects.equals(this.dateOfBirth, ptsv1pushfundstransferRecipientInformation.dateOfBirth) &&
         Objects.equals(this.phoneNumber, ptsv1pushfundstransferRecipientInformation.phoneNumber) &&
         Objects.equals(this.personalIdentification, ptsv1pushfundstransferRecipientInformation.personalIdentification);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentInformation, address1, address2, locality, postalCode, administrativeArea, country, firstName, middleName, middleInitial, lastName, dateOfBirth, phoneNumber, personalIdentification);
+    return Objects.hash(paymentInformation, address1, address2, locality, postalCode, administrativeArea, country, firstName, middleName, lastName, phoneNumber, personalIdentification);
   }
 
 
@@ -371,9 +327,7 @@ public class Ptsv1pushfundstransferRecipientInformation {
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    middleInitial: ").append(toIndentedString(middleInitial)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     sb.append("}");

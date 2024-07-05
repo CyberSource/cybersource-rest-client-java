@@ -15,14 +15,9 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv1pushfundstransferAggregatorInformation;
 import Model.Ptsv1pushfundstransferClientReferenceInformation;
-import Model.Ptsv1pushfundstransferMerchantDefinedInformation;
-import Model.Ptsv1pushfundstransferMerchantInformation;
 import Model.Ptsv1pushfundstransferOrderInformation;
-import Model.Ptsv1pushfundstransferPointOfServiceInformation;
 import Model.Ptsv1pushfundstransferProcessingInformation;
-import Model.Ptsv1pushfundstransferProcessingOptions;
 import Model.Ptsv1pushfundstransferRecipientInformation;
 import Model.Ptsv1pushfundstransferSenderInformation;
 import com.google.gson.TypeAdapter;
@@ -48,26 +43,11 @@ public class PushFundsRequest {
   @SerializedName("processingInformation")
   private Ptsv1pushfundstransferProcessingInformation processingInformation = null;
 
-  @SerializedName("processingOptions")
-  private Ptsv1pushfundstransferProcessingOptions processingOptions = null;
-
   @SerializedName("recipientInformation")
   private Ptsv1pushfundstransferRecipientInformation recipientInformation = null;
 
   @SerializedName("senderInformation")
   private Ptsv1pushfundstransferSenderInformation senderInformation = null;
-
-  @SerializedName("aggregatorInformation")
-  private Ptsv1pushfundstransferAggregatorInformation aggregatorInformation = null;
-
-  @SerializedName("merchantDefinedInformation")
-  private Ptsv1pushfundstransferMerchantDefinedInformation merchantDefinedInformation = null;
-
-  @SerializedName("merchantInformation")
-  private Ptsv1pushfundstransferMerchantInformation merchantInformation = null;
-
-  @SerializedName("pointOfServiceInformation")
-  private Ptsv1pushfundstransferPointOfServiceInformation pointOfServiceInformation = null;
 
   public PushFundsRequest clientReferenceInformation(Ptsv1pushfundstransferClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -123,24 +103,6 @@ public class PushFundsRequest {
     this.processingInformation = processingInformation;
   }
 
-  public PushFundsRequest processingOptions(Ptsv1pushfundstransferProcessingOptions processingOptions) {
-    this.processingOptions = processingOptions;
-    return this;
-  }
-
-   /**
-   * Get processingOptions
-   * @return processingOptions
-  **/
-  @ApiModelProperty(value = "")
-  public Ptsv1pushfundstransferProcessingOptions getProcessingOptions() {
-    return processingOptions;
-  }
-
-  public void setProcessingOptions(Ptsv1pushfundstransferProcessingOptions processingOptions) {
-    this.processingOptions = processingOptions;
-  }
-
   public PushFundsRequest recipientInformation(Ptsv1pushfundstransferRecipientInformation recipientInformation) {
     this.recipientInformation = recipientInformation;
     return this;
@@ -168,85 +130,13 @@ public class PushFundsRequest {
    * Get senderInformation
    * @return senderInformation
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Ptsv1pushfundstransferSenderInformation getSenderInformation() {
     return senderInformation;
   }
 
   public void setSenderInformation(Ptsv1pushfundstransferSenderInformation senderInformation) {
     this.senderInformation = senderInformation;
-  }
-
-  public PushFundsRequest aggregatorInformation(Ptsv1pushfundstransferAggregatorInformation aggregatorInformation) {
-    this.aggregatorInformation = aggregatorInformation;
-    return this;
-  }
-
-   /**
-   * Get aggregatorInformation
-   * @return aggregatorInformation
-  **/
-  @ApiModelProperty(value = "")
-  public Ptsv1pushfundstransferAggregatorInformation getAggregatorInformation() {
-    return aggregatorInformation;
-  }
-
-  public void setAggregatorInformation(Ptsv1pushfundstransferAggregatorInformation aggregatorInformation) {
-    this.aggregatorInformation = aggregatorInformation;
-  }
-
-  public PushFundsRequest merchantDefinedInformation(Ptsv1pushfundstransferMerchantDefinedInformation merchantDefinedInformation) {
-    this.merchantDefinedInformation = merchantDefinedInformation;
-    return this;
-  }
-
-   /**
-   * Get merchantDefinedInformation
-   * @return merchantDefinedInformation
-  **/
-  @ApiModelProperty(value = "")
-  public Ptsv1pushfundstransferMerchantDefinedInformation getMerchantDefinedInformation() {
-    return merchantDefinedInformation;
-  }
-
-  public void setMerchantDefinedInformation(Ptsv1pushfundstransferMerchantDefinedInformation merchantDefinedInformation) {
-    this.merchantDefinedInformation = merchantDefinedInformation;
-  }
-
-  public PushFundsRequest merchantInformation(Ptsv1pushfundstransferMerchantInformation merchantInformation) {
-    this.merchantInformation = merchantInformation;
-    return this;
-  }
-
-   /**
-   * Get merchantInformation
-   * @return merchantInformation
-  **/
-  @ApiModelProperty(value = "")
-  public Ptsv1pushfundstransferMerchantInformation getMerchantInformation() {
-    return merchantInformation;
-  }
-
-  public void setMerchantInformation(Ptsv1pushfundstransferMerchantInformation merchantInformation) {
-    this.merchantInformation = merchantInformation;
-  }
-
-  public PushFundsRequest pointOfServiceInformation(Ptsv1pushfundstransferPointOfServiceInformation pointOfServiceInformation) {
-    this.pointOfServiceInformation = pointOfServiceInformation;
-    return this;
-  }
-
-   /**
-   * Get pointOfServiceInformation
-   * @return pointOfServiceInformation
-  **/
-  @ApiModelProperty(value = "")
-  public Ptsv1pushfundstransferPointOfServiceInformation getPointOfServiceInformation() {
-    return pointOfServiceInformation;
-  }
-
-  public void setPointOfServiceInformation(Ptsv1pushfundstransferPointOfServiceInformation pointOfServiceInformation) {
-    this.pointOfServiceInformation = pointOfServiceInformation;
   }
 
 
@@ -262,18 +152,13 @@ public class PushFundsRequest {
     return Objects.equals(this.clientReferenceInformation, pushFundsRequest.clientReferenceInformation) &&
         Objects.equals(this.orderInformation, pushFundsRequest.orderInformation) &&
         Objects.equals(this.processingInformation, pushFundsRequest.processingInformation) &&
-        Objects.equals(this.processingOptions, pushFundsRequest.processingOptions) &&
         Objects.equals(this.recipientInformation, pushFundsRequest.recipientInformation) &&
-        Objects.equals(this.senderInformation, pushFundsRequest.senderInformation) &&
-        Objects.equals(this.aggregatorInformation, pushFundsRequest.aggregatorInformation) &&
-        Objects.equals(this.merchantDefinedInformation, pushFundsRequest.merchantDefinedInformation) &&
-        Objects.equals(this.merchantInformation, pushFundsRequest.merchantInformation) &&
-        Objects.equals(this.pointOfServiceInformation, pushFundsRequest.pointOfServiceInformation);
+        Objects.equals(this.senderInformation, pushFundsRequest.senderInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, orderInformation, processingInformation, processingOptions, recipientInformation, senderInformation, aggregatorInformation, merchantDefinedInformation, merchantInformation, pointOfServiceInformation);
+    return Objects.hash(clientReferenceInformation, orderInformation, processingInformation, recipientInformation, senderInformation);
   }
 
 
@@ -285,13 +170,8 @@ public class PushFundsRequest {
     sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    processingOptions: ").append(toIndentedString(processingOptions)).append("\n");
     sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
     sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
-    sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
-    sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
-    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
-    sb.append("    pointOfServiceInformation: ").append(toIndentedString(pointOfServiceInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

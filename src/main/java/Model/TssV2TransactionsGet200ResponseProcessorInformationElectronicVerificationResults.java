@@ -65,10 +65,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer&#39;s email address.  For details, see &#x60;auth_ev_email&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer&#39;s email address. 
    * @return email
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's email address.  For details, see `auth_ev_email` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's email address. ")
   public String getEmail() {
     return email;
   }
@@ -137,10 +137,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer&#39;s phone number.  For details, see &#x60;auth_ev_phone_number&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer&#39;s phone number. 
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's phone number.  For details, see `auth_ev_phone_number` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's phone number. ")
   public String getPhoneNumber() {
     return phoneNumber;
   }
@@ -173,10 +173,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer&#39;s street address.  For details, see &#x60;auth_ev_street&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer&#39;s street address. 
    * @return street
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's street address.  For details, see `auth_ev_street` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's street address. ")
   public String getStreet() {
     return street;
   }
@@ -209,10 +209,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerifi
   }
 
    /**
-   * Mapped Electronic Verification response code for the customer&#39;s postal code.  For details, see &#x60;auth_ev_postal_code&#x60; field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Mapped Electronic Verification response code for the customer&#39;s postal code. 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's postal code.  For details, see `auth_ev_postal_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Mapped Electronic Verification response code for the customer's postal code. ")
   public String getPostalCode() {
     return postalCode;
   }

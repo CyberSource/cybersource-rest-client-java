@@ -32,9 +32,6 @@ public class Ptsv2payoutsRecipientInformation {
   @SerializedName("firstName")
   private String firstName = null;
 
-  @SerializedName("middleInitial")
-  private String middleInitial = null;
-
   @SerializedName("middleName")
   private String middleName = null;
 
@@ -59,9 +56,6 @@ public class Ptsv2payoutsRecipientInformation {
   @SerializedName("phoneNumber")
   private String phoneNumber = null;
 
-  @SerializedName("dateOfBirth")
-  private String dateOfBirth = null;
-
   public Ptsv2payoutsRecipientInformation firstName(String firstName) {
     this.firstName = firstName;
     return this;
@@ -78,24 +72,6 @@ public class Ptsv2payoutsRecipientInformation {
 
   public void setFirstName(String firstName) {
     this.firstName = firstName;
-  }
-
-  public Ptsv2payoutsRecipientInformation middleInitial(String middleInitial) {
-    this.middleInitial = middleInitial;
-    return this;
-  }
-
-   /**
-   * Middle Initial of recipient. Required only for FDCCompass. 
-   * @return middleInitial
-  **/
-  @ApiModelProperty(value = "Middle Initial of recipient. Required only for FDCCompass. ")
-  public String getMiddleInitial() {
-    return middleInitial;
-  }
-
-  public void setMiddleInitial(String middleInitial) {
-    this.middleInitial = middleInitial;
   }
 
   public Ptsv2payoutsRecipientInformation middleName(String middleName) {
@@ -242,24 +218,6 @@ public class Ptsv2payoutsRecipientInformation {
     this.phoneNumber = phoneNumber;
   }
 
-  public Ptsv2payoutsRecipientInformation dateOfBirth(String dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
-    return this;
-  }
-
-   /**
-   * Recipient date of birth in YYYYMMDD format. Required only for FDCCompass.
-   * @return dateOfBirth
-  **/
-  @ApiModelProperty(value = "Recipient date of birth in YYYYMMDD format. Required only for FDCCompass.")
-  public String getDateOfBirth() {
-    return dateOfBirth;
-  }
-
-  public void setDateOfBirth(String dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -271,7 +229,6 @@ public class Ptsv2payoutsRecipientInformation {
     }
     Ptsv2payoutsRecipientInformation ptsv2payoutsRecipientInformation = (Ptsv2payoutsRecipientInformation) o;
     return Objects.equals(this.firstName, ptsv2payoutsRecipientInformation.firstName) &&
-        Objects.equals(this.middleInitial, ptsv2payoutsRecipientInformation.middleInitial) &&
         Objects.equals(this.middleName, ptsv2payoutsRecipientInformation.middleName) &&
         Objects.equals(this.lastName, ptsv2payoutsRecipientInformation.lastName) &&
         Objects.equals(this.address1, ptsv2payoutsRecipientInformation.address1) &&
@@ -279,13 +236,12 @@ public class Ptsv2payoutsRecipientInformation {
         Objects.equals(this.administrativeArea, ptsv2payoutsRecipientInformation.administrativeArea) &&
         Objects.equals(this.country, ptsv2payoutsRecipientInformation.country) &&
         Objects.equals(this.postalCode, ptsv2payoutsRecipientInformation.postalCode) &&
-        Objects.equals(this.phoneNumber, ptsv2payoutsRecipientInformation.phoneNumber) &&
-        Objects.equals(this.dateOfBirth, ptsv2payoutsRecipientInformation.dateOfBirth);
+        Objects.equals(this.phoneNumber, ptsv2payoutsRecipientInformation.phoneNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, middleInitial, middleName, lastName, address1, locality, administrativeArea, country, postalCode, phoneNumber, dateOfBirth);
+    return Objects.hash(firstName, middleName, lastName, address1, locality, administrativeArea, country, postalCode, phoneNumber);
   }
 
 
@@ -295,7 +251,6 @@ public class Ptsv2payoutsRecipientInformation {
     sb.append("class Ptsv2payoutsRecipientInformation {\n");
     
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    middleInitial: ").append(toIndentedString(middleInitial)).append("\n");
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
@@ -304,7 +259,6 @@ public class Ptsv2payoutsRecipientInformation {
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("}");
     return sb.toString();
   }

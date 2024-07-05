@@ -44,10 +44,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInfor
   }
 
    /**
-   * Transaction identifier.  For details, see &#x60;xid&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Transaction identifier. 
    * @return xid
   **/
-  @ApiModelProperty(value = "Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Transaction identifier. ")
   public String getXid() {
     return xid;
   }
@@ -80,10 +80,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInfor
   }
 
    /**
-   * Raw electronic commerce indicator (ECI).  For details, see &#x60;eci_raw&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Raw electronic commerce indicator (ECI). 
    * @return eciRaw
   **/
-  @ApiModelProperty(value = "Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Raw electronic commerce indicator (ECI). ")
   public String getEciRaw() {
     return eciRaw;
   }

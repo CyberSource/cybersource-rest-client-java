@@ -41,10 +41,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification {
   }
 
    /**
-   * Results from the ACH verification service. For details about this service and the possible values for the results, see \&quot;ACH Verification\&quot; and \&quot;Verification Codes\&quot; in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/). 
+   * Results from the ACH verification service. 
    * @return resultCode
   **/
-  @ApiModelProperty(value = "Results from the ACH verification service. For details about this service and the possible values for the results, see \"ACH Verification\" and \"Verification Codes\" in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/). ")
+  @ApiModelProperty(value = "Results from the ACH verification service. ")
   public String getResultCode() {
     return resultCode;
   }
@@ -59,10 +59,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification {
   }
 
    /**
-   * Raw results from the ACH verification service. For details about this service and the possible values for the raw results, see \&quot;ACH Verification\&quot; and \&quot;Verification Codes\&quot; in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/). 
+   * Raw results from the ACH verification service. 
    * @return resultCodeRaw
   **/
-  @ApiModelProperty(value = "Raw results from the ACH verification service. For details about this service and the possible values for the raw results, see \"ACH Verification\" and \"Verification Codes\" in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/). ")
+  @ApiModelProperty(value = "Raw results from the ACH verification service. ")
   public String getResultCodeRaw() {
     return resultCodeRaw;
   }
