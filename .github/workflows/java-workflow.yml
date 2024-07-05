@@ -69,3 +69,5 @@ jobs:
                 name: sample-run-report-${{matrix.operating-system}}-java-ver-${{matrix.java-version}}
                 path: |
                   ${{env.SAMPLE_FOLDER}}/${{steps.report-generation.outputs.result-pdf-name}}
+
+#Running the Java Workflow
