@@ -31,7 +31,7 @@ jobs:
                 repository: 'CyberSource/cybersource-rest-samples-java'
                 ref: 'testing-branch'
                 path: ${{env.SAMPLE_FOLDER}}
-            - name: Replace the Version of Cybersource Client in Samples
+            - name: Replace the Version of Cybersource Client in Samples pom file
               run: |
                 cd $CLIENT_FOLDER
                 RESTCLIENT_SDK_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
@@ -50,17 +50,6 @@ jobs:
                 java -version
                 cd $CLIENT_FOLDER
                 mvn clean install
-            - name: Install tree and print all files in .m2 directory
-              run: |
-                sudo apt-get install -y tree
-                tree ~/.m2
-            - name: Check and Print Maven settings.xml
-              run: |
-                if [ -f ~/.m2/settings.xml ]; then
-                  cat ~/.m2/settings.xml
-                else
-                  echo "settings.xml does not exist"
-                fi
             - name: Setup Java version for building the samples
               uses: actions/setup-java@v2
               with:
@@ -70,15 +59,8 @@ jobs:
               run: |
                 mvn -version
                 java -version
-                # cd $CLIENT_FOLDER
-                # RESTCLIENT_SDK_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-                # echo $RESTCLIENT_SDK_VERSION
                 cd $SAMPLE_FOLDER
-                # perl -i -spe "BEGIN{undef $/;} s|<groupId>com\.cybersource<\/groupId>\s*<artifactId>cybersource-rest-client-java<\/artifactId>\s*<version>.*?<\/version>|<groupId>com.cybersource</groupId>\n   <artifactId>cybersource-rest-client-java</artifactId>\n  <version>\${version}</version>|gs" -- -version=$RESTCLIENT_SDK_VERSION pom.xml
-                # cat pom.xml
-                # sed "s|<groupId>com\.cybersource<\/groupId>\s*<artifactId>cybersource-rest-client-java<\/artifactId>\s*<version>.*<\/version>|<groupId>com.cybersource</groupId>\n   <artifactId>cybersource-rest-client-java</artifactId>\n  <version>${RESTCLIENT_SDK_VERSION}</version>|g" pom.xml > temp && mv temp pom.xml
                 mvn -X -e clean install
-                cd target
                 # java -jar SampleCode.jar > ../output.log
                 echo HI > ../output.log
             - name: Using Report Generation Action
