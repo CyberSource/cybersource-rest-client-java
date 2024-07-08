@@ -49,8 +49,8 @@ jobs:
                 mvn -version
                 java -version
                 cd $CLIENT_FOLDER
-                mvn -X -e clean install
-                echo Build Successful
+                mvn clean install
+                echo "Build Successful"
             - name: Install tree and print all files in .m2 directory
               run: |
                 sudo apt-get install -y tree
