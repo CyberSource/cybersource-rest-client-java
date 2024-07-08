@@ -14,6 +14,14 @@ jobs:
             matrix:
               operating-system: [ubuntu-latest,macos-latest,windows-latest]
               java-version: ['8','11','16','17','18','19','20','21','22']
+              distribution: ['temurin','oracle']
+              exclude:
+                - distribution: 'oracle'
+                  java-version: '8'
+                - distribution: 'oracle'
+                  java-version: '11'
+                - distribution: 'oracle'
+                  java-version: '16'
         runs-on: ${{matrix.operating-system}}
         steps:
             - name: Making separate folders
@@ -53,7 +61,7 @@ jobs:
             - name: Setup Java version to Build the samples
               uses: actions/setup-java@v2
               with:
-                distribution: 'temurin'
+                distribution: ${{matrix.distribution}}
                 java-version: ${{matrix.java-version}}
             - name: Build the Sample Project
               run: |
@@ -74,7 +82,7 @@ jobs:
             - name: Upload Test Reports
               uses: actions/upload-artifact@v4
               with:
-                name: sample-run-report-${{matrix.operating-system}}-java-ver-${{matrix.java-version}}
+                name: sample-run-report-${{matrix.operating-system}}-${{matrix.distribution}}-java-ver-${{matrix.java-version}}
                 path: |
                   ${{env.SAMPLE_FOLDER}}/${{steps.report-generation.outputs.result-pdf-name}}
 
