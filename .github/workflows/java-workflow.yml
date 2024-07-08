@@ -51,6 +51,13 @@ jobs:
             #     cd $CLIENT_FOLDER
             #     mvn -X -e clean install
             #     echo Build Successful
+            - name: Check and Print Maven settings.xml
+              run: |
+                if [ -f ~/.m2/settings.xml ]; then
+                  cat ~/.m2/settings.xml
+                else
+                  echo "settings.xml does not exist"
+                fi
             - name: Setup Java version for building the samples
               uses: actions/setup-java@v2
               with:
