@@ -49,7 +49,7 @@ jobs:
                 mvn -version
                 java -version
                 cd $CLIENT_FOLDER
-                mvn clean install
+                mvn -X -e clean install
                 echo Build Successful
             - name: Setup Java version for building the samples
               uses: actions/setup-java@v2
