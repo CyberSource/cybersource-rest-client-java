@@ -67,7 +67,7 @@ jobs:
                 # perl -i -spe "BEGIN{undef $/;} s|<groupId>com\.cybersource<\/groupId>\s*<artifactId>cybersource-rest-client-java<\/artifactId>\s*<version>.*?<\/version>|<groupId>com.cybersource</groupId>\n   <artifactId>cybersource-rest-client-java</artifactId>\n  <version>\${version}</version>|gs" -- -version=$RESTCLIENT_SDK_VERSION pom.xml
                 # cat pom.xml
                 # sed "s|<groupId>com\.cybersource<\/groupId>\s*<artifactId>cybersource-rest-client-java<\/artifactId>\s*<version>.*<\/version>|<groupId>com.cybersource</groupId>\n   <artifactId>cybersource-rest-client-java</artifactId>\n  <version>${RESTCLIENT_SDK_VERSION}</version>|g" pom.xml > temp && mv temp pom.xml
-                mvn clean install
+                mvn -X -e clean install
                 cd target
                 # java -jar SampleCode.jar > ../output.log
                 echo HI > ../output.log
