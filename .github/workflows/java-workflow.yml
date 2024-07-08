@@ -56,7 +56,7 @@ jobs:
               with:
                 distribution: ${{matrix.distribution}}
                 java-version: ${{matrix.java-version}}
-            - name: Build the Sample Project
+            - name: Build the Sample Project and Run the Samples
               run: |
                 mvn -version
                 java -version
