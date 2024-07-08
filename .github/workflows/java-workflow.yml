@@ -45,12 +45,15 @@ jobs:
                 distribution: 'temurin'
                 java-version: '8'
             - name: Building the Java Client
-              run:
+              run: |
                 mvn -version
                 java -version
+                pwd
                 cd $CLIENT_FOLDER
+                ls
                 mvn clean install
-                echo "Build Successful"
+                pwd
+                ls
             - name: Install tree and print all files in .m2 directory
               run: |
                 sudo apt-get install -y tree
