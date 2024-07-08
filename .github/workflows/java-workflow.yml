@@ -1,4 +1,4 @@
-name: Java workflow to run Java rest Samples
+name: JAVA BUILDS
 on:
   push:
 env:
@@ -21,17 +21,17 @@ jobs:
                 rm -rf $CLIENT_FOLDER
                 rm -rf $SAMPLE_FOLDER
                 mkdir $CLIENT_FOLDER $SAMPLE_FOLDER
-            - name: Adding client repo
+            - name: Checkout the cybersource-rest-client-java repo
               uses: actions/checkout@v4
               with:
                 path: ${{env.CLIENT_FOLDER}}
-            - name: Adding sample repo
+            - name: Checkout the cybersource-rest-samples-java repo
               uses: actions/checkout@v4
               with:
                 repository: 'CyberSource/cybersource-rest-samples-java'
                 ref: 'testing-branch'
                 path: ${{env.SAMPLE_FOLDER}}
-            - name: Replace the Version of Cybersource Client in Samples pom file
+            - name: Replace the Version of cybersource-rest-client-java in samples' pom file 
               run: |
                 cd $CLIENT_FOLDER
                 RESTCLIENT_SDK_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
@@ -39,30 +39,31 @@ jobs:
                 cd ../$SAMPLE_FOLDER
                 perl -i -spe "BEGIN{undef $/;} s|<groupId>com\.cybersource<\/groupId>\s*<artifactId>cybersource-rest-client-java<\/artifactId>\s*<version>.*?<\/version>|<groupId>com.cybersource</groupId>\n   <artifactId>cybersource-rest-client-java</artifactId>\n  <version>\${version}</version>|gs" -- -version=$RESTCLIENT_SDK_VERSION pom.xml
                 cat pom.xml
-            - name: Setup Java 8 for building the client
+            - name: Setup Java 8 to Build the Client
               uses: actions/setup-java@v2
               with:
                 distribution: 'temurin'
                 java-version: '8'
-            - name: Building the Java Client
+            - name: Build the Java Client
               run: |
                 mvn -version
                 java -version
                 cd $CLIENT_FOLDER
                 mvn clean install
-            - name: Setup Java version for building the samples
+            - name: Setup Java version to Build the samples
               uses: actions/setup-java@v2
               with:
                 distribution: 'temurin'
                 java-version: ${{matrix.java-version}}
-            - name: Building the Sample PROJECT
+            - name: Build the Sample Project
               run: |
                 mvn -version
                 java -version
                 cd $SAMPLE_FOLDER
                 mvn -X -e clean install
-                # java -jar SampleCode.jar > ../output.log
-                echo HI > output.log
+                cd target
+                java -jar SampleCode.jar > ../output.log
+                # echo HI > ../output.log
             - name: Using Report Generation Action
               id: report-generation
               uses: ./cybersource-rest-client-java/.github/actions/generate-report
