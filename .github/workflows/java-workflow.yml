@@ -62,7 +62,7 @@ jobs:
                 cd $SAMPLE_FOLDER
                 mvn -X -e clean install
                 # java -jar SampleCode.jar > ../output.log
-                echo HI > ../output.log
+                echo HI > output.log
             - name: Using Report Generation Action
               id: report-generation
               uses: ./cybersource-rest-client-java/.github/actions/generate-report
