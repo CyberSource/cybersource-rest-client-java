@@ -38,7 +38,7 @@ jobs:
                 RESTCLIENT_SDK_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
                 echo $RESTCLIENT_SDK_VERSION
                 cd ../$SAMPLE_FOLDER
-                perl -i -spe "BEGIN{undef $/;} s|<groupId>com\.cybersource<\/groupId>\s*<artifactId>cybersource-rest-client-java<\/artifactId>\s*<version>.*?<\/version>|<groupId>com.cybersource</groupId>\n   <artifactId>cybersource-rest-client-java</artifactId>\n  <version>\${version}</version>|gs" -- -version=$RESTCLIENT_SDK_VERSION pom.xml
+                perl -i -spe "BEGIN{undef $/;} s|<groupId>com\.cybersource<\/groupId>\s*<artifactId>cybersource-rest-client-java<\/artifactId>\s*<version>.*?<\/version>|<groupId>com.cybersource</groupId>\n   <artifactId>cybersource-rest-client-java</artifactId>\n  <version>\${version}</version>|g" -- -version=$RESTCLIENT_SDK_VERSION pom.xml
                 cat pom.xml
             - name: Setup Java 8 to Build the Client
               uses: actions/setup-java@v2
