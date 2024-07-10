@@ -1,6 +1,8 @@
 name: JAVA BUILDS
 on:
   push:
+  pull_request:
+  workflow_dispatch:
 env:
   CLIENT_FOLDER: 'cybersource-rest-client-java'
   SAMPLE_FOLDER: 'cybersource-rest-samples-java'
