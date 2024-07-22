@@ -1,5 +1,5 @@
 
-# InlineResponse2011RegistrationInformation
+# InlineResponse2012RegistrationInformation
 
 ## Properties
 Name | Type | Description | Notes

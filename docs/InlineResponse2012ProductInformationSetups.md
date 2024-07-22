@@ -1,11 +1,11 @@
 
-# InlineResponse2011ProductInformationSetups
+# InlineResponse2012ProductInformationSetups
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **organizationId** | **String** |  |  [optional]
-**setups** | [**InlineResponse2011Setups**](InlineResponse2011Setups.md) |  |  [optional]
+**setups** | [**InlineResponse2012Setups**](InlineResponse2012Setups.md) |  |  [optional]
 
 
 

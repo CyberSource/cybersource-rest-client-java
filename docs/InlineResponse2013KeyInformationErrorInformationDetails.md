@@ -1,5 +1,5 @@
 
-# InlineResponse2012KeyInformationErrorInformationDetails
+# InlineResponse2013KeyInformationErrorInformationDetails
 
 ## Properties
 Name | Type | Description | Notes

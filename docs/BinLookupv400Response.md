@@ -1,5 +1,5 @@
 
-# TssV2TransactionsPost400Response
+# BinLookupv400Response
 
 ## Properties
 Name | Type | Description | Notes

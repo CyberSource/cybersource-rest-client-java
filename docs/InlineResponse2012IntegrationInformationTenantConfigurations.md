@@ -1,5 +1,5 @@
 
-# InlineResponse2011IntegrationInformationTenantConfigurations
+# InlineResponse2012IntegrationInformationTenantConfigurations
 
 ## Properties
 Name | Type | Description | Notes

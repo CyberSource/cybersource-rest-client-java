@@ -151,7 +151,7 @@ No authorization required
 
 <a name="saveAsymEgressKey"></a>
 # **saveAsymEgressKey**
-> InlineResponse2014 saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId)
+> InlineResponse2015 saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId)
 
 Message Level Encryption
 
@@ -170,7 +170,7 @@ String vCPermissions = "vCPermissions_example"; // String | Encoded user permiss
 SaveAsymEgressKey saveAsymEgressKey = new SaveAsymEgressKey(); // SaveAsymEgressKey | Provide egress Asymmetric key information to save (create or store)
 String vCCorrelationId = "vCCorrelationId_example"; // String | A globally unique id associated with your request
 try {
-    InlineResponse2014 result = apiInstance.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+    InlineResponse2015 result = apiInstance.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#saveAsymEgressKey");
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**InlineResponse2015**](InlineResponse2015.md)
 
 ### Authorization
 

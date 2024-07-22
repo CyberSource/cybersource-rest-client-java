@@ -1,5 +1,5 @@
 
-# InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus
+# InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus
 
 ## Properties
 Name | Type | Description | Notes

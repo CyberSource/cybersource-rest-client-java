@@ -1,5 +1,5 @@
 
-# InlineResponse2011OrganizationInformation
+# InlineResponse2012OrganizationInformation
 
 ## Properties
 Name | Type | Description | Notes
