@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus;
+import Model.InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,14 +26,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse2011SetupsPaymentsDigitalPayments
+ * InlineResponse2012SetupsPaymentsDigitalPayments
  */
 
-public class InlineResponse2011SetupsPaymentsDigitalPayments {
+public class InlineResponse2012SetupsPaymentsDigitalPayments {
   @SerializedName("subscriptionStatus")
-  private InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus = null;
+  private InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus = null;
 
-  public InlineResponse2011SetupsPaymentsDigitalPayments subscriptionStatus(InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus) {
+  public InlineResponse2012SetupsPaymentsDigitalPayments subscriptionStatus(InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus) {
     this.subscriptionStatus = subscriptionStatus;
     return this;
   }
@@ -43,11 +43,11 @@ public class InlineResponse2011SetupsPaymentsDigitalPayments {
    * @return subscriptionStatus
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus getSubscriptionStatus() {
+  public InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus getSubscriptionStatus() {
     return subscriptionStatus;
   }
 
-  public void setSubscriptionStatus(InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus) {
+  public void setSubscriptionStatus(InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus) {
     this.subscriptionStatus = subscriptionStatus;
   }
 
@@ -60,8 +60,8 @@ public class InlineResponse2011SetupsPaymentsDigitalPayments {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011SetupsPaymentsDigitalPayments inlineResponse2011SetupsPaymentsDigitalPayments = (InlineResponse2011SetupsPaymentsDigitalPayments) o;
-    return Objects.equals(this.subscriptionStatus, inlineResponse2011SetupsPaymentsDigitalPayments.subscriptionStatus);
+    InlineResponse2012SetupsPaymentsDigitalPayments inlineResponse2012SetupsPaymentsDigitalPayments = (InlineResponse2012SetupsPaymentsDigitalPayments) o;
+    return Objects.equals(this.subscriptionStatus, inlineResponse2012SetupsPaymentsDigitalPayments.subscriptionStatus);
   }
 
   @Override
@@ -73,7 +73,7 @@ public class InlineResponse2011SetupsPaymentsDigitalPayments {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011SetupsPaymentsDigitalPayments {\n");
+    sb.append("class InlineResponse2012SetupsPaymentsDigitalPayments {\n");
     
     sb.append("    subscriptionStatus: ").append(toIndentedString(subscriptionStatus)).append("\n");
     sb.append("}");

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2012KeyInformationErrorInformation;
+import Model.InlineResponse2013KeyInformationErrorInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,7 +30,7 @@ import java.io.IOException;
  */
 @ApiModel(description = "Egress Key Information ")
 
-public class InlineResponse2012KeyInformation {
+public class InlineResponse2013KeyInformation {
   @SerializedName("provider")
   private String provider = null;
 
@@ -62,9 +62,9 @@ public class InlineResponse2012KeyInformation {
   private String message = null;
 
   @SerializedName("errorInformation")
-  private InlineResponse2012KeyInformationErrorInformation errorInformation = null;
+  private InlineResponse2013KeyInformationErrorInformation errorInformation = null;
 
-  public InlineResponse2012KeyInformation provider(String provider) {
+  public InlineResponse2013KeyInformation provider(String provider) {
     this.provider = provider;
     return this;
   }
@@ -82,7 +82,7 @@ public class InlineResponse2012KeyInformation {
     this.provider = provider;
   }
 
-  public InlineResponse2012KeyInformation tenant(String tenant) {
+  public InlineResponse2013KeyInformation tenant(String tenant) {
     this.tenant = tenant;
     return this;
   }
@@ -100,7 +100,7 @@ public class InlineResponse2012KeyInformation {
     this.tenant = tenant;
   }
 
-  public InlineResponse2012KeyInformation organizationId(String organizationId) {
+  public InlineResponse2013KeyInformation organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -118,7 +118,7 @@ public class InlineResponse2012KeyInformation {
     this.organizationId = organizationId;
   }
 
-  public InlineResponse2012KeyInformation clientKeyId(String clientKeyId) {
+  public InlineResponse2013KeyInformation clientKeyId(String clientKeyId) {
     this.clientKeyId = clientKeyId;
     return this;
   }
@@ -136,7 +136,7 @@ public class InlineResponse2012KeyInformation {
     this.clientKeyId = clientKeyId;
   }
 
-  public InlineResponse2012KeyInformation keyId(String keyId) {
+  public InlineResponse2013KeyInformation keyId(String keyId) {
     this.keyId = keyId;
     return this;
   }
@@ -154,7 +154,7 @@ public class InlineResponse2012KeyInformation {
     this.keyId = keyId;
   }
 
-  public InlineResponse2012KeyInformation key(String key) {
+  public InlineResponse2013KeyInformation key(String key) {
     this.key = key;
     return this;
   }
@@ -172,7 +172,7 @@ public class InlineResponse2012KeyInformation {
     this.key = key;
   }
 
-  public InlineResponse2012KeyInformation keyType(String keyType) {
+  public InlineResponse2013KeyInformation keyType(String keyType) {
     this.keyType = keyType;
     return this;
   }
@@ -190,7 +190,7 @@ public class InlineResponse2012KeyInformation {
     this.keyType = keyType;
   }
 
-  public InlineResponse2012KeyInformation status(String status) {
+  public InlineResponse2013KeyInformation status(String status) {
     this.status = status;
     return this;
   }
@@ -208,7 +208,7 @@ public class InlineResponse2012KeyInformation {
     this.status = status;
   }
 
-  public InlineResponse2012KeyInformation expirationDate(String expirationDate) {
+  public InlineResponse2013KeyInformation expirationDate(String expirationDate) {
     this.expirationDate = expirationDate;
     return this;
   }
@@ -226,7 +226,7 @@ public class InlineResponse2012KeyInformation {
     this.expirationDate = expirationDate;
   }
 
-  public InlineResponse2012KeyInformation message(String message) {
+  public InlineResponse2013KeyInformation message(String message) {
     this.message = message;
     return this;
   }
@@ -244,7 +244,7 @@ public class InlineResponse2012KeyInformation {
     this.message = message;
   }
 
-  public InlineResponse2012KeyInformation errorInformation(InlineResponse2012KeyInformationErrorInformation errorInformation) {
+  public InlineResponse2013KeyInformation errorInformation(InlineResponse2013KeyInformationErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
     return this;
   }
@@ -254,11 +254,11 @@ public class InlineResponse2012KeyInformation {
    * @return errorInformation
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2012KeyInformationErrorInformation getErrorInformation() {
+  public InlineResponse2013KeyInformationErrorInformation getErrorInformation() {
     return errorInformation;
   }
 
-  public void setErrorInformation(InlineResponse2012KeyInformationErrorInformation errorInformation) {
+  public void setErrorInformation(InlineResponse2013KeyInformationErrorInformation errorInformation) {
     this.errorInformation = errorInformation;
   }
 
@@ -271,18 +271,18 @@ public class InlineResponse2012KeyInformation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2012KeyInformation inlineResponse2012KeyInformation = (InlineResponse2012KeyInformation) o;
-    return Objects.equals(this.provider, inlineResponse2012KeyInformation.provider) &&
-        Objects.equals(this.tenant, inlineResponse2012KeyInformation.tenant) &&
-        Objects.equals(this.organizationId, inlineResponse2012KeyInformation.organizationId) &&
-        Objects.equals(this.clientKeyId, inlineResponse2012KeyInformation.clientKeyId) &&
-        Objects.equals(this.keyId, inlineResponse2012KeyInformation.keyId) &&
-        Objects.equals(this.key, inlineResponse2012KeyInformation.key) &&
-        Objects.equals(this.keyType, inlineResponse2012KeyInformation.keyType) &&
-        Objects.equals(this.status, inlineResponse2012KeyInformation.status) &&
-        Objects.equals(this.expirationDate, inlineResponse2012KeyInformation.expirationDate) &&
-        Objects.equals(this.message, inlineResponse2012KeyInformation.message) &&
-        Objects.equals(this.errorInformation, inlineResponse2012KeyInformation.errorInformation);
+    InlineResponse2013KeyInformation inlineResponse2013KeyInformation = (InlineResponse2013KeyInformation) o;
+    return Objects.equals(this.provider, inlineResponse2013KeyInformation.provider) &&
+        Objects.equals(this.tenant, inlineResponse2013KeyInformation.tenant) &&
+        Objects.equals(this.organizationId, inlineResponse2013KeyInformation.organizationId) &&
+        Objects.equals(this.clientKeyId, inlineResponse2013KeyInformation.clientKeyId) &&
+        Objects.equals(this.keyId, inlineResponse2013KeyInformation.keyId) &&
+        Objects.equals(this.key, inlineResponse2013KeyInformation.key) &&
+        Objects.equals(this.keyType, inlineResponse2013KeyInformation.keyType) &&
+        Objects.equals(this.status, inlineResponse2013KeyInformation.status) &&
+        Objects.equals(this.expirationDate, inlineResponse2013KeyInformation.expirationDate) &&
+        Objects.equals(this.message, inlineResponse2013KeyInformation.message) &&
+        Objects.equals(this.errorInformation, inlineResponse2013KeyInformation.errorInformation);
   }
 
   @Override
@@ -294,7 +294,7 @@ public class InlineResponse2012KeyInformation {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2012KeyInformation {\n");
+    sb.append("class InlineResponse2013KeyInformation {\n");
     
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");

@@ -45,10 +45,10 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails {
   }
 
    /**
-   * Indicates the type of tax data for the _taxDetails_ object.  Possible values:  - &#x60;alternate&#x60; - &#x60;local&#x60; - &#x60;national&#x60; - &#x60;vat&#x60; - &#x60;other&#x60; - &#x60;green&#x60;  For processor-specific details, see the &#x60;alternate_tax_amount&#x60;, &#x60;local_tax&#x60;, &#x60;national_tax&#x60; or &#x60;vat_tax_amount&#x60; field descriptions in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/) 
+   * Indicates the type of tax data for the _taxDetails_ object.  Possible values:  - &#x60;alternate&#x60; - &#x60;local&#x60; - &#x60;national&#x60; - &#x60;vat&#x60; - &#x60;other&#x60; - &#x60;green&#x60; 
    * @return type
   **/
-  @ApiModelProperty(value = "Indicates the type of tax data for the _taxDetails_ object.  Possible values:  - `alternate` - `local` - `national` - `vat` - `other` - `green`  For processor-specific details, see the `alternate_tax_amount`, `local_tax`, `national_tax` or `vat_tax_amount` field descriptions in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Indicates the type of tax data for the _taxDetails_ object.  Possible values:  - `alternate` - `local` - `national` - `vat` - `other` - `green` ")
   public String getType() {
     return type;
   }
@@ -81,10 +81,10 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails {
   }
 
    /**
-   * Rate of VAT or other tax for the order.  Example 0.040 (&#x3D;4%)  Valid range: 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated)  For processor-specific details, see the &#x60;alternate_tax_amount&#x60;, &#x60;vat_rate&#x60;, &#x60;vat_tax_rate&#x60;, &#x60;local_tax&#x60;, &#x60;national_tax&#x60;, &#x60;vat_tax_amount&#x60; or &#x60;other_tax#_rate&#x60; field descriptions in the [Level II and Level III Processing Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/) 
+   * Rate of VAT or other tax for the order.  Example 0.040 (&#x3D;4%)  Valid range: 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated) 
    * @return rate
   **/
-  @ApiModelProperty(value = "Rate of VAT or other tax for the order.  Example 0.040 (=4%)  Valid range: 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated)  For processor-specific details, see the `alternate_tax_amount`, `vat_rate`, `vat_tax_rate`, `local_tax`, `national_tax`, `vat_tax_amount` or `other_tax#_rate` field descriptions in the [Level II and Level III Processing Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Rate of VAT or other tax for the order.  Example 0.040 (=4%)  Valid range: 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated) ")
   public String getRate() {
     return rate;
   }

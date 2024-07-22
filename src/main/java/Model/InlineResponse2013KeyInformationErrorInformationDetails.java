@@ -25,17 +25,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse2012KeyInformationErrorInformationDetails
+ * InlineResponse2013KeyInformationErrorInformationDetails
  */
 
-public class InlineResponse2012KeyInformationErrorInformationDetails {
+public class InlineResponse2013KeyInformationErrorInformationDetails {
   @SerializedName("field")
   private String field = null;
 
   @SerializedName("reason")
   private String reason = null;
 
-  public InlineResponse2012KeyInformationErrorInformationDetails field(String field) {
+  public InlineResponse2013KeyInformationErrorInformationDetails field(String field) {
     this.field = field;
     return this;
   }
@@ -53,7 +53,7 @@ public class InlineResponse2012KeyInformationErrorInformationDetails {
     this.field = field;
   }
 
-  public InlineResponse2012KeyInformationErrorInformationDetails reason(String reason) {
+  public InlineResponse2013KeyInformationErrorInformationDetails reason(String reason) {
     this.reason = reason;
     return this;
   }
@@ -80,9 +80,9 @@ public class InlineResponse2012KeyInformationErrorInformationDetails {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2012KeyInformationErrorInformationDetails inlineResponse2012KeyInformationErrorInformationDetails = (InlineResponse2012KeyInformationErrorInformationDetails) o;
-    return Objects.equals(this.field, inlineResponse2012KeyInformationErrorInformationDetails.field) &&
-        Objects.equals(this.reason, inlineResponse2012KeyInformationErrorInformationDetails.reason);
+    InlineResponse2013KeyInformationErrorInformationDetails inlineResponse2013KeyInformationErrorInformationDetails = (InlineResponse2013KeyInformationErrorInformationDetails) o;
+    return Objects.equals(this.field, inlineResponse2013KeyInformationErrorInformationDetails.field) &&
+        Objects.equals(this.reason, inlineResponse2013KeyInformationErrorInformationDetails.reason);
   }
 
   @Override
@@ -94,7 +94,7 @@ public class InlineResponse2012KeyInformationErrorInformationDetails {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2012KeyInformationErrorInformationDetails {\n");
+    sb.append("class InlineResponse2013KeyInformationErrorInformationDetails {\n");
     
     sb.append("    field: ").append(toIndentedString(field)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");

@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 import Model.InlineResponse2004;
 import Model.InlineResponse2005;
-import Model.InlineResponse2014;
+import Model.InlineResponse2015;
 import Model.InlineResponse4042;
 import Model.SaveAsymEgressKey;
 import Model.UpdateWebhookRequest;
@@ -592,13 +592,13 @@ public class ManageWebhooksApi {
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param saveAsymEgressKey Provide egress Asymmetric key information to save (create or store) (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
-     * @return InlineResponse2014
+     * @return InlineResponse2015
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2014 saveAsymEgressKey(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
+    public InlineResponse2015 saveAsymEgressKey(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
         logger.info("CALL TO METHOD 'saveAsymEgressKey' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2014> resp = saveAsymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+        ApiResponse<InlineResponse2015> resp = saveAsymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
         logger.info("CALL TO METHOD 'saveAsymEgressKey' ENDED");
         return resp.getData();
     }
@@ -610,12 +610,12 @@ public class ManageWebhooksApi {
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param saveAsymEgressKey Provide egress Asymmetric key information to save (create or store) (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
-     * @return ApiResponse&lt;InlineResponse2014&gt;
+     * @return ApiResponse&lt;InlineResponse2015&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2014> saveAsymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
+    public ApiResponse<InlineResponse2015> saveAsymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
         okhttp3.Call call = saveAsymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -630,7 +630,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call saveAsymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ApiCallback<InlineResponse2014> callback) throws ApiException {
+    public okhttp3.Call saveAsymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ApiCallback<InlineResponse2015> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -653,7 +653,7 @@ public class ManageWebhooksApi {
         }
 
         okhttp3.Call call = saveAsymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

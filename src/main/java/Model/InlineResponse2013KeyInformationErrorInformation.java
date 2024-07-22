@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2012KeyInformationErrorInformationDetails;
+import Model.InlineResponse2013KeyInformationErrorInformationDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,17 +28,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * InlineResponse2012KeyInformationErrorInformation
+ * InlineResponse2013KeyInformationErrorInformation
  */
 
-public class InlineResponse2012KeyInformationErrorInformation {
+public class InlineResponse2013KeyInformationErrorInformation {
   @SerializedName("reason")
   private String reason = null;
 
   @SerializedName("details")
-  private List<InlineResponse2012KeyInformationErrorInformationDetails> details = null;
+  private List<InlineResponse2013KeyInformationErrorInformationDetails> details = null;
 
-  public InlineResponse2012KeyInformationErrorInformation reason(String reason) {
+  public InlineResponse2013KeyInformationErrorInformation reason(String reason) {
     this.reason = reason;
     return this;
   }
@@ -56,14 +56,14 @@ public class InlineResponse2012KeyInformationErrorInformation {
     this.reason = reason;
   }
 
-  public InlineResponse2012KeyInformationErrorInformation details(List<InlineResponse2012KeyInformationErrorInformationDetails> details) {
+  public InlineResponse2013KeyInformationErrorInformation details(List<InlineResponse2013KeyInformationErrorInformationDetails> details) {
     this.details = details;
     return this;
   }
 
-  public InlineResponse2012KeyInformationErrorInformation addDetailsItem(InlineResponse2012KeyInformationErrorInformationDetails detailsItem) {
+  public InlineResponse2013KeyInformationErrorInformation addDetailsItem(InlineResponse2013KeyInformationErrorInformationDetails detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<InlineResponse2012KeyInformationErrorInformationDetails>();
+      this.details = new ArrayList<InlineResponse2013KeyInformationErrorInformationDetails>();
     }
     this.details.add(detailsItem);
     return this;
@@ -74,11 +74,11 @@ public class InlineResponse2012KeyInformationErrorInformation {
    * @return details
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse2012KeyInformationErrorInformationDetails> getDetails() {
+  public List<InlineResponse2013KeyInformationErrorInformationDetails> getDetails() {
     return details;
   }
 
-  public void setDetails(List<InlineResponse2012KeyInformationErrorInformationDetails> details) {
+  public void setDetails(List<InlineResponse2013KeyInformationErrorInformationDetails> details) {
     this.details = details;
   }
 
@@ -91,9 +91,9 @@ public class InlineResponse2012KeyInformationErrorInformation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2012KeyInformationErrorInformation inlineResponse2012KeyInformationErrorInformation = (InlineResponse2012KeyInformationErrorInformation) o;
-    return Objects.equals(this.reason, inlineResponse2012KeyInformationErrorInformation.reason) &&
-        Objects.equals(this.details, inlineResponse2012KeyInformationErrorInformation.details);
+    InlineResponse2013KeyInformationErrorInformation inlineResponse2013KeyInformationErrorInformation = (InlineResponse2013KeyInformationErrorInformation) o;
+    return Objects.equals(this.reason, inlineResponse2013KeyInformationErrorInformation.reason) &&
+        Objects.equals(this.details, inlineResponse2013KeyInformationErrorInformation.details);
   }
 
   @Override
@@ -105,7 +105,7 @@ public class InlineResponse2012KeyInformationErrorInformation {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2012KeyInformationErrorInformation {\n");
+    sb.append("class InlineResponse2013KeyInformationErrorInformation {\n");
     
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");

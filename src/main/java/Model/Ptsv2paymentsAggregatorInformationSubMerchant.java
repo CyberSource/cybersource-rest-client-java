@@ -122,10 +122,10 @@ public class Ptsv2paymentsAggregatorInformationSubMerchant {
   }
 
    /**
-   * First line of the sub-merchant&#39;s street address.  For processor-specific details, see &#x60;submerchant_street&#x60; field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
+   * First line of the sub-merchant&#39;s street address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
    * @return address1
   **/
-  @ApiModelProperty(value = "First line of the sub-merchant's street address.  For processor-specific details, see `submerchant_street` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
+  @ApiModelProperty(value = "First line of the sub-merchant's street address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
   public String getAddress1() {
     return address1;
   }
@@ -140,10 +140,10 @@ public class Ptsv2paymentsAggregatorInformationSubMerchant {
   }
 
    /**
-   * Sub-merchant&#39;s city.  For processor-specific details, see &#x60;submerchant_city&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
+   * Sub-merchant&#39;s city.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
    * @return locality
   **/
-  @ApiModelProperty(value = "Sub-merchant's city.  For processor-specific details, see `submerchant_city` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
+  @ApiModelProperty(value = "Sub-merchant's city.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
   public String getLocality() {
     return locality;
   }
@@ -158,10 +158,10 @@ public class Ptsv2paymentsAggregatorInformationSubMerchant {
   }
 
    /**
-   * Sub-merchant&#39;s state or province.  For possible values and also aggregator support, see &#x60;submerchant_state&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
+   * Sub-merchant&#39;s state or province.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "Sub-merchant's state or province.  For possible values and also aggregator support, see `submerchant_state` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
+  @ApiModelProperty(value = "Sub-merchant's state or province.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -176,10 +176,10 @@ public class Ptsv2paymentsAggregatorInformationSubMerchant {
   }
 
    /**
-   * Sub-merchant&#39;s region.  **Example**\\ &#x60;NE&#x60; indicates that the sub-merchant is in the northeast region.  For processor-specific details, see &#x60;submerchant_region&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Sub-merchant&#39;s region.  **Example**\\ &#x60;NE&#x60; indicates that the sub-merchant is in the northeast region. 
    * @return region
   **/
-  @ApiModelProperty(value = "Sub-merchant's region.  **Example**\\ `NE` indicates that the sub-merchant is in the northeast region.  For processor-specific details, see `submerchant_region` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Sub-merchant's region.  **Example**\\ `NE` indicates that the sub-merchant is in the northeast region. ")
   public String getRegion() {
     return region;
   }
@@ -194,10 +194,10 @@ public class Ptsv2paymentsAggregatorInformationSubMerchant {
   }
 
    /**
-   * Partial postal code for the sub-merchant&#39;s address.  For processor-specific details, see &#x60;submerchant_postal_code&#x60; request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
+   * Partial postal code for the sub-merchant&#39;s address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. 
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Partial postal code for the sub-merchant's address.  For processor-specific details, see `submerchant_postal_code` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
+  @ApiModelProperty(value = "Partial postal code for the sub-merchant's address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters. ")
   public String getPostalCode() {
     return postalCode;
   }
@@ -212,10 +212,10 @@ public class Ptsv2paymentsAggregatorInformationSubMerchant {
   }
 
    /**
-   * Sub-merchant&#39;s country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file.  #### FDC Compass This value must consist of uppercase characters.  For details, see the &#x60;submerchant_country&#x60; request-level field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) 
+   * Sub-merchant&#39;s country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file.  #### FDC Compass This value must consist of uppercase characters. 
    * @return country
   **/
-  @ApiModelProperty(value = "Sub-merchant's country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file.  #### FDC Compass This value must consist of uppercase characters.  For details, see the `submerchant_country` request-level field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Sub-merchant's country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file.  #### FDC Compass This value must consist of uppercase characters. ")
   public String getCountry() {
     return country;
   }

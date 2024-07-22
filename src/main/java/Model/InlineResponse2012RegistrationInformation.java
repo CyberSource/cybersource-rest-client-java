@@ -25,10 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse2011RegistrationInformation
+ * InlineResponse2012RegistrationInformation
  */
 
-public class InlineResponse2011RegistrationInformation {
+public class InlineResponse2012RegistrationInformation {
   @SerializedName("boardingPackageId")
   private String boardingPackageId = null;
 
@@ -93,7 +93,7 @@ public class InlineResponse2011RegistrationInformation {
     return boardingPackageId;
   }
 
-  public InlineResponse2011RegistrationInformation mode(ModeEnum mode) {
+  public InlineResponse2012RegistrationInformation mode(ModeEnum mode) {
     this.mode = mode;
     return this;
   }
@@ -111,7 +111,7 @@ public class InlineResponse2011RegistrationInformation {
     this.mode = mode;
   }
 
-  public InlineResponse2011RegistrationInformation salesRepId(String salesRepId) {
+  public InlineResponse2012RegistrationInformation salesRepId(String salesRepId) {
     this.salesRepId = salesRepId;
     return this;
   }
@@ -138,10 +138,10 @@ public class InlineResponse2011RegistrationInformation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011RegistrationInformation inlineResponse2011RegistrationInformation = (InlineResponse2011RegistrationInformation) o;
-    return Objects.equals(this.boardingPackageId, inlineResponse2011RegistrationInformation.boardingPackageId) &&
-        Objects.equals(this.mode, inlineResponse2011RegistrationInformation.mode) &&
-        Objects.equals(this.salesRepId, inlineResponse2011RegistrationInformation.salesRepId);
+    InlineResponse2012RegistrationInformation inlineResponse2012RegistrationInformation = (InlineResponse2012RegistrationInformation) o;
+    return Objects.equals(this.boardingPackageId, inlineResponse2012RegistrationInformation.boardingPackageId) &&
+        Objects.equals(this.mode, inlineResponse2012RegistrationInformation.mode) &&
+        Objects.equals(this.salesRepId, inlineResponse2012RegistrationInformation.salesRepId);
   }
 
   @Override
@@ -153,7 +153,7 @@ public class InlineResponse2011RegistrationInformation {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011RegistrationInformation {\n");
+    sb.append("class InlineResponse2012RegistrationInformation {\n");
     
     sb.append("    boardingPackageId: ").append(toIndentedString(boardingPackageId)).append("\n");
     sb.append("    mode: ").append(toIndentedString(mode)).append("\n");

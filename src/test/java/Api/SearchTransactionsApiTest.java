@@ -13,10 +13,10 @@
 
 package Api;
 
+import Model.BinLookupv400Response;
 import Model.CreateSearchRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.TssV2TransactionsPost201Response;
-import Model.TssV2TransactionsPost400Response;
 import org.junit.Test;
 import org.junit.Ignore;
 

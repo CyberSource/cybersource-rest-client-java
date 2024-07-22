@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2011IntegrationInformationTenantConfigurations;
+import Model.InlineResponse2012IntegrationInformationTenantConfigurations;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,21 +28,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * InlineResponse2011IntegrationInformation
+ * InlineResponse2012IntegrationInformation
  */
 
-public class InlineResponse2011IntegrationInformation {
+public class InlineResponse2012IntegrationInformation {
   @SerializedName("tenantConfigurations")
-  private List<InlineResponse2011IntegrationInformationTenantConfigurations> tenantConfigurations = null;
+  private List<InlineResponse2012IntegrationInformationTenantConfigurations> tenantConfigurations = null;
 
-  public InlineResponse2011IntegrationInformation tenantConfigurations(List<InlineResponse2011IntegrationInformationTenantConfigurations> tenantConfigurations) {
+  public InlineResponse2012IntegrationInformation tenantConfigurations(List<InlineResponse2012IntegrationInformationTenantConfigurations> tenantConfigurations) {
     this.tenantConfigurations = tenantConfigurations;
     return this;
   }
 
-  public InlineResponse2011IntegrationInformation addTenantConfigurationsItem(InlineResponse2011IntegrationInformationTenantConfigurations tenantConfigurationsItem) {
+  public InlineResponse2012IntegrationInformation addTenantConfigurationsItem(InlineResponse2012IntegrationInformationTenantConfigurations tenantConfigurationsItem) {
     if (this.tenantConfigurations == null) {
-      this.tenantConfigurations = new ArrayList<InlineResponse2011IntegrationInformationTenantConfigurations>();
+      this.tenantConfigurations = new ArrayList<InlineResponse2012IntegrationInformationTenantConfigurations>();
     }
     this.tenantConfigurations.add(tenantConfigurationsItem);
     return this;
@@ -53,11 +53,11 @@ public class InlineResponse2011IntegrationInformation {
    * @return tenantConfigurations
   **/
   @ApiModelProperty(value = "tenantConfigurations is an array of objects that includes the tenant information this merchant is associated with.")
-  public List<InlineResponse2011IntegrationInformationTenantConfigurations> getTenantConfigurations() {
+  public List<InlineResponse2012IntegrationInformationTenantConfigurations> getTenantConfigurations() {
     return tenantConfigurations;
   }
 
-  public void setTenantConfigurations(List<InlineResponse2011IntegrationInformationTenantConfigurations> tenantConfigurations) {
+  public void setTenantConfigurations(List<InlineResponse2012IntegrationInformationTenantConfigurations> tenantConfigurations) {
     this.tenantConfigurations = tenantConfigurations;
   }
 
@@ -70,8 +70,8 @@ public class InlineResponse2011IntegrationInformation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011IntegrationInformation inlineResponse2011IntegrationInformation = (InlineResponse2011IntegrationInformation) o;
-    return Objects.equals(this.tenantConfigurations, inlineResponse2011IntegrationInformation.tenantConfigurations);
+    InlineResponse2012IntegrationInformation inlineResponse2012IntegrationInformation = (InlineResponse2012IntegrationInformation) o;
+    return Objects.equals(this.tenantConfigurations, inlineResponse2012IntegrationInformation.tenantConfigurations);
   }
 
   @Override
@@ -83,7 +83,7 @@ public class InlineResponse2011IntegrationInformation {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011IntegrationInformation {\n");
+    sb.append("class InlineResponse2012IntegrationInformation {\n");
     
     sb.append("    tenantConfigurations: ").append(toIndentedString(tenantConfigurations)).append("\n");
     sb.append("}");

@@ -59,10 +59,10 @@ public class TmsEmbeddedInstrumentIdentifierBankAccount {
   }
 
    /**
-   * Bank routing number. This is also called the transit number.  For details, see &#x60;ecp_rdfi&#x60; field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) 
+   * Bank routing number. This is also called the transit number. 
    * @return routingNumber
   **/
-  @ApiModelProperty(value = "Bank routing number. This is also called the transit number.  For details, see `ecp_rdfi` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/) ")
+  @ApiModelProperty(value = "Bank routing number. This is also called the transit number. ")
   public String getRoutingNumber() {
     return routingNumber;
   }

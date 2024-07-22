@@ -120,6 +120,9 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
   @SerializedName("order")
   private Ptsv2paymentsOrderInformationAmountDetailsOrder order = null;
 
+  @SerializedName("anticipatedAmount")
+  private String anticipatedAmount = null;
+
   public Ptsv2paymentsOrderInformationAmountDetails giftWrapAmount(String giftWrapAmount) {
     this.giftWrapAmount = giftWrapAmount;
     return this;
@@ -640,6 +643,24 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     this.order = order;
   }
 
+  public Ptsv2paymentsOrderInformationAmountDetails anticipatedAmount(String anticipatedAmount) {
+    this.anticipatedAmount = anticipatedAmount;
+    return this;
+  }
+
+   /**
+   * This API Field contains the anticipated amount details. This supports use cases where the Merchant does not wish to have funds held against the account, but needs to confirm an amount prior to authorization, such as for a trial subscription, reservation service, or loyalty program. In an account verification, the anticipated amount is used to confirm the account has availability to accept purchases. 
+   * @return anticipatedAmount
+  **/
+  @ApiModelProperty(value = "This API Field contains the anticipated amount details. This supports use cases where the Merchant does not wish to have funds held against the account, but needs to confirm an amount prior to authorization, such as for a trial subscription, reservation service, or loyalty program. In an account verification, the anticipated amount is used to confirm the account has availability to accept purchases. ")
+  public String getAnticipatedAmount() {
+    return anticipatedAmount;
+  }
+
+  public void setAnticipatedAmount(String anticipatedAmount) {
+    this.anticipatedAmount = anticipatedAmount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -677,12 +698,13 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
         Objects.equals(this.originalCurrency, ptsv2paymentsOrderInformationAmountDetails.originalCurrency) &&
         Objects.equals(this.cashbackAmount, ptsv2paymentsOrderInformationAmountDetails.cashbackAmount) &&
         Objects.equals(this.currencyConversion, ptsv2paymentsOrderInformationAmountDetails.currencyConversion) &&
-        Objects.equals(this.order, ptsv2paymentsOrderInformationAmountDetails.order);
+        Objects.equals(this.order, ptsv2paymentsOrderInformationAmountDetails.order) &&
+        Objects.equals(this.anticipatedAmount, ptsv2paymentsOrderInformationAmountDetails.anticipatedAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(giftWrapAmount, totalAmount, subTotalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount, currencyConversion, order);
+    return Objects.hash(giftWrapAmount, totalAmount, subTotalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount, currencyConversion, order, anticipatedAmount);
   }
 
 
@@ -719,6 +741,7 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     sb.append("    cashbackAmount: ").append(toIndentedString(cashbackAmount)).append("\n");
     sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
+    sb.append("    anticipatedAmount: ").append(toIndentedString(anticipatedAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

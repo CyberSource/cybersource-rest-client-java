@@ -15,10 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2011SetupsCommerceSolutions;
-import Model.InlineResponse2011SetupsPayments;
-import Model.InlineResponse2011SetupsRisk;
-import Model.InlineResponse2011SetupsValueAddedServices;
+import Model.InlineResponse2012SetupsCommerceSolutions;
+import Model.InlineResponse2012SetupsPayments;
+import Model.InlineResponse2012SetupsRisk;
+import Model.InlineResponse2012SetupsValueAddedServices;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,23 +29,23 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse2011Setups
+ * InlineResponse2012Setups
  */
 
-public class InlineResponse2011Setups {
+public class InlineResponse2012Setups {
   @SerializedName("payments")
-  private InlineResponse2011SetupsPayments payments = null;
+  private InlineResponse2012SetupsPayments payments = null;
 
   @SerializedName("risk")
-  private InlineResponse2011SetupsRisk risk = null;
+  private InlineResponse2012SetupsRisk risk = null;
 
   @SerializedName("commerceSolutions")
-  private InlineResponse2011SetupsCommerceSolutions commerceSolutions = null;
+  private InlineResponse2012SetupsCommerceSolutions commerceSolutions = null;
 
   @SerializedName("valueAddedServices")
-  private InlineResponse2011SetupsValueAddedServices valueAddedServices = null;
+  private InlineResponse2012SetupsValueAddedServices valueAddedServices = null;
 
-  public InlineResponse2011Setups payments(InlineResponse2011SetupsPayments payments) {
+  public InlineResponse2012Setups payments(InlineResponse2012SetupsPayments payments) {
     this.payments = payments;
     return this;
   }
@@ -55,15 +55,15 @@ public class InlineResponse2011Setups {
    * @return payments
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsPayments getPayments() {
+  public InlineResponse2012SetupsPayments getPayments() {
     return payments;
   }
 
-  public void setPayments(InlineResponse2011SetupsPayments payments) {
+  public void setPayments(InlineResponse2012SetupsPayments payments) {
     this.payments = payments;
   }
 
-  public InlineResponse2011Setups risk(InlineResponse2011SetupsRisk risk) {
+  public InlineResponse2012Setups risk(InlineResponse2012SetupsRisk risk) {
     this.risk = risk;
     return this;
   }
@@ -73,15 +73,15 @@ public class InlineResponse2011Setups {
    * @return risk
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsRisk getRisk() {
+  public InlineResponse2012SetupsRisk getRisk() {
     return risk;
   }
 
-  public void setRisk(InlineResponse2011SetupsRisk risk) {
+  public void setRisk(InlineResponse2012SetupsRisk risk) {
     this.risk = risk;
   }
 
-  public InlineResponse2011Setups commerceSolutions(InlineResponse2011SetupsCommerceSolutions commerceSolutions) {
+  public InlineResponse2012Setups commerceSolutions(InlineResponse2012SetupsCommerceSolutions commerceSolutions) {
     this.commerceSolutions = commerceSolutions;
     return this;
   }
@@ -91,15 +91,15 @@ public class InlineResponse2011Setups {
    * @return commerceSolutions
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsCommerceSolutions getCommerceSolutions() {
+  public InlineResponse2012SetupsCommerceSolutions getCommerceSolutions() {
     return commerceSolutions;
   }
 
-  public void setCommerceSolutions(InlineResponse2011SetupsCommerceSolutions commerceSolutions) {
+  public void setCommerceSolutions(InlineResponse2012SetupsCommerceSolutions commerceSolutions) {
     this.commerceSolutions = commerceSolutions;
   }
 
-  public InlineResponse2011Setups valueAddedServices(InlineResponse2011SetupsValueAddedServices valueAddedServices) {
+  public InlineResponse2012Setups valueAddedServices(InlineResponse2012SetupsValueAddedServices valueAddedServices) {
     this.valueAddedServices = valueAddedServices;
     return this;
   }
@@ -109,11 +109,11 @@ public class InlineResponse2011Setups {
    * @return valueAddedServices
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsValueAddedServices getValueAddedServices() {
+  public InlineResponse2012SetupsValueAddedServices getValueAddedServices() {
     return valueAddedServices;
   }
 
-  public void setValueAddedServices(InlineResponse2011SetupsValueAddedServices valueAddedServices) {
+  public void setValueAddedServices(InlineResponse2012SetupsValueAddedServices valueAddedServices) {
     this.valueAddedServices = valueAddedServices;
   }
 
@@ -126,11 +126,11 @@ public class InlineResponse2011Setups {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011Setups inlineResponse2011Setups = (InlineResponse2011Setups) o;
-    return Objects.equals(this.payments, inlineResponse2011Setups.payments) &&
-        Objects.equals(this.risk, inlineResponse2011Setups.risk) &&
-        Objects.equals(this.commerceSolutions, inlineResponse2011Setups.commerceSolutions) &&
-        Objects.equals(this.valueAddedServices, inlineResponse2011Setups.valueAddedServices);
+    InlineResponse2012Setups inlineResponse2012Setups = (InlineResponse2012Setups) o;
+    return Objects.equals(this.payments, inlineResponse2012Setups.payments) &&
+        Objects.equals(this.risk, inlineResponse2012Setups.risk) &&
+        Objects.equals(this.commerceSolutions, inlineResponse2012Setups.commerceSolutions) &&
+        Objects.equals(this.valueAddedServices, inlineResponse2012Setups.valueAddedServices);
   }
 
   @Override
@@ -142,7 +142,7 @@ public class InlineResponse2011Setups {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011Setups {\n");
+    sb.append("class InlineResponse2012Setups {\n");
     
     sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
     sb.append("    risk: ").append(toIndentedString(risk)).append("\n");

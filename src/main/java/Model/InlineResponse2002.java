@@ -20,7 +20,7 @@ import Model.Boardingv1registrationsOrganizationInformation;
 import Model.Boardingv1registrationsProductInformation;
 import Model.Boardingv1registrationsRegistrationInformation;
 import Model.InlineResponse2002IntegrationInformation;
-import Model.InlineResponse2011ProductInformationSetups;
+import Model.InlineResponse2012ProductInformationSetups;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,7 +52,7 @@ public class InlineResponse2002 {
   private Boardingv1registrationsProductInformation productInformation = null;
 
   @SerializedName("productInformationSetups")
-  private List<InlineResponse2011ProductInformationSetups> productInformationSetups = null;
+  private List<InlineResponse2012ProductInformationSetups> productInformationSetups = null;
 
   @SerializedName("documentInformation")
   private Boardingv1registrationsDocumentInformation documentInformation = null;
@@ -132,14 +132,14 @@ public class InlineResponse2002 {
     this.productInformation = productInformation;
   }
 
-  public InlineResponse2002 productInformationSetups(List<InlineResponse2011ProductInformationSetups> productInformationSetups) {
+  public InlineResponse2002 productInformationSetups(List<InlineResponse2012ProductInformationSetups> productInformationSetups) {
     this.productInformationSetups = productInformationSetups;
     return this;
   }
 
-  public InlineResponse2002 addProductInformationSetupsItem(InlineResponse2011ProductInformationSetups productInformationSetupsItem) {
+  public InlineResponse2002 addProductInformationSetupsItem(InlineResponse2012ProductInformationSetups productInformationSetupsItem) {
     if (this.productInformationSetups == null) {
-      this.productInformationSetups = new ArrayList<InlineResponse2011ProductInformationSetups>();
+      this.productInformationSetups = new ArrayList<InlineResponse2012ProductInformationSetups>();
     }
     this.productInformationSetups.add(productInformationSetupsItem);
     return this;
@@ -150,11 +150,11 @@ public class InlineResponse2002 {
    * @return productInformationSetups
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse2011ProductInformationSetups> getProductInformationSetups() {
+  public List<InlineResponse2012ProductInformationSetups> getProductInformationSetups() {
     return productInformationSetups;
   }
 
-  public void setProductInformationSetups(List<InlineResponse2011ProductInformationSetups> productInformationSetups) {
+  public void setProductInformationSetups(List<InlineResponse2012ProductInformationSetups> productInformationSetups) {
     this.productInformationSetups = productInformationSetups;
   }
 

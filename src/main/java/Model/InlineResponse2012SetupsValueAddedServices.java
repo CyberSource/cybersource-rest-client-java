@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2011SetupsPaymentsDigitalPayments;
+import Model.InlineResponse2012SetupsPaymentsDigitalPayments;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,17 +26,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse2011SetupsValueAddedServices
+ * InlineResponse2012SetupsValueAddedServices
  */
 
-public class InlineResponse2011SetupsValueAddedServices {
+public class InlineResponse2012SetupsValueAddedServices {
   @SerializedName("reporting")
-  private InlineResponse2011SetupsPaymentsDigitalPayments reporting = null;
+  private InlineResponse2012SetupsPaymentsDigitalPayments reporting = null;
 
   @SerializedName("transactionSearch")
-  private InlineResponse2011SetupsPaymentsDigitalPayments transactionSearch = null;
+  private InlineResponse2012SetupsPaymentsDigitalPayments transactionSearch = null;
 
-  public InlineResponse2011SetupsValueAddedServices reporting(InlineResponse2011SetupsPaymentsDigitalPayments reporting) {
+  public InlineResponse2012SetupsValueAddedServices reporting(InlineResponse2012SetupsPaymentsDigitalPayments reporting) {
     this.reporting = reporting;
     return this;
   }
@@ -46,15 +46,15 @@ public class InlineResponse2011SetupsValueAddedServices {
    * @return reporting
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsPaymentsDigitalPayments getReporting() {
+  public InlineResponse2012SetupsPaymentsDigitalPayments getReporting() {
     return reporting;
   }
 
-  public void setReporting(InlineResponse2011SetupsPaymentsDigitalPayments reporting) {
+  public void setReporting(InlineResponse2012SetupsPaymentsDigitalPayments reporting) {
     this.reporting = reporting;
   }
 
-  public InlineResponse2011SetupsValueAddedServices transactionSearch(InlineResponse2011SetupsPaymentsDigitalPayments transactionSearch) {
+  public InlineResponse2012SetupsValueAddedServices transactionSearch(InlineResponse2012SetupsPaymentsDigitalPayments transactionSearch) {
     this.transactionSearch = transactionSearch;
     return this;
   }
@@ -64,11 +64,11 @@ public class InlineResponse2011SetupsValueAddedServices {
    * @return transactionSearch
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsPaymentsDigitalPayments getTransactionSearch() {
+  public InlineResponse2012SetupsPaymentsDigitalPayments getTransactionSearch() {
     return transactionSearch;
   }
 
-  public void setTransactionSearch(InlineResponse2011SetupsPaymentsDigitalPayments transactionSearch) {
+  public void setTransactionSearch(InlineResponse2012SetupsPaymentsDigitalPayments transactionSearch) {
     this.transactionSearch = transactionSearch;
   }
 
@@ -81,9 +81,9 @@ public class InlineResponse2011SetupsValueAddedServices {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011SetupsValueAddedServices inlineResponse2011SetupsValueAddedServices = (InlineResponse2011SetupsValueAddedServices) o;
-    return Objects.equals(this.reporting, inlineResponse2011SetupsValueAddedServices.reporting) &&
-        Objects.equals(this.transactionSearch, inlineResponse2011SetupsValueAddedServices.transactionSearch);
+    InlineResponse2012SetupsValueAddedServices inlineResponse2012SetupsValueAddedServices = (InlineResponse2012SetupsValueAddedServices) o;
+    return Objects.equals(this.reporting, inlineResponse2012SetupsValueAddedServices.reporting) &&
+        Objects.equals(this.transactionSearch, inlineResponse2012SetupsValueAddedServices.transactionSearch);
   }
 
   @Override
@@ -95,7 +95,7 @@ public class InlineResponse2011SetupsValueAddedServices {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011SetupsValueAddedServices {\n");
+    sb.append("class InlineResponse2012SetupsValueAddedServices {\n");
     
     sb.append("    reporting: ").append(toIndentedString(reporting)).append("\n");
     sb.append("    transactionSearch: ").append(toIndentedString(transactionSearch)).append("\n");

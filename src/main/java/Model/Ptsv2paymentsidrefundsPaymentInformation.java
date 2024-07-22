@@ -19,6 +19,7 @@ import Model.Ptsv2paymentsPaymentInformationCustomer;
 import Model.Ptsv2paymentsPaymentInformationFluidData;
 import Model.Ptsv2paymentsPaymentInformationInstrumentIdentifier;
 import Model.Ptsv2paymentsPaymentInformationLegacyToken;
+import Model.Ptsv2paymentsPaymentInformationPaymentAccountReference;
 import Model.Ptsv2paymentsPaymentInformationPaymentInstrument;
 import Model.Ptsv2paymentsPaymentInformationShippingAddress;
 import Model.Ptsv2paymentsPaymentInformationTokenizedCard;
@@ -72,6 +73,9 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
 
   @SerializedName("eWallet")
   private Ptsv2paymentsidrefundsPaymentInformationEWallet eWallet = null;
+
+  @SerializedName("paymentAccountReference")
+  private Ptsv2paymentsPaymentInformationPaymentAccountReference paymentAccountReference = null;
 
   public Ptsv2paymentsidrefundsPaymentInformation card(Ptsv2paymentsidrefundsPaymentInformationCard card) {
     this.card = card;
@@ -271,6 +275,24 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     this.eWallet = eWallet;
   }
 
+  public Ptsv2paymentsidrefundsPaymentInformation paymentAccountReference(Ptsv2paymentsPaymentInformationPaymentAccountReference paymentAccountReference) {
+    this.paymentAccountReference = paymentAccountReference;
+    return this;
+  }
+
+   /**
+   * Get paymentAccountReference
+   * @return paymentAccountReference
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsPaymentInformationPaymentAccountReference getPaymentAccountReference() {
+    return paymentAccountReference;
+  }
+
+  public void setPaymentAccountReference(Ptsv2paymentsPaymentInformationPaymentAccountReference paymentAccountReference) {
+    this.paymentAccountReference = paymentAccountReference;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -291,12 +313,13 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
         Objects.equals(this.shippingAddress, ptsv2paymentsidrefundsPaymentInformation.shippingAddress) &&
         Objects.equals(this.legacyToken, ptsv2paymentsidrefundsPaymentInformation.legacyToken) &&
         Objects.equals(this.paymentType, ptsv2paymentsidrefundsPaymentInformation.paymentType) &&
-        Objects.equals(this.eWallet, ptsv2paymentsidrefundsPaymentInformation.eWallet);
+        Objects.equals(this.eWallet, ptsv2paymentsidrefundsPaymentInformation.eWallet) &&
+        Objects.equals(this.paymentAccountReference, ptsv2paymentsidrefundsPaymentInformation.paymentAccountReference);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card, bank, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, paymentType, eWallet);
+    return Objects.hash(card, bank, tokenizedCard, fluidData, customer, paymentInstrument, instrumentIdentifier, shippingAddress, legacyToken, paymentType, eWallet, paymentAccountReference);
   }
 
 
@@ -316,6 +339,7 @@ public class Ptsv2paymentsidrefundsPaymentInformation {
     sb.append("    legacyToken: ").append(toIndentedString(legacyToken)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
+    sb.append("    paymentAccountReference: ").append(toIndentedString(paymentAccountReference)).append("\n");
     sb.append("}");
     return sb.toString();
   }

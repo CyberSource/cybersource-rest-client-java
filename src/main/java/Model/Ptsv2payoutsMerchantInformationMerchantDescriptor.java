@@ -146,10 +146,10 @@ public class Ptsv2payoutsMerchantInformationMerchantDescriptor {
   }
 
    /**
-   * For the descriptions, used-by information, data types, and lengths for these fields, see &#x60;merchant_descriptor_contact&#x60; field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)--&gt; Contact information for the merchant.  **Note** These are the maximum data lengths for the following payment processors: - FDCCompass (13) - Paymentech (13) 
+   * Contact information for the merchant.  **Note** These are the maximum data lengths for the following payment processors: - FDCCompass (13) - Paymentech (13) 
    * @return contact
   **/
-  @ApiModelProperty(value = "For the descriptions, used-by information, data types, and lengths for these fields, see `merchant_descriptor_contact` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)--> Contact information for the merchant.  **Note** These are the maximum data lengths for the following payment processors: - FDCCompass (13) - Paymentech (13) ")
+  @ApiModelProperty(value = "Contact information for the merchant.  **Note** These are the maximum data lengths for the following payment processors: - FDCCompass (13) - Paymentech (13) ")
   public String getContact() {
     return contact;
   }
@@ -164,10 +164,10 @@ public class Ptsv2payoutsMerchantInformationMerchantDescriptor {
   }
 
    /**
-   * First line of merchant&#39;s address. For the descriptions, used-by information, data types, and lengths for these fields, see &#x60;merchant_descriptor_street&#x60; field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * First line of merchant&#39;s address. 
    * @return address1
   **/
-  @ApiModelProperty(value = "First line of merchant's address. For the descriptions, used-by information, data types, and lengths for these fields, see `merchant_descriptor_street` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "First line of merchant's address. ")
   public String getAddress1() {
     return address1;
   }

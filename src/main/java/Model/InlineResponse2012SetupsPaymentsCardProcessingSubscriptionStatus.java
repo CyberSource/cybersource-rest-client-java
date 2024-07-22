@@ -28,10 +28,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus
+ * InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus
  */
 
-public class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {
+public class InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
@@ -149,7 +149,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {
   @SerializedName("message")
   private String message = null;
 
-  public InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus submitTimeUtc(String submitTimeUtc) {
+  public InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
     return this;
   }
@@ -167,7 +167,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {
     this.submitTimeUtc = submitTimeUtc;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus status(StatusEnum status) {
+  public InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus status(StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -185,7 +185,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {
     this.status = status;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus reason(ReasonEnum reason) {
+  public InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus reason(ReasonEnum reason) {
     this.reason = reason;
     return this;
   }
@@ -203,12 +203,12 @@ public class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {
     this.reason = reason;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus details(List<Map<String, String>> details) {
+  public InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus details(List<Map<String, String>> details) {
     this.details = details;
     return this;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus addDetailsItem(Map<String, String> detailsItem) {
+  public InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus addDetailsItem(Map<String, String> detailsItem) {
     if (this.details == null) {
       this.details = new ArrayList<Map<String, String>>();
     }
@@ -229,7 +229,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {
     this.details = details;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus message(String message) {
+  public InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus message(String message) {
     this.message = message;
     return this;
   }
@@ -256,12 +256,12 @@ public class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus inlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus = (InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus.status) &&
-        Objects.equals(this.reason, inlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus.reason) &&
-        Objects.equals(this.details, inlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus.details) &&
-        Objects.equals(this.message, inlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus.message);
+    InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus inlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus = (InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus) o;
+    return Objects.equals(this.submitTimeUtc, inlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus.submitTimeUtc) &&
+        Objects.equals(this.status, inlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus.status) &&
+        Objects.equals(this.reason, inlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus.reason) &&
+        Objects.equals(this.details, inlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus.details) &&
+        Objects.equals(this.message, inlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus.message);
   }
 
   @Override
@@ -273,7 +273,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus {\n");
+    sb.append("class InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus {\n");
     
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

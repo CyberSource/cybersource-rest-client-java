@@ -437,10 +437,10 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
   }
 
    /**
-   * This field contains the 3D Secure version that was used to process the transaction. For example, 1.0.2 or 2.0.0. 
+   * This field contains the 3D Secure version that was used to process the transaction. For example: 2.2.0 
    * @return specificationVersion
   **/
-  @ApiModelProperty(value = "This field contains the 3D Secure version that was used to process the transaction. For example, 1.0.2 or 2.0.0. ")
+  @ApiModelProperty(value = "This field contains the 3D Secure version that was used to process the transaction. For example: 2.2.0 ")
   public String getSpecificationVersion() {
     return specificationVersion;
   }

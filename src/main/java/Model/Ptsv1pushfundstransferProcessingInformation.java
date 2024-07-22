@@ -36,6 +36,9 @@ public class Ptsv1pushfundstransferProcessingInformation {
   @SerializedName("payoutsOptions")
   private Ptsv1pushfundstransferProcessingInformationPayoutsOptions payoutsOptions = null;
 
+  @SerializedName("enablerId")
+  private String enablerId = null;
+
   public Ptsv1pushfundstransferProcessingInformation businessApplicationId(String businessApplicationId) {
     this.businessApplicationId = businessApplicationId;
     return this;
@@ -72,6 +75,24 @@ public class Ptsv1pushfundstransferProcessingInformation {
     this.payoutsOptions = payoutsOptions;
   }
 
+  public Ptsv1pushfundstransferProcessingInformation enablerId(String enablerId) {
+    this.enablerId = enablerId;
+    return this;
+  }
+
+   /**
+   * Enablers are payment processing entities that are not acquiring members and are often the primary relationship owner with merchants and originators. Enablers own technical solutions through which the merchant or originator will access acceptance. The Enabler ID is a five-character hexadecimal identifier that will be used by Visa to identify enablers. Enabler ID assignment will be determined by Visa. Visa will communicate Enablers assignments to enablers. 
+   * @return enablerId
+  **/
+  @ApiModelProperty(value = "Enablers are payment processing entities that are not acquiring members and are often the primary relationship owner with merchants and originators. Enablers own technical solutions through which the merchant or originator will access acceptance. The Enabler ID is a five-character hexadecimal identifier that will be used by Visa to identify enablers. Enabler ID assignment will be determined by Visa. Visa will communicate Enablers assignments to enablers. ")
+  public String getEnablerId() {
+    return enablerId;
+  }
+
+  public void setEnablerId(String enablerId) {
+    this.enablerId = enablerId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +104,13 @@ public class Ptsv1pushfundstransferProcessingInformation {
     }
     Ptsv1pushfundstransferProcessingInformation ptsv1pushfundstransferProcessingInformation = (Ptsv1pushfundstransferProcessingInformation) o;
     return Objects.equals(this.businessApplicationId, ptsv1pushfundstransferProcessingInformation.businessApplicationId) &&
-        Objects.equals(this.payoutsOptions, ptsv1pushfundstransferProcessingInformation.payoutsOptions);
+        Objects.equals(this.payoutsOptions, ptsv1pushfundstransferProcessingInformation.payoutsOptions) &&
+        Objects.equals(this.enablerId, ptsv1pushfundstransferProcessingInformation.enablerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(businessApplicationId, payoutsOptions);
+    return Objects.hash(businessApplicationId, payoutsOptions, enablerId);
   }
 
 
@@ -99,6 +121,7 @@ public class Ptsv1pushfundstransferProcessingInformation {
     
     sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
     sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
+    sb.append("    enablerId: ").append(toIndentedString(enablerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

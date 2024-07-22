@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2011SetupsPaymentsCardProcessing;
+import Model.InlineResponse2012SetupsPaymentsCardProcessing;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,20 +26,20 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse2011SetupsCommerceSolutions
+ * InlineResponse2012SetupsCommerceSolutions
  */
 
-public class InlineResponse2011SetupsCommerceSolutions {
+public class InlineResponse2012SetupsCommerceSolutions {
   @SerializedName("tokenManagement")
-  private InlineResponse2011SetupsPaymentsCardProcessing tokenManagement = null;
+  private InlineResponse2012SetupsPaymentsCardProcessing tokenManagement = null;
 
   @SerializedName("accountUpdater")
-  private InlineResponse2011SetupsPaymentsCardProcessing accountUpdater = null;
+  private InlineResponse2012SetupsPaymentsCardProcessing accountUpdater = null;
 
   @SerializedName("binLookup")
-  private InlineResponse2011SetupsPaymentsCardProcessing binLookup = null;
+  private InlineResponse2012SetupsPaymentsCardProcessing binLookup = null;
 
-  public InlineResponse2011SetupsCommerceSolutions tokenManagement(InlineResponse2011SetupsPaymentsCardProcessing tokenManagement) {
+  public InlineResponse2012SetupsCommerceSolutions tokenManagement(InlineResponse2012SetupsPaymentsCardProcessing tokenManagement) {
     this.tokenManagement = tokenManagement;
     return this;
   }
@@ -49,15 +49,15 @@ public class InlineResponse2011SetupsCommerceSolutions {
    * @return tokenManagement
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsPaymentsCardProcessing getTokenManagement() {
+  public InlineResponse2012SetupsPaymentsCardProcessing getTokenManagement() {
     return tokenManagement;
   }
 
-  public void setTokenManagement(InlineResponse2011SetupsPaymentsCardProcessing tokenManagement) {
+  public void setTokenManagement(InlineResponse2012SetupsPaymentsCardProcessing tokenManagement) {
     this.tokenManagement = tokenManagement;
   }
 
-  public InlineResponse2011SetupsCommerceSolutions accountUpdater(InlineResponse2011SetupsPaymentsCardProcessing accountUpdater) {
+  public InlineResponse2012SetupsCommerceSolutions accountUpdater(InlineResponse2012SetupsPaymentsCardProcessing accountUpdater) {
     this.accountUpdater = accountUpdater;
     return this;
   }
@@ -67,15 +67,15 @@ public class InlineResponse2011SetupsCommerceSolutions {
    * @return accountUpdater
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsPaymentsCardProcessing getAccountUpdater() {
+  public InlineResponse2012SetupsPaymentsCardProcessing getAccountUpdater() {
     return accountUpdater;
   }
 
-  public void setAccountUpdater(InlineResponse2011SetupsPaymentsCardProcessing accountUpdater) {
+  public void setAccountUpdater(InlineResponse2012SetupsPaymentsCardProcessing accountUpdater) {
     this.accountUpdater = accountUpdater;
   }
 
-  public InlineResponse2011SetupsCommerceSolutions binLookup(InlineResponse2011SetupsPaymentsCardProcessing binLookup) {
+  public InlineResponse2012SetupsCommerceSolutions binLookup(InlineResponse2012SetupsPaymentsCardProcessing binLookup) {
     this.binLookup = binLookup;
     return this;
   }
@@ -85,11 +85,11 @@ public class InlineResponse2011SetupsCommerceSolutions {
    * @return binLookup
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsPaymentsCardProcessing getBinLookup() {
+  public InlineResponse2012SetupsPaymentsCardProcessing getBinLookup() {
     return binLookup;
   }
 
-  public void setBinLookup(InlineResponse2011SetupsPaymentsCardProcessing binLookup) {
+  public void setBinLookup(InlineResponse2012SetupsPaymentsCardProcessing binLookup) {
     this.binLookup = binLookup;
   }
 
@@ -102,10 +102,10 @@ public class InlineResponse2011SetupsCommerceSolutions {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011SetupsCommerceSolutions inlineResponse2011SetupsCommerceSolutions = (InlineResponse2011SetupsCommerceSolutions) o;
-    return Objects.equals(this.tokenManagement, inlineResponse2011SetupsCommerceSolutions.tokenManagement) &&
-        Objects.equals(this.accountUpdater, inlineResponse2011SetupsCommerceSolutions.accountUpdater) &&
-        Objects.equals(this.binLookup, inlineResponse2011SetupsCommerceSolutions.binLookup);
+    InlineResponse2012SetupsCommerceSolutions inlineResponse2012SetupsCommerceSolutions = (InlineResponse2012SetupsCommerceSolutions) o;
+    return Objects.equals(this.tokenManagement, inlineResponse2012SetupsCommerceSolutions.tokenManagement) &&
+        Objects.equals(this.accountUpdater, inlineResponse2012SetupsCommerceSolutions.accountUpdater) &&
+        Objects.equals(this.binLookup, inlineResponse2012SetupsCommerceSolutions.binLookup);
   }
 
   @Override
@@ -117,7 +117,7 @@ public class InlineResponse2011SetupsCommerceSolutions {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011SetupsCommerceSolutions {\n");
+    sb.append("class InlineResponse2012SetupsCommerceSolutions {\n");
     
     sb.append("    tokenManagement: ").append(toIndentedString(tokenManagement)).append("\n");
     sb.append("    accountUpdater: ").append(toIndentedString(accountUpdater)).append("\n");

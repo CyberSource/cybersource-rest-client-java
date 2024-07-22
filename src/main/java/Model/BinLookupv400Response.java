@@ -28,10 +28,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TssV2TransactionsPost400Response
+ * BinLookupv400Response
  */
 
-public class TssV2TransactionsPost400Response {
+public class BinLookupv400Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
@@ -44,7 +44,7 @@ public class TssV2TransactionsPost400Response {
   @SerializedName("details")
   private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
 
-  public TssV2TransactionsPost400Response submitTimeUtc(String submitTimeUtc) {
+  public BinLookupv400Response submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
     return this;
   }
@@ -62,7 +62,7 @@ public class TssV2TransactionsPost400Response {
     this.submitTimeUtc = submitTimeUtc;
   }
 
-  public TssV2TransactionsPost400Response status(String status) {
+  public BinLookupv400Response status(String status) {
     this.status = status;
     return this;
   }
@@ -80,7 +80,7 @@ public class TssV2TransactionsPost400Response {
     this.status = status;
   }
 
-  public TssV2TransactionsPost400Response message(String message) {
+  public BinLookupv400Response message(String message) {
     this.message = message;
     return this;
   }
@@ -98,12 +98,12 @@ public class TssV2TransactionsPost400Response {
     this.message = message;
   }
 
-  public TssV2TransactionsPost400Response details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+  public BinLookupv400Response details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
     this.details = details;
     return this;
   }
 
-  public TssV2TransactionsPost400Response addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
+  public BinLookupv400Response addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
     if (this.details == null) {
       this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
     }
@@ -133,11 +133,11 @@ public class TssV2TransactionsPost400Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TssV2TransactionsPost400Response tssV2TransactionsPost400Response = (TssV2TransactionsPost400Response) o;
-    return Objects.equals(this.submitTimeUtc, tssV2TransactionsPost400Response.submitTimeUtc) &&
-        Objects.equals(this.status, tssV2TransactionsPost400Response.status) &&
-        Objects.equals(this.message, tssV2TransactionsPost400Response.message) &&
-        Objects.equals(this.details, tssV2TransactionsPost400Response.details);
+    BinLookupv400Response binLookupv400Response = (BinLookupv400Response) o;
+    return Objects.equals(this.submitTimeUtc, binLookupv400Response.submitTimeUtc) &&
+        Objects.equals(this.status, binLookupv400Response.status) &&
+        Objects.equals(this.message, binLookupv400Response.message) &&
+        Objects.equals(this.details, binLookupv400Response.details);
   }
 
   @Override
@@ -149,7 +149,7 @@ public class TssV2TransactionsPost400Response {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TssV2TransactionsPost400Response {\n");
+    sb.append("class BinLookupv400Response {\n");
     
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

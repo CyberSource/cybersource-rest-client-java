@@ -26,10 +26,10 @@ import java.io.IOException;
 import org.joda.time.DateTime;
 
 /**
- * InlineResponse2011IntegrationInformationTenantConfigurations
+ * InlineResponse2012IntegrationInformationTenantConfigurations
  */
 
-public class InlineResponse2011IntegrationInformationTenantConfigurations {
+public class InlineResponse2012IntegrationInformationTenantConfigurations {
   @SerializedName("solutionId")
   private String solutionId = null;
 
@@ -90,7 +90,7 @@ public class InlineResponse2011IntegrationInformationTenantConfigurations {
   @SerializedName("submitTimeUtc")
   private DateTime submitTimeUtc = null;
 
-  public InlineResponse2011IntegrationInformationTenantConfigurations solutionId(String solutionId) {
+  public InlineResponse2012IntegrationInformationTenantConfigurations solutionId(String solutionId) {
     this.solutionId = solutionId;
     return this;
   }
@@ -108,7 +108,7 @@ public class InlineResponse2011IntegrationInformationTenantConfigurations {
     this.solutionId = solutionId;
   }
 
-  public InlineResponse2011IntegrationInformationTenantConfigurations tenantConfigurationId(String tenantConfigurationId) {
+  public InlineResponse2012IntegrationInformationTenantConfigurations tenantConfigurationId(String tenantConfigurationId) {
     this.tenantConfigurationId = tenantConfigurationId;
     return this;
   }
@@ -126,7 +126,7 @@ public class InlineResponse2011IntegrationInformationTenantConfigurations {
     this.tenantConfigurationId = tenantConfigurationId;
   }
 
-  public InlineResponse2011IntegrationInformationTenantConfigurations status(StatusEnum status) {
+  public InlineResponse2012IntegrationInformationTenantConfigurations status(StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -144,7 +144,7 @@ public class InlineResponse2011IntegrationInformationTenantConfigurations {
     this.status = status;
   }
 
-  public InlineResponse2011IntegrationInformationTenantConfigurations submitTimeUtc(DateTime submitTimeUtc) {
+  public InlineResponse2012IntegrationInformationTenantConfigurations submitTimeUtc(DateTime submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
     return this;
   }
@@ -171,11 +171,11 @@ public class InlineResponse2011IntegrationInformationTenantConfigurations {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011IntegrationInformationTenantConfigurations inlineResponse2011IntegrationInformationTenantConfigurations = (InlineResponse2011IntegrationInformationTenantConfigurations) o;
-    return Objects.equals(this.solutionId, inlineResponse2011IntegrationInformationTenantConfigurations.solutionId) &&
-        Objects.equals(this.tenantConfigurationId, inlineResponse2011IntegrationInformationTenantConfigurations.tenantConfigurationId) &&
-        Objects.equals(this.status, inlineResponse2011IntegrationInformationTenantConfigurations.status) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse2011IntegrationInformationTenantConfigurations.submitTimeUtc);
+    InlineResponse2012IntegrationInformationTenantConfigurations inlineResponse2012IntegrationInformationTenantConfigurations = (InlineResponse2012IntegrationInformationTenantConfigurations) o;
+    return Objects.equals(this.solutionId, inlineResponse2012IntegrationInformationTenantConfigurations.solutionId) &&
+        Objects.equals(this.tenantConfigurationId, inlineResponse2012IntegrationInformationTenantConfigurations.tenantConfigurationId) &&
+        Objects.equals(this.status, inlineResponse2012IntegrationInformationTenantConfigurations.status) &&
+        Objects.equals(this.submitTimeUtc, inlineResponse2012IntegrationInformationTenantConfigurations.submitTimeUtc);
   }
 
   @Override
@@ -187,7 +187,7 @@ public class InlineResponse2011IntegrationInformationTenantConfigurations {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011IntegrationInformationTenantConfigurations {\n");
+    sb.append("class InlineResponse2012IntegrationInformationTenantConfigurations {\n");
     
     sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
     sb.append("    tenantConfigurationId: ").append(toIndentedString(tenantConfigurationId)).append("\n");

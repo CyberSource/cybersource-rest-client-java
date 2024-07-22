@@ -27,10 +27,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * InlineResponse2011OrganizationInformation
+ * InlineResponse2012OrganizationInformation
  */
 
-public class InlineResponse2011OrganizationInformation {
+public class InlineResponse2012OrganizationInformation {
   @SerializedName("organizationId")
   private String organizationId = null;
 
@@ -40,7 +40,7 @@ public class InlineResponse2011OrganizationInformation {
   @SerializedName("childOrganizations")
   private List<String> childOrganizations = null;
 
-  public InlineResponse2011OrganizationInformation organizationId(String organizationId) {
+  public InlineResponse2012OrganizationInformation organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -58,7 +58,7 @@ public class InlineResponse2011OrganizationInformation {
     this.organizationId = organizationId;
   }
 
-  public InlineResponse2011OrganizationInformation parentOrganizationId(String parentOrganizationId) {
+  public InlineResponse2012OrganizationInformation parentOrganizationId(String parentOrganizationId) {
     this.parentOrganizationId = parentOrganizationId;
     return this;
   }
@@ -76,12 +76,12 @@ public class InlineResponse2011OrganizationInformation {
     this.parentOrganizationId = parentOrganizationId;
   }
 
-  public InlineResponse2011OrganizationInformation childOrganizations(List<String> childOrganizations) {
+  public InlineResponse2012OrganizationInformation childOrganizations(List<String> childOrganizations) {
     this.childOrganizations = childOrganizations;
     return this;
   }
 
-  public InlineResponse2011OrganizationInformation addChildOrganizationsItem(String childOrganizationsItem) {
+  public InlineResponse2012OrganizationInformation addChildOrganizationsItem(String childOrganizationsItem) {
     if (this.childOrganizations == null) {
       this.childOrganizations = new ArrayList<String>();
     }
@@ -111,10 +111,10 @@ public class InlineResponse2011OrganizationInformation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011OrganizationInformation inlineResponse2011OrganizationInformation = (InlineResponse2011OrganizationInformation) o;
-    return Objects.equals(this.organizationId, inlineResponse2011OrganizationInformation.organizationId) &&
-        Objects.equals(this.parentOrganizationId, inlineResponse2011OrganizationInformation.parentOrganizationId) &&
-        Objects.equals(this.childOrganizations, inlineResponse2011OrganizationInformation.childOrganizations);
+    InlineResponse2012OrganizationInformation inlineResponse2012OrganizationInformation = (InlineResponse2012OrganizationInformation) o;
+    return Objects.equals(this.organizationId, inlineResponse2012OrganizationInformation.organizationId) &&
+        Objects.equals(this.parentOrganizationId, inlineResponse2012OrganizationInformation.parentOrganizationId) &&
+        Objects.equals(this.childOrganizations, inlineResponse2012OrganizationInformation.childOrganizations);
   }
 
   @Override
@@ -126,7 +126,7 @@ public class InlineResponse2011OrganizationInformation {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011OrganizationInformation {\n");
+    sb.append("class InlineResponse2012OrganizationInformation {\n");
     
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    parentOrganizationId: ").append(toIndentedString(parentOrganizationId)).append("\n");

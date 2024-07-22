@@ -30,8 +30,8 @@ import java.io.InputStream;
 
 import Model.CreateWebhookRequest;
 import Model.InlineResponse2003;
-import Model.InlineResponse2012;
 import Model.InlineResponse2013;
+import Model.InlineResponse2014;
 import Model.SaveSymEgressKey;
 
 import java.lang.reflect.Type;
@@ -132,13 +132,13 @@ public class CreateNewWebhooksApi {
      * Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file. 
      * <p>DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.</p>
      * @param createWebhookRequest The webhook payload (optional)
-     * @return InlineResponse2013
+     * @return InlineResponse2014
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2013 createWebhookSubscription(CreateWebhookRequest createWebhookRequest) throws ApiException {
+    public InlineResponse2014 createWebhookSubscription(CreateWebhookRequest createWebhookRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createWebhookSubscription' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2013> resp = createWebhookSubscriptionWithHttpInfo(createWebhookRequest);
+        ApiResponse<InlineResponse2014> resp = createWebhookSubscriptionWithHttpInfo(createWebhookRequest);
         logger.info("CALL TO METHOD 'createWebhookSubscription' ENDED");
         return resp.getData();
     }
@@ -147,12 +147,12 @@ public class CreateNewWebhooksApi {
      * Create a Webhook
      * Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file. 
      * @param createWebhookRequest The webhook payload (optional)
-     * @return ApiResponse&lt;InlineResponse2013&gt;
+     * @return ApiResponse&lt;InlineResponse2014&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2013> createWebhookSubscriptionWithHttpInfo(CreateWebhookRequest createWebhookRequest) throws ApiException {
+    public ApiResponse<InlineResponse2014> createWebhookSubscriptionWithHttpInfo(CreateWebhookRequest createWebhookRequest) throws ApiException {
         okhttp3.Call call = createWebhookSubscriptionValidateBeforeCall(createWebhookRequest, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -164,7 +164,7 @@ public class CreateNewWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call createWebhookSubscriptionAsync(CreateWebhookRequest createWebhookRequest, final ApiCallback<InlineResponse2013> callback) throws ApiException {
+    public okhttp3.Call createWebhookSubscriptionAsync(CreateWebhookRequest createWebhookRequest, final ApiCallback<InlineResponse2014> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -187,7 +187,7 @@ public class CreateNewWebhooksApi {
         }
 
         okhttp3.Call call = createWebhookSubscriptionValidateBeforeCall(createWebhookRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -418,13 +418,13 @@ public class CreateNewWebhooksApi {
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
-     * @return InlineResponse2012
+     * @return InlineResponse2013
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2012 saveSymEgressKey(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException {
+    public InlineResponse2013 saveSymEgressKey(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException {
         logger.info("CALL TO METHOD 'saveSymEgressKey' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2012> resp = saveSymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
+        ApiResponse<InlineResponse2013> resp = saveSymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
         logger.info("CALL TO METHOD 'saveSymEgressKey' ENDED");
         return resp.getData();
     }
@@ -436,12 +436,12 @@ public class CreateNewWebhooksApi {
      * @param vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
      * @param vCCorrelationId A globally unique id associated with your request (optional)
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
-     * @return ApiResponse&lt;InlineResponse2012&gt;
+     * @return ApiResponse&lt;InlineResponse2013&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2012> saveSymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException {
+    public ApiResponse<InlineResponse2013> saveSymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException {
         okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -456,7 +456,7 @@ public class CreateNewWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call saveSymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey, final ApiCallback<InlineResponse2012> callback) throws ApiException {
+    public okhttp3.Call saveSymEgressKeyAsync(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey, final ApiCallback<InlineResponse2013> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -479,7 +479,7 @@ public class CreateNewWebhooksApi {
         }
 
         okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

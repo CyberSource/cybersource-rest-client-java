@@ -28,10 +28,10 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
+import Model.BinLookupv400Response;
 import Model.CreateSearchRequest;
 import Model.PtsV2PaymentsPost502Response;
 import Model.TssV2TransactionsPost201Response;
-import Model.TssV2TransactionsPost400Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

@@ -29,10 +29,10 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus
+ * InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus
  */
 
-public class InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus {
+public class InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus {
   @SerializedName("configurationId")
   private UUID configurationId = null;
 
@@ -156,7 +156,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus {
   @SerializedName("message")
   private String message = null;
 
-  public InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus configurationId(UUID configurationId) {
+  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus configurationId(UUID configurationId) {
     this.configurationId = configurationId;
     return this;
   }
@@ -174,7 +174,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus {
     this.configurationId = configurationId;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus version(String version) {
+  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus version(String version) {
     this.version = version;
     return this;
   }
@@ -192,7 +192,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus {
     this.version = version;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus submitTimeUtc(String submitTimeUtc) {
+  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
     return this;
   }
@@ -210,7 +210,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus {
     this.submitTimeUtc = submitTimeUtc;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus status(StatusEnum status) {
+  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus status(StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -228,7 +228,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus {
     this.status = status;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus reason(ReasonEnum reason) {
+  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus reason(ReasonEnum reason) {
     this.reason = reason;
     return this;
   }
@@ -246,12 +246,12 @@ public class InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus {
     this.reason = reason;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus details(List<Map<String, String>> details) {
+  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus details(List<Map<String, String>> details) {
     this.details = details;
     return this;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus addDetailsItem(Map<String, String> detailsItem) {
+  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus addDetailsItem(Map<String, String> detailsItem) {
     if (this.details == null) {
       this.details = new ArrayList<Map<String, String>>();
     }
@@ -272,7 +272,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus {
     this.details = details;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus message(String message) {
+  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus message(String message) {
     this.message = message;
     return this;
   }
@@ -299,14 +299,14 @@ public class InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus inlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus = (InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus) o;
-    return Objects.equals(this.configurationId, inlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus.configurationId) &&
-        Objects.equals(this.version, inlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus.version) &&
-        Objects.equals(this.submitTimeUtc, inlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus.status) &&
-        Objects.equals(this.reason, inlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus.reason) &&
-        Objects.equals(this.details, inlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus.details) &&
-        Objects.equals(this.message, inlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus.message);
+    InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus inlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus = (InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus) o;
+    return Objects.equals(this.configurationId, inlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus.configurationId) &&
+        Objects.equals(this.version, inlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus.version) &&
+        Objects.equals(this.submitTimeUtc, inlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus.submitTimeUtc) &&
+        Objects.equals(this.status, inlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus.status) &&
+        Objects.equals(this.reason, inlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus.reason) &&
+        Objects.equals(this.details, inlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus.details) &&
+        Objects.equals(this.message, inlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus.message);
   }
 
   @Override
@@ -318,7 +318,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus {\n");
+    sb.append("class InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus {\n");
     
     sb.append("    configurationId: ").append(toIndentedString(configurationId)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2011SetupsPaymentsCardProcessing;
+import Model.InlineResponse2012SetupsPaymentsCardProcessing;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,17 +26,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse2011SetupsRisk
+ * InlineResponse2012SetupsRisk
  */
 
-public class InlineResponse2011SetupsRisk {
+public class InlineResponse2012SetupsRisk {
   @SerializedName("fraudManagementEssentials")
-  private InlineResponse2011SetupsPaymentsCardProcessing fraudManagementEssentials = null;
+  private InlineResponse2012SetupsPaymentsCardProcessing fraudManagementEssentials = null;
 
   @SerializedName("decisionManager")
-  private InlineResponse2011SetupsPaymentsCardProcessing decisionManager = null;
+  private InlineResponse2012SetupsPaymentsCardProcessing decisionManager = null;
 
-  public InlineResponse2011SetupsRisk fraudManagementEssentials(InlineResponse2011SetupsPaymentsCardProcessing fraudManagementEssentials) {
+  public InlineResponse2012SetupsRisk fraudManagementEssentials(InlineResponse2012SetupsPaymentsCardProcessing fraudManagementEssentials) {
     this.fraudManagementEssentials = fraudManagementEssentials;
     return this;
   }
@@ -46,15 +46,15 @@ public class InlineResponse2011SetupsRisk {
    * @return fraudManagementEssentials
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsPaymentsCardProcessing getFraudManagementEssentials() {
+  public InlineResponse2012SetupsPaymentsCardProcessing getFraudManagementEssentials() {
     return fraudManagementEssentials;
   }
 
-  public void setFraudManagementEssentials(InlineResponse2011SetupsPaymentsCardProcessing fraudManagementEssentials) {
+  public void setFraudManagementEssentials(InlineResponse2012SetupsPaymentsCardProcessing fraudManagementEssentials) {
     this.fraudManagementEssentials = fraudManagementEssentials;
   }
 
-  public InlineResponse2011SetupsRisk decisionManager(InlineResponse2011SetupsPaymentsCardProcessing decisionManager) {
+  public InlineResponse2012SetupsRisk decisionManager(InlineResponse2012SetupsPaymentsCardProcessing decisionManager) {
     this.decisionManager = decisionManager;
     return this;
   }
@@ -64,11 +64,11 @@ public class InlineResponse2011SetupsRisk {
    * @return decisionManager
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsPaymentsCardProcessing getDecisionManager() {
+  public InlineResponse2012SetupsPaymentsCardProcessing getDecisionManager() {
     return decisionManager;
   }
 
-  public void setDecisionManager(InlineResponse2011SetupsPaymentsCardProcessing decisionManager) {
+  public void setDecisionManager(InlineResponse2012SetupsPaymentsCardProcessing decisionManager) {
     this.decisionManager = decisionManager;
   }
 
@@ -81,9 +81,9 @@ public class InlineResponse2011SetupsRisk {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011SetupsRisk inlineResponse2011SetupsRisk = (InlineResponse2011SetupsRisk) o;
-    return Objects.equals(this.fraudManagementEssentials, inlineResponse2011SetupsRisk.fraudManagementEssentials) &&
-        Objects.equals(this.decisionManager, inlineResponse2011SetupsRisk.decisionManager);
+    InlineResponse2012SetupsRisk inlineResponse2012SetupsRisk = (InlineResponse2012SetupsRisk) o;
+    return Objects.equals(this.fraudManagementEssentials, inlineResponse2012SetupsRisk.fraudManagementEssentials) &&
+        Objects.equals(this.decisionManager, inlineResponse2012SetupsRisk.decisionManager);
   }
 
   @Override
@@ -95,7 +95,7 @@ public class InlineResponse2011SetupsRisk {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011SetupsRisk {\n");
+    sb.append("class InlineResponse2012SetupsRisk {\n");
     
     sb.append("    fraudManagementEssentials: ").append(toIndentedString(fraudManagementEssentials)).append("\n");
     sb.append("    decisionManager: ").append(toIndentedString(decisionManager)).append("\n");

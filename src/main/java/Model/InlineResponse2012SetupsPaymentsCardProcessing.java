@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus;
-import Model.InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus;
+import Model.InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus;
+import Model.InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,17 +27,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse2011SetupsPaymentsCardProcessing
+ * InlineResponse2012SetupsPaymentsCardProcessing
  */
 
-public class InlineResponse2011SetupsPaymentsCardProcessing {
+public class InlineResponse2012SetupsPaymentsCardProcessing {
   @SerializedName("subscriptionStatus")
-  private InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus = null;
+  private InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus = null;
 
   @SerializedName("configurationStatus")
-  private InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus configurationStatus = null;
+  private InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus configurationStatus = null;
 
-  public InlineResponse2011SetupsPaymentsCardProcessing subscriptionStatus(InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus) {
+  public InlineResponse2012SetupsPaymentsCardProcessing subscriptionStatus(InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus) {
     this.subscriptionStatus = subscriptionStatus;
     return this;
   }
@@ -47,15 +47,15 @@ public class InlineResponse2011SetupsPaymentsCardProcessing {
    * @return subscriptionStatus
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus getSubscriptionStatus() {
+  public InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus getSubscriptionStatus() {
     return subscriptionStatus;
   }
 
-  public void setSubscriptionStatus(InlineResponse2011SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus) {
+  public void setSubscriptionStatus(InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus subscriptionStatus) {
     this.subscriptionStatus = subscriptionStatus;
   }
 
-  public InlineResponse2011SetupsPaymentsCardProcessing configurationStatus(InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus configurationStatus) {
+  public InlineResponse2012SetupsPaymentsCardProcessing configurationStatus(InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus configurationStatus) {
     this.configurationStatus = configurationStatus;
     return this;
   }
@@ -65,11 +65,11 @@ public class InlineResponse2011SetupsPaymentsCardProcessing {
    * @return configurationStatus
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus getConfigurationStatus() {
+  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus getConfigurationStatus() {
     return configurationStatus;
   }
 
-  public void setConfigurationStatus(InlineResponse2011SetupsPaymentsCardProcessingConfigurationStatus configurationStatus) {
+  public void setConfigurationStatus(InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus configurationStatus) {
     this.configurationStatus = configurationStatus;
   }
 
@@ -82,9 +82,9 @@ public class InlineResponse2011SetupsPaymentsCardProcessing {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011SetupsPaymentsCardProcessing inlineResponse2011SetupsPaymentsCardProcessing = (InlineResponse2011SetupsPaymentsCardProcessing) o;
-    return Objects.equals(this.subscriptionStatus, inlineResponse2011SetupsPaymentsCardProcessing.subscriptionStatus) &&
-        Objects.equals(this.configurationStatus, inlineResponse2011SetupsPaymentsCardProcessing.configurationStatus);
+    InlineResponse2012SetupsPaymentsCardProcessing inlineResponse2012SetupsPaymentsCardProcessing = (InlineResponse2012SetupsPaymentsCardProcessing) o;
+    return Objects.equals(this.subscriptionStatus, inlineResponse2012SetupsPaymentsCardProcessing.subscriptionStatus) &&
+        Objects.equals(this.configurationStatus, inlineResponse2012SetupsPaymentsCardProcessing.configurationStatus);
   }
 
   @Override
@@ -96,7 +96,7 @@ public class InlineResponse2011SetupsPaymentsCardProcessing {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011SetupsPaymentsCardProcessing {\n");
+    sb.append("class InlineResponse2012SetupsPaymentsCardProcessing {\n");
     
     sb.append("    subscriptionStatus: ").append(toIndentedString(subscriptionStatus)).append("\n");
     sb.append("    configurationStatus: ").append(toIndentedString(configurationStatus)).append("\n");

@@ -179,10 +179,10 @@ public class Ptsv2paymentreferencesOrderInformationShipTo {
   }
 
    /**
-   * Name of the customer&#39;s company.  For processor-specific information, see the company_name field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) 
+   * Name of the customer&#39;s company. 
    * @return company
   **/
-  @ApiModelProperty(value = "Name of the customer's company.  For processor-specific information, see the company_name field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html) ")
+  @ApiModelProperty(value = "Name of the customer's company. ")
   public String getCompany() {
     return company;
   }

@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2011Setups;
+import Model.InlineResponse2012Setups;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,17 +26,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse2011ProductInformationSetups
+ * InlineResponse2012ProductInformationSetups
  */
 
-public class InlineResponse2011ProductInformationSetups {
+public class InlineResponse2012ProductInformationSetups {
   @SerializedName("organizationId")
   private String organizationId = null;
 
   @SerializedName("setups")
-  private InlineResponse2011Setups setups = null;
+  private InlineResponse2012Setups setups = null;
 
-  public InlineResponse2011ProductInformationSetups organizationId(String organizationId) {
+  public InlineResponse2012ProductInformationSetups organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -54,7 +54,7 @@ public class InlineResponse2011ProductInformationSetups {
     this.organizationId = organizationId;
   }
 
-  public InlineResponse2011ProductInformationSetups setups(InlineResponse2011Setups setups) {
+  public InlineResponse2012ProductInformationSetups setups(InlineResponse2012Setups setups) {
     this.setups = setups;
     return this;
   }
@@ -64,11 +64,11 @@ public class InlineResponse2011ProductInformationSetups {
    * @return setups
   **/
   @ApiModelProperty(value = "")
-  public InlineResponse2011Setups getSetups() {
+  public InlineResponse2012Setups getSetups() {
     return setups;
   }
 
-  public void setSetups(InlineResponse2011Setups setups) {
+  public void setSetups(InlineResponse2012Setups setups) {
     this.setups = setups;
   }
 
@@ -81,9 +81,9 @@ public class InlineResponse2011ProductInformationSetups {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse2011ProductInformationSetups inlineResponse2011ProductInformationSetups = (InlineResponse2011ProductInformationSetups) o;
-    return Objects.equals(this.organizationId, inlineResponse2011ProductInformationSetups.organizationId) &&
-        Objects.equals(this.setups, inlineResponse2011ProductInformationSetups.setups);
+    InlineResponse2012ProductInformationSetups inlineResponse2012ProductInformationSetups = (InlineResponse2012ProductInformationSetups) o;
+    return Objects.equals(this.organizationId, inlineResponse2012ProductInformationSetups.organizationId) &&
+        Objects.equals(this.setups, inlineResponse2012ProductInformationSetups.setups);
   }
 
   @Override
@@ -95,7 +95,7 @@ public class InlineResponse2011ProductInformationSetups {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse2011ProductInformationSetups {\n");
+    sb.append("class InlineResponse2012ProductInformationSetups {\n");
     
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    setups: ").append(toIndentedString(setups)).append("\n");

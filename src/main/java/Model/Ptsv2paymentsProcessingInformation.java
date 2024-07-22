@@ -84,9 +84,6 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("intentsId")
   private String intentsId = null;
 
-  @SerializedName("paymentId")
-  private String paymentId = null;
-
   @SerializedName("reportGroup")
   private String reportGroup = null;
 
@@ -149,6 +146,9 @@ public class Ptsv2paymentsProcessingInformation {
 
   @SerializedName("paymentType")
   private String paymentType = null;
+
+  @SerializedName("enablerId")
+  private String enablerId = null;
 
   public Ptsv2paymentsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
@@ -334,10 +334,10 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   * Type of digital payment solution for the transaction. Possible Values:   - &#x60;visacheckout&#x60;: Visa Checkout. This value is required for Visa Checkout transactions. For details, see &#x60;payment_solution&#x60; field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - &#x60;001&#x60;: Apple Pay.  - &#x60;004&#x60;: Cybersource In-App Solution.  - &#x60;005&#x60;: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \&quot;Masterpass\&quot; in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - &#x60;006&#x60;: Android Pay.  - &#x60;007&#x60;: Chase Pay.  - &#x60;008&#x60;: Samsung Pay.  - &#x60;012&#x60;: Google Pay.  - &#x60;013&#x60;: Cybersource P2PE Decryption  - &#x60;014&#x60;: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - &#x60;015&#x60;: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - &#x60;027&#x60;: Click to Pay. 
+   * Type of digital payment solution for the transaction. Possible Values:   - &#x60;visacheckout&#x60;: Visa Checkout. This value is required for Visa Checkout transactions. For details, see &#x60;payment_solution&#x60; field description in [Visa Checkout Using the REST API.](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf)  - &#x60;001&#x60;: Apple Pay.  - &#x60;004&#x60;: Cybersource In-App Solution.  - &#x60;005&#x60;: Masterpass. This value is required for Masterpass transactions on OmniPay Direct.   - &#x60;006&#x60;: Android Pay.  - &#x60;007&#x60;: Chase Pay.  - &#x60;008&#x60;: Samsung Pay.  - &#x60;012&#x60;: Google Pay.  - &#x60;013&#x60;: Cybersource P2PE Decryption  - &#x60;014&#x60;: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - &#x60;015&#x60;: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - &#x60;027&#x60;: Click to Pay. 
    * @return paymentSolution
   **/
-  @ApiModelProperty(value = "Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.  - `013`: Cybersource P2PE Decryption  - `014`: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `015`: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `027`: Click to Pay. ")
+  @ApiModelProperty(value = "Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the REST API.](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct.   - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.  - `013`: Cybersource P2PE Decryption  - `014`: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `015`: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `027`: Click to Pay. ")
   public String getPaymentSolution() {
     return paymentSolution;
   }
@@ -435,24 +435,6 @@ public class Ptsv2paymentsProcessingInformation {
 
   public void setIntentsId(String intentsId) {
     this.intentsId = intentsId;
-  }
-
-  public Ptsv2paymentsProcessingInformation paymentId(String paymentId) {
-    this.paymentId = paymentId;
-    return this;
-  }
-
-   /**
-   * This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.
-   * @return paymentId
-  **/
-  @ApiModelProperty(value = "This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.")
-  public String getPaymentId() {
-    return paymentId;
-  }
-
-  public void setPaymentId(String paymentId) {
-    this.paymentId = paymentId;
   }
 
   public Ptsv2paymentsProcessingInformation reportGroup(String reportGroup) {
@@ -833,6 +815,24 @@ public class Ptsv2paymentsProcessingInformation {
     this.paymentType = paymentType;
   }
 
+  public Ptsv2paymentsProcessingInformation enablerId(String enablerId) {
+    this.enablerId = enablerId;
+    return this;
+  }
+
+   /**
+   * Enablers are payment processing entities that are not acquiring members and are often the primary relationship owner with merchants and originators. Enablers own technical solutions through which the merchant or originator will access acceptance. The Enabler ID is a five-character hexadecimal identifier that will be used by Visa to identify enablers. Enabler ID assignment will be determined by Visa. Visa will communicate Enablers assignments to enablers. 
+   * @return enablerId
+  **/
+  @ApiModelProperty(value = "Enablers are payment processing entities that are not acquiring members and are often the primary relationship owner with merchants and originators. Enablers own technical solutions through which the merchant or originator will access acceptance. The Enabler ID is a five-character hexadecimal identifier that will be used by Visa to identify enablers. Enabler ID assignment will be determined by Visa. Visa will communicate Enablers assignments to enablers. ")
+  public String getEnablerId() {
+    return enablerId;
+  }
+
+  public void setEnablerId(String enablerId) {
+    this.enablerId = enablerId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -858,7 +858,6 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.purchaseLevel, ptsv2paymentsProcessingInformation.purchaseLevel) &&
         Objects.equals(this.transactionTimeout, ptsv2paymentsProcessingInformation.transactionTimeout) &&
         Objects.equals(this.intentsId, ptsv2paymentsProcessingInformation.intentsId) &&
-        Objects.equals(this.paymentId, ptsv2paymentsProcessingInformation.paymentId) &&
         Objects.equals(this.reportGroup, ptsv2paymentsProcessingInformation.reportGroup) &&
         Objects.equals(this.visaCheckoutId, ptsv2paymentsProcessingInformation.visaCheckoutId) &&
         Objects.equals(this.industryDataType, ptsv2paymentsProcessingInformation.industryDataType) &&
@@ -879,12 +878,13 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.timeout, ptsv2paymentsProcessingInformation.timeout) &&
         Objects.equals(this.isReturnAuthRecordEnabled, ptsv2paymentsProcessingInformation.isReturnAuthRecordEnabled) &&
         Objects.equals(this.networkPartnerId, ptsv2paymentsProcessingInformation.networkPartnerId) &&
-        Objects.equals(this.paymentType, ptsv2paymentsProcessingInformation.paymentType);
+        Objects.equals(this.paymentType, ptsv2paymentsProcessingInformation.paymentType) &&
+        Objects.equals(this.enablerId, ptsv2paymentsProcessingInformation.enablerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, paymentId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId);
   }
 
 
@@ -908,7 +908,6 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
     sb.append("    transactionTimeout: ").append(toIndentedString(transactionTimeout)).append("\n");
     sb.append("    intentsId: ").append(toIndentedString(intentsId)).append("\n");
-    sb.append("    paymentId: ").append(toIndentedString(paymentId)).append("\n");
     sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
     sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
     sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
@@ -930,6 +929,7 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    isReturnAuthRecordEnabled: ").append(toIndentedString(isReturnAuthRecordEnabled)).append("\n");
     sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    sb.append("    enablerId: ").append(toIndentedString(enablerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
