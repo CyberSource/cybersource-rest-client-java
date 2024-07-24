@@ -1,6 +1,8 @@
 
 # Java Client SDK for the CyberSource REST API
 
+[![JAVA BUILDS](https://github.com/CyberSource/cybersource-rest-client-java/actions/workflows/java-workflow.yml/badge.svg)](https://github.com/CyberSource/cybersource-rest-client-java/actions/workflows/java-workflow.yml)
+
 ## Description
 
 The CyberSource Java client provides convenient access to the [CyberSource REST API](https://developer.cybersource.com/api/reference/api-reference.html) from your Java application.
