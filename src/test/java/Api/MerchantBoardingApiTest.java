@@ -14,7 +14,7 @@
 package Api;
 
 import Model.InlineResponse2002;
-import Model.InlineResponse2011;
+import Model.InlineResponse2012;
 import Model.InlineResponse4007;
 import Model.InlineResponse4041;
 import Model.InlineResponse4221;
@@ -66,7 +66,7 @@ public class MerchantBoardingApiTest {
     public void postRegistrationTest() throws Exception {
         PostRegistrationBody postRegistrationBody = null;
         String vCIdempotencyId = null;
-        InlineResponse2011 response = api.postRegistration(postRegistrationBody, vCIdempotencyId);
+        InlineResponse2012 response = api.postRegistration(postRegistrationBody, vCIdempotencyId);
 
         // TODO: test validations
     }

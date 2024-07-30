@@ -15,7 +15,7 @@ package Api;
 
 import Model.InlineResponse2004;
 import Model.InlineResponse2005;
-import Model.InlineResponse2014;
+import Model.InlineResponse2015;
 import Model.InlineResponse4042;
 import Model.SaveAsymEgressKey;
 import Model.UpdateWebhookRequest;
@@ -101,7 +101,7 @@ public class ManageWebhooksApiTest {
         String vCPermissions = null;
         SaveAsymEgressKey saveAsymEgressKey = null;
         String vCCorrelationId = null;
-        InlineResponse2014 response = api.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+        InlineResponse2015 response = api.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
 
         // TODO: test validations
     }

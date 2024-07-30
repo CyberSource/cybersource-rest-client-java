@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **integrationInformation** | [**InlineResponse2002IntegrationInformation**](InlineResponse2002IntegrationInformation.md) |  |  [optional]
 **organizationInformation** | [**Boardingv1registrationsOrganizationInformation**](Boardingv1registrationsOrganizationInformation.md) |  |  [optional]
 **productInformation** | [**Boardingv1registrationsProductInformation**](Boardingv1registrationsProductInformation.md) |  |  [optional]
-**productInformationSetups** | [**List&lt;InlineResponse2011ProductInformationSetups&gt;**](InlineResponse2011ProductInformationSetups.md) |  |  [optional]
+**productInformationSetups** | [**List&lt;InlineResponse2012ProductInformationSetups&gt;**](InlineResponse2012ProductInformationSetups.md) |  |  [optional]
 **documentInformation** | [**Boardingv1registrationsDocumentInformation**](Boardingv1registrationsDocumentInformation.md) |  |  [optional]
 **details** | [**Map&lt;String, List&lt;Object&gt;&gt;**](List.md) |  |  [optional]
 

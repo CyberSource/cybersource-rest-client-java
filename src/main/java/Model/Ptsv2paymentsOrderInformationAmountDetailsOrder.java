@@ -170,10 +170,10 @@ public class Ptsv2paymentsOrderInformationAmountDetailsOrder {
   }
 
    /**
-   * Total tax amount. When the purchaseTotals_ taxAmount and ap_subtotalAmount fields are included in the request, do not include the tax amount as part of the subtotal amount calculation.  
+   * Total tax amount. When the purchaseTotals_ taxAmount and ap_subtotalAmount fields are included in the request, do not include the tax amount as part of the subtotal amount calculation. 
    * @return taxAmount
   **/
-  @ApiModelProperty(value = "Total tax amount. When the purchaseTotals_ taxAmount and ap_subtotalAmount fields are included in the request, do not include the tax amount as part of the subtotal amount calculation.  ")
+  @ApiModelProperty(value = "Total tax amount. When the purchaseTotals_ taxAmount and ap_subtotalAmount fields are included in the request, do not include the tax amount as part of the subtotal amount calculation. ")
   public String getTaxAmount() {
     return taxAmount;
   }

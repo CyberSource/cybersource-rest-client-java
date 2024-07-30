@@ -30,23 +30,23 @@ import java.io.IOException;
 
 public class Ptsv2voidsProcessingInformation {
   @SerializedName("paymentId")
-  private String paymentId = null;
+  private Object paymentId = null;
 
-  public Ptsv2voidsProcessingInformation paymentId(String paymentId) {
+  public Ptsv2voidsProcessingInformation paymentId(Object paymentId) {
     this.paymentId = paymentId;
     return this;
   }
 
    /**
-   * This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.
+   * This field is to accept the id of credit/capture in the body of the requests so the type of void can be identified and processed correctly.
    * @return paymentId
   **/
-  @ApiModelProperty(value = "This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.")
-  public String getPaymentId() {
+  @ApiModelProperty(value = "This field is to accept the id of credit/capture in the body of the requests so the type of void can be identified and processed correctly.")
+  public Object getPaymentId() {
     return paymentId;
   }
 
-  public void setPaymentId(String paymentId) {
+  public void setPaymentId(Object paymentId) {
     this.paymentId = paymentId;
   }
 

@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration;
 import Model.PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -32,6 +33,9 @@ import java.io.IOException;
 public class PtsV2PaymentsPost201ResponsePaymentInsightsInformation {
   @SerializedName("responseInsights")
   private PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights responseInsights = null;
+
+  @SerializedName("orchestration")
+  private PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration orchestration = null;
 
   public PtsV2PaymentsPost201ResponsePaymentInsightsInformation responseInsights(PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights responseInsights) {
     this.responseInsights = responseInsights;
@@ -51,6 +55,24 @@ public class PtsV2PaymentsPost201ResponsePaymentInsightsInformation {
     this.responseInsights = responseInsights;
   }
 
+  public PtsV2PaymentsPost201ResponsePaymentInsightsInformation orchestration(PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration orchestration) {
+    this.orchestration = orchestration;
+    return this;
+  }
+
+   /**
+   * Get orchestration
+   * @return orchestration
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration getOrchestration() {
+    return orchestration;
+  }
+
+  public void setOrchestration(PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration orchestration) {
+    this.orchestration = orchestration;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +83,13 @@ public class PtsV2PaymentsPost201ResponsePaymentInsightsInformation {
       return false;
     }
     PtsV2PaymentsPost201ResponsePaymentInsightsInformation ptsV2PaymentsPost201ResponsePaymentInsightsInformation = (PtsV2PaymentsPost201ResponsePaymentInsightsInformation) o;
-    return Objects.equals(this.responseInsights, ptsV2PaymentsPost201ResponsePaymentInsightsInformation.responseInsights);
+    return Objects.equals(this.responseInsights, ptsV2PaymentsPost201ResponsePaymentInsightsInformation.responseInsights) &&
+        Objects.equals(this.orchestration, ptsV2PaymentsPost201ResponsePaymentInsightsInformation.orchestration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseInsights);
+    return Objects.hash(responseInsights, orchestration);
   }
 
 
@@ -76,6 +99,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInsightsInformation {
     sb.append("class PtsV2PaymentsPost201ResponsePaymentInsightsInformation {\n");
     
     sb.append("    responseInsights: ").append(toIndentedString(responseInsights)).append("\n");
+    sb.append("    orchestration: ").append(toIndentedString(orchestration)).append("\n");
     sb.append("}");
     return sb.toString();
   }
