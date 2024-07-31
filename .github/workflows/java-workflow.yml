@@ -1,0 +1,83 @@
+name: JAVA BUILDS
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+env:
+  CLIENT_FOLDER: 'cybersource-rest-client-java'
+  SAMPLE_FOLDER: 'cybersource-rest-samples-java'
+jobs:
+    complete-job:
+        defaults:
+            run:
+              shell: bash
+        strategy:
+            fail-fast: false
+            matrix:
+              operating-system: [ubuntu-latest,macos-latest,windows-latest]
+              java-version: ['8','11','16','17','18','19','20','21','22']
+              distribution: ['temurin']
+        runs-on: ${{matrix.operating-system}}
+        steps:
+            - name: Making separate folders
+              run: |
+                rm -rf $CLIENT_FOLDER
+                rm -rf $SAMPLE_FOLDER
+                mkdir $CLIENT_FOLDER $SAMPLE_FOLDER
+            - name: Checkout the cybersource-rest-client-java repo
+              uses: actions/checkout@v4
+              with:
+                path: ${{env.CLIENT_FOLDER}}
+            - name: Checkout the cybersource-rest-samples-java repo
+              uses: actions/checkout@v4
+              with:
+                repository: 'CyberSource/cybersource-rest-samples-java'
+                ref: 'master'
+                path: ${{env.SAMPLE_FOLDER}}
+            - name: Setup Java 8 to Build the Client
+              uses: actions/setup-java@v2
+              with:
+                distribution: 'temurin'
+                java-version: '8'
+            - name: Build the Java Client
+              run: |
+                mvn -version
+                java -version
+                cd $CLIENT_FOLDER
+                mvn clean install
+            - name: Setup Java version to Build the samples
+              uses: actions/setup-java@v2
+              with:
+                distribution: ${{matrix.distribution}}
+                java-version: ${{matrix.java-version}}
+            - name: Replace the Version of cybersource-rest-client-java in samples' pom file 
+              run: |
+                cd $CLIENT_FOLDER
+                RESTCLIENT_SDK_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+                echo $RESTCLIENT_SDK_VERSION
+                cd ../$SAMPLE_FOLDER
+                perl -i -spe "BEGIN{undef $/;} s|<groupId>com\.cybersource<\/groupId>\s*<artifactId>cybersource-rest-client-java<\/artifactId>\s*<version>.*?<\/version>|<groupId>com.cybersource</groupId>\n   <artifactId>cybersource-rest-client-java</artifactId>\n  <version>\${version}</version>|g" -- -version=$RESTCLIENT_SDK_VERSION pom.xml
+                cat pom.xml
+            - name: Build the Sample Project and Run the Samples
+              run: |
+                mvn -version
+                java -version
+                cd $SAMPLE_FOLDER
+                mvn -X -e clean install
+                echo "Running Samples"
+                java -jar target/SampleCode.jar > output.log
+            - name: Using Report Generation Action
+              id: report-generation
+              uses: ./cybersource-rest-client-java/.github/actions/generate-report
+              with:
+                lang: java
+                sample-folder-name: ${{env.SAMPLE_FOLDER}}
+                log-file-name: output.log
+            - name: Upload Test Reports
+              uses: actions/upload-artifact@v4
+              with:
+                name: sample-run-report-${{matrix.operating-system}}-${{matrix.distribution}}-java-ver-${{matrix.java-version}}
+                path: |
+                  ${{env.SAMPLE_FOLDER}}/${{steps.report-generation.outputs.result-pdf-name}}
+
+#Adding Comment
