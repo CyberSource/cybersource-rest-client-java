@@ -71,10 +71,10 @@ public class RiskV1AuthenticationsPost400Response1 {
   }
 
    /**
-   * The status for payerAuthentication 201 enroll and validate calls. Value is: - &#x60;INVALID_REQUEST&#x60; 
+   * The status for payerAuthentication 400 enroll and validate calls. Value is: - &#x60;INVALID_REQUEST&#x60; 
    * @return status
   **/
-  @ApiModelProperty(value = "The status for payerAuthentication 201 enroll and validate calls. Value is: - `INVALID_REQUEST` ")
+  @ApiModelProperty(value = "The status for payerAuthentication 400 enroll and validate calls. Value is: - `INVALID_REQUEST` ")
   public String getStatus() {
     return status;
   }

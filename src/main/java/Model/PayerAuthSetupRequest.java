@@ -15,10 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Riskv1authenticationsetupsClientReferenceInformation;
 import Model.Riskv1authenticationsetupsPaymentInformation;
 import Model.Riskv1authenticationsetupsProcessingInformation;
 import Model.Riskv1authenticationsetupsTokenInformation;
-import Model.Riskv1decisionsClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ import java.io.IOException;
 
 public class PayerAuthSetupRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1decisionsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("paymentInformation")
   private Riskv1authenticationsetupsPaymentInformation paymentInformation = null;
@@ -45,7 +45,7 @@ public class PayerAuthSetupRequest {
   @SerializedName("tokenInformation")
   private Riskv1authenticationsetupsTokenInformation tokenInformation = null;
 
-  public PayerAuthSetupRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+  public PayerAuthSetupRequest clientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -55,11 +55,11 @@ public class PayerAuthSetupRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1authenticationsetupsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

@@ -29,9 +29,6 @@ import java.io.IOException;
  */
 
 public class Riskv1authenticationresultsPaymentInformationCard {
-  @SerializedName("bin")
-  private String bin = null;
-
   @SerializedName("type")
   private String type = null;
 
@@ -43,24 +40,6 @@ public class Riskv1authenticationresultsPaymentInformationCard {
 
   @SerializedName("number")
   private String number = null;
-
-  public Riskv1authenticationresultsPaymentInformationCard bin(String bin) {
-    this.bin = bin;
-    return this;
-  }
-
-   /**
-   * description: The BIN is the first six digits of the card&#39;s Primary Account Number (PAN). 
-   * @return bin
-  **/
-  @ApiModelProperty(value = "description: The BIN is the first six digits of the card's Primary Account Number (PAN). ")
-  public String getBin() {
-    return bin;
-  }
-
-  public void setBin(String bin) {
-    this.bin = bin;
-  }
 
   public Riskv1authenticationresultsPaymentInformationCard type(String type) {
     this.type = type;
@@ -144,8 +123,7 @@ public class Riskv1authenticationresultsPaymentInformationCard {
       return false;
     }
     Riskv1authenticationresultsPaymentInformationCard riskv1authenticationresultsPaymentInformationCard = (Riskv1authenticationresultsPaymentInformationCard) o;
-    return Objects.equals(this.bin, riskv1authenticationresultsPaymentInformationCard.bin) &&
-        Objects.equals(this.type, riskv1authenticationresultsPaymentInformationCard.type) &&
+    return Objects.equals(this.type, riskv1authenticationresultsPaymentInformationCard.type) &&
         Objects.equals(this.expirationMonth, riskv1authenticationresultsPaymentInformationCard.expirationMonth) &&
         Objects.equals(this.expirationYear, riskv1authenticationresultsPaymentInformationCard.expirationYear) &&
         Objects.equals(this.number, riskv1authenticationresultsPaymentInformationCard.number);
@@ -153,7 +131,7 @@ public class Riskv1authenticationresultsPaymentInformationCard {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bin, type, expirationMonth, expirationYear, number);
+    return Objects.hash(type, expirationMonth, expirationYear, number);
   }
 
 
@@ -162,7 +140,6 @@ public class Riskv1authenticationresultsPaymentInformationCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationresultsPaymentInformationCard {\n");
     
-    sb.append("    bin: ").append(toIndentedString(bin)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
     sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");

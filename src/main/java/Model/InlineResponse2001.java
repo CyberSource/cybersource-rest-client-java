@@ -15,7 +15,12 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse2001Keys;
+import Model.Boardingv1registrationsDocumentInformation;
+import Model.Boardingv1registrationsOrganizationInformation;
+import Model.Boardingv1registrationsProductInformation;
+import Model.Boardingv1registrationsRegistrationInformation;
+import Model.InlineResponse2001IntegrationInformation;
+import Model.InlineResponse2012ProductInformationSetups;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,146 +30,176 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
- * Successful searchKeysResponse
+ * InlineResponse2001
  */
-@ApiModel(description = "Successful searchKeysResponse")
 
 public class InlineResponse2001 {
-  @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  @SerializedName("registrationInformation")
+  private Boardingv1registrationsRegistrationInformation registrationInformation = null;
 
-  @SerializedName("totalCount")
-  private Integer totalCount = null;
+  @SerializedName("integrationInformation")
+  private InlineResponse2001IntegrationInformation integrationInformation = null;
 
-  @SerializedName("offset")
-  private Integer offset = null;
+  @SerializedName("organizationInformation")
+  private Boardingv1registrationsOrganizationInformation organizationInformation = null;
 
-  @SerializedName("limit")
-  private Integer limit = null;
+  @SerializedName("productInformation")
+  private Boardingv1registrationsProductInformation productInformation = null;
 
-  @SerializedName("sort")
-  private String sort = null;
+  @SerializedName("productInformationSetups")
+  private List<InlineResponse2012ProductInformationSetups> productInformationSetups = null;
 
-  @SerializedName("keys")
-  private List<InlineResponse2001Keys> keys = null;
+  @SerializedName("documentInformation")
+  private Boardingv1registrationsDocumentInformation documentInformation = null;
 
-  public InlineResponse2001 submitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
+  @SerializedName("details")
+  private Map<String, List<Object>> details = null;
+
+  public InlineResponse2001 registrationInformation(Boardingv1registrationsRegistrationInformation registrationInformation) {
+    this.registrationInformation = registrationInformation;
     return this;
   }
 
    /**
-   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
-   * @return submitTimeUtc
-  **/
-  @ApiModelProperty(example = "2016-08-11T22:47:57Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public String getSubmitTimeUtc() {
-    return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(String submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
-
-  public InlineResponse2001 totalCount(Integer totalCount) {
-    this.totalCount = totalCount;
-    return this;
-  }
-
-   /**
-   * Specifies the total number of items found based on the request
-   * @return totalCount
-  **/
-  @ApiModelProperty(value = "Specifies the total number of items found based on the request")
-  public Integer getTotalCount() {
-    return totalCount;
-  }
-
-  public void setTotalCount(Integer totalCount) {
-    this.totalCount = totalCount;
-  }
-
-  public InlineResponse2001 offset(Integer offset) {
-    this.offset = offset;
-    return this;
-  }
-
-   /**
-   * Specifies the record offset from the records are returned part of the response
-   * @return offset
-  **/
-  @ApiModelProperty(value = "Specifies the record offset from the records are returned part of the response")
-  public Integer getOffset() {
-    return offset;
-  }
-
-  public void setOffset(Integer offset) {
-    this.offset = offset;
-  }
-
-  public InlineResponse2001 limit(Integer limit) {
-    this.limit = limit;
-    return this;
-  }
-
-   /**
-   * Specifies the maximum number of records requested part of the response
-   * @return limit
-  **/
-  @ApiModelProperty(value = "Specifies the maximum number of records requested part of the response")
-  public Integer getLimit() {
-    return limit;
-  }
-
-  public void setLimit(Integer limit) {
-    this.limit = limit;
-  }
-
-  public InlineResponse2001 sort(String sort) {
-    this.sort = sort;
-    return this;
-  }
-
-   /**
-   * Specifies a comma separated list of field names based on which the result is sorted.
-   * @return sort
-  **/
-  @ApiModelProperty(value = "Specifies a comma separated list of field names based on which the result is sorted.")
-  public String getSort() {
-    return sort;
-  }
-
-  public void setSort(String sort) {
-    this.sort = sort;
-  }
-
-  public InlineResponse2001 keys(List<InlineResponse2001Keys> keys) {
-    this.keys = keys;
-    return this;
-  }
-
-  public InlineResponse2001 addKeysItem(InlineResponse2001Keys keysItem) {
-    if (this.keys == null) {
-      this.keys = new ArrayList<InlineResponse2001Keys>();
-    }
-    this.keys.add(keysItem);
-    return this;
-  }
-
-   /**
-   * Get keys
-   * @return keys
+   * Get registrationInformation
+   * @return registrationInformation
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse2001Keys> getKeys() {
-    return keys;
+  public Boardingv1registrationsRegistrationInformation getRegistrationInformation() {
+    return registrationInformation;
   }
 
-  public void setKeys(List<InlineResponse2001Keys> keys) {
-    this.keys = keys;
+  public void setRegistrationInformation(Boardingv1registrationsRegistrationInformation registrationInformation) {
+    this.registrationInformation = registrationInformation;
+  }
+
+  public InlineResponse2001 integrationInformation(InlineResponse2001IntegrationInformation integrationInformation) {
+    this.integrationInformation = integrationInformation;
+    return this;
+  }
+
+   /**
+   * Get integrationInformation
+   * @return integrationInformation
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2001IntegrationInformation getIntegrationInformation() {
+    return integrationInformation;
+  }
+
+  public void setIntegrationInformation(InlineResponse2001IntegrationInformation integrationInformation) {
+    this.integrationInformation = integrationInformation;
+  }
+
+  public InlineResponse2001 organizationInformation(Boardingv1registrationsOrganizationInformation organizationInformation) {
+    this.organizationInformation = organizationInformation;
+    return this;
+  }
+
+   /**
+   * Get organizationInformation
+   * @return organizationInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Boardingv1registrationsOrganizationInformation getOrganizationInformation() {
+    return organizationInformation;
+  }
+
+  public void setOrganizationInformation(Boardingv1registrationsOrganizationInformation organizationInformation) {
+    this.organizationInformation = organizationInformation;
+  }
+
+  public InlineResponse2001 productInformation(Boardingv1registrationsProductInformation productInformation) {
+    this.productInformation = productInformation;
+    return this;
+  }
+
+   /**
+   * Get productInformation
+   * @return productInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Boardingv1registrationsProductInformation getProductInformation() {
+    return productInformation;
+  }
+
+  public void setProductInformation(Boardingv1registrationsProductInformation productInformation) {
+    this.productInformation = productInformation;
+  }
+
+  public InlineResponse2001 productInformationSetups(List<InlineResponse2012ProductInformationSetups> productInformationSetups) {
+    this.productInformationSetups = productInformationSetups;
+    return this;
+  }
+
+  public InlineResponse2001 addProductInformationSetupsItem(InlineResponse2012ProductInformationSetups productInformationSetupsItem) {
+    if (this.productInformationSetups == null) {
+      this.productInformationSetups = new ArrayList<InlineResponse2012ProductInformationSetups>();
+    }
+    this.productInformationSetups.add(productInformationSetupsItem);
+    return this;
+  }
+
+   /**
+   * Get productInformationSetups
+   * @return productInformationSetups
+  **/
+  @ApiModelProperty(value = "")
+  public List<InlineResponse2012ProductInformationSetups> getProductInformationSetups() {
+    return productInformationSetups;
+  }
+
+  public void setProductInformationSetups(List<InlineResponse2012ProductInformationSetups> productInformationSetups) {
+    this.productInformationSetups = productInformationSetups;
+  }
+
+  public InlineResponse2001 documentInformation(Boardingv1registrationsDocumentInformation documentInformation) {
+    this.documentInformation = documentInformation;
+    return this;
+  }
+
+   /**
+   * Get documentInformation
+   * @return documentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Boardingv1registrationsDocumentInformation getDocumentInformation() {
+    return documentInformation;
+  }
+
+  public void setDocumentInformation(Boardingv1registrationsDocumentInformation documentInformation) {
+    this.documentInformation = documentInformation;
+  }
+
+  public InlineResponse2001 details(Map<String, List<Object>> details) {
+    this.details = details;
+    return this;
+  }
+
+  public InlineResponse2001 putDetailsItem(String key, List<Object> detailsItem) {
+    if (this.details == null) {
+      this.details = new HashMap<String, List<Object>>();
+    }
+    this.details.put(key, detailsItem);
+    return this;
+  }
+
+   /**
+   * Get details
+   * @return details
+  **/
+  @ApiModelProperty(value = "")
+  public Map<String, List<Object>> getDetails() {
+    return details;
+  }
+
+  public void setDetails(Map<String, List<Object>> details) {
+    this.details = details;
   }
 
 
@@ -177,17 +212,18 @@ public class InlineResponse2001 {
       return false;
     }
     InlineResponse2001 inlineResponse2001 = (InlineResponse2001) o;
-    return Objects.equals(this.submitTimeUtc, inlineResponse2001.submitTimeUtc) &&
-        Objects.equals(this.totalCount, inlineResponse2001.totalCount) &&
-        Objects.equals(this.offset, inlineResponse2001.offset) &&
-        Objects.equals(this.limit, inlineResponse2001.limit) &&
-        Objects.equals(this.sort, inlineResponse2001.sort) &&
-        Objects.equals(this.keys, inlineResponse2001.keys);
+    return Objects.equals(this.registrationInformation, inlineResponse2001.registrationInformation) &&
+        Objects.equals(this.integrationInformation, inlineResponse2001.integrationInformation) &&
+        Objects.equals(this.organizationInformation, inlineResponse2001.organizationInformation) &&
+        Objects.equals(this.productInformation, inlineResponse2001.productInformation) &&
+        Objects.equals(this.productInformationSetups, inlineResponse2001.productInformationSetups) &&
+        Objects.equals(this.documentInformation, inlineResponse2001.documentInformation) &&
+        Objects.equals(this.details, inlineResponse2001.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, totalCount, offset, limit, sort, keys);
+    return Objects.hash(registrationInformation, integrationInformation, organizationInformation, productInformation, productInformationSetups, documentInformation, details);
   }
 
 
@@ -196,12 +232,13 @@ public class InlineResponse2001 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2001 {\n");
     
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
-    sb.append("    keys: ").append(toIndentedString(keys)).append("\n");
+    sb.append("    registrationInformation: ").append(toIndentedString(registrationInformation)).append("\n");
+    sb.append("    integrationInformation: ").append(toIndentedString(integrationInformation)).append("\n");
+    sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
+    sb.append("    productInformation: ").append(toIndentedString(productInformation)).append("\n");
+    sb.append("    productInformationSetups: ").append(toIndentedString(productInformationSetups)).append("\n");
+    sb.append("    documentInformation: ").append(toIndentedString(documentInformation)).append("\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

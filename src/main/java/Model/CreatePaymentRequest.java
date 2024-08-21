@@ -39,6 +39,7 @@ import Model.Ptsv2paymentsPromotionInformation;
 import Model.Ptsv2paymentsRecipientInformation;
 import Model.Ptsv2paymentsRecurringPaymentInformation;
 import Model.Ptsv2paymentsRiskInformation;
+import Model.Ptsv2paymentsSenderInformation;
 import Model.Ptsv2paymentsTokenInformation;
 import Model.Ptsv2paymentsTravelInformation;
 import Model.Ptsv2paymentsWatchlistScreeningInformation;
@@ -75,6 +76,9 @@ public class CreatePaymentRequest {
 
   @SerializedName("buyerInformation")
   private Ptsv2paymentsBuyerInformation buyerInformation = null;
+
+  @SerializedName("senderInformation")
+  private Ptsv2paymentsSenderInformation senderInformation = null;
 
   @SerializedName("recipientInformation")
   private Ptsv2paymentsRecipientInformation recipientInformation = null;
@@ -245,6 +249,24 @@ public class CreatePaymentRequest {
 
   public void setBuyerInformation(Ptsv2paymentsBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
+  }
+
+  public CreatePaymentRequest senderInformation(Ptsv2paymentsSenderInformation senderInformation) {
+    this.senderInformation = senderInformation;
+    return this;
+  }
+
+   /**
+   * Get senderInformation
+   * @return senderInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsSenderInformation getSenderInformation() {
+    return senderInformation;
+  }
+
+  public void setSenderInformation(Ptsv2paymentsSenderInformation senderInformation) {
+    this.senderInformation = senderInformation;
   }
 
   public CreatePaymentRequest recipientInformation(Ptsv2paymentsRecipientInformation recipientInformation) {
@@ -649,6 +671,7 @@ public class CreatePaymentRequest {
         Objects.equals(this.paymentInformation, createPaymentRequest.paymentInformation) &&
         Objects.equals(this.orderInformation, createPaymentRequest.orderInformation) &&
         Objects.equals(this.buyerInformation, createPaymentRequest.buyerInformation) &&
+        Objects.equals(this.senderInformation, createPaymentRequest.senderInformation) &&
         Objects.equals(this.recipientInformation, createPaymentRequest.recipientInformation) &&
         Objects.equals(this.deviceInformation, createPaymentRequest.deviceInformation) &&
         Objects.equals(this.merchantInformation, createPaymentRequest.merchantInformation) &&
@@ -674,7 +697,7 @@ public class CreatePaymentRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, agreementInformation, riskInformation, acquirerInformation, recurringPaymentInformation, hostedPaymentInformation, watchlistScreeningInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, senderInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, agreementInformation, riskInformation, acquirerInformation, recurringPaymentInformation, hostedPaymentInformation, watchlistScreeningInformation);
   }
 
 
@@ -689,6 +712,7 @@ public class CreatePaymentRequest {
     sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
+    sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
     sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
     sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
     sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");

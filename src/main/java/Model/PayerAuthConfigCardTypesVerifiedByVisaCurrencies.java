@@ -54,10 +54,10 @@ public class PayerAuthConfigCardTypesVerifiedByVisaCurrencies {
   }
 
    /**
-   * Get currencyCodes
+   * Supported currency codes are numeric ISO 4217 codes, such as 840 for US Dollar and 978 for Euro.  For backward compatibility, we also support the &#39;ALL&#39; code, which represents all currencies.  In the UI, &#39;ALL&#39; is displayed as &#39;Default&#39;. 
    * @return currencyCodes
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "[\"ALL\",\"840\",\"978\"]", value = "Supported currency codes are numeric ISO 4217 codes, such as 840 for US Dollar and 978 for Euro.  For backward compatibility, we also support the 'ALL' code, which represents all currencies.  In the UI, 'ALL' is displayed as 'Default'. ")
   public List<String> getCurrencyCodes() {
     return currencyCodes;
   }

@@ -25,6 +25,7 @@ import Model.PaymentsProductsECheck;
 import Model.PaymentsProductsPayerAuthentication;
 import Model.PaymentsProductsPayouts;
 import Model.PaymentsProductsSecureAcceptance;
+import Model.PaymentsProductsServiceFee;
 import Model.PaymentsProductsTax;
 import Model.PaymentsProductsVirtualTerminal;
 import com.google.gson.TypeAdapter;
@@ -94,6 +95,9 @@ public class PaymentsProducts {
 
   @SerializedName("receivablesManager")
   private PaymentsProductsTax receivablesManager = null;
+
+  @SerializedName("serviceFee")
+  private PaymentsProductsServiceFee serviceFee = null;
 
   public PaymentsProducts cardProcessing(PaymentsProductsCardProcessing cardProcessing) {
     this.cardProcessing = cardProcessing;
@@ -419,6 +423,24 @@ public class PaymentsProducts {
     this.receivablesManager = receivablesManager;
   }
 
+  public PaymentsProducts serviceFee(PaymentsProductsServiceFee serviceFee) {
+    this.serviceFee = serviceFee;
+    return this;
+  }
+
+   /**
+   * Get serviceFee
+   * @return serviceFee
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsServiceFee getServiceFee() {
+    return serviceFee;
+  }
+
+  public void setServiceFee(PaymentsProductsServiceFee serviceFee) {
+    this.serviceFee = serviceFee;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -446,12 +468,13 @@ public class PaymentsProducts {
         Objects.equals(this.differentialFee, paymentsProducts.differentialFee) &&
         Objects.equals(this.payByLink, paymentsProducts.payByLink) &&
         Objects.equals(this.unifiedCheckout, paymentsProducts.unifiedCheckout) &&
-        Objects.equals(this.receivablesManager, paymentsProducts.receivablesManager);
+        Objects.equals(this.receivablesManager, paymentsProducts.receivablesManager) &&
+        Objects.equals(this.serviceFee, paymentsProducts.serviceFee);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardProcessing, cardPresentConnect, cybsReadyTerminal, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, paymentOrchestration, payouts, differentialFee, payByLink, unifiedCheckout, receivablesManager);
+    return Objects.hash(cardProcessing, cardPresentConnect, cybsReadyTerminal, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, paymentOrchestration, payouts, differentialFee, payByLink, unifiedCheckout, receivablesManager, serviceFee);
   }
 
 
@@ -478,6 +501,7 @@ public class PaymentsProducts {
     sb.append("    payByLink: ").append(toIndentedString(payByLink)).append("\n");
     sb.append("    unifiedCheckout: ").append(toIndentedString(unifiedCheckout)).append("\n");
     sb.append("    receivablesManager: ").append(toIndentedString(receivablesManager)).append("\n");
+    sb.append("    serviceFee: ").append(toIndentedString(serviceFee)).append("\n");
     sb.append("}");
     return sb.toString();
   }
