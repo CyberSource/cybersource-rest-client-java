@@ -33,9 +33,6 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
   @SerializedName("strongAuthentication")
   private Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication strongAuthentication = null;
 
-  @SerializedName("authenticationType")
-  private String authenticationType = null;
-
   @SerializedName("acsWindowSize")
   private String acsWindowSize = null;
 
@@ -172,24 +169,6 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
 
   public void setStrongAuthentication(Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication strongAuthentication) {
     this.strongAuthentication = strongAuthentication;
-  }
-
-  public Riskv1decisionsConsumerAuthenticationInformation authenticationType(String authenticationType) {
-    this.authenticationType = authenticationType;
-    return this;
-  }
-
-   /**
-   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
-   * @return authenticationType
-  **/
-  @ApiModelProperty(value = "Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. ")
-  public String getAuthenticationType() {
-    return authenticationType;
-  }
-
-  public void setAuthenticationType(String authenticationType) {
-    this.authenticationType = authenticationType;
   }
 
   public Riskv1decisionsConsumerAuthenticationInformation acsWindowSize(String acsWindowSize) {
@@ -453,7 +432,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
    * Determines the channel that the transaction came through. Possible Values: SDK/Browser/3RI. 3RI - 3DS request initiated. 
    * @return deviceChannel
   **/
-  @ApiModelProperty(value = "Determines the channel that the transaction came through. Possible Values: SDK/Browser/3RI. 3RI - 3DS request initiated. ")
+  @ApiModelProperty(required = true, value = "Determines the channel that the transaction came through. Possible Values: SDK/Browser/3RI. 3RI - 3DS request initiated. ")
   public String getDeviceChannel() {
     return deviceChannel;
   }
@@ -923,7 +902,6 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
     }
     Riskv1decisionsConsumerAuthenticationInformation riskv1decisionsConsumerAuthenticationInformation = (Riskv1decisionsConsumerAuthenticationInformation) o;
     return Objects.equals(this.strongAuthentication, riskv1decisionsConsumerAuthenticationInformation.strongAuthentication) &&
-        Objects.equals(this.authenticationType, riskv1decisionsConsumerAuthenticationInformation.authenticationType) &&
         Objects.equals(this.acsWindowSize, riskv1decisionsConsumerAuthenticationInformation.acsWindowSize) &&
         Objects.equals(this.alternateAuthenticationData, riskv1decisionsConsumerAuthenticationInformation.alternateAuthenticationData) &&
         Objects.equals(this.alternateAuthenticationDate, riskv1decisionsConsumerAuthenticationInformation.alternateAuthenticationDate) &&
@@ -968,7 +946,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(strongAuthentication, authenticationType, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, transactionFlowIndicator, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, scoreRequest);
+    return Objects.hash(strongAuthentication, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, transactionFlowIndicator, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, scoreRequest);
   }
 
 
@@ -978,7 +956,6 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
     sb.append("class Riskv1decisionsConsumerAuthenticationInformation {\n");
     
     sb.append("    strongAuthentication: ").append(toIndentedString(strongAuthentication)).append("\n");
-    sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
     sb.append("    acsWindowSize: ").append(toIndentedString(acsWindowSize)).append("\n");
     sb.append("    alternateAuthenticationData: ").append(toIndentedString(alternateAuthenticationData)).append("\n");
     sb.append("    alternateAuthenticationDate: ").append(toIndentedString(alternateAuthenticationDate)).append("\n");

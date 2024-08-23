@@ -13,12 +13,12 @@
 
 package Api;
 
-import Model.InlineResponse2002;
+import Model.InlineResponse2001;
 import Model.InlineResponse2012;
-import Model.InlineResponse4007;
+import Model.InlineResponse4005;
 import Model.InlineResponse4041;
 import Model.InlineResponse4221;
-import Model.InlineResponse5003;
+import Model.InlineResponse5002;
 import Model.PostRegistrationBody;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -49,7 +49,7 @@ public class MerchantBoardingApiTest {
     @Test
     public void getRegistrationTest() throws Exception {
         String registrationId = null;
-        InlineResponse2002 response = api.getRegistration(registrationId);
+        InlineResponse2001 response = api.getRegistration(registrationId);
 
         // TODO: test validations
     }

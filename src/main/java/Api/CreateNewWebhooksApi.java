@@ -29,7 +29,7 @@ import java.io.InputStream;
 
 
 import Model.CreateWebhookRequest;
-import Model.InlineResponse2003;
+import Model.InlineResponse2002;
 import Model.InlineResponse2013;
 import Model.InlineResponse2014;
 import Model.SaveSymEgressKey;
@@ -268,13 +268,13 @@ public class CreateNewWebhooksApi {
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
      * <p>DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.</p>
      * @param organizationId The Organization Identifier. (required)
-     * @return List&lt;InlineResponse2003&gt;
+     * @return List&lt;InlineResponse2002&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<InlineResponse2003> findProductsToSubscribe(String organizationId) throws ApiException {
+    public List<InlineResponse2002> findProductsToSubscribe(String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'findProductsToSubscribe' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<List<InlineResponse2003>> resp = findProductsToSubscribeWithHttpInfo(organizationId);
+        ApiResponse<List<InlineResponse2002>> resp = findProductsToSubscribeWithHttpInfo(organizationId);
         logger.info("CALL TO METHOD 'findProductsToSubscribe' ENDED");
         return resp.getData();
     }
@@ -283,12 +283,12 @@ public class CreateNewWebhooksApi {
      * Find Products You Can Subscribe To
      * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
      * @param organizationId The Organization Identifier. (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2003&gt;&gt;
+     * @return ApiResponse&lt;List&lt;InlineResponse2002&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<InlineResponse2003>> findProductsToSubscribeWithHttpInfo(String organizationId) throws ApiException {
+    public ApiResponse<List<InlineResponse2002>> findProductsToSubscribeWithHttpInfo(String organizationId) throws ApiException {
         okhttp3.Call call = findProductsToSubscribeValidateBeforeCall(organizationId, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2003>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2002>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -300,7 +300,7 @@ public class CreateNewWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call findProductsToSubscribeAsync(String organizationId, final ApiCallback<List<InlineResponse2003>> callback) throws ApiException {
+    public okhttp3.Call findProductsToSubscribeAsync(String organizationId, final ApiCallback<List<InlineResponse2002>> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -323,7 +323,7 @@ public class CreateNewWebhooksApi {
         }
 
         okhttp3.Call call = findProductsToSubscribeValidateBeforeCall(organizationId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2003>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2002>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -98,6 +98,9 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("cardVerificationIndicator")
   private Boolean cardVerificationIndicator = null;
 
+  @SerializedName("aftIndicator")
+  private Boolean aftIndicator = null;
+
   public Ptsv2paymentsProcessingInformationAuthorizationOptions authType(String authType) {
     this.authType = authType;
     return this;
@@ -502,6 +505,24 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     this.cardVerificationIndicator = cardVerificationIndicator;
   }
 
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions aftIndicator(Boolean aftIndicator) {
+    this.aftIndicator = aftIndicator;
+    return this;
+  }
+
+   /**
+   * Indicates whether the transaction is an Account Funding Transaction (AFT).  This field is mandatory for Account Funding Transactions (AFT).   Possible values:   - &#x60;true&#x60; (This is an AFT transaction)   - &#x60;false&#x60; (default value) (This is not an AFT transaction) 
+   * @return aftIndicator
+  **/
+  @ApiModelProperty(value = "Indicates whether the transaction is an Account Funding Transaction (AFT).  This field is mandatory for Account Funding Transactions (AFT).   Possible values:   - `true` (This is an AFT transaction)   - `false` (default value) (This is not an AFT transaction) ")
+  public Boolean isAftIndicator() {
+    return aftIndicator;
+  }
+
+  public void setAftIndicator(Boolean aftIndicator) {
+    this.aftIndicator = aftIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -533,12 +554,13 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
         Objects.equals(this.deferredAuthIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.deferredAuthIndicator) &&
         Objects.equals(this.cashAdvanceIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.cashAdvanceIndicator) &&
         Objects.equals(this.splitPaymentTransaction, ptsv2paymentsProcessingInformationAuthorizationOptions.splitPaymentTransaction) &&
-        Objects.equals(this.cardVerificationIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.cardVerificationIndicator);
+        Objects.equals(this.cardVerificationIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.cardVerificationIndicator) &&
+        Objects.equals(this.aftIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.aftIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, extendAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator, splitPaymentTransaction, cardVerificationIndicator);
+    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, extendAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator, splitPaymentTransaction, cardVerificationIndicator, aftIndicator);
   }
 
 
@@ -569,6 +591,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     sb.append("    cashAdvanceIndicator: ").append(toIndentedString(cashAdvanceIndicator)).append("\n");
     sb.append("    splitPaymentTransaction: ").append(toIndentedString(splitPaymentTransaction)).append("\n");
     sb.append("    cardVerificationIndicator: ").append(toIndentedString(cardVerificationIndicator)).append("\n");
+    sb.append("    aftIndicator: ").append(toIndentedString(aftIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

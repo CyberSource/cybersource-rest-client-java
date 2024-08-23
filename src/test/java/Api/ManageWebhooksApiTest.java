@@ -13,8 +13,8 @@
 
 package Api;
 
+import Model.InlineResponse2003;
 import Model.InlineResponse2004;
-import Model.InlineResponse2005;
 import Model.InlineResponse2015;
 import Model.InlineResponse4042;
 import Model.SaveAsymEgressKey;
@@ -64,7 +64,7 @@ public class ManageWebhooksApiTest {
     @Test
     public void getWebhookSubscriptionByIdTest() throws Exception {
         String webhookId = null;
-        InlineResponse2005 response = api.getWebhookSubscriptionById(webhookId);
+        InlineResponse2004 response = api.getWebhookSubscriptionById(webhookId);
 
         // TODO: test validations
     }
@@ -82,7 +82,7 @@ public class ManageWebhooksApiTest {
         String organizationId = null;
         String productId = null;
         String eventType = null;
-        List<InlineResponse2004> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
+        List<InlineResponse2003> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
 
         // TODO: test validations
     }

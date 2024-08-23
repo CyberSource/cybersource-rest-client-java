@@ -14,7 +14,7 @@
 package Api;
 
 import Model.CreateWebhookRequest;
-import Model.InlineResponse2003;
+import Model.InlineResponse2002;
 import Model.InlineResponse2013;
 import Model.InlineResponse2014;
 import Model.SaveSymEgressKey;
@@ -63,7 +63,7 @@ public class CreateNewWebhooksApiTest {
     @Test
     public void findProductsToSubscribeTest() throws Exception {
         String organizationId = null;
-        List<InlineResponse2003> response = api.findProductsToSubscribe(organizationId);
+        List<InlineResponse2002> response = api.findProductsToSubscribe(organizationId);
 
         // TODO: test validations
     }

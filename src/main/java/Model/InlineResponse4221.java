@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.InlineResponse4007Details;
+import Model.InlineResponse4005Details;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -90,7 +90,7 @@ public class InlineResponse4221 {
   private String message = null;
 
   @SerializedName("details")
-  private List<InlineResponse4007Details> details = null;
+  private List<InlineResponse4005Details> details = null;
 
   public InlineResponse4221 submitTimeUtc(LocalDate submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -164,14 +164,14 @@ public class InlineResponse4221 {
     this.message = message;
   }
 
-  public InlineResponse4221 details(List<InlineResponse4007Details> details) {
+  public InlineResponse4221 details(List<InlineResponse4005Details> details) {
     this.details = details;
     return this;
   }
 
-  public InlineResponse4221 addDetailsItem(InlineResponse4007Details detailsItem) {
+  public InlineResponse4221 addDetailsItem(InlineResponse4005Details detailsItem) {
     if (this.details == null) {
-      this.details = new ArrayList<InlineResponse4007Details>();
+      this.details = new ArrayList<InlineResponse4005Details>();
     }
     this.details.add(detailsItem);
     return this;
@@ -182,11 +182,11 @@ public class InlineResponse4221 {
    * @return details
   **/
   @ApiModelProperty(value = "")
-  public List<InlineResponse4007Details> getDetails() {
+  public List<InlineResponse4005Details> getDetails() {
     return details;
   }
 
-  public void setDetails(List<InlineResponse4007Details> details) {
+  public void setDetails(List<InlineResponse4005Details> details) {
     this.details = details;
   }
 

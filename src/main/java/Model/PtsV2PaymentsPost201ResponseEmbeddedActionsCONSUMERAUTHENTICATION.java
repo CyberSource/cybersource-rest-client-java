@@ -44,10 +44,10 @@ public class PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION {
   }
 
    /**
-   * The status for payerAuthentication 201 enroll and validate calls. Possible values are: - &#x60;AUTHENTICATION_SUCCESSFUL&#x60; - &#x60;PENDING_AUTHENTICATION&#x60; - &#x60;INVALID_REQUEST&#x60; - &#x60;AUTHENTICATION_FAILED&#x60; 
+   * The status for payerAuthentication 201 enroll and validate calls. Possible values are: - &#x60;AUTHENTICATION_SUCCESSFUL&#x60; - &#x60;PENDING_AUTHENTICATION&#x60; - &#x60;AUTHENTICATION_FAILED&#x60; 
    * @return status
   **/
-  @ApiModelProperty(value = "The status for payerAuthentication 201 enroll and validate calls. Possible values are: - `AUTHENTICATION_SUCCESSFUL` - `PENDING_AUTHENTICATION` - `INVALID_REQUEST` - `AUTHENTICATION_FAILED` ")
+  @ApiModelProperty(value = "The status for payerAuthentication 201 enroll and validate calls. Possible values are: - `AUTHENTICATION_SUCCESSFUL` - `PENDING_AUTHENTICATION` - `AUTHENTICATION_FAILED` ")
   public String getStatus() {
     return status;
   }

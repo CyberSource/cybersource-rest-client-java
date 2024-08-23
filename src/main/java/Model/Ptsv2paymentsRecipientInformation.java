@@ -32,14 +32,26 @@ public class Ptsv2paymentsRecipientInformation {
   @SerializedName("accountId")
   private String accountId = null;
 
+  @SerializedName("accountType")
+  private String accountType = null;
+
+  @SerializedName("firstName")
+  private String firstName = null;
+
   @SerializedName("lastName")
   private String lastName = null;
 
   @SerializedName("middleName")
   private String middleName = null;
 
+  @SerializedName("address1")
+  private String address1 = null;
+
   @SerializedName("postalCode")
   private String postalCode = null;
+
+  @SerializedName("country")
+  private String country = null;
 
   @SerializedName("dateOfBirth")
   private String dateOfBirth = null;
@@ -59,10 +71,10 @@ public class Ptsv2paymentsRecipientInformation {
   }
 
    /**
-   * Identifier for the recipient&#39;s account. Use the first six digits and last four digits of the recipient&#39;s account number. This field is a _pass-through_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the &#x60;recipientInformation.accountId&#x60; field description in the [REST API Fields](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf) 
+   * Identifier for the recipient&#39;s account.  **Applicable for Barclays AFT transactions only.** It is mandatory for both Visa and Mastercard AFT.  For Visa, the field has a maximum length of 34 character.        For Mastercard, the field has a maximum length of 50 character. 
    * @return accountId
   **/
-  @ApiModelProperty(value = "Identifier for the recipient's account. Use the first six digits and last four digits of the recipient's account number. This field is a _pass-through_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the `recipientInformation.accountId` field description in the [REST API Fields](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf) ")
+  @ApiModelProperty(value = "Identifier for the recipient's account.  **Applicable for Barclays AFT transactions only.** It is mandatory for both Visa and Mastercard AFT.  For Visa, the field has a maximum length of 34 character.        For Mastercard, the field has a maximum length of 50 character. ")
   public String getAccountId() {
     return accountId;
   }
@@ -71,16 +83,52 @@ public class Ptsv2paymentsRecipientInformation {
     this.accountId = accountId;
   }
 
+  public Ptsv2paymentsRecipientInformation accountType(String accountType) {
+    this.accountType = accountType;
+    return this;
+  }
+
+   /**
+   * Identifies the recipient&#39;s account type.  **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.  Valid values are:   - &#x60;00&#x60; for Other   - &#x60;01&#x60; for Routing Transit Number (RTN) + Bank Account Number (BAN)   - &#x60;02&#x60; for International Bank Account Number (IBAN)   - &#x60;03&#x60; for Card Account   - &#x60;06&#x60; for Bank Account Number (BAN) + Bank Identification Code (BIC), also known as a SWIFT code 
+   * @return accountType
+  **/
+  @ApiModelProperty(value = "Identifies the recipient's account type.  **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.  Valid values are:   - `00` for Other   - `01` for Routing Transit Number (RTN) + Bank Account Number (BAN)   - `02` for International Bank Account Number (IBAN)   - `03` for Card Account   - `06` for Bank Account Number (BAN) + Bank Identification Code (BIC), also known as a SWIFT code ")
+  public String getAccountType() {
+    return accountType;
+  }
+
+  public void setAccountType(String accountType) {
+    this.accountType = accountType;
+  }
+
+  public Ptsv2paymentsRecipientInformation firstName(String firstName) {
+    this.firstName = firstName;
+    return this;
+  }
+
+   /**
+   * First name of the recipient.  **Applicable for Barclays AFT transactions only.** The field is mandatory for both Visa and Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.         For Mastercard, the field has a maximum length of 35 characters.  Values exceeding the above limits will be truncated. 
+   * @return firstName
+  **/
+  @ApiModelProperty(value = "First name of the recipient.  **Applicable for Barclays AFT transactions only.** The field is mandatory for both Visa and Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.         For Mastercard, the field has a maximum length of 35 characters.  Values exceeding the above limits will be truncated. ")
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
   public Ptsv2paymentsRecipientInformation lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
 
    /**
-   * Recipient&#39;s last name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the &#x60;recipientInformation.lastName&#x60; field description in the [REST API Fields](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf) 
+   * Last name of the recipient.  **Applicable for Barclays AFT transactions only.** This field is optional for both Visa and Mastercard AFT.  Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.  For Mastercard, the field has a maximum length of 35 characters.  Values exceeding these limits will be truncated. 
    * @return lastName
   **/
-  @ApiModelProperty(value = "Recipient's last name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the `recipientInformation.lastName` field description in the [REST API Fields](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf) ")
+  @ApiModelProperty(value = "Last name of the recipient.  **Applicable for Barclays AFT transactions only.** This field is optional for both Visa and Mastercard AFT.  Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.  For Mastercard, the field has a maximum length of 35 characters.  Values exceeding these limits will be truncated. ")
   public String getLastName() {
     return lastName;
   }
@@ -95,16 +143,34 @@ public class Ptsv2paymentsRecipientInformation {
   }
 
    /**
-   * Recipient&#39;s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the &#x60;recipientInformation.middleName&#x60; field description in the [REST API Fields](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf) 
+   * Middle name of the recipient.  **Applicable for Barclays AFT transactions only.** This field is optional for both Visa and Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.        For Mastercard, the field has a maximum length of 1 character.  Values exceeding these limits will be truncated. 
    * @return middleName
   **/
-  @ApiModelProperty(value = "Recipient's middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the `recipientInformation.middleName` field description in the [REST API Fields](https://developer.cybersource.com/content/dam/docs/cybs/en-us/apifields/reference/all/rest/api-fields.pdf) ")
+  @ApiModelProperty(value = "Middle name of the recipient.  **Applicable for Barclays AFT transactions only.** This field is optional for both Visa and Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.        For Mastercard, the field has a maximum length of 1 character.  Values exceeding these limits will be truncated. ")
   public String getMiddleName() {
     return middleName;
   }
 
   public void setMiddleName(String middleName) {
     this.middleName = middleName;
+  }
+
+  public Ptsv2paymentsRecipientInformation address1(String address1) {
+    this.address1 = address1;
+    return this;
+  }
+
+   /**
+   * The street address of the recipient    **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.    Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to Barclays.             The field has a maximum length of 50 characters.  Values exceeding these limits will be truncated. 
+   * @return address1
+  **/
+  @ApiModelProperty(value = "The street address of the recipient    **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.    Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to Barclays.             The field has a maximum length of 50 characters.  Values exceeding these limits will be truncated. ")
+  public String getAddress1() {
+    return address1;
+  }
+
+  public void setAddress1(String address1) {
+    this.address1 = address1;
   }
 
   public Ptsv2paymentsRecipientInformation postalCode(String postalCode) {
@@ -123,6 +189,24 @@ public class Ptsv2paymentsRecipientInformation {
 
   public void setPostalCode(String postalCode) {
     this.postalCode = postalCode;
+  }
+
+  public Ptsv2paymentsRecipientInformation country(String country) {
+    this.country = country;
+    return this;
+  }
+
+   /**
+   * The country associated with the address of the recipient.  **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) 
+   * @return country
+  **/
+  @ApiModelProperty(value = "The country associated with the address of the recipient.  **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) ")
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
   }
 
   public Ptsv2paymentsRecipientInformation dateOfBirth(String dateOfBirth) {
@@ -208,9 +292,13 @@ public class Ptsv2paymentsRecipientInformation {
     }
     Ptsv2paymentsRecipientInformation ptsv2paymentsRecipientInformation = (Ptsv2paymentsRecipientInformation) o;
     return Objects.equals(this.accountId, ptsv2paymentsRecipientInformation.accountId) &&
+        Objects.equals(this.accountType, ptsv2paymentsRecipientInformation.accountType) &&
+        Objects.equals(this.firstName, ptsv2paymentsRecipientInformation.firstName) &&
         Objects.equals(this.lastName, ptsv2paymentsRecipientInformation.lastName) &&
         Objects.equals(this.middleName, ptsv2paymentsRecipientInformation.middleName) &&
+        Objects.equals(this.address1, ptsv2paymentsRecipientInformation.address1) &&
         Objects.equals(this.postalCode, ptsv2paymentsRecipientInformation.postalCode) &&
+        Objects.equals(this.country, ptsv2paymentsRecipientInformation.country) &&
         Objects.equals(this.dateOfBirth, ptsv2paymentsRecipientInformation.dateOfBirth) &&
         Objects.equals(this.beneficiaryId, ptsv2paymentsRecipientInformation.beneficiaryId) &&
         Objects.equals(this.beneficiaryName, ptsv2paymentsRecipientInformation.beneficiaryName) &&
@@ -219,7 +307,7 @@ public class Ptsv2paymentsRecipientInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, lastName, middleName, postalCode, dateOfBirth, beneficiaryId, beneficiaryName, beneficiaryAddress);
+    return Objects.hash(accountId, accountType, firstName, lastName, middleName, address1, postalCode, country, dateOfBirth, beneficiaryId, beneficiaryName, beneficiaryAddress);
   }
 
 
@@ -229,9 +317,13 @@ public class Ptsv2paymentsRecipientInformation {
     sb.append("class Ptsv2paymentsRecipientInformation {\n");
     
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    beneficiaryId: ").append(toIndentedString(beneficiaryId)).append("\n");
     sb.append("    beneficiaryName: ").append(toIndentedString(beneficiaryName)).append("\n");

@@ -19,6 +19,6 @@ hs_err_pid*
 target
 .gradle
 build
-
-#Adding DS Store files to ignore
-.DS_Store
+.classpath
+.project
+/.settings

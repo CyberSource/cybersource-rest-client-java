@@ -22,10 +22,10 @@ import Model.Riskv1authenticationsOrderInformation;
 import Model.Riskv1authenticationsPaymentInformation;
 import Model.Riskv1authenticationsRiskInformation;
 import Model.Riskv1authenticationsTravelInformation;
+import Model.Riskv1authenticationsetupsClientReferenceInformation;
 import Model.Riskv1authenticationsetupsProcessingInformation;
 import Model.Riskv1authenticationsetupsTokenInformation;
 import Model.Riskv1decisionsAcquirerInformation;
-import Model.Riskv1decisionsClientReferenceInformation;
 import Model.Riskv1decisionsConsumerAuthenticationInformation;
 import Model.Riskv1decisionsMerchantDefinedInformation;
 import Model.Riskv1decisionsMerchantInformation;
@@ -46,7 +46,7 @@ import java.util.List;
 
 public class CheckPayerAuthEnrollmentRequest {
   @SerializedName("clientReferenceInformation")
-  private Riskv1decisionsClientReferenceInformation clientReferenceInformation = null;
+  private Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation = null;
 
   @SerializedName("orderInformation")
   private Riskv1authenticationsOrderInformation orderInformation = null;
@@ -87,7 +87,7 @@ public class CheckPayerAuthEnrollmentRequest {
   @SerializedName("merchantDefinedInformation")
   private List<Riskv1decisionsMerchantDefinedInformation> merchantDefinedInformation = null;
 
-  public CheckPayerAuthEnrollmentRequest clientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+  public CheckPayerAuthEnrollmentRequest clientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
     return this;
   }
@@ -97,11 +97,11 @@ public class CheckPayerAuthEnrollmentRequest {
    * @return clientReferenceInformation
   **/
   @ApiModelProperty(value = "")
-  public Riskv1decisionsClientReferenceInformation getClientReferenceInformation() {
+  public Riskv1authenticationsetupsClientReferenceInformation getClientReferenceInformation() {
     return clientReferenceInformation;
   }
 
-  public void setClientReferenceInformation(Riskv1decisionsClientReferenceInformation clientReferenceInformation) {
+  public void setClientReferenceInformation(Riskv1authenticationsetupsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 

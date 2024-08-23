@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.joda.time.LocalDate;
 
 /**
  * InlineResponse5002
@@ -30,32 +31,76 @@ import java.io.IOException;
 
 public class InlineResponse5002 {
   @SerializedName("submitTimeUtc")
-  private String submitTimeUtc = null;
+  private LocalDate submitTimeUtc = null;
 
   @SerializedName("status")
   private String status = null;
 
+  /**
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;SYSTEM_ERROR&#39; 
+   */
+  @JsonAdapter(ReasonEnum.Adapter.class)
+  public enum ReasonEnum {
+    SYSTEM_ERROR("SYSTEM_ERROR");
+
+    private String value;
+
+    ReasonEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ReasonEnum fromValue(String text) {
+      for (ReasonEnum b : ReasonEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<ReasonEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ReasonEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ReasonEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ReasonEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
   @SerializedName("reason")
-  private String reason = null;
+  private ReasonEnum reason = null;
 
   @SerializedName("message")
   private String message = null;
 
-  public InlineResponse5002 submitTimeUtc(String submitTimeUtc) {
+  public InlineResponse5002 submitTimeUtc(LocalDate submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
     return this;
   }
 
    /**
-   * Time of request in UTC. Format: &#x60;YYYY-MM-DDThh:mm:ssZ&#x60; **Example** &#x60;2016-08-11T22:47:57Z&#x60; equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The &#x60;T&#x60; separates the date and the time. The &#x60;Z&#x60; indicates UTC.  Returned by Cybersource for all services. 
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
    * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services. ")
-  public String getSubmitTimeUtc() {
+  @ApiModelProperty(example = "2019-06-11T22:47:57.000Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public LocalDate getSubmitTimeUtc() {
     return submitTimeUtc;
   }
 
-  public void setSubmitTimeUtc(String submitTimeUtc) {
+  public void setSubmitTimeUtc(LocalDate submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
   }
 
@@ -65,10 +110,10 @@ public class InlineResponse5002 {
   }
 
    /**
-   * The status of the submitted request.  Possible values:  - SERVER_ERROR 
+   * The http status description of the submitted request.
    * @return status
   **/
-  @ApiModelProperty(value = "The status of the submitted request.  Possible values:  - SERVER_ERROR ")
+  @ApiModelProperty(example = "INTERNAL_SERVER_ERROR", value = "The http status description of the submitted request.")
   public String getStatus() {
     return status;
   }
@@ -77,21 +122,21 @@ public class InlineResponse5002 {
     this.status = status;
   }
 
-  public InlineResponse5002 reason(String reason) {
+  public InlineResponse5002 reason(ReasonEnum reason) {
     this.reason = reason;
     return this;
   }
 
    /**
-   * The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT 
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;SYSTEM_ERROR&#39; 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT ")
-  public String getReason() {
+  @ApiModelProperty(value = "Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'SYSTEM_ERROR' ")
+  public ReasonEnum getReason() {
     return reason;
   }
 
-  public void setReason(String reason) {
+  public void setReason(ReasonEnum reason) {
     this.reason = reason;
   }
 
@@ -101,10 +146,10 @@ public class InlineResponse5002 {
   }
 
    /**
-   * The detail message related to the status and reason listed above.
+   * Descriptive message for the error.
    * @return message
   **/
-  @ApiModelProperty(value = "The detail message related to the status and reason listed above.")
+  @ApiModelProperty(value = "Descriptive message for the error.")
   public String getMessage() {
     return message;
   }
