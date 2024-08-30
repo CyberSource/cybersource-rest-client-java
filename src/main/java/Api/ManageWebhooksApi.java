@@ -28,8 +28,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
+import Model.InlineResponse2003;
 import Model.InlineResponse2004;
-import Model.InlineResponse2005;
 import Model.InlineResponse2015;
 import Model.InlineResponse4042;
 import Model.SaveAsymEgressKey;
@@ -275,13 +275,13 @@ public class ManageWebhooksApi {
      * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
      * <p>DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.</p>
      * @param webhookId The webhook Identifier (required)
-     * @return InlineResponse2005
+     * @return InlineResponse2004
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2005 getWebhookSubscriptionById(String webhookId) throws ApiException {
+    public InlineResponse2004 getWebhookSubscriptionById(String webhookId) throws ApiException {
         logger.info("CALL TO METHOD 'getWebhookSubscriptionById' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<InlineResponse2005> resp = getWebhookSubscriptionByIdWithHttpInfo(webhookId);
+        ApiResponse<InlineResponse2004> resp = getWebhookSubscriptionByIdWithHttpInfo(webhookId);
         logger.info("CALL TO METHOD 'getWebhookSubscriptionById' ENDED");
         return resp.getData();
     }
@@ -290,12 +290,12 @@ public class ManageWebhooksApi {
      * Get Details On a Single Webhook
      * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
      * @param webhookId The webhook Identifier (required)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;InlineResponse2004&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2005> getWebhookSubscriptionByIdWithHttpInfo(String webhookId) throws ApiException {
+    public ApiResponse<InlineResponse2004> getWebhookSubscriptionByIdWithHttpInfo(String webhookId) throws ApiException {
         okhttp3.Call call = getWebhookSubscriptionByIdValidateBeforeCall(webhookId, null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -307,7 +307,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getWebhookSubscriptionByIdAsync(String webhookId, final ApiCallback<InlineResponse2005> callback) throws ApiException {
+    public okhttp3.Call getWebhookSubscriptionByIdAsync(String webhookId, final ApiCallback<InlineResponse2004> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -330,7 +330,7 @@ public class ManageWebhooksApi {
         }
 
         okhttp3.Call call = getWebhookSubscriptionByIdValidateBeforeCall(webhookId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -432,13 +432,13 @@ public class ManageWebhooksApi {
      * @param organizationId The Organization Identifier. (required)
      * @param productId The Product Identifier. (required)
      * @param eventType The Event Type. (required)
-     * @return List&lt;InlineResponse2004&gt;
+     * @return List&lt;InlineResponse2003&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<InlineResponse2004> getWebhookSubscriptionsByOrg(String organizationId, String productId, String eventType) throws ApiException {
+    public List<InlineResponse2003> getWebhookSubscriptionsByOrg(String organizationId, String productId, String eventType) throws ApiException {
         logger.info("CALL TO METHOD 'getWebhookSubscriptionsByOrg' STARTED");
         this.apiClient.setComputationStartTime(System.nanoTime());
-        ApiResponse<List<InlineResponse2004>> resp = getWebhookSubscriptionsByOrgWithHttpInfo(organizationId, productId, eventType);
+        ApiResponse<List<InlineResponse2003>> resp = getWebhookSubscriptionsByOrgWithHttpInfo(organizationId, productId, eventType);
         logger.info("CALL TO METHOD 'getWebhookSubscriptionsByOrg' ENDED");
         return resp.getData();
     }
@@ -449,12 +449,12 @@ public class ManageWebhooksApi {
      * @param organizationId The Organization Identifier. (required)
      * @param productId The Product Identifier. (required)
      * @param eventType The Event Type. (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse2004&gt;&gt;
+     * @return ApiResponse&lt;List&lt;InlineResponse2003&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<InlineResponse2004>> getWebhookSubscriptionsByOrgWithHttpInfo(String organizationId, String productId, String eventType) throws ApiException {
+    public ApiResponse<List<InlineResponse2003>> getWebhookSubscriptionsByOrgWithHttpInfo(String organizationId, String productId, String eventType) throws ApiException {
         okhttp3.Call call = getWebhookSubscriptionsByOrgValidateBeforeCall(organizationId, productId, eventType, null, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2003>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -468,7 +468,7 @@ public class ManageWebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getWebhookSubscriptionsByOrgAsync(String organizationId, String productId, String eventType, final ApiCallback<List<InlineResponse2004>> callback) throws ApiException {
+    public okhttp3.Call getWebhookSubscriptionsByOrgAsync(String organizationId, String productId, String eventType, final ApiCallback<List<InlineResponse2003>> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -491,7 +491,7 @@ public class ManageWebhooksApi {
         }
 
         okhttp3.Call call = getWebhookSubscriptionsByOrgValidateBeforeCall(organizationId, productId, eventType, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InlineResponse2004>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<InlineResponse2003>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

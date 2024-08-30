@@ -14,7 +14,7 @@
 package Api;
 
 import Model.GenerateUnifiedCheckoutCaptureContextRequest;
-import Model.InlineResponse4008;
+import Model.InlineResponse4006;
 import org.junit.Test;
 import org.junit.Ignore;
 

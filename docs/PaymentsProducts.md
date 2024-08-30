@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **payByLink** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  |  [optional]
 **unifiedCheckout** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  |  [optional]
 **receivablesManager** | [**PaymentsProductsTax**](PaymentsProductsTax.md) |  |  [optional]
+**serviceFee** | [**PaymentsProductsServiceFee**](PaymentsProductsServiceFee.md) |  |  [optional]
 
 
 

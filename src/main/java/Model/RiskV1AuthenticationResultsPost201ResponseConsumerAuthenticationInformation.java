@@ -32,11 +32,20 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
   @SerializedName("acsRenderingType")
   private String acsRenderingType = null;
 
+  @SerializedName("acsReferenceNumber")
+  private String acsReferenceNumber = null;
+
   @SerializedName("acsTransactionId")
   private String acsTransactionId = null;
 
+  @SerializedName("acsOperatorID")
+  private String acsOperatorID = null;
+
   @SerializedName("authenticationResult")
   private String authenticationResult = null;
+
+  @SerializedName("authenticationType")
+  private String authenticationType = null;
 
   @SerializedName("authenticationStatusMsg")
   private String authenticationStatusMsg = null;
@@ -59,11 +68,17 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
   @SerializedName("cavvAlgorithm")
   private String cavvAlgorithm = null;
 
+  @SerializedName("challengeCancelCode")
+  private String challengeCancelCode = null;
+
   @SerializedName("directoryServerErrorCode")
   private String directoryServerErrorCode = null;
 
   @SerializedName("directoryServerErrorDescription")
   private String directoryServerErrorDescription = null;
+
+  @SerializedName("effectiveAuthenticationType")
+  private String effectiveAuthenticationType = null;
 
   @SerializedName("indicator")
   private String indicator = null;
@@ -125,6 +140,24 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     this.acsRenderingType = acsRenderingType;
   }
 
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation acsReferenceNumber(String acsReferenceNumber) {
+    this.acsReferenceNumber = acsReferenceNumber;
+    return this;
+  }
+
+   /**
+   * Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.
+   * @return acsReferenceNumber
+  **/
+  @ApiModelProperty(value = "Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.")
+  public String getAcsReferenceNumber() {
+    return acsReferenceNumber;
+  }
+
+  public void setAcsReferenceNumber(String acsReferenceNumber) {
+    this.acsReferenceNumber = acsReferenceNumber;
+  }
+
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation acsTransactionId(String acsTransactionId) {
     this.acsTransactionId = acsTransactionId;
     return this;
@@ -143,6 +176,24 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     this.acsTransactionId = acsTransactionId;
   }
 
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation acsOperatorID(String acsOperatorID) {
+    this.acsOperatorID = acsOperatorID;
+    return this;
+  }
+
+   /**
+   * Directory Server assigned ACS identifier.
+   * @return acsOperatorID
+  **/
+  @ApiModelProperty(value = "Directory Server assigned ACS identifier.")
+  public String getAcsOperatorID() {
+    return acsOperatorID;
+  }
+
+  public void setAcsOperatorID(String acsOperatorID) {
+    this.acsOperatorID = acsOperatorID;
+  }
+
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation authenticationResult(String authenticationResult) {
     this.authenticationResult = authenticationResult;
     return this;
@@ -159,6 +210,24 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
 
   public void setAuthenticationResult(String authenticationResult) {
     this.authenticationResult = authenticationResult;
+  }
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation authenticationType(String authenticationType) {
+    this.authenticationType = authenticationType;
+    return this;
+  }
+
+   /**
+   * Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. 
+   * @return authenticationType
+  **/
+  @ApiModelProperty(value = "Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time. ")
+  public String getAuthenticationType() {
+    return authenticationType;
+  }
+
+  public void setAuthenticationType(String authenticationType) {
+    this.authenticationType = authenticationType;
   }
 
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation authenticationStatusMsg(String authenticationStatusMsg) {
@@ -287,6 +356,24 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     this.cavvAlgorithm = cavvAlgorithm;
   }
 
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation challengeCancelCode(String challengeCancelCode) {
+    this.challengeCancelCode = challengeCancelCode;
+    return this;
+  }
+
+   /**
+   * An indicator as to why the transaction was canceled. Possible Values:  - &#x60;01&#x60;: Cardholder selected Cancel. - &#x60;02&#x60;: Reserved for future EMVCo use (values invalid until defined by EMVCo). - &#x60;03&#x60;: Transaction Timed Out—Decoupled Authentication - &#x60;04&#x60;: Transaction timed out at ACS—other timeouts - &#x60;05&#x60;: Transaction Timed out at ACS - First CReq not received by ACS - &#x60;06&#x60;: Transaction Error - &#x60;07&#x60;: Unknown - &#x60;08&#x60;: Transaction Timed Out at SDK 
+   * @return challengeCancelCode
+  **/
+  @ApiModelProperty(value = "An indicator as to why the transaction was canceled. Possible Values:  - `01`: Cardholder selected Cancel. - `02`: Reserved for future EMVCo use (values invalid until defined by EMVCo). - `03`: Transaction Timed Out—Decoupled Authentication - `04`: Transaction timed out at ACS—other timeouts - `05`: Transaction Timed out at ACS - First CReq not received by ACS - `06`: Transaction Error - `07`: Unknown - `08`: Transaction Timed Out at SDK ")
+  public String getChallengeCancelCode() {
+    return challengeCancelCode;
+  }
+
+  public void setChallengeCancelCode(String challengeCancelCode) {
+    this.challengeCancelCode = challengeCancelCode;
+  }
+
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation directoryServerErrorCode(String directoryServerErrorCode) {
     this.directoryServerErrorCode = directoryServerErrorCode;
     return this;
@@ -321,6 +408,24 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
 
   public void setDirectoryServerErrorDescription(String directoryServerErrorDescription) {
     this.directoryServerErrorDescription = directoryServerErrorDescription;
+  }
+
+  public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation effectiveAuthenticationType(String effectiveAuthenticationType) {
+    this.effectiveAuthenticationType = effectiveAuthenticationType;
+    return this;
+  }
+
+   /**
+   * This field describes the type of 3DS transaction flow that took place.  It can be one of three possible flows; CH - Challenge FR - Frictionless FD - Frictionless with delegation, (challenge not generated by the issuer but by the scheme on behalf of the issuer). 
+   * @return effectiveAuthenticationType
+  **/
+  @ApiModelProperty(value = "This field describes the type of 3DS transaction flow that took place.  It can be one of three possible flows; CH - Challenge FR - Frictionless FD - Frictionless with delegation, (challenge not generated by the issuer but by the scheme on behalf of the issuer). ")
+  public String getEffectiveAuthenticationType() {
+    return effectiveAuthenticationType;
+  }
+
+  public void setEffectiveAuthenticationType(String effectiveAuthenticationType) {
+    this.effectiveAuthenticationType = effectiveAuthenticationType;
   }
 
   public RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation indicator(String indicator) {
@@ -586,8 +691,11 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     }
     RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation = (RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation) o;
     return Objects.equals(this.acsRenderingType, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.acsRenderingType) &&
+        Objects.equals(this.acsReferenceNumber, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.acsReferenceNumber) &&
         Objects.equals(this.acsTransactionId, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.acsTransactionId) &&
+        Objects.equals(this.acsOperatorID, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.acsOperatorID) &&
         Objects.equals(this.authenticationResult, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationResult) &&
+        Objects.equals(this.authenticationType, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationType) &&
         Objects.equals(this.authenticationStatusMsg, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationStatusMsg) &&
         Objects.equals(this.authenticationTransactionId, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationTransactionId) &&
         Objects.equals(this.authenticationTransactionContextId, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authenticationTransactionContextId) &&
@@ -595,8 +703,10 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
         Objects.equals(this.authorizationPayload, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.authorizationPayload) &&
         Objects.equals(this.cavv, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.cavv) &&
         Objects.equals(this.cavvAlgorithm, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.cavvAlgorithm) &&
+        Objects.equals(this.challengeCancelCode, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.challengeCancelCode) &&
         Objects.equals(this.directoryServerErrorCode, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.directoryServerErrorCode) &&
         Objects.equals(this.directoryServerErrorDescription, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.directoryServerErrorDescription) &&
+        Objects.equals(this.effectiveAuthenticationType, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.effectiveAuthenticationType) &&
         Objects.equals(this.indicator, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.indicator) &&
         Objects.equals(this.interactionCounter, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.interactionCounter) &&
         Objects.equals(this.eci, riskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.eci) &&
@@ -615,7 +725,7 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
 
   @Override
   public int hashCode() {
-    return Objects.hash(acsRenderingType, acsTransactionId, authenticationResult, authenticationStatusMsg, authenticationTransactionId, authenticationTransactionContextId, transactionToken, authorizationPayload, cavv, cavvAlgorithm, directoryServerErrorCode, directoryServerErrorDescription, indicator, interactionCounter, eci, eciRaw, paresStatus, sdkTransactionId, specificationVersion, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, whiteListStatus, whiteListStatusSource, xid, directoryServerTransactionId);
+    return Objects.hash(acsRenderingType, acsReferenceNumber, acsTransactionId, acsOperatorID, authenticationResult, authenticationType, authenticationStatusMsg, authenticationTransactionId, authenticationTransactionContextId, transactionToken, authorizationPayload, cavv, cavvAlgorithm, challengeCancelCode, directoryServerErrorCode, directoryServerErrorDescription, effectiveAuthenticationType, indicator, interactionCounter, eci, eciRaw, paresStatus, sdkTransactionId, specificationVersion, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, whiteListStatus, whiteListStatusSource, xid, directoryServerTransactionId);
   }
 
 
@@ -625,8 +735,11 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     sb.append("class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation {\n");
     
     sb.append("    acsRenderingType: ").append(toIndentedString(acsRenderingType)).append("\n");
+    sb.append("    acsReferenceNumber: ").append(toIndentedString(acsReferenceNumber)).append("\n");
     sb.append("    acsTransactionId: ").append(toIndentedString(acsTransactionId)).append("\n");
+    sb.append("    acsOperatorID: ").append(toIndentedString(acsOperatorID)).append("\n");
     sb.append("    authenticationResult: ").append(toIndentedString(authenticationResult)).append("\n");
+    sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
     sb.append("    authenticationStatusMsg: ").append(toIndentedString(authenticationStatusMsg)).append("\n");
     sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
     sb.append("    authenticationTransactionContextId: ").append(toIndentedString(authenticationTransactionContextId)).append("\n");
@@ -634,8 +747,10 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     sb.append("    authorizationPayload: ").append(toIndentedString(authorizationPayload)).append("\n");
     sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
     sb.append("    cavvAlgorithm: ").append(toIndentedString(cavvAlgorithm)).append("\n");
+    sb.append("    challengeCancelCode: ").append(toIndentedString(challengeCancelCode)).append("\n");
     sb.append("    directoryServerErrorCode: ").append(toIndentedString(directoryServerErrorCode)).append("\n");
     sb.append("    directoryServerErrorDescription: ").append(toIndentedString(directoryServerErrorDescription)).append("\n");
+    sb.append("    effectiveAuthenticationType: ").append(toIndentedString(effectiveAuthenticationType)).append("\n");
     sb.append("    indicator: ").append(toIndentedString(indicator)).append("\n");
     sb.append("    interactionCounter: ").append(toIndentedString(interactionCounter)).append("\n");
     sb.append("    eci: ").append(toIndentedString(eci)).append("\n");

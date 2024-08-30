@@ -57,7 +57,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionById"></a>
 # **getWebhookSubscriptionById**
-> InlineResponse2005 getWebhookSubscriptionById(webhookId)
+> InlineResponse2004 getWebhookSubscriptionById(webhookId)
 
 Get Details On a Single Webhook
 
@@ -73,7 +73,7 @@ Retrieve the details of a specific webhook by supplying the webhook ID in the pa
 ManageWebhooksApi apiInstance = new ManageWebhooksApi();
 String webhookId = "webhookId_example"; // String | The webhook Identifier
 try {
-    InlineResponse2005 result = apiInstance.getWebhookSubscriptionById(webhookId);
+    InlineResponse2004 result = apiInstance.getWebhookSubscriptionById(webhookId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#getWebhookSubscriptionById");
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ No authorization required
 
 <a name="getWebhookSubscriptionsByOrg"></a>
 # **getWebhookSubscriptionsByOrg**
-> List&lt;InlineResponse2004&gt; getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
+> List&lt;InlineResponse2003&gt; getWebhookSubscriptionsByOrg(organizationId, productId, eventType)
 
 Get Details On All Created Webhooks
 
@@ -120,7 +120,7 @@ String organizationId = "organizationId_example"; // String | The Organization I
 String productId = "productId_example"; // String | The Product Identifier.
 String eventType = "eventType_example"; // String | The Event Type.
 try {
-    List<InlineResponse2004> result = apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
+    List<InlineResponse2003> result = apiInstance.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ManageWebhooksApi#getWebhookSubscriptionsByOrg");
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse2004&gt;**](InlineResponse2004.md)
+[**List&lt;InlineResponse2003&gt;**](InlineResponse2003.md)
 
 ### Authorization
 

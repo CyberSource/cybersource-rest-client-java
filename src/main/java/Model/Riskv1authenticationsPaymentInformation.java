@@ -16,8 +16,8 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsPaymentInformationCustomer;
-import Model.Riskv1authenticationsPaymentInformationCard;
 import Model.Riskv1authenticationsPaymentInformationTokenizedCard;
+import Model.Riskv1authenticationsetupsPaymentInformationCard;
 import Model.Riskv1authenticationsetupsPaymentInformationFluidData;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -34,7 +34,7 @@ import java.io.IOException;
 
 public class Riskv1authenticationsPaymentInformation {
   @SerializedName("card")
-  private Riskv1authenticationsPaymentInformationCard card = null;
+  private Riskv1authenticationsetupsPaymentInformationCard card = null;
 
   @SerializedName("tokenizedCard")
   private Riskv1authenticationsPaymentInformationTokenizedCard tokenizedCard = null;
@@ -45,7 +45,7 @@ public class Riskv1authenticationsPaymentInformation {
   @SerializedName("customer")
   private Ptsv2paymentsPaymentInformationCustomer customer = null;
 
-  public Riskv1authenticationsPaymentInformation card(Riskv1authenticationsPaymentInformationCard card) {
+  public Riskv1authenticationsPaymentInformation card(Riskv1authenticationsetupsPaymentInformationCard card) {
     this.card = card;
     return this;
   }
@@ -55,11 +55,11 @@ public class Riskv1authenticationsPaymentInformation {
    * @return card
   **/
   @ApiModelProperty(value = "")
-  public Riskv1authenticationsPaymentInformationCard getCard() {
+  public Riskv1authenticationsetupsPaymentInformationCard getCard() {
     return card;
   }
 
-  public void setCard(Riskv1authenticationsPaymentInformationCard card) {
+  public void setCard(Riskv1authenticationsetupsPaymentInformationCard card) {
     this.card = card;
   }
 

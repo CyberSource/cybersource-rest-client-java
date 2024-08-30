@@ -71,6 +71,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("settlementDate")
   private String settlementDate = null;
 
+  @SerializedName("sequenceNumber")
+  private String sequenceNumber = null;
+
   @SerializedName("avs")
   private PtsV2PaymentsPost201ResponseProcessorInformationAvs avs = null;
 
@@ -348,6 +351,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   public void setSettlementDate(String settlementDate) {
     this.settlementDate = settlementDate;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation sequenceNumber(String sequenceNumber) {
+    this.sequenceNumber = sequenceNumber;
+    return this;
+  }
+
+   /**
+   * This field serves as a unique identifier for initial and subsequent recurring transactions, specific to the payment brand, and is crucial for transaction tracking and recurrence management. Not all processors provide this value. Returned by the authorization service. 
+   * @return sequenceNumber
+  **/
+  @ApiModelProperty(value = "This field serves as a unique identifier for initial and subsequent recurring transactions, specific to the payment brand, and is crucial for transaction tracking and recurrence management. Not all processors provide this value. Returned by the authorization service. ")
+  public String getSequenceNumber() {
+    return sequenceNumber;
+  }
+
+  public void setSequenceNumber(String sequenceNumber) {
+    this.sequenceNumber = sequenceNumber;
   }
 
   public PtsV2PaymentsPost201ResponseProcessorInformation avs(PtsV2PaymentsPost201ResponseProcessorInformationAvs avs) {
@@ -857,6 +878,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.responseCategoryCode, ptsV2PaymentsPost201ResponseProcessorInformation.responseCategoryCode) &&
         Objects.equals(this.forwardedAcquirerCode, ptsV2PaymentsPost201ResponseProcessorInformation.forwardedAcquirerCode) &&
         Objects.equals(this.settlementDate, ptsV2PaymentsPost201ResponseProcessorInformation.settlementDate) &&
+        Objects.equals(this.sequenceNumber, ptsV2PaymentsPost201ResponseProcessorInformation.sequenceNumber) &&
         Objects.equals(this.avs, ptsV2PaymentsPost201ResponseProcessorInformation.avs) &&
         Objects.equals(this.cardVerification, ptsV2PaymentsPost201ResponseProcessorInformation.cardVerification) &&
         Objects.equals(this.merchantAdvice, ptsV2PaymentsPost201ResponseProcessorInformation.merchantAdvice) &&
@@ -888,7 +910,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl);
   }
 
 
@@ -908,6 +930,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    responseCategoryCode: ").append(toIndentedString(responseCategoryCode)).append("\n");
     sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
     sb.append("    settlementDate: ").append(toIndentedString(settlementDate)).append("\n");
+    sb.append("    sequenceNumber: ").append(toIndentedString(sequenceNumber)).append("\n");
     sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
     sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
     sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");

@@ -139,7 +139,7 @@ public class Riskv1authenticationsDeviceInformation {
    * The exact content of the HTTP accept header. 
    * @return httpAcceptContent
   **/
-  @ApiModelProperty(value = "The exact content of the HTTP accept header. ")
+  @ApiModelProperty(required = true, value = "The exact content of the HTTP accept header. ")
   public String getHttpAcceptContent() {
     return httpAcceptContent;
   }
@@ -157,7 +157,7 @@ public class Riskv1authenticationsDeviceInformation {
    * Value represents the browser language as defined in IETF BCP47. Example:en-US, refer  https://en.wikipedia.org/wiki/IETF_language_tag for more details. 
    * @return httpBrowserLanguage
   **/
-  @ApiModelProperty(value = "Value represents the browser language as defined in IETF BCP47. Example:en-US, refer  https://en.wikipedia.org/wiki/IETF_language_tag for more details. ")
+  @ApiModelProperty(required = true, value = "Value represents the browser language as defined in IETF BCP47. Example:en-US, refer  https://en.wikipedia.org/wiki/IETF_language_tag for more details. ")
   public String getHttpBrowserLanguage() {
     return httpBrowserLanguage;
   }
@@ -175,7 +175,7 @@ public class Riskv1authenticationsDeviceInformation {
    * A Boolean value that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property. Possible Values:True/False 
    * @return httpBrowserJavaEnabled
   **/
-  @ApiModelProperty(value = "A Boolean value that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property. Possible Values:True/False ")
+  @ApiModelProperty(required = true, value = "A Boolean value that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property. Possible Values:True/False ")
   public Boolean isHttpBrowserJavaEnabled() {
     return httpBrowserJavaEnabled;
   }
@@ -211,7 +211,7 @@ public class Riskv1authenticationsDeviceInformation {
    * Value represents the bit depth of the color palette for displaying images, in bits per pixel. Example : 24, refer https://en.wikipedia.org/wiki/Color_depth for more details 
    * @return httpBrowserColorDepth
   **/
-  @ApiModelProperty(value = "Value represents the bit depth of the color palette for displaying images, in bits per pixel. Example : 24, refer https://en.wikipedia.org/wiki/Color_depth for more details ")
+  @ApiModelProperty(required = true, value = "Value represents the bit depth of the color palette for displaying images, in bits per pixel. Example : 24, refer https://en.wikipedia.org/wiki/Color_depth for more details ")
   public String getHttpBrowserColorDepth() {
     return httpBrowserColorDepth;
   }
@@ -229,7 +229,7 @@ public class Riskv1authenticationsDeviceInformation {
    * Total height of the Cardholder&#39;s scree in pixels, example: 864. 
    * @return httpBrowserScreenHeight
   **/
-  @ApiModelProperty(value = "Total height of the Cardholder's scree in pixels, example: 864. ")
+  @ApiModelProperty(required = true, value = "Total height of the Cardholder's scree in pixels, example: 864. ")
   public String getHttpBrowserScreenHeight() {
     return httpBrowserScreenHeight;
   }
@@ -247,7 +247,7 @@ public class Riskv1authenticationsDeviceInformation {
    * Total width of the cardholder&#39;s screen in pixels. Example: 1536. 
    * @return httpBrowserScreenWidth
   **/
-  @ApiModelProperty(value = "Total width of the cardholder's screen in pixels. Example: 1536. ")
+  @ApiModelProperty(required = true, value = "Total width of the cardholder's screen in pixels. Example: 1536. ")
   public String getHttpBrowserScreenWidth() {
     return httpBrowserScreenWidth;
   }
@@ -265,7 +265,7 @@ public class Riskv1authenticationsDeviceInformation {
    * Time difference between UTC time and the cardholder browser local time, in minutes, Example:300 
    * @return httpBrowserTimeDifference
   **/
-  @ApiModelProperty(value = "Time difference between UTC time and the cardholder browser local time, in minutes, Example:300 ")
+  @ApiModelProperty(required = true, value = "Time difference between UTC time and the cardholder browser local time, in minutes, Example:300 ")
   public String getHttpBrowserTimeDifference() {
     return httpBrowserTimeDifference;
   }
@@ -283,7 +283,7 @@ public class Riskv1authenticationsDeviceInformation {
    * Value of the User-Agent header sent by the customer&#39;s web browser. Note If the customer&#39;s browser provides a value, you must include it in your request. 
    * @return userAgentBrowserValue
   **/
-  @ApiModelProperty(value = "Value of the User-Agent header sent by the customer's web browser. Note If the customer's browser provides a value, you must include it in your request. ")
+  @ApiModelProperty(required = true, value = "Value of the User-Agent header sent by the customer's web browser. Note If the customer's browser provides a value, you must include it in your request. ")
   public String getUserAgentBrowserValue() {
     return userAgentBrowserValue;
   }

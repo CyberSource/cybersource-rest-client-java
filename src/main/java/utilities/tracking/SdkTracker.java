@@ -14,44 +14,6 @@ public class SdkTracker {
 
         switch (requestClass)
         {
-            case "CreateP12KeysRequest":
-                CreateP12KeysRequest createP12KeysRequest = (CreateP12KeysRequest)requestObj;
-
-                if (createP12KeysRequest.getClientReferenceInformation() == null)
-                {
-                    createP12KeysRequest.setClientReferenceInformation(new Kmsv2keyssymClientReferenceInformation());
-                }
-
-                if (createP12KeysRequest.getClientReferenceInformation().getPartner() == null)
-                {
-                    createP12KeysRequest.getClientReferenceInformation().setPartner(new Riskv1decisionsClientReferenceInformationPartner());
-                }
-
-                if (createP12KeysRequest.getClientReferenceInformation().getPartner().getDeveloperId() == null)
-                {
-                    createP12KeysRequest.getClientReferenceInformation().getPartner().setDeveloperId(developerIdValue);
-                }
-
-                return createP12KeysRequest;
-            case "DeleteBulkP12KeysRequest":
-                DeleteBulkP12KeysRequest deleteBulkP12KeysRequest = (DeleteBulkP12KeysRequest)requestObj;
-
-                if (deleteBulkP12KeysRequest.getClientReferenceInformation() == null)
-                {
-                    deleteBulkP12KeysRequest.setClientReferenceInformation(new Kmsv2keyssymClientReferenceInformation());
-                }
-
-                if (deleteBulkP12KeysRequest.getClientReferenceInformation().getPartner() == null)
-                {
-                    deleteBulkP12KeysRequest.getClientReferenceInformation().setPartner(new Riskv1decisionsClientReferenceInformationPartner());
-                }
-
-                if (deleteBulkP12KeysRequest.getClientReferenceInformation().getPartner().getDeveloperId() == null)
-                {
-                    deleteBulkP12KeysRequest.getClientReferenceInformation().getPartner().setDeveloperId(developerIdValue);
-                }
-
-                return deleteBulkP12KeysRequest;
             case "CapturePaymentRequest":
                 CapturePaymentRequest capturePaymentRequest = (CapturePaymentRequest)requestObj;
 
@@ -152,7 +114,7 @@ public class SdkTracker {
 
                 if (checkPayerAuthEnrollmentRequest.getClientReferenceInformation() == null)
                 {
-                    checkPayerAuthEnrollmentRequest.setClientReferenceInformation(new Riskv1decisionsClientReferenceInformation());
+                    checkPayerAuthEnrollmentRequest.setClientReferenceInformation(new Riskv1authenticationsetupsClientReferenceInformation());
                 }
 
                 if (checkPayerAuthEnrollmentRequest.getClientReferenceInformation().getPartner() == null)
@@ -171,7 +133,7 @@ public class SdkTracker {
 
                 if (payerAuthSetupRequest.getClientReferenceInformation() == null)
                 {
-                    payerAuthSetupRequest.setClientReferenceInformation(new Riskv1decisionsClientReferenceInformation());
+                    payerAuthSetupRequest.setClientReferenceInformation(new Riskv1authenticationsetupsClientReferenceInformation());
                 }
 
                 if (payerAuthSetupRequest.getClientReferenceInformation().getPartner() == null)
@@ -190,7 +152,7 @@ public class SdkTracker {
 
                 if (validateRequest.getClientReferenceInformation() == null)
                 {
-                    validateRequest.setClientReferenceInformation(new Riskv1decisionsClientReferenceInformation());
+                    validateRequest.setClientReferenceInformation(new Riskv1authenticationsetupsClientReferenceInformation());
                 }
 
                 if (validateRequest.getClientReferenceInformation().getPartner() == null)
@@ -375,63 +337,6 @@ public class SdkTracker {
                 }
 
                 return updateSubscription;
-            case "CreateSharedSecretKeysRequest":
-                CreateSharedSecretKeysRequest createSharedSecretKeysRequest = (CreateSharedSecretKeysRequest)requestObj;
-
-                if (createSharedSecretKeysRequest.getClientReferenceInformation() == null)
-                {
-                    createSharedSecretKeysRequest.setClientReferenceInformation(new Kmsv2keyssymClientReferenceInformation());
-                }
-
-                if (createSharedSecretKeysRequest.getClientReferenceInformation().getPartner() == null)
-                {
-                    createSharedSecretKeysRequest.getClientReferenceInformation().setPartner(new Riskv1decisionsClientReferenceInformationPartner());
-                }
-
-                if (createSharedSecretKeysRequest.getClientReferenceInformation().getPartner().getDeveloperId() == null)
-                {
-                    createSharedSecretKeysRequest.getClientReferenceInformation().getPartner().setDeveloperId(developerIdValue);
-                }
-
-                return createSharedSecretKeysRequest;
-            case "CreateSharedSecretKeysVerifiRequest":
-                CreateSharedSecretKeysVerifiRequest createSharedSecretKeysVerifiRequest = (CreateSharedSecretKeysVerifiRequest)requestObj;
-
-                if (createSharedSecretKeysVerifiRequest.getClientReferenceInformation() == null)
-                {
-                    createSharedSecretKeysVerifiRequest.setClientReferenceInformation(new Kmsv2keyssymClientReferenceInformation());
-                }
-
-                if (createSharedSecretKeysVerifiRequest.getClientReferenceInformation().getPartner() == null)
-                {
-                    createSharedSecretKeysVerifiRequest.getClientReferenceInformation().setPartner(new Riskv1decisionsClientReferenceInformationPartner());
-                }
-
-                if (createSharedSecretKeysVerifiRequest.getClientReferenceInformation().getPartner().getDeveloperId() == null)
-                {
-                    createSharedSecretKeysVerifiRequest.getClientReferenceInformation().getPartner().setDeveloperId(developerIdValue);
-                }
-
-                return createSharedSecretKeysVerifiRequest;
-            case "DeleteBulkSymmetricKeysRequest":
-                DeleteBulkSymmetricKeysRequest deleteBulkSymmetricKeysRequest = (DeleteBulkSymmetricKeysRequest)requestObj;
-
-                if (deleteBulkSymmetricKeysRequest.getClientReferenceInformation() == null)
-                {
-                    deleteBulkSymmetricKeysRequest.setClientReferenceInformation(new Kmsv2keyssymClientReferenceInformation());
-                }
-
-                if (deleteBulkSymmetricKeysRequest.getClientReferenceInformation().getPartner() == null)
-                {
-                    deleteBulkSymmetricKeysRequest.getClientReferenceInformation().setPartner(new Riskv1decisionsClientReferenceInformationPartner());
-                }
-
-                if (deleteBulkSymmetricKeysRequest.getClientReferenceInformation().getPartner().getDeveloperId() == null)
-                {
-                    deleteBulkSymmetricKeysRequest.getClientReferenceInformation().getPartner().setDeveloperId(developerIdValue);
-                }
-
-                return deleteBulkSymmetricKeysRequest;
             case "TaxRequest":
                 TaxRequest taxRequest = (TaxRequest)requestObj;
 

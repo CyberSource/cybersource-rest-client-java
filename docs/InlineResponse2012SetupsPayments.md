@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **payByLink** | [**InlineResponse2012SetupsPaymentsDigitalPayments**](InlineResponse2012SetupsPaymentsDigitalPayments.md) |  |  [optional]
 **unifiedCheckout** | [**InlineResponse2012SetupsPaymentsDigitalPayments**](InlineResponse2012SetupsPaymentsDigitalPayments.md) |  |  [optional]
 **receivablesManager** | [**InlineResponse2012SetupsPaymentsDigitalPayments**](InlineResponse2012SetupsPaymentsDigitalPayments.md) |  |  [optional]
+**serviceFee** | [**InlineResponse2012SetupsPaymentsCardProcessing**](InlineResponse2012SetupsPaymentsCardProcessing.md) |  |  [optional]
 
 
 
