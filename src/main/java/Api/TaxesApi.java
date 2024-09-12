@@ -77,7 +77,7 @@ public class TaxesApi {
      */
     public okhttp3.Call calculateTaxCall(TaxRequest taxRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(taxRequest, TaxRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(taxRequest, TaxRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/vas/v2/tax";
@@ -209,7 +209,7 @@ public class TaxesApi {
      */
     public okhttp3.Call voidTaxCall(VoidTaxRequest voidTaxRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidTaxRequest, VoidTaxRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(voidTaxRequest, VoidTaxRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/vas/v2/tax/{id}"

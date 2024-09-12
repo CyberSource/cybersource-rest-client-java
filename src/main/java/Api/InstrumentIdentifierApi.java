@@ -515,7 +515,7 @@ public class InstrumentIdentifierApi {
      */
     public okhttp3.Call patchInstrumentIdentifierCall(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchInstrumentIdentifierRequest, PatchInstrumentIdentifierRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchInstrumentIdentifierRequest, PatchInstrumentIdentifierRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}"
@@ -667,7 +667,7 @@ public class InstrumentIdentifierApi {
      */
     public okhttp3.Call postInstrumentIdentifierCall(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postInstrumentIdentifierRequest, PostInstrumentIdentifierRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postInstrumentIdentifierRequest, PostInstrumentIdentifierRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers";
@@ -805,7 +805,7 @@ public class InstrumentIdentifierApi {
      */
     public okhttp3.Call postInstrumentIdentifierEnrollmentCall(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierEnrollmentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postInstrumentIdentifierEnrollmentRequest, PostInstrumentIdentifierEnrollmentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/enrollment"

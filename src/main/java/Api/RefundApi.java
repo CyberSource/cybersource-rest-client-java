@@ -76,7 +76,7 @@ public class RefundApi {
      */
     public okhttp3.Call refundCaptureCall(RefundCaptureRequest refundCaptureRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(refundCaptureRequest, RefundCaptureRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(refundCaptureRequest, RefundCaptureRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/pts/v2/captures/{id}/refunds"
@@ -218,7 +218,7 @@ public class RefundApi {
      */
     public okhttp3.Call refundPaymentCall(RefundPaymentRequest refundPaymentRequest, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(refundPaymentRequest, RefundPaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(refundPaymentRequest, RefundPaymentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/pts/v2/payments/{id}/refunds"

@@ -79,7 +79,7 @@ public class PayerAuthenticationApi {
      */
     public okhttp3.Call checkPayerAuthEnrollmentCall(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(checkPayerAuthEnrollmentRequest, CheckPayerAuthEnrollmentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(checkPayerAuthEnrollmentRequest, CheckPayerAuthEnrollmentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/risk/v1/authentications";
@@ -210,7 +210,7 @@ public class PayerAuthenticationApi {
      */
     public okhttp3.Call payerAuthSetupCall(PayerAuthSetupRequest payerAuthSetupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(payerAuthSetupRequest, PayerAuthSetupRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(payerAuthSetupRequest, PayerAuthSetupRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/risk/v1/authentication-setups";
@@ -341,7 +341,7 @@ public class PayerAuthenticationApi {
      */
     public okhttp3.Call validateAuthenticationResultsCall(ValidateRequest validateRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(validateRequest, ValidateRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(validateRequest, ValidateRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/risk/v1/authentication-results";

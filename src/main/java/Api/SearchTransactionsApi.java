@@ -74,7 +74,7 @@ public class SearchTransactionsApi {
      */
     public okhttp3.Call createSearchCall(CreateSearchRequest createSearchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSearchRequest, CreateSearchRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSearchRequest, CreateSearchRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/tss/v2/searches";

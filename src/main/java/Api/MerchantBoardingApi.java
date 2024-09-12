@@ -214,7 +214,7 @@ public class MerchantBoardingApi {
      */
     public okhttp3.Call postRegistrationCall(PostRegistrationBody postRegistrationBody, String vCIdempotencyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postRegistrationBody, PostRegistrationBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postRegistrationBody, PostRegistrationBody.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/boarding/v1/registrations";

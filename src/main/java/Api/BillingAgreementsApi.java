@@ -79,7 +79,7 @@ public class BillingAgreementsApi {
      */
     public okhttp3.Call billingAgreementsDeRegistrationCall(ModifyBillingAgreement modifyBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(modifyBillingAgreement, ModifyBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(modifyBillingAgreement, ModifyBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/pts/v2/billing-agreements/{id}"
@@ -221,7 +221,7 @@ public class BillingAgreementsApi {
      */
     public okhttp3.Call billingAgreementsIntimationCall(IntimateBillingAgreement intimateBillingAgreement, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(intimateBillingAgreement, IntimateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(intimateBillingAgreement, IntimateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/pts/v2/billing-agreements/{id}/intimations"
@@ -362,7 +362,7 @@ public class BillingAgreementsApi {
      */
     public okhttp3.Call billingAgreementsRegistrationCall(CreateBillingAgreement createBillingAgreement, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBillingAgreement, CreateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBillingAgreement, CreateBillingAgreement.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/pts/v2/billing-agreements";
