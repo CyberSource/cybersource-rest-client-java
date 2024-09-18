@@ -41,7 +41,7 @@ public class Riskv1authenticationsetupsPaymentInformationCustomer {
    * Unique identifier for the legacy Secure Storage token used in the transaction. When you include this value in your request, many of the fields that are normally required for an authorization or credit become optional. 
    * @return customerId
   **/
-  @ApiModelProperty(value = "Unique identifier for the legacy Secure Storage token used in the transaction. When you include this value in your request, many of the fields that are normally required for an authorization or credit become optional. ")
+  @ApiModelProperty(required = true, value = "Unique identifier for the legacy Secure Storage token used in the transaction. When you include this value in your request, many of the fields that are normally required for an authorization or credit become optional. ")
   public String getCustomerId() {
     return customerId;
   }

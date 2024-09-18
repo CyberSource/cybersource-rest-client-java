@@ -54,6 +54,9 @@ public class CardProcessingConfigCommonMerchantDescriptorInformation {
   @SerializedName("url")
   private String url = null;
 
+  @SerializedName("countryOfOrigin")
+  private String countryOfOrigin = null;
+
   public CardProcessingConfigCommonMerchantDescriptorInformation name(String name) {
     this.name = name;
     return this;
@@ -198,6 +201,24 @@ public class CardProcessingConfigCommonMerchantDescriptorInformation {
     this.url = url;
   }
 
+  public CardProcessingConfigCommonMerchantDescriptorInformation countryOfOrigin(String countryOfOrigin) {
+    this.countryOfOrigin = countryOfOrigin;
+    return this;
+  }
+
+   /**
+   * Country Cf Origin of merchant is applicable for VPC Processors and is dependent on governmentControlled attribute.
+   * @return countryOfOrigin
+  **/
+  @ApiModelProperty(value = "Country Cf Origin of merchant is applicable for VPC Processors and is dependent on governmentControlled attribute.")
+  public String getCountryOfOrigin() {
+    return countryOfOrigin;
+  }
+
+  public void setCountryOfOrigin(String countryOfOrigin) {
+    this.countryOfOrigin = countryOfOrigin;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -215,12 +236,13 @@ public class CardProcessingConfigCommonMerchantDescriptorInformation {
         Objects.equals(this.state, cardProcessingConfigCommonMerchantDescriptorInformation.state) &&
         Objects.equals(this.street, cardProcessingConfigCommonMerchantDescriptorInformation.street) &&
         Objects.equals(this.zip, cardProcessingConfigCommonMerchantDescriptorInformation.zip) &&
-        Objects.equals(this.url, cardProcessingConfigCommonMerchantDescriptorInformation.url);
+        Objects.equals(this.url, cardProcessingConfigCommonMerchantDescriptorInformation.url) &&
+        Objects.equals(this.countryOfOrigin, cardProcessingConfigCommonMerchantDescriptorInformation.countryOfOrigin);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, city, country, phone, state, street, zip, url);
+    return Objects.hash(name, city, country, phone, state, street, zip, url, countryOfOrigin);
   }
 
 
@@ -237,6 +259,7 @@ public class CardProcessingConfigCommonMerchantDescriptorInformation {
     sb.append("    street: ").append(toIndentedString(street)).append("\n");
     sb.append("    zip: ").append(toIndentedString(zip)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    countryOfOrigin: ").append(toIndentedString(countryOfOrigin)).append("\n");
     sb.append("}");
     return sb.toString();
   }

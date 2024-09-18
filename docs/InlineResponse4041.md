@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **status** | **String** | The http status description of the submitted request. |  [optional]
 **reason** | [**ReasonEnum**](#ReasonEnum) | Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;RESOURCE_NOT_FOUND&#39;  |  [optional]
 **message** | **String** | Descriptive message for the error. |  [optional]
-**details** | [**List&lt;InlineResponse4005Details&gt;**](InlineResponse4005Details.md) |  |  [optional]
+**details** | [**List&lt;InlineResponse4006Details&gt;**](InlineResponse4006Details.md) |  |  [optional]
 
 
 <a name="ReasonEnum"></a>

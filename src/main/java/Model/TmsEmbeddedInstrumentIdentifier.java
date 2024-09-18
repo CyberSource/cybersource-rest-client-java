@@ -23,7 +23,7 @@ import Model.TmsEmbeddedInstrumentIdentifierIssuer;
 import Model.TmsEmbeddedInstrumentIdentifierLinks;
 import Model.TmsEmbeddedInstrumentIdentifierMetadata;
 import Model.TmsEmbeddedInstrumentIdentifierProcessingInformation;
-import Model.TmsEmbeddedInstrumentIdentifierTokenizedCard;
+import Model.Tmsv2TokenizedCard;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -63,7 +63,7 @@ public class TmsEmbeddedInstrumentIdentifier {
   private TmsEmbeddedInstrumentIdentifierBankAccount bankAccount = null;
 
   @SerializedName("tokenizedCard")
-  private TmsEmbeddedInstrumentIdentifierTokenizedCard tokenizedCard = null;
+  private Tmsv2TokenizedCard tokenizedCard = null;
 
   @SerializedName("issuer")
   private TmsEmbeddedInstrumentIdentifierIssuer issuer = null;
@@ -203,7 +203,7 @@ public class TmsEmbeddedInstrumentIdentifier {
     this.bankAccount = bankAccount;
   }
 
-  public TmsEmbeddedInstrumentIdentifier tokenizedCard(TmsEmbeddedInstrumentIdentifierTokenizedCard tokenizedCard) {
+  public TmsEmbeddedInstrumentIdentifier tokenizedCard(Tmsv2TokenizedCard tokenizedCard) {
     this.tokenizedCard = tokenizedCard;
     return this;
   }
@@ -213,11 +213,11 @@ public class TmsEmbeddedInstrumentIdentifier {
    * @return tokenizedCard
   **/
   @ApiModelProperty(value = "")
-  public TmsEmbeddedInstrumentIdentifierTokenizedCard getTokenizedCard() {
+  public Tmsv2TokenizedCard getTokenizedCard() {
     return tokenizedCard;
   }
 
-  public void setTokenizedCard(TmsEmbeddedInstrumentIdentifierTokenizedCard tokenizedCard) {
+  public void setTokenizedCard(Tmsv2TokenizedCard tokenizedCard) {
     this.tokenizedCard = tokenizedCard;
   }
 

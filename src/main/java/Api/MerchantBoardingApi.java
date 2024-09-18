@@ -30,7 +30,7 @@ import java.io.InputStream;
 
 import Model.InlineResponse2001;
 import Model.InlineResponse2012;
-import Model.InlineResponse4005;
+import Model.InlineResponse4006;
 import Model.InlineResponse4041;
 import Model.InlineResponse4221;
 import Model.InlineResponse5002;

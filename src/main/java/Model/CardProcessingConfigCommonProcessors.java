@@ -62,6 +62,15 @@ public class CardProcessingConfigCommonProcessors {
   @SerializedName("currencies")
   private Map<String, CardProcessingConfigCommonCurrencies1> currencies = null;
 
+  @SerializedName("visaAggregatorId")
+  private String visaAggregatorId = null;
+
+  @SerializedName("amexAggregatorId")
+  private String amexAggregatorId = null;
+
+  @SerializedName("masterCardAggregatorId")
+  private String masterCardAggregatorId = null;
+
   @SerializedName("sicCode")
   private String sicCode = null;
 
@@ -407,6 +416,60 @@ public class CardProcessingConfigCommonProcessors {
 
   public void setCurrencies(Map<String, CardProcessingConfigCommonCurrencies1> currencies) {
     this.currencies = currencies;
+  }
+
+  public CardProcessingConfigCommonProcessors visaAggregatorId(String visaAggregatorId) {
+    this.visaAggregatorId = visaAggregatorId;
+    return this;
+  }
+
+   /**
+   * This field is used as aggregator Id when Visa payment type is selected
+   * @return visaAggregatorId
+  **/
+  @ApiModelProperty(value = "This field is used as aggregator Id when Visa payment type is selected")
+  public String getVisaAggregatorId() {
+    return visaAggregatorId;
+  }
+
+  public void setVisaAggregatorId(String visaAggregatorId) {
+    this.visaAggregatorId = visaAggregatorId;
+  }
+
+  public CardProcessingConfigCommonProcessors amexAggregatorId(String amexAggregatorId) {
+    this.amexAggregatorId = amexAggregatorId;
+    return this;
+  }
+
+   /**
+   * This field is used as aggregator Id when Amex payment type is selected
+   * @return amexAggregatorId
+  **/
+  @ApiModelProperty(value = "This field is used as aggregator Id when Amex payment type is selected")
+  public String getAmexAggregatorId() {
+    return amexAggregatorId;
+  }
+
+  public void setAmexAggregatorId(String amexAggregatorId) {
+    this.amexAggregatorId = amexAggregatorId;
+  }
+
+  public CardProcessingConfigCommonProcessors masterCardAggregatorId(String masterCardAggregatorId) {
+    this.masterCardAggregatorId = masterCardAggregatorId;
+    return this;
+  }
+
+   /**
+   * This field is used as aggregator Id when Master Card payment type is selected
+   * @return masterCardAggregatorId
+  **/
+  @ApiModelProperty(value = "This field is used as aggregator Id when Master Card payment type is selected")
+  public String getMasterCardAggregatorId() {
+    return masterCardAggregatorId;
+  }
+
+  public void setMasterCardAggregatorId(String masterCardAggregatorId) {
+    this.masterCardAggregatorId = masterCardAggregatorId;
   }
 
   public CardProcessingConfigCommonProcessors sicCode(String sicCode) {
@@ -1058,6 +1121,9 @@ public class CardProcessingConfigCommonProcessors {
         Objects.equals(this.terminalId, cardProcessingConfigCommonProcessors.terminalId) &&
         Objects.equals(this.paymentTypes, cardProcessingConfigCommonProcessors.paymentTypes) &&
         Objects.equals(this.currencies, cardProcessingConfigCommonProcessors.currencies) &&
+        Objects.equals(this.visaAggregatorId, cardProcessingConfigCommonProcessors.visaAggregatorId) &&
+        Objects.equals(this.amexAggregatorId, cardProcessingConfigCommonProcessors.amexAggregatorId) &&
+        Objects.equals(this.masterCardAggregatorId, cardProcessingConfigCommonProcessors.masterCardAggregatorId) &&
         Objects.equals(this.sicCode, cardProcessingConfigCommonProcessors.sicCode) &&
         Objects.equals(this.allowMultipleBills, cardProcessingConfigCommonProcessors.allowMultipleBills) &&
         Objects.equals(this.allowMerchantDescriptorOverride, cardProcessingConfigCommonProcessors.allowMerchantDescriptorOverride) &&
@@ -1097,7 +1163,7 @@ public class CardProcessingConfigCommonProcessors {
 
   @Override
   public int hashCode() {
-    return Objects.hash(batchGroup, businessApplicationId, merchantVerificationValue, abaNumber, acquirer, merchantId, terminalId, paymentTypes, currencies, sicCode, allowMultipleBills, allowMerchantDescriptorOverride, enhancedData, fireSafetyIndicator, quasiCash, acquirerMerchantId, avsFormat, enableLongTransRefNo, enableLevel2, enableMultipleTransactionAdviceAddendum, amexTransactionAdviceAddendum1, enableMultiLineItems, enableTransactionReferenceNumber, enableAutoAuthReversalAfterVoid, enableExpresspayPanTranslation, enableCreditAuth, industryCode, sendAmexLevel2Data, softDescriptorType, vitalNumber, bankNumber, chainNumber, merchantBinNumber, merchantLocationNumber, storeID, travelAgencyCode, travelAgencyName, settlementCurrency, enableLeastCostRouting, enableCVVResponseIndicator, enableMultiCurrencyProcessing, enablePosNetworkSwitching, enableDynamicCurrencyConversion, merchantTier);
+    return Objects.hash(batchGroup, businessApplicationId, merchantVerificationValue, abaNumber, acquirer, merchantId, terminalId, paymentTypes, currencies, visaAggregatorId, amexAggregatorId, masterCardAggregatorId, sicCode, allowMultipleBills, allowMerchantDescriptorOverride, enhancedData, fireSafetyIndicator, quasiCash, acquirerMerchantId, avsFormat, enableLongTransRefNo, enableLevel2, enableMultipleTransactionAdviceAddendum, amexTransactionAdviceAddendum1, enableMultiLineItems, enableTransactionReferenceNumber, enableAutoAuthReversalAfterVoid, enableExpresspayPanTranslation, enableCreditAuth, industryCode, sendAmexLevel2Data, softDescriptorType, vitalNumber, bankNumber, chainNumber, merchantBinNumber, merchantLocationNumber, storeID, travelAgencyCode, travelAgencyName, settlementCurrency, enableLeastCostRouting, enableCVVResponseIndicator, enableMultiCurrencyProcessing, enablePosNetworkSwitching, enableDynamicCurrencyConversion, merchantTier);
   }
 
 
@@ -1115,6 +1181,9 @@ public class CardProcessingConfigCommonProcessors {
     sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
     sb.append("    paymentTypes: ").append(toIndentedString(paymentTypes)).append("\n");
     sb.append("    currencies: ").append(toIndentedString(currencies)).append("\n");
+    sb.append("    visaAggregatorId: ").append(toIndentedString(visaAggregatorId)).append("\n");
+    sb.append("    amexAggregatorId: ").append(toIndentedString(amexAggregatorId)).append("\n");
+    sb.append("    masterCardAggregatorId: ").append(toIndentedString(masterCardAggregatorId)).append("\n");
     sb.append("    sicCode: ").append(toIndentedString(sicCode)).append("\n");
     sb.append("    allowMultipleBills: ").append(toIndentedString(allowMultipleBills)).append("\n");
     sb.append("    allowMerchantDescriptorOverride: ").append(toIndentedString(allowMerchantDescriptorOverride)).append("\n");

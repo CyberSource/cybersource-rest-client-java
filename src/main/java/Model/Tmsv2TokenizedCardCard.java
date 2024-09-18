@@ -29,7 +29,7 @@ import java.io.IOException;
  */
 @ApiModel(description = "The latest card details associated with the network token")
 
-public class TmsEmbeddedInstrumentIdentifierTokenizedCardCard {
+public class Tmsv2TokenizedCardCard {
   @SerializedName("suffix")
   private String suffix = null;
 
@@ -75,10 +75,10 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCardCard {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TmsEmbeddedInstrumentIdentifierTokenizedCardCard tmsEmbeddedInstrumentIdentifierTokenizedCardCard = (TmsEmbeddedInstrumentIdentifierTokenizedCardCard) o;
-    return Objects.equals(this.suffix, tmsEmbeddedInstrumentIdentifierTokenizedCardCard.suffix) &&
-        Objects.equals(this.expirationMonth, tmsEmbeddedInstrumentIdentifierTokenizedCardCard.expirationMonth) &&
-        Objects.equals(this.expirationYear, tmsEmbeddedInstrumentIdentifierTokenizedCardCard.expirationYear);
+    Tmsv2TokenizedCardCard tmsv2TokenizedCardCard = (Tmsv2TokenizedCardCard) o;
+    return Objects.equals(this.suffix, tmsv2TokenizedCardCard.suffix) &&
+        Objects.equals(this.expirationMonth, tmsv2TokenizedCardCard.expirationMonth) &&
+        Objects.equals(this.expirationYear, tmsv2TokenizedCardCard.expirationYear);
   }
 
   @Override
@@ -90,7 +90,7 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCardCard {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TmsEmbeddedInstrumentIdentifierTokenizedCardCard {\n");
+    sb.append("class Tmsv2TokenizedCardCard {\n");
     
     sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
     sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
