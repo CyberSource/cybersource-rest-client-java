@@ -27,12 +27,13 @@ jobs:
             - name: Checkout the cybersource-rest-client-java repo
               uses: actions/checkout@v4
               with:
+                ref: 'release-sep24'
                 path: ${{env.CLIENT_FOLDER}}
             - name: Checkout the cybersource-rest-samples-java repo
               uses: actions/checkout@v4
               with:
                 repository: 'CyberSource/cybersource-rest-samples-java'
-                ref: 'release-aug24'
+                ref: 'master'
                 path: ${{env.SAMPLE_FOLDER}}
             - name: Setup Java 8 to Build the Client
               uses: actions/setup-java@v2
