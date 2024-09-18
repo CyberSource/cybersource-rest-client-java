@@ -31,6 +31,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
 /**
@@ -42,7 +44,7 @@ public class InlineResponse2012 {
   private String id = null;
 
   @SerializedName("submitTimeUtc")
-  private LocalDate submitTimeUtc = null;
+  private DateTime submitTimeUtc = null;
 
   /**
    * The status of Registration request Possible Values:   - &#39;INITIALIZED&#39;   - &#39;RECEIVED&#39;   - &#39;PROCESSING&#39;   - &#39;SUCCESS&#39;   - &#39;FAILURE&#39;   - &#39;PARTIAL&#39; 
@@ -137,7 +139,7 @@ public class InlineResponse2012 {
     this.id = id;
   }
 
-  public InlineResponse2012 submitTimeUtc(LocalDate submitTimeUtc) {
+  public InlineResponse2012 submitTimeUtc(DateTime submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
     return this;
   }
@@ -147,11 +149,11 @@ public class InlineResponse2012 {
    * @return submitTimeUtc
   **/
   @ApiModelProperty(example = "2019-06-11T22:47:57.000Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public LocalDate getSubmitTimeUtc() {
+  public DateTime getSubmitTimeUtc() {
     return submitTimeUtc;
   }
 
-  public void setSubmitTimeUtc(LocalDate submitTimeUtc) {
+  public void setSubmitTimeUtc(DateTime submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
   }
 
