@@ -15,7 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.TmsEmbeddedInstrumentIdentifierTokenizedCardCard;
+import Model.Tmsv2TokenizedCardCard;
+import Model.Tmsv2TokenizedCardMetadata;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,10 +27,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TmsEmbeddedInstrumentIdentifierTokenizedCard
+ * Tmsv2TokenizedCard
  */
 
-public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
+public class Tmsv2TokenizedCard {
   @SerializedName("type")
   private String type = null;
 
@@ -61,7 +62,10 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
   private String cryptogram = null;
 
   @SerializedName("card")
-  private TmsEmbeddedInstrumentIdentifierTokenizedCardCard card = null;
+  private Tmsv2TokenizedCardCard card = null;
+
+  @SerializedName("metadata")
+  private Tmsv2TokenizedCardMetadata metadata = null;
 
    /**
    * The network token card association brand Possible Values: - visa - mastercard - americanexpress 
@@ -153,7 +157,7 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
     return cryptogram;
   }
 
-  public TmsEmbeddedInstrumentIdentifierTokenizedCard card(TmsEmbeddedInstrumentIdentifierTokenizedCardCard card) {
+  public Tmsv2TokenizedCard card(Tmsv2TokenizedCardCard card) {
     this.card = card;
     return this;
   }
@@ -163,12 +167,30 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
    * @return card
   **/
   @ApiModelProperty(value = "")
-  public TmsEmbeddedInstrumentIdentifierTokenizedCardCard getCard() {
+  public Tmsv2TokenizedCardCard getCard() {
     return card;
   }
 
-  public void setCard(TmsEmbeddedInstrumentIdentifierTokenizedCardCard card) {
+  public void setCard(Tmsv2TokenizedCardCard card) {
     this.card = card;
+  }
+
+  public Tmsv2TokenizedCard metadata(Tmsv2TokenizedCardMetadata metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Get metadata
+   * @return metadata
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2TokenizedCardMetadata getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Tmsv2TokenizedCardMetadata metadata) {
+    this.metadata = metadata;
   }
 
 
@@ -180,30 +202,31 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TmsEmbeddedInstrumentIdentifierTokenizedCard tmsEmbeddedInstrumentIdentifierTokenizedCard = (TmsEmbeddedInstrumentIdentifierTokenizedCard) o;
-    return Objects.equals(this.type, tmsEmbeddedInstrumentIdentifierTokenizedCard.type) &&
-        Objects.equals(this.source, tmsEmbeddedInstrumentIdentifierTokenizedCard.source) &&
-        Objects.equals(this.state, tmsEmbeddedInstrumentIdentifierTokenizedCard.state) &&
-        Objects.equals(this.enrollmentId, tmsEmbeddedInstrumentIdentifierTokenizedCard.enrollmentId) &&
-        Objects.equals(this.tokenReferenceId, tmsEmbeddedInstrumentIdentifierTokenizedCard.tokenReferenceId) &&
-        Objects.equals(this.reason, tmsEmbeddedInstrumentIdentifierTokenizedCard.reason) &&
-        Objects.equals(this.number, tmsEmbeddedInstrumentIdentifierTokenizedCard.number) &&
-        Objects.equals(this.expirationMonth, tmsEmbeddedInstrumentIdentifierTokenizedCard.expirationMonth) &&
-        Objects.equals(this.expirationYear, tmsEmbeddedInstrumentIdentifierTokenizedCard.expirationYear) &&
-        Objects.equals(this.cryptogram, tmsEmbeddedInstrumentIdentifierTokenizedCard.cryptogram) &&
-        Objects.equals(this.card, tmsEmbeddedInstrumentIdentifierTokenizedCard.card);
+    Tmsv2TokenizedCard tmsv2TokenizedCard = (Tmsv2TokenizedCard) o;
+    return Objects.equals(this.type, tmsv2TokenizedCard.type) &&
+        Objects.equals(this.source, tmsv2TokenizedCard.source) &&
+        Objects.equals(this.state, tmsv2TokenizedCard.state) &&
+        Objects.equals(this.enrollmentId, tmsv2TokenizedCard.enrollmentId) &&
+        Objects.equals(this.tokenReferenceId, tmsv2TokenizedCard.tokenReferenceId) &&
+        Objects.equals(this.reason, tmsv2TokenizedCard.reason) &&
+        Objects.equals(this.number, tmsv2TokenizedCard.number) &&
+        Objects.equals(this.expirationMonth, tmsv2TokenizedCard.expirationMonth) &&
+        Objects.equals(this.expirationYear, tmsv2TokenizedCard.expirationYear) &&
+        Objects.equals(this.cryptogram, tmsv2TokenizedCard.cryptogram) &&
+        Objects.equals(this.card, tmsv2TokenizedCard.card) &&
+        Objects.equals(this.metadata, tmsv2TokenizedCard.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, source, state, enrollmentId, tokenReferenceId, reason, number, expirationMonth, expirationYear, cryptogram, card);
+    return Objects.hash(type, source, state, enrollmentId, tokenReferenceId, reason, number, expirationMonth, expirationYear, cryptogram, card, metadata);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TmsEmbeddedInstrumentIdentifierTokenizedCard {\n");
+    sb.append("class Tmsv2TokenizedCard {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
@@ -216,6 +239,7 @@ public class TmsEmbeddedInstrumentIdentifierTokenizedCard {
     sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
     sb.append("    cryptogram: ").append(toIndentedString(cryptogram)).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

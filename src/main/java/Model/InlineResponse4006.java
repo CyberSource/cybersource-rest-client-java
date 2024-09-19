@@ -26,58 +26,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.joda.time.LocalDate;
 
 /**
  * InlineResponse4006
  */
 
 public class InlineResponse4006 {
-  @SerializedName("correlationId")
-  private String correlationId = null;
+  @SerializedName("submitTimeUtc")
+  private LocalDate submitTimeUtc = null;
 
-  @SerializedName("details")
-  private List<InlineResponse4006Details> details = null;
-
-  @SerializedName("informationLink")
-  private String informationLink = null;
-
-  @SerializedName("message")
-  private String message = null;
+  @SerializedName("status")
+  private String status = null;
 
   /**
-   * Gets or Sets reason
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;INVALID_DATA&#39;   - &#39;SYSTEM_ERROR&#39;   - &#39;RESOURCE_NOT_FOUND&#39; 
    */
   @JsonAdapter(ReasonEnum.Adapter.class)
   public enum ReasonEnum {
-    INVALID_APIKEY("INVALID_APIKEY"),
+    INVALID_DATA("INVALID_DATA"),
     
-    INVALID_SHIPPING_INPUT_PARAMS("INVALID_SHIPPING_INPUT_PARAMS"),
+    SYSTEM_ERROR("SYSTEM_ERROR"),
     
-    CAPTURE_CONTEXT_INVALID("CAPTURE_CONTEXT_INVALID"),
-    
-    CAPTURE_CONTEXT_EXPIRED("CAPTURE_CONTEXT_EXPIRED"),
-    
-    SDK_XHR_ERROR("SDK_XHR_ERROR"),
-    
-    UNIFIEDPAYMENTS_VALIDATION_PARAMS("UNIFIEDPAYMENTS_VALIDATION_PARAMS"),
-    
-    UNIFIEDPAYMENTS_VALIDATION_FIELDS("UNIFIEDPAYMENTS_VALIDATION_FIELDS"),
-    
-    UNIFIEDPAYMENT_PAYMENT_PARAMITERS("UNIFIEDPAYMENT_PAYMENT_PARAMITERS"),
-    
-    CREATE_TOKEN_TIMEOUT("CREATE_TOKEN_TIMEOUT"),
-    
-    CREATE_TOKEN_XHR_ERROR("CREATE_TOKEN_XHR_ERROR"),
-    
-    SHOW_LOAD_CONTAINER_SELECTOR("SHOW_LOAD_CONTAINER_SELECTOR"),
-    
-    SHOW_LOAD_INVALID_CONTAINER("SHOW_LOAD_INVALID_CONTAINER"),
-    
-    SHOW_TOKEN_TIMEOUT("SHOW_TOKEN_TIMEOUT"),
-    
-    SHOW_TOKEN_XHR_ERROR("SHOW_TOKEN_XHR_ERROR"),
-    
-    SHOW_PAYMENT_TIMEOUT("SHOW_PAYMENT_TIMEOUT");
+    RESOURCE_NOT_FOUND("RESOURCE_NOT_FOUND");
 
     private String value;
 
@@ -119,22 +90,82 @@ public class InlineResponse4006 {
   @SerializedName("reason")
   private ReasonEnum reason = null;
 
-  public InlineResponse4006 correlationId(String correlationId) {
-    this.correlationId = correlationId;
+  @SerializedName("message")
+  private String message = null;
+
+  @SerializedName("details")
+  private List<InlineResponse4006Details> details = null;
+
+  public InlineResponse4006 submitTimeUtc(LocalDate submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
     return this;
   }
 
    /**
-   * Get correlationId
-   * @return correlationId
+   * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return submitTimeUtc
   **/
-  @ApiModelProperty(value = "")
-  public String getCorrelationId() {
-    return correlationId;
+  @ApiModelProperty(example = "2019-06-11T22:47:57.000Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public LocalDate getSubmitTimeUtc() {
+    return submitTimeUtc;
   }
 
-  public void setCorrelationId(String correlationId) {
-    this.correlationId = correlationId;
+  public void setSubmitTimeUtc(LocalDate submitTimeUtc) {
+    this.submitTimeUtc = submitTimeUtc;
+  }
+
+  public InlineResponse4006 status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * The http status description of the submitted request.
+   * @return status
+  **/
+  @ApiModelProperty(example = "BAD_REQUEST", value = "The http status description of the submitted request.")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public InlineResponse4006 reason(ReasonEnum reason) {
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;INVALID_DATA&#39;   - &#39;SYSTEM_ERROR&#39;   - &#39;RESOURCE_NOT_FOUND&#39; 
+   * @return reason
+  **/
+  @ApiModelProperty(value = "Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND' ")
+  public ReasonEnum getReason() {
+    return reason;
+  }
+
+  public void setReason(ReasonEnum reason) {
+    this.reason = reason;
+  }
+
+  public InlineResponse4006 message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * Descriptive message for the error.
+   * @return message
+  **/
+  @ApiModelProperty(value = "Descriptive message for the error.")
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
   }
 
   public InlineResponse4006 details(List<InlineResponse4006Details> details) {
@@ -163,60 +194,6 @@ public class InlineResponse4006 {
     this.details = details;
   }
 
-  public InlineResponse4006 informationLink(String informationLink) {
-    this.informationLink = informationLink;
-    return this;
-  }
-
-   /**
-   * Get informationLink
-   * @return informationLink
-  **/
-  @ApiModelProperty(value = "")
-  public String getInformationLink() {
-    return informationLink;
-  }
-
-  public void setInformationLink(String informationLink) {
-    this.informationLink = informationLink;
-  }
-
-  public InlineResponse4006 message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * Get message
-   * @return message
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-  public InlineResponse4006 reason(ReasonEnum reason) {
-    this.reason = reason;
-    return this;
-  }
-
-   /**
-   * Get reason
-   * @return reason
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public ReasonEnum getReason() {
-    return reason;
-  }
-
-  public void setReason(ReasonEnum reason) {
-    this.reason = reason;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -227,16 +204,16 @@ public class InlineResponse4006 {
       return false;
     }
     InlineResponse4006 inlineResponse4006 = (InlineResponse4006) o;
-    return Objects.equals(this.correlationId, inlineResponse4006.correlationId) &&
-        Objects.equals(this.details, inlineResponse4006.details) &&
-        Objects.equals(this.informationLink, inlineResponse4006.informationLink) &&
+    return Objects.equals(this.submitTimeUtc, inlineResponse4006.submitTimeUtc) &&
+        Objects.equals(this.status, inlineResponse4006.status) &&
+        Objects.equals(this.reason, inlineResponse4006.reason) &&
         Objects.equals(this.message, inlineResponse4006.message) &&
-        Objects.equals(this.reason, inlineResponse4006.reason);
+        Objects.equals(this.details, inlineResponse4006.details);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(correlationId, details, informationLink, message, reason);
+    return Objects.hash(submitTimeUtc, status, reason, message, details);
   }
 
 
@@ -245,11 +222,11 @@ public class InlineResponse4006 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4006 {\n");
     
-    sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("    informationLink: ").append(toIndentedString(informationLink)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }

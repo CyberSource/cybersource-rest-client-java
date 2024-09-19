@@ -145,6 +145,12 @@ public class CardProcessingConfigCommon {
   @SerializedName("merchantDescriptorInformation")
   private CardProcessingConfigCommonMerchantDescriptorInformation merchantDescriptorInformation = null;
 
+  @SerializedName("governmentControlled")
+  private Boolean governmentControlled = null;
+
+  @SerializedName("dropBillingInfo")
+  private Boolean dropBillingInfo = null;
+
   public CardProcessingConfigCommon processors(Map<String, CardProcessingConfigCommonProcessors> processors) {
     this.processors = processors;
     return this;
@@ -531,6 +537,42 @@ public class CardProcessingConfigCommon {
     this.merchantDescriptorInformation = merchantDescriptorInformation;
   }
 
+  public CardProcessingConfigCommon governmentControlled(Boolean governmentControlled) {
+    this.governmentControlled = governmentControlled;
+    return this;
+  }
+
+   /**
+   * Indicates whether the merchant is government controlled. Applicable for VPC processors.
+   * @return governmentControlled
+  **/
+  @ApiModelProperty(value = "Indicates whether the merchant is government controlled. Applicable for VPC processors.")
+  public Boolean isGovernmentControlled() {
+    return governmentControlled;
+  }
+
+  public void setGovernmentControlled(Boolean governmentControlled) {
+    this.governmentControlled = governmentControlled;
+  }
+
+  public CardProcessingConfigCommon dropBillingInfo(Boolean dropBillingInfo) {
+    this.dropBillingInfo = dropBillingInfo;
+    return this;
+  }
+
+   /**
+   * This field is used to indicate whether the merchant wants to drop the billing information from the request. If this field is set to true, then the billing information will be dropped from the request. If this field is set to false, then the billing information will be sent in the request.
+   * @return dropBillingInfo
+  **/
+  @ApiModelProperty(value = "This field is used to indicate whether the merchant wants to drop the billing information from the request. If this field is set to true, then the billing information will be dropped from the request. If this field is set to false, then the billing information will be sent in the request.")
+  public Boolean isDropBillingInfo() {
+    return dropBillingInfo;
+  }
+
+  public void setDropBillingInfo(Boolean dropBillingInfo) {
+    this.dropBillingInfo = dropBillingInfo;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -561,12 +603,14 @@ public class CardProcessingConfigCommon {
         Objects.equals(this.subMerchantId, cardProcessingConfigCommon.subMerchantId) &&
         Objects.equals(this.subMerchantBusinessName, cardProcessingConfigCommon.subMerchantBusinessName) &&
         Objects.equals(this.preferCobadgedSecondaryBrand, cardProcessingConfigCommon.preferCobadgedSecondaryBrand) &&
-        Objects.equals(this.merchantDescriptorInformation, cardProcessingConfigCommon.merchantDescriptorInformation);
+        Objects.equals(this.merchantDescriptorInformation, cardProcessingConfigCommon.merchantDescriptorInformation) &&
+        Objects.equals(this.governmentControlled, cardProcessingConfigCommon.governmentControlled) &&
+        Objects.equals(this.dropBillingInfo, cardProcessingConfigCommon.dropBillingInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processors, amexVendorCode, defaultAuthTypeCode, masterCardAssignedId, enablePartialAuth, merchantCategoryCode, sicCode, foodAndConsumerServiceId, enableSplitShipment, enableInterchangeOptimization, visaDelegatedAuthenticationId, creditCardRefundLimitPercent, businessCenterCreditCardRefundLimitPercent, allowCapturesGreaterThanAuthorizations, enableDuplicateMerchantReferenceNumberBlocking, domesticMerchantId, processLevel3Data, subMerchantId, subMerchantBusinessName, preferCobadgedSecondaryBrand, merchantDescriptorInformation);
+    return Objects.hash(processors, amexVendorCode, defaultAuthTypeCode, masterCardAssignedId, enablePartialAuth, merchantCategoryCode, sicCode, foodAndConsumerServiceId, enableSplitShipment, enableInterchangeOptimization, visaDelegatedAuthenticationId, creditCardRefundLimitPercent, businessCenterCreditCardRefundLimitPercent, allowCapturesGreaterThanAuthorizations, enableDuplicateMerchantReferenceNumberBlocking, domesticMerchantId, processLevel3Data, subMerchantId, subMerchantBusinessName, preferCobadgedSecondaryBrand, merchantDescriptorInformation, governmentControlled, dropBillingInfo);
   }
 
 
@@ -596,6 +640,8 @@ public class CardProcessingConfigCommon {
     sb.append("    subMerchantBusinessName: ").append(toIndentedString(subMerchantBusinessName)).append("\n");
     sb.append("    preferCobadgedSecondaryBrand: ").append(toIndentedString(preferCobadgedSecondaryBrand)).append("\n");
     sb.append("    merchantDescriptorInformation: ").append(toIndentedString(merchantDescriptorInformation)).append("\n");
+    sb.append("    governmentControlled: ").append(toIndentedString(governmentControlled)).append("\n");
+    sb.append("    dropBillingInfo: ").append(toIndentedString(dropBillingInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

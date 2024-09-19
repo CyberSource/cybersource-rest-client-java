@@ -1,5 +1,5 @@
 
-# TmsEmbeddedInstrumentIdentifierTokenizedCard
+# Tmsv2TokenizedCard
 
 ## Properties
 Name | Type | Description | Notes
@@ -14,7 +14,8 @@ Name | Type | Description | Notes
 **expirationMonth** | **String** | Two-digit month in which the network token expires.  Format: &#x60;MM&#x60;.  Possible Values: &#x60;01&#x60; through &#x60;12&#x60;.  |  [optional]
 **expirationYear** | **String** | Four-digit year in which the network token expires.  Format: &#x60;YYYY&#x60;.  |  [optional]
 **cryptogram** | **String** | Generated value used in conjunction with the network token for making a payment.  |  [optional]
-**card** | [**TmsEmbeddedInstrumentIdentifierTokenizedCardCard**](TmsEmbeddedInstrumentIdentifierTokenizedCardCard.md) |  |  [optional]
+**card** | [**Tmsv2TokenizedCardCard**](Tmsv2TokenizedCardCard.md) |  |  [optional]
+**metadata** | [**Tmsv2TokenizedCardMetadata**](Tmsv2TokenizedCardMetadata.md) |  |  [optional]
 
 
 

@@ -1,5 +1,5 @@
 
-# TmsEmbeddedInstrumentIdentifierTokenizedCardCard
+# Tmsv2TokenizedCardCard
 
 ## Properties
 Name | Type | Description | Notes

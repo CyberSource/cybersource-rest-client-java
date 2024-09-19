@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **subMerchantBusinessName** | **String** | Sub-merchant&#39;s business name. Applicable for American Express Direct (amexdirect) processor.  Validation details (for selected processors)...  &lt;table&gt; &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Processor&lt;/th&gt;&lt;th&gt;Acceptance Type&lt;/th&gt;&lt;th&gt;Required&lt;/th&gt;&lt;th&gt;Min. Length&lt;/th&gt;&lt;th&gt;Max. Length&lt;/th&gt;&lt;th&gt;Regex&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt; &lt;tr&gt;&lt;td&gt;American Express Direct&lt;/td&gt;&lt;td&gt;cnp, cp, hybrid&lt;/td&gt;&lt;td&gt;No&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;37&lt;/td&gt;&lt;td&gt;^[0-9a-zA-Z&amp;#92;-&amp;#92;_&amp;#92;,\\s.]+$&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;  |  [optional]
 **preferCobadgedSecondaryBrand** | **Boolean** | It denotes merchant&#39;s preference on secondary brand for routing in case of co-branded cards. Applicable for EFTPOS processors. |  [optional]
 **merchantDescriptorInformation** | [**CardProcessingConfigCommonMerchantDescriptorInformation**](CardProcessingConfigCommonMerchantDescriptorInformation.md) |  |  [optional]
+**governmentControlled** | **Boolean** | Indicates whether the merchant is government controlled. Applicable for VPC processors. |  [optional]
+**dropBillingInfo** | **Boolean** | This field is used to indicate whether the merchant wants to drop the billing information from the request. If this field is set to true, then the billing information will be dropped from the request. If this field is set to false, then the billing information will be sent in the request. |  [optional]
 
 
 <a name="DefaultAuthTypeCodeEnum"></a>

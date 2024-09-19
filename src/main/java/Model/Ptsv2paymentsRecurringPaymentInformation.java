@@ -72,7 +72,7 @@ public class Ptsv2paymentsRecurringPaymentInformation {
    * The date after which no further recurring authorizations should be performed. Format: &#x60;YYYY-MM-DD&#x60; **Note** This field is required for recurring transactions. 
    * @return endDate
   **/
-  @ApiModelProperty(value = "The date after which no further recurring authorizations should be performed. Format: `YYYY-MM-DD` **Note** This field is required for recurring transactions. ")
+  @ApiModelProperty(required = true, value = "The date after which no further recurring authorizations should be performed. Format: `YYYY-MM-DD` **Note** This field is required for recurring transactions. ")
   public String getEndDate() {
     return endDate;
   }
@@ -90,7 +90,7 @@ public class Ptsv2paymentsRecurringPaymentInformation {
    * Integer value indicating the minimum number of days between recurring authorizations. A frequency of monthly is indicated by the value 28. Multiple of 28 days will be used to indicate months.  Example: 6 months &#x3D; 168  Example values accepted (31 days): - 31 - 031 - 0031  **Note** This field is required for recurring transactions. 
    * @return frequency
   **/
-  @ApiModelProperty(value = "Integer value indicating the minimum number of days between recurring authorizations. A frequency of monthly is indicated by the value 28. Multiple of 28 days will be used to indicate months.  Example: 6 months = 168  Example values accepted (31 days): - 31 - 031 - 0031  **Note** This field is required for recurring transactions. ")
+  @ApiModelProperty(required = true, value = "Integer value indicating the minimum number of days between recurring authorizations. A frequency of monthly is indicated by the value 28. Multiple of 28 days will be used to indicate months.  Example: 6 months = 168  Example values accepted (31 days): - 31 - 031 - 0031  **Note** This field is required for recurring transactions. ")
   public Integer getFrequency() {
     return frequency;
   }
