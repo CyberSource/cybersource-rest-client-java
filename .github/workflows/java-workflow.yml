@@ -27,7 +27,7 @@ jobs:
             - name: Checkout the cybersource-rest-client-java repo
               uses: actions/checkout@v4
               with:
-                ref: 'release-sep24'
+#                ref: 'release-sep24'
                 path: ${{env.CLIENT_FOLDER}}
             - name: Checkout the cybersource-rest-samples-java repo
               uses: actions/checkout@v4
