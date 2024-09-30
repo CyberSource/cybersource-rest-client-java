@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.InlineResponse4004;
+import Model.InlineResponse4005;
 import org.joda.time.LocalDate;
 import Model.V1FileDetailsGet200Response;
 

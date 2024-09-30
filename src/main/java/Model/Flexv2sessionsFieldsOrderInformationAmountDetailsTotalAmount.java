@@ -25,50 +25,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InlineResponse4005Details
+ * Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount
  */
 
-public class InlineResponse4005Details {
-  @SerializedName("field")
-  private String field = null;
+public class Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount {
+  @SerializedName("required")
+  private Boolean required = null;
 
-  @SerializedName("reason")
-  private String reason = null;
-
-  public InlineResponse4005Details field(String field) {
-    this.field = field;
+  public Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount required(Boolean required) {
+    this.required = required;
     return this;
   }
 
    /**
-   * This is the flattened JSON object field name/path that is either missing or invalid.
-   * @return field
+   * Get required
+   * @return required
   **/
-  @ApiModelProperty(value = "This is the flattened JSON object field name/path that is either missing or invalid.")
-  public String getField() {
-    return field;
+  @ApiModelProperty(value = "")
+  public Boolean isRequired() {
+    return required;
   }
 
-  public void setField(String field) {
-    this.field = field;
-  }
-
-  public InlineResponse4005Details reason(String reason) {
-    this.reason = reason;
-    return this;
-  }
-
-   /**
-   * Possible reasons for the error.
-   * @return reason
-  **/
-  @ApiModelProperty(example = "MISSING_FIELD", value = "Possible reasons for the error.")
-  public String getReason() {
-    return reason;
-  }
-
-  public void setReason(String reason) {
-    this.reason = reason;
+  public void setRequired(Boolean required) {
+    this.required = required;
   }
 
 
@@ -80,24 +59,22 @@ public class InlineResponse4005Details {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse4005Details inlineResponse4005Details = (InlineResponse4005Details) o;
-    return Objects.equals(this.field, inlineResponse4005Details.field) &&
-        Objects.equals(this.reason, inlineResponse4005Details.reason);
+    Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount = (Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount) o;
+    return Objects.equals(this.required, flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount.required);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(field, reason);
+    return Objects.hash(required);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse4005Details {\n");
+    sb.append("class Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount {\n");
     
-    sb.append("    field: ").append(toIndentedString(field)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    sb.append("    required: ").append(toIndentedString(required)).append("\n");
     sb.append("}");
     return sb.toString();
   }

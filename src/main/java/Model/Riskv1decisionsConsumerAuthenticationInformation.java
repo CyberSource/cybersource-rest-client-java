@@ -54,9 +54,6 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
   @SerializedName("transactionFlowIndicator")
   private Integer transactionFlowIndicator = null;
 
-  @SerializedName("challengeCancelCode")
-  private String challengeCancelCode = null;
-
   @SerializedName("challengeCode")
   private String challengeCode = null;
 
@@ -295,24 +292,6 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
 
   public void setTransactionFlowIndicator(Integer transactionFlowIndicator) {
     this.transactionFlowIndicator = transactionFlowIndicator;
-  }
-
-  public Riskv1decisionsConsumerAuthenticationInformation challengeCancelCode(String challengeCancelCode) {
-    this.challengeCancelCode = challengeCancelCode;
-    return this;
-  }
-
-   /**
-   * An indicator as to why the transaction was canceled. Possible Values:  - &#x60;01&#x60;: Cardholder selected Cancel. - &#x60;02&#x60;: Reserved for future EMVCo use (values invalid until defined by EMVCo). - &#x60;03&#x60;: Transaction Timed Out—Decoupled Authentication - &#x60;04&#x60;: Transaction timed out at ACS—other timeouts - &#x60;05&#x60;: Transaction Timed out at ACS - First CReq not received by ACS - &#x60;06&#x60;: Transaction Error - &#x60;07&#x60;: Unknown - &#x60;08&#x60;: Transaction Timed Out at SDK 
-   * @return challengeCancelCode
-  **/
-  @ApiModelProperty(value = "An indicator as to why the transaction was canceled. Possible Values:  - `01`: Cardholder selected Cancel. - `02`: Reserved for future EMVCo use (values invalid until defined by EMVCo). - `03`: Transaction Timed Out—Decoupled Authentication - `04`: Transaction timed out at ACS—other timeouts - `05`: Transaction Timed out at ACS - First CReq not received by ACS - `06`: Transaction Error - `07`: Unknown - `08`: Transaction Timed Out at SDK ")
-  public String getChallengeCancelCode() {
-    return challengeCancelCode;
-  }
-
-  public void setChallengeCancelCode(String challengeCancelCode) {
-    this.challengeCancelCode = challengeCancelCode;
   }
 
   public Riskv1decisionsConsumerAuthenticationInformation challengeCode(String challengeCode) {
@@ -909,7 +888,6 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
         Objects.equals(this.authenticationDate, riskv1decisionsConsumerAuthenticationInformation.authenticationDate) &&
         Objects.equals(this.authenticationTransactionId, riskv1decisionsConsumerAuthenticationInformation.authenticationTransactionId) &&
         Objects.equals(this.transactionFlowIndicator, riskv1decisionsConsumerAuthenticationInformation.transactionFlowIndicator) &&
-        Objects.equals(this.challengeCancelCode, riskv1decisionsConsumerAuthenticationInformation.challengeCancelCode) &&
         Objects.equals(this.challengeCode, riskv1decisionsConsumerAuthenticationInformation.challengeCode) &&
         Objects.equals(this.challengeStatus, riskv1decisionsConsumerAuthenticationInformation.challengeStatus) &&
         Objects.equals(this.customerCardAlias, riskv1decisionsConsumerAuthenticationInformation.customerCardAlias) &&
@@ -946,7 +924,7 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(strongAuthentication, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, transactionFlowIndicator, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, scoreRequest);
+    return Objects.hash(strongAuthentication, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, transactionFlowIndicator, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, scoreRequest);
   }
 
 
@@ -963,7 +941,6 @@ public class Riskv1decisionsConsumerAuthenticationInformation {
     sb.append("    authenticationDate: ").append(toIndentedString(authenticationDate)).append("\n");
     sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
     sb.append("    transactionFlowIndicator: ").append(toIndentedString(transactionFlowIndicator)).append("\n");
-    sb.append("    challengeCancelCode: ").append(toIndentedString(challengeCancelCode)).append("\n");
     sb.append("    challengeCode: ").append(toIndentedString(challengeCode)).append("\n");
     sb.append("    challengeStatus: ").append(toIndentedString(challengeStatus)).append("\n");
     sb.append("    customerCardAlias: ").append(toIndentedString(customerCardAlias)).append("\n");
