@@ -508,7 +508,7 @@ public class ManageWebhooksApi {
      */
     public okhttp3.Call saveAsymEgressKeyCall(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(saveAsymEgressKey, SaveAsymEgressKey.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(saveAsymEgressKey, SaveAsymEgressKey.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/kms/egress/v2/keys-asym";
@@ -668,7 +668,7 @@ public class ManageWebhooksApi {
      */
     public okhttp3.Call updateWebhookSubscriptionCall(String webhookId, UpdateWebhookRequest updateWebhookRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateWebhookRequest, UpdateWebhookRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateWebhookRequest, UpdateWebhookRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/notification-subscriptions/v1/webhooks/{webhookId}"
