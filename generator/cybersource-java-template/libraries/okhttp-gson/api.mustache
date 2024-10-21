@@ -95,7 +95,7 @@ public class {{classname}} {
             try {
                 {{localVariablePrefix}}localVarPostBody = MLEUtility.encodeRequest(apiClient.merchantConfig, payload);
             } catch (MLEException e) {
-                logger.error("Error occurred while encrypting the request body", e);
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
             }
         }
