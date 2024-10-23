@@ -77,10 +77,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard {
   }
 
    /**
-   * Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction. 
+   * Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see &#x60;token_suffix&#x60; field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/) 
    * @return suffix
   **/
-  @ApiModelProperty(value = "Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction. ")
+  @ApiModelProperty(value = "Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see `token_suffix` field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/) ")
   public String getSuffix() {
     return suffix;
   }

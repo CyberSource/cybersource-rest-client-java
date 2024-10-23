@@ -28,8 +28,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.BinLookupv400Response;
 import Model.CreateSearchRequest;
+import Model.PtsV2CreateOrderPost400Response;
 import Model.PtsV2PaymentsPost502Response;
 import Model.TssV2TransactionsPost201Response;
 

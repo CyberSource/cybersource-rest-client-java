@@ -20,6 +20,8 @@ import Model.PushFunds201ResponseErrorInformation;
 import Model.PushFunds201ResponseLinks;
 import Model.PushFunds201ResponseMerchantInformation;
 import Model.PushFunds201ResponseOrderInformation;
+import Model.PushFunds201ResponsePaymentInformation;
+import Model.PushFunds201ResponseProcessingInformation;
 import Model.PushFunds201ResponseProcessorInformation;
 import Model.PushFunds201ResponseRecipientInformation;
 import com.google.gson.TypeAdapter;
@@ -65,6 +67,12 @@ public class PushFunds201Response {
 
   @SerializedName("orderInformation")
   private PushFunds201ResponseOrderInformation orderInformation = null;
+
+  @SerializedName("paymentInformation")
+  private PushFunds201ResponsePaymentInformation paymentInformation = null;
+
+  @SerializedName("processingInformation")
+  private PushFunds201ResponseProcessingInformation processingInformation = null;
 
   @SerializedName("_links")
   private PushFunds201ResponseLinks links = null;
@@ -249,6 +257,42 @@ public class PushFunds201Response {
     this.orderInformation = orderInformation;
   }
 
+  public PushFunds201Response paymentInformation(PushFunds201ResponsePaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+    return this;
+  }
+
+   /**
+   * Get paymentInformation
+   * @return paymentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PushFunds201ResponsePaymentInformation getPaymentInformation() {
+    return paymentInformation;
+  }
+
+  public void setPaymentInformation(PushFunds201ResponsePaymentInformation paymentInformation) {
+    this.paymentInformation = paymentInformation;
+  }
+
+  public PushFunds201Response processingInformation(PushFunds201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PushFunds201ResponseProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(PushFunds201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
   public PushFunds201Response links(PushFunds201ResponseLinks links) {
     this.links = links;
     return this;
@@ -287,12 +331,14 @@ public class PushFunds201Response {
         Objects.equals(this.errorInformation, pushFunds201Response.errorInformation) &&
         Objects.equals(this.processorInformation, pushFunds201Response.processorInformation) &&
         Objects.equals(this.orderInformation, pushFunds201Response.orderInformation) &&
+        Objects.equals(this.paymentInformation, pushFunds201Response.paymentInformation) &&
+        Objects.equals(this.processingInformation, pushFunds201Response.processingInformation) &&
         Objects.equals(this.links, pushFunds201Response.links);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, recipientInformation, merchantInformation, errorInformation, processorInformation, orderInformation, links);
+    return Objects.hash(id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, recipientInformation, merchantInformation, errorInformation, processorInformation, orderInformation, paymentInformation, processingInformation, links);
   }
 
 
@@ -311,6 +357,8 @@ public class PushFunds201Response {
     sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();

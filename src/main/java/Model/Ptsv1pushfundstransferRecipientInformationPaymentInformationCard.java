@@ -62,10 +62,10 @@ public class Ptsv1pushfundstransferRecipientInformationPaymentInformationCard {
   }
 
    /**
-   * Three-digit value that indicates the card type.  Possible values:  Visa Platform Connect - &#x60;001&#x60;: Visa - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard. - &#x60;033&#x60;: Visa Electron - &#x60;024&#x60;: Maestro  Mastercard Send: - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard.  FDC Compass: - &#x60;001&#x60;: Visa - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Chase Paymentech: - &#x60;001&#x60;: Visa - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Yellow Pepper: - &#x60;001&#x60;: Visa - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard. - &#x60;005&#x60;: Diners Club - &#x60;033&#x60;: Visa Electron - &#x60;024&#x60;: Intl Maestro 
+   * - &#x60;001&#x60;: Visa - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard. - &#x60;033&#x60;: Visa Electron - &#x60;024&#x60;: Maestro - &#x60;042&#x60;: Maestro International 
    * @return type
   **/
-  @ApiModelProperty(value = "Three-digit value that indicates the card type.  Possible values:  Visa Platform Connect - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard. - `033`: Visa Electron - `024`: Maestro  Mastercard Send: - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  FDC Compass: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Chase Paymentech: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Yellow Pepper: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard. - `005`: Diners Club - `033`: Visa Electron - `024`: Intl Maestro ")
+  @ApiModelProperty(value = "- `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard. - `033`: Visa Electron - `024`: Maestro - `042`: Maestro International ")
   public String getType() {
     return type;
   }

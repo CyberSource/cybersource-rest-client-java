@@ -41,10 +41,10 @@ public class Upv1capturecontextsOrderInformationAmountDetails {
   }
 
    /**
-   * Get totalAmount
+   * This field defines the total order amount. 
    * @return totalAmount
   **/
-  @ApiModelProperty(example = "21", value = "")
+  @ApiModelProperty(example = "21", value = "This field defines the total order amount. ")
   public String getTotalAmount() {
     return totalAmount;
   }
@@ -59,10 +59,10 @@ public class Upv1capturecontextsOrderInformationAmountDetails {
   }
 
    /**
-   * Get currency
+   * This field defines the currency applicable to the order. 
    * @return currency
   **/
-  @ApiModelProperty(example = "USD", value = "")
+  @ApiModelProperty(example = "USD", value = "This field defines the currency applicable to the order. ")
   public String getCurrency() {
     return currency;
   }
