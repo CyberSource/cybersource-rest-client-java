@@ -37,6 +37,9 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
   @SerializedName("transactionId")
   private String transactionId = null;
 
+  @SerializedName("networkTransactionId")
+  private String networkTransactionId = null;
+
   @SerializedName("responseCode")
   private String responseCode = null;
 
@@ -86,6 +89,24 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
 
   public void setTransactionId(String transactionId) {
     this.transactionId = transactionId;
+  }
+
+  public PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation networkTransactionId(String networkTransactionId) {
+    this.networkTransactionId = networkTransactionId;
+    return this;
+  }
+
+   /**
+   * Same value as &#x60;processorInformation.transactionId&#x60;
+   * @return networkTransactionId
+  **/
+  @ApiModelProperty(value = "Same value as `processorInformation.transactionId`")
+  public String getNetworkTransactionId() {
+    return networkTransactionId;
+  }
+
+  public void setNetworkTransactionId(String networkTransactionId) {
+    this.networkTransactionId = networkTransactionId;
   }
 
   public PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation responseCode(String responseCode) {
@@ -190,6 +211,7 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
     PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation = (PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation) o;
     return Objects.equals(this.approvalCode, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.approvalCode) &&
         Objects.equals(this.transactionId, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.transactionId) &&
+        Objects.equals(this.networkTransactionId, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.networkTransactionId) &&
         Objects.equals(this.responseCode, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.responseCode) &&
         Objects.equals(this.systemTraceAuditNumber, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.systemTraceAuditNumber) &&
         Objects.equals(this.responseDetails, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.responseDetails) &&
@@ -199,7 +221,7 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalCode, transactionId, responseCode, systemTraceAuditNumber, responseDetails, merchantAdvice, sellerProtection);
+    return Objects.hash(approvalCode, transactionId, networkTransactionId, responseCode, systemTraceAuditNumber, responseDetails, merchantAdvice, sellerProtection);
   }
 
 
@@ -210,6 +232,7 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
     
     sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
     sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
     sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
     sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");

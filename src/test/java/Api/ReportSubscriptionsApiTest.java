@@ -14,7 +14,7 @@
 package Api;
 
 import Model.CreateReportSubscriptionRequest;
-import Model.InlineResponse4004;
+import Model.InlineResponse4005;
 import Model.PredefinedSubscriptionRequestBean;
 import Model.ReportingV3ReportSubscriptionsGet200Response;
 import Model.ReportingV3ReportSubscriptionsGet200ResponseSubscriptions;

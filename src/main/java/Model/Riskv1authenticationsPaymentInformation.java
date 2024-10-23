@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Ptsv2paymentsPaymentInformationCustomer;
+import Model.Riskv1authenticationsPaymentInformationCustomer;
 import Model.Riskv1authenticationsPaymentInformationTokenizedCard;
 import Model.Riskv1authenticationsetupsPaymentInformationCard;
 import Model.Riskv1authenticationsetupsPaymentInformationFluidData;
@@ -43,7 +43,7 @@ public class Riskv1authenticationsPaymentInformation {
   private Riskv1authenticationsetupsPaymentInformationFluidData fluidData = null;
 
   @SerializedName("customer")
-  private Ptsv2paymentsPaymentInformationCustomer customer = null;
+  private Riskv1authenticationsPaymentInformationCustomer customer = null;
 
   public Riskv1authenticationsPaymentInformation card(Riskv1authenticationsetupsPaymentInformationCard card) {
     this.card = card;
@@ -99,7 +99,7 @@ public class Riskv1authenticationsPaymentInformation {
     this.fluidData = fluidData;
   }
 
-  public Riskv1authenticationsPaymentInformation customer(Ptsv2paymentsPaymentInformationCustomer customer) {
+  public Riskv1authenticationsPaymentInformation customer(Riskv1authenticationsPaymentInformationCustomer customer) {
     this.customer = customer;
     return this;
   }
@@ -109,11 +109,11 @@ public class Riskv1authenticationsPaymentInformation {
    * @return customer
   **/
   @ApiModelProperty(value = "")
-  public Ptsv2paymentsPaymentInformationCustomer getCustomer() {
+  public Riskv1authenticationsPaymentInformationCustomer getCustomer() {
     return customer;
   }
 
-  public void setCustomer(Ptsv2paymentsPaymentInformationCustomer customer) {
+  public void setCustomer(Riskv1authenticationsPaymentInformationCustomer customer) {
     this.customer = customer;
   }
 

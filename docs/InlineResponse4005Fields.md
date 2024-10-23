@@ -1,5 +1,5 @@
 
-# InlineResponse4004Fields
+# InlineResponse4005Fields
 
 ## Properties
 Name | Type | Description | Notes

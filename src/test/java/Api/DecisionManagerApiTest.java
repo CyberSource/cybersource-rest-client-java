@@ -20,7 +20,7 @@ import Model.CreateBundledDecisionManagerCaseRequest;
 import Model.FraudMarkingActionRequest;
 import Model.InlineResponse200;
 import Model.InlineResponse201;
-import Model.InlineResponse4001;
+import Model.InlineResponse4002;
 import Model.InlineResponse4031;
 import Model.InlineResponse422;
 import Model.InlineResponse5001;

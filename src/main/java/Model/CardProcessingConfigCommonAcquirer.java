@@ -39,6 +39,12 @@ public class CardProcessingConfigCommonAcquirer {
   @SerializedName("discoverInstitutionId")
   private String discoverInstitutionId = null;
 
+  @SerializedName("unionPayInstitutionId")
+  private String unionPayInstitutionId = null;
+
+  @SerializedName("dinersClubInstitutionId")
+  private String dinersClubInstitutionId = null;
+
   @SerializedName("countryCode")
   private String countryCode = null;
 
@@ -99,6 +105,42 @@ public class CardProcessingConfigCommonAcquirer {
     this.discoverInstitutionId = discoverInstitutionId;
   }
 
+  public CardProcessingConfigCommonAcquirer unionPayInstitutionId(String unionPayInstitutionId) {
+    this.unionPayInstitutionId = unionPayInstitutionId;
+    return this;
+  }
+
+   /**
+   * Assigned by China Union Pay to identify the acquirer. Applicable for VPC processors.
+   * @return unionPayInstitutionId
+  **/
+  @ApiModelProperty(value = "Assigned by China Union Pay to identify the acquirer. Applicable for VPC processors.")
+  public String getUnionPayInstitutionId() {
+    return unionPayInstitutionId;
+  }
+
+  public void setUnionPayInstitutionId(String unionPayInstitutionId) {
+    this.unionPayInstitutionId = unionPayInstitutionId;
+  }
+
+  public CardProcessingConfigCommonAcquirer dinersClubInstitutionId(String dinersClubInstitutionId) {
+    this.dinersClubInstitutionId = dinersClubInstitutionId;
+    return this;
+  }
+
+   /**
+   * Assigned by Diners Club to identify the acquirer. Applicable for VPC processors.
+   * @return dinersClubInstitutionId
+  **/
+  @ApiModelProperty(value = "Assigned by Diners Club to identify the acquirer. Applicable for VPC processors.")
+  public String getDinersClubInstitutionId() {
+    return dinersClubInstitutionId;
+  }
+
+  public void setDinersClubInstitutionId(String dinersClubInstitutionId) {
+    this.dinersClubInstitutionId = dinersClubInstitutionId;
+  }
+
   public CardProcessingConfigCommonAcquirer countryCode(String countryCode) {
     this.countryCode = countryCode;
     return this;
@@ -148,13 +190,15 @@ public class CardProcessingConfigCommonAcquirer {
     return Objects.equals(this.institutionId, cardProcessingConfigCommonAcquirer.institutionId) &&
         Objects.equals(this.interbankCardAssociationId, cardProcessingConfigCommonAcquirer.interbankCardAssociationId) &&
         Objects.equals(this.discoverInstitutionId, cardProcessingConfigCommonAcquirer.discoverInstitutionId) &&
+        Objects.equals(this.unionPayInstitutionId, cardProcessingConfigCommonAcquirer.unionPayInstitutionId) &&
+        Objects.equals(this.dinersClubInstitutionId, cardProcessingConfigCommonAcquirer.dinersClubInstitutionId) &&
         Objects.equals(this.countryCode, cardProcessingConfigCommonAcquirer.countryCode) &&
         Objects.equals(this.fileDestinationBin, cardProcessingConfigCommonAcquirer.fileDestinationBin);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(institutionId, interbankCardAssociationId, discoverInstitutionId, countryCode, fileDestinationBin);
+    return Objects.hash(institutionId, interbankCardAssociationId, discoverInstitutionId, unionPayInstitutionId, dinersClubInstitutionId, countryCode, fileDestinationBin);
   }
 
 
@@ -166,6 +210,8 @@ public class CardProcessingConfigCommonAcquirer {
     sb.append("    institutionId: ").append(toIndentedString(institutionId)).append("\n");
     sb.append("    interbankCardAssociationId: ").append(toIndentedString(interbankCardAssociationId)).append("\n");
     sb.append("    discoverInstitutionId: ").append(toIndentedString(discoverInstitutionId)).append("\n");
+    sb.append("    unionPayInstitutionId: ").append(toIndentedString(unionPayInstitutionId)).append("\n");
+    sb.append("    dinersClubInstitutionId: ").append(toIndentedString(dinersClubInstitutionId)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    fileDestinationBin: ").append(toIndentedString(fileDestinationBin)).append("\n");
     sb.append("}");

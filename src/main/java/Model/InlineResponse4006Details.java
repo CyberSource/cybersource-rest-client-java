@@ -29,46 +29,46 @@ import java.io.IOException;
  */
 
 public class InlineResponse4006Details {
-  @SerializedName("location")
-  private String location = null;
+  @SerializedName("field")
+  private String field = null;
 
-  @SerializedName("message")
-  private String message = null;
+  @SerializedName("reason")
+  private String reason = null;
 
-  public InlineResponse4006Details location(String location) {
-    this.location = location;
+  public InlineResponse4006Details field(String field) {
+    this.field = field;
     return this;
   }
 
    /**
-   * Get location
-   * @return location
+   * This is the flattened JSON object field name/path that is either missing or invalid.
+   * @return field
   **/
-  @ApiModelProperty(value = "")
-  public String getLocation() {
-    return location;
+  @ApiModelProperty(value = "This is the flattened JSON object field name/path that is either missing or invalid.")
+  public String getField() {
+    return field;
   }
 
-  public void setLocation(String location) {
-    this.location = location;
+  public void setField(String field) {
+    this.field = field;
   }
 
-  public InlineResponse4006Details message(String message) {
-    this.message = message;
+  public InlineResponse4006Details reason(String reason) {
+    this.reason = reason;
     return this;
   }
 
    /**
-   * Get message
-   * @return message
+   * Possible reasons for the error.
+   * @return reason
   **/
-  @ApiModelProperty(value = "")
-  public String getMessage() {
-    return message;
+  @ApiModelProperty(example = "MISSING_FIELD", value = "Possible reasons for the error.")
+  public String getReason() {
+    return reason;
   }
 
-  public void setMessage(String message) {
-    this.message = message;
+  public void setReason(String reason) {
+    this.reason = reason;
   }
 
 
@@ -81,13 +81,13 @@ public class InlineResponse4006Details {
       return false;
     }
     InlineResponse4006Details inlineResponse4006Details = (InlineResponse4006Details) o;
-    return Objects.equals(this.location, inlineResponse4006Details.location) &&
-        Objects.equals(this.message, inlineResponse4006Details.message);
+    return Objects.equals(this.field, inlineResponse4006Details.field) &&
+        Objects.equals(this.reason, inlineResponse4006Details.reason);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(location, message);
+    return Objects.hash(field, reason);
   }
 
 
@@ -96,8 +96,8 @@ public class InlineResponse4006Details {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4006Details {\n");
     
-    sb.append("    location: ").append(toIndentedString(location)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    field: ").append(toIndentedString(field)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("}");
     return sb.toString();
   }

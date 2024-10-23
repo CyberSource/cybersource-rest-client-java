@@ -25,72 +25,50 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Provide validation failed input field details
+ * InlineResponse4001Details
  */
-@ApiModel(description = "Provide validation failed input field details")
 
-public class InlineResponse4004Fields {
-  @SerializedName("path")
-  private String path = null;
+public class InlineResponse4001Details {
+  @SerializedName("location")
+  private String location = null;
 
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("localizationKey")
-  private String localizationKey = null;
-
-  public InlineResponse4004Fields path(String path) {
-    this.path = path;
+  public InlineResponse4001Details location(String location) {
+    this.location = location;
     return this;
   }
 
    /**
-   * Path of the failed property
-   * @return path
+   * Get location
+   * @return location
   **/
-  @ApiModelProperty(value = "Path of the failed property")
-  public String getPath() {
-    return path;
+  @ApiModelProperty(value = "")
+  public String getLocation() {
+    return location;
   }
 
-  public void setPath(String path) {
-    this.path = path;
+  public void setLocation(String location) {
+    this.location = location;
   }
 
-  public InlineResponse4004Fields message(String message) {
+  public InlineResponse4001Details message(String message) {
     this.message = message;
     return this;
   }
 
    /**
-   * Error description about validation failed field
+   * Get message
    * @return message
   **/
-  @ApiModelProperty(value = "Error description about validation failed field")
+  @ApiModelProperty(value = "")
   public String getMessage() {
     return message;
   }
 
   public void setMessage(String message) {
     this.message = message;
-  }
-
-  public InlineResponse4004Fields localizationKey(String localizationKey) {
-    this.localizationKey = localizationKey;
-    return this;
-  }
-
-   /**
-   * Localized Key Name
-   * @return localizationKey
-  **/
-  @ApiModelProperty(value = "Localized Key Name")
-  public String getLocalizationKey() {
-    return localizationKey;
-  }
-
-  public void setLocalizationKey(String localizationKey) {
-    this.localizationKey = localizationKey;
   }
 
 
@@ -102,26 +80,24 @@ public class InlineResponse4004Fields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InlineResponse4004Fields inlineResponse4004Fields = (InlineResponse4004Fields) o;
-    return Objects.equals(this.path, inlineResponse4004Fields.path) &&
-        Objects.equals(this.message, inlineResponse4004Fields.message) &&
-        Objects.equals(this.localizationKey, inlineResponse4004Fields.localizationKey);
+    InlineResponse4001Details inlineResponse4001Details = (InlineResponse4001Details) o;
+    return Objects.equals(this.location, inlineResponse4001Details.location) &&
+        Objects.equals(this.message, inlineResponse4001Details.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(path, message, localizationKey);
+    return Objects.hash(location, message);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InlineResponse4004Fields {\n");
+    sb.append("class InlineResponse4001Details {\n");
     
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
+    sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    localizationKey: ").append(toIndentedString(localizationKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
