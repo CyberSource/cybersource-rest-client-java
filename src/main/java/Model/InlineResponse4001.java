@@ -44,80 +44,8 @@ public class InlineResponse4001 {
   @SerializedName("message")
   private String message = null;
 
-  /**
-   * Gets or Sets reason
-   */
-  @JsonAdapter(ReasonEnum.Adapter.class)
-  public enum ReasonEnum {
-    INVALID_APIKEY("INVALID_APIKEY"),
-    
-    INVALID_SHIPPING_INPUT_PARAMS("INVALID_SHIPPING_INPUT_PARAMS"),
-    
-    CAPTURE_CONTEXT_INVALID("CAPTURE_CONTEXT_INVALID"),
-    
-    CAPTURE_CONTEXT_EXPIRED("CAPTURE_CONTEXT_EXPIRED"),
-    
-    SDK_XHR_ERROR("SDK_XHR_ERROR"),
-    
-    UNIFIEDPAYMENTS_VALIDATION_PARAMS("UNIFIEDPAYMENTS_VALIDATION_PARAMS"),
-    
-    UNIFIEDPAYMENTS_VALIDATION_FIELDS("UNIFIEDPAYMENTS_VALIDATION_FIELDS"),
-    
-    UNIFIEDPAYMENT_PAYMENT_PARAMITERS("UNIFIEDPAYMENT_PAYMENT_PARAMITERS"),
-    
-    CREATE_TOKEN_TIMEOUT("CREATE_TOKEN_TIMEOUT"),
-    
-    CREATE_TOKEN_XHR_ERROR("CREATE_TOKEN_XHR_ERROR"),
-    
-    SHOW_LOAD_CONTAINER_SELECTOR("SHOW_LOAD_CONTAINER_SELECTOR"),
-    
-    SHOW_LOAD_INVALID_CONTAINER("SHOW_LOAD_INVALID_CONTAINER"),
-    
-    SHOW_TOKEN_TIMEOUT("SHOW_TOKEN_TIMEOUT"),
-    
-    SHOW_TOKEN_XHR_ERROR("SHOW_TOKEN_XHR_ERROR"),
-    
-    SHOW_PAYMENT_TIMEOUT("SHOW_PAYMENT_TIMEOUT");
-
-    private String value;
-
-    ReasonEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReasonEnum fromValue(String text) {
-      for (ReasonEnum b : ReasonEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReasonEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReasonEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReasonEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReasonEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("reason")
-  private ReasonEnum reason = null;
+  private String reason = null;
 
   public InlineResponse4001 correlationId(String correlationId) {
     this.correlationId = correlationId;
@@ -199,21 +127,21 @@ public class InlineResponse4001 {
     this.message = message;
   }
 
-  public InlineResponse4001 reason(ReasonEnum reason) {
+  public InlineResponse4001 reason(String reason) {
     this.reason = reason;
     return this;
   }
 
    /**
-   * Get reason
+   * Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
    * @return reason
   **/
-  @ApiModelProperty(required = true, value = "")
-  public ReasonEnum getReason() {
+  @ApiModelProperty(required = true, value = "Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT")
+  public String getReason() {
     return reason;
   }
 
-  public void setReason(ReasonEnum reason) {
+  public void setReason(String reason) {
     this.reason = reason;
   }
 

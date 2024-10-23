@@ -150,6 +150,9 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("enablerId")
   private String enablerId = null;
 
+  @SerializedName("processingInstruction")
+  private String processingInstruction = null;
+
   public Ptsv2paymentsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
     return this;
@@ -164,10 +167,10 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - &#x60;DECISION_SKIP&#x60;: Use this when you want to skip Decision Manager service(s).   - &#x60;TOKEN_CREATE&#x60;: Use this when you want to create a token from the card/bank data in your payment request.   - &#x60;CONSUMER_AUTHENTICATION&#x60;: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - &#x60;VALIDATE_CONSUMER_AUTHENTICATION&#x60;: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - &#x60;AP_INITIATE&#x60;: Use this when Alternative Payment Initiate service is requested.   - &#x60;WATCHLIST_SCREENING&#x60; : Use this when you want to call Watchlist Screening service.   - &#x60;AP_SALE&#x60; : Use this when Alternative Payment Sale service is requested.    - &#x60;AP_AUTH&#x60; : Use this when Alternative Payment Authorize service is requested. 
+   * Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - &#x60;DECISION_SKIP&#x60;: Use this when you want to skip Decision Manager service(s).   - &#x60;TOKEN_CREATE&#x60;: Use this when you want to create a token from the card/bank data in your payment request.   - &#x60;CONSUMER_AUTHENTICATION&#x60;: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - &#x60;VALIDATE_CONSUMER_AUTHENTICATION&#x60;: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - &#x60;AP_INITIATE&#x60;: Use this when Alternative Payment Initiate service is requested.   - &#x60;WATCHLIST_SCREENING&#x60; : Use this when you want to call Watchlist Screening service.   - &#x60;AP_SALE&#x60; : Use this when Alternative Payment Sale service is requested.    - &#x60;AP_AUTH&#x60; : Use this when Alternative Payment Authorize service is requested.   - &#x60;AP_REAUTH&#x60; : Use this when Alternative Payment Reauthorize service is requested. 
    * @return actionList
   **/
-  @ApiModelProperty(value = "Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service.   - `AP_SALE` : Use this when Alternative Payment Sale service is requested.    - `AP_AUTH` : Use this when Alternative Payment Authorize service is requested. ")
+  @ApiModelProperty(value = "Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service.   - `AP_SALE` : Use this when Alternative Payment Sale service is requested.    - `AP_AUTH` : Use this when Alternative Payment Authorize service is requested.   - `AP_REAUTH` : Use this when Alternative Payment Reauthorize service is requested. ")
   public List<String> getActionList() {
     return actionList;
   }
@@ -833,6 +836,24 @@ public class Ptsv2paymentsProcessingInformation {
     this.enablerId = enablerId;
   }
 
+  public Ptsv2paymentsProcessingInformation processingInstruction(String processingInstruction) {
+    this.processingInstruction = processingInstruction;
+    return this;
+  }
+
+   /**
+   * The instruction to process an order. - default value: &#39;NO_INSTRUCTION&#39; - &#39;ORDER_SAVED_EXPLICITLY&#39; 
+   * @return processingInstruction
+  **/
+  @ApiModelProperty(value = "The instruction to process an order. - default value: 'NO_INSTRUCTION' - 'ORDER_SAVED_EXPLICITLY' ")
+  public String getProcessingInstruction() {
+    return processingInstruction;
+  }
+
+  public void setProcessingInstruction(String processingInstruction) {
+    this.processingInstruction = processingInstruction;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -879,12 +900,13 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.isReturnAuthRecordEnabled, ptsv2paymentsProcessingInformation.isReturnAuthRecordEnabled) &&
         Objects.equals(this.networkPartnerId, ptsv2paymentsProcessingInformation.networkPartnerId) &&
         Objects.equals(this.paymentType, ptsv2paymentsProcessingInformation.paymentType) &&
-        Objects.equals(this.enablerId, ptsv2paymentsProcessingInformation.enablerId);
+        Objects.equals(this.enablerId, ptsv2paymentsProcessingInformation.enablerId) &&
+        Objects.equals(this.processingInstruction, ptsv2paymentsProcessingInformation.processingInstruction);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction);
   }
 
 
@@ -930,6 +952,7 @@ public class Ptsv2paymentsProcessingInformation {
     sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("    enablerId: ").append(toIndentedString(enablerId)).append("\n");
+    sb.append("    processingInstruction: ").append(toIndentedString(processingInstruction)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Microformv2sessionsCheckoutApiInitialization
+ * Use the [Digital Accept Checkout API](https://developer.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Checkout_API/Secure_Acceptance_Checkout_API.pdf) in conjunction with Microform to provide a cohesive PCI SAQ A embedded payment application within your merchant e-commerce page.   The Digital Accept Checkout API provides access to payment processing and additional value-added services directly from the browser. 
  */
+@ApiModel(description = "Use the [Digital Accept Checkout API](https://developer.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Checkout_API/Secure_Acceptance_Checkout_API.pdf) in conjunction with Microform to provide a cohesive PCI SAQ A embedded payment application within your merchant e-commerce page.   The Digital Accept Checkout API provides access to payment processing and additional value-added services directly from the browser. ")
 
 public class Microformv2sessionsCheckoutApiInitialization {
   @SerializedName("profile_id")
@@ -191,10 +192,10 @@ public class Microformv2sessionsCheckoutApiInitialization {
   }
 
    /**
-   * Get locale
+   * Locale where application is being used.  This field controls aspects of the application such as the language it will be rendered in. 
    * @return locale
   **/
-  @ApiModelProperty(example = "en-us", value = "")
+  @ApiModelProperty(example = "en-us", value = "Locale where application is being used.  This field controls aspects of the application such as the language it will be rendered in. ")
   public String getLocale() {
     return locale;
   }
@@ -212,7 +213,7 @@ public class Microformv2sessionsCheckoutApiInitialization {
    * Get overrideCustomReceiptPage
    * @return overrideCustomReceiptPage
   **/
-  @ApiModelProperty(example = "https://www.test.com/recipt", value = "")
+  @ApiModelProperty(example = "https://www.test.com/receipt", value = "")
   public String getOverrideCustomReceiptPage() {
     return overrideCustomReceiptPage;
   }

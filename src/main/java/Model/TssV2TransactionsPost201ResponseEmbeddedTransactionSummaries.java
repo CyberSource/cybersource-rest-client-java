@@ -15,11 +15,11 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2CreateOrderPost201ResponseBuyerInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
 import Model.Riskv1authenticationresultsDeviceInformation;
 import Model.TssV2TransactionsGet200ResponseFraudMarkingInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedApplicationInformation;
-import Model.TssV2TransactionsPost201ResponseEmbeddedBuyerInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation;
 import Model.TssV2TransactionsPost201ResponseEmbeddedErrorInformation;
@@ -63,7 +63,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
   private TssV2TransactionsPost201ResponseEmbeddedApplicationInformation applicationInformation = null;
 
   @SerializedName("buyerInformation")
-  private TssV2TransactionsPost201ResponseEmbeddedBuyerInformation buyerInformation = null;
+  private PtsV2CreateOrderPost201ResponseBuyerInformation buyerInformation = null;
 
   @SerializedName("clientReferenceInformation")
   private TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation clientReferenceInformation = null;
@@ -197,7 +197,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
     this.applicationInformation = applicationInformation;
   }
 
-  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries buyerInformation(TssV2TransactionsPost201ResponseEmbeddedBuyerInformation buyerInformation) {
+  public TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries buyerInformation(PtsV2CreateOrderPost201ResponseBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
     return this;
   }
@@ -207,11 +207,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries {
    * @return buyerInformation
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsPost201ResponseEmbeddedBuyerInformation getBuyerInformation() {
+  public PtsV2CreateOrderPost201ResponseBuyerInformation getBuyerInformation() {
     return buyerInformation;
   }
 
-  public void setBuyerInformation(TssV2TransactionsPost201ResponseEmbeddedBuyerInformation buyerInformation) {
+  public void setBuyerInformation(PtsV2CreateOrderPost201ResponseBuyerInformation buyerInformation) {
     this.buyerInformation = buyerInformation;
   }
 

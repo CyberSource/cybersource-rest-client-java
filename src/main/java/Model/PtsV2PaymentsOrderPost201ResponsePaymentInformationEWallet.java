@@ -38,6 +38,9 @@ public class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet {
   @SerializedName("fundingSourceSale")
   private String fundingSourceSale = null;
 
+  @SerializedName("userName")
+  private String userName = null;
+
   public PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet accountId(String accountId) {
     this.accountId = accountId;
     return this;
@@ -92,6 +95,24 @@ public class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet {
     this.fundingSourceSale = fundingSourceSale;
   }
 
+  public PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet userName(String userName) {
+    this.userName = userName;
+    return this;
+  }
+
+   /**
+   * The Venmo user name chosen by the user, also know as a Venmo handle. 
+   * @return userName
+  **/
+  @ApiModelProperty(value = "The Venmo user name chosen by the user, also know as a Venmo handle. ")
+  public String getUserName() {
+    return userName;
+  }
+
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,12 +125,13 @@ public class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet {
     PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet ptsV2PaymentsOrderPost201ResponsePaymentInformationEWallet = (PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet) o;
     return Objects.equals(this.accountId, ptsV2PaymentsOrderPost201ResponsePaymentInformationEWallet.accountId) &&
         Objects.equals(this.fundingSource, ptsV2PaymentsOrderPost201ResponsePaymentInformationEWallet.fundingSource) &&
-        Objects.equals(this.fundingSourceSale, ptsV2PaymentsOrderPost201ResponsePaymentInformationEWallet.fundingSourceSale);
+        Objects.equals(this.fundingSourceSale, ptsV2PaymentsOrderPost201ResponsePaymentInformationEWallet.fundingSourceSale) &&
+        Objects.equals(this.userName, ptsV2PaymentsOrderPost201ResponsePaymentInformationEWallet.userName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, fundingSource, fundingSourceSale);
+    return Objects.hash(accountId, fundingSource, fundingSourceSale, userName);
   }
 
 
@@ -121,6 +143,7 @@ public class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet {
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    fundingSource: ").append(toIndentedString(fundingSource)).append("\n");
     sb.append("    fundingSourceSale: ").append(toIndentedString(fundingSourceSale)).append("\n");
+    sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -36,56 +36,8 @@ public class PaymentsProductsDigitalPaymentsSubscriptionInformation {
   @SerializedName("enabled")
   private Boolean enabled = null;
 
-  /**
-   * Indicates if the organization can enable this product using self service.
-   */
-  @JsonAdapter(SelfServiceabilityEnum.Adapter.class)
-  public enum SelfServiceabilityEnum {
-    SELF_SERVICEABLE("SELF_SERVICEABLE"),
-    
-    NOT_SELF_SERVICEABLE("NOT_SELF_SERVICEABLE"),
-    
-    SELF_SERVICE_ONLY("SELF_SERVICE_ONLY");
-
-    private String value;
-
-    SelfServiceabilityEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static SelfServiceabilityEnum fromValue(String text) {
-      for (SelfServiceabilityEnum b : SelfServiceabilityEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<SelfServiceabilityEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final SelfServiceabilityEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public SelfServiceabilityEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return SelfServiceabilityEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("selfServiceability")
-  private SelfServiceabilityEnum selfServiceability = SelfServiceabilityEnum.NOT_SELF_SERVICEABLE;
+  private String selfServiceability = "NOT_SELF_SERVICEABLE";
 
   @SerializedName("features")
   private Map<String, PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures> features = null;
@@ -108,21 +60,21 @@ public class PaymentsProductsDigitalPaymentsSubscriptionInformation {
     this.enabled = enabled;
   }
 
-  public PaymentsProductsDigitalPaymentsSubscriptionInformation selfServiceability(SelfServiceabilityEnum selfServiceability) {
+  public PaymentsProductsDigitalPaymentsSubscriptionInformation selfServiceability(String selfServiceability) {
     this.selfServiceability = selfServiceability;
     return this;
   }
 
    /**
-   * Indicates if the organization can enable this product using self service.
+   * Indicates if the organization can enable this product using self service.  Possible values: - SELF_SERVICEABLE - NOT_SELF_SERVICEABLE - SELF_SERVICE_ONLY
    * @return selfServiceability
   **/
-  @ApiModelProperty(value = "Indicates if the organization can enable this product using self service.")
-  public SelfServiceabilityEnum getSelfServiceability() {
+  @ApiModelProperty(value = "Indicates if the organization can enable this product using self service.  Possible values: - SELF_SERVICEABLE - NOT_SELF_SERVICEABLE - SELF_SERVICE_ONLY")
+  public String getSelfServiceability() {
     return selfServiceability;
   }
 
-  public void setSelfServiceability(SelfServiceabilityEnum selfServiceability) {
+  public void setSelfServiceability(String selfServiceability) {
     this.selfServiceability = selfServiceability;
   }
 

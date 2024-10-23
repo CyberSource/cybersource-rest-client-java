@@ -40,56 +40,8 @@ public class CardProcessingConfigCommon {
   @SerializedName("amexVendorCode")
   private String amexVendorCode = null;
 
-  /**
-   * Authorization Finality indicator. Please note that the input can be in small case or capitals but response is in small case as of now. It will be made capitals everywhere in the next version. Applicable for Elavon Americas (elavonamericas), TSYS (tsys), Barclays (barclays2), Streamline (streamline2), Six (six), Barclays HISO (barclayshiso), GPN (gpn), FDI Global (fdiglobal), GPX (gpx), Paymentech Tampa (paymentechtampa), FDC Nashville (smartfdc), VPC and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  &lt;table&gt; &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Processor&lt;/th&gt;&lt;th&gt;Acceptance Type&lt;/th&gt;&lt;th&gt;Required&lt;/th&gt;&lt;th&gt;Default Value&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt; &lt;tr&gt;&lt;td&gt;Barclays&lt;/td&gt;&lt;td&gt;cnp, cp, hybrid&lt;/td&gt;&lt;td&gt;No&lt;/td&gt;&lt;td&gt;FINAL&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;Barclays HISO&lt;/td&gt;&lt;td&gt;cnp, cp, hybrid&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;td&gt;FINAL&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt; 
-   */
-  @JsonAdapter(DefaultAuthTypeCodeEnum.Adapter.class)
-  public enum DefaultAuthTypeCodeEnum {
-    PRE("PRE"),
-    
-    FINAL("FINAL"),
-    
-    UNDEFINED("UNDEFINED");
-
-    private String value;
-
-    DefaultAuthTypeCodeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static DefaultAuthTypeCodeEnum fromValue(String text) {
-      for (DefaultAuthTypeCodeEnum b : DefaultAuthTypeCodeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<DefaultAuthTypeCodeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final DefaultAuthTypeCodeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public DefaultAuthTypeCodeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return DefaultAuthTypeCodeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("defaultAuthTypeCode")
-  private DefaultAuthTypeCodeEnum defaultAuthTypeCode = null;
+  private String defaultAuthTypeCode = null;
 
   @SerializedName("masterCardAssignedId")
   private String masterCardAssignedId = null;
@@ -195,21 +147,21 @@ public class CardProcessingConfigCommon {
     this.amexVendorCode = amexVendorCode;
   }
 
-  public CardProcessingConfigCommon defaultAuthTypeCode(DefaultAuthTypeCodeEnum defaultAuthTypeCode) {
+  public CardProcessingConfigCommon defaultAuthTypeCode(String defaultAuthTypeCode) {
     this.defaultAuthTypeCode = defaultAuthTypeCode;
     return this;
   }
 
    /**
-   * Authorization Finality indicator. Please note that the input can be in small case or capitals but response is in small case as of now. It will be made capitals everywhere in the next version. Applicable for Elavon Americas (elavonamericas), TSYS (tsys), Barclays (barclays2), Streamline (streamline2), Six (six), Barclays HISO (barclayshiso), GPN (gpn), FDI Global (fdiglobal), GPX (gpx), Paymentech Tampa (paymentechtampa), FDC Nashville (smartfdc), VPC and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  &lt;table&gt; &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Processor&lt;/th&gt;&lt;th&gt;Acceptance Type&lt;/th&gt;&lt;th&gt;Required&lt;/th&gt;&lt;th&gt;Default Value&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt; &lt;tr&gt;&lt;td&gt;Barclays&lt;/td&gt;&lt;td&gt;cnp, cp, hybrid&lt;/td&gt;&lt;td&gt;No&lt;/td&gt;&lt;td&gt;FINAL&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;Barclays HISO&lt;/td&gt;&lt;td&gt;cnp, cp, hybrid&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;td&gt;FINAL&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt; 
+   * Authorization Finality indicator. Please note that the input can be in small case or capitals but response is in small case as of now. It will be made capitals everywhere in the next version. Applicable for Elavon Americas (elavonamericas), TSYS (tsys), Barclays (barclays2), Streamline (streamline2), Six (six), Barclays HISO (barclayshiso), GPN (gpn), FDI Global (fdiglobal), GPX (gpx), Paymentech Tampa (paymentechtampa), FDC Nashville (smartfdc), VPC and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  &lt;table&gt; &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Processor&lt;/th&gt;&lt;th&gt;Acceptance Type&lt;/th&gt;&lt;th&gt;Required&lt;/th&gt;&lt;th&gt;Default Value&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt; &lt;tr&gt;&lt;td&gt;Barclays&lt;/td&gt;&lt;td&gt;cnp, cp, hybrid&lt;/td&gt;&lt;td&gt;No&lt;/td&gt;&lt;td&gt;FINAL&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;Barclays HISO&lt;/td&gt;&lt;td&gt;cnp, cp, hybrid&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;td&gt;FINAL&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;   Possible values: - PRE - FINAL - UNDEFINED
    * @return defaultAuthTypeCode
   **/
-  @ApiModelProperty(value = "Authorization Finality indicator. Please note that the input can be in small case or capitals but response is in small case as of now. It will be made capitals everywhere in the next version. Applicable for Elavon Americas (elavonamericas), TSYS (tsys), Barclays (barclays2), Streamline (streamline2), Six (six), Barclays HISO (barclayshiso), GPN (gpn), FDI Global (fdiglobal), GPX (gpx), Paymentech Tampa (paymentechtampa), FDC Nashville (smartfdc), VPC and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays</td><td>cnp, cp, hybrid</td><td>No</td><td>FINAL</td></tr> <tr><td>Barclays HISO</td><td>cnp, cp, hybrid</td><td>Yes</td><td>FINAL</td></tr> </table> ")
-  public DefaultAuthTypeCodeEnum getDefaultAuthTypeCode() {
+  @ApiModelProperty(value = "Authorization Finality indicator. Please note that the input can be in small case or capitals but response is in small case as of now. It will be made capitals everywhere in the next version. Applicable for Elavon Americas (elavonamericas), TSYS (tsys), Barclays (barclays2), Streamline (streamline2), Six (six), Barclays HISO (barclayshiso), GPN (gpn), FDI Global (fdiglobal), GPX (gpx), Paymentech Tampa (paymentechtampa), FDC Nashville (smartfdc), VPC and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays</td><td>cnp, cp, hybrid</td><td>No</td><td>FINAL</td></tr> <tr><td>Barclays HISO</td><td>cnp, cp, hybrid</td><td>Yes</td><td>FINAL</td></tr> </table>   Possible values: - PRE - FINAL - UNDEFINED")
+  public String getDefaultAuthTypeCode() {
     return defaultAuthTypeCode;
   }
 
-  public void setDefaultAuthTypeCode(DefaultAuthTypeCodeEnum defaultAuthTypeCode) {
+  public void setDefaultAuthTypeCode(String defaultAuthTypeCode) {
     this.defaultAuthTypeCode = defaultAuthTypeCode;
   }
 

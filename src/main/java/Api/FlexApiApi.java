@@ -72,7 +72,7 @@ public class FlexApiApi {
      */
     public okhttp3.Call generateFlexAPICaptureContextCall(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(generateFlexAPICaptureContextRequest, GenerateFlexAPICaptureContextRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(generateFlexAPICaptureContextRequest, GenerateFlexAPICaptureContextRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/flex/v2/sessions";

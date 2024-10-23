@@ -42,113 +42,11 @@ public class InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
-  /**
-   * Gets or Sets status
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    SUCCESS("SUCCESS"),
-    
-    PARTIAL("PARTIAL"),
-    
-    PENDING("PENDING"),
-    
-    NOT_SETUP("NOT_SETUP");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("status")
-  private StatusEnum status = null;
+  private String status = null;
 
-  /**
-   * Gets or Sets reason
-   */
-  @JsonAdapter(ReasonEnum.Adapter.class)
-  public enum ReasonEnum {
-    PENDING_PROVISIONING_PROCESS("PENDING_PROVISIONING_PROCESS"),
-    
-    MISSING_DATA("MISSING_DATA"),
-    
-    INVALID_DATA("INVALID_DATA"),
-    
-    DUPLICATE_FIELD("DUPLICATE_FIELD"),
-    
-    NOT_APPLICABLE("NOT_APPLICABLE");
-
-    private String value;
-
-    ReasonEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReasonEnum fromValue(String text) {
-      for (ReasonEnum b : ReasonEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReasonEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReasonEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReasonEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReasonEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("reason")
-  private ReasonEnum reason = null;
+  private String reason = null;
 
   @SerializedName("details")
   private List<Map<String, String>> details = null;
@@ -210,39 +108,39 @@ public class InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus {
     this.submitTimeUtc = submitTimeUtc;
   }
 
-  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus status(StatusEnum status) {
+  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus status(String status) {
     this.status = status;
     return this;
   }
 
    /**
-   * Get status
+   * Possible values: - SUCCESS - PARTIAL - PENDING - NOT_SETUP
    * @return status
   **/
-  @ApiModelProperty(value = "")
-  public StatusEnum getStatus() {
+  @ApiModelProperty(value = "Possible values: - SUCCESS - PARTIAL - PENDING - NOT_SETUP")
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 
-  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus reason(ReasonEnum reason) {
+  public InlineResponse2012SetupsPaymentsCardProcessingConfigurationStatus reason(String reason) {
     this.reason = reason;
     return this;
   }
 
    /**
-   * Get reason
+   * Possible values: - PENDING_PROVISIONING_PROCESS - MISSING_DATA - INVALID_DATA - DUPLICATE_FIELD - NOT_APPLICABLE
    * @return reason
   **/
-  @ApiModelProperty(value = "")
-  public ReasonEnum getReason() {
+  @ApiModelProperty(value = "Possible values: - PENDING_PROVISIONING_PROCESS - MISSING_DATA - INVALID_DATA - DUPLICATE_FIELD - NOT_APPLICABLE")
+  public String getReason() {
     return reason;
   }
 
-  public void setReason(ReasonEnum reason) {
+  public void setReason(String reason) {
     this.reason = reason;
   }
 

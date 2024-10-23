@@ -1,15 +1,21 @@
 package utilities.tracking;
 
+import org.apache.commons.lang3.ObjectUtils;
+
 import Model.*;
 
 public class SdkTracker {
-    public Object insertDeveloperIdTracker(Object requestObj, String requestClass, String runEnvironment) {
+    public Object insertDeveloperIdTracker(Object requestObj, String requestClass, String runEnvironment, String merchantConfigDeveloperId) {
         String developerIdValue;
         if (runEnvironment.contains("apitest.cybersource.com")) {
             developerIdValue = "GJ5IEJBY";
         }
         else {
             developerIdValue = "SBBARODQ";
+        }
+        
+        if(!ObjectUtils.isEmpty(merchantConfigDeveloperId)) {
+        	developerIdValue= merchantConfigDeveloperId;
         }
 
         switch (requestClass)

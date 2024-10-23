@@ -23,7 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.joda.time.LocalDate;
+import org.joda.time.DateTime;
 
 /**
  * Boardingv1registrationsRegistrationInformation
@@ -34,163 +34,19 @@ public class Boardingv1registrationsRegistrationInformation {
   private String boardingRegistrationId = null;
 
   @SerializedName("submitTimeUtc")
-  private LocalDate submitTimeUtc = null;
+  private DateTime submitTimeUtc = null;
 
-  /**
-   * The status of Registration request Possible Values:   - &#39;PROCESSING&#39;: This status is for Registrations that are still in Progress, you can get the latest status by calling the GET endpoint using the Registration Id   - &#39;SUCCESS&#39;: This status is for Registrations that were successfull on every step of the on boarding process.   - &#39;FAILURE&#39;: This status is for Registrations that fail before the Organization was created; please refer to the details section in the reponse for more information.   - &#39;PARTIAL&#39;: This status is for Registrations that created the Organization successfully but fail in at least on step while configuring it; please refer to the details section in the response for more information. 
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    PROCESSING("PROCESSING"),
-    
-    SUCCESS("SUCCESS"),
-    
-    FAILURE("FAILURE"),
-    
-    PARTIAL("PARTIAL");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("status")
-  private StatusEnum status = null;
+  private String status = null;
 
   @SerializedName("boardingPackageId")
   private String boardingPackageId = null;
 
-  /**
-   * Determines the boarding flow for this registration. Possible Values:   - &#39;ENTERPRISE&#39;   - &#39;SMB&#39;   - &#39;ADDPRODUCT&#39; 
-   */
-  @JsonAdapter(BoardingFlowEnum.Adapter.class)
-  public enum BoardingFlowEnum {
-    ENTERPRISE("ENTERPRISE"),
-    
-    SMB("SMB"),
-    
-    ADDPRODUCT("ADDPRODUCT");
-
-    private String value;
-
-    BoardingFlowEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static BoardingFlowEnum fromValue(String text) {
-      for (BoardingFlowEnum b : BoardingFlowEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<BoardingFlowEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final BoardingFlowEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public BoardingFlowEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return BoardingFlowEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("boardingFlow")
-  private BoardingFlowEnum boardingFlow = null;
+  private String boardingFlow = null;
 
-  /**
-   * In case mode is not provided the API will use COMPLETE as default Possible Values:   - &#39;COMPLETE&#39;   - &#39;PARTIAL&#39; 
-   */
-  @JsonAdapter(ModeEnum.Adapter.class)
-  public enum ModeEnum {
-    COMPLETE("COMPLETE"),
-    
-    PARTIAL("PARTIAL");
-
-    private String value;
-
-    ModeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ModeEnum fromValue(String text) {
-      for (ModeEnum b : ModeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ModeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ModeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ModeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ModeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("mode")
-  private ModeEnum mode = null;
+  private String mode = null;
 
   @SerializedName("salesRepId")
   private String salesRepId = null;
@@ -209,7 +65,7 @@ public class Boardingv1registrationsRegistrationInformation {
    * @return submitTimeUtc
   **/
   @ApiModelProperty(example = "2019-06-11T22:47:57.000Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public LocalDate getSubmitTimeUtc() {
+  public DateTime getSubmitTimeUtc() {
     return submitTimeUtc;
   }
 
@@ -218,7 +74,7 @@ public class Boardingv1registrationsRegistrationInformation {
    * @return status
   **/
   @ApiModelProperty(value = "The status of Registration request Possible Values:   - 'PROCESSING': This status is for Registrations that are still in Progress, you can get the latest status by calling the GET endpoint using the Registration Id   - 'SUCCESS': This status is for Registrations that were successfull on every step of the on boarding process.   - 'FAILURE': This status is for Registrations that fail before the Organization was created; please refer to the details section in the reponse for more information.   - 'PARTIAL': This status is for Registrations that created the Organization successfully but fail in at least on step while configuring it; please refer to the details section in the response for more information. ")
-  public StatusEnum getStatus() {
+  public String getStatus() {
     return status;
   }
 
@@ -240,7 +96,7 @@ public class Boardingv1registrationsRegistrationInformation {
     this.boardingPackageId = boardingPackageId;
   }
 
-  public Boardingv1registrationsRegistrationInformation boardingFlow(BoardingFlowEnum boardingFlow) {
+  public Boardingv1registrationsRegistrationInformation boardingFlow(String boardingFlow) {
     this.boardingFlow = boardingFlow;
     return this;
   }
@@ -250,15 +106,15 @@ public class Boardingv1registrationsRegistrationInformation {
    * @return boardingFlow
   **/
   @ApiModelProperty(value = "Determines the boarding flow for this registration. Possible Values:   - 'ENTERPRISE'   - 'SMB'   - 'ADDPRODUCT' ")
-  public BoardingFlowEnum getBoardingFlow() {
+  public String getBoardingFlow() {
     return boardingFlow;
   }
 
-  public void setBoardingFlow(BoardingFlowEnum boardingFlow) {
+  public void setBoardingFlow(String boardingFlow) {
     this.boardingFlow = boardingFlow;
   }
 
-  public Boardingv1registrationsRegistrationInformation mode(ModeEnum mode) {
+  public Boardingv1registrationsRegistrationInformation mode(String mode) {
     this.mode = mode;
     return this;
   }
@@ -268,11 +124,11 @@ public class Boardingv1registrationsRegistrationInformation {
    * @return mode
   **/
   @ApiModelProperty(value = "In case mode is not provided the API will use COMPLETE as default Possible Values:   - 'COMPLETE'   - 'PARTIAL' ")
-  public ModeEnum getMode() {
+  public String getMode() {
     return mode;
   }
 
-  public void setMode(ModeEnum mode) {
+  public void setMode(String mode) {
     this.mode = mode;
   }
 

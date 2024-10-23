@@ -31,260 +31,14 @@ import java.util.List;
  */
 
 public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
-  /**
-   * Gets or Sets displayCardVerificationValue
-   */
-  @JsonAdapter(DisplayCardVerificationValueEnum.Adapter.class)
-  public enum DisplayCardVerificationValueEnum {
-    VISA("VISA"),
-    
-    MASTER_CARD("MASTER_CARD"),
-    
-    AMEX("AMEX"),
-    
-    DISCOVER("DISCOVER"),
-    
-    DINERS_CLUB("DINERS_CLUB"),
-    
-    CARTE_BLANCHE("CARTE_BLANCHE"),
-    
-    JCB("JCB"),
-    
-    ENROUTE("ENROUTE"),
-    
-    JAL("JAL"),
-    
-    SWITCH_SOLO("SWITCH_SOLO"),
-    
-    DELTA("DELTA"),
-    
-    VISA_ELECTRON("VISA_ELECTRON"),
-    
-    DANKORT("DANKORT"),
-    
-    LASER("LASER"),
-    
-    CARTE_SBANCAIRES("CARTE_SBANCAIRES"),
-    
-    CARTASI("CARTASI"),
-    
-    MAESTRO_INTERNATIONAL("MAESTRO_INTERNATIONAL"),
-    
-    GE_MONEY_UK_CARD("GE_MONEY_UK_CARD"),
-    
-    HIPER_CARD("HIPER_CARD"),
-    
-    ELO("ELO");
-
-    private String value;
-
-    DisplayCardVerificationValueEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static DisplayCardVerificationValueEnum fromValue(String text) {
-      for (DisplayCardVerificationValueEnum b : DisplayCardVerificationValueEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<DisplayCardVerificationValueEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final DisplayCardVerificationValueEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public DisplayCardVerificationValueEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return DisplayCardVerificationValueEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("displayCardVerificationValue")
-  private List<DisplayCardVerificationValueEnum> displayCardVerificationValue = null;
+  private List<String> displayCardVerificationValue = null;
 
-  /**
-   * Gets or Sets requireCardVerificationValue
-   */
-  @JsonAdapter(RequireCardVerificationValueEnum.Adapter.class)
-  public enum RequireCardVerificationValueEnum {
-    VISA("VISA"),
-    
-    MASTER_CARD("MASTER_CARD"),
-    
-    AMEX("AMEX"),
-    
-    DISCOVER("DISCOVER"),
-    
-    DINERS_CLUB("DINERS_CLUB"),
-    
-    CARTE_BLANCHE("CARTE_BLANCHE"),
-    
-    JCB("JCB"),
-    
-    ENROUTE("ENROUTE"),
-    
-    JAL("JAL"),
-    
-    SWITCH_SOLO("SWITCH_SOLO"),
-    
-    DELTA("DELTA"),
-    
-    VISA_ELECTRON("VISA_ELECTRON"),
-    
-    DANKORT("DANKORT"),
-    
-    LASER("LASER"),
-    
-    CARTE_SBANCAIRES("CARTE_SBANCAIRES"),
-    
-    CARTASI("CARTASI"),
-    
-    MAESTRO_INTERNATIONAL("MAESTRO_INTERNATIONAL"),
-    
-    GE_MONEY_UK_CARD("GE_MONEY_UK_CARD"),
-    
-    HIPER_CARD("HIPER_CARD"),
-    
-    ELO("ELO");
-
-    private String value;
-
-    RequireCardVerificationValueEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static RequireCardVerificationValueEnum fromValue(String text) {
-      for (RequireCardVerificationValueEnum b : RequireCardVerificationValueEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<RequireCardVerificationValueEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final RequireCardVerificationValueEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public RequireCardVerificationValueEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return RequireCardVerificationValueEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("requireCardVerificationValue")
-  private List<RequireCardVerificationValueEnum> requireCardVerificationValue = null;
+  private List<String> requireCardVerificationValue = null;
 
-  /**
-   * Gets or Sets acceptedCardTypes
-   */
-  @JsonAdapter(AcceptedCardTypesEnum.Adapter.class)
-  public enum AcceptedCardTypesEnum {
-    VISA("VISA"),
-    
-    MASTER_CARD("MASTER_CARD"),
-    
-    AMEX("AMEX"),
-    
-    DISCOVER("DISCOVER"),
-    
-    DINERS_CLUB("DINERS_CLUB"),
-    
-    CARTE_BLANCHE("CARTE_BLANCHE"),
-    
-    JCB("JCB"),
-    
-    ENROUTE("ENROUTE"),
-    
-    JAL("JAL"),
-    
-    SWITCH_SOLO("SWITCH_SOLO"),
-    
-    DELTA("DELTA"),
-    
-    VISA_ELECTRON("VISA_ELECTRON"),
-    
-    DANKORT("DANKORT"),
-    
-    LASER("LASER"),
-    
-    CARTE_SBANCAIRES("CARTE_SBANCAIRES"),
-    
-    CARTASI("CARTASI"),
-    
-    MAESTRO_INTERNATIONAL("MAESTRO_INTERNATIONAL"),
-    
-    GE_MONEY_UK_CARD("GE_MONEY_UK_CARD"),
-    
-    HIPER_CARD("HIPER_CARD"),
-    
-    ELO("ELO");
-
-    private String value;
-
-    AcceptedCardTypesEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static AcceptedCardTypesEnum fromValue(String text) {
-      for (AcceptedCardTypesEnum b : AcceptedCardTypesEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<AcceptedCardTypesEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final AcceptedCardTypesEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public AcceptedCardTypesEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return AcceptedCardTypesEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("acceptedCardTypes")
-  private List<AcceptedCardTypesEnum> acceptedCardTypes = null;
+  private List<String> acceptedCardTypes = null;
 
   @SerializedName("displayCreditCards")
   private Boolean displayCreditCards = null;
@@ -316,14 +70,14 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
   @SerializedName("displayLastName")
   private Boolean displayLastName = null;
 
-  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation displayCardVerificationValue(List<DisplayCardVerificationValueEnum> displayCardVerificationValue) {
+  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation displayCardVerificationValue(List<String> displayCardVerificationValue) {
     this.displayCardVerificationValue = displayCardVerificationValue;
     return this;
   }
 
-  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation addDisplayCardVerificationValueItem(DisplayCardVerificationValueEnum displayCardVerificationValueItem) {
+  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation addDisplayCardVerificationValueItem(String displayCardVerificationValueItem) {
     if (this.displayCardVerificationValue == null) {
-      this.displayCardVerificationValue = new ArrayList<DisplayCardVerificationValueEnum>();
+      this.displayCardVerificationValue = new ArrayList<String>();
     }
     this.displayCardVerificationValue.add(displayCardVerificationValueItem);
     return this;
@@ -334,22 +88,22 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayCardVerificationValue
   **/
   @ApiModelProperty(value = "")
-  public List<DisplayCardVerificationValueEnum> getDisplayCardVerificationValue() {
+  public List<String> getDisplayCardVerificationValue() {
     return displayCardVerificationValue;
   }
 
-  public void setDisplayCardVerificationValue(List<DisplayCardVerificationValueEnum> displayCardVerificationValue) {
+  public void setDisplayCardVerificationValue(List<String> displayCardVerificationValue) {
     this.displayCardVerificationValue = displayCardVerificationValue;
   }
 
-  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation requireCardVerificationValue(List<RequireCardVerificationValueEnum> requireCardVerificationValue) {
+  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation requireCardVerificationValue(List<String> requireCardVerificationValue) {
     this.requireCardVerificationValue = requireCardVerificationValue;
     return this;
   }
 
-  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation addRequireCardVerificationValueItem(RequireCardVerificationValueEnum requireCardVerificationValueItem) {
+  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation addRequireCardVerificationValueItem(String requireCardVerificationValueItem) {
     if (this.requireCardVerificationValue == null) {
-      this.requireCardVerificationValue = new ArrayList<RequireCardVerificationValueEnum>();
+      this.requireCardVerificationValue = new ArrayList<String>();
     }
     this.requireCardVerificationValue.add(requireCardVerificationValueItem);
     return this;
@@ -360,22 +114,22 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return requireCardVerificationValue
   **/
   @ApiModelProperty(value = "")
-  public List<RequireCardVerificationValueEnum> getRequireCardVerificationValue() {
+  public List<String> getRequireCardVerificationValue() {
     return requireCardVerificationValue;
   }
 
-  public void setRequireCardVerificationValue(List<RequireCardVerificationValueEnum> requireCardVerificationValue) {
+  public void setRequireCardVerificationValue(List<String> requireCardVerificationValue) {
     this.requireCardVerificationValue = requireCardVerificationValue;
   }
 
-  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation acceptedCardTypes(List<AcceptedCardTypesEnum> acceptedCardTypes) {
+  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation acceptedCardTypes(List<String> acceptedCardTypes) {
     this.acceptedCardTypes = acceptedCardTypes;
     return this;
   }
 
-  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation addAcceptedCardTypesItem(AcceptedCardTypesEnum acceptedCardTypesItem) {
+  public VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation addAcceptedCardTypesItem(String acceptedCardTypesItem) {
     if (this.acceptedCardTypes == null) {
-      this.acceptedCardTypes = new ArrayList<AcceptedCardTypesEnum>();
+      this.acceptedCardTypes = new ArrayList<String>();
     }
     this.acceptedCardTypes.add(acceptedCardTypesItem);
     return this;
@@ -386,11 +140,11 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return acceptedCardTypes
   **/
   @ApiModelProperty(value = "")
-  public List<AcceptedCardTypesEnum> getAcceptedCardTypes() {
+  public List<String> getAcceptedCardTypes() {
     return acceptedCardTypes;
   }
 
-  public void setAcceptedCardTypes(List<AcceptedCardTypesEnum> acceptedCardTypes) {
+  public void setAcceptedCardTypes(List<String> acceptedCardTypes) {
     this.acceptedCardTypes = acceptedCardTypes;
   }
 

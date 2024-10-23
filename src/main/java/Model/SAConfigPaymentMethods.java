@@ -31,67 +31,17 @@ import java.util.List;
  */
 
 public class SAConfigPaymentMethods {
-  /**
-   * Gets or Sets enabledPaymentMethods
-   */
-  @JsonAdapter(EnabledPaymentMethodsEnum.Adapter.class)
-  public enum EnabledPaymentMethodsEnum {
-    CARD("CARD"),
-    
-    ECHECK("ECHECK"),
-    
-    VISACHECKOUT("VISACHECKOUT"),
-    
-    PAYPAL("PAYPAL");
-
-    private String value;
-
-    EnabledPaymentMethodsEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static EnabledPaymentMethodsEnum fromValue(String text) {
-      for (EnabledPaymentMethodsEnum b : EnabledPaymentMethodsEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<EnabledPaymentMethodsEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final EnabledPaymentMethodsEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public EnabledPaymentMethodsEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return EnabledPaymentMethodsEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("enabledPaymentMethods")
-  private List<EnabledPaymentMethodsEnum> enabledPaymentMethods = null;
+  private List<String> enabledPaymentMethods = null;
 
-  public SAConfigPaymentMethods enabledPaymentMethods(List<EnabledPaymentMethodsEnum> enabledPaymentMethods) {
+  public SAConfigPaymentMethods enabledPaymentMethods(List<String> enabledPaymentMethods) {
     this.enabledPaymentMethods = enabledPaymentMethods;
     return this;
   }
 
-  public SAConfigPaymentMethods addEnabledPaymentMethodsItem(EnabledPaymentMethodsEnum enabledPaymentMethodsItem) {
+  public SAConfigPaymentMethods addEnabledPaymentMethodsItem(String enabledPaymentMethodsItem) {
     if (this.enabledPaymentMethods == null) {
-      this.enabledPaymentMethods = new ArrayList<EnabledPaymentMethodsEnum>();
+      this.enabledPaymentMethods = new ArrayList<String>();
     }
     this.enabledPaymentMethods.add(enabledPaymentMethodsItem);
     return this;
@@ -102,11 +52,11 @@ public class SAConfigPaymentMethods {
    * @return enabledPaymentMethods
   **/
   @ApiModelProperty(value = "")
-  public List<EnabledPaymentMethodsEnum> getEnabledPaymentMethods() {
+  public List<String> getEnabledPaymentMethods() {
     return enabledPaymentMethods;
   }
 
-  public void setEnabledPaymentMethods(List<EnabledPaymentMethodsEnum> enabledPaymentMethods) {
+  public void setEnabledPaymentMethods(List<String> enabledPaymentMethods) {
     this.enabledPaymentMethods = enabledPaymentMethods;
   }
 

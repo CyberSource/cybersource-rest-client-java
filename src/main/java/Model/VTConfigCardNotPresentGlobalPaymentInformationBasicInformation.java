@@ -38,103 +38,11 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
   @SerializedName("defaultCurrencyCode")
   private String defaultCurrencyCode = null;
 
-  /**
-   * Gets or Sets defaultTransactionType
-   */
-  @JsonAdapter(DefaultTransactionTypeEnum.Adapter.class)
-  public enum DefaultTransactionTypeEnum {
-    AUTHORIZATION("AUTHORIZATION"),
-    
-    SALE("SALE");
-
-    private String value;
-
-    DefaultTransactionTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static DefaultTransactionTypeEnum fromValue(String text) {
-      for (DefaultTransactionTypeEnum b : DefaultTransactionTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<DefaultTransactionTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final DefaultTransactionTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public DefaultTransactionTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return DefaultTransactionTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("defaultTransactionType")
-  private DefaultTransactionTypeEnum defaultTransactionType = null;
+  private String defaultTransactionType = null;
 
-  /**
-   * Gets or Sets defaultPaymentType
-   */
-  @JsonAdapter(DefaultPaymentTypeEnum.Adapter.class)
-  public enum DefaultPaymentTypeEnum {
-    CREDIT_CARD("CREDIT_CARD"),
-    
-    ECHECK("ECHECK");
-
-    private String value;
-
-    DefaultPaymentTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static DefaultPaymentTypeEnum fromValue(String text) {
-      for (DefaultPaymentTypeEnum b : DefaultPaymentTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<DefaultPaymentTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final DefaultPaymentTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public DefaultPaymentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return DefaultPaymentTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("defaultPaymentType")
-  private DefaultPaymentTypeEnum defaultPaymentType = null;
+  private String defaultPaymentType = null;
 
   @SerializedName("defaultTransactionSource")
   private String defaultTransactionSource = null;
@@ -202,39 +110,39 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
     this.defaultCurrencyCode = defaultCurrencyCode;
   }
 
-  public VTConfigCardNotPresentGlobalPaymentInformationBasicInformation defaultTransactionType(DefaultTransactionTypeEnum defaultTransactionType) {
+  public VTConfigCardNotPresentGlobalPaymentInformationBasicInformation defaultTransactionType(String defaultTransactionType) {
     this.defaultTransactionType = defaultTransactionType;
     return this;
   }
 
    /**
-   * Get defaultTransactionType
+   * Possible values: - AUTHORIZATION - SALE
    * @return defaultTransactionType
   **/
-  @ApiModelProperty(value = "")
-  public DefaultTransactionTypeEnum getDefaultTransactionType() {
+  @ApiModelProperty(value = "Possible values: - AUTHORIZATION - SALE")
+  public String getDefaultTransactionType() {
     return defaultTransactionType;
   }
 
-  public void setDefaultTransactionType(DefaultTransactionTypeEnum defaultTransactionType) {
+  public void setDefaultTransactionType(String defaultTransactionType) {
     this.defaultTransactionType = defaultTransactionType;
   }
 
-  public VTConfigCardNotPresentGlobalPaymentInformationBasicInformation defaultPaymentType(DefaultPaymentTypeEnum defaultPaymentType) {
+  public VTConfigCardNotPresentGlobalPaymentInformationBasicInformation defaultPaymentType(String defaultPaymentType) {
     this.defaultPaymentType = defaultPaymentType;
     return this;
   }
 
    /**
-   * Get defaultPaymentType
+   * Possible values: - CREDIT_CARD - ECHECK
    * @return defaultPaymentType
   **/
-  @ApiModelProperty(value = "")
-  public DefaultPaymentTypeEnum getDefaultPaymentType() {
+  @ApiModelProperty(value = "Possible values: - CREDIT_CARD - ECHECK")
+  public String getDefaultPaymentType() {
     return defaultPaymentType;
   }
 
-  public void setDefaultPaymentType(DefaultPaymentTypeEnum defaultPaymentType) {
+  public void setDefaultPaymentType(String defaultPaymentType) {
     this.defaultPaymentType = defaultPaymentType;
   }
 

@@ -55,10 +55,10 @@ public class Upv1capturecontextsCaptureMandate {
   }
 
    /**
-   * This field defines the type of Billing Address information captured through the Manual card Entry UX. FULL, PARTIAL
+   * Configure Unified Checkout to capture billing address information.  Possible values: - FULL: Capture complete billing address information. - PARTIAL: Capture first name, last name, country and postal/zip code only. - NONE: Capture only first name and last name. 
    * @return billingType
   **/
-  @ApiModelProperty(example = "FULL", value = "This field defines the type of Billing Address information captured through the Manual card Entry UX. FULL, PARTIAL")
+  @ApiModelProperty(example = "FULL", value = "Configure Unified Checkout to capture billing address information.  Possible values: - FULL: Capture complete billing address information. - PARTIAL: Capture first name, last name, country and postal/zip code only. - NONE: Capture only first name and last name. ")
   public String getBillingType() {
     return billingType;
   }
@@ -73,10 +73,10 @@ public class Upv1capturecontextsCaptureMandate {
   }
 
    /**
-   * Capture email contact information in the manual card acceptance screens.
+   * Configure Unified Checkout to capture customer email address.  Possible values:  - True  - False 
    * @return requestEmail
   **/
-  @ApiModelProperty(value = "Capture email contact information in the manual card acceptance screens.")
+  @ApiModelProperty(value = "Configure Unified Checkout to capture customer email address.  Possible values:  - True  - False ")
   public Boolean isRequestEmail() {
     return requestEmail;
   }
@@ -91,10 +91,10 @@ public class Upv1capturecontextsCaptureMandate {
   }
 
    /**
-   * Capture email contact information in the manual card acceptance screens.
+   * Configure Unified Checkout to capture customer phone number.  Possible values: - True - False 
    * @return requestPhone
   **/
-  @ApiModelProperty(value = "Capture email contact information in the manual card acceptance screens.")
+  @ApiModelProperty(value = "Configure Unified Checkout to capture customer phone number.  Possible values: - True - False ")
   public Boolean isRequestPhone() {
     return requestPhone;
   }
@@ -109,10 +109,10 @@ public class Upv1capturecontextsCaptureMandate {
   }
 
    /**
-   * Capture email contact information in the manual card acceptance screens.
+   * Configure Unified Checkout to capture customer shipping details.  Possible values: - True - False 
    * @return requestShipping
   **/
-  @ApiModelProperty(value = "Capture email contact information in the manual card acceptance screens.")
+  @ApiModelProperty(value = "Configure Unified Checkout to capture customer shipping details.  Possible values: - True - False ")
   public Boolean isRequestShipping() {
     return requestShipping;
   }
@@ -135,10 +135,10 @@ public class Upv1capturecontextsCaptureMandate {
   }
 
    /**
-   * List of countries available to ship to. Use the two- character ISO Standard Country Codes.
+   * List of countries available to ship to.   Use the two-character ISO Standard Country Codes. 
    * @return shipToCountries
   **/
-  @ApiModelProperty(value = "List of countries available to ship to. Use the two- character ISO Standard Country Codes.")
+  @ApiModelProperty(value = "List of countries available to ship to.   Use the two-character ISO Standard Country Codes. ")
   public List<String> getShipToCountries() {
     return shipToCountries;
   }
@@ -153,10 +153,10 @@ public class Upv1capturecontextsCaptureMandate {
   }
 
    /**
-   * Show the list of accepted payment icons in the payment button
+   * Configure Unified Checkout to display the list of accepted card networks beneath the payment button  Possible values: - True - False 
    * @return showAcceptedNetworkIcons
   **/
-  @ApiModelProperty(value = "Show the list of accepted payment icons in the payment button")
+  @ApiModelProperty(value = "Configure Unified Checkout to display the list of accepted card networks beneath the payment button  Possible values: - True - False ")
   public Boolean isShowAcceptedNetworkIcons() {
     return showAcceptedNetworkIcons;
   }

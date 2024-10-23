@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsAmexAdditionalAmounts;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion;
+import Model.Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsOrder;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsSurcharge;
 import Model.Ptsv2paymentsOrderInformationAmountDetailsTaxDetails;
@@ -116,6 +117,9 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
 
   @SerializedName("currencyConversion")
   private Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion currencyConversion = null;
+
+  @SerializedName("oct-surcharge")
+  private Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge octSurcharge = null;
 
   @SerializedName("order")
   private Ptsv2paymentsOrderInformationAmountDetailsOrder order = null;
@@ -625,6 +629,24 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     this.currencyConversion = currencyConversion;
   }
 
+  public Ptsv2paymentsOrderInformationAmountDetails octSurcharge(Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge octSurcharge) {
+    this.octSurcharge = octSurcharge;
+    return this;
+  }
+
+   /**
+   * Get octSurcharge
+   * @return octSurcharge
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge getOctSurcharge() {
+    return octSurcharge;
+  }
+
+  public void setOctSurcharge(Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge octSurcharge) {
+    this.octSurcharge = octSurcharge;
+  }
+
   public Ptsv2paymentsOrderInformationAmountDetails order(Ptsv2paymentsOrderInformationAmountDetailsOrder order) {
     this.order = order;
     return this;
@@ -698,13 +720,14 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
         Objects.equals(this.originalCurrency, ptsv2paymentsOrderInformationAmountDetails.originalCurrency) &&
         Objects.equals(this.cashbackAmount, ptsv2paymentsOrderInformationAmountDetails.cashbackAmount) &&
         Objects.equals(this.currencyConversion, ptsv2paymentsOrderInformationAmountDetails.currencyConversion) &&
+        Objects.equals(this.octSurcharge, ptsv2paymentsOrderInformationAmountDetails.octSurcharge) &&
         Objects.equals(this.order, ptsv2paymentsOrderInformationAmountDetails.order) &&
         Objects.equals(this.anticipatedAmount, ptsv2paymentsOrderInformationAmountDetails.anticipatedAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(giftWrapAmount, totalAmount, subTotalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount, currencyConversion, order, anticipatedAmount);
+    return Objects.hash(giftWrapAmount, totalAmount, subTotalAmount, currency, discountAmount, dutyAmount, gratuityAmount, taxAmount, nationalTaxIncluded, taxAppliedAfterDiscount, taxAppliedLevel, taxTypeCode, freightAmount, foreignAmount, foreignCurrency, exchangeRate, exchangeRateTimeStamp, surcharge, settlementAmount, settlementCurrency, amexAdditionalAmounts, taxDetails, serviceFeeAmount, originalAmount, originalCurrency, cashbackAmount, currencyConversion, octSurcharge, order, anticipatedAmount);
   }
 
 
@@ -740,6 +763,7 @@ public class Ptsv2paymentsOrderInformationAmountDetails {
     sb.append("    originalCurrency: ").append(toIndentedString(originalCurrency)).append("\n");
     sb.append("    cashbackAmount: ").append(toIndentedString(cashbackAmount)).append("\n");
     sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
+    sb.append("    octSurcharge: ").append(toIndentedString(octSurcharge)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    anticipatedAmount: ").append(toIndentedString(anticipatedAmount)).append("\n");
     sb.append("}");

@@ -54,6 +54,9 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
   @SerializedName("settlementDate")
   private String settlementDate = null;
 
+  @SerializedName("updateTimeUtc")
+  private String updateTimeUtc = null;
+
   public PtsV2PaymentsRefundPost201ResponseProcessorInformation approvalCode(String approvalCode) {
     this.approvalCode = approvalCode;
     return this;
@@ -132,10 +135,10 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
   }
 
    /**
-   * For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is &#x60;08&#x60;, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: &#x60;aa,bb&#x60; with the two values separated by a comma and where: - &#x60;aa&#x60; is the two-digit error message from Atos. - &#x60;bb&#x60; is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example &#x60;2:R06&#x60;  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the &#x60;processorInformation.responseCategoryCode&#x60; field. String (3) 
+   * For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is &#x60;08&#x60;, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: &#x60;aa,bb&#x60; with the two values separated by a comma and where: - &#x60;aa&#x60; is the two-digit error message from Atos. - &#x60;bb&#x60; is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example &#x60;2:R06&#x60;  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the &#x60;processorInformation.responseCategoryCode&#x60; field. String (3)  #### paypalgateway Processor generated ID for the itemized detail. 
    * @return responseCode
   **/
-  @ApiModelProperty(value = "For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3) ")
+  @ApiModelProperty(value = "For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3)  #### paypalgateway Processor generated ID for the itemized detail. ")
   public String getResponseCode() {
     return responseCode;
   }
@@ -198,6 +201,24 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     this.settlementDate = settlementDate;
   }
 
+  public PtsV2PaymentsRefundPost201ResponseProcessorInformation updateTimeUtc(String updateTimeUtc) {
+    this.updateTimeUtc = updateTimeUtc;
+    return this;
+  }
+
+   /**
+   * The date and time when the transaction was last updated, in Internet date and time format. 
+   * @return updateTimeUtc
+  **/
+  @ApiModelProperty(value = "The date and time when the transaction was last updated, in Internet date and time format. ")
+  public String getUpdateTimeUtc() {
+    return updateTimeUtc;
+  }
+
+  public void setUpdateTimeUtc(String updateTimeUtc) {
+    this.updateTimeUtc = updateTimeUtc;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -215,12 +236,13 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
         Objects.equals(this.responseCode, ptsV2PaymentsRefundPost201ResponseProcessorInformation.responseCode) &&
         Objects.equals(this.achVerification, ptsV2PaymentsRefundPost201ResponseProcessorInformation.achVerification) &&
         Objects.equals(this.networkTransactionId, ptsV2PaymentsRefundPost201ResponseProcessorInformation.networkTransactionId) &&
-        Objects.equals(this.settlementDate, ptsV2PaymentsRefundPost201ResponseProcessorInformation.settlementDate);
+        Objects.equals(this.settlementDate, ptsV2PaymentsRefundPost201ResponseProcessorInformation.settlementDate) &&
+        Objects.equals(this.updateTimeUtc, ptsV2PaymentsRefundPost201ResponseProcessorInformation.updateTimeUtc);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalCode, transactionId, forwardedAcquirerCode, merchantNumber, responseCode, achVerification, networkTransactionId, settlementDate);
+    return Objects.hash(approvalCode, transactionId, forwardedAcquirerCode, merchantNumber, responseCode, achVerification, networkTransactionId, settlementDate, updateTimeUtc);
   }
 
 
@@ -237,6 +259,7 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
     sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
     sb.append("    settlementDate: ").append(toIndentedString(settlementDate)).append("\n");
+    sb.append("    updateTimeUtc: ").append(toIndentedString(updateTimeUtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }

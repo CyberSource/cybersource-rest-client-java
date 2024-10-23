@@ -31,9 +31,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
 
 /**
  * InlineResponse2012
@@ -46,62 +44,8 @@ public class InlineResponse2012 {
   @SerializedName("submitTimeUtc")
   private DateTime submitTimeUtc = null;
 
-  /**
-   * The status of Registration request Possible Values:   - &#39;INITIALIZED&#39;   - &#39;RECEIVED&#39;   - &#39;PROCESSING&#39;   - &#39;SUCCESS&#39;   - &#39;FAILURE&#39;   - &#39;PARTIAL&#39; 
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    INITIALIZED("INITIALIZED"),
-    
-    RECEIVED("RECEIVED"),
-    
-    PROCESSING("PROCESSING"),
-    
-    SUCCESS("SUCCESS"),
-    
-    FAILURE("FAILURE"),
-    
-    PARTIAL("PARTIAL");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("status")
-  private StatusEnum status = null;
+  private String status = null;
 
   @SerializedName("registrationInformation")
   private InlineResponse2012RegistrationInformation registrationInformation = null;
@@ -139,11 +83,6 @@ public class InlineResponse2012 {
     this.id = id;
   }
 
-  public InlineResponse2012 submitTimeUtc(DateTime submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
    /**
    * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
    * @return submitTimeUtc
@@ -153,16 +92,12 @@ public class InlineResponse2012 {
     return submitTimeUtc;
   }
 
-  public void setSubmitTimeUtc(DateTime submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-  }
-
    /**
    * The status of Registration request Possible Values:   - &#39;INITIALIZED&#39;   - &#39;RECEIVED&#39;   - &#39;PROCESSING&#39;   - &#39;SUCCESS&#39;   - &#39;FAILURE&#39;   - &#39;PARTIAL&#39; 
    * @return status
   **/
   @ApiModelProperty(value = "The status of Registration request Possible Values:   - 'INITIALIZED'   - 'RECEIVED'   - 'PROCESSING'   - 'SUCCESS'   - 'FAILURE'   - 'PARTIAL' ")
-  public StatusEnum getStatus() {
+  public String getStatus() {
     return status;
   }
 

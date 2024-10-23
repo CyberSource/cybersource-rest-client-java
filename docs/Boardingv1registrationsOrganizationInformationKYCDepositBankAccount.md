@@ -5,19 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountHolderName** | **String** |  | 
-**accountType** | [**AccountTypeEnum**](#AccountTypeEnum) |  | 
+**accountType** | **String** | Possible values: - checking - savings - corporatechecking - corporatesavings | 
 **accountRoutingNumber** | **String** |  | 
 **accountNumber** | **String** |  | 
-
-
-<a name="AccountTypeEnum"></a>
-## Enum: AccountTypeEnum
-Name | Value
----- | -----
-CHECKING | &quot;checking&quot;
-SAVINGS | &quot;savings&quot;
-CORPORATECHECKING | &quot;corporatechecking&quot;
-CORPORATESAVINGS | &quot;corporatesavings&quot;
 
 
 

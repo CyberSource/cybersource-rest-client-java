@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2PaymentsCapturesPost201ResponseEmbeddedActions;
 import Model.PtsV2PaymentsCapturesPost201ResponseLinks;
 import Model.PtsV2PaymentsCapturesPost201ResponseOrderInformation;
 import Model.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation;
@@ -64,6 +65,9 @@ public class PtsV2PaymentsCapturesPost201Response {
 
   @SerializedName("processingInformation")
   private PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation = null;
+
+  @SerializedName("embeddedActions")
+  private PtsV2PaymentsCapturesPost201ResponseEmbeddedActions embeddedActions = null;
 
   public PtsV2PaymentsCapturesPost201Response links(PtsV2PaymentsCapturesPost201ResponseLinks links) {
     this.links = links;
@@ -245,6 +249,24 @@ public class PtsV2PaymentsCapturesPost201Response {
     this.processingInformation = processingInformation;
   }
 
+  public PtsV2PaymentsCapturesPost201Response embeddedActions(PtsV2PaymentsCapturesPost201ResponseEmbeddedActions embeddedActions) {
+    this.embeddedActions = embeddedActions;
+    return this;
+  }
+
+   /**
+   * Get embeddedActions
+   * @return embeddedActions
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsCapturesPost201ResponseEmbeddedActions getEmbeddedActions() {
+    return embeddedActions;
+  }
+
+  public void setEmbeddedActions(PtsV2PaymentsCapturesPost201ResponseEmbeddedActions embeddedActions) {
+    this.embeddedActions = embeddedActions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -264,12 +286,13 @@ public class PtsV2PaymentsCapturesPost201Response {
         Objects.equals(this.processorInformation, ptsV2PaymentsCapturesPost201Response.processorInformation) &&
         Objects.equals(this.orderInformation, ptsV2PaymentsCapturesPost201Response.orderInformation) &&
         Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsCapturesPost201Response.pointOfSaleInformation) &&
-        Objects.equals(this.processingInformation, ptsV2PaymentsCapturesPost201Response.processingInformation);
+        Objects.equals(this.processingInformation, ptsV2PaymentsCapturesPost201Response.processingInformation) &&
+        Objects.equals(this.embeddedActions, ptsV2PaymentsCapturesPost201Response.embeddedActions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, processorInformation, orderInformation, pointOfSaleInformation, processingInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, processorInformation, orderInformation, pointOfSaleInformation, processingInformation, embeddedActions);
   }
 
 
@@ -288,6 +311,7 @@ public class PtsV2PaymentsCapturesPost201Response {
     sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
     sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    sb.append("    embeddedActions: ").append(toIndentedString(embeddedActions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -41,6 +41,9 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
   @SerializedName("isFinal")
   private String isFinal = null;
 
+  @SerializedName("notes")
+  private String notes = null;
+
   public Ptsv2paymentsProcessingInformationCaptureOptions captureSequenceNumber(Integer captureSequenceNumber) {
     this.captureSequenceNumber = captureSequenceNumber;
     return this;
@@ -117,6 +120,24 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
     this.isFinal = isFinal;
   }
 
+  public Ptsv2paymentsProcessingInformationCaptureOptions notes(String notes) {
+    this.notes = notes;
+    return this;
+  }
+
+   /**
+   * An informational note about this settlement. Appears in both the payer&#39;s transaction history and the emails that the payer receives. 
+   * @return notes
+  **/
+  @ApiModelProperty(value = "An informational note about this settlement. Appears in both the payer's transaction history and the emails that the payer receives. ")
+  public String getNotes() {
+    return notes;
+  }
+
+  public void setNotes(String notes) {
+    this.notes = notes;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,12 +151,13 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
     return Objects.equals(this.captureSequenceNumber, ptsv2paymentsProcessingInformationCaptureOptions.captureSequenceNumber) &&
         Objects.equals(this.totalCaptureCount, ptsv2paymentsProcessingInformationCaptureOptions.totalCaptureCount) &&
         Objects.equals(this.dateToCapture, ptsv2paymentsProcessingInformationCaptureOptions.dateToCapture) &&
-        Objects.equals(this.isFinal, ptsv2paymentsProcessingInformationCaptureOptions.isFinal);
+        Objects.equals(this.isFinal, ptsv2paymentsProcessingInformationCaptureOptions.isFinal) &&
+        Objects.equals(this.notes, ptsv2paymentsProcessingInformationCaptureOptions.notes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(captureSequenceNumber, totalCaptureCount, dateToCapture, isFinal);
+    return Objects.hash(captureSequenceNumber, totalCaptureCount, dateToCapture, isFinal, notes);
   }
 
 
@@ -148,6 +170,7 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
     sb.append("    totalCaptureCount: ").append(toIndentedString(totalCaptureCount)).append("\n");
     sb.append("    dateToCapture: ").append(toIndentedString(dateToCapture)).append("\n");
     sb.append("    isFinal: ").append(toIndentedString(isFinal)).append("\n");
+    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

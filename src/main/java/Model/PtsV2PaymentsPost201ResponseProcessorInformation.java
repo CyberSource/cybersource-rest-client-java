@@ -155,6 +155,21 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("deviceUrl")
   private String deviceUrl = null;
 
+  @SerializedName("disbursementMode")
+  private String disbursementMode = null;
+
+  @SerializedName("updateTimeUtc")
+  private String updateTimeUtc = null;
+
+  @SerializedName("expirationTimeUtc")
+  private String expirationTimeUtc = null;
+
+  @SerializedName("orderId")
+  private String orderId = null;
+
+  @SerializedName("orderStatus")
+  private String orderStatus = null;
+
   public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
     this.authIndicator = authIndicator;
     return this;
@@ -251,10 +266,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   }
 
    /**
-   * For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is &#x60;08&#x60;, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: &#x60;aa,bb&#x60; with the two values separated by a comma and where: - &#x60;aa&#x60; is the two-digit error message from Atos. - &#x60;bb&#x60; is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example &#x60;2:R06&#x60;  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the &#x60;processorInformation.responseCategoryCode&#x60; field. String (3) 
+   * For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is &#x60;08&#x60;, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: &#x60;aa,bb&#x60; with the two values separated by a comma and where: - &#x60;aa&#x60; is the two-digit error message from Atos. - &#x60;bb&#x60; is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example &#x60;2:R06&#x60;  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the &#x60;processorInformation.responseCategoryCode&#x60; field. String (3)  #### paypalgateway Processor generated ID for the itemized detail. 
    * @return responseCode
   **/
-  @ApiModelProperty(value = "For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3) ")
+  @ApiModelProperty(value = "For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3)  #### paypalgateway Processor generated ID for the itemized detail. ")
   public String getResponseCode() {
     return responseCode;
   }
@@ -857,6 +872,96 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.deviceUrl = deviceUrl;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation disbursementMode(String disbursementMode) {
+    this.disbursementMode = disbursementMode;
+    return this;
+  }
+
+   /**
+   * The funds are released to the merchant immediately. INSTANT The funds are released to the merchant immediately. DELAYED The funds are held for a finite number of days. The actual duration depends on the region and type of integration. You can release the funds through a referenced payout. Otherwise, the funds disbursed automatically after the specified duration. 
+   * @return disbursementMode
+  **/
+  @ApiModelProperty(value = "The funds are released to the merchant immediately. INSTANT The funds are released to the merchant immediately. DELAYED The funds are held for a finite number of days. The actual duration depends on the region and type of integration. You can release the funds through a referenced payout. Otherwise, the funds disbursed automatically after the specified duration. ")
+  public String getDisbursementMode() {
+    return disbursementMode;
+  }
+
+  public void setDisbursementMode(String disbursementMode) {
+    this.disbursementMode = disbursementMode;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation updateTimeUtc(String updateTimeUtc) {
+    this.updateTimeUtc = updateTimeUtc;
+    return this;
+  }
+
+   /**
+   * The date and time when the transaction was last updated, in Internet date and time format. 
+   * @return updateTimeUtc
+  **/
+  @ApiModelProperty(value = "The date and time when the transaction was last updated, in Internet date and time format. ")
+  public String getUpdateTimeUtc() {
+    return updateTimeUtc;
+  }
+
+  public void setUpdateTimeUtc(String updateTimeUtc) {
+    this.updateTimeUtc = updateTimeUtc;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation expirationTimeUtc(String expirationTimeUtc) {
+    this.expirationTimeUtc = expirationTimeUtc;
+    return this;
+  }
+
+   /**
+   * The date and time when the authorized payment expires, in Internet date and time format. 
+   * @return expirationTimeUtc
+  **/
+  @ApiModelProperty(value = "The date and time when the authorized payment expires, in Internet date and time format. ")
+  public String getExpirationTimeUtc() {
+    return expirationTimeUtc;
+  }
+
+  public void setExpirationTimeUtc(String expirationTimeUtc) {
+    this.expirationTimeUtc = expirationTimeUtc;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation orderId(String orderId) {
+    this.orderId = orderId;
+    return this;
+  }
+
+   /**
+   * The id of the order 
+   * @return orderId
+  **/
+  @ApiModelProperty(value = "The id of the order ")
+  public String getOrderId() {
+    return orderId;
+  }
+
+  public void setOrderId(String orderId) {
+    this.orderId = orderId;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformation orderStatus(String orderStatus) {
+    this.orderStatus = orderStatus;
+    return this;
+  }
+
+   /**
+   * The order status.  Possible values: - &#x60;CREATED&#x60; - &#x60;VOIDED&#x60; - &#x60;COMPLETED&#x60; - &#x60;PAYER_ACTION_REQUIRED&#x60; 
+   * @return orderStatus
+  **/
+  @ApiModelProperty(value = "The order status.  Possible values: - `CREATED` - `VOIDED` - `COMPLETED` - `PAYER_ACTION_REQUIRED` ")
+  public String getOrderStatus() {
+    return orderStatus;
+  }
+
+  public void setOrderStatus(String orderStatus) {
+    this.orderStatus = orderStatus;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -905,12 +1010,17 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.transactionExpiryDate, ptsV2PaymentsPost201ResponseProcessorInformation.transactionExpiryDate) &&
         Objects.equals(this.customUrl, ptsV2PaymentsPost201ResponseProcessorInformation.customUrl) &&
         Objects.equals(this.schemeAssignedId, ptsV2PaymentsPost201ResponseProcessorInformation.schemeAssignedId) &&
-        Objects.equals(this.deviceUrl, ptsV2PaymentsPost201ResponseProcessorInformation.deviceUrl);
+        Objects.equals(this.deviceUrl, ptsV2PaymentsPost201ResponseProcessorInformation.deviceUrl) &&
+        Objects.equals(this.disbursementMode, ptsV2PaymentsPost201ResponseProcessorInformation.disbursementMode) &&
+        Objects.equals(this.updateTimeUtc, ptsV2PaymentsPost201ResponseProcessorInformation.updateTimeUtc) &&
+        Objects.equals(this.expirationTimeUtc, ptsV2PaymentsPost201ResponseProcessorInformation.expirationTimeUtc) &&
+        Objects.equals(this.orderId, ptsV2PaymentsPost201ResponseProcessorInformation.orderId) &&
+        Objects.equals(this.orderStatus, ptsV2PaymentsPost201ResponseProcessorInformation.orderStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl, disbursementMode, updateTimeUtc, expirationTimeUtc, orderId, orderStatus);
   }
 
 
@@ -958,6 +1068,11 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     sb.append("    customUrl: ").append(toIndentedString(customUrl)).append("\n");
     sb.append("    schemeAssignedId: ").append(toIndentedString(schemeAssignedId)).append("\n");
     sb.append("    deviceUrl: ").append(toIndentedString(deviceUrl)).append("\n");
+    sb.append("    disbursementMode: ").append(toIndentedString(disbursementMode)).append("\n");
+    sb.append("    updateTimeUtc: ").append(toIndentedString(updateTimeUtc)).append("\n");
+    sb.append("    expirationTimeUtc: ").append(toIndentedString(expirationTimeUtc)).append("\n");
+    sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+    sb.append("    orderStatus: ").append(toIndentedString(orderStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }

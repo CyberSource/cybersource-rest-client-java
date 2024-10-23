@@ -35,16 +35,25 @@ public class Ptsv1pushfundstransferProcessingInformationPayoutsOptions {
   @SerializedName("destinationCurrency")
   private String destinationCurrency = null;
 
+  @SerializedName("sourceAmount")
+  private String sourceAmount = null;
+
+  @SerializedName("retrievalReferenceNumber")
+  private String retrievalReferenceNumber = null;
+
+  @SerializedName("accountFundingReferenceId")
+  private String accountFundingReferenceId = null;
+
   public Ptsv1pushfundstransferProcessingInformationPayoutsOptions sourceCurrency(String sourceCurrency) {
     this.sourceCurrency = sourceCurrency;
     return this;
   }
 
    /**
-   * Use a 3-character alpha currency code for source currency of the funds transfer.  Yellow Pepper Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
+   * Use a 3-character alpha currency code for source currency of the funds transfer.  Required if sending processingInformation.payoutsOptions.sourceAmount.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
    * @return sourceCurrency
   **/
-  @ApiModelProperty(value = "Use a 3-character alpha currency code for source currency of the funds transfer.  Yellow Pepper Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf ")
+  @ApiModelProperty(value = "Use a 3-character alpha currency code for source currency of the funds transfer.  Required if sending processingInformation.payoutsOptions.sourceAmount.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf ")
   public String getSourceCurrency() {
     return sourceCurrency;
   }
@@ -59,16 +68,70 @@ public class Ptsv1pushfundstransferProcessingInformationPayoutsOptions {
   }
 
    /**
-   * Use a 3-character alpha currency code for destination currency of the funds transfer.  Yellow Pepper Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
+   * Use a 3-character alpha currency code for destination currency of the funds transfer.  Yellow Pepper  Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
    * @return destinationCurrency
   **/
-  @ApiModelProperty(value = "Use a 3-character alpha currency code for destination currency of the funds transfer.  Yellow Pepper Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf ")
+  @ApiModelProperty(value = "Use a 3-character alpha currency code for destination currency of the funds transfer.  Yellow Pepper  Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf ")
   public String getDestinationCurrency() {
     return destinationCurrency;
   }
 
   public void setDestinationCurrency(String destinationCurrency) {
     this.destinationCurrency = destinationCurrency;
+  }
+
+  public Ptsv1pushfundstransferProcessingInformationPayoutsOptions sourceAmount(String sourceAmount) {
+    this.sourceAmount = sourceAmount;
+    return this;
+  }
+
+   /**
+   * Source Amount is required in certain markets to identify the transaction amount entered in the sender&#39;s currency code prior to FX conversion by the originating entity.  Format:  Minimum Value: 0  Maximum value: 999999999.99  Allowed fractional digits: 2 
+   * @return sourceAmount
+  **/
+  @ApiModelProperty(value = "Source Amount is required in certain markets to identify the transaction amount entered in the sender's currency code prior to FX conversion by the originating entity.  Format:  Minimum Value: 0  Maximum value: 999999999.99  Allowed fractional digits: 2 ")
+  public String getSourceAmount() {
+    return sourceAmount;
+  }
+
+  public void setSourceAmount(String sourceAmount) {
+    this.sourceAmount = sourceAmount;
+  }
+
+  public Ptsv1pushfundstransferProcessingInformationPayoutsOptions retrievalReferenceNumber(String retrievalReferenceNumber) {
+    this.retrievalReferenceNumber = retrievalReferenceNumber;
+    return this;
+  }
+
+   /**
+   * Unique reference number returned by the processor that identifies the transaction at the network. 
+   * @return retrievalReferenceNumber
+  **/
+  @ApiModelProperty(value = "Unique reference number returned by the processor that identifies the transaction at the network. ")
+  public String getRetrievalReferenceNumber() {
+    return retrievalReferenceNumber;
+  }
+
+  public void setRetrievalReferenceNumber(String retrievalReferenceNumber) {
+    this.retrievalReferenceNumber = retrievalReferenceNumber;
+  }
+
+  public Ptsv1pushfundstransferProcessingInformationPayoutsOptions accountFundingReferenceId(String accountFundingReferenceId) {
+    this.accountFundingReferenceId = accountFundingReferenceId;
+    return this;
+  }
+
+   /**
+   * Visa-generated transaction identifier (TID) that is unique for each original authorization and financial request. 
+   * @return accountFundingReferenceId
+  **/
+  @ApiModelProperty(value = "Visa-generated transaction identifier (TID) that is unique for each original authorization and financial request. ")
+  public String getAccountFundingReferenceId() {
+    return accountFundingReferenceId;
+  }
+
+  public void setAccountFundingReferenceId(String accountFundingReferenceId) {
+    this.accountFundingReferenceId = accountFundingReferenceId;
   }
 
 
@@ -82,12 +145,15 @@ public class Ptsv1pushfundstransferProcessingInformationPayoutsOptions {
     }
     Ptsv1pushfundstransferProcessingInformationPayoutsOptions ptsv1pushfundstransferProcessingInformationPayoutsOptions = (Ptsv1pushfundstransferProcessingInformationPayoutsOptions) o;
     return Objects.equals(this.sourceCurrency, ptsv1pushfundstransferProcessingInformationPayoutsOptions.sourceCurrency) &&
-        Objects.equals(this.destinationCurrency, ptsv1pushfundstransferProcessingInformationPayoutsOptions.destinationCurrency);
+        Objects.equals(this.destinationCurrency, ptsv1pushfundstransferProcessingInformationPayoutsOptions.destinationCurrency) &&
+        Objects.equals(this.sourceAmount, ptsv1pushfundstransferProcessingInformationPayoutsOptions.sourceAmount) &&
+        Objects.equals(this.retrievalReferenceNumber, ptsv1pushfundstransferProcessingInformationPayoutsOptions.retrievalReferenceNumber) &&
+        Objects.equals(this.accountFundingReferenceId, ptsv1pushfundstransferProcessingInformationPayoutsOptions.accountFundingReferenceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceCurrency, destinationCurrency);
+    return Objects.hash(sourceCurrency, destinationCurrency, sourceAmount, retrievalReferenceNumber, accountFundingReferenceId);
   }
 
 
@@ -98,6 +164,9 @@ public class Ptsv1pushfundstransferProcessingInformationPayoutsOptions {
     
     sb.append("    sourceCurrency: ").append(toIndentedString(sourceCurrency)).append("\n");
     sb.append("    destinationCurrency: ").append(toIndentedString(destinationCurrency)).append("\n");
+    sb.append("    sourceAmount: ").append(toIndentedString(sourceAmount)).append("\n");
+    sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
+    sb.append("    accountFundingReferenceId: ").append(toIndentedString(accountFundingReferenceId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

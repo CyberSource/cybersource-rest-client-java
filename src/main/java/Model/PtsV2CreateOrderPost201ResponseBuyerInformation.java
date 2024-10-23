@@ -25,14 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TssV2TransactionsPost201ResponseEmbeddedBuyerInformation
+ * PtsV2CreateOrderPost201ResponseBuyerInformation
  */
 
-public class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation {
+public class PtsV2CreateOrderPost201ResponseBuyerInformation {
   @SerializedName("merchantCustomerId")
   private String merchantCustomerId = null;
 
-  public TssV2TransactionsPost201ResponseEmbeddedBuyerInformation merchantCustomerId(String merchantCustomerId) {
+  public PtsV2CreateOrderPost201ResponseBuyerInformation merchantCustomerId(String merchantCustomerId) {
     this.merchantCustomerId = merchantCustomerId;
     return this;
   }
@@ -59,8 +59,8 @@ public class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TssV2TransactionsPost201ResponseEmbeddedBuyerInformation tssV2TransactionsPost201ResponseEmbeddedBuyerInformation = (TssV2TransactionsPost201ResponseEmbeddedBuyerInformation) o;
-    return Objects.equals(this.merchantCustomerId, tssV2TransactionsPost201ResponseEmbeddedBuyerInformation.merchantCustomerId);
+    PtsV2CreateOrderPost201ResponseBuyerInformation ptsV2CreateOrderPost201ResponseBuyerInformation = (PtsV2CreateOrderPost201ResponseBuyerInformation) o;
+    return Objects.equals(this.merchantCustomerId, ptsV2CreateOrderPost201ResponseBuyerInformation.merchantCustomerId);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation {\n");
+    sb.append("class PtsV2CreateOrderPost201ResponseBuyerInformation {\n");
     
     sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
     sb.append("}");

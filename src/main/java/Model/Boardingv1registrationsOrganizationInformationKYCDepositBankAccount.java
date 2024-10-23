@@ -32,58 +32,8 @@ public class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount
   @SerializedName("accountHolderName")
   private String accountHolderName = null;
 
-  /**
-   * Gets or Sets accountType
-   */
-  @JsonAdapter(AccountTypeEnum.Adapter.class)
-  public enum AccountTypeEnum {
-    CHECKING("checking"),
-    
-    SAVINGS("savings"),
-    
-    CORPORATECHECKING("corporatechecking"),
-    
-    CORPORATESAVINGS("corporatesavings");
-
-    private String value;
-
-    AccountTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static AccountTypeEnum fromValue(String text) {
-      for (AccountTypeEnum b : AccountTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<AccountTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final AccountTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public AccountTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return AccountTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("accountType")
-  private AccountTypeEnum accountType = null;
+  private String accountType = null;
 
   @SerializedName("accountRoutingNumber")
   private String accountRoutingNumber = null;
@@ -109,21 +59,21 @@ public class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount
     this.accountHolderName = accountHolderName;
   }
 
-  public Boardingv1registrationsOrganizationInformationKYCDepositBankAccount accountType(AccountTypeEnum accountType) {
+  public Boardingv1registrationsOrganizationInformationKYCDepositBankAccount accountType(String accountType) {
     this.accountType = accountType;
     return this;
   }
 
    /**
-   * Get accountType
+   * Possible values: - checking - savings - corporatechecking - corporatesavings
    * @return accountType
   **/
-  @ApiModelProperty(example = "checking", required = true, value = "")
-  public AccountTypeEnum getAccountType() {
+  @ApiModelProperty(example = "checking", required = true, value = "Possible values: - checking - savings - corporatechecking - corporatesavings")
+  public String getAccountType() {
     return accountType;
   }
 
-  public void setAccountType(AccountTypeEnum accountType) {
+  public void setAccountType(String accountType) {
     this.accountType = accountType;
   }
 

@@ -38,6 +38,9 @@ public class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {
   @SerializedName("issuingCountry")
   private String issuingCountry = null;
 
+  @SerializedName("personalIdType")
+  private String personalIdType = null;
+
   public Ptsv1pushfundstransferRecipientInformationPersonalIdentification id(String id) {
     this.id = id;
     return this;
@@ -62,10 +65,10 @@ public class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {
   }
 
    /**
-   * This tag will contain the type of sender identification. 
+   * This tag will contain the type of sender identification. The valid values are: - &#x60;BTHD&#x60;: (Date of birth) - &#x60;CUID&#x60;: (Customer identification (unspecified)) - &#x60;NTID&#x60;: (National identification) - &#x60;PASN&#x60;: (Passport number) - &#x60;DRLN&#x60;: (Driver license) - &#x60;TXIN&#x60;: (Tax identification) - &#x60;CPNY&#x60;: (Company registration number) - &#x60;PRXY&#x60;: (Proxy identification) - &#x60;SSNB&#x60;: (Social security number) - &#x60;ARNB&#x60;: (Alien registration number) - &#x60;LAWE&#x60;: (Law enforcement identification) - &#x60;MILI&#x60;: (Military identification) - &#x60;TRVL&#x60;: (Travel identification (non-passport)) - &#x60;EMAL&#x60;: (Email) - &#x60;PHON&#x60;: (Phone number) 
    * @return type
   **/
-  @ApiModelProperty(value = "This tag will contain the type of sender identification. ")
+  @ApiModelProperty(value = "This tag will contain the type of sender identification. The valid values are: - `BTHD`: (Date of birth) - `CUID`: (Customer identification (unspecified)) - `NTID`: (National identification) - `PASN`: (Passport number) - `DRLN`: (Driver license) - `TXIN`: (Tax identification) - `CPNY`: (Company registration number) - `PRXY`: (Proxy identification) - `SSNB`: (Social security number) - `ARNB`: (Alien registration number) - `LAWE`: (Law enforcement identification) - `MILI`: (Military identification) - `TRVL`: (Travel identification (non-passport)) - `EMAL`: (Email) - `PHON`: (Phone number) ")
   public String getType() {
     return type;
   }
@@ -92,6 +95,24 @@ public class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {
     this.issuingCountry = issuingCountry;
   }
 
+  public Ptsv1pushfundstransferRecipientInformationPersonalIdentification personalIdType(String personalIdType) {
+    this.personalIdType = personalIdType;
+    return this;
+  }
+
+   /**
+   * This tag will denote whether the tax ID is a business or individual tax ID when personal ID Type contains the value of TXIN (Tax identification).  The valid values are:  - &#x60;B&#x60; (Business) - &#x60;I&#x60; (Individual) 
+   * @return personalIdType
+  **/
+  @ApiModelProperty(value = "This tag will denote whether the tax ID is a business or individual tax ID when personal ID Type contains the value of TXIN (Tax identification).  The valid values are:  - `B` (Business) - `I` (Individual) ")
+  public String getPersonalIdType() {
+    return personalIdType;
+  }
+
+  public void setPersonalIdType(String personalIdType) {
+    this.personalIdType = personalIdType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,12 +125,13 @@ public class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {
     Ptsv1pushfundstransferRecipientInformationPersonalIdentification ptsv1pushfundstransferRecipientInformationPersonalIdentification = (Ptsv1pushfundstransferRecipientInformationPersonalIdentification) o;
     return Objects.equals(this.id, ptsv1pushfundstransferRecipientInformationPersonalIdentification.id) &&
         Objects.equals(this.type, ptsv1pushfundstransferRecipientInformationPersonalIdentification.type) &&
-        Objects.equals(this.issuingCountry, ptsv1pushfundstransferRecipientInformationPersonalIdentification.issuingCountry);
+        Objects.equals(this.issuingCountry, ptsv1pushfundstransferRecipientInformationPersonalIdentification.issuingCountry) &&
+        Objects.equals(this.personalIdType, ptsv1pushfundstransferRecipientInformationPersonalIdentification.personalIdType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, issuingCountry);
+    return Objects.hash(id, type, issuingCountry, personalIdType);
   }
 
 
@@ -121,6 +143,7 @@ public class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    issuingCountry: ").append(toIndentedString(issuingCountry)).append("\n");
+    sb.append("    personalIdType: ").append(toIndentedString(personalIdType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

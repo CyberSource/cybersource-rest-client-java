@@ -47,290 +47,14 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
   @SerializedName("address")
   private Boardingv1registrationsOrganizationInformationBusinessInformationAddress address = null;
 
-  /**
-   * Merchant perferred time zone Possible Values: - &#39;Pacific/Pago_Pago&#39; - &#39;Pacific/Honolulu&#39; - &#39;America/Anchorage&#39; - &#39;America/Vancouver&#39; - &#39;America/Los_Angeles&#39; - &#39;America/Phoenix&#39; - &#39;America/Edmonton&#39; - &#39;America/Denver&#39; - &#39;America/Winnipeg&#39; - &#39;America/Mexico_City&#39; - &#39;America/Chicago&#39; - &#39;America/Bogota&#39; - &#39;America/Indianapolis&#39; - &#39;America/New_York&#39; - &#39;America/La_Paz&#39; - &#39;America/Halifax&#39; - &#39;America/St_Johns&#39; - &#39;America/Buenos_Aires&#39; - &#39;America/Godthab&#39; - &#39;America/Sao_Paulo&#39; - &#39;America/Noronha&#39; - &#39;Atlantic/Cape_Verde&#39; - &#39;GMT&#39; - &#39;Europe/Dublin&#39; - &#39;Europe/Lisbon&#39; - &#39;Europe/London&#39; - &#39;Africa/Tunis&#39; - &#39;Europe/Vienna&#39; - &#39;Europe/Brussels&#39; - &#39;Europe/Zurich&#39; - &#39;Europe/Prague&#39; - &#39;Europe/Berlin&#39; - &#39;Europe/Copenhagen&#39; - &#39;Europe/Madrid&#39; - &#39;Europe/Budapest&#39; - &#39;Europe/Rome&#39; - &#39;Africa/Tripoli&#39; - &#39;Europe/Monaco&#39; - &#39;Europe/Malta&#39; - &#39;Europe/Amsterdam&#39; - &#39;Europe/Oslo&#39; - &#39;Europe/Warsaw&#39; - &#39;Europe/Stockholm&#39; - &#39;Europe/Belgrade&#39; - &#39;Europe/Paris&#39; - &#39;Africa/Johannesburg&#39; - &#39;Europe/Minsk&#39; - &#39;Africa/Cairo&#39; - &#39;Europe/Helsinki&#39; - &#39;Europe/Athens&#39; - &#39;Asia/Jerusalem&#39; - &#39;Europe/Riga&#39; - &#39;Europe/Bucharest&#39; - &#39;Europe/Istanbul&#39; - &#39;Asia/Riyadh&#39; - &#39;Europe/Moscow&#39; - &#39;Asia/Dubai&#39; - &#39;Asia/Baku&#39; - &#39;Asia/Tbilisi&#39; - &#39;Asia/Calcutta&#39; - &#39;Asia/Katmandu&#39; - &#39;Asia/Dacca&#39; - &#39;Asia/Rangoon&#39; - &#39;Asia/Jakarta&#39; - &#39;Asia/Saigon&#39; - &#39;Asia/Bangkok&#39; - &#39;Australia/Perth&#39; - &#39;Asia/Hong_Kong&#39; - &#39;Asia/Macao&#39; - &#39;Asia/Kuala_Lumpur&#39; - &#39;Asia/Manila&#39; - &#39;Asia/Singapore&#39; - &#39;Asia/Taipei&#39; - &#39;Asia/Shanghai&#39; - &#39;Asia/Seoul&#39; - &#39;Asia/Tokyo&#39; - &#39;Asia/Yakutsk&#39; - &#39;Australia/Adelaide&#39; - &#39;Australia/Brisbane&#39; - &#39;Australia/Broken_Hill&#39; - &#39;Australia/Darwin&#39; - &#39;Australia/Eucla&#39; - &#39;Australia/Hobart&#39; - &#39;Australia/Lindeman&#39; - &#39;Australia/Sydney&#39; - &#39;Australia/Lord_Howe&#39; - &#39;Australia/Melbourne&#39; - &#39;Asia/Magadan&#39; - &#39;Pacific/Norfolk&#39; - &#39;Pacific/Auckland&#39; 
-   */
-  @JsonAdapter(TimeZoneEnum.Adapter.class)
-  public enum TimeZoneEnum {
-    PACIFIC_PAGO_PAGO("Pacific/Pago_Pago"),
-    
-    PACIFIC_HONOLULU("Pacific/Honolulu"),
-    
-    AMERICA_ANCHORAGE("America/Anchorage"),
-    
-    AMERICA_VANCOUVER("America/Vancouver"),
-    
-    AMERICA_LOS_ANGELES("America/Los_Angeles"),
-    
-    AMERICA_PHOENIX("America/Phoenix"),
-    
-    AMERICA_EDMONTON("America/Edmonton"),
-    
-    AMERICA_DENVER("America/Denver"),
-    
-    AMERICA_WINNIPEG("America/Winnipeg"),
-    
-    AMERICA_MEXICO_CITY("America/Mexico_City"),
-    
-    AMERICA_CHICAGO("America/Chicago"),
-    
-    AMERICA_BOGOTA("America/Bogota"),
-    
-    AMERICA_INDIANAPOLIS("America/Indianapolis"),
-    
-    AMERICA_NEW_YORK("America/New_York"),
-    
-    AMERICA_LA_PAZ("America/La_Paz"),
-    
-    AMERICA_HALIFAX("America/Halifax"),
-    
-    AMERICA_ST_JOHNS("America/St_Johns"),
-    
-    AMERICA_BUENOS_AIRES("America/Buenos_Aires"),
-    
-    AMERICA_GODTHAB("America/Godthab"),
-    
-    AMERICA_SAO_PAULO("America/Sao_Paulo"),
-    
-    AMERICA_NORONHA("America/Noronha"),
-    
-    ATLANTIC_CAPE_VERDE("Atlantic/Cape_Verde"),
-    
-    GMT("GMT"),
-    
-    EUROPE_DUBLIN("Europe/Dublin"),
-    
-    EUROPE_LISBON("Europe/Lisbon"),
-    
-    EUROPE_LONDON("Europe/London"),
-    
-    AFRICA_TUNIS("Africa/Tunis"),
-    
-    EUROPE_VIENNA("Europe/Vienna"),
-    
-    EUROPE_BRUSSELS("Europe/Brussels"),
-    
-    EUROPE_ZURICH("Europe/Zurich"),
-    
-    EUROPE_PRAGUE("Europe/Prague"),
-    
-    EUROPE_BERLIN("Europe/Berlin"),
-    
-    EUROPE_COPENHAGEN("Europe/Copenhagen"),
-    
-    EUROPE_MADRID("Europe/Madrid"),
-    
-    EUROPE_BUDAPEST("Europe/Budapest"),
-    
-    EUROPE_ROME("Europe/Rome"),
-    
-    AFRICA_TRIPOLI("Africa/Tripoli"),
-    
-    EUROPE_MONACO("Europe/Monaco"),
-    
-    EUROPE_MALTA("Europe/Malta"),
-    
-    EUROPE_AMSTERDAM("Europe/Amsterdam"),
-    
-    EUROPE_OSLO("Europe/Oslo"),
-    
-    EUROPE_WARSAW("Europe/Warsaw"),
-    
-    EUROPE_STOCKHOLM("Europe/Stockholm"),
-    
-    EUROPE_BELGRADE("Europe/Belgrade"),
-    
-    EUROPE_PARIS("Europe/Paris"),
-    
-    AFRICA_JOHANNESBURG("Africa/Johannesburg"),
-    
-    EUROPE_MINSK("Europe/Minsk"),
-    
-    AFRICA_CAIRO("Africa/Cairo"),
-    
-    EUROPE_HELSINKI("Europe/Helsinki"),
-    
-    EUROPE_ATHENS("Europe/Athens"),
-    
-    ASIA_JERUSALEM("Asia/Jerusalem"),
-    
-    EUROPE_RIGA("Europe/Riga"),
-    
-    EUROPE_BUCHAREST("Europe/Bucharest"),
-    
-    EUROPE_ISTANBUL("Europe/Istanbul"),
-    
-    ASIA_RIYADH("Asia/Riyadh"),
-    
-    EUROPE_MOSCOW("Europe/Moscow"),
-    
-    ASIA_DUBAI("Asia/Dubai"),
-    
-    ASIA_BAKU("Asia/Baku"),
-    
-    ASIA_TBILISI("Asia/Tbilisi"),
-    
-    ASIA_CALCUTTA("Asia/Calcutta"),
-    
-    ASIA_KATMANDU("Asia/Katmandu"),
-    
-    ASIA_DACCA("Asia/Dacca"),
-    
-    ASIA_RANGOON("Asia/Rangoon"),
-    
-    ASIA_JAKARTA("Asia/Jakarta"),
-    
-    ASIA_SAIGON("Asia/Saigon"),
-    
-    ASIA_BANGKOK("Asia/Bangkok"),
-    
-    AUSTRALIA_PERTH("Australia/Perth"),
-    
-    ASIA_HONG_KONG("Asia/Hong_Kong"),
-    
-    ASIA_MACAO("Asia/Macao"),
-    
-    ASIA_KUALA_LUMPUR("Asia/Kuala_Lumpur"),
-    
-    ASIA_MANILA("Asia/Manila"),
-    
-    ASIA_SINGAPORE("Asia/Singapore"),
-    
-    ASIA_TAIPEI("Asia/Taipei"),
-    
-    ASIA_SHANGHAI("Asia/Shanghai"),
-    
-    ASIA_SEOUL("Asia/Seoul"),
-    
-    ASIA_TOKYO("Asia/Tokyo"),
-    
-    ASIA_YAKUTSK("Asia/Yakutsk"),
-    
-    AUSTRALIA_ADELAIDE("Australia/Adelaide"),
-    
-    AUSTRALIA_BRISBANE("Australia/Brisbane"),
-    
-    AUSTRALIA_BROKEN_HILL("Australia/Broken_Hill"),
-    
-    AUSTRALIA_DARWIN("Australia/Darwin"),
-    
-    AUSTRALIA_EUCLA("Australia/Eucla"),
-    
-    AUSTRALIA_HOBART("Australia/Hobart"),
-    
-    AUSTRALIA_LINDEMAN("Australia/Lindeman"),
-    
-    AUSTRALIA_SYDNEY("Australia/Sydney"),
-    
-    AUSTRALIA_LORD_HOWE("Australia/Lord_Howe"),
-    
-    AUSTRALIA_MELBOURNE("Australia/Melbourne"),
-    
-    ASIA_MAGADAN("Asia/Magadan"),
-    
-    PACIFIC_NORFOLK("Pacific/Norfolk"),
-    
-    PACIFIC_AUCKLAND("Pacific/Auckland");
-
-    private String value;
-
-    TimeZoneEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TimeZoneEnum fromValue(String text) {
-      for (TimeZoneEnum b : TimeZoneEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<TimeZoneEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TimeZoneEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TimeZoneEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return TimeZoneEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("timeZone")
-  private TimeZoneEnum timeZone = null;
+  private String timeZone = null;
 
   @SerializedName("websiteUrl")
   private String websiteUrl = null;
 
-  /**
-   * Business type Possible Values:   - &#39;PARTNERSHIP&#39;   - &#39;SOLE_PROPRIETORSHIP&#39;   - &#39;CORPORATION&#39;   - &#39;LLC&#39;   - &#39;NON_PROFIT&#39;   - &#39;TRUST&#39; 
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    PARTNERSHIP("PARTNERSHIP"),
-    
-    SOLE_PROPRIETORSHIP("SOLE_PROPRIETORSHIP"),
-    
-    CORPORATION("CORPORATION"),
-    
-    LLC("LLC"),
-    
-    NON_PROFIT("NON_PROFIT"),
-    
-    TRUST("TRUST");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String text) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return TypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("type")
-  private TypeEnum type = null;
+  private String type = null;
 
   @SerializedName("taxId")
   private String taxId = null;
@@ -440,7 +164,7 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
     this.address = address;
   }
 
-  public Boardingv1registrationsOrganizationInformationBusinessInformation timeZone(TimeZoneEnum timeZone) {
+  public Boardingv1registrationsOrganizationInformationBusinessInformation timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
@@ -450,11 +174,11 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
    * @return timeZone
   **/
   @ApiModelProperty(example = "America/Chicago", value = "Merchant perferred time zone Possible Values: - 'Pacific/Pago_Pago' - 'Pacific/Honolulu' - 'America/Anchorage' - 'America/Vancouver' - 'America/Los_Angeles' - 'America/Phoenix' - 'America/Edmonton' - 'America/Denver' - 'America/Winnipeg' - 'America/Mexico_City' - 'America/Chicago' - 'America/Bogota' - 'America/Indianapolis' - 'America/New_York' - 'America/La_Paz' - 'America/Halifax' - 'America/St_Johns' - 'America/Buenos_Aires' - 'America/Godthab' - 'America/Sao_Paulo' - 'America/Noronha' - 'Atlantic/Cape_Verde' - 'GMT' - 'Europe/Dublin' - 'Europe/Lisbon' - 'Europe/London' - 'Africa/Tunis' - 'Europe/Vienna' - 'Europe/Brussels' - 'Europe/Zurich' - 'Europe/Prague' - 'Europe/Berlin' - 'Europe/Copenhagen' - 'Europe/Madrid' - 'Europe/Budapest' - 'Europe/Rome' - 'Africa/Tripoli' - 'Europe/Monaco' - 'Europe/Malta' - 'Europe/Amsterdam' - 'Europe/Oslo' - 'Europe/Warsaw' - 'Europe/Stockholm' - 'Europe/Belgrade' - 'Europe/Paris' - 'Africa/Johannesburg' - 'Europe/Minsk' - 'Africa/Cairo' - 'Europe/Helsinki' - 'Europe/Athens' - 'Asia/Jerusalem' - 'Europe/Riga' - 'Europe/Bucharest' - 'Europe/Istanbul' - 'Asia/Riyadh' - 'Europe/Moscow' - 'Asia/Dubai' - 'Asia/Baku' - 'Asia/Tbilisi' - 'Asia/Calcutta' - 'Asia/Katmandu' - 'Asia/Dacca' - 'Asia/Rangoon' - 'Asia/Jakarta' - 'Asia/Saigon' - 'Asia/Bangkok' - 'Australia/Perth' - 'Asia/Hong_Kong' - 'Asia/Macao' - 'Asia/Kuala_Lumpur' - 'Asia/Manila' - 'Asia/Singapore' - 'Asia/Taipei' - 'Asia/Shanghai' - 'Asia/Seoul' - 'Asia/Tokyo' - 'Asia/Yakutsk' - 'Australia/Adelaide' - 'Australia/Brisbane' - 'Australia/Broken_Hill' - 'Australia/Darwin' - 'Australia/Eucla' - 'Australia/Hobart' - 'Australia/Lindeman' - 'Australia/Sydney' - 'Australia/Lord_Howe' - 'Australia/Melbourne' - 'Asia/Magadan' - 'Pacific/Norfolk' - 'Pacific/Auckland' ")
-  public TimeZoneEnum getTimeZone() {
+  public String getTimeZone() {
     return timeZone;
   }
 
-  public void setTimeZone(TimeZoneEnum timeZone) {
+  public void setTimeZone(String timeZone) {
     this.timeZone = timeZone;
   }
 
@@ -476,7 +200,7 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
     this.websiteUrl = websiteUrl;
   }
 
-  public Boardingv1registrationsOrganizationInformationBusinessInformation type(TypeEnum type) {
+  public Boardingv1registrationsOrganizationInformationBusinessInformation type(String type) {
     this.type = type;
     return this;
   }
@@ -486,11 +210,11 @@ public class Boardingv1registrationsOrganizationInformationBusinessInformation {
    * @return type
   **/
   @ApiModelProperty(value = "Business type Possible Values:   - 'PARTNERSHIP'   - 'SOLE_PROPRIETORSHIP'   - 'CORPORATION'   - 'LLC'   - 'NON_PROFIT'   - 'TRUST' ")
-  public TypeEnum getType() {
+  public String getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(String type) {
     this.type = type;
   }
 
