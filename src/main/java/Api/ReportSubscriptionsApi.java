@@ -77,7 +77,7 @@ public class ReportSubscriptionsApi {
      */
     public okhttp3.Call createStandardOrClassicSubscriptionCall(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(predefinedSubscriptionRequestBean, PredefinedSubscriptionRequestBean.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(predefinedSubscriptionRequestBean, PredefinedSubscriptionRequestBean.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/reporting/v3/predefined-report-subscriptions";
@@ -210,7 +210,7 @@ public class ReportSubscriptionsApi {
      */
     public okhttp3.Call createSubscriptionCall(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createReportSubscriptionRequest, CreateReportSubscriptionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createReportSubscriptionRequest, CreateReportSubscriptionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/reporting/v3/report-subscriptions";

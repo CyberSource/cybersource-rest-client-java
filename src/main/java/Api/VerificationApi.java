@@ -76,7 +76,7 @@ public class VerificationApi {
      */
     public okhttp3.Call validateExportComplianceCall(ValidateExportComplianceRequest validateExportComplianceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(validateExportComplianceRequest, ValidateExportComplianceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(validateExportComplianceRequest, ValidateExportComplianceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/risk/v1/export-compliance-inquiries";
@@ -207,7 +207,7 @@ public class VerificationApi {
      */
     public okhttp3.Call verifyCustomerAddressCall(VerifyCustomerAddressRequest verifyCustomerAddressRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(verifyCustomerAddressRequest, VerifyCustomerAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(verifyCustomerAddressRequest, VerifyCustomerAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/risk/v1/address-verifications";

@@ -89,7 +89,7 @@ public class DecisionManagerApi {
      */
     public okhttp3.Call actionDecisionManagerCaseCall(String id, CaseManagementActionsRequest caseManagementActionsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(caseManagementActionsRequest, CaseManagementActionsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(caseManagementActionsRequest, CaseManagementActionsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/risk/v1/decisions/{id}/actions"
@@ -231,7 +231,7 @@ public class DecisionManagerApi {
      */
     public okhttp3.Call addNegativeCall(String type, AddNegativeListRequest addNegativeListRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(addNegativeListRequest, AddNegativeListRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(addNegativeListRequest, AddNegativeListRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/risk/v1/lists/{type}/entries"
@@ -373,7 +373,7 @@ public class DecisionManagerApi {
      */
     public okhttp3.Call commentDecisionManagerCaseCall(String id, CaseManagementCommentsRequest caseManagementCommentsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(caseManagementCommentsRequest, CaseManagementCommentsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(caseManagementCommentsRequest, CaseManagementCommentsRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/risk/v1/decisions/{id}/comments"
@@ -514,7 +514,7 @@ public class DecisionManagerApi {
      */
     public okhttp3.Call createBundledDecisionManagerCaseCall(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBundledDecisionManagerCaseRequest, CreateBundledDecisionManagerCaseRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBundledDecisionManagerCaseRequest, CreateBundledDecisionManagerCaseRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/risk/v1/decisions";
@@ -646,7 +646,7 @@ public class DecisionManagerApi {
      */
     public okhttp3.Call fraudUpdateCall(String id, FraudMarkingActionRequest fraudMarkingActionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(fraudMarkingActionRequest, FraudMarkingActionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(fraudMarkingActionRequest, FraudMarkingActionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/risk/v1/decisions/{id}/marking"
