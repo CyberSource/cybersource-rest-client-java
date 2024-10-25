@@ -28,10 +28,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * BinLookupv400Response
+ * PtsV2CreateOrderPost400Response
  */
 
-public class BinLookupv400Response {
+public class PtsV2CreateOrderPost400Response {
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
 
@@ -44,7 +44,7 @@ public class BinLookupv400Response {
   @SerializedName("details")
   private List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details = null;
 
-  public BinLookupv400Response submitTimeUtc(String submitTimeUtc) {
+  public PtsV2CreateOrderPost400Response submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
     return this;
   }
@@ -62,7 +62,7 @@ public class BinLookupv400Response {
     this.submitTimeUtc = submitTimeUtc;
   }
 
-  public BinLookupv400Response status(String status) {
+  public PtsV2CreateOrderPost400Response status(String status) {
     this.status = status;
     return this;
   }
@@ -80,7 +80,7 @@ public class BinLookupv400Response {
     this.status = status;
   }
 
-  public BinLookupv400Response message(String message) {
+  public PtsV2CreateOrderPost400Response message(String message) {
     this.message = message;
     return this;
   }
@@ -98,12 +98,12 @@ public class BinLookupv400Response {
     this.message = message;
   }
 
-  public BinLookupv400Response details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
+  public PtsV2CreateOrderPost400Response details(List<PtsV2PaymentsPost201ResponseErrorInformationDetails> details) {
     this.details = details;
     return this;
   }
 
-  public BinLookupv400Response addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
+  public PtsV2CreateOrderPost400Response addDetailsItem(PtsV2PaymentsPost201ResponseErrorInformationDetails detailsItem) {
     if (this.details == null) {
       this.details = new ArrayList<PtsV2PaymentsPost201ResponseErrorInformationDetails>();
     }
@@ -133,11 +133,11 @@ public class BinLookupv400Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BinLookupv400Response binLookupv400Response = (BinLookupv400Response) o;
-    return Objects.equals(this.submitTimeUtc, binLookupv400Response.submitTimeUtc) &&
-        Objects.equals(this.status, binLookupv400Response.status) &&
-        Objects.equals(this.message, binLookupv400Response.message) &&
-        Objects.equals(this.details, binLookupv400Response.details);
+    PtsV2CreateOrderPost400Response ptsV2CreateOrderPost400Response = (PtsV2CreateOrderPost400Response) o;
+    return Objects.equals(this.submitTimeUtc, ptsV2CreateOrderPost400Response.submitTimeUtc) &&
+        Objects.equals(this.status, ptsV2CreateOrderPost400Response.status) &&
+        Objects.equals(this.message, ptsV2CreateOrderPost400Response.message) &&
+        Objects.equals(this.details, ptsV2CreateOrderPost400Response.details);
   }
 
   @Override
@@ -149,7 +149,7 @@ public class BinLookupv400Response {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BinLookupv400Response {\n");
+    sb.append("class PtsV2CreateOrderPost400Response {\n");
     
     sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

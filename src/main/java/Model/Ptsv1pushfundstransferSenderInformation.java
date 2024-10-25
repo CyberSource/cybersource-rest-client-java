@@ -35,6 +35,9 @@ public class Ptsv1pushfundstransferSenderInformation {
   @SerializedName("name")
   private String name = null;
 
+  @SerializedName("email")
+  private String email = null;
+
   @SerializedName("firstName")
   private String firstName = null;
 
@@ -46,6 +49,12 @@ public class Ptsv1pushfundstransferSenderInformation {
 
   @SerializedName("postalCode")
   private String postalCode = null;
+
+  @SerializedName("buildingNumber")
+  private String buildingNumber = null;
+
+  @SerializedName("streetName")
+  private String streetName = null;
 
   @SerializedName("address1")
   private String address1 = null;
@@ -80,22 +89,46 @@ public class Ptsv1pushfundstransferSenderInformation {
   @SerializedName("personalIdentification")
   private Ptsv1pushfundstransferSenderInformationPersonalIdentification personalIdentification = null;
 
+  @SerializedName("type")
+  private String type = null;
+
+  @SerializedName("vatRegistrationNumber")
+  private String vatRegistrationNumber = null;
+
   public Ptsv1pushfundstransferSenderInformation name(String name) {
     this.name = name;
     return this;
   }
 
    /**
-   * Name of sender.  Funds Disbursement  This value is the name of the originator sending the funds disbursement. 
+   * Name of sender.  Funds Disbursement  This value is the name of the originator sending the funds disbursement.  Government entities should use this field 
    * @return name
   **/
-  @ApiModelProperty(value = "Name of sender.  Funds Disbursement  This value is the name of the originator sending the funds disbursement. ")
+  @ApiModelProperty(value = "Name of sender.  Funds Disbursement  This value is the name of the originator sending the funds disbursement.  Government entities should use this field ")
   public String getName() {
     return name;
   }
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public Ptsv1pushfundstransferSenderInformation email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s email address, including the full domain name. 
+   * @return email
+  **/
+  @ApiModelProperty(value = "Customer's email address, including the full domain name. ")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
   }
 
   public Ptsv1pushfundstransferSenderInformation firstName(String firstName) {
@@ -168,6 +201,42 @@ public class Ptsv1pushfundstransferSenderInformation {
 
   public void setPostalCode(String postalCode) {
     this.postalCode = postalCode;
+  }
+
+  public Ptsv1pushfundstransferSenderInformation buildingNumber(String buildingNumber) {
+    this.buildingNumber = buildingNumber;
+    return this;
+  }
+
+   /**
+   * Building number in the street address.  For example, if the street address is: Rua da Quitanda 187 then the building number is 187.  Applicable to domestic Colombia transactions only. 
+   * @return buildingNumber
+  **/
+  @ApiModelProperty(value = "Building number in the street address.  For example, if the street address is: Rua da Quitanda 187 then the building number is 187.  Applicable to domestic Colombia transactions only. ")
+  public String getBuildingNumber() {
+    return buildingNumber;
+  }
+
+  public void setBuildingNumber(String buildingNumber) {
+    this.buildingNumber = buildingNumber;
+  }
+
+  public Ptsv1pushfundstransferSenderInformation streetName(String streetName) {
+    this.streetName = streetName;
+    return this;
+  }
+
+   /**
+   * This field contains the street name of the recipient&#39;s address.  Applicable to domestic Colombia transactions only. 
+   * @return streetName
+  **/
+  @ApiModelProperty(value = "This field contains the street name of the recipient's address.  Applicable to domestic Colombia transactions only. ")
+  public String getStreetName() {
+    return streetName;
+  }
+
+  public void setStreetName(String streetName) {
+    this.streetName = streetName;
   }
 
   public Ptsv1pushfundstransferSenderInformation address1(String address1) {
@@ -284,10 +353,10 @@ public class Ptsv1pushfundstransferSenderInformation {
   }
 
    /**
-   * Sender&#39;s phone number. 
+   * Customer&#39;s phone number.  It is recommended that you include the country code when the order is from outside the U.S. 
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Sender's phone number. ")
+  @ApiModelProperty(value = "Customer's phone number.  It is recommended that you include the country code when the order is from outside the U.S. ")
   public String getPhoneNumber() {
     return phoneNumber;
   }
@@ -368,6 +437,42 @@ public class Ptsv1pushfundstransferSenderInformation {
     this.personalIdentification = personalIdentification;
   }
 
+  public Ptsv1pushfundstransferSenderInformation type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * &#x60;B&#x60; for Business or &#x60;I&#x60; for individual. 
+   * @return type
+  **/
+  @ApiModelProperty(value = "`B` for Business or `I` for individual. ")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public Ptsv1pushfundstransferSenderInformation vatRegistrationNumber(String vatRegistrationNumber) {
+    this.vatRegistrationNumber = vatRegistrationNumber;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s government-assigned tax identification number. 
+   * @return vatRegistrationNumber
+  **/
+  @ApiModelProperty(value = "Customer's government-assigned tax identification number. ")
+  public String getVatRegistrationNumber() {
+    return vatRegistrationNumber;
+  }
+
+  public void setVatRegistrationNumber(String vatRegistrationNumber) {
+    this.vatRegistrationNumber = vatRegistrationNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -379,10 +484,13 @@ public class Ptsv1pushfundstransferSenderInformation {
     }
     Ptsv1pushfundstransferSenderInformation ptsv1pushfundstransferSenderInformation = (Ptsv1pushfundstransferSenderInformation) o;
     return Objects.equals(this.name, ptsv1pushfundstransferSenderInformation.name) &&
+        Objects.equals(this.email, ptsv1pushfundstransferSenderInformation.email) &&
         Objects.equals(this.firstName, ptsv1pushfundstransferSenderInformation.firstName) &&
         Objects.equals(this.lastName, ptsv1pushfundstransferSenderInformation.lastName) &&
         Objects.equals(this.middleName, ptsv1pushfundstransferSenderInformation.middleName) &&
         Objects.equals(this.postalCode, ptsv1pushfundstransferSenderInformation.postalCode) &&
+        Objects.equals(this.buildingNumber, ptsv1pushfundstransferSenderInformation.buildingNumber) &&
+        Objects.equals(this.streetName, ptsv1pushfundstransferSenderInformation.streetName) &&
         Objects.equals(this.address1, ptsv1pushfundstransferSenderInformation.address1) &&
         Objects.equals(this.address2, ptsv1pushfundstransferSenderInformation.address2) &&
         Objects.equals(this.locality, ptsv1pushfundstransferSenderInformation.locality) &&
@@ -393,12 +501,14 @@ public class Ptsv1pushfundstransferSenderInformation {
         Objects.equals(this.paymentInformation, ptsv1pushfundstransferSenderInformation.paymentInformation) &&
         Objects.equals(this.referenceNumber, ptsv1pushfundstransferSenderInformation.referenceNumber) &&
         Objects.equals(this.account, ptsv1pushfundstransferSenderInformation.account) &&
-        Objects.equals(this.personalIdentification, ptsv1pushfundstransferSenderInformation.personalIdentification);
+        Objects.equals(this.personalIdentification, ptsv1pushfundstransferSenderInformation.personalIdentification) &&
+        Objects.equals(this.type, ptsv1pushfundstransferSenderInformation.type) &&
+        Objects.equals(this.vatRegistrationNumber, ptsv1pushfundstransferSenderInformation.vatRegistrationNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, firstName, lastName, middleName, postalCode, address1, address2, locality, administrativeArea, country, dateOfBirth, phoneNumber, paymentInformation, referenceNumber, account, personalIdentification);
+    return Objects.hash(name, email, firstName, lastName, middleName, postalCode, buildingNumber, streetName, address1, address2, locality, administrativeArea, country, dateOfBirth, phoneNumber, paymentInformation, referenceNumber, account, personalIdentification, type, vatRegistrationNumber);
   }
 
 
@@ -408,10 +518,13 @@ public class Ptsv1pushfundstransferSenderInformation {
     sb.append("class Ptsv1pushfundstransferSenderInformation {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    sb.append("    buildingNumber: ").append(toIndentedString(buildingNumber)).append("\n");
+    sb.append("    streetName: ").append(toIndentedString(streetName)).append("\n");
     sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
     sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
@@ -423,6 +536,8 @@ public class Ptsv1pushfundstransferSenderInformation {
     sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

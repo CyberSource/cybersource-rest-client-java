@@ -360,7 +360,7 @@ public class PaymentInstrumentApi {
      */
     public okhttp3.Call patchPaymentInstrumentCall(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchPaymentInstrumentRequest, PatchPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchPaymentInstrumentRequest, PatchPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/tms/v1/paymentinstruments/{paymentInstrumentId}"
@@ -512,7 +512,7 @@ public class PaymentInstrumentApi {
      */
     public okhttp3.Call postPaymentInstrumentCall(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentInstrumentRequest, PostPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postPaymentInstrumentRequest, PostPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/tms/v1/paymentinstruments";

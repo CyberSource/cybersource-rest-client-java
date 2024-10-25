@@ -36,8 +36,20 @@ public class Ptsv1pushfundstransferProcessingInformation {
   @SerializedName("payoutsOptions")
   private Ptsv1pushfundstransferProcessingInformationPayoutsOptions payoutsOptions = null;
 
-  @SerializedName("enablerId")
-  private String enablerId = null;
+  @SerializedName("feeProgramId")
+  private String feeProgramId = null;
+
+  @SerializedName("networkPartnerId")
+  private String networkPartnerId = null;
+
+  @SerializedName("processingCode")
+  private String processingCode = null;
+
+  @SerializedName("sharingGroupCode")
+  private String sharingGroupCode = null;
+
+  @SerializedName("purposeOfPayment")
+  private String purposeOfPayment = null;
 
   public Ptsv1pushfundstransferProcessingInformation businessApplicationId(String businessApplicationId) {
     this.businessApplicationId = businessApplicationId;
@@ -45,10 +57,10 @@ public class Ptsv1pushfundstransferProcessingInformation {
   }
 
    /**
-   * Payouts transaction type.  Business Application ID: - &#x60;PP&#x60;: Person to person. - &#x60;FD&#x60;: Funds disbursement (general) 
+   * Money Transfer (MT) - &#x60;AA&#x60;: Account to Account - &#x60;BI&#x60;: Bank-Initiated Money Transfer - &#x60;CD&#x60;: Cash Deposit - &#x60;FT&#x60;: Funds Transfer - &#x60;TU&#x60;: Prepaid Card Loan - &#x60;WT&#x60;: Wallet Transfer-Staged Digital Wallet (SDW) Transfer - &#x60;PP&#x60;: P2P Money Transfer  Funds Disbursement (FD) - &#x60;BB&#x60;: Business-to-business Supplier Payments - &#x60;BP&#x60;: Non-Card Bill Pay  - &#x60;CP&#x60;: Credit Card Bill Pay - &#x60;FD&#x60;: General Funds Disbursements - &#x60;GD&#x60;: Government Disbursements and Government Initiated Tax Refunds - &#x60;GP&#x60;: Gambling/Gaming Payouts (other than online gaming) - &#x60;LO&#x60;: Loyalty Payments - &#x60;MD&#x60;: Merchant Settlement - &#x60;MI&#x60;: Faster Refunds - &#x60;OG&#x60;: Online Gambling Payouts - &#x60;PD&#x60;: Payroll and Pension Disbursements - &#x60;RP&#x60;: Request-to-Pay Service 
    * @return businessApplicationId
   **/
-  @ApiModelProperty(value = "Payouts transaction type.  Business Application ID: - `PP`: Person to person. - `FD`: Funds disbursement (general) ")
+  @ApiModelProperty(value = "Money Transfer (MT) - `AA`: Account to Account - `BI`: Bank-Initiated Money Transfer - `CD`: Cash Deposit - `FT`: Funds Transfer - `TU`: Prepaid Card Loan - `WT`: Wallet Transfer-Staged Digital Wallet (SDW) Transfer - `PP`: P2P Money Transfer  Funds Disbursement (FD) - `BB`: Business-to-business Supplier Payments - `BP`: Non-Card Bill Pay  - `CP`: Credit Card Bill Pay - `FD`: General Funds Disbursements - `GD`: Government Disbursements and Government Initiated Tax Refunds - `GP`: Gambling/Gaming Payouts (other than online gaming) - `LO`: Loyalty Payments - `MD`: Merchant Settlement - `MI`: Faster Refunds - `OG`: Online Gambling Payouts - `PD`: Payroll and Pension Disbursements - `RP`: Request-to-Pay Service ")
   public String getBusinessApplicationId() {
     return businessApplicationId;
   }
@@ -75,22 +87,94 @@ public class Ptsv1pushfundstransferProcessingInformation {
     this.payoutsOptions = payoutsOptions;
   }
 
-  public Ptsv1pushfundstransferProcessingInformation enablerId(String enablerId) {
-    this.enablerId = enablerId;
+  public Ptsv1pushfundstransferProcessingInformation feeProgramId(String feeProgramId) {
+    this.feeProgramId = feeProgramId;
     return this;
   }
 
    /**
-   * Enablers are payment processing entities that are not acquiring members and are often the primary relationship owner with merchants and originators. Enablers own technical solutions through which the merchant or originator will access acceptance. The Enabler ID is a five-character hexadecimal identifier that will be used by Visa to identify enablers. Enabler ID assignment will be determined by Visa. Visa will communicate Enablers assignments to enablers. 
-   * @return enablerId
+   * Fee Program Indicator. This field identifies the interchange fee program applicable to each financial transaction. Fee program indicator (FPI) values correspond to the fee descriptor and rate for each existing fee program. 
+   * @return feeProgramId
   **/
-  @ApiModelProperty(value = "Enablers are payment processing entities that are not acquiring members and are often the primary relationship owner with merchants and originators. Enablers own technical solutions through which the merchant or originator will access acceptance. The Enabler ID is a five-character hexadecimal identifier that will be used by Visa to identify enablers. Enabler ID assignment will be determined by Visa. Visa will communicate Enablers assignments to enablers. ")
-  public String getEnablerId() {
-    return enablerId;
+  @ApiModelProperty(value = "Fee Program Indicator. This field identifies the interchange fee program applicable to each financial transaction. Fee program indicator (FPI) values correspond to the fee descriptor and rate for each existing fee program. ")
+  public String getFeeProgramId() {
+    return feeProgramId;
   }
 
-  public void setEnablerId(String enablerId) {
-    this.enablerId = enablerId;
+  public void setFeeProgramId(String feeProgramId) {
+    this.feeProgramId = feeProgramId;
+  }
+
+  public Ptsv1pushfundstransferProcessingInformation networkPartnerId(String networkPartnerId) {
+    this.networkPartnerId = networkPartnerId;
+    return this;
+  }
+
+   /**
+   * Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction. 
+   * @return networkPartnerId
+  **/
+  @ApiModelProperty(value = "Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction. ")
+  public String getNetworkPartnerId() {
+    return networkPartnerId;
+  }
+
+  public void setNetworkPartnerId(String networkPartnerId) {
+    this.networkPartnerId = networkPartnerId;
+  }
+
+  public Ptsv1pushfundstransferProcessingInformation processingCode(String processingCode) {
+    this.processingCode = processingCode;
+    return this;
+  }
+
+   /**
+   * This field contains coding that identifies (1) the customer transaction type and (2) the customer account types affected by the transaction.  Default: 5402 (Original Credit Transaction)  Contains codes that combined with some other fields such as the BAI (Business Application Id) identify some unique use cases. For Sales Tax rebates this field should be populated with the value 5120 (Value-added tax/Sales Tax) along with the businessApplicationId field set to the value &#39;FD&#39; which indicates this push funds transfer is being conducted in order to facilitate a sales tax refund. 
+   * @return processingCode
+  **/
+  @ApiModelProperty(value = "This field contains coding that identifies (1) the customer transaction type and (2) the customer account types affected by the transaction.  Default: 5402 (Original Credit Transaction)  Contains codes that combined with some other fields such as the BAI (Business Application Id) identify some unique use cases. For Sales Tax rebates this field should be populated with the value 5120 (Value-added tax/Sales Tax) along with the businessApplicationId field set to the value 'FD' which indicates this push funds transfer is being conducted in order to facilitate a sales tax refund. ")
+  public String getProcessingCode() {
+    return processingCode;
+  }
+
+  public void setProcessingCode(String processingCode) {
+    this.processingCode = processingCode;
+  }
+
+  public Ptsv1pushfundstransferProcessingInformation sharingGroupCode(String sharingGroupCode) {
+    this.sharingGroupCode = sharingGroupCode;
+    return this;
+  }
+
+   /**
+   * This U.S.-only field is optionally used by PIN Debit Gateway Service participants (merchants and acquirers) to specify the network access priority. VisaNet checks to determine if there are issuer routing preferences for a network specified by the sharing group code. If an issuer preference exists for one of the specified debit networks, VisaNet makes a routing selection based on issuer preference. If an preference exists for multiple specified debit networks, or if no issuer preference exists, VisaNet makes a selection based on acquirer routing priorities.  Valid Values:  ACCEL_EXCHANGE_E  CU24_C  INTERLINK_G  MAESTRO_8  NYCE_Y  NYCE_F  PULSE_S  PULSE_L  PULSE_H  STAR_N  STAR_W  STAR_Z  STAR_Q  STAR_M  VISA_V 
+   * @return sharingGroupCode
+  **/
+  @ApiModelProperty(value = "This U.S.-only field is optionally used by PIN Debit Gateway Service participants (merchants and acquirers) to specify the network access priority. VisaNet checks to determine if there are issuer routing preferences for a network specified by the sharing group code. If an issuer preference exists for one of the specified debit networks, VisaNet makes a routing selection based on issuer preference. If an preference exists for multiple specified debit networks, or if no issuer preference exists, VisaNet makes a selection based on acquirer routing priorities.  Valid Values:  ACCEL_EXCHANGE_E  CU24_C  INTERLINK_G  MAESTRO_8  NYCE_Y  NYCE_F  PULSE_S  PULSE_L  PULSE_H  STAR_N  STAR_W  STAR_Z  STAR_Q  STAR_M  VISA_V ")
+  public String getSharingGroupCode() {
+    return sharingGroupCode;
+  }
+
+  public void setSharingGroupCode(String sharingGroupCode) {
+    this.sharingGroupCode = sharingGroupCode;
+  }
+
+  public Ptsv1pushfundstransferProcessingInformation purposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
+    return this;
+  }
+
+   /**
+   * This will send purpose of funds code for original credit transactions (OCTs). 
+   * @return purposeOfPayment
+  **/
+  @ApiModelProperty(value = "This will send purpose of funds code for original credit transactions (OCTs). ")
+  public String getPurposeOfPayment() {
+    return purposeOfPayment;
+  }
+
+  public void setPurposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
   }
 
 
@@ -105,12 +189,16 @@ public class Ptsv1pushfundstransferProcessingInformation {
     Ptsv1pushfundstransferProcessingInformation ptsv1pushfundstransferProcessingInformation = (Ptsv1pushfundstransferProcessingInformation) o;
     return Objects.equals(this.businessApplicationId, ptsv1pushfundstransferProcessingInformation.businessApplicationId) &&
         Objects.equals(this.payoutsOptions, ptsv1pushfundstransferProcessingInformation.payoutsOptions) &&
-        Objects.equals(this.enablerId, ptsv1pushfundstransferProcessingInformation.enablerId);
+        Objects.equals(this.feeProgramId, ptsv1pushfundstransferProcessingInformation.feeProgramId) &&
+        Objects.equals(this.networkPartnerId, ptsv1pushfundstransferProcessingInformation.networkPartnerId) &&
+        Objects.equals(this.processingCode, ptsv1pushfundstransferProcessingInformation.processingCode) &&
+        Objects.equals(this.sharingGroupCode, ptsv1pushfundstransferProcessingInformation.sharingGroupCode) &&
+        Objects.equals(this.purposeOfPayment, ptsv1pushfundstransferProcessingInformation.purposeOfPayment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(businessApplicationId, payoutsOptions, enablerId);
+    return Objects.hash(businessApplicationId, payoutsOptions, feeProgramId, networkPartnerId, processingCode, sharingGroupCode, purposeOfPayment);
   }
 
 
@@ -121,7 +209,11 @@ public class Ptsv1pushfundstransferProcessingInformation {
     
     sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
     sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
-    sb.append("    enablerId: ").append(toIndentedString(enablerId)).append("\n");
+    sb.append("    feeProgramId: ").append(toIndentedString(feeProgramId)).append("\n");
+    sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
+    sb.append("    processingCode: ").append(toIndentedString(processingCode)).append("\n");
+    sb.append("    sharingGroupCode: ").append(toIndentedString(sharingGroupCode)).append("\n");
+    sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
     sb.append("}");
     return sb.toString();
   }

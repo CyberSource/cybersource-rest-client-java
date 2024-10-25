@@ -122,72 +122,8 @@ public class CardProcessingConfigCommonProcessors {
   @SerializedName("enableCreditAuth")
   private Boolean enableCreditAuth = null;
 
-  /**
-   * Field used to identify the industry type of the merchant submitting the authorization request.  Valid values: &#x60;0&#x60; – unknown or unsure &#x60;A&#x60; – auto rental (EMV supported) &#x60;B&#x60; – bank/financial institution (EMV supported) &#x60;D&#x60; – direct marketing &#x60;F&#x60; – food/restaurant (EMV supported) &#x60;G&#x60; – grocery store/super market (EMV supported) &#x60;H&#x60; – hotel (EMV supported) &#x60;L&#x60; – limited amount terminal (EMV supported) &#x60;O&#x60; – oil company/automated fueling system (EMV supported) &#x60;P&#x60; – passenger transport (EMV supported) &#x60;R&#x60; – retail (EMV supported) Applicable for TSYS (tsys), RUPAY and Elavon Americas (elavonamericas) processors. 
-   */
-  @JsonAdapter(IndustryCodeEnum.Adapter.class)
-  public enum IndustryCodeEnum {
-    _0("0"),
-    
-    A("A"),
-    
-    B("B"),
-    
-    D("D"),
-    
-    F("F"),
-    
-    G("G"),
-    
-    H("H"),
-    
-    L("L"),
-    
-    O("O"),
-    
-    P("P"),
-    
-    R("R");
-
-    private String value;
-
-    IndustryCodeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static IndustryCodeEnum fromValue(String text) {
-      for (IndustryCodeEnum b : IndustryCodeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<IndustryCodeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final IndustryCodeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public IndustryCodeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return IndustryCodeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("industryCode")
-  private IndustryCodeEnum industryCode = null;
+  private String industryCode = null;
 
   @SerializedName("sendAmexLevel2Data")
   private Boolean sendAmexLevel2Data = null;
@@ -778,21 +714,21 @@ public class CardProcessingConfigCommonProcessors {
     this.enableCreditAuth = enableCreditAuth;
   }
 
-  public CardProcessingConfigCommonProcessors industryCode(IndustryCodeEnum industryCode) {
+  public CardProcessingConfigCommonProcessors industryCode(String industryCode) {
     this.industryCode = industryCode;
     return this;
   }
 
    /**
-   * Field used to identify the industry type of the merchant submitting the authorization request.  Valid values: &#x60;0&#x60; – unknown or unsure &#x60;A&#x60; – auto rental (EMV supported) &#x60;B&#x60; – bank/financial institution (EMV supported) &#x60;D&#x60; – direct marketing &#x60;F&#x60; – food/restaurant (EMV supported) &#x60;G&#x60; – grocery store/super market (EMV supported) &#x60;H&#x60; – hotel (EMV supported) &#x60;L&#x60; – limited amount terminal (EMV supported) &#x60;O&#x60; – oil company/automated fueling system (EMV supported) &#x60;P&#x60; – passenger transport (EMV supported) &#x60;R&#x60; – retail (EMV supported) Applicable for TSYS (tsys), RUPAY and Elavon Americas (elavonamericas) processors. 
+   * Field used to identify the industry type of the merchant submitting the authorization request.  Valid values: &#x60;0&#x60; – unknown or unsure &#x60;A&#x60; – auto rental (EMV supported) &#x60;B&#x60; – bank/financial institution (EMV supported) &#x60;D&#x60; – direct marketing &#x60;F&#x60; – food/restaurant (EMV supported) &#x60;G&#x60; – grocery store/super market (EMV supported) &#x60;H&#x60; – hotel (EMV supported) &#x60;L&#x60; – limited amount terminal (EMV supported) &#x60;O&#x60; – oil company/automated fueling system (EMV supported) &#x60;P&#x60; – passenger transport (EMV supported) &#x60;R&#x60; – retail (EMV supported) Applicable for TSYS (tsys), RUPAY and Elavon Americas (elavonamericas) processors.   Possible values: - 0 - A - B - D - F - G - H - L - O - P - R
    * @return industryCode
   **/
-  @ApiModelProperty(value = "Field used to identify the industry type of the merchant submitting the authorization request.  Valid values: `0` – unknown or unsure `A` – auto rental (EMV supported) `B` – bank/financial institution (EMV supported) `D` – direct marketing `F` – food/restaurant (EMV supported) `G` – grocery store/super market (EMV supported) `H` – hotel (EMV supported) `L` – limited amount terminal (EMV supported) `O` – oil company/automated fueling system (EMV supported) `P` – passenger transport (EMV supported) `R` – retail (EMV supported) Applicable for TSYS (tsys), RUPAY and Elavon Americas (elavonamericas) processors. ")
-  public IndustryCodeEnum getIndustryCode() {
+  @ApiModelProperty(value = "Field used to identify the industry type of the merchant submitting the authorization request.  Valid values: `0` – unknown or unsure `A` – auto rental (EMV supported) `B` – bank/financial institution (EMV supported) `D` – direct marketing `F` – food/restaurant (EMV supported) `G` – grocery store/super market (EMV supported) `H` – hotel (EMV supported) `L` – limited amount terminal (EMV supported) `O` – oil company/automated fueling system (EMV supported) `P` – passenger transport (EMV supported) `R` – retail (EMV supported) Applicable for TSYS (tsys), RUPAY and Elavon Americas (elavonamericas) processors.   Possible values: - 0 - A - B - D - F - G - H - L - O - P - R")
+  public String getIndustryCode() {
     return industryCode;
   }
 
-  public void setIndustryCode(IndustryCodeEnum industryCode) {
+  public void setIndustryCode(String industryCode) {
     this.industryCode = industryCode;
   }
 

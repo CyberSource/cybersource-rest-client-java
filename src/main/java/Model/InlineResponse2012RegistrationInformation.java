@@ -32,54 +32,8 @@ public class InlineResponse2012RegistrationInformation {
   @SerializedName("boardingPackageId")
   private String boardingPackageId = null;
 
-  /**
-   * In case mode is not provided the API will use COMPLETE as default Possible Values:   - &#39;COMPLETE&#39;   - &#39;PARTIAL&#39; 
-   */
-  @JsonAdapter(ModeEnum.Adapter.class)
-  public enum ModeEnum {
-    COMPLETE("COMPLETE"),
-    
-    PARTIAL("PARTIAL");
-
-    private String value;
-
-    ModeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ModeEnum fromValue(String text) {
-      for (ModeEnum b : ModeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ModeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ModeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ModeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ModeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("mode")
-  private ModeEnum mode = null;
+  private String mode = null;
 
   @SerializedName("salesRepId")
   private String salesRepId = null;
@@ -93,7 +47,7 @@ public class InlineResponse2012RegistrationInformation {
     return boardingPackageId;
   }
 
-  public InlineResponse2012RegistrationInformation mode(ModeEnum mode) {
+  public InlineResponse2012RegistrationInformation mode(String mode) {
     this.mode = mode;
     return this;
   }
@@ -103,11 +57,11 @@ public class InlineResponse2012RegistrationInformation {
    * @return mode
   **/
   @ApiModelProperty(value = "In case mode is not provided the API will use COMPLETE as default Possible Values:   - 'COMPLETE'   - 'PARTIAL' ")
-  public ModeEnum getMode() {
+  public String getMode() {
     return mode;
   }
 
-  public void setMode(ModeEnum mode) {
+  public void setMode(String mode) {
     this.mode = mode;
   }
 

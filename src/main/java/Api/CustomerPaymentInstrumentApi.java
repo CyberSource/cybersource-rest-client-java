@@ -537,7 +537,7 @@ public class CustomerPaymentInstrumentApi {
      */
     public okhttp3.Call patchCustomersPaymentInstrumentCall(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerPaymentInstrumentRequest, PatchCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerPaymentInstrumentRequest, PatchCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}"
@@ -700,7 +700,7 @@ public class CustomerPaymentInstrumentApi {
      */
     public okhttp3.Call postCustomerPaymentInstrumentCall(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerPaymentInstrumentRequest, PostCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerPaymentInstrumentRequest, PostCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments"

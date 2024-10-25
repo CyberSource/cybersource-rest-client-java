@@ -30,113 +30,11 @@ import java.math.BigDecimal;
  */
 
 public class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInformation {
-  /**
-   * Payment types accepted by this merchant. The supported values are: MASTERDEBIT, MASTERCREDIT, VISACREDIT, VISADEBIT, DISCOVERCREDIT, AMEXCREDIT, ECHECK
-   */
-  @JsonAdapter(PaymentTypeEnum.Adapter.class)
-  public enum PaymentTypeEnum {
-    MASTERDEBIT("MASTERDEBIT"),
-    
-    MASTERCREDIT("MASTERCREDIT"),
-    
-    VISACREDIT("VISACREDIT"),
-    
-    VISADEBIT("VISADEBIT"),
-    
-    DISCOVERCREDIT("DISCOVERCREDIT"),
-    
-    AMEXCREDIT("AMEXCREDIT"),
-    
-    ECHECK("ECHECK");
-
-    private String value;
-
-    PaymentTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static PaymentTypeEnum fromValue(String text) {
-      for (PaymentTypeEnum b : PaymentTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<PaymentTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final PaymentTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PaymentTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return PaymentTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("paymentType")
-  private PaymentTypeEnum paymentType = null;
+  private String paymentType = null;
 
-  /**
-   * Fee type for the selected payment type. Supported values are: Flat or Percentage. 
-   */
-  @JsonAdapter(FeeTypeEnum.Adapter.class)
-  public enum FeeTypeEnum {
-    FLAT("FLAT"),
-    
-    PERCENTAGE("PERCENTAGE");
-
-    private String value;
-
-    FeeTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static FeeTypeEnum fromValue(String text) {
-      for (FeeTypeEnum b : FeeTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<FeeTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final FeeTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public FeeTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return FeeTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("feeType")
-  private FeeTypeEnum feeType = null;
+  private String feeType = null;
 
   @SerializedName("feeAmount")
   private BigDecimal feeAmount = null;
@@ -147,39 +45,39 @@ public class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPay
   @SerializedName("feeCap")
   private BigDecimal feeCap = null;
 
-  public PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInformation paymentType(PaymentTypeEnum paymentType) {
+  public PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInformation paymentType(String paymentType) {
     this.paymentType = paymentType;
     return this;
   }
 
    /**
-   * Payment types accepted by this merchant. The supported values are: MASTERDEBIT, MASTERCREDIT, VISACREDIT, VISADEBIT, DISCOVERCREDIT, AMEXCREDIT, ECHECK
+   * Payment types accepted by this merchant. The supported values are: MASTERDEBIT, MASTERCREDIT, VISACREDIT, VISADEBIT, DISCOVERCREDIT, AMEXCREDIT, ECHECK  Possible values: - MASTERDEBIT - MASTERCREDIT - VISACREDIT - VISADEBIT - DISCOVERCREDIT - AMEXCREDIT - ECHECK
    * @return paymentType
   **/
-  @ApiModelProperty(value = "Payment types accepted by this merchant. The supported values are: MASTERDEBIT, MASTERCREDIT, VISACREDIT, VISADEBIT, DISCOVERCREDIT, AMEXCREDIT, ECHECK")
-  public PaymentTypeEnum getPaymentType() {
+  @ApiModelProperty(value = "Payment types accepted by this merchant. The supported values are: MASTERDEBIT, MASTERCREDIT, VISACREDIT, VISADEBIT, DISCOVERCREDIT, AMEXCREDIT, ECHECK  Possible values: - MASTERDEBIT - MASTERCREDIT - VISACREDIT - VISADEBIT - DISCOVERCREDIT - AMEXCREDIT - ECHECK")
+  public String getPaymentType() {
     return paymentType;
   }
 
-  public void setPaymentType(PaymentTypeEnum paymentType) {
+  public void setPaymentType(String paymentType) {
     this.paymentType = paymentType;
   }
 
-  public PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInformation feeType(FeeTypeEnum feeType) {
+  public PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInformation feeType(String feeType) {
     this.feeType = feeType;
     return this;
   }
 
    /**
-   * Fee type for the selected payment type. Supported values are: Flat or Percentage. 
+   * Fee type for the selected payment type. Supported values are: Flat or Percentage.   Possible values: - FLAT - PERCENTAGE
    * @return feeType
   **/
-  @ApiModelProperty(value = "Fee type for the selected payment type. Supported values are: Flat or Percentage. ")
-  public FeeTypeEnum getFeeType() {
+  @ApiModelProperty(value = "Fee type for the selected payment type. Supported values are: Flat or Percentage.   Possible values: - FLAT - PERCENTAGE")
+  public String getFeeType() {
     return feeType;
   }
 
-  public void setFeeType(FeeTypeEnum feeType) {
+  public void setFeeType(String feeType) {
     this.feeType = feeType;
   }
 

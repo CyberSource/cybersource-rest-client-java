@@ -33,6 +33,9 @@ public class PushFunds201ResponseRecipientInformation {
   @SerializedName("card")
   private PushFunds201ResponseRecipientInformationCard card = null;
 
+  @SerializedName("email")
+  private String email = null;
+
   public PushFunds201ResponseRecipientInformation card(PushFunds201ResponseRecipientInformationCard card) {
     this.card = card;
     return this;
@@ -51,6 +54,24 @@ public class PushFunds201ResponseRecipientInformation {
     this.card = card;
   }
 
+  public PushFunds201ResponseRecipientInformation email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s email address, including the full domain name. 
+   * @return email
+  **/
+  @ApiModelProperty(value = "Customer's email address, including the full domain name. ")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +82,13 @@ public class PushFunds201ResponseRecipientInformation {
       return false;
     }
     PushFunds201ResponseRecipientInformation pushFunds201ResponseRecipientInformation = (PushFunds201ResponseRecipientInformation) o;
-    return Objects.equals(this.card, pushFunds201ResponseRecipientInformation.card);
+    return Objects.equals(this.card, pushFunds201ResponseRecipientInformation.card) &&
+        Objects.equals(this.email, pushFunds201ResponseRecipientInformation.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(card);
+    return Objects.hash(card, email);
   }
 
 
@@ -76,6 +98,7 @@ public class PushFunds201ResponseRecipientInformation {
     sb.append("class PushFunds201ResponseRecipientInformation {\n");
     
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }

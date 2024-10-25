@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions;
+import Model.PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -38,6 +39,9 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
 
   @SerializedName("enhancedDataEnabled")
   private Boolean enhancedDataEnabled = null;
+
+  @SerializedName("captureOptions")
+  private PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions captureOptions = null;
 
   public PtsV2PaymentsPost201ResponseProcessingInformation bankTransferOptions(PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions bankTransferOptions) {
     this.bankTransferOptions = bankTransferOptions;
@@ -93,6 +97,24 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     this.enhancedDataEnabled = enhancedDataEnabled;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessingInformation captureOptions(PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions captureOptions) {
+    this.captureOptions = captureOptions;
+    return this;
+  }
+
+   /**
+   * Get captureOptions
+   * @return captureOptions
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions getCaptureOptions() {
+    return captureOptions;
+  }
+
+  public void setCaptureOptions(PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions captureOptions) {
+    this.captureOptions = captureOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,12 +127,13 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     PtsV2PaymentsPost201ResponseProcessingInformation ptsV2PaymentsPost201ResponseProcessingInformation = (PtsV2PaymentsPost201ResponseProcessingInformation) o;
     return Objects.equals(this.bankTransferOptions, ptsV2PaymentsPost201ResponseProcessingInformation.bankTransferOptions) &&
         Objects.equals(this.paymentSolution, ptsV2PaymentsPost201ResponseProcessingInformation.paymentSolution) &&
-        Objects.equals(this.enhancedDataEnabled, ptsV2PaymentsPost201ResponseProcessingInformation.enhancedDataEnabled);
+        Objects.equals(this.enhancedDataEnabled, ptsV2PaymentsPost201ResponseProcessingInformation.enhancedDataEnabled) &&
+        Objects.equals(this.captureOptions, ptsV2PaymentsPost201ResponseProcessingInformation.captureOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bankTransferOptions, paymentSolution, enhancedDataEnabled);
+    return Objects.hash(bankTransferOptions, paymentSolution, enhancedDataEnabled, captureOptions);
   }
 
 
@@ -122,6 +145,7 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
     sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
     sb.append("    enhancedDataEnabled: ").append(toIndentedString(enhancedDataEnabled)).append("\n");
+    sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

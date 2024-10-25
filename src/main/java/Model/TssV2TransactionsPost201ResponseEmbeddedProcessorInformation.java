@@ -36,6 +36,9 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
   @SerializedName("approvalCode")
   private String approvalCode = null;
 
+  @SerializedName("retrievalReferenceNumber")
+  private String retrievalReferenceNumber = null;
+
   public TssV2TransactionsPost201ResponseEmbeddedProcessorInformation processor(TssV2TransactionsGet200ResponseProcessorInformationProcessor processor) {
     this.processor = processor;
     return this;
@@ -72,6 +75,24 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
     this.approvalCode = approvalCode;
   }
 
+  public TssV2TransactionsPost201ResponseEmbeddedProcessorInformation retrievalReferenceNumber(String retrievalReferenceNumber) {
+    this.retrievalReferenceNumber = retrievalReferenceNumber;
+    return this;
+  }
+
+   /**
+   * #### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number. 
+   * @return retrievalReferenceNumber
+  **/
+  @ApiModelProperty(value = "#### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number. ")
+  public String getRetrievalReferenceNumber() {
+    return retrievalReferenceNumber;
+  }
+
+  public void setRetrievalReferenceNumber(String retrievalReferenceNumber) {
+    this.retrievalReferenceNumber = retrievalReferenceNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +104,13 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
     }
     TssV2TransactionsPost201ResponseEmbeddedProcessorInformation tssV2TransactionsPost201ResponseEmbeddedProcessorInformation = (TssV2TransactionsPost201ResponseEmbeddedProcessorInformation) o;
     return Objects.equals(this.processor, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.processor) &&
-        Objects.equals(this.approvalCode, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.approvalCode);
+        Objects.equals(this.approvalCode, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.approvalCode) &&
+        Objects.equals(this.retrievalReferenceNumber, tssV2TransactionsPost201ResponseEmbeddedProcessorInformation.retrievalReferenceNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processor, approvalCode);
+    return Objects.hash(processor, approvalCode, retrievalReferenceNumber);
   }
 
 
@@ -99,6 +121,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
     
     sb.append("    processor: ").append(toIndentedString(processor)).append("\n");
     sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
+    sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -537,7 +537,7 @@ public class CustomerShippingAddressApi {
      */
     public okhttp3.Call patchCustomersShippingAddressCall(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerShippingAddressRequest, PatchCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerShippingAddressRequest, PatchCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}"
@@ -700,7 +700,7 @@ public class CustomerShippingAddressApi {
      */
     public okhttp3.Call postCustomerShippingAddressCall(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerShippingAddressRequest, PostCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerShippingAddressRequest, PostCustomerShippingAddressRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/shipping-addresses"

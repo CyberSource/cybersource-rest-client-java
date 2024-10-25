@@ -31,56 +31,8 @@ import java.math.BigDecimal;
  */
 
 public class Boardingv1registrationsOrganizationInformationKYC {
-  /**
-   * Gets or Sets whenIsCustomerCharged
-   */
-  @JsonAdapter(WhenIsCustomerChargedEnum.Adapter.class)
-  public enum WhenIsCustomerChargedEnum {
-    ONETIMEBEFORE("ONETIMEBEFORE"),
-    
-    ONETIMEAFTER("ONETIMEAFTER"),
-    
-    OTHER("OTHER");
-
-    private String value;
-
-    WhenIsCustomerChargedEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static WhenIsCustomerChargedEnum fromValue(String text) {
-      for (WhenIsCustomerChargedEnum b : WhenIsCustomerChargedEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<WhenIsCustomerChargedEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final WhenIsCustomerChargedEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public WhenIsCustomerChargedEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return WhenIsCustomerChargedEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("whenIsCustomerCharged")
-  private WhenIsCustomerChargedEnum whenIsCustomerCharged = null;
+  private String whenIsCustomerCharged = null;
 
   @SerializedName("whenIsCustomerChargedDescription")
   private String whenIsCustomerChargedDescription = null;
@@ -100,60 +52,8 @@ public class Boardingv1registrationsOrganizationInformationKYC {
   @SerializedName("annualSubscriptionPercent")
   private BigDecimal annualSubscriptionPercent = null;
 
-  /**
-   * Gets or Sets timeToProductDelivery
-   */
-  @JsonAdapter(TimeToProductDeliveryEnum.Adapter.class)
-  public enum TimeToProductDeliveryEnum {
-    INSTANT("INSTANT"),
-    
-    UPTO2("UPTO2"),
-    
-    UPTO5("UPTO5"),
-    
-    UPTO10("UPTO10"),
-    
-    GREATERTHAN10("GREATERTHAN10");
-
-    private String value;
-
-    TimeToProductDeliveryEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TimeToProductDeliveryEnum fromValue(String text) {
-      for (TimeToProductDeliveryEnum b : TimeToProductDeliveryEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<TimeToProductDeliveryEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TimeToProductDeliveryEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TimeToProductDeliveryEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return TimeToProductDeliveryEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("timeToProductDelivery")
-  private TimeToProductDeliveryEnum timeToProductDelivery = null;
+  private String timeToProductDelivery = null;
 
   @SerializedName("estimatedMonthlySales")
   private BigDecimal estimatedMonthlySales = null;
@@ -167,21 +67,21 @@ public class Boardingv1registrationsOrganizationInformationKYC {
   @SerializedName("depositBankAccount")
   private Boardingv1registrationsOrganizationInformationKYCDepositBankAccount depositBankAccount = null;
 
-  public Boardingv1registrationsOrganizationInformationKYC whenIsCustomerCharged(WhenIsCustomerChargedEnum whenIsCustomerCharged) {
+  public Boardingv1registrationsOrganizationInformationKYC whenIsCustomerCharged(String whenIsCustomerCharged) {
     this.whenIsCustomerCharged = whenIsCustomerCharged;
     return this;
   }
 
    /**
-   * Get whenIsCustomerCharged
+   * Possible values: - ONETIMEBEFORE - ONETIMEAFTER - OTHER
    * @return whenIsCustomerCharged
   **/
-  @ApiModelProperty(example = "ONETIMEBEFORE", required = true, value = "")
-  public WhenIsCustomerChargedEnum getWhenIsCustomerCharged() {
+  @ApiModelProperty(example = "ONETIMEBEFORE", required = true, value = "Possible values: - ONETIMEBEFORE - ONETIMEAFTER - OTHER")
+  public String getWhenIsCustomerCharged() {
     return whenIsCustomerCharged;
   }
 
-  public void setWhenIsCustomerCharged(WhenIsCustomerChargedEnum whenIsCustomerCharged) {
+  public void setWhenIsCustomerCharged(String whenIsCustomerCharged) {
     this.whenIsCustomerCharged = whenIsCustomerCharged;
   }
 
@@ -293,21 +193,21 @@ public class Boardingv1registrationsOrganizationInformationKYC {
     this.annualSubscriptionPercent = annualSubscriptionPercent;
   }
 
-  public Boardingv1registrationsOrganizationInformationKYC timeToProductDelivery(TimeToProductDeliveryEnum timeToProductDelivery) {
+  public Boardingv1registrationsOrganizationInformationKYC timeToProductDelivery(String timeToProductDelivery) {
     this.timeToProductDelivery = timeToProductDelivery;
     return this;
   }
 
    /**
-   * Get timeToProductDelivery
+   * Possible values: - INSTANT - UPTO2 - UPTO5 - UPTO10 - GREATERTHAN10
    * @return timeToProductDelivery
   **/
-  @ApiModelProperty(required = true, value = "")
-  public TimeToProductDeliveryEnum getTimeToProductDelivery() {
+  @ApiModelProperty(required = true, value = "Possible values: - INSTANT - UPTO2 - UPTO5 - UPTO10 - GREATERTHAN10")
+  public String getTimeToProductDelivery() {
     return timeToProductDelivery;
   }
 
-  public void setTimeToProductDelivery(TimeToProductDeliveryEnum timeToProductDelivery) {
+  public void setTimeToProductDelivery(String timeToProductDelivery) {
     this.timeToProductDelivery = timeToProductDelivery;
   }
 

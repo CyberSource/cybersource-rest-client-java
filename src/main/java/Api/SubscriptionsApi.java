@@ -354,7 +354,7 @@ public class SubscriptionsApi {
      */
     public okhttp3.Call createSubscriptionCall(CreateSubscriptionRequest createSubscriptionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSubscriptionRequest, CreateSubscriptionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createSubscriptionRequest, CreateSubscriptionRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/rbs/v1/subscriptions";
@@ -1028,7 +1028,7 @@ public class SubscriptionsApi {
      */
     public okhttp3.Call updateSubscriptionCall(String id, UpdateSubscription updateSubscription, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateSubscription, UpdateSubscription.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateSubscription, UpdateSubscription.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/rbs/v1/subscriptions/{id}"
