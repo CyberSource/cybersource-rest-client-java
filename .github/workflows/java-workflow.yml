@@ -33,7 +33,7 @@ jobs:
               uses: actions/checkout@v4
               with:
                 repository: 'CyberSource/cybersource-rest-samples-java'
-                ref: 'release-sep24'
+                ref: 'release-oct24'
                 path: ${{env.SAMPLE_FOLDER}}
             - name: Setup Java 8 to Build the Client
               uses: actions/setup-java@v2
@@ -46,6 +46,7 @@ jobs:
                 java -version
                 cd $CLIENT_FOLDER
                 mvn clean install
+                mvn install:install-file -Dfile=target/lib/AuthenticationSdk-0.0.32-SNAPSHOT.jar -DgroupId=<group-id> -DartifactId=com.cybersource -Dversion=0.0.32-SNAPSHOT -Dpackaging=jar
             - name: Setup Java version to Build the samples
               uses: actions/setup-java@v2
               with:
