@@ -23,6 +23,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection
@@ -34,6 +36,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {
 
   @SerializedName("eligibility")
   private String eligibility = null;
+
+  @SerializedName("disputeCategories")
+  private List<String> disputeCategories = null;
 
   @SerializedName("eligibilityType")
   private String eligibilityType = null;
@@ -62,16 +67,42 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {
   }
 
    /**
-   * The level of seller protection in force for the transaction. Possible values: - &#x60;ELIGIBLE&#x60; - &#x60;PARTIALLY_ELIGIBLE&#x60; - &#x60;INELIGIBLE&#x60; 
+   * Indicates whether the transaction is eligible for seller protection. The values returned are described below. Possible values: - &#x60;ELIGIBLE&#x60; - &#x60;PARTIALLY_ELIGIBLE&#x60; - &#x60;INELIGIBLE&#x60; - &#x60;NOT_ELIGIBLE&#x60; 
    * @return eligibility
   **/
-  @ApiModelProperty(value = "The level of seller protection in force for the transaction. Possible values: - `ELIGIBLE` - `PARTIALLY_ELIGIBLE` - `INELIGIBLE` ")
+  @ApiModelProperty(value = "Indicates whether the transaction is eligible for seller protection. The values returned are described below. Possible values: - `ELIGIBLE` - `PARTIALLY_ELIGIBLE` - `INELIGIBLE` - `NOT_ELIGIBLE` ")
   public String getEligibility() {
     return eligibility;
   }
 
   public void setEligibility(String eligibility) {
     this.eligibility = eligibility;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection disputeCategories(List<String> disputeCategories) {
+    this.disputeCategories = disputeCategories;
+    return this;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection addDisputeCategoriesItem(String disputeCategoriesItem) {
+    if (this.disputeCategories == null) {
+      this.disputeCategories = new ArrayList<String>();
+    }
+    this.disputeCategories.add(disputeCategoriesItem);
+    return this;
+  }
+
+   /**
+   * An array of conditions that are covered for the transaction. 
+   * @return disputeCategories
+  **/
+  @ApiModelProperty(value = "An array of conditions that are covered for the transaction. ")
+  public List<String> getDisputeCategories() {
+    return disputeCategories;
+  }
+
+  public void setDisputeCategories(List<String> disputeCategories) {
+    this.disputeCategories = disputeCategories;
   }
 
   public PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection eligibilityType(String eligibilityType) {
@@ -104,12 +135,13 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {
     PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection ptsV2PaymentsPost201ResponseProcessorInformationSellerProtection = (PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection) o;
     return Objects.equals(this.type, ptsV2PaymentsPost201ResponseProcessorInformationSellerProtection.type) &&
         Objects.equals(this.eligibility, ptsV2PaymentsPost201ResponseProcessorInformationSellerProtection.eligibility) &&
+        Objects.equals(this.disputeCategories, ptsV2PaymentsPost201ResponseProcessorInformationSellerProtection.disputeCategories) &&
         Objects.equals(this.eligibilityType, ptsV2PaymentsPost201ResponseProcessorInformationSellerProtection.eligibilityType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, eligibility, eligibilityType);
+    return Objects.hash(type, eligibility, disputeCategories, eligibilityType);
   }
 
 
@@ -120,6 +152,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    eligibility: ").append(toIndentedString(eligibility)).append("\n");
+    sb.append("    disputeCategories: ").append(toIndentedString(disputeCategories)).append("\n");
     sb.append("    eligibilityType: ").append(toIndentedString(eligibilityType)).append("\n");
     sb.append("}");
     return sb.toString();

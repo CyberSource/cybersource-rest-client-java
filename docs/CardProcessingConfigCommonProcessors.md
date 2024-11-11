@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **enableAutoAuthReversalAfterVoid** | **Boolean** | Enables to meet the Visa mandate requirements to reverse unused authorizations, benefitting the customer by releasing the hold on unused credit card funds. Applicable for CB2A, Elavon Americas (elavonamericas), Six (six), VPC and American Express Direct (amexdirect) processors.  Validation details (for selected processors)...  &lt;table&gt; &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Processor&lt;/th&gt;&lt;th&gt;Acceptance Type&lt;/th&gt;&lt;th&gt;Required&lt;/th&gt;&lt;th&gt;Default Value&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt; &lt;tr&gt;&lt;td&gt;American Express Direct&lt;/td&gt;&lt;td&gt;cp, cnp, hybrid&lt;/td&gt;&lt;td&gt;No&lt;/td&gt;&lt;td&gt;No&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;  |  [optional]
 **enableExpresspayPanTranslation** | **Boolean** | When this is enabled, authorization responses from American Express expresspay transactions include the Primary Account Number (PAN) and expiration date of the card. Applicable for American Express Direct (amexdirect) processor. |  [optional]
 **enableCreditAuth** | **Boolean** | Authorizes a credit. Reduces refund chargebacks and prevents customers from seeing the online update for credits which are otherwise offline settlements. |  [optional]
-**industryCode** | [**IndustryCodeEnum**](#IndustryCodeEnum) | Field used to identify the industry type of the merchant submitting the authorization request.  Valid values: &#x60;0&#x60; – unknown or unsure &#x60;A&#x60; – auto rental (EMV supported) &#x60;B&#x60; – bank/financial institution (EMV supported) &#x60;D&#x60; – direct marketing &#x60;F&#x60; – food/restaurant (EMV supported) &#x60;G&#x60; – grocery store/super market (EMV supported) &#x60;H&#x60; – hotel (EMV supported) &#x60;L&#x60; – limited amount terminal (EMV supported) &#x60;O&#x60; – oil company/automated fueling system (EMV supported) &#x60;P&#x60; – passenger transport (EMV supported) &#x60;R&#x60; – retail (EMV supported) Applicable for TSYS (tsys), RUPAY and Elavon Americas (elavonamericas) processors.  |  [optional]
+**industryCode** | **String** | Field used to identify the industry type of the merchant submitting the authorization request.  Valid values: &#x60;0&#x60; – unknown or unsure &#x60;A&#x60; – auto rental (EMV supported) &#x60;B&#x60; – bank/financial institution (EMV supported) &#x60;D&#x60; – direct marketing &#x60;F&#x60; – food/restaurant (EMV supported) &#x60;G&#x60; – grocery store/super market (EMV supported) &#x60;H&#x60; – hotel (EMV supported) &#x60;L&#x60; – limited amount terminal (EMV supported) &#x60;O&#x60; – oil company/automated fueling system (EMV supported) &#x60;P&#x60; – passenger transport (EMV supported) &#x60;R&#x60; – retail (EMV supported) Applicable for TSYS (tsys), RUPAY and Elavon Americas (elavonamericas) processors.   Possible values: - 0 - A - B - D - F - G - H - L - O - P - R |  [optional]
 **sendAmexLevel2Data** | **Boolean** | Field that indicates whether merchant will send level 2 data for Amex cards. Applicable for TSYS (tsys) processor. |  [optional]
 **softDescriptorType** | **String** | A soft descriptor is a text, rendered on a cardholder&#39;s statement, describing a particular product or service, purchased by the cardholder. Descriptors are intended to help the cardholder identify the products or services purchased. Valid values: &#x60;1&#x60; - trans_ref_no &#x60;2&#x60; - merchant_descriptor &#x60;3&#x60; - trans_ref_no and merchant_descriptor Applicable for TSYS (tsys) processor.  |  [optional]
 **vitalNumber** | **String** | V-number provided by TSYS info. The leading &#x60;V&#x60; must be replaced by a &#x60;7&#x60;. For example, replace &#x60;V1234567&#x60; with &#x60;71234567&#x60;. Applicable for TSYS (tsys) processor. |  [optional]
@@ -51,23 +51,6 @@ Name | Type | Description | Notes
 **enablePosNetworkSwitching** | **Boolean** | &#39;POS Network Switching&#39; or &#39;Alternate Routing&#39; means merchant can process PIN Debit transactions without a PIN. Set the value to &#39;Yes&#39; if it is supported. Applicable for FDI Global (fdiglobal) processor. |  [optional]
 **enableDynamicCurrencyConversion** | **Boolean** | Enable dynamic currency conversion for a merchant. |  [optional]
 **merchantTier** | **String** | Merchant Tier defines the type of merchant, the numeric Merchant Tier value is allocated by EFTPOS. Applicable for EFTPOS processors. |  [optional]
-
-
-<a name="IndustryCodeEnum"></a>
-## Enum: IndustryCodeEnum
-Name | Value
----- | -----
-_0 | &quot;0&quot;
-A | &quot;A&quot;
-B | &quot;B&quot;
-D | &quot;D&quot;
-F | &quot;F&quot;
-G | &quot;G&quot;
-H | &quot;H&quot;
-L | &quot;L&quot;
-O | &quot;O&quot;
-P | &quot;P&quot;
-R | &quot;R&quot;
 
 
 

@@ -28,9 +28,9 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-import Model.BinLookupv400Response;
 import Model.CreateBinLookupRequest;
 import Model.InlineResponse2011;
+import Model.PtsV2CreateOrderPost400Response;
 import Model.PtsV2PaymentsPost502Response;
 
 import java.lang.reflect.Type;
@@ -74,7 +74,7 @@ public class BinLookupApi {
      */
     public okhttp3.Call getAccountInfoCall(CreateBinLookupRequest createBinLookupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBinLookupRequest, CreateBinLookupRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createBinLookupRequest, CreateBinLookupRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/bin/v1/binlookup";

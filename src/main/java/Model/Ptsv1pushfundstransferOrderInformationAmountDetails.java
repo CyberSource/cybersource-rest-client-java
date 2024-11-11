@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -40,6 +41,9 @@ public class Ptsv1pushfundstransferOrderInformationAmountDetails {
 
   @SerializedName("destinationCurrency")
   private String destinationCurrency = null;
+
+  @SerializedName("surcharge")
+  private Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge surcharge = null;
 
   public Ptsv1pushfundstransferOrderInformationAmountDetails totalAmount(String totalAmount) {
     this.totalAmount = totalAmount;
@@ -101,16 +105,34 @@ public class Ptsv1pushfundstransferOrderInformationAmountDetails {
   }
 
    /**
-   * Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf NOTE: This field is supported only for Visa Platform Connect 
+   * Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf 
    * @return destinationCurrency
   **/
-  @ApiModelProperty(value = "Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf NOTE: This field is supported only for Visa Platform Connect ")
+  @ApiModelProperty(value = "Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf ")
   public String getDestinationCurrency() {
     return destinationCurrency;
   }
 
   public void setDestinationCurrency(String destinationCurrency) {
     this.destinationCurrency = destinationCurrency;
+  }
+
+  public Ptsv1pushfundstransferOrderInformationAmountDetails surcharge(Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge surcharge) {
+    this.surcharge = surcharge;
+    return this;
+  }
+
+   /**
+   * Get surcharge
+   * @return surcharge
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge getSurcharge() {
+    return surcharge;
+  }
+
+  public void setSurcharge(Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge surcharge) {
+    this.surcharge = surcharge;
   }
 
 
@@ -126,12 +148,13 @@ public class Ptsv1pushfundstransferOrderInformationAmountDetails {
     return Objects.equals(this.totalAmount, ptsv1pushfundstransferOrderInformationAmountDetails.totalAmount) &&
         Objects.equals(this.currency, ptsv1pushfundstransferOrderInformationAmountDetails.currency) &&
         Objects.equals(this.sourceCurrency, ptsv1pushfundstransferOrderInformationAmountDetails.sourceCurrency) &&
-        Objects.equals(this.destinationCurrency, ptsv1pushfundstransferOrderInformationAmountDetails.destinationCurrency);
+        Objects.equals(this.destinationCurrency, ptsv1pushfundstransferOrderInformationAmountDetails.destinationCurrency) &&
+        Objects.equals(this.surcharge, ptsv1pushfundstransferOrderInformationAmountDetails.surcharge);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAmount, currency, sourceCurrency, destinationCurrency);
+    return Objects.hash(totalAmount, currency, sourceCurrency, destinationCurrency, surcharge);
   }
 
 
@@ -144,6 +167,7 @@ public class Ptsv1pushfundstransferOrderInformationAmountDetails {
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    sourceCurrency: ").append(toIndentedString(sourceCurrency)).append("\n");
     sb.append("    destinationCurrency: ").append(toIndentedString(destinationCurrency)).append("\n");
+    sb.append("    surcharge: ").append(toIndentedString(surcharge)).append("\n");
     sb.append("}");
     return sb.toString();
   }
