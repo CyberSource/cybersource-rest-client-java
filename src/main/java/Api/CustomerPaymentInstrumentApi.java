@@ -48,6 +48,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.tracking.SdkTracker;
+import com.cybersource.authsdk.util.mle.MLEUtility;
+import com.cybersource.authsdk.util.mle.MLEException;
 
 public class CustomerPaymentInstrumentApi {
     private static Logger logger = LogManager.getLogger(CustomerPaymentInstrumentApi.class);
@@ -85,6 +87,17 @@ public class CustomerPaymentInstrumentApi {
         Object localVarPostBody = null;
         if ("DELETE".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "deleteCustomerPaymentInstrument,deleteCustomerPaymentInstrumentAsync,deleteCustomerPaymentInstrumentWithHttpInfo,deleteCustomerPaymentInstrumentCall")) {
+            String payload = apiClient.getJSON().serialize(localVarPostBody);
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -233,6 +246,17 @@ public class CustomerPaymentInstrumentApi {
         Object localVarPostBody = null;
         if ("GET".equalsIgnoreCase("POST")) {
             localVarPostBody = "{}";
+        }
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getCustomerPaymentInstrument,getCustomerPaymentInstrumentAsync,getCustomerPaymentInstrumentWithHttpInfo,getCustomerPaymentInstrumentCall")) {
+            String payload = apiClient.getJSON().serialize(localVarPostBody);
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
         }
         
         // create path and map variables
@@ -388,6 +412,17 @@ public class CustomerPaymentInstrumentApi {
             localVarPostBody = "{}";
         }
         
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getCustomerPaymentInstrumentsList,getCustomerPaymentInstrumentsListAsync,getCustomerPaymentInstrumentsListWithHttpInfo,getCustomerPaymentInstrumentsListCall")) {
+            String payload = apiClient.getJSON().serialize(localVarPostBody);
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
+        
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments"
             .replaceAll("\\{" + "customerId" + "\\}", apiClient.escapeString(customerId.toString()));
@@ -538,6 +573,17 @@ public class CustomerPaymentInstrumentApi {
     public okhttp3.Call patchCustomersPaymentInstrumentCall(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(patchCustomerPaymentInstrumentRequest, PatchCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "patchCustomersPaymentInstrument,patchCustomersPaymentInstrumentAsync,patchCustomersPaymentInstrumentWithHttpInfo,patchCustomersPaymentInstrumentCall")) {
+            String payload = apiClient.getJSON().serialize(localVarPostBody);
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}"
@@ -701,6 +747,17 @@ public class CustomerPaymentInstrumentApi {
     public okhttp3.Call postCustomerPaymentInstrumentCall(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
         Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(postCustomerPaymentInstrumentRequest, PostCustomerPaymentInstrumentRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        
+        boolean isMLESupportedByCybsForApi = false;
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "postCustomerPaymentInstrument,postCustomerPaymentInstrumentAsync,postCustomerPaymentInstrumentWithHttpInfo,postCustomerPaymentInstrumentCall")) {
+            String payload = apiClient.getJSON().serialize(localVarPostBody);
+            try {
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+            } catch (MLEException e) {
+                logger.error("Failed to encrypt request body {}", e.getMessage(), e);
+                throw new ApiException("Failed to encrypt request body : " + e.getMessage());
+            }
+        }
         
         // create path and map variables
         String localVarPath = "/tms/v2/customers/{customerId}/payment-instruments"
