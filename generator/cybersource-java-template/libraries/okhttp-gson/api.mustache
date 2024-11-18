@@ -93,7 +93,7 @@ public class {{classname}} {
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "{{operationId}},{{operationId}}Async,{{operationId}}WithHttpInfo,{{operationId}}Call")) {
             String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                {{localVariablePrefix}}localVarPostBody = MLEUtility.encodeRequest(apiClient.merchantConfig, payload);
+                {{localVariablePrefix}}localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
