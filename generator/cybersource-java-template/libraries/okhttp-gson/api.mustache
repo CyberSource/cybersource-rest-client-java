@@ -82,7 +82,7 @@ public class {{classname}} {
      */
     public okhttp3.Call {{operationId}}Call({{#allParams}}{{{dataType}}} {{paramName}}, {{/allParams}}final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = {{#bodyParam}}sdkTracker.insertDeveloperIdTracker({{paramName}}, {{dataType}}.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment()){{/bodyParam}}{{^bodyParam}}null{{/bodyParam}};
+        Object localVarPostBody = {{#bodyParam}}sdkTracker.insertDeveloperIdTracker({{paramName}}, {{dataType}}.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId()){{/bodyParam}}{{^bodyParam}}null{{/bodyParam}};
 {{^bodyParam}}
         if ("{{httpMethod}}".equalsIgnoreCase("POST")) {
             {{localVariablePrefix}}localVarPostBody = "{}";

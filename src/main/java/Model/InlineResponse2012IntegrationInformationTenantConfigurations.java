@@ -36,56 +36,8 @@ public class InlineResponse2012IntegrationInformationTenantConfigurations {
   @SerializedName("tenantConfigurationId")
   private String tenantConfigurationId = null;
 
-  /**
-   * Gets or Sets status
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    LIVE("LIVE"),
-    
-    INACTIVE("INACTIVE"),
-    
-    TEST("TEST");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("status")
-  private StatusEnum status = null;
+  private String status = null;
 
   @SerializedName("submitTimeUtc")
   private DateTime submitTimeUtc = null;
@@ -126,21 +78,21 @@ public class InlineResponse2012IntegrationInformationTenantConfigurations {
     this.tenantConfigurationId = tenantConfigurationId;
   }
 
-  public InlineResponse2012IntegrationInformationTenantConfigurations status(StatusEnum status) {
+  public InlineResponse2012IntegrationInformationTenantConfigurations status(String status) {
     this.status = status;
     return this;
   }
 
    /**
-   * Get status
+   * Possible values: - LIVE - INACTIVE - TEST
    * @return status
   **/
-  @ApiModelProperty(value = "")
-  public StatusEnum getStatus() {
+  @ApiModelProperty(value = "Possible values: - LIVE - INACTIVE - TEST")
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 

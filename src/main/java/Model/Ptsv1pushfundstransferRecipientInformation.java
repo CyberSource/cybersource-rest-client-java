@@ -64,8 +64,20 @@ public class Ptsv1pushfundstransferRecipientInformation {
   @SerializedName("phoneNumber")
   private String phoneNumber = null;
 
+  @SerializedName("email")
+  private String email = null;
+
   @SerializedName("personalIdentification")
   private Ptsv1pushfundstransferRecipientInformationPersonalIdentification personalIdentification = null;
+
+  @SerializedName("buildingNumber")
+  private String buildingNumber = null;
+
+  @SerializedName("streetName")
+  private String streetName = null;
+
+  @SerializedName("type")
+  private String type = null;
 
   public Ptsv1pushfundstransferRecipientInformation paymentInformation(Ptsv1pushfundstransferRecipientInformationPaymentInformation paymentInformation) {
     this.paymentInformation = paymentInformation;
@@ -253,16 +265,34 @@ public class Ptsv1pushfundstransferRecipientInformation {
   }
 
    /**
-   * Recipient phone number.  This field is supported by FDC Compass.  Mastercard Send: Max length is 15 with no dashes or spaces. 
+   * Customer&#39;s phone number.  It is recommended that you include the country code when the order is from outside the U.S. 
    * @return phoneNumber
   **/
-  @ApiModelProperty(value = "Recipient phone number.  This field is supported by FDC Compass.  Mastercard Send: Max length is 15 with no dashes or spaces. ")
+  @ApiModelProperty(value = "Customer's phone number.  It is recommended that you include the country code when the order is from outside the U.S. ")
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
   public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
+  }
+
+  public Ptsv1pushfundstransferRecipientInformation email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Customer&#39;s email address, including the full domain name. 
+   * @return email
+  **/
+  @ApiModelProperty(value = "Customer's email address, including the full domain name. ")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
   }
 
   public Ptsv1pushfundstransferRecipientInformation personalIdentification(Ptsv1pushfundstransferRecipientInformationPersonalIdentification personalIdentification) {
@@ -281,6 +311,60 @@ public class Ptsv1pushfundstransferRecipientInformation {
 
   public void setPersonalIdentification(Ptsv1pushfundstransferRecipientInformationPersonalIdentification personalIdentification) {
     this.personalIdentification = personalIdentification;
+  }
+
+  public Ptsv1pushfundstransferRecipientInformation buildingNumber(String buildingNumber) {
+    this.buildingNumber = buildingNumber;
+    return this;
+  }
+
+   /**
+   * Building number in the street address.  For example, if the street address is: Rua da Quitanda 187 then the building number is 187.  Applicable to domestic Colombia transactions only. 
+   * @return buildingNumber
+  **/
+  @ApiModelProperty(value = "Building number in the street address.  For example, if the street address is: Rua da Quitanda 187 then the building number is 187.  Applicable to domestic Colombia transactions only. ")
+  public String getBuildingNumber() {
+    return buildingNumber;
+  }
+
+  public void setBuildingNumber(String buildingNumber) {
+    this.buildingNumber = buildingNumber;
+  }
+
+  public Ptsv1pushfundstransferRecipientInformation streetName(String streetName) {
+    this.streetName = streetName;
+    return this;
+  }
+
+   /**
+   * This field contains the street name of the recipient&#39;s address.  Applicable to domestic Colombia transactions only. 
+   * @return streetName
+  **/
+  @ApiModelProperty(value = "This field contains the street name of the recipient's address.  Applicable to domestic Colombia transactions only. ")
+  public String getStreetName() {
+    return streetName;
+  }
+
+  public void setStreetName(String streetName) {
+    this.streetName = streetName;
+  }
+
+  public Ptsv1pushfundstransferRecipientInformation type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * &#x60;B&#x60; for Business or &#x60;I&#x60; for individual. 
+   * @return type
+  **/
+  @ApiModelProperty(value = "`B` for Business or `I` for individual. ")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
   }
 
 
@@ -304,12 +388,16 @@ public class Ptsv1pushfundstransferRecipientInformation {
         Objects.equals(this.middleName, ptsv1pushfundstransferRecipientInformation.middleName) &&
         Objects.equals(this.lastName, ptsv1pushfundstransferRecipientInformation.lastName) &&
         Objects.equals(this.phoneNumber, ptsv1pushfundstransferRecipientInformation.phoneNumber) &&
-        Objects.equals(this.personalIdentification, ptsv1pushfundstransferRecipientInformation.personalIdentification);
+        Objects.equals(this.email, ptsv1pushfundstransferRecipientInformation.email) &&
+        Objects.equals(this.personalIdentification, ptsv1pushfundstransferRecipientInformation.personalIdentification) &&
+        Objects.equals(this.buildingNumber, ptsv1pushfundstransferRecipientInformation.buildingNumber) &&
+        Objects.equals(this.streetName, ptsv1pushfundstransferRecipientInformation.streetName) &&
+        Objects.equals(this.type, ptsv1pushfundstransferRecipientInformation.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentInformation, address1, address2, locality, postalCode, administrativeArea, country, firstName, middleName, lastName, phoneNumber, personalIdentification);
+    return Objects.hash(paymentInformation, address1, address2, locality, postalCode, administrativeArea, country, firstName, middleName, lastName, phoneNumber, email, personalIdentification, buildingNumber, streetName, type);
   }
 
 
@@ -329,7 +417,11 @@ public class Ptsv1pushfundstransferRecipientInformation {
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
+    sb.append("    buildingNumber: ").append(toIndentedString(buildingNumber)).append("\n");
+    sb.append("    streetName: ").append(toIndentedString(streetName)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

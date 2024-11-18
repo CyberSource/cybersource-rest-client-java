@@ -32,22 +32,43 @@ public class Ptsv2paymentsAgreementInformation {
   @SerializedName("agreementId")
   private String agreementId = null;
 
+  @SerializedName("id")
+  private String id = null;
+
   public Ptsv2paymentsAgreementInformation agreementId(String agreementId) {
     this.agreementId = agreementId;
     return this;
   }
 
    /**
-   * Identifier for the mandate being signed for. This mandate id is required for all the subsequent transactions.  
+   * Identifier for the mandate being signed for. This mandate id is required for all the subsequent transactions. 
    * @return agreementId
   **/
-  @ApiModelProperty(value = "Identifier for the mandate being signed for. This mandate id is required for all the subsequent transactions.  ")
+  @ApiModelProperty(value = "Identifier for the mandate being signed for. This mandate id is required for all the subsequent transactions. ")
   public String getAgreementId() {
     return agreementId;
   }
 
   public void setAgreementId(String agreementId) {
     this.agreementId = agreementId;
+  }
+
+  public Ptsv2paymentsAgreementInformation id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * The processor specific billing agreement ID. References an approved recurring payment for goods or services. This value is sent by merchant via Cybersource to processor. The value sent in this field is procured by the merchant from the processor. 
+   * @return id
+  **/
+  @ApiModelProperty(value = "The processor specific billing agreement ID. References an approved recurring payment for goods or services. This value is sent by merchant via Cybersource to processor. The value sent in this field is procured by the merchant from the processor. ")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -60,12 +81,13 @@ public class Ptsv2paymentsAgreementInformation {
       return false;
     }
     Ptsv2paymentsAgreementInformation ptsv2paymentsAgreementInformation = (Ptsv2paymentsAgreementInformation) o;
-    return Objects.equals(this.agreementId, ptsv2paymentsAgreementInformation.agreementId);
+    return Objects.equals(this.agreementId, ptsv2paymentsAgreementInformation.agreementId) &&
+        Objects.equals(this.id, ptsv2paymentsAgreementInformation.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(agreementId);
+    return Objects.hash(agreementId, id);
   }
 
 
@@ -75,6 +97,7 @@ public class Ptsv2paymentsAgreementInformation {
     sb.append("class Ptsv2paymentsAgreementInformation {\n");
     
     sb.append("    agreementId: ").append(toIndentedString(agreementId)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

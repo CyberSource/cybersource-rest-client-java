@@ -104,10 +104,10 @@ public class PushFunds502Response {
   }
 
    /**
-   * The reason of the status.  Possible values: - SYSTEM_ERROR 
+   * The reason of the status.  Possible values: - SYSTEM_ERROR - SERVICE_TIMEOUT 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values: - SYSTEM_ERROR ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values: - SYSTEM_ERROR - SERVICE_TIMEOUT ")
   public String getReason() {
     return reason;
   }
@@ -122,10 +122,10 @@ public class PushFunds502Response {
   }
 
    /**
-   * The detail message related to the status and reason listed above.  Possible values: - Error - General system failure. 
+   * The detail message related to the status and reason listed above.  Possible values: - Error - General system failure. - The request was received, but a service did not finish running in time. 
    * @return message
   **/
-  @ApiModelProperty(value = "The detail message related to the status and reason listed above.  Possible values: - Error - General system failure. ")
+  @ApiModelProperty(value = "The detail message related to the status and reason listed above.  Possible values: - Error - General system failure. - The request was received, but a service did not finish running in time. ")
   public String getMessage() {
     return message;
   }

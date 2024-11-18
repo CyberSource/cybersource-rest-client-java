@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.joda.time.LocalDate;
+import org.joda.time.DateTime;
 
 /**
  * InlineResponse4006
@@ -34,61 +34,13 @@ import org.joda.time.LocalDate;
 
 public class InlineResponse4006 {
   @SerializedName("submitTimeUtc")
-  private LocalDate submitTimeUtc = null;
+  private DateTime submitTimeUtc = null;
 
   @SerializedName("status")
   private String status = null;
 
-  /**
-   * Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;INVALID_DATA&#39;   - &#39;SYSTEM_ERROR&#39;   - &#39;RESOURCE_NOT_FOUND&#39; 
-   */
-  @JsonAdapter(ReasonEnum.Adapter.class)
-  public enum ReasonEnum {
-    INVALID_DATA("INVALID_DATA"),
-    
-    SYSTEM_ERROR("SYSTEM_ERROR"),
-    
-    RESOURCE_NOT_FOUND("RESOURCE_NOT_FOUND");
-
-    private String value;
-
-    ReasonEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ReasonEnum fromValue(String text) {
-      for (ReasonEnum b : ReasonEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ReasonEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ReasonEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ReasonEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ReasonEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("reason")
-  private ReasonEnum reason = null;
+  private String reason = null;
 
   @SerializedName("message")
   private String message = null;
@@ -96,22 +48,13 @@ public class InlineResponse4006 {
   @SerializedName("details")
   private List<InlineResponse4006Details> details = null;
 
-  public InlineResponse4006 submitTimeUtc(LocalDate submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
-    return this;
-  }
-
    /**
    * Time of request in UTC. &#x60;Format: YYYY-MM-DDThh:mm:ssZ&#x60;  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
    * @return submitTimeUtc
   **/
   @ApiModelProperty(example = "2019-06-11T22:47:57.000Z", value = "Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
-  public LocalDate getSubmitTimeUtc() {
+  public DateTime getSubmitTimeUtc() {
     return submitTimeUtc;
-  }
-
-  public void setSubmitTimeUtc(LocalDate submitTimeUtc) {
-    this.submitTimeUtc = submitTimeUtc;
   }
 
   public InlineResponse4006 status(String status) {
@@ -132,7 +75,7 @@ public class InlineResponse4006 {
     this.status = status;
   }
 
-  public InlineResponse4006 reason(ReasonEnum reason) {
+  public InlineResponse4006 reason(String reason) {
     this.reason = reason;
     return this;
   }
@@ -142,11 +85,11 @@ public class InlineResponse4006 {
    * @return reason
   **/
   @ApiModelProperty(value = "Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND' ")
-  public ReasonEnum getReason() {
+  public String getReason() {
     return reason;
   }
 
-  public void setReason(ReasonEnum reason) {
+  public void setReason(String reason) {
     this.reason = reason;
   }
 

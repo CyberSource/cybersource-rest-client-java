@@ -79,7 +79,7 @@ public class InvoicesApi {
      */
     public okhttp3.Call createInvoiceCall(CreateInvoiceRequest createInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createInvoiceRequest, CreateInvoiceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(createInvoiceRequest, CreateInvoiceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/invoices";
@@ -770,7 +770,7 @@ public class InvoicesApi {
      */
     public okhttp3.Call updateInvoiceCall(String id, UpdateInvoiceRequest updateInvoiceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateInvoiceRequest, UpdateInvoiceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(updateInvoiceRequest, UpdateInvoiceRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/invoicing/v2/invoices/{id}"

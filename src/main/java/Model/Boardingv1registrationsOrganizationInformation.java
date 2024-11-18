@@ -43,107 +43,11 @@ public class Boardingv1registrationsOrganizationInformation {
   @SerializedName("childOrganizations")
   private List<String> childOrganizations = null;
 
-  /**
-   * Determines the type of organization in the hirarchy that this registration will use to onboard this Organization Possible Values:   - &#39;TRANSACTING&#39;   - &#39;STRUCTURAL&#39;   - &#39;MERCHANT&#39; 
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    TRANSACTING("TRANSACTING"),
-    
-    STRUCTURAL("STRUCTURAL"),
-    
-    MERCHANT("MERCHANT");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String text) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return TypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("type")
-  private TypeEnum type = null;
+  private String type = null;
 
-  /**
-   * Determines the status that the organization will be after being onboarded Possible Values:             - &#39;LIVE&#39;             - &#39;TEST&#39;             - &#39;DRAFT&#39; 
-   */
-  @JsonAdapter(StatusEnum.Adapter.class)
-  public enum StatusEnum {
-    LIVE("LIVE"),
-    
-    TEST("TEST"),
-    
-    DRAFT("DRAFT");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<StatusEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StatusEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
   @SerializedName("status")
-  private StatusEnum status = null;
+  private String status = null;
 
   @SerializedName("configurable")
   private Boolean configurable = false;
@@ -202,7 +106,7 @@ public class Boardingv1registrationsOrganizationInformation {
     return childOrganizations;
   }
 
-  public Boardingv1registrationsOrganizationInformation type(TypeEnum type) {
+  public Boardingv1registrationsOrganizationInformation type(String type) {
     this.type = type;
     return this;
   }
@@ -212,15 +116,15 @@ public class Boardingv1registrationsOrganizationInformation {
    * @return type
   **/
   @ApiModelProperty(value = "Determines the type of organization in the hirarchy that this registration will use to onboard this Organization Possible Values:   - 'TRANSACTING'   - 'STRUCTURAL'   - 'MERCHANT' ")
-  public TypeEnum getType() {
+  public String getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(String type) {
     this.type = type;
   }
 
-  public Boardingv1registrationsOrganizationInformation status(StatusEnum status) {
+  public Boardingv1registrationsOrganizationInformation status(String status) {
     this.status = status;
     return this;
   }
@@ -230,11 +134,11 @@ public class Boardingv1registrationsOrganizationInformation {
    * @return status
   **/
   @ApiModelProperty(value = "Determines the status that the organization will be after being onboarded Possible Values:             - 'LIVE'             - 'TEST'             - 'DRAFT' ")
-  public StatusEnum getStatus() {
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 

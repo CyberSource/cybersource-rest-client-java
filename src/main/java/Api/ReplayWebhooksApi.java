@@ -72,7 +72,7 @@ public class ReplayWebhooksApi {
      */
     public okhttp3.Call replayPreviousWebhooksCall(String webhookId, ReplayWebhooksRequest replayWebhooksRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(replayWebhooksRequest, ReplayWebhooksRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(replayWebhooksRequest, ReplayWebhooksRequest.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         // create path and map variables
         String localVarPath = "/nrtf/v1/webhooks/{webhookId}/replays"
