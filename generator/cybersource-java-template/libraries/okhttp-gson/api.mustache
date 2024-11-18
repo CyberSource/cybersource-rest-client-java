@@ -90,7 +90,7 @@ public class {{classname}} {
         {{/bodyParam}}
         
         boolean isMLESupportedByCybsForApi = {{#vendorExtensions.x-devcenter-metaData.isMLEsupported}}true;{{/vendorExtensions.x-devcenter-metaData.isMLEsupported}}{{^vendorExtensions.x-devcenter-metaData.isMLEsupported}}false;{{/vendorExtensions.x-devcenter-metaData.isMLEsupported}}
-        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "{{operationId}}")) {
+        if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "{{operationId}},{{operationId}}Async,{{operationId}}WithHttpInfo,{{operationId}}Call")) {
             String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
                 {{localVariablePrefix}}localVarPostBody = MLEUtility.encodeRequest(apiClient.merchantConfig, payload);
