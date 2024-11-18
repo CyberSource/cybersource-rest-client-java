@@ -85,9 +85,8 @@ public class InvoicesApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "createInvoice,createInvoiceAsync,createInvoiceWithHttpInfo,createInvoiceCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -232,9 +231,8 @@ public class InvoicesApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getAllInvoices,getAllInvoicesAsync,getAllInvoicesWithHttpInfo,getAllInvoicesCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -395,9 +393,8 @@ public class InvoicesApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getInvoice,getInvoiceAsync,getInvoiceWithHttpInfo,getInvoiceCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -541,9 +538,8 @@ public class InvoicesApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "performCancelAction,performCancelActionAsync,performCancelActionWithHttpInfo,performCancelActionCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -687,9 +683,8 @@ public class InvoicesApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "performSendAction,performSendActionAsync,performSendActionWithHttpInfo,performSendActionCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -831,9 +826,8 @@ public class InvoicesApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "updateInvoice,updateInvoiceAsync,updateInvoiceWithHttpInfo,updateInvoiceCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());

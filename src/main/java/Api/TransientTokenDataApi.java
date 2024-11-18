@@ -79,9 +79,8 @@ public class TransientTokenDataApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPaymentCredentialsForTransientToken,getPaymentCredentialsForTransientTokenAsync,getPaymentCredentialsForTransientTokenWithHttpInfo,getPaymentCredentialsForTransientTokenCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -225,9 +224,8 @@ public class TransientTokenDataApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getTransactionForTransientToken,getTransactionForTransientTokenAsync,getTransactionForTransientTokenWithHttpInfo,getTransactionForTransientTokenCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());

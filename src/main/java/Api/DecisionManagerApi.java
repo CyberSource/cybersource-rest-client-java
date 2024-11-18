@@ -95,9 +95,8 @@ public class DecisionManagerApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "actionDecisionManagerCase,actionDecisionManagerCaseAsync,actionDecisionManagerCaseWithHttpInfo,actionDecisionManagerCaseCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -248,9 +247,8 @@ public class DecisionManagerApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "addNegative,addNegativeAsync,addNegativeWithHttpInfo,addNegativeCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -401,9 +399,8 @@ public class DecisionManagerApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "commentDecisionManagerCase,commentDecisionManagerCaseAsync,commentDecisionManagerCaseWithHttpInfo,commentDecisionManagerCaseCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -553,9 +550,8 @@ public class DecisionManagerApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "createBundledDecisionManagerCase,createBundledDecisionManagerCaseAsync,createBundledDecisionManagerCaseWithHttpInfo,createBundledDecisionManagerCaseCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
@@ -696,9 +692,8 @@ public class DecisionManagerApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "fraudUpdate,fraudUpdateAsync,fraudUpdateWithHttpInfo,fraudUpdateCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());

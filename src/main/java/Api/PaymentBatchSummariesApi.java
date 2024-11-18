@@ -87,9 +87,8 @@ public class PaymentBatchSummariesApi {
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "getPaymentBatchSummary,getPaymentBatchSummaryAsync,getPaymentBatchSummaryWithHttpInfo,getPaymentBatchSummaryCall")) {
-            String payload = apiClient.getJSON().serialize(localVarPostBody);
             try {
-                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, payload);
+                localVarPostBody = MLEUtility.encryptRequestPayload(apiClient.merchantConfig, localVarPostBody);
             } catch (MLEException e) {
                 logger.error("Failed to encrypt request body {}", e.getMessage(), e);
                 throw new ApiException("Failed to encrypt request body : " + e.getMessage());
