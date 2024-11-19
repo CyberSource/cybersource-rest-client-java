@@ -11,7 +11,7 @@ This feature provides an implementation of Message Level Encryption (MLE) for AP
 In the `merchantConfig` object, set the `useMLEGlobally` variable to enable or disable MLE for all supported APIs for the Rest SDK.
 
 - **Variable**: `useMLEGlobally`
-- **Type**: `boolean`
+- **Type**: `Boolean`
 - **Default**: `false`
 - **Description**: Enables MLE globally for all APIs when set to `true`. If set to `true`, it will enable MLE for all API calls that support MLE by CyberSource, unless overridden by `mapToControlMLEonAPI`.
 
@@ -28,7 +28,7 @@ Optionally, you can control the MLE feature at the API level using the `mapToCon
 Another optional parameter for MLE is `mleKeyAlias`, which specifies the key alias used to retrieve the MLE certificate from the JWT P12 file.
 
 - **Variable**: `mleKeyAlias`
-- **Type**: `string`
+- **Type**: `String`
 - **Default**: `CyberSource_SJC_US`
 - **Description**: By default, CyberSource uses the `CyberSource_SJC_US` public certificate to encrypt the payload. However, users can override this default value by setting their own key alias.
 
@@ -38,17 +38,20 @@ Another optional parameter for MLE is `mleKeyAlias`, which specifies the key ali
 - The `mleKeyAlias` parameter is optional and defaults to CyberSource_SJC_US if not specified by the user. Users can override this default value by setting their own key alias.
 
 ## Example Configuration
-
-```json
-{
-  "merchantConfig": {
-    "useMLEGlobally": true //globally MLE will be enabled for all MLE supported APIs
-  }
-}
 ```
+  {
+    "merchantConfig": {
+      "useMLEGlobally": true //globally MLE will be enabled for all MLE supported APIs
+    }
+  }
+          OR
+//Set MLE Settings in Merchant Configuration
+Properties merchantProps = new Properties();
+merchantProps.setProperty("useMLEGlobally", "true");
+  ```
 Or 
 
-```json
+```
 {
   "merchantConfig": {
     "useMLEGlobally": true, //globally MLE will be enabled for all MLE supported APIs
@@ -59,10 +62,20 @@ Or
     "mleKeyAlias": "Custom_Key_Alias" //optional if any custom value provided by Cybs
   }
 }
+                   OR
+//Set MLE Settings in Merchant Configuration
+Map<String,Boolean> mleMap = new HashMap<>();
+mleMap.put("apiFunctionName1", false);
+mleMap.put("apiFunctionName2", true);
+
+Properties merchantProps = new Properties();
+merchantProps.setProperty("useMLEGlobally", "true");
+merchantProps.put("mapToControlMLEonAPI", mleMap);
+merchantProps.setProperty("mleKeyAlias", "Custom_Key_Alias");
 ```
 Or
 
-```json
+```
 {
   "merchantConfig": {
     "useMLEGlobally": false, //globally MLE will be disabled for all APIs
@@ -73,6 +86,16 @@ Or
     "mleKeyAlias": "Custom_Key_Alias" //optional if any custom value provided by Cybs
   }
 }
+                    OR
+//Set MLE Settings in Merchant Configuration
+Map<String,Boolean> mleMap = new HashMap<>();
+mleMap.put("apiFunctionName1", true);
+mleMap.put("apiFunctionName2", true);
+
+Properties merchantProps = new Properties();
+merchantProps.setProperty("useMLEGlobally", "false");
+merchantProps.put("mapToControlMLEonAPI", mleMap);
+merchantProps.setProperty("mleKeyAlias", "Custom_Key_Alias");
 ```
 
 In the above examples:
