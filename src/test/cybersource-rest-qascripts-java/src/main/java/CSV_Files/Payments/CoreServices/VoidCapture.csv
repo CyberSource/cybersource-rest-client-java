@@ -1,0 +1,3 @@
+testCaseId,captureId,statusInput,message
+VCap_01,5510757573906363803002,VOIDED,Success
+VCap_02,551075757390555803002,VOIDED,Fails due to invalid captureId

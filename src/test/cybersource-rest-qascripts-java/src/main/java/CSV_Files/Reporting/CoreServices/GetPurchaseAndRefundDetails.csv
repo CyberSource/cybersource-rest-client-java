@@ -1,0 +1,4 @@
+testCaseId,sTime,eTime,orgId,message
+GPARD_01,2018-09-01T12:00:00+05:00,2018-05-30T12:00:00-05:00,testrest,Success
+GPARD_02,2019-09-01T12:00:00+05:00,2018-05-30T12:00:00-05:00,testrest,Fails due to invalid dateTime
+GPARD_03,2018-09-01T12:00:00+05:00,2018-05-30T12:00:00-05:00,udapaa,Fails due to invalid organizationId
