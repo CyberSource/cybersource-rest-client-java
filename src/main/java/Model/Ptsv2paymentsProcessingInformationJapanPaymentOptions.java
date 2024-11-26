@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,6 +24,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ptsv2paymentsProcessingInformationJapanPaymentOptions
@@ -33,19 +36,7 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
   private String paymentMethod = null;
 
   @SerializedName("bonuses")
-  private String bonuses = null;
-
-  @SerializedName("bonusMonth")
-  private String bonusMonth = null;
-
-  @SerializedName("secondBonusMonth")
-  private String secondBonusMonth = null;
-
-  @SerializedName("bonusAmount")
-  private String bonusAmount = null;
-
-  @SerializedName("secondBonusAmount")
-  private String secondBonusAmount = null;
+  private List<Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses> bonuses = null;
 
   @SerializedName("preapprovalType")
   private String preapprovalType = null;
@@ -89,94 +80,30 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
     this.paymentMethod = paymentMethod;
   }
 
-  public Ptsv2paymentsProcessingInformationJapanPaymentOptions bonuses(String bonuses) {
+  public Ptsv2paymentsProcessingInformationJapanPaymentOptions bonuses(List<Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses> bonuses) {
     this.bonuses = bonuses;
     return this;
   }
 
+  public Ptsv2paymentsProcessingInformationJapanPaymentOptions addBonusesItem(Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses bonusesItem) {
+    if (this.bonuses == null) {
+      this.bonuses = new ArrayList<Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses>();
+    }
+    this.bonuses.add(bonusesItem);
+    return this;
+  }
+
    /**
-   * This value is a 2-digit code indicating the Number of Bonuses. Valid value from 1 to 6. 
+   * An array of objects, each of which contains a bonus month and bonus amount.  Length of bonuses array is equal to the number of bonuses.  Max length &#x3D; 6.  In case of bonus month and amount not specified, null objects to be returned in the array. Example: bonuses : [ {\&quot;month\&quot;: \&quot;1\&quot;,\&quot;amount\&quot;: \&quot;200\&quot;}, {\&quot;month\&quot;: \&quot;3\&quot;,\&quot;amount\&quot;: \&quot;2500\&quot;}, null] 
    * @return bonuses
   **/
-  @ApiModelProperty(value = "This value is a 2-digit code indicating the Number of Bonuses. Valid value from 1 to 6. ")
-  public String getBonuses() {
+  @ApiModelProperty(value = "An array of objects, each of which contains a bonus month and bonus amount.  Length of bonuses array is equal to the number of bonuses.  Max length = 6.  In case of bonus month and amount not specified, null objects to be returned in the array. Example: bonuses : [ {\"month\": \"1\",\"amount\": \"200\"}, {\"month\": \"3\",\"amount\": \"2500\"}, null] ")
+  public List<Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses> getBonuses() {
     return bonuses;
   }
 
-  public void setBonuses(String bonuses) {
+  public void setBonuses(List<Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses> bonuses) {
     this.bonuses = bonuses;
-  }
-
-  public Ptsv2paymentsProcessingInformationJapanPaymentOptions bonusMonth(String bonusMonth) {
-    this.bonusMonth = bonusMonth;
-    return this;
-  }
-
-   /**
-   * This value is a 2-digit code indicating the first bonus month. Valid value from 1 to 12. 
-   * @return bonusMonth
-  **/
-  @ApiModelProperty(value = "This value is a 2-digit code indicating the first bonus month. Valid value from 1 to 12. ")
-  public String getBonusMonth() {
-    return bonusMonth;
-  }
-
-  public void setBonusMonth(String bonusMonth) {
-    this.bonusMonth = bonusMonth;
-  }
-
-  public Ptsv2paymentsProcessingInformationJapanPaymentOptions secondBonusMonth(String secondBonusMonth) {
-    this.secondBonusMonth = secondBonusMonth;
-    return this;
-  }
-
-   /**
-   * This value is a 2-digit code indicating the second bonus month. Valid value from 1 to 12. 
-   * @return secondBonusMonth
-  **/
-  @ApiModelProperty(value = "This value is a 2-digit code indicating the second bonus month. Valid value from 1 to 12. ")
-  public String getSecondBonusMonth() {
-    return secondBonusMonth;
-  }
-
-  public void setSecondBonusMonth(String secondBonusMonth) {
-    this.secondBonusMonth = secondBonusMonth;
-  }
-
-  public Ptsv2paymentsProcessingInformationJapanPaymentOptions bonusAmount(String bonusAmount) {
-    this.bonusAmount = bonusAmount;
-    return this;
-  }
-
-   /**
-   * This value contains the bonus amount of the first month. Maximum value without decimal 99999999. 
-   * @return bonusAmount
-  **/
-  @ApiModelProperty(value = "This value contains the bonus amount of the first month. Maximum value without decimal 99999999. ")
-  public String getBonusAmount() {
-    return bonusAmount;
-  }
-
-  public void setBonusAmount(String bonusAmount) {
-    this.bonusAmount = bonusAmount;
-  }
-
-  public Ptsv2paymentsProcessingInformationJapanPaymentOptions secondBonusAmount(String secondBonusAmount) {
-    this.secondBonusAmount = secondBonusAmount;
-    return this;
-  }
-
-   /**
-   * This value contains the bonus amount of the second month. Maximum value without decimal 99999999. 
-   * @return secondBonusAmount
-  **/
-  @ApiModelProperty(value = "This value contains the bonus amount of the second month. Maximum value without decimal 99999999. ")
-  public String getSecondBonusAmount() {
-    return secondBonusAmount;
-  }
-
-  public void setSecondBonusAmount(String secondBonusAmount) {
-    this.secondBonusAmount = secondBonusAmount;
   }
 
   public Ptsv2paymentsProcessingInformationJapanPaymentOptions preapprovalType(String preapprovalType) {
@@ -335,10 +262,6 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
     Ptsv2paymentsProcessingInformationJapanPaymentOptions ptsv2paymentsProcessingInformationJapanPaymentOptions = (Ptsv2paymentsProcessingInformationJapanPaymentOptions) o;
     return Objects.equals(this.paymentMethod, ptsv2paymentsProcessingInformationJapanPaymentOptions.paymentMethod) &&
         Objects.equals(this.bonuses, ptsv2paymentsProcessingInformationJapanPaymentOptions.bonuses) &&
-        Objects.equals(this.bonusMonth, ptsv2paymentsProcessingInformationJapanPaymentOptions.bonusMonth) &&
-        Objects.equals(this.secondBonusMonth, ptsv2paymentsProcessingInformationJapanPaymentOptions.secondBonusMonth) &&
-        Objects.equals(this.bonusAmount, ptsv2paymentsProcessingInformationJapanPaymentOptions.bonusAmount) &&
-        Objects.equals(this.secondBonusAmount, ptsv2paymentsProcessingInformationJapanPaymentOptions.secondBonusAmount) &&
         Objects.equals(this.preapprovalType, ptsv2paymentsProcessingInformationJapanPaymentOptions.preapprovalType) &&
         Objects.equals(this.installments, ptsv2paymentsProcessingInformationJapanPaymentOptions.installments) &&
         Objects.equals(this.terminalId, ptsv2paymentsProcessingInformationJapanPaymentOptions.terminalId) &&
@@ -351,7 +274,7 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentMethod, bonuses, bonusMonth, secondBonusMonth, bonusAmount, secondBonusAmount, preapprovalType, installments, terminalId, firstBillingMonth, businessName, businessNameKatakana, jis2TrackData, businessNameAlphaNumeric);
+    return Objects.hash(paymentMethod, bonuses, preapprovalType, installments, terminalId, firstBillingMonth, businessName, businessNameKatakana, jis2TrackData, businessNameAlphaNumeric);
   }
 
 
@@ -362,10 +285,6 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
     
     sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
     sb.append("    bonuses: ").append(toIndentedString(bonuses)).append("\n");
-    sb.append("    bonusMonth: ").append(toIndentedString(bonusMonth)).append("\n");
-    sb.append("    secondBonusMonth: ").append(toIndentedString(secondBonusMonth)).append("\n");
-    sb.append("    bonusAmount: ").append(toIndentedString(bonusAmount)).append("\n");
-    sb.append("    secondBonusAmount: ").append(toIndentedString(secondBonusAmount)).append("\n");
     sb.append("    preapprovalType: ").append(toIndentedString(preapprovalType)).append("\n");
     sb.append("    installments: ").append(toIndentedString(installments)).append("\n");
     sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");

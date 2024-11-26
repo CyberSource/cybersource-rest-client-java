@@ -43,7 +43,7 @@ public class ECheckConfigCommonProcessors {
   private Boolean enableAccuityForAvs = true;
 
   @SerializedName("accuityCheckType")
-  private Object accuityCheckType = null;
+  private String accuityCheckType = "ALWAYS";
 
   @SerializedName("setCompletedState")
   private Boolean setCompletedState = false;
@@ -120,21 +120,21 @@ public class ECheckConfigCommonProcessors {
     this.enableAccuityForAvs = enableAccuityForAvs;
   }
 
-  public ECheckConfigCommonProcessors accuityCheckType(Object accuityCheckType) {
+  public ECheckConfigCommonProcessors accuityCheckType(String accuityCheckType) {
     this.accuityCheckType = accuityCheckType;
     return this;
   }
 
    /**
-   * *NEW*
+   * *NEW*  Possible values: - ALWAYS
    * @return accuityCheckType
   **/
-  @ApiModelProperty(value = "*NEW*")
-  public Object getAccuityCheckType() {
+  @ApiModelProperty(value = "*NEW*  Possible values: - ALWAYS")
+  public String getAccuityCheckType() {
     return accuityCheckType;
   }
 
-  public void setAccuityCheckType(Object accuityCheckType) {
+  public void setAccuityCheckType(String accuityCheckType) {
     this.accuityCheckType = accuityCheckType;
   }
 
