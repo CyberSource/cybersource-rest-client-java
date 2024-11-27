@@ -71,6 +71,9 @@ public class Ptsv2paymentsPaymentInformationCard {
   @SerializedName("productName")
   private String productName = null;
 
+  @SerializedName("productSubtype")
+  private String productSubtype = null;
+
   @SerializedName("typeSelectionIndicator")
   private String typeSelectionIndicator = null;
 
@@ -326,6 +329,24 @@ public class Ptsv2paymentsPaymentInformationCard {
     this.productName = productName;
   }
 
+  public Ptsv2paymentsPaymentInformationCard productSubtype(String productSubtype) {
+    this.productSubtype = productSubtype;
+    return this;
+  }
+
+   /**
+   * This field would contain the indicator for transaction type  Possible values: - AC: Agriculture Maintenance Account - AE: Agriculture Debit Account/Electron  - AG: Agriculture  - AI: Agriculture Investment Loan - CG: Brazil Cargo - CS: Construction  - DS: Distribution  - HC: Healthcare - LP: Visa Large Purchase Advantage - MA: Visa Mobile Agent - MB: Interoperable Mobile Branchless Banking - MG: Visa Mobile General - VA: Visa Vale - Supermarket - VF: Visa Vale - Fuel - VR: Visa Vale - Restaurant 
+   * @return productSubtype
+  **/
+  @ApiModelProperty(value = "This field would contain the indicator for transaction type  Possible values: - AC: Agriculture Maintenance Account - AE: Agriculture Debit Account/Electron  - AG: Agriculture  - AI: Agriculture Investment Loan - CG: Brazil Cargo - CS: Construction  - DS: Distribution  - HC: Healthcare - LP: Visa Large Purchase Advantage - MA: Visa Mobile Agent - MB: Interoperable Mobile Branchless Banking - MG: Visa Mobile General - VA: Visa Vale - Supermarket - VF: Visa Vale - Fuel - VR: Visa Vale - Restaurant ")
+  public String getProductSubtype() {
+    return productSubtype;
+  }
+
+  public void setProductSubtype(String productSubtype) {
+    this.productSubtype = productSubtype;
+  }
+
   public Ptsv2paymentsPaymentInformationCard typeSelectionIndicator(String typeSelectionIndicator) {
     this.typeSelectionIndicator = typeSelectionIndicator;
     return this;
@@ -368,12 +389,13 @@ public class Ptsv2paymentsPaymentInformationCard {
         Objects.equals(this.startMonth, ptsv2paymentsPaymentInformationCard.startMonth) &&
         Objects.equals(this.startYear, ptsv2paymentsPaymentInformationCard.startYear) &&
         Objects.equals(this.productName, ptsv2paymentsPaymentInformationCard.productName) &&
+        Objects.equals(this.productSubtype, ptsv2paymentsPaymentInformationCard.productSubtype) &&
         Objects.equals(this.typeSelectionIndicator, ptsv2paymentsPaymentInformationCard.typeSelectionIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(number, expirationMonth, expirationYear, type, useAs, sourceAccountType, sourceAccountTypeDetails, securityCode, securityCodeIndicator, accountEncoderId, issueNumber, startMonth, startYear, productName, typeSelectionIndicator);
+    return Objects.hash(number, expirationMonth, expirationYear, type, useAs, sourceAccountType, sourceAccountTypeDetails, securityCode, securityCodeIndicator, accountEncoderId, issueNumber, startMonth, startYear, productName, productSubtype, typeSelectionIndicator);
   }
 
 
@@ -396,6 +418,7 @@ public class Ptsv2paymentsPaymentInformationCard {
     sb.append("    startMonth: ").append(toIndentedString(startMonth)).append("\n");
     sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
     sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    sb.append("    productSubtype: ").append(toIndentedString(productSubtype)).append("\n");
     sb.append("    typeSelectionIndicator: ").append(toIndentedString(typeSelectionIndicator)).append("\n");
     sb.append("}");
     return sb.toString();

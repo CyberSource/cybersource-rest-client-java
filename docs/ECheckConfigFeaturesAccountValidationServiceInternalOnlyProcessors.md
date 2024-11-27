@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**avsVersion** | **Object** | *NEW* |  [optional]
+**avsVersion** | **String** | *NEW*  Possible values: - 2 |  [optional]
 
 
 

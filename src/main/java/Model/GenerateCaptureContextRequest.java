@@ -33,17 +33,35 @@ import java.util.List;
 @ApiModel(description = "This is a server-to-server API request to generate the capture context that can be used to initiate instance of microform on a acceptance page.   The capture context is a digitally signed JWT that provides authentication, one-time keys, and the target origin to the Microform Integration application. ")
 
 public class GenerateCaptureContextRequest {
+  @SerializedName("clientVersion")
+  private String clientVersion = null;
+
   @SerializedName("targetOrigins")
   private List<String> targetOrigins = null;
 
   @SerializedName("allowedCardNetworks")
   private List<String> allowedCardNetworks = null;
 
-  @SerializedName("clientVersion")
-  private String clientVersion = null;
-
   @SerializedName("checkoutApiInitialization")
   private Microformv2sessionsCheckoutApiInitialization checkoutApiInitialization = null;
+
+  public GenerateCaptureContextRequest clientVersion(String clientVersion) {
+    this.clientVersion = clientVersion;
+    return this;
+  }
+
+   /**
+   * Specify the version of Microform that you want to use. 
+   * @return clientVersion
+  **/
+  @ApiModelProperty(value = "Specify the version of Microform that you want to use. ")
+  public String getClientVersion() {
+    return clientVersion;
+  }
+
+  public void setClientVersion(String clientVersion) {
+    this.clientVersion = clientVersion;
+  }
 
   public GenerateCaptureContextRequest targetOrigins(List<String> targetOrigins) {
     this.targetOrigins = targetOrigins;
@@ -85,34 +103,16 @@ public class GenerateCaptureContextRequest {
   }
 
    /**
-   * The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MAESTRO - MASTERCARD - AMEX - DISCOVER - DINERSCLUB - JCB - CUP - CARTESBANCAIRES - CARNET 
+   * The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA 
    * @return allowedCardNetworks
   **/
-  @ApiModelProperty(value = "The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MAESTRO - MASTERCARD - AMEX - DISCOVER - DINERSCLUB - JCB - CUP - CARTESBANCAIRES - CARNET ")
+  @ApiModelProperty(value = "The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA ")
   public List<String> getAllowedCardNetworks() {
     return allowedCardNetworks;
   }
 
   public void setAllowedCardNetworks(List<String> allowedCardNetworks) {
     this.allowedCardNetworks = allowedCardNetworks;
-  }
-
-  public GenerateCaptureContextRequest clientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
-    return this;
-  }
-
-   /**
-   * Specify the version of Microform that you want to use. 
-   * @return clientVersion
-  **/
-  @ApiModelProperty(value = "Specify the version of Microform that you want to use. ")
-  public String getClientVersion() {
-    return clientVersion;
-  }
-
-  public void setClientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
   }
 
   public GenerateCaptureContextRequest checkoutApiInitialization(Microformv2sessionsCheckoutApiInitialization checkoutApiInitialization) {
@@ -143,15 +143,15 @@ public class GenerateCaptureContextRequest {
       return false;
     }
     GenerateCaptureContextRequest generateCaptureContextRequest = (GenerateCaptureContextRequest) o;
-    return Objects.equals(this.targetOrigins, generateCaptureContextRequest.targetOrigins) &&
+    return Objects.equals(this.clientVersion, generateCaptureContextRequest.clientVersion) &&
+        Objects.equals(this.targetOrigins, generateCaptureContextRequest.targetOrigins) &&
         Objects.equals(this.allowedCardNetworks, generateCaptureContextRequest.allowedCardNetworks) &&
-        Objects.equals(this.clientVersion, generateCaptureContextRequest.clientVersion) &&
         Objects.equals(this.checkoutApiInitialization, generateCaptureContextRequest.checkoutApiInitialization);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(targetOrigins, allowedCardNetworks, clientVersion, checkoutApiInitialization);
+    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, checkoutApiInitialization);
   }
 
 
@@ -160,9 +160,9 @@ public class GenerateCaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateCaptureContextRequest {\n");
     
+    sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
     sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
     sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
-    sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
     sb.append("    checkoutApiInitialization: ").append(toIndentedString(checkoutApiInitialization)).append("\n");
     sb.append("}");
     return sb.toString();

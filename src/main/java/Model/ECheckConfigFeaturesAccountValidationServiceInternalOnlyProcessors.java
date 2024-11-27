@@ -31,23 +31,23 @@ import java.io.IOException;
 
 public class ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors {
   @SerializedName("avsVersion")
-  private Object avsVersion = null;
+  private String avsVersion = "2";
 
-  public ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors avsVersion(Object avsVersion) {
+  public ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors avsVersion(String avsVersion) {
     this.avsVersion = avsVersion;
     return this;
   }
 
    /**
-   * *NEW*
+   * *NEW*  Possible values: - 2
    * @return avsVersion
   **/
-  @ApiModelProperty(value = "*NEW*")
-  public Object getAvsVersion() {
+  @ApiModelProperty(value = "*NEW*  Possible values: - 2")
+  public String getAvsVersion() {
     return avsVersion;
   }
 
-  public void setAvsVersion(Object avsVersion) {
+  public void setAvsVersion(String avsVersion) {
     this.avsVersion = avsVersion;
   }
 

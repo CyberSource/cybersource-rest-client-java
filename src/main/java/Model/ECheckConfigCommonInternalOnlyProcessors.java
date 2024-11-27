@@ -43,10 +43,10 @@ public class ECheckConfigCommonInternalOnlyProcessors {
   private String portalSupportedPaytypes = "CHECK";
 
   @SerializedName("settlementMethod")
-  private Object settlementMethod = null;
+  private String settlementMethod = "BEST_GUESS";
 
   @SerializedName("verificationLevel")
-  private Object verificationLevel = null;
+  private String verificationLevel = "VALIDATION";
 
   @SerializedName("setCompletedState")
   private Boolean setCompletedState = false;
@@ -123,39 +123,39 @@ public class ECheckConfigCommonInternalOnlyProcessors {
     this.portalSupportedPaytypes = portalSupportedPaytypes;
   }
 
-  public ECheckConfigCommonInternalOnlyProcessors settlementMethod(Object settlementMethod) {
+  public ECheckConfigCommonInternalOnlyProcessors settlementMethod(String settlementMethod) {
     this.settlementMethod = settlementMethod;
     return this;
   }
 
    /**
-   * *NEW*
+   * *NEW*  Possible values: - BEST_GUESS
    * @return settlementMethod
   **/
-  @ApiModelProperty(value = "*NEW*")
-  public Object getSettlementMethod() {
+  @ApiModelProperty(value = "*NEW*  Possible values: - BEST_GUESS")
+  public String getSettlementMethod() {
     return settlementMethod;
   }
 
-  public void setSettlementMethod(Object settlementMethod) {
+  public void setSettlementMethod(String settlementMethod) {
     this.settlementMethod = settlementMethod;
   }
 
-  public ECheckConfigCommonInternalOnlyProcessors verificationLevel(Object verificationLevel) {
+  public ECheckConfigCommonInternalOnlyProcessors verificationLevel(String verificationLevel) {
     this.verificationLevel = verificationLevel;
     return this;
   }
 
    /**
-   * *NEW*
+   * *NEW*  Possible values: - VALIDATION
    * @return verificationLevel
   **/
-  @ApiModelProperty(value = "*NEW*")
-  public Object getVerificationLevel() {
+  @ApiModelProperty(value = "*NEW*  Possible values: - VALIDATION")
+  public String getVerificationLevel() {
     return verificationLevel;
   }
 
-  public void setVerificationLevel(Object verificationLevel) {
+  public void setVerificationLevel(String verificationLevel) {
     this.verificationLevel = verificationLevel;
   }
 

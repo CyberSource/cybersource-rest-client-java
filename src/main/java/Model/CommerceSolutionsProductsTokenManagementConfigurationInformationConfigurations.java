@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -31,6 +32,9 @@ import java.io.IOException;
 public class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations {
   @SerializedName("parentProfileId")
   private String parentProfileId = null;
+
+  @SerializedName("vault")
+  private CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault vault = null;
 
   public CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations parentProfileId(String parentProfileId) {
     this.parentProfileId = parentProfileId;
@@ -50,6 +54,24 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
     this.parentProfileId = parentProfileId;
   }
 
+  public CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations vault(CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault vault) {
+    this.vault = vault;
+    return this;
+  }
+
+   /**
+   * Get vault
+   * @return vault
+  **/
+  @ApiModelProperty(value = "")
+  public CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault getVault() {
+    return vault;
+  }
+
+  public void setVault(CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault vault) {
+    this.vault = vault;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +82,13 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
       return false;
     }
     CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations commerceSolutionsProductsTokenManagementConfigurationInformationConfigurations = (CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations) o;
-    return Objects.equals(this.parentProfileId, commerceSolutionsProductsTokenManagementConfigurationInformationConfigurations.parentProfileId);
+    return Objects.equals(this.parentProfileId, commerceSolutionsProductsTokenManagementConfigurationInformationConfigurations.parentProfileId) &&
+        Objects.equals(this.vault, commerceSolutionsProductsTokenManagementConfigurationInformationConfigurations.vault);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parentProfileId);
+    return Objects.hash(parentProfileId, vault);
   }
 
 
@@ -75,6 +98,7 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
     sb.append("class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations {\n");
     
     sb.append("    parentProfileId: ").append(toIndentedString(parentProfileId)).append("\n");
+    sb.append("    vault: ").append(toIndentedString(vault)).append("\n");
     sb.append("}");
     return sb.toString();
   }
