@@ -40,7 +40,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
   private Boolean avsSignedAgreement = null;
 
   @SerializedName("avsCalculatedResponseBehavior")
-  private Object avsCalculatedResponseBehavior = null;
+  private String avsCalculatedResponseBehavior = "continue";
 
   @SerializedName("avsAdditionalId")
   private String avsAdditionalId = null;
@@ -52,7 +52,7 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
   private String avsEntityId = null;
 
   @SerializedName("avsResultMode")
-  private Object avsResultMode = null;
+  private String avsResultMode = null;
 
   @SerializedName("enableAvsTokenCreation")
   private Boolean enableAvsTokenCreation = false;
@@ -111,21 +111,21 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
     this.avsSignedAgreement = avsSignedAgreement;
   }
 
-  public ECheckConfigFeaturesAccountValidationServiceProcessors avsCalculatedResponseBehavior(Object avsCalculatedResponseBehavior) {
+  public ECheckConfigFeaturesAccountValidationServiceProcessors avsCalculatedResponseBehavior(String avsCalculatedResponseBehavior) {
     this.avsCalculatedResponseBehavior = avsCalculatedResponseBehavior;
     return this;
   }
 
    /**
-   * *NEW*
+   * *NEW*  Possible values: - continue
    * @return avsCalculatedResponseBehavior
   **/
-  @ApiModelProperty(value = "*NEW*")
-  public Object getAvsCalculatedResponseBehavior() {
+  @ApiModelProperty(value = "*NEW*  Possible values: - continue")
+  public String getAvsCalculatedResponseBehavior() {
     return avsCalculatedResponseBehavior;
   }
 
-  public void setAvsCalculatedResponseBehavior(Object avsCalculatedResponseBehavior) {
+  public void setAvsCalculatedResponseBehavior(String avsCalculatedResponseBehavior) {
     this.avsCalculatedResponseBehavior = avsCalculatedResponseBehavior;
   }
 
@@ -183,21 +183,21 @@ public class ECheckConfigFeaturesAccountValidationServiceProcessors {
     this.avsEntityId = avsEntityId;
   }
 
-  public ECheckConfigFeaturesAccountValidationServiceProcessors avsResultMode(Object avsResultMode) {
+  public ECheckConfigFeaturesAccountValidationServiceProcessors avsResultMode(String avsResultMode) {
     this.avsResultMode = avsResultMode;
     return this;
   }
 
    /**
-   * *NEW*
+   * *NEW*  Possible values: - FULL_RESPONSE - LOGIC_BOX
    * @return avsResultMode
   **/
-  @ApiModelProperty(value = "*NEW*")
-  public Object getAvsResultMode() {
+  @ApiModelProperty(value = "*NEW*  Possible values: - FULL_RESPONSE - LOGIC_BOX")
+  public String getAvsResultMode() {
     return avsResultMode;
   }
 
-  public void setAvsResultMode(Object avsResultMode) {
+  public void setAvsResultMode(String avsResultMode) {
     this.avsResultMode = avsResultMode;
   }
 

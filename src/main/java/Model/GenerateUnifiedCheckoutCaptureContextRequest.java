@@ -34,11 +34,11 @@ import java.util.List;
  */
 
 public class GenerateUnifiedCheckoutCaptureContextRequest {
-  @SerializedName("targetOrigins")
-  private List<String> targetOrigins = null;
-
   @SerializedName("clientVersion")
   private String clientVersion = null;
+
+  @SerializedName("targetOrigins")
+  private List<String> targetOrigins = null;
 
   @SerializedName("allowedCardNetworks")
   private List<String> allowedCardNetworks = null;
@@ -60,6 +60,24 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
 
   @SerializedName("checkoutApiInitialization")
   private Upv1capturecontextsCheckoutApiInitialization checkoutApiInitialization = null;
+
+  public GenerateUnifiedCheckoutCaptureContextRequest clientVersion(String clientVersion) {
+    this.clientVersion = clientVersion;
+    return this;
+  }
+
+   /**
+   * Specify the version of Unified Checkout that you want to use.
+   * @return clientVersion
+  **/
+  @ApiModelProperty(example = "0.22", value = "Specify the version of Unified Checkout that you want to use.")
+  public String getClientVersion() {
+    return clientVersion;
+  }
+
+  public void setClientVersion(String clientVersion) {
+    this.clientVersion = clientVersion;
+  }
 
   public GenerateUnifiedCheckoutCaptureContextRequest targetOrigins(List<String> targetOrigins) {
     this.targetOrigins = targetOrigins;
@@ -87,24 +105,6 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     this.targetOrigins = targetOrigins;
   }
 
-  public GenerateUnifiedCheckoutCaptureContextRequest clientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
-    return this;
-  }
-
-   /**
-   * Specify the version of Unified Checkout that you want to use.
-   * @return clientVersion
-  **/
-  @ApiModelProperty(example = "0.22", value = "Specify the version of Unified Checkout that you want to use.")
-  public String getClientVersion() {
-    return clientVersion;
-  }
-
-  public void setClientVersion(String clientVersion) {
-    this.clientVersion = clientVersion;
-  }
-
   public GenerateUnifiedCheckoutCaptureContextRequest allowedCardNetworks(List<String> allowedCardNetworks) {
     this.allowedCardNetworks = allowedCardNetworks;
     return this;
@@ -119,10 +119,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   }
 
    /**
-   * The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:   - VISA   - MASTERCARD   - AMEX   - DISCOVER   - DINERSCLUB   - JCB 
+   * The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JCB     - JCREW     - MADA     - MAESTRO     - MEEZA 
    * @return allowedCardNetworks
   **/
-  @ApiModelProperty(value = "The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:   - VISA   - MASTERCARD   - AMEX   - DISCOVER   - DINERSCLUB   - JCB ")
+  @ApiModelProperty(value = "The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JCB     - JCREW     - MADA     - MAESTRO     - MEEZA ")
   public List<String> getAllowedCardNetworks() {
     return allowedCardNetworks;
   }
@@ -257,8 +257,8 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
       return false;
     }
     GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest = (GenerateUnifiedCheckoutCaptureContextRequest) o;
-    return Objects.equals(this.targetOrigins, generateUnifiedCheckoutCaptureContextRequest.targetOrigins) &&
-        Objects.equals(this.clientVersion, generateUnifiedCheckoutCaptureContextRequest.clientVersion) &&
+    return Objects.equals(this.clientVersion, generateUnifiedCheckoutCaptureContextRequest.clientVersion) &&
+        Objects.equals(this.targetOrigins, generateUnifiedCheckoutCaptureContextRequest.targetOrigins) &&
         Objects.equals(this.allowedCardNetworks, generateUnifiedCheckoutCaptureContextRequest.allowedCardNetworks) &&
         Objects.equals(this.allowedPaymentTypes, generateUnifiedCheckoutCaptureContextRequest.allowedPaymentTypes) &&
         Objects.equals(this.country, generateUnifiedCheckoutCaptureContextRequest.country) &&
@@ -270,7 +270,7 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(targetOrigins, clientVersion, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, orderInformation, checkoutApiInitialization);
+    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, orderInformation, checkoutApiInitialization);
   }
 
 
@@ -279,8 +279,8 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateUnifiedCheckoutCaptureContextRequest {\n");
     
-    sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
     sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
+    sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
     sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
     sb.append("    allowedPaymentTypes: ").append(toIndentedString(allowedPaymentTypes)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
