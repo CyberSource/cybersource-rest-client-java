@@ -1355,8 +1355,11 @@ public class ApiClient {
 
 	public void callAuthenticationHeader(String method, String path, Object body, List<Pair> queryParams) {
 
+		//not setting few values to MC double check if anything ahed is impacted
 		try {
-			merchantConfig.setRequestType(method);
+			String requestType = method;
+			String requestTarget = null;
+
 
 			if (queryParams != null && !queryParams.isEmpty()) {
 				StringBuilder url = new StringBuilder();
@@ -1377,10 +1380,10 @@ public class ApiClient {
 							url.append(escapeString(param.getName())).append("=").append(escapeString(value));
 						}
 					}
-					merchantConfig.setRequestTarget(url.toString());
+					requestTarget= url.toString();
 				}
 			} else {
-				merchantConfig.setRequestTarget(path);
+				requestTarget =path;
 			}
 
 			Authorization authorization = new Authorization();
@@ -1395,11 +1398,11 @@ public class ApiClient {
 			}
 
 			logger.debug("HTTP Request Body:\n" + requestBody);
-			merchantConfig.setRequestData(requestBody);
+//			merchantConfig.setRequestData(requestBody);
 			authorization.setJWTRequestBody(requestBody);
-			boolean isMerchantDetails = merchantConfig.validateMerchantDetails();
+			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(requestType);
 
-			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
+//			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
 
 			if (isMerchantDetails
 					&& !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
@@ -1414,7 +1417,7 @@ public class ApiClient {
 
 					if (method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT")
 							|| method.equalsIgnoreCase("PATCH")) {
-						PayloadDigest payloadDigest = new PayloadDigest(merchantConfig);
+						PayloadDigest payloadDigest = new PayloadDigest(requestBody);
 						String digest = payloadDigest.getDigest();
 						addDefaultHeader("Digest", digest);
 					}
