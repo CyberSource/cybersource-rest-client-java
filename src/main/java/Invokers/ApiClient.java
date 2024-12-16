@@ -1357,7 +1357,6 @@ public class ApiClient {
 
 		//not setting few values to MC double check if anything ahed is impacted
 		try {
-			String requestType = method;
 			String requestTarget = null;
 
 
@@ -1400,9 +1399,9 @@ public class ApiClient {
 			logger.debug("HTTP Request Body:\n" + requestBody);
 //			merchantConfig.setRequestData(requestBody);
 			authorization.setJWTRequestBody(requestBody);
-			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(requestType);
+			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(method);
 
-//			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
+			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
 
 			if (isMerchantDetails
 					&& !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
