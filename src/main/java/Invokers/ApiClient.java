@@ -1318,7 +1318,7 @@ public class ApiClient {
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 			
-		if(merchantConfig.getDefaultHeaders() != null && !merchantConfig.getDefaultHeaders().isEmpty()) {
+		if(merchantConfig.getDefaultHeaders() != null && !merchantConfig.getDefaultHeaders().isEmpty()) { //check fr this test case
 			for (Entry<String, String> header : merchantConfig.getDefaultHeaders().entrySet()) {
 				if(!header.getKey().equalsIgnoreCase("Authorization") && !header.getKey().equalsIgnoreCase("Signature")){
 					addDefaultHeader(header.getKey(), header.getValue());
@@ -1355,7 +1355,6 @@ public class ApiClient {
 
 	public void callAuthenticationHeader(String method, String path, Object body, List<Pair> queryParams) {
 
-		//not setting few values to MC double check if anything ahed is impacted
 		try {
 			String requestTarget = null;
 
