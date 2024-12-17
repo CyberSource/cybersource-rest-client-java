@@ -1405,7 +1405,7 @@ public class ApiClient {
 
 			if (isMerchantDetails
 					&& !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
-				String token = authorization.getToken(merchantConfig);
+				String token = authorization.getToken(merchantConfig, method, requestBody);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
 					addDefaultHeader("Date", PropertiesUtil.date);
