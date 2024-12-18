@@ -1318,7 +1318,7 @@ public class ApiClient {
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 			
-		if(merchantConfig.getDefaultHeaders() != null && !merchantConfig.getDefaultHeaders().isEmpty()) {
+		if(merchantConfig.getDefaultHeaders() != null && !merchantConfig.getDefaultHeaders().isEmpty()) { //check fr this test case
 			for (Entry<String, String> header : merchantConfig.getDefaultHeaders().entrySet()) {
 				if(!header.getKey().equalsIgnoreCase("Authorization") && !header.getKey().equalsIgnoreCase("Signature")){
 					addDefaultHeader(header.getKey(), header.getValue());
@@ -1356,7 +1356,8 @@ public class ApiClient {
 	public void callAuthenticationHeader(String method, String path, Object body, List<Pair> queryParams) {
 
 		try {
-			merchantConfig.setRequestType(method);
+			String requestTarget = null;
+
 
 			if (queryParams != null && !queryParams.isEmpty()) {
 				StringBuilder url = new StringBuilder();
@@ -1377,10 +1378,10 @@ public class ApiClient {
 							url.append(escapeString(param.getName())).append("=").append(escapeString(value));
 						}
 					}
-					merchantConfig.setRequestTarget(url.toString());
+					requestTarget= url.toString();
 				}
 			} else {
-				merchantConfig.setRequestTarget(path);
+				requestTarget =path;
 			}
 
 			Authorization authorization = new Authorization();
@@ -1395,15 +1396,15 @@ public class ApiClient {
 			}
 
 			logger.debug("HTTP Request Body:\n" + requestBody);
-			merchantConfig.setRequestData(requestBody);
+//			merchantConfig.setRequestData(requestBody);
 			authorization.setJWTRequestBody(requestBody);
-			boolean isMerchantDetails = merchantConfig.validateMerchantDetails();
+			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(method);
 
 			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
 
 			if (isMerchantDetails
 					&& !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
-				String token = authorization.getToken(merchantConfig);
+				String token = authorization.getToken(merchantConfig, method, requestBody);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
 					addDefaultHeader("Date", PropertiesUtil.date);
@@ -1414,7 +1415,7 @@ public class ApiClient {
 
 					if (method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT")
 							|| method.equalsIgnoreCase("PATCH")) {
-						PayloadDigest payloadDigest = new PayloadDigest(merchantConfig);
+						PayloadDigest payloadDigest = new PayloadDigest(requestBody);
 						String digest = payloadDigest.getDigest();
 						addDefaultHeader("Digest", digest);
 					}
@@ -1434,9 +1435,11 @@ public class ApiClient {
 
 		} catch (ConfigException e) {
 			logger.error(e.getMessage());
+		} catch (NullPointerException e){
+			logger.error(e);
 		}
 
-	}
+    }
 
 	/**
 	 * Build an HTTP request with the given options.
