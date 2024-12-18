@@ -1435,9 +1435,11 @@ public class ApiClient {
 
 		} catch (ConfigException e) {
 			logger.error(e.getMessage());
+		} catch (NullPointerException e){
+			logger.error(e);
 		}
 
-	}
+    }
 
 	/**
 	 * Build an HTTP request with the given options.
