@@ -1358,7 +1358,6 @@ public class ApiClient {
 		try {
 			String requestTarget = null;
 
-
 			if (queryParams != null && !queryParams.isEmpty()) {
 				StringBuilder url = new StringBuilder();
 				url.append(path);
@@ -1396,7 +1395,6 @@ public class ApiClient {
 			}
 
 			logger.debug("HTTP Request Body:\n" + requestBody);
-//			merchantConfig.setRequestData(requestBody);
 			authorization.setJWTRequestBody(requestBody);
 			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(method);
 
@@ -1404,7 +1402,7 @@ public class ApiClient {
 
 			if (isMerchantDetails
 					&& !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
-				String token = authorization.getToken(merchantConfig, method, requestBody);
+				String token = authorization.getToken(merchantConfig, method, requestBody, requestTarget);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
 					addDefaultHeader("Date", PropertiesUtil.date);
