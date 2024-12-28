@@ -144,8 +144,6 @@ public class ApiClient {
 
 	public String responseCode;
 	public String status;
-	public InputStream responseBody;
-	public String respBody;
 	public MerchantConfig merchantConfig;
 	public RequestTransactionMetrics apiRequestMetrics = new RequestTransactionMetrics();
 
@@ -1035,7 +1033,9 @@ public class ApiClient {
 			// Handle file downloading.
 			return (T) downloadFileFromResponse(response);
 		}
-
+		
+		String respBody = null;
+		
 		try {
 			if (response.body() != null)
 				respBody = response.body().string();
@@ -1191,8 +1191,9 @@ public class ApiClient {
 		try {
 			this.apiRequestMetrics.setComputeTime((System.nanoTime() - this.getComputationStartTime()) / 1000000);
 			Response response = call.execute();
-			responseCode = String.valueOf(response.code());
-			status = response.message();
+			String responseCode = String.valueOf(response.code());
+			this.status = response.message();
+			this.responseCode= responseCode;
 
 			logger.debug("Network Response :\n" + json.serialize(response.headers()));
 
@@ -1317,16 +1318,19 @@ public class ApiClient {
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-			
-		if(merchantConfig.getDefaultHeaders() != null && !merchantConfig.getDefaultHeaders().isEmpty()) { //check fr this test case
+		
+		//create reqHeader parameter here 
+		Map<String, String> requestHeaderMap = new HashMap<String, String>();
+		
+		if(merchantConfig.getDefaultHeaders() != null && !merchantConfig.getDefaultHeaders().isEmpty()) {
 			for (Entry<String, String> header : merchantConfig.getDefaultHeaders().entrySet()) {
 				if(!header.getKey().equalsIgnoreCase("Authorization") && !header.getKey().equalsIgnoreCase("Signature")){
-					addDefaultHeader(header.getKey(), header.getValue());
+					requestHeaderMap.put(header.getKey(), header.getValue());    
 				}
 			}
 		}
 						
-		callAuthenticationHeader(method, path, body, queryParams);
+		callAuthenticationHeader(method, path, body, queryParams,requestHeaderMap);
 
 		if (merchantConfig.isEnableClientCert()) {
 			addClientCertToKeyStore();
@@ -1339,10 +1343,11 @@ public class ApiClient {
 			headerParams.put("Accept", defaultAcceptHeader);
 		}
 		
-		headerParams.putAll(defaultHeaderMap);
+		headerParams.putAll(requestHeaderMap);
 
 		
 		logger.info("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
+		//till here completed
 		Request request = buildRequest(path, method, queryParams, body, headerParams, formParams, authNames,
 				progressRequestListener);
 		return httpClient.newCall(request);
@@ -1353,7 +1358,7 @@ public class ApiClient {
 	 *
 	 */
 
-	public void callAuthenticationHeader(String method, String path, Object body, List<Pair> queryParams) {
+	public void callAuthenticationHeader(String method, String path, Object body, List<Pair> queryParams, Map<String, String> requestHeaderMap) {
 
 		try {
 			String requestTarget = null;
@@ -1395,40 +1400,37 @@ public class ApiClient {
 			}
 
 			logger.debug("HTTP Request Body:\n" + requestBody);
-			authorization.setJWTRequestBody(requestBody);
 			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(method);
-
-			merchantConfig.setRequestHost(merchantConfig.getRequestHost().trim());
 
 			if (isMerchantDetails
 					&& !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
-				String token = authorization.getToken(merchantConfig, method, requestBody, requestTarget);
+				String date = PropertiesUtil.getNewDate();
+				String token = authorization.getToken(merchantConfig, method, requestBody, requestTarget, date);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
-
-					addDefaultHeader("Date", PropertiesUtil.date);
-					addDefaultHeader("Host", merchantConfig.getRequestHost().trim());
-					addDefaultHeader("v-c-merchant-id", merchantConfig.getMerchantID());
-					addDefaultHeader("Signature", token);
-					addDefaultHeader("User-Agent", "Mozilla/5.0");
+					requestHeaderMap.put("Date", date);
+					requestHeaderMap.put("Host", merchantConfig.getRequestHost().trim());
+					requestHeaderMap.put("v-c-merchant-id", merchantConfig.getMerchantID());
+					requestHeaderMap.put("Signature", token);
+					requestHeaderMap.put("User-Agent", "Mozilla/5.0");
 
 					if (method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT")
 							|| method.equalsIgnoreCase("PATCH")) {
 						PayloadDigest payloadDigest = new PayloadDigest(requestBody);
 						String digest = payloadDigest.getDigest();
-						addDefaultHeader("Digest", digest);
+						requestHeaderMap.put("Digest", digest);
 					}
 
 				} else if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.JWT)) {
 					token = "Bearer " + token;
-					addDefaultHeader("Authorization", token);
+					requestHeaderMap.put("Authorization", token);
 				} else if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.OAUTH)) {
 					token = "Bearer " + token;
-					addDefaultHeader("Authorization", token);
+					requestHeaderMap.put("Authorization", token);
 				}
 			}
 
 			if (versionInfo != null && !versionInfo.isEmpty()) {
-				addDefaultHeader("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
+				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			}
 
 		} catch (ConfigException e) {
