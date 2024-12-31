@@ -1033,9 +1033,9 @@ public class ApiClient {
 			// Handle file downloading.
 			return (T) downloadFileFromResponse(response);
 		}
-		
+
 		String respBody = null;
-		
+
 		try {
 			if (response.body() != null)
 				respBody = response.body().string();
@@ -1318,19 +1318,19 @@ public class ApiClient {
 	public Call buildCall(String path, String method, List<Pair> queryParams, Object body,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-		
+
 		//create reqHeader parameter here 
 		Map<String, String> requestHeaderMap = new HashMap<String, String>();
-		
+
 		if(merchantConfig.getDefaultHeaders() != null && !merchantConfig.getDefaultHeaders().isEmpty()) {
 			for (Entry<String, String> header : merchantConfig.getDefaultHeaders().entrySet()) {
 				if(!header.getKey().equalsIgnoreCase("Authorization") && !header.getKey().equalsIgnoreCase("Signature")){
-					requestHeaderMap.put(header.getKey(), header.getValue());    
+					requestHeaderMap.put(header.getKey(), header.getValue());
 				}
 			}
 		}
 						
-		callAuthenticationHeader(method, path, body, queryParams,requestHeaderMap);
+		callAuthenticationHeader(method, path, body, queryParams, requestHeaderMap);
 
 		if (merchantConfig.isEnableClientCert()) {
 			addClientCertToKeyStore();
@@ -1347,7 +1347,6 @@ public class ApiClient {
 
 		
 		logger.info("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
-		//till here completed
 		Request request = buildRequest(path, method, queryParams, body, headerParams, formParams, authNames,
 				progressRequestListener);
 		return httpClient.newCall(request);
@@ -1407,6 +1406,7 @@ public class ApiClient {
 				String date = PropertiesUtil.getNewDate();
 				String token = authorization.getToken(merchantConfig, method, requestBody, requestTarget, date);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
+
 					requestHeaderMap.put("Date", date);
 					requestHeaderMap.put("Host", merchantConfig.getRequestHost().trim());
 					requestHeaderMap.put("v-c-merchant-id", merchantConfig.getMerchantID());
@@ -1435,11 +1435,9 @@ public class ApiClient {
 
 		} catch (ConfigException e) {
 			logger.error(e.getMessage());
-		} catch (NullPointerException e){
-			logger.error(e);
 		}
 
-    }
+	}
 
 	/**
 	 * Build an HTTP request with the given options.
