@@ -1209,7 +1209,7 @@ public class ApiClient {
 			
 			logger.info("HTTP Response Body :\n{}", data);
 
-			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), data);
+			return new ApiResponse<T>(response.code(), response.headers().toMultimap(), response.message(), data);
 		} catch (IOException e) {
 			logger.error("ApiException : " + e.getMessage());
 			throw new ApiException(e);
