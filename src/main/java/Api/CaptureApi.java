@@ -162,7 +162,6 @@ public class CaptureApi {
      */
     public PtsV2PaymentsCapturesPost201Response capturePayment(CapturePaymentRequest capturePaymentRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'capturePayment' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsCapturesPost201Response> resp = capturePaymentWithHttpInfo(capturePaymentRequest, id);
         logger.info("CALL TO METHOD 'capturePayment' ENDED");
         return resp.getData();
@@ -177,6 +176,7 @@ public class CaptureApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsCapturesPost201Response> capturePaymentWithHttpInfo(CapturePaymentRequest capturePaymentRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = capturePaymentValidateBeforeCall(capturePaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsCapturesPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

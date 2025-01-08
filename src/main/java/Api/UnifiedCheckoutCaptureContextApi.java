@@ -151,7 +151,6 @@ public class UnifiedCheckoutCaptureContextApi {
      */
     public String generateUnifiedCheckoutCaptureContext(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest) throws ApiException {
         logger.info("CALL TO METHOD 'generateUnifiedCheckoutCaptureContext' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<String> resp = generateUnifiedCheckoutCaptureContextWithHttpInfo(generateUnifiedCheckoutCaptureContextRequest);
         logger.info("CALL TO METHOD 'generateUnifiedCheckoutCaptureContext' ENDED");
         return resp.getData();
@@ -165,6 +164,7 @@ public class UnifiedCheckoutCaptureContextApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<String> generateUnifiedCheckoutCaptureContextWithHttpInfo(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = generateUnifiedCheckoutCaptureContextValidateBeforeCall(generateUnifiedCheckoutCaptureContextRequest, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

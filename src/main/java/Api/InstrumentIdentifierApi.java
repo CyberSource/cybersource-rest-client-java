@@ -167,7 +167,6 @@ public class InstrumentIdentifierApi {
      */
     public void deleteInstrumentIdentifier(String instrumentIdentifierId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'deleteInstrumentIdentifier' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         deleteInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, profileId);
 
     }
@@ -181,6 +180,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deleteInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteInstrumentIdentifierValidateBeforeCall(instrumentIdentifierId, profileId, null, null);
         return apiClient.execute(call);
     }
@@ -315,7 +315,6 @@ public class InstrumentIdentifierApi {
      */
     public PostInstrumentIdentifierRequest getInstrumentIdentifier(String instrumentIdentifierId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'getInstrumentIdentifier' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PostInstrumentIdentifierRequest> resp = getInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, profileId);
         logger.info("CALL TO METHOD 'getInstrumentIdentifier' ENDED");
         return resp.getData();
@@ -330,6 +329,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PostInstrumentIdentifierRequest> getInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getInstrumentIdentifierValidateBeforeCall(instrumentIdentifierId, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostInstrumentIdentifierRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -474,7 +474,6 @@ public class InstrumentIdentifierApi {
      */
     public PaymentInstrumentList1 getInstrumentIdentifierPaymentInstrumentsList(String instrumentIdentifierId, String profileId, Long offset, Long limit) throws ApiException {
         logger.info("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PaymentInstrumentList1> resp = getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(instrumentIdentifierId, profileId, offset, limit);
         logger.info("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' ENDED");
         return resp.getData();
@@ -491,6 +490,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PaymentInstrumentList1> getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo(String instrumentIdentifierId, String profileId, Long offset, Long limit) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getInstrumentIdentifierPaymentInstrumentsListValidateBeforeCall(instrumentIdentifierId, profileId, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<PaymentInstrumentList1>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -638,7 +638,6 @@ public class InstrumentIdentifierApi {
      */
     public PatchInstrumentIdentifierRequest patchInstrumentIdentifier(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchInstrumentIdentifier' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PatchInstrumentIdentifierRequest> resp = patchInstrumentIdentifierWithHttpInfo(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchInstrumentIdentifier' ENDED");
         return resp.getData();
@@ -655,6 +654,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PatchInstrumentIdentifierRequest> patchInstrumentIdentifierWithHttpInfo(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, String ifMatch) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = patchInstrumentIdentifierValidateBeforeCall(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchInstrumentIdentifierRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -789,7 +789,6 @@ public class InstrumentIdentifierApi {
      */
     public PostInstrumentIdentifierRequest postInstrumentIdentifier(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postInstrumentIdentifier' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PostInstrumentIdentifierRequest> resp = postInstrumentIdentifierWithHttpInfo(postInstrumentIdentifierRequest, profileId);
         logger.info("CALL TO METHOD 'postInstrumentIdentifier' ENDED");
         return resp.getData();
@@ -804,6 +803,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PostInstrumentIdentifierRequest> postInstrumentIdentifierWithHttpInfo(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postInstrumentIdentifierValidateBeforeCall(postInstrumentIdentifierRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostInstrumentIdentifierRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -944,7 +944,6 @@ public class InstrumentIdentifierApi {
      */
     public void postInstrumentIdentifierEnrollment(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postInstrumentIdentifierEnrollment' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         postInstrumentIdentifierEnrollmentWithHttpInfo(instrumentIdentifierId, postInstrumentIdentifierEnrollmentRequest, profileId);
 
     }
@@ -959,6 +958,7 @@ public class InstrumentIdentifierApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> postInstrumentIdentifierEnrollmentWithHttpInfo(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postInstrumentIdentifierEnrollmentValidateBeforeCall(instrumentIdentifierId, postInstrumentIdentifierEnrollmentRequest, profileId, null, null);
         return apiClient.execute(call);
     }

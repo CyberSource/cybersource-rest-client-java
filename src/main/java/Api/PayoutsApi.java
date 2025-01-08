@@ -153,7 +153,6 @@ public class PayoutsApi {
      */
     public PtsV2PayoutsPost201Response octCreatePayment(OctCreatePaymentRequest octCreatePaymentRequest) throws ApiException {
         logger.info("CALL TO METHOD 'octCreatePayment' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PayoutsPost201Response> resp = octCreatePaymentWithHttpInfo(octCreatePaymentRequest);
         logger.info("CALL TO METHOD 'octCreatePayment' ENDED");
         return resp.getData();
@@ -167,6 +166,7 @@ public class PayoutsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PayoutsPost201Response> octCreatePaymentWithHttpInfo(OctCreatePaymentRequest octCreatePaymentRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = octCreatePaymentValidateBeforeCall(octCreatePaymentRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PayoutsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -172,7 +172,6 @@ public class PaymentsApi {
      */
     public PtsV2PaymentsOrderPost201Response createOrderRequest(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'createOrderRequest' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsOrderPost201Response> resp = createOrderRequestWithHttpInfo(orderPaymentRequest, id);
         logger.info("CALL TO METHOD 'createOrderRequest' ENDED");
         return resp.getData();
@@ -187,6 +186,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsOrderPost201Response> createOrderRequestWithHttpInfo(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createOrderRequestValidateBeforeCall(orderPaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsOrderPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -315,7 +315,6 @@ public class PaymentsApi {
      */
     public PtsV2PaymentsPost201Response createPayment(CreatePaymentRequest createPaymentRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createPayment' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsPost201Response> resp = createPaymentWithHttpInfo(createPaymentRequest);
         logger.info("CALL TO METHOD 'createPayment' ENDED");
         return resp.getData();
@@ -329,6 +328,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsPost201Response> createPaymentWithHttpInfo(CreatePaymentRequest createPaymentRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createPaymentValidateBeforeCall(createPaymentRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -456,7 +456,6 @@ public class PaymentsApi {
      */
     public PtsV2PaymentsPost201Response2 createSessionRequest(CreateSessionReq createSessionReq) throws ApiException {
         logger.info("CALL TO METHOD 'createSessionRequest' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsPost201Response2> resp = createSessionRequestWithHttpInfo(createSessionReq);
         logger.info("CALL TO METHOD 'createSessionRequest' ENDED");
         return resp.getData();
@@ -470,6 +469,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsPost201Response2> createSessionRequestWithHttpInfo(CreateSessionReq createSessionReq) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createSessionRequestValidateBeforeCall(createSessionReq, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -606,7 +606,6 @@ public class PaymentsApi {
      */
     public PtsV2IncrementalAuthorizationPatch201Response incrementAuth(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException {
         logger.info("CALL TO METHOD 'incrementAuth' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2IncrementalAuthorizationPatch201Response> resp = incrementAuthWithHttpInfo(id, incrementAuthRequest);
         logger.info("CALL TO METHOD 'incrementAuth' ENDED");
         return resp.getData();
@@ -621,6 +620,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2IncrementalAuthorizationPatch201Response> incrementAuthWithHttpInfo(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = incrementAuthValidateBeforeCall(id, incrementAuthRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2IncrementalAuthorizationPatch201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -758,7 +758,6 @@ public class PaymentsApi {
      */
     public PtsV2PaymentsPost201Response1 refreshPaymentStatus(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException {
         logger.info("CALL TO METHOD 'refreshPaymentStatus' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsPost201Response1> resp = refreshPaymentStatusWithHttpInfo(id, refreshPaymentStatusRequest);
         logger.info("CALL TO METHOD 'refreshPaymentStatus' ENDED");
         return resp.getData();
@@ -773,6 +772,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsPost201Response1> refreshPaymentStatusWithHttpInfo(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = refreshPaymentStatusValidateBeforeCall(id, refreshPaymentStatusRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response1>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -910,7 +910,6 @@ public class PaymentsApi {
      */
     public PtsV2PaymentsPost201Response2 updateSessionReq(CreateSessionRequest createSessionRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'updateSessionReq' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsPost201Response2> resp = updateSessionReqWithHttpInfo(createSessionRequest, id);
         logger.info("CALL TO METHOD 'updateSessionReq' ENDED");
         return resp.getData();
@@ -925,6 +924,7 @@ public class PaymentsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsPost201Response2> updateSessionReqWithHttpInfo(CreateSessionRequest createSessionRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateSessionReqValidateBeforeCall(createSessionRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsPost201Response2>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

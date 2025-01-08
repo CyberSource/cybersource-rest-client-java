@@ -152,7 +152,6 @@ public class DownloadXsdApi {
      */
     public void getXSDV2(String reportDefinitionNameVersion) throws ApiException {
         logger.info("CALL TO METHOD 'getXSDV2' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         getXSDV2WithHttpInfo(reportDefinitionNameVersion);
 
     }
@@ -165,6 +164,7 @@ public class DownloadXsdApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> getXSDV2WithHttpInfo(String reportDefinitionNameVersion) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getXSDV2ValidateBeforeCall(reportDefinitionNameVersion, null, null);
         return apiClient.execute(call);
     }

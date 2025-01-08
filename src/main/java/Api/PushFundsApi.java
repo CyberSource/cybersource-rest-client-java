@@ -215,7 +215,6 @@ public class PushFundsApi {
      */
     public PushFunds201Response createPushFundsTransfer(PushFundsRequest pushFundsRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException {
         logger.info("CALL TO METHOD 'createPushFundsTransfer' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PushFunds201Response> resp = createPushFundsTransferWithHttpInfo(pushFundsRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId);
         logger.info("CALL TO METHOD 'createPushFundsTransfer' ENDED");
         return resp.getData();
@@ -235,6 +234,7 @@ public class PushFundsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PushFunds201Response> createPushFundsTransferWithHttpInfo(PushFundsRequest pushFundsRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createPushFundsTransferValidateBeforeCall(pushFundsRequest, contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId, null, null);
         Type localVarReturnType = new TypeToken<PushFunds201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

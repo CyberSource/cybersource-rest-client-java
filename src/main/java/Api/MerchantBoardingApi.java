@@ -160,7 +160,6 @@ public class MerchantBoardingApi {
      */
     public InlineResponse2001 getRegistration(String registrationId) throws ApiException {
         logger.info("CALL TO METHOD 'getRegistration' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2001> resp = getRegistrationWithHttpInfo(registrationId);
         logger.info("CALL TO METHOD 'getRegistration' ENDED");
         return resp.getData();
@@ -174,6 +173,7 @@ public class MerchantBoardingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2001> getRegistrationWithHttpInfo(String registrationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getRegistrationValidateBeforeCall(registrationId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -305,7 +305,6 @@ public class MerchantBoardingApi {
      */
     public InlineResponse2012 postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException {
         logger.info("CALL TO METHOD 'postRegistration' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2012> resp = postRegistrationWithHttpInfo(postRegistrationBody, vCIdempotencyId);
         logger.info("CALL TO METHOD 'postRegistration' ENDED");
         return resp.getData();
@@ -320,6 +319,7 @@ public class MerchantBoardingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2012> postRegistrationWithHttpInfo(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postRegistrationValidateBeforeCall(postRegistrationBody, vCIdempotencyId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2012>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
