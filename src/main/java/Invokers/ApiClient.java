@@ -142,8 +142,18 @@ public class ApiClient {
 	 */
 	public static final String LENIENT_DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
-	public String responseCode;
-	public String status;
+    /**
+     * Use this field <b>ONLY IF</b> you have more than one instance of ApiClient.
+     * This field should <b>NOT</b> be used/accessed for a singleton object.
+     */
+    public String responseCode;
+
+    /**
+     * Use this field <b>ONLY IF</b> you have more than one instance of ApiClient.
+     * This field should <b>NOT</b> be used/accessed for a singleton object.
+     */
+    public String status;
+
 	public MerchantConfig merchantConfig;
 	public RequestTransactionMetrics apiRequestMetrics = new RequestTransactionMetrics();
 
