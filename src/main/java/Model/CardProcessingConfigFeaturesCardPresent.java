@@ -75,7 +75,7 @@ public class CardProcessingConfigFeaturesCardPresent {
    * @return enableTerminalIdLookup
   **/
   @ApiModelProperty(value = "Used for Card Present and Virtual Terminal Transactions for Terminal ID lookup. Applicable for GPX (gpx) processor.")
-  public Boolean isEnableTerminalIdLookup() {
+  public Boolean EnableTerminalIdLookup() {
     return enableTerminalIdLookup;
   }
 
@@ -108,8 +108,8 @@ public class CardProcessingConfigFeaturesCardPresent {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigFeaturesCardPresent {\n");
     
-    sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
-    sb.append("    enableTerminalIdLookup: ").append(toIndentedString(enableTerminalIdLookup)).append("\n");
+    if (processors != null) sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
+    if (enableTerminalIdLookup != null) sb.append("    enableTerminalIdLookup: ").append(toIndentedString(enableTerminalIdLookup)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -120,10 +120,10 @@ public class CardProcessingConfigFeaturesCardPresent {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

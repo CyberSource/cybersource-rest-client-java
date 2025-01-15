@@ -75,7 +75,7 @@ public class Riskv1decisionsidmarkingRiskInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsidmarkingRiskInformation {\n");
     
-    sb.append("    markingDetails: ").append(toIndentedString(markingDetails)).append("\n");
+    if (markingDetails != null) sb.append("    markingDetails: ").append(toIndentedString(markingDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Riskv1decisionsidmarkingRiskInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

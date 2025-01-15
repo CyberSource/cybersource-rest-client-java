@@ -141,10 +141,10 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    credentialStoredOnFile: ").append(toIndentedString(credentialStoredOnFile)).append("\n");
-    sb.append("    storedCredentialUsed: ").append(toIndentedString(storedCredentialUsed)).append("\n");
-    sb.append("    merchantInitiatedTransaction: ").append(toIndentedString(merchantInitiatedTransaction)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (credentialStoredOnFile != null) sb.append("    credentialStoredOnFile: ").append(toIndentedString(credentialStoredOnFile)).append("\n");
+    if (storedCredentialUsed != null) sb.append("    storedCredentialUsed: ").append(toIndentedString(storedCredentialUsed)).append("\n");
+    if (merchantInitiatedTransaction != null) sb.append("    merchantInitiatedTransaction: ").append(toIndentedString(merchantInitiatedTransaction)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

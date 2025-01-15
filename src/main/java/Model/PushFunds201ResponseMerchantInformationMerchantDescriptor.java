@@ -118,9 +118,9 @@ public class PushFunds201ResponseMerchantInformationMerchantDescriptor {
     StringBuilder sb = new StringBuilder();
     sb.append("class PushFunds201ResponseMerchantInformationMerchantDescriptor {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class PushFunds201ResponseMerchantInformationMerchantDescriptor {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

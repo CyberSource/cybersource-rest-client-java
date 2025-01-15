@@ -120,9 +120,9 @@ public class InlineResponse2007Records {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2007Records {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    sourceRecord: ").append(toIndentedString(sourceRecord)).append("\n");
-    sb.append("    responseRecord: ").append(toIndentedString(responseRecord)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (sourceRecord != null) sb.append("    sourceRecord: ").append(toIndentedString(sourceRecord)).append("\n");
+    if (responseRecord != null) sb.append("    responseRecord: ").append(toIndentedString(responseRecord)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -133,10 +133,10 @@ public class InlineResponse2007Records {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

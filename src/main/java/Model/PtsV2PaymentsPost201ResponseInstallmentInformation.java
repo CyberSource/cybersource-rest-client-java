@@ -626,32 +626,32 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseInstallmentInformation {\n");
     
-    sb.append("    additionalCosts: ").append(toIndentedString(additionalCosts)).append("\n");
-    sb.append("    additionalCostsPercentage: ").append(toIndentedString(additionalCostsPercentage)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    amountFunded: ").append(toIndentedString(amountFunded)).append("\n");
-    sb.append("    amountRequestedPercentage: ").append(toIndentedString(amountRequestedPercentage)).append("\n");
-    sb.append("    annualFinancingCost: ").append(toIndentedString(annualFinancingCost)).append("\n");
-    sb.append("    annualInterestRate: ").append(toIndentedString(annualInterestRate)).append("\n");
-    sb.append("    expenses: ").append(toIndentedString(expenses)).append("\n");
-    sb.append("    expensesPercentage: ").append(toIndentedString(expensesPercentage)).append("\n");
-    sb.append("    fees: ").append(toIndentedString(fees)).append("\n");
-    sb.append("    feesPercentage: ").append(toIndentedString(feesPercentage)).append("\n");
-    sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
-    sb.append("    insurance: ").append(toIndentedString(insurance)).append("\n");
-    sb.append("    insurancePercentage: ").append(toIndentedString(insurancePercentage)).append("\n");
-    sb.append("    invoiceData: ").append(toIndentedString(invoiceData)).append("\n");
-    sb.append("    monthlyInterestRate: ").append(toIndentedString(monthlyInterestRate)).append("\n");
-    sb.append("    planType: ").append(toIndentedString(planType)).append("\n");
-    sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
-    sb.append("    taxes: ").append(toIndentedString(taxes)).append("\n");
-    sb.append("    taxesPercentage: ").append(toIndentedString(taxesPercentage)).append("\n");
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-    sb.append("    minimumTotalCount: ").append(toIndentedString(minimumTotalCount)).append("\n");
-    sb.append("    maximumTotalCount: ").append(toIndentedString(maximumTotalCount)).append("\n");
-    sb.append("    firstInstallmentAmount: ").append(toIndentedString(firstInstallmentAmount)).append("\n");
-    sb.append("    firstInstallmentDate: ").append(toIndentedString(firstInstallmentDate)).append("\n");
+    if (additionalCosts != null) sb.append("    additionalCosts: ").append(toIndentedString(additionalCosts)).append("\n");
+    if (additionalCostsPercentage != null) sb.append("    additionalCostsPercentage: ").append(toIndentedString(additionalCostsPercentage)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (amountFunded != null) sb.append("    amountFunded: ").append(toIndentedString(amountFunded)).append("\n");
+    if (amountRequestedPercentage != null) sb.append("    amountRequestedPercentage: ").append(toIndentedString(amountRequestedPercentage)).append("\n");
+    if (annualFinancingCost != null) sb.append("    annualFinancingCost: ").append(toIndentedString(annualFinancingCost)).append("\n");
+    if (annualInterestRate != null) sb.append("    annualInterestRate: ").append(toIndentedString(annualInterestRate)).append("\n");
+    if (expenses != null) sb.append("    expenses: ").append(toIndentedString(expenses)).append("\n");
+    if (expensesPercentage != null) sb.append("    expensesPercentage: ").append(toIndentedString(expensesPercentage)).append("\n");
+    if (fees != null) sb.append("    fees: ").append(toIndentedString(fees)).append("\n");
+    if (feesPercentage != null) sb.append("    feesPercentage: ").append(toIndentedString(feesPercentage)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
+    if (insurance != null) sb.append("    insurance: ").append(toIndentedString(insurance)).append("\n");
+    if (insurancePercentage != null) sb.append("    insurancePercentage: ").append(toIndentedString(insurancePercentage)).append("\n");
+    if (invoiceData != null) sb.append("    invoiceData: ").append(toIndentedString(invoiceData)).append("\n");
+    if (monthlyInterestRate != null) sb.append("    monthlyInterestRate: ").append(toIndentedString(monthlyInterestRate)).append("\n");
+    if (planType != null) sb.append("    planType: ").append(toIndentedString(planType)).append("\n");
+    if (sequence != null) sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
+    if (taxes != null) sb.append("    taxes: ").append(toIndentedString(taxes)).append("\n");
+    if (taxesPercentage != null) sb.append("    taxesPercentage: ").append(toIndentedString(taxesPercentage)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (totalCount != null) sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+    if (minimumTotalCount != null) sb.append("    minimumTotalCount: ").append(toIndentedString(minimumTotalCount)).append("\n");
+    if (maximumTotalCount != null) sb.append("    maximumTotalCount: ").append(toIndentedString(maximumTotalCount)).append("\n");
+    if (firstInstallmentAmount != null) sb.append("    firstInstallmentAmount: ").append(toIndentedString(firstInstallmentAmount)).append("\n");
+    if (firstInstallmentDate != null) sb.append("    firstInstallmentDate: ").append(toIndentedString(firstInstallmentDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -662,10 +662,10 @@ public class PtsV2PaymentsPost201ResponseInstallmentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

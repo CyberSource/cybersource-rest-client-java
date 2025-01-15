@@ -306,17 +306,17 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidrefundsProcessingInformation {\n");
     
-    sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
-    sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
-    sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
-    sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
-    sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
-    sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
-    sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
-    sb.append("    refundOptions: ").append(toIndentedString(refundOptions)).append("\n");
+    if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
+    if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (linkId != null) sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
+    if (reportGroup != null) sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
+    if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
+    if (purchaseLevel != null) sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
+    if (recurringOptions != null) sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
+    if (industryDataType != null) sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (refundOptions != null) sb.append("    refundOptions: ").append(toIndentedString(refundOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -327,10 +327,10 @@ public class Ptsv2paymentsidrefundsProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -164,11 +164,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {\n");
     
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
-    sb.append("    terminalSerialNumber: ").append(toIndentedString(terminalSerialNumber)).append("\n");
-    sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
-    sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (terminalSerialNumber != null) sb.append("    terminalSerialNumber: ").append(toIndentedString(terminalSerialNumber)).append("\n");
+    if (deviceId != null) sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+    if (partner != null) sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
+    if (emv != null) sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -179,10 +179,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

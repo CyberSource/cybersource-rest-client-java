@@ -52,7 +52,7 @@ public class PaymentsProductsCardProcessingSubscriptionInformation {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -130,9 +130,9 @@ public class PaymentsProductsCardProcessingSubscriptionInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsCardProcessingSubscriptionInformation {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    selfServiceability: ").append(toIndentedString(selfServiceability)).append("\n");
-    sb.append("    features: ").append(toIndentedString(features)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (selfServiceability != null) sb.append("    selfServiceability: ").append(toIndentedString(selfServiceability)).append("\n");
+    if (features != null) sb.append("    features: ").append(toIndentedString(features)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -143,10 +143,10 @@ public class PaymentsProductsCardProcessingSubscriptionInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

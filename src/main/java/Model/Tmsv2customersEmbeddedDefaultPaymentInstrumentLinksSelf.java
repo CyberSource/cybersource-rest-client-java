@@ -65,7 +65,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentLinksSelf {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultPaymentInstrumentLinksSelf {\n");
     
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    if (href != null) sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -76,10 +76,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentLinksSelf {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

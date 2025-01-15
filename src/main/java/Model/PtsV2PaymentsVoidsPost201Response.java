@@ -232,14 +232,14 @@ public class PtsV2PaymentsVoidsPost201Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsVoidsPost201Response {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    voidAmountDetails: ").append(toIndentedString(voidAmountDetails)).append("\n");
-    sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (voidAmountDetails != null) sb.append("    voidAmountDetails: ").append(toIndentedString(voidAmountDetails)).append("\n");
+    if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -250,10 +250,10 @@ public class PtsV2PaymentsVoidsPost201Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

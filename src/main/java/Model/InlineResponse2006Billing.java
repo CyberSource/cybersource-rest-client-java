@@ -140,10 +140,10 @@ public class InlineResponse2006Billing {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2006Billing {\n");
     
-    sb.append("    nan: ").append(toIndentedString(nan)).append("\n");
-    sb.append("    ned: ").append(toIndentedString(ned)).append("\n");
-    sb.append("    acl: ").append(toIndentedString(acl)).append("\n");
-    sb.append("    cch: ").append(toIndentedString(cch)).append("\n");
+    if (nan != null) sb.append("    nan: ").append(toIndentedString(nan)).append("\n");
+    if (ned != null) sb.append("    ned: ").append(toIndentedString(ned)).append("\n");
+    if (acl != null) sb.append("    acl: ").append(toIndentedString(acl)).append("\n");
+    if (cch != null) sb.append("    cch: ").append(toIndentedString(cch)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class InlineResponse2006Billing {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

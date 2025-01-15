@@ -140,10 +140,10 @@ public class DmConfigThirdpartyProviderSignifydCredentials {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfigThirdpartyProviderSignifydCredentials {\n");
     
-    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
-    sb.append("    apiKey: ").append(toIndentedString(apiKey)).append("\n");
-    sb.append("    secretKeyid: ").append(toIndentedString(secretKeyid)).append("\n");
-    sb.append("    secretKey: ").append(toIndentedString(secretKey)).append("\n");
+    if (teamId != null) sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
+    if (apiKey != null) sb.append("    apiKey: ").append(toIndentedString(apiKey)).append("\n");
+    if (secretKeyid != null) sb.append("    secretKeyid: ").append(toIndentedString(secretKeyid)).append("\n");
+    if (secretKey != null) sb.append("    secretKey: ").append(toIndentedString(secretKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class DmConfigThirdpartyProviderSignifydCredentials {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

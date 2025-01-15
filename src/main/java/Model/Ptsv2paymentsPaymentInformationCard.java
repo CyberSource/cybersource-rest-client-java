@@ -404,22 +404,22 @@ public class Ptsv2paymentsPaymentInformationCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPaymentInformationCard {\n");
     
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
-    sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
-    sb.append("    sourceAccountType: ").append(toIndentedString(sourceAccountType)).append("\n");
-    sb.append("    sourceAccountTypeDetails: ").append(toIndentedString(sourceAccountTypeDetails)).append("\n");
-    sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
-    sb.append("    securityCodeIndicator: ").append(toIndentedString(securityCodeIndicator)).append("\n");
-    sb.append("    accountEncoderId: ").append(toIndentedString(accountEncoderId)).append("\n");
-    sb.append("    issueNumber: ").append(toIndentedString(issueNumber)).append("\n");
-    sb.append("    startMonth: ").append(toIndentedString(startMonth)).append("\n");
-    sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    productSubtype: ").append(toIndentedString(productSubtype)).append("\n");
-    sb.append("    typeSelectionIndicator: ").append(toIndentedString(typeSelectionIndicator)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (useAs != null) sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
+    if (sourceAccountType != null) sb.append("    sourceAccountType: ").append(toIndentedString(sourceAccountType)).append("\n");
+    if (sourceAccountTypeDetails != null) sb.append("    sourceAccountTypeDetails: ").append(toIndentedString(sourceAccountTypeDetails)).append("\n");
+    if (securityCode != null) sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
+    if (securityCodeIndicator != null) sb.append("    securityCodeIndicator: ").append(toIndentedString(securityCodeIndicator)).append("\n");
+    if (accountEncoderId != null) sb.append("    accountEncoderId: ").append(toIndentedString(accountEncoderId)).append("\n");
+    if (issueNumber != null) sb.append("    issueNumber: ").append(toIndentedString(issueNumber)).append("\n");
+    if (startMonth != null) sb.append("    startMonth: ").append(toIndentedString(startMonth)).append("\n");
+    if (startYear != null) sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (productSubtype != null) sb.append("    productSubtype: ").append(toIndentedString(productSubtype)).append("\n");
+    if (typeSelectionIndicator != null) sb.append("    typeSelectionIndicator: ").append(toIndentedString(typeSelectionIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -430,10 +430,10 @@ public class Ptsv2paymentsPaymentInformationCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

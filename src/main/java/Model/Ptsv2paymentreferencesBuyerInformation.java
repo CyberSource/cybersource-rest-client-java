@@ -173,11 +173,11 @@ public class Ptsv2paymentreferencesBuyerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesBuyerInformation {\n");
     
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
-    sb.append("    noteToSeller: ").append(toIndentedString(noteToSeller)).append("\n");
-    sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    if (gender != null) sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    if (language != null) sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    if (noteToSeller != null) sb.append("    noteToSeller: ").append(toIndentedString(noteToSeller)).append("\n");
+    if (personalIdentification != null) sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -188,10 +188,10 @@ public class Ptsv2paymentreferencesBuyerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

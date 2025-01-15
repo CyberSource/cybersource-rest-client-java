@@ -63,7 +63,7 @@ public class Ptsv2paymentsidcapturesPointOfSaleInformationEmv {
    * @return fallback
   **/
   @ApiModelProperty(value = "Indicates whether a fallback method was used to enter credit card information into the POS terminal. When a technical problem prevents a successful exchange of information between a chip card and a chip-capable terminal:   1. Swipe the card or key the credit card information into the POS terminal.  2. Use the pointOfSaleInformation.entryMode field to indicate whether the information was swiped or keyed.   Possible values: - `true`: Fallback method was used. - `false` (default): Fallback method was not used.  This field is supported only on American Express Direct, Chase Paymentech Solutions, CyberSource through VisaNet, FDC Nashville Global, GPN, JCN Gateway, OmniPay Direct, and SIX. ")
-  public Boolean isFallback() {
+  public Boolean Fallback() {
     return fallback;
   }
 
@@ -96,8 +96,8 @@ public class Ptsv2paymentsidcapturesPointOfSaleInformationEmv {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesPointOfSaleInformationEmv {\n");
     
-    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-    sb.append("    fallback: ").append(toIndentedString(fallback)).append("\n");
+    if (tags != null) sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    if (fallback != null) sb.append("    fallback: ").append(toIndentedString(fallback)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsidcapturesPointOfSaleInformationEmv {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

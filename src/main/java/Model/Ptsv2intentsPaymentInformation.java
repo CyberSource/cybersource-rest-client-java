@@ -75,7 +75,7 @@ public class Ptsv2intentsPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2intentsPaymentInformation {\n");
     
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Ptsv2intentsPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

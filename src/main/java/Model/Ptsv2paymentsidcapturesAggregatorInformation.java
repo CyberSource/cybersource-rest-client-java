@@ -119,9 +119,9 @@ public class Ptsv2paymentsidcapturesAggregatorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesAggregatorInformation {\n");
     
-    sb.append("    aggregatorId: ").append(toIndentedString(aggregatorId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    subMerchant: ").append(toIndentedString(subMerchant)).append("\n");
+    if (aggregatorId != null) sb.append("    aggregatorId: ").append(toIndentedString(aggregatorId)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (subMerchant != null) sb.append("    subMerchant: ").append(toIndentedString(subMerchant)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class Ptsv2paymentsidcapturesAggregatorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

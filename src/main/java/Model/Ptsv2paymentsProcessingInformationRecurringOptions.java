@@ -45,7 +45,7 @@ public class Ptsv2paymentsProcessingInformationRecurringOptions {
    * @return loanPayment
   **/
   @ApiModelProperty(value = "Flag that indicates whether this is a payment towards an existing contractual loan.  Possible values: - `true`: Loan payment - `false`: (default) Not a loan payment ")
-  public Boolean isLoanPayment() {
+  public Boolean LoanPayment() {
     return loanPayment;
   }
 
@@ -63,7 +63,7 @@ public class Ptsv2paymentsProcessingInformationRecurringOptions {
    * @return firstRecurringPayment
   **/
   @ApiModelProperty(value = "Flag that indicates whether this transaction is the first in a series of recurring payments.  This field is supported only for **Atos**, **FDC Nashville Global**, and **OmniPay Direct**.  Possible values:  - `true` Indicates this is the first payment in a series of recurring payments  - `false` (default) Indicates this is not the first payment in a series of recurring payments. ")
-  public Boolean isFirstRecurringPayment() {
+  public Boolean FirstRecurringPayment() {
     return firstRecurringPayment;
   }
 
@@ -96,8 +96,8 @@ public class Ptsv2paymentsProcessingInformationRecurringOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformationRecurringOptions {\n");
     
-    sb.append("    loanPayment: ").append(toIndentedString(loanPayment)).append("\n");
-    sb.append("    firstRecurringPayment: ").append(toIndentedString(firstRecurringPayment)).append("\n");
+    if (loanPayment != null) sb.append("    loanPayment: ").append(toIndentedString(loanPayment)).append("\n");
+    if (firstRecurringPayment != null) sb.append("    firstRecurringPayment: ").append(toIndentedString(firstRecurringPayment)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsProcessingInformationRecurringOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

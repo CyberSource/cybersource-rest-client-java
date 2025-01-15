@@ -88,7 +88,7 @@ public class ECheckConfigUnderwriting {
    * @return enableHold
   **/
   @ApiModelProperty(required = true, value = "Mandatory  Determines whether CYBS has placed the merchant on a funding hold This will often be set to True for new merchants until the risk team has completed additional verification of their first transaction. It will be switched to \"false\" once underwriting review is completed and we are ready to start funding the merchant. ")
-  public Boolean isEnableHold() {
+  public Boolean EnableHold() {
     return enableHold;
   }
 
@@ -142,7 +142,7 @@ public class ECheckConfigUnderwriting {
    * @return enableCredits
   **/
   @ApiModelProperty(value = "Optional  Allow Credits (True/False) ")
-  public Boolean isEnableCredits() {
+  public Boolean EnableCredits() {
     return enableCredits;
   }
 
@@ -273,16 +273,16 @@ public class ECheckConfigUnderwriting {
     StringBuilder sb = new StringBuilder();
     sb.append("class ECheckConfigUnderwriting {\n");
     
-    sb.append("    standardEntryClassCodes: ").append(toIndentedString(standardEntryClassCodes)).append("\n");
-    sb.append("    enableHold: ").append(toIndentedString(enableHold)).append("\n");
-    sb.append("    monthlyTotalTransactionAmountLimit: ").append(toIndentedString(monthlyTotalTransactionAmountLimit)).append("\n");
-    sb.append("    holdingDays: ").append(toIndentedString(holdingDays)).append("\n");
-    sb.append("    enableCredits: ").append(toIndentedString(enableCredits)).append("\n");
-    sb.append("    transactionAmountLimit: ").append(toIndentedString(transactionAmountLimit)).append("\n");
-    sb.append("    riskReserveMethod: ").append(toIndentedString(riskReserveMethod)).append("\n");
-    sb.append("    riskReserveRate: ").append(toIndentedString(riskReserveRate)).append("\n");
-    sb.append("    riskReserveTargetAmount: ").append(toIndentedString(riskReserveTargetAmount)).append("\n");
-    sb.append("    solutionOrganizationId: ").append(toIndentedString(solutionOrganizationId)).append("\n");
+    if (standardEntryClassCodes != null) sb.append("    standardEntryClassCodes: ").append(toIndentedString(standardEntryClassCodes)).append("\n");
+    if (enableHold != null) sb.append("    enableHold: ").append(toIndentedString(enableHold)).append("\n");
+    if (monthlyTotalTransactionAmountLimit != null) sb.append("    monthlyTotalTransactionAmountLimit: ").append(toIndentedString(monthlyTotalTransactionAmountLimit)).append("\n");
+    if (holdingDays != null) sb.append("    holdingDays: ").append(toIndentedString(holdingDays)).append("\n");
+    if (enableCredits != null) sb.append("    enableCredits: ").append(toIndentedString(enableCredits)).append("\n");
+    if (transactionAmountLimit != null) sb.append("    transactionAmountLimit: ").append(toIndentedString(transactionAmountLimit)).append("\n");
+    if (riskReserveMethod != null) sb.append("    riskReserveMethod: ").append(toIndentedString(riskReserveMethod)).append("\n");
+    if (riskReserveRate != null) sb.append("    riskReserveRate: ").append(toIndentedString(riskReserveRate)).append("\n");
+    if (riskReserveTargetAmount != null) sb.append("    riskReserveTargetAmount: ").append(toIndentedString(riskReserveTargetAmount)).append("\n");
+    if (solutionOrganizationId != null) sb.append("    solutionOrganizationId: ").append(toIndentedString(solutionOrganizationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -293,10 +293,10 @@ public class ECheckConfigUnderwriting {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

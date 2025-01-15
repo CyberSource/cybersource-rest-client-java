@@ -167,11 +167,11 @@ public class Ptsv2paymentreferencesPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesPaymentInformation {\n");
     
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
-    sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
-    sb.append("    options: ").append(toIndentedString(options)).append("\n");
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (bank != null) sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    if (eWallet != null) sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
+    if (options != null) sb.append("    options: ").append(toIndentedString(options)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -182,10 +182,10 @@ public class Ptsv2paymentreferencesPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

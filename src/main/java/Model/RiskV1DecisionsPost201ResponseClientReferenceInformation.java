@@ -119,9 +119,9 @@ public class RiskV1DecisionsPost201ResponseClientReferenceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1DecisionsPost201ResponseClientReferenceInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
-    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (comments != null) sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    if (partner != null) sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class RiskV1DecisionsPost201ResponseClientReferenceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

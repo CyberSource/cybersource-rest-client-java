@@ -320,7 +320,7 @@ public class Ptsv2paymentsidrefundsOrderInformationLineItems {
    * @return amountIncludesTax
   **/
   @ApiModelProperty(value = "Flag that indicates whether the tax amount is included in the Line Item Total.  Possible values:  - **true**  - **false** ")
-  public Boolean isAmountIncludesTax() {
+  public Boolean AmountIncludesTax() {
     return amountIncludesTax;
   }
 
@@ -392,7 +392,7 @@ public class Ptsv2paymentsidrefundsOrderInformationLineItems {
    * @return discountApplied
   **/
   @ApiModelProperty(value = "Flag that indicates whether the amount is discounted.  If you do not provide a value but you set Discount Amount to a value greater than zero, then CyberSource sets this field to **true**.  Possible values:  - **true**  - **false** ")
-  public Boolean isDiscountApplied() {
+  public Boolean DiscountApplied() {
     return discountApplied;
   }
 
@@ -505,26 +505,26 @@ public class Ptsv2paymentsidrefundsOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidrefundsOrderInformationLineItems {\n");
     
-    sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
-    sb.append("    unitOfMeasure: ").append(toIndentedString(unitOfMeasure)).append("\n");
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
-    sb.append("    taxAppliedAfterDiscount: ").append(toIndentedString(taxAppliedAfterDiscount)).append("\n");
-    sb.append("    taxStatusIndicator: ").append(toIndentedString(taxStatusIndicator)).append("\n");
-    sb.append("    taxTypeCode: ").append(toIndentedString(taxTypeCode)).append("\n");
-    sb.append("    amountIncludesTax: ").append(toIndentedString(amountIncludesTax)).append("\n");
-    sb.append("    typeOfSupply: ").append(toIndentedString(typeOfSupply)).append("\n");
-    sb.append("    commodityCode: ").append(toIndentedString(commodityCode)).append("\n");
-    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
-    sb.append("    discountApplied: ").append(toIndentedString(discountApplied)).append("\n");
-    sb.append("    discountRate: ").append(toIndentedString(discountRate)).append("\n");
-    sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
-    sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (productSku != null) sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (unitOfMeasure != null) sb.append("    unitOfMeasure: ").append(toIndentedString(unitOfMeasure)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (taxRate != null) sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+    if (taxAppliedAfterDiscount != null) sb.append("    taxAppliedAfterDiscount: ").append(toIndentedString(taxAppliedAfterDiscount)).append("\n");
+    if (taxStatusIndicator != null) sb.append("    taxStatusIndicator: ").append(toIndentedString(taxStatusIndicator)).append("\n");
+    if (taxTypeCode != null) sb.append("    taxTypeCode: ").append(toIndentedString(taxTypeCode)).append("\n");
+    if (amountIncludesTax != null) sb.append("    amountIncludesTax: ").append(toIndentedString(amountIncludesTax)).append("\n");
+    if (typeOfSupply != null) sb.append("    typeOfSupply: ").append(toIndentedString(typeOfSupply)).append("\n");
+    if (commodityCode != null) sb.append("    commodityCode: ").append(toIndentedString(commodityCode)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (discountApplied != null) sb.append("    discountApplied: ").append(toIndentedString(discountApplied)).append("\n");
+    if (discountRate != null) sb.append("    discountRate: ").append(toIndentedString(discountRate)).append("\n");
+    if (invoiceNumber != null) sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
+    if (taxDetails != null) sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -535,10 +535,10 @@ public class Ptsv2paymentsidrefundsOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

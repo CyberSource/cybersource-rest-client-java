@@ -119,9 +119,9 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponsePointOfSaleInformation {\n");
     
-    sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
-    sb.append("    amexCapnData: ").append(toIndentedString(amexCapnData)).append("\n");
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (emv != null) sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
+    if (amexCapnData != null) sb.append("    amexCapnData: ").append(toIndentedString(amexCapnData)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

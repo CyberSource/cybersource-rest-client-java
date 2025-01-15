@@ -144,10 +144,10 @@ public class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions {\n");
     
-    sb.append("    captureSequenceNumber: ").append(toIndentedString(captureSequenceNumber)).append("\n");
-    sb.append("    totalCaptureCount: ").append(toIndentedString(totalCaptureCount)).append("\n");
-    sb.append("    isFinal: ").append(toIndentedString(isFinal)).append("\n");
-    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    if (captureSequenceNumber != null) sb.append("    captureSequenceNumber: ").append(toIndentedString(captureSequenceNumber)).append("\n");
+    if (totalCaptureCount != null) sb.append("    totalCaptureCount: ").append(toIndentedString(totalCaptureCount)).append("\n");
+    if (isFinal != null) sb.append("    isFinal: ").append(toIndentedString(isFinal)).append("\n");
+    if (notes != null) sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -158,10 +158,10 @@ public class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

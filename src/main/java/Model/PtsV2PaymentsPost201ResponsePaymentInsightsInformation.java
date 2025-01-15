@@ -98,8 +98,8 @@ public class PtsV2PaymentsPost201ResponsePaymentInsightsInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponsePaymentInsightsInformation {\n");
     
-    sb.append("    responseInsights: ").append(toIndentedString(responseInsights)).append("\n");
-    sb.append("    orchestration: ").append(toIndentedString(orchestration)).append("\n");
+    if (responseInsights != null) sb.append("    responseInsights: ").append(toIndentedString(responseInsights)).append("\n");
+    if (orchestration != null) sb.append("    orchestration: ").append(toIndentedString(orchestration)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInsightsInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

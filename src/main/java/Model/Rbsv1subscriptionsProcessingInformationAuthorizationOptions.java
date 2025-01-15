@@ -75,7 +75,7 @@ public class Rbsv1subscriptionsProcessingInformationAuthorizationOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rbsv1subscriptionsProcessingInformationAuthorizationOptions {\n");
     
-    sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
+    if (initiator != null) sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Rbsv1subscriptionsProcessingInformationAuthorizationOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -99,8 +99,8 @@ public class Riskv1decisionsProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsProcessorInformation {\n");
     
-    sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
-    sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
+    if (avs != null) sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
+    if (cardVerification != null) sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -111,10 +111,10 @@ public class Riskv1decisionsProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

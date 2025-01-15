@@ -96,8 +96,8 @@ public class GetPlanCodeResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetPlanCodeResponse {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class GetPlanCodeResponse {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

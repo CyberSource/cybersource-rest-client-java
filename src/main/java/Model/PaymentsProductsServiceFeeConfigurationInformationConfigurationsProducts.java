@@ -42,7 +42,7 @@ public class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPro
    * @return serviceFeeEnabled
   **/
   @ApiModelProperty(value = "Boolean flag to determine if service fee will be applied to the Product.")
-  public Boolean isServiceFeeEnabled() {
+  public Boolean ServiceFeeEnabled() {
     return serviceFeeEnabled;
   }
 
@@ -74,7 +74,7 @@ public class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPro
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsServiceFeeConfigurationInformationConfigurationsProducts {\n");
     
-    sb.append("    serviceFeeEnabled: ").append(toIndentedString(serviceFeeEnabled)).append("\n");
+    if (serviceFeeEnabled != null) sb.append("    serviceFeeEnabled: ").append(toIndentedString(serviceFeeEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPro
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -152,10 +152,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation {\n");
     
-    sb.append("    companyTaxID: ").append(toIndentedString(companyTaxID)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
+    if (companyTaxID != null) sb.append("    companyTaxID: ").append(toIndentedString(companyTaxID)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    if (personalIdentification != null) sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -166,10 +166,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

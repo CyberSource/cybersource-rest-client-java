@@ -212,13 +212,13 @@ public class SAConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfig {\n");
     
-    sb.append("    parentProfileId: ").append(toIndentedString(parentProfileId)).append("\n");
-    sb.append("    contactInformation: ").append(toIndentedString(contactInformation)).append("\n");
-    sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
-    sb.append("    service: ").append(toIndentedString(service)).append("\n");
-    sb.append("    paymentMethods: ").append(toIndentedString(paymentMethods)).append("\n");
-    sb.append("    checkout: ").append(toIndentedString(checkout)).append("\n");
-    sb.append("    paymentTypes: ").append(toIndentedString(paymentTypes)).append("\n");
+    if (parentProfileId != null) sb.append("    parentProfileId: ").append(toIndentedString(parentProfileId)).append("\n");
+    if (contactInformation != null) sb.append("    contactInformation: ").append(toIndentedString(contactInformation)).append("\n");
+    if (notifications != null) sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
+    if (service != null) sb.append("    service: ").append(toIndentedString(service)).append("\n");
+    if (paymentMethods != null) sb.append("    paymentMethods: ").append(toIndentedString(paymentMethods)).append("\n");
+    if (checkout != null) sb.append("    checkout: ").append(toIndentedString(checkout)).append("\n");
+    if (paymentTypes != null) sb.append("    paymentTypes: ").append(toIndentedString(paymentTypes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -229,10 +229,10 @@ public class SAConfig {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

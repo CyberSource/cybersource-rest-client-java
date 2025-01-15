@@ -144,10 +144,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {\n");
     
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (bank != null) sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -158,10 +158,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -207,13 +207,13 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    authorizedAmount: ").append(toIndentedString(authorizedAmount)).append("\n");
-    sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
-    sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
-    sb.append("    surcharge: ").append(toIndentedString(surcharge)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (authorizedAmount != null) sb.append("    authorizedAmount: ").append(toIndentedString(authorizedAmount)).append("\n");
+    if (settlementAmount != null) sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
+    if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
+    if (surcharge != null) sb.append("    surcharge: ").append(toIndentedString(surcharge)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -224,10 +224,10 @@ public class TssV2TransactionsGet200ResponseOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

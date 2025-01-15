@@ -197,12 +197,12 @@ public class ECheckConfigCommon {
     StringBuilder sb = new StringBuilder();
     sb.append("class ECheckConfigCommon {\n");
     
-    sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
-    sb.append("    internalOnly: ").append(toIndentedString(internalOnly)).append("\n");
-    sb.append("    accountHolderName: ").append(toIndentedString(accountHolderName)).append("\n");
-    sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-    sb.append("    accountRoutingNumber: ").append(toIndentedString(accountRoutingNumber)).append("\n");
-    sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
+    if (processors != null) sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
+    if (internalOnly != null) sb.append("    internalOnly: ").append(toIndentedString(internalOnly)).append("\n");
+    if (accountHolderName != null) sb.append("    accountHolderName: ").append(toIndentedString(accountHolderName)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    if (accountRoutingNumber != null) sb.append("    accountRoutingNumber: ").append(toIndentedString(accountRoutingNumber)).append("\n");
+    if (accountNumber != null) sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -213,10 +213,10 @@ public class ECheckConfigCommon {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

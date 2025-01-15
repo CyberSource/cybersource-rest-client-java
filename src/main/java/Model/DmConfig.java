@@ -144,10 +144,10 @@ public class DmConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfig {\n");
     
-    sb.append("    processingOptions: ").append(toIndentedString(processingOptions)).append("\n");
-    sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
-    sb.append("    portfolioControls: ").append(toIndentedString(portfolioControls)).append("\n");
-    sb.append("    thirdparty: ").append(toIndentedString(thirdparty)).append("\n");
+    if (processingOptions != null) sb.append("    processingOptions: ").append(toIndentedString(processingOptions)).append("\n");
+    if (organization != null) sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
+    if (portfolioControls != null) sb.append("    portfolioControls: ").append(toIndentedString(portfolioControls)).append("\n");
+    if (thirdparty != null) sb.append("    thirdparty: ").append(toIndentedString(thirdparty)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -158,10 +158,10 @@ public class DmConfig {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

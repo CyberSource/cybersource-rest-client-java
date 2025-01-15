@@ -162,11 +162,11 @@ public class InlineResponse2011IssuerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2011IssuerInformation {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    binLength: ").append(toIndentedString(binLength)).append("\n");
-    sb.append("    accountPrefix: ").append(toIndentedString(accountPrefix)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (binLength != null) sb.append("    binLength: ").append(toIndentedString(binLength)).append("\n");
+    if (accountPrefix != null) sb.append("    accountPrefix: ").append(toIndentedString(accountPrefix)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class InlineResponse2011IssuerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

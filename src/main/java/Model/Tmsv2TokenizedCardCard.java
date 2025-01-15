@@ -92,9 +92,9 @@ public class Tmsv2TokenizedCardCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2TokenizedCardCard {\n");
     
-    sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
-    sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
-    sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (suffix != null) sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -105,10 +105,10 @@ public class Tmsv2TokenizedCardCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

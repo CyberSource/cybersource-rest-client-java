@@ -74,7 +74,7 @@ public class Ptsv2paymentsidTravelInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidTravelInformation {\n");
     
-    sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+    if (duration != null) sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsidTravelInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

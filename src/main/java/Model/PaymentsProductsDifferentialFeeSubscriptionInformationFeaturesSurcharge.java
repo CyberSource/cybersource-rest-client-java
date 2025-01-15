@@ -42,7 +42,7 @@ public class PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurch
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -74,7 +74,7 @@ public class PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurch
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurch
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -192,7 +192,7 @@ public class InlineResponse2011PaymentAccountInformationFeatures {
    * @return corporatePurchase
   **/
   @ApiModelProperty(value = "This field indicates whether the card can be used for corporate purchasing. This field is only applicable for American Express cards. Possible values:   - `true`   - `false` ")
-  public Boolean isCorporatePurchase() {
+  public Boolean CorporatePurchase() {
     return corporatePurchase;
   }
 
@@ -210,7 +210,7 @@ public class InlineResponse2011PaymentAccountInformationFeatures {
    * @return healthCard
   **/
   @ApiModelProperty(value = "This field indicates if the entered card is a healthcare BIN. Currently, this field is only supported for Visa BINs. Possible values:     - `true`     - `false`       ")
-  public Boolean isHealthCard() {
+  public Boolean HealthCard() {
     return healthCard;
   }
 
@@ -250,15 +250,15 @@ public class InlineResponse2011PaymentAccountInformationFeatures {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2011PaymentAccountInformationFeatures {\n");
     
-    sb.append("    accountFundingSource: ").append(toIndentedString(accountFundingSource)).append("\n");
-    sb.append("    accountFundingSourceSubType: ").append(toIndentedString(accountFundingSourceSubType)).append("\n");
-    sb.append("    cardProduct: ").append(toIndentedString(cardProduct)).append("\n");
-    sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
-    sb.append("    acceptanceLevel: ").append(toIndentedString(acceptanceLevel)).append("\n");
-    sb.append("    cardPlatform: ").append(toIndentedString(cardPlatform)).append("\n");
-    sb.append("    comboCard: ").append(toIndentedString(comboCard)).append("\n");
-    sb.append("    corporatePurchase: ").append(toIndentedString(corporatePurchase)).append("\n");
-    sb.append("    healthCard: ").append(toIndentedString(healthCard)).append("\n");
+    if (accountFundingSource != null) sb.append("    accountFundingSource: ").append(toIndentedString(accountFundingSource)).append("\n");
+    if (accountFundingSourceSubType != null) sb.append("    accountFundingSourceSubType: ").append(toIndentedString(accountFundingSourceSubType)).append("\n");
+    if (cardProduct != null) sb.append("    cardProduct: ").append(toIndentedString(cardProduct)).append("\n");
+    if (messageType != null) sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
+    if (acceptanceLevel != null) sb.append("    acceptanceLevel: ").append(toIndentedString(acceptanceLevel)).append("\n");
+    if (cardPlatform != null) sb.append("    cardPlatform: ").append(toIndentedString(cardPlatform)).append("\n");
+    if (comboCard != null) sb.append("    comboCard: ").append(toIndentedString(comboCard)).append("\n");
+    if (corporatePurchase != null) sb.append("    corporatePurchase: ").append(toIndentedString(corporatePurchase)).append("\n");
+    if (healthCard != null) sb.append("    healthCard: ").append(toIndentedString(healthCard)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -269,10 +269,10 @@ public class InlineResponse2011PaymentAccountInformationFeatures {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -383,21 +383,21 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesOrderInformationBillTo {\n");
     
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    sb.append("    company: ").append(toIndentedString(company)).append("\n");
-    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
-    sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    district: ").append(toIndentedString(district)).append("\n");
-    sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
-    sb.append("    county: ").append(toIndentedString(county)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (title != null) sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    if (firstName != null) sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    if (company != null) sb.append("    company: ").append(toIndentedString(company)).append("\n");
+    if (address1 != null) sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
+    if (address2 != null) sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (district != null) sb.append("    district: ").append(toIndentedString(district)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (county != null) sb.append("    county: ").append(toIndentedString(county)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -408,10 +408,10 @@ public class Ptsv2paymentsidcapturesOrderInformationBillTo {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

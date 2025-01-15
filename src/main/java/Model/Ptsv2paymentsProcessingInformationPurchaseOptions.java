@@ -45,7 +45,7 @@ public class Ptsv2paymentsProcessingInformationPurchaseOptions {
    * @return isElectronicBenefitsTransfer
   **/
   @ApiModelProperty(value = "Flag that indicates whether this transaction is an EBT transaction. Possible values: - `true` - `false`  #### PIN debit Required field for EBT and EBT voucher transactions that use PIN debit credit or PIN debit purchase; otherwise, not used. ")
-  public Boolean isIsElectronicBenefitsTransfer() {
+  public Boolean IsElectronicBenefitsTransfer() {
     return isElectronicBenefitsTransfer;
   }
 
@@ -96,8 +96,8 @@ public class Ptsv2paymentsProcessingInformationPurchaseOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformationPurchaseOptions {\n");
     
-    sb.append("    isElectronicBenefitsTransfer: ").append(toIndentedString(isElectronicBenefitsTransfer)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (isElectronicBenefitsTransfer != null) sb.append("    isElectronicBenefitsTransfer: ").append(toIndentedString(isElectronicBenefitsTransfer)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsProcessingInformationPurchaseOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

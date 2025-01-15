@@ -75,7 +75,7 @@ public class Ptsv2paymentsTravelInformationTransit {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationTransit {\n");
     
-    sb.append("    airline: ").append(toIndentedString(airline)).append("\n");
+    if (airline != null) sb.append("    airline: ").append(toIndentedString(airline)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Ptsv2paymentsTravelInformationTransit {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

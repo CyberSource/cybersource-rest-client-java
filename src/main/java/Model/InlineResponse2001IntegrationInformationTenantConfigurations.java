@@ -164,11 +164,11 @@ public class InlineResponse2001IntegrationInformationTenantConfigurations {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2001IntegrationInformationTenantConfigurations {\n");
     
-    sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
-    sb.append("    tenantConfigurationId: ").append(toIndentedString(tenantConfigurationId)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    tenantInformation: ").append(toIndentedString(tenantInformation)).append("\n");
+    if (solutionId != null) sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
+    if (tenantConfigurationId != null) sb.append("    tenantConfigurationId: ").append(toIndentedString(tenantConfigurationId)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (tenantInformation != null) sb.append("    tenantInformation: ").append(toIndentedString(tenantInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -179,10 +179,10 @@ public class InlineResponse2001IntegrationInformationTenantConfigurations {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

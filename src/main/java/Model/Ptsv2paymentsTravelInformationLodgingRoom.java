@@ -98,8 +98,8 @@ public class Ptsv2paymentsTravelInformationLodgingRoom {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationLodgingRoom {\n");
     
-    sb.append("    dailyRate: ").append(toIndentedString(dailyRate)).append("\n");
-    sb.append("    numberOfNights: ").append(toIndentedString(numberOfNights)).append("\n");
+    if (dailyRate != null) sb.append("    dailyRate: ").append(toIndentedString(dailyRate)).append("\n");
+    if (numberOfNights != null) sb.append("    numberOfNights: ").append(toIndentedString(numberOfNights)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class Ptsv2paymentsTravelInformationLodgingRoom {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

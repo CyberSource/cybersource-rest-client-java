@@ -97,8 +97,8 @@ public class Reportingv3ReportDownloadsGet400ResponseDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Reportingv3ReportDownloadsGet400ResponseDetails {\n");
     
-    sb.append("    field: ").append(toIndentedString(field)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (field != null) sb.append("    field: ").append(toIndentedString(field)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class Reportingv3ReportDownloadsGet400ResponseDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

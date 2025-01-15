@@ -629,7 +629,7 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
    * @return electronicTicketIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates whether an electronic ticket was issued. Possible values: - `true` - `false` Optional request field. ")
-  public Boolean isElectronicTicketIndicator() {
+  public Boolean ElectronicTicketIndicator() {
     return electronicTicketIndicator;
   }
 
@@ -1055,51 +1055,51 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationTransitAirline {\n");
     
-    sb.append("    isDomestic: ").append(toIndentedString(isDomestic)).append("\n");
-    sb.append("    bookingReferenceNumber: ").append(toIndentedString(bookingReferenceNumber)).append("\n");
-    sb.append("    carrierName: ").append(toIndentedString(carrierName)).append("\n");
-    sb.append("    ticketIssuer: ").append(toIndentedString(ticketIssuer)).append("\n");
-    sb.append("    ticketNumber: ").append(toIndentedString(ticketNumber)).append("\n");
-    sb.append("    checkDigit: ").append(toIndentedString(checkDigit)).append("\n");
-    sb.append("    restrictedTicketIndicator: ").append(toIndentedString(restrictedTicketIndicator)).append("\n");
-    sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
-    sb.append("    extendedPaymentCode: ").append(toIndentedString(extendedPaymentCode)).append("\n");
-    sb.append("    passengerName: ").append(toIndentedString(passengerName)).append("\n");
-    sb.append("    customerCode: ").append(toIndentedString(customerCode)).append("\n");
-    sb.append("    documentType: ").append(toIndentedString(documentType)).append("\n");
-    sb.append("    documentNumber: ").append(toIndentedString(documentNumber)).append("\n");
-    sb.append("    documentNumberOfParts: ").append(toIndentedString(documentNumberOfParts)).append("\n");
-    sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
-    sb.append("    invoiceDate: ").append(toIndentedString(invoiceDate)).append("\n");
-    sb.append("    additionalCharges: ").append(toIndentedString(additionalCharges)).append("\n");
-    sb.append("    totalFeeAmount: ").append(toIndentedString(totalFeeAmount)).append("\n");
-    sb.append("    clearingSequence: ").append(toIndentedString(clearingSequence)).append("\n");
-    sb.append("    clearingCount: ").append(toIndentedString(clearingCount)).append("\n");
-    sb.append("    totalClearingAmount: ").append(toIndentedString(totalClearingAmount)).append("\n");
-    sb.append("    numberOfPassengers: ").append(toIndentedString(numberOfPassengers)).append("\n");
-    sb.append("    reservationSystemCode: ").append(toIndentedString(reservationSystemCode)).append("\n");
-    sb.append("    processIdentifier: ").append(toIndentedString(processIdentifier)).append("\n");
-    sb.append("    ticketIssueDate: ").append(toIndentedString(ticketIssueDate)).append("\n");
-    sb.append("    electronicTicketIndicator: ").append(toIndentedString(electronicTicketIndicator)).append("\n");
-    sb.append("    originalTicketNumber: ").append(toIndentedString(originalTicketNumber)).append("\n");
-    sb.append("    purchaseType: ").append(toIndentedString(purchaseType)).append("\n");
-    sb.append("    creditReasonIndicator: ").append(toIndentedString(creditReasonIndicator)).append("\n");
-    sb.append("    ticketChangeIndicator: ").append(toIndentedString(ticketChangeIndicator)).append("\n");
-    sb.append("    planNumber: ").append(toIndentedString(planNumber)).append("\n");
-    sb.append("    arrivalDate: ").append(toIndentedString(arrivalDate)).append("\n");
-    sb.append("    restrictedTicketDesciption: ").append(toIndentedString(restrictedTicketDesciption)).append("\n");
-    sb.append("    exchangeTicketAmount: ").append(toIndentedString(exchangeTicketAmount)).append("\n");
-    sb.append("    exchangeTicketFeeAmount: ").append(toIndentedString(exchangeTicketFeeAmount)).append("\n");
-    sb.append("    reservationType: ").append(toIndentedString(reservationType)).append("\n");
-    sb.append("    boardingFeeAmount: ").append(toIndentedString(boardingFeeAmount)).append("\n");
-    sb.append("    legs: ").append(toIndentedString(legs)).append("\n");
-    sb.append("    ancillaryInformation: ").append(toIndentedString(ancillaryInformation)).append("\n");
-    sb.append("    flightType: ").append(toIndentedString(flightType)).append("\n");
-    sb.append("    insuranceAmount: ").append(toIndentedString(insuranceAmount)).append("\n");
-    sb.append("    frequentFlyerNumber: ").append(toIndentedString(frequentFlyerNumber)).append("\n");
-    sb.append("    thirdPartyStatus: ").append(toIndentedString(thirdPartyStatus)).append("\n");
-    sb.append("    passengerType: ").append(toIndentedString(passengerType)).append("\n");
-    sb.append("    totalInsuranceAmount: ").append(toIndentedString(totalInsuranceAmount)).append("\n");
+    if (isDomestic != null) sb.append("    isDomestic: ").append(toIndentedString(isDomestic)).append("\n");
+    if (bookingReferenceNumber != null) sb.append("    bookingReferenceNumber: ").append(toIndentedString(bookingReferenceNumber)).append("\n");
+    if (carrierName != null) sb.append("    carrierName: ").append(toIndentedString(carrierName)).append("\n");
+    if (ticketIssuer != null) sb.append("    ticketIssuer: ").append(toIndentedString(ticketIssuer)).append("\n");
+    if (ticketNumber != null) sb.append("    ticketNumber: ").append(toIndentedString(ticketNumber)).append("\n");
+    if (checkDigit != null) sb.append("    checkDigit: ").append(toIndentedString(checkDigit)).append("\n");
+    if (restrictedTicketIndicator != null) sb.append("    restrictedTicketIndicator: ").append(toIndentedString(restrictedTicketIndicator)).append("\n");
+    if (transactionType != null) sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
+    if (extendedPaymentCode != null) sb.append("    extendedPaymentCode: ").append(toIndentedString(extendedPaymentCode)).append("\n");
+    if (passengerName != null) sb.append("    passengerName: ").append(toIndentedString(passengerName)).append("\n");
+    if (customerCode != null) sb.append("    customerCode: ").append(toIndentedString(customerCode)).append("\n");
+    if (documentType != null) sb.append("    documentType: ").append(toIndentedString(documentType)).append("\n");
+    if (documentNumber != null) sb.append("    documentNumber: ").append(toIndentedString(documentNumber)).append("\n");
+    if (documentNumberOfParts != null) sb.append("    documentNumberOfParts: ").append(toIndentedString(documentNumberOfParts)).append("\n");
+    if (invoiceNumber != null) sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
+    if (invoiceDate != null) sb.append("    invoiceDate: ").append(toIndentedString(invoiceDate)).append("\n");
+    if (additionalCharges != null) sb.append("    additionalCharges: ").append(toIndentedString(additionalCharges)).append("\n");
+    if (totalFeeAmount != null) sb.append("    totalFeeAmount: ").append(toIndentedString(totalFeeAmount)).append("\n");
+    if (clearingSequence != null) sb.append("    clearingSequence: ").append(toIndentedString(clearingSequence)).append("\n");
+    if (clearingCount != null) sb.append("    clearingCount: ").append(toIndentedString(clearingCount)).append("\n");
+    if (totalClearingAmount != null) sb.append("    totalClearingAmount: ").append(toIndentedString(totalClearingAmount)).append("\n");
+    if (numberOfPassengers != null) sb.append("    numberOfPassengers: ").append(toIndentedString(numberOfPassengers)).append("\n");
+    if (reservationSystemCode != null) sb.append("    reservationSystemCode: ").append(toIndentedString(reservationSystemCode)).append("\n");
+    if (processIdentifier != null) sb.append("    processIdentifier: ").append(toIndentedString(processIdentifier)).append("\n");
+    if (ticketIssueDate != null) sb.append("    ticketIssueDate: ").append(toIndentedString(ticketIssueDate)).append("\n");
+    if (electronicTicketIndicator != null) sb.append("    electronicTicketIndicator: ").append(toIndentedString(electronicTicketIndicator)).append("\n");
+    if (originalTicketNumber != null) sb.append("    originalTicketNumber: ").append(toIndentedString(originalTicketNumber)).append("\n");
+    if (purchaseType != null) sb.append("    purchaseType: ").append(toIndentedString(purchaseType)).append("\n");
+    if (creditReasonIndicator != null) sb.append("    creditReasonIndicator: ").append(toIndentedString(creditReasonIndicator)).append("\n");
+    if (ticketChangeIndicator != null) sb.append("    ticketChangeIndicator: ").append(toIndentedString(ticketChangeIndicator)).append("\n");
+    if (planNumber != null) sb.append("    planNumber: ").append(toIndentedString(planNumber)).append("\n");
+    if (arrivalDate != null) sb.append("    arrivalDate: ").append(toIndentedString(arrivalDate)).append("\n");
+    if (restrictedTicketDesciption != null) sb.append("    restrictedTicketDesciption: ").append(toIndentedString(restrictedTicketDesciption)).append("\n");
+    if (exchangeTicketAmount != null) sb.append("    exchangeTicketAmount: ").append(toIndentedString(exchangeTicketAmount)).append("\n");
+    if (exchangeTicketFeeAmount != null) sb.append("    exchangeTicketFeeAmount: ").append(toIndentedString(exchangeTicketFeeAmount)).append("\n");
+    if (reservationType != null) sb.append("    reservationType: ").append(toIndentedString(reservationType)).append("\n");
+    if (boardingFeeAmount != null) sb.append("    boardingFeeAmount: ").append(toIndentedString(boardingFeeAmount)).append("\n");
+    if (legs != null) sb.append("    legs: ").append(toIndentedString(legs)).append("\n");
+    if (ancillaryInformation != null) sb.append("    ancillaryInformation: ").append(toIndentedString(ancillaryInformation)).append("\n");
+    if (flightType != null) sb.append("    flightType: ").append(toIndentedString(flightType)).append("\n");
+    if (insuranceAmount != null) sb.append("    insuranceAmount: ").append(toIndentedString(insuranceAmount)).append("\n");
+    if (frequentFlyerNumber != null) sb.append("    frequentFlyerNumber: ").append(toIndentedString(frequentFlyerNumber)).append("\n");
+    if (thirdPartyStatus != null) sb.append("    thirdPartyStatus: ").append(toIndentedString(thirdPartyStatus)).append("\n");
+    if (passengerType != null) sb.append("    passengerType: ").append(toIndentedString(passengerType)).append("\n");
+    if (totalInsuranceAmount != null) sb.append("    totalInsuranceAmount: ").append(toIndentedString(totalInsuranceAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1110,10 +1110,10 @@ public class Ptsv2paymentsTravelInformationTransitAirline {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

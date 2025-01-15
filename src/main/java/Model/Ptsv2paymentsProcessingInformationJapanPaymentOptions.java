@@ -283,16 +283,16 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformationJapanPaymentOptions {\n");
     
-    sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
-    sb.append("    bonuses: ").append(toIndentedString(bonuses)).append("\n");
-    sb.append("    preapprovalType: ").append(toIndentedString(preapprovalType)).append("\n");
-    sb.append("    installments: ").append(toIndentedString(installments)).append("\n");
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
-    sb.append("    firstBillingMonth: ").append(toIndentedString(firstBillingMonth)).append("\n");
-    sb.append("    businessName: ").append(toIndentedString(businessName)).append("\n");
-    sb.append("    businessNameKatakana: ").append(toIndentedString(businessNameKatakana)).append("\n");
-    sb.append("    jis2TrackData: ").append(toIndentedString(jis2TrackData)).append("\n");
-    sb.append("    businessNameAlphaNumeric: ").append(toIndentedString(businessNameAlphaNumeric)).append("\n");
+    if (paymentMethod != null) sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
+    if (bonuses != null) sb.append("    bonuses: ").append(toIndentedString(bonuses)).append("\n");
+    if (preapprovalType != null) sb.append("    preapprovalType: ").append(toIndentedString(preapprovalType)).append("\n");
+    if (installments != null) sb.append("    installments: ").append(toIndentedString(installments)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (firstBillingMonth != null) sb.append("    firstBillingMonth: ").append(toIndentedString(firstBillingMonth)).append("\n");
+    if (businessName != null) sb.append("    businessName: ").append(toIndentedString(businessName)).append("\n");
+    if (businessNameKatakana != null) sb.append("    businessNameKatakana: ").append(toIndentedString(businessNameKatakana)).append("\n");
+    if (jis2TrackData != null) sb.append("    jis2TrackData: ").append(toIndentedString(jis2TrackData)).append("\n");
+    if (businessNameAlphaNumeric != null) sb.append("    businessNameAlphaNumeric: ").append(toIndentedString(businessNameAlphaNumeric)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -303,10 +303,10 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

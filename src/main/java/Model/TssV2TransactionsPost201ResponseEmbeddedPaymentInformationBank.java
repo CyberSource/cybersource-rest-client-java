@@ -75,7 +75,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank {\n");
     
-    sb.append("    account: ").append(toIndentedString(account)).append("\n");
+    if (account != null) sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

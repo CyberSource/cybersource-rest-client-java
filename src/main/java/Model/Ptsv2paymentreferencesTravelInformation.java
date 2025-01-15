@@ -75,7 +75,7 @@ public class Ptsv2paymentreferencesTravelInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesTravelInformation {\n");
     
-    sb.append("    autoRental: ").append(toIndentedString(autoRental)).append("\n");
+    if (autoRental != null) sb.append("    autoRental: ").append(toIndentedString(autoRental)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Ptsv2paymentreferencesTravelInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -279,15 +279,15 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateUnifiedCheckoutCaptureContextRequest {\n");
     
-    sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
-    sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
-    sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
-    sb.append("    allowedPaymentTypes: ").append(toIndentedString(allowedPaymentTypes)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
-    sb.append("    captureMandate: ").append(toIndentedString(captureMandate)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    checkoutApiInitialization: ").append(toIndentedString(checkoutApiInitialization)).append("\n");
+    if (clientVersion != null) sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
+    if (targetOrigins != null) sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
+    if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
+    if (allowedPaymentTypes != null) sb.append("    allowedPaymentTypes: ").append(toIndentedString(allowedPaymentTypes)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (locale != null) sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+    if (captureMandate != null) sb.append("    captureMandate: ").append(toIndentedString(captureMandate)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (checkoutApiInitialization != null) sb.append("    checkoutApiInitialization: ").append(toIndentedString(checkoutApiInitialization)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -298,10 +298,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

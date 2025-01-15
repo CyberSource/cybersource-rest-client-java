@@ -119,9 +119,9 @@ public class InlineResponse202 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse202 {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
-    sb.append("    batchItemCount: ").append(toIndentedString(batchItemCount)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (batchId != null) sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
+    if (batchItemCount != null) sb.append("    batchItemCount: ").append(toIndentedString(batchItemCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class InlineResponse202 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -228,14 +228,14 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {\n");
     
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
-    sb.append("    responseCategoryCode: ").append(toIndentedString(responseCategoryCode)).append("\n");
-    sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
-    sb.append("    masterCardServiceCode: ").append(toIndentedString(masterCardServiceCode)).append("\n");
-    sb.append("    masterCardServiceReplyCode: ").append(toIndentedString(masterCardServiceReplyCode)).append("\n");
-    sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
-    sb.append("    providerResponse: ").append(toIndentedString(providerResponse)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (responseCategoryCode != null) sb.append("    responseCategoryCode: ").append(toIndentedString(responseCategoryCode)).append("\n");
+    if (forwardedAcquirerCode != null) sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
+    if (masterCardServiceCode != null) sb.append("    masterCardServiceCode: ").append(toIndentedString(masterCardServiceCode)).append("\n");
+    if (masterCardServiceReplyCode != null) sb.append("    masterCardServiceReplyCode: ").append(toIndentedString(masterCardServiceReplyCode)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
+    if (providerResponse != null) sb.append("    providerResponse: ").append(toIndentedString(providerResponse)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -246,10 +246,10 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

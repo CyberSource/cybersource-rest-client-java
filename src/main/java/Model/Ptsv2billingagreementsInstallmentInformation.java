@@ -251,15 +251,15 @@ public class Ptsv2billingagreementsInstallmentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2billingagreementsInstallmentInformation {\n");
     
-    sb.append("    alertPreference: ").append(toIndentedString(alertPreference)).append("\n");
-    sb.append("    firstInstallmentDate: ").append(toIndentedString(firstInstallmentDate)).append("\n");
-    sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
-    sb.append("    lastInstallmentDate: ").append(toIndentedString(lastInstallmentDate)).append("\n");
-    sb.append("    maxAmount: ").append(toIndentedString(maxAmount)).append("\n");
-    sb.append("    minAmount: ").append(toIndentedString(minAmount)).append("\n");
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
-    sb.append("    preferredDay: ").append(toIndentedString(preferredDay)).append("\n");
-    sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
+    if (alertPreference != null) sb.append("    alertPreference: ").append(toIndentedString(alertPreference)).append("\n");
+    if (firstInstallmentDate != null) sb.append("    firstInstallmentDate: ").append(toIndentedString(firstInstallmentDate)).append("\n");
+    if (identifier != null) sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
+    if (lastInstallmentDate != null) sb.append("    lastInstallmentDate: ").append(toIndentedString(lastInstallmentDate)).append("\n");
+    if (maxAmount != null) sb.append("    maxAmount: ").append(toIndentedString(maxAmount)).append("\n");
+    if (minAmount != null) sb.append("    minAmount: ").append(toIndentedString(minAmount)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (preferredDay != null) sb.append("    preferredDay: ").append(toIndentedString(preferredDay)).append("\n");
+    if (sequence != null) sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -270,10 +270,10 @@ public class Ptsv2billingagreementsInstallmentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

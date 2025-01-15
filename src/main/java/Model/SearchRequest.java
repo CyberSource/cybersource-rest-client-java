@@ -140,10 +140,10 @@ public class SearchRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class SearchRequest {\n");
     
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-    sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
-    sb.append("    permissionId: ").append(toIndentedString(permissionId)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (userName != null) sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+    if (roleId != null) sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+    if (permissionId != null) sb.append("    permissionId: ").append(toIndentedString(permissionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class SearchRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

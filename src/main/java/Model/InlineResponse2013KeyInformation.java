@@ -296,17 +296,17 @@ public class InlineResponse2013KeyInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2013KeyInformation {\n");
     
-    sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-    sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    clientKeyId: ").append(toIndentedString(clientKeyId)).append("\n");
-    sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    keyType: ").append(toIndentedString(keyType)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
+    if (provider != null) sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    if (tenant != null) sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (clientKeyId != null) sb.append("    clientKeyId: ").append(toIndentedString(clientKeyId)).append("\n");
+    if (keyId != null) sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
+    if (key != null) sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    if (keyType != null) sb.append("    keyType: ").append(toIndentedString(keyType)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (expirationDate != null) sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -317,10 +317,10 @@ public class InlineResponse2013KeyInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

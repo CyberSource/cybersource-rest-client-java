@@ -96,8 +96,8 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses {\n");
     
-    sb.append("    month: ").append(toIndentedString(month)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (month != null) sb.append("    month: ").append(toIndentedString(month)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

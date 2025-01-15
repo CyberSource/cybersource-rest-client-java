@@ -96,8 +96,8 @@ public class GetAllSubscriptionsResponsePlanInformationBillingCycles {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetAllSubscriptionsResponsePlanInformationBillingCycles {\n");
     
-    sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    current: ").append(toIndentedString(current)).append("\n");
+    if (total != null) sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    if (current != null) sb.append("    current: ").append(toIndentedString(current)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class GetAllSubscriptionsResponsePlanInformationBillingCycles {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

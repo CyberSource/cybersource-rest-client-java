@@ -98,8 +98,8 @@ public class InlineResponse2012SetupsPaymentsCardProcessing {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012SetupsPaymentsCardProcessing {\n");
     
-    sb.append("    subscriptionStatus: ").append(toIndentedString(subscriptionStatus)).append("\n");
-    sb.append("    configurationStatus: ").append(toIndentedString(configurationStatus)).append("\n");
+    if (subscriptionStatus != null) sb.append("    subscriptionStatus: ").append(toIndentedString(subscriptionStatus)).append("\n");
+    if (configurationStatus != null) sb.append("    configurationStatus: ").append(toIndentedString(configurationStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class InlineResponse2012SetupsPaymentsCardProcessing {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -186,12 +186,12 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response1ProcessorInformation {\n");
     
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    tradeNumber: ").append(toIndentedString(tradeNumber)).append("\n");
-    sb.append("    rawResponse: ").append(toIndentedString(rawResponse)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
-    sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
-    sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (tradeNumber != null) sb.append("    tradeNumber: ").append(toIndentedString(tradeNumber)).append("\n");
+    if (rawResponse != null) sb.append("    rawResponse: ").append(toIndentedString(rawResponse)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (sellerProtection != null) sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
+    if (avs != null) sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -202,10 +202,10 @@ public class PtsV2PaymentsPost201Response1ProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

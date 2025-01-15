@@ -162,11 +162,11 @@ public class Ptsv2payoutsProcessingInformationPayoutsOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2payoutsProcessingInformationPayoutsOptions {\n");
     
-    sb.append("    acquirerMerchantId: ").append(toIndentedString(acquirerMerchantId)).append("\n");
-    sb.append("    acquirerBin: ").append(toIndentedString(acquirerBin)).append("\n");
-    sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
-    sb.append("    accountFundingReferenceId: ").append(toIndentedString(accountFundingReferenceId)).append("\n");
-    sb.append("    deferredDateTime: ").append(toIndentedString(deferredDateTime)).append("\n");
+    if (acquirerMerchantId != null) sb.append("    acquirerMerchantId: ").append(toIndentedString(acquirerMerchantId)).append("\n");
+    if (acquirerBin != null) sb.append("    acquirerBin: ").append(toIndentedString(acquirerBin)).append("\n");
+    if (retrievalReferenceNumber != null) sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
+    if (accountFundingReferenceId != null) sb.append("    accountFundingReferenceId: ").append(toIndentedString(accountFundingReferenceId)).append("\n");
+    if (deferredDateTime != null) sb.append("    deferredDateTime: ").append(toIndentedString(deferredDateTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class Ptsv2payoutsProcessingInformationPayoutsOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

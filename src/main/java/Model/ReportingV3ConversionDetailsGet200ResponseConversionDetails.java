@@ -284,16 +284,16 @@ public class ReportingV3ConversionDetailsGet200ResponseConversionDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ConversionDetailsGet200ResponseConversionDetails {\n");
     
-    sb.append("    merchantReferenceNumber: ").append(toIndentedString(merchantReferenceNumber)).append("\n");
-    sb.append("    conversionTime: ").append(toIndentedString(conversionTime)).append("\n");
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    originalDecision: ").append(toIndentedString(originalDecision)).append("\n");
-    sb.append("    newDecision: ").append(toIndentedString(newDecision)).append("\n");
-    sb.append("    reviewer: ").append(toIndentedString(reviewer)).append("\n");
-    sb.append("    reviewerComments: ").append(toIndentedString(reviewerComments)).append("\n");
-    sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
-    sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
-    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    if (merchantReferenceNumber != null) sb.append("    merchantReferenceNumber: ").append(toIndentedString(merchantReferenceNumber)).append("\n");
+    if (conversionTime != null) sb.append("    conversionTime: ").append(toIndentedString(conversionTime)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    if (originalDecision != null) sb.append("    originalDecision: ").append(toIndentedString(originalDecision)).append("\n");
+    if (newDecision != null) sb.append("    newDecision: ").append(toIndentedString(newDecision)).append("\n");
+    if (reviewer != null) sb.append("    reviewer: ").append(toIndentedString(reviewer)).append("\n");
+    if (reviewerComments != null) sb.append("    reviewerComments: ").append(toIndentedString(reviewerComments)).append("\n");
+    if (queue != null) sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    if (profile != null) sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
+    if (notes != null) sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -304,10 +304,10 @@ public class ReportingV3ConversionDetailsGet200ResponseConversionDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -96,8 +96,8 @@ public class InlineResponse4001Details {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4001Details {\n");
     
-    sb.append("    location: ").append(toIndentedString(location)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (location != null) sb.append("    location: ").append(toIndentedString(location)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class InlineResponse4001Details {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

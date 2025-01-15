@@ -273,16 +273,16 @@ public class Ptsv2paymentsidrefundsClientReferenceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidrefundsClientReferenceInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    returnReconciliationId: ").append(toIndentedString(returnReconciliationId)).append("\n");
-    sb.append("    pausedRequestId: ").append(toIndentedString(pausedRequestId)).append("\n");
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
-    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
-    sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
-    sb.append("    applicationVersion: ").append(toIndentedString(applicationVersion)).append("\n");
-    sb.append("    applicationUser: ").append(toIndentedString(applicationUser)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (returnReconciliationId != null) sb.append("    returnReconciliationId: ").append(toIndentedString(returnReconciliationId)).append("\n");
+    if (pausedRequestId != null) sb.append("    pausedRequestId: ").append(toIndentedString(pausedRequestId)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (comments != null) sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    if (partner != null) sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
+    if (applicationName != null) sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
+    if (applicationVersion != null) sb.append("    applicationVersion: ").append(toIndentedString(applicationVersion)).append("\n");
+    if (applicationUser != null) sb.append("    applicationUser: ").append(toIndentedString(applicationUser)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -293,10 +293,10 @@ public class Ptsv2paymentsidrefundsClientReferenceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -118,9 +118,9 @@ public class Ptsv2paymentsidreversalsClientReferenceInformationPartner {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidreversalsClientReferenceInformationPartner {\n");
     
-    sb.append("    developerId: ").append(toIndentedString(developerId)).append("\n");
-    sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
-    sb.append("    thirdPartyCertificationNumber: ").append(toIndentedString(thirdPartyCertificationNumber)).append("\n");
+    if (developerId != null) sb.append("    developerId: ").append(toIndentedString(developerId)).append("\n");
+    if (solutionId != null) sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
+    if (thirdPartyCertificationNumber != null) sb.append("    thirdPartyCertificationNumber: ").append(toIndentedString(thirdPartyCertificationNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class Ptsv2paymentsidreversalsClientReferenceInformationPartner {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

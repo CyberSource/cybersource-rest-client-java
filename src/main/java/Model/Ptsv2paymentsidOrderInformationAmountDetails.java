@@ -96,8 +96,8 @@ public class Ptsv2paymentsidOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidOrderInformationAmountDetails {\n");
     
-    sb.append("    additionalAmount: ").append(toIndentedString(additionalAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (additionalAmount != null) sb.append("    additionalAmount: ").append(toIndentedString(additionalAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsidOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

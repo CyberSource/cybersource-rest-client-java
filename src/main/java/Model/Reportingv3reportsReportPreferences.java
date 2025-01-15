@@ -46,7 +46,7 @@ public class Reportingv3reportsReportPreferences {
    * @return signedAmounts
   **/
   @ApiModelProperty(value = "Indicator to determine whether negative sign infront of amount for all refunded transaction")
-  public Boolean isSignedAmounts() {
+  public Boolean SignedAmounts() {
     return signedAmounts;
   }
 
@@ -97,8 +97,8 @@ public class Reportingv3reportsReportPreferences {
     StringBuilder sb = new StringBuilder();
     sb.append("class Reportingv3reportsReportPreferences {\n");
     
-    sb.append("    signedAmounts: ").append(toIndentedString(signedAmounts)).append("\n");
-    sb.append("    fieldNameConvention: ").append(toIndentedString(fieldNameConvention)).append("\n");
+    if (signedAmounts != null) sb.append("    signedAmounts: ").append(toIndentedString(signedAmounts)).append("\n");
+    if (fieldNameConvention != null) sb.append("    fieldNameConvention: ").append(toIndentedString(fieldNameConvention)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class Reportingv3reportsReportPreferences {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

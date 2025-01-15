@@ -119,9 +119,9 @@ public class Ptsv2paymentreferencesUserInterface {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesUserInterface {\n");
     
-    sb.append("    borderRadius: ").append(toIndentedString(borderRadius)).append("\n");
-    sb.append("    theme: ").append(toIndentedString(theme)).append("\n");
-    sb.append("    color: ").append(toIndentedString(color)).append("\n");
+    if (borderRadius != null) sb.append("    borderRadius: ").append(toIndentedString(borderRadius)).append("\n");
+    if (theme != null) sb.append("    theme: ").append(toIndentedString(theme)).append("\n");
+    if (color != null) sb.append("    color: ").append(toIndentedString(color)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class Ptsv2paymentreferencesUserInterface {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -96,8 +96,8 @@ public class TssV2TransactionsGet200ResponseInstallmentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseInstallmentInformation {\n");
     
-    sb.append("    numberOfInstallments: ").append(toIndentedString(numberOfInstallments)).append("\n");
-    sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
+    if (numberOfInstallments != null) sb.append("    numberOfInstallments: ").append(toIndentedString(numberOfInstallments)).append("\n");
+    if (identifier != null) sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class TssV2TransactionsGet200ResponseInstallmentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

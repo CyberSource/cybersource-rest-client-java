@@ -99,8 +99,8 @@ public class InlineResponse200Embedded {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse200Embedded {\n");
     
-    sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
-    sb.append("    reversal: ").append(toIndentedString(reversal)).append("\n");
+    if (capture != null) sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
+    if (reversal != null) sb.append("    reversal: ").append(toIndentedString(reversal)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -111,10 +111,10 @@ public class InlineResponse200Embedded {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

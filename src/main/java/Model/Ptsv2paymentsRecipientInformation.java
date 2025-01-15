@@ -316,18 +316,18 @@ public class Ptsv2paymentsRecipientInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsRecipientInformation {\n");
     
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    beneficiaryId: ").append(toIndentedString(beneficiaryId)).append("\n");
-    sb.append("    beneficiaryName: ").append(toIndentedString(beneficiaryName)).append("\n");
-    sb.append("    beneficiaryAddress: ").append(toIndentedString(beneficiaryAddress)).append("\n");
+    if (accountId != null) sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    if (firstName != null) sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    if (address1 != null) sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    if (beneficiaryId != null) sb.append("    beneficiaryId: ").append(toIndentedString(beneficiaryId)).append("\n");
+    if (beneficiaryName != null) sb.append("    beneficiaryName: ").append(toIndentedString(beneficiaryName)).append("\n");
+    if (beneficiaryAddress != null) sb.append("    beneficiaryAddress: ").append(toIndentedString(beneficiaryAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -338,10 +338,10 @@ public class Ptsv2paymentsRecipientInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

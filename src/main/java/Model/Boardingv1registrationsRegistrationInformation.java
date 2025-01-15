@@ -180,13 +180,13 @@ public class Boardingv1registrationsRegistrationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsRegistrationInformation {\n");
     
-    sb.append("    boardingRegistrationId: ").append(toIndentedString(boardingRegistrationId)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    boardingPackageId: ").append(toIndentedString(boardingPackageId)).append("\n");
-    sb.append("    boardingFlow: ").append(toIndentedString(boardingFlow)).append("\n");
-    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-    sb.append("    salesRepId: ").append(toIndentedString(salesRepId)).append("\n");
+    if (boardingRegistrationId != null) sb.append("    boardingRegistrationId: ").append(toIndentedString(boardingRegistrationId)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (boardingPackageId != null) sb.append("    boardingPackageId: ").append(toIndentedString(boardingPackageId)).append("\n");
+    if (boardingFlow != null) sb.append("    boardingFlow: ").append(toIndentedString(boardingFlow)).append("\n");
+    if (mode != null) sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+    if (salesRepId != null) sb.append("    salesRepId: ").append(toIndentedString(salesRepId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -197,10 +197,10 @@ public class Boardingv1registrationsRegistrationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

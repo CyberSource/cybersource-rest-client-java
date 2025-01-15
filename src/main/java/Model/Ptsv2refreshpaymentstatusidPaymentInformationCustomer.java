@@ -74,7 +74,7 @@ public class Ptsv2refreshpaymentstatusidPaymentInformationCustomer {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2refreshpaymentstatusidPaymentInformationCustomer {\n");
     
-    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+    if (customerId != null) sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2refreshpaymentstatusidPaymentInformationCustomer {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

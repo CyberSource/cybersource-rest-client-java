@@ -96,8 +96,8 @@ public class Riskv1exportcomplianceinquiriesDeviceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1exportcomplianceinquiriesDeviceInformation {\n");
     
-    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
-    sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
+    if (ipAddress != null) sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+    if (hostName != null) sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Riskv1exportcomplianceinquiriesDeviceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

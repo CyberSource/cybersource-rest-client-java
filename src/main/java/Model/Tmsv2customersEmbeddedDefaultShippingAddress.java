@@ -93,7 +93,7 @@ public class Tmsv2customersEmbeddedDefaultShippingAddress {
    * @return _default
   **/
   @ApiModelProperty(value = "Flag that indicates whether customer shipping address is the dafault. Possible Values:  - `true`: Shipping Address is customer's default.  - `false`: Shipping Address is not customer's default. ")
-  public Boolean isDefault() {
+  public Boolean Default() {
     return _default;
   }
 
@@ -165,11 +165,11 @@ public class Tmsv2customersEmbeddedDefaultShippingAddress {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultShippingAddress {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
-    sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (_default != null) sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    if (metadata != null) sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -180,10 +180,10 @@ public class Tmsv2customersEmbeddedDefaultShippingAddress {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

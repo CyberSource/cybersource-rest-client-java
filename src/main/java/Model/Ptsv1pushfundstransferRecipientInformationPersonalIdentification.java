@@ -140,10 +140,10 @@ public class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    issuingCountry: ").append(toIndentedString(issuingCountry)).append("\n");
-    sb.append("    personalIdType: ").append(toIndentedString(personalIdType)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (issuingCountry != null) sb.append("    issuingCountry: ").append(toIndentedString(issuingCountry)).append("\n");
+    if (personalIdType != null) sb.append("    personalIdType: ").append(toIndentedString(personalIdType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class Ptsv1pushfundstransferRecipientInformationPersonalIdentification {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -230,14 +230,14 @@ public class Ptsv2payoutsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2payoutsProcessingInformation {\n");
     
-    sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
-    sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
-    sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
-    sb.append("    transactionReason: ").append(toIndentedString(transactionReason)).append("\n");
-    sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
-    sb.append("    fundingOptions: ").append(toIndentedString(fundingOptions)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (networkRoutingOrder != null) sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (payoutsOptions != null) sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
+    if (transactionReason != null) sb.append("    transactionReason: ").append(toIndentedString(transactionReason)).append("\n");
+    if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
+    if (fundingOptions != null) sb.append("    fundingOptions: ").append(toIndentedString(fundingOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -248,10 +248,10 @@ public class Ptsv2payoutsProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

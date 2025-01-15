@@ -228,14 +228,14 @@ public class Ptsv2intentsOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2intentsOrderInformationAmountDetails {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
-    sb.append("    shippingAmount: ").append(toIndentedString(shippingAmount)).append("\n");
-    sb.append("    shippingDiscountAmount: ").append(toIndentedString(shippingDiscountAmount)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    insuranceAmount: ").append(toIndentedString(insuranceAmount)).append("\n");
-    sb.append("    dutyAmount: ").append(toIndentedString(dutyAmount)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (shippingAmount != null) sb.append("    shippingAmount: ").append(toIndentedString(shippingAmount)).append("\n");
+    if (shippingDiscountAmount != null) sb.append("    shippingDiscountAmount: ").append(toIndentedString(shippingDiscountAmount)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (insuranceAmount != null) sb.append("    insuranceAmount: ").append(toIndentedString(insuranceAmount)).append("\n");
+    if (dutyAmount != null) sb.append("    dutyAmount: ").append(toIndentedString(dutyAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -246,10 +246,10 @@ public class Ptsv2intentsOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

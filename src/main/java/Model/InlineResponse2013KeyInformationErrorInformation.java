@@ -107,8 +107,8 @@ public class InlineResponse2013KeyInformationErrorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2013KeyInformationErrorInformation {\n");
     
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -119,10 +119,10 @@ public class InlineResponse2013KeyInformationErrorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

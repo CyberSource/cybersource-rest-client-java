@@ -118,9 +118,9 @@ public class PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails {\n");
     
-    sb.append("    voidAmount: ").append(toIndentedString(voidAmount)).append("\n");
-    sb.append("    originalTransactionAmount: ").append(toIndentedString(originalTransactionAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (voidAmount != null) sb.append("    voidAmount: ").append(toIndentedString(voidAmount)).append("\n");
+    if (originalTransactionAmount != null) sb.append("    originalTransactionAmount: ").append(toIndentedString(originalTransactionAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

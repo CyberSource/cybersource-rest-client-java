@@ -211,13 +211,13 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
     StringBuilder sb = new StringBuilder();
     sb.append("class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault {\n");
     
-    sb.append("    defaultTokenType: ").append(toIndentedString(defaultTokenType)).append("\n");
-    sb.append("    location: ").append(toIndentedString(location)).append("\n");
-    sb.append("    tokenFormats: ").append(toIndentedString(tokenFormats)).append("\n");
-    sb.append("    tokenPermissions: ").append(toIndentedString(tokenPermissions)).append("\n");
-    sb.append("    sensitivePrivileges: ").append(toIndentedString(sensitivePrivileges)).append("\n");
-    sb.append("    nullify: ").append(toIndentedString(nullify)).append("\n");
-    sb.append("    networkTokenServices: ").append(toIndentedString(networkTokenServices)).append("\n");
+    if (defaultTokenType != null) sb.append("    defaultTokenType: ").append(toIndentedString(defaultTokenType)).append("\n");
+    if (location != null) sb.append("    location: ").append(toIndentedString(location)).append("\n");
+    if (tokenFormats != null) sb.append("    tokenFormats: ").append(toIndentedString(tokenFormats)).append("\n");
+    if (tokenPermissions != null) sb.append("    tokenPermissions: ").append(toIndentedString(tokenPermissions)).append("\n");
+    if (sensitivePrivileges != null) sb.append("    sensitivePrivileges: ").append(toIndentedString(sensitivePrivileges)).append("\n");
+    if (nullify != null) sb.append("    nullify: ").append(toIndentedString(nullify)).append("\n");
+    if (networkTokenServices != null) sb.append("    networkTokenServices: ").append(toIndentedString(networkTokenServices)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -228,10 +228,10 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

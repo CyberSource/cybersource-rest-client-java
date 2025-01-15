@@ -195,12 +195,12 @@ public class PtsV2PaymentsPost201ResponseBuyerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseBuyerInformation {\n");
     
-    sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
-    sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
-    sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
-    sb.append("    loginId: ").append(toIndentedString(loginId)).append("\n");
+    if (merchantCustomerId != null) sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    if (vatRegistrationNumber != null) sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
+    if (personalIdentification != null) sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
+    if (taxId != null) sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
+    if (loginId != null) sb.append("    loginId: ").append(toIndentedString(loginId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -211,10 +211,10 @@ public class PtsV2PaymentsPost201ResponseBuyerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

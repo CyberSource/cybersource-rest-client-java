@@ -185,12 +185,12 @@ public class Nrtfv1webhookswebhookIdreplaysByDeliveryStatus {
     StringBuilder sb = new StringBuilder();
     sb.append("class Nrtfv1webhookswebhookIdreplaysByDeliveryStatus {\n");
     
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-    sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-    sb.append("    hoursBack: ").append(toIndentedString(hoursBack)).append("\n");
-    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (startTime != null) sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    if (endTime != null) sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+    if (hoursBack != null) sb.append("    hoursBack: ").append(toIndentedString(hoursBack)).append("\n");
+    if (productId != null) sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+    if (eventType != null) sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -201,10 +201,10 @@ public class Nrtfv1webhookswebhookIdreplaysByDeliveryStatus {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -187,12 +187,12 @@ public class InlineResponse2011 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2011 {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    paymentAccountInformation: ").append(toIndentedString(paymentAccountInformation)).append("\n");
-    sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
-    sb.append("    payoutInformation: ").append(toIndentedString(payoutInformation)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (paymentAccountInformation != null) sb.append("    paymentAccountInformation: ").append(toIndentedString(paymentAccountInformation)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
+    if (payoutInformation != null) sb.append("    payoutInformation: ").append(toIndentedString(payoutInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -203,10 +203,10 @@ public class InlineResponse2011 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

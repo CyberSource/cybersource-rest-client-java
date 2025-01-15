@@ -164,11 +164,11 @@ public class UpdateSubscriptionResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateSubscriptionResponse {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (subscriptionInformation != null) sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -179,10 +179,10 @@ public class UpdateSubscriptionResponse {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

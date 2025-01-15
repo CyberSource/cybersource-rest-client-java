@@ -96,8 +96,8 @@ public class Boardingv1registrationsIntegrationInformationOauth2 {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsIntegrationInformationOauth2 {\n");
     
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    if (clientId != null) sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    if (state != null) sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Boardingv1registrationsIntegrationInformationOauth2 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

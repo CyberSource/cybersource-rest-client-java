@@ -360,20 +360,20 @@ public class InlineResponse2011PayoutInformationPushFunds {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2011PayoutInformationPushFunds {\n");
     
-    sb.append("    moneyTransferFastFundsCrossBorder: ").append(toIndentedString(moneyTransferFastFundsCrossBorder)).append("\n");
-    sb.append("    moneyTransferFastFundsDomestic: ").append(toIndentedString(moneyTransferFastFundsDomestic)).append("\n");
-    sb.append("    moneyTransferCrossBorder: ").append(toIndentedString(moneyTransferCrossBorder)).append("\n");
-    sb.append("    moneyTransferDomestic: ").append(toIndentedString(moneyTransferDomestic)).append("\n");
-    sb.append("    nonMoneyTransferFastFundsCrossBorder: ").append(toIndentedString(nonMoneyTransferFastFundsCrossBorder)).append("\n");
-    sb.append("    nonMoneyTransferFastFundsDomestic: ").append(toIndentedString(nonMoneyTransferFastFundsDomestic)).append("\n");
-    sb.append("    nonMoneyTransferCrossBorder: ").append(toIndentedString(nonMoneyTransferCrossBorder)).append("\n");
-    sb.append("    nonMoneyTransferDomestic: ").append(toIndentedString(nonMoneyTransferDomestic)).append("\n");
-    sb.append("    onlineGamblingFastFundsCrossBorder: ").append(toIndentedString(onlineGamblingFastFundsCrossBorder)).append("\n");
-    sb.append("    onlineGamblingFastFundsDomestic: ").append(toIndentedString(onlineGamblingFastFundsDomestic)).append("\n");
-    sb.append("    onlineGamblingCrossBorder: ").append(toIndentedString(onlineGamblingCrossBorder)).append("\n");
-    sb.append("    onlineGamblingDomestic: ").append(toIndentedString(onlineGamblingDomestic)).append("\n");
-    sb.append("    domesticParticipant: ").append(toIndentedString(domesticParticipant)).append("\n");
-    sb.append("    crossBorderParticipant: ").append(toIndentedString(crossBorderParticipant)).append("\n");
+    if (moneyTransferFastFundsCrossBorder != null) sb.append("    moneyTransferFastFundsCrossBorder: ").append(toIndentedString(moneyTransferFastFundsCrossBorder)).append("\n");
+    if (moneyTransferFastFundsDomestic != null) sb.append("    moneyTransferFastFundsDomestic: ").append(toIndentedString(moneyTransferFastFundsDomestic)).append("\n");
+    if (moneyTransferCrossBorder != null) sb.append("    moneyTransferCrossBorder: ").append(toIndentedString(moneyTransferCrossBorder)).append("\n");
+    if (moneyTransferDomestic != null) sb.append("    moneyTransferDomestic: ").append(toIndentedString(moneyTransferDomestic)).append("\n");
+    if (nonMoneyTransferFastFundsCrossBorder != null) sb.append("    nonMoneyTransferFastFundsCrossBorder: ").append(toIndentedString(nonMoneyTransferFastFundsCrossBorder)).append("\n");
+    if (nonMoneyTransferFastFundsDomestic != null) sb.append("    nonMoneyTransferFastFundsDomestic: ").append(toIndentedString(nonMoneyTransferFastFundsDomestic)).append("\n");
+    if (nonMoneyTransferCrossBorder != null) sb.append("    nonMoneyTransferCrossBorder: ").append(toIndentedString(nonMoneyTransferCrossBorder)).append("\n");
+    if (nonMoneyTransferDomestic != null) sb.append("    nonMoneyTransferDomestic: ").append(toIndentedString(nonMoneyTransferDomestic)).append("\n");
+    if (onlineGamblingFastFundsCrossBorder != null) sb.append("    onlineGamblingFastFundsCrossBorder: ").append(toIndentedString(onlineGamblingFastFundsCrossBorder)).append("\n");
+    if (onlineGamblingFastFundsDomestic != null) sb.append("    onlineGamblingFastFundsDomestic: ").append(toIndentedString(onlineGamblingFastFundsDomestic)).append("\n");
+    if (onlineGamblingCrossBorder != null) sb.append("    onlineGamblingCrossBorder: ").append(toIndentedString(onlineGamblingCrossBorder)).append("\n");
+    if (onlineGamblingDomestic != null) sb.append("    onlineGamblingDomestic: ").append(toIndentedString(onlineGamblingDomestic)).append("\n");
+    if (domesticParticipant != null) sb.append("    domesticParticipant: ").append(toIndentedString(domesticParticipant)).append("\n");
+    if (crossBorderParticipant != null) sb.append("    crossBorderParticipant: ").append(toIndentedString(crossBorderParticipant)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -384,10 +384,10 @@ public class InlineResponse2011PayoutInformationPushFunds {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

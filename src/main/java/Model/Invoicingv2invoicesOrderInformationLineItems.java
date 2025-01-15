@@ -253,15 +253,15 @@ public class Invoicingv2invoicesOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Invoicingv2invoicesOrderInformationLineItems {\n");
     
-    sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
-    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
-    sb.append("    discountRate: ").append(toIndentedString(discountRate)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (productSku != null) sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (discountRate != null) sb.append("    discountRate: ").append(toIndentedString(discountRate)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (taxRate != null) sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -272,10 +272,10 @@ public class Invoicingv2invoicesOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

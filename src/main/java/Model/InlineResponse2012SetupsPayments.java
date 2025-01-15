@@ -450,24 +450,24 @@ public class InlineResponse2012SetupsPayments {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012SetupsPayments {\n");
     
-    sb.append("    cardProcessing: ").append(toIndentedString(cardProcessing)).append("\n");
-    sb.append("    cardPresentConnect: ").append(toIndentedString(cardPresentConnect)).append("\n");
-    sb.append("    eCheck: ").append(toIndentedString(eCheck)).append("\n");
-    sb.append("    payerAuthentication: ").append(toIndentedString(payerAuthentication)).append("\n");
-    sb.append("    digitalPayments: ").append(toIndentedString(digitalPayments)).append("\n");
-    sb.append("    secureAcceptance: ").append(toIndentedString(secureAcceptance)).append("\n");
-    sb.append("    virtualTerminal: ").append(toIndentedString(virtualTerminal)).append("\n");
-    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
-    sb.append("    tax: ").append(toIndentedString(tax)).append("\n");
-    sb.append("    customerInvoicing: ").append(toIndentedString(customerInvoicing)).append("\n");
-    sb.append("    recurringBilling: ").append(toIndentedString(recurringBilling)).append("\n");
-    sb.append("    cybsReadyTerminal: ").append(toIndentedString(cybsReadyTerminal)).append("\n");
-    sb.append("    paymentOrchestration: ").append(toIndentedString(paymentOrchestration)).append("\n");
-    sb.append("    payouts: ").append(toIndentedString(payouts)).append("\n");
-    sb.append("    payByLink: ").append(toIndentedString(payByLink)).append("\n");
-    sb.append("    unifiedCheckout: ").append(toIndentedString(unifiedCheckout)).append("\n");
-    sb.append("    receivablesManager: ").append(toIndentedString(receivablesManager)).append("\n");
-    sb.append("    serviceFee: ").append(toIndentedString(serviceFee)).append("\n");
+    if (cardProcessing != null) sb.append("    cardProcessing: ").append(toIndentedString(cardProcessing)).append("\n");
+    if (cardPresentConnect != null) sb.append("    cardPresentConnect: ").append(toIndentedString(cardPresentConnect)).append("\n");
+    if (eCheck != null) sb.append("    eCheck: ").append(toIndentedString(eCheck)).append("\n");
+    if (payerAuthentication != null) sb.append("    payerAuthentication: ").append(toIndentedString(payerAuthentication)).append("\n");
+    if (digitalPayments != null) sb.append("    digitalPayments: ").append(toIndentedString(digitalPayments)).append("\n");
+    if (secureAcceptance != null) sb.append("    secureAcceptance: ").append(toIndentedString(secureAcceptance)).append("\n");
+    if (virtualTerminal != null) sb.append("    virtualTerminal: ").append(toIndentedString(virtualTerminal)).append("\n");
+    if (currencyConversion != null) sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
+    if (tax != null) sb.append("    tax: ").append(toIndentedString(tax)).append("\n");
+    if (customerInvoicing != null) sb.append("    customerInvoicing: ").append(toIndentedString(customerInvoicing)).append("\n");
+    if (recurringBilling != null) sb.append("    recurringBilling: ").append(toIndentedString(recurringBilling)).append("\n");
+    if (cybsReadyTerminal != null) sb.append("    cybsReadyTerminal: ").append(toIndentedString(cybsReadyTerminal)).append("\n");
+    if (paymentOrchestration != null) sb.append("    paymentOrchestration: ").append(toIndentedString(paymentOrchestration)).append("\n");
+    if (payouts != null) sb.append("    payouts: ").append(toIndentedString(payouts)).append("\n");
+    if (payByLink != null) sb.append("    payByLink: ").append(toIndentedString(payByLink)).append("\n");
+    if (unifiedCheckout != null) sb.append("    unifiedCheckout: ").append(toIndentedString(unifiedCheckout)).append("\n");
+    if (receivablesManager != null) sb.append("    receivablesManager: ").append(toIndentedString(receivablesManager)).append("\n");
+    if (serviceFee != null) sb.append("    serviceFee: ").append(toIndentedString(serviceFee)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -478,10 +478,10 @@ public class InlineResponse2012SetupsPayments {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

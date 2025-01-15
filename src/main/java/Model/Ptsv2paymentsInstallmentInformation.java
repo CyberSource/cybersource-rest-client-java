@@ -384,21 +384,21 @@ public class Ptsv2paymentsInstallmentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsInstallmentInformation {\n");
     
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
-    sb.append("    planType: ").append(toIndentedString(planType)).append("\n");
-    sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-    sb.append("    firstInstallmentDate: ").append(toIndentedString(firstInstallmentDate)).append("\n");
-    sb.append("    invoiceData: ").append(toIndentedString(invoiceData)).append("\n");
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
-    sb.append("    eligibilityInquiry: ").append(toIndentedString(eligibilityInquiry)).append("\n");
-    sb.append("    gracePeriodDuration: ").append(toIndentedString(gracePeriodDuration)).append("\n");
-    sb.append("    gracePeriodDurationType: ").append(toIndentedString(gracePeriodDurationType)).append("\n");
-    sb.append("    firstInstallmentAmount: ").append(toIndentedString(firstInstallmentAmount)).append("\n");
-    sb.append("    validationIndicator: ").append(toIndentedString(validationIndicator)).append("\n");
-    sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
+    if (planType != null) sb.append("    planType: ").append(toIndentedString(planType)).append("\n");
+    if (sequence != null) sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (totalCount != null) sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+    if (firstInstallmentDate != null) sb.append("    firstInstallmentDate: ").append(toIndentedString(firstInstallmentDate)).append("\n");
+    if (invoiceData != null) sb.append("    invoiceData: ").append(toIndentedString(invoiceData)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (eligibilityInquiry != null) sb.append("    eligibilityInquiry: ").append(toIndentedString(eligibilityInquiry)).append("\n");
+    if (gracePeriodDuration != null) sb.append("    gracePeriodDuration: ").append(toIndentedString(gracePeriodDuration)).append("\n");
+    if (gracePeriodDurationType != null) sb.append("    gracePeriodDurationType: ").append(toIndentedString(gracePeriodDurationType)).append("\n");
+    if (firstInstallmentAmount != null) sb.append("    firstInstallmentAmount: ").append(toIndentedString(firstInstallmentAmount)).append("\n");
+    if (validationIndicator != null) sb.append("    validationIndicator: ").append(toIndentedString(validationIndicator)).append("\n");
+    if (identifier != null) sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -409,10 +409,10 @@ public class Ptsv2paymentsInstallmentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

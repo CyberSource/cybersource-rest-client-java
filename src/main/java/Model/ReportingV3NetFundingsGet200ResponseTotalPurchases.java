@@ -96,8 +96,8 @@ public class ReportingV3NetFundingsGet200ResponseTotalPurchases {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3NetFundingsGet200ResponseTotalPurchases {\n");
     
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (value != null) sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class ReportingV3NetFundingsGet200ResponseTotalPurchases {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -97,8 +97,8 @@ public class PushFunds201ResponseRecipientInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PushFunds201ResponseRecipientInformation {\n");
     
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class PushFunds201ResponseRecipientInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

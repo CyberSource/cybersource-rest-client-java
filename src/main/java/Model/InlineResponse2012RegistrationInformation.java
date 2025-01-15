@@ -109,9 +109,9 @@ public class InlineResponse2012RegistrationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012RegistrationInformation {\n");
     
-    sb.append("    boardingPackageId: ").append(toIndentedString(boardingPackageId)).append("\n");
-    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-    sb.append("    salesRepId: ").append(toIndentedString(salesRepId)).append("\n");
+    if (boardingPackageId != null) sb.append("    boardingPackageId: ").append(toIndentedString(boardingPackageId)).append("\n");
+    if (mode != null) sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+    if (salesRepId != null) sb.append("    salesRepId: ").append(toIndentedString(salesRepId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -122,10 +122,10 @@ public class InlineResponse2012RegistrationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

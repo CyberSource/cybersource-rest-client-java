@@ -120,9 +120,9 @@ public class InlineResponse2011PayoutInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2011PayoutInformation {\n");
     
-    sb.append("    pushFunds: ").append(toIndentedString(pushFunds)).append("\n");
-    sb.append("    pullFunds: ").append(toIndentedString(pullFunds)).append("\n");
-    sb.append("    geoRestrictionIndicator: ").append(toIndentedString(geoRestrictionIndicator)).append("\n");
+    if (pushFunds != null) sb.append("    pushFunds: ").append(toIndentedString(pushFunds)).append("\n");
+    if (pullFunds != null) sb.append("    pullFunds: ").append(toIndentedString(pullFunds)).append("\n");
+    if (geoRestrictionIndicator != null) sb.append("    geoRestrictionIndicator: ").append(toIndentedString(geoRestrictionIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -133,10 +133,10 @@ public class InlineResponse2011PayoutInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

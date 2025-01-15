@@ -75,7 +75,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrong
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication {\n");
     
-    sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrong
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

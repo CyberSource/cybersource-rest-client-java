@@ -207,13 +207,13 @@ public class PtsV2PaymentsPost201ResponseRiskInformationIpAddress {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformationIpAddress {\n");
     
-    sb.append("    anonymizerStatus: ").append(toIndentedString(anonymizerStatus)).append("\n");
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
-    sb.append("    routingMethod: ").append(toIndentedString(routingMethod)).append("\n");
-    sb.append("    carrier: ").append(toIndentedString(carrier)).append("\n");
-    sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
+    if (anonymizerStatus != null) sb.append("    anonymizerStatus: ").append(toIndentedString(anonymizerStatus)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    if (routingMethod != null) sb.append("    routingMethod: ").append(toIndentedString(routingMethod)).append("\n");
+    if (carrier != null) sb.append("    carrier: ").append(toIndentedString(carrier)).append("\n");
+    if (organization != null) sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -224,10 +224,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationIpAddress {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

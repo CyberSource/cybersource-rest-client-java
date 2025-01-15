@@ -140,10 +140,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {\n");
     
-    sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
-    sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
-    sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
-    sb.append("    commerceIndicatorLabel: ").append(toIndentedString(commerceIndicatorLabel)).append("\n");
+    if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    if (commerceIndicatorLabel != null) sb.append("    commerceIndicatorLabel: ").append(toIndentedString(commerceIndicatorLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

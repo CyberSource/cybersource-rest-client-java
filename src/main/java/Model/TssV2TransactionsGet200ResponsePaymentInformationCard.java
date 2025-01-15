@@ -316,18 +316,18 @@ public class TssV2TransactionsGet200ResponsePaymentInformationCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationCard {\n");
     
-    sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
-    sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
-    sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
-    sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
-    sb.append("    startMonth: ").append(toIndentedString(startMonth)).append("\n");
-    sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
-    sb.append("    issueNumber: ").append(toIndentedString(issueNumber)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    brandName: ").append(toIndentedString(brandName)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    accountEncoderId: ").append(toIndentedString(accountEncoderId)).append("\n");
-    sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
+    if (suffix != null) sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
+    if (prefix != null) sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (startMonth != null) sb.append("    startMonth: ").append(toIndentedString(startMonth)).append("\n");
+    if (startYear != null) sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
+    if (issueNumber != null) sb.append("    issueNumber: ").append(toIndentedString(issueNumber)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (brandName != null) sb.append("    brandName: ").append(toIndentedString(brandName)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (accountEncoderId != null) sb.append("    accountEncoderId: ").append(toIndentedString(accountEncoderId)).append("\n");
+    if (useAs != null) sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -338,10 +338,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

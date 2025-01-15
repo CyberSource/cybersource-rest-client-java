@@ -284,16 +284,16 @@ public class CreateWebhookRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateWebhookRequest {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("    eventTypes: ").append(toIndentedString(eventTypes)).append("\n");
-    sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
-    sb.append("    healthCheckUrl: ").append(toIndentedString(healthCheckUrl)).append("\n");
-    sb.append("    notificationScope: ").append(toIndentedString(notificationScope)).append("\n");
-    sb.append("    retryPolicy: ").append(toIndentedString(retryPolicy)).append("\n");
-    sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (productId != null) sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+    if (eventTypes != null) sb.append("    eventTypes: ").append(toIndentedString(eventTypes)).append("\n");
+    if (webhookUrl != null) sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
+    if (healthCheckUrl != null) sb.append("    healthCheckUrl: ").append(toIndentedString(healthCheckUrl)).append("\n");
+    if (notificationScope != null) sb.append("    notificationScope: ").append(toIndentedString(notificationScope)).append("\n");
+    if (retryPolicy != null) sb.append("    retryPolicy: ").append(toIndentedString(retryPolicy)).append("\n");
+    if (securityPolicy != null) sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -304,10 +304,10 @@ public class CreateWebhookRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -261,15 +261,15 @@ public class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOpt
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions {\n");
     
-    sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
-    sb.append("    businessName: ").append(toIndentedString(businessName)).append("\n");
-    sb.append("    businessNameKatakana: ").append(toIndentedString(businessNameKatakana)).append("\n");
-    sb.append("    businessNameEnglish: ").append(toIndentedString(businessNameEnglish)).append("\n");
-    sb.append("    bonuses: ").append(toIndentedString(bonuses)).append("\n");
-    sb.append("    firstBillingMonth: ").append(toIndentedString(firstBillingMonth)).append("\n");
-    sb.append("    numberOfInstallments: ").append(toIndentedString(numberOfInstallments)).append("\n");
-    sb.append("    preApprovalType: ").append(toIndentedString(preApprovalType)).append("\n");
+    if (paymentMethod != null) sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (businessName != null) sb.append("    businessName: ").append(toIndentedString(businessName)).append("\n");
+    if (businessNameKatakana != null) sb.append("    businessNameKatakana: ").append(toIndentedString(businessNameKatakana)).append("\n");
+    if (businessNameEnglish != null) sb.append("    businessNameEnglish: ").append(toIndentedString(businessNameEnglish)).append("\n");
+    if (bonuses != null) sb.append("    bonuses: ").append(toIndentedString(bonuses)).append("\n");
+    if (firstBillingMonth != null) sb.append("    firstBillingMonth: ").append(toIndentedString(firstBillingMonth)).append("\n");
+    if (numberOfInstallments != null) sb.append("    numberOfInstallments: ").append(toIndentedString(numberOfInstallments)).append("\n");
+    if (preApprovalType != null) sb.append("    preApprovalType: ").append(toIndentedString(preApprovalType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -280,10 +280,10 @@ public class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOpt
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -141,10 +141,10 @@ public class SAConfigContactInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfigContactInformation {\n");
     
-    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
-    sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (phone != null) sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+    if (companyName != null) sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class SAConfigContactInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

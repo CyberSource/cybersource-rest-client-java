@@ -282,7 +282,7 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
    * @return payByPointsIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates if the transaction is pay by points transaction true: Transaction uses loyalty points false: Transaction does not use loyalty points Default: false ")
-  public Boolean isPayByPointsIndicator() {
+  public Boolean PayByPointsIndicator() {
     return payByPointsIndicator;
   }
 
@@ -352,19 +352,19 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesProcessingInformation {\n");
     
-    sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
-    sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
-    sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
-    sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
-    sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
-    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
-    sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
-    sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
-    sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
-    sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
-    sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
+    if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (linkId != null) sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
+    if (reportGroup != null) sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
+    if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
+    if (purchaseLevel != null) sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
+    if (industryDataType != null) sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
+    if (issuer != null) sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    if (captureOptions != null) sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
+    if (loanOptions != null) sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
+    if (payByPointsIndicator != null) sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
+    if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -375,10 +375,10 @@ public class Ptsv2paymentsidcapturesProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

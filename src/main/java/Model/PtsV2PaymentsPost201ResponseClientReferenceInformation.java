@@ -118,9 +118,9 @@ public class PtsV2PaymentsPost201ResponseClientReferenceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseClientReferenceInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    submitLocalDateTime: ").append(toIndentedString(submitLocalDateTime)).append("\n");
-    sb.append("    ownerMerchantId: ").append(toIndentedString(ownerMerchantId)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (submitLocalDateTime != null) sb.append("    submitLocalDateTime: ").append(toIndentedString(submitLocalDateTime)).append("\n");
+    if (ownerMerchantId != null) sb.append("    ownerMerchantId: ").append(toIndentedString(ownerMerchantId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class PtsV2PaymentsPost201ResponseClientReferenceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

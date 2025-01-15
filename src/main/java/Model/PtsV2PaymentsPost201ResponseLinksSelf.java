@@ -96,8 +96,8 @@ public class PtsV2PaymentsPost201ResponseLinksSelf {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseLinksSelf {\n");
     
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    if (href != null) sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    if (method != null) sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PtsV2PaymentsPost201ResponseLinksSelf {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

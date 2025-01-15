@@ -239,14 +239,14 @@ public class UmsV1UsersGet200ResponseAccountInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class UmsV1UsersGet200ResponseAccountInformation {\n");
     
-    sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-    sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
-    sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
-    sb.append("    lastAccessTime: ").append(toIndentedString(lastAccessTime)).append("\n");
-    sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
-    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    if (userName != null) sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+    if (roleId != null) sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+    if (permissions != null) sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (createdTime != null) sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
+    if (lastAccessTime != null) sb.append("    lastAccessTime: ").append(toIndentedString(lastAccessTime)).append("\n");
+    if (languagePreference != null) sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
+    if (timezone != null) sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -257,10 +257,10 @@ public class UmsV1UsersGet200ResponseAccountInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -217,13 +217,13 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidreversalsProcessingInformation {\n");
     
-    sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
-    sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
-    sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
-    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
-    sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
+    if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (linkId != null) sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
+    if (reportGroup != null) sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
+    if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
+    if (issuer != null) sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
+    if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -234,10 +234,10 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

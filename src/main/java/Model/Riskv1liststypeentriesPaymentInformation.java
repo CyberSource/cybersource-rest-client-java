@@ -99,8 +99,8 @@ public class Riskv1liststypeentriesPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1liststypeentriesPaymentInformation {\n");
     
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (bank != null) sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -111,10 +111,10 @@ public class Riskv1liststypeentriesPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

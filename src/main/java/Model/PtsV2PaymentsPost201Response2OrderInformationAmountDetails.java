@@ -74,7 +74,7 @@ public class PtsV2PaymentsPost201Response2OrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response2OrderInformationAmountDetails {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2PaymentsPost201Response2OrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

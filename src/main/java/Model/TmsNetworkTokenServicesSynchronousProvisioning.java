@@ -42,7 +42,7 @@ public class TmsNetworkTokenServicesSynchronousProvisioning {
    * @return enabled
   **/
   @ApiModelProperty(value = "Indicates if network tokens are provisioned synchronously (i.e. as part of the transaction flow) or asychronously (i.e. in parallel to the payment flow)  NOTE: The synchronous provisioning feature is designed exclusively for aggregator merchants.  Direct merchants should not enable synchronous provisioning as TMS manages the asynchronous creation of network tokens for direct clients.   Activation of this feature by direct merchants will lead to latency in the authorization response. ")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -74,7 +74,7 @@ public class TmsNetworkTokenServicesSynchronousProvisioning {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsNetworkTokenServicesSynchronousProvisioning {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TmsNetworkTokenServicesSynchronousProvisioning {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

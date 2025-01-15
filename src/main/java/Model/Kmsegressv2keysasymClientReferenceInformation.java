@@ -75,7 +75,7 @@ public class Kmsegressv2keysasymClientReferenceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Kmsegressv2keysasymClientReferenceInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Kmsegressv2keysasymClientReferenceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

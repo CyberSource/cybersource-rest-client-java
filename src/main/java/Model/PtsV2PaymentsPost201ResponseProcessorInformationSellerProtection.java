@@ -150,10 +150,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    eligibility: ").append(toIndentedString(eligibility)).append("\n");
-    sb.append("    disputeCategories: ").append(toIndentedString(disputeCategories)).append("\n");
-    sb.append("    eligibilityType: ").append(toIndentedString(eligibilityType)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (eligibility != null) sb.append("    eligibility: ").append(toIndentedString(eligibility)).append("\n");
+    if (disputeCategories != null) sb.append("    disputeCategories: ").append(toIndentedString(disputeCategories)).append("\n");
+    if (eligibilityType != null) sb.append("    eligibilityType: ").append(toIndentedString(eligibilityType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -164,10 +164,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

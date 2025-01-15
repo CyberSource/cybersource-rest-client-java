@@ -75,7 +75,7 @@ public class Ptsv2paymentsidreversalsPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidreversalsPaymentInformation {\n");
     
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Ptsv2paymentsidreversalsPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

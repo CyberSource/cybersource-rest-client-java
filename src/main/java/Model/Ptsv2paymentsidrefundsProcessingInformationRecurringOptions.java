@@ -42,7 +42,7 @@ public class Ptsv2paymentsidrefundsProcessingInformationRecurringOptions {
    * @return loanPayment
   **/
   @ApiModelProperty(value = "Flag that indicates whether this is a payment towards an existing contractual loan.  Possible values: - `true`: Loan payment - `false`: (default) Not a loan payment ")
-  public Boolean isLoanPayment() {
+  public Boolean LoanPayment() {
     return loanPayment;
   }
 
@@ -74,7 +74,7 @@ public class Ptsv2paymentsidrefundsProcessingInformationRecurringOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidrefundsProcessingInformationRecurringOptions {\n");
     
-    sb.append("    loanPayment: ").append(toIndentedString(loanPayment)).append("\n");
+    if (loanPayment != null) sb.append("    loanPayment: ").append(toIndentedString(loanPayment)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsidrefundsProcessingInformationRecurringOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

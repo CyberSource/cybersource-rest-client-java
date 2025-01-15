@@ -74,7 +74,7 @@ public class PostPaymentCredentialsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PostPaymentCredentialsRequest {\n");
     
-    sb.append("    paymentCredentialType: ").append(toIndentedString(paymentCredentialType)).append("\n");
+    if (paymentCredentialType != null) sb.append("    paymentCredentialType: ").append(toIndentedString(paymentCredentialType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PostPaymentCredentialsRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

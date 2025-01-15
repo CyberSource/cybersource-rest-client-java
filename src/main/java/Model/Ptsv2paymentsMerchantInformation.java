@@ -453,24 +453,24 @@ public class Ptsv2paymentsMerchantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsMerchantInformation {\n");
     
-    sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
-    sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
-    sb.append("    salesOrganizationId: ").append(toIndentedString(salesOrganizationId)).append("\n");
-    sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
-    sb.append("    categoryCodeDomestic: ").append(toIndentedString(categoryCodeDomestic)).append("\n");
-    sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
-    sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
-    sb.append("    cardAcceptorReferenceNumber: ").append(toIndentedString(cardAcceptorReferenceNumber)).append("\n");
-    sb.append("    transactionLocalDateTime: ").append(toIndentedString(transactionLocalDateTime)).append("\n");
-    sb.append("    serviceFeeDescriptor: ").append(toIndentedString(serviceFeeDescriptor)).append("\n");
-    sb.append("    cancelUrl: ").append(toIndentedString(cancelUrl)).append("\n");
-    sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
-    sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
-    sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
-    sb.append("    partnerIdCode: ").append(toIndentedString(partnerIdCode)).append("\n");
-    sb.append("    serviceLocation: ").append(toIndentedString(serviceLocation)).append("\n");
-    sb.append("    noteToBuyer: ").append(toIndentedString(noteToBuyer)).append("\n");
-    sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
+    if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
+    if (domainName != null) sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
+    if (salesOrganizationId != null) sb.append("    salesOrganizationId: ").append(toIndentedString(salesOrganizationId)).append("\n");
+    if (categoryCode != null) sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
+    if (categoryCodeDomestic != null) sb.append("    categoryCodeDomestic: ").append(toIndentedString(categoryCodeDomestic)).append("\n");
+    if (taxId != null) sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
+    if (vatRegistrationNumber != null) sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
+    if (cardAcceptorReferenceNumber != null) sb.append("    cardAcceptorReferenceNumber: ").append(toIndentedString(cardAcceptorReferenceNumber)).append("\n");
+    if (transactionLocalDateTime != null) sb.append("    transactionLocalDateTime: ").append(toIndentedString(transactionLocalDateTime)).append("\n");
+    if (serviceFeeDescriptor != null) sb.append("    serviceFeeDescriptor: ").append(toIndentedString(serviceFeeDescriptor)).append("\n");
+    if (cancelUrl != null) sb.append("    cancelUrl: ").append(toIndentedString(cancelUrl)).append("\n");
+    if (successUrl != null) sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
+    if (failureUrl != null) sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
+    if (returnUrl != null) sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
+    if (partnerIdCode != null) sb.append("    partnerIdCode: ").append(toIndentedString(partnerIdCode)).append("\n");
+    if (serviceLocation != null) sb.append("    serviceLocation: ").append(toIndentedString(serviceLocation)).append("\n");
+    if (noteToBuyer != null) sb.append("    noteToBuyer: ").append(toIndentedString(noteToBuyer)).append("\n");
+    if (merchantName != null) sb.append("    merchantName: ").append(toIndentedString(merchantName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -481,10 +481,10 @@ public class Ptsv2paymentsMerchantInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

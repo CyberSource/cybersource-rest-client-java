@@ -96,8 +96,8 @@ public class PushFunds201ResponseClientReferenceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PushFunds201ResponseClientReferenceInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    submitLocalDateTime: ").append(toIndentedString(submitLocalDateTime)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (submitLocalDateTime != null) sb.append("    submitLocalDateTime: ").append(toIndentedString(submitLocalDateTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PushFunds201ResponseClientReferenceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -118,9 +118,9 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (method != null) sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationPaymentType {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

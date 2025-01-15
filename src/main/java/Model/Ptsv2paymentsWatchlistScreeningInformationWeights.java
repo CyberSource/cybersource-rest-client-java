@@ -118,9 +118,9 @@ public class Ptsv2paymentsWatchlistScreeningInformationWeights {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsWatchlistScreeningInformationWeights {\n");
     
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
-    sb.append("    company: ").append(toIndentedString(company)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (address != null) sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    if (company != null) sb.append("    company: ").append(toIndentedString(company)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class Ptsv2paymentsWatchlistScreeningInformationWeights {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

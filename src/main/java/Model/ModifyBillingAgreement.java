@@ -305,17 +305,17 @@ public class ModifyBillingAgreement {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModifyBillingAgreement {\n");
     
-    sb.append("    agreementInformation: ").append(toIndentedString(agreementInformation)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
-    sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
-    sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
-    sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
-    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
+    if (agreementInformation != null) sb.append("    agreementInformation: ").append(toIndentedString(agreementInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (aggregatorInformation != null) sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
+    if (consumerAuthenticationInformation != null) sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
+    if (installmentInformation != null) sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -326,10 +326,10 @@ public class ModifyBillingAgreement {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

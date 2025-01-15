@@ -74,7 +74,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationI
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation {\n");
     
-    sb.append("    exemptionDataRaw: ").append(toIndentedString(exemptionDataRaw)).append("\n");
+    if (exemptionDataRaw != null) sb.append("    exemptionDataRaw: ").append(toIndentedString(exemptionDataRaw)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationI
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

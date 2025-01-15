@@ -206,13 +206,13 @@ public class TssV2TransactionsGet200ResponsePaymentInformationFeatures {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationFeatures {\n");
     
-    sb.append("    accountFundingSource: ").append(toIndentedString(accountFundingSource)).append("\n");
-    sb.append("    accountFundingSourceSubType: ").append(toIndentedString(accountFundingSourceSubType)).append("\n");
-    sb.append("    cardProduct: ").append(toIndentedString(cardProduct)).append("\n");
-    sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
-    sb.append("    acceptanceLevel: ").append(toIndentedString(acceptanceLevel)).append("\n");
-    sb.append("    cardPlatform: ").append(toIndentedString(cardPlatform)).append("\n");
-    sb.append("    comboCard: ").append(toIndentedString(comboCard)).append("\n");
+    if (accountFundingSource != null) sb.append("    accountFundingSource: ").append(toIndentedString(accountFundingSource)).append("\n");
+    if (accountFundingSourceSubType != null) sb.append("    accountFundingSourceSubType: ").append(toIndentedString(accountFundingSourceSubType)).append("\n");
+    if (cardProduct != null) sb.append("    cardProduct: ").append(toIndentedString(cardProduct)).append("\n");
+    if (messageType != null) sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
+    if (acceptanceLevel != null) sb.append("    acceptanceLevel: ").append(toIndentedString(acceptanceLevel)).append("\n");
+    if (cardPlatform != null) sb.append("    cardPlatform: ").append(toIndentedString(cardPlatform)).append("\n");
+    if (comboCard != null) sb.append("    comboCard: ").append(toIndentedString(comboCard)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -223,10 +223,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationFeatures {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -97,8 +97,8 @@ public class Rbsv1subscriptionsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rbsv1subscriptionsProcessingInformation {\n");
     
-    sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
-    sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class Rbsv1subscriptionsProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

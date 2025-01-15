@@ -46,7 +46,7 @@ public class TmsPaymentInstrumentProcessingInfo {
    * @return billPaymentProgramEnabled
   **/
   @ApiModelProperty(value = "Flag that indicates that this is a payment for a bill or for an existing contractual loan. Possible Values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment. ")
-  public Boolean isBillPaymentProgramEnabled() {
+  public Boolean BillPaymentProgramEnabled() {
     return billPaymentProgramEnabled;
   }
 
@@ -97,8 +97,8 @@ public class TmsPaymentInstrumentProcessingInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsPaymentInstrumentProcessingInfo {\n");
     
-    sb.append("    billPaymentProgramEnabled: ").append(toIndentedString(billPaymentProgramEnabled)).append("\n");
-    sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
+    if (billPaymentProgramEnabled != null) sb.append("    billPaymentProgramEnabled: ").append(toIndentedString(billPaymentProgramEnabled)).append("\n");
+    if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class TmsPaymentInstrumentProcessingInfo {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

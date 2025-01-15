@@ -118,9 +118,9 @@ public class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFin
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint {\n");
     
-    sb.append("    trueIpaddress: ").append(toIndentedString(trueIpaddress)).append("\n");
-    sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
-    sb.append("    smartId: ").append(toIndentedString(smartId)).append("\n");
+    if (trueIpaddress != null) sb.append("    trueIpaddress: ").append(toIndentedString(trueIpaddress)).append("\n");
+    if (hash != null) sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
+    if (smartId != null) sb.append("    smartId: ").append(toIndentedString(smartId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFin
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

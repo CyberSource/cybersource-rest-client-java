@@ -140,10 +140,10 @@ public class Ptsv2billingagreementsBuyerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2billingagreementsBuyerInformation {\n");
     
-    sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    if (merchantCustomerId != null) sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    if (gender != null) sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    if (language != null) sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class Ptsv2billingagreementsBuyerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

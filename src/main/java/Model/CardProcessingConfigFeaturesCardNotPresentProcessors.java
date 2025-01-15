@@ -58,7 +58,7 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
    * @return relaxAddressVerificationSystem
   **/
   @ApiModelProperty(value = "Enables you to submit the payment transaction without one or more of the fields for the billTo or card_expiration. Applicable for Elavon Americas (elavonamericas), CB2A, Six (six), CMCIC (cmcic), GPX (gpx), GPN (gpn), VPC, Vero (vero), Fiserv (fiserv), American Express Direct (amexdirect), Chase Paymentech Salem (chasepaymentechsalem), RUPAY, FDI Global (fdiglobal) and Barclays HISO (barclayshiso) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays HISO</td><td>cp, cnp, hybrid</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>cnp</td><td>No</td><td>No</td></tr> <tr><td>American Express Direct</td><td>cp</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>hybrid</td><td>Yes</td><td>Yes</td></tr> </table> ")
-  public Boolean isRelaxAddressVerificationSystem() {
+  public Boolean RelaxAddressVerificationSystem() {
     return relaxAddressVerificationSystem;
   }
 
@@ -76,7 +76,7 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
    * @return relaxAddressVerificationSystemAllowZipWithoutCountry
   **/
   @ApiModelProperty(value = "Allows Zip code without country. Applicable for American Express Direct (amexdirect), GPX (gpx), VPC, FDI Global (fdiglobal), Elavon Americas (elavonamericas), Chase Paymentech Salem (chasepaymentechsalem), RUPAY, GPN (gpn) and Barclays HISO (barclayshiso) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays HISO</td><td>cp, cnp, both</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>cp, hybrid</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>cnp</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean isRelaxAddressVerificationSystemAllowZipWithoutCountry() {
+  public Boolean RelaxAddressVerificationSystemAllowZipWithoutCountry() {
     return relaxAddressVerificationSystemAllowZipWithoutCountry;
   }
 
@@ -94,7 +94,7 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
    * @return relaxAddressVerificationSystemAllowExpiredCard
   **/
   @ApiModelProperty(value = "Allows transactions that use an expired card. Applicable for American Express Direct (amexdirect), GPN (gpn), Barclays HISO (barclayshiso), Elavon Americas (elavonamericas), VPC, FDI Global (fdiglobal), GPX (gpx), RUPAY, Six (six), Chase Paymentech Salem (chasepaymentechsalem) and CB2A processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays HISO</td><td>cp, cnp, hybrid</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>cp, hybrid</td><td>No</td><td>Yes</td></tr> <tr><td>American Express Direct</td><td>cnp</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean isRelaxAddressVerificationSystemAllowExpiredCard() {
+  public Boolean RelaxAddressVerificationSystemAllowExpiredCard() {
     return relaxAddressVerificationSystemAllowExpiredCard;
   }
 
@@ -112,7 +112,7 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
    * @return enableEmsTransactionRiskScore
   **/
   @ApiModelProperty(value = "MasterCard Expert Monitoring Solutions (EMS) provides a predictive, behavior-based fraud score in real time during authorizations for card-not-present (CNP) transactions on cards issued in the U.S. Applicable for GPX (gpx) and VPC processors.")
-  public Boolean isEnableEmsTransactionRiskScore() {
+  public Boolean EnableEmsTransactionRiskScore() {
     return enableEmsTransactionRiskScore;
   }
 
@@ -185,12 +185,12 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigFeaturesCardNotPresentProcessors {\n");
     
-    sb.append("    relaxAddressVerificationSystem: ").append(toIndentedString(relaxAddressVerificationSystem)).append("\n");
-    sb.append("    relaxAddressVerificationSystemAllowZipWithoutCountry: ").append(toIndentedString(relaxAddressVerificationSystemAllowZipWithoutCountry)).append("\n");
-    sb.append("    relaxAddressVerificationSystemAllowExpiredCard: ").append(toIndentedString(relaxAddressVerificationSystemAllowExpiredCard)).append("\n");
-    sb.append("    enableEmsTransactionRiskScore: ").append(toIndentedString(enableEmsTransactionRiskScore)).append("\n");
-    sb.append("    prestigiousPropertyIndicator: ").append(toIndentedString(prestigiousPropertyIndicator)).append("\n");
-    sb.append("    payouts: ").append(toIndentedString(payouts)).append("\n");
+    if (relaxAddressVerificationSystem != null) sb.append("    relaxAddressVerificationSystem: ").append(toIndentedString(relaxAddressVerificationSystem)).append("\n");
+    if (relaxAddressVerificationSystemAllowZipWithoutCountry != null) sb.append("    relaxAddressVerificationSystemAllowZipWithoutCountry: ").append(toIndentedString(relaxAddressVerificationSystemAllowZipWithoutCountry)).append("\n");
+    if (relaxAddressVerificationSystemAllowExpiredCard != null) sb.append("    relaxAddressVerificationSystemAllowExpiredCard: ").append(toIndentedString(relaxAddressVerificationSystemAllowExpiredCard)).append("\n");
+    if (enableEmsTransactionRiskScore != null) sb.append("    enableEmsTransactionRiskScore: ").append(toIndentedString(enableEmsTransactionRiskScore)).append("\n");
+    if (prestigiousPropertyIndicator != null) sb.append("    prestigiousPropertyIndicator: ").append(toIndentedString(prestigiousPropertyIndicator)).append("\n");
+    if (payouts != null) sb.append("    payouts: ").append(toIndentedString(payouts)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -201,10 +201,10 @@ public class CardProcessingConfigFeaturesCardNotPresentProcessors {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

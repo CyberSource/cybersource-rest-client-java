@@ -96,8 +96,8 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticat
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    codeRaw: ").append(toIndentedString(codeRaw)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (codeRaw != null) sb.append("    codeRaw: ").append(toIndentedString(codeRaw)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticat
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

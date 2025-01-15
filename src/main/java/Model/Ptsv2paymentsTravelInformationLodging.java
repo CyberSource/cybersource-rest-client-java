@@ -1079,52 +1079,52 @@ public class Ptsv2paymentsTravelInformationLodging {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationLodging {\n");
     
-    sb.append("    checkInDate: ").append(toIndentedString(checkInDate)).append("\n");
-    sb.append("    checkOutDate: ").append(toIndentedString(checkOutDate)).append("\n");
-    sb.append("    room: ").append(toIndentedString(room)).append("\n");
-    sb.append("    smokingPreference: ").append(toIndentedString(smokingPreference)).append("\n");
-    sb.append("    numberOfRooms: ").append(toIndentedString(numberOfRooms)).append("\n");
-    sb.append("    numberOfGuests: ").append(toIndentedString(numberOfGuests)).append("\n");
-    sb.append("    roomBedType: ").append(toIndentedString(roomBedType)).append("\n");
-    sb.append("    roomTaxType: ").append(toIndentedString(roomTaxType)).append("\n");
-    sb.append("    roomRateType: ").append(toIndentedString(roomRateType)).append("\n");
-    sb.append("    guestName: ").append(toIndentedString(guestName)).append("\n");
-    sb.append("    customerServicePhoneNumber: ").append(toIndentedString(customerServicePhoneNumber)).append("\n");
-    sb.append("    corporateClientCode: ").append(toIndentedString(corporateClientCode)).append("\n");
-    sb.append("    additionalDiscountAmount: ").append(toIndentedString(additionalDiscountAmount)).append("\n");
-    sb.append("    roomLocation: ").append(toIndentedString(roomLocation)).append("\n");
-    sb.append("    specialProgramCode: ").append(toIndentedString(specialProgramCode)).append("\n");
-    sb.append("    totalTaxAmount: ").append(toIndentedString(totalTaxAmount)).append("\n");
-    sb.append("    prepaidCost: ").append(toIndentedString(prepaidCost)).append("\n");
-    sb.append("    foodAndBeverageCost: ").append(toIndentedString(foodAndBeverageCost)).append("\n");
-    sb.append("    roomTaxAmount: ").append(toIndentedString(roomTaxAmount)).append("\n");
-    sb.append("    adjustmentAmount: ").append(toIndentedString(adjustmentAmount)).append("\n");
-    sb.append("    phoneCost: ").append(toIndentedString(phoneCost)).append("\n");
-    sb.append("    restaurantCost: ").append(toIndentedString(restaurantCost)).append("\n");
-    sb.append("    roomServiceCost: ").append(toIndentedString(roomServiceCost)).append("\n");
-    sb.append("    miniBarCost: ").append(toIndentedString(miniBarCost)).append("\n");
-    sb.append("    laundryCost: ").append(toIndentedString(laundryCost)).append("\n");
-    sb.append("    miscellaneousCost: ").append(toIndentedString(miscellaneousCost)).append("\n");
-    sb.append("    giftShopCost: ").append(toIndentedString(giftShopCost)).append("\n");
-    sb.append("    movieCost: ").append(toIndentedString(movieCost)).append("\n");
-    sb.append("    healthClubCost: ").append(toIndentedString(healthClubCost)).append("\n");
-    sb.append("    valetParkingCost: ").append(toIndentedString(valetParkingCost)).append("\n");
-    sb.append("    cashDisbursementCost: ").append(toIndentedString(cashDisbursementCost)).append("\n");
-    sb.append("    nonRoomCost: ").append(toIndentedString(nonRoomCost)).append("\n");
-    sb.append("    businessCenterCost: ").append(toIndentedString(businessCenterCost)).append("\n");
-    sb.append("    loungeBarCost: ").append(toIndentedString(loungeBarCost)).append("\n");
-    sb.append("    transportationCost: ").append(toIndentedString(transportationCost)).append("\n");
-    sb.append("    gratuityAmount: ").append(toIndentedString(gratuityAmount)).append("\n");
-    sb.append("    conferenceRoomCost: ").append(toIndentedString(conferenceRoomCost)).append("\n");
-    sb.append("    audioVisualCost: ").append(toIndentedString(audioVisualCost)).append("\n");
-    sb.append("    banquestCost: ").append(toIndentedString(banquestCost)).append("\n");
-    sb.append("    nonRoomTaxAmount: ").append(toIndentedString(nonRoomTaxAmount)).append("\n");
-    sb.append("    earlyCheckOutCost: ").append(toIndentedString(earlyCheckOutCost)).append("\n");
-    sb.append("    internetAccessCost: ").append(toIndentedString(internetAccessCost)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    hotelName: ").append(toIndentedString(hotelName)).append("\n");
-    sb.append("    checkInDateTime: ").append(toIndentedString(checkInDateTime)).append("\n");
-    sb.append("    checkOutDateTime: ").append(toIndentedString(checkOutDateTime)).append("\n");
+    if (checkInDate != null) sb.append("    checkInDate: ").append(toIndentedString(checkInDate)).append("\n");
+    if (checkOutDate != null) sb.append("    checkOutDate: ").append(toIndentedString(checkOutDate)).append("\n");
+    if (room != null) sb.append("    room: ").append(toIndentedString(room)).append("\n");
+    if (smokingPreference != null) sb.append("    smokingPreference: ").append(toIndentedString(smokingPreference)).append("\n");
+    if (numberOfRooms != null) sb.append("    numberOfRooms: ").append(toIndentedString(numberOfRooms)).append("\n");
+    if (numberOfGuests != null) sb.append("    numberOfGuests: ").append(toIndentedString(numberOfGuests)).append("\n");
+    if (roomBedType != null) sb.append("    roomBedType: ").append(toIndentedString(roomBedType)).append("\n");
+    if (roomTaxType != null) sb.append("    roomTaxType: ").append(toIndentedString(roomTaxType)).append("\n");
+    if (roomRateType != null) sb.append("    roomRateType: ").append(toIndentedString(roomRateType)).append("\n");
+    if (guestName != null) sb.append("    guestName: ").append(toIndentedString(guestName)).append("\n");
+    if (customerServicePhoneNumber != null) sb.append("    customerServicePhoneNumber: ").append(toIndentedString(customerServicePhoneNumber)).append("\n");
+    if (corporateClientCode != null) sb.append("    corporateClientCode: ").append(toIndentedString(corporateClientCode)).append("\n");
+    if (additionalDiscountAmount != null) sb.append("    additionalDiscountAmount: ").append(toIndentedString(additionalDiscountAmount)).append("\n");
+    if (roomLocation != null) sb.append("    roomLocation: ").append(toIndentedString(roomLocation)).append("\n");
+    if (specialProgramCode != null) sb.append("    specialProgramCode: ").append(toIndentedString(specialProgramCode)).append("\n");
+    if (totalTaxAmount != null) sb.append("    totalTaxAmount: ").append(toIndentedString(totalTaxAmount)).append("\n");
+    if (prepaidCost != null) sb.append("    prepaidCost: ").append(toIndentedString(prepaidCost)).append("\n");
+    if (foodAndBeverageCost != null) sb.append("    foodAndBeverageCost: ").append(toIndentedString(foodAndBeverageCost)).append("\n");
+    if (roomTaxAmount != null) sb.append("    roomTaxAmount: ").append(toIndentedString(roomTaxAmount)).append("\n");
+    if (adjustmentAmount != null) sb.append("    adjustmentAmount: ").append(toIndentedString(adjustmentAmount)).append("\n");
+    if (phoneCost != null) sb.append("    phoneCost: ").append(toIndentedString(phoneCost)).append("\n");
+    if (restaurantCost != null) sb.append("    restaurantCost: ").append(toIndentedString(restaurantCost)).append("\n");
+    if (roomServiceCost != null) sb.append("    roomServiceCost: ").append(toIndentedString(roomServiceCost)).append("\n");
+    if (miniBarCost != null) sb.append("    miniBarCost: ").append(toIndentedString(miniBarCost)).append("\n");
+    if (laundryCost != null) sb.append("    laundryCost: ").append(toIndentedString(laundryCost)).append("\n");
+    if (miscellaneousCost != null) sb.append("    miscellaneousCost: ").append(toIndentedString(miscellaneousCost)).append("\n");
+    if (giftShopCost != null) sb.append("    giftShopCost: ").append(toIndentedString(giftShopCost)).append("\n");
+    if (movieCost != null) sb.append("    movieCost: ").append(toIndentedString(movieCost)).append("\n");
+    if (healthClubCost != null) sb.append("    healthClubCost: ").append(toIndentedString(healthClubCost)).append("\n");
+    if (valetParkingCost != null) sb.append("    valetParkingCost: ").append(toIndentedString(valetParkingCost)).append("\n");
+    if (cashDisbursementCost != null) sb.append("    cashDisbursementCost: ").append(toIndentedString(cashDisbursementCost)).append("\n");
+    if (nonRoomCost != null) sb.append("    nonRoomCost: ").append(toIndentedString(nonRoomCost)).append("\n");
+    if (businessCenterCost != null) sb.append("    businessCenterCost: ").append(toIndentedString(businessCenterCost)).append("\n");
+    if (loungeBarCost != null) sb.append("    loungeBarCost: ").append(toIndentedString(loungeBarCost)).append("\n");
+    if (transportationCost != null) sb.append("    transportationCost: ").append(toIndentedString(transportationCost)).append("\n");
+    if (gratuityAmount != null) sb.append("    gratuityAmount: ").append(toIndentedString(gratuityAmount)).append("\n");
+    if (conferenceRoomCost != null) sb.append("    conferenceRoomCost: ").append(toIndentedString(conferenceRoomCost)).append("\n");
+    if (audioVisualCost != null) sb.append("    audioVisualCost: ").append(toIndentedString(audioVisualCost)).append("\n");
+    if (banquestCost != null) sb.append("    banquestCost: ").append(toIndentedString(banquestCost)).append("\n");
+    if (nonRoomTaxAmount != null) sb.append("    nonRoomTaxAmount: ").append(toIndentedString(nonRoomTaxAmount)).append("\n");
+    if (earlyCheckOutCost != null) sb.append("    earlyCheckOutCost: ").append(toIndentedString(earlyCheckOutCost)).append("\n");
+    if (internetAccessCost != null) sb.append("    internetAccessCost: ").append(toIndentedString(internetAccessCost)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (hotelName != null) sb.append("    hotelName: ").append(toIndentedString(hotelName)).append("\n");
+    if (checkInDateTime != null) sb.append("    checkInDateTime: ").append(toIndentedString(checkInDateTime)).append("\n");
+    if (checkOutDateTime != null) sb.append("    checkOutDateTime: ").append(toIndentedString(checkOutDateTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1135,10 +1135,10 @@ public class Ptsv2paymentsTravelInformationLodging {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

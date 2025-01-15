@@ -61,7 +61,7 @@ public class SAConfigNotificationsCustomerNotifications {
    * @return customReceiptPageEnabled
   **/
   @ApiModelProperty(value = "Toggles the custom receipt page, where merchants can receive the results of the transaction and display appropriate messaging. Usually set by web developers integrating to Secure Acceptance.")
-  public Boolean isCustomReceiptPageEnabled() {
+  public Boolean CustomReceiptPageEnabled() {
     return customReceiptPageEnabled;
   }
 
@@ -97,7 +97,7 @@ public class SAConfigNotificationsCustomerNotifications {
    * @return customerReceiptEmailEnabled
   **/
   @ApiModelProperty(value = "Toggles an email receipt sent to the payer's email address on payment success.")
-  public Boolean isCustomerReceiptEmailEnabled() {
+  public Boolean CustomerReceiptEmailEnabled() {
     return customerReceiptEmailEnabled;
   }
 
@@ -151,7 +151,7 @@ public class SAConfigNotificationsCustomerNotifications {
    * @return customCancelPageEnabled
   **/
   @ApiModelProperty(value = "Toggles the custom cancel page, where merchants can receive notice that the payer has canceled, and display appropriate messaging and direction. Usually set by web developers integrating to Secure Acceptance.")
-  public Boolean isCustomCancelPageEnabled() {
+  public Boolean CustomCancelPageEnabled() {
     return customCancelPageEnabled;
   }
 
@@ -169,7 +169,7 @@ public class SAConfigNotificationsCustomerNotifications {
    * @return notificationReceiptEmailEnabled
   **/
   @ApiModelProperty(value = "Toggles whether merchant receives a copy of the payer's receipt email.")
-  public Boolean isNotificationReceiptEmailEnabled() {
+  public Boolean NotificationReceiptEmailEnabled() {
     return notificationReceiptEmailEnabled;
   }
 
@@ -207,13 +207,13 @@ public class SAConfigNotificationsCustomerNotifications {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfigNotificationsCustomerNotifications {\n");
     
-    sb.append("    customReceiptPageEnabled: ").append(toIndentedString(customReceiptPageEnabled)).append("\n");
-    sb.append("    receiptEmailAddress: ").append(toIndentedString(receiptEmailAddress)).append("\n");
-    sb.append("    customerReceiptEmailEnabled: ").append(toIndentedString(customerReceiptEmailEnabled)).append("\n");
-    sb.append("    customCancelPage: ").append(toIndentedString(customCancelPage)).append("\n");
-    sb.append("    customReceiptPage: ").append(toIndentedString(customReceiptPage)).append("\n");
-    sb.append("    customCancelPageEnabled: ").append(toIndentedString(customCancelPageEnabled)).append("\n");
-    sb.append("    notificationReceiptEmailEnabled: ").append(toIndentedString(notificationReceiptEmailEnabled)).append("\n");
+    if (customReceiptPageEnabled != null) sb.append("    customReceiptPageEnabled: ").append(toIndentedString(customReceiptPageEnabled)).append("\n");
+    if (receiptEmailAddress != null) sb.append("    receiptEmailAddress: ").append(toIndentedString(receiptEmailAddress)).append("\n");
+    if (customerReceiptEmailEnabled != null) sb.append("    customerReceiptEmailEnabled: ").append(toIndentedString(customerReceiptEmailEnabled)).append("\n");
+    if (customCancelPage != null) sb.append("    customCancelPage: ").append(toIndentedString(customCancelPage)).append("\n");
+    if (customReceiptPage != null) sb.append("    customReceiptPage: ").append(toIndentedString(customReceiptPage)).append("\n");
+    if (customCancelPageEnabled != null) sb.append("    customCancelPageEnabled: ").append(toIndentedString(customCancelPageEnabled)).append("\n");
+    if (notificationReceiptEmailEnabled != null) sb.append("    notificationReceiptEmailEnabled: ").append(toIndentedString(notificationReceiptEmailEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -224,10 +224,10 @@ public class SAConfigNotificationsCustomerNotifications {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

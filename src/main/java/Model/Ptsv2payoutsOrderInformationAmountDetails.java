@@ -119,9 +119,9 @@ public class Ptsv2payoutsOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2payoutsOrderInformationAmountDetails {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    surcharge: ").append(toIndentedString(surcharge)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (surcharge != null) sb.append("    surcharge: ").append(toIndentedString(surcharge)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class Ptsv2payoutsOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

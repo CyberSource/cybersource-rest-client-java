@@ -144,10 +144,10 @@ public class PtsV2PaymentsOrderPost201ResponseOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsOrderPost201ResponseOrderInformation {\n");
     
-    sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
-    sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
-    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
-    sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    if (shippingDetails != null) sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -158,10 +158,10 @@ public class PtsV2PaymentsOrderPost201ResponseOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

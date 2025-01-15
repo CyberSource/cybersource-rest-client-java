@@ -48,7 +48,7 @@ public class TmsNetworkTokenServicesMastercardDigitalEnablementService {
    * @return enableService
   **/
   @ApiModelProperty(value = "Indicates if the service for network tokens for the Mastercard card association are enabled")
-  public Boolean isEnableService() {
+  public Boolean EnableService() {
     return enableService;
   }
 
@@ -66,7 +66,7 @@ public class TmsNetworkTokenServicesMastercardDigitalEnablementService {
    * @return enableTransactionalTokens
   **/
   @ApiModelProperty(value = "Indicates if network tokens for the Mastercard card association are enabled for transactions")
-  public Boolean isEnableTransactionalTokens() {
+  public Boolean EnableTransactionalTokens() {
     return enableTransactionalTokens;
   }
 
@@ -118,9 +118,9 @@ public class TmsNetworkTokenServicesMastercardDigitalEnablementService {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsNetworkTokenServicesMastercardDigitalEnablementService {\n");
     
-    sb.append("    enableService: ").append(toIndentedString(enableService)).append("\n");
-    sb.append("    enableTransactionalTokens: ").append(toIndentedString(enableTransactionalTokens)).append("\n");
-    sb.append("    tokenRequestorId: ").append(toIndentedString(tokenRequestorId)).append("\n");
+    if (enableService != null) sb.append("    enableService: ").append(toIndentedString(enableService)).append("\n");
+    if (enableTransactionalTokens != null) sb.append("    enableTransactionalTokens: ").append(toIndentedString(enableTransactionalTokens)).append("\n");
+    if (tokenRequestorId != null) sb.append("    tokenRequestorId: ").append(toIndentedString(tokenRequestorId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class TmsNetworkTokenServicesMastercardDigitalEnablementService {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

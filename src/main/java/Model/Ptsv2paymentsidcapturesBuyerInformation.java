@@ -195,12 +195,12 @@ public class Ptsv2paymentsidcapturesBuyerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesBuyerInformation {\n");
     
-    sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
-    sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
-    sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
+    if (merchantCustomerId != null) sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
+    if (vatRegistrationNumber != null) sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    if (gender != null) sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+    if (language != null) sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    if (personalIdentification != null) sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -211,10 +211,10 @@ public class Ptsv2paymentsidcapturesBuyerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

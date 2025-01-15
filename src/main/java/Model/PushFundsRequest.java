@@ -236,14 +236,14 @@ public class PushFundsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PushFundsRequest {\n");
     
-    sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
-    sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
-    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
-    sb.append("    pointOfServiceInformation: ").append(toIndentedString(pointOfServiceInformation)).append("\n");
+    if (aggregatorInformation != null) sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (recipientInformation != null) sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
+    if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (pointOfServiceInformation != null) sb.append("    pointOfServiceInformation: ").append(toIndentedString(pointOfServiceInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -254,10 +254,10 @@ public class PushFundsRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

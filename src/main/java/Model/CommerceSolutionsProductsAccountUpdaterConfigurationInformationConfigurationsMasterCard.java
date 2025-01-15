@@ -84,7 +84,7 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConf
    * @return active
   **/
   @ApiModelProperty(value = "")
-  public Boolean isActive() {
+  public Boolean Active() {
     return active;
   }
 
@@ -118,9 +118,9 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConf
     StringBuilder sb = new StringBuilder();
     sb.append("class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurationsMasterCard {\n");
     
-    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
-    sb.append("    interbankCardAssociationNumber: ").append(toIndentedString(interbankCardAssociationNumber)).append("\n");
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    if (interbankCardAssociationNumber != null) sb.append("    interbankCardAssociationNumber: ").append(toIndentedString(interbankCardAssociationNumber)).append("\n");
+    if (active != null) sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConf
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

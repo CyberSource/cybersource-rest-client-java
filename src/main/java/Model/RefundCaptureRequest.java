@@ -338,18 +338,18 @@ public class RefundCaptureRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RefundCaptureRequest {\n");
     
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
-    sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
-    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
-    sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
-    sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
-    sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
-    sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
-    sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
+    if (deviceInformation != null) sb.append("    deviceInformation: ").append(toIndentedString(deviceInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (aggregatorInformation != null) sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
+    if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
+    if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
+    if (travelInformation != null) sb.append("    travelInformation: ").append(toIndentedString(travelInformation)).append("\n");
+    if (promotionInformation != null) sb.append("    promotionInformation: ").append(toIndentedString(promotionInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -360,10 +360,10 @@ public class RefundCaptureRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -100,8 +100,8 @@ public class TssV2TransactionsGet200ResponseProcessingInformationCaptureOptions 
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessingInformationCaptureOptions {\n");
     
-    sb.append("    totalCaptureCount: ").append(toIndentedString(totalCaptureCount)).append("\n");
-    sb.append("    captureSequenceNumber: ").append(toIndentedString(captureSequenceNumber)).append("\n");
+    if (totalCaptureCount != null) sb.append("    totalCaptureCount: ").append(toIndentedString(totalCaptureCount)).append("\n");
+    if (captureSequenceNumber != null) sb.append("    captureSequenceNumber: ").append(toIndentedString(captureSequenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -112,10 +112,10 @@ public class TssV2TransactionsGet200ResponseProcessingInformationCaptureOptions 
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

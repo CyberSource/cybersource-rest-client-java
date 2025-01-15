@@ -301,17 +301,17 @@ public class PtsV2PaymentsOrderPost201Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsOrderPost201Response {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (riskInformation != null) sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -322,10 +322,10 @@ public class PtsV2PaymentsOrderPost201Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

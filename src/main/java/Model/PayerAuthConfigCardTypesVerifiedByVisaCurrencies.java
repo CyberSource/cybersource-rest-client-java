@@ -128,9 +128,9 @@ public class PayerAuthConfigCardTypesVerifiedByVisaCurrencies {
     StringBuilder sb = new StringBuilder();
     sb.append("class PayerAuthConfigCardTypesVerifiedByVisaCurrencies {\n");
     
-    sb.append("    currencyCodes: ").append(toIndentedString(currencyCodes)).append("\n");
-    sb.append("    acquirerId: ").append(toIndentedString(acquirerId)).append("\n");
-    sb.append("    processorMerchantId: ").append(toIndentedString(processorMerchantId)).append("\n");
+    if (currencyCodes != null) sb.append("    currencyCodes: ").append(toIndentedString(currencyCodes)).append("\n");
+    if (acquirerId != null) sb.append("    acquirerId: ").append(toIndentedString(acquirerId)).append("\n");
+    if (processorMerchantId != null) sb.append("    processorMerchantId: ").append(toIndentedString(processorMerchantId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -141,10 +141,10 @@ public class PayerAuthConfigCardTypesVerifiedByVisaCurrencies {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

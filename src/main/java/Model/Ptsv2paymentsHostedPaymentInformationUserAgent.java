@@ -97,8 +97,8 @@ public class Ptsv2paymentsHostedPaymentInformationUserAgent {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsHostedPaymentInformationUserAgent {\n");
     
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
+    if (url != null) sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    if (width != null) sb.append("    width: ").append(toIndentedString(width)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class Ptsv2paymentsHostedPaymentInformationUserAgent {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

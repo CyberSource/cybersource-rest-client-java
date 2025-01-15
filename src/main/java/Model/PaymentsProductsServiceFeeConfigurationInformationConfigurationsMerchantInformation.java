@@ -118,9 +118,9 @@ public class PaymentsProductsServiceFeeConfigurationInformationConfigurationsMer
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsServiceFeeConfigurationInformationConfigurationsMerchantInformation {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (contact != null) sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
+    if (state != null) sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class PaymentsProductsServiceFeeConfigurationInformationConfigurationsMer
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -140,10 +140,10 @@ public class TmsTokenFormats {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsTokenFormats {\n");
     
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
-    sb.append("    instrumentIdentifierCard: ").append(toIndentedString(instrumentIdentifierCard)).append("\n");
-    sb.append("    instrumentIdentifierBankAccount: ").append(toIndentedString(instrumentIdentifierBankAccount)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    if (instrumentIdentifierCard != null) sb.append("    instrumentIdentifierCard: ").append(toIndentedString(instrumentIdentifierCard)).append("\n");
+    if (instrumentIdentifierBankAccount != null) sb.append("    instrumentIdentifierBankAccount: ").append(toIndentedString(instrumentIdentifierBankAccount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class TmsTokenFormats {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

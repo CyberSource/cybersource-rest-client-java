@@ -1175,57 +1175,57 @@ public class ReportingV3InterchangeClearingLevelDetailsGet200ResponseInterchange
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3InterchangeClearingLevelDetailsGet200ResponseInterchangeClearingLevelDetails {\n");
     
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    processorMerchantId: ").append(toIndentedString(processorMerchantId)).append("\n");
-    sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
-    sb.append("    merchantReferenceNumber: ").append(toIndentedString(merchantReferenceNumber)).append("\n");
-    sb.append("    accountSuffix: ").append(toIndentedString(accountSuffix)).append("\n");
-    sb.append("    paymentSubType: ").append(toIndentedString(paymentSubType)).append("\n");
-    sb.append("    paymentSubTypeDescription: ").append(toIndentedString(paymentSubTypeDescription)).append("\n");
-    sb.append("    transactionTime: ").append(toIndentedString(transactionTime)).append("\n");
-    sb.append("    processedTime: ").append(toIndentedString(processedTime)).append("\n");
-    sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
-    sb.append("    priceType: ").append(toIndentedString(priceType)).append("\n");
-    sb.append("    priceAmountOne: ").append(toIndentedString(priceAmountOne)).append("\n");
-    sb.append("    priceAmountTwo: ").append(toIndentedString(priceAmountTwo)).append("\n");
-    sb.append("    reClass: ").append(toIndentedString(reClass)).append("\n");
-    sb.append("    settlementTime: ").append(toIndentedString(settlementTime)).append("\n");
-    sb.append("    settlementProcessor: ").append(toIndentedString(settlementProcessor)).append("\n");
-    sb.append("    merchantBatchNumber: ").append(toIndentedString(merchantBatchNumber)).append("\n");
-    sb.append("    clearedLevel: ").append(toIndentedString(clearedLevel)).append("\n");
-    sb.append("    billbackReasonCode: ").append(toIndentedString(billbackReasonCode)).append("\n");
-    sb.append("    billbackReasonDescription: ").append(toIndentedString(billbackReasonDescription)).append("\n");
-    sb.append("    merchantPricedLevel: ").append(toIndentedString(merchantPricedLevel)).append("\n");
-    sb.append("    discountRate: ").append(toIndentedString(discountRate)).append("\n");
-    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
-    sb.append("    clearingRateAmountOne: ").append(toIndentedString(clearingRateAmountOne)).append("\n");
-    sb.append("    clearingRateAmountTwo: ").append(toIndentedString(clearingRateAmountTwo)).append("\n");
-    sb.append("    clearingRateAmountThree: ").append(toIndentedString(clearingRateAmountThree)).append("\n");
-    sb.append("    clearingRateCurrencyCode: ").append(toIndentedString(clearingRateCurrencyCode)).append("\n");
-    sb.append("    interchangeAmount: ").append(toIndentedString(interchangeAmount)).append("\n");
-    sb.append("    billbackAmount: ").append(toIndentedString(billbackAmount)).append("\n");
-    sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
-    sb.append("    settlementCurrencyCode: ").append(toIndentedString(settlementCurrencyCode)).append("\n");
-    sb.append("    conversionRate: ").append(toIndentedString(conversionRate)).append("\n");
-    sb.append("    deltaCost: ").append(toIndentedString(deltaCost)).append("\n");
-    sb.append("    surchargeAmount: ").append(toIndentedString(surchargeAmount)).append("\n");
-    sb.append("    percentRateCharged: ").append(toIndentedString(percentRateCharged)).append("\n");
-    sb.append("    perTransactionCharged: ").append(toIndentedString(perTransactionCharged)).append("\n");
-    sb.append("    downgradeReasonCode: ").append(toIndentedString(downgradeReasonCode)).append("\n");
-    sb.append("    processTime: ").append(toIndentedString(processTime)).append("\n");
-    sb.append("    authCode: ").append(toIndentedString(authCode)).append("\n");
-    sb.append("    batchTime: ").append(toIndentedString(batchTime)).append("\n");
-    sb.append("    processorBatchNumber: ").append(toIndentedString(processorBatchNumber)).append("\n");
-    sb.append("    cardIndicator: ").append(toIndentedString(cardIndicator)).append("\n");
-    sb.append("    minimumUnit: ").append(toIndentedString(minimumUnit)).append("\n");
-    sb.append("    minimumUnitCurrencyCode: ").append(toIndentedString(minimumUnitCurrencyCode)).append("\n");
-    sb.append("    creditDeltaIndicator: ").append(toIndentedString(creditDeltaIndicator)).append("\n");
-    sb.append("    feeCategory: ").append(toIndentedString(feeCategory)).append("\n");
-    sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (accountId != null) sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    if (processorMerchantId != null) sb.append("    processorMerchantId: ").append(toIndentedString(processorMerchantId)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
+    if (merchantReferenceNumber != null) sb.append("    merchantReferenceNumber: ").append(toIndentedString(merchantReferenceNumber)).append("\n");
+    if (accountSuffix != null) sb.append("    accountSuffix: ").append(toIndentedString(accountSuffix)).append("\n");
+    if (paymentSubType != null) sb.append("    paymentSubType: ").append(toIndentedString(paymentSubType)).append("\n");
+    if (paymentSubTypeDescription != null) sb.append("    paymentSubTypeDescription: ").append(toIndentedString(paymentSubTypeDescription)).append("\n");
+    if (transactionTime != null) sb.append("    transactionTime: ").append(toIndentedString(transactionTime)).append("\n");
+    if (processedTime != null) sb.append("    processedTime: ").append(toIndentedString(processedTime)).append("\n");
+    if (transactionType != null) sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (currencyCode != null) sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    if (priceType != null) sb.append("    priceType: ").append(toIndentedString(priceType)).append("\n");
+    if (priceAmountOne != null) sb.append("    priceAmountOne: ").append(toIndentedString(priceAmountOne)).append("\n");
+    if (priceAmountTwo != null) sb.append("    priceAmountTwo: ").append(toIndentedString(priceAmountTwo)).append("\n");
+    if (reClass != null) sb.append("    reClass: ").append(toIndentedString(reClass)).append("\n");
+    if (settlementTime != null) sb.append("    settlementTime: ").append(toIndentedString(settlementTime)).append("\n");
+    if (settlementProcessor != null) sb.append("    settlementProcessor: ").append(toIndentedString(settlementProcessor)).append("\n");
+    if (merchantBatchNumber != null) sb.append("    merchantBatchNumber: ").append(toIndentedString(merchantBatchNumber)).append("\n");
+    if (clearedLevel != null) sb.append("    clearedLevel: ").append(toIndentedString(clearedLevel)).append("\n");
+    if (billbackReasonCode != null) sb.append("    billbackReasonCode: ").append(toIndentedString(billbackReasonCode)).append("\n");
+    if (billbackReasonDescription != null) sb.append("    billbackReasonDescription: ").append(toIndentedString(billbackReasonDescription)).append("\n");
+    if (merchantPricedLevel != null) sb.append("    merchantPricedLevel: ").append(toIndentedString(merchantPricedLevel)).append("\n");
+    if (discountRate != null) sb.append("    discountRate: ").append(toIndentedString(discountRate)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (clearingRateAmountOne != null) sb.append("    clearingRateAmountOne: ").append(toIndentedString(clearingRateAmountOne)).append("\n");
+    if (clearingRateAmountTwo != null) sb.append("    clearingRateAmountTwo: ").append(toIndentedString(clearingRateAmountTwo)).append("\n");
+    if (clearingRateAmountThree != null) sb.append("    clearingRateAmountThree: ").append(toIndentedString(clearingRateAmountThree)).append("\n");
+    if (clearingRateCurrencyCode != null) sb.append("    clearingRateCurrencyCode: ").append(toIndentedString(clearingRateCurrencyCode)).append("\n");
+    if (interchangeAmount != null) sb.append("    interchangeAmount: ").append(toIndentedString(interchangeAmount)).append("\n");
+    if (billbackAmount != null) sb.append("    billbackAmount: ").append(toIndentedString(billbackAmount)).append("\n");
+    if (settlementAmount != null) sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
+    if (settlementCurrencyCode != null) sb.append("    settlementCurrencyCode: ").append(toIndentedString(settlementCurrencyCode)).append("\n");
+    if (conversionRate != null) sb.append("    conversionRate: ").append(toIndentedString(conversionRate)).append("\n");
+    if (deltaCost != null) sb.append("    deltaCost: ").append(toIndentedString(deltaCost)).append("\n");
+    if (surchargeAmount != null) sb.append("    surchargeAmount: ").append(toIndentedString(surchargeAmount)).append("\n");
+    if (percentRateCharged != null) sb.append("    percentRateCharged: ").append(toIndentedString(percentRateCharged)).append("\n");
+    if (perTransactionCharged != null) sb.append("    perTransactionCharged: ").append(toIndentedString(perTransactionCharged)).append("\n");
+    if (downgradeReasonCode != null) sb.append("    downgradeReasonCode: ").append(toIndentedString(downgradeReasonCode)).append("\n");
+    if (processTime != null) sb.append("    processTime: ").append(toIndentedString(processTime)).append("\n");
+    if (authCode != null) sb.append("    authCode: ").append(toIndentedString(authCode)).append("\n");
+    if (batchTime != null) sb.append("    batchTime: ").append(toIndentedString(batchTime)).append("\n");
+    if (processorBatchNumber != null) sb.append("    processorBatchNumber: ").append(toIndentedString(processorBatchNumber)).append("\n");
+    if (cardIndicator != null) sb.append("    cardIndicator: ").append(toIndentedString(cardIndicator)).append("\n");
+    if (minimumUnit != null) sb.append("    minimumUnit: ").append(toIndentedString(minimumUnit)).append("\n");
+    if (minimumUnitCurrencyCode != null) sb.append("    minimumUnitCurrencyCode: ").append(toIndentedString(minimumUnitCurrencyCode)).append("\n");
+    if (creditDeltaIndicator != null) sb.append("    creditDeltaIndicator: ").append(toIndentedString(creditDeltaIndicator)).append("\n");
+    if (feeCategory != null) sb.append("    feeCategory: ").append(toIndentedString(feeCategory)).append("\n");
+    if (applicationName != null) sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1236,10 +1236,10 @@ public class ReportingV3InterchangeClearingLevelDetailsGet200ResponseInterchange
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

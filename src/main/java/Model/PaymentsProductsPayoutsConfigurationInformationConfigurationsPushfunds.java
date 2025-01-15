@@ -106,7 +106,7 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfu
    * @return allowCryptoCurrencyPurchase
   **/
   @ApiModelProperty(value = "This configuration allows a transaction to be flagged for cryptocurrency funds transfer.")
-  public Boolean isAllowCryptoCurrencyPurchase() {
+  public Boolean AllowCryptoCurrencyPurchase() {
     return allowCryptoCurrencyPurchase;
   }
 
@@ -259,15 +259,15 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfu
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds {\n");
     
-    sb.append("    acquirerCountryCode: ").append(toIndentedString(acquirerCountryCode)).append("\n");
-    sb.append("    acquiringBIN: ").append(toIndentedString(acquiringBIN)).append("\n");
-    sb.append("    allowCryptoCurrencyPurchase: ").append(toIndentedString(allowCryptoCurrencyPurchase)).append("\n");
-    sb.append("    financialInstitutionId: ").append(toIndentedString(financialInstitutionId)).append("\n");
-    sb.append("    networkOrder: ").append(toIndentedString(networkOrder)).append("\n");
-    sb.append("    nationalReimbursementFee: ").append(toIndentedString(nationalReimbursementFee)).append("\n");
-    sb.append("    originatorBusinessApplicationId: ").append(toIndentedString(originatorBusinessApplicationId)).append("\n");
-    sb.append("    originatorPseudoAbaNumber: ").append(toIndentedString(originatorPseudoAbaNumber)).append("\n");
-    sb.append("    processorAccount: ").append(toIndentedString(processorAccount)).append("\n");
+    if (acquirerCountryCode != null) sb.append("    acquirerCountryCode: ").append(toIndentedString(acquirerCountryCode)).append("\n");
+    if (acquiringBIN != null) sb.append("    acquiringBIN: ").append(toIndentedString(acquiringBIN)).append("\n");
+    if (allowCryptoCurrencyPurchase != null) sb.append("    allowCryptoCurrencyPurchase: ").append(toIndentedString(allowCryptoCurrencyPurchase)).append("\n");
+    if (financialInstitutionId != null) sb.append("    financialInstitutionId: ").append(toIndentedString(financialInstitutionId)).append("\n");
+    if (networkOrder != null) sb.append("    networkOrder: ").append(toIndentedString(networkOrder)).append("\n");
+    if (nationalReimbursementFee != null) sb.append("    nationalReimbursementFee: ").append(toIndentedString(nationalReimbursementFee)).append("\n");
+    if (originatorBusinessApplicationId != null) sb.append("    originatorBusinessApplicationId: ").append(toIndentedString(originatorBusinessApplicationId)).append("\n");
+    if (originatorPseudoAbaNumber != null) sb.append("    originatorPseudoAbaNumber: ").append(toIndentedString(originatorPseudoAbaNumber)).append("\n");
+    if (processorAccount != null) sb.append("    processorAccount: ").append(toIndentedString(processorAccount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -278,10 +278,10 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfu
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

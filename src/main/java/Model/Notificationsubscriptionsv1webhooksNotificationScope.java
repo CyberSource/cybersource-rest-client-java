@@ -106,8 +106,8 @@ public class Notificationsubscriptionsv1webhooksNotificationScope {
     StringBuilder sb = new StringBuilder();
     sb.append("class Notificationsubscriptionsv1webhooksNotificationScope {\n");
     
-    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
-    sb.append("    scopeData: ").append(toIndentedString(scopeData)).append("\n");
+    if (scope != null) sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+    if (scopeData != null) sb.append("    scopeData: ").append(toIndentedString(scopeData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -118,10 +118,10 @@ public class Notificationsubscriptionsv1webhooksNotificationScope {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

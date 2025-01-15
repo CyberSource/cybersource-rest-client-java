@@ -201,7 +201,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return partialAuthIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates whether the transaction is enabled for partial authorization. When the request includes this field, this value overrides the information in your account. Possible values: - `true`: Enable the transaction for partial authorization. - `false`: Do not enable the transaction for partial authorization.  #### PIN debit Required field for partial authorizations that use PIN debit purchase; otherwise, not used.  #### Used by **Authorization** Optional field.  #### CyberSource through VisaNet To set the default for this field, contact CyberSource Customer Support. The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 164 - Field: Additional Authorization Indicators ")
-  public Boolean isPartialAuthIndicator() {
+  public Boolean PartialAuthIndicator() {
     return partialAuthIndicator;
   }
 
@@ -237,7 +237,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return balanceInquiry
   **/
   @ApiModelProperty(value = "Flag that indicates whether to return balance information.  Possible values: - `true`: Return balance information. - `false`: Do not return balance information.  #### Used by **Authorization** Required for a balance inquiry; otherwise, not used.  #### PIN debit Required for a balance inquiry request of a PIN debit purchase; otherwise, not used. ")
-  public Boolean isBalanceInquiry() {
+  public Boolean BalanceInquiry() {
     return balanceInquiry;
   }
 
@@ -255,7 +255,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return ignoreAvsResult
   **/
   @ApiModelProperty(value = "Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives an AVS decline, as indicated by a reply flag value of DAVSNO.  Possible values: - `true`: Ignore the results of AVS checking and run the capture service. - `false` (default): If the authorization receives an AVS decline, do not run the capture service. When the value of this field is `true`, the list in the `processingInformation.authorizationOptions.declineAvsFlags` field is ignored.  #### Used by **Authorization** Optional field. String (3) ")
-  public Boolean isIgnoreAvsResult() {
+  public Boolean IgnoreAvsResult() {
     return ignoreAvsResult;
   }
 
@@ -299,7 +299,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return ignoreCvResult
   **/
   @ApiModelProperty(value = "Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives a CVN decline, as indicated by an `processorInformation.cardVerification.resultCode` value of `D` or `N`. Possible values: - `true`: Ignore the results of CVN checking and run the capture service. - `false` (default): If the authorization receives a CVN decline, do not run the capture service.  #### Used by **Authorization** Optional field. ")
-  public Boolean isIgnoreCvResult() {
+  public Boolean IgnoreCvResult() {
     return ignoreCvResult;
   }
 
@@ -335,7 +335,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return billPayment
   **/
   @ApiModelProperty(value = "Indicates payment for bill or payment towards existing contractual loan.  Possible values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment.  Optional request field. ")
-  public Boolean isBillPayment() {
+  public Boolean BillPayment() {
     return billPayment;
   }
 
@@ -371,7 +371,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return redemptionInquiry
   **/
   @ApiModelProperty(value = "Flag that indicates the payment request is a redemption inquiry.  Possible values:   - `true`   - `false` ")
-  public Boolean isRedemptionInquiry() {
+  public Boolean RedemptionInquiry() {
     return redemptionInquiry;
   }
 
@@ -443,7 +443,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return deferredAuthIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates whether the authorization request was delayed because connectivity was interrupted.  Possible values:   - `true` (Deferred authorization)   - `false` (default: Not a deferred authorization) ")
-  public Boolean isDeferredAuthIndicator() {
+  public Boolean DeferredAuthIndicator() {
     return deferredAuthIndicator;
   }
 
@@ -461,7 +461,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return cashAdvanceIndicator
   **/
   @ApiModelProperty(value = "This API field enables the merchant to indicate that a given transaction is Cash Advance.  Cash advance or Cash disbursement functionality allows a merchant to dispense cash at a point of sale. It provides the ability of a POS system to act like an ATM. These terminals are typically seen in bank branches where customers can use their card and withdraw cash or at merchant locations where ATMs are sparse.  Possible values:   - `true` (Cash advance is supported)   - `false` (default: cash advance is not supported) ")
-  public Boolean isCashAdvanceIndicator() {
+  public Boolean CashAdvanceIndicator() {
     return cashAdvanceIndicator;
   }
 
@@ -479,7 +479,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return splitPaymentTransaction
   **/
   @ApiModelProperty(value = "#### Visa Platform Connect Indicates split payment transaction. A split payment allows the use of two payment methods for a single transaction.  Possible values:   - `true` (split payment transaction is supported)   - `false` (default: split payment transaction is not supported) ")
-  public Boolean isSplitPaymentTransaction() {
+  public Boolean SplitPaymentTransaction() {
     return splitPaymentTransaction;
   }
 
@@ -497,7 +497,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return cardVerificationIndicator
   **/
   @ApiModelProperty(value = "This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - `true`   - `false` (default value) ")
-  public Boolean isCardVerificationIndicator() {
+  public Boolean CardVerificationIndicator() {
     return cardVerificationIndicator;
   }
 
@@ -515,7 +515,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return aftIndicator
   **/
   @ApiModelProperty(value = "Indicates whether the transaction is an Account Funding Transaction (AFT).  This field is mandatory for Account Funding Transactions (AFT).   Possible values:   - `true` (This is an AFT transaction)   - `false` (default value) (This is not an AFT transaction) ")
-  public Boolean isAftIndicator() {
+  public Boolean AftIndicator() {
     return aftIndicator;
   }
 
@@ -569,29 +569,29 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformationAuthorizationOptions {\n");
     
-    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
-    sb.append("    panReturnIndicator: ").append(toIndentedString(panReturnIndicator)).append("\n");
-    sb.append("    verbalAuthCode: ").append(toIndentedString(verbalAuthCode)).append("\n");
-    sb.append("    verbalAuthTransactionId: ").append(toIndentedString(verbalAuthTransactionId)).append("\n");
-    sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
-    sb.append("    partialAuthIndicator: ").append(toIndentedString(partialAuthIndicator)).append("\n");
-    sb.append("    extendAuthIndicator: ").append(toIndentedString(extendAuthIndicator)).append("\n");
-    sb.append("    balanceInquiry: ").append(toIndentedString(balanceInquiry)).append("\n");
-    sb.append("    ignoreAvsResult: ").append(toIndentedString(ignoreAvsResult)).append("\n");
-    sb.append("    declineAvsFlags: ").append(toIndentedString(declineAvsFlags)).append("\n");
-    sb.append("    ignoreCvResult: ").append(toIndentedString(ignoreCvResult)).append("\n");
-    sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
-    sb.append("    billPayment: ").append(toIndentedString(billPayment)).append("\n");
-    sb.append("    billPaymentType: ").append(toIndentedString(billPaymentType)).append("\n");
-    sb.append("    redemptionInquiry: ").append(toIndentedString(redemptionInquiry)).append("\n");
-    sb.append("    transportationMode: ").append(toIndentedString(transportationMode)).append("\n");
-    sb.append("    aggregatedAuthIndicator: ").append(toIndentedString(aggregatedAuthIndicator)).append("\n");
-    sb.append("    debtRecoveryIndicator: ").append(toIndentedString(debtRecoveryIndicator)).append("\n");
-    sb.append("    deferredAuthIndicator: ").append(toIndentedString(deferredAuthIndicator)).append("\n");
-    sb.append("    cashAdvanceIndicator: ").append(toIndentedString(cashAdvanceIndicator)).append("\n");
-    sb.append("    splitPaymentTransaction: ").append(toIndentedString(splitPaymentTransaction)).append("\n");
-    sb.append("    cardVerificationIndicator: ").append(toIndentedString(cardVerificationIndicator)).append("\n");
-    sb.append("    aftIndicator: ").append(toIndentedString(aftIndicator)).append("\n");
+    if (authType != null) sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
+    if (panReturnIndicator != null) sb.append("    panReturnIndicator: ").append(toIndentedString(panReturnIndicator)).append("\n");
+    if (verbalAuthCode != null) sb.append("    verbalAuthCode: ").append(toIndentedString(verbalAuthCode)).append("\n");
+    if (verbalAuthTransactionId != null) sb.append("    verbalAuthTransactionId: ").append(toIndentedString(verbalAuthTransactionId)).append("\n");
+    if (authIndicator != null) sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
+    if (partialAuthIndicator != null) sb.append("    partialAuthIndicator: ").append(toIndentedString(partialAuthIndicator)).append("\n");
+    if (extendAuthIndicator != null) sb.append("    extendAuthIndicator: ").append(toIndentedString(extendAuthIndicator)).append("\n");
+    if (balanceInquiry != null) sb.append("    balanceInquiry: ").append(toIndentedString(balanceInquiry)).append("\n");
+    if (ignoreAvsResult != null) sb.append("    ignoreAvsResult: ").append(toIndentedString(ignoreAvsResult)).append("\n");
+    if (declineAvsFlags != null) sb.append("    declineAvsFlags: ").append(toIndentedString(declineAvsFlags)).append("\n");
+    if (ignoreCvResult != null) sb.append("    ignoreCvResult: ").append(toIndentedString(ignoreCvResult)).append("\n");
+    if (initiator != null) sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
+    if (billPayment != null) sb.append("    billPayment: ").append(toIndentedString(billPayment)).append("\n");
+    if (billPaymentType != null) sb.append("    billPaymentType: ").append(toIndentedString(billPaymentType)).append("\n");
+    if (redemptionInquiry != null) sb.append("    redemptionInquiry: ").append(toIndentedString(redemptionInquiry)).append("\n");
+    if (transportationMode != null) sb.append("    transportationMode: ").append(toIndentedString(transportationMode)).append("\n");
+    if (aggregatedAuthIndicator != null) sb.append("    aggregatedAuthIndicator: ").append(toIndentedString(aggregatedAuthIndicator)).append("\n");
+    if (debtRecoveryIndicator != null) sb.append("    debtRecoveryIndicator: ").append(toIndentedString(debtRecoveryIndicator)).append("\n");
+    if (deferredAuthIndicator != null) sb.append("    deferredAuthIndicator: ").append(toIndentedString(deferredAuthIndicator)).append("\n");
+    if (cashAdvanceIndicator != null) sb.append("    cashAdvanceIndicator: ").append(toIndentedString(cashAdvanceIndicator)).append("\n");
+    if (splitPaymentTransaction != null) sb.append("    splitPaymentTransaction: ").append(toIndentedString(splitPaymentTransaction)).append("\n");
+    if (cardVerificationIndicator != null) sb.append("    cardVerificationIndicator: ").append(toIndentedString(cardVerificationIndicator)).append("\n");
+    if (aftIndicator != null) sb.append("    aftIndicator: ").append(toIndentedString(aftIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -602,10 +602,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

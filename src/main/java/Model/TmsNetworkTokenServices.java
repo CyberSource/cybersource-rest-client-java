@@ -190,12 +190,12 @@ public class TmsNetworkTokenServices {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsNetworkTokenServices {\n");
     
-    sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
-    sb.append("    paymentCredentials: ").append(toIndentedString(paymentCredentials)).append("\n");
-    sb.append("    synchronousProvisioning: ").append(toIndentedString(synchronousProvisioning)).append("\n");
-    sb.append("    visaTokenService: ").append(toIndentedString(visaTokenService)).append("\n");
-    sb.append("    mastercardDigitalEnablementService: ").append(toIndentedString(mastercardDigitalEnablementService)).append("\n");
-    sb.append("    americanExpressTokenService: ").append(toIndentedString(americanExpressTokenService)).append("\n");
+    if (notifications != null) sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
+    if (paymentCredentials != null) sb.append("    paymentCredentials: ").append(toIndentedString(paymentCredentials)).append("\n");
+    if (synchronousProvisioning != null) sb.append("    synchronousProvisioning: ").append(toIndentedString(synchronousProvisioning)).append("\n");
+    if (visaTokenService != null) sb.append("    visaTokenService: ").append(toIndentedString(visaTokenService)).append("\n");
+    if (mastercardDigitalEnablementService != null) sb.append("    mastercardDigitalEnablementService: ").append(toIndentedString(mastercardDigitalEnablementService)).append("\n");
+    if (americanExpressTokenService != null) sb.append("    americanExpressTokenService: ").append(toIndentedString(americanExpressTokenService)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -206,10 +206,10 @@ public class TmsNetworkTokenServices {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

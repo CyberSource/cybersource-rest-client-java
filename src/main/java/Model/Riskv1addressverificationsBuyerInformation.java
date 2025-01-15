@@ -74,7 +74,7 @@ public class Riskv1addressverificationsBuyerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1addressverificationsBuyerInformation {\n");
     
-    sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
+    if (merchantCustomerId != null) sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Riskv1addressverificationsBuyerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

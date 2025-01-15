@@ -113,7 +113,7 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
    * @return allowPartialPayments
   **/
   @ApiModelProperty(value = "If set to `true`, the payer can make a partial invoice payment.")
-  public Boolean isAllowPartialPayments() {
+  public Boolean AllowPartialPayments() {
     return allowPartialPayments;
   }
 
@@ -186,12 +186,12 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesPost201ResponseInvoiceInformation {\n");
     
-    sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
-    sb.append("    allowPartialPayments: ").append(toIndentedString(allowPartialPayments)).append("\n");
-    sb.append("    paymentLink: ").append(toIndentedString(paymentLink)).append("\n");
-    sb.append("    deliveryMode: ").append(toIndentedString(deliveryMode)).append("\n");
+    if (invoiceNumber != null) sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (dueDate != null) sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
+    if (allowPartialPayments != null) sb.append("    allowPartialPayments: ").append(toIndentedString(allowPartialPayments)).append("\n");
+    if (paymentLink != null) sb.append("    paymentLink: ").append(toIndentedString(paymentLink)).append("\n");
+    if (deliveryMode != null) sb.append("    deliveryMode: ").append(toIndentedString(deliveryMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -202,10 +202,10 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

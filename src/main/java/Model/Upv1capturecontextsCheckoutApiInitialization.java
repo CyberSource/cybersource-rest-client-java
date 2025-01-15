@@ -273,16 +273,16 @@ public class Upv1capturecontextsCheckoutApiInitialization {
     StringBuilder sb = new StringBuilder();
     sb.append("class Upv1capturecontextsCheckoutApiInitialization {\n");
     
-    sb.append("    profileId: ").append(toIndentedString(profileId)).append("\n");
-    sb.append("    accessKey: ").append(toIndentedString(accessKey)).append("\n");
-    sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
-    sb.append("    transactionUuid: ").append(toIndentedString(transactionUuid)).append("\n");
-    sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
-    sb.append("    overrideCustomReceiptPage: ").append(toIndentedString(overrideCustomReceiptPage)).append("\n");
-    sb.append("    unsignedFieldNames: ").append(toIndentedString(unsignedFieldNames)).append("\n");
+    if (profileId != null) sb.append("    profileId: ").append(toIndentedString(profileId)).append("\n");
+    if (accessKey != null) sb.append("    accessKey: ").append(toIndentedString(accessKey)).append("\n");
+    if (referenceNumber != null) sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
+    if (transactionUuid != null) sb.append("    transactionUuid: ").append(toIndentedString(transactionUuid)).append("\n");
+    if (transactionType != null) sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (locale != null) sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+    if (overrideCustomReceiptPage != null) sb.append("    overrideCustomReceiptPage: ").append(toIndentedString(overrideCustomReceiptPage)).append("\n");
+    if (unsignedFieldNames != null) sb.append("    unsignedFieldNames: ").append(toIndentedString(unsignedFieldNames)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -293,10 +293,10 @@ public class Upv1capturecontextsCheckoutApiInitialization {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

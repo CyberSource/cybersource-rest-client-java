@@ -74,7 +74,7 @@ public class Boardingv1registrationsDocumentInformationSignedDocuments {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsDocumentInformationSignedDocuments {\n");
     
-    sb.append("    documentId: ").append(toIndentedString(documentId)).append("\n");
+    if (documentId != null) sb.append("    documentId: ").append(toIndentedString(documentId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Boardingv1registrationsDocumentInformationSignedDocuments {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

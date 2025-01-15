@@ -141,10 +141,10 @@ public class Riskv1liststypeentriesPaymentInformationBank {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1liststypeentriesPaymentInformationBank {\n");
     
-    sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
+    if (accountNumber != null) sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (iban != null) sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class Riskv1liststypeentriesPaymentInformationBank {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

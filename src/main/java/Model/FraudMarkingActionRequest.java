@@ -98,8 +98,8 @@ public class FraudMarkingActionRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class FraudMarkingActionRequest {\n");
     
-    sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (riskInformation != null) sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class FraudMarkingActionRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

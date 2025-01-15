@@ -96,8 +96,8 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformationPartner {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseClientReferenceInformationPartner {\n");
     
-    sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
-    sb.append("    thirdPartyCertificationNumber: ").append(toIndentedString(thirdPartyCertificationNumber)).append("\n");
+    if (solutionId != null) sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
+    if (thirdPartyCertificationNumber != null) sb.append("    thirdPartyCertificationNumber: ").append(toIndentedString(thirdPartyCertificationNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformationPartner {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

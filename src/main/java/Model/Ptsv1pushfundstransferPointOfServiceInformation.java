@@ -75,7 +75,7 @@ public class Ptsv1pushfundstransferPointOfServiceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv1pushfundstransferPointOfServiceInformation {\n");
     
-    sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
+    if (emv != null) sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Ptsv1pushfundstransferPointOfServiceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

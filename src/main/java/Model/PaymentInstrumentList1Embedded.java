@@ -69,7 +69,7 @@ public class PaymentInstrumentList1Embedded {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentInstrumentList1Embedded {\n");
     
-    sb.append("    paymentInstruments: ").append(toIndentedString(paymentInstruments)).append("\n");
+    if (paymentInstruments != null) sb.append("    paymentInstruments: ").append(toIndentedString(paymentInstruments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -80,10 +80,10 @@ public class PaymentInstrumentList1Embedded {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

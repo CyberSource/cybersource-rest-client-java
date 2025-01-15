@@ -141,10 +141,10 @@ public class Notificationsubscriptionsv1webhooksSecurityPolicy1ConfigAdditionalC
     StringBuilder sb = new StringBuilder();
     sb.append("class Notificationsubscriptionsv1webhooksSecurityPolicy1ConfigAdditionalConfig {\n");
     
-    sb.append("    aud: ").append(toIndentedString(aud)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
-    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+    if (aud != null) sb.append("    aud: ").append(toIndentedString(aud)).append("\n");
+    if (clientId != null) sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    if (keyId != null) sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
+    if (scope != null) sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class Notificationsubscriptionsv1webhooksSecurityPolicy1ConfigAdditionalC
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

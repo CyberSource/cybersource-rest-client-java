@@ -64,7 +64,7 @@ public class PtsV2CreditsPost201ResponseProcessingInformation {
    * @return enhancedDataEnabled
   **/
   @ApiModelProperty(value = "The possible values for the reply field are: - `true` : the airline data was included in the request to the processor. - `false` : the airline data was not included in the request to the processor.  Returned by authorization, capture, or credit services. ")
-  public Boolean isEnhancedDataEnabled() {
+  public Boolean EnhancedDataEnabled() {
     return enhancedDataEnabled;
   }
 
@@ -97,8 +97,8 @@ public class PtsV2CreditsPost201ResponseProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2CreditsPost201ResponseProcessingInformation {\n");
     
-    sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
-    sb.append("    enhancedDataEnabled: ").append(toIndentedString(enhancedDataEnabled)).append("\n");
+    if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
+    if (enhancedDataEnabled != null) sb.append("    enhancedDataEnabled: ").append(toIndentedString(enhancedDataEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class PtsV2CreditsPost201ResponseProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

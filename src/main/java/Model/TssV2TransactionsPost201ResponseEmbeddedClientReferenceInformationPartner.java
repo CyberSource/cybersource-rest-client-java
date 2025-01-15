@@ -74,7 +74,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationP
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner {\n");
     
-    sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
+    if (solutionId != null) sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationP
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -98,7 +98,7 @@ public class TssV2TransactionsPost201Response {
    * @return save
   **/
   @ApiModelProperty(value = "Indicates whether or not you want to save this search request for future use. The options are:  * `true` * `false` (default value)  If set to `true`, this field returns `searchID` in the response. You can use this value to retrieve the details of the saved search. ")
-  public Boolean isSave() {
+  public Boolean Save() {
     return save;
   }
 
@@ -340,19 +340,19 @@ public class TssV2TransactionsPost201Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201Response {\n");
     
-    sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
-    sb.append("    save: ").append(toIndentedString(save)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
-    sb.append("    query: ").append(toIndentedString(query)).append("\n");
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
-    sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (searchId != null) sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
+    if (save != null) sb.append("    save: ").append(toIndentedString(save)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (timezone != null) sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    if (query != null) sb.append("    query: ").append(toIndentedString(query)).append("\n");
+    if (offset != null) sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    if (limit != null) sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+    if (sort != null) sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
+    if (count != null) sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    if (totalCount != null) sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (embedded != null) sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -363,10 +363,10 @@ public class TssV2TransactionsPost201Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

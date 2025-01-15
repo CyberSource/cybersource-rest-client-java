@@ -176,7 +176,7 @@ public class Riskv1authenticationsDeviceInformation {
    * @return httpBrowserJavaEnabled
   **/
   @ApiModelProperty(required = true, value = "A Boolean value that represents the ability of the cardholder browser to execute Java. Value is returned from the navigator.javaEnabled property. Possible Values:True/False ")
-  public Boolean isHttpBrowserJavaEnabled() {
+  public Boolean HttpBrowserJavaEnabled() {
     return httpBrowserJavaEnabled;
   }
 
@@ -194,7 +194,7 @@ public class Riskv1authenticationsDeviceInformation {
    * @return httpBrowserJavaScriptEnabled
   **/
   @ApiModelProperty(value = "A Boolean value that represents the ability of the cardholder browser to execute JavaScript. Possible Values:True/False. **Note**: Merchants should be able to know the values from fingerprint details of cardholder's browser. ")
-  public Boolean isHttpBrowserJavaScriptEnabled() {
+  public Boolean HttpBrowserJavaScriptEnabled() {
     return httpBrowserJavaScriptEnabled;
   }
 
@@ -327,18 +327,18 @@ public class Riskv1authenticationsDeviceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationsDeviceInformation {\n");
     
-    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
-    sb.append("    rawData: ").append(toIndentedString(rawData)).append("\n");
-    sb.append("    httpAcceptBrowserValue: ").append(toIndentedString(httpAcceptBrowserValue)).append("\n");
-    sb.append("    httpAcceptContent: ").append(toIndentedString(httpAcceptContent)).append("\n");
-    sb.append("    httpBrowserLanguage: ").append(toIndentedString(httpBrowserLanguage)).append("\n");
-    sb.append("    httpBrowserJavaEnabled: ").append(toIndentedString(httpBrowserJavaEnabled)).append("\n");
-    sb.append("    httpBrowserJavaScriptEnabled: ").append(toIndentedString(httpBrowserJavaScriptEnabled)).append("\n");
-    sb.append("    httpBrowserColorDepth: ").append(toIndentedString(httpBrowserColorDepth)).append("\n");
-    sb.append("    httpBrowserScreenHeight: ").append(toIndentedString(httpBrowserScreenHeight)).append("\n");
-    sb.append("    httpBrowserScreenWidth: ").append(toIndentedString(httpBrowserScreenWidth)).append("\n");
-    sb.append("    httpBrowserTimeDifference: ").append(toIndentedString(httpBrowserTimeDifference)).append("\n");
-    sb.append("    userAgentBrowserValue: ").append(toIndentedString(userAgentBrowserValue)).append("\n");
+    if (ipAddress != null) sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+    if (rawData != null) sb.append("    rawData: ").append(toIndentedString(rawData)).append("\n");
+    if (httpAcceptBrowserValue != null) sb.append("    httpAcceptBrowserValue: ").append(toIndentedString(httpAcceptBrowserValue)).append("\n");
+    if (httpAcceptContent != null) sb.append("    httpAcceptContent: ").append(toIndentedString(httpAcceptContent)).append("\n");
+    if (httpBrowserLanguage != null) sb.append("    httpBrowserLanguage: ").append(toIndentedString(httpBrowserLanguage)).append("\n");
+    if (httpBrowserJavaEnabled != null) sb.append("    httpBrowserJavaEnabled: ").append(toIndentedString(httpBrowserJavaEnabled)).append("\n");
+    if (httpBrowserJavaScriptEnabled != null) sb.append("    httpBrowserJavaScriptEnabled: ").append(toIndentedString(httpBrowserJavaScriptEnabled)).append("\n");
+    if (httpBrowserColorDepth != null) sb.append("    httpBrowserColorDepth: ").append(toIndentedString(httpBrowserColorDepth)).append("\n");
+    if (httpBrowserScreenHeight != null) sb.append("    httpBrowserScreenHeight: ").append(toIndentedString(httpBrowserScreenHeight)).append("\n");
+    if (httpBrowserScreenWidth != null) sb.append("    httpBrowserScreenWidth: ").append(toIndentedString(httpBrowserScreenWidth)).append("\n");
+    if (httpBrowserTimeDifference != null) sb.append("    httpBrowserTimeDifference: ").append(toIndentedString(httpBrowserTimeDifference)).append("\n");
+    if (userAgentBrowserValue != null) sb.append("    userAgentBrowserValue: ").append(toIndentedString(userAgentBrowserValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -349,10 +349,10 @@ public class Riskv1authenticationsDeviceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

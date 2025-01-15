@@ -98,8 +98,8 @@ public class Ptsv2paymentsidreversalsOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidreversalsOrderInformationLineItems {\n");
     
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class Ptsv2paymentsidreversalsOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

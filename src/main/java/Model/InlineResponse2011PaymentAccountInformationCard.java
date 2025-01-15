@@ -195,12 +195,12 @@ public class InlineResponse2011PaymentAccountInformationCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2011PaymentAccountInformationCard {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    brandName: ").append(toIndentedString(brandName)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
-    sb.append("    credentialType: ").append(toIndentedString(credentialType)).append("\n");
-    sb.append("    brands: ").append(toIndentedString(brands)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (brandName != null) sb.append("    brandName: ").append(toIndentedString(brandName)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (maxLength != null) sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
+    if (credentialType != null) sb.append("    credentialType: ").append(toIndentedString(credentialType)).append("\n");
+    if (brands != null) sb.append("    brands: ").append(toIndentedString(brands)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -211,10 +211,10 @@ public class InlineResponse2011PaymentAccountInformationCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

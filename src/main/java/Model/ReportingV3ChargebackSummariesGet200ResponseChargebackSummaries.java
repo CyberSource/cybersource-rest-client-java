@@ -120,9 +120,9 @@ public class ReportingV3ChargebackSummariesGet200ResponseChargebackSummaries {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ChargebackSummariesGet200ResponseChargebackSummaries {\n");
     
-    sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    time: ").append(toIndentedString(time)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    if (count != null) sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    if (time != null) sb.append("    time: ").append(toIndentedString(time)).append("\n");
+    if (accountId != null) sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -133,10 +133,10 @@ public class ReportingV3ChargebackSummariesGet200ResponseChargebackSummaries {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

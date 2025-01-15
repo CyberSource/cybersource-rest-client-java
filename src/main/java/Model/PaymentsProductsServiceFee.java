@@ -98,8 +98,8 @@ public class PaymentsProductsServiceFee {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsServiceFee {\n");
     
-    sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
-    sb.append("    configurationInformation: ").append(toIndentedString(configurationInformation)).append("\n");
+    if (subscriptionInformation != null) sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
+    if (configurationInformation != null) sb.append("    configurationInformation: ").append(toIndentedString(configurationInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class PaymentsProductsServiceFee {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

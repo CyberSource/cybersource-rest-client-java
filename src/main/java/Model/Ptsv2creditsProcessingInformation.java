@@ -477,25 +477,25 @@ public class Ptsv2creditsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2creditsProcessingInformation {\n");
     
-    sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
-    sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
-    sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
-    sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
-    sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
-    sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
-    sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
-    sb.append("    walletType: ").append(toIndentedString(walletType)).append("\n");
-    sb.append("    nationalNetDomesticData: ").append(toIndentedString(nationalNetDomesticData)).append("\n");
-    sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
-    sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
-    sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
-    sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
-    sb.append("    electronicBenefitsTransfer: ").append(toIndentedString(electronicBenefitsTransfer)).append("\n");
-    sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
-    sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
-    sb.append("    refundOptions: ").append(toIndentedString(refundOptions)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    if (processorId != null) sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
+    if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (linkId != null) sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
+    if (reportGroup != null) sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
+    if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
+    if (purchaseLevel != null) sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
+    if (industryDataType != null) sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
+    if (walletType != null) sb.append("    walletType: ").append(toIndentedString(walletType)).append("\n");
+    if (nationalNetDomesticData != null) sb.append("    nationalNetDomesticData: ").append(toIndentedString(nationalNetDomesticData)).append("\n");
+    if (networkRoutingOrder != null) sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
+    if (recurringOptions != null) sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
+    if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
+    if (purchaseOptions != null) sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
+    if (electronicBenefitsTransfer != null) sb.append("    electronicBenefitsTransfer: ").append(toIndentedString(electronicBenefitsTransfer)).append("\n");
+    if (loanOptions != null) sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
+    if (japanPaymentOptions != null) sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
+    if (refundOptions != null) sb.append("    refundOptions: ").append(toIndentedString(refundOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -506,10 +506,10 @@ public class Ptsv2creditsProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

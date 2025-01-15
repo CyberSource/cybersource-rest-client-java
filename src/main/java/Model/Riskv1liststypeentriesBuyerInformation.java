@@ -86,7 +86,7 @@ public class Riskv1liststypeentriesBuyerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1liststypeentriesBuyerInformation {\n");
     
-    sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
+    if (personalIdentification != null) sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -97,10 +97,10 @@ public class Riskv1liststypeentriesBuyerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

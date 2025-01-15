@@ -166,10 +166,10 @@ public class PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchListM
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchListMatches {\n");
     
-    sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
-    sb.append("    sanctionList: ").append(toIndentedString(sanctionList)).append("\n");
-    sb.append("    aliases: ").append(toIndentedString(aliases)).append("\n");
-    sb.append("    programs: ").append(toIndentedString(programs)).append("\n");
+    if (addresses != null) sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
+    if (sanctionList != null) sb.append("    sanctionList: ").append(toIndentedString(sanctionList)).append("\n");
+    if (aliases != null) sb.append("    aliases: ").append(toIndentedString(aliases)).append("\n");
+    if (programs != null) sb.append("    programs: ").append(toIndentedString(programs)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -180,10 +180,10 @@ public class PtsV2PaymentsPost201ResponseWatchlistScreeningInformationWatchListM
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

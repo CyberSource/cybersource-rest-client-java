@@ -75,7 +75,7 @@ public class TssV2TransactionsPost201ResponseEmbeddedRiskInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedRiskInformation {\n");
     
-    sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
+    if (providers != null) sb.append("    providers: ").append(toIndentedString(providers)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedRiskInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

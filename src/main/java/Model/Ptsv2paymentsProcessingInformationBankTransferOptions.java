@@ -294,17 +294,17 @@ public class Ptsv2paymentsProcessingInformationBankTransferOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformationBankTransferOptions {\n");
     
-    sb.append("    declineAvsFlags: ").append(toIndentedString(declineAvsFlags)).append("\n");
-    sb.append("    secCode: ").append(toIndentedString(secCode)).append("\n");
-    sb.append("    terminalCity: ").append(toIndentedString(terminalCity)).append("\n");
-    sb.append("    terminalState: ").append(toIndentedString(terminalState)).append("\n");
-    sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
-    sb.append("    partialPaymentId: ").append(toIndentedString(partialPaymentId)).append("\n");
-    sb.append("    customerMemo: ").append(toIndentedString(customerMemo)).append("\n");
-    sb.append("    paymentCategoryCode: ").append(toIndentedString(paymentCategoryCode)).append("\n");
-    sb.append("    settlementMethod: ").append(toIndentedString(settlementMethod)).append("\n");
-    sb.append("    fraudScreeningLevel: ").append(toIndentedString(fraudScreeningLevel)).append("\n");
-    sb.append("    customerPresent: ").append(toIndentedString(customerPresent)).append("\n");
+    if (declineAvsFlags != null) sb.append("    declineAvsFlags: ").append(toIndentedString(declineAvsFlags)).append("\n");
+    if (secCode != null) sb.append("    secCode: ").append(toIndentedString(secCode)).append("\n");
+    if (terminalCity != null) sb.append("    terminalCity: ").append(toIndentedString(terminalCity)).append("\n");
+    if (terminalState != null) sb.append("    terminalState: ").append(toIndentedString(terminalState)).append("\n");
+    if (effectiveDate != null) sb.append("    effectiveDate: ").append(toIndentedString(effectiveDate)).append("\n");
+    if (partialPaymentId != null) sb.append("    partialPaymentId: ").append(toIndentedString(partialPaymentId)).append("\n");
+    if (customerMemo != null) sb.append("    customerMemo: ").append(toIndentedString(customerMemo)).append("\n");
+    if (paymentCategoryCode != null) sb.append("    paymentCategoryCode: ").append(toIndentedString(paymentCategoryCode)).append("\n");
+    if (settlementMethod != null) sb.append("    settlementMethod: ").append(toIndentedString(settlementMethod)).append("\n");
+    if (fraudScreeningLevel != null) sb.append("    fraudScreeningLevel: ").append(toIndentedString(fraudScreeningLevel)).append("\n");
+    if (customerPresent != null) sb.append("    customerPresent: ").append(toIndentedString(customerPresent)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -315,10 +315,10 @@ public class Ptsv2paymentsProcessingInformationBankTransferOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -108,8 +108,8 @@ public class V1FileDetailsGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class V1FileDetailsGet200Response {\n");
     
-    sb.append("    fileDetails: ").append(toIndentedString(fileDetails)).append("\n");
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (fileDetails != null) sb.append("    fileDetails: ").append(toIndentedString(fileDetails)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -120,10 +120,10 @@ public class V1FileDetailsGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

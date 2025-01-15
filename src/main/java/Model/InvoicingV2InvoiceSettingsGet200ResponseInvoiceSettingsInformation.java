@@ -124,7 +124,7 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
    * @return enableReminders
   **/
   @ApiModelProperty(value = "Whether you would like us to send an auto-generated reminder email to your invoice recipients. Currently, this reminder email is sent five days before the invoice is due and one day after it is past due.")
-  public Boolean isEnableReminders() {
+  public Boolean EnableReminders() {
     return enableReminders;
   }
 
@@ -196,7 +196,7 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
    * @return payerAuthentication3DSVersion
   **/
   @ApiModelProperty(value = "The 3D Secure payer authentication status for a merchant's invoice payments.")
-  public Boolean isPayerAuthentication3DSVersion() {
+  public Boolean PayerAuthentication3DSVersion() {
     return payerAuthentication3DSVersion;
   }
 
@@ -214,7 +214,7 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
    * @return showVatNumber
   **/
   @ApiModelProperty(value = "Display VAT number on Invoice.")
-  public Boolean isShowVatNumber() {
+  public Boolean ShowVatNumber() {
     return showVatNumber;
   }
 
@@ -273,16 +273,16 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation {\n");
     
-    sb.append("    merchantLogo: ").append(toIndentedString(merchantLogo)).append("\n");
-    sb.append("    merchantDisplayName: ").append(toIndentedString(merchantDisplayName)).append("\n");
-    sb.append("    customEmailMessage: ").append(toIndentedString(customEmailMessage)).append("\n");
-    sb.append("    enableReminders: ").append(toIndentedString(enableReminders)).append("\n");
-    sb.append("    headerStyle: ").append(toIndentedString(headerStyle)).append("\n");
-    sb.append("    deliveryLanguage: ").append(toIndentedString(deliveryLanguage)).append("\n");
-    sb.append("    defaultCurrencyCode: ").append(toIndentedString(defaultCurrencyCode)).append("\n");
-    sb.append("    payerAuthentication3DSVersion: ").append(toIndentedString(payerAuthentication3DSVersion)).append("\n");
-    sb.append("    showVatNumber: ").append(toIndentedString(showVatNumber)).append("\n");
-    sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
+    if (merchantLogo != null) sb.append("    merchantLogo: ").append(toIndentedString(merchantLogo)).append("\n");
+    if (merchantDisplayName != null) sb.append("    merchantDisplayName: ").append(toIndentedString(merchantDisplayName)).append("\n");
+    if (customEmailMessage != null) sb.append("    customEmailMessage: ").append(toIndentedString(customEmailMessage)).append("\n");
+    if (enableReminders != null) sb.append("    enableReminders: ").append(toIndentedString(enableReminders)).append("\n");
+    if (headerStyle != null) sb.append("    headerStyle: ").append(toIndentedString(headerStyle)).append("\n");
+    if (deliveryLanguage != null) sb.append("    deliveryLanguage: ").append(toIndentedString(deliveryLanguage)).append("\n");
+    if (defaultCurrencyCode != null) sb.append("    defaultCurrencyCode: ").append(toIndentedString(defaultCurrencyCode)).append("\n");
+    if (payerAuthentication3DSVersion != null) sb.append("    payerAuthentication3DSVersion: ").append(toIndentedString(payerAuthentication3DSVersion)).append("\n");
+    if (showVatNumber != null) sb.append("    showVatNumber: ").append(toIndentedString(showVatNumber)).append("\n");
+    if (vatRegistrationNumber != null) sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -293,10 +293,10 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

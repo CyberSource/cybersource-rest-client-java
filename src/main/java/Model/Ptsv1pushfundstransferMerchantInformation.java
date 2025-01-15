@@ -74,7 +74,7 @@ public class Ptsv1pushfundstransferMerchantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv1pushfundstransferMerchantInformation {\n");
     
-    sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
+    if (categoryCode != null) sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv1pushfundstransferMerchantInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

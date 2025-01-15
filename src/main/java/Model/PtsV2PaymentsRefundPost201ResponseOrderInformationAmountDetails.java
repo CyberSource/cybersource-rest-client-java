@@ -162,11 +162,11 @@ public class PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails {\n");
     
-    sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
-    sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
-    sb.append("    exchangeRate: ").append(toIndentedString(exchangeRate)).append("\n");
-    sb.append("    foreignAmount: ").append(toIndentedString(foreignAmount)).append("\n");
-    sb.append("    foreignCurrency: ").append(toIndentedString(foreignCurrency)).append("\n");
+    if (settlementAmount != null) sb.append("    settlementAmount: ").append(toIndentedString(settlementAmount)).append("\n");
+    if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
+    if (exchangeRate != null) sb.append("    exchangeRate: ").append(toIndentedString(exchangeRate)).append("\n");
+    if (foreignAmount != null) sb.append("    foreignAmount: ").append(toIndentedString(foreignAmount)).append("\n");
+    if (foreignCurrency != null) sb.append("    foreignCurrency: ").append(toIndentedString(foreignCurrency)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

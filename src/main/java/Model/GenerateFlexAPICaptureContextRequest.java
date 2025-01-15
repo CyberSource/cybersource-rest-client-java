@@ -75,7 +75,7 @@ public class GenerateFlexAPICaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateFlexAPICaptureContextRequest {\n");
     
-    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
+    if (fields != null) sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class GenerateFlexAPICaptureContextRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

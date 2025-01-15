@@ -142,10 +142,10 @@ public class Notificationsubscriptionsv1webhooksSecurityPolicy1Config {
     StringBuilder sb = new StringBuilder();
     sb.append("class Notificationsubscriptionsv1webhooksSecurityPolicy1Config {\n");
     
-    sb.append("    oAuthTokenExpiry: ").append(toIndentedString(oAuthTokenExpiry)).append("\n");
-    sb.append("    oAuthURL: ").append(toIndentedString(oAuthURL)).append("\n");
-    sb.append("    oAuthTokenType: ").append(toIndentedString(oAuthTokenType)).append("\n");
-    sb.append("    additionalConfig: ").append(toIndentedString(additionalConfig)).append("\n");
+    if (oAuthTokenExpiry != null) sb.append("    oAuthTokenExpiry: ").append(toIndentedString(oAuthTokenExpiry)).append("\n");
+    if (oAuthURL != null) sb.append("    oAuthURL: ").append(toIndentedString(oAuthURL)).append("\n");
+    if (oAuthTokenType != null) sb.append("    oAuthTokenType: ").append(toIndentedString(oAuthTokenType)).append("\n");
+    if (additionalConfig != null) sb.append("    additionalConfig: ").append(toIndentedString(additionalConfig)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -156,10 +156,10 @@ public class Notificationsubscriptionsv1webhooksSecurityPolicy1Config {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

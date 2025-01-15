@@ -74,7 +74,7 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PayoutsPost201ResponseIssuerInformation {\n");
     
-    sb.append("    serviceProcessingType: ").append(toIndentedString(serviceProcessingType)).append("\n");
+    if (serviceProcessingType != null) sb.append("    serviceProcessingType: ").append(toIndentedString(serviceProcessingType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2PayoutsPost201ResponseIssuerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

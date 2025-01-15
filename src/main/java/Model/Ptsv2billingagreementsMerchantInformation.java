@@ -208,13 +208,13 @@ public class Ptsv2billingagreementsMerchantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2billingagreementsMerchantInformation {\n");
     
-    sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
-    sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
-    sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
-    sb.append("    transactionLocalDateTime: ").append(toIndentedString(transactionLocalDateTime)).append("\n");
-    sb.append("    cancelUrl: ").append(toIndentedString(cancelUrl)).append("\n");
-    sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
-    sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
+    if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
+    if (categoryCode != null) sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    if (transactionLocalDateTime != null) sb.append("    transactionLocalDateTime: ").append(toIndentedString(transactionLocalDateTime)).append("\n");
+    if (cancelUrl != null) sb.append("    cancelUrl: ").append(toIndentedString(cancelUrl)).append("\n");
+    if (successUrl != null) sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
+    if (failureUrl != null) sb.append("    failureUrl: ").append(toIndentedString(failureUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -225,10 +225,10 @@ public class Ptsv2billingagreementsMerchantInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

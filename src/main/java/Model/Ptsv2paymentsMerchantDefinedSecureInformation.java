@@ -141,10 +141,10 @@ public class Ptsv2paymentsMerchantDefinedSecureInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsMerchantDefinedSecureInformation {\n");
     
-    sb.append("    secure1: ").append(toIndentedString(secure1)).append("\n");
-    sb.append("    secure2: ").append(toIndentedString(secure2)).append("\n");
-    sb.append("    secure3: ").append(toIndentedString(secure3)).append("\n");
-    sb.append("    secure4: ").append(toIndentedString(secure4)).append("\n");
+    if (secure1 != null) sb.append("    secure1: ").append(toIndentedString(secure1)).append("\n");
+    if (secure2 != null) sb.append("    secure2: ").append(toIndentedString(secure2)).append("\n");
+    if (secure3 != null) sb.append("    secure3: ").append(toIndentedString(secure3)).append("\n");
+    if (secure4 != null) sb.append("    secure4: ").append(toIndentedString(secure4)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class Ptsv2paymentsMerchantDefinedSecureInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

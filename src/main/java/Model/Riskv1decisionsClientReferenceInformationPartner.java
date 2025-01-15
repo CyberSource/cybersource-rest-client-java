@@ -96,8 +96,8 @@ public class Riskv1decisionsClientReferenceInformationPartner {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsClientReferenceInformationPartner {\n");
     
-    sb.append("    developerId: ").append(toIndentedString(developerId)).append("\n");
-    sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
+    if (developerId != null) sb.append("    developerId: ").append(toIndentedString(developerId)).append("\n");
+    if (solutionId != null) sb.append("    solutionId: ").append(toIndentedString(solutionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Riskv1decisionsClientReferenceInformationPartner {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

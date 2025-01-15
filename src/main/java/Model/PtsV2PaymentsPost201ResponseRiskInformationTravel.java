@@ -144,10 +144,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationTravel {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformationTravel {\n");
     
-    sb.append("    actualFinalDestination: ").append(toIndentedString(actualFinalDestination)).append("\n");
-    sb.append("    firstDeparture: ").append(toIndentedString(firstDeparture)).append("\n");
-    sb.append("    firstDestination: ").append(toIndentedString(firstDestination)).append("\n");
-    sb.append("    lastDestination: ").append(toIndentedString(lastDestination)).append("\n");
+    if (actualFinalDestination != null) sb.append("    actualFinalDestination: ").append(toIndentedString(actualFinalDestination)).append("\n");
+    if (firstDeparture != null) sb.append("    firstDeparture: ").append(toIndentedString(firstDeparture)).append("\n");
+    if (firstDestination != null) sb.append("    firstDestination: ").append(toIndentedString(firstDestination)).append("\n");
+    if (lastDestination != null) sb.append("    lastDestination: ").append(toIndentedString(lastDestination)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -158,10 +158,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationTravel {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

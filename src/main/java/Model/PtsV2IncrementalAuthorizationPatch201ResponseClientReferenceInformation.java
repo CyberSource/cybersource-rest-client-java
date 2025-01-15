@@ -74,7 +74,7 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInforma
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInforma
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

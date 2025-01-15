@@ -42,7 +42,7 @@ public class TmsNetworkTokenServicesNotifications {
    * @return enabled
   **/
   @ApiModelProperty(value = "Indicates if lifecycle management (LCM) notifications are enabled")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -74,7 +74,7 @@ public class TmsNetworkTokenServicesNotifications {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsNetworkTokenServicesNotifications {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TmsNetworkTokenServicesNotifications {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

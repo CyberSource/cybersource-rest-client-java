@@ -369,20 +369,20 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponsePaymentInformation {\n");
     
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
-    sb.append("    accountFeatures: ").append(toIndentedString(accountFeatures)).append("\n");
-    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
-    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
-    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
-    sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
-    sb.append("    bin: ").append(toIndentedString(bin)).append("\n");
-    sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
-    sb.append("    binCountry: ").append(toIndentedString(binCountry)).append("\n");
-    sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    if (accountFeatures != null) sb.append("    accountFeatures: ").append(toIndentedString(accountFeatures)).append("\n");
+    if (bank != null) sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    if (shippingAddress != null) sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    if (scheme != null) sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
+    if (bin != null) sb.append("    bin: ").append(toIndentedString(bin)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    if (issuer != null) sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
+    if (binCountry != null) sb.append("    binCountry: ").append(toIndentedString(binCountry)).append("\n");
+    if (eWallet != null) sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -393,10 +393,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

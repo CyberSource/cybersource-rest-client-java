@@ -119,9 +119,9 @@ public class Ptsv2intentsMerchantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2intentsMerchantInformation {\n");
     
-    sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
-    sb.append("    cancelUrl: ").append(toIndentedString(cancelUrl)).append("\n");
-    sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
+    if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
+    if (cancelUrl != null) sb.append("    cancelUrl: ").append(toIndentedString(cancelUrl)).append("\n");
+    if (successUrl != null) sb.append("    successUrl: ").append(toIndentedString(successUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class Ptsv2intentsMerchantInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

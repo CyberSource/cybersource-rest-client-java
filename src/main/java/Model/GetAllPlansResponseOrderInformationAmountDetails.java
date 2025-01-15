@@ -118,9 +118,9 @@ public class GetAllPlansResponseOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetAllPlansResponseOrderInformationAmountDetails {\n");
     
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    billingAmount: ").append(toIndentedString(billingAmount)).append("\n");
-    sb.append("    setupFee: ").append(toIndentedString(setupFee)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (billingAmount != null) sb.append("    billingAmount: ").append(toIndentedString(billingAmount)).append("\n");
+    if (setupFee != null) sb.append("    setupFee: ").append(toIndentedString(setupFee)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class GetAllPlansResponseOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

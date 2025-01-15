@@ -436,7 +436,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return allowMultipleBills
   **/
   @ApiModelProperty(value = "Allows multiple captures for a single authorization transaction. Applicable for Paymentech Tampa (paymentechtampa), VPC, American Express Direct (amexdirect) and GPX (gpx) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, hybrid</td><td>Yes</td><td>No</td></tr> <tr><td>American Express Direct</td><td>cnp</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean isAllowMultipleBills() {
+  public Boolean AllowMultipleBills() {
     return allowMultipleBills;
   }
 
@@ -454,7 +454,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return allowMerchantDescriptorOverride
   **/
   @ApiModelProperty(value = "Enables partner to enable/disable merchant descriptors values. Applicable for VPC, EFTPOS and CUP processors.")
-  public Boolean isAllowMerchantDescriptorOverride() {
+  public Boolean AllowMerchantDescriptorOverride() {
     return allowMerchantDescriptorOverride;
   }
 
@@ -490,7 +490,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return fireSafetyIndicator
   **/
   @ApiModelProperty(value = "Indicates whether the merchant is compliant with Hotel and Motel Fire Safety Act of 1990. Applicable for GPX (gpx) and VPC processors.")
-  public Boolean isFireSafetyIndicator() {
+  public Boolean FireSafetyIndicator() {
     return fireSafetyIndicator;
   }
 
@@ -508,7 +508,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return quasiCash
   **/
   @ApiModelProperty(value = "To enable quasi-cash transactions. A quasi-cash transaction is a cash-like transaction for the sale of items that are directly convertible to cash, such as:- Casino gaming chips, Money orders, Wire transfers.  Applicable for GPX (gpx), TSYS (tsys), Barclays (barclays2) and VPC processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays</td><td>cnp, cp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean isQuasiCash() {
+  public Boolean QuasiCash() {
     return quasiCash;
   }
 
@@ -562,7 +562,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableLongTransRefNo
   **/
   @ApiModelProperty(value = "Amex Direct specific merchant config value which determines what length (either 9 or Unique 12-char reference number) of reference number will be CYBS generated if the merchant does not pass in a trans_ref_no. Can be any combination of alpha, numeric and special characters, and/or binary data in hexadecimal.  Applicable for American Express Direct (amexdirect) processor.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, cnp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean isEnableLongTransRefNo() {
+  public Boolean EnableLongTransRefNo() {
     return enableLongTransRefNo;
   }
 
@@ -580,7 +580,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableLevel2
   **/
   @ApiModelProperty(value = "Field that indicates whether merchant will send level 2 data for Amex cards. Applicable for American Express Direct (amexdirect) processor.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, cnp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean isEnableLevel2() {
+  public Boolean EnableLevel2() {
     return enableLevel2;
   }
 
@@ -598,7 +598,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableMultipleTransactionAdviceAddendum
   **/
   @ApiModelProperty(value = "This flag related to multiple transaction advice addendum field. It is used to display descriptive information about a transaction on customer's American Express card statement. Applicable for American Express Direct (amexdirect) processor.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, cnp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean isEnableMultipleTransactionAdviceAddendum() {
+  public Boolean EnableMultipleTransactionAdviceAddendum() {
     return enableMultipleTransactionAdviceAddendum;
   }
 
@@ -634,7 +634,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableMultiLineItems
   **/
   @ApiModelProperty(value = "This flag is related to offer/line item details to be included instead of sending one line item, and a grand total. Example, offer0, offer 1...offer n. Applicable for American Express Direct (amexdirect) and Elavon Americas (elavonamericas) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, cnp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean isEnableMultiLineItems() {
+  public Boolean EnableMultiLineItems() {
     return enableMultiLineItems;
   }
 
@@ -652,7 +652,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableTransactionReferenceNumber
   **/
   @ApiModelProperty(value = "To enable merchant to send in transaction reference number (unique reconciliation ID). Applicable for VPC, Vero (vero), FDI Global (fdiglobal), Six (six), CB2A, CUP, VPC, Chase Paymentech Salem (chasepaymentechsalem), Fiserv (fiserv), Elavon Americas (elavonamericas) and EFTPOS processors.")
-  public Boolean isEnableTransactionReferenceNumber() {
+  public Boolean EnableTransactionReferenceNumber() {
     return enableTransactionReferenceNumber;
   }
 
@@ -670,7 +670,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableAutoAuthReversalAfterVoid
   **/
   @ApiModelProperty(value = "Enables to meet the Visa mandate requirements to reverse unused authorizations, benefitting the customer by releasing the hold on unused credit card funds. Applicable for CB2A, Elavon Americas (elavonamericas), Six (six), VPC and American Express Direct (amexdirect) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cp, cnp, hybrid</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean isEnableAutoAuthReversalAfterVoid() {
+  public Boolean EnableAutoAuthReversalAfterVoid() {
     return enableAutoAuthReversalAfterVoid;
   }
 
@@ -688,7 +688,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableExpresspayPanTranslation
   **/
   @ApiModelProperty(value = "When this is enabled, authorization responses from American Express expresspay transactions include the Primary Account Number (PAN) and expiration date of the card. Applicable for American Express Direct (amexdirect) processor.")
-  public Boolean isEnableExpresspayPanTranslation() {
+  public Boolean EnableExpresspayPanTranslation() {
     return enableExpresspayPanTranslation;
   }
 
@@ -706,7 +706,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableCreditAuth
   **/
   @ApiModelProperty(value = "Authorizes a credit. Reduces refund chargebacks and prevents customers from seeing the online update for credits which are otherwise offline settlements.")
-  public Boolean isEnableCreditAuth() {
+  public Boolean EnableCreditAuth() {
     return enableCreditAuth;
   }
 
@@ -742,7 +742,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return sendAmexLevel2Data
   **/
   @ApiModelProperty(value = "Field that indicates whether merchant will send level 2 data for Amex cards. Applicable for TSYS (tsys) processor.")
-  public Boolean isSendAmexLevel2Data() {
+  public Boolean SendAmexLevel2Data() {
     return sendAmexLevel2Data;
   }
 
@@ -940,7 +940,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableLeastCostRouting
   **/
   @ApiModelProperty(value = "Indicates whether Least Cost Routing is enabled. Applicable for EFTPOS and CUP processors.")
-  public Boolean isEnableLeastCostRouting() {
+  public Boolean EnableLeastCostRouting() {
     return enableLeastCostRouting;
   }
 
@@ -958,7 +958,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableCVVResponseIndicator
   **/
   @ApiModelProperty(value = "This field denotes EFTPOS Merchant's choice of receiving CVV Processing Response in return. Applicable for EFTPOS processors.")
-  public Boolean isEnableCVVResponseIndicator() {
+  public Boolean EnableCVVResponseIndicator() {
     return enableCVVResponseIndicator;
   }
 
@@ -994,7 +994,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enablePosNetworkSwitching
   **/
   @ApiModelProperty(value = "'POS Network Switching' or 'Alternate Routing' means merchant can process PIN Debit transactions without a PIN. Set the value to 'Yes' if it is supported. Applicable for FDI Global (fdiglobal) processor.")
-  public Boolean isEnablePosNetworkSwitching() {
+  public Boolean EnablePosNetworkSwitching() {
     return enablePosNetworkSwitching;
   }
 
@@ -1012,7 +1012,7 @@ public class CardProcessingConfigCommonProcessors {
    * @return enableDynamicCurrencyConversion
   **/
   @ApiModelProperty(value = "Enable dynamic currency conversion for a merchant.")
-  public Boolean isEnableDynamicCurrencyConversion() {
+  public Boolean EnableDynamicCurrencyConversion() {
     return enableDynamicCurrencyConversion;
   }
 
@@ -1108,53 +1108,53 @@ public class CardProcessingConfigCommonProcessors {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigCommonProcessors {\n");
     
-    sb.append("    batchGroup: ").append(toIndentedString(batchGroup)).append("\n");
-    sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
-    sb.append("    merchantVerificationValue: ").append(toIndentedString(merchantVerificationValue)).append("\n");
-    sb.append("    abaNumber: ").append(toIndentedString(abaNumber)).append("\n");
-    sb.append("    acquirer: ").append(toIndentedString(acquirer)).append("\n");
-    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
-    sb.append("    paymentTypes: ").append(toIndentedString(paymentTypes)).append("\n");
-    sb.append("    currencies: ").append(toIndentedString(currencies)).append("\n");
-    sb.append("    visaAggregatorId: ").append(toIndentedString(visaAggregatorId)).append("\n");
-    sb.append("    amexAggregatorId: ").append(toIndentedString(amexAggregatorId)).append("\n");
-    sb.append("    masterCardAggregatorId: ").append(toIndentedString(masterCardAggregatorId)).append("\n");
-    sb.append("    sicCode: ").append(toIndentedString(sicCode)).append("\n");
-    sb.append("    allowMultipleBills: ").append(toIndentedString(allowMultipleBills)).append("\n");
-    sb.append("    allowMerchantDescriptorOverride: ").append(toIndentedString(allowMerchantDescriptorOverride)).append("\n");
-    sb.append("    enhancedData: ").append(toIndentedString(enhancedData)).append("\n");
-    sb.append("    fireSafetyIndicator: ").append(toIndentedString(fireSafetyIndicator)).append("\n");
-    sb.append("    quasiCash: ").append(toIndentedString(quasiCash)).append("\n");
-    sb.append("    acquirerMerchantId: ").append(toIndentedString(acquirerMerchantId)).append("\n");
-    sb.append("    avsFormat: ").append(toIndentedString(avsFormat)).append("\n");
-    sb.append("    enableLongTransRefNo: ").append(toIndentedString(enableLongTransRefNo)).append("\n");
-    sb.append("    enableLevel2: ").append(toIndentedString(enableLevel2)).append("\n");
-    sb.append("    enableMultipleTransactionAdviceAddendum: ").append(toIndentedString(enableMultipleTransactionAdviceAddendum)).append("\n");
-    sb.append("    amexTransactionAdviceAddendum1: ").append(toIndentedString(amexTransactionAdviceAddendum1)).append("\n");
-    sb.append("    enableMultiLineItems: ").append(toIndentedString(enableMultiLineItems)).append("\n");
-    sb.append("    enableTransactionReferenceNumber: ").append(toIndentedString(enableTransactionReferenceNumber)).append("\n");
-    sb.append("    enableAutoAuthReversalAfterVoid: ").append(toIndentedString(enableAutoAuthReversalAfterVoid)).append("\n");
-    sb.append("    enableExpresspayPanTranslation: ").append(toIndentedString(enableExpresspayPanTranslation)).append("\n");
-    sb.append("    enableCreditAuth: ").append(toIndentedString(enableCreditAuth)).append("\n");
-    sb.append("    industryCode: ").append(toIndentedString(industryCode)).append("\n");
-    sb.append("    sendAmexLevel2Data: ").append(toIndentedString(sendAmexLevel2Data)).append("\n");
-    sb.append("    softDescriptorType: ").append(toIndentedString(softDescriptorType)).append("\n");
-    sb.append("    vitalNumber: ").append(toIndentedString(vitalNumber)).append("\n");
-    sb.append("    bankNumber: ").append(toIndentedString(bankNumber)).append("\n");
-    sb.append("    chainNumber: ").append(toIndentedString(chainNumber)).append("\n");
-    sb.append("    merchantBinNumber: ").append(toIndentedString(merchantBinNumber)).append("\n");
-    sb.append("    merchantLocationNumber: ").append(toIndentedString(merchantLocationNumber)).append("\n");
-    sb.append("    storeID: ").append(toIndentedString(storeID)).append("\n");
-    sb.append("    travelAgencyCode: ").append(toIndentedString(travelAgencyCode)).append("\n");
-    sb.append("    travelAgencyName: ").append(toIndentedString(travelAgencyName)).append("\n");
-    sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
-    sb.append("    enableLeastCostRouting: ").append(toIndentedString(enableLeastCostRouting)).append("\n");
-    sb.append("    enableCVVResponseIndicator: ").append(toIndentedString(enableCVVResponseIndicator)).append("\n");
-    sb.append("    enableMultiCurrencyProcessing: ").append(toIndentedString(enableMultiCurrencyProcessing)).append("\n");
-    sb.append("    enablePosNetworkSwitching: ").append(toIndentedString(enablePosNetworkSwitching)).append("\n");
-    sb.append("    enableDynamicCurrencyConversion: ").append(toIndentedString(enableDynamicCurrencyConversion)).append("\n");
-    sb.append("    merchantTier: ").append(toIndentedString(merchantTier)).append("\n");
+    if (batchGroup != null) sb.append("    batchGroup: ").append(toIndentedString(batchGroup)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (merchantVerificationValue != null) sb.append("    merchantVerificationValue: ").append(toIndentedString(merchantVerificationValue)).append("\n");
+    if (abaNumber != null) sb.append("    abaNumber: ").append(toIndentedString(abaNumber)).append("\n");
+    if (acquirer != null) sb.append("    acquirer: ").append(toIndentedString(acquirer)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (paymentTypes != null) sb.append("    paymentTypes: ").append(toIndentedString(paymentTypes)).append("\n");
+    if (currencies != null) sb.append("    currencies: ").append(toIndentedString(currencies)).append("\n");
+    if (visaAggregatorId != null) sb.append("    visaAggregatorId: ").append(toIndentedString(visaAggregatorId)).append("\n");
+    if (amexAggregatorId != null) sb.append("    amexAggregatorId: ").append(toIndentedString(amexAggregatorId)).append("\n");
+    if (masterCardAggregatorId != null) sb.append("    masterCardAggregatorId: ").append(toIndentedString(masterCardAggregatorId)).append("\n");
+    if (sicCode != null) sb.append("    sicCode: ").append(toIndentedString(sicCode)).append("\n");
+    if (allowMultipleBills != null) sb.append("    allowMultipleBills: ").append(toIndentedString(allowMultipleBills)).append("\n");
+    if (allowMerchantDescriptorOverride != null) sb.append("    allowMerchantDescriptorOverride: ").append(toIndentedString(allowMerchantDescriptorOverride)).append("\n");
+    if (enhancedData != null) sb.append("    enhancedData: ").append(toIndentedString(enhancedData)).append("\n");
+    if (fireSafetyIndicator != null) sb.append("    fireSafetyIndicator: ").append(toIndentedString(fireSafetyIndicator)).append("\n");
+    if (quasiCash != null) sb.append("    quasiCash: ").append(toIndentedString(quasiCash)).append("\n");
+    if (acquirerMerchantId != null) sb.append("    acquirerMerchantId: ").append(toIndentedString(acquirerMerchantId)).append("\n");
+    if (avsFormat != null) sb.append("    avsFormat: ").append(toIndentedString(avsFormat)).append("\n");
+    if (enableLongTransRefNo != null) sb.append("    enableLongTransRefNo: ").append(toIndentedString(enableLongTransRefNo)).append("\n");
+    if (enableLevel2 != null) sb.append("    enableLevel2: ").append(toIndentedString(enableLevel2)).append("\n");
+    if (enableMultipleTransactionAdviceAddendum != null) sb.append("    enableMultipleTransactionAdviceAddendum: ").append(toIndentedString(enableMultipleTransactionAdviceAddendum)).append("\n");
+    if (amexTransactionAdviceAddendum1 != null) sb.append("    amexTransactionAdviceAddendum1: ").append(toIndentedString(amexTransactionAdviceAddendum1)).append("\n");
+    if (enableMultiLineItems != null) sb.append("    enableMultiLineItems: ").append(toIndentedString(enableMultiLineItems)).append("\n");
+    if (enableTransactionReferenceNumber != null) sb.append("    enableTransactionReferenceNumber: ").append(toIndentedString(enableTransactionReferenceNumber)).append("\n");
+    if (enableAutoAuthReversalAfterVoid != null) sb.append("    enableAutoAuthReversalAfterVoid: ").append(toIndentedString(enableAutoAuthReversalAfterVoid)).append("\n");
+    if (enableExpresspayPanTranslation != null) sb.append("    enableExpresspayPanTranslation: ").append(toIndentedString(enableExpresspayPanTranslation)).append("\n");
+    if (enableCreditAuth != null) sb.append("    enableCreditAuth: ").append(toIndentedString(enableCreditAuth)).append("\n");
+    if (industryCode != null) sb.append("    industryCode: ").append(toIndentedString(industryCode)).append("\n");
+    if (sendAmexLevel2Data != null) sb.append("    sendAmexLevel2Data: ").append(toIndentedString(sendAmexLevel2Data)).append("\n");
+    if (softDescriptorType != null) sb.append("    softDescriptorType: ").append(toIndentedString(softDescriptorType)).append("\n");
+    if (vitalNumber != null) sb.append("    vitalNumber: ").append(toIndentedString(vitalNumber)).append("\n");
+    if (bankNumber != null) sb.append("    bankNumber: ").append(toIndentedString(bankNumber)).append("\n");
+    if (chainNumber != null) sb.append("    chainNumber: ").append(toIndentedString(chainNumber)).append("\n");
+    if (merchantBinNumber != null) sb.append("    merchantBinNumber: ").append(toIndentedString(merchantBinNumber)).append("\n");
+    if (merchantLocationNumber != null) sb.append("    merchantLocationNumber: ").append(toIndentedString(merchantLocationNumber)).append("\n");
+    if (storeID != null) sb.append("    storeID: ").append(toIndentedString(storeID)).append("\n");
+    if (travelAgencyCode != null) sb.append("    travelAgencyCode: ").append(toIndentedString(travelAgencyCode)).append("\n");
+    if (travelAgencyName != null) sb.append("    travelAgencyName: ").append(toIndentedString(travelAgencyName)).append("\n");
+    if (settlementCurrency != null) sb.append("    settlementCurrency: ").append(toIndentedString(settlementCurrency)).append("\n");
+    if (enableLeastCostRouting != null) sb.append("    enableLeastCostRouting: ").append(toIndentedString(enableLeastCostRouting)).append("\n");
+    if (enableCVVResponseIndicator != null) sb.append("    enableCVVResponseIndicator: ").append(toIndentedString(enableCVVResponseIndicator)).append("\n");
+    if (enableMultiCurrencyProcessing != null) sb.append("    enableMultiCurrencyProcessing: ").append(toIndentedString(enableMultiCurrencyProcessing)).append("\n");
+    if (enablePosNetworkSwitching != null) sb.append("    enablePosNetworkSwitching: ").append(toIndentedString(enablePosNetworkSwitching)).append("\n");
+    if (enableDynamicCurrencyConversion != null) sb.append("    enableDynamicCurrencyConversion: ").append(toIndentedString(enableDynamicCurrencyConversion)).append("\n");
+    if (merchantTier != null) sb.append("    merchantTier: ").append(toIndentedString(merchantTier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1165,10 +1165,10 @@ public class CardProcessingConfigCommonProcessors {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

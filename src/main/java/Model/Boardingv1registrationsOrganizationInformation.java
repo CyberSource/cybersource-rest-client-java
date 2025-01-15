@@ -152,7 +152,7 @@ public class Boardingv1registrationsOrganizationInformation {
    * @return configurable
   **/
   @ApiModelProperty(example = "false", value = "This denotes the one organization, with exception to the TRANSACTING types, that is allowed to be used for configuration purposes against products.  Eventually this field will be deprecated and all organizations will be allowed for product configuration.")
-  public Boolean isConfigurable() {
+  public Boolean Configurable() {
     return configurable;
   }
 
@@ -254,15 +254,15 @@ public class Boardingv1registrationsOrganizationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsOrganizationInformation {\n");
     
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    parentOrganizationId: ").append(toIndentedString(parentOrganizationId)).append("\n");
-    sb.append("    childOrganizations: ").append(toIndentedString(childOrganizations)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    configurable: ").append(toIndentedString(configurable)).append("\n");
-    sb.append("    businessInformation: ").append(toIndentedString(businessInformation)).append("\n");
-    sb.append("    KYC: ").append(toIndentedString(KYC)).append("\n");
-    sb.append("    owners: ").append(toIndentedString(owners)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (parentOrganizationId != null) sb.append("    parentOrganizationId: ").append(toIndentedString(parentOrganizationId)).append("\n");
+    if (childOrganizations != null) sb.append("    childOrganizations: ").append(toIndentedString(childOrganizations)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (configurable != null) sb.append("    configurable: ").append(toIndentedString(configurable)).append("\n");
+    if (businessInformation != null) sb.append("    businessInformation: ").append(toIndentedString(businessInformation)).append("\n");
+    if (KYC != null) sb.append("    KYC: ").append(toIndentedString(KYC)).append("\n");
+    if (owners != null) sb.append("    owners: ").append(toIndentedString(owners)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -273,10 +273,10 @@ public class Boardingv1registrationsOrganizationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

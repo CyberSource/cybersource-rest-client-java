@@ -98,8 +98,8 @@ public class Tmsv2customersEmbeddedDefaultShippingAddressLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultShippingAddressLinks {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class Tmsv2customersEmbeddedDefaultShippingAddressLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

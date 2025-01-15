@@ -74,7 +74,7 @@ public class CaseManagementCommentsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CaseManagementCommentsRequest {\n");
     
-    sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    if (comments != null) sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class CaseManagementCommentsRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

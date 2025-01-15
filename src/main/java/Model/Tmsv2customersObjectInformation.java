@@ -96,8 +96,8 @@ public class Tmsv2customersObjectInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersObjectInformation {\n");
     
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
+    if (title != null) sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    if (comment != null) sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Tmsv2customersObjectInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

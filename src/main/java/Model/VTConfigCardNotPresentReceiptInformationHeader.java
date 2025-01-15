@@ -74,7 +74,7 @@ public class VTConfigCardNotPresentReceiptInformationHeader {
     StringBuilder sb = new StringBuilder();
     sb.append("class VTConfigCardNotPresentReceiptInformationHeader {\n");
     
-    sb.append("    virtualTerminalReceiptHeader: ").append(toIndentedString(virtualTerminalReceiptHeader)).append("\n");
+    if (virtualTerminalReceiptHeader != null) sb.append("    virtualTerminalReceiptHeader: ").append(toIndentedString(virtualTerminalReceiptHeader)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class VTConfigCardNotPresentReceiptInformationHeader {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

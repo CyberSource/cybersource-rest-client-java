@@ -96,8 +96,8 @@ public class VTConfigCardNotPresentReceiptInformationOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class VTConfigCardNotPresentReceiptInformationOrderInformation {\n");
     
-    sb.append("    emailAliasName: ").append(toIndentedString(emailAliasName)).append("\n");
-    sb.append("    customReplyToEmailAddress: ").append(toIndentedString(customReplyToEmailAddress)).append("\n");
+    if (emailAliasName != null) sb.append("    emailAliasName: ").append(toIndentedString(emailAliasName)).append("\n");
+    if (customReplyToEmailAddress != null) sb.append("    customReplyToEmailAddress: ").append(toIndentedString(customReplyToEmailAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class VTConfigCardNotPresentReceiptInformationOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

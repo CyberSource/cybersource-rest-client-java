@@ -150,7 +150,7 @@ public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
    * @return applied
   **/
   @ApiModelProperty(value = "Flag that indicates whether the alternate tax amount (`orderInformation.amountDetails.taxDetails[].amount`) is included in the request.  Possible values: - `false`: alternate tax amount is not included in the request. - `true`: alternate tax amount is included in the request. ")
-  public Boolean isApplied() {
+  public Boolean Applied() {
     return applied;
   }
 
@@ -206,13 +206,13 @@ public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
-    sb.append("    applied: ").append(toIndentedString(applied)).append("\n");
-    sb.append("    exemptionCode: ").append(toIndentedString(exemptionCode)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (rate != null) sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (taxId != null) sb.append("    taxId: ").append(toIndentedString(taxId)).append("\n");
+    if (applied != null) sb.append("    applied: ").append(toIndentedString(applied)).append("\n");
+    if (exemptionCode != null) sb.append("    exemptionCode: ").append(toIndentedString(exemptionCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -223,10 +223,10 @@ public class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

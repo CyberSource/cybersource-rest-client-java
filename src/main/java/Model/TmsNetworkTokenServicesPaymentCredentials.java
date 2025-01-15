@@ -42,7 +42,7 @@ public class TmsNetworkTokenServicesPaymentCredentials {
    * @return enabled
   **/
   @ApiModelProperty(value = "Indicates if Payment Credentials are enabled. If enabled, this provides access to the unredacted token and its associated cryptogram.")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -74,7 +74,7 @@ public class TmsNetworkTokenServicesPaymentCredentials {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsNetworkTokenServicesPaymentCredentials {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TmsNetworkTokenServicesPaymentCredentials {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

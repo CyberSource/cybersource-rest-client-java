@@ -189,7 +189,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return enableEscrowOption
   **/
   @ApiModelProperty(value = "Indicates whether to use the customer's escrow agreement. Possible values: - `true`: yes, use the customer's escrow agreement. - `false`: no, do not use the customer's escrow agreement.  ")
-  public Boolean isEnableEscrowOption() {
+  public Boolean EnableEscrowOption() {
     return enableEscrowOption;
   }
 
@@ -251,7 +251,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return capture
   **/
   @ApiModelProperty(value = "Indicates whether to also include a capture  in the submitted authorization request or not.  Possible values: - `true`: Include a capture with an authorization request. - `false`: (default) Do not include a capture with an authorization request.  #### Used by **Authorization and Capture** Optional field. ")
-  public Boolean isCapture() {
+  public Boolean Capture() {
     return capture;
   }
 
@@ -738,7 +738,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return payByPointsIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates if the transaction is pay by points transaction true: Transaction uses loyalty points false: Transaction does not use loyalty points Default: false ")
-  public Boolean isPayByPointsIndicator() {
+  public Boolean PayByPointsIndicator() {
     return payByPointsIndicator;
   }
 
@@ -774,7 +774,7 @@ public class Ptsv2paymentsProcessingInformation {
    * @return isReturnAuthRecordEnabled
   **/
   @ApiModelProperty(value = "Flag that indicates the functionality we are having for merchants for which auth is done through Cybersource but settlement is done by themselves. true: functionality is supported. Processor should send raw processor auth response to Merchant. false: functionality is not supported. Default: false ")
-  public Boolean isIsReturnAuthRecordEnabled() {
+  public Boolean IsReturnAuthRecordEnabled() {
     return isReturnAuthRecordEnabled;
   }
 
@@ -915,44 +915,44 @@ public class Ptsv2paymentsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformation {\n");
     
-    sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
-    sb.append("    enableEscrowOption: ").append(toIndentedString(enableEscrowOption)).append("\n");
-    sb.append("    actionTokenTypes: ").append(toIndentedString(actionTokenTypes)).append("\n");
-    sb.append("    binSource: ").append(toIndentedString(binSource)).append("\n");
-    sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
-    sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
-    sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
-    sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
-    sb.append("    commerceIndicatorLabel: ").append(toIndentedString(commerceIndicatorLabel)).append("\n");
-    sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
-    sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
-    sb.append("    transactionTimeout: ").append(toIndentedString(transactionTimeout)).append("\n");
-    sb.append("    intentsId: ").append(toIndentedString(intentsId)).append("\n");
-    sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
-    sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
-    sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
-    sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
-    sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
-    sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
-    sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
-    sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
-    sb.append("    electronicBenefitsTransfer: ").append(toIndentedString(electronicBenefitsTransfer)).append("\n");
-    sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
-    sb.append("    walletType: ").append(toIndentedString(walletType)).append("\n");
-    sb.append("    nationalNetDomesticData: ").append(toIndentedString(nationalNetDomesticData)).append("\n");
-    sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
-    sb.append("    mobileRemotePaymentType: ").append(toIndentedString(mobileRemotePaymentType)).append("\n");
-    sb.append("    extendedCreditTotalCount: ").append(toIndentedString(extendedCreditTotalCount)).append("\n");
-    sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
-    sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
-    sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
-    sb.append("    isReturnAuthRecordEnabled: ").append(toIndentedString(isReturnAuthRecordEnabled)).append("\n");
-    sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
-    sb.append("    enablerId: ").append(toIndentedString(enablerId)).append("\n");
-    sb.append("    processingInstruction: ").append(toIndentedString(processingInstruction)).append("\n");
+    if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
+    if (enableEscrowOption != null) sb.append("    enableEscrowOption: ").append(toIndentedString(enableEscrowOption)).append("\n");
+    if (actionTokenTypes != null) sb.append("    actionTokenTypes: ").append(toIndentedString(actionTokenTypes)).append("\n");
+    if (binSource != null) sb.append("    binSource: ").append(toIndentedString(binSource)).append("\n");
+    if (capture != null) sb.append("    capture: ").append(toIndentedString(capture)).append("\n");
+    if (processorId != null) sb.append("    processorId: ").append(toIndentedString(processorId)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    if (commerceIndicatorLabel != null) sb.append("    commerceIndicatorLabel: ").append(toIndentedString(commerceIndicatorLabel)).append("\n");
+    if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (linkId != null) sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
+    if (purchaseLevel != null) sb.append("    purchaseLevel: ").append(toIndentedString(purchaseLevel)).append("\n");
+    if (transactionTimeout != null) sb.append("    transactionTimeout: ").append(toIndentedString(transactionTimeout)).append("\n");
+    if (intentsId != null) sb.append("    intentsId: ").append(toIndentedString(intentsId)).append("\n");
+    if (reportGroup != null) sb.append("    reportGroup: ").append(toIndentedString(reportGroup)).append("\n");
+    if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
+    if (industryDataType != null) sb.append("    industryDataType: ").append(toIndentedString(industryDataType)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    if (captureOptions != null) sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
+    if (recurringOptions != null) sb.append("    recurringOptions: ").append(toIndentedString(recurringOptions)).append("\n");
+    if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
+    if (purchaseOptions != null) sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
+    if (electronicBenefitsTransfer != null) sb.append("    electronicBenefitsTransfer: ").append(toIndentedString(electronicBenefitsTransfer)).append("\n");
+    if (loanOptions != null) sb.append("    loanOptions: ").append(toIndentedString(loanOptions)).append("\n");
+    if (walletType != null) sb.append("    walletType: ").append(toIndentedString(walletType)).append("\n");
+    if (nationalNetDomesticData != null) sb.append("    nationalNetDomesticData: ").append(toIndentedString(nationalNetDomesticData)).append("\n");
+    if (japanPaymentOptions != null) sb.append("    japanPaymentOptions: ").append(toIndentedString(japanPaymentOptions)).append("\n");
+    if (mobileRemotePaymentType != null) sb.append("    mobileRemotePaymentType: ").append(toIndentedString(mobileRemotePaymentType)).append("\n");
+    if (extendedCreditTotalCount != null) sb.append("    extendedCreditTotalCount: ").append(toIndentedString(extendedCreditTotalCount)).append("\n");
+    if (networkRoutingOrder != null) sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
+    if (payByPointsIndicator != null) sb.append("    payByPointsIndicator: ").append(toIndentedString(payByPointsIndicator)).append("\n");
+    if (timeout != null) sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+    if (isReturnAuthRecordEnabled != null) sb.append("    isReturnAuthRecordEnabled: ").append(toIndentedString(isReturnAuthRecordEnabled)).append("\n");
+    if (networkPartnerId != null) sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (enablerId != null) sb.append("    enablerId: ").append(toIndentedString(enablerId)).append("\n");
+    if (processingInstruction != null) sb.append("    processingInstruction: ").append(toIndentedString(processingInstruction)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -963,10 +963,10 @@ public class Ptsv2paymentsProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

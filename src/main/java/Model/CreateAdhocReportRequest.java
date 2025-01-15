@@ -307,17 +307,17 @@ public class CreateAdhocReportRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateAdhocReportRequest {\n");
     
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    reportDefinitionName: ").append(toIndentedString(reportDefinitionName)).append("\n");
-    sb.append("    reportFields: ").append(toIndentedString(reportFields)).append("\n");
-    sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");
-    sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
-    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
-    sb.append("    reportStartTime: ").append(toIndentedString(reportStartTime)).append("\n");
-    sb.append("    reportEndTime: ").append(toIndentedString(reportEndTime)).append("\n");
-    sb.append("    reportFilters: ").append(toIndentedString(reportFilters)).append("\n");
-    sb.append("    reportPreferences: ").append(toIndentedString(reportPreferences)).append("\n");
-    sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (reportDefinitionName != null) sb.append("    reportDefinitionName: ").append(toIndentedString(reportDefinitionName)).append("\n");
+    if (reportFields != null) sb.append("    reportFields: ").append(toIndentedString(reportFields)).append("\n");
+    if (reportMimeType != null) sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");
+    if (reportName != null) sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
+    if (timezone != null) sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    if (reportStartTime != null) sb.append("    reportStartTime: ").append(toIndentedString(reportStartTime)).append("\n");
+    if (reportEndTime != null) sb.append("    reportEndTime: ").append(toIndentedString(reportEndTime)).append("\n");
+    if (reportFilters != null) sb.append("    reportFilters: ").append(toIndentedString(reportFilters)).append("\n");
+    if (reportPreferences != null) sb.append("    reportPreferences: ").append(toIndentedString(reportPreferences)).append("\n");
+    if (groupName != null) sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -328,10 +328,10 @@ public class CreateAdhocReportRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

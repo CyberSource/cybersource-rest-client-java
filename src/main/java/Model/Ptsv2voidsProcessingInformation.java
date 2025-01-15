@@ -74,7 +74,7 @@ public class Ptsv2voidsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2voidsProcessingInformation {\n");
     
-    sb.append("    paymentId: ").append(toIndentedString(paymentId)).append("\n");
+    if (paymentId != null) sb.append("    paymentId: ").append(toIndentedString(paymentId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2voidsProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

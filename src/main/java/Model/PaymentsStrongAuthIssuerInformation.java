@@ -162,11 +162,11 @@ public class PaymentsStrongAuthIssuerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsStrongAuthIssuerInformation {\n");
     
-    sb.append("    riskAnalysisExemptionResult: ").append(toIndentedString(riskAnalysisExemptionResult)).append("\n");
-    sb.append("    trustedMerchantExemptionResult: ").append(toIndentedString(trustedMerchantExemptionResult)).append("\n");
-    sb.append("    lowValueExemptionResult: ").append(toIndentedString(lowValueExemptionResult)).append("\n");
-    sb.append("    secureCorporatePaymentResult: ").append(toIndentedString(secureCorporatePaymentResult)).append("\n");
-    sb.append("    transactionRiskAnalysisExemptionResult: ").append(toIndentedString(transactionRiskAnalysisExemptionResult)).append("\n");
+    if (riskAnalysisExemptionResult != null) sb.append("    riskAnalysisExemptionResult: ").append(toIndentedString(riskAnalysisExemptionResult)).append("\n");
+    if (trustedMerchantExemptionResult != null) sb.append("    trustedMerchantExemptionResult: ").append(toIndentedString(trustedMerchantExemptionResult)).append("\n");
+    if (lowValueExemptionResult != null) sb.append("    lowValueExemptionResult: ").append(toIndentedString(lowValueExemptionResult)).append("\n");
+    if (secureCorporatePaymentResult != null) sb.append("    secureCorporatePaymentResult: ").append(toIndentedString(secureCorporatePaymentResult)).append("\n");
+    if (transactionRiskAnalysisExemptionResult != null) sb.append("    transactionRiskAnalysisExemptionResult: ").append(toIndentedString(transactionRiskAnalysisExemptionResult)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class PaymentsStrongAuthIssuerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

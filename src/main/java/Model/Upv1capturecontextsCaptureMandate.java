@@ -77,7 +77,7 @@ public class Upv1capturecontextsCaptureMandate {
    * @return requestEmail
   **/
   @ApiModelProperty(value = "Configure Unified Checkout to capture customer email address.  Possible values:  - True  - False ")
-  public Boolean isRequestEmail() {
+  public Boolean RequestEmail() {
     return requestEmail;
   }
 
@@ -95,7 +95,7 @@ public class Upv1capturecontextsCaptureMandate {
    * @return requestPhone
   **/
   @ApiModelProperty(value = "Configure Unified Checkout to capture customer phone number.  Possible values: - True - False ")
-  public Boolean isRequestPhone() {
+  public Boolean RequestPhone() {
     return requestPhone;
   }
 
@@ -113,7 +113,7 @@ public class Upv1capturecontextsCaptureMandate {
    * @return requestShipping
   **/
   @ApiModelProperty(value = "Configure Unified Checkout to capture customer shipping details.  Possible values: - True - False ")
-  public Boolean isRequestShipping() {
+  public Boolean RequestShipping() {
     return requestShipping;
   }
 
@@ -157,7 +157,7 @@ public class Upv1capturecontextsCaptureMandate {
    * @return showAcceptedNetworkIcons
   **/
   @ApiModelProperty(value = "Configure Unified Checkout to display the list of accepted card networks beneath the payment button  Possible values: - True - False ")
-  public Boolean isShowAcceptedNetworkIcons() {
+  public Boolean ShowAcceptedNetworkIcons() {
     return showAcceptedNetworkIcons;
   }
 
@@ -194,12 +194,12 @@ public class Upv1capturecontextsCaptureMandate {
     StringBuilder sb = new StringBuilder();
     sb.append("class Upv1capturecontextsCaptureMandate {\n");
     
-    sb.append("    billingType: ").append(toIndentedString(billingType)).append("\n");
-    sb.append("    requestEmail: ").append(toIndentedString(requestEmail)).append("\n");
-    sb.append("    requestPhone: ").append(toIndentedString(requestPhone)).append("\n");
-    sb.append("    requestShipping: ").append(toIndentedString(requestShipping)).append("\n");
-    sb.append("    shipToCountries: ").append(toIndentedString(shipToCountries)).append("\n");
-    sb.append("    showAcceptedNetworkIcons: ").append(toIndentedString(showAcceptedNetworkIcons)).append("\n");
+    if (billingType != null) sb.append("    billingType: ").append(toIndentedString(billingType)).append("\n");
+    if (requestEmail != null) sb.append("    requestEmail: ").append(toIndentedString(requestEmail)).append("\n");
+    if (requestPhone != null) sb.append("    requestPhone: ").append(toIndentedString(requestPhone)).append("\n");
+    if (requestShipping != null) sb.append("    requestShipping: ").append(toIndentedString(requestShipping)).append("\n");
+    if (shipToCountries != null) sb.append("    shipToCountries: ").append(toIndentedString(shipToCountries)).append("\n");
+    if (showAcceptedNetworkIcons != null) sb.append("    showAcceptedNetworkIcons: ").append(toIndentedString(showAcceptedNetworkIcons)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -210,10 +210,10 @@ public class Upv1capturecontextsCaptureMandate {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

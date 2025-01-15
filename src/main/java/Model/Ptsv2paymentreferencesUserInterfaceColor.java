@@ -250,15 +250,15 @@ public class Ptsv2paymentreferencesUserInterfaceColor {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesUserInterfaceColor {\n");
     
-    sb.append("    border: ").append(toIndentedString(border)).append("\n");
-    sb.append("    borderSelected: ").append(toIndentedString(borderSelected)).append("\n");
-    sb.append("    button: ").append(toIndentedString(button)).append("\n");
-    sb.append("    buttonText: ").append(toIndentedString(buttonText)).append("\n");
-    sb.append("    checkbox: ").append(toIndentedString(checkbox)).append("\n");
-    sb.append("    checkboxCheckMark: ").append(toIndentedString(checkboxCheckMark)).append("\n");
-    sb.append("    header: ").append(toIndentedString(header)).append("\n");
-    sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    if (border != null) sb.append("    border: ").append(toIndentedString(border)).append("\n");
+    if (borderSelected != null) sb.append("    borderSelected: ").append(toIndentedString(borderSelected)).append("\n");
+    if (button != null) sb.append("    button: ").append(toIndentedString(button)).append("\n");
+    if (buttonText != null) sb.append("    buttonText: ").append(toIndentedString(buttonText)).append("\n");
+    if (checkbox != null) sb.append("    checkbox: ").append(toIndentedString(checkbox)).append("\n");
+    if (checkboxCheckMark != null) sb.append("    checkboxCheckMark: ").append(toIndentedString(checkboxCheckMark)).append("\n");
+    if (header != null) sb.append("    header: ").append(toIndentedString(header)).append("\n");
+    if (link != null) sb.append("    link: ").append(toIndentedString(link)).append("\n");
+    if (text != null) sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -269,10 +269,10 @@ public class Ptsv2paymentreferencesUserInterfaceColor {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

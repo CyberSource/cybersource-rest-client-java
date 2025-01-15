@@ -96,8 +96,8 @@ public class TssV2GetEmvTags200ResponseEmvTagBreakdownList {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2GetEmvTags200ResponseEmvTagBreakdownList {\n");
     
-    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (tag != null) sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class TssV2GetEmvTags200ResponseEmvTagBreakdownList {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

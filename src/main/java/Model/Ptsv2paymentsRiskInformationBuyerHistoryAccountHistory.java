@@ -45,7 +45,7 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory {
    * @return firstUseOfShippingAddress
   **/
   @ApiModelProperty(value = "Applicable when this is not a guest account. ")
-  public Boolean isFirstUseOfShippingAddress() {
+  public Boolean FirstUseOfShippingAddress() {
     return firstUseOfShippingAddress;
   }
 
@@ -96,8 +96,8 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory {\n");
     
-    sb.append("    firstUseOfShippingAddress: ").append(toIndentedString(firstUseOfShippingAddress)).append("\n");
-    sb.append("    shippingAddressUsageDate: ").append(toIndentedString(shippingAddressUsageDate)).append("\n");
+    if (firstUseOfShippingAddress != null) sb.append("    firstUseOfShippingAddress: ").append(toIndentedString(firstUseOfShippingAddress)).append("\n");
+    if (shippingAddressUsageDate != null) sb.append("    shippingAddressUsageDate: ").append(toIndentedString(shippingAddressUsageDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

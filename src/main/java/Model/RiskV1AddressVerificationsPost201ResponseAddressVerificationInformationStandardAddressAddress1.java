@@ -96,8 +96,8 @@ public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInforma
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformationStandardAddressAddress1 {\n");
     
-    sb.append("    withApartment: ").append(toIndentedString(withApartment)).append("\n");
-    sb.append("    withoutApartment: ").append(toIndentedString(withoutApartment)).append("\n");
+    if (withApartment != null) sb.append("    withApartment: ").append(toIndentedString(withApartment)).append("\n");
+    if (withoutApartment != null) sb.append("    withoutApartment: ").append(toIndentedString(withoutApartment)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInforma
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

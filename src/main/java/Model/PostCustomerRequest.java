@@ -291,16 +291,16 @@ public class PostCustomerRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PostCustomerRequest {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    objectInformation: ").append(toIndentedString(objectInformation)).append("\n");
-    sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
-    sb.append("    defaultPaymentInstrument: ").append(toIndentedString(defaultPaymentInstrument)).append("\n");
-    sb.append("    defaultShippingAddress: ").append(toIndentedString(defaultShippingAddress)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (objectInformation != null) sb.append("    objectInformation: ").append(toIndentedString(objectInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (merchantDefinedInformation != null) sb.append("    merchantDefinedInformation: ").append(toIndentedString(merchantDefinedInformation)).append("\n");
+    if (defaultPaymentInstrument != null) sb.append("    defaultPaymentInstrument: ").append(toIndentedString(defaultPaymentInstrument)).append("\n");
+    if (defaultShippingAddress != null) sb.append("    defaultShippingAddress: ").append(toIndentedString(defaultShippingAddress)).append("\n");
+    if (metadata != null) sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    if (embedded != null) sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -311,10 +311,10 @@ public class PostCustomerRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

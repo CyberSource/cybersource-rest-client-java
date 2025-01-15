@@ -364,20 +364,20 @@ public class Vasv2taxOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Vasv2taxOrderInformationLineItems {\n");
     
-    sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
-    sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    orderAcceptance: ").append(toIndentedString(orderAcceptance)).append("\n");
-    sb.append("    orderOrigin: ").append(toIndentedString(orderOrigin)).append("\n");
-    sb.append("    shipFromCountry: ").append(toIndentedString(shipFromCountry)).append("\n");
-    sb.append("    shipFromAdministrativeArea: ").append(toIndentedString(shipFromAdministrativeArea)).append("\n");
-    sb.append("    shipFromLocality: ").append(toIndentedString(shipFromLocality)).append("\n");
-    sb.append("    shipFromPostalCode: ").append(toIndentedString(shipFromPostalCode)).append("\n");
-    sb.append("    buyerVatRegistrationNumber: ").append(toIndentedString(buyerVatRegistrationNumber)).append("\n");
-    sb.append("    sellerVatRegistrationNumber: ").append(toIndentedString(sellerVatRegistrationNumber)).append("\n");
+    if (productSKU != null) sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (orderAcceptance != null) sb.append("    orderAcceptance: ").append(toIndentedString(orderAcceptance)).append("\n");
+    if (orderOrigin != null) sb.append("    orderOrigin: ").append(toIndentedString(orderOrigin)).append("\n");
+    if (shipFromCountry != null) sb.append("    shipFromCountry: ").append(toIndentedString(shipFromCountry)).append("\n");
+    if (shipFromAdministrativeArea != null) sb.append("    shipFromAdministrativeArea: ").append(toIndentedString(shipFromAdministrativeArea)).append("\n");
+    if (shipFromLocality != null) sb.append("    shipFromLocality: ").append(toIndentedString(shipFromLocality)).append("\n");
+    if (shipFromPostalCode != null) sb.append("    shipFromPostalCode: ").append(toIndentedString(shipFromPostalCode)).append("\n");
+    if (buyerVatRegistrationNumber != null) sb.append("    buyerVatRegistrationNumber: ").append(toIndentedString(buyerVatRegistrationNumber)).append("\n");
+    if (sellerVatRegistrationNumber != null) sb.append("    sellerVatRegistrationNumber: ").append(toIndentedString(sellerVatRegistrationNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -388,10 +388,10 @@ public class Vasv2taxOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

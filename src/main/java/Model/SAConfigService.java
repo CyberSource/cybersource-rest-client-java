@@ -61,7 +61,7 @@ public class SAConfigService {
    * @return decisionManagerVerboseEnabled
   **/
   @ApiModelProperty(value = "Toggles whether verbose Decision Manager results should be present in the Secure Acceptance response. As this response passes through the browser, it is recommended to set this to \"false\" outside of debugging.")
-  public Boolean isDecisionManagerVerboseEnabled() {
+  public Boolean DecisionManagerVerboseEnabled() {
     return decisionManagerVerboseEnabled;
   }
 
@@ -97,7 +97,7 @@ public class SAConfigService {
    * @return decisionManagerEnabled
   **/
   @ApiModelProperty(value = "Toggles whether Decision Manager is enabled or not for Secure Acceptance transactions. Requires the transacting MID to be enabled and configured for Decicion Manager.")
-  public Boolean isDecisionManagerEnabled() {
+  public Boolean DecisionManagerEnabled() {
     return decisionManagerEnabled;
   }
 
@@ -115,7 +115,7 @@ public class SAConfigService {
    * @return tokenizationEnabled
   **/
   @ApiModelProperty(value = "Toggles whether Tokenization is enabled or not for Secure Acceptance transactions. Requires the transacting MID to be enabled and configured for Tokenization.")
-  public Boolean isTokenizationEnabled() {
+  public Boolean TokenizationEnabled() {
     return tokenizationEnabled;
   }
 
@@ -133,7 +133,7 @@ public class SAConfigService {
    * @return reverseAuthOnAddressVerificationSystemFailure
   **/
   @ApiModelProperty(value = "Toggles whether or not an approved Authorization that fails AVS should be automatically reversed.")
-  public Boolean isReverseAuthOnAddressVerificationSystemFailure() {
+  public Boolean ReverseAuthOnAddressVerificationSystemFailure() {
     return reverseAuthOnAddressVerificationSystemFailure;
   }
 
@@ -151,7 +151,7 @@ public class SAConfigService {
    * @return deviceFingerprintEnabled
   **/
   @ApiModelProperty(value = "Toggles whether or not fraud Device Fingerprinting is enabled on the Hosted Checkout. This simplifies enablement for Decision Manager.")
-  public Boolean isDeviceFingerprintEnabled() {
+  public Boolean DeviceFingerprintEnabled() {
     return deviceFingerprintEnabled;
   }
 
@@ -169,7 +169,7 @@ public class SAConfigService {
    * @return reverseAuthOnCardVerificationNumberFailure
   **/
   @ApiModelProperty(value = "Toggles whether or not an approved Authorization that fails CVN check that should be automatically reversed.")
-  public Boolean isReverseAuthOnCardVerificationNumberFailure() {
+  public Boolean ReverseAuthOnCardVerificationNumberFailure() {
     return reverseAuthOnCardVerificationNumberFailure;
   }
 
@@ -207,13 +207,13 @@ public class SAConfigService {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfigService {\n");
     
-    sb.append("    decisionManagerVerboseEnabled: ").append(toIndentedString(decisionManagerVerboseEnabled)).append("\n");
-    sb.append("    declinedRetryLimit: ").append(toIndentedString(declinedRetryLimit)).append("\n");
-    sb.append("    decisionManagerEnabled: ").append(toIndentedString(decisionManagerEnabled)).append("\n");
-    sb.append("    tokenizationEnabled: ").append(toIndentedString(tokenizationEnabled)).append("\n");
-    sb.append("    reverseAuthOnAddressVerificationSystemFailure: ").append(toIndentedString(reverseAuthOnAddressVerificationSystemFailure)).append("\n");
-    sb.append("    deviceFingerprintEnabled: ").append(toIndentedString(deviceFingerprintEnabled)).append("\n");
-    sb.append("    reverseAuthOnCardVerificationNumberFailure: ").append(toIndentedString(reverseAuthOnCardVerificationNumberFailure)).append("\n");
+    if (decisionManagerVerboseEnabled != null) sb.append("    decisionManagerVerboseEnabled: ").append(toIndentedString(decisionManagerVerboseEnabled)).append("\n");
+    if (declinedRetryLimit != null) sb.append("    declinedRetryLimit: ").append(toIndentedString(declinedRetryLimit)).append("\n");
+    if (decisionManagerEnabled != null) sb.append("    decisionManagerEnabled: ").append(toIndentedString(decisionManagerEnabled)).append("\n");
+    if (tokenizationEnabled != null) sb.append("    tokenizationEnabled: ").append(toIndentedString(tokenizationEnabled)).append("\n");
+    if (reverseAuthOnAddressVerificationSystemFailure != null) sb.append("    reverseAuthOnAddressVerificationSystemFailure: ").append(toIndentedString(reverseAuthOnAddressVerificationSystemFailure)).append("\n");
+    if (deviceFingerprintEnabled != null) sb.append("    deviceFingerprintEnabled: ").append(toIndentedString(deviceFingerprintEnabled)).append("\n");
+    if (reverseAuthOnCardVerificationNumberFailure != null) sb.append("    reverseAuthOnCardVerificationNumberFailure: ").append(toIndentedString(reverseAuthOnCardVerificationNumberFailure)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -224,10 +224,10 @@ public class SAConfigService {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

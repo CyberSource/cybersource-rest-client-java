@@ -185,12 +185,12 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseClientReferenceInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    applicationVersion: ").append(toIndentedString(applicationVersion)).append("\n");
-    sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
-    sb.append("    applicationUser: ").append(toIndentedString(applicationUser)).append("\n");
-    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
-    sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (applicationVersion != null) sb.append("    applicationVersion: ").append(toIndentedString(applicationVersion)).append("\n");
+    if (applicationName != null) sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
+    if (applicationUser != null) sb.append("    applicationUser: ").append(toIndentedString(applicationUser)).append("\n");
+    if (partner != null) sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
+    if (comments != null) sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -201,10 +201,10 @@ public class TssV2TransactionsGet200ResponseClientReferenceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

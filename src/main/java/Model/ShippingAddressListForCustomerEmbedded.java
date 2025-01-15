@@ -69,7 +69,7 @@ public class ShippingAddressListForCustomerEmbedded {
     StringBuilder sb = new StringBuilder();
     sb.append("class ShippingAddressListForCustomerEmbedded {\n");
     
-    sb.append("    shippingAddresses: ").append(toIndentedString(shippingAddresses)).append("\n");
+    if (shippingAddresses != null) sb.append("    shippingAddresses: ").append(toIndentedString(shippingAddresses)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -80,10 +80,10 @@ public class ShippingAddressListForCustomerEmbedded {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

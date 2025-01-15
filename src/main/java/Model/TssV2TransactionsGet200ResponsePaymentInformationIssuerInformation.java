@@ -140,10 +140,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation 
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    binLength: ").append(toIndentedString(binLength)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (binLength != null) sb.append("    binLength: ").append(toIndentedString(binLength)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation 
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

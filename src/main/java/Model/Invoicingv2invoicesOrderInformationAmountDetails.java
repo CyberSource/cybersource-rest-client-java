@@ -232,14 +232,14 @@ public class Invoicingv2invoicesOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Invoicingv2invoicesOrderInformationAmountDetails {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
-    sb.append("    discountPercent: ").append(toIndentedString(discountPercent)).append("\n");
-    sb.append("    subAmount: ").append(toIndentedString(subAmount)).append("\n");
-    sb.append("    minimumPartialAmount: ").append(toIndentedString(minimumPartialAmount)).append("\n");
-    sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
-    sb.append("    freight: ").append(toIndentedString(freight)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (discountPercent != null) sb.append("    discountPercent: ").append(toIndentedString(discountPercent)).append("\n");
+    if (subAmount != null) sb.append("    subAmount: ").append(toIndentedString(subAmount)).append("\n");
+    if (minimumPartialAmount != null) sb.append("    minimumPartialAmount: ").append(toIndentedString(minimumPartialAmount)).append("\n");
+    if (taxDetails != null) sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
+    if (freight != null) sb.append("    freight: ").append(toIndentedString(freight)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -250,10 +250,10 @@ public class Invoicingv2invoicesOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

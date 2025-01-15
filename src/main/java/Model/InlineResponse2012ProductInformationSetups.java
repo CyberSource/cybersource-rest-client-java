@@ -97,8 +97,8 @@ public class InlineResponse2012ProductInformationSetups {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012ProductInformationSetups {\n");
     
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    setups: ").append(toIndentedString(setups)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (setups != null) sb.append("    setups: ").append(toIndentedString(setups)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class InlineResponse2012ProductInformationSetups {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

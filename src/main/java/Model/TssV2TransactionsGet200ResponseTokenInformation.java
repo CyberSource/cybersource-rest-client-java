@@ -188,12 +188,12 @@ public class TssV2TransactionsGet200ResponseTokenInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseTokenInformation {\n");
     
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
-    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
-    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
-    sb.append("    jti: ").append(toIndentedString(jti)).append("\n");
-    sb.append("    transientTokenJwt: ").append(toIndentedString(transientTokenJwt)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    if (shippingAddress != null) sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    if (jti != null) sb.append("    jti: ").append(toIndentedString(jti)).append("\n");
+    if (transientTokenJwt != null) sb.append("    transientTokenJwt: ").append(toIndentedString(transientTokenJwt)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -204,10 +204,10 @@ public class TssV2TransactionsGet200ResponseTokenInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

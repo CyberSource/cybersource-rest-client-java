@@ -163,11 +163,11 @@ public class Ptsv1pushfundstransferOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv1pushfundstransferOrderInformationAmountDetails {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    sourceCurrency: ").append(toIndentedString(sourceCurrency)).append("\n");
-    sb.append("    destinationCurrency: ").append(toIndentedString(destinationCurrency)).append("\n");
-    sb.append("    surcharge: ").append(toIndentedString(surcharge)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (sourceCurrency != null) sb.append("    sourceCurrency: ").append(toIndentedString(sourceCurrency)).append("\n");
+    if (destinationCurrency != null) sb.append("    destinationCurrency: ").append(toIndentedString(destinationCurrency)).append("\n");
+    if (surcharge != null) sb.append("    surcharge: ").append(toIndentedString(surcharge)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -178,10 +178,10 @@ public class Ptsv1pushfundstransferOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

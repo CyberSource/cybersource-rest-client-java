@@ -158,7 +158,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayCreditCards
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayCreditCards() {
+  public Boolean DisplayCreditCards() {
     return displayCreditCards;
   }
 
@@ -176,7 +176,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayEchecks
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayEchecks() {
+  public Boolean DisplayEchecks() {
     return displayEchecks;
   }
 
@@ -194,7 +194,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayDebtIndicator
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayDebtIndicator() {
+  public Boolean DisplayDebtIndicator() {
     return displayDebtIndicator;
   }
 
@@ -212,7 +212,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayBillPayment
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayBillPayment() {
+  public Boolean DisplayBillPayment() {
     return displayBillPayment;
   }
 
@@ -230,7 +230,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return enableEchecks
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnableEchecks() {
+  public Boolean EnableEchecks() {
     return enableEchecks;
   }
 
@@ -248,7 +248,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayIgnoreECheckAvsCheckbox
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayIgnoreECheckAvsCheckbox() {
+  public Boolean DisplayIgnoreECheckAvsCheckbox() {
     return displayIgnoreECheckAvsCheckbox;
   }
 
@@ -266,7 +266,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return firstNameRequired
   **/
   @ApiModelProperty(value = "")
-  public Boolean isFirstNameRequired() {
+  public Boolean FirstNameRequired() {
     return firstNameRequired;
   }
 
@@ -284,7 +284,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return lastNameRequired
   **/
   @ApiModelProperty(value = "")
-  public Boolean isLastNameRequired() {
+  public Boolean LastNameRequired() {
     return lastNameRequired;
   }
 
@@ -302,7 +302,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayFirstName
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayFirstName() {
+  public Boolean DisplayFirstName() {
     return displayFirstName;
   }
 
@@ -320,7 +320,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    * @return displayLastName
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayLastName() {
+  public Boolean DisplayLastName() {
     return displayLastName;
   }
 
@@ -364,19 +364,19 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {\n");
     
-    sb.append("    displayCardVerificationValue: ").append(toIndentedString(displayCardVerificationValue)).append("\n");
-    sb.append("    requireCardVerificationValue: ").append(toIndentedString(requireCardVerificationValue)).append("\n");
-    sb.append("    acceptedCardTypes: ").append(toIndentedString(acceptedCardTypes)).append("\n");
-    sb.append("    displayCreditCards: ").append(toIndentedString(displayCreditCards)).append("\n");
-    sb.append("    displayEchecks: ").append(toIndentedString(displayEchecks)).append("\n");
-    sb.append("    displayDebtIndicator: ").append(toIndentedString(displayDebtIndicator)).append("\n");
-    sb.append("    displayBillPayment: ").append(toIndentedString(displayBillPayment)).append("\n");
-    sb.append("    enableEchecks: ").append(toIndentedString(enableEchecks)).append("\n");
-    sb.append("    displayIgnoreECheckAvsCheckbox: ").append(toIndentedString(displayIgnoreECheckAvsCheckbox)).append("\n");
-    sb.append("    firstNameRequired: ").append(toIndentedString(firstNameRequired)).append("\n");
-    sb.append("    lastNameRequired: ").append(toIndentedString(lastNameRequired)).append("\n");
-    sb.append("    displayFirstName: ").append(toIndentedString(displayFirstName)).append("\n");
-    sb.append("    displayLastName: ").append(toIndentedString(displayLastName)).append("\n");
+    if (displayCardVerificationValue != null) sb.append("    displayCardVerificationValue: ").append(toIndentedString(displayCardVerificationValue)).append("\n");
+    if (requireCardVerificationValue != null) sb.append("    requireCardVerificationValue: ").append(toIndentedString(requireCardVerificationValue)).append("\n");
+    if (acceptedCardTypes != null) sb.append("    acceptedCardTypes: ").append(toIndentedString(acceptedCardTypes)).append("\n");
+    if (displayCreditCards != null) sb.append("    displayCreditCards: ").append(toIndentedString(displayCreditCards)).append("\n");
+    if (displayEchecks != null) sb.append("    displayEchecks: ").append(toIndentedString(displayEchecks)).append("\n");
+    if (displayDebtIndicator != null) sb.append("    displayDebtIndicator: ").append(toIndentedString(displayDebtIndicator)).append("\n");
+    if (displayBillPayment != null) sb.append("    displayBillPayment: ").append(toIndentedString(displayBillPayment)).append("\n");
+    if (enableEchecks != null) sb.append("    enableEchecks: ").append(toIndentedString(enableEchecks)).append("\n");
+    if (displayIgnoreECheckAvsCheckbox != null) sb.append("    displayIgnoreECheckAvsCheckbox: ").append(toIndentedString(displayIgnoreECheckAvsCheckbox)).append("\n");
+    if (firstNameRequired != null) sb.append("    firstNameRequired: ").append(toIndentedString(firstNameRequired)).append("\n");
+    if (lastNameRequired != null) sb.append("    lastNameRequired: ").append(toIndentedString(lastNameRequired)).append("\n");
+    if (displayFirstName != null) sb.append("    displayFirstName: ").append(toIndentedString(displayFirstName)).append("\n");
+    if (displayLastName != null) sb.append("    displayLastName: ").append(toIndentedString(displayLastName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -387,10 +387,10 @@ public class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

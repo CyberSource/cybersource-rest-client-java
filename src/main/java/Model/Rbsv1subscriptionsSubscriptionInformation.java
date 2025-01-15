@@ -140,10 +140,10 @@ public class Rbsv1subscriptionsSubscriptionInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rbsv1subscriptionsSubscriptionInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    planId: ").append(toIndentedString(planId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (planId != null) sb.append("    planId: ").append(toIndentedString(planId)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (startDate != null) sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class Rbsv1subscriptionsSubscriptionInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

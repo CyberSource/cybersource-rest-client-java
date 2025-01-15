@@ -173,11 +173,11 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {\n");
     
-    sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
-    sb.append("    rCode: ").append(toIndentedString(rCode)).append("\n");
-    sb.append("    rFlag: ").append(toIndentedString(rFlag)).append("\n");
-    sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
-    sb.append("    returnCode: ").append(toIndentedString(returnCode)).append("\n");
+    if (reasonCode != null) sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
+    if (rCode != null) sb.append("    rCode: ").append(toIndentedString(rCode)).append("\n");
+    if (rFlag != null) sb.append("    rFlag: ").append(toIndentedString(rFlag)).append("\n");
+    if (applications != null) sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
+    if (returnCode != null) sb.append("    returnCode: ").append(toIndentedString(returnCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -188,10 +188,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

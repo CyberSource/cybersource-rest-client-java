@@ -97,8 +97,8 @@ public class InvoicingV2InvoicesGet200ResponseTransactionDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesGet200ResponseTransactionDetails {\n");
     
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class InvoicingV2InvoicesGet200ResponseTransactionDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

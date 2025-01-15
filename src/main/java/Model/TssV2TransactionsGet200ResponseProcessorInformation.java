@@ -398,21 +398,21 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessorInformation {\n");
     
-    sb.append("    processor: ").append(toIndentedString(processor)).append("\n");
-    sb.append("    multiProcessorRouting: ").append(toIndentedString(multiProcessorRouting)).append("\n");
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
-    sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
-    sb.append("    responseId: ").append(toIndentedString(responseId)).append("\n");
-    sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
-    sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
-    sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
-    sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
-    sb.append("    electronicVerificationResults: ").append(toIndentedString(electronicVerificationResults)).append("\n");
-    sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
-    sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
-    sb.append("    paymentAccountReferenceNumber: ").append(toIndentedString(paymentAccountReferenceNumber)).append("\n");
+    if (processor != null) sb.append("    processor: ").append(toIndentedString(processor)).append("\n");
+    if (multiProcessorRouting != null) sb.append("    multiProcessorRouting: ").append(toIndentedString(multiProcessorRouting)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (networkTransactionId != null) sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
+    if (retrievalReferenceNumber != null) sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
+    if (responseId != null) sb.append("    responseId: ").append(toIndentedString(responseId)).append("\n");
+    if (approvalCode != null) sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (avs != null) sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
+    if (cardVerification != null) sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
+    if (achVerification != null) sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
+    if (electronicVerificationResults != null) sb.append("    electronicVerificationResults: ").append(toIndentedString(electronicVerificationResults)).append("\n");
+    if (systemTraceAuditNumber != null) sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
+    if (responseCodeSource != null) sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
+    if (paymentAccountReferenceNumber != null) sb.append("    paymentAccountReferenceNumber: ").append(toIndentedString(paymentAccountReferenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -423,10 +423,10 @@ public class TssV2TransactionsGet200ResponseProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -106,8 +106,8 @@ public class TssV2TransactionsGet200ResponseRiskInformationScore {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseRiskInformationScore {\n");
     
-    sb.append("    factorCodes: ").append(toIndentedString(factorCodes)).append("\n");
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    if (factorCodes != null) sb.append("    factorCodes: ").append(toIndentedString(factorCodes)).append("\n");
+    if (result != null) sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -118,10 +118,10 @@ public class TssV2TransactionsGet200ResponseRiskInformationScore {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class PtsV2CreateOrderPost201ResponseBuyerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2CreateOrderPost201ResponseBuyerInformation {\n");
     
-    sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
+    if (merchantCustomerId != null) sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2CreateOrderPost201ResponseBuyerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

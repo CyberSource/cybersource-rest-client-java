@@ -75,7 +75,7 @@ public class CommerceSolutionsProductsBinLookupConfigurationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class CommerceSolutionsProductsBinLookupConfigurationInformation {\n");
     
-    sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
+    if (configurations != null) sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class CommerceSolutionsProductsBinLookupConfigurationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

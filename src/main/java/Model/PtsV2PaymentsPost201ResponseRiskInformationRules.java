@@ -96,8 +96,8 @@ public class PtsV2PaymentsPost201ResponseRiskInformationRules {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformationRules {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    decision: ").append(toIndentedString(decision)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (decision != null) sb.append("    decision: ").append(toIndentedString(decision)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationRules {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -228,14 +228,14 @@ public class ReportingV3NetFundingsGet200ResponseNetFundingSummaries {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3NetFundingsGet200ResponseNetFundingSummaries {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    paymentSubType: ").append(toIndentedString(paymentSubType)).append("\n");
-    sb.append("    conveyedCount: ").append(toIndentedString(conveyedCount)).append("\n");
-    sb.append("    conveyedAmount: ").append(toIndentedString(conveyedAmount)).append("\n");
-    sb.append("    settledCount: ").append(toIndentedString(settledCount)).append("\n");
-    sb.append("    fundedCount: ").append(toIndentedString(fundedCount)).append("\n");
-    sb.append("    fundedAmount: ").append(toIndentedString(fundedAmount)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (paymentSubType != null) sb.append("    paymentSubType: ").append(toIndentedString(paymentSubType)).append("\n");
+    if (conveyedCount != null) sb.append("    conveyedCount: ").append(toIndentedString(conveyedCount)).append("\n");
+    if (conveyedAmount != null) sb.append("    conveyedAmount: ").append(toIndentedString(conveyedAmount)).append("\n");
+    if (settledCount != null) sb.append("    settledCount: ").append(toIndentedString(settledCount)).append("\n");
+    if (fundedCount != null) sb.append("    fundedCount: ").append(toIndentedString(fundedCount)).append("\n");
+    if (fundedAmount != null) sb.append("    fundedAmount: ").append(toIndentedString(fundedAmount)).append("\n");
+    if (currencyCode != null) sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -246,10 +246,10 @@ public class ReportingV3NetFundingsGet200ResponseNetFundingSummaries {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

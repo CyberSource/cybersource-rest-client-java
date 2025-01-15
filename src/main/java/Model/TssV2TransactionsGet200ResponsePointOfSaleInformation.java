@@ -165,11 +165,11 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePointOfSaleInformation {\n");
     
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
-    sb.append("    entryMode: ").append(toIndentedString(entryMode)).append("\n");
-    sb.append("    terminalCapability: ").append(toIndentedString(terminalCapability)).append("\n");
-    sb.append("    cardholderVerificationMethodUsed: ").append(toIndentedString(cardholderVerificationMethodUsed)).append("\n");
-    sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (entryMode != null) sb.append("    entryMode: ").append(toIndentedString(entryMode)).append("\n");
+    if (terminalCapability != null) sb.append("    terminalCapability: ").append(toIndentedString(terminalCapability)).append("\n");
+    if (cardholderVerificationMethodUsed != null) sb.append("    cardholderVerificationMethodUsed: ").append(toIndentedString(cardholderVerificationMethodUsed)).append("\n");
+    if (emv != null) sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -180,10 +180,10 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

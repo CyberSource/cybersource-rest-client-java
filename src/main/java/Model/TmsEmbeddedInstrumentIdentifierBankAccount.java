@@ -96,8 +96,8 @@ public class TmsEmbeddedInstrumentIdentifierBankAccount {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsEmbeddedInstrumentIdentifierBankAccount {\n");
     
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (routingNumber != null) sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class TmsEmbeddedInstrumentIdentifierBankAccount {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

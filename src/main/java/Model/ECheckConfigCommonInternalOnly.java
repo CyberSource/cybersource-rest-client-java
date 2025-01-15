@@ -49,7 +49,7 @@ public class ECheckConfigCommonInternalOnly {
    * @return displayEcheckInfo
   **/
   @ApiModelProperty(value = "*NEW* Used by EBC UI always set to true")
-  public Boolean isDisplayEcheckInfo() {
+  public Boolean DisplayEcheckInfo() {
     return displayEcheckInfo;
   }
 
@@ -108,8 +108,8 @@ public class ECheckConfigCommonInternalOnly {
     StringBuilder sb = new StringBuilder();
     sb.append("class ECheckConfigCommonInternalOnly {\n");
     
-    sb.append("    displayEcheckInfo: ").append(toIndentedString(displayEcheckInfo)).append("\n");
-    sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
+    if (displayEcheckInfo != null) sb.append("    displayEcheckInfo: ").append(toIndentedString(displayEcheckInfo)).append("\n");
+    if (processors != null) sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -120,10 +120,10 @@ public class ECheckConfigCommonInternalOnly {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

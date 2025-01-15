@@ -734,37 +734,37 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation {\n");
     
-    sb.append("    acsRenderingType: ").append(toIndentedString(acsRenderingType)).append("\n");
-    sb.append("    acsReferenceNumber: ").append(toIndentedString(acsReferenceNumber)).append("\n");
-    sb.append("    acsTransactionId: ").append(toIndentedString(acsTransactionId)).append("\n");
-    sb.append("    acsOperatorID: ").append(toIndentedString(acsOperatorID)).append("\n");
-    sb.append("    authenticationResult: ").append(toIndentedString(authenticationResult)).append("\n");
-    sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
-    sb.append("    authenticationStatusMsg: ").append(toIndentedString(authenticationStatusMsg)).append("\n");
-    sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
-    sb.append("    authenticationTransactionContextId: ").append(toIndentedString(authenticationTransactionContextId)).append("\n");
-    sb.append("    transactionToken: ").append(toIndentedString(transactionToken)).append("\n");
-    sb.append("    authorizationPayload: ").append(toIndentedString(authorizationPayload)).append("\n");
-    sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
-    sb.append("    cavvAlgorithm: ").append(toIndentedString(cavvAlgorithm)).append("\n");
-    sb.append("    challengeCancelCode: ").append(toIndentedString(challengeCancelCode)).append("\n");
-    sb.append("    directoryServerErrorCode: ").append(toIndentedString(directoryServerErrorCode)).append("\n");
-    sb.append("    directoryServerErrorDescription: ").append(toIndentedString(directoryServerErrorDescription)).append("\n");
-    sb.append("    effectiveAuthenticationType: ").append(toIndentedString(effectiveAuthenticationType)).append("\n");
-    sb.append("    indicator: ").append(toIndentedString(indicator)).append("\n");
-    sb.append("    interactionCounter: ").append(toIndentedString(interactionCounter)).append("\n");
-    sb.append("    eci: ").append(toIndentedString(eci)).append("\n");
-    sb.append("    eciRaw: ").append(toIndentedString(eciRaw)).append("\n");
-    sb.append("    paresStatus: ").append(toIndentedString(paresStatus)).append("\n");
-    sb.append("    sdkTransactionId: ").append(toIndentedString(sdkTransactionId)).append("\n");
-    sb.append("    specificationVersion: ").append(toIndentedString(specificationVersion)).append("\n");
-    sb.append("    threeDSServerTransactionId: ").append(toIndentedString(threeDSServerTransactionId)).append("\n");
-    sb.append("    ucafAuthenticationData: ").append(toIndentedString(ucafAuthenticationData)).append("\n");
-    sb.append("    ucafCollectionIndicator: ").append(toIndentedString(ucafCollectionIndicator)).append("\n");
-    sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
-    sb.append("    whiteListStatusSource: ").append(toIndentedString(whiteListStatusSource)).append("\n");
-    sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
-    sb.append("    directoryServerTransactionId: ").append(toIndentedString(directoryServerTransactionId)).append("\n");
+    if (acsRenderingType != null) sb.append("    acsRenderingType: ").append(toIndentedString(acsRenderingType)).append("\n");
+    if (acsReferenceNumber != null) sb.append("    acsReferenceNumber: ").append(toIndentedString(acsReferenceNumber)).append("\n");
+    if (acsTransactionId != null) sb.append("    acsTransactionId: ").append(toIndentedString(acsTransactionId)).append("\n");
+    if (acsOperatorID != null) sb.append("    acsOperatorID: ").append(toIndentedString(acsOperatorID)).append("\n");
+    if (authenticationResult != null) sb.append("    authenticationResult: ").append(toIndentedString(authenticationResult)).append("\n");
+    if (authenticationType != null) sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
+    if (authenticationStatusMsg != null) sb.append("    authenticationStatusMsg: ").append(toIndentedString(authenticationStatusMsg)).append("\n");
+    if (authenticationTransactionId != null) sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
+    if (authenticationTransactionContextId != null) sb.append("    authenticationTransactionContextId: ").append(toIndentedString(authenticationTransactionContextId)).append("\n");
+    if (transactionToken != null) sb.append("    transactionToken: ").append(toIndentedString(transactionToken)).append("\n");
+    if (authorizationPayload != null) sb.append("    authorizationPayload: ").append(toIndentedString(authorizationPayload)).append("\n");
+    if (cavv != null) sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
+    if (cavvAlgorithm != null) sb.append("    cavvAlgorithm: ").append(toIndentedString(cavvAlgorithm)).append("\n");
+    if (challengeCancelCode != null) sb.append("    challengeCancelCode: ").append(toIndentedString(challengeCancelCode)).append("\n");
+    if (directoryServerErrorCode != null) sb.append("    directoryServerErrorCode: ").append(toIndentedString(directoryServerErrorCode)).append("\n");
+    if (directoryServerErrorDescription != null) sb.append("    directoryServerErrorDescription: ").append(toIndentedString(directoryServerErrorDescription)).append("\n");
+    if (effectiveAuthenticationType != null) sb.append("    effectiveAuthenticationType: ").append(toIndentedString(effectiveAuthenticationType)).append("\n");
+    if (indicator != null) sb.append("    indicator: ").append(toIndentedString(indicator)).append("\n");
+    if (interactionCounter != null) sb.append("    interactionCounter: ").append(toIndentedString(interactionCounter)).append("\n");
+    if (eci != null) sb.append("    eci: ").append(toIndentedString(eci)).append("\n");
+    if (eciRaw != null) sb.append("    eciRaw: ").append(toIndentedString(eciRaw)).append("\n");
+    if (paresStatus != null) sb.append("    paresStatus: ").append(toIndentedString(paresStatus)).append("\n");
+    if (sdkTransactionId != null) sb.append("    sdkTransactionId: ").append(toIndentedString(sdkTransactionId)).append("\n");
+    if (specificationVersion != null) sb.append("    specificationVersion: ").append(toIndentedString(specificationVersion)).append("\n");
+    if (threeDSServerTransactionId != null) sb.append("    threeDSServerTransactionId: ").append(toIndentedString(threeDSServerTransactionId)).append("\n");
+    if (ucafAuthenticationData != null) sb.append("    ucafAuthenticationData: ").append(toIndentedString(ucafAuthenticationData)).append("\n");
+    if (ucafCollectionIndicator != null) sb.append("    ucafCollectionIndicator: ").append(toIndentedString(ucafCollectionIndicator)).append("\n");
+    if (whiteListStatus != null) sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
+    if (whiteListStatusSource != null) sb.append("    whiteListStatusSource: ").append(toIndentedString(whiteListStatusSource)).append("\n");
+    if (xid != null) sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
+    if (directoryServerTransactionId != null) sb.append("    directoryServerTransactionId: ").append(toIndentedString(directoryServerTransactionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -775,10 +775,10 @@ public class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInf
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

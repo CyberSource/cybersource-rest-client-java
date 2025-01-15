@@ -97,7 +97,7 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfu
    * @return allowCryptoCurrencyPurchase
   **/
   @ApiModelProperty(value = "This configuration allows a transaction to be flagged for cryptocurrency funds transfer.")
-  public Boolean isAllowCryptoCurrencyPurchase() {
+  public Boolean AllowCryptoCurrencyPurchase() {
     return allowCryptoCurrencyPurchase;
   }
 
@@ -207,13 +207,13 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfu
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds {\n");
     
-    sb.append("    acquirerOrganizationId: ").append(toIndentedString(acquirerOrganizationId)).append("\n");
-    sb.append("    acquiringBIN: ").append(toIndentedString(acquiringBIN)).append("\n");
-    sb.append("    allowCryptoCurrencyPurchase: ").append(toIndentedString(allowCryptoCurrencyPurchase)).append("\n");
-    sb.append("    cardAcceptorId: ").append(toIndentedString(cardAcceptorId)).append("\n");
-    sb.append("    originatorMvv: ").append(toIndentedString(originatorMvv)).append("\n");
-    sb.append("    originatorNameAbbreviation: ").append(toIndentedString(originatorNameAbbreviation)).append("\n");
-    sb.append("    cardTerminalId: ").append(toIndentedString(cardTerminalId)).append("\n");
+    if (acquirerOrganizationId != null) sb.append("    acquirerOrganizationId: ").append(toIndentedString(acquirerOrganizationId)).append("\n");
+    if (acquiringBIN != null) sb.append("    acquiringBIN: ").append(toIndentedString(acquiringBIN)).append("\n");
+    if (allowCryptoCurrencyPurchase != null) sb.append("    allowCryptoCurrencyPurchase: ").append(toIndentedString(allowCryptoCurrencyPurchase)).append("\n");
+    if (cardAcceptorId != null) sb.append("    cardAcceptorId: ").append(toIndentedString(cardAcceptorId)).append("\n");
+    if (originatorMvv != null) sb.append("    originatorMvv: ").append(toIndentedString(originatorMvv)).append("\n");
+    if (originatorNameAbbreviation != null) sb.append("    originatorNameAbbreviation: ").append(toIndentedString(originatorNameAbbreviation)).append("\n");
+    if (cardTerminalId != null) sb.append("    cardTerminalId: ").append(toIndentedString(cardTerminalId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -224,10 +224,10 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfu
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

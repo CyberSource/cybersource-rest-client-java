@@ -121,9 +121,9 @@ public class Ptsv2paymentsProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessorInformation {\n");
     
-    sb.append("    preApprovalToken: ").append(toIndentedString(preApprovalToken)).append("\n");
-    sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
-    sb.append("    reversal: ").append(toIndentedString(reversal)).append("\n");
+    if (preApprovalToken != null) sb.append("    preApprovalToken: ").append(toIndentedString(preApprovalToken)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    if (reversal != null) sb.append("    reversal: ").append(toIndentedString(reversal)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -134,10 +134,10 @@ public class Ptsv2paymentsProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

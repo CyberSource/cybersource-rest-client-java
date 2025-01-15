@@ -316,18 +316,18 @@ public class Ptsv2paymentsidrefundsPaymentInformationCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidrefundsPaymentInformationCard {\n");
     
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
-    sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    accountEncoderId: ").append(toIndentedString(accountEncoderId)).append("\n");
-    sb.append("    issueNumber: ").append(toIndentedString(issueNumber)).append("\n");
-    sb.append("    startMonth: ").append(toIndentedString(startMonth)).append("\n");
-    sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
-    sb.append("    sourceAccountType: ").append(toIndentedString(sourceAccountType)).append("\n");
-    sb.append("    sourceAccountTypeDetails: ").append(toIndentedString(sourceAccountTypeDetails)).append("\n");
-    sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
-    sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (accountEncoderId != null) sb.append("    accountEncoderId: ").append(toIndentedString(accountEncoderId)).append("\n");
+    if (issueNumber != null) sb.append("    issueNumber: ").append(toIndentedString(issueNumber)).append("\n");
+    if (startMonth != null) sb.append("    startMonth: ").append(toIndentedString(startMonth)).append("\n");
+    if (startYear != null) sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
+    if (sourceAccountType != null) sb.append("    sourceAccountType: ").append(toIndentedString(sourceAccountType)).append("\n");
+    if (sourceAccountTypeDetails != null) sb.append("    sourceAccountTypeDetails: ").append(toIndentedString(sourceAccountTypeDetails)).append("\n");
+    if (securityCode != null) sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
+    if (useAs != null) sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -338,10 +338,10 @@ public class Ptsv2paymentsidrefundsPaymentInformationCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

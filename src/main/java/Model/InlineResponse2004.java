@@ -383,20 +383,20 @@ public class InlineResponse2004 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2004 {\n");
     
-    sb.append("    webhookId: ").append(toIndentedString(webhookId)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    products: ").append(toIndentedString(products)).append("\n");
-    sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
-    sb.append("    healthCheckUrl: ").append(toIndentedString(healthCheckUrl)).append("\n");
-    sb.append("    notificationScope: ").append(toIndentedString(notificationScope)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    retryPolicy: ").append(toIndentedString(retryPolicy)).append("\n");
-    sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
-    sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
-    sb.append("    updatedOn: ").append(toIndentedString(updatedOn)).append("\n");
-    sb.append("    additionalAttributes: ").append(toIndentedString(additionalAttributes)).append("\n");
+    if (webhookId != null) sb.append("    webhookId: ").append(toIndentedString(webhookId)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (products != null) sb.append("    products: ").append(toIndentedString(products)).append("\n");
+    if (webhookUrl != null) sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
+    if (healthCheckUrl != null) sb.append("    healthCheckUrl: ").append(toIndentedString(healthCheckUrl)).append("\n");
+    if (notificationScope != null) sb.append("    notificationScope: ").append(toIndentedString(notificationScope)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (retryPolicy != null) sb.append("    retryPolicy: ").append(toIndentedString(retryPolicy)).append("\n");
+    if (securityPolicy != null) sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
+    if (createdOn != null) sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
+    if (updatedOn != null) sb.append("    updatedOn: ").append(toIndentedString(updatedOn)).append("\n");
+    if (additionalAttributes != null) sb.append("    additionalAttributes: ").append(toIndentedString(additionalAttributes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -407,10 +407,10 @@ public class InlineResponse2004 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

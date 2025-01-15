@@ -120,9 +120,9 @@ public class InvoicingV2InvoicesGet200ResponseInvoiceHistory {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesGet200ResponseInvoiceHistory {\n");
     
-    sb.append("    event: ").append(toIndentedString(event)).append("\n");
-    sb.append("    date: ").append(toIndentedString(date)).append("\n");
-    sb.append("    transactionDetails: ").append(toIndentedString(transactionDetails)).append("\n");
+    if (event != null) sb.append("    event: ").append(toIndentedString(event)).append("\n");
+    if (date != null) sb.append("    date: ").append(toIndentedString(date)).append("\n");
+    if (transactionDetails != null) sb.append("    transactionDetails: ").append(toIndentedString(transactionDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -133,10 +133,10 @@ public class InvoicingV2InvoicesGet200ResponseInvoiceHistory {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

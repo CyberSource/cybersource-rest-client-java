@@ -228,18 +228,18 @@ public class Tmsv2TokenizedCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2TokenizedCard {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    source: ").append(toIndentedString(source)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    enrollmentId: ").append(toIndentedString(enrollmentId)).append("\n");
-    sb.append("    tokenReferenceId: ").append(toIndentedString(tokenReferenceId)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
-    sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
-    sb.append("    cryptogram: ").append(toIndentedString(cryptogram)).append("\n");
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (source != null) sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    if (state != null) sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    if (enrollmentId != null) sb.append("    enrollmentId: ").append(toIndentedString(enrollmentId)).append("\n");
+    if (tokenReferenceId != null) sb.append("    tokenReferenceId: ").append(toIndentedString(tokenReferenceId)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (cryptogram != null) sb.append("    cryptogram: ").append(toIndentedString(cryptogram)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (metadata != null) sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -250,10 +250,10 @@ public class Tmsv2TokenizedCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

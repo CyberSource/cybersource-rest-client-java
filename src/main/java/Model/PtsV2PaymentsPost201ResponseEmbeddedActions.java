@@ -167,11 +167,11 @@ public class PtsV2PaymentsPost201ResponseEmbeddedActions {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseEmbeddedActions {\n");
     
-    sb.append("    CAPTURE: ").append(toIndentedString(CAPTURE)).append("\n");
-    sb.append("    DECISION: ").append(toIndentedString(DECISION)).append("\n");
-    sb.append("    CONSUMER_AUTHENTICATION: ").append(toIndentedString(CONSUMER_AUTHENTICATION)).append("\n");
-    sb.append("    VALIDATE_CONSUMER_AUTHENTICATION: ").append(toIndentedString(VALIDATE_CONSUMER_AUTHENTICATION)).append("\n");
-    sb.append("    WATCHLIST_SCREENING: ").append(toIndentedString(WATCHLIST_SCREENING)).append("\n");
+    if (CAPTURE != null) sb.append("    CAPTURE: ").append(toIndentedString(CAPTURE)).append("\n");
+    if (DECISION != null) sb.append("    DECISION: ").append(toIndentedString(DECISION)).append("\n");
+    if (CONSUMER_AUTHENTICATION != null) sb.append("    CONSUMER_AUTHENTICATION: ").append(toIndentedString(CONSUMER_AUTHENTICATION)).append("\n");
+    if (VALIDATE_CONSUMER_AUTHENTICATION != null) sb.append("    VALIDATE_CONSUMER_AUTHENTICATION: ").append(toIndentedString(VALIDATE_CONSUMER_AUTHENTICATION)).append("\n");
+    if (WATCHLIST_SCREENING != null) sb.append("    WATCHLIST_SCREENING: ").append(toIndentedString(WATCHLIST_SCREENING)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -182,10 +182,10 @@ public class PtsV2PaymentsPost201ResponseEmbeddedActions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

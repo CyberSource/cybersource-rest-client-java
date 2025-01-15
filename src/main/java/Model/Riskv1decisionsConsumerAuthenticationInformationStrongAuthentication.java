@@ -74,7 +74,7 @@ public class Riskv1decisionsConsumerAuthenticationInformationStrongAuthenticatio
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication {\n");
     
-    sb.append("    authenticationIndicator: ").append(toIndentedString(authenticationIndicator)).append("\n");
+    if (authenticationIndicator != null) sb.append("    authenticationIndicator: ").append(toIndentedString(authenticationIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Riskv1decisionsConsumerAuthenticationInformationStrongAuthenticatio
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -118,9 +118,9 @@ public class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures {\n");
     
-    sb.append("    balanceAmount: ").append(toIndentedString(balanceAmount)).append("\n");
-    sb.append("    previousBalanceAmount: ").append(toIndentedString(previousBalanceAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (balanceAmount != null) sb.append("    balanceAmount: ").append(toIndentedString(balanceAmount)).append("\n");
+    if (previousBalanceAmount != null) sb.append("    previousBalanceAmount: ").append(toIndentedString(previousBalanceAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

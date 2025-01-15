@@ -599,30 +599,30 @@ public class PtsV2PaymentsPost201Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
-    sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
-    sb.append("    paymentAccountInformation: ").append(toIndentedString(paymentAccountInformation)).append("\n");
-    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
-    sb.append("    paymentInsightsInformation: ").append(toIndentedString(paymentInsightsInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
-    sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
-    sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
-    sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
-    sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
-    sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
-    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
-    sb.append("    embeddedActions: ").append(toIndentedString(embeddedActions)).append("\n");
-    sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
+    if (paymentAccountInformation != null) sb.append("    paymentAccountInformation: ").append(toIndentedString(paymentAccountInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    if (paymentInsightsInformation != null) sb.append("    paymentInsightsInformation: ").append(toIndentedString(paymentInsightsInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");
+    if (installmentInformation != null) sb.append("    installmentInformation: ").append(toIndentedString(installmentInformation)).append("\n");
+    if (tokenInformation != null) sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
+    if (buyerInformation != null) sb.append("    buyerInformation: ").append(toIndentedString(buyerInformation)).append("\n");
+    if (riskInformation != null) sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
+    if (consumerAuthenticationInformation != null) sb.append("    consumerAuthenticationInformation: ").append(toIndentedString(consumerAuthenticationInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (embeddedActions != null) sb.append("    embeddedActions: ").append(toIndentedString(embeddedActions)).append("\n");
+    if (watchlistScreeningInformation != null) sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -633,10 +633,10 @@ public class PtsV2PaymentsPost201Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

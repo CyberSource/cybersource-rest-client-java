@@ -118,9 +118,9 @@ public class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails {\n");
     
-    sb.append("    refundAmount: ").append(toIndentedString(refundAmount)).append("\n");
-    sb.append("    creditAmount: ").append(toIndentedString(creditAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (refundAmount != null) sb.append("    refundAmount: ").append(toIndentedString(refundAmount)).append("\n");
+    if (creditAmount != null) sb.append("    creditAmount: ").append(toIndentedString(creditAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

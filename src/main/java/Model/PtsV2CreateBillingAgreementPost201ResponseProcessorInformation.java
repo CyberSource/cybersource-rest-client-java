@@ -162,11 +162,11 @@ public class PtsV2CreateBillingAgreementPost201ResponseProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2CreateBillingAgreementPost201ResponseProcessorInformation {\n");
     
-    sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
-    sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
+    if (approvalCode != null) sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
+    if (reasonCode != null) sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class PtsV2CreateBillingAgreementPost201ResponseProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

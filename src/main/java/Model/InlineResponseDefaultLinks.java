@@ -137,9 +137,9 @@ public class InlineResponseDefaultLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponseDefaultLinks {\n");
     
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
-    sb.append("    documentation: ").append(toIndentedString(documentation)).append("\n");
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (next != null) sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    if (documentation != null) sb.append("    documentation: ").append(toIndentedString(documentation)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -150,10 +150,10 @@ public class InlineResponseDefaultLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -119,9 +119,9 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {\n");
     
-    sb.append("    processor: ").append(toIndentedString(processor)).append("\n");
-    sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
-    sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
+    if (processor != null) sb.append("    processor: ").append(toIndentedString(processor)).append("\n");
+    if (approvalCode != null) sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
+    if (retrievalReferenceNumber != null) sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

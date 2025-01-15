@@ -163,11 +163,11 @@ public class RiskV1DecisionsPost201ResponsePaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1DecisionsPost201ResponsePaymentInformation {\n");
     
-    sb.append("    binCountry: ").append(toIndentedString(binCountry)).append("\n");
-    sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
-    sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
-    sb.append("    bin: ").append(toIndentedString(bin)).append("\n");
+    if (binCountry != null) sb.append("    binCountry: ").append(toIndentedString(binCountry)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    if (issuer != null) sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
+    if (scheme != null) sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
+    if (bin != null) sb.append("    bin: ").append(toIndentedString(bin)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -178,10 +178,10 @@ public class RiskV1DecisionsPost201ResponsePaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

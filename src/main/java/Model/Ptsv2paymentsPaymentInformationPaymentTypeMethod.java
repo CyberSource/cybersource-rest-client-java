@@ -96,8 +96,8 @@ public class Ptsv2paymentsPaymentInformationPaymentTypeMethod {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPaymentInformationPaymentTypeMethod {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsPaymentInformationPaymentTypeMethod {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

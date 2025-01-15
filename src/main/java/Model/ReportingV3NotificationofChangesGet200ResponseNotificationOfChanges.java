@@ -230,14 +230,14 @@ public class ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges {\n");
     
-    sb.append("    merchantReferenceNumber: ").append(toIndentedString(merchantReferenceNumber)).append("\n");
-    sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
-    sb.append("    time: ").append(toIndentedString(time)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-    sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");
-    sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
-    sb.append("    consumerName: ").append(toIndentedString(consumerName)).append("\n");
+    if (merchantReferenceNumber != null) sb.append("    merchantReferenceNumber: ").append(toIndentedString(merchantReferenceNumber)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
+    if (time != null) sb.append("    time: ").append(toIndentedString(time)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    if (routingNumber != null) sb.append("    routingNumber: ").append(toIndentedString(routingNumber)).append("\n");
+    if (accountNumber != null) sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
+    if (consumerName != null) sb.append("    consumerName: ").append(toIndentedString(consumerName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -248,10 +248,10 @@ public class ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

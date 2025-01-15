@@ -203,13 +203,13 @@ public class Tmsv2TokenizedCardMetadataCardArt {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2TokenizedCardMetadataCardArt {\n");
     
-    sb.append("    combinedAsset: ").append(toIndentedString(combinedAsset)).append("\n");
-    sb.append("    brandLogoAsset: ").append(toIndentedString(brandLogoAsset)).append("\n");
-    sb.append("    coBrandLogoAsset: ").append(toIndentedString(coBrandLogoAsset)).append("\n");
-    sb.append("    issuerLogoAsset: ").append(toIndentedString(issuerLogoAsset)).append("\n");
-    sb.append("    iconAsset: ").append(toIndentedString(iconAsset)).append("\n");
-    sb.append("    foregroundColor: ").append(toIndentedString(foregroundColor)).append("\n");
-    sb.append("    backgroundAsset: ").append(toIndentedString(backgroundAsset)).append("\n");
+    if (combinedAsset != null) sb.append("    combinedAsset: ").append(toIndentedString(combinedAsset)).append("\n");
+    if (brandLogoAsset != null) sb.append("    brandLogoAsset: ").append(toIndentedString(brandLogoAsset)).append("\n");
+    if (coBrandLogoAsset != null) sb.append("    coBrandLogoAsset: ").append(toIndentedString(coBrandLogoAsset)).append("\n");
+    if (issuerLogoAsset != null) sb.append("    issuerLogoAsset: ").append(toIndentedString(issuerLogoAsset)).append("\n");
+    if (iconAsset != null) sb.append("    iconAsset: ").append(toIndentedString(iconAsset)).append("\n");
+    if (foregroundColor != null) sb.append("    foregroundColor: ").append(toIndentedString(foregroundColor)).append("\n");
+    if (backgroundAsset != null) sb.append("    backgroundAsset: ").append(toIndentedString(backgroundAsset)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -220,10 +220,10 @@ public class Tmsv2TokenizedCardMetadataCardArt {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

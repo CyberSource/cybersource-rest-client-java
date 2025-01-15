@@ -254,15 +254,15 @@ public class RiskV1AddressVerificationsPost201Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1AddressVerificationsPost201Response {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    submitTimeLocal: ").append(toIndentedString(submitTimeLocal)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    addressVerificationInformation: ").append(toIndentedString(addressVerificationInformation)).append("\n");
-    sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (submitTimeLocal != null) sb.append("    submitTimeLocal: ").append(toIndentedString(submitTimeLocal)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (addressVerificationInformation != null) sb.append("    addressVerificationInformation: ").append(toIndentedString(addressVerificationInformation)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -273,10 +273,10 @@ public class RiskV1AddressVerificationsPost201Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

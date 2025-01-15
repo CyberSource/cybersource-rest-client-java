@@ -160,10 +160,10 @@ public class GenerateCaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateCaptureContextRequest {\n");
     
-    sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
-    sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
-    sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
-    sb.append("    checkoutApiInitialization: ").append(toIndentedString(checkoutApiInitialization)).append("\n");
+    if (clientVersion != null) sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
+    if (targetOrigins != null) sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
+    if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
+    if (checkoutApiInitialization != null) sb.append("    checkoutApiInitialization: ").append(toIndentedString(checkoutApiInitialization)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -174,10 +174,10 @@ public class GenerateCaptureContextRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -162,11 +162,11 @@ public class PtsV2PaymentsPost201Response2ProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201Response2ProcessorInformation {\n");
     
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    paymentUrl: ").append(toIndentedString(paymentUrl)).append("\n");
-    sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (paymentUrl != null) sb.append("    paymentUrl: ").append(toIndentedString(paymentUrl)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
+    if (token != null) sb.append("    token: ").append(toIndentedString(token)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class PtsV2PaymentsPost201Response2ProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

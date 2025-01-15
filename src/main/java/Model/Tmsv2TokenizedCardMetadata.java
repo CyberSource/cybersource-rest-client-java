@@ -75,7 +75,7 @@ public class Tmsv2TokenizedCardMetadata {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2TokenizedCardMetadata {\n");
     
-    sb.append("    cardArt: ").append(toIndentedString(cardArt)).append("\n");
+    if (cardArt != null) sb.append("    cardArt: ").append(toIndentedString(cardArt)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Tmsv2TokenizedCardMetadata {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

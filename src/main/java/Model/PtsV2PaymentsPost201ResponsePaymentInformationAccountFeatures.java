@@ -459,24 +459,24 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {\n");
     
-    sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-    sb.append("    accountStatus: ").append(toIndentedString(accountStatus)).append("\n");
-    sb.append("    balances: ").append(toIndentedString(balances)).append("\n");
-    sb.append("    balanceAmount: ").append(toIndentedString(balanceAmount)).append("\n");
-    sb.append("    balanceAmountType: ").append(toIndentedString(balanceAmountType)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    balanceSign: ").append(toIndentedString(balanceSign)).append("\n");
-    sb.append("    affluenceIndicator: ").append(toIndentedString(affluenceIndicator)).append("\n");
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    commercial: ").append(toIndentedString(commercial)).append("\n");
-    sb.append("    group: ").append(toIndentedString(group)).append("\n");
-    sb.append("    healthCare: ").append(toIndentedString(healthCare)).append("\n");
-    sb.append("    payroll: ").append(toIndentedString(payroll)).append("\n");
-    sb.append("    level3Eligible: ").append(toIndentedString(level3Eligible)).append("\n");
-    sb.append("    pinlessDebit: ").append(toIndentedString(pinlessDebit)).append("\n");
-    sb.append("    signatureDebit: ").append(toIndentedString(signatureDebit)).append("\n");
-    sb.append("    prepaid: ").append(toIndentedString(prepaid)).append("\n");
-    sb.append("    regulated: ").append(toIndentedString(regulated)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    if (accountStatus != null) sb.append("    accountStatus: ").append(toIndentedString(accountStatus)).append("\n");
+    if (balances != null) sb.append("    balances: ").append(toIndentedString(balances)).append("\n");
+    if (balanceAmount != null) sb.append("    balanceAmount: ").append(toIndentedString(balanceAmount)).append("\n");
+    if (balanceAmountType != null) sb.append("    balanceAmountType: ").append(toIndentedString(balanceAmountType)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (balanceSign != null) sb.append("    balanceSign: ").append(toIndentedString(balanceSign)).append("\n");
+    if (affluenceIndicator != null) sb.append("    affluenceIndicator: ").append(toIndentedString(affluenceIndicator)).append("\n");
+    if (category != null) sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    if (commercial != null) sb.append("    commercial: ").append(toIndentedString(commercial)).append("\n");
+    if (group != null) sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    if (healthCare != null) sb.append("    healthCare: ").append(toIndentedString(healthCare)).append("\n");
+    if (payroll != null) sb.append("    payroll: ").append(toIndentedString(payroll)).append("\n");
+    if (level3Eligible != null) sb.append("    level3Eligible: ").append(toIndentedString(level3Eligible)).append("\n");
+    if (pinlessDebit != null) sb.append("    pinlessDebit: ").append(toIndentedString(pinlessDebit)).append("\n");
+    if (signatureDebit != null) sb.append("    signatureDebit: ").append(toIndentedString(signatureDebit)).append("\n");
+    if (prepaid != null) sb.append("    prepaid: ").append(toIndentedString(prepaid)).append("\n");
+    if (regulated != null) sb.append("    regulated: ").append(toIndentedString(regulated)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -487,10 +487,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -119,9 +119,9 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (rate != null) sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

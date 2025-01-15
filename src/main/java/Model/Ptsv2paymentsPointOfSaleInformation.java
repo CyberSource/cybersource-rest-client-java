@@ -714,35 +714,35 @@ public class Ptsv2paymentsPointOfSaleInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPointOfSaleInformation {\n");
     
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
-    sb.append("    terminalSerialNumber: ").append(toIndentedString(terminalSerialNumber)).append("\n");
-    sb.append("    cardholderVerificationMethodUsed: ").append(toIndentedString(cardholderVerificationMethodUsed)).append("\n");
-    sb.append("    laneNumber: ").append(toIndentedString(laneNumber)).append("\n");
-    sb.append("    catLevel: ").append(toIndentedString(catLevel)).append("\n");
-    sb.append("    entryMode: ").append(toIndentedString(entryMode)).append("\n");
-    sb.append("    terminalCapability: ").append(toIndentedString(terminalCapability)).append("\n");
-    sb.append("    operatingEnvironment: ").append(toIndentedString(operatingEnvironment)).append("\n");
-    sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
-    sb.append("    amexCapnData: ").append(toIndentedString(amexCapnData)).append("\n");
-    sb.append("    trackData: ").append(toIndentedString(trackData)).append("\n");
-    sb.append("    storeAndForwardIndicator: ").append(toIndentedString(storeAndForwardIndicator)).append("\n");
-    sb.append("    cardholderVerificationMethod: ").append(toIndentedString(cardholderVerificationMethod)).append("\n");
-    sb.append("    terminalInputCapability: ").append(toIndentedString(terminalInputCapability)).append("\n");
-    sb.append("    terminalCardCaptureCapability: ").append(toIndentedString(terminalCardCaptureCapability)).append("\n");
-    sb.append("    terminalOutputCapability: ").append(toIndentedString(terminalOutputCapability)).append("\n");
-    sb.append("    terminalPinCapability: ").append(toIndentedString(terminalPinCapability)).append("\n");
-    sb.append("    pinEntrySolution: ").append(toIndentedString(pinEntrySolution)).append("\n");
-    sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-    sb.append("    pinBlockEncodingFormat: ").append(toIndentedString(pinBlockEncodingFormat)).append("\n");
-    sb.append("    encryptedPin: ").append(toIndentedString(encryptedPin)).append("\n");
-    sb.append("    encryptedKeySerialNumber: ").append(toIndentedString(encryptedKeySerialNumber)).append("\n");
-    sb.append("    partnerSdkVersion: ").append(toIndentedString(partnerSdkVersion)).append("\n");
-    sb.append("    emvApplicationIdentifierAndDedicatedFileName: ").append(toIndentedString(emvApplicationIdentifierAndDedicatedFileName)).append("\n");
-    sb.append("    terminalCompliance: ").append(toIndentedString(terminalCompliance)).append("\n");
-    sb.append("    isDedicatedHardwareTerminal: ").append(toIndentedString(isDedicatedHardwareTerminal)).append("\n");
-    sb.append("    terminalModel: ").append(toIndentedString(terminalModel)).append("\n");
-    sb.append("    terminalMake: ").append(toIndentedString(terminalMake)).append("\n");
-    sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (terminalSerialNumber != null) sb.append("    terminalSerialNumber: ").append(toIndentedString(terminalSerialNumber)).append("\n");
+    if (cardholderVerificationMethodUsed != null) sb.append("    cardholderVerificationMethodUsed: ").append(toIndentedString(cardholderVerificationMethodUsed)).append("\n");
+    if (laneNumber != null) sb.append("    laneNumber: ").append(toIndentedString(laneNumber)).append("\n");
+    if (catLevel != null) sb.append("    catLevel: ").append(toIndentedString(catLevel)).append("\n");
+    if (entryMode != null) sb.append("    entryMode: ").append(toIndentedString(entryMode)).append("\n");
+    if (terminalCapability != null) sb.append("    terminalCapability: ").append(toIndentedString(terminalCapability)).append("\n");
+    if (operatingEnvironment != null) sb.append("    operatingEnvironment: ").append(toIndentedString(operatingEnvironment)).append("\n");
+    if (emv != null) sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
+    if (amexCapnData != null) sb.append("    amexCapnData: ").append(toIndentedString(amexCapnData)).append("\n");
+    if (trackData != null) sb.append("    trackData: ").append(toIndentedString(trackData)).append("\n");
+    if (storeAndForwardIndicator != null) sb.append("    storeAndForwardIndicator: ").append(toIndentedString(storeAndForwardIndicator)).append("\n");
+    if (cardholderVerificationMethod != null) sb.append("    cardholderVerificationMethod: ").append(toIndentedString(cardholderVerificationMethod)).append("\n");
+    if (terminalInputCapability != null) sb.append("    terminalInputCapability: ").append(toIndentedString(terminalInputCapability)).append("\n");
+    if (terminalCardCaptureCapability != null) sb.append("    terminalCardCaptureCapability: ").append(toIndentedString(terminalCardCaptureCapability)).append("\n");
+    if (terminalOutputCapability != null) sb.append("    terminalOutputCapability: ").append(toIndentedString(terminalOutputCapability)).append("\n");
+    if (terminalPinCapability != null) sb.append("    terminalPinCapability: ").append(toIndentedString(terminalPinCapability)).append("\n");
+    if (pinEntrySolution != null) sb.append("    pinEntrySolution: ").append(toIndentedString(pinEntrySolution)).append("\n");
+    if (deviceId != null) sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+    if (pinBlockEncodingFormat != null) sb.append("    pinBlockEncodingFormat: ").append(toIndentedString(pinBlockEncodingFormat)).append("\n");
+    if (encryptedPin != null) sb.append("    encryptedPin: ").append(toIndentedString(encryptedPin)).append("\n");
+    if (encryptedKeySerialNumber != null) sb.append("    encryptedKeySerialNumber: ").append(toIndentedString(encryptedKeySerialNumber)).append("\n");
+    if (partnerSdkVersion != null) sb.append("    partnerSdkVersion: ").append(toIndentedString(partnerSdkVersion)).append("\n");
+    if (emvApplicationIdentifierAndDedicatedFileName != null) sb.append("    emvApplicationIdentifierAndDedicatedFileName: ").append(toIndentedString(emvApplicationIdentifierAndDedicatedFileName)).append("\n");
+    if (terminalCompliance != null) sb.append("    terminalCompliance: ").append(toIndentedString(terminalCompliance)).append("\n");
+    if (isDedicatedHardwareTerminal != null) sb.append("    isDedicatedHardwareTerminal: ").append(toIndentedString(isDedicatedHardwareTerminal)).append("\n");
+    if (terminalModel != null) sb.append("    terminalModel: ").append(toIndentedString(terminalModel)).append("\n");
+    if (terminalMake != null) sb.append("    terminalMake: ").append(toIndentedString(terminalMake)).append("\n");
+    if (serviceCode != null) sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -753,10 +753,10 @@ public class Ptsv2paymentsPointOfSaleInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

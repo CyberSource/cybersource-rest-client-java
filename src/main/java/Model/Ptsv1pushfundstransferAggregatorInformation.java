@@ -141,10 +141,10 @@ public class Ptsv1pushfundstransferAggregatorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv1pushfundstransferAggregatorInformation {\n");
     
-    sb.append("    aggregatorId: ").append(toIndentedString(aggregatorId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    independentSalesOrganizationID: ").append(toIndentedString(independentSalesOrganizationID)).append("\n");
-    sb.append("    subMerchant: ").append(toIndentedString(subMerchant)).append("\n");
+    if (aggregatorId != null) sb.append("    aggregatorId: ").append(toIndentedString(aggregatorId)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (independentSalesOrganizationID != null) sb.append("    independentSalesOrganizationID: ").append(toIndentedString(independentSalesOrganizationID)).append("\n");
+    if (subMerchant != null) sb.append("    subMerchant: ").append(toIndentedString(subMerchant)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class Ptsv1pushfundstransferAggregatorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -96,8 +96,8 @@ public class PtsV1TransactionBatchesGet500ResponseErrorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV1TransactionBatchesGet500ResponseErrorInformation {\n");
     
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PtsV1TransactionBatchesGet500ResponseErrorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

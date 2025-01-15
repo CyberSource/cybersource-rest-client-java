@@ -45,7 +45,7 @@ public class CardProcessingConfigFeaturesCardNotPresentInstallment {
    * @return enableInstallment
   **/
   @ApiModelProperty(value = "This flag is to enable for installment plan programs. Applicable for Fiserv (fiserv), Vero (vero) and American Express Direct (amexdirect) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>American Express Direct</td><td>cnp</td><td>No</td><td>No</td></tr> </table> ")
-  public Boolean isEnableInstallment() {
+  public Boolean EnableInstallment() {
     return enableInstallment;
   }
 
@@ -96,8 +96,8 @@ public class CardProcessingConfigFeaturesCardNotPresentInstallment {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigFeaturesCardNotPresentInstallment {\n");
     
-    sb.append("    enableInstallment: ").append(toIndentedString(enableInstallment)).append("\n");
-    sb.append("    installmentPlan: ").append(toIndentedString(installmentPlan)).append("\n");
+    if (enableInstallment != null) sb.append("    enableInstallment: ").append(toIndentedString(enableInstallment)).append("\n");
+    if (installmentPlan != null) sb.append("    installmentPlan: ").append(toIndentedString(installmentPlan)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class CardProcessingConfigFeaturesCardNotPresentInstallment {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

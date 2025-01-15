@@ -471,25 +471,25 @@ public class Upv1capturecontextsOrderInformationBillTo {
     StringBuilder sb = new StringBuilder();
     sb.append("class Upv1capturecontextsOrderInformationBillTo {\n");
     
-    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
-    sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
-    sb.append("    address3: ").append(toIndentedString(address3)).append("\n");
-    sb.append("    address4: ").append(toIndentedString(address4)).append("\n");
-    sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
-    sb.append("    buildingNumber: ").append(toIndentedString(buildingNumber)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    district: ").append(toIndentedString(district)).append("\n");
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
-    sb.append("    company: ").append(toIndentedString(company)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    nameSuffix: ").append(toIndentedString(nameSuffix)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
-    sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
+    if (address1 != null) sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
+    if (address2 != null) sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
+    if (address3 != null) sb.append("    address3: ").append(toIndentedString(address3)).append("\n");
+    if (address4 != null) sb.append("    address4: ").append(toIndentedString(address4)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    if (buildingNumber != null) sb.append("    buildingNumber: ").append(toIndentedString(buildingNumber)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (district != null) sb.append("    district: ").append(toIndentedString(district)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (company != null) sb.append("    company: ").append(toIndentedString(company)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    if (firstName != null) sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    if (nameSuffix != null) sb.append("    nameSuffix: ").append(toIndentedString(nameSuffix)).append("\n");
+    if (title != null) sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (phoneType != null) sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -500,10 +500,10 @@ public class Upv1capturecontextsOrderInformationBillTo {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

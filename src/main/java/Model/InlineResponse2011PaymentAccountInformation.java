@@ -121,9 +121,9 @@ public class InlineResponse2011PaymentAccountInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2011PaymentAccountInformation {\n");
     
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    features: ").append(toIndentedString(features)).append("\n");
-    sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (features != null) sb.append("    features: ").append(toIndentedString(features)).append("\n");
+    if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -134,10 +134,10 @@ public class InlineResponse2011PaymentAccountInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -119,9 +119,9 @@ public class ReportingV3ConversionDetailsGet200ResponseNotes {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ConversionDetailsGet200ResponseNotes {\n");
     
-    sb.append("    time: ").append(toIndentedString(time)).append("\n");
-    sb.append("    addedBy: ").append(toIndentedString(addedBy)).append("\n");
-    sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
+    if (time != null) sb.append("    time: ").append(toIndentedString(time)).append("\n");
+    if (addedBy != null) sb.append("    addedBy: ").append(toIndentedString(addedBy)).append("\n");
+    if (comments != null) sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class ReportingV3ConversionDetailsGet200ResponseNotes {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

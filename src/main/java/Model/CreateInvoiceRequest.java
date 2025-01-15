@@ -121,9 +121,9 @@ public class CreateInvoiceRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateInvoiceRequest {\n");
     
-    sb.append("    customerInformation: ").append(toIndentedString(customerInformation)).append("\n");
-    sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (customerInformation != null) sb.append("    customerInformation: ").append(toIndentedString(customerInformation)).append("\n");
+    if (invoiceInformation != null) sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -134,10 +134,10 @@ public class CreateInvoiceRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

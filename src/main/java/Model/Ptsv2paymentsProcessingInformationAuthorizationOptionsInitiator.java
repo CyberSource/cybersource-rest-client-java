@@ -70,7 +70,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
    * @return credentialStoredOnFile
   **/
   @ApiModelProperty(value = "Indicates to the issuing bank two things: - The merchant has received consent from the cardholder to store their card details on file - The merchant wants the issuing bank to check out the card details before the merchant initiates their first transaction for this cardholder. The purpose of the merchant-initiated transaction is to ensure that the cardholder's credentials are valid (that the card is not stolen or has restrictions) and that the card details are good to be stored on the merchant's file for future transactions.  Valid values: - `true` means merchant will use this transaction to store payment credentials for follow-up merchant-initiated transactions. - `false` means merchant will not use this transaction to store payment credentials for follow-up merchant-initiated transactions.  **NOTE:** The value for this field does not correspond to any data in the TC 33 capture file5.  This field is supported only for Visa transactions on CyberSource through VisaNet. ")
-  public Boolean isCredentialStoredOnFile() {
+  public Boolean CredentialStoredOnFile() {
     return credentialStoredOnFile;
   }
 
@@ -88,7 +88,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
    * @return storedCredentialUsed
   **/
   @ApiModelProperty(value = "Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **true** means the merchant-initiated transaction came from a card that was already stored on file. - **false**  means the merchant-initiated transaction came from a card that was not stored on file. ")
-  public Boolean isStoredCredentialUsed() {
+  public Boolean StoredCredentialUsed() {
     return storedCredentialUsed;
   }
 
@@ -141,10 +141,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    credentialStoredOnFile: ").append(toIndentedString(credentialStoredOnFile)).append("\n");
-    sb.append("    storedCredentialUsed: ").append(toIndentedString(storedCredentialUsed)).append("\n");
-    sb.append("    merchantInitiatedTransaction: ").append(toIndentedString(merchantInitiatedTransaction)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (credentialStoredOnFile != null) sb.append("    credentialStoredOnFile: ").append(toIndentedString(credentialStoredOnFile)).append("\n");
+    if (storedCredentialUsed != null) sb.append("    storedCredentialUsed: ").append(toIndentedString(storedCredentialUsed)).append("\n");
+    if (merchantInitiatedTransaction != null) sb.append("    merchantInitiatedTransaction: ").append(toIndentedString(merchantInitiatedTransaction)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

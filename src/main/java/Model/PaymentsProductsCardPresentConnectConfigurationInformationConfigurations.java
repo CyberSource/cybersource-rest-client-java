@@ -74,7 +74,7 @@ public class PaymentsProductsCardPresentConnectConfigurationInformationConfigura
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsCardPresentConnectConfigurationInformationConfigurations {\n");
     
-    sb.append("    partnerSolutionIdentifier: ").append(toIndentedString(partnerSolutionIdentifier)).append("\n");
+    if (partnerSolutionIdentifier != null) sb.append("    partnerSolutionIdentifier: ").append(toIndentedString(partnerSolutionIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PaymentsProductsCardPresentConnectConfigurationInformationConfigura
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

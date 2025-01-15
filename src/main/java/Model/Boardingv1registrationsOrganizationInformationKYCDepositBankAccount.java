@@ -140,10 +140,10 @@ public class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount {\n");
     
-    sb.append("    accountHolderName: ").append(toIndentedString(accountHolderName)).append("\n");
-    sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-    sb.append("    accountRoutingNumber: ").append(toIndentedString(accountRoutingNumber)).append("\n");
-    sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
+    if (accountHolderName != null) sb.append("    accountHolderName: ").append(toIndentedString(accountHolderName)).append("\n");
+    if (accountType != null) sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+    if (accountRoutingNumber != null) sb.append("    accountRoutingNumber: ").append(toIndentedString(accountRoutingNumber)).append("\n");
+    if (accountNumber != null) sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 
