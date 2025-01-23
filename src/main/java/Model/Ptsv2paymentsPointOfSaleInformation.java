@@ -71,6 +71,9 @@ public class Ptsv2paymentsPointOfSaleInformation {
   @SerializedName("cardholderVerificationMethod")
   private List<String> cardholderVerificationMethod = null;
 
+  @SerializedName("terminalCategory")
+  private String terminalCategory = null;
+
   @SerializedName("terminalInputCapability")
   private List<String> terminalInputCapability = null;
 
@@ -161,10 +164,10 @@ public class Ptsv2paymentsPointOfSaleInformation {
   }
 
    /**
-   * Method that was used to verify the cardholder&#39;s identity. Possible values:    - &#x60;0&#x60;: No verification   - &#x60;1&#x60;: Signature   - &#x60;2&#x60;: PIN   - &#x60;3&#x60;: Cardholder device CVM 
+   * Method that was used to verify the cardholder&#39;s identity. Possible values:    - &#x60;0&#x60;: No verification   - &#x60;1&#x60;: Signature   - &#x60;2&#x60;: PIN   - &#x60;3&#x60;: Cardholder device CVM   - &#x60;4&#x60;: Biometric   - &#x60;5&#x60;: OTP 
    * @return cardholderVerificationMethodUsed
   **/
-  @ApiModelProperty(value = "Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM ")
+  @ApiModelProperty(value = "Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM   - `4`: Biometric   - `5`: OTP ")
   public Integer getCardholderVerificationMethodUsed() {
     return cardholderVerificationMethodUsed;
   }
@@ -363,6 +366,24 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   public void setCardholderVerificationMethod(List<String> cardholderVerificationMethod) {
     this.cardholderVerificationMethod = cardholderVerificationMethod;
+  }
+
+  public Ptsv2paymentsPointOfSaleInformation terminalCategory(String terminalCategory) {
+    this.terminalCategory = terminalCategory;
+    return this;
+  }
+
+   /**
+   * Indicates the type of terminal.   Possible values: - &#x60;AFD&#x60;: Automated Fuel Dispenser 
+   * @return terminalCategory
+  **/
+  @ApiModelProperty(value = "Indicates the type of terminal.   Possible values: - `AFD`: Automated Fuel Dispenser ")
+  public String getTerminalCategory() {
+    return terminalCategory;
+  }
+
+  public void setTerminalCategory(String terminalCategory) {
+    this.terminalCategory = terminalCategory;
   }
 
   public Ptsv2paymentsPointOfSaleInformation terminalInputCapability(List<String> terminalInputCapability) {
@@ -685,6 +706,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
         Objects.equals(this.trackData, ptsv2paymentsPointOfSaleInformation.trackData) &&
         Objects.equals(this.storeAndForwardIndicator, ptsv2paymentsPointOfSaleInformation.storeAndForwardIndicator) &&
         Objects.equals(this.cardholderVerificationMethod, ptsv2paymentsPointOfSaleInformation.cardholderVerificationMethod) &&
+        Objects.equals(this.terminalCategory, ptsv2paymentsPointOfSaleInformation.terminalCategory) &&
         Objects.equals(this.terminalInputCapability, ptsv2paymentsPointOfSaleInformation.terminalInputCapability) &&
         Objects.equals(this.terminalCardCaptureCapability, ptsv2paymentsPointOfSaleInformation.terminalCardCaptureCapability) &&
         Objects.equals(this.terminalOutputCapability, ptsv2paymentsPointOfSaleInformation.terminalOutputCapability) &&
@@ -705,7 +727,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(terminalId, terminalSerialNumber, cardholderVerificationMethodUsed, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, pinEntrySolution, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake, serviceCode);
+    return Objects.hash(terminalId, terminalSerialNumber, cardholderVerificationMethodUsed, laneNumber, catLevel, entryMode, terminalCapability, operatingEnvironment, emv, amexCapnData, trackData, storeAndForwardIndicator, cardholderVerificationMethod, terminalCategory, terminalInputCapability, terminalCardCaptureCapability, terminalOutputCapability, terminalPinCapability, pinEntrySolution, deviceId, pinBlockEncodingFormat, encryptedPin, encryptedKeySerialNumber, partnerSdkVersion, emvApplicationIdentifierAndDedicatedFileName, terminalCompliance, isDedicatedHardwareTerminal, terminalModel, terminalMake, serviceCode);
   }
 
 
@@ -727,6 +749,7 @@ public class Ptsv2paymentsPointOfSaleInformation {
     if (trackData != null) sb.append("    trackData: ").append(toIndentedString(trackData)).append("\n");
     if (storeAndForwardIndicator != null) sb.append("    storeAndForwardIndicator: ").append(toIndentedString(storeAndForwardIndicator)).append("\n");
     if (cardholderVerificationMethod != null) sb.append("    cardholderVerificationMethod: ").append(toIndentedString(cardholderVerificationMethod)).append("\n");
+    if (terminalCategory != null) sb.append("    terminalCategory: ").append(toIndentedString(terminalCategory)).append("\n");
     if (terminalInputCapability != null) sb.append("    terminalInputCapability: ").append(toIndentedString(terminalInputCapability)).append("\n");
     if (terminalCardCaptureCapability != null) sb.append("    terminalCardCaptureCapability: ").append(toIndentedString(terminalCardCaptureCapability)).append("\n");
     if (terminalOutputCapability != null) sb.append("    terminalOutputCapability: ").append(toIndentedString(terminalOutputCapability)).append("\n");

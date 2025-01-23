@@ -53,6 +53,9 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
   @SerializedName("actionList")
   private List<String> actionList = null;
 
+  @SerializedName("transactionTypeIndicator")
+  private String transactionTypeIndicator = null;
+
   public Ptsv2paymentsidreversalsProcessingInformation paymentSolution(String paymentSolution) {
     this.paymentSolution = paymentSolution;
     return this;
@@ -187,6 +190,24 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
     this.actionList = actionList;
   }
 
+  public Ptsv2paymentsidreversalsProcessingInformation transactionTypeIndicator(String transactionTypeIndicator) {
+    this.transactionTypeIndicator = transactionTypeIndicator;
+    return this;
+  }
+
+   /**
+   * This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities 
+   * @return transactionTypeIndicator
+  **/
+  @ApiModelProperty(value = "This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities ")
+  public String getTransactionTypeIndicator() {
+    return transactionTypeIndicator;
+  }
+
+  public void setTransactionTypeIndicator(String transactionTypeIndicator) {
+    this.transactionTypeIndicator = transactionTypeIndicator;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -203,12 +224,13 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
         Objects.equals(this.reportGroup, ptsv2paymentsidreversalsProcessingInformation.reportGroup) &&
         Objects.equals(this.visaCheckoutId, ptsv2paymentsidreversalsProcessingInformation.visaCheckoutId) &&
         Objects.equals(this.issuer, ptsv2paymentsidreversalsProcessingInformation.issuer) &&
-        Objects.equals(this.actionList, ptsv2paymentsidreversalsProcessingInformation.actionList);
+        Objects.equals(this.actionList, ptsv2paymentsidreversalsProcessingInformation.actionList) &&
+        Objects.equals(this.transactionTypeIndicator, ptsv2paymentsidreversalsProcessingInformation.transactionTypeIndicator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, issuer, actionList);
+    return Objects.hash(paymentSolution, reconciliationId, linkId, reportGroup, visaCheckoutId, issuer, actionList, transactionTypeIndicator);
   }
 
 
@@ -224,6 +246,7 @@ public class Ptsv2paymentsidreversalsProcessingInformation {
     if (visaCheckoutId != null) sb.append("    visaCheckoutId: ").append(toIndentedString(visaCheckoutId)).append("\n");
     if (issuer != null) sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     if (actionList != null) sb.append("    actionList: ").append(toIndentedString(actionList)).append("\n");
+    if (transactionTypeIndicator != null) sb.append("    transactionTypeIndicator: ").append(toIndentedString(transactionTypeIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

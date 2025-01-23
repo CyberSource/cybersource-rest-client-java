@@ -35,6 +35,15 @@ public class Ptsv2paymentsProcessingInformationPurchaseOptions {
   @SerializedName("type")
   private String type = null;
 
+  @SerializedName("eligibilityIndicator")
+  private String eligibilityIndicator = null;
+
+  @SerializedName("benefitAmount")
+  private String benefitAmount = null;
+
+  @SerializedName("benefitType")
+  private String benefitType = null;
+
   public Ptsv2paymentsProcessingInformationPurchaseOptions isElectronicBenefitsTransfer(Boolean isElectronicBenefitsTransfer) {
     this.isElectronicBenefitsTransfer = isElectronicBenefitsTransfer;
     return this;
@@ -71,6 +80,60 @@ public class Ptsv2paymentsProcessingInformationPurchaseOptions {
     this.type = type;
   }
 
+  public Ptsv2paymentsProcessingInformationPurchaseOptions eligibilityIndicator(String eligibilityIndicator) {
+    this.eligibilityIndicator = eligibilityIndicator;
+    return this;
+  }
+
+   /**
+   * This field contains installment data defined by MasterCard. Possible values:   - Y &#x3D; eligible   - N &#x3D; not eligile 
+   * @return eligibilityIndicator
+  **/
+  @ApiModelProperty(value = "This field contains installment data defined by MasterCard. Possible values:   - Y = eligible   - N = not eligile ")
+  public String getEligibilityIndicator() {
+    return eligibilityIndicator;
+  }
+
+  public void setEligibilityIndicator(String eligibilityIndicator) {
+    this.eligibilityIndicator = eligibilityIndicator;
+  }
+
+  public Ptsv2paymentsProcessingInformationPurchaseOptions benefitAmount(String benefitAmount) {
+    this.benefitAmount = benefitAmount;
+    return this;
+  }
+
+   /**
+   * Workplace benefit amount.
+   * @return benefitAmount
+  **/
+  @ApiModelProperty(value = "Workplace benefit amount.")
+  public String getBenefitAmount() {
+    return benefitAmount;
+  }
+
+  public void setBenefitAmount(String benefitAmount) {
+    this.benefitAmount = benefitAmount;
+  }
+
+  public Ptsv2paymentsProcessingInformationPurchaseOptions benefitType(String benefitType) {
+    this.benefitType = benefitType;
+    return this;
+  }
+
+   /**
+   * Workplace benefit type. Possible values: - 70 &#x3D; employee benefit - 4T &#x3D; transportation / transit - 52 &#x3D; general benefit - 53 &#x3D; meal voucher - 54 &#x3D; fuel - 55 &#x3D; ecological / sustainability - 58 &#x3D; philanthropy / patronage / consumption - 59 &#x3D; gift - 5S &#x3D; sport / culture - 5T &#x3D; book / education 
+   * @return benefitType
+  **/
+  @ApiModelProperty(value = "Workplace benefit type. Possible values: - 70 = employee benefit - 4T = transportation / transit - 52 = general benefit - 53 = meal voucher - 54 = fuel - 55 = ecological / sustainability - 58 = philanthropy / patronage / consumption - 59 = gift - 5S = sport / culture - 5T = book / education ")
+  public String getBenefitType() {
+    return benefitType;
+  }
+
+  public void setBenefitType(String benefitType) {
+    this.benefitType = benefitType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,12 +145,15 @@ public class Ptsv2paymentsProcessingInformationPurchaseOptions {
     }
     Ptsv2paymentsProcessingInformationPurchaseOptions ptsv2paymentsProcessingInformationPurchaseOptions = (Ptsv2paymentsProcessingInformationPurchaseOptions) o;
     return Objects.equals(this.isElectronicBenefitsTransfer, ptsv2paymentsProcessingInformationPurchaseOptions.isElectronicBenefitsTransfer) &&
-        Objects.equals(this.type, ptsv2paymentsProcessingInformationPurchaseOptions.type);
+        Objects.equals(this.type, ptsv2paymentsProcessingInformationPurchaseOptions.type) &&
+        Objects.equals(this.eligibilityIndicator, ptsv2paymentsProcessingInformationPurchaseOptions.eligibilityIndicator) &&
+        Objects.equals(this.benefitAmount, ptsv2paymentsProcessingInformationPurchaseOptions.benefitAmount) &&
+        Objects.equals(this.benefitType, ptsv2paymentsProcessingInformationPurchaseOptions.benefitType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isElectronicBenefitsTransfer, type);
+    return Objects.hash(isElectronicBenefitsTransfer, type, eligibilityIndicator, benefitAmount, benefitType);
   }
 
 
@@ -98,6 +164,9 @@ public class Ptsv2paymentsProcessingInformationPurchaseOptions {
     
     if (isElectronicBenefitsTransfer != null) sb.append("    isElectronicBenefitsTransfer: ").append(toIndentedString(isElectronicBenefitsTransfer)).append("\n");
     if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (eligibilityIndicator != null) sb.append("    eligibilityIndicator: ").append(toIndentedString(eligibilityIndicator)).append("\n");
+    if (benefitAmount != null) sb.append("    benefitAmount: ").append(toIndentedString(benefitAmount)).append("\n");
+    if (benefitType != null) sb.append("    benefitType: ").append(toIndentedString(benefitType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

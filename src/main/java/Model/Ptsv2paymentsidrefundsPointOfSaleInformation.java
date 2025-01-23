@@ -33,6 +33,9 @@ public class Ptsv2paymentsidrefundsPointOfSaleInformation {
   @SerializedName("emv")
   private Ptsv2paymentsidcapturesPointOfSaleInformationEmv emv = null;
 
+  @SerializedName("terminalCategory")
+  private String terminalCategory = null;
+
   public Ptsv2paymentsidrefundsPointOfSaleInformation emv(Ptsv2paymentsidcapturesPointOfSaleInformationEmv emv) {
     this.emv = emv;
     return this;
@@ -51,6 +54,24 @@ public class Ptsv2paymentsidrefundsPointOfSaleInformation {
     this.emv = emv;
   }
 
+  public Ptsv2paymentsidrefundsPointOfSaleInformation terminalCategory(String terminalCategory) {
+    this.terminalCategory = terminalCategory;
+    return this;
+  }
+
+   /**
+   * Indicates the type of terminal.   Possible values: - &#x60;AFD&#x60;: Automated Fuel Dispenser 
+   * @return terminalCategory
+  **/
+  @ApiModelProperty(value = "Indicates the type of terminal.   Possible values: - `AFD`: Automated Fuel Dispenser ")
+  public String getTerminalCategory() {
+    return terminalCategory;
+  }
+
+  public void setTerminalCategory(String terminalCategory) {
+    this.terminalCategory = terminalCategory;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +82,13 @@ public class Ptsv2paymentsidrefundsPointOfSaleInformation {
       return false;
     }
     Ptsv2paymentsidrefundsPointOfSaleInformation ptsv2paymentsidrefundsPointOfSaleInformation = (Ptsv2paymentsidrefundsPointOfSaleInformation) o;
-    return Objects.equals(this.emv, ptsv2paymentsidrefundsPointOfSaleInformation.emv);
+    return Objects.equals(this.emv, ptsv2paymentsidrefundsPointOfSaleInformation.emv) &&
+        Objects.equals(this.terminalCategory, ptsv2paymentsidrefundsPointOfSaleInformation.terminalCategory);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(emv);
+    return Objects.hash(emv, terminalCategory);
   }
 
 
@@ -76,6 +98,7 @@ public class Ptsv2paymentsidrefundsPointOfSaleInformation {
     sb.append("class Ptsv2paymentsidrefundsPointOfSaleInformation {\n");
     
     if (emv != null) sb.append("    emv: ").append(toIndentedString(emv)).append("\n");
+    if (terminalCategory != null) sb.append("    terminalCategory: ").append(toIndentedString(terminalCategory)).append("\n");
     sb.append("}");
     return sb.toString();
   }

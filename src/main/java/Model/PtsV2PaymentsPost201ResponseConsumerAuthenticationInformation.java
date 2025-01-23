@@ -142,6 +142,9 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
   @SerializedName("directoryServerTransactionId")
   private String directoryServerTransactionId = null;
 
+  @SerializedName("dataQualityIndicator")
+  private String dataQualityIndicator = null;
+
   @SerializedName("authenticationResult")
   private String authenticationResult = null;
 
@@ -823,6 +826,24 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
     this.directoryServerTransactionId = directoryServerTransactionId;
   }
 
+  public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation dataQualityIndicator(String dataQualityIndicator) {
+    this.dataQualityIndicator = dataQualityIndicator;
+    return this;
+  }
+
+   /**
+   * The field is used to indicate that a transaction does not meet the Visa Secure authentication data quality requirements.
+   * @return dataQualityIndicator
+  **/
+  @ApiModelProperty(value = "The field is used to indicate that a transaction does not meet the Visa Secure authentication data quality requirements.")
+  public String getDataQualityIndicator() {
+    return dataQualityIndicator;
+  }
+
+  public void setDataQualityIndicator(String dataQualityIndicator) {
+    this.dataQualityIndicator = dataQualityIndicator;
+  }
+
   public PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation authenticationResult(String authenticationResult) {
     this.authenticationResult = authenticationResult;
     return this;
@@ -960,6 +981,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
         Objects.equals(this.whiteListStatusSource, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.whiteListStatusSource) &&
         Objects.equals(this.xid, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.xid) &&
         Objects.equals(this.directoryServerTransactionId, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.directoryServerTransactionId) &&
+        Objects.equals(this.dataQualityIndicator, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.dataQualityIndicator) &&
         Objects.equals(this.authenticationResult, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.authenticationResult) &&
         Objects.equals(this.authenticationStatusMsg, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.authenticationStatusMsg) &&
         Objects.equals(this.indicator, ptsV2PaymentsPost201ResponseConsumerAuthenticationInformation.indicator) &&
@@ -969,7 +991,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, strongAuthentication, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId, authenticationResult, authenticationStatusMsg, indicator, interactionCounter, whiteListStatus);
+    return Objects.hash(accessToken, acsRenderingType, acsTransactionId, acsUrl, authenticationPath, authorizationPayload, authenticationTransactionId, cardholderMessage, cavv, cavvAlgorithm, challengeCancelCode, challengeRequired, decoupledAuthenticationIndicator, directoryServerErrorCode, directoryServerErrorDescription, ecommerceIndicator, eci, eciRaw, effectiveAuthenticationType, ivr, strongAuthentication, networkScore, pareq, paresStatus, proofXml, proxyPan, sdkTransactionId, signedParesStatusReason, specificationVersion, stepUpUrl, threeDSServerTransactionId, ucafAuthenticationData, ucafCollectionIndicator, veresEnrolled, whiteListStatusSource, xid, directoryServerTransactionId, dataQualityIndicator, authenticationResult, authenticationStatusMsg, indicator, interactionCounter, whiteListStatus);
   }
 
 
@@ -1015,6 +1037,7 @@ public class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation {
     if (whiteListStatusSource != null) sb.append("    whiteListStatusSource: ").append(toIndentedString(whiteListStatusSource)).append("\n");
     if (xid != null) sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
     if (directoryServerTransactionId != null) sb.append("    directoryServerTransactionId: ").append(toIndentedString(directoryServerTransactionId)).append("\n");
+    if (dataQualityIndicator != null) sb.append("    dataQualityIndicator: ").append(toIndentedString(dataQualityIndicator)).append("\n");
     if (authenticationResult != null) sb.append("    authenticationResult: ").append(toIndentedString(authenticationResult)).append("\n");
     if (authenticationStatusMsg != null) sb.append("    authenticationStatusMsg: ").append(toIndentedString(authenticationStatusMsg)).append("\n");
     if (indicator != null) sb.append("    indicator: ").append(toIndentedString(indicator)).append("\n");

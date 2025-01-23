@@ -60,7 +60,7 @@ No authorization required
 
 <a name="getInstrumentIdentifier"></a>
 # **getInstrumentIdentifier**
-> PostInstrumentIdentifierRequest getInstrumentIdentifier(instrumentIdentifierId, profileId)
+> PostInstrumentIdentifierRequest getInstrumentIdentifier(instrumentIdentifierId, profileId, retrieveBinDetails)
 
 Retrieve an Instrument Identifier
 
@@ -76,8 +76,9 @@ Retrieve an Instrument Identifier
 InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
 String instrumentIdentifierId = "instrumentIdentifierId_example"; // String | The Id of an Instrument Identifier.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
+Boolean retrieveBinDetails = true; // Boolean | Retrieve the Bin Details of PAN or network token
 try {
-    PostInstrumentIdentifierRequest result = apiInstance.getInstrumentIdentifier(instrumentIdentifierId, profileId);
+    PostInstrumentIdentifierRequest result = apiInstance.getInstrumentIdentifier(instrumentIdentifierId, profileId, retrieveBinDetails);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#getInstrumentIdentifier");
@@ -91,6 +92,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instrumentIdentifierId** | **String**| The Id of an Instrument Identifier. |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional]
 
 ### Return type
 
@@ -107,7 +109,7 @@ No authorization required
 
 <a name="getInstrumentIdentifierPaymentInstrumentsList"></a>
 # **getInstrumentIdentifierPaymentInstrumentsList**
-> PaymentInstrumentList1 getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, offset, limit)
+> PaymentInstrumentList1 getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, retrieveBinDetails, offset, limit)
 
 List Payment Instruments for an Instrument Identifier
 
@@ -123,10 +125,11 @@ List Payment Instruments for an Instrument Identifier
 InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
 String instrumentIdentifierId = "instrumentIdentifierId_example"; // String | The Id of an Instrument Identifier.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
+Boolean retrieveBinDetails = true; // Boolean | Retrieve the Bin Details of PAN or network token
 Long offset = 0L; // Long | Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0.
 Long limit = 20L; // Long | The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100.
 try {
-    PaymentInstrumentList1 result = apiInstance.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, offset, limit);
+    PaymentInstrumentList1 result = apiInstance.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, retrieveBinDetails, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#getInstrumentIdentifierPaymentInstrumentsList");
@@ -140,6 +143,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instrumentIdentifierId** | **String**| The Id of an Instrument Identifier. |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional]
  **offset** | **Long**| Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. | [optional] [default to 0]
  **limit** | **Long**| The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. | [optional] [default to 20]
 
@@ -158,7 +162,7 @@ No authorization required
 
 <a name="patchInstrumentIdentifier"></a>
 # **patchInstrumentIdentifier**
-> PatchInstrumentIdentifierRequest patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch)
+> PatchInstrumentIdentifierRequest patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, retrieveBinDetails, ifMatch)
 
 Update an Instrument Identifier
 
@@ -175,9 +179,10 @@ InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
 String instrumentIdentifierId = "instrumentIdentifierId_example"; // String | The Id of an Instrument Identifier.
 PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest = new PatchInstrumentIdentifierRequest(); // PatchInstrumentIdentifierRequest | Specify the previous transaction Id to update.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
+Boolean retrieveBinDetails = true; // Boolean | Retrieve the Bin Details of PAN or network token
 String ifMatch = "ifMatch_example"; // String | Contains an ETag value from a GET request to make the request conditional.
 try {
-    PatchInstrumentIdentifierRequest result = apiInstance.patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
+    PatchInstrumentIdentifierRequest result = apiInstance.patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, retrieveBinDetails, ifMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#patchInstrumentIdentifier");
@@ -192,6 +197,7 @@ Name | Type | Description  | Notes
  **instrumentIdentifierId** | **String**| The Id of an Instrument Identifier. |
  **patchInstrumentIdentifierRequest** | [**PatchInstrumentIdentifierRequest**](PatchInstrumentIdentifierRequest.md)| Specify the previous transaction Id to update. |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional]
  **ifMatch** | **String**| Contains an ETag value from a GET request to make the request conditional. | [optional]
 
 ### Return type
@@ -209,7 +215,7 @@ No authorization required
 
 <a name="postInstrumentIdentifier"></a>
 # **postInstrumentIdentifier**
-> PostInstrumentIdentifierRequest postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId)
+> PostInstrumentIdentifierRequest postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId, retrieveBinDetails)
 
 Create an Instrument Identifier
 
@@ -225,8 +231,9 @@ Create an Instrument Identifier
 InstrumentIdentifierApi apiInstance = new InstrumentIdentifierApi();
 PostInstrumentIdentifierRequest postInstrumentIdentifierRequest = new PostInstrumentIdentifierRequest(); // PostInstrumentIdentifierRequest | Specify either a Card, Bank Account or Enrollable Card
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
+Boolean retrieveBinDetails = true; // Boolean | Retrieve the Bin Details of PAN or network token
 try {
-    PostInstrumentIdentifierRequest result = apiInstance.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId);
+    PostInstrumentIdentifierRequest result = apiInstance.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId, retrieveBinDetails);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InstrumentIdentifierApi#postInstrumentIdentifier");
@@ -240,6 +247,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postInstrumentIdentifierRequest** | [**PostInstrumentIdentifierRequest**](PostInstrumentIdentifierRequest.md)| Specify either a Card, Bank Account or Enrollable Card |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional]
 
 ### Return type
 

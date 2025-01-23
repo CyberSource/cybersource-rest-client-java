@@ -192,6 +192,9 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   @SerializedName("whiteListStatus")
   private String whiteListStatus = null;
 
+  @SerializedName("authenticationBrand")
+  private String authenticationBrand = null;
+
   @SerializedName("effectiveAuthenticationType")
   private String effectiveAuthenticationType = null;
 
@@ -200,6 +203,12 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @SerializedName("signedPares")
   private String signedPares = null;
+
+  @SerializedName("acsReferenceNumber")
+  private String acsReferenceNumber = null;
+
+  @SerializedName("dsReferenceNumber")
+  private String dsReferenceNumber = null;
 
   public Ptsv2paymentsConsumerAuthenticationInformation cavv(String cavv) {
     this.cavv = cavv;
@@ -1173,6 +1182,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     this.whiteListStatus = whiteListStatus;
   }
 
+  public Ptsv2paymentsConsumerAuthenticationInformation authenticationBrand(String authenticationBrand) {
+    this.authenticationBrand = authenticationBrand;
+    return this;
+  }
+
+   /**
+   * Indicates which directory server was used while authentication process, this data is useful in case of scenarios  when domestic scheme directory server is not present and authentication fallbacks to global scheme directory server. Possible values: - VISA - Returned for Mada VISA Co-badged cards, when authentication falls back to VISA Directory Server - MASTERCARD - Returned for Mada MasterCard Co-badged cards, when authentication falls back to MasterCard Directory Server 
+   * @return authenticationBrand
+  **/
+  @ApiModelProperty(value = "Indicates which directory server was used while authentication process, this data is useful in case of scenarios  when domestic scheme directory server is not present and authentication fallbacks to global scheme directory server. Possible values: - VISA - Returned for Mada VISA Co-badged cards, when authentication falls back to VISA Directory Server - MASTERCARD - Returned for Mada MasterCard Co-badged cards, when authentication falls back to MasterCard Directory Server ")
+  public String getAuthenticationBrand() {
+    return authenticationBrand;
+  }
+
+  public void setAuthenticationBrand(String authenticationBrand) {
+    this.authenticationBrand = authenticationBrand;
+  }
+
   public Ptsv2paymentsConsumerAuthenticationInformation effectiveAuthenticationType(String effectiveAuthenticationType) {
     this.effectiveAuthenticationType = effectiveAuthenticationType;
     return this;
@@ -1225,6 +1252,42 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   public void setSignedPares(String signedPares) {
     this.signedPares = signedPares;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation acsReferenceNumber(String acsReferenceNumber) {
+    this.acsReferenceNumber = acsReferenceNumber;
+    return this;
+  }
+
+   /**
+   * Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.
+   * @return acsReferenceNumber
+  **/
+  @ApiModelProperty(value = "Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.")
+  public String getAcsReferenceNumber() {
+    return acsReferenceNumber;
+  }
+
+  public void setAcsReferenceNumber(String acsReferenceNumber) {
+    this.acsReferenceNumber = acsReferenceNumber;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation dsReferenceNumber(String dsReferenceNumber) {
+    this.dsReferenceNumber = dsReferenceNumber;
+    return this;
+  }
+
+   /**
+   * EMVCo-assigned unique identifier. This field is required in Cardholder Initiated 3DS fully authenticated mada transactions. When you request the payer authentication and authorization services separately, get the value for this field from the payerAuthEnrollReply_dsReferenceNumber or payerAuthValidateReply_dsReferenceNumber response field. 
+   * @return dsReferenceNumber
+  **/
+  @ApiModelProperty(value = "EMVCo-assigned unique identifier. This field is required in Cardholder Initiated 3DS fully authenticated mada transactions. When you request the payer authentication and authorization services separately, get the value for this field from the payerAuthEnrollReply_dsReferenceNumber or payerAuthValidateReply_dsReferenceNumber response field. ")
+  public String getDsReferenceNumber() {
+    return dsReferenceNumber;
+  }
+
+  public void setDsReferenceNumber(String dsReferenceNumber) {
+    this.dsReferenceNumber = dsReferenceNumber;
   }
 
 
@@ -1291,14 +1354,17 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
         Objects.equals(this.secureCorporatePaymentIndicator, ptsv2paymentsConsumerAuthenticationInformation.secureCorporatePaymentIndicator) &&
         Objects.equals(this.transactionMode, ptsv2paymentsConsumerAuthenticationInformation.transactionMode) &&
         Objects.equals(this.whiteListStatus, ptsv2paymentsConsumerAuthenticationInformation.whiteListStatus) &&
+        Objects.equals(this.authenticationBrand, ptsv2paymentsConsumerAuthenticationInformation.authenticationBrand) &&
         Objects.equals(this.effectiveAuthenticationType, ptsv2paymentsConsumerAuthenticationInformation.effectiveAuthenticationType) &&
         Objects.equals(this.signedParesStatusReason, ptsv2paymentsConsumerAuthenticationInformation.signedParesStatusReason) &&
-        Objects.equals(this.signedPares, ptsv2paymentsConsumerAuthenticationInformation.signedPares);
+        Objects.equals(this.signedPares, ptsv2paymentsConsumerAuthenticationInformation.signedPares) &&
+        Objects.equals(this.acsReferenceNumber, ptsv2paymentsConsumerAuthenticationInformation.acsReferenceNumber) &&
+        Objects.equals(this.dsReferenceNumber, ptsv2paymentsConsumerAuthenticationInformation.dsReferenceNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cavv, transactionFlowIndicator, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, responseAccessToken, acsTransactionId, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, networkScore, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, effectiveAuthenticationType, signedParesStatusReason, signedPares);
+    return Objects.hash(cavv, transactionFlowIndicator, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, responseAccessToken, acsTransactionId, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, networkScore, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, authenticationBrand, effectiveAuthenticationType, signedParesStatusReason, signedPares, acsReferenceNumber, dsReferenceNumber);
   }
 
 
@@ -1361,9 +1427,12 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     if (secureCorporatePaymentIndicator != null) sb.append("    secureCorporatePaymentIndicator: ").append(toIndentedString(secureCorporatePaymentIndicator)).append("\n");
     if (transactionMode != null) sb.append("    transactionMode: ").append(toIndentedString(transactionMode)).append("\n");
     if (whiteListStatus != null) sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
+    if (authenticationBrand != null) sb.append("    authenticationBrand: ").append(toIndentedString(authenticationBrand)).append("\n");
     if (effectiveAuthenticationType != null) sb.append("    effectiveAuthenticationType: ").append(toIndentedString(effectiveAuthenticationType)).append("\n");
     if (signedParesStatusReason != null) sb.append("    signedParesStatusReason: ").append(toIndentedString(signedParesStatusReason)).append("\n");
     if (signedPares != null) sb.append("    signedPares: ").append(toIndentedString(signedPares)).append("\n");
+    if (acsReferenceNumber != null) sb.append("    acsReferenceNumber: ").append(toIndentedString(acsReferenceNumber)).append("\n");
+    if (dsReferenceNumber != null) sb.append("    dsReferenceNumber: ").append(toIndentedString(dsReferenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

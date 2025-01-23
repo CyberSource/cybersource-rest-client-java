@@ -15,8 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions;
 import Model.PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions;
 import Model.PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions;
+import Model.PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,6 +44,12 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
 
   @SerializedName("captureOptions")
   private PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions captureOptions = null;
+
+  @SerializedName("authorizationOptions")
+  private PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions authorizationOptions = null;
+
+  @SerializedName("purchaseOptions")
+  private PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions purchaseOptions = null;
 
   public PtsV2PaymentsPost201ResponseProcessingInformation bankTransferOptions(PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions bankTransferOptions) {
     this.bankTransferOptions = bankTransferOptions;
@@ -115,6 +123,42 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     this.captureOptions = captureOptions;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessingInformation authorizationOptions(PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions authorizationOptions) {
+    this.authorizationOptions = authorizationOptions;
+    return this;
+  }
+
+   /**
+   * Get authorizationOptions
+   * @return authorizationOptions
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions getAuthorizationOptions() {
+    return authorizationOptions;
+  }
+
+  public void setAuthorizationOptions(PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions authorizationOptions) {
+    this.authorizationOptions = authorizationOptions;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessingInformation purchaseOptions(PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions purchaseOptions) {
+    this.purchaseOptions = purchaseOptions;
+    return this;
+  }
+
+   /**
+   * Get purchaseOptions
+   * @return purchaseOptions
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions getPurchaseOptions() {
+    return purchaseOptions;
+  }
+
+  public void setPurchaseOptions(PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions purchaseOptions) {
+    this.purchaseOptions = purchaseOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,12 +172,14 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     return Objects.equals(this.bankTransferOptions, ptsV2PaymentsPost201ResponseProcessingInformation.bankTransferOptions) &&
         Objects.equals(this.paymentSolution, ptsV2PaymentsPost201ResponseProcessingInformation.paymentSolution) &&
         Objects.equals(this.enhancedDataEnabled, ptsV2PaymentsPost201ResponseProcessingInformation.enhancedDataEnabled) &&
-        Objects.equals(this.captureOptions, ptsV2PaymentsPost201ResponseProcessingInformation.captureOptions);
+        Objects.equals(this.captureOptions, ptsV2PaymentsPost201ResponseProcessingInformation.captureOptions) &&
+        Objects.equals(this.authorizationOptions, ptsV2PaymentsPost201ResponseProcessingInformation.authorizationOptions) &&
+        Objects.equals(this.purchaseOptions, ptsV2PaymentsPost201ResponseProcessingInformation.purchaseOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bankTransferOptions, paymentSolution, enhancedDataEnabled, captureOptions);
+    return Objects.hash(bankTransferOptions, paymentSolution, enhancedDataEnabled, captureOptions, authorizationOptions, purchaseOptions);
   }
 
 
@@ -146,6 +192,8 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
     if (enhancedDataEnabled != null) sb.append("    enhancedDataEnabled: ").append(toIndentedString(enhancedDataEnabled)).append("\n");
     if (captureOptions != null) sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    if (purchaseOptions != null) sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

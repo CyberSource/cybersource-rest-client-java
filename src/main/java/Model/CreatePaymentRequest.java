@@ -42,6 +42,7 @@ import Model.Ptsv2paymentsRiskInformation;
 import Model.Ptsv2paymentsSenderInformation;
 import Model.Ptsv2paymentsTokenInformation;
 import Model.Ptsv2paymentsTravelInformation;
+import Model.Ptsv2paymentsUnscheduledPaymentInformation;
 import Model.Ptsv2paymentsWatchlistScreeningInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -136,6 +137,9 @@ public class CreatePaymentRequest {
 
   @SerializedName("recurringPaymentInformation")
   private Ptsv2paymentsRecurringPaymentInformation recurringPaymentInformation = null;
+
+  @SerializedName("unscheduledPaymentInformation")
+  private Ptsv2paymentsUnscheduledPaymentInformation unscheduledPaymentInformation = null;
 
   @SerializedName("hostedPaymentInformation")
   private Ptsv2paymentsHostedPaymentInformation hostedPaymentInformation = null;
@@ -619,6 +623,24 @@ public class CreatePaymentRequest {
     this.recurringPaymentInformation = recurringPaymentInformation;
   }
 
+  public CreatePaymentRequest unscheduledPaymentInformation(Ptsv2paymentsUnscheduledPaymentInformation unscheduledPaymentInformation) {
+    this.unscheduledPaymentInformation = unscheduledPaymentInformation;
+    return this;
+  }
+
+   /**
+   * Get unscheduledPaymentInformation
+   * @return unscheduledPaymentInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsUnscheduledPaymentInformation getUnscheduledPaymentInformation() {
+    return unscheduledPaymentInformation;
+  }
+
+  public void setUnscheduledPaymentInformation(Ptsv2paymentsUnscheduledPaymentInformation unscheduledPaymentInformation) {
+    this.unscheduledPaymentInformation = unscheduledPaymentInformation;
+  }
+
   public CreatePaymentRequest hostedPaymentInformation(Ptsv2paymentsHostedPaymentInformation hostedPaymentInformation) {
     this.hostedPaymentInformation = hostedPaymentInformation;
     return this;
@@ -691,13 +713,14 @@ public class CreatePaymentRequest {
         Objects.equals(this.riskInformation, createPaymentRequest.riskInformation) &&
         Objects.equals(this.acquirerInformation, createPaymentRequest.acquirerInformation) &&
         Objects.equals(this.recurringPaymentInformation, createPaymentRequest.recurringPaymentInformation) &&
+        Objects.equals(this.unscheduledPaymentInformation, createPaymentRequest.unscheduledPaymentInformation) &&
         Objects.equals(this.hostedPaymentInformation, createPaymentRequest.hostedPaymentInformation) &&
         Objects.equals(this.watchlistScreeningInformation, createPaymentRequest.watchlistScreeningInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, senderInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, agreementInformation, riskInformation, acquirerInformation, recurringPaymentInformation, hostedPaymentInformation, watchlistScreeningInformation);
+    return Objects.hash(clientReferenceInformation, processingInformation, issuerInformation, paymentInformation, orderInformation, buyerInformation, senderInformation, recipientInformation, deviceInformation, merchantInformation, aggregatorInformation, consumerAuthenticationInformation, pointOfSaleInformation, merchantDefinedInformation, merchantDefinedSecureInformation, installmentInformation, travelInformation, healthCareInformation, promotionInformation, tokenInformation, invoiceDetails, processorInformation, agreementInformation, riskInformation, acquirerInformation, recurringPaymentInformation, unscheduledPaymentInformation, hostedPaymentInformation, watchlistScreeningInformation);
   }
 
 
@@ -732,6 +755,7 @@ public class CreatePaymentRequest {
     if (riskInformation != null) sb.append("    riskInformation: ").append(toIndentedString(riskInformation)).append("\n");
     if (acquirerInformation != null) sb.append("    acquirerInformation: ").append(toIndentedString(acquirerInformation)).append("\n");
     if (recurringPaymentInformation != null) sb.append("    recurringPaymentInformation: ").append(toIndentedString(recurringPaymentInformation)).append("\n");
+    if (unscheduledPaymentInformation != null) sb.append("    unscheduledPaymentInformation: ").append(toIndentedString(unscheduledPaymentInformation)).append("\n");
     if (hostedPaymentInformation != null) sb.append("    hostedPaymentInformation: ").append(toIndentedString(hostedPaymentInformation)).append("\n");
     if (watchlistScreeningInformation != null) sb.append("    watchlistScreeningInformation: ").append(toIndentedString(watchlistScreeningInformation)).append("\n");
     sb.append("}");

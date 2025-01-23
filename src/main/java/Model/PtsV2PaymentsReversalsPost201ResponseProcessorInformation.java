@@ -35,6 +35,9 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
   @SerializedName("responseCode")
   private String responseCode = null;
 
+  @SerializedName("networkTransactionId")
+  private String networkTransactionId = null;
+
   @SerializedName("responseCategoryCode")
   private String responseCategoryCode = null;
 
@@ -87,6 +90,24 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
 
   public void setResponseCode(String responseCode) {
     this.responseCode = responseCode;
+  }
+
+  public PtsV2PaymentsReversalsPost201ResponseProcessorInformation networkTransactionId(String networkTransactionId) {
+    this.networkTransactionId = networkTransactionId;
+    return this;
+  }
+
+   /**
+   * Same value as &#x60;processorInformation.transactionId&#x60;
+   * @return networkTransactionId
+  **/
+  @ApiModelProperty(value = "Same value as `processorInformation.transactionId`")
+  public String getNetworkTransactionId() {
+    return networkTransactionId;
+  }
+
+  public void setNetworkTransactionId(String networkTransactionId) {
+    this.networkTransactionId = networkTransactionId;
   }
 
   public PtsV2PaymentsReversalsPost201ResponseProcessorInformation responseCategoryCode(String responseCategoryCode) {
@@ -209,6 +230,7 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
     PtsV2PaymentsReversalsPost201ResponseProcessorInformation ptsV2PaymentsReversalsPost201ResponseProcessorInformation = (PtsV2PaymentsReversalsPost201ResponseProcessorInformation) o;
     return Objects.equals(this.transactionId, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.transactionId) &&
         Objects.equals(this.responseCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.responseCode) &&
+        Objects.equals(this.networkTransactionId, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.networkTransactionId) &&
         Objects.equals(this.responseCategoryCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.responseCategoryCode) &&
         Objects.equals(this.forwardedAcquirerCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.forwardedAcquirerCode) &&
         Objects.equals(this.masterCardServiceCode, ptsV2PaymentsReversalsPost201ResponseProcessorInformation.masterCardServiceCode) &&
@@ -219,7 +241,7 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, responseCode, responseCategoryCode, forwardedAcquirerCode, masterCardServiceCode, masterCardServiceReplyCode, responseDetails, providerResponse);
+    return Objects.hash(transactionId, responseCode, networkTransactionId, responseCategoryCode, forwardedAcquirerCode, masterCardServiceCode, masterCardServiceReplyCode, responseDetails, providerResponse);
   }
 
 
@@ -230,6 +252,7 @@ public class PtsV2PaymentsReversalsPost201ResponseProcessorInformation {
     
     if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (networkTransactionId != null) sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
     if (responseCategoryCode != null) sb.append("    responseCategoryCode: ").append(toIndentedString(responseCategoryCode)).append("\n");
     if (forwardedAcquirerCode != null) sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
     if (masterCardServiceCode != null) sb.append("    masterCardServiceCode: ").append(toIndentedString(masterCardServiceCode)).append("\n");

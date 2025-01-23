@@ -15,7 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Tmsv2TokenizedCardMetadataCardArt;
+import Model.TmsCardArt;
+import Model.Tmsv2TokenizedCardMetadataIssuer;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,14 +27,18 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Tmsv2TokenizedCardMetadata
+ * Metadata associated with the tokenized card. 
  */
+@ApiModel(description = "Metadata associated with the tokenized card. ")
 
 public class Tmsv2TokenizedCardMetadata {
   @SerializedName("cardArt")
-  private Tmsv2TokenizedCardMetadataCardArt cardArt = null;
+  private TmsCardArt cardArt = null;
 
-  public Tmsv2TokenizedCardMetadata cardArt(Tmsv2TokenizedCardMetadataCardArt cardArt) {
+  @SerializedName("issuer")
+  private Tmsv2TokenizedCardMetadataIssuer issuer = null;
+
+  public Tmsv2TokenizedCardMetadata cardArt(TmsCardArt cardArt) {
     this.cardArt = cardArt;
     return this;
   }
@@ -43,12 +48,30 @@ public class Tmsv2TokenizedCardMetadata {
    * @return cardArt
   **/
   @ApiModelProperty(value = "")
-  public Tmsv2TokenizedCardMetadataCardArt getCardArt() {
+  public TmsCardArt getCardArt() {
     return cardArt;
   }
 
-  public void setCardArt(Tmsv2TokenizedCardMetadataCardArt cardArt) {
+  public void setCardArt(TmsCardArt cardArt) {
     this.cardArt = cardArt;
+  }
+
+  public Tmsv2TokenizedCardMetadata issuer(Tmsv2TokenizedCardMetadataIssuer issuer) {
+    this.issuer = issuer;
+    return this;
+  }
+
+   /**
+   * Get issuer
+   * @return issuer
+  **/
+  @ApiModelProperty(value = "")
+  public Tmsv2TokenizedCardMetadataIssuer getIssuer() {
+    return issuer;
+  }
+
+  public void setIssuer(Tmsv2TokenizedCardMetadataIssuer issuer) {
+    this.issuer = issuer;
   }
 
 
@@ -61,12 +84,13 @@ public class Tmsv2TokenizedCardMetadata {
       return false;
     }
     Tmsv2TokenizedCardMetadata tmsv2TokenizedCardMetadata = (Tmsv2TokenizedCardMetadata) o;
-    return Objects.equals(this.cardArt, tmsv2TokenizedCardMetadata.cardArt);
+    return Objects.equals(this.cardArt, tmsv2TokenizedCardMetadata.cardArt) &&
+        Objects.equals(this.issuer, tmsv2TokenizedCardMetadata.issuer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardArt);
+    return Objects.hash(cardArt, issuer);
   }
 
 
@@ -76,6 +100,7 @@ public class Tmsv2TokenizedCardMetadata {
     sb.append("class Tmsv2TokenizedCardMetadata {\n");
     
     if (cardArt != null) sb.append("    cardArt: ").append(toIndentedString(cardArt)).append("\n");
+    if (issuer != null) sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     sb.append("}");
     return sb.toString();
   }

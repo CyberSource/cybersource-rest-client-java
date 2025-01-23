@@ -86,6 +86,9 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
   @SerializedName("regulated")
   private String regulated = null;
 
+  @SerializedName("accountHolderType")
+  private String accountHolderType = null;
+
   public PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures accountType(String accountType) {
     this.accountType = accountType;
     return this;
@@ -418,6 +421,24 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
     this.regulated = regulated;
   }
 
+  public PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures accountHolderType(String accountHolderType) {
+    this.accountHolderType = accountHolderType;
+    return this;
+  }
+
+   /**
+   * This is the account owner information, valid values are: - &#x60;01&#x60; : primary account holder - &#x60;02&#x60; : secondary account holder This is returned in the response of an account verification transaction by the Issuer.  
+   * @return accountHolderType
+  **/
+  @ApiModelProperty(value = "This is the account owner information, valid values are: - `01` : primary account holder - `02` : secondary account holder This is returned in the response of an account verification transaction by the Issuer.  ")
+  public String getAccountHolderType() {
+    return accountHolderType;
+  }
+
+  public void setAccountHolderType(String accountHolderType) {
+    this.accountHolderType = accountHolderType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -445,12 +466,13 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
         Objects.equals(this.pinlessDebit, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.pinlessDebit) &&
         Objects.equals(this.signatureDebit, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.signatureDebit) &&
         Objects.equals(this.prepaid, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.prepaid) &&
-        Objects.equals(this.regulated, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.regulated);
+        Objects.equals(this.regulated, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.regulated) &&
+        Objects.equals(this.accountHolderType, ptsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.accountHolderType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountType, accountStatus, balances, balanceAmount, balanceAmountType, currency, balanceSign, affluenceIndicator, category, commercial, group, healthCare, payroll, level3Eligible, pinlessDebit, signatureDebit, prepaid, regulated);
+    return Objects.hash(accountType, accountStatus, balances, balanceAmount, balanceAmountType, currency, balanceSign, affluenceIndicator, category, commercial, group, healthCare, payroll, level3Eligible, pinlessDebit, signatureDebit, prepaid, regulated, accountHolderType);
   }
 
 
@@ -477,6 +499,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures {
     if (signatureDebit != null) sb.append("    signatureDebit: ").append(toIndentedString(signatureDebit)).append("\n");
     if (prepaid != null) sb.append("    prepaid: ").append(toIndentedString(prepaid)).append("\n");
     if (regulated != null) sb.append("    regulated: ").append(toIndentedString(regulated)).append("\n");
+    if (accountHolderType != null) sb.append("    accountHolderType: ").append(toIndentedString(accountHolderType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

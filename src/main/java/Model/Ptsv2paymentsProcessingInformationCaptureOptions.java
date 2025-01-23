@@ -44,6 +44,12 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
   @SerializedName("notes")
   private String notes = null;
 
+  @SerializedName("reconciliationId")
+  private String reconciliationId = null;
+
+  @SerializedName("reconciliationIdAlternate")
+  private String reconciliationIdAlternate = null;
+
   public Ptsv2paymentsProcessingInformationCaptureOptions captureSequenceNumber(Integer captureSequenceNumber) {
     this.captureSequenceNumber = captureSequenceNumber;
     return this;
@@ -138,6 +144,42 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
     this.notes = notes;
   }
 
+  public Ptsv2paymentsProcessingInformationCaptureOptions reconciliationId(String reconciliationId) {
+    this.reconciliationId = reconciliationId;
+    return this;
+  }
+
+   /**
+   * Used for authbill request when capture field equals true
+   * @return reconciliationId
+  **/
+  @ApiModelProperty(value = "Used for authbill request when capture field equals true")
+  public String getReconciliationId() {
+    return reconciliationId;
+  }
+
+  public void setReconciliationId(String reconciliationId) {
+    this.reconciliationId = reconciliationId;
+  }
+
+  public Ptsv2paymentsProcessingInformationCaptureOptions reconciliationIdAlternate(String reconciliationIdAlternate) {
+    this.reconciliationIdAlternate = reconciliationIdAlternate;
+    return this;
+  }
+
+   /**
+   * Used by Nike merchant to send 12 digit order number
+   * @return reconciliationIdAlternate
+  **/
+  @ApiModelProperty(value = "Used by Nike merchant to send 12 digit order number")
+  public String getReconciliationIdAlternate() {
+    return reconciliationIdAlternate;
+  }
+
+  public void setReconciliationIdAlternate(String reconciliationIdAlternate) {
+    this.reconciliationIdAlternate = reconciliationIdAlternate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -152,12 +194,14 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
         Objects.equals(this.totalCaptureCount, ptsv2paymentsProcessingInformationCaptureOptions.totalCaptureCount) &&
         Objects.equals(this.dateToCapture, ptsv2paymentsProcessingInformationCaptureOptions.dateToCapture) &&
         Objects.equals(this.isFinal, ptsv2paymentsProcessingInformationCaptureOptions.isFinal) &&
-        Objects.equals(this.notes, ptsv2paymentsProcessingInformationCaptureOptions.notes);
+        Objects.equals(this.notes, ptsv2paymentsProcessingInformationCaptureOptions.notes) &&
+        Objects.equals(this.reconciliationId, ptsv2paymentsProcessingInformationCaptureOptions.reconciliationId) &&
+        Objects.equals(this.reconciliationIdAlternate, ptsv2paymentsProcessingInformationCaptureOptions.reconciliationIdAlternate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(captureSequenceNumber, totalCaptureCount, dateToCapture, isFinal, notes);
+    return Objects.hash(captureSequenceNumber, totalCaptureCount, dateToCapture, isFinal, notes, reconciliationId, reconciliationIdAlternate);
   }
 
 
@@ -171,6 +215,8 @@ public class Ptsv2paymentsProcessingInformationCaptureOptions {
     if (dateToCapture != null) sb.append("    dateToCapture: ").append(toIndentedString(dateToCapture)).append("\n");
     if (isFinal != null) sb.append("    isFinal: ").append(toIndentedString(isFinal)).append("\n");
     if (notes != null) sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (reconciliationIdAlternate != null) sb.append("    reconciliationIdAlternate: ").append(toIndentedString(reconciliationIdAlternate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

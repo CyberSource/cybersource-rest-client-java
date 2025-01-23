@@ -18,6 +18,7 @@ import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponsePaymentInsightsInformation;
 import Model.Ptsv2paymentsHealthCareInformation;
 import Model.Ptsv2paymentsMerchantDefinedInformation;
+import Model.Ptsv2paymentsUnscheduledPaymentInformation;
 import Model.TssV2TransactionsGet200ResponseApplicationInformation;
 import Model.TssV2TransactionsGet200ResponseBuyerInformation;
 import Model.TssV2TransactionsGet200ResponseClientReferenceInformation;
@@ -38,7 +39,6 @@ import Model.TssV2TransactionsGet200ResponseRecurringPaymentInformation;
 import Model.TssV2TransactionsGet200ResponseRiskInformation;
 import Model.TssV2TransactionsGet200ResponseSenderInformation;
 import Model.TssV2TransactionsGet200ResponseTokenInformation;
-import Model.TssV2TransactionsGet200ResponseUnscheduledPaymentInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -119,7 +119,7 @@ public class TssV2TransactionsGet200Response {
   private TssV2TransactionsGet200ResponsePayoutOptions payoutOptions = null;
 
   @SerializedName("unscheduledPaymentInformation")
-  private TssV2TransactionsGet200ResponseUnscheduledPaymentInformation unscheduledPaymentInformation = null;
+  private Ptsv2paymentsUnscheduledPaymentInformation unscheduledPaymentInformation = null;
 
   @SerializedName("processingInformation")
   private TssV2TransactionsGet200ResponseProcessingInformation processingInformation = null;
@@ -531,7 +531,7 @@ public class TssV2TransactionsGet200Response {
     this.payoutOptions = payoutOptions;
   }
 
-  public TssV2TransactionsGet200Response unscheduledPaymentInformation(TssV2TransactionsGet200ResponseUnscheduledPaymentInformation unscheduledPaymentInformation) {
+  public TssV2TransactionsGet200Response unscheduledPaymentInformation(Ptsv2paymentsUnscheduledPaymentInformation unscheduledPaymentInformation) {
     this.unscheduledPaymentInformation = unscheduledPaymentInformation;
     return this;
   }
@@ -541,11 +541,11 @@ public class TssV2TransactionsGet200Response {
    * @return unscheduledPaymentInformation
   **/
   @ApiModelProperty(value = "")
-  public TssV2TransactionsGet200ResponseUnscheduledPaymentInformation getUnscheduledPaymentInformation() {
+  public Ptsv2paymentsUnscheduledPaymentInformation getUnscheduledPaymentInformation() {
     return unscheduledPaymentInformation;
   }
 
-  public void setUnscheduledPaymentInformation(TssV2TransactionsGet200ResponseUnscheduledPaymentInformation unscheduledPaymentInformation) {
+  public void setUnscheduledPaymentInformation(Ptsv2paymentsUnscheduledPaymentInformation unscheduledPaymentInformation) {
     this.unscheduledPaymentInformation = unscheduledPaymentInformation;
   }
 

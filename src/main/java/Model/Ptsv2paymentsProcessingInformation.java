@@ -153,6 +153,18 @@ public class Ptsv2paymentsProcessingInformation {
   @SerializedName("processingInstruction")
   private String processingInstruction = null;
 
+  @SerializedName("transactionTypeIndicator")
+  private String transactionTypeIndicator = null;
+
+  @SerializedName("purposeOfPayment")
+  private String purposeOfPayment = null;
+
+  @SerializedName("languageCode")
+  private String languageCode = null;
+
+  @SerializedName("originalPaymentId")
+  private String originalPaymentId = null;
+
   public Ptsv2paymentsProcessingInformation actionList(List<String> actionList) {
     this.actionList = actionList;
     return this;
@@ -854,6 +866,78 @@ public class Ptsv2paymentsProcessingInformation {
     this.processingInstruction = processingInstruction;
   }
 
+  public Ptsv2paymentsProcessingInformation transactionTypeIndicator(String transactionTypeIndicator) {
+    this.transactionTypeIndicator = transactionTypeIndicator;
+    return this;
+  }
+
+   /**
+   * This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities 
+   * @return transactionTypeIndicator
+  **/
+  @ApiModelProperty(value = "This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities ")
+  public String getTransactionTypeIndicator() {
+    return transactionTypeIndicator;
+  }
+
+  public void setTransactionTypeIndicator(String transactionTypeIndicator) {
+    this.transactionTypeIndicator = transactionTypeIndicator;
+  }
+
+  public Ptsv2paymentsProcessingInformation purposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
+    return this;
+  }
+
+   /**
+   *  Possible values: - &#x60;16&#x60; :  High Risk Security  Other values can also be accommodated in future for different transactions.  Currently this field is only used in OCT, we could not find any existing valid values for the past 30 days in production. Issuer may decline invalid purpose of payment code with response code 93.  This field is also applicable for AFT transactions. For list of supported values, please refer to Developer Guide. 
+   * @return purposeOfPayment
+  **/
+  @ApiModelProperty(value = " Possible values: - `16` :  High Risk Security  Other values can also be accommodated in future for different transactions.  Currently this field is only used in OCT, we could not find any existing valid values for the past 30 days in production. Issuer may decline invalid purpose of payment code with response code 93.  This field is also applicable for AFT transactions. For list of supported values, please refer to Developer Guide. ")
+  public String getPurposeOfPayment() {
+    return purposeOfPayment;
+  }
+
+  public void setPurposeOfPayment(String purposeOfPayment) {
+    this.purposeOfPayment = purposeOfPayment;
+  }
+
+  public Ptsv2paymentsProcessingInformation languageCode(String languageCode) {
+    this.languageCode = languageCode;
+    return this;
+  }
+
+   /**
+   * Contains the ISO 639-2 defined language Code 
+   * @return languageCode
+  **/
+  @ApiModelProperty(value = "Contains the ISO 639-2 defined language Code ")
+  public String getLanguageCode() {
+    return languageCode;
+  }
+
+  public void setLanguageCode(String languageCode) {
+    this.languageCode = languageCode;
+  }
+
+  public Ptsv2paymentsProcessingInformation originalPaymentId(String originalPaymentId) {
+    this.originalPaymentId = originalPaymentId;
+    return this;
+  }
+
+   /**
+   * This value is used for linking Authorization extension transaction to the original Authorization transaction  and for linking MIT (Merchant initiated transaction) with the respective CIT (Customer initiated transaction). 
+   * @return originalPaymentId
+  **/
+  @ApiModelProperty(value = "This value is used for linking Authorization extension transaction to the original Authorization transaction  and for linking MIT (Merchant initiated transaction) with the respective CIT (Customer initiated transaction). ")
+  public String getOriginalPaymentId() {
+    return originalPaymentId;
+  }
+
+  public void setOriginalPaymentId(String originalPaymentId) {
+    this.originalPaymentId = originalPaymentId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -901,12 +985,16 @@ public class Ptsv2paymentsProcessingInformation {
         Objects.equals(this.networkPartnerId, ptsv2paymentsProcessingInformation.networkPartnerId) &&
         Objects.equals(this.paymentType, ptsv2paymentsProcessingInformation.paymentType) &&
         Objects.equals(this.enablerId, ptsv2paymentsProcessingInformation.enablerId) &&
-        Objects.equals(this.processingInstruction, ptsv2paymentsProcessingInformation.processingInstruction);
+        Objects.equals(this.processingInstruction, ptsv2paymentsProcessingInformation.processingInstruction) &&
+        Objects.equals(this.transactionTypeIndicator, ptsv2paymentsProcessingInformation.transactionTypeIndicator) &&
+        Objects.equals(this.purposeOfPayment, ptsv2paymentsProcessingInformation.purposeOfPayment) &&
+        Objects.equals(this.languageCode, ptsv2paymentsProcessingInformation.languageCode) &&
+        Objects.equals(this.originalPaymentId, ptsv2paymentsProcessingInformation.originalPaymentId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction);
+    return Objects.hash(actionList, enableEscrowOption, actionTokenTypes, binSource, capture, processorId, businessApplicationId, commerceIndicator, commerceIndicatorLabel, paymentSolution, reconciliationId, linkId, purchaseLevel, transactionTimeout, intentsId, reportGroup, visaCheckoutId, industryDataType, authorizationOptions, captureOptions, recurringOptions, bankTransferOptions, purchaseOptions, electronicBenefitsTransfer, loanOptions, walletType, nationalNetDomesticData, japanPaymentOptions, mobileRemotePaymentType, extendedCreditTotalCount, networkRoutingOrder, payByPointsIndicator, timeout, isReturnAuthRecordEnabled, networkPartnerId, paymentType, enablerId, processingInstruction, transactionTypeIndicator, purposeOfPayment, languageCode, originalPaymentId);
   }
 
 
@@ -953,6 +1041,10 @@ public class Ptsv2paymentsProcessingInformation {
     if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     if (enablerId != null) sb.append("    enablerId: ").append(toIndentedString(enablerId)).append("\n");
     if (processingInstruction != null) sb.append("    processingInstruction: ").append(toIndentedString(processingInstruction)).append("\n");
+    if (transactionTypeIndicator != null) sb.append("    transactionTypeIndicator: ").append(toIndentedString(transactionTypeIndicator)).append("\n");
+    if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
+    if (languageCode != null) sb.append("    languageCode: ").append(toIndentedString(languageCode)).append("\n");
+    if (originalPaymentId != null) sb.append("    originalPaymentId: ").append(toIndentedString(originalPaymentId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -41,6 +41,9 @@ public class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions {
   @SerializedName("notes")
   private String notes = null;
 
+  @SerializedName("reconciliationIdAlternate")
+  private String reconciliationIdAlternate = null;
+
   public Ptsv2paymentsidcapturesProcessingInformationCaptureOptions captureSequenceNumber(Integer captureSequenceNumber) {
     this.captureSequenceNumber = captureSequenceNumber;
     return this;
@@ -117,6 +120,24 @@ public class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions {
     this.notes = notes;
   }
 
+  public Ptsv2paymentsidcapturesProcessingInformationCaptureOptions reconciliationIdAlternate(String reconciliationIdAlternate) {
+    this.reconciliationIdAlternate = reconciliationIdAlternate;
+    return this;
+  }
+
+   /**
+   * Used by Nike merchant to send 12 digit order number
+   * @return reconciliationIdAlternate
+  **/
+  @ApiModelProperty(value = "Used by Nike merchant to send 12 digit order number")
+  public String getReconciliationIdAlternate() {
+    return reconciliationIdAlternate;
+  }
+
+  public void setReconciliationIdAlternate(String reconciliationIdAlternate) {
+    this.reconciliationIdAlternate = reconciliationIdAlternate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,12 +151,13 @@ public class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions {
     return Objects.equals(this.captureSequenceNumber, ptsv2paymentsidcapturesProcessingInformationCaptureOptions.captureSequenceNumber) &&
         Objects.equals(this.totalCaptureCount, ptsv2paymentsidcapturesProcessingInformationCaptureOptions.totalCaptureCount) &&
         Objects.equals(this.isFinal, ptsv2paymentsidcapturesProcessingInformationCaptureOptions.isFinal) &&
-        Objects.equals(this.notes, ptsv2paymentsidcapturesProcessingInformationCaptureOptions.notes);
+        Objects.equals(this.notes, ptsv2paymentsidcapturesProcessingInformationCaptureOptions.notes) &&
+        Objects.equals(this.reconciliationIdAlternate, ptsv2paymentsidcapturesProcessingInformationCaptureOptions.reconciliationIdAlternate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(captureSequenceNumber, totalCaptureCount, isFinal, notes);
+    return Objects.hash(captureSequenceNumber, totalCaptureCount, isFinal, notes, reconciliationIdAlternate);
   }
 
 
@@ -148,6 +170,7 @@ public class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions {
     if (totalCaptureCount != null) sb.append("    totalCaptureCount: ").append(toIndentedString(totalCaptureCount)).append("\n");
     if (isFinal != null) sb.append("    isFinal: ").append(toIndentedString(isFinal)).append("\n");
     if (notes != null) sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    if (reconciliationIdAlternate != null) sb.append("    reconciliationIdAlternate: ").append(toIndentedString(reconciliationIdAlternate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

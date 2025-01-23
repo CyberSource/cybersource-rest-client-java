@@ -22,6 +22,7 @@ import Model.PtsV2PayoutsPost201ResponseErrorInformation;
 import Model.PtsV2PayoutsPost201ResponseIssuerInformation;
 import Model.PtsV2PayoutsPost201ResponseMerchantInformation;
 import Model.PtsV2PayoutsPost201ResponseOrderInformation;
+import Model.PtsV2PayoutsPost201ResponseProcessingInformation;
 import Model.PtsV2PayoutsPost201ResponseProcessorInformation;
 import Model.PtsV2PayoutsPost201ResponseRecipientInformation;
 import com.google.gson.TypeAdapter;
@@ -76,6 +77,9 @@ public class PtsV2PayoutsPost201Response {
 
   @SerializedName("tokenInformation")
   private PtsV2PaymentsPost201ResponseTokenInformation tokenInformation = null;
+
+  @SerializedName("processingInformation")
+  private PtsV2PayoutsPost201ResponseProcessingInformation processingInformation = null;
 
   public PtsV2PayoutsPost201Response links(PtsV2IncrementalAuthorizationPatch201ResponseLinks links) {
     this.links = links;
@@ -311,6 +315,24 @@ public class PtsV2PayoutsPost201Response {
     this.tokenInformation = tokenInformation;
   }
 
+  public PtsV2PayoutsPost201Response processingInformation(PtsV2PayoutsPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PayoutsPost201ResponseProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(PtsV2PayoutsPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -333,12 +355,13 @@ public class PtsV2PayoutsPost201Response {
         Objects.equals(this.processorInformation, ptsV2PayoutsPost201Response.processorInformation) &&
         Objects.equals(this.recipientInformation, ptsV2PayoutsPost201Response.recipientInformation) &&
         Objects.equals(this.issuerInformation, ptsV2PayoutsPost201Response.issuerInformation) &&
-        Objects.equals(this.tokenInformation, ptsV2PayoutsPost201Response.tokenInformation);
+        Objects.equals(this.tokenInformation, ptsV2PayoutsPost201Response.tokenInformation) &&
+        Objects.equals(this.processingInformation, ptsV2PayoutsPost201Response.processingInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, merchantInformation, orderInformation, processorInformation, recipientInformation, issuerInformation, tokenInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, errorInformation, clientReferenceInformation, merchantInformation, orderInformation, processorInformation, recipientInformation, issuerInformation, tokenInformation, processingInformation);
   }
 
 
@@ -360,6 +383,7 @@ public class PtsV2PayoutsPost201Response {
     if (recipientInformation != null) sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
     if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
     if (tokenInformation != null) sb.append("    tokenInformation: ").append(toIndentedString(tokenInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

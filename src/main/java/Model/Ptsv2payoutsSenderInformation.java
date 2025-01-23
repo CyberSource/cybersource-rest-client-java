@@ -84,6 +84,9 @@ public class Ptsv2payoutsSenderInformation {
   @SerializedName("identificationNumber")
   private String identificationNumber = null;
 
+  @SerializedName("aliasName")
+  private String aliasName = null;
+
   public Ptsv2payoutsSenderInformation referenceNumber(String referenceNumber) {
     this.referenceNumber = referenceNumber;
     return this;
@@ -408,6 +411,24 @@ public class Ptsv2payoutsSenderInformation {
     this.identificationNumber = identificationNumber;
   }
 
+  public Ptsv2payoutsSenderInformation aliasName(String aliasName) {
+    this.aliasName = aliasName;
+    return this;
+  }
+
+   /**
+   * Sender&#39;s alias name.
+   * @return aliasName
+  **/
+  @ApiModelProperty(value = "Sender's alias name.")
+  public String getAliasName() {
+    return aliasName;
+  }
+
+  public void setAliasName(String aliasName) {
+    this.aliasName = aliasName;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -435,12 +456,13 @@ public class Ptsv2payoutsSenderInformation {
         Objects.equals(this.vatRegistrationNumber, ptsv2payoutsSenderInformation.vatRegistrationNumber) &&
         Objects.equals(this.personalIdType, ptsv2payoutsSenderInformation.personalIdType) &&
         Objects.equals(this.type, ptsv2payoutsSenderInformation.type) &&
-        Objects.equals(this.identificationNumber, ptsv2payoutsSenderInformation.identificationNumber);
+        Objects.equals(this.identificationNumber, ptsv2payoutsSenderInformation.identificationNumber) &&
+        Objects.equals(this.aliasName, ptsv2payoutsSenderInformation.aliasName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(referenceNumber, account, firstName, middleInitial, middleName, lastName, name, address1, locality, administrativeArea, countryCode, postalCode, phoneNumber, dateOfBirth, vatRegistrationNumber, personalIdType, type, identificationNumber);
+    return Objects.hash(referenceNumber, account, firstName, middleInitial, middleName, lastName, name, address1, locality, administrativeArea, countryCode, postalCode, phoneNumber, dateOfBirth, vatRegistrationNumber, personalIdType, type, identificationNumber, aliasName);
   }
 
 
@@ -467,6 +489,7 @@ public class Ptsv2payoutsSenderInformation {
     if (personalIdType != null) sb.append("    personalIdType: ").append(toIndentedString(personalIdType)).append("\n");
     if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
     if (identificationNumber != null) sb.append("    identificationNumber: ").append(toIndentedString(identificationNumber)).append("\n");
+    if (aliasName != null) sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

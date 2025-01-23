@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2paymentsSenderInformationAccount;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -49,6 +50,18 @@ public class Ptsv2paymentsSenderInformation {
 
   @SerializedName("countryCode")
   private String countryCode = null;
+
+  @SerializedName("aliasName")
+  private String aliasName = null;
+
+  @SerializedName("referenceNumber")
+  private String referenceNumber = null;
+
+  @SerializedName("account")
+  private Ptsv2paymentsSenderInformationAccount account = null;
+
+  @SerializedName("postalCode")
+  private String postalCode = null;
 
   public Ptsv2paymentsSenderInformation firstName(String firstName) {
     this.firstName = firstName;
@@ -176,6 +189,78 @@ public class Ptsv2paymentsSenderInformation {
     this.countryCode = countryCode;
   }
 
+  public Ptsv2paymentsSenderInformation aliasName(String aliasName) {
+    this.aliasName = aliasName;
+    return this;
+  }
+
+   /**
+   * Sender&#39;s alias name.
+   * @return aliasName
+  **/
+  @ApiModelProperty(value = "Sender's alias name.")
+  public String getAliasName() {
+    return aliasName;
+  }
+
+  public void setAliasName(String aliasName) {
+    this.aliasName = aliasName;
+  }
+
+  public Ptsv2paymentsSenderInformation referenceNumber(String referenceNumber) {
+    this.referenceNumber = referenceNumber;
+    return this;
+  }
+
+   /**
+   * This field is applicable for AFT transactions.   Contains a transaction reference number provided by the Merchant. Only alpha numeric values are supported. 
+   * @return referenceNumber
+  **/
+  @ApiModelProperty(value = "This field is applicable for AFT transactions.   Contains a transaction reference number provided by the Merchant. Only alpha numeric values are supported. ")
+  public String getReferenceNumber() {
+    return referenceNumber;
+  }
+
+  public void setReferenceNumber(String referenceNumber) {
+    this.referenceNumber = referenceNumber;
+  }
+
+  public Ptsv2paymentsSenderInformation account(Ptsv2paymentsSenderInformationAccount account) {
+    this.account = account;
+    return this;
+  }
+
+   /**
+   * Get account
+   * @return account
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2paymentsSenderInformationAccount getAccount() {
+    return account;
+  }
+
+  public void setAccount(Ptsv2paymentsSenderInformationAccount account) {
+    this.account = account;
+  }
+
+  public Ptsv2paymentsSenderInformation postalCode(String postalCode) {
+    this.postalCode = postalCode;
+    return this;
+  }
+
+   /**
+   * Postal code of sender. 
+   * @return postalCode
+  **/
+  @ApiModelProperty(value = "Postal code of sender. ")
+  public String getPostalCode() {
+    return postalCode;
+  }
+
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -192,12 +277,16 @@ public class Ptsv2paymentsSenderInformation {
         Objects.equals(this.address1, ptsv2paymentsSenderInformation.address1) &&
         Objects.equals(this.locality, ptsv2paymentsSenderInformation.locality) &&
         Objects.equals(this.administrativeArea, ptsv2paymentsSenderInformation.administrativeArea) &&
-        Objects.equals(this.countryCode, ptsv2paymentsSenderInformation.countryCode);
+        Objects.equals(this.countryCode, ptsv2paymentsSenderInformation.countryCode) &&
+        Objects.equals(this.aliasName, ptsv2paymentsSenderInformation.aliasName) &&
+        Objects.equals(this.referenceNumber, ptsv2paymentsSenderInformation.referenceNumber) &&
+        Objects.equals(this.account, ptsv2paymentsSenderInformation.account) &&
+        Objects.equals(this.postalCode, ptsv2paymentsSenderInformation.postalCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstName, middleName, lastName, address1, locality, administrativeArea, countryCode);
+    return Objects.hash(firstName, middleName, lastName, address1, locality, administrativeArea, countryCode, aliasName, referenceNumber, account, postalCode);
   }
 
 
@@ -213,6 +302,10 @@ public class Ptsv2paymentsSenderInformation {
     if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
     if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     if (countryCode != null) sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    if (aliasName != null) sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
+    if (referenceNumber != null) sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
+    if (account != null) sb.append("    account: ").append(toIndentedString(account)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

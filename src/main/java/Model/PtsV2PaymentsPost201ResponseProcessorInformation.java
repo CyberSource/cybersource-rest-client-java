@@ -170,6 +170,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("orderStatus")
   private String orderStatus = null;
 
+  @SerializedName("merchantRiskPrediction")
+  private String merchantRiskPrediction = null;
+
   public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
     this.authIndicator = authIndicator;
     return this;
@@ -962,6 +965,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.orderStatus = orderStatus;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation merchantRiskPrediction(String merchantRiskPrediction) {
+    this.merchantRiskPrediction = merchantRiskPrediction;
+    return this;
+  }
+
+   /**
+   * Mastercard is introducing the Merchant Risk Predict Service in the middle East/Africa Region. A newly launched service comprised of seven independent artificial intelligence (AI)-powered scores intended to augment existing merchant risk management practices. 
+   * @return merchantRiskPrediction
+  **/
+  @ApiModelProperty(value = "Mastercard is introducing the Merchant Risk Predict Service in the middle East/Africa Region. A newly launched service comprised of seven independent artificial intelligence (AI)-powered scores intended to augment existing merchant risk management practices. ")
+  public String getMerchantRiskPrediction() {
+    return merchantRiskPrediction;
+  }
+
+  public void setMerchantRiskPrediction(String merchantRiskPrediction) {
+    this.merchantRiskPrediction = merchantRiskPrediction;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1015,12 +1036,13 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.updateTimeUtc, ptsV2PaymentsPost201ResponseProcessorInformation.updateTimeUtc) &&
         Objects.equals(this.expirationTimeUtc, ptsV2PaymentsPost201ResponseProcessorInformation.expirationTimeUtc) &&
         Objects.equals(this.orderId, ptsV2PaymentsPost201ResponseProcessorInformation.orderId) &&
-        Objects.equals(this.orderStatus, ptsV2PaymentsPost201ResponseProcessorInformation.orderStatus);
+        Objects.equals(this.orderStatus, ptsV2PaymentsPost201ResponseProcessorInformation.orderStatus) &&
+        Objects.equals(this.merchantRiskPrediction, ptsV2PaymentsPost201ResponseProcessorInformation.merchantRiskPrediction);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl, disbursementMode, updateTimeUtc, expirationTimeUtc, orderId, orderStatus);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl, disbursementMode, updateTimeUtc, expirationTimeUtc, orderId, orderStatus, merchantRiskPrediction);
   }
 
 
@@ -1073,6 +1095,7 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     if (expirationTimeUtc != null) sb.append("    expirationTimeUtc: ").append(toIndentedString(expirationTimeUtc)).append("\n");
     if (orderId != null) sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
     if (orderStatus != null) sb.append("    orderStatus: ").append(toIndentedString(orderStatus)).append("\n");
+    if (merchantRiskPrediction != null) sb.append("    merchantRiskPrediction: ").append(toIndentedString(merchantRiskPrediction)).append("\n");
     sb.append("}");
     return sb.toString();
   }

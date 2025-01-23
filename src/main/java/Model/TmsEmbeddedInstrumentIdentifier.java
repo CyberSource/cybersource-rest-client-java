@@ -19,6 +19,7 @@ import Model.Ptsv2paymentsTokenInformationTokenProvisioningInformation;
 import Model.TmsEmbeddedInstrumentIdentifierBankAccount;
 import Model.TmsEmbeddedInstrumentIdentifierBillTo;
 import Model.TmsEmbeddedInstrumentIdentifierCard;
+import Model.TmsEmbeddedInstrumentIdentifierEmbedded;
 import Model.TmsEmbeddedInstrumentIdentifierIssuer;
 import Model.TmsEmbeddedInstrumentIdentifierLinks;
 import Model.TmsEmbeddedInstrumentIdentifierMetadata;
@@ -76,6 +77,9 @@ public class TmsEmbeddedInstrumentIdentifier {
 
   @SerializedName("metadata")
   private TmsEmbeddedInstrumentIdentifierMetadata metadata = null;
+
+  @SerializedName("_embedded")
+  private TmsEmbeddedInstrumentIdentifierEmbedded embedded = null;
 
   public TmsEmbeddedInstrumentIdentifier links(TmsEmbeddedInstrumentIdentifierLinks links) {
     this.links = links;
@@ -293,6 +297,24 @@ public class TmsEmbeddedInstrumentIdentifier {
     this.metadata = metadata;
   }
 
+  public TmsEmbeddedInstrumentIdentifier embedded(TmsEmbeddedInstrumentIdentifierEmbedded embedded) {
+    this.embedded = embedded;
+    return this;
+  }
+
+   /**
+   * Get embedded
+   * @return embedded
+  **/
+  @ApiModelProperty(value = "")
+  public TmsEmbeddedInstrumentIdentifierEmbedded getEmbedded() {
+    return embedded;
+  }
+
+  public void setEmbedded(TmsEmbeddedInstrumentIdentifierEmbedded embedded) {
+    this.embedded = embedded;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -315,12 +337,13 @@ public class TmsEmbeddedInstrumentIdentifier {
         Objects.equals(this.issuer, tmsEmbeddedInstrumentIdentifier.issuer) &&
         Objects.equals(this.processingInformation, tmsEmbeddedInstrumentIdentifier.processingInformation) &&
         Objects.equals(this.billTo, tmsEmbeddedInstrumentIdentifier.billTo) &&
-        Objects.equals(this.metadata, tmsEmbeddedInstrumentIdentifier.metadata);
+        Objects.equals(this.metadata, tmsEmbeddedInstrumentIdentifier.metadata) &&
+        Objects.equals(this.embedded, tmsEmbeddedInstrumentIdentifier.embedded);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, object, state, type, tokenProvisioningInformation, card, bankAccount, tokenizedCard, issuer, processingInformation, billTo, metadata);
+    return Objects.hash(links, id, object, state, type, tokenProvisioningInformation, card, bankAccount, tokenizedCard, issuer, processingInformation, billTo, metadata, embedded);
   }
 
 
@@ -342,6 +365,7 @@ public class TmsEmbeddedInstrumentIdentifier {
     if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
     if (metadata != null) sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    if (embedded != null) sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("}");
     return sb.toString();
   }

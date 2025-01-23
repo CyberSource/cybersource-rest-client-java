@@ -87,10 +87,10 @@ public class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOp
   }
 
    /**
-   * Flag that indicates whether the transaction is an extended authorization. 
+   * Indicates Authorization extension transaction. Extension transaction is used to prolong the settlement period by one additional settlement cycle period.  Possible values: - true: Transaction is an Authorization Extension transaction.  - false: Transaction is not an Authorization Extension transaction. 
    * @return extendAuthIndicator
   **/
-  @ApiModelProperty(value = "Flag that indicates whether the transaction is an extended authorization. ")
+  @ApiModelProperty(value = "Indicates Authorization extension transaction. Extension transaction is used to prolong the settlement period by one additional settlement cycle period.  Possible values: - true: Transaction is an Authorization Extension transaction.  - false: Transaction is not an Authorization Extension transaction. ")
   public String getExtendAuthIndicator() {
     return extendAuthIndicator;
   }

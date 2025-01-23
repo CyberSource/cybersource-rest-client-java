@@ -107,10 +107,10 @@ public class TssV2TransactionsGet200ResponsePointOfSaleInformation {
   }
 
    /**
-   * Method that was used to verify the cardholder&#39;s identity. Possible values:    - &#x60;0&#x60;: No verification   - &#x60;1&#x60;: Signature   - &#x60;2&#x60;: PIN   - &#x60;3&#x60;: Cardholder device CVM 
+   * Method that was used to verify the cardholder&#39;s identity. Possible values:    - &#x60;0&#x60;: No verification   - &#x60;1&#x60;: Signature   - &#x60;2&#x60;: PIN   - &#x60;3&#x60;: Cardholder device CVM   - &#x60;4&#x60;: Biometric   - &#x60;5&#x60;: OTP 
    * @return cardholderVerificationMethodUsed
   **/
-  @ApiModelProperty(value = "Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM ")
+  @ApiModelProperty(value = "Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM   - `4`: Biometric   - `5`: OTP ")
   public Integer getCardholderVerificationMethodUsed() {
     return cardholderVerificationMethodUsed;
   }
