@@ -148,7 +148,6 @@ public class InvoiceSettingsApi {
      */
     public InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings() throws ApiException {
         logger.info("CALL TO METHOD 'getInvoiceSettings' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = getInvoiceSettingsWithHttpInfo();
         logger.info("CALL TO METHOD 'getInvoiceSettings' ENDED");
         return resp.getData();
@@ -161,6 +160,7 @@ public class InvoiceSettingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InvoicingV2InvoiceSettingsGet200Response> getInvoiceSettingsWithHttpInfo() throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getInvoiceSettingsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoiceSettingsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -287,7 +287,6 @@ public class InvoiceSettingsApi {
      */
     public InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(InvoiceSettingsRequest invoiceSettingsRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updateInvoiceSettings' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoiceSettingsGet200Response> resp = updateInvoiceSettingsWithHttpInfo(invoiceSettingsRequest);
         logger.info("CALL TO METHOD 'updateInvoiceSettings' ENDED");
         return resp.getData();
@@ -301,6 +300,7 @@ public class InvoiceSettingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InvoicingV2InvoiceSettingsGet200Response> updateInvoiceSettingsWithHttpInfo(InvoiceSettingsRequest invoiceSettingsRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateInvoiceSettingsValidateBeforeCall(invoiceSettingsRequest, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoiceSettingsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

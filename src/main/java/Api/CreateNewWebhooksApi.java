@@ -149,7 +149,6 @@ public class CreateNewWebhooksApi {
      */
     public InlineResponse2014 createWebhookSubscription(CreateWebhookRequest createWebhookRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createWebhookSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2014> resp = createWebhookSubscriptionWithHttpInfo(createWebhookRequest);
         logger.info("CALL TO METHOD 'createWebhookSubscription' ENDED");
         return resp.getData();
@@ -163,6 +162,7 @@ public class CreateNewWebhooksApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2014> createWebhookSubscriptionWithHttpInfo(CreateWebhookRequest createWebhookRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createWebhookSubscriptionValidateBeforeCall(createWebhookRequest, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2014>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -295,7 +295,6 @@ public class CreateNewWebhooksApi {
      */
     public List<InlineResponse2002> findProductsToSubscribe(String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'findProductsToSubscribe' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<List<InlineResponse2002>> resp = findProductsToSubscribeWithHttpInfo(organizationId);
         logger.info("CALL TO METHOD 'findProductsToSubscribe' ENDED");
         return resp.getData();
@@ -309,6 +308,7 @@ public class CreateNewWebhooksApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<List<InlineResponse2002>> findProductsToSubscribeWithHttpInfo(String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = findProductsToSubscribeValidateBeforeCall(organizationId, null, null);
         Type localVarReturnType = new TypeToken<List<InlineResponse2002>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -455,7 +455,6 @@ public class CreateNewWebhooksApi {
      */
     public InlineResponse2013 saveSymEgressKey(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException {
         logger.info("CALL TO METHOD 'saveSymEgressKey' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2013> resp = saveSymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey);
         logger.info("CALL TO METHOD 'saveSymEgressKey' ENDED");
         return resp.getData();
@@ -472,6 +471,7 @@ public class CreateNewWebhooksApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2013> saveSymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = saveSymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, vCCorrelationId, saveSymEgressKey, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2013>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

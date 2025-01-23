@@ -166,7 +166,6 @@ public class TransactionBatchesApi {
      */
     public void getTransactionBatchDetails(String id, LocalDate uploadDate, String status) throws ApiException {
         logger.info("CALL TO METHOD 'getTransactionBatchDetails' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         getTransactionBatchDetailsWithHttpInfo(id, uploadDate, status);
 
     }
@@ -181,6 +180,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InputStream> getTransactionBatchDetailsWithHttpInfo(String id, LocalDate uploadDate, String status) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getTransactionBatchDetailsValidateBeforeCall(id, uploadDate, status, null, null);
         return apiClient.execute(call);
     }
@@ -312,7 +312,6 @@ public class TransactionBatchesApi {
      */
     public PtsV1TransactionBatchesIdGet200Response getTransactionBatchId(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getTransactionBatchId' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV1TransactionBatchesIdGet200Response> resp = getTransactionBatchIdWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getTransactionBatchId' ENDED");
         return resp.getData();
@@ -326,6 +325,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV1TransactionBatchesIdGet200Response> getTransactionBatchIdWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getTransactionBatchIdValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesIdGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -468,7 +468,6 @@ public class TransactionBatchesApi {
      */
     public PtsV1TransactionBatchesGet200Response getTransactionBatches(DateTime startTime, DateTime endTime) throws ApiException {
         logger.info("CALL TO METHOD 'getTransactionBatches' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV1TransactionBatchesGet200Response> resp = getTransactionBatchesWithHttpInfo(startTime, endTime);
         logger.info("CALL TO METHOD 'getTransactionBatches' ENDED");
         return resp.getData();
@@ -483,6 +482,7 @@ public class TransactionBatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV1TransactionBatchesGet200Response> getTransactionBatchesWithHttpInfo(DateTime startTime, DateTime endTime) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getTransactionBatchesValidateBeforeCall(startTime, endTime, null, null);
         Type localVarReturnType = new TypeToken<PtsV1TransactionBatchesGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

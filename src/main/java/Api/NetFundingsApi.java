@@ -175,7 +175,6 @@ public class NetFundingsApi {
      */
     public ReportingV3NetFundingsGet200Response getNetFundingDetails(DateTime startTime, DateTime endTime, String organizationId, String groupName) throws ApiException {
         logger.info("CALL TO METHOD 'getNetFundingDetails' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3NetFundingsGet200Response> resp = getNetFundingDetailsWithHttpInfo(startTime, endTime, organizationId, groupName);
         logger.info("CALL TO METHOD 'getNetFundingDetails' ENDED");
         return resp.getData();
@@ -192,6 +191,7 @@ public class NetFundingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3NetFundingsGet200Response> getNetFundingDetailsWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId, String groupName) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getNetFundingDetailsValidateBeforeCall(startTime, endTime, organizationId, groupName, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3NetFundingsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -153,7 +153,6 @@ public class ReplayWebhooksApi {
      */
     public void replayPreviousWebhooks(String webhookId, ReplayWebhooksRequest replayWebhooksRequest) throws ApiException {
         logger.info("CALL TO METHOD 'replayPreviousWebhooks' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         replayPreviousWebhooksWithHttpInfo(webhookId, replayWebhooksRequest);
 
     }
@@ -167,6 +166,7 @@ public class ReplayWebhooksApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> replayPreviousWebhooksWithHttpInfo(String webhookId, ReplayWebhooksRequest replayWebhooksRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = replayPreviousWebhooksValidateBeforeCall(webhookId, replayWebhooksRequest, null, null);
         return apiClient.execute(call);
     }

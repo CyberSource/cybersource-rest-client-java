@@ -169,7 +169,6 @@ public class ReportDownloadsApi {
      */
     public void downloadReport(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'downloadReport' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         downloadReportWithHttpInfo(reportDate, reportName, organizationId);
 
     }
@@ -184,6 +183,7 @@ public class ReportDownloadsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InputStream> downloadReportWithHttpInfo(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = downloadReportValidateBeforeCall(reportDate, reportName, organizationId, null, null);
         return apiClient.execute(call);
     }

@@ -154,7 +154,6 @@ public class TransactionDetailsApi {
      */
     public TssV2TransactionsGet200Response getTransaction(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getTransaction' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsGet200Response> resp = getTransactionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getTransaction' ENDED");
         return resp.getData();
@@ -168,6 +167,7 @@ public class TransactionDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2TransactionsGet200Response> getTransactionWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getTransactionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

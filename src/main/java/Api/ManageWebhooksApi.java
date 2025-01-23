@@ -159,7 +159,6 @@ public class ManageWebhooksApi {
      */
     public void deleteWebhookSubscription(String webhookId) throws ApiException {
         logger.info("CALL TO METHOD 'deleteWebhookSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         deleteWebhookSubscriptionWithHttpInfo(webhookId);
 
     }
@@ -172,6 +171,7 @@ public class ManageWebhooksApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deleteWebhookSubscriptionWithHttpInfo(String webhookId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteWebhookSubscriptionValidateBeforeCall(webhookId, null, null);
         return apiClient.execute(call);
     }
@@ -302,7 +302,6 @@ public class ManageWebhooksApi {
      */
     public InlineResponse2004 getWebhookSubscriptionById(String webhookId) throws ApiException {
         logger.info("CALL TO METHOD 'getWebhookSubscriptionById' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2004> resp = getWebhookSubscriptionByIdWithHttpInfo(webhookId);
         logger.info("CALL TO METHOD 'getWebhookSubscriptionById' ENDED");
         return resp.getData();
@@ -316,6 +315,7 @@ public class ManageWebhooksApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2004> getWebhookSubscriptionByIdWithHttpInfo(String webhookId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getWebhookSubscriptionByIdValidateBeforeCall(webhookId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -469,7 +469,6 @@ public class ManageWebhooksApi {
      */
     public List<InlineResponse2003> getWebhookSubscriptionsByOrg(String organizationId, String productId, String eventType) throws ApiException {
         logger.info("CALL TO METHOD 'getWebhookSubscriptionsByOrg' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<List<InlineResponse2003>> resp = getWebhookSubscriptionsByOrgWithHttpInfo(organizationId, productId, eventType);
         logger.info("CALL TO METHOD 'getWebhookSubscriptionsByOrg' ENDED");
         return resp.getData();
@@ -485,6 +484,7 @@ public class ManageWebhooksApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<List<InlineResponse2003>> getWebhookSubscriptionsByOrgWithHttpInfo(String organizationId, String productId, String eventType) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getWebhookSubscriptionsByOrgValidateBeforeCall(organizationId, productId, eventType, null, null);
         Type localVarReturnType = new TypeToken<List<InlineResponse2003>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -639,7 +639,6 @@ public class ManageWebhooksApi {
      */
     public InlineResponse2015 saveAsymEgressKey(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
         logger.info("CALL TO METHOD 'saveAsymEgressKey' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2015> resp = saveAsymEgressKeyWithHttpInfo(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
         logger.info("CALL TO METHOD 'saveAsymEgressKey' ENDED");
         return resp.getData();
@@ -656,6 +655,7 @@ public class ManageWebhooksApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2015> saveAsymEgressKeyWithHttpInfo(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = saveAsymEgressKeyValidateBeforeCall(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2015>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -789,7 +789,6 @@ public class ManageWebhooksApi {
      */
     public void updateWebhookSubscription(String webhookId, UpdateWebhookRequest updateWebhookRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updateWebhookSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         updateWebhookSubscriptionWithHttpInfo(webhookId, updateWebhookRequest);
 
     }
@@ -803,6 +802,7 @@ public class ManageWebhooksApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> updateWebhookSubscriptionWithHttpInfo(String webhookId, UpdateWebhookRequest updateWebhookRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateWebhookSubscriptionValidateBeforeCall(webhookId, updateWebhookRequest, null, null);
         return apiClient.execute(call);
     }

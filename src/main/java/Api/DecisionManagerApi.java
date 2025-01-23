@@ -176,7 +176,6 @@ public class DecisionManagerApi {
      */
     public InlineResponse200 actionDecisionManagerCase(String id, CaseManagementActionsRequest caseManagementActionsRequest) throws ApiException {
         logger.info("CALL TO METHOD 'actionDecisionManagerCase' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse200> resp = actionDecisionManagerCaseWithHttpInfo(id, caseManagementActionsRequest);
         logger.info("CALL TO METHOD 'actionDecisionManagerCase' ENDED");
         return resp.getData();
@@ -191,6 +190,7 @@ public class DecisionManagerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse200> actionDecisionManagerCaseWithHttpInfo(String id, CaseManagementActionsRequest caseManagementActionsRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = actionDecisionManagerCaseValidateBeforeCall(id, caseManagementActionsRequest, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -328,7 +328,6 @@ public class DecisionManagerApi {
      */
     public RiskV1UpdatePost201Response addNegative(String type, AddNegativeListRequest addNegativeListRequest) throws ApiException {
         logger.info("CALL TO METHOD 'addNegative' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1UpdatePost201Response> resp = addNegativeWithHttpInfo(type, addNegativeListRequest);
         logger.info("CALL TO METHOD 'addNegative' ENDED");
         return resp.getData();
@@ -343,6 +342,7 @@ public class DecisionManagerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RiskV1UpdatePost201Response> addNegativeWithHttpInfo(String type, AddNegativeListRequest addNegativeListRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = addNegativeValidateBeforeCall(type, addNegativeListRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1UpdatePost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -480,7 +480,6 @@ public class DecisionManagerApi {
      */
     public InlineResponse201 commentDecisionManagerCase(String id, CaseManagementCommentsRequest caseManagementCommentsRequest) throws ApiException {
         logger.info("CALL TO METHOD 'commentDecisionManagerCase' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse201> resp = commentDecisionManagerCaseWithHttpInfo(id, caseManagementCommentsRequest);
         logger.info("CALL TO METHOD 'commentDecisionManagerCase' ENDED");
         return resp.getData();
@@ -495,6 +494,7 @@ public class DecisionManagerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse201> commentDecisionManagerCaseWithHttpInfo(String id, CaseManagementCommentsRequest caseManagementCommentsRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = commentDecisionManagerCaseValidateBeforeCall(id, caseManagementCommentsRequest, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -623,7 +623,6 @@ public class DecisionManagerApi {
      */
     public RiskV1DecisionsPost201Response createBundledDecisionManagerCase(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createBundledDecisionManagerCase' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1DecisionsPost201Response> resp = createBundledDecisionManagerCaseWithHttpInfo(createBundledDecisionManagerCaseRequest);
         logger.info("CALL TO METHOD 'createBundledDecisionManagerCase' ENDED");
         return resp.getData();
@@ -637,6 +636,7 @@ public class DecisionManagerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RiskV1DecisionsPost201Response> createBundledDecisionManagerCaseWithHttpInfo(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createBundledDecisionManagerCaseValidateBeforeCall(createBundledDecisionManagerCaseRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1DecisionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -773,7 +773,6 @@ public class DecisionManagerApi {
      */
     public RiskV1UpdatePost201Response fraudUpdate(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
         logger.info("CALL TO METHOD 'fraudUpdate' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1UpdatePost201Response> resp = fraudUpdateWithHttpInfo(id, fraudMarkingActionRequest);
         logger.info("CALL TO METHOD 'fraudUpdate' ENDED");
         return resp.getData();
@@ -788,6 +787,7 @@ public class DecisionManagerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RiskV1UpdatePost201Response> fraudUpdateWithHttpInfo(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = fraudUpdateValidateBeforeCall(id, fraudMarkingActionRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1UpdatePost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

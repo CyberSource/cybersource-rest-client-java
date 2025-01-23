@@ -155,7 +155,6 @@ public class VerificationApi {
      */
     public RiskV1ExportComplianceInquiriesPost201Response validateExportCompliance(ValidateExportComplianceRequest validateExportComplianceRequest) throws ApiException {
         logger.info("CALL TO METHOD 'validateExportCompliance' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1ExportComplianceInquiriesPost201Response> resp = validateExportComplianceWithHttpInfo(validateExportComplianceRequest);
         logger.info("CALL TO METHOD 'validateExportCompliance' ENDED");
         return resp.getData();
@@ -169,6 +168,7 @@ public class VerificationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RiskV1ExportComplianceInquiriesPost201Response> validateExportComplianceWithHttpInfo(ValidateExportComplianceRequest validateExportComplianceRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = validateExportComplianceValidateBeforeCall(validateExportComplianceRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1ExportComplianceInquiriesPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -296,7 +296,6 @@ public class VerificationApi {
      */
     public RiskV1AddressVerificationsPost201Response verifyCustomerAddress(VerifyCustomerAddressRequest verifyCustomerAddressRequest) throws ApiException {
         logger.info("CALL TO METHOD 'verifyCustomerAddress' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AddressVerificationsPost201Response> resp = verifyCustomerAddressWithHttpInfo(verifyCustomerAddressRequest);
         logger.info("CALL TO METHOD 'verifyCustomerAddress' ENDED");
         return resp.getData();
@@ -310,6 +309,7 @@ public class VerificationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RiskV1AddressVerificationsPost201Response> verifyCustomerAddressWithHttpInfo(VerifyCustomerAddressRequest verifyCustomerAddressRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = verifyCustomerAddressValidateBeforeCall(verifyCustomerAddressRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1AddressVerificationsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

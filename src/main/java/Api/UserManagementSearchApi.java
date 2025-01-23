@@ -152,7 +152,6 @@ public class UserManagementSearchApi {
      */
     public UmsV1UsersGet200Response searchUsers(SearchRequest searchRequest) throws ApiException {
         logger.info("CALL TO METHOD 'searchUsers' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<UmsV1UsersGet200Response> resp = searchUsersWithHttpInfo(searchRequest);
         logger.info("CALL TO METHOD 'searchUsers' ENDED");
         return resp.getData();
@@ -166,6 +165,7 @@ public class UserManagementSearchApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UmsV1UsersGet200Response> searchUsersWithHttpInfo(SearchRequest searchRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = searchUsersValidateBeforeCall(searchRequest, null, null);
         Type localVarReturnType = new TypeToken<UmsV1UsersGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

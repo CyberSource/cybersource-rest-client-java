@@ -158,7 +158,6 @@ public class InvoicesApi {
      */
     public InvoicingV2InvoicesPost201Response createInvoice(CreateInvoiceRequest createInvoiceRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createInvoice' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = createInvoiceWithHttpInfo(createInvoiceRequest);
         logger.info("CALL TO METHOD 'createInvoice' ENDED");
         return resp.getData();
@@ -172,6 +171,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InvoicingV2InvoicesPost201Response> createInvoiceWithHttpInfo(CreateInvoiceRequest createInvoiceRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createInvoiceValidateBeforeCall(createInvoiceRequest, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -318,7 +318,6 @@ public class InvoicesApi {
      */
     public InvoicingV2InvoicesAllGet200Response getAllInvoices(Integer offset, Integer limit, String status) throws ApiException {
         logger.info("CALL TO METHOD 'getAllInvoices' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesAllGet200Response> resp = getAllInvoicesWithHttpInfo(offset, limit, status);
         logger.info("CALL TO METHOD 'getAllInvoices' ENDED");
         return resp.getData();
@@ -334,6 +333,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InvoicingV2InvoicesAllGet200Response> getAllInvoicesWithHttpInfo(Integer offset, Integer limit, String status) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getAllInvoicesValidateBeforeCall(offset, limit, status, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesAllGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -467,7 +467,6 @@ public class InvoicesApi {
      */
     public InvoicingV2InvoicesGet200Response getInvoice(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getInvoice' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesGet200Response> resp = getInvoiceWithHttpInfo(id);
         logger.info("CALL TO METHOD 'getInvoice' ENDED");
         return resp.getData();
@@ -481,6 +480,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InvoicingV2InvoicesGet200Response> getInvoiceWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getInvoiceValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -612,7 +612,6 @@ public class InvoicesApi {
      */
     public InvoicingV2InvoicesPost201Response performCancelAction(String id) throws ApiException {
         logger.info("CALL TO METHOD 'performCancelAction' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = performCancelActionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'performCancelAction' ENDED");
         return resp.getData();
@@ -626,6 +625,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InvoicingV2InvoicesPost201Response> performCancelActionWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = performCancelActionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -757,7 +757,6 @@ public class InvoicesApi {
      */
     public InvoicingV2InvoicesPost201Response performSendAction(String id) throws ApiException {
         logger.info("CALL TO METHOD 'performSendAction' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = performSendActionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'performSendAction' ENDED");
         return resp.getData();
@@ -771,6 +770,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InvoicingV2InvoicesPost201Response> performSendActionWithHttpInfo(String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = performSendActionValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -907,7 +907,6 @@ public class InvoicesApi {
      */
     public InvoicingV2InvoicesPost201Response updateInvoice(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updateInvoice' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InvoicingV2InvoicesPost201Response> resp = updateInvoiceWithHttpInfo(id, updateInvoiceRequest);
         logger.info("CALL TO METHOD 'updateInvoice' ENDED");
         return resp.getData();
@@ -922,6 +921,7 @@ public class InvoicesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InvoicingV2InvoicesPost201Response> updateInvoiceWithHttpInfo(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateInvoiceValidateBeforeCall(id, updateInvoiceRequest, null, null);
         Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -166,7 +166,6 @@ public class BillingAgreementsApi {
      */
     public PtsV2ModifyBillingAgreementPost201Response billingAgreementsDeRegistration(ModifyBillingAgreement modifyBillingAgreement, String id) throws ApiException {
         logger.info("CALL TO METHOD 'billingAgreementsDeRegistration' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2ModifyBillingAgreementPost201Response> resp = billingAgreementsDeRegistrationWithHttpInfo(modifyBillingAgreement, id);
         logger.info("CALL TO METHOD 'billingAgreementsDeRegistration' ENDED");
         return resp.getData();
@@ -181,6 +180,7 @@ public class BillingAgreementsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2ModifyBillingAgreementPost201Response> billingAgreementsDeRegistrationWithHttpInfo(ModifyBillingAgreement modifyBillingAgreement, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = billingAgreementsDeRegistrationValidateBeforeCall(modifyBillingAgreement, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2ModifyBillingAgreementPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -318,7 +318,6 @@ public class BillingAgreementsApi {
      */
     public PtsV2CreditsPost201Response1 billingAgreementsIntimation(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException {
         logger.info("CALL TO METHOD 'billingAgreementsIntimation' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2CreditsPost201Response1> resp = billingAgreementsIntimationWithHttpInfo(intimateBillingAgreement, id);
         logger.info("CALL TO METHOD 'billingAgreementsIntimation' ENDED");
         return resp.getData();
@@ -333,6 +332,7 @@ public class BillingAgreementsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2CreditsPost201Response1> billingAgreementsIntimationWithHttpInfo(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = billingAgreementsIntimationValidateBeforeCall(intimateBillingAgreement, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response1>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -461,7 +461,6 @@ public class BillingAgreementsApi {
      */
     public PtsV2CreateBillingAgreementPost201Response billingAgreementsRegistration(CreateBillingAgreement createBillingAgreement) throws ApiException {
         logger.info("CALL TO METHOD 'billingAgreementsRegistration' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2CreateBillingAgreementPost201Response> resp = billingAgreementsRegistrationWithHttpInfo(createBillingAgreement);
         logger.info("CALL TO METHOD 'billingAgreementsRegistration' ENDED");
         return resp.getData();
@@ -475,6 +474,7 @@ public class BillingAgreementsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2CreateBillingAgreementPost201Response> billingAgreementsRegistrationWithHttpInfo(CreateBillingAgreement createBillingAgreement) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = billingAgreementsRegistrationValidateBeforeCall(createBillingAgreement, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreateBillingAgreementPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

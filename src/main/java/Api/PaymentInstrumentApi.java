@@ -165,7 +165,6 @@ public class PaymentInstrumentApi {
      */
     public void deletePaymentInstrument(String paymentInstrumentId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'deletePaymentInstrument' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         deletePaymentInstrumentWithHttpInfo(paymentInstrumentId, profileId);
 
     }
@@ -179,6 +178,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deletePaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deletePaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, null, null);
         return apiClient.execute(call);
     }
@@ -313,7 +313,6 @@ public class PaymentInstrumentApi {
      */
     public PostPaymentInstrumentRequest getPaymentInstrument(String paymentInstrumentId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'getPaymentInstrument' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PostPaymentInstrumentRequest> resp = getPaymentInstrumentWithHttpInfo(paymentInstrumentId, profileId);
         logger.info("CALL TO METHOD 'getPaymentInstrument' ENDED");
         return resp.getData();
@@ -328,6 +327,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PostPaymentInstrumentRequest> getPaymentInstrumentWithHttpInfo(String paymentInstrumentId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getPaymentInstrumentValidateBeforeCall(paymentInstrumentId, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -473,7 +473,6 @@ public class PaymentInstrumentApi {
      */
     public PatchPaymentInstrumentRequest patchPaymentInstrument(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchPaymentInstrument' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PatchPaymentInstrumentRequest> resp = patchPaymentInstrumentWithHttpInfo(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchPaymentInstrument' ENDED");
         return resp.getData();
@@ -490,6 +489,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PatchPaymentInstrumentRequest> patchPaymentInstrumentWithHttpInfo(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = patchPaymentInstrumentValidateBeforeCall(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -624,7 +624,6 @@ public class PaymentInstrumentApi {
      */
     public PostPaymentInstrumentRequest postPaymentInstrument(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postPaymentInstrument' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PostPaymentInstrumentRequest> resp = postPaymentInstrumentWithHttpInfo(postPaymentInstrumentRequest, profileId);
         logger.info("CALL TO METHOD 'postPaymentInstrument' ENDED");
         return resp.getData();
@@ -639,6 +638,7 @@ public class PaymentInstrumentApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PostPaymentInstrumentRequest> postPaymentInstrumentWithHttpInfo(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postPaymentInstrumentValidateBeforeCall(postPaymentInstrumentRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostPaymentInstrumentRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -147,7 +147,6 @@ public class EmvTagDetailsApi {
      */
     public TssV2GetEmvTags200Response getEmvTags() throws ApiException {
         logger.info("CALL TO METHOD 'getEmvTags' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2GetEmvTags200Response> resp = getEmvTagsWithHttpInfo();
         logger.info("CALL TO METHOD 'getEmvTags' ENDED");
         return resp.getData();
@@ -160,6 +159,7 @@ public class EmvTagDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2GetEmvTags200Response> getEmvTagsWithHttpInfo() throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getEmvTagsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<TssV2GetEmvTags200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -286,7 +286,6 @@ public class EmvTagDetailsApi {
      */
     public TssV2PostEmvTags200Response parseEmvTags(Body body) throws ApiException {
         logger.info("CALL TO METHOD 'parseEmvTags' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2PostEmvTags200Response> resp = parseEmvTagsWithHttpInfo(body);
         logger.info("CALL TO METHOD 'parseEmvTags' ENDED");
         return resp.getData();
@@ -300,6 +299,7 @@ public class EmvTagDetailsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2PostEmvTags200Response> parseEmvTagsWithHttpInfo(Body body) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = parseEmvTagsValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<TssV2PostEmvTags200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

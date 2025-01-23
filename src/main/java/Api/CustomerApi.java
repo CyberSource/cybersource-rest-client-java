@@ -165,7 +165,6 @@ public class CustomerApi {
      */
     public void deleteCustomer(String customerId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'deleteCustomer' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         deleteCustomerWithHttpInfo(customerId, profileId);
 
     }
@@ -179,6 +178,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deleteCustomerWithHttpInfo(String customerId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteCustomerValidateBeforeCall(customerId, profileId, null, null);
         return apiClient.execute(call);
     }
@@ -313,7 +313,6 @@ public class CustomerApi {
      */
     public PostCustomerRequest getCustomer(String customerId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'getCustomer' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PostCustomerRequest> resp = getCustomerWithHttpInfo(customerId, profileId);
         logger.info("CALL TO METHOD 'getCustomer' ENDED");
         return resp.getData();
@@ -328,6 +327,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PostCustomerRequest> getCustomerWithHttpInfo(String customerId, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getCustomerValidateBeforeCall(customerId, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -473,7 +473,6 @@ public class CustomerApi {
      */
     public PatchCustomerRequest patchCustomer(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchCustomer' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PatchCustomerRequest> resp = patchCustomerWithHttpInfo(customerId, patchCustomerRequest, profileId, ifMatch);
         logger.info("CALL TO METHOD 'patchCustomer' ENDED");
         return resp.getData();
@@ -490,6 +489,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PatchCustomerRequest> patchCustomerWithHttpInfo(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = patchCustomerValidateBeforeCall(customerId, patchCustomerRequest, profileId, ifMatch, null, null);
         Type localVarReturnType = new TypeToken<PatchCustomerRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -624,7 +624,6 @@ public class CustomerApi {
      */
     public PostCustomerRequest postCustomer(PostCustomerRequest postCustomerRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postCustomer' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PostCustomerRequest> resp = postCustomerWithHttpInfo(postCustomerRequest, profileId);
         logger.info("CALL TO METHOD 'postCustomer' ENDED");
         return resp.getData();
@@ -639,6 +638,7 @@ public class CustomerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PostCustomerRequest> postCustomerWithHttpInfo(PostCustomerRequest postCustomerRequest, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postCustomerValidateBeforeCall(postCustomerRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<PostCustomerRequest>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -158,7 +158,6 @@ public class PayerAuthenticationApi {
      */
     public RiskV1AuthenticationsPost201Response checkPayerAuthEnrollment(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest) throws ApiException {
         logger.info("CALL TO METHOD 'checkPayerAuthEnrollment' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationsPost201Response> resp = checkPayerAuthEnrollmentWithHttpInfo(checkPayerAuthEnrollmentRequest);
         logger.info("CALL TO METHOD 'checkPayerAuthEnrollment' ENDED");
         return resp.getData();
@@ -172,6 +171,7 @@ public class PayerAuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RiskV1AuthenticationsPost201Response> checkPayerAuthEnrollmentWithHttpInfo(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = checkPayerAuthEnrollmentValidateBeforeCall(checkPayerAuthEnrollmentRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1AuthenticationsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -299,7 +299,6 @@ public class PayerAuthenticationApi {
      */
     public RiskV1AuthenticationSetupsPost201Response payerAuthSetup(PayerAuthSetupRequest payerAuthSetupRequest) throws ApiException {
         logger.info("CALL TO METHOD 'payerAuthSetup' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationSetupsPost201Response> resp = payerAuthSetupWithHttpInfo(payerAuthSetupRequest);
         logger.info("CALL TO METHOD 'payerAuthSetup' ENDED");
         return resp.getData();
@@ -313,6 +312,7 @@ public class PayerAuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RiskV1AuthenticationSetupsPost201Response> payerAuthSetupWithHttpInfo(PayerAuthSetupRequest payerAuthSetupRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = payerAuthSetupValidateBeforeCall(payerAuthSetupRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1AuthenticationSetupsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -440,7 +440,6 @@ public class PayerAuthenticationApi {
      */
     public RiskV1AuthenticationResultsPost201Response validateAuthenticationResults(ValidateRequest validateRequest) throws ApiException {
         logger.info("CALL TO METHOD 'validateAuthenticationResults' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<RiskV1AuthenticationResultsPost201Response> resp = validateAuthenticationResultsWithHttpInfo(validateRequest);
         logger.info("CALL TO METHOD 'validateAuthenticationResults' ENDED");
         return resp.getData();
@@ -454,6 +453,7 @@ public class PayerAuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RiskV1AuthenticationResultsPost201Response> validateAuthenticationResultsWithHttpInfo(ValidateRequest validateRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = validateAuthenticationResultsValidateBeforeCall(validateRequest, null, null);
         Type localVarReturnType = new TypeToken<RiskV1AuthenticationResultsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

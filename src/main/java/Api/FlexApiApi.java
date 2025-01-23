@@ -151,7 +151,6 @@ public class FlexApiApi {
      */
     public String generateFlexAPICaptureContext(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest) throws ApiException {
         logger.info("CALL TO METHOD 'generateFlexAPICaptureContext' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<String> resp = generateFlexAPICaptureContextWithHttpInfo(generateFlexAPICaptureContextRequest);
         logger.info("CALL TO METHOD 'generateFlexAPICaptureContext' ENDED");
         return resp.getData();
@@ -165,6 +164,7 @@ public class FlexApiApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<String> generateFlexAPICaptureContextWithHttpInfo(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = generateFlexAPICaptureContextValidateBeforeCall(generateFlexAPICaptureContextRequest, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

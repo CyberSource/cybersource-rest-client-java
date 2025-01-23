@@ -153,7 +153,6 @@ public class CreditApi {
      */
     public PtsV2CreditsPost201Response createCredit(CreateCreditRequest createCreditRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createCredit' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2CreditsPost201Response> resp = createCreditWithHttpInfo(createCreditRequest);
         logger.info("CALL TO METHOD 'createCredit' ENDED");
         return resp.getData();
@@ -167,6 +166,7 @@ public class CreditApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2CreditsPost201Response> createCreditWithHttpInfo(CreateCreditRequest createCreditRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createCreditValidateBeforeCall(createCreditRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreditsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

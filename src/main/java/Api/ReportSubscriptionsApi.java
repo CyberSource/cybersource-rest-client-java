@@ -158,7 +158,6 @@ public class ReportSubscriptionsApi {
      */
     public void createStandardOrClassicSubscription(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'createStandardOrClassicSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         createStandardOrClassicSubscriptionWithHttpInfo(predefinedSubscriptionRequestBean, organizationId);
 
     }
@@ -172,6 +171,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> createStandardOrClassicSubscriptionWithHttpInfo(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createStandardOrClassicSubscriptionValidateBeforeCall(predefinedSubscriptionRequestBean, organizationId, null, null);
         return apiClient.execute(call);
     }
@@ -301,7 +301,6 @@ public class ReportSubscriptionsApi {
      */
     public void createSubscription(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'createSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         createSubscriptionWithHttpInfo(createReportSubscriptionRequest, organizationId);
 
     }
@@ -315,6 +314,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> createSubscriptionWithHttpInfo(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createSubscriptionValidateBeforeCall(createReportSubscriptionRequest, organizationId, null, null);
         return apiClient.execute(call);
     }
@@ -448,7 +448,6 @@ public class ReportSubscriptionsApi {
      */
     public void deleteSubscription(String reportName, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'deleteSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         deleteSubscriptionWithHttpInfo(reportName, organizationId);
 
     }
@@ -462,6 +461,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deleteSubscriptionWithHttpInfo(String reportName, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = deleteSubscriptionValidateBeforeCall(reportName, organizationId, null, null);
         return apiClient.execute(call);
     }
@@ -587,7 +587,6 @@ public class ReportSubscriptionsApi {
      */
     public ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions(String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportSubscriptionsGet200Response> resp = getAllSubscriptionsWithHttpInfo(organizationId);
         logger.info("CALL TO METHOD 'getAllSubscriptions' ENDED");
         return resp.getData();
@@ -601,6 +600,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportSubscriptionsGet200Response> getAllSubscriptionsWithHttpInfo(String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getAllSubscriptionsValidateBeforeCall(organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -736,7 +736,6 @@ public class ReportSubscriptionsApi {
      */
     public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(String reportName, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getSubscription' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> resp = getSubscriptionWithHttpInfo(reportName, organizationId);
         logger.info("CALL TO METHOD 'getSubscription' ENDED");
         return resp.getData();
@@ -751,6 +750,7 @@ public class ReportSubscriptionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions> getSubscriptionWithHttpInfo(String reportName, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getSubscriptionValidateBeforeCall(reportName, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportSubscriptionsGet200ResponseSubscriptions>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
