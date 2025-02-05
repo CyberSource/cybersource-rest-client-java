@@ -118,9 +118,9 @@ public class PtsV2PaymentsPost201ResponseRiskInformationProfile {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformationProfile {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    desinationQueue: ").append(toIndentedString(desinationQueue)).append("\n");
-    sb.append("    selectorRule: ").append(toIndentedString(selectorRule)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (desinationQueue != null) sb.append("    desinationQueue: ").append(toIndentedString(desinationQueue)).append("\n");
+    if (selectorRule != null) sb.append("    selectorRule: ").append(toIndentedString(selectorRule)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationProfile {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

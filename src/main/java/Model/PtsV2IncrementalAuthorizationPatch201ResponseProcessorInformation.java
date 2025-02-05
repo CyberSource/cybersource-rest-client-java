@@ -52,6 +52,9 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
   @SerializedName("merchantAdvice")
   private PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice merchantAdvice = null;
 
+  @SerializedName("merchantRiskPrediction")
+  private String merchantRiskPrediction = null;
+
   @SerializedName("sellerProtection")
   private PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection = null;
 
@@ -181,6 +184,24 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
     this.merchantAdvice = merchantAdvice;
   }
 
+  public PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation merchantRiskPrediction(String merchantRiskPrediction) {
+    this.merchantRiskPrediction = merchantRiskPrediction;
+    return this;
+  }
+
+   /**
+   * Mastercard is introducing the Merchant Risk Predict Service in the middle East/Africa Region. A newly launched service comprised of seven independent artificial intelligence (AI)-powered scores intended to augment existing merchant risk management practices. 
+   * @return merchantRiskPrediction
+  **/
+  @ApiModelProperty(value = "Mastercard is introducing the Merchant Risk Predict Service in the middle East/Africa Region. A newly launched service comprised of seven independent artificial intelligence (AI)-powered scores intended to augment existing merchant risk management practices. ")
+  public String getMerchantRiskPrediction() {
+    return merchantRiskPrediction;
+  }
+
+  public void setMerchantRiskPrediction(String merchantRiskPrediction) {
+    this.merchantRiskPrediction = merchantRiskPrediction;
+  }
+
   public PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation sellerProtection(PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection sellerProtection) {
     this.sellerProtection = sellerProtection;
     return this;
@@ -216,12 +237,13 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
         Objects.equals(this.systemTraceAuditNumber, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.systemTraceAuditNumber) &&
         Objects.equals(this.responseDetails, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.responseDetails) &&
         Objects.equals(this.merchantAdvice, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.merchantAdvice) &&
+        Objects.equals(this.merchantRiskPrediction, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.merchantRiskPrediction) &&
         Objects.equals(this.sellerProtection, ptsV2IncrementalAuthorizationPatch201ResponseProcessorInformation.sellerProtection);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalCode, transactionId, networkTransactionId, responseCode, systemTraceAuditNumber, responseDetails, merchantAdvice, sellerProtection);
+    return Objects.hash(approvalCode, transactionId, networkTransactionId, responseCode, systemTraceAuditNumber, responseDetails, merchantAdvice, merchantRiskPrediction, sellerProtection);
   }
 
 
@@ -230,14 +252,15 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {\n");
     
-    sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
-    sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
-    sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
-    sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");
-    sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
+    if (approvalCode != null) sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (networkTransactionId != null) sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (systemTraceAuditNumber != null) sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
+    if (merchantAdvice != null) sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");
+    if (merchantRiskPrediction != null) sb.append("    merchantRiskPrediction: ").append(toIndentedString(merchantRiskPrediction)).append("\n");
+    if (sellerProtection != null) sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -248,10 +271,10 @@ public class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -154,7 +154,6 @@ public class BinLookupApi {
      */
     public InlineResponse2011 getAccountInfo(CreateBinLookupRequest createBinLookupRequest) throws ApiException {
         logger.info("CALL TO METHOD 'getAccountInfo' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2011> resp = getAccountInfoWithHttpInfo(createBinLookupRequest);
         logger.info("CALL TO METHOD 'getAccountInfo' ENDED");
         return resp.getData();
@@ -168,6 +167,7 @@ public class BinLookupApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2011> getAccountInfoWithHttpInfo(CreateBinLookupRequest createBinLookupRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getAccountInfoValidateBeforeCall(createBinLookupRequest, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2011>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -16,7 +16,6 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.Upv1capturecontextsCaptureMandate;
-import Model.Upv1capturecontextsCheckoutApiInitialization;
 import Model.Upv1capturecontextsOrderInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -57,9 +56,6 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
 
   @SerializedName("orderInformation")
   private Upv1capturecontextsOrderInformation orderInformation = null;
-
-  @SerializedName("checkoutApiInitialization")
-  private Upv1capturecontextsCheckoutApiInitialization checkoutApiInitialization = null;
 
   public GenerateUnifiedCheckoutCaptureContextRequest clientVersion(String clientVersion) {
     this.clientVersion = clientVersion;
@@ -145,10 +141,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   }
 
    /**
-   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - PANENTRY                 - GOOGLEPAY   - SRC   - CHECK &lt;br&gt;&lt;br&gt;  Possible values when launching Unified Checkout with Checkout API: - PANENTRY               - SRC &lt;br&gt;&lt;br&gt;  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY &lt;br&gt;&lt;br&gt;  **Important:**    - SRC and CLICKTOPAY are only available for Visa, Mastercard and AMEX. 
+   * The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE &lt;br&gt;&lt;br&gt;  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY &lt;br&gt;&lt;br&gt;  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant&#39;s existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field. 
    * @return allowedPaymentTypes
   **/
-  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - PANENTRY                 - GOOGLEPAY   - SRC   - CHECK <br><br>  Possible values when launching Unified Checkout with Checkout API: - PANENTRY               - SRC <br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - SRC and CLICKTOPAY are only available for Visa, Mastercard and AMEX. ")
+  @ApiModelProperty(value = "The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field. ")
   public List<String> getAllowedPaymentTypes() {
     return allowedPaymentTypes;
   }
@@ -229,24 +225,6 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     this.orderInformation = orderInformation;
   }
 
-  public GenerateUnifiedCheckoutCaptureContextRequest checkoutApiInitialization(Upv1capturecontextsCheckoutApiInitialization checkoutApiInitialization) {
-    this.checkoutApiInitialization = checkoutApiInitialization;
-    return this;
-  }
-
-   /**
-   * Get checkoutApiInitialization
-   * @return checkoutApiInitialization
-  **/
-  @ApiModelProperty(value = "")
-  public Upv1capturecontextsCheckoutApiInitialization getCheckoutApiInitialization() {
-    return checkoutApiInitialization;
-  }
-
-  public void setCheckoutApiInitialization(Upv1capturecontextsCheckoutApiInitialization checkoutApiInitialization) {
-    this.checkoutApiInitialization = checkoutApiInitialization;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -264,13 +242,12 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
         Objects.equals(this.country, generateUnifiedCheckoutCaptureContextRequest.country) &&
         Objects.equals(this.locale, generateUnifiedCheckoutCaptureContextRequest.locale) &&
         Objects.equals(this.captureMandate, generateUnifiedCheckoutCaptureContextRequest.captureMandate) &&
-        Objects.equals(this.orderInformation, generateUnifiedCheckoutCaptureContextRequest.orderInformation) &&
-        Objects.equals(this.checkoutApiInitialization, generateUnifiedCheckoutCaptureContextRequest.checkoutApiInitialization);
+        Objects.equals(this.orderInformation, generateUnifiedCheckoutCaptureContextRequest.orderInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, orderInformation, checkoutApiInitialization);
+    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, orderInformation);
   }
 
 
@@ -279,15 +256,14 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateUnifiedCheckoutCaptureContextRequest {\n");
     
-    sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
-    sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
-    sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
-    sb.append("    allowedPaymentTypes: ").append(toIndentedString(allowedPaymentTypes)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
-    sb.append("    captureMandate: ").append(toIndentedString(captureMandate)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    checkoutApiInitialization: ").append(toIndentedString(checkoutApiInitialization)).append("\n");
+    if (clientVersion != null) sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
+    if (targetOrigins != null) sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
+    if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
+    if (allowedPaymentTypes != null) sb.append("    allowedPaymentTypes: ").append(toIndentedString(allowedPaymentTypes)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (locale != null) sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+    if (captureMandate != null) sb.append("    captureMandate: ").append(toIndentedString(captureMandate)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -298,10 +274,10 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

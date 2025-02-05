@@ -419,22 +419,22 @@ public class Ptsv2paymentsPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPaymentInformation {\n");
     
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
-    sb.append("    directDebit: ").append(toIndentedString(directDebit)).append("\n");
-    sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
-    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
-    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
-    sb.append("    legacyToken: ").append(toIndentedString(legacyToken)).append("\n");
-    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
-    sb.append("    options: ").append(toIndentedString(options)).append("\n");
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
-    sb.append("    initiationChannel: ").append(toIndentedString(initiationChannel)).append("\n");
-    sb.append("    sepa: ").append(toIndentedString(sepa)).append("\n");
-    sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
-    sb.append("    paymentAccountReference: ").append(toIndentedString(paymentAccountReference)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    if (directDebit != null) sb.append("    directDebit: ").append(toIndentedString(directDebit)).append("\n");
+    if (fluidData != null) sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    if (shippingAddress != null) sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    if (legacyToken != null) sb.append("    legacyToken: ").append(toIndentedString(legacyToken)).append("\n");
+    if (bank != null) sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    if (options != null) sb.append("    options: ").append(toIndentedString(options)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (initiationChannel != null) sb.append("    initiationChannel: ").append(toIndentedString(initiationChannel)).append("\n");
+    if (sepa != null) sb.append("    sepa: ").append(toIndentedString(sepa)).append("\n");
+    if (eWallet != null) sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
+    if (paymentAccountReference != null) sb.append("    paymentAccountReference: ").append(toIndentedString(paymentAccountReference)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -445,10 +445,10 @@ public class Ptsv2paymentsPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

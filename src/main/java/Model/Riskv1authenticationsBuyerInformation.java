@@ -151,10 +151,10 @@ public class Riskv1authenticationsBuyerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationsBuyerInformation {\n");
     
-    sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
-    sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
-    sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
-    sb.append("    workPhone: ").append(toIndentedString(workPhone)).append("\n");
+    if (merchantCustomerId != null) sb.append("    merchantCustomerId: ").append(toIndentedString(merchantCustomerId)).append("\n");
+    if (personalIdentification != null) sb.append("    personalIdentification: ").append(toIndentedString(personalIdentification)).append("\n");
+    if (mobilePhone != null) sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
+    if (workPhone != null) sb.append("    workPhone: ").append(toIndentedString(workPhone)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -165,10 +165,10 @@ public class Riskv1authenticationsBuyerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

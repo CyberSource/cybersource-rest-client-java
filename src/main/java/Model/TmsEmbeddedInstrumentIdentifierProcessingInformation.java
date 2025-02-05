@@ -75,7 +75,7 @@ public class TmsEmbeddedInstrumentIdentifierProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsEmbeddedInstrumentIdentifierProcessingInformation {\n");
     
-    sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class TmsEmbeddedInstrumentIdentifierProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -75,7 +75,7 @@ public class ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors 
     StringBuilder sb = new StringBuilder();
     sb.append("class ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors {\n");
     
-    sb.append("    avsVersion: ").append(toIndentedString(avsVersion)).append("\n");
+    if (avsVersion != null) sb.append("    avsVersion: ").append(toIndentedString(avsVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors 
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

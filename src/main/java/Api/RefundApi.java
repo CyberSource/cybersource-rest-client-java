@@ -163,7 +163,6 @@ public class RefundApi {
      */
     public PtsV2PaymentsRefundPost201Response refundCapture(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'refundCapture' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundCaptureWithHttpInfo(refundCaptureRequest, id);
         logger.info("CALL TO METHOD 'refundCapture' ENDED");
         return resp.getData();
@@ -178,6 +177,7 @@ public class RefundApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsRefundPost201Response> refundCaptureWithHttpInfo(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = refundCaptureValidateBeforeCall(refundCaptureRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -315,7 +315,6 @@ public class RefundApi {
      */
     public PtsV2PaymentsRefundPost201Response refundPayment(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'refundPayment' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsRefundPost201Response> resp = refundPaymentWithHttpInfo(refundPaymentRequest, id);
         logger.info("CALL TO METHOD 'refundPayment' ENDED");
         return resp.getData();
@@ -330,6 +329,7 @@ public class RefundApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsRefundPost201Response> refundPaymentWithHttpInfo(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = refundPaymentValidateBeforeCall(refundPaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsRefundPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -152,10 +152,10 @@ public class InvoicingV2InvoicesAllGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoicingV2InvoicesAllGet200Response {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    totalInvoices: ").append(toIndentedString(totalInvoices)).append("\n");
-    sb.append("    invoices: ").append(toIndentedString(invoices)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (totalInvoices != null) sb.append("    totalInvoices: ").append(toIndentedString(totalInvoices)).append("\n");
+    if (invoices != null) sb.append("    invoices: ").append(toIndentedString(invoices)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -166,10 +166,10 @@ public class InvoicingV2InvoicesAllGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

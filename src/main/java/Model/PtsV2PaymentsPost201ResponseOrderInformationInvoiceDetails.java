@@ -45,7 +45,7 @@ public class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails {
    * @return level3TransmissionStatus
   **/
   @ApiModelProperty(value = "Indicates whether CyberSource sent the Level III information to the processor. The possible values are:  If your account is not enabled for Level III data or if you did not include the purchasing level field in your request, CyberSource does not include the Level III data in the request sent to the processor.  Possible values: - **true** - **false** ")
-  public Boolean isLevel3TransmissionStatus() {
+  public Boolean Level3TransmissionStatus() {
     return level3TransmissionStatus;
   }
 
@@ -97,8 +97,8 @@ public class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails {\n");
     
-    sb.append("    level3TransmissionStatus: ").append(toIndentedString(level3TransmissionStatus)).append("\n");
-    sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
+    if (level3TransmissionStatus != null) sb.append("    level3TransmissionStatus: ").append(toIndentedString(level3TransmissionStatus)).append("\n");
+    if (salesSlipNumber != null) sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

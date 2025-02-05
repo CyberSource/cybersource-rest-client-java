@@ -96,8 +96,8 @@ public class Binv1binlookupTokenInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Binv1binlookupTokenInformation {\n");
     
-    sb.append("    jti: ").append(toIndentedString(jti)).append("\n");
-    sb.append("    transientTokenJwt: ").append(toIndentedString(transientTokenJwt)).append("\n");
+    if (jti != null) sb.append("    jti: ").append(toIndentedString(jti)).append("\n");
+    if (transientTokenJwt != null) sb.append("    transientTokenJwt: ").append(toIndentedString(transientTokenJwt)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Binv1binlookupTokenInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

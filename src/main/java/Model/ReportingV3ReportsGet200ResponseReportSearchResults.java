@@ -407,22 +407,22 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ReportsGet200ResponseReportSearchResults {\n");
     
-    sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("    reportDefinitionId: ").append(toIndentedString(reportDefinitionId)).append("\n");
-    sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
-    sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");
-    sb.append("    reportFrequency: ").append(toIndentedString(reportFrequency)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    reportStartTime: ").append(toIndentedString(reportStartTime)).append("\n");
-    sb.append("    reportEndTime: ").append(toIndentedString(reportEndTime)).append("\n");
-    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
-    sb.append("    reportId: ").append(toIndentedString(reportId)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    queuedTime: ").append(toIndentedString(queuedTime)).append("\n");
-    sb.append("    reportGeneratingTime: ").append(toIndentedString(reportGeneratingTime)).append("\n");
-    sb.append("    reportCompletedTime: ").append(toIndentedString(reportCompletedTime)).append("\n");
-    sb.append("    subscriptionType: ").append(toIndentedString(subscriptionType)).append("\n");
-    sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+    if (link != null) sb.append("    link: ").append(toIndentedString(link)).append("\n");
+    if (reportDefinitionId != null) sb.append("    reportDefinitionId: ").append(toIndentedString(reportDefinitionId)).append("\n");
+    if (reportName != null) sb.append("    reportName: ").append(toIndentedString(reportName)).append("\n");
+    if (reportMimeType != null) sb.append("    reportMimeType: ").append(toIndentedString(reportMimeType)).append("\n");
+    if (reportFrequency != null) sb.append("    reportFrequency: ").append(toIndentedString(reportFrequency)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (reportStartTime != null) sb.append("    reportStartTime: ").append(toIndentedString(reportStartTime)).append("\n");
+    if (reportEndTime != null) sb.append("    reportEndTime: ").append(toIndentedString(reportEndTime)).append("\n");
+    if (timezone != null) sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    if (reportId != null) sb.append("    reportId: ").append(toIndentedString(reportId)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (queuedTime != null) sb.append("    queuedTime: ").append(toIndentedString(queuedTime)).append("\n");
+    if (reportGeneratingTime != null) sb.append("    reportGeneratingTime: ").append(toIndentedString(reportGeneratingTime)).append("\n");
+    if (reportCompletedTime != null) sb.append("    reportCompletedTime: ").append(toIndentedString(reportCompletedTime)).append("\n");
+    if (subscriptionType != null) sb.append("    subscriptionType: ").append(toIndentedString(subscriptionType)).append("\n");
+    if (groupId != null) sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -433,10 +433,10 @@ public class ReportingV3ReportsGet200ResponseReportSearchResults {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

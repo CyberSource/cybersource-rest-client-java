@@ -168,7 +168,7 @@ public class Vasv2taxTaxInformation {
    * @return commitIndicator
   **/
   @ApiModelProperty(value = "Indicates whether this is a committed tax transaction. For a committed tax transaction, the status in the Tax Detail Report is \"Committed.\" For an uncommitted tax transaction, the status in the Tax Detail Report is \"Uncommitted.\" Possible values: - `true`: This is a committed tax transaction. - `false` (default): This is not a committed tax transaction.  A committed tax request is a tax service request that sets the status field in the Tax Detail Report to committed. The committed status indicates that the amount calculated by the tax service is included in the amount of a capture or credit.  Use a void service request to cancel a committed tax request or a committed refund tax request. The void transaction is included as a separate entry in the Tax Detail Report. The value of the status field is cancelled. The value of the link ID is the request ID of the committed tax request or refund tax request that was voided. You can use the value of the link ID to reconcile your orders.  Optional for U.S., Canadian, international tax, and value added taxes. For more information on Tax Detail Report features refer the [Tax Service Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). ")
-  public Boolean isCommitIndicator() {
+  public Boolean CommitIndicator() {
     return commitIndicator;
   }
 
@@ -186,7 +186,7 @@ public class Vasv2taxTaxInformation {
    * @return refundIndicator
   **/
   @ApiModelProperty(value = "Indicates whether this is a refund tax transaction. For a refund tax transaction, amounts in the Tax Detail Report will be negative. Possible values: - `true`: This is a refund tax transaction. - `false` (default): This is not a refund tax transaction.  A refund tax request is a tax service request that sets the transaction type field in the Tax Detail Report to refunded and makes the reported amount negative. Tax amounts are returned as positive amounts in reply messages, but they are saved in reports as negative amounts which enables the reporting software to accurately calculate the aggregate amounts.  Optional for U.S., Canadian, international tax, and value added taxes. For more information on Tax Detail Report features refer the [Tax Service Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html). ")
-  public Boolean isRefundIndicator() {
+  public Boolean RefundIndicator() {
     return refundIndicator;
   }
 
@@ -224,13 +224,13 @@ public class Vasv2taxTaxInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Vasv2taxTaxInformation {\n");
     
-    sb.append("    reportingDate: ").append(toIndentedString(reportingDate)).append("\n");
-    sb.append("    dateOverrideReason: ").append(toIndentedString(dateOverrideReason)).append("\n");
-    sb.append("    nexus: ").append(toIndentedString(nexus)).append("\n");
-    sb.append("    noNexus: ").append(toIndentedString(noNexus)).append("\n");
-    sb.append("    showTaxPerLineItem: ").append(toIndentedString(showTaxPerLineItem)).append("\n");
-    sb.append("    commitIndicator: ").append(toIndentedString(commitIndicator)).append("\n");
-    sb.append("    refundIndicator: ").append(toIndentedString(refundIndicator)).append("\n");
+    if (reportingDate != null) sb.append("    reportingDate: ").append(toIndentedString(reportingDate)).append("\n");
+    if (dateOverrideReason != null) sb.append("    dateOverrideReason: ").append(toIndentedString(dateOverrideReason)).append("\n");
+    if (nexus != null) sb.append("    nexus: ").append(toIndentedString(nexus)).append("\n");
+    if (noNexus != null) sb.append("    noNexus: ").append(toIndentedString(noNexus)).append("\n");
+    if (showTaxPerLineItem != null) sb.append("    showTaxPerLineItem: ").append(toIndentedString(showTaxPerLineItem)).append("\n");
+    if (commitIndicator != null) sb.append("    commitIndicator: ").append(toIndentedString(commitIndicator)).append("\n");
+    if (refundIndicator != null) sb.append("    refundIndicator: ").append(toIndentedString(refundIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -241,10 +241,10 @@ public class Vasv2taxTaxInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

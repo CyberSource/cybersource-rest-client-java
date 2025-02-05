@@ -162,11 +162,11 @@ public class Ptsv2paymentsAcquirerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsAcquirerInformation {\n");
     
-    sb.append("    acquirerBin: ").append(toIndentedString(acquirerBin)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
-    sb.append("    acquirerMerchantId: ").append(toIndentedString(acquirerMerchantId)).append("\n");
+    if (acquirerBin != null) sb.append("    acquirerBin: ").append(toIndentedString(acquirerBin)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (password != null) sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    if (merchantId != null) sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    if (acquirerMerchantId != null) sb.append("    acquirerMerchantId: ").append(toIndentedString(acquirerMerchantId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class Ptsv2paymentsAcquirerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

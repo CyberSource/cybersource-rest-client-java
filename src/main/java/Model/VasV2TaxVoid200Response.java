@@ -164,11 +164,11 @@ public class VasV2TaxVoid200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class VasV2TaxVoid200Response {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    voidAmountDetails: ").append(toIndentedString(voidAmountDetails)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (voidAmountDetails != null) sb.append("    voidAmountDetails: ").append(toIndentedString(voidAmountDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -179,10 +179,10 @@ public class VasV2TaxVoid200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

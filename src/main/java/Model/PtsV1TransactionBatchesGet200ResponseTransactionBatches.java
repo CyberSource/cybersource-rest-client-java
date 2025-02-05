@@ -206,13 +206,13 @@ public class PtsV1TransactionBatchesGet200ResponseTransactionBatches {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV1TransactionBatchesGet200ResponseTransactionBatches {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    uploadDate: ").append(toIndentedString(uploadDate)).append("\n");
-    sb.append("    completionDate: ").append(toIndentedString(completionDate)).append("\n");
-    sb.append("    transactionCount: ").append(toIndentedString(transactionCount)).append("\n");
-    sb.append("    acceptedTransactionCount: ").append(toIndentedString(acceptedTransactionCount)).append("\n");
-    sb.append("    rejectedTransactionCount: ").append(toIndentedString(rejectedTransactionCount)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (uploadDate != null) sb.append("    uploadDate: ").append(toIndentedString(uploadDate)).append("\n");
+    if (completionDate != null) sb.append("    completionDate: ").append(toIndentedString(completionDate)).append("\n");
+    if (transactionCount != null) sb.append("    transactionCount: ").append(toIndentedString(transactionCount)).append("\n");
+    if (acceptedTransactionCount != null) sb.append("    acceptedTransactionCount: ").append(toIndentedString(acceptedTransactionCount)).append("\n");
+    if (rejectedTransactionCount != null) sb.append("    rejectedTransactionCount: ").append(toIndentedString(rejectedTransactionCount)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -223,10 +223,10 @@ public class PtsV1TransactionBatchesGet200ResponseTransactionBatches {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

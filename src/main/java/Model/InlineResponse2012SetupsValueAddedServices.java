@@ -97,8 +97,8 @@ public class InlineResponse2012SetupsValueAddedServices {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012SetupsValueAddedServices {\n");
     
-    sb.append("    reporting: ").append(toIndentedString(reporting)).append("\n");
-    sb.append("    transactionSearch: ").append(toIndentedString(transactionSearch)).append("\n");
+    if (reporting != null) sb.append("    reporting: ").append(toIndentedString(reporting)).append("\n");
+    if (transactionSearch != null) sb.append("    transactionSearch: ").append(toIndentedString(transactionSearch)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class InlineResponse2012SetupsValueAddedServices {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

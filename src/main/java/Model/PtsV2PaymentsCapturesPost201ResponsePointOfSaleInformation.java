@@ -74,7 +74,7 @@ public class PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation {\n");
     
-    sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
+    if (terminalId != null) sb.append("    terminalId: ").append(toIndentedString(terminalId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

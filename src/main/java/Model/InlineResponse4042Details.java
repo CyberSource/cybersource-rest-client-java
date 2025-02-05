@@ -96,8 +96,8 @@ public class InlineResponse4042Details {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4042Details {\n");
     
-    sb.append("    field: ").append(toIndentedString(field)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (field != null) sb.append("    field: ").append(toIndentedString(field)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class InlineResponse4042Details {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

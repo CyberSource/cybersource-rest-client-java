@@ -106,8 +106,8 @@ public class Notificationsubscriptionsv1webhooksProducts {
     StringBuilder sb = new StringBuilder();
     sb.append("class Notificationsubscriptionsv1webhooksProducts {\n");
     
-    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("    eventTypes: ").append(toIndentedString(eventTypes)).append("\n");
+    if (productId != null) sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+    if (eventTypes != null) sb.append("    eventTypes: ").append(toIndentedString(eventTypes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -118,10 +118,10 @@ public class Notificationsubscriptionsv1webhooksProducts {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

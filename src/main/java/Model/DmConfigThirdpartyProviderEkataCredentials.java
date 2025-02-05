@@ -74,7 +74,7 @@ public class DmConfigThirdpartyProviderEkataCredentials {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfigThirdpartyProviderEkataCredentials {\n");
     
-    sb.append("    apiKey: ").append(toIndentedString(apiKey)).append("\n");
+    if (apiKey != null) sb.append("    apiKey: ").append(toIndentedString(apiKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class DmConfigThirdpartyProviderEkataCredentials {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

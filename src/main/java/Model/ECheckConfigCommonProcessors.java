@@ -112,7 +112,7 @@ public class ECheckConfigCommonProcessors {
    * @return enableAccuityForAvs
   **/
   @ApiModelProperty(value = "*NEW* Accuity is the original validation service that checks the account/routing number for formatting issues. Used by WF and set to \"Yes\" unless told otherwise")
-  public Boolean isEnableAccuityForAvs() {
+  public Boolean EnableAccuityForAvs() {
     return enableAccuityForAvs;
   }
 
@@ -148,7 +148,7 @@ public class ECheckConfigCommonProcessors {
    * @return setCompletedState
   **/
   @ApiModelProperty(value = "*Moved* When set to Yes we will automatically update transactions to a completed status X-number of days after the transaction comes through; if no failure notification is received. When set to No means we will not update transaction status in this manner. For BAMS/Bank of America merchants, they should be set to No unless we are explicitly asked to set a merchant to YES.")
-  public Boolean isSetCompletedState() {
+  public Boolean SetCompletedState() {
     return setCompletedState;
   }
 
@@ -185,12 +185,12 @@ public class ECheckConfigCommonProcessors {
     StringBuilder sb = new StringBuilder();
     sb.append("class ECheckConfigCommonProcessors {\n");
     
-    sb.append("    companyEntryDescription: ").append(toIndentedString(companyEntryDescription)).append("\n");
-    sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
-    sb.append("    batchGroup: ").append(toIndentedString(batchGroup)).append("\n");
-    sb.append("    enableAccuityForAvs: ").append(toIndentedString(enableAccuityForAvs)).append("\n");
-    sb.append("    accuityCheckType: ").append(toIndentedString(accuityCheckType)).append("\n");
-    sb.append("    setCompletedState: ").append(toIndentedString(setCompletedState)).append("\n");
+    if (companyEntryDescription != null) sb.append("    companyEntryDescription: ").append(toIndentedString(companyEntryDescription)).append("\n");
+    if (companyId != null) sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
+    if (batchGroup != null) sb.append("    batchGroup: ").append(toIndentedString(batchGroup)).append("\n");
+    if (enableAccuityForAvs != null) sb.append("    enableAccuityForAvs: ").append(toIndentedString(enableAccuityForAvs)).append("\n");
+    if (accuityCheckType != null) sb.append("    accuityCheckType: ").append(toIndentedString(accuityCheckType)).append("\n");
+    if (setCompletedState != null) sb.append("    setCompletedState: ").append(toIndentedString(setCompletedState)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -201,10 +201,10 @@ public class ECheckConfigCommonProcessors {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

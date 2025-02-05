@@ -74,7 +74,7 @@ public class TmsSensitivePrivileges {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsSensitivePrivileges {\n");
     
-    sb.append("    cardNumberMaskingFormat: ").append(toIndentedString(cardNumberMaskingFormat)).append("\n");
+    if (cardNumberMaskingFormat != null) sb.append("    cardNumberMaskingFormat: ").append(toIndentedString(cardNumberMaskingFormat)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TmsSensitivePrivileges {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

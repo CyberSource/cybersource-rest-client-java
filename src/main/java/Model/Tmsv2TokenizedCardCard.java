@@ -25,13 +25,13 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * The latest card details associated with the network token
+ * Card object used to create a network token 
  */
-@ApiModel(description = "The latest card details associated with the network token")
+@ApiModel(description = "Card object used to create a network token ")
 
 public class Tmsv2TokenizedCardCard {
-  @SerializedName("suffix")
-  private String suffix = null;
+  @SerializedName("number")
+  private String number = null;
 
   @SerializedName("expirationMonth")
   private String expirationMonth = null;
@@ -39,31 +39,91 @@ public class Tmsv2TokenizedCardCard {
   @SerializedName("expirationYear")
   private String expirationYear = null;
 
-   /**
-   * The customer&#39;s latest payment card number suffix 
-   * @return suffix
-  **/
-  @ApiModelProperty(example = "1111", value = "The customer's latest payment card number suffix ")
-  public String getSuffix() {
-    return suffix;
+  @SerializedName("type")
+  private String type = null;
+
+  @SerializedName("suffix")
+  private String suffix = null;
+
+  public Tmsv2TokenizedCardCard number(String number) {
+    this.number = number;
+    return this;
   }
 
    /**
-   *  Two-digit month in which the customer&#39;s latest payment card expires.  Format: &#x60;MM&#x60;.  Possible Values: &#x60;01&#x60; through &#x60;12&#x60;. 
+   * The customer&#39;s payment card number, also known as the Primary Account Number (PAN). 
+   * @return number
+  **/
+  @ApiModelProperty(value = "The customer's payment card number, also known as the Primary Account Number (PAN). ")
+  public String getNumber() {
+    return number;
+  }
+
+  public void setNumber(String number) {
+    this.number = number;
+  }
+
+  public Tmsv2TokenizedCardCard expirationMonth(String expirationMonth) {
+    this.expirationMonth = expirationMonth;
+    return this;
+  }
+
+   /**
+   * Two-digit month in which the payment card expires.  Format: &#x60;MM&#x60;.  Possible Values: &#x60;01&#x60; through &#x60;12&#x60;. 
    * @return expirationMonth
   **/
-  @ApiModelProperty(value = " Two-digit month in which the customer's latest payment card expires.  Format: `MM`.  Possible Values: `01` through `12`. ")
+  @ApiModelProperty(value = "Two-digit month in which the payment card expires.  Format: `MM`.  Possible Values: `01` through `12`. ")
   public String getExpirationMonth() {
     return expirationMonth;
   }
 
+  public void setExpirationMonth(String expirationMonth) {
+    this.expirationMonth = expirationMonth;
+  }
+
+  public Tmsv2TokenizedCardCard expirationYear(String expirationYear) {
+    this.expirationYear = expirationYear;
+    return this;
+  }
+
    /**
-   * Four-digit year in which the customer&#39;s latest payment card expires.  Format: &#x60;YYYY&#x60;. 
+   * Four-digit year in which the credit card expires.  Format: &#x60;YYYY&#x60;. 
    * @return expirationYear
   **/
-  @ApiModelProperty(value = "Four-digit year in which the customer's latest payment card expires.  Format: `YYYY`. ")
+  @ApiModelProperty(value = "Four-digit year in which the credit card expires.  Format: `YYYY`. ")
   public String getExpirationYear() {
     return expirationYear;
+  }
+
+  public void setExpirationYear(String expirationYear) {
+    this.expirationYear = expirationYear;
+  }
+
+  public Tmsv2TokenizedCardCard type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * The type of card(Card network). Possible Values: 001: visa 
+   * @return type
+  **/
+  @ApiModelProperty(value = "The type of card(Card network). Possible Values: 001: visa ")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+   /**
+   * The customer&#39;s latest payment card number suffix. 
+   * @return suffix
+  **/
+  @ApiModelProperty(value = "The customer's latest payment card number suffix. ")
+  public String getSuffix() {
+    return suffix;
   }
 
 
@@ -76,14 +136,16 @@ public class Tmsv2TokenizedCardCard {
       return false;
     }
     Tmsv2TokenizedCardCard tmsv2TokenizedCardCard = (Tmsv2TokenizedCardCard) o;
-    return Objects.equals(this.suffix, tmsv2TokenizedCardCard.suffix) &&
+    return Objects.equals(this.number, tmsv2TokenizedCardCard.number) &&
         Objects.equals(this.expirationMonth, tmsv2TokenizedCardCard.expirationMonth) &&
-        Objects.equals(this.expirationYear, tmsv2TokenizedCardCard.expirationYear);
+        Objects.equals(this.expirationYear, tmsv2TokenizedCardCard.expirationYear) &&
+        Objects.equals(this.type, tmsv2TokenizedCardCard.type) &&
+        Objects.equals(this.suffix, tmsv2TokenizedCardCard.suffix);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(suffix, expirationMonth, expirationYear);
+    return Objects.hash(number, expirationMonth, expirationYear, type, suffix);
   }
 
 
@@ -92,9 +154,11 @@ public class Tmsv2TokenizedCardCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2TokenizedCardCard {\n");
     
-    sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
-    sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
-    sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (suffix != null) sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -105,10 +169,10 @@ public class Tmsv2TokenizedCardCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

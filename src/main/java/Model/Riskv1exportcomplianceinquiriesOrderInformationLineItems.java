@@ -248,14 +248,14 @@ public class Riskv1exportcomplianceinquiriesOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1exportcomplianceinquiriesOrderInformationLineItems {\n");
     
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
-    sb.append("    allowedExportCountries: ").append(toIndentedString(allowedExportCountries)).append("\n");
-    sb.append("    restrictedExportCountries: ").append(toIndentedString(restrictedExportCountries)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
-    sb.append("    productRisk: ").append(toIndentedString(productRisk)).append("\n");
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (allowedExportCountries != null) sb.append("    allowedExportCountries: ").append(toIndentedString(allowedExportCountries)).append("\n");
+    if (restrictedExportCountries != null) sb.append("    restrictedExportCountries: ").append(toIndentedString(restrictedExportCountries)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (productSKU != null) sb.append("    productSKU: ").append(toIndentedString(productSKU)).append("\n");
+    if (productRisk != null) sb.append("    productRisk: ").append(toIndentedString(productRisk)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -266,10 +266,10 @@ public class Riskv1exportcomplianceinquiriesOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

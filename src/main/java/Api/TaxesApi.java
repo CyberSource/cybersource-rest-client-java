@@ -156,7 +156,6 @@ public class TaxesApi {
      */
     public VasV2PaymentsPost201Response calculateTax(TaxRequest taxRequest) throws ApiException {
         logger.info("CALL TO METHOD 'calculateTax' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<VasV2PaymentsPost201Response> resp = calculateTaxWithHttpInfo(taxRequest);
         logger.info("CALL TO METHOD 'calculateTax' ENDED");
         return resp.getData();
@@ -170,6 +169,7 @@ public class TaxesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<VasV2PaymentsPost201Response> calculateTaxWithHttpInfo(TaxRequest taxRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = calculateTaxValidateBeforeCall(taxRequest, null, null);
         Type localVarReturnType = new TypeToken<VasV2PaymentsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -306,7 +306,6 @@ public class TaxesApi {
      */
     public VasV2TaxVoid200Response voidTax(VoidTaxRequest voidTaxRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidTax' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<VasV2TaxVoid200Response> resp = voidTaxWithHttpInfo(voidTaxRequest, id);
         logger.info("CALL TO METHOD 'voidTax' ENDED");
         return resp.getData();
@@ -321,6 +320,7 @@ public class TaxesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<VasV2TaxVoid200Response> voidTaxWithHttpInfo(VoidTaxRequest voidTaxRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = voidTaxValidateBeforeCall(voidTaxRequest, id, null, null);
         Type localVarReturnType = new TypeToken<VasV2TaxVoid200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

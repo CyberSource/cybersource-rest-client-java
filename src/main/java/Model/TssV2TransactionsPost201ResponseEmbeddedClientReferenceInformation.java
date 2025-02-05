@@ -141,10 +141,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation 
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
-    sb.append("    applicationUser: ").append(toIndentedString(applicationUser)).append("\n");
-    sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (applicationName != null) sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
+    if (applicationUser != null) sb.append("    applicationUser: ").append(toIndentedString(applicationUser)).append("\n");
+    if (partner != null) sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation 
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

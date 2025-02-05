@@ -98,8 +98,8 @@ public class Notificationsubscriptionsv1webhooksSecurityPolicy {
     StringBuilder sb = new StringBuilder();
     sb.append("class Notificationsubscriptionsv1webhooksSecurityPolicy {\n");
     
-    sb.append("    securityType: ").append(toIndentedString(securityType)).append("\n");
-    sb.append("    config: ").append(toIndentedString(config)).append("\n");
+    if (securityType != null) sb.append("    securityType: ").append(toIndentedString(securityType)).append("\n");
+    if (config != null) sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class Notificationsubscriptionsv1webhooksSecurityPolicy {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

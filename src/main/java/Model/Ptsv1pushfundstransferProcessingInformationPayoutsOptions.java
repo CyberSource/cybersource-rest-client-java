@@ -162,11 +162,11 @@ public class Ptsv1pushfundstransferProcessingInformationPayoutsOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv1pushfundstransferProcessingInformationPayoutsOptions {\n");
     
-    sb.append("    sourceCurrency: ").append(toIndentedString(sourceCurrency)).append("\n");
-    sb.append("    destinationCurrency: ").append(toIndentedString(destinationCurrency)).append("\n");
-    sb.append("    sourceAmount: ").append(toIndentedString(sourceAmount)).append("\n");
-    sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
-    sb.append("    accountFundingReferenceId: ").append(toIndentedString(accountFundingReferenceId)).append("\n");
+    if (sourceCurrency != null) sb.append("    sourceCurrency: ").append(toIndentedString(sourceCurrency)).append("\n");
+    if (destinationCurrency != null) sb.append("    destinationCurrency: ").append(toIndentedString(destinationCurrency)).append("\n");
+    if (sourceAmount != null) sb.append("    sourceAmount: ").append(toIndentedString(sourceAmount)).append("\n");
+    if (retrievalReferenceNumber != null) sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
+    if (accountFundingReferenceId != null) sb.append("    accountFundingReferenceId: ").append(toIndentedString(accountFundingReferenceId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class Ptsv1pushfundstransferProcessingInformationPayoutsOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

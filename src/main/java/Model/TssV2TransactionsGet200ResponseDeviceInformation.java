@@ -118,9 +118,9 @@ public class TssV2TransactionsGet200ResponseDeviceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseDeviceInformation {\n");
     
-    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
-    sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
-    sb.append("    cookiesAccepted: ").append(toIndentedString(cookiesAccepted)).append("\n");
+    if (ipAddress != null) sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+    if (hostName != null) sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
+    if (cookiesAccepted != null) sb.append("    cookiesAccepted: ").append(toIndentedString(cookiesAccepted)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class TssV2TransactionsGet200ResponseDeviceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

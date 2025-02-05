@@ -74,7 +74,7 @@ public class TssV2TransactionsGet200ResponsePayoutOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePayoutOptions {\n");
     
-    sb.append("    payoutInquiry: ").append(toIndentedString(payoutInquiry)).append("\n");
+    if (payoutInquiry != null) sb.append("    payoutInquiry: ").append(toIndentedString(payoutInquiry)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TssV2TransactionsGet200ResponsePayoutOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

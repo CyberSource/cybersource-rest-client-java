@@ -168,7 +168,6 @@ public class TokenApi {
      */
     public String postTokenPaymentCredentials(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<String> resp = postTokenPaymentCredentialsWithHttpInfo(tokenId, postPaymentCredentialsRequest, profileId);
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' ENDED");
         return resp.getData();
@@ -184,6 +183,7 @@ public class TokenApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<String> postTokenPaymentCredentialsWithHttpInfo(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postTokenPaymentCredentialsValidateBeforeCall(tokenId, postPaymentCredentialsRequest, profileId, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

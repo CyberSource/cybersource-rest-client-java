@@ -75,7 +75,7 @@ public class PushFunds201ResponsePaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PushFunds201ResponsePaymentInformation {\n");
     
-    sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class PushFunds201ResponsePaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

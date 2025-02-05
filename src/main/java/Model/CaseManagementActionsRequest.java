@@ -98,8 +98,8 @@ public class CaseManagementActionsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CaseManagementActionsRequest {\n");
     
-    sb.append("    decisionInformation: ").append(toIndentedString(decisionInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (decisionInformation != null) sb.append("    decisionInformation: ").append(toIndentedString(decisionInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class CaseManagementActionsRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

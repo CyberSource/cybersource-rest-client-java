@@ -129,9 +129,9 @@ public class Riskv1exportcomplianceinquiriesExportComplianceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1exportcomplianceinquiriesExportComplianceInformation {\n");
     
-    sb.append("    addressOperator: ").append(toIndentedString(addressOperator)).append("\n");
-    sb.append("    weights: ").append(toIndentedString(weights)).append("\n");
-    sb.append("    sanctionLists: ").append(toIndentedString(sanctionLists)).append("\n");
+    if (addressOperator != null) sb.append("    addressOperator: ").append(toIndentedString(addressOperator)).append("\n");
+    if (weights != null) sb.append("    weights: ").append(toIndentedString(weights)).append("\n");
+    if (sanctionLists != null) sb.append("    sanctionLists: ").append(toIndentedString(sanctionLists)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -142,10 +142,10 @@ public class Riskv1exportcomplianceinquiriesExportComplianceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

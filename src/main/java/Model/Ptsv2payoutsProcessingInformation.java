@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Ptsv2payoutsProcessingInformationFundingOptions;
 import Model.Ptsv2payoutsProcessingInformationPayoutsOptions;
+import Model.Ptsv2payoutsProcessingInformationPurchaseOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -54,6 +55,12 @@ public class Ptsv2payoutsProcessingInformation {
 
   @SerializedName("fundingOptions")
   private Ptsv2payoutsProcessingInformationFundingOptions fundingOptions = null;
+
+  @SerializedName("languageCode")
+  private String languageCode = null;
+
+  @SerializedName("purchaseOptions")
+  private Ptsv2payoutsProcessingInformationPurchaseOptions purchaseOptions = null;
 
   public Ptsv2payoutsProcessingInformation businessApplicationId(String businessApplicationId) {
     this.businessApplicationId = businessApplicationId;
@@ -199,6 +206,42 @@ public class Ptsv2payoutsProcessingInformation {
     this.fundingOptions = fundingOptions;
   }
 
+  public Ptsv2payoutsProcessingInformation languageCode(String languageCode) {
+    this.languageCode = languageCode;
+    return this;
+  }
+
+   /**
+   * Contains the ISO 639-2 defined language Code 
+   * @return languageCode
+  **/
+  @ApiModelProperty(value = "Contains the ISO 639-2 defined language Code ")
+  public String getLanguageCode() {
+    return languageCode;
+  }
+
+  public void setLanguageCode(String languageCode) {
+    this.languageCode = languageCode;
+  }
+
+  public Ptsv2payoutsProcessingInformation purchaseOptions(Ptsv2payoutsProcessingInformationPurchaseOptions purchaseOptions) {
+    this.purchaseOptions = purchaseOptions;
+    return this;
+  }
+
+   /**
+   * Get purchaseOptions
+   * @return purchaseOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2payoutsProcessingInformationPurchaseOptions getPurchaseOptions() {
+    return purchaseOptions;
+  }
+
+  public void setPurchaseOptions(Ptsv2payoutsProcessingInformationPurchaseOptions purchaseOptions) {
+    this.purchaseOptions = purchaseOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,12 +259,14 @@ public class Ptsv2payoutsProcessingInformation {
         Objects.equals(this.payoutsOptions, ptsv2payoutsProcessingInformation.payoutsOptions) &&
         Objects.equals(this.transactionReason, ptsv2payoutsProcessingInformation.transactionReason) &&
         Objects.equals(this.purposeOfPayment, ptsv2payoutsProcessingInformation.purposeOfPayment) &&
-        Objects.equals(this.fundingOptions, ptsv2payoutsProcessingInformation.fundingOptions);
+        Objects.equals(this.fundingOptions, ptsv2payoutsProcessingInformation.fundingOptions) &&
+        Objects.equals(this.languageCode, ptsv2payoutsProcessingInformation.languageCode) &&
+        Objects.equals(this.purchaseOptions, ptsv2payoutsProcessingInformation.purchaseOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(businessApplicationId, networkRoutingOrder, commerceIndicator, reconciliationId, payoutsOptions, transactionReason, purposeOfPayment, fundingOptions);
+    return Objects.hash(businessApplicationId, networkRoutingOrder, commerceIndicator, reconciliationId, payoutsOptions, transactionReason, purposeOfPayment, fundingOptions, languageCode, purchaseOptions);
   }
 
 
@@ -230,14 +275,16 @@ public class Ptsv2payoutsProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2payoutsProcessingInformation {\n");
     
-    sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
-    sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
-    sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
-    sb.append("    transactionReason: ").append(toIndentedString(transactionReason)).append("\n");
-    sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
-    sb.append("    fundingOptions: ").append(toIndentedString(fundingOptions)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (networkRoutingOrder != null) sb.append("    networkRoutingOrder: ").append(toIndentedString(networkRoutingOrder)).append("\n");
+    if (commerceIndicator != null) sb.append("    commerceIndicator: ").append(toIndentedString(commerceIndicator)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (payoutsOptions != null) sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
+    if (transactionReason != null) sb.append("    transactionReason: ").append(toIndentedString(transactionReason)).append("\n");
+    if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
+    if (fundingOptions != null) sb.append("    fundingOptions: ").append(toIndentedString(fundingOptions)).append("\n");
+    if (languageCode != null) sb.append("    languageCode: ").append(toIndentedString(languageCode)).append("\n");
+    if (purchaseOptions != null) sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -248,10 +295,10 @@ public class Ptsv2payoutsProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

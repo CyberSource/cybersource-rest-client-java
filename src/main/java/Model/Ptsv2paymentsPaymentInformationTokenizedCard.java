@@ -316,18 +316,18 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPaymentInformationTokenizedCard {\n");
     
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
-    sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    cryptogram: ").append(toIndentedString(cryptogram)).append("\n");
-    sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
-    sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
-    sb.append("    assuranceLevel: ").append(toIndentedString(assuranceLevel)).append("\n");
-    sb.append("    storageMethod: ").append(toIndentedString(storageMethod)).append("\n");
-    sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
-    sb.append("    securityCodeIndicator: ").append(toIndentedString(securityCodeIndicator)).append("\n");
-    sb.append("    assuranceMethod: ").append(toIndentedString(assuranceMethod)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (cryptogram != null) sb.append("    cryptogram: ").append(toIndentedString(cryptogram)).append("\n");
+    if (requestorId != null) sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
+    if (transactionType != null) sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
+    if (assuranceLevel != null) sb.append("    assuranceLevel: ").append(toIndentedString(assuranceLevel)).append("\n");
+    if (storageMethod != null) sb.append("    storageMethod: ").append(toIndentedString(storageMethod)).append("\n");
+    if (securityCode != null) sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
+    if (securityCodeIndicator != null) sb.append("    securityCodeIndicator: ").append(toIndentedString(securityCodeIndicator)).append("\n");
+    if (assuranceMethod != null) sb.append("    assuranceMethod: ").append(toIndentedString(assuranceMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -338,10 +338,10 @@ public class Ptsv2paymentsPaymentInformationTokenizedCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

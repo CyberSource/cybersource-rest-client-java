@@ -18,6 +18,8 @@ import java.util.Arrays;
 import Model.PtsV2PaymentsPost201ResponseEmbeddedActionsCAPTURE;
 import Model.PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION;
 import Model.PtsV2PaymentsPost201ResponseEmbeddedActionsDECISION;
+import Model.PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE;
+import Model.PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE;
 import Model.PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -48,6 +50,12 @@ public class PtsV2PaymentsPost201ResponseEmbeddedActions {
 
   @SerializedName("WATCHLIST_SCREENING")
   private PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING WATCHLIST_SCREENING = null;
+
+  @SerializedName("TOKEN_CREATE")
+  private PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE TOKEN_CREATE = null;
+
+  @SerializedName("TOKEN_UPDATE")
+  private PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE TOKEN_UPDATE = null;
 
   public PtsV2PaymentsPost201ResponseEmbeddedActions CAPTURE(PtsV2PaymentsPost201ResponseEmbeddedActionsCAPTURE CAPTURE) {
     this.CAPTURE = CAPTURE;
@@ -139,6 +147,42 @@ public class PtsV2PaymentsPost201ResponseEmbeddedActions {
     this.WATCHLIST_SCREENING = WATCHLIST_SCREENING;
   }
 
+  public PtsV2PaymentsPost201ResponseEmbeddedActions TOKEN_CREATE(PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE TOKEN_CREATE) {
+    this.TOKEN_CREATE = TOKEN_CREATE;
+    return this;
+  }
+
+   /**
+   * Get TOKEN_CREATE
+   * @return TOKEN_CREATE
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE getTOKENCREATE() {
+    return TOKEN_CREATE;
+  }
+
+  public void setTOKENCREATE(PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE TOKEN_CREATE) {
+    this.TOKEN_CREATE = TOKEN_CREATE;
+  }
+
+  public PtsV2PaymentsPost201ResponseEmbeddedActions TOKEN_UPDATE(PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE TOKEN_UPDATE) {
+    this.TOKEN_UPDATE = TOKEN_UPDATE;
+    return this;
+  }
+
+   /**
+   * Get TOKEN_UPDATE
+   * @return TOKEN_UPDATE
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE getTOKENUPDATE() {
+    return TOKEN_UPDATE;
+  }
+
+  public void setTOKENUPDATE(PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE TOKEN_UPDATE) {
+    this.TOKEN_UPDATE = TOKEN_UPDATE;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -153,12 +197,14 @@ public class PtsV2PaymentsPost201ResponseEmbeddedActions {
         Objects.equals(this.DECISION, ptsV2PaymentsPost201ResponseEmbeddedActions.DECISION) &&
         Objects.equals(this.CONSUMER_AUTHENTICATION, ptsV2PaymentsPost201ResponseEmbeddedActions.CONSUMER_AUTHENTICATION) &&
         Objects.equals(this.VALIDATE_CONSUMER_AUTHENTICATION, ptsV2PaymentsPost201ResponseEmbeddedActions.VALIDATE_CONSUMER_AUTHENTICATION) &&
-        Objects.equals(this.WATCHLIST_SCREENING, ptsV2PaymentsPost201ResponseEmbeddedActions.WATCHLIST_SCREENING);
+        Objects.equals(this.WATCHLIST_SCREENING, ptsV2PaymentsPost201ResponseEmbeddedActions.WATCHLIST_SCREENING) &&
+        Objects.equals(this.TOKEN_CREATE, ptsV2PaymentsPost201ResponseEmbeddedActions.TOKEN_CREATE) &&
+        Objects.equals(this.TOKEN_UPDATE, ptsV2PaymentsPost201ResponseEmbeddedActions.TOKEN_UPDATE);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(CAPTURE, DECISION, CONSUMER_AUTHENTICATION, VALIDATE_CONSUMER_AUTHENTICATION, WATCHLIST_SCREENING);
+    return Objects.hash(CAPTURE, DECISION, CONSUMER_AUTHENTICATION, VALIDATE_CONSUMER_AUTHENTICATION, WATCHLIST_SCREENING, TOKEN_CREATE, TOKEN_UPDATE);
   }
 
 
@@ -167,11 +213,13 @@ public class PtsV2PaymentsPost201ResponseEmbeddedActions {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseEmbeddedActions {\n");
     
-    sb.append("    CAPTURE: ").append(toIndentedString(CAPTURE)).append("\n");
-    sb.append("    DECISION: ").append(toIndentedString(DECISION)).append("\n");
-    sb.append("    CONSUMER_AUTHENTICATION: ").append(toIndentedString(CONSUMER_AUTHENTICATION)).append("\n");
-    sb.append("    VALIDATE_CONSUMER_AUTHENTICATION: ").append(toIndentedString(VALIDATE_CONSUMER_AUTHENTICATION)).append("\n");
-    sb.append("    WATCHLIST_SCREENING: ").append(toIndentedString(WATCHLIST_SCREENING)).append("\n");
+    if (CAPTURE != null) sb.append("    CAPTURE: ").append(toIndentedString(CAPTURE)).append("\n");
+    if (DECISION != null) sb.append("    DECISION: ").append(toIndentedString(DECISION)).append("\n");
+    if (CONSUMER_AUTHENTICATION != null) sb.append("    CONSUMER_AUTHENTICATION: ").append(toIndentedString(CONSUMER_AUTHENTICATION)).append("\n");
+    if (VALIDATE_CONSUMER_AUTHENTICATION != null) sb.append("    VALIDATE_CONSUMER_AUTHENTICATION: ").append(toIndentedString(VALIDATE_CONSUMER_AUTHENTICATION)).append("\n");
+    if (WATCHLIST_SCREENING != null) sb.append("    WATCHLIST_SCREENING: ").append(toIndentedString(WATCHLIST_SCREENING)).append("\n");
+    if (TOKEN_CREATE != null) sb.append("    TOKEN_CREATE: ").append(toIndentedString(TOKEN_CREATE)).append("\n");
+    if (TOKEN_UPDATE != null) sb.append("    TOKEN_UPDATE: ").append(toIndentedString(TOKEN_UPDATE)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -182,10 +230,10 @@ public class PtsV2PaymentsPost201ResponseEmbeddedActions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class Ptsv2paymentsPaymentInformationDirectDebitMandate {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPaymentInformationDirectDebitMandate {\n");
     
-    sb.append("    clearingDate: ").append(toIndentedString(clearingDate)).append("\n");
+    if (clearingDate != null) sb.append("    clearingDate: ").append(toIndentedString(clearingDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsPaymentInformationDirectDebitMandate {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

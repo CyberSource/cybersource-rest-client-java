@@ -74,7 +74,7 @@ public class Boardingv1registrationsIntegrationInformationTenantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsIntegrationInformationTenantInformation {\n");
     
-    sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+    if (tenantId != null) sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Boardingv1registrationsIntegrationInformationTenantInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

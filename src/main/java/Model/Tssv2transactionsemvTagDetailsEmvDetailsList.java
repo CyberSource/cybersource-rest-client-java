@@ -96,8 +96,8 @@ public class Tssv2transactionsemvTagDetailsEmvDetailsList {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tssv2transactionsemvTagDetailsEmvDetailsList {\n");
     
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    emvRequestCombinedTags: ").append(toIndentedString(emvRequestCombinedTags)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    if (emvRequestCombinedTags != null) sb.append("    emvRequestCombinedTags: ").append(toIndentedString(emvRequestCombinedTags)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Tssv2transactionsemvTagDetailsEmvDetailsList {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

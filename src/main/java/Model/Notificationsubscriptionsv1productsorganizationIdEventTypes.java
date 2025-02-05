@@ -108,7 +108,7 @@ public class Notificationsubscriptionsv1productsorganizationIdEventTypes {
    * @return timeSensitivity
   **/
   @ApiModelProperty(value = "")
-  public Boolean isTimeSensitivity() {
+  public Boolean TimeSensitivity() {
     return timeSensitivity;
   }
 
@@ -126,7 +126,7 @@ public class Notificationsubscriptionsv1productsorganizationIdEventTypes {
    * @return payloadEncryption
   **/
   @ApiModelProperty(value = "")
-  public Boolean isPayloadEncryption() {
+  public Boolean PayloadEncryption() {
     return payloadEncryption;
   }
 
@@ -162,11 +162,11 @@ public class Notificationsubscriptionsv1productsorganizationIdEventTypes {
     StringBuilder sb = new StringBuilder();
     sb.append("class Notificationsubscriptionsv1productsorganizationIdEventTypes {\n");
     
-    sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-    sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
-    sb.append("    timeSensitivity: ").append(toIndentedString(timeSensitivity)).append("\n");
-    sb.append("    payloadEncryption: ").append(toIndentedString(payloadEncryption)).append("\n");
+    if (eventName != null) sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
+    if (displayName != null) sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    if (frequency != null) sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
+    if (timeSensitivity != null) sb.append("    timeSensitivity: ").append(toIndentedString(timeSensitivity)).append("\n");
+    if (payloadEncryption != null) sb.append("    payloadEncryption: ").append(toIndentedString(payloadEncryption)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class Notificationsubscriptionsv1productsorganizationIdEventTypes {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

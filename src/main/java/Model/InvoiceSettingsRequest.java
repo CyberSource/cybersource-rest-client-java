@@ -75,7 +75,7 @@ public class InvoiceSettingsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoiceSettingsRequest {\n");
     
-    sb.append("    invoiceSettingsInformation: ").append(toIndentedString(invoiceSettingsInformation)).append("\n");
+    if (invoiceSettingsInformation != null) sb.append("    invoiceSettingsInformation: ").append(toIndentedString(invoiceSettingsInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class InvoiceSettingsRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

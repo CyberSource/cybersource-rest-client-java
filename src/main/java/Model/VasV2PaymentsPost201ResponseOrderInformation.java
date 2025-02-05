@@ -205,12 +205,12 @@ public class VasV2PaymentsPost201ResponseOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class VasV2PaymentsPost201ResponseOrderInformation {\n");
     
-    sb.append("    exemptAmount: ").append(toIndentedString(exemptAmount)).append("\n");
-    sb.append("    taxableAmount: ").append(toIndentedString(taxableAmount)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
-    sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
-    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    if (exemptAmount != null) sb.append("    exemptAmount: ").append(toIndentedString(exemptAmount)).append("\n");
+    if (taxableAmount != null) sb.append("    taxableAmount: ").append(toIndentedString(taxableAmount)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
+    if (taxDetails != null) sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
+    if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -221,10 +221,10 @@ public class VasV2PaymentsPost201ResponseOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

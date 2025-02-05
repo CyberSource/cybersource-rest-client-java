@@ -98,8 +98,8 @@ public class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformation {\n");
     
-    sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
-    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    if (eWallet != null) sb.append("    eWallet: ").append(toIndentedString(eWallet)).append("\n");
+    if (bank != null) sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

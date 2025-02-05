@@ -232,13 +232,13 @@ public class InlineResponse2001 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2001 {\n");
     
-    sb.append("    registrationInformation: ").append(toIndentedString(registrationInformation)).append("\n");
-    sb.append("    integrationInformation: ").append(toIndentedString(integrationInformation)).append("\n");
-    sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
-    sb.append("    productInformation: ").append(toIndentedString(productInformation)).append("\n");
-    sb.append("    productInformationSetups: ").append(toIndentedString(productInformationSetups)).append("\n");
-    sb.append("    documentInformation: ").append(toIndentedString(documentInformation)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    if (registrationInformation != null) sb.append("    registrationInformation: ").append(toIndentedString(registrationInformation)).append("\n");
+    if (integrationInformation != null) sb.append("    integrationInformation: ").append(toIndentedString(integrationInformation)).append("\n");
+    if (organizationInformation != null) sb.append("    organizationInformation: ").append(toIndentedString(organizationInformation)).append("\n");
+    if (productInformation != null) sb.append("    productInformation: ").append(toIndentedString(productInformation)).append("\n");
+    if (productInformationSetups != null) sb.append("    productInformationSetups: ").append(toIndentedString(productInformationSetups)).append("\n");
+    if (documentInformation != null) sb.append("    documentInformation: ").append(toIndentedString(documentInformation)).append("\n");
+    if (details != null) sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -249,10 +249,10 @@ public class InlineResponse2001 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

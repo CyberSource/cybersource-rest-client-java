@@ -75,7 +75,7 @@ public class PayerAuthConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class PayerAuthConfig {\n");
     
-    sb.append("    cardTypes: ").append(toIndentedString(cardTypes)).append("\n");
+    if (cardTypes != null) sb.append("    cardTypes: ").append(toIndentedString(cardTypes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class PayerAuthConfig {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

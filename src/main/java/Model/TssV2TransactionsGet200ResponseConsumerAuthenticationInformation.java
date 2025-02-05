@@ -163,11 +163,11 @@ public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation {\n");
     
-    sb.append("    eciRaw: ").append(toIndentedString(eciRaw)).append("\n");
-    sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
-    sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    strongAuthentication: ").append(toIndentedString(strongAuthentication)).append("\n");
+    if (eciRaw != null) sb.append("    eciRaw: ").append(toIndentedString(eciRaw)).append("\n");
+    if (cavv != null) sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
+    if (xid != null) sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (strongAuthentication != null) sb.append("    strongAuthentication: ").append(toIndentedString(strongAuthentication)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -178,10 +178,10 @@ public class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

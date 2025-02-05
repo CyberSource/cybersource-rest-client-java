@@ -119,9 +119,9 @@ public class GetAllPlansResponseLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetAllPlansResponseLinks {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
-    sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (next != null) sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    if (previous != null) sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class GetAllPlansResponseLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

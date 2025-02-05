@@ -131,9 +131,9 @@ public class PtsV2PaymentsPost201ResponseWatchlistScreeningInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseWatchlistScreeningInformation {\n");
     
-    sb.append("    ipCountryConfidence: ").append(toIndentedString(ipCountryConfidence)).append("\n");
-    sb.append("    infoCodes: ").append(toIndentedString(infoCodes)).append("\n");
-    sb.append("    watchList: ").append(toIndentedString(watchList)).append("\n");
+    if (ipCountryConfidence != null) sb.append("    ipCountryConfidence: ").append(toIndentedString(ipCountryConfidence)).append("\n");
+    if (infoCodes != null) sb.append("    infoCodes: ").append(toIndentedString(infoCodes)).append("\n");
+    if (watchList != null) sb.append("    watchList: ").append(toIndentedString(watchList)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -144,10 +144,10 @@ public class PtsV2PaymentsPost201ResponseWatchlistScreeningInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

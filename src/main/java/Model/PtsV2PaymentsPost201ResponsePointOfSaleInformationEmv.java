@@ -118,9 +118,9 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv {\n");
     
-    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-    sb.append("    chipValidationType: ").append(toIndentedString(chipValidationType)).append("\n");
-    sb.append("    chipValidationResult: ").append(toIndentedString(chipValidationResult)).append("\n");
+    if (tags != null) sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    if (chipValidationType != null) sb.append("    chipValidationType: ").append(toIndentedString(chipValidationType)).append("\n");
+    if (chipValidationResult != null) sb.append("    chipValidationResult: ").append(toIndentedString(chipValidationResult)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

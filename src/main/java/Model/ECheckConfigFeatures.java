@@ -75,7 +75,7 @@ public class ECheckConfigFeatures {
     StringBuilder sb = new StringBuilder();
     sb.append("class ECheckConfigFeatures {\n");
     
-    sb.append("    accountValidationService: ").append(toIndentedString(accountValidationService)).append("\n");
+    if (accountValidationService != null) sb.append("    accountValidationService: ").append(toIndentedString(accountValidationService)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class ECheckConfigFeatures {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -339,19 +339,19 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails 
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails {\n");
     
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    interchangePerItemFee: ").append(toIndentedString(interchangePerItemFee)).append("\n");
-    sb.append("    interchangeDescription: ").append(toIndentedString(interchangeDescription)).append("\n");
-    sb.append("    interchangePercentage: ").append(toIndentedString(interchangePercentage)).append("\n");
-    sb.append("    interchangePercentageAmount: ").append(toIndentedString(interchangePercentageAmount)).append("\n");
-    sb.append("    discountPercentage: ").append(toIndentedString(discountPercentage)).append("\n");
-    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
-    sb.append("    discountPerItemFee: ").append(toIndentedString(discountPerItemFee)).append("\n");
-    sb.append("    totalFee: ").append(toIndentedString(totalFee)).append("\n");
-    sb.append("    feeCurrency: ").append(toIndentedString(feeCurrency)).append("\n");
-    sb.append("    duesAssessments: ").append(toIndentedString(duesAssessments)).append("\n");
-    sb.append("    fundingAmount: ").append(toIndentedString(fundingAmount)).append("\n");
-    sb.append("    fundingCurrency: ").append(toIndentedString(fundingCurrency)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    if (interchangePerItemFee != null) sb.append("    interchangePerItemFee: ").append(toIndentedString(interchangePerItemFee)).append("\n");
+    if (interchangeDescription != null) sb.append("    interchangeDescription: ").append(toIndentedString(interchangeDescription)).append("\n");
+    if (interchangePercentage != null) sb.append("    interchangePercentage: ").append(toIndentedString(interchangePercentage)).append("\n");
+    if (interchangePercentageAmount != null) sb.append("    interchangePercentageAmount: ").append(toIndentedString(interchangePercentageAmount)).append("\n");
+    if (discountPercentage != null) sb.append("    discountPercentage: ").append(toIndentedString(discountPercentage)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (discountPerItemFee != null) sb.append("    discountPerItemFee: ").append(toIndentedString(discountPerItemFee)).append("\n");
+    if (totalFee != null) sb.append("    totalFee: ").append(toIndentedString(totalFee)).append("\n");
+    if (feeCurrency != null) sb.append("    feeCurrency: ").append(toIndentedString(feeCurrency)).append("\n");
+    if (duesAssessments != null) sb.append("    duesAssessments: ").append(toIndentedString(duesAssessments)).append("\n");
+    if (fundingAmount != null) sb.append("    fundingAmount: ").append(toIndentedString(fundingAmount)).append("\n");
+    if (fundingCurrency != null) sb.append("    fundingCurrency: ").append(toIndentedString(fundingCurrency)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -362,10 +362,10 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails 
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

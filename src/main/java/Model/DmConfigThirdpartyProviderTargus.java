@@ -49,7 +49,7 @@ public class DmConfigThirdpartyProviderTargus {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -67,7 +67,7 @@ public class DmConfigThirdpartyProviderTargus {
    * @return useCybsCredentials
   **/
   @ApiModelProperty(value = "")
-  public Boolean isUseCybsCredentials() {
+  public Boolean UseCybsCredentials() {
     return useCybsCredentials;
   }
 
@@ -119,9 +119,9 @@ public class DmConfigThirdpartyProviderTargus {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfigThirdpartyProviderTargus {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    useCybsCredentials: ").append(toIndentedString(useCybsCredentials)).append("\n");
-    sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (useCybsCredentials != null) sb.append("    useCybsCredentials: ").append(toIndentedString(useCybsCredentials)).append("\n");
+    if (credentials != null) sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class DmConfigThirdpartyProviderTargus {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

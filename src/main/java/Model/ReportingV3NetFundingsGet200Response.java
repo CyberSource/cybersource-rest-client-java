@@ -281,14 +281,14 @@ public class ReportingV3NetFundingsGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3NetFundingsGet200Response {\n");
     
-    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-    sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-    sb.append("    netFundingSummaries: ").append(toIndentedString(netFundingSummaries)).append("\n");
-    sb.append("    totalPurchases: ").append(toIndentedString(totalPurchases)).append("\n");
-    sb.append("    totalRefunds: ").append(toIndentedString(totalRefunds)).append("\n");
-    sb.append("    totalFees: ").append(toIndentedString(totalFees)).append("\n");
-    sb.append("    totalChargebacks: ").append(toIndentedString(totalChargebacks)).append("\n");
-    sb.append("    netTotal: ").append(toIndentedString(netTotal)).append("\n");
+    if (startTime != null) sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    if (endTime != null) sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+    if (netFundingSummaries != null) sb.append("    netFundingSummaries: ").append(toIndentedString(netFundingSummaries)).append("\n");
+    if (totalPurchases != null) sb.append("    totalPurchases: ").append(toIndentedString(totalPurchases)).append("\n");
+    if (totalRefunds != null) sb.append("    totalRefunds: ").append(toIndentedString(totalRefunds)).append("\n");
+    if (totalFees != null) sb.append("    totalFees: ").append(toIndentedString(totalFees)).append("\n");
+    if (totalChargebacks != null) sb.append("    totalChargebacks: ").append(toIndentedString(totalChargebacks)).append("\n");
+    if (netTotal != null) sb.append("    netTotal: ").append(toIndentedString(netTotal)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -299,10 +299,10 @@ public class ReportingV3NetFundingsGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -151,7 +151,6 @@ public class MicroformIntegrationApi {
      */
     public String generateCaptureContext(GenerateCaptureContextRequest generateCaptureContextRequest) throws ApiException {
         logger.info("CALL TO METHOD 'generateCaptureContext' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<String> resp = generateCaptureContextWithHttpInfo(generateCaptureContextRequest);
         logger.info("CALL TO METHOD 'generateCaptureContext' ENDED");
         return resp.getData();
@@ -165,6 +164,7 @@ public class MicroformIntegrationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<String> generateCaptureContextWithHttpInfo(GenerateCaptureContextRequest generateCaptureContextRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = generateCaptureContextValidateBeforeCall(generateCaptureContextRequest, null, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

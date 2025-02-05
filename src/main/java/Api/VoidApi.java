@@ -157,7 +157,6 @@ public class VoidApi {
      */
     public PtsV2PaymentsVoidsPost201Response mitVoid(MitVoidRequest mitVoidRequest) throws ApiException {
         logger.info("CALL TO METHOD 'mitVoid' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = mitVoidWithHttpInfo(mitVoidRequest);
         logger.info("CALL TO METHOD 'mitVoid' ENDED");
         return resp.getData();
@@ -171,6 +170,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> mitVoidWithHttpInfo(MitVoidRequest mitVoidRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = mitVoidValidateBeforeCall(mitVoidRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -307,7 +307,6 @@ public class VoidApi {
      */
     public PtsV2PaymentsVoidsPost201Response voidCapture(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidCapture' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCaptureWithHttpInfo(voidCaptureRequest, id);
         logger.info("CALL TO METHOD 'voidCapture' ENDED");
         return resp.getData();
@@ -322,6 +321,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidCaptureWithHttpInfo(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = voidCaptureValidateBeforeCall(voidCaptureRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -459,7 +459,6 @@ public class VoidApi {
      */
     public PtsV2PaymentsVoidsPost201Response voidCredit(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidCredit' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidCreditWithHttpInfo(voidCreditRequest, id);
         logger.info("CALL TO METHOD 'voidCredit' ENDED");
         return resp.getData();
@@ -474,6 +473,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidCreditWithHttpInfo(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = voidCreditValidateBeforeCall(voidCreditRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -611,7 +611,6 @@ public class VoidApi {
      */
     public PtsV2PaymentsVoidsPost201Response voidPayment(VoidPaymentRequest voidPaymentRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidPayment' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidPaymentWithHttpInfo(voidPaymentRequest, id);
         logger.info("CALL TO METHOD 'voidPayment' ENDED");
         return resp.getData();
@@ -626,6 +625,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidPaymentWithHttpInfo(VoidPaymentRequest voidPaymentRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = voidPaymentValidateBeforeCall(voidPaymentRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -763,7 +763,6 @@ public class VoidApi {
      */
     public PtsV2PaymentsVoidsPost201Response voidRefund(VoidRefundRequest voidRefundRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidRefund' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2PaymentsVoidsPost201Response> resp = voidRefundWithHttpInfo(voidRefundRequest, id);
         logger.info("CALL TO METHOD 'voidRefund' ENDED");
         return resp.getData();
@@ -778,6 +777,7 @@ public class VoidApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2PaymentsVoidsPost201Response> voidRefundWithHttpInfo(VoidRefundRequest voidRefundRequest, String id) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = voidRefundValidateBeforeCall(voidRefundRequest, id, null, null);
         Type localVarReturnType = new TypeToken<PtsV2PaymentsVoidsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

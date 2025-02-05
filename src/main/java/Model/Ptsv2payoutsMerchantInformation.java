@@ -142,10 +142,10 @@ public class Ptsv2payoutsMerchantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2payoutsMerchantInformation {\n");
     
-    sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
-    sb.append("    submitLocalDateTime: ").append(toIndentedString(submitLocalDateTime)).append("\n");
-    sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
-    sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
+    if (categoryCode != null) sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
+    if (submitLocalDateTime != null) sb.append("    submitLocalDateTime: ").append(toIndentedString(submitLocalDateTime)).append("\n");
+    if (vatRegistrationNumber != null) sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
+    if (merchantDescriptor != null) sb.append("    merchantDescriptor: ").append(toIndentedString(merchantDescriptor)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -156,10 +156,10 @@ public class Ptsv2payoutsMerchantInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

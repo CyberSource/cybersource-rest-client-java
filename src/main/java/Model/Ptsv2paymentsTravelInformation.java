@@ -189,12 +189,12 @@ public class Ptsv2paymentsTravelInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformation {\n");
     
-    sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
-    sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
-    sb.append("    autoRental: ").append(toIndentedString(autoRental)).append("\n");
-    sb.append("    lodging: ").append(toIndentedString(lodging)).append("\n");
-    sb.append("    transit: ").append(toIndentedString(transit)).append("\n");
-    sb.append("    vehicleData: ").append(toIndentedString(vehicleData)).append("\n");
+    if (duration != null) sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+    if (agency != null) sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
+    if (autoRental != null) sb.append("    autoRental: ").append(toIndentedString(autoRental)).append("\n");
+    if (lodging != null) sb.append("    lodging: ").append(toIndentedString(lodging)).append("\n");
+    if (transit != null) sb.append("    transit: ").append(toIndentedString(transit)).append("\n");
+    if (vehicleData != null) sb.append("    vehicleData: ").append(toIndentedString(vehicleData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -205,10 +205,10 @@ public class Ptsv2paymentsTravelInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

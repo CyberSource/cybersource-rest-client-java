@@ -71,7 +71,8 @@ public class InstrumentIdentifierApiTest {
     public void getInstrumentIdentifierTest() throws Exception {
         String instrumentIdentifierId = null;
         String profileId = null;
-        PostInstrumentIdentifierRequest response = api.getInstrumentIdentifier(instrumentIdentifierId, profileId);
+        Boolean retrieveBinDetails = null;
+        PostInstrumentIdentifierRequest response = api.getInstrumentIdentifier(instrumentIdentifierId, profileId, retrieveBinDetails);
 
         // TODO: test validations
     }
@@ -88,9 +89,10 @@ public class InstrumentIdentifierApiTest {
     public void getInstrumentIdentifierPaymentInstrumentsListTest() throws Exception {
         String instrumentIdentifierId = null;
         String profileId = null;
+        Boolean retrieveBinDetails = null;
         Long offset = null;
         Long limit = null;
-        PaymentInstrumentList1 response = api.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, offset, limit);
+        PaymentInstrumentList1 response = api.getInstrumentIdentifierPaymentInstrumentsList(instrumentIdentifierId, profileId, retrieveBinDetails, offset, limit);
 
         // TODO: test validations
     }
@@ -108,8 +110,9 @@ public class InstrumentIdentifierApiTest {
         String instrumentIdentifierId = null;
         PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest = null;
         String profileId = null;
+        Boolean retrieveBinDetails = null;
         String ifMatch = null;
-        PatchInstrumentIdentifierRequest response = api.patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, ifMatch);
+        PatchInstrumentIdentifierRequest response = api.patchInstrumentIdentifier(instrumentIdentifierId, patchInstrumentIdentifierRequest, profileId, retrieveBinDetails, ifMatch);
 
         // TODO: test validations
     }
@@ -126,7 +129,8 @@ public class InstrumentIdentifierApiTest {
     public void postInstrumentIdentifierTest() throws Exception {
         PostInstrumentIdentifierRequest postInstrumentIdentifierRequest = null;
         String profileId = null;
-        PostInstrumentIdentifierRequest response = api.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId);
+        Boolean retrieveBinDetails = null;
+        PostInstrumentIdentifierRequest response = api.postInstrumentIdentifier(postInstrumentIdentifierRequest, profileId, retrieveBinDetails);
 
         // TODO: test validations
     }

@@ -120,9 +120,9 @@ public class Notificationsubscriptionsv1webhooksSecurityPolicy1 {
     StringBuilder sb = new StringBuilder();
     sb.append("class Notificationsubscriptionsv1webhooksSecurityPolicy1 {\n");
     
-    sb.append("    securityType: ").append(toIndentedString(securityType)).append("\n");
-    sb.append("    proxyType: ").append(toIndentedString(proxyType)).append("\n");
-    sb.append("    config: ").append(toIndentedString(config)).append("\n");
+    if (securityType != null) sb.append("    securityType: ").append(toIndentedString(securityType)).append("\n");
+    if (proxyType != null) sb.append("    proxyType: ").append(toIndentedString(proxyType)).append("\n");
+    if (config != null) sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -133,10 +133,10 @@ public class Notificationsubscriptionsv1webhooksSecurityPolicy1 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

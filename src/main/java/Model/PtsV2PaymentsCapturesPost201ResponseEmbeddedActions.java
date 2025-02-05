@@ -75,7 +75,7 @@ public class PtsV2PaymentsCapturesPost201ResponseEmbeddedActions {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsCapturesPost201ResponseEmbeddedActions {\n");
     
-    sb.append("    apCapture: ").append(toIndentedString(apCapture)).append("\n");
+    if (apCapture != null) sb.append("    apCapture: ").append(toIndentedString(apCapture)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class PtsV2PaymentsCapturesPost201ResponseEmbeddedActions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

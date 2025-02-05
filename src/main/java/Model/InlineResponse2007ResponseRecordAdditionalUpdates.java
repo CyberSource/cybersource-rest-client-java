@@ -162,11 +162,11 @@ public class InlineResponse2007ResponseRecordAdditionalUpdates {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2007ResponseRecordAdditionalUpdates {\n");
     
-    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-    sb.append("    paymentInstrumentId: ").append(toIndentedString(paymentInstrumentId)).append("\n");
-    sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (customerId != null) sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+    if (paymentInstrumentId != null) sb.append("    paymentInstrumentId: ").append(toIndentedString(paymentInstrumentId)).append("\n");
+    if (creator != null) sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
+    if (state != null) sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class InlineResponse2007ResponseRecordAdditionalUpdates {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

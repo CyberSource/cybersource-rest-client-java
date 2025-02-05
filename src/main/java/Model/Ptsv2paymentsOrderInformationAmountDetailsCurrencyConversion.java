@@ -118,9 +118,9 @@ public class Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion {\n");
     
-    sb.append("    indicator: ").append(toIndentedString(indicator)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (indicator != null) sb.append("    indicator: ").append(toIndentedString(indicator)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

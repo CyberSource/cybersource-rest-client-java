@@ -119,9 +119,9 @@ public class PtsV2PaymentsCapturesPost201ResponseLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsCapturesPost201ResponseLinks {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    _void: ").append(toIndentedString(_void)).append("\n");
-    sb.append("    refund: ").append(toIndentedString(refund)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (_void != null) sb.append("    _void: ").append(toIndentedString(_void)).append("\n");
+    if (refund != null) sb.append("    refund: ").append(toIndentedString(refund)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class PtsV2PaymentsCapturesPost201ResponseLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

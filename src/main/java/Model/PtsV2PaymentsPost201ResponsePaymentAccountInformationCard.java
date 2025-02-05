@@ -184,12 +184,12 @@ public class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard {\n");
     
-    sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
-    sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
-    sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
-    sb.append("    hashedNumber: ").append(toIndentedString(hashedNumber)).append("\n");
+    if (suffix != null) sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (prefix != null) sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
+    if (hashedNumber != null) sb.append("    hashedNumber: ").append(toIndentedString(hashedNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -200,10 +200,10 @@ public class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

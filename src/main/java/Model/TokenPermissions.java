@@ -51,7 +51,7 @@ public class TokenPermissions {
    * @return create
   **/
   @ApiModelProperty(value = "Indicates if tokens may be created")
-  public Boolean isCreate() {
+  public Boolean Create() {
     return create;
   }
 
@@ -69,7 +69,7 @@ public class TokenPermissions {
    * @return read
   **/
   @ApiModelProperty(value = "Indicates if tokens may be read")
-  public Boolean isRead() {
+  public Boolean Read() {
     return read;
   }
 
@@ -87,7 +87,7 @@ public class TokenPermissions {
    * @return update
   **/
   @ApiModelProperty(value = "Indicates if tokens may be updated")
-  public Boolean isUpdate() {
+  public Boolean Update() {
     return update;
   }
 
@@ -105,7 +105,7 @@ public class TokenPermissions {
    * @return delete
   **/
   @ApiModelProperty(value = "Indicates if tokens may be deleted")
-  public Boolean isDelete() {
+  public Boolean Delete() {
     return delete;
   }
 
@@ -140,10 +140,10 @@ public class TokenPermissions {
     StringBuilder sb = new StringBuilder();
     sb.append("class TokenPermissions {\n");
     
-    sb.append("    create: ").append(toIndentedString(create)).append("\n");
-    sb.append("    read: ").append(toIndentedString(read)).append("\n");
-    sb.append("    update: ").append(toIndentedString(update)).append("\n");
-    sb.append("    delete: ").append(toIndentedString(delete)).append("\n");
+    if (create != null) sb.append("    create: ").append(toIndentedString(create)).append("\n");
+    if (read != null) sb.append("    read: ").append(toIndentedString(read)).append("\n");
+    if (update != null) sb.append("    update: ").append(toIndentedString(update)).append("\n");
+    if (delete != null) sb.append("    delete: ").append(toIndentedString(delete)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class TokenPermissions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

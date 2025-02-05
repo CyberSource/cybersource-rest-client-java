@@ -98,8 +98,20 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   @SerializedName("cardVerificationIndicator")
   private Boolean cardVerificationIndicator = null;
 
+  @SerializedName("transactionMode")
+  private String transactionMode = null;
+
   @SerializedName("aftIndicator")
   private Boolean aftIndicator = null;
+
+  @SerializedName("serviceType")
+  private String serviceType = null;
+
+  @SerializedName("balanceUpdate")
+  private Boolean balanceUpdate = null;
+
+  @SerializedName("moneyLoad")
+  private Boolean moneyLoad = null;
 
   public Ptsv2paymentsProcessingInformationAuthorizationOptions authType(String authType) {
     this.authType = authType;
@@ -201,7 +213,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return partialAuthIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates whether the transaction is enabled for partial authorization. When the request includes this field, this value overrides the information in your account. Possible values: - `true`: Enable the transaction for partial authorization. - `false`: Do not enable the transaction for partial authorization.  #### PIN debit Required field for partial authorizations that use PIN debit purchase; otherwise, not used.  #### Used by **Authorization** Optional field.  #### CyberSource through VisaNet To set the default for this field, contact CyberSource Customer Support. The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 164 - Field: Additional Authorization Indicators ")
-  public Boolean isPartialAuthIndicator() {
+  public Boolean PartialAuthIndicator() {
     return partialAuthIndicator;
   }
 
@@ -215,10 +227,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Flag that indicates whether the transaction is an extended authorization. 
+   * Indicates Authorization extension transaction. Extension transaction is used to prolong the settlement period by one additional settlement cycle period.  Possible values: - true: Transaction is an Authorization Extension transaction.  - false: Transaction is not an Authorization Extension transaction. 
    * @return extendAuthIndicator
   **/
-  @ApiModelProperty(value = "Flag that indicates whether the transaction is an extended authorization. ")
+  @ApiModelProperty(value = "Indicates Authorization extension transaction. Extension transaction is used to prolong the settlement period by one additional settlement cycle period.  Possible values: - true: Transaction is an Authorization Extension transaction.  - false: Transaction is not an Authorization Extension transaction. ")
   public String getExtendAuthIndicator() {
     return extendAuthIndicator;
   }
@@ -237,7 +249,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return balanceInquiry
   **/
   @ApiModelProperty(value = "Flag that indicates whether to return balance information.  Possible values: - `true`: Return balance information. - `false`: Do not return balance information.  #### Used by **Authorization** Required for a balance inquiry; otherwise, not used.  #### PIN debit Required for a balance inquiry request of a PIN debit purchase; otherwise, not used. ")
-  public Boolean isBalanceInquiry() {
+  public Boolean BalanceInquiry() {
     return balanceInquiry;
   }
 
@@ -255,7 +267,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return ignoreAvsResult
   **/
   @ApiModelProperty(value = "Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives an AVS decline, as indicated by a reply flag value of DAVSNO.  Possible values: - `true`: Ignore the results of AVS checking and run the capture service. - `false` (default): If the authorization receives an AVS decline, do not run the capture service. When the value of this field is `true`, the list in the `processingInformation.authorizationOptions.declineAvsFlags` field is ignored.  #### Used by **Authorization** Optional field. String (3) ")
-  public Boolean isIgnoreAvsResult() {
+  public Boolean IgnoreAvsResult() {
     return ignoreAvsResult;
   }
 
@@ -299,7 +311,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return ignoreCvResult
   **/
   @ApiModelProperty(value = "Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives a CVN decline, as indicated by an `processorInformation.cardVerification.resultCode` value of `D` or `N`. Possible values: - `true`: Ignore the results of CVN checking and run the capture service. - `false` (default): If the authorization receives a CVN decline, do not run the capture service.  #### Used by **Authorization** Optional field. ")
-  public Boolean isIgnoreCvResult() {
+  public Boolean IgnoreCvResult() {
     return ignoreCvResult;
   }
 
@@ -335,7 +347,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return billPayment
   **/
   @ApiModelProperty(value = "Indicates payment for bill or payment towards existing contractual loan.  Possible values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment.  Optional request field. ")
-  public Boolean isBillPayment() {
+  public Boolean BillPayment() {
     return billPayment;
   }
 
@@ -349,10 +361,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
   }
 
    /**
-   * Reason for the payment.  Possible values: - 001: Utility payment - 002: Government services - 003: Mobile phone top-up - 004: Coupon payment - 005: Installment based repayment  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Brazil): - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Installment) based Repayment): - Record: CP01 TCR6 - Position: 154-156 - Field: Bill Payment Transaction Type Identifier   This field is supported for 1. Bill payments in Brazil with Mastercard on CyberSource through VisaNet. 2. Installment based repayment transactions on Cybersource through VisaNet. 
+   * Reason for the payment.  Possible values: - 001: Public utilities / Utility payment - 002: Government services - 003: Cellular / Mobile phone top-up - 004: Coupon payment - 005: Installment based repayment - 006: Billing payment - 007: Tax payment - 008: Tax payment refunds  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Brazil): - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Installment) based Repayment): - Record: CP01 TCR6 - Position: 154-156 - Field: Bill Payment Transaction Type Identifier   This field is supported for 1. Bill payments in Brazil with Mastercard on CyberSource through VisaNet. 2. Installment based repayment transactions on Cybersource through VisaNet. 
    * @return billPaymentType
   **/
-  @ApiModelProperty(value = "Reason for the payment.  Possible values: - 001: Utility payment - 002: Government services - 003: Mobile phone top-up - 004: Coupon payment - 005: Installment based repayment  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Brazil): - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Installment) based Repayment): - Record: CP01 TCR6 - Position: 154-156 - Field: Bill Payment Transaction Type Identifier   This field is supported for 1. Bill payments in Brazil with Mastercard on CyberSource through VisaNet. 2. Installment based repayment transactions on Cybersource through VisaNet. ")
+  @ApiModelProperty(value = "Reason for the payment.  Possible values: - 001: Public utilities / Utility payment - 002: Government services - 003: Cellular / Mobile phone top-up - 004: Coupon payment - 005: Installment based repayment - 006: Billing payment - 007: Tax payment - 008: Tax payment refunds  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Brazil): - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Installment) based Repayment): - Record: CP01 TCR6 - Position: 154-156 - Field: Bill Payment Transaction Type Identifier   This field is supported for 1. Bill payments in Brazil with Mastercard on CyberSource through VisaNet. 2. Installment based repayment transactions on Cybersource through VisaNet. ")
   public String getBillPaymentType() {
     return billPaymentType;
   }
@@ -371,7 +383,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return redemptionInquiry
   **/
   @ApiModelProperty(value = "Flag that indicates the payment request is a redemption inquiry.  Possible values:   - `true`   - `false` ")
-  public Boolean isRedemptionInquiry() {
+  public Boolean RedemptionInquiry() {
     return redemptionInquiry;
   }
 
@@ -443,7 +455,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return deferredAuthIndicator
   **/
   @ApiModelProperty(value = "Flag that indicates whether the authorization request was delayed because connectivity was interrupted.  Possible values:   - `true` (Deferred authorization)   - `false` (default: Not a deferred authorization) ")
-  public Boolean isDeferredAuthIndicator() {
+  public Boolean DeferredAuthIndicator() {
     return deferredAuthIndicator;
   }
 
@@ -461,7 +473,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return cashAdvanceIndicator
   **/
   @ApiModelProperty(value = "This API field enables the merchant to indicate that a given transaction is Cash Advance.  Cash advance or Cash disbursement functionality allows a merchant to dispense cash at a point of sale. It provides the ability of a POS system to act like an ATM. These terminals are typically seen in bank branches where customers can use their card and withdraw cash or at merchant locations where ATMs are sparse.  Possible values:   - `true` (Cash advance is supported)   - `false` (default: cash advance is not supported) ")
-  public Boolean isCashAdvanceIndicator() {
+  public Boolean CashAdvanceIndicator() {
     return cashAdvanceIndicator;
   }
 
@@ -479,7 +491,7 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return splitPaymentTransaction
   **/
   @ApiModelProperty(value = "#### Visa Platform Connect Indicates split payment transaction. A split payment allows the use of two payment methods for a single transaction.  Possible values:   - `true` (split payment transaction is supported)   - `false` (default: split payment transaction is not supported) ")
-  public Boolean isSplitPaymentTransaction() {
+  public Boolean SplitPaymentTransaction() {
     return splitPaymentTransaction;
   }
 
@@ -497,12 +509,30 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return cardVerificationIndicator
   **/
   @ApiModelProperty(value = "This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - `true`   - `false` (default value) ")
-  public Boolean isCardVerificationIndicator() {
+  public Boolean CardVerificationIndicator() {
     return cardVerificationIndicator;
   }
 
   public void setCardVerificationIndicator(Boolean cardVerificationIndicator) {
     this.cardVerificationIndicator = cardVerificationIndicator;
+  }
+
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions transactionMode(String transactionMode) {
+    this.transactionMode = transactionMode;
+    return this;
+  }
+
+   /**
+   * Transaction mode identifier. Identifies the specific channel from which the transaction originates.  Possible values: - M – Mobile Order - T – Telephone Order 
+   * @return transactionMode
+  **/
+  @ApiModelProperty(value = "Transaction mode identifier. Identifies the specific channel from which the transaction originates.  Possible values: - M – Mobile Order - T – Telephone Order ")
+  public String getTransactionMode() {
+    return transactionMode;
+  }
+
+  public void setTransactionMode(String transactionMode) {
+    this.transactionMode = transactionMode;
   }
 
   public Ptsv2paymentsProcessingInformationAuthorizationOptions aftIndicator(Boolean aftIndicator) {
@@ -515,12 +545,66 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    * @return aftIndicator
   **/
   @ApiModelProperty(value = "Indicates whether the transaction is an Account Funding Transaction (AFT).  This field is mandatory for Account Funding Transactions (AFT).   Possible values:   - `true` (This is an AFT transaction)   - `false` (default value) (This is not an AFT transaction) ")
-  public Boolean isAftIndicator() {
+  public Boolean AftIndicator() {
     return aftIndicator;
   }
 
   public void setAftIndicator(Boolean aftIndicator) {
     this.aftIndicator = aftIndicator;
+  }
+
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions serviceType(String serviceType) {
+    this.serviceType = serviceType;
+    return this;
+  }
+
+   /**
+   * Field is used for back-to-back funding transaction and can be defined as a payment flow that automatically transfers funds through a real-time  funding or a live-load. This type of transaction can also be connected to a purchase.  In back-to-back funding of general purpose card that is used to make a purchase, two separate accounts are involved:  - account one is used to make the purchase - account two is used to automatically fund or reimburse account one  Possible values: - 0B &#x3D; back to back funding transaction - 00 &#x3D; normal transaction - 01 &#x3D; originator hold - 02 &#x3D; Visa deferred OCT hold, default interval - 03 &#x3D; Visa deferred OCT hold, user-defined interval - 09 &#x3D; Cancel pending deferred OCT request - 0I &#x3D; Visa Direct custom program 1 - 0Q &#x3D; uery the status of the deferred OCT - A0 &#x3D; Alias Directory 2 
+   * @return serviceType
+  **/
+  @ApiModelProperty(value = "Field is used for back-to-back funding transaction and can be defined as a payment flow that automatically transfers funds through a real-time  funding or a live-load. This type of transaction can also be connected to a purchase.  In back-to-back funding of general purpose card that is used to make a purchase, two separate accounts are involved:  - account one is used to make the purchase - account two is used to automatically fund or reimburse account one  Possible values: - 0B = back to back funding transaction - 00 = normal transaction - 01 = originator hold - 02 = Visa deferred OCT hold, default interval - 03 = Visa deferred OCT hold, user-defined interval - 09 = Cancel pending deferred OCT request - 0I = Visa Direct custom program 1 - 0Q = uery the status of the deferred OCT - A0 = Alias Directory 2 ")
+  public String getServiceType() {
+    return serviceType;
+  }
+
+  public void setServiceType(String serviceType) {
+    this.serviceType = serviceType;
+  }
+
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions balanceUpdate(Boolean balanceUpdate) {
+    this.balanceUpdate = balanceUpdate;
+    return this;
+  }
+
+   /**
+   * Merchant to inform Cybersource whether a transaction is Money load with Balance Update.  Possible values:   - &#x60;true&#x60; (This is a Money load with balance update transaction)   - &#x60;false&#x60; (default value) (This is not a Money load with balance update transaction) 
+   * @return balanceUpdate
+  **/
+  @ApiModelProperty(value = "Merchant to inform Cybersource whether a transaction is Money load with Balance Update.  Possible values:   - `true` (This is a Money load with balance update transaction)   - `false` (default value) (This is not a Money load with balance update transaction) ")
+  public Boolean BalanceUpdate() {
+    return balanceUpdate;
+  }
+
+  public void setBalanceUpdate(Boolean balanceUpdate) {
+    this.balanceUpdate = balanceUpdate;
+  }
+
+  public Ptsv2paymentsProcessingInformationAuthorizationOptions moneyLoad(Boolean moneyLoad) {
+    this.moneyLoad = moneyLoad;
+    return this;
+  }
+
+   /**
+   * Merchant to inform Cybersource whether a transaction is Money load with Money load only.  Possible values:   - &#x60;true&#x60; (This is a money load transaction)   - &#x60;false&#x60; (default value) (This is not a money load transaction) 
+   * @return moneyLoad
+  **/
+  @ApiModelProperty(value = "Merchant to inform Cybersource whether a transaction is Money load with Money load only.  Possible values:   - `true` (This is a money load transaction)   - `false` (default value) (This is not a money load transaction) ")
+  public Boolean MoneyLoad() {
+    return moneyLoad;
+  }
+
+  public void setMoneyLoad(Boolean moneyLoad) {
+    this.moneyLoad = moneyLoad;
   }
 
 
@@ -555,12 +639,16 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
         Objects.equals(this.cashAdvanceIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.cashAdvanceIndicator) &&
         Objects.equals(this.splitPaymentTransaction, ptsv2paymentsProcessingInformationAuthorizationOptions.splitPaymentTransaction) &&
         Objects.equals(this.cardVerificationIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.cardVerificationIndicator) &&
-        Objects.equals(this.aftIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.aftIndicator);
+        Objects.equals(this.transactionMode, ptsv2paymentsProcessingInformationAuthorizationOptions.transactionMode) &&
+        Objects.equals(this.aftIndicator, ptsv2paymentsProcessingInformationAuthorizationOptions.aftIndicator) &&
+        Objects.equals(this.serviceType, ptsv2paymentsProcessingInformationAuthorizationOptions.serviceType) &&
+        Objects.equals(this.balanceUpdate, ptsv2paymentsProcessingInformationAuthorizationOptions.balanceUpdate) &&
+        Objects.equals(this.moneyLoad, ptsv2paymentsProcessingInformationAuthorizationOptions.moneyLoad);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, extendAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator, splitPaymentTransaction, cardVerificationIndicator, aftIndicator);
+    return Objects.hash(authType, panReturnIndicator, verbalAuthCode, verbalAuthTransactionId, authIndicator, partialAuthIndicator, extendAuthIndicator, balanceInquiry, ignoreAvsResult, declineAvsFlags, ignoreCvResult, initiator, billPayment, billPaymentType, redemptionInquiry, transportationMode, aggregatedAuthIndicator, debtRecoveryIndicator, deferredAuthIndicator, cashAdvanceIndicator, splitPaymentTransaction, cardVerificationIndicator, transactionMode, aftIndicator, serviceType, balanceUpdate, moneyLoad);
   }
 
 
@@ -569,29 +657,33 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessingInformationAuthorizationOptions {\n");
     
-    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
-    sb.append("    panReturnIndicator: ").append(toIndentedString(panReturnIndicator)).append("\n");
-    sb.append("    verbalAuthCode: ").append(toIndentedString(verbalAuthCode)).append("\n");
-    sb.append("    verbalAuthTransactionId: ").append(toIndentedString(verbalAuthTransactionId)).append("\n");
-    sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
-    sb.append("    partialAuthIndicator: ").append(toIndentedString(partialAuthIndicator)).append("\n");
-    sb.append("    extendAuthIndicator: ").append(toIndentedString(extendAuthIndicator)).append("\n");
-    sb.append("    balanceInquiry: ").append(toIndentedString(balanceInquiry)).append("\n");
-    sb.append("    ignoreAvsResult: ").append(toIndentedString(ignoreAvsResult)).append("\n");
-    sb.append("    declineAvsFlags: ").append(toIndentedString(declineAvsFlags)).append("\n");
-    sb.append("    ignoreCvResult: ").append(toIndentedString(ignoreCvResult)).append("\n");
-    sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
-    sb.append("    billPayment: ").append(toIndentedString(billPayment)).append("\n");
-    sb.append("    billPaymentType: ").append(toIndentedString(billPaymentType)).append("\n");
-    sb.append("    redemptionInquiry: ").append(toIndentedString(redemptionInquiry)).append("\n");
-    sb.append("    transportationMode: ").append(toIndentedString(transportationMode)).append("\n");
-    sb.append("    aggregatedAuthIndicator: ").append(toIndentedString(aggregatedAuthIndicator)).append("\n");
-    sb.append("    debtRecoveryIndicator: ").append(toIndentedString(debtRecoveryIndicator)).append("\n");
-    sb.append("    deferredAuthIndicator: ").append(toIndentedString(deferredAuthIndicator)).append("\n");
-    sb.append("    cashAdvanceIndicator: ").append(toIndentedString(cashAdvanceIndicator)).append("\n");
-    sb.append("    splitPaymentTransaction: ").append(toIndentedString(splitPaymentTransaction)).append("\n");
-    sb.append("    cardVerificationIndicator: ").append(toIndentedString(cardVerificationIndicator)).append("\n");
-    sb.append("    aftIndicator: ").append(toIndentedString(aftIndicator)).append("\n");
+    if (authType != null) sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
+    if (panReturnIndicator != null) sb.append("    panReturnIndicator: ").append(toIndentedString(panReturnIndicator)).append("\n");
+    if (verbalAuthCode != null) sb.append("    verbalAuthCode: ").append(toIndentedString(verbalAuthCode)).append("\n");
+    if (verbalAuthTransactionId != null) sb.append("    verbalAuthTransactionId: ").append(toIndentedString(verbalAuthTransactionId)).append("\n");
+    if (authIndicator != null) sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
+    if (partialAuthIndicator != null) sb.append("    partialAuthIndicator: ").append(toIndentedString(partialAuthIndicator)).append("\n");
+    if (extendAuthIndicator != null) sb.append("    extendAuthIndicator: ").append(toIndentedString(extendAuthIndicator)).append("\n");
+    if (balanceInquiry != null) sb.append("    balanceInquiry: ").append(toIndentedString(balanceInquiry)).append("\n");
+    if (ignoreAvsResult != null) sb.append("    ignoreAvsResult: ").append(toIndentedString(ignoreAvsResult)).append("\n");
+    if (declineAvsFlags != null) sb.append("    declineAvsFlags: ").append(toIndentedString(declineAvsFlags)).append("\n");
+    if (ignoreCvResult != null) sb.append("    ignoreCvResult: ").append(toIndentedString(ignoreCvResult)).append("\n");
+    if (initiator != null) sb.append("    initiator: ").append(toIndentedString(initiator)).append("\n");
+    if (billPayment != null) sb.append("    billPayment: ").append(toIndentedString(billPayment)).append("\n");
+    if (billPaymentType != null) sb.append("    billPaymentType: ").append(toIndentedString(billPaymentType)).append("\n");
+    if (redemptionInquiry != null) sb.append("    redemptionInquiry: ").append(toIndentedString(redemptionInquiry)).append("\n");
+    if (transportationMode != null) sb.append("    transportationMode: ").append(toIndentedString(transportationMode)).append("\n");
+    if (aggregatedAuthIndicator != null) sb.append("    aggregatedAuthIndicator: ").append(toIndentedString(aggregatedAuthIndicator)).append("\n");
+    if (debtRecoveryIndicator != null) sb.append("    debtRecoveryIndicator: ").append(toIndentedString(debtRecoveryIndicator)).append("\n");
+    if (deferredAuthIndicator != null) sb.append("    deferredAuthIndicator: ").append(toIndentedString(deferredAuthIndicator)).append("\n");
+    if (cashAdvanceIndicator != null) sb.append("    cashAdvanceIndicator: ").append(toIndentedString(cashAdvanceIndicator)).append("\n");
+    if (splitPaymentTransaction != null) sb.append("    splitPaymentTransaction: ").append(toIndentedString(splitPaymentTransaction)).append("\n");
+    if (cardVerificationIndicator != null) sb.append("    cardVerificationIndicator: ").append(toIndentedString(cardVerificationIndicator)).append("\n");
+    if (transactionMode != null) sb.append("    transactionMode: ").append(toIndentedString(transactionMode)).append("\n");
+    if (aftIndicator != null) sb.append("    aftIndicator: ").append(toIndentedString(aftIndicator)).append("\n");
+    if (serviceType != null) sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+    if (balanceUpdate != null) sb.append("    balanceUpdate: ").append(toIndentedString(balanceUpdate)).append("\n");
+    if (moneyLoad != null) sb.append("    moneyLoad: ").append(toIndentedString(moneyLoad)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -602,10 +694,10 @@ public class Ptsv2paymentsProcessingInformationAuthorizationOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class Binv1binlookupPaymentInformationCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Binv1binlookupPaymentInformationCard {\n");
     
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Binv1binlookupPaymentInformationCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

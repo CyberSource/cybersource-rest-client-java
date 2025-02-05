@@ -130,9 +130,9 @@ public class ReportingV3InterchangeClearingLevelDetailsGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3InterchangeClearingLevelDetailsGet200Response {\n");
     
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    interchangeClearingLevelDetails: ").append(toIndentedString(interchangeClearingLevelDetails)).append("\n");
+    if (startDate != null) sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    if (endDate != null) sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    if (interchangeClearingLevelDetails != null) sb.append("    interchangeClearingLevelDetails: ").append(toIndentedString(interchangeClearingLevelDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -143,10 +143,10 @@ public class ReportingV3InterchangeClearingLevelDetailsGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -96,8 +96,8 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformat
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformation {\n");
     
-    sb.append("    requestorID: ").append(toIndentedString(requestorID)).append("\n");
-    sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
+    if (requestorID != null) sb.append("    requestorID: ").append(toIndentedString(requestorID)).append("\n");
+    if (transactionType != null) sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformat
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

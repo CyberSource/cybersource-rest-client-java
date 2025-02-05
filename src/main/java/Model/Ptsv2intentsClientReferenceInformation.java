@@ -74,7 +74,7 @@ public class Ptsv2intentsClientReferenceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2intentsClientReferenceInformation {\n");
     
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2intentsClientReferenceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

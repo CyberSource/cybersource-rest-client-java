@@ -69,7 +69,7 @@ public class PayerAuthConfigCardTypesCB {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -129,9 +129,9 @@ public class PayerAuthConfigCardTypesCB {
     StringBuilder sb = new StringBuilder();
     sb.append("class PayerAuthConfigCardTypesCB {\n");
     
-    sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    currencies: ").append(toIndentedString(currencies)).append("\n");
+    if (requestorId != null) sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (currencies != null) sb.append("    currencies: ").append(toIndentedString(currencies)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -142,10 +142,10 @@ public class PayerAuthConfigCardTypesCB {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -108,8 +108,8 @@ public class InlineResponse202Links {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse202Links {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -120,10 +120,10 @@ public class InlineResponse202Links {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

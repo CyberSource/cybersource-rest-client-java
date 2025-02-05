@@ -74,7 +74,7 @@ public class TssV2TransactionsGet200ResponsePaymentInformationFluidData {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationFluidData {\n");
     
-    sb.append("    descriptor: ").append(toIndentedString(descriptor)).append("\n");
+    if (descriptor != null) sb.append("    descriptor: ").append(toIndentedString(descriptor)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationFluidData {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

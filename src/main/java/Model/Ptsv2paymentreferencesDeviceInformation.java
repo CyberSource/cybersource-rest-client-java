@@ -140,10 +140,10 @@ public class Ptsv2paymentreferencesDeviceInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesDeviceInformation {\n");
     
-    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
-    sb.append("    deviceType: ").append(toIndentedString(deviceType)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
+    if (ipAddress != null) sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+    if (deviceType != null) sb.append("    deviceType: ").append(toIndentedString(deviceType)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (userAgent != null) sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class Ptsv2paymentreferencesDeviceInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -76,7 +76,7 @@ public class PaymentInstrumentList1EmbeddedEmbedded {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentInstrumentList1EmbeddedEmbedded {\n");
     
-    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -87,10 +87,10 @@ public class PaymentInstrumentList1EmbeddedEmbedded {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

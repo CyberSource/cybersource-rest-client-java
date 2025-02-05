@@ -74,7 +74,7 @@ public class PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions {\n");
     
-    sb.append("    finalCapture: ").append(toIndentedString(finalCapture)).append("\n");
+    if (finalCapture != null) sb.append("    finalCapture: ").append(toIndentedString(finalCapture)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class UmsV1UsersGet200ResponseOrganizationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class UmsV1UsersGet200ResponseOrganizationInformation {\n");
     
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class UmsV1UsersGet200ResponseOrganizationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

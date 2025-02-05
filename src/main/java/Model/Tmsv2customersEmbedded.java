@@ -99,8 +99,8 @@ public class Tmsv2customersEmbedded {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbedded {\n");
     
-    sb.append("    defaultPaymentInstrument: ").append(toIndentedString(defaultPaymentInstrument)).append("\n");
-    sb.append("    defaultShippingAddress: ").append(toIndentedString(defaultShippingAddress)).append("\n");
+    if (defaultPaymentInstrument != null) sb.append("    defaultPaymentInstrument: ").append(toIndentedString(defaultPaymentInstrument)).append("\n");
+    if (defaultShippingAddress != null) sb.append("    defaultShippingAddress: ").append(toIndentedString(defaultShippingAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -111,10 +111,10 @@ public class Tmsv2customersEmbedded {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

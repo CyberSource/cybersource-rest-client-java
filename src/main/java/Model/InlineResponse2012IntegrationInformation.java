@@ -85,7 +85,7 @@ public class InlineResponse2012IntegrationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012IntegrationInformation {\n");
     
-    sb.append("    tenantConfigurations: ").append(toIndentedString(tenantConfigurations)).append("\n");
+    if (tenantConfigurations != null) sb.append("    tenantConfigurations: ").append(toIndentedString(tenantConfigurations)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -96,10 +96,10 @@ public class InlineResponse2012IntegrationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

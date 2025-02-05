@@ -74,7 +74,7 @@ public class Ptsv2paymentsProcessorInformationReversal {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsProcessorInformationReversal {\n");
     
-    sb.append("    preApprovalToken: ").append(toIndentedString(preApprovalToken)).append("\n");
+    if (preApprovalToken != null) sb.append("    preApprovalToken: ").append(toIndentedString(preApprovalToken)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsProcessorInformationReversal {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

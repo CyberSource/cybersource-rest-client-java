@@ -74,7 +74,7 @@ public class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformationEWallet
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformationEWallet {\n");
     
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    if (accountId != null) sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformationEWallet
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

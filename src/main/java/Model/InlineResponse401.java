@@ -218,13 +218,13 @@ public class InlineResponse401 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse401 {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
-    sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
-    sb.append("    localizationKey: ").append(toIndentedString(localizationKey)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (code != null) sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    if (correlationId != null) sb.append("    correlationId: ").append(toIndentedString(correlationId)).append("\n");
+    if (detail != null) sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+    if (fields != null) sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
+    if (localizationKey != null) sb.append("    localizationKey: ").append(toIndentedString(localizationKey)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -235,10 +235,10 @@ public class InlineResponse401 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

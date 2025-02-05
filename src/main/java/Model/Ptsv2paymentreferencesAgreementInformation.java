@@ -96,8 +96,8 @@ public class Ptsv2paymentreferencesAgreementInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesAgreementInformation {\n");
     
-    sb.append("    indicator: ").append(toIndentedString(indicator)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (indicator != null) sb.append("    indicator: ").append(toIndentedString(indicator)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentreferencesAgreementInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

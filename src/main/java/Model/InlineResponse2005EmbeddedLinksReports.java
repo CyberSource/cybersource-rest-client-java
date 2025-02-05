@@ -75,7 +75,7 @@ public class InlineResponse2005EmbeddedLinksReports {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2005EmbeddedLinksReports {\n");
     
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    if (href != null) sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class InlineResponse2005EmbeddedLinksReports {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

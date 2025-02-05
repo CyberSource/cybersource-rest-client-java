@@ -240,14 +240,14 @@ public class Notificationsubscriptionsv1webhooksRetryPolicy {
     StringBuilder sb = new StringBuilder();
     sb.append("class Notificationsubscriptionsv1webhooksRetryPolicy {\n");
     
-    sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
-    sb.append("    firstRetry: ").append(toIndentedString(firstRetry)).append("\n");
-    sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
-    sb.append("    numberOfRetries: ").append(toIndentedString(numberOfRetries)).append("\n");
-    sb.append("    deactivateFlag: ").append(toIndentedString(deactivateFlag)).append("\n");
-    sb.append("    repeatSequenceCount: ").append(toIndentedString(repeatSequenceCount)).append("\n");
-    sb.append("    repeatSequenceWaitTime: ").append(toIndentedString(repeatSequenceWaitTime)).append("\n");
-    sb.append("    additionalAttributes: ").append(toIndentedString(additionalAttributes)).append("\n");
+    if (algorithm != null) sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
+    if (firstRetry != null) sb.append("    firstRetry: ").append(toIndentedString(firstRetry)).append("\n");
+    if (interval != null) sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
+    if (numberOfRetries != null) sb.append("    numberOfRetries: ").append(toIndentedString(numberOfRetries)).append("\n");
+    if (deactivateFlag != null) sb.append("    deactivateFlag: ").append(toIndentedString(deactivateFlag)).append("\n");
+    if (repeatSequenceCount != null) sb.append("    repeatSequenceCount: ").append(toIndentedString(repeatSequenceCount)).append("\n");
+    if (repeatSequenceWaitTime != null) sb.append("    repeatSequenceWaitTime: ").append(toIndentedString(repeatSequenceWaitTime)).append("\n");
+    if (additionalAttributes != null) sb.append("    additionalAttributes: ").append(toIndentedString(additionalAttributes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -258,10 +258,10 @@ public class Notificationsubscriptionsv1webhooksRetryPolicy {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

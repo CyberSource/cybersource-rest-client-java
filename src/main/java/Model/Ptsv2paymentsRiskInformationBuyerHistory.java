@@ -140,7 +140,7 @@ public class Ptsv2paymentsRiskInformationBuyerHistory {
    * @return priorSuspiciousActivity
   **/
   @ApiModelProperty(value = "Indicates whether the merchant experienced suspicious activity (including previous fraud) on the account. Recommended for Discover ProtectBuy. ")
-  public Boolean isPriorSuspiciousActivity() {
+  public Boolean PriorSuspiciousActivity() {
     return priorSuspiciousActivity;
   }
 
@@ -252,15 +252,15 @@ public class Ptsv2paymentsRiskInformationBuyerHistory {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsRiskInformationBuyerHistory {\n");
     
-    sb.append("    customerAccount: ").append(toIndentedString(customerAccount)).append("\n");
-    sb.append("    accountHistory: ").append(toIndentedString(accountHistory)).append("\n");
-    sb.append("    accountPurchases: ").append(toIndentedString(accountPurchases)).append("\n");
-    sb.append("    addCardAttempts: ").append(toIndentedString(addCardAttempts)).append("\n");
-    sb.append("    priorSuspiciousActivity: ").append(toIndentedString(priorSuspiciousActivity)).append("\n");
-    sb.append("    paymentAccountHistory: ").append(toIndentedString(paymentAccountHistory)).append("\n");
-    sb.append("    paymentAccountDate: ").append(toIndentedString(paymentAccountDate)).append("\n");
-    sb.append("    transactionCountDay: ").append(toIndentedString(transactionCountDay)).append("\n");
-    sb.append("    transactionCountYear: ").append(toIndentedString(transactionCountYear)).append("\n");
+    if (customerAccount != null) sb.append("    customerAccount: ").append(toIndentedString(customerAccount)).append("\n");
+    if (accountHistory != null) sb.append("    accountHistory: ").append(toIndentedString(accountHistory)).append("\n");
+    if (accountPurchases != null) sb.append("    accountPurchases: ").append(toIndentedString(accountPurchases)).append("\n");
+    if (addCardAttempts != null) sb.append("    addCardAttempts: ").append(toIndentedString(addCardAttempts)).append("\n");
+    if (priorSuspiciousActivity != null) sb.append("    priorSuspiciousActivity: ").append(toIndentedString(priorSuspiciousActivity)).append("\n");
+    if (paymentAccountHistory != null) sb.append("    paymentAccountHistory: ").append(toIndentedString(paymentAccountHistory)).append("\n");
+    if (paymentAccountDate != null) sb.append("    paymentAccountDate: ").append(toIndentedString(paymentAccountDate)).append("\n");
+    if (transactionCountDay != null) sb.append("    transactionCountDay: ").append(toIndentedString(transactionCountDay)).append("\n");
+    if (transactionCountYear != null) sb.append("    transactionCountYear: ").append(toIndentedString(transactionCountYear)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -271,10 +271,10 @@ public class Ptsv2paymentsRiskInformationBuyerHistory {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

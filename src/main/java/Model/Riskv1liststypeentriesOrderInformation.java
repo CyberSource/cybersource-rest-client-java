@@ -154,10 +154,10 @@ public class Riskv1liststypeentriesOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1liststypeentriesOrderInformation {\n");
     
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
-    sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
-    sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
-    sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
+    if (address != null) sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -168,10 +168,10 @@ public class Riskv1liststypeentriesOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

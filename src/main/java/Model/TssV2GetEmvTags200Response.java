@@ -85,7 +85,7 @@ public class TssV2GetEmvTags200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2GetEmvTags200Response {\n");
     
-    sb.append("    emvTagBreakdownList: ").append(toIndentedString(emvTagBreakdownList)).append("\n");
+    if (emvTagBreakdownList != null) sb.append("    emvTagBreakdownList: ").append(toIndentedString(emvTagBreakdownList)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -96,10 +96,10 @@ public class TssV2GetEmvTags200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

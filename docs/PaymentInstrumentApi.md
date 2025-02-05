@@ -58,7 +58,7 @@ No authorization required
 
 <a name="getPaymentInstrument"></a>
 # **getPaymentInstrument**
-> PostPaymentInstrumentRequest getPaymentInstrument(paymentInstrumentId, profileId)
+> PostPaymentInstrumentRequest getPaymentInstrument(paymentInstrumentId, profileId, retrieveBinDetails)
 
 Retrieve a Payment Instrument
 
@@ -74,8 +74,9 @@ Retrieve a Payment Instrument
 PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
 String paymentInstrumentId = "paymentInstrumentId_example"; // String | The Id of a payment instrument.
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
+Boolean retrieveBinDetails = true; // Boolean | Retrieve the Bin Details of PAN or network token
 try {
-    PostPaymentInstrumentRequest result = apiInstance.getPaymentInstrument(paymentInstrumentId, profileId);
+    PostPaymentInstrumentRequest result = apiInstance.getPaymentInstrument(paymentInstrumentId, profileId, retrieveBinDetails);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#getPaymentInstrument");
@@ -89,6 +90,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **paymentInstrumentId** | **String**| The Id of a payment instrument. |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional]
 
 ### Return type
 
@@ -105,7 +107,7 @@ No authorization required
 
 <a name="patchPaymentInstrument"></a>
 # **patchPaymentInstrument**
-> PatchPaymentInstrumentRequest patchPaymentInstrument(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch)
+> PatchPaymentInstrumentRequest patchPaymentInstrument(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, retrieveBinDetails, ifMatch)
 
 Update a Payment Instrument
 
@@ -122,9 +124,10 @@ PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
 String paymentInstrumentId = "paymentInstrumentId_example"; // String | The Id of a payment instrument.
 PatchPaymentInstrumentRequest patchPaymentInstrumentRequest = new PatchPaymentInstrumentRequest(); // PatchPaymentInstrumentRequest | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
+Boolean retrieveBinDetails = true; // Boolean | Retrieve the Bin Details of PAN or network token
 String ifMatch = "ifMatch_example"; // String | Contains an ETag value from a GET request to make the request conditional.
 try {
-    PatchPaymentInstrumentRequest result = apiInstance.patchPaymentInstrument(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, ifMatch);
+    PatchPaymentInstrumentRequest result = apiInstance.patchPaymentInstrument(paymentInstrumentId, patchPaymentInstrumentRequest, profileId, retrieveBinDetails, ifMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#patchPaymentInstrument");
@@ -139,6 +142,7 @@ Name | Type | Description  | Notes
  **paymentInstrumentId** | **String**| The Id of a payment instrument. |
  **patchPaymentInstrumentRequest** | [**PatchPaymentInstrumentRequest**](PatchPaymentInstrumentRequest.md)|  |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional]
  **ifMatch** | **String**| Contains an ETag value from a GET request to make the request conditional. | [optional]
 
 ### Return type
@@ -156,7 +160,7 @@ No authorization required
 
 <a name="postPaymentInstrument"></a>
 # **postPaymentInstrument**
-> PostPaymentInstrumentRequest postPaymentInstrument(postPaymentInstrumentRequest, profileId)
+> PostPaymentInstrumentRequest postPaymentInstrument(postPaymentInstrumentRequest, profileId, retrieveBinDetails)
 
 Create a Payment Instrument
 
@@ -172,8 +176,9 @@ Create a Payment Instrument
 PaymentInstrumentApi apiInstance = new PaymentInstrumentApi();
 PostPaymentInstrumentRequest postPaymentInstrumentRequest = new PostPaymentInstrumentRequest(); // PostPaymentInstrumentRequest | 
 String profileId = "profileId_example"; // String | The Id of a profile containing user specific TMS configuration.
+Boolean retrieveBinDetails = true; // Boolean | Retrieve the Bin Details of PAN or network token
 try {
-    PostPaymentInstrumentRequest result = apiInstance.postPaymentInstrument(postPaymentInstrumentRequest, profileId);
+    PostPaymentInstrumentRequest result = apiInstance.postPaymentInstrument(postPaymentInstrumentRequest, profileId, retrieveBinDetails);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentInstrumentApi#postPaymentInstrument");
@@ -187,6 +192,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postPaymentInstrumentRequest** | [**PostPaymentInstrumentRequest**](PostPaymentInstrumentRequest.md)|  |
  **profileId** | **String**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **Boolean**| Retrieve the Bin Details of PAN or network token | [optional]
 
 ### Return type
 

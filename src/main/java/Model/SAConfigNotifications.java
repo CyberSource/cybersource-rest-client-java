@@ -98,8 +98,8 @@ public class SAConfigNotifications {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfigNotifications {\n");
     
-    sb.append("    merchantNotifications: ").append(toIndentedString(merchantNotifications)).append("\n");
-    sb.append("    customerNotifications: ").append(toIndentedString(customerNotifications)).append("\n");
+    if (merchantNotifications != null) sb.append("    merchantNotifications: ").append(toIndentedString(merchantNotifications)).append("\n");
+    if (customerNotifications != null) sb.append("    customerNotifications: ").append(toIndentedString(customerNotifications)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class SAConfigNotifications {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -170,6 +170,9 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
   @SerializedName("orderStatus")
   private String orderStatus = null;
 
+  @SerializedName("merchantRiskPrediction")
+  private String merchantRiskPrediction = null;
+
   public PtsV2PaymentsPost201ResponseProcessorInformation authIndicator(String authIndicator) {
     this.authIndicator = authIndicator;
     return this;
@@ -962,6 +965,24 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     this.orderStatus = orderStatus;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessorInformation merchantRiskPrediction(String merchantRiskPrediction) {
+    this.merchantRiskPrediction = merchantRiskPrediction;
+    return this;
+  }
+
+   /**
+   * Mastercard is introducing the Merchant Risk Predict Service in the middle East/Africa Region. A newly launched service comprised of seven independent artificial intelligence (AI)-powered scores intended to augment existing merchant risk management practices. 
+   * @return merchantRiskPrediction
+  **/
+  @ApiModelProperty(value = "Mastercard is introducing the Merchant Risk Predict Service in the middle East/Africa Region. A newly launched service comprised of seven independent artificial intelligence (AI)-powered scores intended to augment existing merchant risk management practices. ")
+  public String getMerchantRiskPrediction() {
+    return merchantRiskPrediction;
+  }
+
+  public void setMerchantRiskPrediction(String merchantRiskPrediction) {
+    this.merchantRiskPrediction = merchantRiskPrediction;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1015,12 +1036,13 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
         Objects.equals(this.updateTimeUtc, ptsV2PaymentsPost201ResponseProcessorInformation.updateTimeUtc) &&
         Objects.equals(this.expirationTimeUtc, ptsV2PaymentsPost201ResponseProcessorInformation.expirationTimeUtc) &&
         Objects.equals(this.orderId, ptsV2PaymentsPost201ResponseProcessorInformation.orderId) &&
-        Objects.equals(this.orderStatus, ptsV2PaymentsPost201ResponseProcessorInformation.orderStatus);
+        Objects.equals(this.orderStatus, ptsV2PaymentsPost201ResponseProcessorInformation.orderStatus) &&
+        Objects.equals(this.merchantRiskPrediction, ptsV2PaymentsPost201ResponseProcessorInformation.merchantRiskPrediction);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl, disbursementMode, updateTimeUtc, expirationTimeUtc, orderId, orderStatus);
+    return Objects.hash(authIndicator, approvalCode, cardReferenceData, transactionId, networkTransactionId, responseCode, responseCodeSource, responseDetails, responseCategoryCode, forwardedAcquirerCode, settlementDate, sequenceNumber, avs, cardVerification, merchantAdvice, electronicVerificationResults, achVerification, customer, consumerAuthenticationResponse, systemTraceAuditNumber, paymentAccountReferenceNumber, transactionIntegrityCode, amexVerbalAuthReferenceNumber, masterCardServiceCode, masterCardServiceReplyCode, masterCardAuthenticationType, name, routing, merchantNumber, retrievalReferenceNumber, paymentUrl, completeUrl, signature, publicKey, sellerProtection, transactionExpiryDate, customUrl, schemeAssignedId, deviceUrl, disbursementMode, updateTimeUtc, expirationTimeUtc, orderId, orderStatus, merchantRiskPrediction);
   }
 
 
@@ -1029,50 +1051,51 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseProcessorInformation {\n");
     
-    sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
-    sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
-    sb.append("    cardReferenceData: ").append(toIndentedString(cardReferenceData)).append("\n");
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
-    sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
-    sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
-    sb.append("    responseCategoryCode: ").append(toIndentedString(responseCategoryCode)).append("\n");
-    sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
-    sb.append("    settlementDate: ").append(toIndentedString(settlementDate)).append("\n");
-    sb.append("    sequenceNumber: ").append(toIndentedString(sequenceNumber)).append("\n");
-    sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
-    sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
-    sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");
-    sb.append("    electronicVerificationResults: ").append(toIndentedString(electronicVerificationResults)).append("\n");
-    sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    consumerAuthenticationResponse: ").append(toIndentedString(consumerAuthenticationResponse)).append("\n");
-    sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
-    sb.append("    paymentAccountReferenceNumber: ").append(toIndentedString(paymentAccountReferenceNumber)).append("\n");
-    sb.append("    transactionIntegrityCode: ").append(toIndentedString(transactionIntegrityCode)).append("\n");
-    sb.append("    amexVerbalAuthReferenceNumber: ").append(toIndentedString(amexVerbalAuthReferenceNumber)).append("\n");
-    sb.append("    masterCardServiceCode: ").append(toIndentedString(masterCardServiceCode)).append("\n");
-    sb.append("    masterCardServiceReplyCode: ").append(toIndentedString(masterCardServiceReplyCode)).append("\n");
-    sb.append("    masterCardAuthenticationType: ").append(toIndentedString(masterCardAuthenticationType)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
-    sb.append("    merchantNumber: ").append(toIndentedString(merchantNumber)).append("\n");
-    sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
-    sb.append("    paymentUrl: ").append(toIndentedString(paymentUrl)).append("\n");
-    sb.append("    completeUrl: ").append(toIndentedString(completeUrl)).append("\n");
-    sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
-    sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
-    sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
-    sb.append("    transactionExpiryDate: ").append(toIndentedString(transactionExpiryDate)).append("\n");
-    sb.append("    customUrl: ").append(toIndentedString(customUrl)).append("\n");
-    sb.append("    schemeAssignedId: ").append(toIndentedString(schemeAssignedId)).append("\n");
-    sb.append("    deviceUrl: ").append(toIndentedString(deviceUrl)).append("\n");
-    sb.append("    disbursementMode: ").append(toIndentedString(disbursementMode)).append("\n");
-    sb.append("    updateTimeUtc: ").append(toIndentedString(updateTimeUtc)).append("\n");
-    sb.append("    expirationTimeUtc: ").append(toIndentedString(expirationTimeUtc)).append("\n");
-    sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
-    sb.append("    orderStatus: ").append(toIndentedString(orderStatus)).append("\n");
+    if (authIndicator != null) sb.append("    authIndicator: ").append(toIndentedString(authIndicator)).append("\n");
+    if (approvalCode != null) sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
+    if (cardReferenceData != null) sb.append("    cardReferenceData: ").append(toIndentedString(cardReferenceData)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (networkTransactionId != null) sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (responseCodeSource != null) sb.append("    responseCodeSource: ").append(toIndentedString(responseCodeSource)).append("\n");
+    if (responseDetails != null) sb.append("    responseDetails: ").append(toIndentedString(responseDetails)).append("\n");
+    if (responseCategoryCode != null) sb.append("    responseCategoryCode: ").append(toIndentedString(responseCategoryCode)).append("\n");
+    if (forwardedAcquirerCode != null) sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
+    if (settlementDate != null) sb.append("    settlementDate: ").append(toIndentedString(settlementDate)).append("\n");
+    if (sequenceNumber != null) sb.append("    sequenceNumber: ").append(toIndentedString(sequenceNumber)).append("\n");
+    if (avs != null) sb.append("    avs: ").append(toIndentedString(avs)).append("\n");
+    if (cardVerification != null) sb.append("    cardVerification: ").append(toIndentedString(cardVerification)).append("\n");
+    if (merchantAdvice != null) sb.append("    merchantAdvice: ").append(toIndentedString(merchantAdvice)).append("\n");
+    if (electronicVerificationResults != null) sb.append("    electronicVerificationResults: ").append(toIndentedString(electronicVerificationResults)).append("\n");
+    if (achVerification != null) sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (consumerAuthenticationResponse != null) sb.append("    consumerAuthenticationResponse: ").append(toIndentedString(consumerAuthenticationResponse)).append("\n");
+    if (systemTraceAuditNumber != null) sb.append("    systemTraceAuditNumber: ").append(toIndentedString(systemTraceAuditNumber)).append("\n");
+    if (paymentAccountReferenceNumber != null) sb.append("    paymentAccountReferenceNumber: ").append(toIndentedString(paymentAccountReferenceNumber)).append("\n");
+    if (transactionIntegrityCode != null) sb.append("    transactionIntegrityCode: ").append(toIndentedString(transactionIntegrityCode)).append("\n");
+    if (amexVerbalAuthReferenceNumber != null) sb.append("    amexVerbalAuthReferenceNumber: ").append(toIndentedString(amexVerbalAuthReferenceNumber)).append("\n");
+    if (masterCardServiceCode != null) sb.append("    masterCardServiceCode: ").append(toIndentedString(masterCardServiceCode)).append("\n");
+    if (masterCardServiceReplyCode != null) sb.append("    masterCardServiceReplyCode: ").append(toIndentedString(masterCardServiceReplyCode)).append("\n");
+    if (masterCardAuthenticationType != null) sb.append("    masterCardAuthenticationType: ").append(toIndentedString(masterCardAuthenticationType)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (routing != null) sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
+    if (merchantNumber != null) sb.append("    merchantNumber: ").append(toIndentedString(merchantNumber)).append("\n");
+    if (retrievalReferenceNumber != null) sb.append("    retrievalReferenceNumber: ").append(toIndentedString(retrievalReferenceNumber)).append("\n");
+    if (paymentUrl != null) sb.append("    paymentUrl: ").append(toIndentedString(paymentUrl)).append("\n");
+    if (completeUrl != null) sb.append("    completeUrl: ").append(toIndentedString(completeUrl)).append("\n");
+    if (signature != null) sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
+    if (publicKey != null) sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
+    if (sellerProtection != null) sb.append("    sellerProtection: ").append(toIndentedString(sellerProtection)).append("\n");
+    if (transactionExpiryDate != null) sb.append("    transactionExpiryDate: ").append(toIndentedString(transactionExpiryDate)).append("\n");
+    if (customUrl != null) sb.append("    customUrl: ").append(toIndentedString(customUrl)).append("\n");
+    if (schemeAssignedId != null) sb.append("    schemeAssignedId: ").append(toIndentedString(schemeAssignedId)).append("\n");
+    if (deviceUrl != null) sb.append("    deviceUrl: ").append(toIndentedString(deviceUrl)).append("\n");
+    if (disbursementMode != null) sb.append("    disbursementMode: ").append(toIndentedString(disbursementMode)).append("\n");
+    if (updateTimeUtc != null) sb.append("    updateTimeUtc: ").append(toIndentedString(updateTimeUtc)).append("\n");
+    if (expirationTimeUtc != null) sb.append("    expirationTimeUtc: ").append(toIndentedString(expirationTimeUtc)).append("\n");
+    if (orderId != null) sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+    if (orderStatus != null) sb.append("    orderStatus: ").append(toIndentedString(orderStatus)).append("\n");
+    if (merchantRiskPrediction != null) sb.append("    merchantRiskPrediction: ").append(toIndentedString(merchantRiskPrediction)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1083,10 +1106,10 @@ public class PtsV2PaymentsPost201ResponseProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -140,10 +140,10 @@ public class MerchantInitiatedTransactionObject {
     StringBuilder sb = new StringBuilder();
     sb.append("class MerchantInitiatedTransactionObject {\n");
     
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    previousTransactionId: ").append(toIndentedString(previousTransactionId)).append("\n");
-    sb.append("    originalAuthorizedAmount: ").append(toIndentedString(originalAuthorizedAmount)).append("\n");
-    sb.append("    agreementId: ").append(toIndentedString(agreementId)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (previousTransactionId != null) sb.append("    previousTransactionId: ").append(toIndentedString(previousTransactionId)).append("\n");
+    if (originalAuthorizedAmount != null) sb.append("    originalAuthorizedAmount: ").append(toIndentedString(originalAuthorizedAmount)).append("\n");
+    if (agreementId != null) sb.append("    agreementId: ").append(toIndentedString(agreementId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class MerchantInitiatedTransactionObject {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

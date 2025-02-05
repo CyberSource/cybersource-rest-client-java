@@ -250,15 +250,15 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationAppli
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    rCode: ").append(toIndentedString(rCode)).append("\n");
-    sb.append("    rFlag: ").append(toIndentedString(rFlag)).append("\n");
-    sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
-    sb.append("    rMessage: ").append(toIndentedString(rMessage)).append("\n");
-    sb.append("    returnCode: ").append(toIndentedString(returnCode)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (reasonCode != null) sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (reason != null) sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    if (rCode != null) sb.append("    rCode: ").append(toIndentedString(rCode)).append("\n");
+    if (rFlag != null) sb.append("    rFlag: ").append(toIndentedString(rFlag)).append("\n");
+    if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
+    if (rMessage != null) sb.append("    rMessage: ").append(toIndentedString(rMessage)).append("\n");
+    if (returnCode != null) sb.append("    returnCode: ").append(toIndentedString(returnCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -269,10 +269,10 @@ public class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationAppli
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

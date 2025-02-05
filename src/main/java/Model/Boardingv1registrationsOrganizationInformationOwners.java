@@ -156,7 +156,7 @@ public class Boardingv1registrationsOrganizationInformationOwners {
    * @return isPrimary
   **/
   @ApiModelProperty(example = "true", required = true, value = "Determines whether the owner is the Primary owner of the organization")
-  public Boolean isIsPrimary() {
+  public Boolean IsPrimary() {
     return isPrimary;
   }
 
@@ -246,7 +246,7 @@ public class Boardingv1registrationsOrganizationInformationOwners {
    * @return hasSignificantResponsability
   **/
   @ApiModelProperty(example = "true", required = true, value = "Determines whether owner has significant responsibility to control, manage or direct the company")
-  public Boolean isHasSignificantResponsability() {
+  public Boolean HasSignificantResponsability() {
     return hasSignificantResponsability;
   }
 
@@ -363,20 +363,20 @@ public class Boardingv1registrationsOrganizationInformationOwners {
     StringBuilder sb = new StringBuilder();
     sb.append("class Boardingv1registrationsOrganizationInformationOwners {\n");
     
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    sb.append("    birthDate: ").append(toIndentedString(birthDate)).append("\n");
-    sb.append("    isPrimary: ").append(toIndentedString(isPrimary)).append("\n");
-    sb.append("    ssn: ").append(toIndentedString(ssn)).append("\n");
-    sb.append("    passportNumber: ").append(toIndentedString(passportNumber)).append("\n");
-    sb.append("    passportCountry: ").append(toIndentedString(passportCountry)).append("\n");
-    sb.append("    jobTitle: ").append(toIndentedString(jobTitle)).append("\n");
-    sb.append("    hasSignificantResponsability: ").append(toIndentedString(hasSignificantResponsability)).append("\n");
-    sb.append("    ownershipPercentage: ").append(toIndentedString(ownershipPercentage)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    if (firstName != null) sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    if (birthDate != null) sb.append("    birthDate: ").append(toIndentedString(birthDate)).append("\n");
+    if (isPrimary != null) sb.append("    isPrimary: ").append(toIndentedString(isPrimary)).append("\n");
+    if (ssn != null) sb.append("    ssn: ").append(toIndentedString(ssn)).append("\n");
+    if (passportNumber != null) sb.append("    passportNumber: ").append(toIndentedString(passportNumber)).append("\n");
+    if (passportCountry != null) sb.append("    passportCountry: ").append(toIndentedString(passportCountry)).append("\n");
+    if (jobTitle != null) sb.append("    jobTitle: ").append(toIndentedString(jobTitle)).append("\n");
+    if (hasSignificantResponsability != null) sb.append("    hasSignificantResponsability: ").append(toIndentedString(hasSignificantResponsability)).append("\n");
+    if (ownershipPercentage != null) sb.append("    ownershipPercentage: ").append(toIndentedString(ownershipPercentage)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    if (address != null) sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -387,10 +387,10 @@ public class Boardingv1registrationsOrganizationInformationOwners {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

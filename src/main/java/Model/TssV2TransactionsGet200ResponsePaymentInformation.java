@@ -384,20 +384,20 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformation {\n");
     
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    brands: ").append(toIndentedString(brands)).append("\n");
-    sb.append("    features: ").append(toIndentedString(features)).append("\n");
-    sb.append("    invoice: ").append(toIndentedString(invoice)).append("\n");
-    sb.append("    network: ").append(toIndentedString(network)).append("\n");
-    sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
-    sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
-    sb.append("    accountFeatures: ").append(toIndentedString(accountFeatures)).append("\n");
-    sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
-    sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
-    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
-    sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (brands != null) sb.append("    brands: ").append(toIndentedString(brands)).append("\n");
+    if (features != null) sb.append("    features: ").append(toIndentedString(features)).append("\n");
+    if (invoice != null) sb.append("    invoice: ").append(toIndentedString(invoice)).append("\n");
+    if (network != null) sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
+    if (bank != null) sb.append("    bank: ").append(toIndentedString(bank)).append("\n");
+    if (accountFeatures != null) sb.append("    accountFeatures: ").append(toIndentedString(accountFeatures)).append("\n");
+    if (paymentInstrument != null) sb.append("    paymentInstrument: ").append(toIndentedString(paymentInstrument)).append("\n");
+    if (instrumentIdentifier != null) sb.append("    instrumentIdentifier: ").append(toIndentedString(instrumentIdentifier)).append("\n");
+    if (shippingAddress != null) sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    if (fluidData != null) sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -408,10 +408,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

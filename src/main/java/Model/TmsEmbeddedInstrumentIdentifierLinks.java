@@ -98,8 +98,8 @@ public class TmsEmbeddedInstrumentIdentifierLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsEmbeddedInstrumentIdentifierLinks {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    paymentInstruments: ").append(toIndentedString(paymentInstruments)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (paymentInstruments != null) sb.append("    paymentInstruments: ").append(toIndentedString(paymentInstruments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class TmsEmbeddedInstrumentIdentifierLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

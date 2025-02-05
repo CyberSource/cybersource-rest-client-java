@@ -153,7 +153,6 @@ public class SearchTransactionsApi {
      */
     public TssV2TransactionsPost201Response createSearch(CreateSearchRequest createSearchRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createSearch' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = createSearchWithHttpInfo(createSearchRequest);
         logger.info("CALL TO METHOD 'createSearch' ENDED");
         return resp.getData();
@@ -167,6 +166,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2TransactionsPost201Response> createSearchWithHttpInfo(CreateSearchRequest createSearchRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createSearchValidateBeforeCall(createSearchRequest, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -298,7 +298,6 @@ public class SearchTransactionsApi {
      */
     public TssV2TransactionsPost201Response getSearch(String searchId) throws ApiException {
         logger.info("CALL TO METHOD 'getSearch' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<TssV2TransactionsPost201Response> resp = getSearchWithHttpInfo(searchId);
         logger.info("CALL TO METHOD 'getSearch' ENDED");
         return resp.getData();
@@ -312,6 +311,7 @@ public class SearchTransactionsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TssV2TransactionsPost201Response> getSearchWithHttpInfo(String searchId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getSearchValidateBeforeCall(searchId, null, null);
         Type localVarReturnType = new TypeToken<TssV2TransactionsPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

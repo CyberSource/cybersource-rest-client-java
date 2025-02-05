@@ -74,7 +74,7 @@ public class PtsV2PaymentsReversalsPost201ResponseIssuerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsReversalsPost201ResponseIssuerInformation {\n");
     
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2PaymentsReversalsPost201ResponseIssuerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

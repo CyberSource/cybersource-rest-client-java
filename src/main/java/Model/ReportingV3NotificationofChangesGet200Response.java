@@ -85,7 +85,7 @@ public class ReportingV3NotificationofChangesGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3NotificationofChangesGet200Response {\n");
     
-    sb.append("    notificationOfChanges: ").append(toIndentedString(notificationOfChanges)).append("\n");
+    if (notificationOfChanges != null) sb.append("    notificationOfChanges: ").append(toIndentedString(notificationOfChanges)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -96,10 +96,10 @@ public class ReportingV3NotificationofChangesGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

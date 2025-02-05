@@ -184,12 +184,12 @@ public class Ptsv2paymentreferencesPaymentInformationCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesPaymentInformationCard {\n");
     
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
-    sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
-    sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (securityCode != null) sb.append("    securityCode: ").append(toIndentedString(securityCode)).append("\n");
+    if (useAs != null) sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -200,10 +200,10 @@ public class Ptsv2paymentreferencesPaymentInformationCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

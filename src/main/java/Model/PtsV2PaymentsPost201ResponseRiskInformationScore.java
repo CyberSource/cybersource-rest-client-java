@@ -128,9 +128,9 @@ public class PtsV2PaymentsPost201ResponseRiskInformationScore {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformationScore {\n");
     
-    sb.append("    factorCodes: ").append(toIndentedString(factorCodes)).append("\n");
-    sb.append("    modelUsed: ").append(toIndentedString(modelUsed)).append("\n");
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    if (factorCodes != null) sb.append("    factorCodes: ").append(toIndentedString(factorCodes)).append("\n");
+    if (modelUsed != null) sb.append("    modelUsed: ").append(toIndentedString(modelUsed)).append("\n");
+    if (result != null) sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -141,10 +141,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationScore {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

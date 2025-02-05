@@ -119,9 +119,9 @@ public class Notificationsubscriptionsv1webhooksSecurityPolicyConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class Notificationsubscriptionsv1webhooksSecurityPolicyConfig {\n");
     
-    sb.append("    oAuthTokenExpiry: ").append(toIndentedString(oAuthTokenExpiry)).append("\n");
-    sb.append("    oAuthURL: ").append(toIndentedString(oAuthURL)).append("\n");
-    sb.append("    oAuthTokenType: ").append(toIndentedString(oAuthTokenType)).append("\n");
+    if (oAuthTokenExpiry != null) sb.append("    oAuthTokenExpiry: ").append(toIndentedString(oAuthTokenExpiry)).append("\n");
+    if (oAuthURL != null) sb.append("    oAuthURL: ").append(toIndentedString(oAuthURL)).append("\n");
+    if (oAuthTokenType != null) sb.append("    oAuthTokenType: ").append(toIndentedString(oAuthTokenType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class Notificationsubscriptionsv1webhooksSecurityPolicyConfig {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

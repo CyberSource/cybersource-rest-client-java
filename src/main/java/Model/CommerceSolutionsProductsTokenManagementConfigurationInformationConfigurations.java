@@ -97,8 +97,8 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
     StringBuilder sb = new StringBuilder();
     sb.append("class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations {\n");
     
-    sb.append("    parentProfileId: ").append(toIndentedString(parentProfileId)).append("\n");
-    sb.append("    vault: ").append(toIndentedString(vault)).append("\n");
+    if (parentProfileId != null) sb.append("    parentProfileId: ").append(toIndentedString(parentProfileId)).append("\n");
+    if (vault != null) sb.append("    vault: ").append(toIndentedString(vault)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

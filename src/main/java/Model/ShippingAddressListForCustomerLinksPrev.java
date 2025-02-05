@@ -65,7 +65,7 @@ public class ShippingAddressListForCustomerLinksPrev {
     StringBuilder sb = new StringBuilder();
     sb.append("class ShippingAddressListForCustomerLinksPrev {\n");
     
-    sb.append("    href: ").append(toIndentedString(href)).append("\n");
+    if (href != null) sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -76,10 +76,10 @@ public class ShippingAddressListForCustomerLinksPrev {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

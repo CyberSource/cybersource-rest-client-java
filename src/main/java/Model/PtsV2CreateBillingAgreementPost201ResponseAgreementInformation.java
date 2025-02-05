@@ -184,12 +184,12 @@ public class PtsV2CreateBillingAgreementPost201ResponseAgreementInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2CreateBillingAgreementPost201ResponseAgreementInformation {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    dateSigned: ").append(toIndentedString(dateSigned)).append("\n");
-    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
-    sb.append("    encodedHtml: ").append(toIndentedString(encodedHtml)).append("\n");
-    sb.append("    encodedHtmlPopup: ").append(toIndentedString(encodedHtmlPopup)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    if (dateSigned != null) sb.append("    dateSigned: ").append(toIndentedString(dateSigned)).append("\n");
+    if (dateCreated != null) sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    if (encodedHtml != null) sb.append("    encodedHtml: ").append(toIndentedString(encodedHtml)).append("\n");
+    if (encodedHtmlPopup != null) sb.append("    encodedHtmlPopup: ").append(toIndentedString(encodedHtmlPopup)).append("\n");
+    if (url != null) sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -200,10 +200,10 @@ public class PtsV2CreateBillingAgreementPost201ResponseAgreementInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

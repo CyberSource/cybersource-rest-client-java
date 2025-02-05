@@ -75,7 +75,7 @@ public class ReportingV3ReportsGet200ResponseLink {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ReportsGet200ResponseLink {\n");
     
-    sb.append("    reportDownload: ").append(toIndentedString(reportDownload)).append("\n");
+    if (reportDownload != null) sb.append("    reportDownload: ").append(toIndentedString(reportDownload)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class ReportingV3ReportsGet200ResponseLink {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

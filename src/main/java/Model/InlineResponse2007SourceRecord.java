@@ -228,14 +228,14 @@ public class InlineResponse2007SourceRecord {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2007SourceRecord {\n");
     
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-    sb.append("    paymentInstrumentId: ").append(toIndentedString(paymentInstrumentId)).append("\n");
-    sb.append("    instrumentIdentifierId: ").append(toIndentedString(instrumentIdentifierId)).append("\n");
-    sb.append("    cardNumber: ").append(toIndentedString(cardNumber)).append("\n");
-    sb.append("    cardExpiryMonth: ").append(toIndentedString(cardExpiryMonth)).append("\n");
-    sb.append("    cardExpiryYear: ").append(toIndentedString(cardExpiryYear)).append("\n");
-    sb.append("    cardType: ").append(toIndentedString(cardType)).append("\n");
+    if (token != null) sb.append("    token: ").append(toIndentedString(token)).append("\n");
+    if (customerId != null) sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+    if (paymentInstrumentId != null) sb.append("    paymentInstrumentId: ").append(toIndentedString(paymentInstrumentId)).append("\n");
+    if (instrumentIdentifierId != null) sb.append("    instrumentIdentifierId: ").append(toIndentedString(instrumentIdentifierId)).append("\n");
+    if (cardNumber != null) sb.append("    cardNumber: ").append(toIndentedString(cardNumber)).append("\n");
+    if (cardExpiryMonth != null) sb.append("    cardExpiryMonth: ").append(toIndentedString(cardExpiryMonth)).append("\n");
+    if (cardExpiryYear != null) sb.append("    cardExpiryYear: ").append(toIndentedString(cardExpiryYear)).append("\n");
+    if (cardType != null) sb.append("    cardType: ").append(toIndentedString(cardType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -246,10 +246,10 @@ public class InlineResponse2007SourceRecord {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

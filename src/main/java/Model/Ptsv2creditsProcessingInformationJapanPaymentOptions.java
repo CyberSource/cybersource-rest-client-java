@@ -96,8 +96,8 @@ public class Ptsv2creditsProcessingInformationJapanPaymentOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2creditsProcessingInformationJapanPaymentOptions {\n");
     
-    sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
-    sb.append("    installments: ").append(toIndentedString(installments)).append("\n");
+    if (paymentMethod != null) sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
+    if (installments != null) sb.append("    installments: ").append(toIndentedString(installments)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2creditsProcessingInformationJapanPaymentOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

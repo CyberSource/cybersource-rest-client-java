@@ -107,8 +107,8 @@ public class ReplayWebhooksRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReplayWebhooksRequest {\n");
     
-    sb.append("    byTransactionTraceIdentifiers: ").append(toIndentedString(byTransactionTraceIdentifiers)).append("\n");
-    sb.append("    byDeliveryStatus: ").append(toIndentedString(byDeliveryStatus)).append("\n");
+    if (byTransactionTraceIdentifiers != null) sb.append("    byTransactionTraceIdentifiers: ").append(toIndentedString(byTransactionTraceIdentifiers)).append("\n");
+    if (byDeliveryStatus != null) sb.append("    byDeliveryStatus: ").append(toIndentedString(byDeliveryStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -119,10 +119,10 @@ public class ReplayWebhooksRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

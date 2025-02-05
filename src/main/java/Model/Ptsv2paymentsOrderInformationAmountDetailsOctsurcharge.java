@@ -74,7 +74,7 @@ public class Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge {\n");
     
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

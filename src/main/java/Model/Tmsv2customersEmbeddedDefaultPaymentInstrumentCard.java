@@ -242,15 +242,15 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard {\n");
     
-    sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
-    sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    issueNumber: ").append(toIndentedString(issueNumber)).append("\n");
-    sb.append("    startMonth: ").append(toIndentedString(startMonth)).append("\n");
-    sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
-    sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
-    sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
-    sb.append("    tokenizedInformation: ").append(toIndentedString(tokenizedInformation)).append("\n");
+    if (expirationMonth != null) sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
+    if (expirationYear != null) sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (issueNumber != null) sb.append("    issueNumber: ").append(toIndentedString(issueNumber)).append("\n");
+    if (startMonth != null) sb.append("    startMonth: ").append(toIndentedString(startMonth)).append("\n");
+    if (startYear != null) sb.append("    startYear: ").append(toIndentedString(startYear)).append("\n");
+    if (useAs != null) sb.append("    useAs: ").append(toIndentedString(useAs)).append("\n");
+    if (hash != null) sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
+    if (tokenizedInformation != null) sb.append("    tokenizedInformation: ").append(toIndentedString(tokenizedInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -261,10 +261,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

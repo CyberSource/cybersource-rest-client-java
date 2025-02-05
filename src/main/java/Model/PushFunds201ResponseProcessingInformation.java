@@ -75,7 +75,7 @@ public class PushFunds201ResponseProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PushFunds201ResponseProcessingInformation {\n");
     
-    sb.append("    domesticNationalNet: ").append(toIndentedString(domesticNationalNet)).append("\n");
+    if (domesticNationalNet != null) sb.append("    domesticNationalNet: ").append(toIndentedString(domesticNationalNet)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class PushFunds201ResponseProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

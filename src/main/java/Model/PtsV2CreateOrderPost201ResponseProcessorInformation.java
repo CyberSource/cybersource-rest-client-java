@@ -118,9 +118,9 @@ public class PtsV2CreateOrderPost201ResponseProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2CreateOrderPost201ResponseProcessorInformation {\n");
     
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
-    sb.append("    paymentUrl: ").append(toIndentedString(paymentUrl)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (networkTransactionId != null) sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
+    if (paymentUrl != null) sb.append("    paymentUrl: ").append(toIndentedString(paymentUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class PtsV2CreateOrderPost201ResponseProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

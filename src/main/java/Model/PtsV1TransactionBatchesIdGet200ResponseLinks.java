@@ -85,7 +85,7 @@ public class PtsV1TransactionBatchesIdGet200ResponseLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV1TransactionBatchesIdGet200ResponseLinks {\n");
     
-    sb.append("    transactions: ").append(toIndentedString(transactions)).append("\n");
+    if (transactions != null) sb.append("    transactions: ").append(toIndentedString(transactions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -96,10 +96,10 @@ public class PtsV1TransactionBatchesIdGet200ResponseLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

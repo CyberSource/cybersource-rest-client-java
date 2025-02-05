@@ -105,7 +105,7 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConf
    * @return active
   **/
   @ApiModelProperty(value = "")
-  public Boolean isActive() {
+  public Boolean Active() {
     return active;
   }
 
@@ -140,10 +140,10 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConf
     StringBuilder sb = new StringBuilder();
     sb.append("class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConfigurationsAmex {\n");
     
-    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-    sb.append("    seNumber: ").append(toIndentedString(seNumber)).append("\n");
-    sb.append("    subscriberId: ").append(toIndentedString(subscriberId)).append("\n");
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    if (mode != null) sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+    if (seNumber != null) sb.append("    seNumber: ").append(toIndentedString(seNumber)).append("\n");
+    if (subscriberId != null) sb.append("    subscriberId: ").append(toIndentedString(subscriberId)).append("\n");
+    if (active != null) sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class CommerceSolutionsProductsAccountUpdaterConfigurationInformationConf
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

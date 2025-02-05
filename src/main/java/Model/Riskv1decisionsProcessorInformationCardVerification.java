@@ -74,7 +74,7 @@ public class Riskv1decisionsProcessorInformationCardVerification {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsProcessorInformationCardVerification {\n");
     
-    sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");
+    if (resultCode != null) sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Riskv1decisionsProcessorInformationCardVerification {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

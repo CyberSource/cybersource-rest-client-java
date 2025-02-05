@@ -208,13 +208,13 @@ public class TssV2TransactionsGet200ResponseOrderInformationLineItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseOrderInformationLineItems {\n");
     
-    sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
-    sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
-    sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
-    sb.append("    fulfillmentType: ").append(toIndentedString(fulfillmentType)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+    if (productSku != null) sb.append("    productSku: ").append(toIndentedString(productSku)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (quantity != null) sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    if (unitPrice != null) sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    if (fulfillmentType != null) sb.append("    fulfillmentType: ").append(toIndentedString(fulfillmentType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -225,10 +225,10 @@ public class TssV2TransactionsGet200ResponseOrderInformationLineItems {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -42,7 +42,7 @@ public class Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount {
    * @return required
   **/
   @ApiModelProperty(value = "")
-  public Boolean isRequired() {
+  public Boolean Required() {
     return required;
   }
 
@@ -74,7 +74,7 @@ public class Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount {
     StringBuilder sb = new StringBuilder();
     sb.append("class Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount {\n");
     
-    sb.append("    required: ").append(toIndentedString(required)).append("\n");
+    if (required != null) sb.append("    required: ").append(toIndentedString(required)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

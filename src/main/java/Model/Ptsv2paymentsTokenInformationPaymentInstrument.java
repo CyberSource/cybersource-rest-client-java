@@ -42,7 +42,7 @@ public class Ptsv2paymentsTokenInformationPaymentInstrument {
    * @return _default
   **/
   @ApiModelProperty(value = "Flag that specifies if the Payment Instrument should be made the Customers default. Possible values: - true - false : (default) ")
-  public Boolean isDefault() {
+  public Boolean Default() {
     return _default;
   }
 
@@ -74,7 +74,7 @@ public class Ptsv2paymentsTokenInformationPaymentInstrument {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTokenInformationPaymentInstrument {\n");
     
-    sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
+    if (_default != null) sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsTokenInformationPaymentInstrument {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

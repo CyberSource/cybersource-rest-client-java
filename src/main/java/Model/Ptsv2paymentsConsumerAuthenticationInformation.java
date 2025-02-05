@@ -192,6 +192,9 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
   @SerializedName("whiteListStatus")
   private String whiteListStatus = null;
 
+  @SerializedName("authenticationBrand")
+  private String authenticationBrand = null;
+
   @SerializedName("effectiveAuthenticationType")
   private String effectiveAuthenticationType = null;
 
@@ -200,6 +203,12 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   @SerializedName("signedPares")
   private String signedPares = null;
+
+  @SerializedName("acsReferenceNumber")
+  private String acsReferenceNumber = null;
+
+  @SerializedName("dsReferenceNumber")
+  private String dsReferenceNumber = null;
 
   public Ptsv2paymentsConsumerAuthenticationInformation cavv(String cavv) {
     this.cavv = cavv;
@@ -697,7 +706,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
    * @return defaultCard
   **/
   @ApiModelProperty(value = "Indicates that the card being used is the one designated as the primary payment card for purchase. Recommended for Discover ProtectBuy. ")
-  public Boolean isDefaultCard() {
+  public Boolean DefaultCard() {
     return defaultCard;
   }
 
@@ -769,7 +778,7 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
    * @return marketingOptIn
   **/
   @ApiModelProperty(value = "Indicates whether the customer has opted in for marketing offers. Recommended for Discover ProtectBuy. ")
-  public Boolean isMarketingOptIn() {
+  public Boolean MarketingOptIn() {
     return marketingOptIn;
   }
 
@@ -1173,6 +1182,24 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     this.whiteListStatus = whiteListStatus;
   }
 
+  public Ptsv2paymentsConsumerAuthenticationInformation authenticationBrand(String authenticationBrand) {
+    this.authenticationBrand = authenticationBrand;
+    return this;
+  }
+
+   /**
+   * Indicates which directory server was used while authentication process, this data is useful in case of scenarios  when domestic scheme directory server is not present and authentication fallbacks to global scheme directory server. Possible values: - VISA - Returned for Mada VISA Co-badged cards, when authentication falls back to VISA Directory Server - MASTERCARD - Returned for Mada MasterCard Co-badged cards, when authentication falls back to MasterCard Directory Server 
+   * @return authenticationBrand
+  **/
+  @ApiModelProperty(value = "Indicates which directory server was used while authentication process, this data is useful in case of scenarios  when domestic scheme directory server is not present and authentication fallbacks to global scheme directory server. Possible values: - VISA - Returned for Mada VISA Co-badged cards, when authentication falls back to VISA Directory Server - MASTERCARD - Returned for Mada MasterCard Co-badged cards, when authentication falls back to MasterCard Directory Server ")
+  public String getAuthenticationBrand() {
+    return authenticationBrand;
+  }
+
+  public void setAuthenticationBrand(String authenticationBrand) {
+    this.authenticationBrand = authenticationBrand;
+  }
+
   public Ptsv2paymentsConsumerAuthenticationInformation effectiveAuthenticationType(String effectiveAuthenticationType) {
     this.effectiveAuthenticationType = effectiveAuthenticationType;
     return this;
@@ -1225,6 +1252,42 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
 
   public void setSignedPares(String signedPares) {
     this.signedPares = signedPares;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation acsReferenceNumber(String acsReferenceNumber) {
+    this.acsReferenceNumber = acsReferenceNumber;
+    return this;
+  }
+
+   /**
+   * Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.
+   * @return acsReferenceNumber
+  **/
+  @ApiModelProperty(value = "Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.")
+  public String getAcsReferenceNumber() {
+    return acsReferenceNumber;
+  }
+
+  public void setAcsReferenceNumber(String acsReferenceNumber) {
+    this.acsReferenceNumber = acsReferenceNumber;
+  }
+
+  public Ptsv2paymentsConsumerAuthenticationInformation dsReferenceNumber(String dsReferenceNumber) {
+    this.dsReferenceNumber = dsReferenceNumber;
+    return this;
+  }
+
+   /**
+   * EMVCo-assigned unique identifier. This field is required in Cardholder Initiated 3DS fully authenticated mada transactions. When you request the payer authentication and authorization services separately, get the value for this field from the payerAuthEnrollReply_dsReferenceNumber or payerAuthValidateReply_dsReferenceNumber response field. 
+   * @return dsReferenceNumber
+  **/
+  @ApiModelProperty(value = "EMVCo-assigned unique identifier. This field is required in Cardholder Initiated 3DS fully authenticated mada transactions. When you request the payer authentication and authorization services separately, get the value for this field from the payerAuthEnrollReply_dsReferenceNumber or payerAuthValidateReply_dsReferenceNumber response field. ")
+  public String getDsReferenceNumber() {
+    return dsReferenceNumber;
+  }
+
+  public void setDsReferenceNumber(String dsReferenceNumber) {
+    this.dsReferenceNumber = dsReferenceNumber;
   }
 
 
@@ -1291,14 +1354,17 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
         Objects.equals(this.secureCorporatePaymentIndicator, ptsv2paymentsConsumerAuthenticationInformation.secureCorporatePaymentIndicator) &&
         Objects.equals(this.transactionMode, ptsv2paymentsConsumerAuthenticationInformation.transactionMode) &&
         Objects.equals(this.whiteListStatus, ptsv2paymentsConsumerAuthenticationInformation.whiteListStatus) &&
+        Objects.equals(this.authenticationBrand, ptsv2paymentsConsumerAuthenticationInformation.authenticationBrand) &&
         Objects.equals(this.effectiveAuthenticationType, ptsv2paymentsConsumerAuthenticationInformation.effectiveAuthenticationType) &&
         Objects.equals(this.signedParesStatusReason, ptsv2paymentsConsumerAuthenticationInformation.signedParesStatusReason) &&
-        Objects.equals(this.signedPares, ptsv2paymentsConsumerAuthenticationInformation.signedPares);
+        Objects.equals(this.signedPares, ptsv2paymentsConsumerAuthenticationInformation.signedPares) &&
+        Objects.equals(this.acsReferenceNumber, ptsv2paymentsConsumerAuthenticationInformation.acsReferenceNumber) &&
+        Objects.equals(this.dsReferenceNumber, ptsv2paymentsConsumerAuthenticationInformation.dsReferenceNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cavv, transactionFlowIndicator, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, responseAccessToken, acsTransactionId, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, networkScore, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, effectiveAuthenticationType, signedParesStatusReason, signedPares);
+    return Objects.hash(cavv, transactionFlowIndicator, cavvAlgorithm, eciRaw, paresStatus, veresEnrolled, xid, ucafCollectionIndicator, ucafAuthenticationData, strongAuthentication, directoryServerTransactionId, paSpecificationVersion, authenticationType, responseAccessToken, acsTransactionId, acsWindowSize, alternateAuthenticationData, alternateAuthenticationDate, alternateAuthenticationMethod, authenticationDate, authenticationTransactionId, challengeCancelCode, challengeCode, challengeStatus, customerCardAlias, decoupledAuthenticationIndicator, decoupledAuthenticationMaxTime, defaultCard, deviceChannel, installmentTotalCount, merchantFraudRate, marketingOptIn, marketingSource, mcc, merchantScore, messageCategory, networkScore, npaCode, overridePaymentMethod, overrideCountryCode, priorAuthenticationData, priorAuthenticationMethod, priorAuthenticationReferenceId, priorAuthenticationTime, productCode, returnUrl, requestorId, requestorInitiatedAuthenticationIndicator, requestorName, referenceId, sdkMaxTimeout, secureCorporatePaymentIndicator, transactionMode, whiteListStatus, authenticationBrand, effectiveAuthenticationType, signedParesStatusReason, signedPares, acsReferenceNumber, dsReferenceNumber);
   }
 
 
@@ -1307,63 +1373,66 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsConsumerAuthenticationInformation {\n");
     
-    sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
-    sb.append("    transactionFlowIndicator: ").append(toIndentedString(transactionFlowIndicator)).append("\n");
-    sb.append("    cavvAlgorithm: ").append(toIndentedString(cavvAlgorithm)).append("\n");
-    sb.append("    eciRaw: ").append(toIndentedString(eciRaw)).append("\n");
-    sb.append("    paresStatus: ").append(toIndentedString(paresStatus)).append("\n");
-    sb.append("    veresEnrolled: ").append(toIndentedString(veresEnrolled)).append("\n");
-    sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
-    sb.append("    ucafCollectionIndicator: ").append(toIndentedString(ucafCollectionIndicator)).append("\n");
-    sb.append("    ucafAuthenticationData: ").append(toIndentedString(ucafAuthenticationData)).append("\n");
-    sb.append("    strongAuthentication: ").append(toIndentedString(strongAuthentication)).append("\n");
-    sb.append("    directoryServerTransactionId: ").append(toIndentedString(directoryServerTransactionId)).append("\n");
-    sb.append("    paSpecificationVersion: ").append(toIndentedString(paSpecificationVersion)).append("\n");
-    sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
-    sb.append("    responseAccessToken: ").append(toIndentedString(responseAccessToken)).append("\n");
-    sb.append("    acsTransactionId: ").append(toIndentedString(acsTransactionId)).append("\n");
-    sb.append("    acsWindowSize: ").append(toIndentedString(acsWindowSize)).append("\n");
-    sb.append("    alternateAuthenticationData: ").append(toIndentedString(alternateAuthenticationData)).append("\n");
-    sb.append("    alternateAuthenticationDate: ").append(toIndentedString(alternateAuthenticationDate)).append("\n");
-    sb.append("    alternateAuthenticationMethod: ").append(toIndentedString(alternateAuthenticationMethod)).append("\n");
-    sb.append("    authenticationDate: ").append(toIndentedString(authenticationDate)).append("\n");
-    sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
-    sb.append("    challengeCancelCode: ").append(toIndentedString(challengeCancelCode)).append("\n");
-    sb.append("    challengeCode: ").append(toIndentedString(challengeCode)).append("\n");
-    sb.append("    challengeStatus: ").append(toIndentedString(challengeStatus)).append("\n");
-    sb.append("    customerCardAlias: ").append(toIndentedString(customerCardAlias)).append("\n");
-    sb.append("    decoupledAuthenticationIndicator: ").append(toIndentedString(decoupledAuthenticationIndicator)).append("\n");
-    sb.append("    decoupledAuthenticationMaxTime: ").append(toIndentedString(decoupledAuthenticationMaxTime)).append("\n");
-    sb.append("    defaultCard: ").append(toIndentedString(defaultCard)).append("\n");
-    sb.append("    deviceChannel: ").append(toIndentedString(deviceChannel)).append("\n");
-    sb.append("    installmentTotalCount: ").append(toIndentedString(installmentTotalCount)).append("\n");
-    sb.append("    merchantFraudRate: ").append(toIndentedString(merchantFraudRate)).append("\n");
-    sb.append("    marketingOptIn: ").append(toIndentedString(marketingOptIn)).append("\n");
-    sb.append("    marketingSource: ").append(toIndentedString(marketingSource)).append("\n");
-    sb.append("    mcc: ").append(toIndentedString(mcc)).append("\n");
-    sb.append("    merchantScore: ").append(toIndentedString(merchantScore)).append("\n");
-    sb.append("    messageCategory: ").append(toIndentedString(messageCategory)).append("\n");
-    sb.append("    networkScore: ").append(toIndentedString(networkScore)).append("\n");
-    sb.append("    npaCode: ").append(toIndentedString(npaCode)).append("\n");
-    sb.append("    overridePaymentMethod: ").append(toIndentedString(overridePaymentMethod)).append("\n");
-    sb.append("    overrideCountryCode: ").append(toIndentedString(overrideCountryCode)).append("\n");
-    sb.append("    priorAuthenticationData: ").append(toIndentedString(priorAuthenticationData)).append("\n");
-    sb.append("    priorAuthenticationMethod: ").append(toIndentedString(priorAuthenticationMethod)).append("\n");
-    sb.append("    priorAuthenticationReferenceId: ").append(toIndentedString(priorAuthenticationReferenceId)).append("\n");
-    sb.append("    priorAuthenticationTime: ").append(toIndentedString(priorAuthenticationTime)).append("\n");
-    sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
-    sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
-    sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
-    sb.append("    requestorInitiatedAuthenticationIndicator: ").append(toIndentedString(requestorInitiatedAuthenticationIndicator)).append("\n");
-    sb.append("    requestorName: ").append(toIndentedString(requestorName)).append("\n");
-    sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
-    sb.append("    sdkMaxTimeout: ").append(toIndentedString(sdkMaxTimeout)).append("\n");
-    sb.append("    secureCorporatePaymentIndicator: ").append(toIndentedString(secureCorporatePaymentIndicator)).append("\n");
-    sb.append("    transactionMode: ").append(toIndentedString(transactionMode)).append("\n");
-    sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
-    sb.append("    effectiveAuthenticationType: ").append(toIndentedString(effectiveAuthenticationType)).append("\n");
-    sb.append("    signedParesStatusReason: ").append(toIndentedString(signedParesStatusReason)).append("\n");
-    sb.append("    signedPares: ").append(toIndentedString(signedPares)).append("\n");
+    if (cavv != null) sb.append("    cavv: ").append(toIndentedString(cavv)).append("\n");
+    if (transactionFlowIndicator != null) sb.append("    transactionFlowIndicator: ").append(toIndentedString(transactionFlowIndicator)).append("\n");
+    if (cavvAlgorithm != null) sb.append("    cavvAlgorithm: ").append(toIndentedString(cavvAlgorithm)).append("\n");
+    if (eciRaw != null) sb.append("    eciRaw: ").append(toIndentedString(eciRaw)).append("\n");
+    if (paresStatus != null) sb.append("    paresStatus: ").append(toIndentedString(paresStatus)).append("\n");
+    if (veresEnrolled != null) sb.append("    veresEnrolled: ").append(toIndentedString(veresEnrolled)).append("\n");
+    if (xid != null) sb.append("    xid: ").append(toIndentedString(xid)).append("\n");
+    if (ucafCollectionIndicator != null) sb.append("    ucafCollectionIndicator: ").append(toIndentedString(ucafCollectionIndicator)).append("\n");
+    if (ucafAuthenticationData != null) sb.append("    ucafAuthenticationData: ").append(toIndentedString(ucafAuthenticationData)).append("\n");
+    if (strongAuthentication != null) sb.append("    strongAuthentication: ").append(toIndentedString(strongAuthentication)).append("\n");
+    if (directoryServerTransactionId != null) sb.append("    directoryServerTransactionId: ").append(toIndentedString(directoryServerTransactionId)).append("\n");
+    if (paSpecificationVersion != null) sb.append("    paSpecificationVersion: ").append(toIndentedString(paSpecificationVersion)).append("\n");
+    if (authenticationType != null) sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
+    if (responseAccessToken != null) sb.append("    responseAccessToken: ").append(toIndentedString(responseAccessToken)).append("\n");
+    if (acsTransactionId != null) sb.append("    acsTransactionId: ").append(toIndentedString(acsTransactionId)).append("\n");
+    if (acsWindowSize != null) sb.append("    acsWindowSize: ").append(toIndentedString(acsWindowSize)).append("\n");
+    if (alternateAuthenticationData != null) sb.append("    alternateAuthenticationData: ").append(toIndentedString(alternateAuthenticationData)).append("\n");
+    if (alternateAuthenticationDate != null) sb.append("    alternateAuthenticationDate: ").append(toIndentedString(alternateAuthenticationDate)).append("\n");
+    if (alternateAuthenticationMethod != null) sb.append("    alternateAuthenticationMethod: ").append(toIndentedString(alternateAuthenticationMethod)).append("\n");
+    if (authenticationDate != null) sb.append("    authenticationDate: ").append(toIndentedString(authenticationDate)).append("\n");
+    if (authenticationTransactionId != null) sb.append("    authenticationTransactionId: ").append(toIndentedString(authenticationTransactionId)).append("\n");
+    if (challengeCancelCode != null) sb.append("    challengeCancelCode: ").append(toIndentedString(challengeCancelCode)).append("\n");
+    if (challengeCode != null) sb.append("    challengeCode: ").append(toIndentedString(challengeCode)).append("\n");
+    if (challengeStatus != null) sb.append("    challengeStatus: ").append(toIndentedString(challengeStatus)).append("\n");
+    if (customerCardAlias != null) sb.append("    customerCardAlias: ").append(toIndentedString(customerCardAlias)).append("\n");
+    if (decoupledAuthenticationIndicator != null) sb.append("    decoupledAuthenticationIndicator: ").append(toIndentedString(decoupledAuthenticationIndicator)).append("\n");
+    if (decoupledAuthenticationMaxTime != null) sb.append("    decoupledAuthenticationMaxTime: ").append(toIndentedString(decoupledAuthenticationMaxTime)).append("\n");
+    if (defaultCard != null) sb.append("    defaultCard: ").append(toIndentedString(defaultCard)).append("\n");
+    if (deviceChannel != null) sb.append("    deviceChannel: ").append(toIndentedString(deviceChannel)).append("\n");
+    if (installmentTotalCount != null) sb.append("    installmentTotalCount: ").append(toIndentedString(installmentTotalCount)).append("\n");
+    if (merchantFraudRate != null) sb.append("    merchantFraudRate: ").append(toIndentedString(merchantFraudRate)).append("\n");
+    if (marketingOptIn != null) sb.append("    marketingOptIn: ").append(toIndentedString(marketingOptIn)).append("\n");
+    if (marketingSource != null) sb.append("    marketingSource: ").append(toIndentedString(marketingSource)).append("\n");
+    if (mcc != null) sb.append("    mcc: ").append(toIndentedString(mcc)).append("\n");
+    if (merchantScore != null) sb.append("    merchantScore: ").append(toIndentedString(merchantScore)).append("\n");
+    if (messageCategory != null) sb.append("    messageCategory: ").append(toIndentedString(messageCategory)).append("\n");
+    if (networkScore != null) sb.append("    networkScore: ").append(toIndentedString(networkScore)).append("\n");
+    if (npaCode != null) sb.append("    npaCode: ").append(toIndentedString(npaCode)).append("\n");
+    if (overridePaymentMethod != null) sb.append("    overridePaymentMethod: ").append(toIndentedString(overridePaymentMethod)).append("\n");
+    if (overrideCountryCode != null) sb.append("    overrideCountryCode: ").append(toIndentedString(overrideCountryCode)).append("\n");
+    if (priorAuthenticationData != null) sb.append("    priorAuthenticationData: ").append(toIndentedString(priorAuthenticationData)).append("\n");
+    if (priorAuthenticationMethod != null) sb.append("    priorAuthenticationMethod: ").append(toIndentedString(priorAuthenticationMethod)).append("\n");
+    if (priorAuthenticationReferenceId != null) sb.append("    priorAuthenticationReferenceId: ").append(toIndentedString(priorAuthenticationReferenceId)).append("\n");
+    if (priorAuthenticationTime != null) sb.append("    priorAuthenticationTime: ").append(toIndentedString(priorAuthenticationTime)).append("\n");
+    if (productCode != null) sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
+    if (returnUrl != null) sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
+    if (requestorId != null) sb.append("    requestorId: ").append(toIndentedString(requestorId)).append("\n");
+    if (requestorInitiatedAuthenticationIndicator != null) sb.append("    requestorInitiatedAuthenticationIndicator: ").append(toIndentedString(requestorInitiatedAuthenticationIndicator)).append("\n");
+    if (requestorName != null) sb.append("    requestorName: ").append(toIndentedString(requestorName)).append("\n");
+    if (referenceId != null) sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
+    if (sdkMaxTimeout != null) sb.append("    sdkMaxTimeout: ").append(toIndentedString(sdkMaxTimeout)).append("\n");
+    if (secureCorporatePaymentIndicator != null) sb.append("    secureCorporatePaymentIndicator: ").append(toIndentedString(secureCorporatePaymentIndicator)).append("\n");
+    if (transactionMode != null) sb.append("    transactionMode: ").append(toIndentedString(transactionMode)).append("\n");
+    if (whiteListStatus != null) sb.append("    whiteListStatus: ").append(toIndentedString(whiteListStatus)).append("\n");
+    if (authenticationBrand != null) sb.append("    authenticationBrand: ").append(toIndentedString(authenticationBrand)).append("\n");
+    if (effectiveAuthenticationType != null) sb.append("    effectiveAuthenticationType: ").append(toIndentedString(effectiveAuthenticationType)).append("\n");
+    if (signedParesStatusReason != null) sb.append("    signedParesStatusReason: ").append(toIndentedString(signedParesStatusReason)).append("\n");
+    if (signedPares != null) sb.append("    signedPares: ").append(toIndentedString(signedPares)).append("\n");
+    if (acsReferenceNumber != null) sb.append("    acsReferenceNumber: ").append(toIndentedString(acsReferenceNumber)).append("\n");
+    if (dsReferenceNumber != null) sb.append("    dsReferenceNumber: ").append(toIndentedString(dsReferenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1374,10 +1443,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

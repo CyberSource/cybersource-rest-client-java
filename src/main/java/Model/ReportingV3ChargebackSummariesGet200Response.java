@@ -152,10 +152,10 @@ public class ReportingV3ChargebackSummariesGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ChargebackSummariesGet200Response {\n");
     
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-    sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-    sb.append("    chargebackSummaries: ").append(toIndentedString(chargebackSummaries)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (startTime != null) sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    if (endTime != null) sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+    if (chargebackSummaries != null) sb.append("    chargebackSummaries: ").append(toIndentedString(chargebackSummaries)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -166,10 +166,10 @@ public class ReportingV3ChargebackSummariesGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

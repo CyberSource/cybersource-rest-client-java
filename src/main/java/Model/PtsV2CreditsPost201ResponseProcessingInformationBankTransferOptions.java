@@ -74,7 +74,7 @@ public class PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions {\n");
     
-    sb.append("    settlementMethod: ").append(toIndentedString(settlementMethod)).append("\n");
+    if (settlementMethod != null) sb.append("    settlementMethod: ").append(toIndentedString(settlementMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -54,7 +54,7 @@ public class SAConfigNotificationsMerchantNotifications {
    * @return backofficePostEnabled
   **/
   @ApiModelProperty(value = "Enables Webhook transaction confirmation messages sent to URL defined in backofficePostUrl. Usually enabled by web developers integrating to Secure Acceptance.")
-  public Boolean isBackofficePostEnabled() {
+  public Boolean BackofficePostEnabled() {
     return backofficePostEnabled;
   }
 
@@ -90,7 +90,7 @@ public class SAConfigNotificationsMerchantNotifications {
    * @return backofficeEmailEnabled
   **/
   @ApiModelProperty(value = "Enables email transaction confirmation messages, sent to the address specified in backofficeEmailAddress.")
-  public Boolean isBackofficeEmailEnabled() {
+  public Boolean BackofficeEmailEnabled() {
     return backofficeEmailEnabled;
   }
 
@@ -162,11 +162,11 @@ public class SAConfigNotificationsMerchantNotifications {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfigNotificationsMerchantNotifications {\n");
     
-    sb.append("    backofficePostEnabled: ").append(toIndentedString(backofficePostEnabled)).append("\n");
-    sb.append("    backofficeEmailAddress: ").append(toIndentedString(backofficeEmailAddress)).append("\n");
-    sb.append("    backofficeEmailEnabled: ").append(toIndentedString(backofficeEmailEnabled)).append("\n");
-    sb.append("    backofficePostUrl: ").append(toIndentedString(backofficePostUrl)).append("\n");
-    sb.append("    cardNumberFormat: ").append(toIndentedString(cardNumberFormat)).append("\n");
+    if (backofficePostEnabled != null) sb.append("    backofficePostEnabled: ").append(toIndentedString(backofficePostEnabled)).append("\n");
+    if (backofficeEmailAddress != null) sb.append("    backofficeEmailAddress: ").append(toIndentedString(backofficeEmailAddress)).append("\n");
+    if (backofficeEmailEnabled != null) sb.append("    backofficeEmailEnabled: ").append(toIndentedString(backofficeEmailEnabled)).append("\n");
+    if (backofficePostUrl != null) sb.append("    backofficePostUrl: ").append(toIndentedString(backofficePostUrl)).append("\n");
+    if (cardNumberFormat != null) sb.append("    cardNumberFormat: ").append(toIndentedString(cardNumberFormat)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class SAConfigNotificationsMerchantNotifications {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

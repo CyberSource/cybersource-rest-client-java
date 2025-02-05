@@ -248,14 +248,14 @@ public class ReportingV3ReportDefinitionsNameGet200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3ReportDefinitionsNameGet200Response {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    reportDefinitionId: ").append(toIndentedString(reportDefinitionId)).append("\n");
-    sb.append("    reportDefintionName: ").append(toIndentedString(reportDefintionName)).append("\n");
-    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
-    sb.append("    supportedFormats: ").append(toIndentedString(supportedFormats)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    defaultSettings: ").append(toIndentedString(defaultSettings)).append("\n");
-    sb.append("    subscriptionType: ").append(toIndentedString(subscriptionType)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (reportDefinitionId != null) sb.append("    reportDefinitionId: ").append(toIndentedString(reportDefinitionId)).append("\n");
+    if (reportDefintionName != null) sb.append("    reportDefintionName: ").append(toIndentedString(reportDefintionName)).append("\n");
+    if (attributes != null) sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+    if (supportedFormats != null) sb.append("    supportedFormats: ").append(toIndentedString(supportedFormats)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (defaultSettings != null) sb.append("    defaultSettings: ").append(toIndentedString(defaultSettings)).append("\n");
+    if (subscriptionType != null) sb.append("    subscriptionType: ").append(toIndentedString(subscriptionType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -266,10 +266,10 @@ public class ReportingV3ReportDefinitionsNameGet200Response {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -75,7 +75,7 @@ public class Ptsv2paymentsPaymentInformationSepa {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPaymentInformationSepa {\n");
     
-    sb.append("    directDebit: ").append(toIndentedString(directDebit)).append("\n");
+    if (directDebit != null) sb.append("    directDebit: ").append(toIndentedString(directDebit)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Ptsv2paymentsPaymentInformationSepa {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

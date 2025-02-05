@@ -117,8 +117,8 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurations {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsPayoutsConfigurationInformationConfigurations {\n");
     
-    sb.append("    pullfunds: ").append(toIndentedString(pullfunds)).append("\n");
-    sb.append("    pushfunds: ").append(toIndentedString(pushfunds)).append("\n");
+    if (pullfunds != null) sb.append("    pullfunds: ").append(toIndentedString(pullfunds)).append("\n");
+    if (pushfunds != null) sb.append("    pushfunds: ").append(toIndentedString(pushfunds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -129,10 +129,10 @@ public class PaymentsProductsPayoutsConfigurationInformationConfigurations {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

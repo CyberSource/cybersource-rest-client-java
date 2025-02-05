@@ -251,15 +251,15 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsRefundPost201ResponseProcessorInformation {\n");
     
-    sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
-    sb.append("    merchantNumber: ").append(toIndentedString(merchantNumber)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
-    sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
-    sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
-    sb.append("    settlementDate: ").append(toIndentedString(settlementDate)).append("\n");
-    sb.append("    updateTimeUtc: ").append(toIndentedString(updateTimeUtc)).append("\n");
+    if (approvalCode != null) sb.append("    approvalCode: ").append(toIndentedString(approvalCode)).append("\n");
+    if (transactionId != null) sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    if (forwardedAcquirerCode != null) sb.append("    forwardedAcquirerCode: ").append(toIndentedString(forwardedAcquirerCode)).append("\n");
+    if (merchantNumber != null) sb.append("    merchantNumber: ").append(toIndentedString(merchantNumber)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (achVerification != null) sb.append("    achVerification: ").append(toIndentedString(achVerification)).append("\n");
+    if (networkTransactionId != null) sb.append("    networkTransactionId: ").append(toIndentedString(networkTransactionId)).append("\n");
+    if (settlementDate != null) sb.append("    settlementDate: ").append(toIndentedString(settlementDate)).append("\n");
+    if (updateTimeUtc != null) sb.append("    updateTimeUtc: ").append(toIndentedString(updateTimeUtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -270,10 +270,10 @@ public class PtsV2PaymentsRefundPost201ResponseProcessorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

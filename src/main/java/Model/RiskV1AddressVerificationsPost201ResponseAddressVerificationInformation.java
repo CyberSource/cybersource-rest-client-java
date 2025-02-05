@@ -230,14 +230,14 @@ public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInforma
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation {\n");
     
-    sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
-    sb.append("    barCode: ").append(toIndentedString(barCode)).append("\n");
-    sb.append("    applicableRegion: ").append(toIndentedString(applicableRegion)).append("\n");
-    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
-    sb.append("    careOf: ").append(toIndentedString(careOf)).append("\n");
-    sb.append("    matchScore: ").append(toIndentedString(matchScore)).append("\n");
-    sb.append("    standardAddress: ").append(toIndentedString(standardAddress)).append("\n");
+    if (addressType != null) sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
+    if (barCode != null) sb.append("    barCode: ").append(toIndentedString(barCode)).append("\n");
+    if (applicableRegion != null) sb.append("    applicableRegion: ").append(toIndentedString(applicableRegion)).append("\n");
+    if (errorCode != null) sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+    if (statusCode != null) sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
+    if (careOf != null) sb.append("    careOf: ").append(toIndentedString(careOf)).append("\n");
+    if (matchScore != null) sb.append("    matchScore: ").append(toIndentedString(matchScore)).append("\n");
+    if (standardAddress != null) sb.append("    standardAddress: ").append(toIndentedString(standardAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -248,10 +248,10 @@ public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInforma
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

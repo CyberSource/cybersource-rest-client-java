@@ -96,8 +96,8 @@ public class PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOption
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions {\n");
     
-    sb.append("    settlementMethod: ").append(toIndentedString(settlementMethod)).append("\n");
-    sb.append("    fraudScreeningLevel: ").append(toIndentedString(fraudScreeningLevel)).append("\n");
+    if (settlementMethod != null) sb.append("    settlementMethod: ").append(toIndentedString(settlementMethod)).append("\n");
+    if (fraudScreeningLevel != null) sb.append("    fraudScreeningLevel: ").append(toIndentedString(fraudScreeningLevel)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOption
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

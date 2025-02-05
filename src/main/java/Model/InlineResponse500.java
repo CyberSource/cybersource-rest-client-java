@@ -68,7 +68,7 @@ public class InlineResponse500 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse500 {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    if (errors != null) sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -79,10 +79,10 @@ public class InlineResponse500 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

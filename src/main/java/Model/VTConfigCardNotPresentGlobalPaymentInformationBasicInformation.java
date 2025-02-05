@@ -174,7 +174,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
    * @return displayRetail
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayRetail() {
+  public Boolean DisplayRetail() {
     return displayRetail;
   }
 
@@ -192,7 +192,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
    * @return displayMoto
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayMoto() {
+  public Boolean DisplayMoto() {
     return displayMoto;
   }
 
@@ -210,7 +210,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
    * @return displayInternet
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayInternet() {
+  public Boolean DisplayInternet() {
     return displayInternet;
   }
 
@@ -250,15 +250,15 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {\n");
     
-    sb.append("    defaultStandardEntryClassCode: ").append(toIndentedString(defaultStandardEntryClassCode)).append("\n");
-    sb.append("    defaultCountryCode: ").append(toIndentedString(defaultCountryCode)).append("\n");
-    sb.append("    defaultCurrencyCode: ").append(toIndentedString(defaultCurrencyCode)).append("\n");
-    sb.append("    defaultTransactionType: ").append(toIndentedString(defaultTransactionType)).append("\n");
-    sb.append("    defaultPaymentType: ").append(toIndentedString(defaultPaymentType)).append("\n");
-    sb.append("    defaultTransactionSource: ").append(toIndentedString(defaultTransactionSource)).append("\n");
-    sb.append("    displayRetail: ").append(toIndentedString(displayRetail)).append("\n");
-    sb.append("    displayMoto: ").append(toIndentedString(displayMoto)).append("\n");
-    sb.append("    displayInternet: ").append(toIndentedString(displayInternet)).append("\n");
+    if (defaultStandardEntryClassCode != null) sb.append("    defaultStandardEntryClassCode: ").append(toIndentedString(defaultStandardEntryClassCode)).append("\n");
+    if (defaultCountryCode != null) sb.append("    defaultCountryCode: ").append(toIndentedString(defaultCountryCode)).append("\n");
+    if (defaultCurrencyCode != null) sb.append("    defaultCurrencyCode: ").append(toIndentedString(defaultCurrencyCode)).append("\n");
+    if (defaultTransactionType != null) sb.append("    defaultTransactionType: ").append(toIndentedString(defaultTransactionType)).append("\n");
+    if (defaultPaymentType != null) sb.append("    defaultPaymentType: ").append(toIndentedString(defaultPaymentType)).append("\n");
+    if (defaultTransactionSource != null) sb.append("    defaultTransactionSource: ").append(toIndentedString(defaultTransactionSource)).append("\n");
+    if (displayRetail != null) sb.append("    displayRetail: ").append(toIndentedString(displayRetail)).append("\n");
+    if (displayMoto != null) sb.append("    displayMoto: ").append(toIndentedString(displayMoto)).append("\n");
+    if (displayInternet != null) sb.append("    displayInternet: ").append(toIndentedString(displayInternet)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -269,10 +269,10 @@ public class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -207,13 +207,13 @@ public class Ptsv1pushfundstransferProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv1pushfundstransferProcessingInformation {\n");
     
-    sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
-    sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
-    sb.append("    feeProgramId: ").append(toIndentedString(feeProgramId)).append("\n");
-    sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
-    sb.append("    processingCode: ").append(toIndentedString(processingCode)).append("\n");
-    sb.append("    sharingGroupCode: ").append(toIndentedString(sharingGroupCode)).append("\n");
-    sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
+    if (businessApplicationId != null) sb.append("    businessApplicationId: ").append(toIndentedString(businessApplicationId)).append("\n");
+    if (payoutsOptions != null) sb.append("    payoutsOptions: ").append(toIndentedString(payoutsOptions)).append("\n");
+    if (feeProgramId != null) sb.append("    feeProgramId: ").append(toIndentedString(feeProgramId)).append("\n");
+    if (networkPartnerId != null) sb.append("    networkPartnerId: ").append(toIndentedString(networkPartnerId)).append("\n");
+    if (processingCode != null) sb.append("    processingCode: ").append(toIndentedString(processingCode)).append("\n");
+    if (sharingGroupCode != null) sb.append("    sharingGroupCode: ").append(toIndentedString(sharingGroupCode)).append("\n");
+    if (purposeOfPayment != null) sb.append("    purposeOfPayment: ").append(toIndentedString(purposeOfPayment)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -224,10 +224,10 @@ public class Ptsv1pushfundstransferProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

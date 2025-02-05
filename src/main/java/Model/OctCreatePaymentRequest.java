@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Ptsv2payoutsAggregatorInformation;
 import Model.Ptsv2payoutsClientReferenceInformation;
 import Model.Ptsv2payoutsMerchantInformation;
 import Model.Ptsv2payoutsOrderInformation;
@@ -56,6 +57,9 @@ public class OctCreatePaymentRequest {
 
   @SerializedName("paymentInformation")
   private Ptsv2payoutsPaymentInformation paymentInformation = null;
+
+  @SerializedName("aggregatorInformation")
+  private Ptsv2payoutsAggregatorInformation aggregatorInformation = null;
 
   public OctCreatePaymentRequest clientReferenceInformation(Ptsv2payoutsClientReferenceInformation clientReferenceInformation) {
     this.clientReferenceInformation = clientReferenceInformation;
@@ -183,6 +187,24 @@ public class OctCreatePaymentRequest {
     this.paymentInformation = paymentInformation;
   }
 
+  public OctCreatePaymentRequest aggregatorInformation(Ptsv2payoutsAggregatorInformation aggregatorInformation) {
+    this.aggregatorInformation = aggregatorInformation;
+    return this;
+  }
+
+   /**
+   * Get aggregatorInformation
+   * @return aggregatorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Ptsv2payoutsAggregatorInformation getAggregatorInformation() {
+    return aggregatorInformation;
+  }
+
+  public void setAggregatorInformation(Ptsv2payoutsAggregatorInformation aggregatorInformation) {
+    this.aggregatorInformation = aggregatorInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -199,12 +221,13 @@ public class OctCreatePaymentRequest {
         Objects.equals(this.recipientInformation, octCreatePaymentRequest.recipientInformation) &&
         Objects.equals(this.senderInformation, octCreatePaymentRequest.senderInformation) &&
         Objects.equals(this.processingInformation, octCreatePaymentRequest.processingInformation) &&
-        Objects.equals(this.paymentInformation, octCreatePaymentRequest.paymentInformation);
+        Objects.equals(this.paymentInformation, octCreatePaymentRequest.paymentInformation) &&
+        Objects.equals(this.aggregatorInformation, octCreatePaymentRequest.aggregatorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientReferenceInformation, orderInformation, merchantInformation, recipientInformation, senderInformation, processingInformation, paymentInformation);
+    return Objects.hash(clientReferenceInformation, orderInformation, merchantInformation, recipientInformation, senderInformation, processingInformation, paymentInformation, aggregatorInformation);
   }
 
 
@@ -213,13 +236,14 @@ public class OctCreatePaymentRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class OctCreatePaymentRequest {\n");
     
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
-    sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
-    sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
-    sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (merchantInformation != null) sb.append("    merchantInformation: ").append(toIndentedString(merchantInformation)).append("\n");
+    if (recipientInformation != null) sb.append("    recipientInformation: ").append(toIndentedString(recipientInformation)).append("\n");
+    if (senderInformation != null) sb.append("    senderInformation: ").append(toIndentedString(senderInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
+    if (aggregatorInformation != null) sb.append("    aggregatorInformation: ").append(toIndentedString(aggregatorInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -230,10 +254,10 @@ public class OctCreatePaymentRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

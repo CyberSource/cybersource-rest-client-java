@@ -39,6 +39,21 @@ public class Ptsv2paymentsAggregatorInformation {
   @SerializedName("subMerchant")
   private Ptsv2paymentsAggregatorInformationSubMerchant subMerchant = null;
 
+  @SerializedName("streetAddress")
+  private String streetAddress = null;
+
+  @SerializedName("city")
+  private String city = null;
+
+  @SerializedName("state")
+  private String state = null;
+
+  @SerializedName("postalCode")
+  private String postalCode = null;
+
+  @SerializedName("country")
+  private String country = null;
+
   public Ptsv2paymentsAggregatorInformation aggregatorId(String aggregatorId) {
     this.aggregatorId = aggregatorId;
     return this;
@@ -93,6 +108,96 @@ public class Ptsv2paymentsAggregatorInformation {
     this.subMerchant = subMerchant;
   }
 
+  public Ptsv2paymentsAggregatorInformation streetAddress(String streetAddress) {
+    this.streetAddress = streetAddress;
+    return this;
+  }
+
+   /**
+   * Acquirer street name.
+   * @return streetAddress
+  **/
+  @ApiModelProperty(value = "Acquirer street name.")
+  public String getStreetAddress() {
+    return streetAddress;
+  }
+
+  public void setStreetAddress(String streetAddress) {
+    this.streetAddress = streetAddress;
+  }
+
+  public Ptsv2paymentsAggregatorInformation city(String city) {
+    this.city = city;
+    return this;
+  }
+
+   /**
+   * Acquirer city.
+   * @return city
+  **/
+  @ApiModelProperty(value = "Acquirer city.")
+  public String getCity() {
+    return city;
+  }
+
+  public void setCity(String city) {
+    this.city = city;
+  }
+
+  public Ptsv2paymentsAggregatorInformation state(String state) {
+    this.state = state;
+    return this;
+  }
+
+   /**
+   * Acquirer state.
+   * @return state
+  **/
+  @ApiModelProperty(value = "Acquirer state.")
+  public String getState() {
+    return state;
+  }
+
+  public void setState(String state) {
+    this.state = state;
+  }
+
+  public Ptsv2paymentsAggregatorInformation postalCode(String postalCode) {
+    this.postalCode = postalCode;
+    return this;
+  }
+
+   /**
+   * Acquirer postal code.
+   * @return postalCode
+  **/
+  @ApiModelProperty(value = "Acquirer postal code.")
+  public String getPostalCode() {
+    return postalCode;
+  }
+
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
+  }
+
+  public Ptsv2paymentsAggregatorInformation country(String country) {
+    this.country = country;
+    return this;
+  }
+
+   /**
+   * Acquirer country.
+   * @return country
+  **/
+  @ApiModelProperty(value = "Acquirer country.")
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,12 +210,17 @@ public class Ptsv2paymentsAggregatorInformation {
     Ptsv2paymentsAggregatorInformation ptsv2paymentsAggregatorInformation = (Ptsv2paymentsAggregatorInformation) o;
     return Objects.equals(this.aggregatorId, ptsv2paymentsAggregatorInformation.aggregatorId) &&
         Objects.equals(this.name, ptsv2paymentsAggregatorInformation.name) &&
-        Objects.equals(this.subMerchant, ptsv2paymentsAggregatorInformation.subMerchant);
+        Objects.equals(this.subMerchant, ptsv2paymentsAggregatorInformation.subMerchant) &&
+        Objects.equals(this.streetAddress, ptsv2paymentsAggregatorInformation.streetAddress) &&
+        Objects.equals(this.city, ptsv2paymentsAggregatorInformation.city) &&
+        Objects.equals(this.state, ptsv2paymentsAggregatorInformation.state) &&
+        Objects.equals(this.postalCode, ptsv2paymentsAggregatorInformation.postalCode) &&
+        Objects.equals(this.country, ptsv2paymentsAggregatorInformation.country);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aggregatorId, name, subMerchant);
+    return Objects.hash(aggregatorId, name, subMerchant, streetAddress, city, state, postalCode, country);
   }
 
 
@@ -119,9 +229,14 @@ public class Ptsv2paymentsAggregatorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsAggregatorInformation {\n");
     
-    sb.append("    aggregatorId: ").append(toIndentedString(aggregatorId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    subMerchant: ").append(toIndentedString(subMerchant)).append("\n");
+    if (aggregatorId != null) sb.append("    aggregatorId: ").append(toIndentedString(aggregatorId)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (subMerchant != null) sb.append("    subMerchant: ").append(toIndentedString(subMerchant)).append("\n");
+    if (streetAddress != null) sb.append("    streetAddress: ").append(toIndentedString(streetAddress)).append("\n");
+    if (city != null) sb.append("    city: ").append(toIndentedString(city)).append("\n");
+    if (state != null) sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +247,10 @@ public class Ptsv2paymentsAggregatorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

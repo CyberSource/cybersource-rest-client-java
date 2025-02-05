@@ -159,7 +159,6 @@ public class SecureFileShareApi {
      */
     public void getFile(String fileId, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getFile' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         getFileWithHttpInfo(fileId, organizationId);
 
     }
@@ -173,6 +172,7 @@ public class SecureFileShareApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InputStream> getFileWithHttpInfo(String fileId, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getFileValidateBeforeCall(fileId, organizationId, null, null);
         return apiClient.execute(call);
     }
@@ -322,7 +322,6 @@ public class SecureFileShareApi {
      */
     public V1FileDetailsGet200Response getFileDetail(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
         logger.info("CALL TO METHOD 'getFileDetail' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<V1FileDetailsGet200Response> resp = getFileDetailWithHttpInfo(startDate, endDate, organizationId, name);
         logger.info("CALL TO METHOD 'getFileDetail' ENDED");
         return resp.getData();
@@ -339,6 +338,7 @@ public class SecureFileShareApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<V1FileDetailsGet200Response> getFileDetailWithHttpInfo(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getFileDetailValidateBeforeCall(startDate, endDate, organizationId, name, null, null);
         Type localVarReturnType = new TypeToken<V1FileDetailsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

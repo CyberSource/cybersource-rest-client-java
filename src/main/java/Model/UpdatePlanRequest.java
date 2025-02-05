@@ -121,9 +121,9 @@ public class UpdatePlanRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdatePlanRequest {\n");
     
-    sb.append("    planInformation: ").append(toIndentedString(planInformation)).append("\n");
-    sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
-    sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (planInformation != null) sb.append("    planInformation: ").append(toIndentedString(planInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
+    if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -134,10 +134,10 @@ public class UpdatePlanRequest {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationIssue
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationIssuedBy {\n");
     
-    sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationIssue
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

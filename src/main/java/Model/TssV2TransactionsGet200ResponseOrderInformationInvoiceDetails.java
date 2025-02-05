@@ -75,7 +75,7 @@ public class TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails {\n");
     
-    sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
+    if (salesSlipNumber != null) sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

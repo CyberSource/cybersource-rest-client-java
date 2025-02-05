@@ -202,7 +202,7 @@ public class Ptsv2paymentsOrderInformation {
    * @return returnsAccepted
   **/
   @ApiModelProperty(value = "This is only needed when you are requesting both payment and DM service at same time.  Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order. ")
-  public Boolean isReturnsAccepted() {
+  public Boolean ReturnsAccepted() {
     return returnsAccepted;
   }
 
@@ -292,7 +292,7 @@ public class Ptsv2paymentsOrderInformation {
    * @return reordered
   **/
   @ApiModelProperty(value = "Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered ")
-  public Boolean isReordered() {
+  public Boolean Reordered() {
     return reordered;
   }
 
@@ -354,19 +354,19 @@ public class Ptsv2paymentsOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformation {\n");
     
-    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
-    sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
-    sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
-    sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
-    sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
-    sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
-    sb.append("    returnsAccepted: ").append(toIndentedString(returnsAccepted)).append("\n");
-    sb.append("    isCryptocurrencyPurchase: ").append(toIndentedString(isCryptocurrencyPurchase)).append("\n");
-    sb.append("    cutoffDateTime: ").append(toIndentedString(cutoffDateTime)).append("\n");
-    sb.append("    preOrder: ").append(toIndentedString(preOrder)).append("\n");
-    sb.append("    preOrderDate: ").append(toIndentedString(preOrderDate)).append("\n");
-    sb.append("    reordered: ").append(toIndentedString(reordered)).append("\n");
-    sb.append("    totalOffersCount: ").append(toIndentedString(totalOffersCount)).append("\n");
+    if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    if (billTo != null) sb.append("    billTo: ").append(toIndentedString(billTo)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    if (lineItems != null) sb.append("    lineItems: ").append(toIndentedString(lineItems)).append("\n");
+    if (invoiceDetails != null) sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
+    if (shippingDetails != null) sb.append("    shippingDetails: ").append(toIndentedString(shippingDetails)).append("\n");
+    if (returnsAccepted != null) sb.append("    returnsAccepted: ").append(toIndentedString(returnsAccepted)).append("\n");
+    if (isCryptocurrencyPurchase != null) sb.append("    isCryptocurrencyPurchase: ").append(toIndentedString(isCryptocurrencyPurchase)).append("\n");
+    if (cutoffDateTime != null) sb.append("    cutoffDateTime: ").append(toIndentedString(cutoffDateTime)).append("\n");
+    if (preOrder != null) sb.append("    preOrder: ").append(toIndentedString(preOrder)).append("\n");
+    if (preOrderDate != null) sb.append("    preOrderDate: ").append(toIndentedString(preOrderDate)).append("\n");
+    if (reordered != null) sb.append("    reordered: ").append(toIndentedString(reordered)).append("\n");
+    if (totalOffersCount != null) sb.append("    totalOffersCount: ").append(toIndentedString(totalOffersCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -377,10 +377,10 @@ public class Ptsv2paymentsOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

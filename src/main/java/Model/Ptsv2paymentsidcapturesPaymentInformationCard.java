@@ -96,8 +96,8 @@ public class Ptsv2paymentsidcapturesPaymentInformationCard {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesPaymentInformationCard {\n");
     
-    sb.append("    sourceAccountType: ").append(toIndentedString(sourceAccountType)).append("\n");
-    sb.append("    sourceAccountTypeDetails: ").append(toIndentedString(sourceAccountTypeDetails)).append("\n");
+    if (sourceAccountType != null) sb.append("    sourceAccountType: ").append(toIndentedString(sourceAccountType)).append("\n");
+    if (sourceAccountTypeDetails != null) sb.append("    sourceAccountTypeDetails: ").append(toIndentedString(sourceAccountTypeDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsidcapturesPaymentInformationCard {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -97,8 +97,8 @@ public class Binv1binlookupProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Binv1binlookupProcessingInformation {\n");
     
-    sb.append("    binSource: ").append(toIndentedString(binSource)).append("\n");
-    sb.append("    payoutOptions: ").append(toIndentedString(payoutOptions)).append("\n");
+    if (binSource != null) sb.append("    binSource: ").append(toIndentedString(binSource)).append("\n");
+    if (payoutOptions != null) sb.append("    payoutOptions: ").append(toIndentedString(payoutOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class Binv1binlookupProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -284,16 +284,16 @@ public class InlineResponse2005EmbeddedBatches {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2005EmbeddedBatches {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
-    sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
-    sb.append("    batchCreatedDate: ").append(toIndentedString(batchCreatedDate)).append("\n");
-    sb.append("    batchModifiedDate: ").append(toIndentedString(batchModifiedDate)).append("\n");
-    sb.append("    batchSource: ").append(toIndentedString(batchSource)).append("\n");
-    sb.append("    tokenSource: ").append(toIndentedString(tokenSource)).append("\n");
-    sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
-    sb.append("    batchCaEndpoints: ").append(toIndentedString(batchCaEndpoints)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (batchId != null) sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
+    if (batchCreatedDate != null) sb.append("    batchCreatedDate: ").append(toIndentedString(batchCreatedDate)).append("\n");
+    if (batchModifiedDate != null) sb.append("    batchModifiedDate: ").append(toIndentedString(batchModifiedDate)).append("\n");
+    if (batchSource != null) sb.append("    batchSource: ").append(toIndentedString(batchSource)).append("\n");
+    if (tokenSource != null) sb.append("    tokenSource: ").append(toIndentedString(tokenSource)).append("\n");
+    if (merchantReference != null) sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
+    if (batchCaEndpoints != null) sb.append("    batchCaEndpoints: ").append(toIndentedString(batchCaEndpoints)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (totals != null) sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -304,10 +304,10 @@ public class InlineResponse2005EmbeddedBatches {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

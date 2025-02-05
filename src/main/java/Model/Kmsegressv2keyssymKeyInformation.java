@@ -251,15 +251,15 @@ public class Kmsegressv2keyssymKeyInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Kmsegressv2keyssymKeyInformation {\n");
     
-    sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-    sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
-    sb.append("    keyType: ").append(toIndentedString(keyType)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    clientKeyId: ").append(toIndentedString(clientKeyId)).append("\n");
-    sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    expiryDuration: ").append(toIndentedString(expiryDuration)).append("\n");
+    if (provider != null) sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    if (tenant != null) sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+    if (keyType != null) sb.append("    keyType: ").append(toIndentedString(keyType)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (clientKeyId != null) sb.append("    clientKeyId: ").append(toIndentedString(clientKeyId)).append("\n");
+    if (keyId != null) sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
+    if (key != null) sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (expiryDuration != null) sb.append("    expiryDuration: ").append(toIndentedString(expiryDuration)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -270,10 +270,10 @@ public class Kmsegressv2keyssymKeyInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

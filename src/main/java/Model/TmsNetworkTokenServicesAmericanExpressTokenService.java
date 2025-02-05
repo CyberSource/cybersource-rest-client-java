@@ -51,7 +51,7 @@ public class TmsNetworkTokenServicesAmericanExpressTokenService {
    * @return enableService
   **/
   @ApiModelProperty(value = "Indicates if the service for network tokens for the American Express card association are enabled")
-  public Boolean isEnableService() {
+  public Boolean EnableService() {
     return enableService;
   }
 
@@ -69,7 +69,7 @@ public class TmsNetworkTokenServicesAmericanExpressTokenService {
    * @return enableTransactionalTokens
   **/
   @ApiModelProperty(value = "Indicates if network tokens for the American Express card association are enabled for transactions")
-  public Boolean isEnableTransactionalTokens() {
+  public Boolean EnableTransactionalTokens() {
     return enableTransactionalTokens;
   }
 
@@ -140,10 +140,10 @@ public class TmsNetworkTokenServicesAmericanExpressTokenService {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsNetworkTokenServicesAmericanExpressTokenService {\n");
     
-    sb.append("    enableService: ").append(toIndentedString(enableService)).append("\n");
-    sb.append("    enableTransactionalTokens: ").append(toIndentedString(enableTransactionalTokens)).append("\n");
-    sb.append("    tokenRequestorId: ").append(toIndentedString(tokenRequestorId)).append("\n");
-    sb.append("    seNumber: ").append(toIndentedString(seNumber)).append("\n");
+    if (enableService != null) sb.append("    enableService: ").append(toIndentedString(enableService)).append("\n");
+    if (enableTransactionalTokens != null) sb.append("    enableTransactionalTokens: ").append(toIndentedString(enableTransactionalTokens)).append("\n");
+    if (tokenRequestorId != null) sb.append("    tokenRequestorId: ").append(toIndentedString(tokenRequestorId)).append("\n");
+    if (seNumber != null) sb.append("    seNumber: ").append(toIndentedString(seNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class TmsNetworkTokenServicesAmericanExpressTokenService {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

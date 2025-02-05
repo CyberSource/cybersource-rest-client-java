@@ -120,9 +120,9 @@ public class SaveAsymEgressKey {
     StringBuilder sb = new StringBuilder();
     sb.append("class SaveAsymEgressKey {\n");
     
-    sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    sb.append("    clientRequestAction: ").append(toIndentedString(clientRequestAction)).append("\n");
-    sb.append("    keyInformation: ").append(toIndentedString(keyInformation)).append("\n");
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (clientRequestAction != null) sb.append("    clientRequestAction: ").append(toIndentedString(clientRequestAction)).append("\n");
+    if (keyInformation != null) sb.append("    keyInformation: ").append(toIndentedString(keyInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -133,10 +133,10 @@ public class SaveAsymEgressKey {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

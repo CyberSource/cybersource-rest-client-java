@@ -204,7 +204,7 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
    * @return taxable
   **/
   @ApiModelProperty(value = "Flag that indicates whether an order is taxable. This value must be true if the sum of all _lineItems[].taxAmount_ values > 0.  If you do not include any `lineItems[].taxAmount` values in your request, CyberSource does not include `invoiceDetails.taxable` in the data it sends to the processor.  Possible values:  - **true**  - **false** ")
-  public Boolean isTaxable() {
+  public Boolean Taxable() {
     return taxable;
   }
 
@@ -460,24 +460,24 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformationInvoiceDetails {\n");
     
-    sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
-    sb.append("    barcodeNumber: ").append(toIndentedString(barcodeNumber)).append("\n");
-    sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
-    sb.append("    purchaseOrderNumber: ").append(toIndentedString(purchaseOrderNumber)).append("\n");
-    sb.append("    purchaseOrderDate: ").append(toIndentedString(purchaseOrderDate)).append("\n");
-    sb.append("    purchaseContactName: ").append(toIndentedString(purchaseContactName)).append("\n");
-    sb.append("    taxable: ").append(toIndentedString(taxable)).append("\n");
-    sb.append("    vatInvoiceReferenceNumber: ").append(toIndentedString(vatInvoiceReferenceNumber)).append("\n");
-    sb.append("    commodityCode: ").append(toIndentedString(commodityCode)).append("\n");
-    sb.append("    merchandiseCode: ").append(toIndentedString(merchandiseCode)).append("\n");
-    sb.append("    transactionAdviceAddendum: ").append(toIndentedString(transactionAdviceAddendum)).append("\n");
-    sb.append("    referenceDataCode: ").append(toIndentedString(referenceDataCode)).append("\n");
-    sb.append("    referenceDataNumber: ").append(toIndentedString(referenceDataNumber)).append("\n");
-    sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
-    sb.append("    invoiceDate: ").append(toIndentedString(invoiceDate)).append("\n");
-    sb.append("    costCenter: ").append(toIndentedString(costCenter)).append("\n");
-    sb.append("    issuerMessage: ").append(toIndentedString(issuerMessage)).append("\n");
-    sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
+    if (invoiceNumber != null) sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
+    if (barcodeNumber != null) sb.append("    barcodeNumber: ").append(toIndentedString(barcodeNumber)).append("\n");
+    if (expirationDate != null) sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
+    if (purchaseOrderNumber != null) sb.append("    purchaseOrderNumber: ").append(toIndentedString(purchaseOrderNumber)).append("\n");
+    if (purchaseOrderDate != null) sb.append("    purchaseOrderDate: ").append(toIndentedString(purchaseOrderDate)).append("\n");
+    if (purchaseContactName != null) sb.append("    purchaseContactName: ").append(toIndentedString(purchaseContactName)).append("\n");
+    if (taxable != null) sb.append("    taxable: ").append(toIndentedString(taxable)).append("\n");
+    if (vatInvoiceReferenceNumber != null) sb.append("    vatInvoiceReferenceNumber: ").append(toIndentedString(vatInvoiceReferenceNumber)).append("\n");
+    if (commodityCode != null) sb.append("    commodityCode: ").append(toIndentedString(commodityCode)).append("\n");
+    if (merchandiseCode != null) sb.append("    merchandiseCode: ").append(toIndentedString(merchandiseCode)).append("\n");
+    if (transactionAdviceAddendum != null) sb.append("    transactionAdviceAddendum: ").append(toIndentedString(transactionAdviceAddendum)).append("\n");
+    if (referenceDataCode != null) sb.append("    referenceDataCode: ").append(toIndentedString(referenceDataCode)).append("\n");
+    if (referenceDataNumber != null) sb.append("    referenceDataNumber: ").append(toIndentedString(referenceDataNumber)).append("\n");
+    if (salesSlipNumber != null) sb.append("    salesSlipNumber: ").append(toIndentedString(salesSlipNumber)).append("\n");
+    if (invoiceDate != null) sb.append("    invoiceDate: ").append(toIndentedString(invoiceDate)).append("\n");
+    if (costCenter != null) sb.append("    costCenter: ").append(toIndentedString(costCenter)).append("\n");
+    if (issuerMessage != null) sb.append("    issuerMessage: ").append(toIndentedString(issuerMessage)).append("\n");
+    if (productDescription != null) sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -488,10 +488,10 @@ public class Ptsv2paymentsOrderInformationInvoiceDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

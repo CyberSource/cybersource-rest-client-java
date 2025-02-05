@@ -74,7 +74,7 @@ public class PtsV2PaymentsOrderPost201ResponseProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsOrderPost201ResponseProcessingInformation {\n");
     
-    sb.append("    intentsId: ").append(toIndentedString(intentsId)).append("\n");
+    if (intentsId != null) sb.append("    intentsId: ").append(toIndentedString(intentsId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2PaymentsOrderPost201ResponseProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

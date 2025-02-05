@@ -163,11 +163,11 @@ public class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPay
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInformation {\n");
     
-    sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
-    sb.append("    feeType: ").append(toIndentedString(feeType)).append("\n");
-    sb.append("    feeAmount: ").append(toIndentedString(feeAmount)).append("\n");
-    sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
-    sb.append("    feeCap: ").append(toIndentedString(feeCap)).append("\n");
+    if (paymentType != null) sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
+    if (feeType != null) sb.append("    feeType: ").append(toIndentedString(feeType)).append("\n");
+    if (feeAmount != null) sb.append("    feeAmount: ").append(toIndentedString(feeAmount)).append("\n");
+    if (percentage != null) sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
+    if (feeCap != null) sb.append("    feeCap: ").append(toIndentedString(feeCap)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -178,10 +178,10 @@ public class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPay
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

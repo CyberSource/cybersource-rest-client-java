@@ -162,11 +162,11 @@ public class InlineResponse2005EmbeddedTotals {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2005EmbeddedTotals {\n");
     
-    sb.append("    acceptedRecords: ").append(toIndentedString(acceptedRecords)).append("\n");
-    sb.append("    rejectedRecords: ").append(toIndentedString(rejectedRecords)).append("\n");
-    sb.append("    updatedRecords: ").append(toIndentedString(updatedRecords)).append("\n");
-    sb.append("    caResponses: ").append(toIndentedString(caResponses)).append("\n");
-    sb.append("    caResponsesOmitted: ").append(toIndentedString(caResponsesOmitted)).append("\n");
+    if (acceptedRecords != null) sb.append("    acceptedRecords: ").append(toIndentedString(acceptedRecords)).append("\n");
+    if (rejectedRecords != null) sb.append("    rejectedRecords: ").append(toIndentedString(rejectedRecords)).append("\n");
+    if (updatedRecords != null) sb.append("    updatedRecords: ").append(toIndentedString(updatedRecords)).append("\n");
+    if (caResponses != null) sb.append("    caResponses: ").append(toIndentedString(caResponses)).append("\n");
+    if (caResponsesOmitted != null) sb.append("    caResponsesOmitted: ").append(toIndentedString(caResponsesOmitted)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class InlineResponse2005EmbeddedTotals {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -128,9 +128,9 @@ public class InlineResponse2012OrganizationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2012OrganizationInformation {\n");
     
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    parentOrganizationId: ").append(toIndentedString(parentOrganizationId)).append("\n");
-    sb.append("    childOrganizations: ").append(toIndentedString(childOrganizations)).append("\n");
+    if (organizationId != null) sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    if (parentOrganizationId != null) sb.append("    parentOrganizationId: ").append(toIndentedString(parentOrganizationId)).append("\n");
+    if (childOrganizations != null) sb.append("    childOrganizations: ").append(toIndentedString(childOrganizations)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -141,10 +141,10 @@ public class InlineResponse2012OrganizationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -138,9 +138,9 @@ public class Riskv1authenticationsTravelInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationsTravelInformation {\n");
     
-    sb.append("    legs: ").append(toIndentedString(legs)).append("\n");
-    sb.append("    numberOfPassengers: ").append(toIndentedString(numberOfPassengers)).append("\n");
-    sb.append("    passengers: ").append(toIndentedString(passengers)).append("\n");
+    if (legs != null) sb.append("    legs: ").append(toIndentedString(legs)).append("\n");
+    if (numberOfPassengers != null) sb.append("    numberOfPassengers: ").append(toIndentedString(numberOfPassengers)).append("\n");
+    if (passengers != null) sb.append("    passengers: ").append(toIndentedString(passengers)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -151,10 +151,10 @@ public class Riskv1authenticationsTravelInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

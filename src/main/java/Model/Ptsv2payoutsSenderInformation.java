@@ -84,6 +84,9 @@ public class Ptsv2payoutsSenderInformation {
   @SerializedName("identificationNumber")
   private String identificationNumber = null;
 
+  @SerializedName("aliasName")
+  private String aliasName = null;
+
   public Ptsv2payoutsSenderInformation referenceNumber(String referenceNumber) {
     this.referenceNumber = referenceNumber;
     return this;
@@ -408,6 +411,24 @@ public class Ptsv2payoutsSenderInformation {
     this.identificationNumber = identificationNumber;
   }
 
+  public Ptsv2payoutsSenderInformation aliasName(String aliasName) {
+    this.aliasName = aliasName;
+    return this;
+  }
+
+   /**
+   * Sender&#39;s alias name.
+   * @return aliasName
+  **/
+  @ApiModelProperty(value = "Sender's alias name.")
+  public String getAliasName() {
+    return aliasName;
+  }
+
+  public void setAliasName(String aliasName) {
+    this.aliasName = aliasName;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -435,12 +456,13 @@ public class Ptsv2payoutsSenderInformation {
         Objects.equals(this.vatRegistrationNumber, ptsv2payoutsSenderInformation.vatRegistrationNumber) &&
         Objects.equals(this.personalIdType, ptsv2payoutsSenderInformation.personalIdType) &&
         Objects.equals(this.type, ptsv2payoutsSenderInformation.type) &&
-        Objects.equals(this.identificationNumber, ptsv2payoutsSenderInformation.identificationNumber);
+        Objects.equals(this.identificationNumber, ptsv2payoutsSenderInformation.identificationNumber) &&
+        Objects.equals(this.aliasName, ptsv2payoutsSenderInformation.aliasName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(referenceNumber, account, firstName, middleInitial, middleName, lastName, name, address1, locality, administrativeArea, countryCode, postalCode, phoneNumber, dateOfBirth, vatRegistrationNumber, personalIdType, type, identificationNumber);
+    return Objects.hash(referenceNumber, account, firstName, middleInitial, middleName, lastName, name, address1, locality, administrativeArea, countryCode, postalCode, phoneNumber, dateOfBirth, vatRegistrationNumber, personalIdType, type, identificationNumber, aliasName);
   }
 
 
@@ -449,24 +471,25 @@ public class Ptsv2payoutsSenderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2payoutsSenderInformation {\n");
     
-    sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
-    sb.append("    account: ").append(toIndentedString(account)).append("\n");
-    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
-    sb.append("    middleInitial: ").append(toIndentedString(middleInitial)).append("\n");
-    sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
-    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
-    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
-    sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
-    sb.append("    personalIdType: ").append(toIndentedString(personalIdType)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    identificationNumber: ").append(toIndentedString(identificationNumber)).append("\n");
+    if (referenceNumber != null) sb.append("    referenceNumber: ").append(toIndentedString(referenceNumber)).append("\n");
+    if (account != null) sb.append("    account: ").append(toIndentedString(account)).append("\n");
+    if (firstName != null) sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    if (middleInitial != null) sb.append("    middleInitial: ").append(toIndentedString(middleInitial)).append("\n");
+    if (middleName != null) sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    if (lastName != null) sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (address1 != null) sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    if (countryCode != null) sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (dateOfBirth != null) sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
+    if (vatRegistrationNumber != null) sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
+    if (personalIdType != null) sb.append("    personalIdType: ").append(toIndentedString(personalIdType)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (identificationNumber != null) sb.append("    identificationNumber: ").append(toIndentedString(identificationNumber)).append("\n");
+    if (aliasName != null) sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -477,10 +500,10 @@ public class Ptsv2payoutsSenderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

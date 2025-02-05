@@ -45,7 +45,7 @@ public class DmConfigPortfolioControls {
    * @return hideRiskMenus
   **/
   @ApiModelProperty(value = "")
-  public Boolean isHideRiskMenus() {
+  public Boolean HideRiskMenus() {
     return hideRiskMenus;
   }
 
@@ -63,7 +63,7 @@ public class DmConfigPortfolioControls {
    * @return hideRiskTransactionData
   **/
   @ApiModelProperty(value = "")
-  public Boolean isHideRiskTransactionData() {
+  public Boolean HideRiskTransactionData() {
     return hideRiskTransactionData;
   }
 
@@ -96,8 +96,8 @@ public class DmConfigPortfolioControls {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfigPortfolioControls {\n");
     
-    sb.append("    hideRiskMenus: ").append(toIndentedString(hideRiskMenus)).append("\n");
-    sb.append("    hideRiskTransactionData: ").append(toIndentedString(hideRiskTransactionData)).append("\n");
+    if (hideRiskMenus != null) sb.append("    hideRiskMenus: ").append(toIndentedString(hideRiskMenus)).append("\n");
+    if (hideRiskTransactionData != null) sb.append("    hideRiskTransactionData: ").append(toIndentedString(hideRiskTransactionData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class DmConfigPortfolioControls {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

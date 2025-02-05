@@ -206,13 +206,13 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {\n");
     
-    sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
-    sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
-    sb.append("    checkNumber: ").append(toIndentedString(checkNumber)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    checkDigit: ").append(toIndentedString(checkDigit)).append("\n");
-    sb.append("    encoderId: ").append(toIndentedString(encoderId)).append("\n");
+    if (suffix != null) sb.append("    suffix: ").append(toIndentedString(suffix)).append("\n");
+    if (prefix != null) sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
+    if (checkNumber != null) sb.append("    checkNumber: ").append(toIndentedString(checkNumber)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (checkDigit != null) sb.append("    checkDigit: ").append(toIndentedString(checkDigit)).append("\n");
+    if (encoderId != null) sb.append("    encoderId: ").append(toIndentedString(encoderId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -223,10 +223,10 @@ public class TssV2TransactionsGet200ResponsePaymentInformationBankAccount {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

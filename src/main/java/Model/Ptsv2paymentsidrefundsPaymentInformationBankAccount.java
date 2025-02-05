@@ -162,11 +162,11 @@ public class Ptsv2paymentsidrefundsPaymentInformationBankAccount {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidrefundsPaymentInformationBankAccount {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    encoderId: ").append(toIndentedString(encoderId)).append("\n");
-    sb.append("    checkNumber: ").append(toIndentedString(checkNumber)).append("\n");
-    sb.append("    checkImageReferenceNumber: ").append(toIndentedString(checkImageReferenceNumber)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (number != null) sb.append("    number: ").append(toIndentedString(number)).append("\n");
+    if (encoderId != null) sb.append("    encoderId: ").append(toIndentedString(encoderId)).append("\n");
+    if (checkNumber != null) sb.append("    checkNumber: ").append(toIndentedString(checkNumber)).append("\n");
+    if (checkImageReferenceNumber != null) sb.append("    checkImageReferenceNumber: ").append(toIndentedString(checkImageReferenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class Ptsv2paymentsidrefundsPaymentInformationBankAccount {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

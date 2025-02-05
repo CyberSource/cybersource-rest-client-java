@@ -97,8 +97,8 @@ public class Ptsv2paymentsRiskInformationAuxiliaryData {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsRiskInformationAuxiliaryData {\n");
     
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    if (key != null) sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    if (value != null) sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class Ptsv2paymentsRiskInformationAuxiliaryData {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

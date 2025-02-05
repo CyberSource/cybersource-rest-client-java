@@ -116,8 +116,8 @@ public class InlineResponse2001IntegrationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2001IntegrationInformation {\n");
     
-    sb.append("    oauth2: ").append(toIndentedString(oauth2)).append("\n");
-    sb.append("    tenantConfigurations: ").append(toIndentedString(tenantConfigurations)).append("\n");
+    if (oauth2 != null) sb.append("    oauth2: ").append(toIndentedString(oauth2)).append("\n");
+    if (tenantConfigurations != null) sb.append("    tenantConfigurations: ").append(toIndentedString(tenantConfigurations)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -128,10 +128,10 @@ public class InlineResponse2001IntegrationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -173,11 +173,11 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {\n");
     
-    sb.append("    ticketNumber: ").append(toIndentedString(ticketNumber)).append("\n");
-    sb.append("    passengerName: ").append(toIndentedString(passengerName)).append("\n");
-    sb.append("    connectedTicketNumber: ").append(toIndentedString(connectedTicketNumber)).append("\n");
-    sb.append("    creditReasonIndicator: ").append(toIndentedString(creditReasonIndicator)).append("\n");
-    sb.append("    service: ").append(toIndentedString(service)).append("\n");
+    if (ticketNumber != null) sb.append("    ticketNumber: ").append(toIndentedString(ticketNumber)).append("\n");
+    if (passengerName != null) sb.append("    passengerName: ").append(toIndentedString(passengerName)).append("\n");
+    if (connectedTicketNumber != null) sb.append("    connectedTicketNumber: ").append(toIndentedString(connectedTicketNumber)).append("\n");
+    if (creditReasonIndicator != null) sb.append("    creditReasonIndicator: ").append(toIndentedString(creditReasonIndicator)).append("\n");
+    if (service != null) sb.append("    service: ").append(toIndentedString(service)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -188,10 +188,10 @@ public class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

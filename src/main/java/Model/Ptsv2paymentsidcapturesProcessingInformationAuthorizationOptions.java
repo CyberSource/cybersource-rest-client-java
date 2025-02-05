@@ -118,9 +118,9 @@ public class Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions {\n");
     
-    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
-    sb.append("    verbalAuthCode: ").append(toIndentedString(verbalAuthCode)).append("\n");
-    sb.append("    verbalAuthTransactionId: ").append(toIndentedString(verbalAuthTransactionId)).append("\n");
+    if (authType != null) sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
+    if (verbalAuthCode != null) sb.append("    verbalAuthCode: ").append(toIndentedString(verbalAuthCode)).append("\n");
+    if (verbalAuthTransactionId != null) sb.append("    verbalAuthTransactionId: ").append(toIndentedString(verbalAuthTransactionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

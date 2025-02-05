@@ -75,7 +75,7 @@ public class VasV2PaymentsPost201ResponseLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class VasV2PaymentsPost201ResponseLinks {\n");
     
-    sb.append("    _void: ").append(toIndentedString(_void)).append("\n");
+    if (_void != null) sb.append("    _void: ").append(toIndentedString(_void)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class VasV2PaymentsPost201ResponseLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

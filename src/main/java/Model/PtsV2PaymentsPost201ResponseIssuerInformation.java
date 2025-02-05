@@ -162,11 +162,11 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseIssuerInformation {\n");
     
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    discretionaryData: ").append(toIndentedString(discretionaryData)).append("\n");
-    sb.append("    countrySpecificDiscretionaryData: ").append(toIndentedString(countrySpecificDiscretionaryData)).append("\n");
-    sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
-    sb.append("    pinRequestIndicator: ").append(toIndentedString(pinRequestIndicator)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (discretionaryData != null) sb.append("    discretionaryData: ").append(toIndentedString(discretionaryData)).append("\n");
+    if (countrySpecificDiscretionaryData != null) sb.append("    countrySpecificDiscretionaryData: ").append(toIndentedString(countrySpecificDiscretionaryData)).append("\n");
+    if (responseCode != null) sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
+    if (pinRequestIndicator != null) sb.append("    pinRequestIndicator: ").append(toIndentedString(pinRequestIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class PtsV2PaymentsPost201ResponseIssuerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

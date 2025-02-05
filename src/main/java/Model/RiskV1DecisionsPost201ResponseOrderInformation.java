@@ -75,7 +75,7 @@ public class RiskV1DecisionsPost201ResponseOrderInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1DecisionsPost201ResponseOrderInformation {\n");
     
-    sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
+    if (amountDetails != null) sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class RiskV1DecisionsPost201ResponseOrderInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

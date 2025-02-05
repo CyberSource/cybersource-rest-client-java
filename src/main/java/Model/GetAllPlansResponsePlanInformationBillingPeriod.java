@@ -97,8 +97,8 @@ public class GetAllPlansResponsePlanInformationBillingPeriod {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetAllPlansResponsePlanInformationBillingPeriod {\n");
     
-    sb.append("    length: ").append(toIndentedString(length)).append("\n");
-    sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    if (length != null) sb.append("    length: ").append(toIndentedString(length)).append("\n");
+    if (unit != null) sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class GetAllPlansResponsePlanInformationBillingPeriod {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

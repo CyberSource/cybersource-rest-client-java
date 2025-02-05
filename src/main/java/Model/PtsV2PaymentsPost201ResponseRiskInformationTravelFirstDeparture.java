@@ -140,10 +140,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDeparture {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDeparture {\n");
     
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    latitude: ").append(toIndentedString(latitude)).append("\n");
-    sb.append("    longitude: ").append(toIndentedString(longitude)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (latitude != null) sb.append("    latitude: ").append(toIndentedString(latitude)).append("\n");
+    if (longitude != null) sb.append("    longitude: ").append(toIndentedString(longitude)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDeparture {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

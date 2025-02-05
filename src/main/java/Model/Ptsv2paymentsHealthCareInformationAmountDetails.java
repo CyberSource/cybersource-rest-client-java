@@ -96,8 +96,8 @@ public class Ptsv2paymentsHealthCareInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsHealthCareInformationAmountDetails {\n");
     
-    sb.append("    amountType: ").append(toIndentedString(amountType)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    if (amountType != null) sb.append("    amountType: ").append(toIndentedString(amountType)).append("\n");
+    if (amount != null) sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Ptsv2paymentsHealthCareInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

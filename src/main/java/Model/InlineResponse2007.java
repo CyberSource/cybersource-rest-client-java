@@ -285,16 +285,16 @@ public class InlineResponse2007 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2007 {\n");
     
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    reportCreatedDate: ").append(toIndentedString(reportCreatedDate)).append("\n");
-    sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
-    sb.append("    batchSource: ").append(toIndentedString(batchSource)).append("\n");
-    sb.append("    batchCaEndpoints: ").append(toIndentedString(batchCaEndpoints)).append("\n");
-    sb.append("    batchCreatedDate: ").append(toIndentedString(batchCreatedDate)).append("\n");
-    sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
-    sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
-    sb.append("    billing: ").append(toIndentedString(billing)).append("\n");
-    sb.append("    records: ").append(toIndentedString(records)).append("\n");
+    if (version != null) sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    if (reportCreatedDate != null) sb.append("    reportCreatedDate: ").append(toIndentedString(reportCreatedDate)).append("\n");
+    if (batchId != null) sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
+    if (batchSource != null) sb.append("    batchSource: ").append(toIndentedString(batchSource)).append("\n");
+    if (batchCaEndpoints != null) sb.append("    batchCaEndpoints: ").append(toIndentedString(batchCaEndpoints)).append("\n");
+    if (batchCreatedDate != null) sb.append("    batchCreatedDate: ").append(toIndentedString(batchCreatedDate)).append("\n");
+    if (merchantReference != null) sb.append("    merchantReference: ").append(toIndentedString(merchantReference)).append("\n");
+    if (totals != null) sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
+    if (billing != null) sb.append("    billing: ").append(toIndentedString(billing)).append("\n");
+    if (records != null) sb.append("    records: ").append(toIndentedString(records)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -305,10 +305,10 @@ public class InlineResponse2007 {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

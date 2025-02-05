@@ -106,7 +106,7 @@ public class CardProcessingConfigFeaturesCardPresentProcessors {
    * @return disablePointOfSaleTerminalIdValidation
   **/
   @ApiModelProperty(value = "Disables terminal ID validation. Applicable for VPC processors.")
-  public Boolean isDisablePointOfSaleTerminalIdValidation() {
+  public Boolean DisablePointOfSaleTerminalIdValidation() {
     return disablePointOfSaleTerminalIdValidation;
   }
 
@@ -178,7 +178,7 @@ public class CardProcessingConfigFeaturesCardPresentProcessors {
    * @return enablePinTranslation
   **/
   @ApiModelProperty(value = "Enables CyberSource PIN Translation for Online PIN Transactions. Please ensure you have exchanged PIN keys with CyberSource to use this feature. Applicable for VPC processors.")
-  public Boolean isEnablePinTranslation() {
+  public Boolean EnablePinTranslation() {
     return enablePinTranslation;
   }
 
@@ -216,13 +216,13 @@ public class CardProcessingConfigFeaturesCardPresentProcessors {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigFeaturesCardPresentProcessors {\n");
     
-    sb.append("    defaultPointOfSaleTerminalId: ").append(toIndentedString(defaultPointOfSaleTerminalId)).append("\n");
-    sb.append("    pointOfSaleTerminalIds: ").append(toIndentedString(pointOfSaleTerminalIds)).append("\n");
-    sb.append("    disablePointOfSaleTerminalIdValidation: ").append(toIndentedString(disablePointOfSaleTerminalIdValidation)).append("\n");
-    sb.append("    pinDebitNetworkOrder: ").append(toIndentedString(pinDebitNetworkOrder)).append("\n");
-    sb.append("    pinDebitReimbursementCode: ").append(toIndentedString(pinDebitReimbursementCode)).append("\n");
-    sb.append("    financialInstitutionId: ").append(toIndentedString(financialInstitutionId)).append("\n");
-    sb.append("    enablePinTranslation: ").append(toIndentedString(enablePinTranslation)).append("\n");
+    if (defaultPointOfSaleTerminalId != null) sb.append("    defaultPointOfSaleTerminalId: ").append(toIndentedString(defaultPointOfSaleTerminalId)).append("\n");
+    if (pointOfSaleTerminalIds != null) sb.append("    pointOfSaleTerminalIds: ").append(toIndentedString(pointOfSaleTerminalIds)).append("\n");
+    if (disablePointOfSaleTerminalIdValidation != null) sb.append("    disablePointOfSaleTerminalIdValidation: ").append(toIndentedString(disablePointOfSaleTerminalIdValidation)).append("\n");
+    if (pinDebitNetworkOrder != null) sb.append("    pinDebitNetworkOrder: ").append(toIndentedString(pinDebitNetworkOrder)).append("\n");
+    if (pinDebitReimbursementCode != null) sb.append("    pinDebitReimbursementCode: ").append(toIndentedString(pinDebitReimbursementCode)).append("\n");
+    if (financialInstitutionId != null) sb.append("    financialInstitutionId: ").append(toIndentedString(financialInstitutionId)).append("\n");
+    if (enablePinTranslation != null) sb.append("    enablePinTranslation: ").append(toIndentedString(enablePinTranslation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -233,10 +233,10 @@ public class CardProcessingConfigFeaturesCardPresentProcessors {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

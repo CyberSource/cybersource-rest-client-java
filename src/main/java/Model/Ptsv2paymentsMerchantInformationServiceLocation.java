@@ -140,10 +140,10 @@ public class Ptsv2paymentsMerchantInformationServiceLocation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsMerchantInformationServiceLocation {\n");
     
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    countrySubdivisionCode: ").append(toIndentedString(countrySubdivisionCode)).append("\n");
-    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (countrySubdivisionCode != null) sb.append("    countrySubdivisionCode: ").append(toIndentedString(countrySubdivisionCode)).append("\n");
+    if (countryCode != null) sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class Ptsv2paymentsMerchantInformationServiceLocation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

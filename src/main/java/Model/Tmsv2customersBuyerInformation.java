@@ -96,8 +96,8 @@ public class Tmsv2customersBuyerInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tmsv2customersBuyerInformation {\n");
     
-    sb.append("    merchantCustomerID: ").append(toIndentedString(merchantCustomerID)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    if (merchantCustomerID != null) sb.append("    merchantCustomerID: ").append(toIndentedString(merchantCustomerID)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Tmsv2customersBuyerInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

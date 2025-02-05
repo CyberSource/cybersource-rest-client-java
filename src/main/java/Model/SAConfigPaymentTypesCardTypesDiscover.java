@@ -63,7 +63,7 @@ public class SAConfigPaymentTypesCardTypesDiscover {
    * @return cardVerificationNumberSupported
   **/
   @ApiModelProperty(value = "Dictates whether or Card Verification Number is supported by the card type. Usually this is set at system level.")
-  public Boolean isCardVerificationNumberSupported() {
+  public Boolean CardVerificationNumberSupported() {
     return cardVerificationNumberSupported;
   }
 
@@ -81,7 +81,7 @@ public class SAConfigPaymentTypesCardTypesDiscover {
    * @return cardVerificationNumberDisplay
   **/
   @ApiModelProperty(value = "Toggles whether or Card Verification Number is displayed on the Hosted Checkout.")
-  public Boolean isCardVerificationNumberDisplay() {
+  public Boolean CardVerificationNumberDisplay() {
     return cardVerificationNumberDisplay;
   }
 
@@ -99,7 +99,7 @@ public class SAConfigPaymentTypesCardTypesDiscover {
    * @return payerAuthenticationSupported
   **/
   @ApiModelProperty(value = "Dictates whether or Payer Authentication is supported by the card type. Usually this is set at system level.")
-  public Boolean isPayerAuthenticationSupported() {
+  public Boolean PayerAuthenticationSupported() {
     return payerAuthenticationSupported;
   }
 
@@ -161,7 +161,7 @@ public class SAConfigPaymentTypesCardTypesDiscover {
    * @return cardVerificationNumberRequired
   **/
   @ApiModelProperty(value = "")
-  public Boolean isCardVerificationNumberRequired() {
+  public Boolean CardVerificationNumberRequired() {
     return cardVerificationNumberRequired;
   }
 
@@ -179,7 +179,7 @@ public class SAConfigPaymentTypesCardTypesDiscover {
    * @return payerAuthenticationEnabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean isPayerAuthenticationEnabled() {
+  public Boolean PayerAuthenticationEnabled() {
     return payerAuthenticationEnabled;
   }
 
@@ -217,13 +217,13 @@ public class SAConfigPaymentTypesCardTypesDiscover {
     StringBuilder sb = new StringBuilder();
     sb.append("class SAConfigPaymentTypesCardTypesDiscover {\n");
     
-    sb.append("    cardVerificationNumberSupported: ").append(toIndentedString(cardVerificationNumberSupported)).append("\n");
-    sb.append("    cardVerificationNumberDisplay: ").append(toIndentedString(cardVerificationNumberDisplay)).append("\n");
-    sb.append("    payerAuthenticationSupported: ").append(toIndentedString(payerAuthenticationSupported)).append("\n");
-    sb.append("    supportedCurrencies: ").append(toIndentedString(supportedCurrencies)).append("\n");
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
-    sb.append("    cardVerificationNumberRequired: ").append(toIndentedString(cardVerificationNumberRequired)).append("\n");
-    sb.append("    payerAuthenticationEnabled: ").append(toIndentedString(payerAuthenticationEnabled)).append("\n");
+    if (cardVerificationNumberSupported != null) sb.append("    cardVerificationNumberSupported: ").append(toIndentedString(cardVerificationNumberSupported)).append("\n");
+    if (cardVerificationNumberDisplay != null) sb.append("    cardVerificationNumberDisplay: ").append(toIndentedString(cardVerificationNumberDisplay)).append("\n");
+    if (payerAuthenticationSupported != null) sb.append("    payerAuthenticationSupported: ").append(toIndentedString(payerAuthenticationSupported)).append("\n");
+    if (supportedCurrencies != null) sb.append("    supportedCurrencies: ").append(toIndentedString(supportedCurrencies)).append("\n");
+    if (method != null) sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    if (cardVerificationNumberRequired != null) sb.append("    cardVerificationNumberRequired: ").append(toIndentedString(cardVerificationNumberRequired)).append("\n");
+    if (payerAuthenticationEnabled != null) sb.append("    payerAuthenticationEnabled: ").append(toIndentedString(payerAuthenticationEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -234,10 +234,10 @@ public class SAConfigPaymentTypesCardTypesDiscover {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

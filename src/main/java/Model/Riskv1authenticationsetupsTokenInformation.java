@@ -96,8 +96,8 @@ public class Riskv1authenticationsetupsTokenInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationsetupsTokenInformation {\n");
     
-    sb.append("    transientToken: ").append(toIndentedString(transientToken)).append("\n");
-    sb.append("    jti: ").append(toIndentedString(jti)).append("\n");
+    if (transientToken != null) sb.append("    transientToken: ").append(toIndentedString(transientToken)).append("\n");
+    if (jti != null) sb.append("    jti: ").append(toIndentedString(jti)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class Riskv1authenticationsetupsTokenInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

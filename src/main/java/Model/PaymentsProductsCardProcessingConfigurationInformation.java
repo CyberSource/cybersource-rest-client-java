@@ -98,8 +98,8 @@ public class PaymentsProductsCardProcessingConfigurationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentsProductsCardProcessingConfigurationInformation {\n");
     
-    sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
-    sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
+    if (templateId != null) sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+    if (configurations != null) sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -110,10 +110,10 @@ public class PaymentsProductsCardProcessingConfigurationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

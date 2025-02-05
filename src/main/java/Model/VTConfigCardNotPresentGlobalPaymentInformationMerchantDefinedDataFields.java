@@ -114,7 +114,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return displayMerchantDefinedData1
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayMerchantDefinedData1() {
+  public Boolean DisplayMerchantDefinedData1() {
     return displayMerchantDefinedData1;
   }
 
@@ -132,7 +132,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return displayMerchantDefinedData2
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayMerchantDefinedData2() {
+  public Boolean DisplayMerchantDefinedData2() {
     return displayMerchantDefinedData2;
   }
 
@@ -150,7 +150,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return displayMerchantDefinedData3
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayMerchantDefinedData3() {
+  public Boolean DisplayMerchantDefinedData3() {
     return displayMerchantDefinedData3;
   }
 
@@ -168,7 +168,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return displayMerchantDefinedData4
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayMerchantDefinedData4() {
+  public Boolean DisplayMerchantDefinedData4() {
     return displayMerchantDefinedData4;
   }
 
@@ -186,7 +186,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return displayMerchantDefinedData5
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDisplayMerchantDefinedData5() {
+  public Boolean DisplayMerchantDefinedData5() {
     return displayMerchantDefinedData5;
   }
 
@@ -240,7 +240,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return requireMerchantDefinedData1
   **/
   @ApiModelProperty(value = "")
-  public Boolean isRequireMerchantDefinedData1() {
+  public Boolean RequireMerchantDefinedData1() {
     return requireMerchantDefinedData1;
   }
 
@@ -294,7 +294,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return requireMerchantDefinedData2
   **/
   @ApiModelProperty(value = "")
-  public Boolean isRequireMerchantDefinedData2() {
+  public Boolean RequireMerchantDefinedData2() {
     return requireMerchantDefinedData2;
   }
 
@@ -348,7 +348,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return requireMerchantDefinedData3
   **/
   @ApiModelProperty(value = "")
-  public Boolean isRequireMerchantDefinedData3() {
+  public Boolean RequireMerchantDefinedData3() {
     return requireMerchantDefinedData3;
   }
 
@@ -402,7 +402,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return requireMerchantDefinedData4
   **/
   @ApiModelProperty(value = "")
-  public Boolean isRequireMerchantDefinedData4() {
+  public Boolean RequireMerchantDefinedData4() {
     return requireMerchantDefinedData4;
   }
 
@@ -456,7 +456,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return requireMerchantDefinedData5
   **/
   @ApiModelProperty(value = "")
-  public Boolean isRequireMerchantDefinedData5() {
+  public Boolean RequireMerchantDefinedData5() {
     return requireMerchantDefinedData5;
   }
 
@@ -474,7 +474,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return merchantDefinedData1DisplayOnReceipt
   **/
   @ApiModelProperty(value = "")
-  public Boolean isMerchantDefinedData1DisplayOnReceipt() {
+  public Boolean MerchantDefinedData1DisplayOnReceipt() {
     return merchantDefinedData1DisplayOnReceipt;
   }
 
@@ -492,7 +492,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return merchantDefinedData2DisplayOnReceipt
   **/
   @ApiModelProperty(value = "")
-  public Boolean isMerchantDefinedData2DisplayOnReceipt() {
+  public Boolean MerchantDefinedData2DisplayOnReceipt() {
     return merchantDefinedData2DisplayOnReceipt;
   }
 
@@ -510,7 +510,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return merchantDefinedData3DisplayOnReceipt
   **/
   @ApiModelProperty(value = "")
-  public Boolean isMerchantDefinedData3DisplayOnReceipt() {
+  public Boolean MerchantDefinedData3DisplayOnReceipt() {
     return merchantDefinedData3DisplayOnReceipt;
   }
 
@@ -528,7 +528,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return merchantDefinedData4DisplayOnReceipt
   **/
   @ApiModelProperty(value = "")
-  public Boolean isMerchantDefinedData4DisplayOnReceipt() {
+  public Boolean MerchantDefinedData4DisplayOnReceipt() {
     return merchantDefinedData4DisplayOnReceipt;
   }
 
@@ -546,7 +546,7 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    * @return merchantDefinedData5DisplayOnReceipt
   **/
   @ApiModelProperty(value = "")
-  public Boolean isMerchantDefinedData5DisplayOnReceipt() {
+  public Boolean MerchantDefinedData5DisplayOnReceipt() {
     return merchantDefinedData5DisplayOnReceipt;
   }
 
@@ -602,31 +602,31 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
     StringBuilder sb = new StringBuilder();
     sb.append("class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFields {\n");
     
-    sb.append("    displayMerchantDefinedData1: ").append(toIndentedString(displayMerchantDefinedData1)).append("\n");
-    sb.append("    displayMerchantDefinedData2: ").append(toIndentedString(displayMerchantDefinedData2)).append("\n");
-    sb.append("    displayMerchantDefinedData3: ").append(toIndentedString(displayMerchantDefinedData3)).append("\n");
-    sb.append("    displayMerchantDefinedData4: ").append(toIndentedString(displayMerchantDefinedData4)).append("\n");
-    sb.append("    displayMerchantDefinedData5: ").append(toIndentedString(displayMerchantDefinedData5)).append("\n");
-    sb.append("    merchantDefinedData1DefaultValue: ").append(toIndentedString(merchantDefinedData1DefaultValue)).append("\n");
-    sb.append("    merchantDefinedData1Label: ").append(toIndentedString(merchantDefinedData1Label)).append("\n");
-    sb.append("    requireMerchantDefinedData1: ").append(toIndentedString(requireMerchantDefinedData1)).append("\n");
-    sb.append("    merchantDefinedData2DefaultValue: ").append(toIndentedString(merchantDefinedData2DefaultValue)).append("\n");
-    sb.append("    merchantDefinedData2Label: ").append(toIndentedString(merchantDefinedData2Label)).append("\n");
-    sb.append("    requireMerchantDefinedData2: ").append(toIndentedString(requireMerchantDefinedData2)).append("\n");
-    sb.append("    merchantDefinedData3DefaultValue: ").append(toIndentedString(merchantDefinedData3DefaultValue)).append("\n");
-    sb.append("    merchantDefinedData3Label: ").append(toIndentedString(merchantDefinedData3Label)).append("\n");
-    sb.append("    requireMerchantDefinedData3: ").append(toIndentedString(requireMerchantDefinedData3)).append("\n");
-    sb.append("    merchantDefinedData4DefaultValue: ").append(toIndentedString(merchantDefinedData4DefaultValue)).append("\n");
-    sb.append("    merchantDefinedData4Label: ").append(toIndentedString(merchantDefinedData4Label)).append("\n");
-    sb.append("    requireMerchantDefinedData4: ").append(toIndentedString(requireMerchantDefinedData4)).append("\n");
-    sb.append("    merchantDefinedData5DefaultValue: ").append(toIndentedString(merchantDefinedData5DefaultValue)).append("\n");
-    sb.append("    merchantDefinedData5Label: ").append(toIndentedString(merchantDefinedData5Label)).append("\n");
-    sb.append("    requireMerchantDefinedData5: ").append(toIndentedString(requireMerchantDefinedData5)).append("\n");
-    sb.append("    merchantDefinedData1DisplayOnReceipt: ").append(toIndentedString(merchantDefinedData1DisplayOnReceipt)).append("\n");
-    sb.append("    merchantDefinedData2DisplayOnReceipt: ").append(toIndentedString(merchantDefinedData2DisplayOnReceipt)).append("\n");
-    sb.append("    merchantDefinedData3DisplayOnReceipt: ").append(toIndentedString(merchantDefinedData3DisplayOnReceipt)).append("\n");
-    sb.append("    merchantDefinedData4DisplayOnReceipt: ").append(toIndentedString(merchantDefinedData4DisplayOnReceipt)).append("\n");
-    sb.append("    merchantDefinedData5DisplayOnReceipt: ").append(toIndentedString(merchantDefinedData5DisplayOnReceipt)).append("\n");
+    if (displayMerchantDefinedData1 != null) sb.append("    displayMerchantDefinedData1: ").append(toIndentedString(displayMerchantDefinedData1)).append("\n");
+    if (displayMerchantDefinedData2 != null) sb.append("    displayMerchantDefinedData2: ").append(toIndentedString(displayMerchantDefinedData2)).append("\n");
+    if (displayMerchantDefinedData3 != null) sb.append("    displayMerchantDefinedData3: ").append(toIndentedString(displayMerchantDefinedData3)).append("\n");
+    if (displayMerchantDefinedData4 != null) sb.append("    displayMerchantDefinedData4: ").append(toIndentedString(displayMerchantDefinedData4)).append("\n");
+    if (displayMerchantDefinedData5 != null) sb.append("    displayMerchantDefinedData5: ").append(toIndentedString(displayMerchantDefinedData5)).append("\n");
+    if (merchantDefinedData1DefaultValue != null) sb.append("    merchantDefinedData1DefaultValue: ").append(toIndentedString(merchantDefinedData1DefaultValue)).append("\n");
+    if (merchantDefinedData1Label != null) sb.append("    merchantDefinedData1Label: ").append(toIndentedString(merchantDefinedData1Label)).append("\n");
+    if (requireMerchantDefinedData1 != null) sb.append("    requireMerchantDefinedData1: ").append(toIndentedString(requireMerchantDefinedData1)).append("\n");
+    if (merchantDefinedData2DefaultValue != null) sb.append("    merchantDefinedData2DefaultValue: ").append(toIndentedString(merchantDefinedData2DefaultValue)).append("\n");
+    if (merchantDefinedData2Label != null) sb.append("    merchantDefinedData2Label: ").append(toIndentedString(merchantDefinedData2Label)).append("\n");
+    if (requireMerchantDefinedData2 != null) sb.append("    requireMerchantDefinedData2: ").append(toIndentedString(requireMerchantDefinedData2)).append("\n");
+    if (merchantDefinedData3DefaultValue != null) sb.append("    merchantDefinedData3DefaultValue: ").append(toIndentedString(merchantDefinedData3DefaultValue)).append("\n");
+    if (merchantDefinedData3Label != null) sb.append("    merchantDefinedData3Label: ").append(toIndentedString(merchantDefinedData3Label)).append("\n");
+    if (requireMerchantDefinedData3 != null) sb.append("    requireMerchantDefinedData3: ").append(toIndentedString(requireMerchantDefinedData3)).append("\n");
+    if (merchantDefinedData4DefaultValue != null) sb.append("    merchantDefinedData4DefaultValue: ").append(toIndentedString(merchantDefinedData4DefaultValue)).append("\n");
+    if (merchantDefinedData4Label != null) sb.append("    merchantDefinedData4Label: ").append(toIndentedString(merchantDefinedData4Label)).append("\n");
+    if (requireMerchantDefinedData4 != null) sb.append("    requireMerchantDefinedData4: ").append(toIndentedString(requireMerchantDefinedData4)).append("\n");
+    if (merchantDefinedData5DefaultValue != null) sb.append("    merchantDefinedData5DefaultValue: ").append(toIndentedString(merchantDefinedData5DefaultValue)).append("\n");
+    if (merchantDefinedData5Label != null) sb.append("    merchantDefinedData5Label: ").append(toIndentedString(merchantDefinedData5Label)).append("\n");
+    if (requireMerchantDefinedData5 != null) sb.append("    requireMerchantDefinedData5: ").append(toIndentedString(requireMerchantDefinedData5)).append("\n");
+    if (merchantDefinedData1DisplayOnReceipt != null) sb.append("    merchantDefinedData1DisplayOnReceipt: ").append(toIndentedString(merchantDefinedData1DisplayOnReceipt)).append("\n");
+    if (merchantDefinedData2DisplayOnReceipt != null) sb.append("    merchantDefinedData2DisplayOnReceipt: ").append(toIndentedString(merchantDefinedData2DisplayOnReceipt)).append("\n");
+    if (merchantDefinedData3DisplayOnReceipt != null) sb.append("    merchantDefinedData3DisplayOnReceipt: ").append(toIndentedString(merchantDefinedData3DisplayOnReceipt)).append("\n");
+    if (merchantDefinedData4DisplayOnReceipt != null) sb.append("    merchantDefinedData4DisplayOnReceipt: ").append(toIndentedString(merchantDefinedData4DisplayOnReceipt)).append("\n");
+    if (merchantDefinedData5DisplayOnReceipt != null) sb.append("    merchantDefinedData5DisplayOnReceipt: ").append(toIndentedString(merchantDefinedData5DisplayOnReceipt)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -637,10 +637,10 @@ public class VTConfigCardNotPresentGlobalPaymentInformationMerchantDefinedDataFi
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

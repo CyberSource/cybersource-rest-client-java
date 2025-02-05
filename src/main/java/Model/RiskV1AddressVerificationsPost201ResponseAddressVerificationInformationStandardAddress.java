@@ -295,17 +295,17 @@ public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInforma
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformationStandardAddress {\n");
     
-    sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
-    sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
-    sb.append("    address3: ").append(toIndentedString(address3)).append("\n");
-    sb.append("    address4: ").append(toIndentedString(address4)).append("\n");
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    county: ").append(toIndentedString(county)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    csz: ").append(toIndentedString(csz)).append("\n");
-    sb.append("    isoCountry: ").append(toIndentedString(isoCountry)).append("\n");
-    sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+    if (address1 != null) sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
+    if (address2 != null) sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
+    if (address3 != null) sb.append("    address3: ").append(toIndentedString(address3)).append("\n");
+    if (address4 != null) sb.append("    address4: ").append(toIndentedString(address4)).append("\n");
+    if (locality != null) sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+    if (county != null) sb.append("    county: ").append(toIndentedString(county)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (csz != null) sb.append("    csz: ").append(toIndentedString(csz)).append("\n");
+    if (isoCountry != null) sb.append("    isoCountry: ").append(toIndentedString(isoCountry)).append("\n");
+    if (administrativeArea != null) sb.append("    administrativeArea: ").append(toIndentedString(administrativeArea)).append("\n");
+    if (postalCode != null) sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -316,10 +316,10 @@ public class RiskV1AddressVerificationsPost201ResponseAddressVerificationInforma
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

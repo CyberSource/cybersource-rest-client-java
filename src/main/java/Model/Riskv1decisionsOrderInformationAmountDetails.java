@@ -97,8 +97,8 @@ public class Riskv1decisionsOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsOrderInformationAmountDetails {\n");
     
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class Riskv1decisionsOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

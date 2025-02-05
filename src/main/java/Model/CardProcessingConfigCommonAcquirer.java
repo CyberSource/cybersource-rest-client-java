@@ -207,13 +207,13 @@ public class CardProcessingConfigCommonAcquirer {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigCommonAcquirer {\n");
     
-    sb.append("    institutionId: ").append(toIndentedString(institutionId)).append("\n");
-    sb.append("    interbankCardAssociationId: ").append(toIndentedString(interbankCardAssociationId)).append("\n");
-    sb.append("    discoverInstitutionId: ").append(toIndentedString(discoverInstitutionId)).append("\n");
-    sb.append("    unionPayInstitutionId: ").append(toIndentedString(unionPayInstitutionId)).append("\n");
-    sb.append("    dinersClubInstitutionId: ").append(toIndentedString(dinersClubInstitutionId)).append("\n");
-    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
-    sb.append("    fileDestinationBin: ").append(toIndentedString(fileDestinationBin)).append("\n");
+    if (institutionId != null) sb.append("    institutionId: ").append(toIndentedString(institutionId)).append("\n");
+    if (interbankCardAssociationId != null) sb.append("    interbankCardAssociationId: ").append(toIndentedString(interbankCardAssociationId)).append("\n");
+    if (discoverInstitutionId != null) sb.append("    discoverInstitutionId: ").append(toIndentedString(discoverInstitutionId)).append("\n");
+    if (unionPayInstitutionId != null) sb.append("    unionPayInstitutionId: ").append(toIndentedString(unionPayInstitutionId)).append("\n");
+    if (dinersClubInstitutionId != null) sb.append("    dinersClubInstitutionId: ").append(toIndentedString(dinersClubInstitutionId)).append("\n");
+    if (countryCode != null) sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    if (fileDestinationBin != null) sb.append("    fileDestinationBin: ").append(toIndentedString(fileDestinationBin)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -224,10 +224,10 @@ public class CardProcessingConfigCommonAcquirer {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

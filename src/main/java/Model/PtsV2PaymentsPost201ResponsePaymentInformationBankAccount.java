@@ -74,7 +74,7 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationBankAccount {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponsePaymentInformationBankAccount {\n");
     
-    sb.append("    correctedAccountNumber: ").append(toIndentedString(correctedAccountNumber)).append("\n");
+    if (correctedAccountNumber != null) sb.append("    correctedAccountNumber: ").append(toIndentedString(correctedAccountNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class PtsV2PaymentsPost201ResponsePaymentInformationBankAccount {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

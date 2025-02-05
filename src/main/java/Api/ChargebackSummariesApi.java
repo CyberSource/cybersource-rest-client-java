@@ -170,7 +170,6 @@ public class ChargebackSummariesApi {
      */
     public ReportingV3ChargebackSummariesGet200Response getChargebackSummaries(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getChargebackSummaries' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ChargebackSummariesGet200Response> resp = getChargebackSummariesWithHttpInfo(startTime, endTime, organizationId);
         logger.info("CALL TO METHOD 'getChargebackSummaries' ENDED");
         return resp.getData();
@@ -186,6 +185,7 @@ public class ChargebackSummariesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ChargebackSummariesGet200Response> getChargebackSummariesWithHttpInfo(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getChargebackSummariesValidateBeforeCall(startTime, endTime, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ChargebackSummariesGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

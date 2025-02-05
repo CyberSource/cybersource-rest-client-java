@@ -155,7 +155,6 @@ public class OrdersApi {
      */
     public PtsV2CreateOrderPost201Response createOrder(CreateOrderRequest createOrderRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createOrder' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2CreateOrderPost201Response> resp = createOrderWithHttpInfo(createOrderRequest);
         logger.info("CALL TO METHOD 'createOrder' ENDED");
         return resp.getData();
@@ -169,6 +168,7 @@ public class OrdersApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2CreateOrderPost201Response> createOrderWithHttpInfo(CreateOrderRequest createOrderRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createOrderValidateBeforeCall(createOrderRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2CreateOrderPost201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -305,7 +305,6 @@ public class OrdersApi {
      */
     public PtsV2UpdateOrderPatch201Response updateOrder(String id, UpdateOrderRequest updateOrderRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updateOrder' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<PtsV2UpdateOrderPatch201Response> resp = updateOrderWithHttpInfo(id, updateOrderRequest);
         logger.info("CALL TO METHOD 'updateOrder' ENDED");
         return resp.getData();
@@ -320,6 +319,7 @@ public class OrdersApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PtsV2UpdateOrderPatch201Response> updateOrderWithHttpInfo(String id, UpdateOrderRequest updateOrderRequest) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateOrderValidateBeforeCall(id, updateOrderRequest, null, null);
         Type localVarReturnType = new TypeToken<PtsV2UpdateOrderPatch201Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

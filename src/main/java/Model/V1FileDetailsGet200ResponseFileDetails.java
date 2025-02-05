@@ -209,13 +209,13 @@ public class V1FileDetailsGet200ResponseFileDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class V1FileDetailsGet200ResponseFileDetails {\n");
     
-    sb.append("    fileId: ").append(toIndentedString(fileId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
-    sb.append("    lastModifiedTime: ").append(toIndentedString(lastModifiedTime)).append("\n");
-    sb.append("    date: ").append(toIndentedString(date)).append("\n");
-    sb.append("    mimeType: ").append(toIndentedString(mimeType)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    if (fileId != null) sb.append("    fileId: ").append(toIndentedString(fileId)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (createdTime != null) sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
+    if (lastModifiedTime != null) sb.append("    lastModifiedTime: ").append(toIndentedString(lastModifiedTime)).append("\n");
+    if (date != null) sb.append("    date: ").append(toIndentedString(date)).append("\n");
+    if (mimeType != null) sb.append("    mimeType: ").append(toIndentedString(mimeType)).append("\n");
+    if (size != null) sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -226,10 +226,10 @@ public class V1FileDetailsGet200ResponseFileDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

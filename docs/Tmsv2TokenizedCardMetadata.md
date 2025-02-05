@@ -4,7 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cardArt** | [**Tmsv2TokenizedCardMetadataCardArt**](Tmsv2TokenizedCardMetadataCardArt.md) |  |  [optional]
+**cardArt** | [**TmsCardArt**](TmsCardArt.md) |  |  [optional]
+**issuer** | [**Tmsv2TokenizedCardMetadataIssuer**](Tmsv2TokenizedCardMetadataIssuer.md) |  |  [optional]
 
 
 

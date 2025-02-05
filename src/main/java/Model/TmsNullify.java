@@ -48,7 +48,7 @@ public class TmsNullify {
    * @return instrumentIdentifierCardNumber
   **/
   @ApiModelProperty(value = "Indicates if the card number should be nullified (i.e. not stored)")
-  public Boolean isInstrumentIdentifierCardNumber() {
+  public Boolean InstrumentIdentifierCardNumber() {
     return instrumentIdentifierCardNumber;
   }
 
@@ -66,7 +66,7 @@ public class TmsNullify {
    * @return instrumentIdentifierCardExpiration
   **/
   @ApiModelProperty(value = "Indicates if the expiration date associated to the instrument identifier should be nullified (i.e. not stored)")
-  public Boolean isInstrumentIdentifierCardExpiration() {
+  public Boolean InstrumentIdentifierCardExpiration() {
     return instrumentIdentifierCardExpiration;
   }
 
@@ -84,7 +84,7 @@ public class TmsNullify {
    * @return paymentInstrumentCardDetails
   **/
   @ApiModelProperty(value = "Indicates if the card details should be nullified (i.e. not stored)")
-  public Boolean isPaymentInstrumentCardDetails() {
+  public Boolean PaymentInstrumentCardDetails() {
     return paymentInstrumentCardDetails;
   }
 
@@ -118,9 +118,9 @@ public class TmsNullify {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsNullify {\n");
     
-    sb.append("    instrumentIdentifierCardNumber: ").append(toIndentedString(instrumentIdentifierCardNumber)).append("\n");
-    sb.append("    instrumentIdentifierCardExpiration: ").append(toIndentedString(instrumentIdentifierCardExpiration)).append("\n");
-    sb.append("    paymentInstrumentCardDetails: ").append(toIndentedString(paymentInstrumentCardDetails)).append("\n");
+    if (instrumentIdentifierCardNumber != null) sb.append("    instrumentIdentifierCardNumber: ").append(toIndentedString(instrumentIdentifierCardNumber)).append("\n");
+    if (instrumentIdentifierCardExpiration != null) sb.append("    instrumentIdentifierCardExpiration: ").append(toIndentedString(instrumentIdentifierCardExpiration)).append("\n");
+    if (paymentInstrumentCardDetails != null) sb.append("    paymentInstrumentCardDetails: ").append(toIndentedString(paymentInstrumentCardDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class TmsNullify {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

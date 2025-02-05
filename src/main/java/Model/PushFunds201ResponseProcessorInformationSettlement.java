@@ -45,7 +45,7 @@ public class PushFunds201ResponseProcessorInformationSettlement {
    * @return responsibilityFlag
   **/
   @ApiModelProperty(value = "Settlement Responsibility Flag: VisaNet sets this flag.  This flag is set to true to indicate that VisaNet has settlement responsibility for this transaction. This flag does not indicate the transaction will be settled. ")
-  public Boolean isResponsibilityFlag() {
+  public Boolean ResponsibilityFlag() {
     return responsibilityFlag;
   }
 
@@ -96,8 +96,8 @@ public class PushFunds201ResponseProcessorInformationSettlement {
     StringBuilder sb = new StringBuilder();
     sb.append("class PushFunds201ResponseProcessorInformationSettlement {\n");
     
-    sb.append("    responsibilityFlag: ").append(toIndentedString(responsibilityFlag)).append("\n");
-    sb.append("    serviceFlag: ").append(toIndentedString(serviceFlag)).append("\n");
+    if (responsibilityFlag != null) sb.append("    responsibilityFlag: ").append(toIndentedString(responsibilityFlag)).append("\n");
+    if (serviceFlag != null) sb.append("    serviceFlag: ").append(toIndentedString(serviceFlag)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class PushFunds201ResponseProcessorInformationSettlement {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

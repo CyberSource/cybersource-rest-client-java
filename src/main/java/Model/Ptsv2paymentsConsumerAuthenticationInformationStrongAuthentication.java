@@ -229,14 +229,14 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication {\n");
     
-    sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
-    sb.append("    lowValueExemptionIndicator: ").append(toIndentedString(lowValueExemptionIndicator)).append("\n");
-    sb.append("    riskAnalysisExemptionIndicator: ").append(toIndentedString(riskAnalysisExemptionIndicator)).append("\n");
-    sb.append("    trustedMerchantExemptionIndicator: ").append(toIndentedString(trustedMerchantExemptionIndicator)).append("\n");
-    sb.append("    secureCorporatePaymentIndicator: ").append(toIndentedString(secureCorporatePaymentIndicator)).append("\n");
-    sb.append("    delegatedAuthenticationExemptionIndicator: ").append(toIndentedString(delegatedAuthenticationExemptionIndicator)).append("\n");
-    sb.append("    outageExemptionIndicator: ").append(toIndentedString(outageExemptionIndicator)).append("\n");
-    sb.append("    authenticationIndicator: ").append(toIndentedString(authenticationIndicator)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
+    if (lowValueExemptionIndicator != null) sb.append("    lowValueExemptionIndicator: ").append(toIndentedString(lowValueExemptionIndicator)).append("\n");
+    if (riskAnalysisExemptionIndicator != null) sb.append("    riskAnalysisExemptionIndicator: ").append(toIndentedString(riskAnalysisExemptionIndicator)).append("\n");
+    if (trustedMerchantExemptionIndicator != null) sb.append("    trustedMerchantExemptionIndicator: ").append(toIndentedString(trustedMerchantExemptionIndicator)).append("\n");
+    if (secureCorporatePaymentIndicator != null) sb.append("    secureCorporatePaymentIndicator: ").append(toIndentedString(secureCorporatePaymentIndicator)).append("\n");
+    if (delegatedAuthenticationExemptionIndicator != null) sb.append("    delegatedAuthenticationExemptionIndicator: ").append(toIndentedString(delegatedAuthenticationExemptionIndicator)).append("\n");
+    if (outageExemptionIndicator != null) sb.append("    outageExemptionIndicator: ").append(toIndentedString(outageExemptionIndicator)).append("\n");
+    if (authenticationIndicator != null) sb.append("    authenticationIndicator: ").append(toIndentedString(authenticationIndicator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -247,10 +247,10 @@ public class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication 
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

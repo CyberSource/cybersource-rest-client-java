@@ -208,13 +208,13 @@ public class Ptsv2paymentreferencesTravelInformationAutoRental {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentreferencesTravelInformationAutoRental {\n");
     
-    sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
-    sb.append("    affiliateName: ").append(toIndentedString(affiliateName)).append("\n");
-    sb.append("    rentalAddress: ").append(toIndentedString(rentalAddress)).append("\n");
-    sb.append("    returnAddress: ").append(toIndentedString(returnAddress)).append("\n");
-    sb.append("    returnDateTime: ").append(toIndentedString(returnDateTime)).append("\n");
-    sb.append("    rentalDateTime: ").append(toIndentedString(rentalDateTime)).append("\n");
-    sb.append("    customerName: ").append(toIndentedString(customerName)).append("\n");
+    if (companyName != null) sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
+    if (affiliateName != null) sb.append("    affiliateName: ").append(toIndentedString(affiliateName)).append("\n");
+    if (rentalAddress != null) sb.append("    rentalAddress: ").append(toIndentedString(rentalAddress)).append("\n");
+    if (returnAddress != null) sb.append("    returnAddress: ").append(toIndentedString(returnAddress)).append("\n");
+    if (returnDateTime != null) sb.append("    returnDateTime: ").append(toIndentedString(returnDateTime)).append("\n");
+    if (rentalDateTime != null) sb.append("    rentalDateTime: ").append(toIndentedString(rentalDateTime)).append("\n");
+    if (customerName != null) sb.append("    customerName: ").append(toIndentedString(customerName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -225,10 +225,10 @@ public class Ptsv2paymentreferencesTravelInformationAutoRental {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

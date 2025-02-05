@@ -251,15 +251,15 @@ public class CardProcessingConfigCommonMerchantDescriptorInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProcessingConfigCommonMerchantDescriptorInformation {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    city: ").append(toIndentedString(city)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    street: ").append(toIndentedString(street)).append("\n");
-    sb.append("    zip: ").append(toIndentedString(zip)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    countryOfOrigin: ").append(toIndentedString(countryOfOrigin)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (city != null) sb.append("    city: ").append(toIndentedString(city)).append("\n");
+    if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    if (phone != null) sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+    if (state != null) sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    if (street != null) sb.append("    street: ").append(toIndentedString(street)).append("\n");
+    if (zip != null) sb.append("    zip: ").append(toIndentedString(zip)).append("\n");
+    if (url != null) sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    if (countryOfOrigin != null) sb.append("    countryOfOrigin: ").append(toIndentedString(countryOfOrigin)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -270,10 +270,10 @@ public class CardProcessingConfigCommonMerchantDescriptorInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

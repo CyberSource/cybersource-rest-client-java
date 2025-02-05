@@ -75,7 +75,7 @@ public class RiskProductsFraudManagementEssentialsConfigurationInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskProductsFraudManagementEssentialsConfigurationInformation {\n");
     
-    sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+    if (templateId != null) sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class RiskProductsFraudManagementEssentialsConfigurationInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

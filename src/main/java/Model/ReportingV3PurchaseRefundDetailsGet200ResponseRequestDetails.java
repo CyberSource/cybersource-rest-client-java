@@ -185,12 +185,12 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseRequestDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReportingV3PurchaseRefundDetailsGet200ResponseRequestDetails {\n");
     
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    cybersourceMerchantId: ").append(toIndentedString(cybersourceMerchantId)).append("\n");
-    sb.append("    processorMerchantId: ").append(toIndentedString(processorMerchantId)).append("\n");
-    sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
-    sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
-    sb.append("    merchantReferenceNumber: ").append(toIndentedString(merchantReferenceNumber)).append("\n");
+    if (requestId != null) sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    if (cybersourceMerchantId != null) sb.append("    cybersourceMerchantId: ").append(toIndentedString(cybersourceMerchantId)).append("\n");
+    if (processorMerchantId != null) sb.append("    processorMerchantId: ").append(toIndentedString(processorMerchantId)).append("\n");
+    if (groupName != null) sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+    if (transactionReferenceNumber != null) sb.append("    transactionReferenceNumber: ").append(toIndentedString(transactionReferenceNumber)).append("\n");
+    if (merchantReferenceNumber != null) sb.append("    merchantReferenceNumber: ").append(toIndentedString(merchantReferenceNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -201,10 +201,10 @@ public class ReportingV3PurchaseRefundDetailsGet200ResponseRequestDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

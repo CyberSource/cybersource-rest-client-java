@@ -512,26 +512,26 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidcapturesOrderInformationAmountDetails {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
-    sb.append("    dutyAmount: ").append(toIndentedString(dutyAmount)).append("\n");
-    sb.append("    gratuityAmount: ").append(toIndentedString(gratuityAmount)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    nationalTaxIncluded: ").append(toIndentedString(nationalTaxIncluded)).append("\n");
-    sb.append("    taxAppliedAfterDiscount: ").append(toIndentedString(taxAppliedAfterDiscount)).append("\n");
-    sb.append("    taxAppliedLevel: ").append(toIndentedString(taxAppliedLevel)).append("\n");
-    sb.append("    taxTypeCode: ").append(toIndentedString(taxTypeCode)).append("\n");
-    sb.append("    freightAmount: ").append(toIndentedString(freightAmount)).append("\n");
-    sb.append("    foreignAmount: ").append(toIndentedString(foreignAmount)).append("\n");
-    sb.append("    foreignCurrency: ").append(toIndentedString(foreignCurrency)).append("\n");
-    sb.append("    exchangeRate: ").append(toIndentedString(exchangeRate)).append("\n");
-    sb.append("    exchangeRateTimeStamp: ").append(toIndentedString(exchangeRateTimeStamp)).append("\n");
-    sb.append("    amexAdditionalAmounts: ").append(toIndentedString(amexAdditionalAmounts)).append("\n");
-    sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
-    sb.append("    serviceFeeAmount: ").append(toIndentedString(serviceFeeAmount)).append("\n");
-    sb.append("    originalCurrency: ").append(toIndentedString(originalCurrency)).append("\n");
-    sb.append("    cashbackAmount: ").append(toIndentedString(cashbackAmount)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (discountAmount != null) sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+    if (dutyAmount != null) sb.append("    dutyAmount: ").append(toIndentedString(dutyAmount)).append("\n");
+    if (gratuityAmount != null) sb.append("    gratuityAmount: ").append(toIndentedString(gratuityAmount)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (nationalTaxIncluded != null) sb.append("    nationalTaxIncluded: ").append(toIndentedString(nationalTaxIncluded)).append("\n");
+    if (taxAppliedAfterDiscount != null) sb.append("    taxAppliedAfterDiscount: ").append(toIndentedString(taxAppliedAfterDiscount)).append("\n");
+    if (taxAppliedLevel != null) sb.append("    taxAppliedLevel: ").append(toIndentedString(taxAppliedLevel)).append("\n");
+    if (taxTypeCode != null) sb.append("    taxTypeCode: ").append(toIndentedString(taxTypeCode)).append("\n");
+    if (freightAmount != null) sb.append("    freightAmount: ").append(toIndentedString(freightAmount)).append("\n");
+    if (foreignAmount != null) sb.append("    foreignAmount: ").append(toIndentedString(foreignAmount)).append("\n");
+    if (foreignCurrency != null) sb.append("    foreignCurrency: ").append(toIndentedString(foreignCurrency)).append("\n");
+    if (exchangeRate != null) sb.append("    exchangeRate: ").append(toIndentedString(exchangeRate)).append("\n");
+    if (exchangeRateTimeStamp != null) sb.append("    exchangeRateTimeStamp: ").append(toIndentedString(exchangeRateTimeStamp)).append("\n");
+    if (amexAdditionalAmounts != null) sb.append("    amexAdditionalAmounts: ").append(toIndentedString(amexAdditionalAmounts)).append("\n");
+    if (taxDetails != null) sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
+    if (serviceFeeAmount != null) sb.append("    serviceFeeAmount: ").append(toIndentedString(serviceFeeAmount)).append("\n");
+    if (originalCurrency != null) sb.append("    originalCurrency: ").append(toIndentedString(originalCurrency)).append("\n");
+    if (cashbackAmount != null) sb.append("    cashbackAmount: ").append(toIndentedString(cashbackAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -542,10 +542,10 @@ public class Ptsv2paymentsidcapturesOrderInformationAmountDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

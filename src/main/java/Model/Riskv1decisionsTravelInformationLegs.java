@@ -140,10 +140,10 @@ public class Riskv1decisionsTravelInformationLegs {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsTravelInformationLegs {\n");
     
-    sb.append("    origination: ").append(toIndentedString(origination)).append("\n");
-    sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
-    sb.append("    carrierCode: ").append(toIndentedString(carrierCode)).append("\n");
-    sb.append("    departureDate: ").append(toIndentedString(departureDate)).append("\n");
+    if (origination != null) sb.append("    origination: ").append(toIndentedString(origination)).append("\n");
+    if (destination != null) sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
+    if (carrierCode != null) sb.append("    carrierCode: ").append(toIndentedString(carrierCode)).append("\n");
+    if (departureDate != null) sb.append("    departureDate: ").append(toIndentedString(departureDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class Riskv1decisionsTravelInformationLegs {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

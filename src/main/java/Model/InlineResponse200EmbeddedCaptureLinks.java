@@ -76,7 +76,7 @@ public class InlineResponse200EmbeddedCaptureLinks {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse200EmbeddedCaptureLinks {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    if (self != null) sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -87,10 +87,10 @@ public class InlineResponse200EmbeddedCaptureLinks {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

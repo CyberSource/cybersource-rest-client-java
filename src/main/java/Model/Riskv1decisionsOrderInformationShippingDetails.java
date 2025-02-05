@@ -46,7 +46,7 @@ public class Riskv1decisionsOrderInformationShippingDetails {
    * @return giftWrap
   **/
   @ApiModelProperty(value = "Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values: - true: The customer requested gift wrapping. - false: The customer did not request gift wrapping. ")
-  public Boolean isGiftWrap() {
+  public Boolean GiftWrap() {
     return giftWrap;
   }
 
@@ -97,8 +97,8 @@ public class Riskv1decisionsOrderInformationShippingDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1decisionsOrderInformationShippingDetails {\n");
     
-    sb.append("    giftWrap: ").append(toIndentedString(giftWrap)).append("\n");
-    sb.append("    shippingMethod: ").append(toIndentedString(shippingMethod)).append("\n");
+    if (giftWrap != null) sb.append("    giftWrap: ").append(toIndentedString(giftWrap)).append("\n");
+    if (shippingMethod != null) sb.append("    shippingMethod: ").append(toIndentedString(shippingMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,10 +109,10 @@ public class Riskv1decisionsOrderInformationShippingDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

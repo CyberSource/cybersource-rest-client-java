@@ -144,10 +144,10 @@ public class Riskv1authenticationsPaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Riskv1authenticationsPaymentInformation {\n");
     
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
-    sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
-    sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
-    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    if (card != null) sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    if (tokenizedCard != null) sb.append("    tokenizedCard: ").append(toIndentedString(tokenizedCard)).append("\n");
+    if (fluidData != null) sb.append("    fluidData: ").append(toIndentedString(fluidData)).append("\n");
+    if (customer != null) sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -158,10 +158,10 @@ public class Riskv1authenticationsPaymentInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

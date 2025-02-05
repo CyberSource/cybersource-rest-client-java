@@ -15,8 +15,10 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions;
 import Model.PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions;
 import Model.PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions;
+import Model.PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -42,6 +44,12 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
 
   @SerializedName("captureOptions")
   private PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions captureOptions = null;
+
+  @SerializedName("authorizationOptions")
+  private PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions authorizationOptions = null;
+
+  @SerializedName("purchaseOptions")
+  private PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions purchaseOptions = null;
 
   public PtsV2PaymentsPost201ResponseProcessingInformation bankTransferOptions(PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions bankTransferOptions) {
     this.bankTransferOptions = bankTransferOptions;
@@ -89,7 +97,7 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
    * @return enhancedDataEnabled
   **/
   @ApiModelProperty(value = "The possible values for the reply field are: - `true` : the airline data was included in the request to the processor. - `false` : the airline data was not included in the request to the processor.  Returned by authorization, capture, or credit services. ")
-  public Boolean isEnhancedDataEnabled() {
+  public Boolean EnhancedDataEnabled() {
     return enhancedDataEnabled;
   }
 
@@ -115,6 +123,42 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     this.captureOptions = captureOptions;
   }
 
+  public PtsV2PaymentsPost201ResponseProcessingInformation authorizationOptions(PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions authorizationOptions) {
+    this.authorizationOptions = authorizationOptions;
+    return this;
+  }
+
+   /**
+   * Get authorizationOptions
+   * @return authorizationOptions
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions getAuthorizationOptions() {
+    return authorizationOptions;
+  }
+
+  public void setAuthorizationOptions(PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions authorizationOptions) {
+    this.authorizationOptions = authorizationOptions;
+  }
+
+  public PtsV2PaymentsPost201ResponseProcessingInformation purchaseOptions(PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions purchaseOptions) {
+    this.purchaseOptions = purchaseOptions;
+    return this;
+  }
+
+   /**
+   * Get purchaseOptions
+   * @return purchaseOptions
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions getPurchaseOptions() {
+    return purchaseOptions;
+  }
+
+  public void setPurchaseOptions(PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions purchaseOptions) {
+    this.purchaseOptions = purchaseOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,12 +172,14 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     return Objects.equals(this.bankTransferOptions, ptsV2PaymentsPost201ResponseProcessingInformation.bankTransferOptions) &&
         Objects.equals(this.paymentSolution, ptsV2PaymentsPost201ResponseProcessingInformation.paymentSolution) &&
         Objects.equals(this.enhancedDataEnabled, ptsV2PaymentsPost201ResponseProcessingInformation.enhancedDataEnabled) &&
-        Objects.equals(this.captureOptions, ptsV2PaymentsPost201ResponseProcessingInformation.captureOptions);
+        Objects.equals(this.captureOptions, ptsV2PaymentsPost201ResponseProcessingInformation.captureOptions) &&
+        Objects.equals(this.authorizationOptions, ptsV2PaymentsPost201ResponseProcessingInformation.authorizationOptions) &&
+        Objects.equals(this.purchaseOptions, ptsV2PaymentsPost201ResponseProcessingInformation.purchaseOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bankTransferOptions, paymentSolution, enhancedDataEnabled, captureOptions);
+    return Objects.hash(bankTransferOptions, paymentSolution, enhancedDataEnabled, captureOptions, authorizationOptions, purchaseOptions);
   }
 
 
@@ -142,10 +188,12 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsPost201ResponseProcessingInformation {\n");
     
-    sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
-    sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
-    sb.append("    enhancedDataEnabled: ").append(toIndentedString(enhancedDataEnabled)).append("\n");
-    sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
+    if (bankTransferOptions != null) sb.append("    bankTransferOptions: ").append(toIndentedString(bankTransferOptions)).append("\n");
+    if (paymentSolution != null) sb.append("    paymentSolution: ").append(toIndentedString(paymentSolution)).append("\n");
+    if (enhancedDataEnabled != null) sb.append("    enhancedDataEnabled: ").append(toIndentedString(enhancedDataEnabled)).append("\n");
+    if (captureOptions != null) sb.append("    captureOptions: ").append(toIndentedString(captureOptions)).append("\n");
+    if (authorizationOptions != null) sb.append("    authorizationOptions: ").append(toIndentedString(authorizationOptions)).append("\n");
+    if (purchaseOptions != null) sb.append("    purchaseOptions: ").append(toIndentedString(purchaseOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -156,10 +204,10 @@ public class PtsV2PaymentsPost201ResponseProcessingInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

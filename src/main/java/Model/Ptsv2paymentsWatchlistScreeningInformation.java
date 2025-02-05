@@ -116,7 +116,7 @@ public class Ptsv2paymentsWatchlistScreeningInformation {
    * @return proceedOnMatch
   **/
   @ApiModelProperty(value = "Indicates whether the transaction should proceed if there is a match. Possible values: - `true`: Transaction proceeds even when match is found in the Denied Parties List. The match is noted in the response. - `false`: Normal watchlist screening behavior occurs. (Transaction stops if a match to DPL occurs. Transaction proceeds if no match.) ")
-  public Boolean isProceedOnMatch() {
+  public Boolean ProceedOnMatch() {
     return proceedOnMatch;
   }
 
@@ -151,10 +151,10 @@ public class Ptsv2paymentsWatchlistScreeningInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsWatchlistScreeningInformation {\n");
     
-    sb.append("    addressOperator: ").append(toIndentedString(addressOperator)).append("\n");
-    sb.append("    weights: ").append(toIndentedString(weights)).append("\n");
-    sb.append("    sanctionLists: ").append(toIndentedString(sanctionLists)).append("\n");
-    sb.append("    proceedOnMatch: ").append(toIndentedString(proceedOnMatch)).append("\n");
+    if (addressOperator != null) sb.append("    addressOperator: ").append(toIndentedString(addressOperator)).append("\n");
+    if (weights != null) sb.append("    weights: ").append(toIndentedString(weights)).append("\n");
+    if (sanctionLists != null) sb.append("    sanctionLists: ").append(toIndentedString(sanctionLists)).append("\n");
+    if (proceedOnMatch != null) sb.append("    proceedOnMatch: ").append(toIndentedString(proceedOnMatch)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -165,10 +165,10 @@ public class Ptsv2paymentsWatchlistScreeningInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

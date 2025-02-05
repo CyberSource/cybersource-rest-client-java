@@ -52,7 +52,7 @@ public class DmConfigThirdpartyProviderEkata {
    * @return enabled
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnabled() {
+  public Boolean Enabled() {
     return enabled;
   }
 
@@ -70,7 +70,7 @@ public class DmConfigThirdpartyProviderEkata {
    * @return enableRealTime
   **/
   @ApiModelProperty(value = "")
-  public Boolean isEnableRealTime() {
+  public Boolean EnableRealTime() {
     return enableRealTime;
   }
 
@@ -88,7 +88,7 @@ public class DmConfigThirdpartyProviderEkata {
    * @return useCybsCredentials
   **/
   @ApiModelProperty(value = "")
-  public Boolean isUseCybsCredentials() {
+  public Boolean UseCybsCredentials() {
     return useCybsCredentials;
   }
 
@@ -141,10 +141,10 @@ public class DmConfigThirdpartyProviderEkata {
     StringBuilder sb = new StringBuilder();
     sb.append("class DmConfigThirdpartyProviderEkata {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    enableRealTime: ").append(toIndentedString(enableRealTime)).append("\n");
-    sb.append("    useCybsCredentials: ").append(toIndentedString(useCybsCredentials)).append("\n");
-    sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
+    if (enabled != null) sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    if (enableRealTime != null) sb.append("    enableRealTime: ").append(toIndentedString(enableRealTime)).append("\n");
+    if (useCybsCredentials != null) sb.append("    useCybsCredentials: ").append(toIndentedString(useCybsCredentials)).append("\n");
+    if (credentials != null) sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -155,10 +155,10 @@ public class DmConfigThirdpartyProviderEkata {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

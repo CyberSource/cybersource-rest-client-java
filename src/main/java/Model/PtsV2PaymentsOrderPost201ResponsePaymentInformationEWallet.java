@@ -140,10 +140,10 @@ public class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet {
     StringBuilder sb = new StringBuilder();
     sb.append("class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet {\n");
     
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    fundingSource: ").append(toIndentedString(fundingSource)).append("\n");
-    sb.append("    fundingSourceSale: ").append(toIndentedString(fundingSourceSale)).append("\n");
-    sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+    if (accountId != null) sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    if (fundingSource != null) sb.append("    fundingSource: ").append(toIndentedString(fundingSource)).append("\n");
+    if (fundingSourceSale != null) sb.append("    fundingSourceSale: ").append(toIndentedString(fundingSourceSale)).append("\n");
+    if (userName != null) sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

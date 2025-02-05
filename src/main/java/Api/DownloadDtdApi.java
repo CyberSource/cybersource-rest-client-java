@@ -152,7 +152,6 @@ public class DownloadDtdApi {
      */
     public void getDTDV2(String reportDefinitionNameVersion) throws ApiException {
         logger.info("CALL TO METHOD 'getDTDV2' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         getDTDV2WithHttpInfo(reportDefinitionNameVersion);
 
     }
@@ -165,6 +164,7 @@ public class DownloadDtdApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> getDTDV2WithHttpInfo(String reportDefinitionNameVersion) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getDTDV2ValidateBeforeCall(reportDefinitionNameVersion, null, null);
         return apiClient.execute(call);
     }

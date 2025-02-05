@@ -96,8 +96,8 @@ public class TmsAuthorizationOptionsInitiatorMerchantInitiatedTransaction {
     StringBuilder sb = new StringBuilder();
     sb.append("class TmsAuthorizationOptionsInitiatorMerchantInitiatedTransaction {\n");
     
-    sb.append("    previousTransactionId: ").append(toIndentedString(previousTransactionId)).append("\n");
-    sb.append("    originalAuthorizedAmount: ").append(toIndentedString(originalAuthorizedAmount)).append("\n");
+    if (previousTransactionId != null) sb.append("    previousTransactionId: ").append(toIndentedString(previousTransactionId)).append("\n");
+    if (originalAuthorizedAmount != null) sb.append("    originalAuthorizedAmount: ").append(toIndentedString(originalAuthorizedAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,10 +108,10 @@ public class TmsAuthorizationOptionsInitiatorMerchantInitiatedTransaction {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -119,9 +119,9 @@ public class InlineResponse4005Fields {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse4005Fields {\n");
     
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    localizationKey: ").append(toIndentedString(localizationKey)).append("\n");
+    if (path != null) sb.append("    path: ").append(toIndentedString(path)).append("\n");
+    if (message != null) sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    if (localizationKey != null) sb.append("    localizationKey: ").append(toIndentedString(localizationKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -132,10 +132,10 @@ public class InlineResponse4005Fields {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

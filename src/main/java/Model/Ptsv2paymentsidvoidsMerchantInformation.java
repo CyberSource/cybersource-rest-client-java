@@ -74,7 +74,7 @@ public class Ptsv2paymentsidvoidsMerchantInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsidvoidsMerchantInformation {\n");
     
-    sb.append("    transactionLocalDateTime: ").append(toIndentedString(transactionLocalDateTime)).append("\n");
+    if (transactionLocalDateTime != null) sb.append("    transactionLocalDateTime: ").append(toIndentedString(transactionLocalDateTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2paymentsidvoidsMerchantInformation {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -75,7 +75,7 @@ public class Ptsv2paymentsInvoiceDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsInvoiceDetails {\n");
     
-    sb.append("    barcodeNumber: ").append(toIndentedString(barcodeNumber)).append("\n");
+    if (barcodeNumber != null) sb.append("    barcodeNumber: ").append(toIndentedString(barcodeNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,10 +86,10 @@ public class Ptsv2paymentsInvoiceDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

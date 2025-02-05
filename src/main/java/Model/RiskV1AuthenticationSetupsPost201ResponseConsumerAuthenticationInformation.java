@@ -118,9 +118,9 @@ public class RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInfo
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation {\n");
     
-    sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
-    sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
-    sb.append("    deviceDataCollectionUrl: ").append(toIndentedString(deviceDataCollectionUrl)).append("\n");
+    if (accessToken != null) sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+    if (referenceId != null) sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
+    if (deviceDataCollectionUrl != null) sb.append("    deviceDataCollectionUrl: ").append(toIndentedString(deviceDataCollectionUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,10 +131,10 @@ public class RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInfo
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

@@ -74,7 +74,7 @@ public class Ptsv2intentsOrderInformationInvoiceDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2intentsOrderInformationInvoiceDetails {\n");
     
-    sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
+    if (productDescription != null) sb.append("    productDescription: ").append(toIndentedString(productDescription)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2intentsOrderInformationInvoiceDetails {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

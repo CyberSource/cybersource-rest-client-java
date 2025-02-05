@@ -159,7 +159,6 @@ public class BatchesApi {
      */
     public InlineResponse2007 getBatchReport(String batchId) throws ApiException {
         logger.info("CALL TO METHOD 'getBatchReport' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2007> resp = getBatchReportWithHttpInfo(batchId);
         logger.info("CALL TO METHOD 'getBatchReport' ENDED");
         return resp.getData();
@@ -173,6 +172,7 @@ public class BatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2007> getBatchReportWithHttpInfo(String batchId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getBatchReportValidateBeforeCall(batchId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -304,7 +304,6 @@ public class BatchesApi {
      */
     public InlineResponse2006 getBatchStatus(String batchId) throws ApiException {
         logger.info("CALL TO METHOD 'getBatchStatus' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2006> resp = getBatchStatusWithHttpInfo(batchId);
         logger.info("CALL TO METHOD 'getBatchStatus' ENDED");
         return resp.getData();
@@ -318,6 +317,7 @@ public class BatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2006> getBatchStatusWithHttpInfo(String batchId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getBatchStatusValidateBeforeCall(batchId, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -456,7 +456,6 @@ public class BatchesApi {
      */
     public InlineResponse2005 getBatchesList(Long offset, Long limit, String fromDate, String toDate) throws ApiException {
         logger.info("CALL TO METHOD 'getBatchesList' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse2005> resp = getBatchesListWithHttpInfo(offset, limit, fromDate, toDate);
         logger.info("CALL TO METHOD 'getBatchesList' ENDED");
         return resp.getData();
@@ -473,6 +472,7 @@ public class BatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse2005> getBatchesListWithHttpInfo(Long offset, Long limit, String fromDate, String toDate) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getBatchesListValidateBeforeCall(offset, limit, fromDate, toDate, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -603,7 +603,6 @@ public class BatchesApi {
      */
     public InlineResponse202 postBatch(Body body) throws ApiException {
         logger.info("CALL TO METHOD 'postBatch' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<InlineResponse202> resp = postBatchWithHttpInfo(body);
         logger.info("CALL TO METHOD 'postBatch' ENDED");
         return resp.getData();
@@ -617,6 +616,7 @@ public class BatchesApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InlineResponse202> postBatchWithHttpInfo(Body body) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = postBatchValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse202>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

@@ -162,11 +162,11 @@ public class TssV2PostEmvTags200ResponseEmvTagBreakdownList {
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2PostEmvTags200ResponseEmvTagBreakdownList {\n");
     
-    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    length: ").append(toIndentedString(length)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    if (tag != null) sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    if (name != null) sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    if (length != null) sb.append("    length: ").append(toIndentedString(length)).append("\n");
+    if (value != null) sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,10 +177,10 @@ public class TssV2PostEmvTags200ResponseEmvTagBreakdownList {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

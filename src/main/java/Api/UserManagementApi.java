@@ -162,7 +162,6 @@ public class UserManagementApi {
      */
     public UmsV1UsersGet200Response getUsers(String organizationId, String userName, String permissionId, String roleId) throws ApiException {
         logger.info("CALL TO METHOD 'getUsers' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<UmsV1UsersGet200Response> resp = getUsersWithHttpInfo(organizationId, userName, permissionId, roleId);
         logger.info("CALL TO METHOD 'getUsers' ENDED");
         return resp.getData();
@@ -179,6 +178,7 @@ public class UserManagementApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UmsV1UsersGet200Response> getUsersWithHttpInfo(String organizationId, String userName, String permissionId, String roleId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getUsersValidateBeforeCall(organizationId, userName, permissionId, roleId, null, null);
         Type localVarReturnType = new TypeToken<UmsV1UsersGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

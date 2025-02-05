@@ -85,7 +85,7 @@ public class InlineResponse2005Embedded {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2005Embedded {\n");
     
-    sb.append("    batches: ").append(toIndentedString(batches)).append("\n");
+    if (batches != null) sb.append("    batches: ").append(toIndentedString(batches)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -96,10 +96,10 @@ public class InlineResponse2005Embedded {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

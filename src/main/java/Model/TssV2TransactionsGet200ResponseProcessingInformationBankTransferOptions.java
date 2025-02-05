@@ -74,7 +74,7 @@ public class TssV2TransactionsGet200ResponseProcessingInformationBankTransferOpt
     StringBuilder sb = new StringBuilder();
     sb.append("class TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions {\n");
     
-    sb.append("    secCode: ").append(toIndentedString(secCode)).append("\n");
+    if (secCode != null) sb.append("    secCode: ").append(toIndentedString(secCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class TssV2TransactionsGet200ResponseProcessingInformationBankTransferOpt
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

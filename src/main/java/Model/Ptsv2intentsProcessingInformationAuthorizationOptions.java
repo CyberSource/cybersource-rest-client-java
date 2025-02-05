@@ -74,7 +74,7 @@ public class Ptsv2intentsProcessingInformationAuthorizationOptions {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2intentsProcessingInformationAuthorizationOptions {\n");
     
-    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
+    if (authType != null) sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -85,10 +85,10 @@ public class Ptsv2intentsProcessingInformationAuthorizationOptions {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

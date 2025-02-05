@@ -250,15 +250,15 @@ public class Ptsv2paymentsOrderInformationAmountDetailsOrder {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsOrderInformationAmountDetailsOrder {\n");
     
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    subTotalAmount: ").append(toIndentedString(subTotalAmount)).append("\n");
-    sb.append("    handlingAmount: ").append(toIndentedString(handlingAmount)).append("\n");
-    sb.append("    shippingAmount: ").append(toIndentedString(shippingAmount)).append("\n");
-    sb.append("    shippingDiscountAmount: ").append(toIndentedString(shippingDiscountAmount)).append("\n");
-    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
-    sb.append("    insuranceAmount: ").append(toIndentedString(insuranceAmount)).append("\n");
-    sb.append("    giftWrapAmount: ").append(toIndentedString(giftWrapAmount)).append("\n");
+    if (totalAmount != null) sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
+    if (currency != null) sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    if (subTotalAmount != null) sb.append("    subTotalAmount: ").append(toIndentedString(subTotalAmount)).append("\n");
+    if (handlingAmount != null) sb.append("    handlingAmount: ").append(toIndentedString(handlingAmount)).append("\n");
+    if (shippingAmount != null) sb.append("    shippingAmount: ").append(toIndentedString(shippingAmount)).append("\n");
+    if (shippingDiscountAmount != null) sb.append("    shippingDiscountAmount: ").append(toIndentedString(shippingDiscountAmount)).append("\n");
+    if (taxAmount != null) sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    if (insuranceAmount != null) sb.append("    insuranceAmount: ").append(toIndentedString(insuranceAmount)).append("\n");
+    if (giftWrapAmount != null) sb.append("    giftWrapAmount: ").append(toIndentedString(giftWrapAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -269,10 +269,10 @@ public class Ptsv2paymentsOrderInformationAmountDetailsOrder {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 

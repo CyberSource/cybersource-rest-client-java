@@ -157,7 +157,6 @@ public class ReportsApi {
      */
     public void createReport(CreateAdhocReportRequest createAdhocReportRequest, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'createReport' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         createReportWithHttpInfo(createAdhocReportRequest, organizationId);
 
     }
@@ -171,6 +170,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> createReportWithHttpInfo(CreateAdhocReportRequest createAdhocReportRequest, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = createReportValidateBeforeCall(createAdhocReportRequest, organizationId, null, null);
         return apiClient.execute(call);
     }
@@ -305,7 +305,6 @@ public class ReportsApi {
      */
     public ReportingV3ReportsIdGet200Response getReportByReportId(String reportId, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getReportByReportId' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportsIdGet200Response> resp = getReportByReportIdWithHttpInfo(reportId, organizationId);
         logger.info("CALL TO METHOD 'getReportByReportId' ENDED");
         return resp.getData();
@@ -320,6 +319,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportsIdGet200Response> getReportByReportIdWithHttpInfo(String reportId, String organizationId) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = getReportByReportIdValidateBeforeCall(reportId, organizationId, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsIdGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -497,7 +497,6 @@ public class ReportsApi {
      */
     public ReportingV3ReportsGet200Response searchReports(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus) throws ApiException {
         logger.info("CALL TO METHOD 'searchReports' STARTED");
-        this.apiClient.setComputationStartTime(System.nanoTime());
         ApiResponse<ReportingV3ReportsGet200Response> resp = searchReportsWithHttpInfo(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus);
         logger.info("CALL TO METHOD 'searchReports' ENDED");
         return resp.getData();
@@ -519,6 +518,7 @@ public class ReportsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ReportingV3ReportsGet200Response> searchReportsWithHttpInfo(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus) throws ApiException {
+        this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = searchReportsValidateBeforeCall(startTime, endTime, timeQueryType, organizationId, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus, null, null);
         Type localVarReturnType = new TypeToken<ReportingV3ReportsGet200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);

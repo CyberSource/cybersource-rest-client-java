@@ -140,10 +140,10 @@ public class Ptsv2paymentsPaymentInformationSepaDirectDebit {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ptsv2paymentsPaymentInformationSepaDirectDebit {\n");
     
-    sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
-    sb.append("    signatureDate: ").append(toIndentedString(signatureDate)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    if (reference != null) sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
+    if (signatureDate != null) sb.append("    signatureDate: ").append(toIndentedString(signatureDate)).append("\n");
+    if (url != null) sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    if (type != null) sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,10 +154,10 @@ public class Ptsv2paymentsPaymentInformationSepaDirectDebit {
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
-      return "null";
+      // return "null";
     }
     return o.toString().replace("\n", "\n    ");
   }
-
+  
 }
 
