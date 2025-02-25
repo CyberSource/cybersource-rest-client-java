@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault;
+import Model.NetworkTokenEnrollment;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -35,6 +36,9 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
 
   @SerializedName("vault")
   private CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault vault = null;
+
+  @SerializedName("networkTokenEnrollment")
+  private NetworkTokenEnrollment networkTokenEnrollment = null;
 
   public CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations parentProfileId(String parentProfileId) {
     this.parentProfileId = parentProfileId;
@@ -72,6 +76,24 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
     this.vault = vault;
   }
 
+  public CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations networkTokenEnrollment(NetworkTokenEnrollment networkTokenEnrollment) {
+    this.networkTokenEnrollment = networkTokenEnrollment;
+    return this;
+  }
+
+   /**
+   * Get networkTokenEnrollment
+   * @return networkTokenEnrollment
+  **/
+  @ApiModelProperty(value = "")
+  public NetworkTokenEnrollment getNetworkTokenEnrollment() {
+    return networkTokenEnrollment;
+  }
+
+  public void setNetworkTokenEnrollment(NetworkTokenEnrollment networkTokenEnrollment) {
+    this.networkTokenEnrollment = networkTokenEnrollment;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +105,13 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
     }
     CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations commerceSolutionsProductsTokenManagementConfigurationInformationConfigurations = (CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurations) o;
     return Objects.equals(this.parentProfileId, commerceSolutionsProductsTokenManagementConfigurationInformationConfigurations.parentProfileId) &&
-        Objects.equals(this.vault, commerceSolutionsProductsTokenManagementConfigurationInformationConfigurations.vault);
+        Objects.equals(this.vault, commerceSolutionsProductsTokenManagementConfigurationInformationConfigurations.vault) &&
+        Objects.equals(this.networkTokenEnrollment, commerceSolutionsProductsTokenManagementConfigurationInformationConfigurations.networkTokenEnrollment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parentProfileId, vault);
+    return Objects.hash(parentProfileId, vault, networkTokenEnrollment);
   }
 
 
@@ -99,6 +122,7 @@ public class CommerceSolutionsProductsTokenManagementConfigurationInformationCon
     
     if (parentProfileId != null) sb.append("    parentProfileId: ").append(toIndentedString(parentProfileId)).append("\n");
     if (vault != null) sb.append("    vault: ").append(toIndentedString(vault)).append("\n");
+    if (networkTokenEnrollment != null) sb.append("    networkTokenEnrollment: ").append(toIndentedString(networkTokenEnrollment)).append("\n");
     sb.append("}");
     return sb.toString();
   }

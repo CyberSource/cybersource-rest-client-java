@@ -49,6 +49,12 @@ public class Upv1capturecontextsCaptureMandate {
   @SerializedName("showAcceptedNetworkIcons")
   private Boolean showAcceptedNetworkIcons = null;
 
+  @SerializedName("requestSaveCard")
+  private Boolean requestSaveCard = null;
+
+  @SerializedName("comboCard")
+  private Boolean comboCard = null;
+
   public Upv1capturecontextsCaptureMandate billingType(String billingType) {
     this.billingType = billingType;
     return this;
@@ -165,6 +171,42 @@ public class Upv1capturecontextsCaptureMandate {
     this.showAcceptedNetworkIcons = showAcceptedNetworkIcons;
   }
 
+  public Upv1capturecontextsCaptureMandate requestSaveCard(Boolean requestSaveCard) {
+    this.requestSaveCard = requestSaveCard;
+    return this;
+  }
+
+   /**
+   * Configure Unified Checkout to display the \&quot;Save card for future use\&quot; checkbox.&lt;br&gt;  Configurable check box that will show in a Manual card entry flow to allow a Cardholder to give consent to store their manually entered credential with the Merchant that they are paying.&lt;br&gt;  Applicable when manually entering the details and not enrolling in Click to Pay.  Possible values:  - True   - False&lt;br&gt;&lt;br&gt;  **Use Cases:**  **Offer consumers option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to true. - When set to true, this will show a checkbox with the message &#39;Save card for future use&#39; in Unified Checkout. - When selected this provides a response in both the Transient Token and Get Credentials API response.&lt;br&gt;&lt;br&gt;  **Do not offer consumers the option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to false OR omit the field from the capture context request. - When set to false, the save card option is not shown to consumers when manually entering card details. 
+   * @return requestSaveCard
+  **/
+  @ApiModelProperty(value = "Configure Unified Checkout to display the \"Save card for future use\" checkbox.<br>  Configurable check box that will show in a Manual card entry flow to allow a Cardholder to give consent to store their manually entered credential with the Merchant that they are paying.<br>  Applicable when manually entering the details and not enrolling in Click to Pay.  Possible values:  - True   - False<br><br>  **Use Cases:**  **Offer consumers option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to true. - When set to true, this will show a checkbox with the message 'Save card for future use' in Unified Checkout. - When selected this provides a response in both the Transient Token and Get Credentials API response.<br><br>  **Do not offer consumers the option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to false OR omit the field from the capture context request. - When set to false, the save card option is not shown to consumers when manually entering card details. ")
+  public Boolean RequestSaveCard() {
+    return requestSaveCard;
+  }
+
+  public void setRequestSaveCard(Boolean requestSaveCard) {
+    this.requestSaveCard = requestSaveCard;
+  }
+
+  public Upv1capturecontextsCaptureMandate comboCard(Boolean comboCard) {
+    this.comboCard = comboCard;
+    return this;
+  }
+
+   /**
+   * Configure Unified Checkout to display combo card at checkout.&lt;br&gt;  A combo debit/credit card is a single card that functions both as a Debit/Credit card.  Unified Checkout / Click to Pay Drop-in UI allows the Cardholder to choose whether they would like the transaction to be paid for using either debit or credit card. **Important:** This is applicable to Visa cards only.  Possible values: - True  - False&lt;br&gt;&lt;br&gt;  **Use Cases:**  **Offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to true. - When set to true, Combo Card selection is shown at checkout &lt;br&gt;&lt;br&gt;  **Do not offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to false OR omit the field from the capture context request. - The Combo Card selection is not shown at checkout. 
+   * @return comboCard
+  **/
+  @ApiModelProperty(value = "Configure Unified Checkout to display combo card at checkout.<br>  A combo debit/credit card is a single card that functions both as a Debit/Credit card.  Unified Checkout / Click to Pay Drop-in UI allows the Cardholder to choose whether they would like the transaction to be paid for using either debit or credit card. **Important:** This is applicable to Visa cards only.  Possible values: - True  - False<br><br>  **Use Cases:**  **Offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to true. - When set to true, Combo Card selection is shown at checkout <br><br>  **Do not offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to false OR omit the field from the capture context request. - The Combo Card selection is not shown at checkout. ")
+  public Boolean ComboCard() {
+    return comboCard;
+  }
+
+  public void setComboCard(Boolean comboCard) {
+    this.comboCard = comboCard;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -180,12 +222,14 @@ public class Upv1capturecontextsCaptureMandate {
         Objects.equals(this.requestPhone, upv1capturecontextsCaptureMandate.requestPhone) &&
         Objects.equals(this.requestShipping, upv1capturecontextsCaptureMandate.requestShipping) &&
         Objects.equals(this.shipToCountries, upv1capturecontextsCaptureMandate.shipToCountries) &&
-        Objects.equals(this.showAcceptedNetworkIcons, upv1capturecontextsCaptureMandate.showAcceptedNetworkIcons);
+        Objects.equals(this.showAcceptedNetworkIcons, upv1capturecontextsCaptureMandate.showAcceptedNetworkIcons) &&
+        Objects.equals(this.requestSaveCard, upv1capturecontextsCaptureMandate.requestSaveCard) &&
+        Objects.equals(this.comboCard, upv1capturecontextsCaptureMandate.comboCard);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingType, requestEmail, requestPhone, requestShipping, shipToCountries, showAcceptedNetworkIcons);
+    return Objects.hash(billingType, requestEmail, requestPhone, requestShipping, shipToCountries, showAcceptedNetworkIcons, requestSaveCard, comboCard);
   }
 
 
@@ -200,6 +244,8 @@ public class Upv1capturecontextsCaptureMandate {
     if (requestShipping != null) sb.append("    requestShipping: ").append(toIndentedString(requestShipping)).append("\n");
     if (shipToCountries != null) sb.append("    shipToCountries: ").append(toIndentedString(shipToCountries)).append("\n");
     if (showAcceptedNetworkIcons != null) sb.append("    showAcceptedNetworkIcons: ").append(toIndentedString(showAcceptedNetworkIcons)).append("\n");
+    if (requestSaveCard != null) sb.append("    requestSaveCard: ").append(toIndentedString(requestSaveCard)).append("\n");
+    if (comboCard != null) sb.append("    comboCard: ").append(toIndentedString(comboCard)).append("\n");
     sb.append("}");
     return sb.toString();
   }

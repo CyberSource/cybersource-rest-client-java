@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Microformv2sessionsTransientTokenResponseOptions;
 import Model.Upv1capturecontextsCaptureMandate;
 import Model.Upv1capturecontextsOrderInformation;
 import com.google.gson.TypeAdapter;
@@ -57,6 +58,9 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   @SerializedName("orderInformation")
   private Upv1capturecontextsOrderInformation orderInformation = null;
 
+  @SerializedName("transientTokenResponseOptions")
+  private Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions = null;
+
   public GenerateUnifiedCheckoutCaptureContextRequest clientVersion(String clientVersion) {
     this.clientVersion = clientVersion;
     return this;
@@ -66,7 +70,7 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
    * Specify the version of Unified Checkout that you want to use.
    * @return clientVersion
   **/
-  @ApiModelProperty(example = "0.22", value = "Specify the version of Unified Checkout that you want to use.")
+  @ApiModelProperty(example = "0.24", value = "Specify the version of Unified Checkout that you want to use.")
   public String getClientVersion() {
     return clientVersion;
   }
@@ -225,6 +229,24 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     this.orderInformation = orderInformation;
   }
 
+  public GenerateUnifiedCheckoutCaptureContextRequest transientTokenResponseOptions(Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions) {
+    this.transientTokenResponseOptions = transientTokenResponseOptions;
+    return this;
+  }
+
+   /**
+   * Get transientTokenResponseOptions
+   * @return transientTokenResponseOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Microformv2sessionsTransientTokenResponseOptions getTransientTokenResponseOptions() {
+    return transientTokenResponseOptions;
+  }
+
+  public void setTransientTokenResponseOptions(Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions) {
+    this.transientTokenResponseOptions = transientTokenResponseOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -242,12 +264,13 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
         Objects.equals(this.country, generateUnifiedCheckoutCaptureContextRequest.country) &&
         Objects.equals(this.locale, generateUnifiedCheckoutCaptureContextRequest.locale) &&
         Objects.equals(this.captureMandate, generateUnifiedCheckoutCaptureContextRequest.captureMandate) &&
-        Objects.equals(this.orderInformation, generateUnifiedCheckoutCaptureContextRequest.orderInformation);
+        Objects.equals(this.orderInformation, generateUnifiedCheckoutCaptureContextRequest.orderInformation) &&
+        Objects.equals(this.transientTokenResponseOptions, generateUnifiedCheckoutCaptureContextRequest.transientTokenResponseOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, orderInformation);
+    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, orderInformation, transientTokenResponseOptions);
   }
 
 
@@ -264,6 +287,7 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     if (locale != null) sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     if (captureMandate != null) sb.append("    captureMandate: ").append(toIndentedString(captureMandate)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
+    if (transientTokenResponseOptions != null) sb.append("    transientTokenResponseOptions: ").append(toIndentedString(transientTokenResponseOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
