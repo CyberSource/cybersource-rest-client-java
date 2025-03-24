@@ -63,6 +63,11 @@ The API Reference Guide provides examples of what information is needed for a pa
 To learn more about how to use CyberSource's REST API SDKs, please use [Developer Center REST API SDKs](https://developer.cybersource.com/hello-world/rest-api-sdks.html)
 .
 
+## Security Guidance
+
+* It is strongly recommended to use HTTPS for any proxy servers in your environment to protect secrets during transit.
+
+
 ### Example using Sample Code Application
 
 * Add the [CyberSource REST client as a dependency](https://github.com/CyberSource/cybersource-rest-samples-java/blob/a34f25a384e1fa982f5bb336225e3e37ca3e245d/pom.xml#L20C3-L24C16) in your java project.

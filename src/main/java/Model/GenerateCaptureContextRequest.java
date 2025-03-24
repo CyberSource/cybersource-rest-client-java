@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Microformv2sessionsTransientTokenResponseOptions;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,6 +44,9 @@ public class GenerateCaptureContextRequest {
 
   @SerializedName("allowedPaymentTypes")
   private List<String> allowedPaymentTypes = null;
+
+  @SerializedName("transientTokenResponseOptions")
+  private Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions = null;
 
   public GenerateCaptureContextRequest clientVersion(String clientVersion) {
     this.clientVersion = clientVersion;
@@ -102,10 +106,10 @@ public class GenerateCaptureContextRequest {
   }
 
    /**
-   * The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Accept Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (Accept Check) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Accept Card) and Microform (Accept Check) at least one card network should be specified in the allowedCardNetworks field in the capture context request. 
+   * The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (ACH/Echeck) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Card) and Microform (ACH/Echeck) at least one card network should be specified in the allowedCardNetworks field in the capture context request. 
    * @return allowedCardNetworks
   **/
-  @ApiModelProperty(value = "The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Accept Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (Accept Check) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Accept Card) and Microform (Accept Check) at least one card network should be specified in the allowedCardNetworks field in the capture context request. ")
+  @ApiModelProperty(value = "The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (ACH/Echeck) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Card) and Microform (ACH/Echeck) at least one card network should be specified in the allowedCardNetworks field in the capture context request. ")
   public List<String> getAllowedCardNetworks() {
     return allowedCardNetworks;
   }
@@ -140,6 +144,24 @@ public class GenerateCaptureContextRequest {
     this.allowedPaymentTypes = allowedPaymentTypes;
   }
 
+  public GenerateCaptureContextRequest transientTokenResponseOptions(Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions) {
+    this.transientTokenResponseOptions = transientTokenResponseOptions;
+    return this;
+  }
+
+   /**
+   * Get transientTokenResponseOptions
+   * @return transientTokenResponseOptions
+  **/
+  @ApiModelProperty(value = "")
+  public Microformv2sessionsTransientTokenResponseOptions getTransientTokenResponseOptions() {
+    return transientTokenResponseOptions;
+  }
+
+  public void setTransientTokenResponseOptions(Microformv2sessionsTransientTokenResponseOptions transientTokenResponseOptions) {
+    this.transientTokenResponseOptions = transientTokenResponseOptions;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -153,12 +175,13 @@ public class GenerateCaptureContextRequest {
     return Objects.equals(this.clientVersion, generateCaptureContextRequest.clientVersion) &&
         Objects.equals(this.targetOrigins, generateCaptureContextRequest.targetOrigins) &&
         Objects.equals(this.allowedCardNetworks, generateCaptureContextRequest.allowedCardNetworks) &&
-        Objects.equals(this.allowedPaymentTypes, generateCaptureContextRequest.allowedPaymentTypes);
+        Objects.equals(this.allowedPaymentTypes, generateCaptureContextRequest.allowedPaymentTypes) &&
+        Objects.equals(this.transientTokenResponseOptions, generateCaptureContextRequest.transientTokenResponseOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes);
+    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, transientTokenResponseOptions);
   }
 
 
@@ -171,6 +194,7 @@ public class GenerateCaptureContextRequest {
     if (targetOrigins != null) sb.append("    targetOrigins: ").append(toIndentedString(targetOrigins)).append("\n");
     if (allowedCardNetworks != null) sb.append("    allowedCardNetworks: ").append(toIndentedString(allowedCardNetworks)).append("\n");
     if (allowedPaymentTypes != null) sb.append("    allowedPaymentTypes: ").append(toIndentedString(allowedPaymentTypes)).append("\n");
+    if (transientTokenResponseOptions != null) sb.append("    transientTokenResponseOptions: ").append(toIndentedString(transientTokenResponseOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1,17 +1,25 @@
 package utilities.JWEResponse;
 
 import com.cybersource.authsdk.core.MerchantConfig;
+import com.nimbusds.jose.JOSEException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utilities.JWEResponse.JWEException.JWEException;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
 import java.text.ParseException;
 
 public class JWEUtility {
     private static final Logger logger = LogManager.getLogger(JWEUtility.class);
 
+    /**
+     * This method has been marked as Deprecated and will be removed in coming releases.
+     *
+     * @deprecated use {@link #decryptJWEResponse(PrivateKey, String)} instead.
+     */
+    @Deprecated
     public static String decryptJWEResponse(String encodedResponse, MerchantConfig merchantConfig) throws JWEException {
         try {
             return com.cybersource.authsdk.util.JWEUtility.decryptJWEUsingPEM(merchantConfig, encodedResponse);
@@ -26,6 +34,21 @@ public class JWEUtility {
             throw new JWEException("Unparsable decrypted response", exception);
         }
         catch (Exception exception) {
+            logger.error("JWE internal SDK exception", exception);
+            throw new JWEException("Exception occurred while decrypting the response", exception);
+        }
+    }
+
+    public static String decryptJWEResponse(PrivateKey privateKey, String encodedResponse) throws JWEException {
+        try {
+            return com.cybersource.authsdk.util.JWEUtility.decryptJWEUsingPrivateKey(privateKey, encodedResponse);
+        } catch (ParseException exception) {
+            logger.error("ParseException: Unparsable decrypted response", exception);
+            throw new JWEException("Unparsable decrypted response", exception);
+        } catch (JOSEException exception) {
+            logger.error("JOSEException: Could not able to decrypt the JWE response", exception);
+            throw new JWEException("Could not able to decrypt the JWE response", exception);
+        } catch (Exception exception) {
             logger.error("JWE internal SDK exception", exception);
             throw new JWEException("Exception occurred while decrypting the response", exception);
         }
