@@ -16,6 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation;
+import Model.PtsV2PaymentsCapturesPost201ResponseProcessingInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseClientReferenceInformation;
 import Model.PtsV2PaymentsRefundPost201ResponseLinks;
 import Model.PtsV2PaymentsRefundPost201ResponseOrderInformation;
@@ -55,6 +56,9 @@ public class PtsV2PaymentsRefundPost201Response {
 
   @SerializedName("refundAmountDetails")
   private PtsV2PaymentsRefundPost201ResponseRefundAmountDetails refundAmountDetails = null;
+
+  @SerializedName("processingInformation")
+  private PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation = null;
 
   @SerializedName("processorInformation")
   private PtsV2PaymentsRefundPost201ResponseProcessorInformation processorInformation = null;
@@ -191,6 +195,24 @@ public class PtsV2PaymentsRefundPost201Response {
     this.refundAmountDetails = refundAmountDetails;
   }
 
+  public PtsV2PaymentsRefundPost201Response processingInformation(PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsCapturesPost201ResponseProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(PtsV2PaymentsCapturesPost201ResponseProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
   public PtsV2PaymentsRefundPost201Response processorInformation(PtsV2PaymentsRefundPost201ResponseProcessorInformation processorInformation) {
     this.processorInformation = processorInformation;
     return this;
@@ -262,6 +284,7 @@ public class PtsV2PaymentsRefundPost201Response {
         Objects.equals(this.reconciliationId, ptsV2PaymentsRefundPost201Response.reconciliationId) &&
         Objects.equals(this.clientReferenceInformation, ptsV2PaymentsRefundPost201Response.clientReferenceInformation) &&
         Objects.equals(this.refundAmountDetails, ptsV2PaymentsRefundPost201Response.refundAmountDetails) &&
+        Objects.equals(this.processingInformation, ptsV2PaymentsRefundPost201Response.processingInformation) &&
         Objects.equals(this.processorInformation, ptsV2PaymentsRefundPost201Response.processorInformation) &&
         Objects.equals(this.orderInformation, ptsV2PaymentsRefundPost201Response.orderInformation) &&
         Objects.equals(this.pointOfSaleInformation, ptsV2PaymentsRefundPost201Response.pointOfSaleInformation);
@@ -269,7 +292,7 @@ public class PtsV2PaymentsRefundPost201Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, refundAmountDetails, processorInformation, orderInformation, pointOfSaleInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, reconciliationId, clientReferenceInformation, refundAmountDetails, processingInformation, processorInformation, orderInformation, pointOfSaleInformation);
   }
 
 
@@ -285,6 +308,7 @@ public class PtsV2PaymentsRefundPost201Response {
     if (reconciliationId != null) sb.append("    reconciliationId: ").append(toIndentedString(reconciliationId)).append("\n");
     if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     if (refundAmountDetails != null) sb.append("    refundAmountDetails: ").append(toIndentedString(refundAmountDetails)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (processorInformation != null) sb.append("    processorInformation: ").append(toIndentedString(processorInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     if (pointOfSaleInformation != null) sb.append("    pointOfSaleInformation: ").append(toIndentedString(pointOfSaleInformation)).append("\n");

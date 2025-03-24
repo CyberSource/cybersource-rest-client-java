@@ -890,10 +890,10 @@ public class Ptsv2paymentsProcessingInformation {
   }
 
    /**
-   *  Possible values: - &#x60;16&#x60; :  High Risk Security  Other values can also be accommodated in future for different transactions.  Currently this field is only used in OCT, we could not find any existing valid values for the past 30 days in production. Issuer may decline invalid purpose of payment code with response code 93.  This field is also applicable for AFT transactions. For list of supported values, please refer to Developer Guide. 
+   * This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide. 
    * @return purposeOfPayment
   **/
-  @ApiModelProperty(value = " Possible values: - `16` :  High Risk Security  Other values can also be accommodated in future for different transactions.  Currently this field is only used in OCT, we could not find any existing valid values for the past 30 days in production. Issuer may decline invalid purpose of payment code with response code 93.  This field is also applicable for AFT transactions. For list of supported values, please refer to Developer Guide. ")
+  @ApiModelProperty(value = "This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide. ")
   public String getPurposeOfPayment() {
     return purposeOfPayment;
   }

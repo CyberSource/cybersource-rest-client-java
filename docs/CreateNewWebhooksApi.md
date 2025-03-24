@@ -4,100 +4,8 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWebhookSubscription**](CreateNewWebhooksApi.md#createWebhookSubscription) | **POST** /notification-subscriptions/v1/webhooks | Create a Webhook
-[**findProductsToSubscribe**](CreateNewWebhooksApi.md#findProductsToSubscribe) | **GET** /notification-subscriptions/v1/products/{organizationId} | Find Products You Can Subscribe To
 [**saveSymEgressKey**](CreateNewWebhooksApi.md#saveSymEgressKey) | **POST** /kms/egress/v2/keys-sym | Create Webhook Security Keys
 
-
-<a name="createWebhookSubscription"></a>
-# **createWebhookSubscription**
-> InlineResponse2014 createWebhookSubscription(createWebhookRequest)
-
-Create a Webhook
-
-Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file. 
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.CreateNewWebhooksApi;
-
-
-CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
-CreateWebhookRequest createWebhookRequest = new CreateWebhookRequest(); // CreateWebhookRequest | The webhook payload
-try {
-    InlineResponse2014 result = apiInstance.createWebhookSubscription(createWebhookRequest);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreateNewWebhooksApi#createWebhookSubscription");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createWebhookRequest** | [**CreateWebhookRequest**](CreateWebhookRequest.md)| The webhook payload | [optional]
-
-### Return type
-
-[**InlineResponse2014**](InlineResponse2014.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-<a name="findProductsToSubscribe"></a>
-# **findProductsToSubscribe**
-> List&lt;InlineResponse2002&gt; findProductsToSubscribe(organizationId)
-
-Find Products You Can Subscribe To
-
-Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
-
-### Example
-```java
-// Import classes:
-//import Invokers.ApiException;
-//import Api.CreateNewWebhooksApi;
-
-
-CreateNewWebhooksApi apiInstance = new CreateNewWebhooksApi();
-String organizationId = "organizationId_example"; // String | The Organization Identifier.
-try {
-    List<InlineResponse2002> result = apiInstance.findProductsToSubscribe(organizationId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CreateNewWebhooksApi#findProductsToSubscribe");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| The Organization Identifier. |
-
-### Return type
-
-[**List&lt;InlineResponse2002&gt;**](InlineResponse2002.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
 
 <a name="saveSymEgressKey"></a>
 # **saveSymEgressKey**
@@ -105,7 +13,7 @@ No authorization required
 
 Create Webhook Security Keys
 
-Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remeber to save the key in the API response, so that you can use it to validate messages later. 
+Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remember to save the key in the API response, so that you can use it to validate messages later. 
 
 ### Example
 ```java
@@ -148,5 +56,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 

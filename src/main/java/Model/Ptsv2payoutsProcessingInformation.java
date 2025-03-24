@@ -176,10 +176,10 @@ public class Ptsv2payoutsProcessingInformation {
   }
 
    /**
-   * This will send purpose of funds code for original credit transactions (OCTs). 
+   * This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide. 
    * @return purposeOfPayment
   **/
-  @ApiModelProperty(value = "This will send purpose of funds code for original credit transactions (OCTs). ")
+  @ApiModelProperty(value = "This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide. ")
   public String getPurposeOfPayment() {
     return purposeOfPayment;
   }

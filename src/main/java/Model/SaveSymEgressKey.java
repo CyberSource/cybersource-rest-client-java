@@ -67,7 +67,7 @@ public class SaveSymEgressKey {
    * Client request action. 
    * @return clientRequestAction
   **/
-  @ApiModelProperty(required = true, value = "Client request action. ")
+  @ApiModelProperty(value = "Client request action. ")
   public String getClientRequestAction() {
     return clientRequestAction;
   }
@@ -85,7 +85,7 @@ public class SaveSymEgressKey {
    * Get keyInformation
    * @return keyInformation
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Kmsegressv2keyssymKeyInformation getKeyInformation() {
     return keyInformation;
   }

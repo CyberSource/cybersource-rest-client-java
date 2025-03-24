@@ -15,8 +15,6 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Kmsegressv2keysasymKeyInformation;
-import Model.Kmsegressv2keyssymClientReferenceInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -37,12 +35,6 @@ public class InlineResponse2015 {
 
   @SerializedName("status")
   private String status = null;
-
-  @SerializedName("clientReferenceInformation")
-  private Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation = null;
-
-  @SerializedName("keyInformation")
-  private Kmsegressv2keysasymKeyInformation keyInformation = null;
 
   public InlineResponse2015 submitTimeUtc(String submitTimeUtc) {
     this.submitTimeUtc = submitTimeUtc;
@@ -80,42 +72,6 @@ public class InlineResponse2015 {
     this.status = status;
   }
 
-  public InlineResponse2015 clientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
-    return this;
-  }
-
-   /**
-   * Get clientReferenceInformation
-   * @return clientReferenceInformation
-  **/
-  @ApiModelProperty(value = "")
-  public Kmsegressv2keyssymClientReferenceInformation getClientReferenceInformation() {
-    return clientReferenceInformation;
-  }
-
-  public void setClientReferenceInformation(Kmsegressv2keyssymClientReferenceInformation clientReferenceInformation) {
-    this.clientReferenceInformation = clientReferenceInformation;
-  }
-
-  public InlineResponse2015 keyInformation(Kmsegressv2keysasymKeyInformation keyInformation) {
-    this.keyInformation = keyInformation;
-    return this;
-  }
-
-   /**
-   * Get keyInformation
-   * @return keyInformation
-  **/
-  @ApiModelProperty(value = "")
-  public Kmsegressv2keysasymKeyInformation getKeyInformation() {
-    return keyInformation;
-  }
-
-  public void setKeyInformation(Kmsegressv2keysasymKeyInformation keyInformation) {
-    this.keyInformation = keyInformation;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -127,14 +83,12 @@ public class InlineResponse2015 {
     }
     InlineResponse2015 inlineResponse2015 = (InlineResponse2015) o;
     return Objects.equals(this.submitTimeUtc, inlineResponse2015.submitTimeUtc) &&
-        Objects.equals(this.status, inlineResponse2015.status) &&
-        Objects.equals(this.clientReferenceInformation, inlineResponse2015.clientReferenceInformation) &&
-        Objects.equals(this.keyInformation, inlineResponse2015.keyInformation);
+        Objects.equals(this.status, inlineResponse2015.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(submitTimeUtc, status, clientReferenceInformation, keyInformation);
+    return Objects.hash(submitTimeUtc, status);
   }
 
 
@@ -145,8 +99,6 @@ public class InlineResponse2015 {
     
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
-    if (keyInformation != null) sb.append("    keyInformation: ").append(toIndentedString(keyInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }
