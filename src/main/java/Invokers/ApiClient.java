@@ -1347,7 +1347,7 @@ public class ApiClient {
 			contentType = "application/json";
 		}
 		RequestBody requestbody = createRequestBody(method, body, formParams, contentType);
-						
+		
 		callAuthenticationHeader(method, path, requestbody, queryParams, requestHeaderMap);
 
 		if (merchantConfig.isEnableClientCert()) {
@@ -1496,7 +1496,7 @@ public class ApiClient {
 
 		return request;
 	}
-
+	
 	private RequestBody createRequestBody(String method, Object body, Map<String, Object> formParams,
 			String contentType) throws ApiException {
 		RequestBody reqBody;

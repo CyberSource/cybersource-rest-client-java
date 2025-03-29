@@ -57,6 +57,7 @@ import okhttp3.Route;
 import okhttp3.internal.http.HttpMethod;
 import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
+import okio.Buffer;
 import okio.BufferedSink;
 import okio.Okio;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
@@ -1339,8 +1340,15 @@ public class ApiClient {
 				}
 			}
 		}
-						
-		callAuthenticationHeader(method, path, body, queryParams, requestHeaderMap);
+		
+		String contentType = headerParams.get("Content-Type");
+		// ensuring a default content type
+		if (contentType == null) {
+			contentType = "application/json";
+		}
+		RequestBody requestbody = createRequestBody(method, body, formParams, contentType);
+		
+		callAuthenticationHeader(method, path, requestbody, queryParams, requestHeaderMap);
 
 		if (merchantConfig.isEnableClientCert()) {
 			addClientCertToKeyStore();
@@ -1357,9 +1365,19 @@ public class ApiClient {
 
 		
 		logger.info("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
-		Request request = buildRequest(path, method, queryParams, body, headerParams, formParams, authNames,
+		Request request = buildRequest(path, method, queryParams, requestbody, headerParams, formParams, authNames,
 				progressRequestListener);
 		return httpClient.newCall(request);
+	}
+	
+	private String getRequestContentSendOverNetwork(RequestBody requestBody) throws IOException {
+		if(requestBody!=null) {
+			Buffer buffer = new Buffer();
+			requestBody.writeTo(buffer);
+			String payload = buffer.readUtf8();
+			return payload;
+		}
+		return null;
 	}
 
 	/*
@@ -1367,7 +1385,7 @@ public class ApiClient {
 	 *
 	 */
 
-	public void callAuthenticationHeader(String method, String path, Object body, List<Pair> queryParams, Map<String, String> requestHeaderMap) {
+	public void callAuthenticationHeader(String method, String path, RequestBody reqBody, List<Pair> queryParams, Map<String, String> requestHeaderMap) {
 
 		try {
 			String requestTarget = null;
@@ -1399,14 +1417,7 @@ public class ApiClient {
 
 			Authorization authorization = new Authorization();
 
-			String requestBody = null;
-			if ((method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT") ||
-					method.equalsIgnoreCase("PATCH"))
-					&& body.equals("{}")) {
-				requestBody = "{}";
-			} else {
-				requestBody = json.serialize(body);
-			}
+			String requestBody = getRequestContentSendOverNetwork(reqBody);
 
 			logger.debug("HTTP Request Body:\n" + requestBody);
 			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(method);
@@ -1443,7 +1454,7 @@ public class ApiClient {
 				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			}
 
-		} catch (ConfigException e) {
+		} catch (ConfigException | IOException e) {
 			logger.error(e.getMessage());
 		}
 
@@ -1465,7 +1476,7 @@ public class ApiClient {
 	 * @throws ApiException If fail to serialize the request body object
 	 */
 	@SuppressWarnings({ "unchecked" })
-	public Request buildRequest(String path, String method, List<Pair> queryParams, Object body,
+	public Request buildRequest(String path, String method, List<Pair> queryParams, RequestBody reqBody,
 			Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames,
 			ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 		updateParamsForAuth(authNames, queryParams, headerParams);
@@ -1474,12 +1485,20 @@ public class ApiClient {
 		final Request.Builder reqBuilder = new Request.Builder().url(url);
 		processHeaderParams(headerParams, reqBuilder);
 
-		String contentType = headerParams.get("Content-Type");
-		// ensuring a default content type
-		if (contentType == null) {
-			contentType = "application/json";
+		Request request = null;
+
+		if (progressRequestListener != null && reqBody != null) {
+			ProgressRequestBody progressRequestBody = new ProgressRequestBody(reqBody, progressRequestListener);
+			request = reqBuilder.method(method, progressRequestBody).build();
+		} else {
+			request = reqBuilder.method(method, reqBody).build();
 		}
 
+		return request;
+	}
+	
+	private RequestBody createRequestBody(String method, Object body, Map<String, Object> formParams,
+			String contentType) throws ApiException {
 		RequestBody reqBody;
 		if (!HttpMethod.permitsRequestBody(method)) {
 			reqBody = null;
@@ -1506,17 +1525,7 @@ public class ApiClient {
 				reqBody = serialize(body, contentType);
 			}
 		}
-
-		Request request = null;
-
-		if (progressRequestListener != null && reqBody != null) {
-			ProgressRequestBody progressRequestBody = new ProgressRequestBody(reqBody, progressRequestListener);
-			request = reqBuilder.method(method, progressRequestBody).build();
-		} else {
-			request = reqBuilder.method(method, reqBody).build();
-		}
-
-		return request;
+		return reqBody;
 	}
 
 	/**
