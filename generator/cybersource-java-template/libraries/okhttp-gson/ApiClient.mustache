@@ -517,7 +517,6 @@ public class ApiClient {
 	 * <p>
 	 * When lenientDatetimeFormat is enabled, the following ISO 8601 datetime
 	 * formats are supported:
-	 * <p>
 	 * <ul>
 	 * <li>2015-08-16T08:20:05Z</li>
 	 * <li>2015-8-16T8:20:05Z</li>
@@ -1467,7 +1466,7 @@ public class ApiClient {
 	 * @param method                  The request method, one of "GET", "HEAD",
 	 *                                "OPTIONS", "POST", "PUT", "PATCH" and "DELETE"
 	 * @param queryParams             The query parameters
-	 * @param body                    The request body object
+	 * @param reqBody                 The request body object
 	 * @param headerParams            The header parameters
 	 * @param formParams              The form parameters
 	 * @param authNames               The authentications to apply
