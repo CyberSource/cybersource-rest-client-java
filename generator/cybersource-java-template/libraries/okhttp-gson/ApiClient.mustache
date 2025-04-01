@@ -1091,10 +1091,10 @@ public class ApiClient {
 	public RequestBody serialize(Object obj, String contentType) throws ApiException {
 		if (obj instanceof byte[]) {
 			// Binary (byte array) body parameter support.
-			return RequestBody.create(MediaType.parse(contentType), (byte[]) obj);
+			return RequestBody.create((byte[]) obj, MediaType.parse(contentType));
 		} else if (obj instanceof File) {
 			// File body parameter support.
-			return RequestBody.create(MediaType.parse(contentType), (File) obj);
+			return RequestBody.create((File) obj, MediaType.parse(contentType));
 		} else if (isJsonMime(contentType)) {
 			String content;
 			if (obj != null) {
@@ -1102,7 +1102,7 @@ public class ApiClient {
 			} else {
 				content = null;
 			}
-			return RequestBody.create(MediaType.parse(contentType), content);
+			return RequestBody.create(content, MediaType.parse(contentType));
 		} else {
 			logger.error("ApiException : Content type \"" + contentType + "\" is not supported");
 			throw new ApiException("Content type \"" + contentType + "\" is not supported");
@@ -1516,7 +1516,7 @@ public class ApiClient {
 				reqBody = null;
 			} else {
 				// use an empty request body (for POST, PUT and PATCH)
-				reqBody = RequestBody.create(MediaType.parse(contentType), "");
+				reqBody = RequestBody.create("",MediaType.parse(contentType));
 			}
 		} else {
 			if (body.equals("{}")) {
@@ -1636,10 +1636,10 @@ public class ApiClient {
 				Headers partHeaders = Headers.of("Content-Disposition",
 						"form-data; name=\"" + param.getKey() + "\"; filename=\"" + file.getName() + "\"");
 				MediaType mediaType = MediaType.parse(guessContentTypeFromFile(file));
-				mpBuilder.addPart(partHeaders, RequestBody.create(mediaType, file));
+				mpBuilder.addPart(partHeaders, RequestBody.create(file, mediaType));
 			} else {
 				Headers partHeaders = Headers.of("Content-Disposition", "form-data; name=\"" + param.getKey() + "\"");
-				mpBuilder.addPart(partHeaders, RequestBody.create(null, parameterToString(param.getValue())));
+				mpBuilder.addPart(partHeaders, RequestBody.create(parameterToString(param.getValue()), null));
 			}
 		}
 		return mpBuilder.build();
