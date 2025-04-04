@@ -4,9 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**productId** | **String** | Product ID. |  [optional]
-**productName** | **String** | Product Name. |  [optional]
-**eventTypes** | [**List&lt;Notificationsubscriptionsv1productsorganizationIdEventTypes&gt;**](Notificationsubscriptionsv1productsorganizationIdEventTypes.md) |  |  [optional]
+**links** | [**List&lt;InlineResponse2002Links&gt;**](InlineResponse2002Links.md) |  |  [optional]
+**object** | **String** |  |  [optional]
+**offset** | **Integer** |  |  [optional]
+**limit** | **Integer** |  |  [optional]
+**count** | **Integer** |  |  [optional]
+**total** | **Integer** |  |  [optional]
+**embedded** | [**InlineResponse2002Embedded**](InlineResponse2002Embedded.md) |  |  [optional]
 
 
 

@@ -15,7 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.Notificationsubscriptionsv1productsorganizationIdEventTypes;
+import Model.InlineResponse2002Embedded;
+import Model.InlineResponse2002Links;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,75 +33,159 @@ import java.util.List;
  */
 
 public class InlineResponse2002 {
-  @SerializedName("productId")
-  private String productId = null;
+  @SerializedName("_links")
+  private List<InlineResponse2002Links> links = null;
 
-  @SerializedName("productName")
-  private String productName = null;
+  @SerializedName("object")
+  private String object = null;
 
-  @SerializedName("eventTypes")
-  private List<Notificationsubscriptionsv1productsorganizationIdEventTypes> eventTypes = null;
+  @SerializedName("offset")
+  private Integer offset = null;
 
-  public InlineResponse2002 productId(String productId) {
-    this.productId = productId;
+  @SerializedName("limit")
+  private Integer limit = null;
+
+  @SerializedName("count")
+  private Integer count = null;
+
+  @SerializedName("total")
+  private Integer total = null;
+
+  @SerializedName("_embedded")
+  private InlineResponse2002Embedded embedded = null;
+
+  public InlineResponse2002 links(List<InlineResponse2002Links> links) {
+    this.links = links;
     return this;
   }
 
-   /**
-   * Product ID.
-   * @return productId
-  **/
-  @ApiModelProperty(value = "Product ID.")
-  public String getProductId() {
-    return productId;
-  }
-
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
-
-  public InlineResponse2002 productName(String productName) {
-    this.productName = productName;
-    return this;
-  }
-
-   /**
-   * Product Name.
-   * @return productName
-  **/
-  @ApiModelProperty(value = "Product Name.")
-  public String getProductName() {
-    return productName;
-  }
-
-  public void setProductName(String productName) {
-    this.productName = productName;
-  }
-
-  public InlineResponse2002 eventTypes(List<Notificationsubscriptionsv1productsorganizationIdEventTypes> eventTypes) {
-    this.eventTypes = eventTypes;
-    return this;
-  }
-
-  public InlineResponse2002 addEventTypesItem(Notificationsubscriptionsv1productsorganizationIdEventTypes eventTypesItem) {
-    if (this.eventTypes == null) {
-      this.eventTypes = new ArrayList<Notificationsubscriptionsv1productsorganizationIdEventTypes>();
+  public InlineResponse2002 addLinksItem(InlineResponse2002Links linksItem) {
+    if (this.links == null) {
+      this.links = new ArrayList<InlineResponse2002Links>();
     }
-    this.eventTypes.add(eventTypesItem);
+    this.links.add(linksItem);
     return this;
   }
 
    /**
-   * Get eventTypes
-   * @return eventTypes
+   * Get links
+   * @return links
   **/
   @ApiModelProperty(value = "")
-  public List<Notificationsubscriptionsv1productsorganizationIdEventTypes> getEventTypes() {
-    return eventTypes;
+  public List<InlineResponse2002Links> getLinks() {
+    return links;
   }
 
-  public void setEventTypes(List<Notificationsubscriptionsv1productsorganizationIdEventTypes> eventTypes) {
-    this.eventTypes = eventTypes;
+  public void setLinks(List<InlineResponse2002Links> links) {
+    this.links = links;
+  }
+
+  public InlineResponse2002 object(String object) {
+    this.object = object;
+    return this;
+  }
+
+   /**
+   * Get object
+   * @return object
+  **/
+  @ApiModelProperty(example = "collection", value = "")
+  public String getObject() {
+    return object;
+  }
+
+  public void setObject(String object) {
+    this.object = object;
+  }
+
+  public InlineResponse2002 offset(Integer offset) {
+    this.offset = offset;
+    return this;
+  }
+
+   /**
+   * Get offset
+   * @return offset
+  **/
+  @ApiModelProperty(example = "0", value = "")
+  public Integer getOffset() {
+    return offset;
+  }
+
+  public void setOffset(Integer offset) {
+    this.offset = offset;
+  }
+
+  public InlineResponse2002 limit(Integer limit) {
+    this.limit = limit;
+    return this;
+  }
+
+   /**
+   * Get limit
+   * @return limit
+  **/
+  @ApiModelProperty(example = "20", value = "")
+  public Integer getLimit() {
+    return limit;
+  }
+
+  public void setLimit(Integer limit) {
+    this.limit = limit;
+  }
+
+  public InlineResponse2002 count(Integer count) {
+    this.count = count;
+    return this;
+  }
+
+   /**
+   * Get count
+   * @return count
+  **/
+  @ApiModelProperty(example = "1", value = "")
+  public Integer getCount() {
+    return count;
+  }
+
+  public void setCount(Integer count) {
+    this.count = count;
+  }
+
+  public InlineResponse2002 total(Integer total) {
+    this.total = total;
+    return this;
+  }
+
+   /**
+   * Get total
+   * @return total
+  **/
+  @ApiModelProperty(example = "1", value = "")
+  public Integer getTotal() {
+    return total;
+  }
+
+  public void setTotal(Integer total) {
+    this.total = total;
+  }
+
+  public InlineResponse2002 embedded(InlineResponse2002Embedded embedded) {
+    this.embedded = embedded;
+    return this;
+  }
+
+   /**
+   * Get embedded
+   * @return embedded
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2002Embedded getEmbedded() {
+    return embedded;
+  }
+
+  public void setEmbedded(InlineResponse2002Embedded embedded) {
+    this.embedded = embedded;
   }
 
 
@@ -113,14 +198,18 @@ public class InlineResponse2002 {
       return false;
     }
     InlineResponse2002 inlineResponse2002 = (InlineResponse2002) o;
-    return Objects.equals(this.productId, inlineResponse2002.productId) &&
-        Objects.equals(this.productName, inlineResponse2002.productName) &&
-        Objects.equals(this.eventTypes, inlineResponse2002.eventTypes);
+    return Objects.equals(this.links, inlineResponse2002.links) &&
+        Objects.equals(this.object, inlineResponse2002.object) &&
+        Objects.equals(this.offset, inlineResponse2002.offset) &&
+        Objects.equals(this.limit, inlineResponse2002.limit) &&
+        Objects.equals(this.count, inlineResponse2002.count) &&
+        Objects.equals(this.total, inlineResponse2002.total) &&
+        Objects.equals(this.embedded, inlineResponse2002.embedded);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productId, productName, eventTypes);
+    return Objects.hash(links, object, offset, limit, count, total, embedded);
   }
 
 
@@ -129,9 +218,13 @@ public class InlineResponse2002 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse2002 {\n");
     
-    if (productId != null) sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    if (productName != null) sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
-    if (eventTypes != null) sb.append("    eventTypes: ").append(toIndentedString(eventTypes)).append("\n");
+    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (object != null) sb.append("    object: ").append(toIndentedString(object)).append("\n");
+    if (offset != null) sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    if (limit != null) sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+    if (count != null) sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    if (total != null) sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    if (embedded != null) sb.append("    embedded: ").append(toIndentedString(embedded)).append("\n");
     sb.append("}");
     return sb.toString();
   }

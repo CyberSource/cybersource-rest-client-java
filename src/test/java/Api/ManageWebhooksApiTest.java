@@ -13,12 +13,9 @@
 
 package Api;
 
-import Model.InlineResponse2003;
-import Model.InlineResponse2004;
+import Model.InlineResponse2014;
 import Model.InlineResponse2015;
-import Model.InlineResponse4042;
 import Model.SaveAsymEgressKey;
-import Model.UpdateWebhookRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -38,51 +35,17 @@ public class ManageWebhooksApiTest {
 
     
     /**
-     * Delete a Webhook Subscription
+     * Test a Webhook Configuration
      *
-     * Delete the webhook. Please note that deleting a particular webhook does not delete the history of the webhook notifications.
+     * Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user&#39;s subscription.   It will contain sample values for the product &amp; eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
      *
      * @throws Exception
      *          if the Api call fails
      */
     @Test
-    public void deleteWebhookSubscriptionTest() throws Exception {
+    public void notificationSubscriptionsV1WebhooksWebhookIdPostTest() throws Exception {
         String webhookId = null;
-        api.deleteWebhookSubscription(webhookId);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get Details On a Single Webhook
-     *
-     * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
-     *
-     * @throws Exception
-     *          if the Api call fails
-     */
-    @Test
-    public void getWebhookSubscriptionByIdTest() throws Exception {
-        String webhookId = null;
-        InlineResponse2004 response = api.getWebhookSubscriptionById(webhookId);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get Details On All Created Webhooks
-     *
-     * Retrieve a list of all previously created webhooks.
-     *
-     * @throws Exception
-     *          if the Api call fails
-     */
-    @Test
-    public void getWebhookSubscriptionsByOrgTest() throws Exception {
-        String organizationId = null;
-        String productId = null;
-        String eventType = null;
-        List<InlineResponse2003> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
+        InlineResponse2014 response = api.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
 
         // TODO: test validations
     }
@@ -102,23 +65,6 @@ public class ManageWebhooksApiTest {
         SaveAsymEgressKey saveAsymEgressKey = null;
         String vCCorrelationId = null;
         InlineResponse2015 response = api.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Update a Webhook Subscription
-     *
-     * Update the webhook subscription using PATCH.
-     *
-     * @throws Exception
-     *          if the Api call fails
-     */
-    @Test
-    public void updateWebhookSubscriptionTest() throws Exception {
-        String webhookId = null;
-        UpdateWebhookRequest updateWebhookRequest = null;
-        api.updateWebhookSubscription(webhookId, updateWebhookRequest);
 
         // TODO: test validations
     }

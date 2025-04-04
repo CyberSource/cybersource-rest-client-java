@@ -16,6 +16,8 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation;
+import Model.PtsV2PaymentsPost201Response1ErrorInformation;
+import Model.PtsV2PaymentsPost201Response1IssuerInformation;
 import Model.PtsV2PaymentsPost201Response1OrderInformation;
 import Model.PtsV2PaymentsPost201Response1PaymentInformation;
 import Model.PtsV2PaymentsPost201Response1ProcessorInformation;
@@ -56,6 +58,12 @@ public class PtsV2PaymentsPost201Response1 {
 
   @SerializedName("clientReferenceInformation")
   private PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation clientReferenceInformation = null;
+
+  @SerializedName("issuerInformation")
+  private PtsV2PaymentsPost201Response1IssuerInformation issuerInformation = null;
+
+  @SerializedName("errorInformation")
+  private PtsV2PaymentsPost201Response1ErrorInformation errorInformation = null;
 
   public PtsV2PaymentsPost201Response1 id(String id) {
     this.id = id;
@@ -201,6 +209,42 @@ public class PtsV2PaymentsPost201Response1 {
     this.clientReferenceInformation = clientReferenceInformation;
   }
 
+  public PtsV2PaymentsPost201Response1 issuerInformation(PtsV2PaymentsPost201Response1IssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+    return this;
+  }
+
+   /**
+   * Get issuerInformation
+   * @return issuerInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201Response1IssuerInformation getIssuerInformation() {
+    return issuerInformation;
+  }
+
+  public void setIssuerInformation(PtsV2PaymentsPost201Response1IssuerInformation issuerInformation) {
+    this.issuerInformation = issuerInformation;
+  }
+
+  public PtsV2PaymentsPost201Response1 errorInformation(PtsV2PaymentsPost201Response1ErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
+    return this;
+  }
+
+   /**
+   * Get errorInformation
+   * @return errorInformation
+  **/
+  @ApiModelProperty(value = "")
+  public PtsV2PaymentsPost201Response1ErrorInformation getErrorInformation() {
+    return errorInformation;
+  }
+
+  public void setErrorInformation(PtsV2PaymentsPost201Response1ErrorInformation errorInformation) {
+    this.errorInformation = errorInformation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,12 +262,14 @@ public class PtsV2PaymentsPost201Response1 {
         Objects.equals(this.reconciliationId, ptsV2PaymentsPost201Response1.reconciliationId) &&
         Objects.equals(this.paymentInformation, ptsV2PaymentsPost201Response1.paymentInformation) &&
         Objects.equals(this.orderInformation, ptsV2PaymentsPost201Response1.orderInformation) &&
-        Objects.equals(this.clientReferenceInformation, ptsV2PaymentsPost201Response1.clientReferenceInformation);
+        Objects.equals(this.clientReferenceInformation, ptsV2PaymentsPost201Response1.clientReferenceInformation) &&
+        Objects.equals(this.issuerInformation, ptsV2PaymentsPost201Response1.issuerInformation) &&
+        Objects.equals(this.errorInformation, ptsV2PaymentsPost201Response1.errorInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, submitTimeUtc, processorInformation, reconciliationId, paymentInformation, orderInformation, clientReferenceInformation);
+    return Objects.hash(id, status, submitTimeUtc, processorInformation, reconciliationId, paymentInformation, orderInformation, clientReferenceInformation, issuerInformation, errorInformation);
   }
 
 
@@ -240,6 +286,8 @@ public class PtsV2PaymentsPost201Response1 {
     if (paymentInformation != null) sb.append("    paymentInformation: ").append(toIndentedString(paymentInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
+    if (issuerInformation != null) sb.append("    issuerInformation: ").append(toIndentedString(issuerInformation)).append("\n");
+    if (errorInformation != null) sb.append("    errorInformation: ").append(toIndentedString(errorInformation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

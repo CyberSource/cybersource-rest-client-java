@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getTransactionBatchDetails**](TransactionBatchesApi.md#getTransactionBatchDetails) | **GET** /pts/v1/transaction-batch-details/{id} | Get Transaction Details for a given Batch Id
 [**getTransactionBatchId**](TransactionBatchesApi.md#getTransactionBatchId) | **GET** /pts/v1/transaction-batches/{id} | Get Individual Batch File
 [**getTransactionBatches**](TransactionBatchesApi.md#getTransactionBatches) | **GET** /pts/v1/transaction-batches | Get a List of Batch Files
+[**uploadTransactionBatch**](TransactionBatchesApi.md#uploadTransactionBatch) | **POST** /pts/v1/transaction-batch-upload | Upload a Batch File
 
 
 <a name="getTransactionBatchDetails"></a>
@@ -148,4 +149,48 @@ No authorization required
 
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/hal+json
+
+<a name="uploadTransactionBatch"></a>
+# **uploadTransactionBatch**
+> uploadTransactionBatch(file)
+
+Upload a Batch File
+
+This endpoint enables the upload of a batch file containing transactions for processing.
+
+### Example
+```java
+// Import classes:
+//import Invokers.ApiException;
+//import Api.TransactionBatchesApi;
+
+
+TransactionBatchesApi apiInstance = new TransactionBatchesApi();
+File file = new File("/path/to/file.txt"); // File | The file to upload.
+try {
+    apiInstance.uploadTransactionBatch(file);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TransactionBatchesApi#uploadTransactionBatch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| The file to upload. |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 

@@ -77,10 +77,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * First name of recipient. characters. * CTV (14) * Paymentech (30) 
+   * First name of the recipient.    This field is applicable for AFT &amp; OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
    * @return firstName
   **/
-  @ApiModelProperty(value = "First name of recipient. characters. * CTV (14) * Paymentech (30) ")
+  @ApiModelProperty(value = "First name of the recipient.    This field is applicable for AFT & OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. ")
   public String getFirstName() {
     return firstName;
   }
@@ -95,10 +95,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Recipient&#39;s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. 
+   * Middle name of the recipient.    This field is applicable for AFT &amp; OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
    * @return middleName
   **/
-  @ApiModelProperty(value = "Recipient's middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. ")
+  @ApiModelProperty(value = "Middle name of the recipient.    This field is applicable for AFT & OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. ")
   public String getMiddleName() {
     return middleName;
   }
@@ -113,10 +113,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Last name of recipient. characters. * CTV (14) * Paymentech (30) 
+   * Last name of the recipient.  This field is applicable for AFT &amp; OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. 
    * @return lastName
   **/
-  @ApiModelProperty(value = "Last name of recipient. characters. * CTV (14) * Paymentech (30) ")
+  @ApiModelProperty(value = "Last name of the recipient.  This field is applicable for AFT & OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. ")
   public String getLastName() {
     return lastName;
   }
@@ -131,10 +131,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Recipient address information. Required only for FDCCompass.
+   * The street address of the recipient This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. 
    * @return address1
   **/
-  @ApiModelProperty(value = "Recipient address information. Required only for FDCCompass.")
+  @ApiModelProperty(value = "The street address of the recipient This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. ")
   public String getAddress1() {
     return address1;
   }
@@ -149,10 +149,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Recipient city. Required only for FDCCompass.
+   * The city of the recipient. This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. 
    * @return locality
   **/
-  @ApiModelProperty(value = "Recipient city. Required only for FDCCompass.")
+  @ApiModelProperty(value = "The city of the recipient. This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. ")
   public String getLocality() {
     return locality;
   }
@@ -167,10 +167,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Recipient State. Required only for FDCCompass.
+   * The state or province of the recipient. This field is applicable for AFT and OCT transactions when the recipient country is US or CA. Else it is optional.  Must be a two character value 
    * @return administrativeArea
   **/
-  @ApiModelProperty(value = "Recipient State. Required only for FDCCompass.")
+  @ApiModelProperty(value = "The state or province of the recipient. This field is applicable for AFT and OCT transactions when the recipient country is US or CA. Else it is optional.  Must be a two character value ")
   public String getAdministrativeArea() {
     return administrativeArea;
   }
@@ -185,10 +185,10 @@ public class Ptsv2payoutsRecipientInformation {
   }
 
    /**
-   * Recipient country code. Required only for FDCCompass.
+   * The country associated with the address of the recipient. This field is applicable for AFT and OCT transactions.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) 
    * @return country
   **/
-  @ApiModelProperty(value = "Recipient country code. Required only for FDCCompass.")
+  @ApiModelProperty(value = "The country associated with the address of the recipient. This field is applicable for AFT and OCT transactions.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) ")
   public String getCountry() {
     return country;
   }
