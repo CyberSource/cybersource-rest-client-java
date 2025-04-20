@@ -561,7 +561,7 @@ public class TransactionBatchesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         if (file != null)
         localVarFormParams.put("file", file);
-
+        System.out.println("localVarFormParams" + localVarFormParams);
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -587,6 +587,13 @@ public class TransactionBatchesApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
+        System.out.println("localVarQueryParams" + localVarQueryParams);
+        System.out.println("localVarPostBody" + localVarPostBody);
+        System.out.println("localVarHeaderParams" + localVarHeaderParams);
+        System.out.println("localVarFormParams" + localVarFormParams);
+        System.out.println("localVarAuthNames" + localVarAuthNames);
+        System.out.println("progressRequestListener" + progressRequestListener);
+
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
@@ -598,8 +605,10 @@ public class TransactionBatchesApi {
             logger.error("Missing the required parameter 'file' when calling uploadTransactionBatch(Async)");
             throw new ApiException("Missing the required parameter 'file' when calling uploadTransactionBatch(Async)");
         }
-        
-        
+        System.out.println("file" + file);
+        System.out.println("progressListener" + progressListener);
+        System.out.println("progressRequestListener" + progressRequestListener);
+
         okhttp3.Call call = uploadTransactionBatchCall(file, progressListener, progressRequestListener);
         return call;
 
