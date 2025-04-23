@@ -155,6 +155,14 @@ public class InvoicesApi {
      * @param createInvoiceRequest  (required)
      * @return InvoicingV2InvoicesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InvoicingV2InvoicesPost201Response
+     * OPERATION_ID=createInvoice
+     * HTTP_METHOD=POST
+     * PATH=/invoicing/v2/invoices
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createInvoiceRequest
      */
     public InvoicingV2InvoicesPost201Response createInvoice(CreateInvoiceRequest createInvoiceRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createInvoice' STARTED");
@@ -315,6 +323,14 @@ public class InvoicesApi {
      * @param status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING  (optional)
      * @return InvoicingV2InvoicesAllGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InvoicingV2InvoicesAllGet200Response
+     * OPERATION_ID=getAllInvoices
+     * HTTP_METHOD=GET
+     * PATH=/invoicing/v2/invoices
+     * QUERY_PARAMS=offset, limit, status
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public InvoicingV2InvoicesAllGet200Response getAllInvoices(Integer offset, Integer limit, String status) throws ApiException {
         logger.info("CALL TO METHOD 'getAllInvoices' STARTED");
@@ -464,6 +480,14 @@ public class InvoicesApi {
      * @param id The invoice number. (required)
      * @return InvoicingV2InvoicesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InvoicingV2InvoicesGet200Response
+     * OPERATION_ID=getInvoice
+     * HTTP_METHOD=GET
+     * PATH=/invoicing/v2/invoices/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public InvoicingV2InvoicesGet200Response getInvoice(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getInvoice' STARTED");
@@ -609,6 +633,14 @@ public class InvoicesApi {
      * @param id The invoice number. (required)
      * @return InvoicingV2InvoicesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InvoicingV2InvoicesPost201Response
+     * OPERATION_ID=performCancelAction
+     * HTTP_METHOD=POST
+     * PATH=/invoicing/v2/invoices/{id}/cancelation
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public InvoicingV2InvoicesPost201Response performCancelAction(String id) throws ApiException {
         logger.info("CALL TO METHOD 'performCancelAction' STARTED");
@@ -754,6 +786,14 @@ public class InvoicesApi {
      * @param id The invoice number. (required)
      * @return InvoicingV2InvoicesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InvoicingV2InvoicesPost201Response
+     * OPERATION_ID=performSendAction
+     * HTTP_METHOD=POST
+     * PATH=/invoicing/v2/invoices/{id}/delivery
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public InvoicingV2InvoicesPost201Response performSendAction(String id) throws ApiException {
         logger.info("CALL TO METHOD 'performSendAction' STARTED");
@@ -904,6 +944,14 @@ public class InvoicesApi {
      * @param updateInvoiceRequest Updating the invoice does not resend the invoice automatically. You must resend the invoice separately. (required)
      * @return InvoicingV2InvoicesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InvoicingV2InvoicesPost201Response
+     * OPERATION_ID=updateInvoice
+     * HTTP_METHOD=PUT
+     * PATH=/invoicing/v2/invoices/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=updateInvoiceRequest
      */
     public InvoicingV2InvoicesPost201Response updateInvoice(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updateInvoice' STARTED");

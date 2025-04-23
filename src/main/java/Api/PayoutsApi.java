@@ -150,6 +150,14 @@ public class PayoutsApi {
      * @param octCreatePaymentRequest  (required)
      * @return PtsV2PayoutsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PayoutsPost201Response
+     * OPERATION_ID=octCreatePayment
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/payouts
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=octCreatePaymentRequest
      */
     public PtsV2PayoutsPost201Response octCreatePayment(OctCreatePaymentRequest octCreatePaymentRequest) throws ApiException {
         logger.info("CALL TO METHOD 'octCreatePayment' STARTED");

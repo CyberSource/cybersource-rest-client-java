@@ -160,6 +160,14 @@ public class ReversalApi {
      * @param authReversalRequest  (required)
      * @return PtsV2PaymentsReversalsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsReversalsPost201Response
+     * OPERATION_ID=authReversal
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/payments/{id}/reversals
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=authReversalRequest
      */
     public PtsV2PaymentsReversalsPost201Response authReversal(String id, AuthReversalRequest authReversalRequest) throws ApiException {
         logger.info("CALL TO METHOD 'authReversal' STARTED");
@@ -303,6 +311,14 @@ public class ReversalApi {
      * @param mitReversalRequest  (required)
      * @return PtsV2PaymentsReversalsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsReversalsPost201Response
+     * OPERATION_ID=mitReversal
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/reversals
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=mitReversalRequest
      */
     public PtsV2PaymentsReversalsPost201Response mitReversal(MitReversalRequest mitReversalRequest) throws ApiException {
         logger.info("CALL TO METHOD 'mitReversal' STARTED");

@@ -149,6 +149,14 @@ public class DownloadXsdApi {
      * Used to download XSDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=getXSDV2
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/xsds/{reportDefinitionNameVersion}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void getXSDV2(String reportDefinitionNameVersion) throws ApiException {
         logger.info("CALL TO METHOD 'getXSDV2' STARTED");

@@ -169,6 +169,14 @@ public class PaymentsApi {
      * @param id Request identifier number for the order request.  (required)
      * @return PtsV2PaymentsOrderPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsOrderPost201Response
+     * OPERATION_ID=createOrderRequest
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/payment-references/{id}/intents
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=orderPaymentRequest
      */
     public PtsV2PaymentsOrderPost201Response createOrderRequest(OrderPaymentRequest orderPaymentRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'createOrderRequest' STARTED");
@@ -312,6 +320,14 @@ public class PaymentsApi {
      * @param createPaymentRequest  (required)
      * @return PtsV2PaymentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsPost201Response
+     * OPERATION_ID=createPayment
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/payments
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createPaymentRequest
      */
     public PtsV2PaymentsPost201Response createPayment(CreatePaymentRequest createPaymentRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createPayment' STARTED");
@@ -453,6 +469,14 @@ public class PaymentsApi {
      * @param createSessionReq  (required)
      * @return PtsV2PaymentsPost201Response2
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsPost201Response2
+     * OPERATION_ID=createSessionRequest
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/payment-references
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createSessionReq
      */
     public PtsV2PaymentsPost201Response2 createSessionRequest(CreateSessionReq createSessionReq) throws ApiException {
         logger.info("CALL TO METHOD 'createSessionRequest' STARTED");
@@ -603,6 +627,14 @@ public class PaymentsApi {
      * @param incrementAuthRequest  (required)
      * @return PtsV2IncrementalAuthorizationPatch201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2IncrementalAuthorizationPatch201Response
+     * OPERATION_ID=incrementAuth
+     * HTTP_METHOD=PATCH
+     * PATH=/pts/v2/payments/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=incrementAuthRequest
      */
     public PtsV2IncrementalAuthorizationPatch201Response incrementAuth(String id, IncrementAuthRequest incrementAuthRequest) throws ApiException {
         logger.info("CALL TO METHOD 'incrementAuth' STARTED");
@@ -755,6 +787,14 @@ public class PaymentsApi {
      * @param refreshPaymentStatusRequest  (required)
      * @return PtsV2PaymentsPost201Response1
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsPost201Response1
+     * OPERATION_ID=refreshPaymentStatus
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/refresh-payment-status/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=refreshPaymentStatusRequest
      */
     public PtsV2PaymentsPost201Response1 refreshPaymentStatus(String id, RefreshPaymentStatusRequest refreshPaymentStatusRequest) throws ApiException {
         logger.info("CALL TO METHOD 'refreshPaymentStatus' STARTED");
@@ -907,6 +947,14 @@ public class PaymentsApi {
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @return PtsV2PaymentsPost201Response2
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsPost201Response2
+     * OPERATION_ID=updateSessionReq
+     * HTTP_METHOD=PATCH
+     * PATH=/pts/v2/payment-references/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createSessionRequest
      */
     public PtsV2PaymentsPost201Response2 updateSessionReq(CreateSessionRequest createSessionRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'updateSessionReq' STARTED");

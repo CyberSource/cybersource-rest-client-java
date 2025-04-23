@@ -188,6 +188,14 @@ public class PurchaseAndRefundDetailsApi {
      * @param limit Results count per page. Range(1-2000) (optional, default to 2000)
      * @return ReportingV3PurchaseRefundDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3PurchaseRefundDetailsGet200Response
+     * OPERATION_ID=getPurchaseAndRefundDetails
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/purchase-refund-details
+     * QUERY_PARAMS=startTime, endTime, organizationId, paymentSubtype, viewBy, groupName, offset, limit
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3PurchaseRefundDetailsGet200Response getPurchaseAndRefundDetails(DateTime startTime, DateTime endTime, String organizationId, String paymentSubtype, String viewBy, String groupName, Integer offset, Integer limit) throws ApiException {
         logger.info("CALL TO METHOD 'getPurchaseAndRefundDetails' STARTED");

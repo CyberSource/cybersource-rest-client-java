@@ -148,6 +148,14 @@ public class FlexApiApi {
      * @param generateFlexAPICaptureContextRequest  (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=String
+     * OPERATION_ID=generateFlexAPICaptureContext
+     * HTTP_METHOD=POST
+     * PATH=/flex/v2/sessions
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=generateFlexAPICaptureContextRequest
      */
     public String generateFlexAPICaptureContext(GenerateFlexAPICaptureContextRequest generateFlexAPICaptureContextRequest) throws ApiException {
         logger.info("CALL TO METHOD 'generateFlexAPICaptureContext' STARTED");

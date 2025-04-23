@@ -154,6 +154,14 @@ public class VoidApi {
      * @param mitVoidRequest  (required)
      * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsVoidsPost201Response
+     * OPERATION_ID=mitVoid
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/voids
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=mitVoidRequest
      */
     public PtsV2PaymentsVoidsPost201Response mitVoid(MitVoidRequest mitVoidRequest) throws ApiException {
         logger.info("CALL TO METHOD 'mitVoid' STARTED");
@@ -304,6 +312,14 @@ public class VoidApi {
      * @param id The capture ID returned from a previous capture request. (required)
      * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsVoidsPost201Response
+     * OPERATION_ID=voidCapture
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/captures/{id}/voids
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=voidCaptureRequest
      */
     public PtsV2PaymentsVoidsPost201Response voidCapture(VoidCaptureRequest voidCaptureRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidCapture' STARTED");
@@ -456,6 +472,14 @@ public class VoidApi {
      * @param id The credit ID returned from a previous credit request. (required)
      * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsVoidsPost201Response
+     * OPERATION_ID=voidCredit
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/credits/{id}/voids
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=voidCreditRequest
      */
     public PtsV2PaymentsVoidsPost201Response voidCredit(VoidCreditRequest voidCreditRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidCredit' STARTED");
@@ -608,6 +632,14 @@ public class VoidApi {
      * @param id The payment ID returned from a previous payment request. (required)
      * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsVoidsPost201Response
+     * OPERATION_ID=voidPayment
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/payments/{id}/voids
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=voidPaymentRequest
      */
     public PtsV2PaymentsVoidsPost201Response voidPayment(VoidPaymentRequest voidPaymentRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidPayment' STARTED");
@@ -760,6 +792,14 @@ public class VoidApi {
      * @param id The refund ID returned from a previous refund request. (required)
      * @return PtsV2PaymentsVoidsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsVoidsPost201Response
+     * OPERATION_ID=voidRefund
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/refunds/{id}/voids
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=voidRefundRequest
      */
     public PtsV2PaymentsVoidsPost201Response voidRefund(VoidRefundRequest voidRefundRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidRefund' STARTED");

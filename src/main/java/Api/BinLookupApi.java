@@ -151,6 +151,14 @@ public class BinLookupApi {
      * @param createBinLookupRequest  (required)
      * @return InlineResponse2011
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse2011
+     * OPERATION_ID=getAccountInfo
+     * HTTP_METHOD=POST
+     * PATH=/bin/v1/binlookup
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createBinLookupRequest
      */
     public InlineResponse2011 getAccountInfo(CreateBinLookupRequest createBinLookupRequest) throws ApiException {
         logger.info("CALL TO METHOD 'getAccountInfo' STARTED");

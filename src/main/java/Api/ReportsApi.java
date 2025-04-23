@@ -154,6 +154,14 @@ public class ReportsApi {
      * @param createAdhocReportRequest Report subscription request payload (required)
      * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=createReport
+     * HTTP_METHOD=POST
+     * PATH=/reporting/v3/reports
+     * QUERY_PARAMS=organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createAdhocReportRequest
      */
     public void createReport(CreateAdhocReportRequest createAdhocReportRequest, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'createReport' STARTED");
@@ -302,6 +310,14 @@ public class ReportsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportsIdGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3ReportsIdGet200Response
+     * OPERATION_ID=getReportByReportId
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/reports/{reportId}
+     * QUERY_PARAMS=organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3ReportsIdGet200Response getReportByReportId(String reportId, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getReportByReportId' STARTED");
@@ -494,6 +510,14 @@ public class ReportsApi {
      * @param reportStatus Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA  (optional)
      * @return ReportingV3ReportsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3ReportsGet200Response
+     * OPERATION_ID=searchReports
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/reports
+     * QUERY_PARAMS=organizationId, startTime, endTime, timeQueryType, reportMimeType, reportFrequency, reportName, reportDefinitionId, reportStatus
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3ReportsGet200Response searchReports(DateTime startTime, DateTime endTime, String timeQueryType, String organizationId, String reportMimeType, String reportFrequency, String reportName, Integer reportDefinitionId, String reportStatus) throws ApiException {
         logger.info("CALL TO METHOD 'searchReports' STARTED");

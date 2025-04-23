@@ -172,6 +172,14 @@ public class CustomerPaymentInstrumentApi {
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=deleteCustomerPaymentInstrument
+     * HTTP_METHOD=DELETE
+     * PATH=/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void deleteCustomerPaymentInstrument(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'deleteCustomerPaymentInstrument' STARTED");
@@ -331,6 +339,14 @@ public class CustomerPaymentInstrumentApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PostCustomerPaymentInstrumentRequest
+     * OPERATION_ID=getCustomerPaymentInstrument
+     * HTTP_METHOD=GET
+     * PATH=/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public PostCustomerPaymentInstrumentRequest getCustomerPaymentInstrument(String customerId, String paymentInstrumentId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrument' STARTED");
@@ -492,6 +508,14 @@ public class CustomerPaymentInstrumentApi {
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @return PaymentInstrumentList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PaymentInstrumentList
+     * OPERATION_ID=getCustomerPaymentInstrumentsList
+     * HTTP_METHOD=GET
+     * PATH=/tms/v2/customers/{customerId}/payment-instruments
+     * QUERY_PARAMS=offset, limit
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public PaymentInstrumentList getCustomerPaymentInstrumentsList(String customerId, String profileId, Long offset, Long limit) throws ApiException {
         logger.info("CALL TO METHOD 'getCustomerPaymentInstrumentsList' STARTED");
@@ -665,6 +689,14 @@ public class CustomerPaymentInstrumentApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return PatchCustomerPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PatchCustomerPaymentInstrumentRequest
+     * OPERATION_ID=patchCustomersPaymentInstrument
+     * HTTP_METHOD=PATCH
+     * PATH=/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId, ifMatch
+     * FORM_PARAMS=
+     * BODY_PARAM=patchCustomerPaymentInstrumentRequest
      */
     public PatchCustomerPaymentInstrumentRequest patchCustomersPaymentInstrument(String customerId, String paymentInstrumentId, PatchCustomerPaymentInstrumentRequest patchCustomerPaymentInstrumentRequest, String profileId, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchCustomersPaymentInstrument' STARTED");
@@ -827,6 +859,14 @@ public class CustomerPaymentInstrumentApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PostCustomerPaymentInstrumentRequest
+     * OPERATION_ID=postCustomerPaymentInstrument
+     * HTTP_METHOD=POST
+     * PATH=/tms/v2/customers/{customerId}/payment-instruments
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=postCustomerPaymentInstrumentRequest
      */
     public PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrument(String customerId, PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrumentRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postCustomerPaymentInstrument' STARTED");

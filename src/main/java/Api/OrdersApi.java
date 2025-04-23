@@ -152,6 +152,14 @@ public class OrdersApi {
      * @param createOrderRequest  (required)
      * @return PtsV2CreateOrderPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2CreateOrderPost201Response
+     * OPERATION_ID=createOrder
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/intents
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createOrderRequest
      */
     public PtsV2CreateOrderPost201Response createOrder(CreateOrderRequest createOrderRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createOrder' STARTED");
@@ -302,6 +310,14 @@ public class OrdersApi {
      * @param updateOrderRequest  (required)
      * @return PtsV2UpdateOrderPatch201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2UpdateOrderPatch201Response
+     * OPERATION_ID=updateOrder
+     * HTTP_METHOD=PATCH
+     * PATH=/pts/v2/intents/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=updateOrderRequest
      */
     public PtsV2UpdateOrderPatch201Response updateOrder(String id, UpdateOrderRequest updateOrderRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updateOrder' STARTED");

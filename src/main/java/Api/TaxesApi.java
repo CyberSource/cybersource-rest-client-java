@@ -153,6 +153,14 @@ public class TaxesApi {
      * @param taxRequest  (required)
      * @return VasV2PaymentsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=VasV2PaymentsPost201Response
+     * OPERATION_ID=calculateTax
+     * HTTP_METHOD=POST
+     * PATH=/vas/v2/tax
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=taxRequest
      */
     public VasV2PaymentsPost201Response calculateTax(TaxRequest taxRequest) throws ApiException {
         logger.info("CALL TO METHOD 'calculateTax' STARTED");
@@ -303,6 +311,14 @@ public class TaxesApi {
      * @param id The tax ID returned from a previous request. (required)
      * @return VasV2TaxVoid200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=VasV2TaxVoid200Response
+     * OPERATION_ID=voidTax
+     * HTTP_METHOD=PATCH
+     * PATH=/vas/v2/tax/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=voidTaxRequest
      */
     public VasV2TaxVoid200Response voidTax(VoidTaxRequest voidTaxRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'voidTax' STARTED");

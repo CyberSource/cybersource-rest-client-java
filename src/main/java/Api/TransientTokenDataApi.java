@@ -150,6 +150,14 @@ public class TransientTokenDataApi {
      * @param paymentCredentialsReference The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction  (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=String
+     * OPERATION_ID=getPaymentCredentialsForTransientToken
+     * HTTP_METHOD=GET
+     * PATH=/flex/v2/payment-credentials/{paymentCredentialsReference}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public String getPaymentCredentialsForTransientToken(String paymentCredentialsReference) throws ApiException {
         logger.info("CALL TO METHOD 'getPaymentCredentialsForTransientToken' STARTED");
@@ -294,6 +302,14 @@ public class TransientTokenDataApi {
      * Retrieve the data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will not return PCI payment data (PAN). Include the Request ID in the GET request to retrieve the transaction details.
      * @param transientToken Transient Token returned by the Unified Checkout application.  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=getTransactionForTransientToken
+     * HTTP_METHOD=GET
+     * PATH=/up/v1/payment-details/{transientToken}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void getTransactionForTransientToken(String transientToken) throws ApiException {
         logger.info("CALL TO METHOD 'getTransactionForTransientToken' STARTED");

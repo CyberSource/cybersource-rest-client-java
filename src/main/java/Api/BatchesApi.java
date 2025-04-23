@@ -156,6 +156,14 @@ public class BatchesApi {
      * @param batchId Unique identification number assigned to the submitted request. (required)
      * @return InlineResponse2004
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse2004
+     * OPERATION_ID=getBatchReport
+     * HTTP_METHOD=GET
+     * PATH=/accountupdater/v1/batches/{batchId}/report
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public InlineResponse2004 getBatchReport(String batchId) throws ApiException {
         logger.info("CALL TO METHOD 'getBatchReport' STARTED");
@@ -301,6 +309,14 @@ public class BatchesApi {
      * @param batchId Unique identification number assigned to the submitted request. (required)
      * @return InlineResponse2003
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse2003
+     * OPERATION_ID=getBatchStatus
+     * HTTP_METHOD=GET
+     * PATH=/accountupdater/v1/batches/{batchId}/status
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public InlineResponse2003 getBatchStatus(String batchId) throws ApiException {
         logger.info("CALL TO METHOD 'getBatchStatus' STARTED");
@@ -453,6 +469,14 @@ public class BatchesApi {
      * @param toDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
      * @return InlineResponse2002
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse2002
+     * OPERATION_ID=getBatchesList
+     * HTTP_METHOD=GET
+     * PATH=/accountupdater/v1/batches
+     * QUERY_PARAMS=offset, limit, fromDate, toDate
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public InlineResponse2002 getBatchesList(Long offset, Long limit, String fromDate, String toDate) throws ApiException {
         logger.info("CALL TO METHOD 'getBatchesList' STARTED");
@@ -600,6 +624,14 @@ public class BatchesApi {
      * @param body  (required)
      * @return InlineResponse202
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse202
+     * OPERATION_ID=postBatch
+     * HTTP_METHOD=POST
+     * PATH=/accountupdater/v1/batches
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=body
      */
     public InlineResponse202 postBatch(Body body) throws ApiException {
         logger.info("CALL TO METHOD 'postBatch' STARTED");

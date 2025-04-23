@@ -149,6 +149,14 @@ public class DownloadDtdApi {
      * Used to download DTDs for reports on no-auth.
      * @param reportDefinitionNameVersion Name and version of DTD file to download. Some DTDs only have one version. In that case version name is not needed. Some example values are ctdr-1.0, tdr, pbdr-1.1 (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=getDTDV2
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/dtds/{reportDefinitionNameVersion}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void getDTDV2(String reportDefinitionNameVersion) throws ApiException {
         logger.info("CALL TO METHOD 'getDTDV2' STARTED");

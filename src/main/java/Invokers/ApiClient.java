@@ -1339,19 +1339,14 @@ public class ApiClient {
 				}
 			}
 		}
-		System.out.println("merchantConfig.getDefaultHeaders() " + merchantConfig.getDefaultHeaders());
+		
 		String contentType = headerParams.get("Content-Type");
 		// ensuring a default content type
 		if (contentType == null) {
 			contentType = "application/json";
 		}
 		RequestBody requestbody = createRequestBody(method, body, formParams, contentType);
-		//print requestBody and all params in the above function.
-		System.out.println("body " + body);
-		System.out.println("formParams " + formParams);
-		System.out.println("contentType " + contentType);
-		System.out.println("requestHeaderMap1 " + requestHeaderMap);
-
+		
 		callAuthenticationHeader(method, path, requestbody, queryParams, requestHeaderMap);
 
 		if (merchantConfig.isEnableClientCert()) {
@@ -1366,13 +1361,11 @@ public class ApiClient {
 		}
 		
 		headerParams.putAll(requestHeaderMap);
-		System.out.println("headerParams " + headerParams);
-		System.out.println("headerParams2 " + new PrettyPrintingMap<String, String>(headerParams));
 
+		
 		logger.info("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
 		Request request = buildRequest(path, method, queryParams, requestbody, headerParams, formParams, authNames,
 				progressRequestListener);
-		System.out.println("request " + request);
 		return httpClient.newCall(request);
 	}
 	
@@ -1392,10 +1385,6 @@ public class ApiClient {
 	 */
 
 	public void callAuthenticationHeader(String method, String path, RequestBody reqBody, List<Pair> queryParams, Map<String, String> requestHeaderMap) {
-		System.out.println("reqBody" + reqBody);
-		System.out.println("queryParams" + queryParams);
-		System.out.println("requestHeaderMap" + requestHeaderMap);
-
 
 		try {
 			String requestTarget = null;
@@ -1428,7 +1417,6 @@ public class ApiClient {
 			Authorization authorization = new Authorization();
 
 			String requestBody = getRequestContentSendOverNetwork(reqBody);
-			System.out.println("requestBody " + requestBody);
 
 			logger.debug("HTTP Request Body:\n" + requestBody);
 			boolean isMerchantDetails = merchantConfig.validateMerchantDetails(method);
@@ -1437,7 +1425,6 @@ public class ApiClient {
 					&& !merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.MUTUALAUTH)) {
 				String date = PropertiesUtil.getNewDate();
 				String token = authorization.getToken(merchantConfig, method, requestBody, requestTarget, date);
-				System.out.println("token " + token);
 				if (merchantConfig.getAuthenticationType().equalsIgnoreCase(GlobalLabelParameters.HTTP)) {
 
 					requestHeaderMap.put("Date", date);
@@ -1465,7 +1452,7 @@ public class ApiClient {
 			if (versionInfo != null && !versionInfo.isEmpty()) {
 				requestHeaderMap.put("v-c-client-id", "cybs-rest-sdk-java-" + versionInfo);
 			}
-			System.out.println("requestHeaderMap2 " + requestHeaderMap);
+
 		} catch (ConfigException | IOException e) {
 			logger.error(e.getMessage());
 		}
@@ -1505,15 +1492,12 @@ public class ApiClient {
 		} else {
 			request = reqBuilder.method(method, reqBody).build();
 		}
-		System.out.println("request " + request);
+
 		return request;
 	}
 	
 	private RequestBody createRequestBody(String method, Object body, Map<String, Object> formParams,
 			String contentType) throws ApiException {
-		System.out.println("formParams " + formParams);
-		System.out.println("body " + body);
-
 		RequestBody reqBody;
 		if (!HttpMethod.permitsRequestBody(method)) {
 			reqBody = null;
@@ -1525,7 +1509,6 @@ public class ApiClient {
 			reqBody = buildRequestBodyFormEncoding(formParams);
 		} else if ("multipart/form-data".equals(contentType)) {
 			reqBody = buildRequestBodyMultipart(formParams);
-			System.out.println("multipart reqBody" + reqBody);
 		} else if (body == null) {
 			if ("DELETE".equals(method)) {
 				// allow calling DELETE without sending a request body

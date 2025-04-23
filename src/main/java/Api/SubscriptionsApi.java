@@ -164,6 +164,14 @@ public class SubscriptionsApi {
      * @param id Subscription Id (required)
      * @return ActivateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ActivateSubscriptionResponse
+     * OPERATION_ID=activateSubscription
+     * HTTP_METHOD=POST
+     * PATH=/rbs/v1/subscriptions/{id}/activate
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ActivateSubscriptionResponse activateSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'activateSubscription' STARTED");
@@ -309,6 +317,14 @@ public class SubscriptionsApi {
      * @param id Subscription Id (required)
      * @return CancelSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=CancelSubscriptionResponse
+     * OPERATION_ID=cancelSubscription
+     * HTTP_METHOD=POST
+     * PATH=/rbs/v1/subscriptions/{id}/cancel
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public CancelSubscriptionResponse cancelSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'cancelSubscription' STARTED");
@@ -450,6 +466,14 @@ public class SubscriptionsApi {
      * @param createSubscriptionRequest  (required)
      * @return CreateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=CreateSubscriptionResponse
+     * OPERATION_ID=createSubscription
+     * HTTP_METHOD=POST
+     * PATH=/rbs/v1/subscriptions
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createSubscriptionRequest
      */
     public CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest createSubscriptionRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createSubscription' STARTED");
@@ -602,6 +626,14 @@ public class SubscriptionsApi {
      * @param status Filter by Subscription Status (optional)
      * @return GetAllSubscriptionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=GetAllSubscriptionsResponse
+     * OPERATION_ID=getAllSubscriptions
+     * HTTP_METHOD=GET
+     * PATH=/rbs/v1/subscriptions
+     * QUERY_PARAMS=offset, limit, code, status
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public GetAllSubscriptionsResponse getAllSubscriptions(Integer offset, Integer limit, String code, String status) throws ApiException {
         logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
@@ -753,6 +785,14 @@ public class SubscriptionsApi {
      * @param id Subscription Id (required)
      * @return GetSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=GetSubscriptionResponse
+     * OPERATION_ID=getSubscription
+     * HTTP_METHOD=GET
+     * PATH=/rbs/v1/subscriptions/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public GetSubscriptionResponse getSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getSubscription' STARTED");
@@ -889,6 +929,14 @@ public class SubscriptionsApi {
      * Get a Unique Subscription Code
      * @return GetSubscriptionCodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=GetSubscriptionCodeResponse
+     * OPERATION_ID=getSubscriptionCode
+     * HTTP_METHOD=GET
+     * PATH=/rbs/v1/subscriptions/code
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public GetSubscriptionCodeResponse getSubscriptionCode() throws ApiException {
         logger.info("CALL TO METHOD 'getSubscriptionCode' STARTED");
@@ -1032,6 +1080,14 @@ public class SubscriptionsApi {
      * @param id Subscription Id (required)
      * @return SuspendSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=SuspendSubscriptionResponse
+     * OPERATION_ID=suspendSubscription
+     * HTTP_METHOD=POST
+     * PATH=/rbs/v1/subscriptions/{id}/suspend
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public SuspendSubscriptionResponse suspendSubscription(String id) throws ApiException {
         logger.info("CALL TO METHOD 'suspendSubscription' STARTED");
@@ -1182,6 +1238,14 @@ public class SubscriptionsApi {
      * @param updateSubscription Update Subscription (required)
      * @return UpdateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=UpdateSubscriptionResponse
+     * OPERATION_ID=updateSubscription
+     * HTTP_METHOD=PATCH
+     * PATH=/rbs/v1/subscriptions/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=updateSubscription
      */
     public UpdateSubscriptionResponse updateSubscription(String id, UpdateSubscription updateSubscription) throws ApiException {
         logger.info("CALL TO METHOD 'updateSubscription' STARTED");

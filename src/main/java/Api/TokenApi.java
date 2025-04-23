@@ -165,6 +165,14 @@ public class TokenApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=String
+     * OPERATION_ID=postTokenPaymentCredentials
+     * HTTP_METHOD=POST
+     * PATH=/tms/v2/tokens/{tokenId}/payment-credentials
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=postPaymentCredentialsRequest
      */
     public String postTokenPaymentCredentials(String tokenId, PostPaymentCredentialsRequest postPaymentCredentialsRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postTokenPaymentCredentials' STARTED");

@@ -167,6 +167,14 @@ public class CreateNewWebhooksApi {
      * @param saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
      * @return InlineResponse2013
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse2013
+     * OPERATION_ID=saveSymEgressKey
+     * HTTP_METHOD=POST
+     * PATH=/kms/egress/v2/keys-sym
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=vCCorrelationId, vCSenderOrganizationId, vCPermissions
+     * FORM_PARAMS=
+     * BODY_PARAM=saveSymEgressKey
      */
     public InlineResponse2013 saveSymEgressKey(String vCSenderOrganizationId, String vCPermissions, String vCCorrelationId, SaveSymEgressKey saveSymEgressKey) throws ApiException {
         logger.info("CALL TO METHOD 'saveSymEgressKey' STARTED");

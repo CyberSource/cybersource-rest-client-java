@@ -155,6 +155,14 @@ public class ReportSubscriptionsApi {
      * @param predefinedSubscriptionRequestBean Report subscription request payload (required)
      * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=createStandardOrClassicSubscription
+     * HTTP_METHOD=PUT
+     * PATH=/reporting/v3/predefined-report-subscriptions
+     * QUERY_PARAMS=organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=predefinedSubscriptionRequestBean
      */
     public void createStandardOrClassicSubscription(PredefinedSubscriptionRequestBean predefinedSubscriptionRequestBean, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'createStandardOrClassicSubscription' STARTED");
@@ -298,6 +306,14 @@ public class ReportSubscriptionsApi {
      * @param createReportSubscriptionRequest Report subscription request payload (required)
      * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=createSubscription
+     * HTTP_METHOD=PUT
+     * PATH=/reporting/v3/report-subscriptions
+     * QUERY_PARAMS=organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createReportSubscriptionRequest
      */
     public void createSubscription(CreateReportSubscriptionRequest createReportSubscriptionRequest, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'createSubscription' STARTED");
@@ -445,6 +461,14 @@ public class ReportSubscriptionsApi {
      * @param reportName Name of the Report to Delete (required)
      * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=deleteSubscription
+     * HTTP_METHOD=DELETE
+     * PATH=/reporting/v3/report-subscriptions/{reportName}
+     * QUERY_PARAMS=organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void deleteSubscription(String reportName, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'deleteSubscription' STARTED");
@@ -584,6 +608,14 @@ public class ReportSubscriptionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportSubscriptionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3ReportSubscriptionsGet200Response
+     * OPERATION_ID=getAllSubscriptions
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/report-subscriptions
+     * QUERY_PARAMS=organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions(String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getAllSubscriptions' STARTED");
@@ -733,6 +765,14 @@ public class ReportSubscriptionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
+     * OPERATION_ID=getSubscription
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/report-subscriptions/{reportName}
+     * QUERY_PARAMS=organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription(String reportName, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getSubscription' STARTED");

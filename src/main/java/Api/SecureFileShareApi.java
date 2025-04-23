@@ -156,6 +156,14 @@ public class SecureFileShareApi {
      * @param fileId Unique identifier for each file (required)
      * @param organizationId Valid Cybersource Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=getFile
+     * HTTP_METHOD=GET
+     * PATH=/sfs/v1/files/{fileId}
+     * QUERY_PARAMS=organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void getFile(String fileId, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getFile' STARTED");
@@ -319,6 +327,14 @@ public class SecureFileShareApi {
      * @param name **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml  (optional)
      * @return V1FileDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=V1FileDetailsGet200Response
+     * OPERATION_ID=getFileDetail
+     * HTTP_METHOD=GET
+     * PATH=/sfs/v1/file-details
+     * QUERY_PARAMS=startDate, endDate, organizationId, name
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public V1FileDetailsGet200Response getFileDetail(LocalDate startDate, LocalDate endDate, String organizationId, String name) throws ApiException {
         logger.info("CALL TO METHOD 'getFileDetail' STARTED");

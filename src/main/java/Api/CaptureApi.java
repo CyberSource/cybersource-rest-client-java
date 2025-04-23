@@ -159,6 +159,14 @@ public class CaptureApi {
      * @param id The payment ID returned from a previous payment request. This ID links the capture to the payment.  (required)
      * @return PtsV2PaymentsCapturesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsCapturesPost201Response
+     * OPERATION_ID=capturePayment
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/payments/{id}/captures
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=capturePaymentRequest
      */
     public PtsV2PaymentsCapturesPost201Response capturePayment(CapturePaymentRequest capturePaymentRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'capturePayment' STARTED");

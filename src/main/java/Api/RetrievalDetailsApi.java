@@ -167,6 +167,14 @@ public class RetrievalDetailsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3RetrievalDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3RetrievalDetailsGet200Response
+     * OPERATION_ID=getRetrievalDetails
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/retrieval-details
+     * QUERY_PARAMS=startTime, endTime, organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3RetrievalDetailsGet200Response getRetrievalDetails(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getRetrievalDetails' STARTED");

@@ -173,6 +173,14 @@ public class DecisionManagerApi {
      * @param caseManagementActionsRequest  (required)
      * @return InlineResponse200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse200
+     * OPERATION_ID=actionDecisionManagerCase
+     * HTTP_METHOD=POST
+     * PATH=/risk/v1/decisions/{id}/actions
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=caseManagementActionsRequest
      */
     public InlineResponse200 actionDecisionManagerCase(String id, CaseManagementActionsRequest caseManagementActionsRequest) throws ApiException {
         logger.info("CALL TO METHOD 'actionDecisionManagerCase' STARTED");
@@ -325,6 +333,14 @@ public class DecisionManagerApi {
      * @param addNegativeListRequest  (required)
      * @return RiskV1UpdatePost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=RiskV1UpdatePost201Response
+     * OPERATION_ID=addNegative
+     * HTTP_METHOD=POST
+     * PATH=/risk/v1/lists/{type}/entries
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=addNegativeListRequest
      */
     public RiskV1UpdatePost201Response addNegative(String type, AddNegativeListRequest addNegativeListRequest) throws ApiException {
         logger.info("CALL TO METHOD 'addNegative' STARTED");
@@ -477,6 +493,14 @@ public class DecisionManagerApi {
      * @param caseManagementCommentsRequest  (required)
      * @return InlineResponse201
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse201
+     * OPERATION_ID=commentDecisionManagerCase
+     * HTTP_METHOD=POST
+     * PATH=/risk/v1/decisions/{id}/comments
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=caseManagementCommentsRequest
      */
     public InlineResponse201 commentDecisionManagerCase(String id, CaseManagementCommentsRequest caseManagementCommentsRequest) throws ApiException {
         logger.info("CALL TO METHOD 'commentDecisionManagerCase' STARTED");
@@ -620,6 +644,14 @@ public class DecisionManagerApi {
      * @param createBundledDecisionManagerCaseRequest  (required)
      * @return RiskV1DecisionsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=RiskV1DecisionsPost201Response
+     * OPERATION_ID=createBundledDecisionManagerCase
+     * HTTP_METHOD=POST
+     * PATH=/risk/v1/decisions
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createBundledDecisionManagerCaseRequest
      */
     public RiskV1DecisionsPost201Response createBundledDecisionManagerCase(CreateBundledDecisionManagerCaseRequest createBundledDecisionManagerCaseRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createBundledDecisionManagerCase' STARTED");
@@ -770,6 +802,14 @@ public class DecisionManagerApi {
      * @param fraudMarkingActionRequest  (required)
      * @return RiskV1UpdatePost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=RiskV1UpdatePost201Response
+     * OPERATION_ID=fraudUpdate
+     * HTTP_METHOD=POST
+     * PATH=/risk/v1/decisions/{id}/marking
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=fraudMarkingActionRequest
      */
     public RiskV1UpdatePost201Response fraudUpdate(String id, FraudMarkingActionRequest fraudMarkingActionRequest) throws ApiException {
         logger.info("CALL TO METHOD 'fraudUpdate' STARTED");

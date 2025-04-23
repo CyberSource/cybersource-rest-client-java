@@ -164,6 +164,14 @@ public class NotificationOfChangesApi {
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z)  (required)
      * @return ReportingV3NotificationofChangesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3NotificationofChangesGet200Response
+     * OPERATION_ID=getNotificationOfChangeReport
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/notification-of-changes
+     * QUERY_PARAMS=startTime, endTime
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3NotificationofChangesGet200Response getNotificationOfChangeReport(DateTime startTime, DateTime endTime) throws ApiException {
         logger.info("CALL TO METHOD 'getNotificationOfChangeReport' STARTED");

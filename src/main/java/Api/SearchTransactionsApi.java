@@ -150,6 +150,14 @@ public class SearchTransactionsApi {
      * @param createSearchRequest  (required)
      * @return TssV2TransactionsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=TssV2TransactionsPost201Response
+     * OPERATION_ID=createSearch
+     * HTTP_METHOD=POST
+     * PATH=/tss/v2/searches
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createSearchRequest
      */
     public TssV2TransactionsPost201Response createSearch(CreateSearchRequest createSearchRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createSearch' STARTED");
@@ -295,6 +303,14 @@ public class SearchTransactionsApi {
      * @param searchId Search ID. (required)
      * @return TssV2TransactionsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=TssV2TransactionsPost201Response
+     * OPERATION_ID=getSearch
+     * HTTP_METHOD=GET
+     * PATH=/tss/v2/searches/{searchId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public TssV2TransactionsPost201Response getSearch(String searchId) throws ApiException {
         logger.info("CALL TO METHOD 'getSearch' STARTED");

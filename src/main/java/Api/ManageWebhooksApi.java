@@ -154,6 +154,14 @@ public class ManageWebhooksApi {
      * @param webhookId The Webhook Identifier. (required)
      * @return InlineResponse2014
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse2014
+     * OPERATION_ID=notificationSubscriptionsV1WebhooksWebhookIdPost
+     * HTTP_METHOD=POST
+     * PATH=/notification-subscriptions/v1/webhooks/{webhookId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public InlineResponse2014 notificationSubscriptionsV1WebhooksWebhookIdPost(String webhookId) throws ApiException {
         logger.info("CALL TO METHOD 'notificationSubscriptionsV1WebhooksWebhookIdPost' STARTED");
@@ -320,6 +328,14 @@ public class ManageWebhooksApi {
      * @param vCCorrelationId A globally unique id associated with your request (optional)
      * @return InlineResponse2015
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse2015
+     * OPERATION_ID=saveAsymEgressKey
+     * HTTP_METHOD=POST
+     * PATH=/kms/egress/v2/keys-asym
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=vCCorrelationId, vCSenderOrganizationId, vCPermissions
+     * FORM_PARAMS=
+     * BODY_PARAM=saveAsymEgressKey
      */
     public InlineResponse2015 saveAsymEgressKey(String vCSenderOrganizationId, String vCPermissions, SaveAsymEgressKey saveAsymEgressKey, String vCCorrelationId) throws ApiException {
         logger.info("CALL TO METHOD 'saveAsymEgressKey' STARTED");

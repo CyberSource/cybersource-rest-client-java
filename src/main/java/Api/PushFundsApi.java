@@ -212,6 +212,14 @@ public class PushFundsApi {
      * @param vCOrganizationId  (required)
      * @return PushFunds201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PushFunds201Response
+     * OPERATION_ID=createPushFundsTransfer
+     * HTTP_METHOD=POST
+     * PATH=/pts/v1/push-funds-transfer
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=contentType, xRequestid, vCMerchantId, vCPermissions, vCCorrelationId, vCOrganizationId
+     * FORM_PARAMS=
+     * BODY_PARAM=pushFundsRequest
      */
     public PushFunds201Response createPushFundsTransfer(PushFundsRequest pushFundsRequest, String contentType, String xRequestid, String vCMerchantId, String vCPermissions, String vCCorrelationId, String vCOrganizationId) throws ApiException {
         logger.info("CALL TO METHOD 'createPushFundsTransfer' STARTED");

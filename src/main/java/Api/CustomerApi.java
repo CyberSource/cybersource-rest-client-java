@@ -162,6 +162,14 @@ public class CustomerApi {
      * @param customerId The Id of a Customer. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=deleteCustomer
+     * HTTP_METHOD=DELETE
+     * PATH=/tms/v2/customers/{customerId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void deleteCustomer(String customerId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'deleteCustomer' STARTED");
@@ -310,6 +318,14 @@ public class CustomerApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PostCustomerRequest
+     * OPERATION_ID=getCustomer
+     * HTTP_METHOD=GET
+     * PATH=/tms/v2/customers/{customerId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public PostCustomerRequest getCustomer(String customerId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'getCustomer' STARTED");
@@ -470,6 +486,14 @@ public class CustomerApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return PatchCustomerRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PatchCustomerRequest
+     * OPERATION_ID=patchCustomer
+     * HTTP_METHOD=PATCH
+     * PATH=/tms/v2/customers/{customerId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId, ifMatch
+     * FORM_PARAMS=
+     * BODY_PARAM=patchCustomerRequest
      */
     public PatchCustomerRequest patchCustomer(String customerId, PatchCustomerRequest patchCustomerRequest, String profileId, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchCustomer' STARTED");
@@ -621,6 +645,14 @@ public class CustomerApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PostCustomerRequest
+     * OPERATION_ID=postCustomer
+     * HTTP_METHOD=POST
+     * PATH=/tms/v2/customers
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=postCustomerRequest
      */
     public PostCustomerRequest postCustomer(PostCustomerRequest postCustomerRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postCustomer' STARTED");

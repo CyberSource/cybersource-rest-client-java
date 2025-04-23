@@ -150,6 +150,14 @@ public class CreditApi {
      * @param createCreditRequest  (required)
      * @return PtsV2CreditsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2CreditsPost201Response
+     * OPERATION_ID=createCredit
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/credits
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createCreditRequest
      */
     public PtsV2CreditsPost201Response createCredit(CreateCreditRequest createCreditRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createCredit' STARTED");

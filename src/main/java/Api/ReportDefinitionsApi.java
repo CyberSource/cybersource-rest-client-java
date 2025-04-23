@@ -165,6 +165,14 @@ public class ReportDefinitionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportDefinitionsNameGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3ReportDefinitionsNameGet200Response
+     * OPERATION_ID=getResourceInfoByReportDefinition
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/report-definitions/{reportDefinitionName}
+     * QUERY_PARAMS=subscriptionType, reportMimeType, organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition(String reportDefinitionName, String subscriptionType, String reportMimeType, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getResourceInfoByReportDefinition' STARTED");
@@ -315,6 +323,14 @@ public class ReportDefinitionsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ReportDefinitionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3ReportDefinitionsGet200Response
+     * OPERATION_ID=getResourceV2Info
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/report-definitions
+     * QUERY_PARAMS=subscriptionType, organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3ReportDefinitionsGet200Response getResourceV2Info(String subscriptionType, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getResourceV2Info' STARTED");

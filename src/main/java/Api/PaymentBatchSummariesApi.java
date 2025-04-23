@@ -180,6 +180,14 @@ public class PaymentBatchSummariesApi {
      * @param startDayOfWeek Optional - Start day of week to breakdown data for weeks in a month (optional)
      * @return ReportingV3PaymentBatchSummariesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3PaymentBatchSummariesGet200Response
+     * OPERATION_ID=getPaymentBatchSummary
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/payment-batch-summaries
+     * QUERY_PARAMS=startTime, endTime, organizationId, rollUp, breakdown, startDayOfWeek
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3PaymentBatchSummariesGet200Response getPaymentBatchSummary(DateTime startTime, DateTime endTime, String organizationId, String rollUp, String breakdown, Integer startDayOfWeek) throws ApiException {
         logger.info("CALL TO METHOD 'getPaymentBatchSummary' STARTED");

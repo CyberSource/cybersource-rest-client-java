@@ -148,6 +148,14 @@ public class UnifiedCheckoutCaptureContextApi {
      * @param generateUnifiedCheckoutCaptureContextRequest  (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=String
+     * OPERATION_ID=generateUnifiedCheckoutCaptureContext
+     * HTTP_METHOD=POST
+     * PATH=/up/v1/capture-contexts
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=generateUnifiedCheckoutCaptureContextRequest
      */
     public String generateUnifiedCheckoutCaptureContext(GenerateUnifiedCheckoutCaptureContextRequest generateUnifiedCheckoutCaptureContextRequest) throws ApiException {
         logger.info("CALL TO METHOD 'generateUnifiedCheckoutCaptureContext' STARTED");

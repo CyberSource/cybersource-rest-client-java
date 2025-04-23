@@ -163,6 +163,14 @@ public class BillingAgreementsApi {
      * @param id ID for de-registration or cancellation of Billing Agreement (required)
      * @return PtsV2ModifyBillingAgreementPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2ModifyBillingAgreementPost201Response
+     * OPERATION_ID=billingAgreementsDeRegistration
+     * HTTP_METHOD=PATCH
+     * PATH=/pts/v2/billing-agreements/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=modifyBillingAgreement
      */
     public PtsV2ModifyBillingAgreementPost201Response billingAgreementsDeRegistration(ModifyBillingAgreement modifyBillingAgreement, String id) throws ApiException {
         logger.info("CALL TO METHOD 'billingAgreementsDeRegistration' STARTED");
@@ -315,6 +323,14 @@ public class BillingAgreementsApi {
      * @param id ID for intimation of Billing Agreement (required)
      * @return PtsV2CreditsPost201Response1
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2CreditsPost201Response1
+     * OPERATION_ID=billingAgreementsIntimation
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/billing-agreements/{id}/intimations
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=intimateBillingAgreement
      */
     public PtsV2CreditsPost201Response1 billingAgreementsIntimation(IntimateBillingAgreement intimateBillingAgreement, String id) throws ApiException {
         logger.info("CALL TO METHOD 'billingAgreementsIntimation' STARTED");
@@ -458,6 +474,14 @@ public class BillingAgreementsApi {
      * @param createBillingAgreement  (required)
      * @return PtsV2CreateBillingAgreementPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2CreateBillingAgreementPost201Response
+     * OPERATION_ID=billingAgreementsRegistration
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/billing-agreements
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createBillingAgreement
      */
     public PtsV2CreateBillingAgreementPost201Response billingAgreementsRegistration(CreateBillingAgreement createBillingAgreement) throws ApiException {
         logger.info("CALL TO METHOD 'billingAgreementsRegistration' STARTED");

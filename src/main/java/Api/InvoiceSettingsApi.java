@@ -145,6 +145,14 @@ public class InvoiceSettingsApi {
      * Allows you to retrieve the invoice settings for the payment page.
      * @return InvoicingV2InvoiceSettingsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InvoicingV2InvoiceSettingsGet200Response
+     * OPERATION_ID=getInvoiceSettings
+     * HTTP_METHOD=GET
+     * PATH=/invoicing/v2/invoiceSettings
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public InvoicingV2InvoiceSettingsGet200Response getInvoiceSettings() throws ApiException {
         logger.info("CALL TO METHOD 'getInvoiceSettings' STARTED");
@@ -284,6 +292,14 @@ public class InvoiceSettingsApi {
      * @param invoiceSettingsRequest  (required)
      * @return InvoicingV2InvoiceSettingsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InvoicingV2InvoiceSettingsGet200Response
+     * OPERATION_ID=updateInvoiceSettings
+     * HTTP_METHOD=PUT
+     * PATH=/invoicing/v2/invoiceSettings
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=invoiceSettingsRequest
      */
     public InvoicingV2InvoiceSettingsGet200Response updateInvoiceSettings(InvoiceSettingsRequest invoiceSettingsRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updateInvoiceSettings' STARTED");

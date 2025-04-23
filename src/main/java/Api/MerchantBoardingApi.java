@@ -157,6 +157,14 @@ public class MerchantBoardingApi {
      * @param registrationId Identifies the boarding registration to be updated (required)
      * @return InlineResponse2001
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse2001
+     * OPERATION_ID=getRegistration
+     * HTTP_METHOD=GET
+     * PATH=/boarding/v1/registrations/{registrationId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public InlineResponse2001 getRegistration(String registrationId) throws ApiException {
         logger.info("CALL TO METHOD 'getRegistration' STARTED");
@@ -302,6 +310,14 @@ public class MerchantBoardingApi {
      * @param vCIdempotencyId defines idempotency of the request (optional)
      * @return InlineResponse2012
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=InlineResponse2012
+     * OPERATION_ID=postRegistration
+     * HTTP_METHOD=POST
+     * PATH=/boarding/v1/registrations
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=vCIdempotencyId
+     * FORM_PARAMS=
+     * BODY_PARAM=postRegistrationBody
      */
     public InlineResponse2012 postRegistration(PostRegistrationBody postRegistrationBody, String vCIdempotencyId) throws ApiException {
         logger.info("CALL TO METHOD 'postRegistration' STARTED");

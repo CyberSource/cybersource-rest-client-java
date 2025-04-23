@@ -166,6 +166,14 @@ public class ReportDownloadsApi {
      * @param reportName Name of the report to download (required)
      * @param organizationId Valid Organization Id (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=downloadReport
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/report-downloads
+     * QUERY_PARAMS=organizationId, reportDate, reportName
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void downloadReport(LocalDate reportDate, String reportName, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'downloadReport' STARTED");

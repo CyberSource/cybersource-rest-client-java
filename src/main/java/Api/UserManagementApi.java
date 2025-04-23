@@ -159,6 +159,14 @@ public class UserManagementApi {
      * @param roleId role of the user you are trying to search on. (optional)
      * @return UmsV1UsersGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=UmsV1UsersGet200Response
+     * OPERATION_ID=getUsers
+     * HTTP_METHOD=GET
+     * PATH=/ums/v1/users
+     * QUERY_PARAMS=organizationId, userName, permissionId, roleId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public UmsV1UsersGet200Response getUsers(String organizationId, String userName, String permissionId, String roleId) throws ApiException {
         logger.info("CALL TO METHOD 'getUsers' STARTED");

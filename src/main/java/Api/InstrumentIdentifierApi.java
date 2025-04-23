@@ -164,6 +164,14 @@ public class InstrumentIdentifierApi {
      * @param instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=deleteInstrumentIdentifier
+     * HTTP_METHOD=DELETE
+     * PATH=/tms/v1/instrumentidentifiers/{instrumentIdentifierId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void deleteInstrumentIdentifier(String instrumentIdentifierId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'deleteInstrumentIdentifier' STARTED");
@@ -316,6 +324,14 @@ public class InstrumentIdentifierApi {
      * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return PostInstrumentIdentifierRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PostInstrumentIdentifierRequest
+     * OPERATION_ID=getInstrumentIdentifier
+     * HTTP_METHOD=GET
+     * PATH=/tms/v1/instrumentidentifiers/{instrumentIdentifierId}
+     * QUERY_PARAMS=retrieveBinDetails
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public PostInstrumentIdentifierRequest getInstrumentIdentifier(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails) throws ApiException {
         logger.info("CALL TO METHOD 'getInstrumentIdentifier' STARTED");
@@ -481,6 +497,14 @@ public class InstrumentIdentifierApi {
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @return PaymentInstrumentList1
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PaymentInstrumentList1
+     * OPERATION_ID=getInstrumentIdentifierPaymentInstrumentsList
+     * HTTP_METHOD=GET
+     * PATH=/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/paymentinstruments
+     * QUERY_PARAMS=retrieveBinDetails, offset, limit
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public PaymentInstrumentList1 getInstrumentIdentifierPaymentInstrumentsList(String instrumentIdentifierId, String profileId, Boolean retrieveBinDetails, Long offset, Long limit) throws ApiException {
         logger.info("CALL TO METHOD 'getInstrumentIdentifierPaymentInstrumentsList' STARTED");
@@ -651,6 +675,14 @@ public class InstrumentIdentifierApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return PatchInstrumentIdentifierRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PatchInstrumentIdentifierRequest
+     * OPERATION_ID=patchInstrumentIdentifier
+     * HTTP_METHOD=PATCH
+     * PATH=/tms/v1/instrumentidentifiers/{instrumentIdentifierId}
+     * QUERY_PARAMS=retrieveBinDetails
+     * HEADER_PARAMS=profileId, ifMatch
+     * FORM_PARAMS=
+     * BODY_PARAM=patchInstrumentIdentifierRequest
      */
     public PatchInstrumentIdentifierRequest patchInstrumentIdentifier(String instrumentIdentifierId, PatchInstrumentIdentifierRequest patchInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchInstrumentIdentifier' STARTED");
@@ -808,6 +840,14 @@ public class InstrumentIdentifierApi {
      * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return PostInstrumentIdentifierRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PostInstrumentIdentifierRequest
+     * OPERATION_ID=postInstrumentIdentifier
+     * HTTP_METHOD=POST
+     * PATH=/tms/v1/instrumentidentifiers
+     * QUERY_PARAMS=retrieveBinDetails
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=postInstrumentIdentifierRequest
      */
     public PostInstrumentIdentifierRequest postInstrumentIdentifier(PostInstrumentIdentifierRequest postInstrumentIdentifierRequest, String profileId, Boolean retrieveBinDetails) throws ApiException {
         logger.info("CALL TO METHOD 'postInstrumentIdentifier' STARTED");
@@ -965,6 +1005,14 @@ public class InstrumentIdentifierApi {
      * @param postInstrumentIdentifierEnrollmentRequest Specify Enrollable Card details (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=postInstrumentIdentifierEnrollment
+     * HTTP_METHOD=POST
+     * PATH=/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/enrollment
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=postInstrumentIdentifierEnrollmentRequest
      */
     public void postInstrumentIdentifierEnrollment(String instrumentIdentifierId, PostInstrumentIdentifierEnrollmentRequest postInstrumentIdentifierEnrollmentRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postInstrumentIdentifierEnrollment' STARTED");

@@ -167,6 +167,14 @@ public class ChargebackDetailsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ChargebackDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3ChargebackDetailsGet200Response
+     * OPERATION_ID=getChargebackDetails
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/chargeback-details
+     * QUERY_PARAMS=startTime, endTime, organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3ChargebackDetailsGet200Response getChargebackDetails(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getChargebackDetails' STARTED");

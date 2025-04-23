@@ -165,6 +165,14 @@ public class TransactionBatchesApi {
      * @param uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd  (optional)
      * @param status Allows you to filter by rejected response.  Valid values: - Rejected  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=getTransactionBatchDetails
+     * HTTP_METHOD=GET
+     * PATH=/pts/v1/transaction-batch-details/{id}
+     * QUERY_PARAMS=uploadDate, status
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void getTransactionBatchDetails(String id, LocalDate uploadDate, String status) throws ApiException {
         logger.info("CALL TO METHOD 'getTransactionBatchDetails' STARTED");
@@ -311,6 +319,14 @@ public class TransactionBatchesApi {
      * @param id The batch id assigned for the template. (required)
      * @return PtsV1TransactionBatchesIdGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV1TransactionBatchesIdGet200Response
+     * OPERATION_ID=getTransactionBatchId
+     * HTTP_METHOD=GET
+     * PATH=/pts/v1/transaction-batches/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public PtsV1TransactionBatchesIdGet200Response getTransactionBatchId(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getTransactionBatchId' STARTED");
@@ -467,6 +483,14 @@ public class TransactionBatchesApi {
      * @param endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ  (required)
      * @return PtsV1TransactionBatchesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV1TransactionBatchesGet200Response
+     * OPERATION_ID=getTransactionBatches
+     * HTTP_METHOD=GET
+     * PATH=/pts/v1/transaction-batches
+     * QUERY_PARAMS=startTime, endTime
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public PtsV1TransactionBatchesGet200Response getTransactionBatches(DateTime startTime, DateTime endTime) throws ApiException {
         logger.info("CALL TO METHOD 'getTransactionBatches' STARTED");
@@ -561,7 +585,7 @@ public class TransactionBatchesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         if (file != null)
         localVarFormParams.put("file", file);
-        System.out.println("localVarFormParams" + localVarFormParams);
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -587,13 +611,6 @@ public class TransactionBatchesApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        System.out.println("localVarQueryParams" + localVarQueryParams);
-        System.out.println("localVarPostBody" + localVarPostBody);
-        System.out.println("localVarHeaderParams" + localVarHeaderParams);
-        System.out.println("localVarFormParams" + localVarFormParams);
-        System.out.println("localVarAuthNames" + localVarAuthNames);
-        System.out.println("progressRequestListener" + progressRequestListener);
-
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
@@ -605,10 +622,8 @@ public class TransactionBatchesApi {
             logger.error("Missing the required parameter 'file' when calling uploadTransactionBatch(Async)");
             throw new ApiException("Missing the required parameter 'file' when calling uploadTransactionBatch(Async)");
         }
-        System.out.println("file" + file);
-        System.out.println("progressListener" + progressListener);
-        System.out.println("progressRequestListener" + progressRequestListener);
-
+        
+        
         okhttp3.Call call = uploadTransactionBatchCall(file, progressListener, progressRequestListener);
         return call;
 
@@ -623,6 +638,14 @@ public class TransactionBatchesApi {
      * This endpoint enables the upload of a batch file containing transactions for processing.
      * @param file The file to upload. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=uploadTransactionBatch
+     * HTTP_METHOD=POST
+     * PATH=/pts/v1/transaction-batch-upload
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=file
+     * BODY_PARAM=null
      */
     public void uploadTransactionBatch(File file) throws ApiException {
         logger.info("CALL TO METHOD 'uploadTransactionBatch' STARTED");

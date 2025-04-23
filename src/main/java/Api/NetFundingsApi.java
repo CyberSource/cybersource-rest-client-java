@@ -172,6 +172,14 @@ public class NetFundingsApi {
      * @param groupName Valid CyberSource Group Name. (optional)
      * @return ReportingV3NetFundingsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3NetFundingsGet200Response
+     * OPERATION_ID=getNetFundingDetails
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/net-fundings
+     * QUERY_PARAMS=startTime, endTime, organizationId, groupName
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3NetFundingsGet200Response getNetFundingDetails(DateTime startTime, DateTime endTime, String organizationId, String groupName) throws ApiException {
         logger.info("CALL TO METHOD 'getNetFundingDetails' STARTED");

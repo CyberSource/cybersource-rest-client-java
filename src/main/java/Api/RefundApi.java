@@ -160,6 +160,14 @@ public class RefundApi {
      * @param id The capture ID. This ID is returned from a previous capture request. (required)
      * @return PtsV2PaymentsRefundPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsRefundPost201Response
+     * OPERATION_ID=refundCapture
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/captures/{id}/refunds
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=refundCaptureRequest
      */
     public PtsV2PaymentsRefundPost201Response refundCapture(RefundCaptureRequest refundCaptureRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'refundCapture' STARTED");
@@ -312,6 +320,14 @@ public class RefundApi {
      * @param id The payment ID. This ID is returned from a previous payment request. (required)
      * @return PtsV2PaymentsRefundPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PtsV2PaymentsRefundPost201Response
+     * OPERATION_ID=refundPayment
+     * HTTP_METHOD=POST
+     * PATH=/pts/v2/payments/{id}/refunds
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=refundPaymentRequest
      */
     public PtsV2PaymentsRefundPost201Response refundPayment(RefundPaymentRequest refundPaymentRequest, String id) throws ApiException {
         logger.info("CALL TO METHOD 'refundPayment' STARTED");

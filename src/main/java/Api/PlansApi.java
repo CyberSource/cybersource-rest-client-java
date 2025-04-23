@@ -162,6 +162,14 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return ActivateDeactivatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ActivateDeactivatePlanResponse
+     * OPERATION_ID=activatePlan
+     * HTTP_METHOD=POST
+     * PATH=/rbs/v1/plans/{id}/activate
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ActivateDeactivatePlanResponse activatePlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'activatePlan' STARTED");
@@ -303,6 +311,14 @@ public class PlansApi {
      * @param createPlanRequest  (required)
      * @return CreatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=CreatePlanResponse
+     * OPERATION_ID=createPlan
+     * HTTP_METHOD=POST
+     * PATH=/rbs/v1/plans
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=createPlanRequest
      */
     public CreatePlanResponse createPlan(CreatePlanRequest createPlanRequest) throws ApiException {
         logger.info("CALL TO METHOD 'createPlan' STARTED");
@@ -448,6 +464,14 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return ActivateDeactivatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ActivateDeactivatePlanResponse
+     * OPERATION_ID=deactivatePlan
+     * HTTP_METHOD=POST
+     * PATH=/rbs/v1/plans/{id}/deactivate
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ActivateDeactivatePlanResponse deactivatePlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'deactivatePlan' STARTED");
@@ -593,6 +617,14 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return DeletePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=DeletePlanResponse
+     * OPERATION_ID=deletePlan
+     * HTTP_METHOD=DELETE
+     * PATH=/rbs/v1/plans/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public DeletePlanResponse deletePlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'deletePlan' STARTED");
@@ -738,6 +770,14 @@ public class PlansApi {
      * @param id Plan Id (required)
      * @return GetPlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=GetPlanResponse
+     * OPERATION_ID=getPlan
+     * HTTP_METHOD=GET
+     * PATH=/rbs/v1/plans/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public GetPlanResponse getPlan(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getPlan' STARTED");
@@ -874,6 +914,14 @@ public class PlansApi {
      * Get a Unique Plan Code
      * @return GetPlanCodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=GetPlanCodeResponse
+     * OPERATION_ID=getPlanCode
+     * HTTP_METHOD=GET
+     * PATH=/rbs/v1/plans/code
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public GetPlanCodeResponse getPlanCode() throws ApiException {
         logger.info("CALL TO METHOD 'getPlanCode' STARTED");
@@ -1028,6 +1076,14 @@ public class PlansApi {
      * @param name Filter by Plan Name. (First sub string or full string) **[Not Recommended]**  (optional)
      * @return GetAllPlansResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=GetAllPlansResponse
+     * OPERATION_ID=getPlans
+     * HTTP_METHOD=GET
+     * PATH=/rbs/v1/plans
+     * QUERY_PARAMS=offset, limit, code, status, name
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public GetAllPlansResponse getPlans(Integer offset, Integer limit, String code, String status, String name) throws ApiException {
         logger.info("CALL TO METHOD 'getPlans' STARTED");
@@ -1186,6 +1242,14 @@ public class PlansApi {
      * @param updatePlanRequest  (required)
      * @return UpdatePlanResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=UpdatePlanResponse
+     * OPERATION_ID=updatePlan
+     * HTTP_METHOD=PATCH
+     * PATH=/rbs/v1/plans/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=updatePlanRequest
      */
     public UpdatePlanResponse updatePlan(String id, UpdatePlanRequest updatePlanRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updatePlan' STARTED");

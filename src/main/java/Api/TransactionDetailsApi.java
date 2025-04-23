@@ -151,6 +151,14 @@ public class TransactionDetailsApi {
      * @param id Request ID.  (required)
      * @return TssV2TransactionsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=TssV2TransactionsGet200Response
+     * OPERATION_ID=getTransaction
+     * HTTP_METHOD=GET
+     * PATH=/tss/v2/transactions/{id}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public TssV2TransactionsGet200Response getTransaction(String id) throws ApiException {
         logger.info("CALL TO METHOD 'getTransaction' STARTED");

@@ -167,6 +167,14 @@ public class ChargebackSummariesApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3ChargebackSummariesGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3ChargebackSummariesGet200Response
+     * OPERATION_ID=getChargebackSummaries
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/chargeback-summaries
+     * QUERY_PARAMS=startTime, endTime, organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3ChargebackSummariesGet200Response getChargebackSummaries(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getChargebackSummaries' STARTED");

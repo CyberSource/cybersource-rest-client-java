@@ -152,6 +152,14 @@ public class VerificationApi {
      * @param validateExportComplianceRequest  (required)
      * @return RiskV1ExportComplianceInquiriesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=RiskV1ExportComplianceInquiriesPost201Response
+     * OPERATION_ID=validateExportCompliance
+     * HTTP_METHOD=POST
+     * PATH=/risk/v1/export-compliance-inquiries
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=validateExportComplianceRequest
      */
     public RiskV1ExportComplianceInquiriesPost201Response validateExportCompliance(ValidateExportComplianceRequest validateExportComplianceRequest) throws ApiException {
         logger.info("CALL TO METHOD 'validateExportCompliance' STARTED");
@@ -293,6 +301,14 @@ public class VerificationApi {
      * @param verifyCustomerAddressRequest  (required)
      * @return RiskV1AddressVerificationsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=RiskV1AddressVerificationsPost201Response
+     * OPERATION_ID=verifyCustomerAddress
+     * HTTP_METHOD=POST
+     * PATH=/risk/v1/address-verifications
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=verifyCustomerAddressRequest
      */
     public RiskV1AddressVerificationsPost201Response verifyCustomerAddress(VerifyCustomerAddressRequest verifyCustomerAddressRequest) throws ApiException {
         logger.info("CALL TO METHOD 'verifyCustomerAddress' STARTED");

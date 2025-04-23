@@ -155,6 +155,14 @@ public class PayerAuthenticationApi {
      * @param checkPayerAuthEnrollmentRequest  (required)
      * @return RiskV1AuthenticationsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=RiskV1AuthenticationsPost201Response
+     * OPERATION_ID=checkPayerAuthEnrollment
+     * HTTP_METHOD=POST
+     * PATH=/risk/v1/authentications
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=checkPayerAuthEnrollmentRequest
      */
     public RiskV1AuthenticationsPost201Response checkPayerAuthEnrollment(CheckPayerAuthEnrollmentRequest checkPayerAuthEnrollmentRequest) throws ApiException {
         logger.info("CALL TO METHOD 'checkPayerAuthEnrollment' STARTED");
@@ -296,6 +304,14 @@ public class PayerAuthenticationApi {
      * @param payerAuthSetupRequest  (required)
      * @return RiskV1AuthenticationSetupsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=RiskV1AuthenticationSetupsPost201Response
+     * OPERATION_ID=payerAuthSetup
+     * HTTP_METHOD=POST
+     * PATH=/risk/v1/authentication-setups
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=payerAuthSetupRequest
      */
     public RiskV1AuthenticationSetupsPost201Response payerAuthSetup(PayerAuthSetupRequest payerAuthSetupRequest) throws ApiException {
         logger.info("CALL TO METHOD 'payerAuthSetup' STARTED");
@@ -437,6 +453,14 @@ public class PayerAuthenticationApi {
      * @param validateRequest  (required)
      * @return RiskV1AuthenticationResultsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=RiskV1AuthenticationResultsPost201Response
+     * OPERATION_ID=validateAuthenticationResults
+     * HTTP_METHOD=POST
+     * PATH=/risk/v1/authentication-results
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=validateRequest
      */
     public RiskV1AuthenticationResultsPost201Response validateAuthenticationResults(ValidateRequest validateRequest) throws ApiException {
         logger.info("CALL TO METHOD 'validateAuthenticationResults' STARTED");

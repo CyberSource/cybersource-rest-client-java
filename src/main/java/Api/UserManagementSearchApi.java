@@ -149,6 +149,14 @@ public class UserManagementSearchApi {
      * @param searchRequest  (required)
      * @return UmsV1UsersGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=UmsV1UsersGet200Response
+     * OPERATION_ID=searchUsers
+     * HTTP_METHOD=POST
+     * PATH=/ums/v1/users/search
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=searchRequest
      */
     public UmsV1UsersGet200Response searchUsers(SearchRequest searchRequest) throws ApiException {
         logger.info("CALL TO METHOD 'searchUsers' STARTED");

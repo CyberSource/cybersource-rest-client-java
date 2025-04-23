@@ -162,6 +162,14 @@ public class PaymentInstrumentApi {
      * @param paymentInstrumentId The Id of a payment instrument. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=deletePaymentInstrument
+     * HTTP_METHOD=DELETE
+     * PATH=/tms/v1/paymentinstruments/{paymentInstrumentId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void deletePaymentInstrument(String paymentInstrumentId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'deletePaymentInstrument' STARTED");
@@ -314,6 +322,14 @@ public class PaymentInstrumentApi {
      * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return PostPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PostPaymentInstrumentRequest
+     * OPERATION_ID=getPaymentInstrument
+     * HTTP_METHOD=GET
+     * PATH=/tms/v1/paymentinstruments/{paymentInstrumentId}
+     * QUERY_PARAMS=retrieveBinDetails
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public PostPaymentInstrumentRequest getPaymentInstrument(String paymentInstrumentId, String profileId, Boolean retrieveBinDetails) throws ApiException {
         logger.info("CALL TO METHOD 'getPaymentInstrument' STARTED");
@@ -480,6 +496,14 @@ public class PaymentInstrumentApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return PatchPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PatchPaymentInstrumentRequest
+     * OPERATION_ID=patchPaymentInstrument
+     * HTTP_METHOD=PATCH
+     * PATH=/tms/v1/paymentinstruments/{paymentInstrumentId}
+     * QUERY_PARAMS=retrieveBinDetails
+     * HEADER_PARAMS=profileId, ifMatch
+     * FORM_PARAMS=
+     * BODY_PARAM=patchPaymentInstrumentRequest
      */
     public PatchPaymentInstrumentRequest patchPaymentInstrument(String paymentInstrumentId, PatchPaymentInstrumentRequest patchPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchPaymentInstrument' STARTED");
@@ -637,6 +661,14 @@ public class PaymentInstrumentApi {
      * @param retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @return PostPaymentInstrumentRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PostPaymentInstrumentRequest
+     * OPERATION_ID=postPaymentInstrument
+     * HTTP_METHOD=POST
+     * PATH=/tms/v1/paymentinstruments
+     * QUERY_PARAMS=retrieveBinDetails
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=postPaymentInstrumentRequest
      */
     public PostPaymentInstrumentRequest postPaymentInstrument(PostPaymentInstrumentRequest postPaymentInstrumentRequest, String profileId, Boolean retrieveBinDetails) throws ApiException {
         logger.info("CALL TO METHOD 'postPaymentInstrument' STARTED");

@@ -172,6 +172,14 @@ public class CustomerShippingAddressApi {
      * @param shippingAddressId The Id of a shipping address. (required)
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=Void
+     * OPERATION_ID=deleteCustomerShippingAddress
+     * HTTP_METHOD=DELETE
+     * PATH=/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public void deleteCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'deleteCustomerShippingAddress' STARTED");
@@ -331,6 +339,14 @@ public class CustomerShippingAddressApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerShippingAddressRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PostCustomerShippingAddressRequest
+     * OPERATION_ID=getCustomerShippingAddress
+     * HTTP_METHOD=GET
+     * PATH=/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public PostCustomerShippingAddressRequest getCustomerShippingAddress(String customerId, String shippingAddressId, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'getCustomerShippingAddress' STARTED");
@@ -492,6 +508,14 @@ public class CustomerShippingAddressApi {
      * @param limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @return ShippingAddressListForCustomer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ShippingAddressListForCustomer
+     * OPERATION_ID=getCustomerShippingAddressesList
+     * HTTP_METHOD=GET
+     * PATH=/tms/v2/customers/{customerId}/shipping-addresses
+     * QUERY_PARAMS=offset, limit
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ShippingAddressListForCustomer getCustomerShippingAddressesList(String customerId, String profileId, Long offset, Long limit) throws ApiException {
         logger.info("CALL TO METHOD 'getCustomerShippingAddressesList' STARTED");
@@ -665,6 +689,14 @@ public class CustomerShippingAddressApi {
      * @param ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @return PatchCustomerShippingAddressRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PatchCustomerShippingAddressRequest
+     * OPERATION_ID=patchCustomersShippingAddress
+     * HTTP_METHOD=PATCH
+     * PATH=/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId, ifMatch
+     * FORM_PARAMS=
+     * BODY_PARAM=patchCustomerShippingAddressRequest
      */
     public PatchCustomerShippingAddressRequest patchCustomersShippingAddress(String customerId, String shippingAddressId, PatchCustomerShippingAddressRequest patchCustomerShippingAddressRequest, String profileId, String ifMatch) throws ApiException {
         logger.info("CALL TO METHOD 'patchCustomersShippingAddress' STARTED");
@@ -827,6 +859,14 @@ public class CustomerShippingAddressApi {
      * @param profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @return PostCustomerShippingAddressRequest
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=PostCustomerShippingAddressRequest
+     * OPERATION_ID=postCustomerShippingAddress
+     * HTTP_METHOD=POST
+     * PATH=/tms/v2/customers/{customerId}/shipping-addresses
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=profileId
+     * FORM_PARAMS=
+     * BODY_PARAM=postCustomerShippingAddressRequest
      */
     public PostCustomerShippingAddressRequest postCustomerShippingAddress(String customerId, PostCustomerShippingAddressRequest postCustomerShippingAddressRequest, String profileId) throws ApiException {
         logger.info("CALL TO METHOD 'postCustomerShippingAddress' STARTED");

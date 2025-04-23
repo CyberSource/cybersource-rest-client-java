@@ -148,6 +148,14 @@ public class MicroformIntegrationApi {
      * @param generateCaptureContextRequest  (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=String
+     * OPERATION_ID=generateCaptureContext
+     * HTTP_METHOD=POST
+     * PATH=/microform/v2/sessions
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=generateCaptureContextRequest
      */
     public String generateCaptureContext(GenerateCaptureContextRequest generateCaptureContextRequest) throws ApiException {
         logger.info("CALL TO METHOD 'generateCaptureContext' STARTED");

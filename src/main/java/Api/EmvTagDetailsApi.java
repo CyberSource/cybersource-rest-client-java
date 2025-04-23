@@ -144,6 +144,14 @@ public class EmvTagDetailsApi {
      * Returns the entire EMV tag dictionary
      * @return TssV2GetEmvTags200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=TssV2GetEmvTags200Response
+     * OPERATION_ID=getEmvTags
+     * HTTP_METHOD=GET
+     * PATH=/tss/v2/transactions/emvTagDetails
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public TssV2GetEmvTags200Response getEmvTags() throws ApiException {
         logger.info("CALL TO METHOD 'getEmvTags' STARTED");
@@ -283,6 +291,14 @@ public class EmvTagDetailsApi {
      * @param body  (required)
      * @return TssV2PostEmvTags200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=TssV2PostEmvTags200Response
+     * OPERATION_ID=parseEmvTags
+     * HTTP_METHOD=POST
+     * PATH=/tss/v2/transactions/emvTagDetails
+     * QUERY_PARAMS=
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=body
      */
     public TssV2PostEmvTags200Response parseEmvTags(Body body) throws ApiException {
         logger.info("CALL TO METHOD 'parseEmvTags' STARTED");

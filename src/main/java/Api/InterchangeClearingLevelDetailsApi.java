@@ -167,6 +167,14 @@ public class InterchangeClearingLevelDetailsApi {
      * @param organizationId Valid Organization Id (optional)
      * @return ReportingV3InterchangeClearingLevelDetailsGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE=ReportingV3InterchangeClearingLevelDetailsGet200Response
+     * OPERATION_ID=getInterchangeClearingLevelDetails
+     * HTTP_METHOD=GET
+     * PATH=/reporting/v3/interchange-clearing-level-details
+     * QUERY_PARAMS=startTime, endTime, organizationId
+     * HEADER_PARAMS=
+     * FORM_PARAMS=
+     * BODY_PARAM=null
      */
     public ReportingV3InterchangeClearingLevelDetailsGet200Response getInterchangeClearingLevelDetails(DateTime startTime, DateTime endTime, String organizationId) throws ApiException {
         logger.info("CALL TO METHOD 'getInterchangeClearingLevelDetails' STARTED");
