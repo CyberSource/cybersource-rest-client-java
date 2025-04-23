@@ -1372,6 +1372,7 @@ public class ApiClient {
 		logger.info("Request Header Parameters:\n{}", new PrettyPrintingMap<String, String>(headerParams));
 		Request request = buildRequest(path, method, queryParams, requestbody, headerParams, formParams, authNames,
 				progressRequestListener);
+		System.out.println("request " + request);
 		return httpClient.newCall(request);
 	}
 	
