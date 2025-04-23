@@ -197,6 +197,14 @@ public class {{classname}} {
      * @param {{paramName}} {{description}}{{#required}} (required){{/required}}{{^required}} (optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}{{/allParams}}{{#returnType}}
      * @return {{returnType}}{{/returnType}}
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * RETURN_TYPE={{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Void{{/returnType}}
+     * OPERATION_ID={{operationId}}
+     * HTTP_METHOD={{httpMethod}}
+     * PATH={{path}}
+     * QUERY_PARAMS={{#queryParams}}{{{paramName}}}{{#hasMore}}, {{/hasMore}}{{/queryParams}}
+     * HEADER_PARAMS={{#headerParams}}{{{paramName}}}{{#hasMore}}, {{/hasMore}}{{/headerParams}}
+     * FORM_PARAMS={{#formParams}}{{{paramName}}}{{#hasMore}}, {{/hasMore}}{{/formParams}}
+     * BODY_PARAM={{#bodyParam}}{{{paramName}}}{{/bodyParam}}{{^bodyParam}}null{{/bodyParam}}
      */
     public {{#returnType}}{{{returnType}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{operationId}}({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
         logger.info("CALL TO METHOD '{{operationId}}' STARTED");
