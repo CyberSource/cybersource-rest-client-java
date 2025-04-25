@@ -13,9 +13,9 @@
 
 package Api;
 
-import Model.InlineResponse2001;
+import Model.InlineResponse2002;
 import Model.InlineResponse2012;
-import Model.InlineResponse4006;
+import Model.InlineResponse4007;
 import Model.InlineResponse4041;
 import Model.InlineResponse4221;
 import Model.InlineResponse5002;
@@ -49,7 +49,7 @@ public class MerchantBoardingApiTest {
     @Test
     public void getRegistrationTest() throws Exception {
         String registrationId = null;
-        InlineResponse2001 response = api.getRegistration(registrationId);
+        InlineResponse2002 response = api.getRegistration(registrationId);
 
         // TODO: test validations
     }
@@ -57,7 +57,7 @@ public class MerchantBoardingApiTest {
     /**
      * Create a boarding registration
      *
-     * Create a registration to board merchant  If you have  Card Processing product enabled in your boarding request, select payment processor from Configuration -&gt; Sample Request. You may unselect attributes from the Request Builder tree which you do not need in the request. For VPC, CUP and EFTPOS processors, replace the processor name from VPC or CUP or EFTPOS to the actual processor name in the sample request. e.g. replace VPC with &amp;lt;your vpc processor&amp;gt; 
+     * Boarding Product is specifically for resellers who onboard merchants to resell their services to merchants and help integrate REST API into their systems.  The Boarding API is designed to simplify and streamline the onboarding process of merchants by enabling administrators and developers to: 1. Enable and Configure Products: The API helps in adding new products to an existing organization and configuring them to suit specific needs. 2. Update Merchant Information: The API allows for updating an organization&#39;s information efficiently. 3. Manage Payment Integration: It provides templates for secure payment integration and management. 
      *
      * @throws Exception
      *          if the Api call fails

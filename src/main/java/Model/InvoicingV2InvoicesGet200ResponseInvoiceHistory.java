@@ -46,10 +46,10 @@ public class InvoicingV2InvoicesGet200ResponseInvoiceHistory {
   }
 
    /**
-   * The event triggered for the invoice.  Possible values:  - &#x60;CREATE&#x60;  - &#x60;UPDATE&#x60;  - &#x60;SEND&#x60;  - &#x60;RESEND&#x60;  - &#x60;REMINDER&#x60;  - &#x60;PAYMENT&#x60;  - &#x60;CANCEL&#x60; 
+   * The event triggered for the invoice.  Possible values:  - &#x60;UNKNOWN&#x60;  - &#x60;DRAFT&#x60;  - &#x60;CREATE&#x60;  - &#x60;UPDATE&#x60;  - &#x60;SEND&#x60;  - &#x60;RESEND&#x60;  - &#x60;REMINDER&#x60;  - &#x60;PAYMENT&#x60;  - &#x60;CANCEL&#x60;  - &#x60;PENDING&#x60;  - &#x60;REJECTED&#x60; 
    * @return event
   **/
-  @ApiModelProperty(value = "The event triggered for the invoice.  Possible values:  - `CREATE`  - `UPDATE`  - `SEND`  - `RESEND`  - `REMINDER`  - `PAYMENT`  - `CANCEL` ")
+  @ApiModelProperty(value = "The event triggered for the invoice.  Possible values:  - `UNKNOWN`  - `DRAFT`  - `CREATE`  - `UPDATE`  - `SEND`  - `RESEND`  - `REMINDER`  - `PAYMENT`  - `CANCEL`  - `PENDING`  - `REJECTED` ")
   public String getEvent() {
     return event;
   }

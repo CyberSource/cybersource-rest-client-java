@@ -14,9 +14,9 @@
 package Api;
 
 import Model.Body;
-import Model.InlineResponse2002;
-import Model.InlineResponse2003;
-import Model.InlineResponse2004;
+import Model.InlineResponse2005;
+import Model.InlineResponse2006;
+import Model.InlineResponse2007;
 import Model.InlineResponse202;
 import Model.InlineResponse401;
 import org.junit.Test;
@@ -48,7 +48,7 @@ public class BatchesApiTest {
     @Test
     public void getBatchReportTest() throws Exception {
         String batchId = null;
-        InlineResponse2004 response = api.getBatchReport(batchId);
+        InlineResponse2007 response = api.getBatchReport(batchId);
 
         // TODO: test validations
     }
@@ -64,7 +64,7 @@ public class BatchesApiTest {
     @Test
     public void getBatchStatusTest() throws Exception {
         String batchId = null;
-        InlineResponse2003 response = api.getBatchStatus(batchId);
+        InlineResponse2006 response = api.getBatchStatus(batchId);
 
         // TODO: test validations
     }
@@ -83,7 +83,7 @@ public class BatchesApiTest {
         Long limit = null;
         String fromDate = null;
         String toDate = null;
-        InlineResponse2002 response = api.getBatchesList(offset, limit, fromDate, toDate);
+        InlineResponse2005 response = api.getBatchesList(offset, limit, fromDate, toDate);
 
         // TODO: test validations
     }
@@ -91,7 +91,7 @@ public class BatchesApiTest {
     /**
      * Create a Batch
      *
-     * **Create a Batch**&lt;br&gt;This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. &lt;br&gt; The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.&lt;br&gt;The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. 
+     * **Create a Batch**&lt;br&gt;This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. &lt;br&gt; The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.&lt;br&gt;The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. The availability of API features for a merchant may depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      *
      * @throws Exception
      *          if the Api call fails

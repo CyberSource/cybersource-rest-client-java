@@ -17,6 +17,7 @@ import java.util.Objects;
 import java.util.Arrays;
 import Model.Microformv2sessionsTransientTokenResponseOptions;
 import Model.Upv1capturecontextsCaptureMandate;
+import Model.Upv1capturecontextsCompleteMandate;
 import Model.Upv1capturecontextsOrderInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -55,6 +56,9 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
   @SerializedName("captureMandate")
   private Upv1capturecontextsCaptureMandate captureMandate = null;
 
+  @SerializedName("completeMandate")
+  private Upv1capturecontextsCompleteMandate completeMandate = null;
+
   @SerializedName("orderInformation")
   private Upv1capturecontextsOrderInformation orderInformation = null;
 
@@ -70,7 +74,7 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
    * Specify the version of Unified Checkout that you want to use.
    * @return clientVersion
   **/
-  @ApiModelProperty(example = "0.24", value = "Specify the version of Unified Checkout that you want to use.")
+  @ApiModelProperty(example = "0.25", value = "Specify the version of Unified Checkout that you want to use.")
   public String getClientVersion() {
     return clientVersion;
   }
@@ -211,6 +215,24 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     this.captureMandate = captureMandate;
   }
 
+  public GenerateUnifiedCheckoutCaptureContextRequest completeMandate(Upv1capturecontextsCompleteMandate completeMandate) {
+    this.completeMandate = completeMandate;
+    return this;
+  }
+
+   /**
+   * Get completeMandate
+   * @return completeMandate
+  **/
+  @ApiModelProperty(value = "")
+  public Upv1capturecontextsCompleteMandate getCompleteMandate() {
+    return completeMandate;
+  }
+
+  public void setCompleteMandate(Upv1capturecontextsCompleteMandate completeMandate) {
+    this.completeMandate = completeMandate;
+  }
+
   public GenerateUnifiedCheckoutCaptureContextRequest orderInformation(Upv1capturecontextsOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
@@ -264,13 +286,14 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
         Objects.equals(this.country, generateUnifiedCheckoutCaptureContextRequest.country) &&
         Objects.equals(this.locale, generateUnifiedCheckoutCaptureContextRequest.locale) &&
         Objects.equals(this.captureMandate, generateUnifiedCheckoutCaptureContextRequest.captureMandate) &&
+        Objects.equals(this.completeMandate, generateUnifiedCheckoutCaptureContextRequest.completeMandate) &&
         Objects.equals(this.orderInformation, generateUnifiedCheckoutCaptureContextRequest.orderInformation) &&
         Objects.equals(this.transientTokenResponseOptions, generateUnifiedCheckoutCaptureContextRequest.transientTokenResponseOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, orderInformation, transientTokenResponseOptions);
+    return Objects.hash(clientVersion, targetOrigins, allowedCardNetworks, allowedPaymentTypes, country, locale, captureMandate, completeMandate, orderInformation, transientTokenResponseOptions);
   }
 
 
@@ -286,6 +309,7 @@ public class GenerateUnifiedCheckoutCaptureContextRequest {
     if (country != null) sb.append("    country: ").append(toIndentedString(country)).append("\n");
     if (locale != null) sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     if (captureMandate != null) sb.append("    captureMandate: ").append(toIndentedString(captureMandate)).append("\n");
+    if (completeMandate != null) sb.append("    completeMandate: ").append(toIndentedString(completeMandate)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     if (transientTokenResponseOptions != null) sb.append("    transientTokenResponseOptions: ").append(toIndentedString(transientTokenResponseOptions)).append("\n");
     sb.append("}");

@@ -60,6 +60,18 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
   @SerializedName("vatRegistrationNumber")
   private String vatRegistrationNumber = null;
 
+  @SerializedName("shipTo")
+  private Boolean shipTo = false;
+
+  @SerializedName("phoneNumber")
+  private Boolean phoneNumber = false;
+
+  @SerializedName("email")
+  private Boolean email = false;
+
+  @SerializedName("enableMerchantEmailNotifications")
+  private Boolean enableMerchantEmailNotifications = false;
+
   public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation merchantLogo(String merchantLogo) {
     this.merchantLogo = merchantLogo;
     return this;
@@ -228,16 +240,88 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
   }
 
    /**
-   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.       
+   * Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.  
    * @return vatRegistrationNumber
   **/
-  @ApiModelProperty(value = "Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.       ")
+  @ApiModelProperty(value = "Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.  ")
   public String getVatRegistrationNumber() {
     return vatRegistrationNumber;
   }
 
   public void setVatRegistrationNumber(String vatRegistrationNumber) {
     this.vatRegistrationNumber = vatRegistrationNumber;
+  }
+
+  public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation shipTo(Boolean shipTo) {
+    this.shipTo = shipTo;
+    return this;
+  }
+
+   /**
+   * Collect the payers shipping address.
+   * @return shipTo
+  **/
+  @ApiModelProperty(value = "Collect the payers shipping address.")
+  public Boolean ShipTo() {
+    return shipTo;
+  }
+
+  public void setShipTo(Boolean shipTo) {
+    this.shipTo = shipTo;
+  }
+
+  public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation phoneNumber(Boolean phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+
+   /**
+   * Collect the payers phone number.
+   * @return phoneNumber
+  **/
+  @ApiModelProperty(value = "Collect the payers phone number.")
+  public Boolean PhoneNumber() {
+    return phoneNumber;
+  }
+
+  public void setPhoneNumber(Boolean phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
+  public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation email(Boolean email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Collect the payers email address when the email address is not known or confirm it if it is known at the time of invoice creation.
+   * @return email
+  **/
+  @ApiModelProperty(value = "Collect the payers email address when the email address is not known or confirm it if it is known at the time of invoice creation.")
+  public Boolean Email() {
+    return email;
+  }
+
+  public void setEmail(Boolean email) {
+    this.email = email;
+  }
+
+  public InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation enableMerchantEmailNotifications(Boolean enableMerchantEmailNotifications) {
+    this.enableMerchantEmailNotifications = enableMerchantEmailNotifications;
+    return this;
+  }
+
+   /**
+   * Whether you would like to receive payment notification for successful transaction
+   * @return enableMerchantEmailNotifications
+  **/
+  @ApiModelProperty(value = "Whether you would like to receive payment notification for successful transaction")
+  public Boolean EnableMerchantEmailNotifications() {
+    return enableMerchantEmailNotifications;
+  }
+
+  public void setEnableMerchantEmailNotifications(Boolean enableMerchantEmailNotifications) {
+    this.enableMerchantEmailNotifications = enableMerchantEmailNotifications;
   }
 
 
@@ -259,12 +343,16 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
         Objects.equals(this.defaultCurrencyCode, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.defaultCurrencyCode) &&
         Objects.equals(this.payerAuthentication3DSVersion, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.payerAuthentication3DSVersion) &&
         Objects.equals(this.showVatNumber, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.showVatNumber) &&
-        Objects.equals(this.vatRegistrationNumber, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.vatRegistrationNumber);
+        Objects.equals(this.vatRegistrationNumber, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.vatRegistrationNumber) &&
+        Objects.equals(this.shipTo, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.shipTo) &&
+        Objects.equals(this.phoneNumber, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.phoneNumber) &&
+        Objects.equals(this.email, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.email) &&
+        Objects.equals(this.enableMerchantEmailNotifications, invoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation.enableMerchantEmailNotifications);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthentication3DSVersion, showVatNumber, vatRegistrationNumber);
+    return Objects.hash(merchantLogo, merchantDisplayName, customEmailMessage, enableReminders, headerStyle, deliveryLanguage, defaultCurrencyCode, payerAuthentication3DSVersion, showVatNumber, vatRegistrationNumber, shipTo, phoneNumber, email, enableMerchantEmailNotifications);
   }
 
 
@@ -283,6 +371,10 @@ public class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation 
     if (payerAuthentication3DSVersion != null) sb.append("    payerAuthentication3DSVersion: ").append(toIndentedString(payerAuthentication3DSVersion)).append("\n");
     if (showVatNumber != null) sb.append("    showVatNumber: ").append(toIndentedString(showVatNumber)).append("\n");
     if (vatRegistrationNumber != null) sb.append("    vatRegistrationNumber: ").append(toIndentedString(vatRegistrationNumber)).append("\n");
+    if (shipTo != null) sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
+    if (phoneNumber != null) sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    if (email != null) sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    if (enableMerchantEmailNotifications != null) sb.append("    enableMerchantEmailNotifications: ").append(toIndentedString(enableMerchantEmailNotifications)).append("\n");
     sb.append("}");
     return sb.toString();
   }

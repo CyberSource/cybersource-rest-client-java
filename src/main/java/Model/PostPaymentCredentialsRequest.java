@@ -32,6 +32,9 @@ public class PostPaymentCredentialsRequest {
   @SerializedName("paymentCredentialType")
   private String paymentCredentialType = null;
 
+  @SerializedName("transactionType")
+  private String transactionType = null;
+
   public PostPaymentCredentialsRequest paymentCredentialType(String paymentCredentialType) {
     this.paymentCredentialType = paymentCredentialType;
     return this;
@@ -50,6 +53,24 @@ public class PostPaymentCredentialsRequest {
     this.paymentCredentialType = paymentCredentialType;
   }
 
+  public PostPaymentCredentialsRequest transactionType(String transactionType) {
+    this.transactionType = transactionType;
+    return this;
+  }
+
+   /**
+   * Specifies the type of transaction for which the network token credentials are required. Possible Values:   - ECOM: Ecommerce transaction. If transactionType is not provided, ECOM is set as the default.   - AFT: Account Funding Transaction. This is only supported for VISA and paymentCredentialType of CRYPTOGRAM. 
+   * @return transactionType
+  **/
+  @ApiModelProperty(value = "Specifies the type of transaction for which the network token credentials are required. Possible Values:   - ECOM: Ecommerce transaction. If transactionType is not provided, ECOM is set as the default.   - AFT: Account Funding Transaction. This is only supported for VISA and paymentCredentialType of CRYPTOGRAM. ")
+  public String getTransactionType() {
+    return transactionType;
+  }
+
+  public void setTransactionType(String transactionType) {
+    this.transactionType = transactionType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +81,13 @@ public class PostPaymentCredentialsRequest {
       return false;
     }
     PostPaymentCredentialsRequest postPaymentCredentialsRequest = (PostPaymentCredentialsRequest) o;
-    return Objects.equals(this.paymentCredentialType, postPaymentCredentialsRequest.paymentCredentialType);
+    return Objects.equals(this.paymentCredentialType, postPaymentCredentialsRequest.paymentCredentialType) &&
+        Objects.equals(this.transactionType, postPaymentCredentialsRequest.transactionType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentCredentialType);
+    return Objects.hash(paymentCredentialType, transactionType);
   }
 
 
@@ -75,6 +97,7 @@ public class PostPaymentCredentialsRequest {
     sb.append("class PostPaymentCredentialsRequest {\n");
     
     if (paymentCredentialType != null) sb.append("    paymentCredentialType: ").append(toIndentedString(paymentCredentialType)).append("\n");
+    if (transactionType != null) sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

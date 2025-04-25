@@ -13,7 +13,10 @@
 
 package Api;
 
+import Model.CreateWebhook;
+import Model.InlineResponse2003;
 import Model.InlineResponse2013;
+import Model.InlineResponse2014;
 import Model.SaveSymEgressKey;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -32,6 +35,38 @@ public class CreateNewWebhooksApiTest {
 
     private final CreateNewWebhooksApi api = new CreateNewWebhooksApi();
 
+    
+    /**
+     * Find Products You Can Subscribe To
+     *
+     * Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void findProductsToSubscribeTest() throws Exception {
+        String organizationId = null;
+        List<InlineResponse2003> response = api.findProductsToSubscribe(organizationId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a New Webhook Subscription
+     *
+     * Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \&quot;Create Webhook using oAuth with Client Credentials\&quot; - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \&quot;Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\&quot; to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \&quot;Create Webhook using oAuth with JWT\&quot; 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void notificationSubscriptionsV2WebhooksPostTest() throws Exception {
+        CreateWebhook createWebhook = null;
+        InlineResponse2014 response = api.notificationSubscriptionsV2WebhooksPost(createWebhook);
+
+        // TODO: test validations
+    }
     
     /**
      * Create Webhook Security Keys

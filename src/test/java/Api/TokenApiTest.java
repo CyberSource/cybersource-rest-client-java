@@ -13,6 +13,7 @@
 
 package Api;
 
+import Model.InlineResponse200;
 import Model.InlineResponse400;
 import Model.InlineResponse403;
 import Model.InlineResponse410;
@@ -36,6 +37,24 @@ public class TokenApiTest {
 
     private final TokenApi api = new TokenApi();
 
+    
+    /**
+     * Retrieve Card Art
+     *
+     * Retrieves Card Art for a specific Instrument Identifier. The Card Art is a visual representation of the cardholder&#39;s payment card. Card Art is only available if a Network Token is successfully provisioned. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void getCardArtAssetTest() throws Exception {
+        String instrumentIdentifierId = null;
+        String tokenProvider = null;
+        String assetType = null;
+        InlineResponse200 response = api.getCardArtAsset(instrumentIdentifierId, tokenProvider, assetType);
+
+        // TODO: test validations
+    }
     
     /**
      * Generate Payment Credentials for a TMS Token

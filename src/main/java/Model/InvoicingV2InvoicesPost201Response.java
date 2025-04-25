@@ -19,6 +19,7 @@ import Model.InvoicingV2InvoicesAllGet200ResponseLinks;
 import Model.InvoicingV2InvoicesPost201ResponseInvoiceInformation;
 import Model.InvoicingV2InvoicesPost201ResponseOrderInformation;
 import Model.Invoicingv2invoicesCustomerInformation;
+import Model.Invoicingv2invoicesProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,6 +48,9 @@ public class InvoicingV2InvoicesPost201Response {
 
   @SerializedName("customerInformation")
   private Invoicingv2invoicesCustomerInformation customerInformation = null;
+
+  @SerializedName("processingInformation")
+  private Invoicingv2invoicesProcessingInformation processingInformation = null;
 
   @SerializedName("invoiceInformation")
   private InvoicingV2InvoicesPost201ResponseInvoiceInformation invoiceInformation = null;
@@ -144,6 +148,24 @@ public class InvoicingV2InvoicesPost201Response {
     this.customerInformation = customerInformation;
   }
 
+  public InvoicingV2InvoicesPost201Response processingInformation(Invoicingv2invoicesProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Invoicingv2invoicesProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(Invoicingv2invoicesProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
   public InvoicingV2InvoicesPost201Response invoiceInformation(InvoicingV2InvoicesPost201ResponseInvoiceInformation invoiceInformation) {
     this.invoiceInformation = invoiceInformation;
     return this;
@@ -195,13 +217,14 @@ public class InvoicingV2InvoicesPost201Response {
         Objects.equals(this.submitTimeUtc, invoicingV2InvoicesPost201Response.submitTimeUtc) &&
         Objects.equals(this.status, invoicingV2InvoicesPost201Response.status) &&
         Objects.equals(this.customerInformation, invoicingV2InvoicesPost201Response.customerInformation) &&
+        Objects.equals(this.processingInformation, invoicingV2InvoicesPost201Response.processingInformation) &&
         Objects.equals(this.invoiceInformation, invoicingV2InvoicesPost201Response.invoiceInformation) &&
         Objects.equals(this.orderInformation, invoicingV2InvoicesPost201Response.orderInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, submitTimeUtc, status, customerInformation, invoiceInformation, orderInformation);
+    return Objects.hash(links, id, submitTimeUtc, status, customerInformation, processingInformation, invoiceInformation, orderInformation);
   }
 
 
@@ -215,6 +238,7 @@ public class InvoicingV2InvoicesPost201Response {
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
     if (customerInformation != null) sb.append("    customerInformation: ").append(toIndentedString(customerInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (invoiceInformation != null) sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");

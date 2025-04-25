@@ -40,8 +40,11 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
   @SerializedName("dueDate")
   private LocalDate dueDate = null;
 
+  @SerializedName("expirationDate")
+  private LocalDate expirationDate = null;
+
   @SerializedName("allowPartialPayments")
-  private Boolean allowPartialPayments = null;
+  private Boolean allowPartialPayments = false;
 
   @SerializedName("paymentLink")
   private String paymentLink = null;
@@ -103,6 +106,24 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
     this.dueDate = dueDate;
   }
 
+  public InvoicingV2InvoicesPost201ResponseInvoiceInformation expirationDate(LocalDate expirationDate) {
+    this.expirationDate = expirationDate;
+    return this;
+  }
+
+   /**
+   * Define an expiration date for the link.  Format: &#x60;YYYY-MM-DD&#x60;, where &#x60;YYYY&#x60; &#x3D; year, &#x60;MM&#x60; &#x3D; month, and &#x60;DD&#x60; &#x3D; day 
+   * @return expirationDate
+  **/
+  @ApiModelProperty(value = "Define an expiration date for the link.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day ")
+  public LocalDate getExpirationDate() {
+    return expirationDate;
+  }
+
+  public void setExpirationDate(LocalDate expirationDate) {
+    this.expirationDate = expirationDate;
+  }
+
   public InvoicingV2InvoicesPost201ResponseInvoiceInformation allowPartialPayments(Boolean allowPartialPayments) {
     this.allowPartialPayments = allowPartialPayments;
     return this;
@@ -145,10 +166,10 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
   }
 
    /**
-   * If set to &#x60;None&#x60;, the invoice is created, and its status is set to &#39;CREATED&#39;, but no email is sent.    Possible values:        - &#x60;None&#x60;   - &#x60;Email&#x60;  
+   * If this field is set to &#39;None&#39;, an invoice will be generated with the status &#39;CREATED&#39;, but no email will be dispatched.    Possible values:        - &#x60;None&#x60;   - &#x60;Email&#x60;    
    * @return deliveryMode
   **/
-  @ApiModelProperty(value = "If set to `None`, the invoice is created, and its status is set to 'CREATED', but no email is sent.    Possible values:        - `None`   - `Email`  ")
+  @ApiModelProperty(value = "If this field is set to 'None', an invoice will be generated with the status 'CREATED', but no email will be dispatched.    Possible values:        - `None`   - `Email`    ")
   public String getDeliveryMode() {
     return deliveryMode;
   }
@@ -170,6 +191,7 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
     return Objects.equals(this.invoiceNumber, invoicingV2InvoicesPost201ResponseInvoiceInformation.invoiceNumber) &&
         Objects.equals(this.description, invoicingV2InvoicesPost201ResponseInvoiceInformation.description) &&
         Objects.equals(this.dueDate, invoicingV2InvoicesPost201ResponseInvoiceInformation.dueDate) &&
+        Objects.equals(this.expirationDate, invoicingV2InvoicesPost201ResponseInvoiceInformation.expirationDate) &&
         Objects.equals(this.allowPartialPayments, invoicingV2InvoicesPost201ResponseInvoiceInformation.allowPartialPayments) &&
         Objects.equals(this.paymentLink, invoicingV2InvoicesPost201ResponseInvoiceInformation.paymentLink) &&
         Objects.equals(this.deliveryMode, invoicingV2InvoicesPost201ResponseInvoiceInformation.deliveryMode);
@@ -177,7 +199,7 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, description, dueDate, allowPartialPayments, paymentLink, deliveryMode);
+    return Objects.hash(invoiceNumber, description, dueDate, expirationDate, allowPartialPayments, paymentLink, deliveryMode);
   }
 
 
@@ -189,6 +211,7 @@ public class InvoicingV2InvoicesPost201ResponseInvoiceInformation {
     if (invoiceNumber != null) sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
     if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
     if (dueDate != null) sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
+    if (expirationDate != null) sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
     if (allowPartialPayments != null) sb.append("    allowPartialPayments: ").append(toIndentedString(allowPartialPayments)).append("\n");
     if (paymentLink != null) sb.append("    paymentLink: ").append(toIndentedString(paymentLink)).append("\n");
     if (deliveryMode != null) sb.append("    deliveryMode: ").append(toIndentedString(deliveryMode)).append("\n");

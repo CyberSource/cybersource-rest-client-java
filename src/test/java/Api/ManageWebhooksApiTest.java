@@ -13,9 +13,14 @@
 
 package Api;
 
+import Model.InlineResponse2004;
 import Model.InlineResponse2014;
 import Model.InlineResponse2015;
+import Model.InlineResponse2016;
+import Model.InlineResponse4042;
 import Model.SaveAsymEgressKey;
+import Model.UpdateStatus;
+import Model.UpdateWebhook;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -35,6 +40,56 @@ public class ManageWebhooksApiTest {
 
     
     /**
+     * Delete a Webhook Subscription
+     *
+     * Delete the webhook. Please note that deleting a particular webhook does not delete the history of the webhook notifications.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteWebhookSubscriptionTest() throws Exception {
+        String webhookId = null;
+        api.deleteWebhookSubscription(webhookId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get Details On a Single Webhook
+     *
+     * Retrieve the details of a specific webhook by supplying the webhook ID in the path.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void getWebhookSubscriptionByIdTest() throws Exception {
+        String webhookId = null;
+        InlineResponse2014 response = api.getWebhookSubscriptionById(webhookId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get Details On All Created Webhooks
+     *
+     * Retrieve a list of all previously created webhooks.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void getWebhookSubscriptionsByOrgTest() throws Exception {
+        String organizationId = null;
+        String productId = null;
+        String eventType = null;
+        List<InlineResponse2004> response = api.getWebhookSubscriptionsByOrg(organizationId, productId, eventType);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Test a Webhook Configuration
      *
      * Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user&#39;s subscription.   It will contain sample values for the product &amp; eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly. 
@@ -45,7 +100,41 @@ public class ManageWebhooksApiTest {
     @Test
     public void notificationSubscriptionsV1WebhooksWebhookIdPostTest() throws Exception {
         String webhookId = null;
-        InlineResponse2014 response = api.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
+        InlineResponse2015 response = api.notificationSubscriptionsV1WebhooksWebhookIdPost(webhookId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a Webhook Subscription
+     *
+     * Update a Webhook Subscription.
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void notificationSubscriptionsV2WebhooksWebhookIdPatchTest() throws Exception {
+        String webhookId = null;
+        UpdateWebhook updateWebhook = null;
+        api.notificationSubscriptionsV2WebhooksWebhookIdPatch(webhookId, updateWebhook);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a Webhook Status
+     *
+     * Users can update the status of a webhook subscription by calling this endpoint.   The webhookId parameter in the URL path identifies the specific webhook subscription to be updated. The request body accepts the values ACTIVE or INACTIVE. If the subscription is set to INACTIVE, webhooks will not be delivered until the subscription is activated again. 
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void notificationSubscriptionsV2WebhooksWebhookIdStatusPutTest() throws Exception {
+        String webhookId = null;
+        UpdateStatus updateStatus = null;
+        api.notificationSubscriptionsV2WebhooksWebhookIdStatusPut(webhookId, updateStatus);
 
         // TODO: test validations
     }
@@ -64,7 +153,7 @@ public class ManageWebhooksApiTest {
         String vCPermissions = null;
         SaveAsymEgressKey saveAsymEgressKey = null;
         String vCCorrelationId = null;
-        InlineResponse2015 response = api.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
+        InlineResponse2016 response = api.saveAsymEgressKey(vCSenderOrganizationId, vCPermissions, saveAsymEgressKey, vCCorrelationId);
 
         // TODO: test validations
     }

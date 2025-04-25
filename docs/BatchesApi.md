@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getBatchReport"></a>
 # **getBatchReport**
-> InlineResponse2004 getBatchReport(batchId)
+> InlineResponse2007 getBatchReport(batchId)
 
 Retrieve a Batch Report
 
@@ -28,7 +28,7 @@ Retrieve a Batch Report
 BatchesApi apiInstance = new BatchesApi();
 String batchId = "batchId_example"; // String | Unique identification number assigned to the submitted request.
 try {
-    InlineResponse2004 result = apiInstance.getBatchReport(batchId);
+    InlineResponse2007 result = apiInstance.getBatchReport(batchId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BatchesApi#getBatchReport");
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ No authorization required
 
 <a name="getBatchStatus"></a>
 # **getBatchStatus**
-> InlineResponse2003 getBatchStatus(batchId)
+> InlineResponse2006 getBatchStatus(batchId)
 
 Retrieve a Batch Status
 
@@ -73,7 +73,7 @@ Retrieve a Batch Status
 BatchesApi apiInstance = new BatchesApi();
 String batchId = "batchId_example"; // String | Unique identification number assigned to the submitted request.
 try {
-    InlineResponse2003 result = apiInstance.getBatchStatus(batchId);
+    InlineResponse2006 result = apiInstance.getBatchStatus(batchId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BatchesApi#getBatchStatus");
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ No authorization required
 
 <a name="getBatchesList"></a>
 # **getBatchesList**
-> InlineResponse2002 getBatchesList(offset, limit, fromDate, toDate)
+> InlineResponse2005 getBatchesList(offset, limit, fromDate, toDate)
 
 List Batches
 
@@ -121,7 +121,7 @@ Long limit = 20L; // Long | The maximum number that can be returned in the array
 String fromDate = "fromDate_example"; // String | ISO-8601 format: yyyyMMddTHHmmssZ
 String toDate = "toDate_example"; // String | ISO-8601 format: yyyyMMddTHHmmssZ
 try {
-    InlineResponse2002 result = apiInstance.getBatchesList(offset, limit, fromDate, toDate);
+    InlineResponse2005 result = apiInstance.getBatchesList(offset, limit, fromDate, toDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BatchesApi#getBatchesList");
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ No authorization required
 
 Create a Batch
 
-**Create a Batch**&lt;br&gt;This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. &lt;br&gt; The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.&lt;br&gt;The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. 
+**Create a Batch**&lt;br&gt;This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. &lt;br&gt; The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.&lt;br&gt;The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. The availability of API features for a merchant may depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
 
 ### Example
 ```java

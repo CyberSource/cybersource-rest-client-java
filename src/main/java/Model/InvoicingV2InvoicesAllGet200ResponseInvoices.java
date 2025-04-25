@@ -43,6 +43,9 @@ public class InvoicingV2InvoicesAllGet200ResponseInvoices {
   @SerializedName("status")
   private String status = null;
 
+  @SerializedName("createdDate")
+  private String createdDate = null;
+
   @SerializedName("customerInformation")
   private InvoicingV2InvoicesAllGet200ResponseCustomerInformation customerInformation = null;
 
@@ -104,6 +107,24 @@ public class InvoicingV2InvoicesAllGet200ResponseInvoices {
 
   public void setStatus(String status) {
     this.status = status;
+  }
+
+  public InvoicingV2InvoicesAllGet200ResponseInvoices createdDate(String createdDate) {
+    this.createdDate = createdDate;
+    return this;
+  }
+
+   /**
+   * Date and time (UTC) the invoice was created.  Format: YYYY-MM-DDThh:mm:ssZ Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. 
+   * @return createdDate
+  **/
+  @ApiModelProperty(value = "Date and time (UTC) the invoice was created.  Format: YYYY-MM-DDThh:mm:ssZ Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC. ")
+  public String getCreatedDate() {
+    return createdDate;
+  }
+
+  public void setCreatedDate(String createdDate) {
+    this.createdDate = createdDate;
   }
 
   public InvoicingV2InvoicesAllGet200ResponseInvoices customerInformation(InvoicingV2InvoicesAllGet200ResponseCustomerInformation customerInformation) {
@@ -173,6 +194,7 @@ public class InvoicingV2InvoicesAllGet200ResponseInvoices {
     return Objects.equals(this.links, invoicingV2InvoicesAllGet200ResponseInvoices.links) &&
         Objects.equals(this.id, invoicingV2InvoicesAllGet200ResponseInvoices.id) &&
         Objects.equals(this.status, invoicingV2InvoicesAllGet200ResponseInvoices.status) &&
+        Objects.equals(this.createdDate, invoicingV2InvoicesAllGet200ResponseInvoices.createdDate) &&
         Objects.equals(this.customerInformation, invoicingV2InvoicesAllGet200ResponseInvoices.customerInformation) &&
         Objects.equals(this.invoiceInformation, invoicingV2InvoicesAllGet200ResponseInvoices.invoiceInformation) &&
         Objects.equals(this.orderInformation, invoicingV2InvoicesAllGet200ResponseInvoices.orderInformation);
@@ -180,7 +202,7 @@ public class InvoicingV2InvoicesAllGet200ResponseInvoices {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, id, status, customerInformation, invoiceInformation, orderInformation);
+    return Objects.hash(links, id, status, createdDate, customerInformation, invoiceInformation, orderInformation);
   }
 
 
@@ -192,6 +214,7 @@ public class InvoicingV2InvoicesAllGet200ResponseInvoices {
     if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
     if (status != null) sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    if (createdDate != null) sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     if (customerInformation != null) sb.append("    customerInformation: ").append(toIndentedString(customerInformation)).append("\n");
     if (invoiceInformation != null) sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");

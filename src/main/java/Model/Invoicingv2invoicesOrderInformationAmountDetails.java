@@ -25,12 +25,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
- * Contains all of the amount-related fields in the invoice.
+ * Contains all of the amount-related fields.
  */
-@ApiModel(description = "Contains all of the amount-related fields in the invoice.")
+@ApiModel(description = "Contains all of the amount-related fields.")
 
 public class Invoicingv2invoicesOrderInformationAmountDetails {
   @SerializedName("totalAmount")
@@ -43,13 +42,13 @@ public class Invoicingv2invoicesOrderInformationAmountDetails {
   private String discountAmount = null;
 
   @SerializedName("discountPercent")
-  private BigDecimal discountPercent = null;
+  private String discountPercent = null;
 
   @SerializedName("subAmount")
-  private BigDecimal subAmount = null;
+  private String subAmount = null;
 
   @SerializedName("minimumPartialAmount")
-  private BigDecimal minimumPartialAmount = null;
+  private String minimumPartialAmount = null;
 
   @SerializedName("taxDetails")
   private Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails taxDetails = null;
@@ -63,10 +62,10 @@ public class Invoicingv2invoicesOrderInformationAmountDetails {
   }
 
    /**
-   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.   #### Card Present Required to include either this field or &#x60;orderInformation.lineItems[].unitPrice&#x60; for the order.  #### Invoicing Required for creating a new invoice.  #### PIN Debit Amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount.  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit; however, for all other processors, these fields are required.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request.   #### DCC for First Data Not used. 
+   * Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.   #### Card Present Required to include either this field or &#x60;orderInformation.lineItems[].unitPrice&#x60; for the order.  #### Invoicing / Pay By Link Required for creating a new invoice or payment link.  #### PIN Debit Amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount.  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit; however, for all other processors, these fields are required.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request.   #### DCC for First Data Not used. 
    * @return totalAmount
   **/
-  @ApiModelProperty(value = "Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.   #### Card Present Required to include either this field or `orderInformation.lineItems[].unitPrice` for the order.  #### Invoicing Required for creating a new invoice.  #### PIN Debit Amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount.  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit; however, for all other processors, these fields are required.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request.   #### DCC for First Data Not used. ")
+  @ApiModelProperty(required = true, value = "Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths.  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.   #### Card Present Required to include either this field or `orderInformation.lineItems[].unitPrice` for the order.  #### Invoicing / Pay By Link Required for creating a new invoice or payment link.  #### PIN Debit Amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount.  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit; however, for all other processors, these fields are required.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request.   #### DCC for First Data Not used. ")
   public String getTotalAmount() {
     return totalAmount;
   }
@@ -84,7 +83,7 @@ public class Invoicingv2invoicesOrderInformationAmountDetails {
    * Currency used for the order. Use the three-character [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  #### Used by **Authorization** Required field.  **Authorization Reversal** For an authorization reversal (&#x60;reversalInformation&#x60;) or a capture (&#x60;processingOptions.capture&#x60; is set to &#x60;true&#x60;), you must use the same currency that you used in your payment authorization request.  #### PIN Debit Currency for the amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount. For the possible values, see the [ISO Standard Currency Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/currencies.pdf). Returned by PIN debit purchase.  For PIN debit reversal requests, you must use the same currency that was used for the PIN debit purchase or PIN debit credit that you are reversing. For the possible values, see the [ISO Standard Currency Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/currencies.pdf).  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit.  #### DCC for First Data Your local currency.  #### Tax Calculation Required for international tax and value added tax only. Optional for U.S. and Canadian taxes. Your local currency. 
    * @return currency
   **/
-  @ApiModelProperty(value = "Currency used for the order. Use the three-character [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  #### Used by **Authorization** Required field.  **Authorization Reversal** For an authorization reversal (`reversalInformation`) or a capture (`processingOptions.capture` is set to `true`), you must use the same currency that you used in your payment authorization request.  #### PIN Debit Currency for the amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount. For the possible values, see the [ISO Standard Currency Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/currencies.pdf). Returned by PIN debit purchase.  For PIN debit reversal requests, you must use the same currency that was used for the PIN debit purchase or PIN debit credit that you are reversing. For the possible values, see the [ISO Standard Currency Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/currencies.pdf).  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit.  #### DCC for First Data Your local currency.  #### Tax Calculation Required for international tax and value added tax only. Optional for U.S. and Canadian taxes. Your local currency. ")
+  @ApiModelProperty(required = true, value = "Currency used for the order. Use the three-character [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  #### Used by **Authorization** Required field.  **Authorization Reversal** For an authorization reversal (`reversalInformation`) or a capture (`processingOptions.capture` is set to `true`), you must use the same currency that you used in your payment authorization request.  #### PIN Debit Currency for the amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount. For the possible values, see the [ISO Standard Currency Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/currencies.pdf). Returned by PIN debit purchase.  For PIN debit reversal requests, you must use the same currency that was used for the PIN debit purchase or PIN debit credit that you are reversing. For the possible values, see the [ISO Standard Currency Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/currencies.pdf).  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit.  #### DCC for First Data Your local currency.  #### Tax Calculation Required for international tax and value added tax only. Optional for U.S. and Canadian taxes. Your local currency. ")
   public String getCurrency() {
     return currency;
   }
@@ -102,7 +101,7 @@ public class Invoicingv2invoicesOrderInformationAmountDetails {
    * Total discount amount applied to the order. 
    * @return discountAmount
   **/
-  @ApiModelProperty(value = "Total discount amount applied to the order. ")
+  @ApiModelProperty(example = "10.00", value = "Total discount amount applied to the order. ")
   public String getDiscountAmount() {
     return discountAmount;
   }
@@ -111,43 +110,43 @@ public class Invoicingv2invoicesOrderInformationAmountDetails {
     this.discountAmount = discountAmount;
   }
 
-  public Invoicingv2invoicesOrderInformationAmountDetails discountPercent(BigDecimal discountPercent) {
+  public Invoicingv2invoicesOrderInformationAmountDetails discountPercent(String discountPercent) {
     this.discountPercent = discountPercent;
     return this;
   }
 
    /**
-   * The total discount percentage applied to the invoice.
+   * The total discount percentage applied to the order.
    * @return discountPercent
   **/
-  @ApiModelProperty(value = "The total discount percentage applied to the invoice.")
-  public BigDecimal getDiscountPercent() {
+  @ApiModelProperty(example = "10", value = "The total discount percentage applied to the order.")
+  public String getDiscountPercent() {
     return discountPercent;
   }
 
-  public void setDiscountPercent(BigDecimal discountPercent) {
+  public void setDiscountPercent(String discountPercent) {
     this.discountPercent = discountPercent;
   }
 
-  public Invoicingv2invoicesOrderInformationAmountDetails subAmount(BigDecimal subAmount) {
+  public Invoicingv2invoicesOrderInformationAmountDetails subAmount(String subAmount) {
     this.subAmount = subAmount;
     return this;
   }
 
    /**
-   * Sub-amount of the invoice.
+   * Sub-amount of the order.
    * @return subAmount
   **/
-  @ApiModelProperty(value = "Sub-amount of the invoice.")
-  public BigDecimal getSubAmount() {
+  @ApiModelProperty(value = "Sub-amount of the order.")
+  public String getSubAmount() {
     return subAmount;
   }
 
-  public void setSubAmount(BigDecimal subAmount) {
+  public void setSubAmount(String subAmount) {
     this.subAmount = subAmount;
   }
 
-  public Invoicingv2invoicesOrderInformationAmountDetails minimumPartialAmount(BigDecimal minimumPartialAmount) {
+  public Invoicingv2invoicesOrderInformationAmountDetails minimumPartialAmount(String minimumPartialAmount) {
     this.minimumPartialAmount = minimumPartialAmount;
     return this;
   }
@@ -157,11 +156,11 @@ public class Invoicingv2invoicesOrderInformationAmountDetails {
    * @return minimumPartialAmount
   **/
   @ApiModelProperty(value = "The minimum partial amount required to pay the invoice.")
-  public BigDecimal getMinimumPartialAmount() {
+  public String getMinimumPartialAmount() {
     return minimumPartialAmount;
   }
 
-  public void setMinimumPartialAmount(BigDecimal minimumPartialAmount) {
+  public void setMinimumPartialAmount(String minimumPartialAmount) {
     this.minimumPartialAmount = minimumPartialAmount;
   }
 
