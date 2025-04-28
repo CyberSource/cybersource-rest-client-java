@@ -550,7 +550,7 @@ public class InvoicesApi {
         }
         
         // create path and map variables
-        String localVarPath = "/invoicing/v2/invoices{id}/cancelation"
+        String localVarPath = "/invoicing/v2/invoices/{id}/cancelation"
             .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

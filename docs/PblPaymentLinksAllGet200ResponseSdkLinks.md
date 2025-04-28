@@ -1,5 +1,5 @@
 
-# PblPaymentLinksAllGet200ResponseLinks
+# PblPaymentLinksAllGet200ResponseSdkLinks
 
 ## Properties
 Name | Type | Description | Notes

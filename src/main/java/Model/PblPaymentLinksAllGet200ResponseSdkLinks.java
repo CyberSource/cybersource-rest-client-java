@@ -33,7 +33,7 @@ import java.io.IOException;
  */
 @ApiModel(description = "A list of purchase or donation links.")
 
-public class PblPaymentLinksAllGet200ResponseLinks {
+public class PblPaymentLinksAllGet200ResponseSdkLinks {
   @SerializedName("_links")
   private GetAllPlansResponseLinks links = null;
 
@@ -55,7 +55,7 @@ public class PblPaymentLinksAllGet200ResponseLinks {
   @SerializedName("orderInformation")
   private PblPaymentLinksAllGet200ResponseOrderInformation orderInformation = null;
 
-  public PblPaymentLinksAllGet200ResponseLinks links(GetAllPlansResponseLinks links) {
+  public PblPaymentLinksAllGet200ResponseSdkLinks links(GetAllPlansResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -73,7 +73,7 @@ public class PblPaymentLinksAllGet200ResponseLinks {
     this.links = links;
   }
 
-  public PblPaymentLinksAllGet200ResponseLinks id(String id) {
+  public PblPaymentLinksAllGet200ResponseSdkLinks id(String id) {
     this.id = id;
     return this;
   }
@@ -91,7 +91,7 @@ public class PblPaymentLinksAllGet200ResponseLinks {
     this.id = id;
   }
 
-  public PblPaymentLinksAllGet200ResponseLinks status(String status) {
+  public PblPaymentLinksAllGet200ResponseSdkLinks status(String status) {
     this.status = status;
     return this;
   }
@@ -109,7 +109,7 @@ public class PblPaymentLinksAllGet200ResponseLinks {
     this.status = status;
   }
 
-  public PblPaymentLinksAllGet200ResponseLinks createdDate(String createdDate) {
+  public PblPaymentLinksAllGet200ResponseSdkLinks createdDate(String createdDate) {
     this.createdDate = createdDate;
     return this;
   }
@@ -127,7 +127,7 @@ public class PblPaymentLinksAllGet200ResponseLinks {
     this.createdDate = createdDate;
   }
 
-  public PblPaymentLinksAllGet200ResponseLinks processingInformation(PblPaymentLinksAllGet200ResponseProcessingInformation processingInformation) {
+  public PblPaymentLinksAllGet200ResponseSdkLinks processingInformation(PblPaymentLinksAllGet200ResponseProcessingInformation processingInformation) {
     this.processingInformation = processingInformation;
     return this;
   }
@@ -145,7 +145,7 @@ public class PblPaymentLinksAllGet200ResponseLinks {
     this.processingInformation = processingInformation;
   }
 
-  public PblPaymentLinksAllGet200ResponseLinks purchaseInformation(PblPaymentLinksAllGet200ResponsePurchaseInformation purchaseInformation) {
+  public PblPaymentLinksAllGet200ResponseSdkLinks purchaseInformation(PblPaymentLinksAllGet200ResponsePurchaseInformation purchaseInformation) {
     this.purchaseInformation = purchaseInformation;
     return this;
   }
@@ -163,7 +163,7 @@ public class PblPaymentLinksAllGet200ResponseLinks {
     this.purchaseInformation = purchaseInformation;
   }
 
-  public PblPaymentLinksAllGet200ResponseLinks orderInformation(PblPaymentLinksAllGet200ResponseOrderInformation orderInformation) {
+  public PblPaymentLinksAllGet200ResponseSdkLinks orderInformation(PblPaymentLinksAllGet200ResponseOrderInformation orderInformation) {
     this.orderInformation = orderInformation;
     return this;
   }
@@ -190,14 +190,14 @@ public class PblPaymentLinksAllGet200ResponseLinks {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PblPaymentLinksAllGet200ResponseLinks pblPaymentLinksAllGet200ResponseLinks = (PblPaymentLinksAllGet200ResponseLinks) o;
-    return Objects.equals(this.links, pblPaymentLinksAllGet200ResponseLinks.links) &&
-        Objects.equals(this.id, pblPaymentLinksAllGet200ResponseLinks.id) &&
-        Objects.equals(this.status, pblPaymentLinksAllGet200ResponseLinks.status) &&
-        Objects.equals(this.createdDate, pblPaymentLinksAllGet200ResponseLinks.createdDate) &&
-        Objects.equals(this.processingInformation, pblPaymentLinksAllGet200ResponseLinks.processingInformation) &&
-        Objects.equals(this.purchaseInformation, pblPaymentLinksAllGet200ResponseLinks.purchaseInformation) &&
-        Objects.equals(this.orderInformation, pblPaymentLinksAllGet200ResponseLinks.orderInformation);
+    PblPaymentLinksAllGet200ResponseSdkLinks pblPaymentLinksAllGet200ResponseSdkLinks = (PblPaymentLinksAllGet200ResponseSdkLinks) o;
+    return Objects.equals(this.links, pblPaymentLinksAllGet200ResponseSdkLinks.links) &&
+        Objects.equals(this.id, pblPaymentLinksAllGet200ResponseSdkLinks.id) &&
+        Objects.equals(this.status, pblPaymentLinksAllGet200ResponseSdkLinks.status) &&
+        Objects.equals(this.createdDate, pblPaymentLinksAllGet200ResponseSdkLinks.createdDate) &&
+        Objects.equals(this.processingInformation, pblPaymentLinksAllGet200ResponseSdkLinks.processingInformation) &&
+        Objects.equals(this.purchaseInformation, pblPaymentLinksAllGet200ResponseSdkLinks.purchaseInformation) &&
+        Objects.equals(this.orderInformation, pblPaymentLinksAllGet200ResponseSdkLinks.orderInformation);
   }
 
   @Override
@@ -209,7 +209,7 @@ public class PblPaymentLinksAllGet200ResponseLinks {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PblPaymentLinksAllGet200ResponseLinks {\n");
+    sb.append("class PblPaymentLinksAllGet200ResponseSdkLinks {\n");
     
     if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
     if (id != null) sb.append("    id: ").append(toIndentedString(id)).append("\n");
