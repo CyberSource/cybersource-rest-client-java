@@ -34,7 +34,7 @@ import java.util.List;
 
 public class PblPaymentLinksAllGet200Response {
   @SerializedName("_links")
-  private GetAllPlansResponseLinks links = null;
+  private GetAllPlansResponseLinks plansLinks = null;
 
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -46,7 +46,7 @@ public class PblPaymentLinksAllGet200Response {
   private List<PblPaymentLinksAllGet200ResponseLinks> links = null;
 
   public PblPaymentLinksAllGet200Response links(GetAllPlansResponseLinks links) {
-    this.links = links;
+    this.plansLinks = plansLinks;
     return this;
   }
 
@@ -55,12 +55,12 @@ public class PblPaymentLinksAllGet200Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public GetAllPlansResponseLinks getLinks() {
-    return links;
+  public GetAllPlansResponseLinks getPlanLinks() {
+    return plansLinks;
   }
 
-  public void setLinks(GetAllPlansResponseLinks links) {
-    this.links = links;
+  public void setPlanLinks(GetAllPlansResponseLinks links) {
+    this.plansLinks = plansLinks;
   }
 
   public PblPaymentLinksAllGet200Response submitTimeUtc(String submitTimeUtc) {
@@ -135,7 +135,7 @@ public class PblPaymentLinksAllGet200Response {
       return false;
     }
     PblPaymentLinksAllGet200Response pblPaymentLinksAllGet200Response = (PblPaymentLinksAllGet200Response) o;
-    return Objects.equals(this.links, pblPaymentLinksAllGet200Response.links) &&
+    return Objects.equals(this.plansLinks, pblPaymentLinksAllGet200Response.plansLinks) &&
         Objects.equals(this.submitTimeUtc, pblPaymentLinksAllGet200Response.submitTimeUtc) &&
         Objects.equals(this.totalLinks, pblPaymentLinksAllGet200Response.totalLinks) &&
         Objects.equals(this.links, pblPaymentLinksAllGet200Response.links);
@@ -143,7 +143,7 @@ public class PblPaymentLinksAllGet200Response {
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, submitTimeUtc, totalLinks, links);
+    return Objects.hash(plansLinks, submitTimeUtc, totalLinks, links);
   }
 
 
@@ -155,7 +155,7 @@ public class PblPaymentLinksAllGet200Response {
     if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
     if (submitTimeUtc != null) sb.append("    submitTimeUtc: ").append(toIndentedString(submitTimeUtc)).append("\n");
     if (totalLinks != null) sb.append("    totalLinks: ").append(toIndentedString(totalLinks)).append("\n");
-    if (links != null) sb.append("    links: ").append(toIndentedString(links)).append("\n");
+    if (plansLinks != null) sb.append("    plansLinks: ").append(toIndentedString(plansLinks)).append("\n");
     sb.append("}");
     return sb.toString();
   }
