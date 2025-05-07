@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Create a New Invoice
 
-The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments.
+The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments. The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
 
 ### Example
 ```java
@@ -75,7 +75,7 @@ Provides a (filtered) list of invoices that have been created in your account. Y
 InvoicesApi apiInstance = new InvoicesApi();
 Integer offset = 56; // Integer | Page offset number.
 Integer limit = 56; // Integer | Maximum number of items you would like returned.
-String status = "status_example"; // String | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING 
+String status = "status_example"; // String | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED 
 try {
     InvoicingV2InvoicesAllGet200Response result = apiInstance.getAllInvoices(offset, limit, status);
     System.out.println(result);
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **Integer**| Page offset number. |
  **limit** | **Integer**| Maximum number of items you would like returned. |
- **status** | **String**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING  | [optional]
+ **status** | **String**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED  | [optional]
 
 ### Return type
 
@@ -153,7 +153,7 @@ No authorization required
 
 <a name="performCancelAction"></a>
 # **performCancelAction**
-> InvoicingV2InvoicesPost201Response performCancelAction(id)
+> InvoicingV2InvoicesCancel200Response performCancelAction(id)
 
 Cancel an Invoice
 
@@ -169,7 +169,7 @@ You can cancel an invoice if no payment is made to it. You cannot cancel partial
 InvoicesApi apiInstance = new InvoicesApi();
 String id = "id_example"; // String | The invoice number.
 try {
-    InvoicingV2InvoicesPost201Response result = apiInstance.performCancelAction(id);
+    InvoicingV2InvoicesCancel200Response result = apiInstance.performCancelAction(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoicesApi#performCancelAction");
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvoicingV2InvoicesPost201Response**](InvoicingV2InvoicesPost201Response.md)
+[**InvoicingV2InvoicesCancel200Response**](InvoicingV2InvoicesCancel200Response.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ No authorization required
 
 <a name="performSendAction"></a>
 # **performSendAction**
-> InvoicingV2InvoicesPost201Response performSendAction(id)
+> InvoicingV2InvoicesSend200Response performSendAction(id)
 
 Send an Invoice
 
@@ -214,7 +214,7 @@ You can send an invoice in draft or created state or resend a sent or partially 
 InvoicesApi apiInstance = new InvoicesApi();
 String id = "id_example"; // String | The invoice number.
 try {
-    InvoicingV2InvoicesPost201Response result = apiInstance.performSendAction(id);
+    InvoicingV2InvoicesSend200Response result = apiInstance.performSendAction(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoicesApi#performSendAction");
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvoicingV2InvoicesPost201Response**](InvoicingV2InvoicesPost201Response.md)
+[**InvoicingV2InvoicesSend200Response**](InvoicingV2InvoicesSend200Response.md)
 
 ### Authorization
 
@@ -243,7 +243,7 @@ No authorization required
 
 <a name="updateInvoice"></a>
 # **updateInvoice**
-> InvoicingV2InvoicesPost201Response updateInvoice(id, updateInvoiceRequest)
+> InvoicingV2InvoicesPut200Response updateInvoice(id, updateInvoiceRequest)
 
 Update an Invoice
 
@@ -260,7 +260,7 @@ InvoicesApi apiInstance = new InvoicesApi();
 String id = "id_example"; // String | The invoice number.
 UpdateInvoiceRequest updateInvoiceRequest = new UpdateInvoiceRequest(); // UpdateInvoiceRequest | Updating the invoice does not resend the invoice automatically. You must resend the invoice separately.
 try {
-    InvoicingV2InvoicesPost201Response result = apiInstance.updateInvoice(id, updateInvoiceRequest);
+    InvoicingV2InvoicesPut200Response result = apiInstance.updateInvoice(id, updateInvoiceRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoicesApi#updateInvoice");
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvoicingV2InvoicesPost201Response**](InvoicingV2InvoicesPost201Response.md)
+[**InvoicingV2InvoicesPut200Response**](InvoicingV2InvoicesPut200Response.md)
 
 ### Authorization
 

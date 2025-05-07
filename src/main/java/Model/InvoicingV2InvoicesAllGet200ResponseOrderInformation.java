@@ -26,8 +26,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * InvoicingV2InvoicesAllGet200ResponseOrderInformation
+ * Contains all of the order-related fields, such as the amount and line item details.
  */
+@ApiModel(description = "Contains all of the order-related fields, such as the amount and line item details.")
 
 public class InvoicingV2InvoicesAllGet200ResponseOrderInformation {
   @SerializedName("amountDetails")

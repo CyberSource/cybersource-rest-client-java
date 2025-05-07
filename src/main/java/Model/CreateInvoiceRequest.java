@@ -15,9 +15,11 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.Invoicingv2invoicesClientReferenceInformation;
 import Model.Invoicingv2invoicesCustomerInformation;
 import Model.Invoicingv2invoicesInvoiceInformation;
 import Model.Invoicingv2invoicesOrderInformation;
+import Model.Invoicingv2invoicesProcessingInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,14 +34,38 @@ import java.io.IOException;
  */
 
 public class CreateInvoiceRequest {
+  @SerializedName("clientReferenceInformation")
+  private Invoicingv2invoicesClientReferenceInformation clientReferenceInformation = null;
+
   @SerializedName("customerInformation")
   private Invoicingv2invoicesCustomerInformation customerInformation = null;
+
+  @SerializedName("processingInformation")
+  private Invoicingv2invoicesProcessingInformation processingInformation = null;
 
   @SerializedName("invoiceInformation")
   private Invoicingv2invoicesInvoiceInformation invoiceInformation = null;
 
   @SerializedName("orderInformation")
   private Invoicingv2invoicesOrderInformation orderInformation = null;
+
+  public CreateInvoiceRequest clientReferenceInformation(Invoicingv2invoicesClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+    return this;
+  }
+
+   /**
+   * Get clientReferenceInformation
+   * @return clientReferenceInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Invoicingv2invoicesClientReferenceInformation getClientReferenceInformation() {
+    return clientReferenceInformation;
+  }
+
+  public void setClientReferenceInformation(Invoicingv2invoicesClientReferenceInformation clientReferenceInformation) {
+    this.clientReferenceInformation = clientReferenceInformation;
+  }
 
   public CreateInvoiceRequest customerInformation(Invoicingv2invoicesCustomerInformation customerInformation) {
     this.customerInformation = customerInformation;
@@ -59,6 +85,24 @@ public class CreateInvoiceRequest {
     this.customerInformation = customerInformation;
   }
 
+  public CreateInvoiceRequest processingInformation(Invoicingv2invoicesProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+    return this;
+  }
+
+   /**
+   * Get processingInformation
+   * @return processingInformation
+  **/
+  @ApiModelProperty(value = "")
+  public Invoicingv2invoicesProcessingInformation getProcessingInformation() {
+    return processingInformation;
+  }
+
+  public void setProcessingInformation(Invoicingv2invoicesProcessingInformation processingInformation) {
+    this.processingInformation = processingInformation;
+  }
+
   public CreateInvoiceRequest invoiceInformation(Invoicingv2invoicesInvoiceInformation invoiceInformation) {
     this.invoiceInformation = invoiceInformation;
     return this;
@@ -68,7 +112,7 @@ public class CreateInvoiceRequest {
    * Get invoiceInformation
    * @return invoiceInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Invoicingv2invoicesInvoiceInformation getInvoiceInformation() {
     return invoiceInformation;
   }
@@ -86,7 +130,7 @@ public class CreateInvoiceRequest {
    * Get orderInformation
    * @return orderInformation
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Invoicingv2invoicesOrderInformation getOrderInformation() {
     return orderInformation;
   }
@@ -105,14 +149,16 @@ public class CreateInvoiceRequest {
       return false;
     }
     CreateInvoiceRequest createInvoiceRequest = (CreateInvoiceRequest) o;
-    return Objects.equals(this.customerInformation, createInvoiceRequest.customerInformation) &&
+    return Objects.equals(this.clientReferenceInformation, createInvoiceRequest.clientReferenceInformation) &&
+        Objects.equals(this.customerInformation, createInvoiceRequest.customerInformation) &&
+        Objects.equals(this.processingInformation, createInvoiceRequest.processingInformation) &&
         Objects.equals(this.invoiceInformation, createInvoiceRequest.invoiceInformation) &&
         Objects.equals(this.orderInformation, createInvoiceRequest.orderInformation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerInformation, invoiceInformation, orderInformation);
+    return Objects.hash(clientReferenceInformation, customerInformation, processingInformation, invoiceInformation, orderInformation);
   }
 
 
@@ -121,7 +167,9 @@ public class CreateInvoiceRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateInvoiceRequest {\n");
     
+    if (clientReferenceInformation != null) sb.append("    clientReferenceInformation: ").append(toIndentedString(clientReferenceInformation)).append("\n");
     if (customerInformation != null) sb.append("    customerInformation: ").append(toIndentedString(customerInformation)).append("\n");
+    if (processingInformation != null) sb.append("    processingInformation: ").append(toIndentedString(processingInformation)).append("\n");
     if (invoiceInformation != null) sb.append("    invoiceInformation: ").append(toIndentedString(invoiceInformation)).append("\n");
     if (orderInformation != null) sb.append("    orderInformation: ").append(toIndentedString(orderInformation)).append("\n");
     sb.append("}");

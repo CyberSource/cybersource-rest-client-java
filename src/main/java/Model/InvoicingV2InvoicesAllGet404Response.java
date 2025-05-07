@@ -89,10 +89,10 @@ public class InvoicingV2InvoicesAllGet404Response {
   }
 
    /**
-   * The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE 
+   * The reason of the status.  Possible values: - NOTFOUND 
    * @return reason
   **/
-  @ApiModelProperty(value = "The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE ")
+  @ApiModelProperty(value = "The reason of the status.  Possible values: - NOTFOUND ")
   public String getReason() {
     return reason;
   }

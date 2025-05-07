@@ -56,6 +56,36 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
   @SerializedName("healthCard")
   private Boolean healthCard = null;
 
+  @SerializedName("sharedBIN")
+  private Boolean sharedBIN = null;
+
+  @SerializedName("posDomesticOnly")
+  private Boolean posDomesticOnly = null;
+
+  @SerializedName("gamblingAllowed")
+  private Boolean gamblingAllowed = null;
+
+  @SerializedName("commercialCardLevel2")
+  private Boolean commercialCardLevel2 = null;
+
+  @SerializedName("commercialCardLevel3")
+  private Boolean commercialCardLevel3 = null;
+
+  @SerializedName("exemptBIN")
+  private Boolean exemptBIN = null;
+
+  @SerializedName("accountLevelManagement")
+  private Boolean accountLevelManagement = null;
+
+  @SerializedName("onlineGamblingBlock")
+  private Boolean onlineGamblingBlock = null;
+
+  @SerializedName("autoSubstantiation")
+  private Boolean autoSubstantiation = null;
+
+  @SerializedName("flexCredential")
+  private Boolean flexCredential = null;
+
   public TmsBinLookupPaymentAccountInformationFeatures accountFundingSource(String accountFundingSource) {
     this.accountFundingSource = accountFundingSource;
     return this;
@@ -152,10 +182,10 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
   }
 
    /**
-   * This field contains the type of card platform. Possible values:   - &#x60;BUSINESS&#x60;   - &#x60;CONSUMER&#x60;   - &#x60;COMMERCIAL&#x60;   - &#x60;GOVERNMENT&#x60; 
+   * This field contains the type of card platform. Possible values:   - &#x60;BUSINESS&#x60;   - &#x60;CONSUMER&#x60;   - &#x60;CORPORATE&#x60;   - &#x60;COMMERCIAL&#x60;   - &#x60;GOVERNMENT&#x60; 
    * @return cardPlatform
   **/
-  @ApiModelProperty(value = "This field contains the type of card platform. Possible values:   - `BUSINESS`   - `CONSUMER`   - `COMMERCIAL`   - `GOVERNMENT` ")
+  @ApiModelProperty(value = "This field contains the type of card platform. Possible values:   - `BUSINESS`   - `CONSUMER`   - `CORPORATE`   - `COMMERCIAL`   - `GOVERNMENT` ")
   public String getCardPlatform() {
     return cardPlatform;
   }
@@ -188,10 +218,10 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
   }
 
    /**
-   * This field indicates whether the card can be used for corporate purchasing. This field is only applicable for American Express cards. Possible values:   - &#x60;true&#x60;   - &#x60;false&#x60; 
+   * This field indicates if the instrument can be used for corporate purchasing. This field is only applicable for American Express cards. Possible values:   - &#x60;true&#x60;   - &#x60;false&#x60; 
    * @return corporatePurchase
   **/
-  @ApiModelProperty(value = "This field indicates whether the card can be used for corporate purchasing. This field is only applicable for American Express cards. Possible values:   - `true`   - `false` ")
+  @ApiModelProperty(value = "This field indicates if the instrument can be used for corporate purchasing. This field is only applicable for American Express cards. Possible values:   - `true`   - `false` ")
   public Boolean CorporatePurchase() {
     return corporatePurchase;
   }
@@ -206,16 +236,196 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
   }
 
    /**
-   * This field indicates if the entered card is a healthcare BIN. Currently, this field is only supported for Visa BINs. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60;       
+   * This field indicates if the BIN is for healthcare (HSA/FSA). Currently, this field is only supported for Visa BINs. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
    * @return healthCard
   **/
-  @ApiModelProperty(value = "This field indicates if the entered card is a healthcare BIN. Currently, this field is only supported for Visa BINs. Possible values:     - `true`     - `false`       ")
+  @ApiModelProperty(value = "This field indicates if the BIN is for healthcare (HSA/FSA). Currently, this field is only supported for Visa BINs. Possible values:     - `true`     - `false` ")
   public Boolean HealthCard() {
     return healthCard;
   }
 
   public void setHealthCard(Boolean healthCard) {
     this.healthCard = healthCard;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures sharedBIN(Boolean sharedBIN) {
+    this.sharedBIN = sharedBIN;
+    return this;
+  }
+
+   /**
+   * This field indicates if the BIN is shared by multiple issuers Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return sharedBIN
+  **/
+  @ApiModelProperty(value = "This field indicates if the BIN is shared by multiple issuers Possible values:     - `true`     - `false` ")
+  public Boolean SharedBIN() {
+    return sharedBIN;
+  }
+
+  public void setSharedBIN(Boolean sharedBIN) {
+    this.sharedBIN = sharedBIN;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures posDomesticOnly(Boolean posDomesticOnly) {
+    this.posDomesticOnly = posDomesticOnly;
+    return this;
+  }
+
+   /**
+   * This field indicates if the BIN is valid only for POS domestic usage. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return posDomesticOnly
+  **/
+  @ApiModelProperty(value = "This field indicates if the BIN is valid only for POS domestic usage. Possible values:     - `true`     - `false` ")
+  public Boolean PosDomesticOnly() {
+    return posDomesticOnly;
+  }
+
+  public void setPosDomesticOnly(Boolean posDomesticOnly) {
+    this.posDomesticOnly = posDomesticOnly;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures gamblingAllowed(Boolean gamblingAllowed) {
+    this.gamblingAllowed = gamblingAllowed;
+    return this;
+  }
+
+   /**
+   * This field indicates if gambling transactions are allowed on the BIN. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return gamblingAllowed
+  **/
+  @ApiModelProperty(value = "This field indicates if gambling transactions are allowed on the BIN. Possible values:     - `true`     - `false` ")
+  public Boolean GamblingAllowed() {
+    return gamblingAllowed;
+  }
+
+  public void setGamblingAllowed(Boolean gamblingAllowed) {
+    this.gamblingAllowed = gamblingAllowed;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures commercialCardLevel2(Boolean commercialCardLevel2) {
+    this.commercialCardLevel2 = commercialCardLevel2;
+    return this;
+  }
+
+   /**
+   * This field indicates if a transaction on the instrument qualifies for level 2 interchange rates. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return commercialCardLevel2
+  **/
+  @ApiModelProperty(value = "This field indicates if a transaction on the instrument qualifies for level 2 interchange rates. Possible values:     - `true`     - `false` ")
+  public Boolean CommercialCardLevel2() {
+    return commercialCardLevel2;
+  }
+
+  public void setCommercialCardLevel2(Boolean commercialCardLevel2) {
+    this.commercialCardLevel2 = commercialCardLevel2;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures commercialCardLevel3(Boolean commercialCardLevel3) {
+    this.commercialCardLevel3 = commercialCardLevel3;
+    return this;
+  }
+
+   /**
+   * This field indicates if a transaction on the instrument qualifies for level 3 interchange rates. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return commercialCardLevel3
+  **/
+  @ApiModelProperty(value = "This field indicates if a transaction on the instrument qualifies for level 3 interchange rates. Possible values:     - `true`     - `false` ")
+  public Boolean CommercialCardLevel3() {
+    return commercialCardLevel3;
+  }
+
+  public void setCommercialCardLevel3(Boolean commercialCardLevel3) {
+    this.commercialCardLevel3 = commercialCardLevel3;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures exemptBIN(Boolean exemptBIN) {
+    this.exemptBIN = exemptBIN;
+    return this;
+  }
+
+   /**
+   * This field indicates if a transaction on the instrument qualifies for government exempt interchange fee. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return exemptBIN
+  **/
+  @ApiModelProperty(value = "This field indicates if a transaction on the instrument qualifies for government exempt interchange fee. Possible values:     - `true`     - `false` ")
+  public Boolean ExemptBIN() {
+    return exemptBIN;
+  }
+
+  public void setExemptBIN(Boolean exemptBIN) {
+    this.exemptBIN = exemptBIN;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures accountLevelManagement(Boolean accountLevelManagement) {
+    this.accountLevelManagement = accountLevelManagement;
+    return this;
+  }
+
+   /**
+   * This field indicates if the BIN participates in Account Level Management (ALM). Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return accountLevelManagement
+  **/
+  @ApiModelProperty(value = "This field indicates if the BIN participates in Account Level Management (ALM). Possible values:     - `true`     - `false` ")
+  public Boolean AccountLevelManagement() {
+    return accountLevelManagement;
+  }
+
+  public void setAccountLevelManagement(Boolean accountLevelManagement) {
+    this.accountLevelManagement = accountLevelManagement;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures onlineGamblingBlock(Boolean onlineGamblingBlock) {
+    this.onlineGamblingBlock = onlineGamblingBlock;
+    return this;
+  }
+
+   /**
+   * This field indicates if online gambling is blocked on the BIN. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return onlineGamblingBlock
+  **/
+  @ApiModelProperty(value = "This field indicates if online gambling is blocked on the BIN. Possible values:     - `true`     - `false` ")
+  public Boolean OnlineGamblingBlock() {
+    return onlineGamblingBlock;
+  }
+
+  public void setOnlineGamblingBlock(Boolean onlineGamblingBlock) {
+    this.onlineGamblingBlock = onlineGamblingBlock;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures autoSubstantiation(Boolean autoSubstantiation) {
+    this.autoSubstantiation = autoSubstantiation;
+    return this;
+  }
+
+   /**
+   * This field indicates if auto-substantiation is enabled on the BIN. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return autoSubstantiation
+  **/
+  @ApiModelProperty(value = "This field indicates if auto-substantiation is enabled on the BIN. Possible values:     - `true`     - `false` ")
+  public Boolean AutoSubstantiation() {
+    return autoSubstantiation;
+  }
+
+  public void setAutoSubstantiation(Boolean autoSubstantiation) {
+    this.autoSubstantiation = autoSubstantiation;
+  }
+
+  public TmsBinLookupPaymentAccountInformationFeatures flexCredential(Boolean flexCredential) {
+    this.flexCredential = flexCredential;
+    return this;
+  }
+
+   /**
+   * This field indicates if the instrument is a flex credential. Possible values:     - &#x60;true&#x60;     - &#x60;false&#x60; 
+   * @return flexCredential
+  **/
+  @ApiModelProperty(value = "This field indicates if the instrument is a flex credential. Possible values:     - `true`     - `false` ")
+  public Boolean FlexCredential() {
+    return flexCredential;
+  }
+
+  public void setFlexCredential(Boolean flexCredential) {
+    this.flexCredential = flexCredential;
   }
 
 
@@ -236,12 +446,22 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
         Objects.equals(this.cardPlatform, tmsBinLookupPaymentAccountInformationFeatures.cardPlatform) &&
         Objects.equals(this.comboCard, tmsBinLookupPaymentAccountInformationFeatures.comboCard) &&
         Objects.equals(this.corporatePurchase, tmsBinLookupPaymentAccountInformationFeatures.corporatePurchase) &&
-        Objects.equals(this.healthCard, tmsBinLookupPaymentAccountInformationFeatures.healthCard);
+        Objects.equals(this.healthCard, tmsBinLookupPaymentAccountInformationFeatures.healthCard) &&
+        Objects.equals(this.sharedBIN, tmsBinLookupPaymentAccountInformationFeatures.sharedBIN) &&
+        Objects.equals(this.posDomesticOnly, tmsBinLookupPaymentAccountInformationFeatures.posDomesticOnly) &&
+        Objects.equals(this.gamblingAllowed, tmsBinLookupPaymentAccountInformationFeatures.gamblingAllowed) &&
+        Objects.equals(this.commercialCardLevel2, tmsBinLookupPaymentAccountInformationFeatures.commercialCardLevel2) &&
+        Objects.equals(this.commercialCardLevel3, tmsBinLookupPaymentAccountInformationFeatures.commercialCardLevel3) &&
+        Objects.equals(this.exemptBIN, tmsBinLookupPaymentAccountInformationFeatures.exemptBIN) &&
+        Objects.equals(this.accountLevelManagement, tmsBinLookupPaymentAccountInformationFeatures.accountLevelManagement) &&
+        Objects.equals(this.onlineGamblingBlock, tmsBinLookupPaymentAccountInformationFeatures.onlineGamblingBlock) &&
+        Objects.equals(this.autoSubstantiation, tmsBinLookupPaymentAccountInformationFeatures.autoSubstantiation) &&
+        Objects.equals(this.flexCredential, tmsBinLookupPaymentAccountInformationFeatures.flexCredential);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountFundingSource, accountFundingSourceSubType, cardProduct, messageType, acceptanceLevel, cardPlatform, comboCard, corporatePurchase, healthCard);
+    return Objects.hash(accountFundingSource, accountFundingSourceSubType, cardProduct, messageType, acceptanceLevel, cardPlatform, comboCard, corporatePurchase, healthCard, sharedBIN, posDomesticOnly, gamblingAllowed, commercialCardLevel2, commercialCardLevel3, exemptBIN, accountLevelManagement, onlineGamblingBlock, autoSubstantiation, flexCredential);
   }
 
 
@@ -259,6 +479,16 @@ public class TmsBinLookupPaymentAccountInformationFeatures {
     if (comboCard != null) sb.append("    comboCard: ").append(toIndentedString(comboCard)).append("\n");
     if (corporatePurchase != null) sb.append("    corporatePurchase: ").append(toIndentedString(corporatePurchase)).append("\n");
     if (healthCard != null) sb.append("    healthCard: ").append(toIndentedString(healthCard)).append("\n");
+    if (sharedBIN != null) sb.append("    sharedBIN: ").append(toIndentedString(sharedBIN)).append("\n");
+    if (posDomesticOnly != null) sb.append("    posDomesticOnly: ").append(toIndentedString(posDomesticOnly)).append("\n");
+    if (gamblingAllowed != null) sb.append("    gamblingAllowed: ").append(toIndentedString(gamblingAllowed)).append("\n");
+    if (commercialCardLevel2 != null) sb.append("    commercialCardLevel2: ").append(toIndentedString(commercialCardLevel2)).append("\n");
+    if (commercialCardLevel3 != null) sb.append("    commercialCardLevel3: ").append(toIndentedString(commercialCardLevel3)).append("\n");
+    if (exemptBIN != null) sb.append("    exemptBIN: ").append(toIndentedString(exemptBIN)).append("\n");
+    if (accountLevelManagement != null) sb.append("    accountLevelManagement: ").append(toIndentedString(accountLevelManagement)).append("\n");
+    if (onlineGamblingBlock != null) sb.append("    onlineGamblingBlock: ").append(toIndentedString(onlineGamblingBlock)).append("\n");
+    if (autoSubstantiation != null) sb.append("    autoSubstantiation: ").append(toIndentedString(autoSubstantiation)).append("\n");
+    if (flexCredential != null) sb.append("    flexCredential: ").append(toIndentedString(flexCredential)).append("\n");
     sb.append("}");
     return sb.toString();
   }

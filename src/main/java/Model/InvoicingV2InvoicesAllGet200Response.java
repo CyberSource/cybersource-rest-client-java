@@ -15,8 +15,8 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.GetAllPlansResponseLinks;
 import Model.InvoicingV2InvoicesAllGet200ResponseInvoices;
+import Model.InvoicingV2InvoicesAllGet200ResponseLinks;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -34,7 +34,7 @@ import java.util.List;
 
 public class InvoicingV2InvoicesAllGet200Response {
   @SerializedName("_links")
-  private GetAllPlansResponseLinks links = null;
+  private InvoicingV2InvoicesAllGet200ResponseLinks links = null;
 
   @SerializedName("submitTimeUtc")
   private String submitTimeUtc = null;
@@ -45,7 +45,7 @@ public class InvoicingV2InvoicesAllGet200Response {
   @SerializedName("invoices")
   private List<InvoicingV2InvoicesAllGet200ResponseInvoices> invoices = null;
 
-  public InvoicingV2InvoicesAllGet200Response links(GetAllPlansResponseLinks links) {
+  public InvoicingV2InvoicesAllGet200Response links(InvoicingV2InvoicesAllGet200ResponseLinks links) {
     this.links = links;
     return this;
   }
@@ -55,11 +55,11 @@ public class InvoicingV2InvoicesAllGet200Response {
    * @return links
   **/
   @ApiModelProperty(value = "")
-  public GetAllPlansResponseLinks getLinks() {
+  public InvoicingV2InvoicesAllGet200ResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(GetAllPlansResponseLinks links) {
+  public void setLinks(InvoicingV2InvoicesAllGet200ResponseLinks links) {
     this.links = links;
   }
 

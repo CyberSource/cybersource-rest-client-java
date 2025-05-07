@@ -146,7 +146,7 @@ public class PayoutsApi {
 
     /**
      * Process a Payout
-     * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). 
+     * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      * @param octCreatePaymentRequest  (required)
      * @return PtsV2PayoutsPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -160,7 +160,7 @@ public class PayoutsApi {
 
     /**
      * Process a Payout
-     * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). 
+     * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      * @param octCreatePaymentRequest  (required)
      * @return ApiResponse&lt;PtsV2PayoutsPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -174,7 +174,7 @@ public class PayoutsApi {
 
     /**
      * Process a Payout (asynchronously)
-     * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). 
+     * Send funds from a selected funding source to a designated credit/debit card account or a prepaid card using an Original Credit Transaction (OCT). The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts. 
      * @param octCreatePaymentRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

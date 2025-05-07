@@ -40,11 +40,14 @@ public class Invoicingv2invoicesInvoiceInformation {
   @SerializedName("dueDate")
   private LocalDate dueDate = null;
 
+  @SerializedName("expirationDate")
+  private LocalDate expirationDate = null;
+
   @SerializedName("sendImmediately")
-  private Boolean sendImmediately = null;
+  private Boolean sendImmediately = false;
 
   @SerializedName("allowPartialPayments")
-  private Boolean allowPartialPayments = null;
+  private Boolean allowPartialPayments = false;
 
   @SerializedName("deliveryMode")
   private String deliveryMode = null;
@@ -76,7 +79,7 @@ public class Invoicingv2invoicesInvoiceInformation {
    * The description included in the invoice.
    * @return description
   **/
-  @ApiModelProperty(value = "The description included in the invoice.")
+  @ApiModelProperty(required = true, value = "The description included in the invoice.")
   public String getDescription() {
     return description;
   }
@@ -94,13 +97,31 @@ public class Invoicingv2invoicesInvoiceInformation {
    * The invoice due date. This field is required for creating an invoice. Format: &#x60;YYYY-MM-DD&#x60;, where &#x60;YYYY&#x60; &#x3D; year, &#x60;MM&#x60; &#x3D; month, and &#x60;DD&#x60; &#x3D; day 
    * @return dueDate
   **/
-  @ApiModelProperty(value = "The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day ")
+  @ApiModelProperty(required = true, value = "The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day ")
   public LocalDate getDueDate() {
     return dueDate;
   }
 
   public void setDueDate(LocalDate dueDate) {
     this.dueDate = dueDate;
+  }
+
+  public Invoicingv2invoicesInvoiceInformation expirationDate(LocalDate expirationDate) {
+    this.expirationDate = expirationDate;
+    return this;
+  }
+
+   /**
+   * Define an expiration date for the link.  Format: &#x60;YYYY-MM-DD&#x60;, where &#x60;YYYY&#x60; &#x3D; year, &#x60;MM&#x60; &#x3D; month, and &#x60;DD&#x60; &#x3D; day 
+   * @return expirationDate
+  **/
+  @ApiModelProperty(value = "Define an expiration date for the link.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day ")
+  public LocalDate getExpirationDate() {
+    return expirationDate;
+  }
+
+  public void setExpirationDate(LocalDate expirationDate) {
+    this.expirationDate = expirationDate;
   }
 
   public Invoicingv2invoicesInvoiceInformation sendImmediately(Boolean sendImmediately) {
@@ -145,10 +166,10 @@ public class Invoicingv2invoicesInvoiceInformation {
   }
 
    /**
-   * If set to &#x60;None&#x60;, the invoice is created, and its status is set to &#39;CREATED&#39;, but no email is sent.    Possible values:        - &#x60;None&#x60;   - &#x60;Email&#x60;  
+   * If this field is set to &#39;None&#39;, an invoice will be generated with the status &#39;CREATED&#39;, but no email will be dispatched.    Possible values:        - &#x60;None&#x60;   - &#x60;Email&#x60;    
    * @return deliveryMode
   **/
-  @ApiModelProperty(value = "If set to `None`, the invoice is created, and its status is set to 'CREATED', but no email is sent.    Possible values:        - `None`   - `Email`  ")
+  @ApiModelProperty(value = "If this field is set to 'None', an invoice will be generated with the status 'CREATED', but no email will be dispatched.    Possible values:        - `None`   - `Email`    ")
   public String getDeliveryMode() {
     return deliveryMode;
   }
@@ -170,6 +191,7 @@ public class Invoicingv2invoicesInvoiceInformation {
     return Objects.equals(this.invoiceNumber, invoicingv2invoicesInvoiceInformation.invoiceNumber) &&
         Objects.equals(this.description, invoicingv2invoicesInvoiceInformation.description) &&
         Objects.equals(this.dueDate, invoicingv2invoicesInvoiceInformation.dueDate) &&
+        Objects.equals(this.expirationDate, invoicingv2invoicesInvoiceInformation.expirationDate) &&
         Objects.equals(this.sendImmediately, invoicingv2invoicesInvoiceInformation.sendImmediately) &&
         Objects.equals(this.allowPartialPayments, invoicingv2invoicesInvoiceInformation.allowPartialPayments) &&
         Objects.equals(this.deliveryMode, invoicingv2invoicesInvoiceInformation.deliveryMode);
@@ -177,7 +199,7 @@ public class Invoicingv2invoicesInvoiceInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(invoiceNumber, description, dueDate, sendImmediately, allowPartialPayments, deliveryMode);
+    return Objects.hash(invoiceNumber, description, dueDate, expirationDate, sendImmediately, allowPartialPayments, deliveryMode);
   }
 
 
@@ -189,6 +211,7 @@ public class Invoicingv2invoicesInvoiceInformation {
     if (invoiceNumber != null) sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
     if (description != null) sb.append("    description: ").append(toIndentedString(description)).append("\n");
     if (dueDate != null) sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
+    if (expirationDate != null) sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
     if (sendImmediately != null) sb.append("    sendImmediately: ").append(toIndentedString(sendImmediately)).append("\n");
     if (allowPartialPayments != null) sb.append("    allowPartialPayments: ").append(toIndentedString(allowPartialPayments)).append("\n");
     if (deliveryMode != null) sb.append("    deliveryMode: ").append(toIndentedString(deliveryMode)).append("\n");

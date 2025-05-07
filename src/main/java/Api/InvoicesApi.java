@@ -33,9 +33,12 @@ import Model.InvoicingV2InvoicesAllGet200Response;
 import Model.InvoicingV2InvoicesAllGet400Response;
 import Model.InvoicingV2InvoicesAllGet404Response;
 import Model.InvoicingV2InvoicesAllGet502Response;
+import Model.InvoicingV2InvoicesCancel200Response;
 import Model.InvoicingV2InvoicesGet200Response;
 import Model.InvoicingV2InvoicesPost201Response;
 import Model.InvoicingV2InvoicesPost202Response;
+import Model.InvoicingV2InvoicesPut200Response;
+import Model.InvoicingV2InvoicesSend200Response;
 import Model.UpdateInvoiceRequest;
 
 import java.lang.reflect.Type;
@@ -151,7 +154,7 @@ public class InvoicesApi {
 
     /**
      * Create a New Invoice
-     * The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments.
+     * The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments. The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
      * @param createInvoiceRequest  (required)
      * @return InvoicingV2InvoicesPost201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -165,7 +168,7 @@ public class InvoicesApi {
 
     /**
      * Create a New Invoice
-     * The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments.
+     * The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments. The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
      * @param createInvoiceRequest  (required)
      * @return ApiResponse&lt;InvoicingV2InvoicesPost201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -179,7 +182,7 @@ public class InvoicesApi {
 
     /**
      * Create a New Invoice (asynchronously)
-     * The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments.
+     * The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments. The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
      * @param createInvoiceRequest  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -216,7 +219,7 @@ public class InvoicesApi {
      * Build call for getAllInvoices
      * @param offset Page offset number. (required)
      * @param limit Maximum number of items you would like returned. (required)
-     * @param status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING  (optional)
+     * @param status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -312,7 +315,7 @@ public class InvoicesApi {
      * Provides a (filtered) list of invoices that have been created in your account. You can filter the list based on Invoice Status by setting the status query parameter to one of DRAFT, CREATED, SENT, PARTIAL, PAID or CANCELED.
      * @param offset Page offset number. (required)
      * @param limit Maximum number of items you would like returned. (required)
-     * @param status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING  (optional)
+     * @param status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED  (optional)
      * @return InvoicingV2InvoicesAllGet200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -328,7 +331,7 @@ public class InvoicesApi {
      * Provides a (filtered) list of invoices that have been created in your account. You can filter the list based on Invoice Status by setting the status query parameter to one of DRAFT, CREATED, SENT, PARTIAL, PAID or CANCELED.
      * @param offset Page offset number. (required)
      * @param limit Maximum number of items you would like returned. (required)
-     * @param status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING  (optional)
+     * @param status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED  (optional)
      * @return ApiResponse&lt;InvoicingV2InvoicesAllGet200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -344,7 +347,7 @@ public class InvoicesApi {
      * Provides a (filtered) list of invoices that have been created in your account. You can filter the list based on Invoice Status by setting the status query parameter to one of DRAFT, CREATED, SENT, PARTIAL, PAID or CANCELED.
      * @param offset Page offset number. (required)
      * @param limit Maximum number of items you would like returned. (required)
-     * @param status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING  (optional)
+     * @param status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -607,12 +610,12 @@ public class InvoicesApi {
      * Cancel an Invoice
      * You can cancel an invoice if no payment is made to it. You cannot cancel partially or fully paid invoices.
      * @param id The invoice number. (required)
-     * @return InvoicingV2InvoicesPost201Response
+     * @return InvoicingV2InvoicesCancel200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InvoicingV2InvoicesPost201Response performCancelAction(String id) throws ApiException {
+    public InvoicingV2InvoicesCancel200Response performCancelAction(String id) throws ApiException {
         logger.info("CALL TO METHOD 'performCancelAction' STARTED");
-        ApiResponse<InvoicingV2InvoicesPost201Response> resp = performCancelActionWithHttpInfo(id);
+        ApiResponse<InvoicingV2InvoicesCancel200Response> resp = performCancelActionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'performCancelAction' ENDED");
         return resp.getData();
     }
@@ -621,13 +624,13 @@ public class InvoicesApi {
      * Cancel an Invoice
      * You can cancel an invoice if no payment is made to it. You cannot cancel partially or fully paid invoices.
      * @param id The invoice number. (required)
-     * @return ApiResponse&lt;InvoicingV2InvoicesPost201Response&gt;
+     * @return ApiResponse&lt;InvoicingV2InvoicesCancel200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InvoicingV2InvoicesPost201Response> performCancelActionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<InvoicingV2InvoicesCancel200Response> performCancelActionWithHttpInfo(String id) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = performCancelActionValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPost201Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesCancel200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -639,7 +642,7 @@ public class InvoicesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call performCancelActionAsync(String id, final ApiCallback<InvoicingV2InvoicesPost201Response> callback) throws ApiException {
+    public okhttp3.Call performCancelActionAsync(String id, final ApiCallback<InvoicingV2InvoicesCancel200Response> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -662,7 +665,7 @@ public class InvoicesApi {
         }
 
         okhttp3.Call call = performCancelActionValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPost201Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesCancel200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -752,12 +755,12 @@ public class InvoicesApi {
      * Send an Invoice
      * You can send an invoice in draft or created state or resend a sent or partially paid invoice. Fully paid or canceled invoices cannot be resent.
      * @param id The invoice number. (required)
-     * @return InvoicingV2InvoicesPost201Response
+     * @return InvoicingV2InvoicesSend200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InvoicingV2InvoicesPost201Response performSendAction(String id) throws ApiException {
+    public InvoicingV2InvoicesSend200Response performSendAction(String id) throws ApiException {
         logger.info("CALL TO METHOD 'performSendAction' STARTED");
-        ApiResponse<InvoicingV2InvoicesPost201Response> resp = performSendActionWithHttpInfo(id);
+        ApiResponse<InvoicingV2InvoicesSend200Response> resp = performSendActionWithHttpInfo(id);
         logger.info("CALL TO METHOD 'performSendAction' ENDED");
         return resp.getData();
     }
@@ -766,13 +769,13 @@ public class InvoicesApi {
      * Send an Invoice
      * You can send an invoice in draft or created state or resend a sent or partially paid invoice. Fully paid or canceled invoices cannot be resent.
      * @param id The invoice number. (required)
-     * @return ApiResponse&lt;InvoicingV2InvoicesPost201Response&gt;
+     * @return ApiResponse&lt;InvoicingV2InvoicesSend200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InvoicingV2InvoicesPost201Response> performSendActionWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<InvoicingV2InvoicesSend200Response> performSendActionWithHttpInfo(String id) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = performSendActionValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPost201Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesSend200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -784,7 +787,7 @@ public class InvoicesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call performSendActionAsync(String id, final ApiCallback<InvoicingV2InvoicesPost201Response> callback) throws ApiException {
+    public okhttp3.Call performSendActionAsync(String id, final ApiCallback<InvoicingV2InvoicesSend200Response> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -807,7 +810,7 @@ public class InvoicesApi {
         }
 
         okhttp3.Call call = performSendActionValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPost201Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesSend200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -902,12 +905,12 @@ public class InvoicesApi {
      * You can update all information except the invoice number till any payment is received for an invoice. Invoices that are partially or fully paid or cancelled cannot be updated.
      * @param id The invoice number. (required)
      * @param updateInvoiceRequest Updating the invoice does not resend the invoice automatically. You must resend the invoice separately. (required)
-     * @return InvoicingV2InvoicesPost201Response
+     * @return InvoicingV2InvoicesPut200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InvoicingV2InvoicesPost201Response updateInvoice(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
+    public InvoicingV2InvoicesPut200Response updateInvoice(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
         logger.info("CALL TO METHOD 'updateInvoice' STARTED");
-        ApiResponse<InvoicingV2InvoicesPost201Response> resp = updateInvoiceWithHttpInfo(id, updateInvoiceRequest);
+        ApiResponse<InvoicingV2InvoicesPut200Response> resp = updateInvoiceWithHttpInfo(id, updateInvoiceRequest);
         logger.info("CALL TO METHOD 'updateInvoice' ENDED");
         return resp.getData();
     }
@@ -917,13 +920,13 @@ public class InvoicesApi {
      * You can update all information except the invoice number till any payment is received for an invoice. Invoices that are partially or fully paid or cancelled cannot be updated.
      * @param id The invoice number. (required)
      * @param updateInvoiceRequest Updating the invoice does not resend the invoice automatically. You must resend the invoice separately. (required)
-     * @return ApiResponse&lt;InvoicingV2InvoicesPost201Response&gt;
+     * @return ApiResponse&lt;InvoicingV2InvoicesPut200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InvoicingV2InvoicesPost201Response> updateInvoiceWithHttpInfo(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
+    public ApiResponse<InvoicingV2InvoicesPut200Response> updateInvoiceWithHttpInfo(String id, UpdateInvoiceRequest updateInvoiceRequest) throws ApiException {
         this.apiClient.setComputationStartTime(System.nanoTime());
         okhttp3.Call call = updateInvoiceValidateBeforeCall(id, updateInvoiceRequest, null, null);
-        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPost201Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPut200Response>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -936,7 +939,7 @@ public class InvoicesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call updateInvoiceAsync(String id, UpdateInvoiceRequest updateInvoiceRequest, final ApiCallback<InvoicingV2InvoicesPost201Response> callback) throws ApiException {
+    public okhttp3.Call updateInvoiceAsync(String id, UpdateInvoiceRequest updateInvoiceRequest, final ApiCallback<InvoicingV2InvoicesPut200Response> callback) throws ApiException {
 
         this.apiClient.setComputationStartTime(System.nanoTime());
         ProgressResponseBody.ProgressListener progressListener = null;
@@ -959,7 +962,7 @@ public class InvoicesApi {
         }
 
         okhttp3.Call call = updateInvoiceValidateBeforeCall(id, updateInvoiceRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPost201Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<InvoicingV2InvoicesPut200Response>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

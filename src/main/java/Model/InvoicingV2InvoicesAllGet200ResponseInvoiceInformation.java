@@ -33,6 +33,9 @@ public class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation {
   @SerializedName("dueDate")
   private LocalDate dueDate = null;
 
+  @SerializedName("expirationDate")
+  private LocalDate expirationDate = null;
+
   public InvoicingV2InvoicesAllGet200ResponseInvoiceInformation dueDate(LocalDate dueDate) {
     this.dueDate = dueDate;
     return this;
@@ -51,6 +54,24 @@ public class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation {
     this.dueDate = dueDate;
   }
 
+  public InvoicingV2InvoicesAllGet200ResponseInvoiceInformation expirationDate(LocalDate expirationDate) {
+    this.expirationDate = expirationDate;
+    return this;
+  }
+
+   /**
+   * Define an expiration date for the link.  Format: &#x60;YYYY-MM-DD&#x60;, where &#x60;YYYY&#x60; &#x3D; year, &#x60;MM&#x60; &#x3D; month, and &#x60;DD&#x60; &#x3D; day 
+   * @return expirationDate
+  **/
+  @ApiModelProperty(value = "Define an expiration date for the link.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day ")
+  public LocalDate getExpirationDate() {
+    return expirationDate;
+  }
+
+  public void setExpirationDate(LocalDate expirationDate) {
+    this.expirationDate = expirationDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +82,13 @@ public class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation {
       return false;
     }
     InvoicingV2InvoicesAllGet200ResponseInvoiceInformation invoicingV2InvoicesAllGet200ResponseInvoiceInformation = (InvoicingV2InvoicesAllGet200ResponseInvoiceInformation) o;
-    return Objects.equals(this.dueDate, invoicingV2InvoicesAllGet200ResponseInvoiceInformation.dueDate);
+    return Objects.equals(this.dueDate, invoicingV2InvoicesAllGet200ResponseInvoiceInformation.dueDate) &&
+        Objects.equals(this.expirationDate, invoicingV2InvoicesAllGet200ResponseInvoiceInformation.expirationDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dueDate);
+    return Objects.hash(dueDate, expirationDate);
   }
 
 
@@ -76,6 +98,7 @@ public class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation {
     sb.append("class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation {\n");
     
     if (dueDate != null) sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
+    if (expirationDate != null) sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

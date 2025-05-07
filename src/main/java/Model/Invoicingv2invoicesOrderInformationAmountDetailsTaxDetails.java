@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Contains all of the tax-related fields for the invoice.
+ * Contains all of the tax-related fields for the order.
  */
-@ApiModel(description = "Contains all of the tax-related fields for the invoice.")
+@ApiModel(description = "Contains all of the tax-related fields for the order.")
 
 public class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails {
   @SerializedName("type")

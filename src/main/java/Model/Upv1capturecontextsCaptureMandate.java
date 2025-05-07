@@ -55,6 +55,9 @@ public class Upv1capturecontextsCaptureMandate {
   @SerializedName("comboCard")
   private Boolean comboCard = null;
 
+  @SerializedName("CPF")
+  private Boolean CPF = null;
+
   public Upv1capturecontextsCaptureMandate billingType(String billingType) {
     this.billingType = billingType;
     return this;
@@ -207,6 +210,24 @@ public class Upv1capturecontextsCaptureMandate {
     this.comboCard = comboCard;
   }
 
+  public Upv1capturecontextsCaptureMandate CPF(Boolean CPF) {
+    this.CPF = CPF;
+    return this;
+  }
+
+   /**
+   * Configure Unified Checkout to display and capture the CPF number (Cadastro de Pessoas Físicas).  The CPF number is a unique 11-digit identifier issued to Brazilian citizens and residents for tax purposes.  Possible values: - True - False&lt;br&gt;&lt;br&gt;  This field is optional.   If set to true the field is required. If set to false the field is optional. If the field is not included in the capture context then it is not captured.&lt;br&gt;&lt;br&gt;  **Important:**  - If PANENTRY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout regardless of what card number is entered.  - If CLICKTOPAY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout only when a Visa Click To Pay card is entered. 
+   * @return CPF
+  **/
+  @ApiModelProperty(value = "Configure Unified Checkout to display and capture the CPF number (Cadastro de Pessoas Físicas).  The CPF number is a unique 11-digit identifier issued to Brazilian citizens and residents for tax purposes.  Possible values: - True - False<br><br>  This field is optional.   If set to true the field is required. If set to false the field is optional. If the field is not included in the capture context then it is not captured.<br><br>  **Important:**  - If PANENTRY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout regardless of what card number is entered.  - If CLICKTOPAY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout only when a Visa Click To Pay card is entered. ")
+  public Boolean CPF() {
+    return CPF;
+  }
+
+  public void setCPF(Boolean CPF) {
+    this.CPF = CPF;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -224,12 +245,13 @@ public class Upv1capturecontextsCaptureMandate {
         Objects.equals(this.shipToCountries, upv1capturecontextsCaptureMandate.shipToCountries) &&
         Objects.equals(this.showAcceptedNetworkIcons, upv1capturecontextsCaptureMandate.showAcceptedNetworkIcons) &&
         Objects.equals(this.requestSaveCard, upv1capturecontextsCaptureMandate.requestSaveCard) &&
-        Objects.equals(this.comboCard, upv1capturecontextsCaptureMandate.comboCard);
+        Objects.equals(this.comboCard, upv1capturecontextsCaptureMandate.comboCard) &&
+        Objects.equals(this.CPF, upv1capturecontextsCaptureMandate.CPF);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingType, requestEmail, requestPhone, requestShipping, shipToCountries, showAcceptedNetworkIcons, requestSaveCard, comboCard);
+    return Objects.hash(billingType, requestEmail, requestPhone, requestShipping, shipToCountries, showAcceptedNetworkIcons, requestSaveCard, comboCard, CPF);
   }
 
 
@@ -246,6 +268,7 @@ public class Upv1capturecontextsCaptureMandate {
     if (showAcceptedNetworkIcons != null) sb.append("    showAcceptedNetworkIcons: ").append(toIndentedString(showAcceptedNetworkIcons)).append("\n");
     if (requestSaveCard != null) sb.append("    requestSaveCard: ").append(toIndentedString(requestSaveCard)).append("\n");
     if (comboCard != null) sb.append("    comboCard: ").append(toIndentedString(comboCard)).append("\n");
+    if (CPF != null) sb.append("    CPF: ").append(toIndentedString(CPF)).append("\n");
     sb.append("}");
     return sb.toString();
   }

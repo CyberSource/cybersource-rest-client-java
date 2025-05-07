@@ -105,10 +105,10 @@ public class Tmsv2TokenizedCardCard {
   }
 
    /**
-   * The type of card(Card network). Possible Values: 001: visa 
+   * The type of card (Card Network). Possible Values: - 001: visa 
    * @return type
   **/
-  @ApiModelProperty(value = "The type of card(Card network). Possible Values: 001: visa ")
+  @ApiModelProperty(value = "The type of card (Card Network). Possible Values: - 001: visa ")
   public String getType() {
     return type;
   }

@@ -18,9 +18,12 @@ import Model.InvoicingV2InvoicesAllGet200Response;
 import Model.InvoicingV2InvoicesAllGet400Response;
 import Model.InvoicingV2InvoicesAllGet404Response;
 import Model.InvoicingV2InvoicesAllGet502Response;
+import Model.InvoicingV2InvoicesCancel200Response;
 import Model.InvoicingV2InvoicesGet200Response;
 import Model.InvoicingV2InvoicesPost201Response;
 import Model.InvoicingV2InvoicesPost202Response;
+import Model.InvoicingV2InvoicesPut200Response;
+import Model.InvoicingV2InvoicesSend200Response;
 import Model.UpdateInvoiceRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -43,7 +46,7 @@ public class InvoicesApiTest {
     /**
      * Create a New Invoice
      *
-     * The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments.
+     * The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments. The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
      *
      * @throws Exception
      *          if the Api call fails
@@ -101,7 +104,7 @@ public class InvoicesApiTest {
     @Test
     public void performCancelActionTest() throws Exception {
         String id = null;
-        InvoicingV2InvoicesPost201Response response = api.performCancelAction(id);
+        InvoicingV2InvoicesCancel200Response response = api.performCancelAction(id);
 
         // TODO: test validations
     }
@@ -117,7 +120,7 @@ public class InvoicesApiTest {
     @Test
     public void performSendActionTest() throws Exception {
         String id = null;
-        InvoicingV2InvoicesPost201Response response = api.performSendAction(id);
+        InvoicingV2InvoicesSend200Response response = api.performSendAction(id);
 
         // TODO: test validations
     }
@@ -134,7 +137,7 @@ public class InvoicesApiTest {
     public void updateInvoiceTest() throws Exception {
         String id = null;
         UpdateInvoiceRequest updateInvoiceRequest = null;
-        InvoicingV2InvoicesPost201Response response = api.updateInvoice(id, updateInvoiceRequest);
+        InvoicingV2InvoicesPut200Response response = api.updateInvoice(id, updateInvoiceRequest);
 
         // TODO: test validations
     }
