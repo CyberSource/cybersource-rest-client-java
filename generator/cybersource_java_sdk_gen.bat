@@ -27,3 +27,8 @@ git checkout ..\src\main\java\Model\CreateAccessTokenRequest.java
 
 git checkout ..\pom.xml
 git checkout ..\README.md
+git checkout ..\.gitignore
+
+del ..\gradle*
+del ..\git_push.sh
+rd /s /q ..\gradle
