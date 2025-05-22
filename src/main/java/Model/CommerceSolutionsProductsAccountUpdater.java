@@ -16,7 +16,7 @@ package Model;
 import java.util.Objects;
 import java.util.Arrays;
 import Model.CommerceSolutionsProductsAccountUpdaterConfigurationInformation;
-import Model.PaymentsProductsPayerAuthenticationSubscriptionInformation;
+import Model.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,12 +32,12 @@ import java.io.IOException;
 
 public class CommerceSolutionsProductsAccountUpdater {
   @SerializedName("subscriptionInformation")
-  private PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation = null;
+  private PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation = null;
 
   @SerializedName("configurationInformation")
   private CommerceSolutionsProductsAccountUpdaterConfigurationInformation configurationInformation = null;
 
-  public CommerceSolutionsProductsAccountUpdater subscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public CommerceSolutionsProductsAccountUpdater subscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
     return this;
   }
@@ -47,11 +47,11 @@ public class CommerceSolutionsProductsAccountUpdater {
    * @return subscriptionInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsPayerAuthenticationSubscriptionInformation getSubscriptionInformation() {
+  public PaymentsProductsAlternativePaymentMethodsSubscriptionInformation getSubscriptionInformation() {
     return subscriptionInformation;
   }
 
-  public void setSubscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public void setSubscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
   }
 

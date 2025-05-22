@@ -15,7 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import Model.PaymentsProductsPayerAuthenticationSubscriptionInformation;
+import Model.PaymentsProductsAlternativePaymentMethodsSubscriptionInformation;
 import Model.PaymentsProductsServiceFeeConfigurationInformation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -32,12 +32,12 @@ import java.io.IOException;
 
 public class PaymentsProductsServiceFee {
   @SerializedName("subscriptionInformation")
-  private PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation = null;
+  private PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation = null;
 
   @SerializedName("configurationInformation")
   private PaymentsProductsServiceFeeConfigurationInformation configurationInformation = null;
 
-  public PaymentsProductsServiceFee subscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public PaymentsProductsServiceFee subscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
     return this;
   }
@@ -47,11 +47,11 @@ public class PaymentsProductsServiceFee {
    * @return subscriptionInformation
   **/
   @ApiModelProperty(value = "")
-  public PaymentsProductsPayerAuthenticationSubscriptionInformation getSubscriptionInformation() {
+  public PaymentsProductsAlternativePaymentMethodsSubscriptionInformation getSubscriptionInformation() {
     return subscriptionInformation;
   }
 
-  public void setSubscriptionInformation(PaymentsProductsPayerAuthenticationSubscriptionInformation subscriptionInformation) {
+  public void setSubscriptionInformation(PaymentsProductsAlternativePaymentMethodsSubscriptionInformation subscriptionInformation) {
     this.subscriptionInformation = subscriptionInformation;
   }
 
