@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.PaymentsProductsAlternativePaymentMethods;
 import Model.PaymentsProductsCardPresentConnect;
 import Model.PaymentsProductsCardProcessing;
 import Model.PaymentsProductsCurrencyConversion;
@@ -44,6 +45,9 @@ import java.io.IOException;
 public class PaymentsProducts {
   @SerializedName("cardProcessing")
   private PaymentsProductsCardProcessing cardProcessing = null;
+
+  @SerializedName("alternativePaymentMethods")
+  private PaymentsProductsAlternativePaymentMethods alternativePaymentMethods = null;
 
   @SerializedName("cardPresentConnect")
   private PaymentsProductsCardPresentConnect cardPresentConnect = null;
@@ -115,6 +119,24 @@ public class PaymentsProducts {
 
   public void setCardProcessing(PaymentsProductsCardProcessing cardProcessing) {
     this.cardProcessing = cardProcessing;
+  }
+
+  public PaymentsProducts alternativePaymentMethods(PaymentsProductsAlternativePaymentMethods alternativePaymentMethods) {
+    this.alternativePaymentMethods = alternativePaymentMethods;
+    return this;
+  }
+
+   /**
+   * Get alternativePaymentMethods
+   * @return alternativePaymentMethods
+  **/
+  @ApiModelProperty(value = "")
+  public PaymentsProductsAlternativePaymentMethods getAlternativePaymentMethods() {
+    return alternativePaymentMethods;
+  }
+
+  public void setAlternativePaymentMethods(PaymentsProductsAlternativePaymentMethods alternativePaymentMethods) {
+    this.alternativePaymentMethods = alternativePaymentMethods;
   }
 
   public PaymentsProducts cardPresentConnect(PaymentsProductsCardPresentConnect cardPresentConnect) {
@@ -452,6 +474,7 @@ public class PaymentsProducts {
     }
     PaymentsProducts paymentsProducts = (PaymentsProducts) o;
     return Objects.equals(this.cardProcessing, paymentsProducts.cardProcessing) &&
+        Objects.equals(this.alternativePaymentMethods, paymentsProducts.alternativePaymentMethods) &&
         Objects.equals(this.cardPresentConnect, paymentsProducts.cardPresentConnect) &&
         Objects.equals(this.cybsReadyTerminal, paymentsProducts.cybsReadyTerminal) &&
         Objects.equals(this.eCheck, paymentsProducts.eCheck) &&
@@ -474,7 +497,7 @@ public class PaymentsProducts {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardProcessing, cardPresentConnect, cybsReadyTerminal, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, paymentOrchestration, payouts, differentialFee, payByLink, unifiedCheckout, receivablesManager, serviceFee);
+    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, cybsReadyTerminal, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, paymentOrchestration, payouts, differentialFee, payByLink, unifiedCheckout, receivablesManager, serviceFee);
   }
 
 
@@ -484,6 +507,7 @@ public class PaymentsProducts {
     sb.append("class PaymentsProducts {\n");
     
     if (cardProcessing != null) sb.append("    cardProcessing: ").append(toIndentedString(cardProcessing)).append("\n");
+    if (alternativePaymentMethods != null) sb.append("    alternativePaymentMethods: ").append(toIndentedString(alternativePaymentMethods)).append("\n");
     if (cardPresentConnect != null) sb.append("    cardPresentConnect: ").append(toIndentedString(cardPresentConnect)).append("\n");
     if (cybsReadyTerminal != null) sb.append("    cybsReadyTerminal: ").append(toIndentedString(cybsReadyTerminal)).append("\n");
     if (eCheck != null) sb.append("    eCheck: ").append(toIndentedString(eCheck)).append("\n");

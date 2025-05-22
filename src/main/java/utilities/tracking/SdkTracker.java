@@ -315,7 +315,7 @@ public class SdkTracker {
 
                 if (createSubscriptionRequest.getClientReferenceInformation().getPartner() == null)
                 {
-                    createSubscriptionRequest.getClientReferenceInformation().setPartner(new Riskv1decisionsClientReferenceInformationPartner());
+                    createSubscriptionRequest.getClientReferenceInformation().setPartner(new Rbsv1subscriptionsClientReferenceInformationPartner());
                 }
 
                 if (createSubscriptionRequest.getClientReferenceInformation().getPartner().getDeveloperId() == null)
@@ -334,7 +334,7 @@ public class SdkTracker {
 
                 if (updateSubscription.getClientReferenceInformation().getPartner() == null)
                 {
-                    updateSubscription.getClientReferenceInformation().setPartner(new Riskv1decisionsClientReferenceInformationPartner());
+                    updateSubscription.getClientReferenceInformation().setPartner(new Rbsv1subscriptionsClientReferenceInformationPartner());
                 }
 
                 if (updateSubscription.getClientReferenceInformation().getPartner().getDeveloperId() == null)

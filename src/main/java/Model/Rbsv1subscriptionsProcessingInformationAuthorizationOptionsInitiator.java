@@ -38,10 +38,10 @@ public class Rbsv1subscriptionsProcessingInformationAuthorizationOptionsInitiato
   }
 
    /**
-   * This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant** 
+   * &gt; This field is ignored when you provide the &#x60;subscriptionInformation.originalTransactionId&#x60; or update the subscription.  This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant** 
    * @return type
   **/
-  @ApiModelProperty(value = "This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant** ")
+  @ApiModelProperty(value = "> This field is ignored when you provide the `subscriptionInformation.originalTransactionId` or update the subscription.  This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant** ")
   public String getType() {
     return type;
   }

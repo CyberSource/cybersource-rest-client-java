@@ -15,6 +15,7 @@ package Model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import Model.InlineResponse2012SetupsPaymentsAlternativePaymentMethods;
 import Model.InlineResponse2012SetupsPaymentsCardProcessing;
 import Model.InlineResponse2012SetupsPaymentsDigitalPayments;
 import com.google.gson.TypeAdapter;
@@ -33,6 +34,9 @@ import java.io.IOException;
 public class InlineResponse2012SetupsPayments {
   @SerializedName("cardProcessing")
   private InlineResponse2012SetupsPaymentsCardProcessing cardProcessing = null;
+
+  @SerializedName("alternativePaymentMethods")
+  private InlineResponse2012SetupsPaymentsAlternativePaymentMethods alternativePaymentMethods = null;
 
   @SerializedName("cardPresentConnect")
   private InlineResponse2012SetupsPaymentsCardProcessing cardPresentConnect = null;
@@ -101,6 +105,24 @@ public class InlineResponse2012SetupsPayments {
 
   public void setCardProcessing(InlineResponse2012SetupsPaymentsCardProcessing cardProcessing) {
     this.cardProcessing = cardProcessing;
+  }
+
+  public InlineResponse2012SetupsPayments alternativePaymentMethods(InlineResponse2012SetupsPaymentsAlternativePaymentMethods alternativePaymentMethods) {
+    this.alternativePaymentMethods = alternativePaymentMethods;
+    return this;
+  }
+
+   /**
+   * Get alternativePaymentMethods
+   * @return alternativePaymentMethods
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2012SetupsPaymentsAlternativePaymentMethods getAlternativePaymentMethods() {
+    return alternativePaymentMethods;
+  }
+
+  public void setAlternativePaymentMethods(InlineResponse2012SetupsPaymentsAlternativePaymentMethods alternativePaymentMethods) {
+    this.alternativePaymentMethods = alternativePaymentMethods;
   }
 
   public InlineResponse2012SetupsPayments cardPresentConnect(InlineResponse2012SetupsPaymentsCardProcessing cardPresentConnect) {
@@ -420,6 +442,7 @@ public class InlineResponse2012SetupsPayments {
     }
     InlineResponse2012SetupsPayments inlineResponse2012SetupsPayments = (InlineResponse2012SetupsPayments) o;
     return Objects.equals(this.cardProcessing, inlineResponse2012SetupsPayments.cardProcessing) &&
+        Objects.equals(this.alternativePaymentMethods, inlineResponse2012SetupsPayments.alternativePaymentMethods) &&
         Objects.equals(this.cardPresentConnect, inlineResponse2012SetupsPayments.cardPresentConnect) &&
         Objects.equals(this.eCheck, inlineResponse2012SetupsPayments.eCheck) &&
         Objects.equals(this.payerAuthentication, inlineResponse2012SetupsPayments.payerAuthentication) &&
@@ -441,7 +464,7 @@ public class InlineResponse2012SetupsPayments {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardProcessing, cardPresentConnect, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, cybsReadyTerminal, paymentOrchestration, payouts, payByLink, unifiedCheckout, receivablesManager, serviceFee);
+    return Objects.hash(cardProcessing, alternativePaymentMethods, cardPresentConnect, eCheck, payerAuthentication, digitalPayments, secureAcceptance, virtualTerminal, currencyConversion, tax, customerInvoicing, recurringBilling, cybsReadyTerminal, paymentOrchestration, payouts, payByLink, unifiedCheckout, receivablesManager, serviceFee);
   }
 
 
@@ -451,6 +474,7 @@ public class InlineResponse2012SetupsPayments {
     sb.append("class InlineResponse2012SetupsPayments {\n");
     
     if (cardProcessing != null) sb.append("    cardProcessing: ").append(toIndentedString(cardProcessing)).append("\n");
+    if (alternativePaymentMethods != null) sb.append("    alternativePaymentMethods: ").append(toIndentedString(alternativePaymentMethods)).append("\n");
     if (cardPresentConnect != null) sb.append("    cardPresentConnect: ").append(toIndentedString(cardPresentConnect)).append("\n");
     if (eCheck != null) sb.append("    eCheck: ").append(toIndentedString(eCheck)).append("\n");
     if (payerAuthentication != null) sb.append("    payerAuthentication: ").append(toIndentedString(payerAuthentication)).append("\n");
