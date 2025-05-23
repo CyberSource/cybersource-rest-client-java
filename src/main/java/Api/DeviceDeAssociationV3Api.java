@@ -80,7 +80,7 @@ public class DeviceDeAssociationV3Api {
      */
     public okhttp3.Call postDeAssociateV3TerminalCall(List<DeviceDeAssociateV3Request> deviceDeAssociateV3Request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         SdkTracker sdkTracker = new SdkTracker();
-        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(deviceDeAssociateV3Request, List<DeviceDeAssociateV3Request>.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
+        Object localVarPostBody = sdkTracker.insertDeveloperIdTracker(deviceDeAssociateV3Request, DeviceDeAssociateV3Request.class.getSimpleName(), apiClient.merchantConfig.getRunEnvironment(), apiClient.merchantConfig.getDefaultDeveloperId());
         
         boolean isMLESupportedByCybsForApi = false;
         if (MLEUtility.checkIsMLEForAPI(apiClient.merchantConfig, isMLESupportedByCybsForApi, "postDeAssociateV3Terminal,postDeAssociateV3TerminalAsync,postDeAssociateV3TerminalWithHttpInfo,postDeAssociateV3TerminalCall")) {
@@ -212,3 +212,4 @@ public class DeviceDeAssociationV3Api {
         return call;
     }
 }
+
