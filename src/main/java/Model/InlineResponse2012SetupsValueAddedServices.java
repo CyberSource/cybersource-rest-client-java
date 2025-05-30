@@ -36,6 +36,9 @@ public class InlineResponse2012SetupsValueAddedServices {
   @SerializedName("transactionSearch")
   private InlineResponse2012SetupsPaymentsDigitalPayments transactionSearch = null;
 
+  @SerializedName("bankAccountValidation")
+  private InlineResponse2012SetupsPaymentsDigitalPayments bankAccountValidation = null;
+
   public InlineResponse2012SetupsValueAddedServices reporting(InlineResponse2012SetupsPaymentsDigitalPayments reporting) {
     this.reporting = reporting;
     return this;
@@ -72,6 +75,24 @@ public class InlineResponse2012SetupsValueAddedServices {
     this.transactionSearch = transactionSearch;
   }
 
+  public InlineResponse2012SetupsValueAddedServices bankAccountValidation(InlineResponse2012SetupsPaymentsDigitalPayments bankAccountValidation) {
+    this.bankAccountValidation = bankAccountValidation;
+    return this;
+  }
+
+   /**
+   * Get bankAccountValidation
+   * @return bankAccountValidation
+  **/
+  @ApiModelProperty(value = "")
+  public InlineResponse2012SetupsPaymentsDigitalPayments getBankAccountValidation() {
+    return bankAccountValidation;
+  }
+
+  public void setBankAccountValidation(InlineResponse2012SetupsPaymentsDigitalPayments bankAccountValidation) {
+    this.bankAccountValidation = bankAccountValidation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +104,13 @@ public class InlineResponse2012SetupsValueAddedServices {
     }
     InlineResponse2012SetupsValueAddedServices inlineResponse2012SetupsValueAddedServices = (InlineResponse2012SetupsValueAddedServices) o;
     return Objects.equals(this.reporting, inlineResponse2012SetupsValueAddedServices.reporting) &&
-        Objects.equals(this.transactionSearch, inlineResponse2012SetupsValueAddedServices.transactionSearch);
+        Objects.equals(this.transactionSearch, inlineResponse2012SetupsValueAddedServices.transactionSearch) &&
+        Objects.equals(this.bankAccountValidation, inlineResponse2012SetupsValueAddedServices.bankAccountValidation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reporting, transactionSearch);
+    return Objects.hash(reporting, transactionSearch, bankAccountValidation);
   }
 
 
@@ -99,6 +121,7 @@ public class InlineResponse2012SetupsValueAddedServices {
     
     if (reporting != null) sb.append("    reporting: ").append(toIndentedString(reporting)).append("\n");
     if (transactionSearch != null) sb.append("    transactionSearch: ").append(toIndentedString(transactionSearch)).append("\n");
+    if (bankAccountValidation != null) sb.append("    bankAccountValidation: ").append(toIndentedString(bankAccountValidation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

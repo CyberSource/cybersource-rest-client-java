@@ -89,10 +89,10 @@ public class Ptsv2paymentreferencesBuyerInformation {
   }
 
    /**
-   * language setting of the user
+   * language setting of the user.  Supports 2-character language codes (e.g., en, fr) and 5-character locale values (e.g., en-US, fr-CA). 
    * @return language
   **/
-  @ApiModelProperty(value = "language setting of the user")
+  @ApiModelProperty(value = "language setting of the user.  Supports 2-character language codes (e.g., en, fr) and 5-character locale values (e.g., en-US, fr-CA). ")
   public String getLanguage() {
     return language;
   }
