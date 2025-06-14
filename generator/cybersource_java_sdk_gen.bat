@@ -22,6 +22,7 @@ powershell -Command " Set-Content ..\src\main\java\Model\PblPaymentLinksAllGet20
 echo "completed the task of replacing the links keyword in PblPaymentLinksAllGet200Response.java model"
 
 git checkout ..\src\main\java\Api\OAuthApi.java
+git checkout ..\src\main\java\Api\BatchUploadwithMTLSApi.java
 git checkout ..\src\main\java\Model\AccessTokenResponse.java
 git checkout ..\src\main\java\Model\CreateAccessTokenRequest.java
 
