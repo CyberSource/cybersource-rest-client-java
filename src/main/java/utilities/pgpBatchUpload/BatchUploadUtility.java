@@ -5,6 +5,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.PrivateKey;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
@@ -56,7 +59,7 @@ public class BatchUploadUtility {
      * @throws IllegalArgumentException If the file path is null or empty.
      */
     public static PGPPublicKey readPGPPublicKey(String filePath) throws IOException, PGPException {
-        validatePath(filePath, "pgp public key path");
+        validatePathAndFile(filePath, "pgp public key path");
         logger.debug("Reading pgp public key from file: {}", filePath);
         try (InputStream keyIn = new BufferedInputStream(new FileInputStream(filePath))) {
 			PGPPublicKeyRingCollection pgpPub = new PGPPublicKeyRingCollection(PGPUtil.getDecoderStream(keyIn),
@@ -109,9 +112,9 @@ public class BatchUploadUtility {
     		logger.error("Environment Host Name for Batch Upload API cannot be null or empty.");
     		throw new IllegalArgumentException("Environment Host Name for Batch Upload API cannot be null or empty.");
     	}
-    	validatePath(pgpEncryptionCertPath, "PGP Encryption Cert Path");
-    	validatePath(keystorePath, "Keystore Path");
-    	validatePath(truststorePath, "Truststore Path");
+    	validatePathAndFile(pgpEncryptionCertPath, "PGP Encryption Cert Path");
+    	validatePathAndFile(keystorePath, "Keystore Path");
+    	validatePathAndFile(truststorePath, "Truststore Path");
     }
     
     /**
@@ -130,9 +133,9 @@ public class BatchUploadUtility {
     		logger.error("Environment Host Name for Batch Upload API cannot be null or empty.");
     		throw new IllegalArgumentException("Environment Host Name for Batch Upload API cannot be null or empty.");
     	}
-    	validatePath(pgpEncryptionCertPath, "PGP Encryption Cert Path");
-    	validatePath(clientCertP12FilePath, "Client Cert P12 File Path");
-    	validatePath(serverTrustCertPath, "Server Trust Cert Path");
+    	validatePathAndFile(pgpEncryptionCertPath, "PGP Encryption Cert Path");
+    	validatePathAndFile(clientCertP12FilePath, "Client Cert P12 File Path");
+    	validatePathAndFile(serverTrustCertPath, "Server Trust Cert Path");
     }
     
     /**
@@ -190,16 +193,30 @@ public class BatchUploadUtility {
      * @throws IOException              If the file does not exist.
      * @throws IllegalArgumentException If the path is null or empty.
      */
-    private static void validatePath(String path, String pathType) throws IOException {
-        if (path == null || path.trim().isEmpty()) {
-        	logger.error(pathType + " path cannot be null or empty");
+    private static void validatePathAndFile(String filePath, String pathType) throws IOException {
+        if (filePath == null || filePath.trim().isEmpty()) {
+            logger.error(pathType + " path cannot be null or empty");
             throw new IllegalArgumentException(pathType + " path cannot be null or empty");
         }
-        
-        File file = new File(path);
-        if (!file.exists()) {
-        	logger.error(pathType + " does not exist: " + path);
+
+        // Normalize Windows-style paths that start with a slash before the drive letter
+        String normalizedPath = filePath;
+        if (File.separatorChar == '\\' && normalizedPath.matches("^/[A-Za-z]:.*")) {
+            normalizedPath = normalizedPath.substring(1);
+        }
+
+        Path path = Paths.get(normalizedPath);
+        if (!Files.exists(path)) {
+            logger.error(pathType + " does not exist: " + path);
             throw new IOException(pathType + " does not exist: " + path);
+        }
+        if (!Files.isRegularFile(path)) {
+        	logger.error(pathType + " does not have valid file: " + path);
+            throw new IOException(pathType + " does not have valid file: " + path);
+        }
+        if (!Files.isReadable(path)) {
+            logger.error(pathType + " is not readable: " + path);
+            throw new IOException(pathType + " is not readable: " + path);
         }
     }
     
