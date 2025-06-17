@@ -42,9 +42,12 @@ import okhttp3.Response;
  * </p>
  */
 public class MutualAuthUploadUtility {
-    
+
     private static final Logger logger = LogManager.getLogger(MutualAuthUploadUtility.class);
-    
+
+    // Global variable to control SSL verification
+    private static boolean disableSslVerification = false;
+
     /**
      * Handles file upload operation using JKS keystore and truststore for mutual authentication.
      * 
@@ -193,6 +196,19 @@ public class MutualAuthUploadUtility {
 			throw new IOException("Failed to perform upload operation with private/cert keys ", e);
 		}
 	}
+
+    /**
+     * Sets whether SSL verification should be disabled.
+     * @param disable true to disable SSL verification, false to enable
+     * By default, SSL verification is enabled.
+     */
+    public static void setDisableSslVerification(boolean disable) {
+        logger.warn("Setting disableSslVerification to: " + disable);
+        if (disable) {
+            logger.warn("SSL verification is DISABLED. This setting is NOT SAFE for production and should NOT be used in production environments!");
+        }
+        disableSslVerification = disable;
+    }
     
     /**
      * Creates an OkHttpClient configured for mutual TLS authentication.
@@ -209,22 +225,42 @@ public class MutualAuthUploadUtility {
     private static OkHttpClient getOkHttpClientForMutualAuth(KeyStore clientKeyStore, KeyStore serverTrustStore, 
         char[] keyPassword) throws NoSuchAlgorithmException, UnrecoverableKeyException, KeyStoreException, 
         KeyManagementException 
-	{
-	    // Set up KeyManager and TrustManager
-	    KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-	    kmf.init(clientKeyStore, keyPassword);  // Use the provided password
-	    TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-	    tmf.init(serverTrustStore);
-	
-	    // Create SSL context
-	    SSLContext sslContext = SSLContext.getInstance("TLS");
-	    sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), new SecureRandom());
-	
-	    // Build OkHttpClient with mutual TLS
-	    return new OkHttpClient.Builder()
-	            .sslSocketFactory(sslContext.getSocketFactory(), (X509TrustManager) tmf.getTrustManagers()[0])
-	            .build();
-	}
+    {
+        if (disableSslVerification) {
+        	logger.warn("SSL verification is DISABLED. This setting is NOT SAFE for production and should NOT be used in production environments!");
+            // Trust all certificates
+            X509TrustManager trustAllManager = new X509TrustManager() {
+                public void checkClientTrusted(X509Certificate[] chain, String authType) {}
+                public void checkServerTrusted(X509Certificate[] chain, String authType) {}
+                public X509Certificate[] getAcceptedIssuers() { return new X509Certificate[0]; }
+            };
+            KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+            kmf.init(clientKeyStore, keyPassword);
+
+            SSLContext sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(kmf.getKeyManagers(), new javax.net.ssl.TrustManager[]{trustAllManager}, new SecureRandom());
+
+            return new OkHttpClient.Builder()
+                .sslSocketFactory(sslContext.getSocketFactory(), trustAllManager)
+                .hostnameVerifier((hostname, session) -> true)
+                .build();
+        } else {
+            // Set up KeyManager and TrustManager
+            KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+            kmf.init(clientKeyStore, keyPassword);  // Use the provided password
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+            tmf.init(serverTrustStore);
+    
+            // Create SSL context
+            SSLContext sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), new SecureRandom());
+    
+            // Build OkHttpClient with mutual TLS
+            return new OkHttpClient.Builder()
+                    .sslSocketFactory(sslContext.getSocketFactory(), (X509TrustManager) tmf.getTrustManagers()[0])
+                    .build();
+        }
+    }
     
     /**
      * Uploads a file to the specified endpoint using the provided HTTP client.
