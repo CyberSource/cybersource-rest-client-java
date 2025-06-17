@@ -3,6 +3,7 @@ package Api;
 import java.io.File;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
+import java.util.Collection;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,9 +31,9 @@ public class BatchUploadwithMTLSApi {
      * @param inputFile The file to be uploaded.
      * @param environmentHostname The environment hostname (e.g., secure-batch-test.cybersource.com).
      * @param pgpEncryptionCertPath Path to the PGP encryption certificate.
-     * @param keystorePath Path to the JKS keystore file.
+     * @param keystorePath Path to the JKS keystore file containing client certificates.
      * @param keystorePassword Password for the keystore.
-     * @param truststorePath Path to the truststore file.
+     * @param truststorePath Path to the JKS truststore file containing trusted server certificates. <b>Optional</b>: Can be <code>null</code> if not required.
      * @param truststorePassword Password for the truststore.
      * @return ApiResponse containing the server response as a String.
      * @throws ApiException If an API error occurs.
@@ -56,9 +57,9 @@ public class BatchUploadwithMTLSApi {
      * @param inputFile The file to be uploaded.
      * @param environmentHostname The environment hostname (e.g., api.cybersource.com).
      * @param pgpEncryptionCertPath Path to the PGP encryption certificate.
-     * @param clientCertP12FilePath Path to the PKCS#12 client certificate file.
+     * @param clientCertP12FilePath Path to the PKCS#12 client certificate file (.p12 or .pfx).
      * @param clientCertP12Password Password for the PKCS#12 client certificate.
-     * @param serverTrustCertPath Path to the server trust certificate.
+     * @param serverTrustCertPath Path to the server trust certificate(s) in PEM format. <b>Optional</b>: Can be <code>null</code> if not required.
      * @return ApiResponse containing the server response as a String.
      * @throws ApiException If an API error occurs.
      * @throws Exception If a general error occurs.
@@ -83,20 +84,20 @@ public class BatchUploadwithMTLSApi {
      * @param pgpPublicKey The PGP public key for encryption.
      * @param clientPrivateKey The client's private key.
      * @param clientCert The client's X509 certificate.
-     * @param serverTrustCert The server's trust X509 certificate.
+     * @param serverTrustCerts A collection of server's trusted X509 certificates (can be a certificate chain). <b>Optional</b>: Can be <code>null</code> or empty if not required.
      * @return ApiResponse containing the server response as a String.
      * @throws ApiException If an API error occurs.
      * @throws Exception If a general error occurs.
      */
-    public ApiResponse<String> uploadBatchAPI(File inputFile, String environmentHostname, PGPPublicKey pgpPublicKey, PrivateKey clientPrivateKey, X509Certificate clientCert , X509Certificate serverTrustCert) throws ApiException, Exception {
+    public ApiResponse<String> uploadBatchAPI(File inputFile, String environmentHostname, PGPPublicKey pgpPublicKey, PrivateKey clientPrivateKey, X509Certificate clientCert , Collection<X509Certificate> serverTrustCerts) throws ApiException, Exception {
         logger.info("Starting batch upload with client private key and certs for given file");
-        BatchUploadUtility.validateBatchApiKeysInputs(inputFile, environmentHostname, pgpPublicKey, clientPrivateKey, clientCert, serverTrustCert);
+        BatchUploadUtility.validateBatchApiKeysInputs(inputFile, environmentHostname, pgpPublicKey, clientPrivateKey, clientCert, serverTrustCerts);
         String endpoint = "/pts/v1/transaction-batch-upload";
         String endpointUrl = BatchUploadUtility.getEndpointUrl(environmentHostname, endpoint);
         byte[] encryptedPgpBytes = PgpEncryptionUtility.handlePGPEncrypt(inputFile, pgpPublicKey);
         return MutualAuthUploadUtility.handleUploadOperationUsingPrivateKeyAndCerts(
             encryptedPgpBytes, endpointUrl, inputFile.getName(),
-            clientPrivateKey, clientCert, serverTrustCert
+            clientPrivateKey, clientCert, serverTrustCerts
         );
     }
 
