@@ -12,6 +12,7 @@ import java.security.SecureRandom;
 import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.Collection;
 import java.util.UUID;
 
 import javax.net.ssl.KeyManagerFactory;
@@ -41,9 +42,12 @@ import okhttp3.Response;
  * </p>
  */
 public class MutualAuthUploadUtility {
-    
+
     private static final Logger logger = LogManager.getLogger(MutualAuthUploadUtility.class);
-    
+
+    // Global variable to control SSL verification
+    private static boolean disableSslVerification = false;
+
     /**
      * Handles file upload operation using JKS keystore and truststore for mutual authentication.
      * 
@@ -52,7 +56,7 @@ public class MutualAuthUploadUtility {
      * @param fileName The name of the file to be uploaded (will be suffixed with .pgp)
      * @param keystorePath The file path to the JKS keystore containing client certificates
      * @param keystorePassword The password for the JKS keystore
-     * @param truststorePath The file path to the JKS truststore containing trusted server certificates
+     * @param truststorePath (Optional) The file path to the JKS truststore containing trusted server certificates. Can be null if not required.
      * @param truststorePassword The password for the JKS truststore
      * @return ApiResponse containing the upload response details
      * @throws IOException If file operations or network communication fails
@@ -67,7 +71,7 @@ public class MutualAuthUploadUtility {
             NoSuchAlgorithmException, CertificateException, KeyManagementException, UnrecoverableKeyException {
         
         KeyStore clientKeyStore = KeyStore.getInstance("JKS");
-        KeyStore serverTrustStore = KeyStore.getInstance("JKS");
+        KeyStore serverTrustStore = null;
         
         // Load the JKS keyStore using try-with-resources
         try (FileInputStream keyStoreFile = new FileInputStream(keystorePath)) {
@@ -75,8 +79,11 @@ public class MutualAuthUploadUtility {
         }
             
         // Load the JKS trustStore using try-with-resources
-        try (FileInputStream trustStoreFile = new FileInputStream(truststorePath)) {
-            serverTrustStore.load(trustStoreFile, truststorePassword);
+        if(!StringUtils.isEmpty(truststorePath)) {
+        	serverTrustStore = KeyStore.getInstance("JKS");
+        	try (FileInputStream trustStoreFile = new FileInputStream(truststorePath)) {
+                serverTrustStore.load(trustStoreFile, truststorePassword);
+            }
         }
         
         try {
@@ -89,14 +96,14 @@ public class MutualAuthUploadUtility {
     }
     
     /**
-     * Handles file upload operation using P12/PFX keystore and PEM server certificate for mutual authentication.
-     * 
-     * @param encryptedPgpBytes The encrypted PGP file content as byte array
+     * Handles file upload operation using P12/PFX keystore and PEM server certificate(s) for mutual authentication
+     *
+     * @param encryptedPgpBytes The encrypted PGP file content as a byte array
      * @param endpointUrl The target URL endpoint for file upload
      * @param fileName The name of the file to be uploaded (will be suffixed with .pgp)
      * @param p12FilePath The file path to the P12/PFX keystore containing client certificates
      * @param p12FilePassword The password for the P12/PFX keystore
-     * @param serverTrustCertPath The file path to the PEM file containing server trust certificate
+     * @param serverTrustCertPath (Optional) The file path to the PEM file containing one or more server trust certificates. Can be null if not required
      * @return ApiResponse containing the upload response details
      * @throws IOException If file operations or network communication fails
      * @throws KeyStoreException If keystore operations fail
@@ -108,14 +115,24 @@ public class MutualAuthUploadUtility {
     public static ApiResponse<String> handleUploadOperationUsingP12orPfx(byte[] encryptedPgpBytes, String endpointUrl, String fileName, String p12FilePath, char[] p12FilePassword, String serverTrustCertPath) throws IOException, KeyStoreException, 
             NoSuchAlgorithmException, CertificateException, KeyManagementException, UnrecoverableKeyException {
             
-            X509Certificate serverTrustCert;
+            Collection<X509Certificate> serverTrustCert;
             KeyStore clientKeyStore;
+            KeyStore serverTrustStore =null;
             
-            try {
-                serverTrustCert = BatchUploadUtility.loadCertificateFromPemFile(serverTrustCertPath);
-            } catch (CertificateException e) {
-                logger.error("Error loading certificate from PEM file", e);
-                throw new CertificateException("Failed to load certificate from PEM file: " + serverTrustCertPath, e);
+            if(!StringUtils.isEmpty(serverTrustCertPath)) {
+                try {
+                    serverTrustCert = BatchUploadUtility.loadCertificatesFromPemFile(serverTrustCertPath);
+                } catch (CertificateException e) {
+                    logger.error("Error loading certificate from PEM file", e);
+                    throw new CertificateException("Failed to load certificate from PEM file: " + serverTrustCertPath, e);
+                }
+                serverTrustStore = KeyStore.getInstance("JKS");
+                serverTrustStore.load(null, null);
+                int i = 0;
+                for (X509Certificate cert : serverTrustCert) {
+                    serverTrustStore.setCertificateEntry("server-" + i, cert);
+                    i++;
+                }
             }
                 
             clientKeyStore = KeyStore.getInstance("PKCS12", new BouncyCastleProvider());
@@ -124,11 +141,7 @@ public class MutualAuthUploadUtility {
             try (FileInputStream file = new FileInputStream(new File(p12FilePath))) {
                 clientKeyStore.load(file, p12FilePassword);
             }
-            
-            KeyStore serverTrustStore = KeyStore.getInstance("JKS");
-            serverTrustStore.load(null, null);
-            serverTrustStore.setCertificateEntry("server", serverTrustCert);
-            
+
             try {
                 OkHttpClient client = getOkHttpClientForMutualAuth(clientKeyStore, serverTrustStore, p12FilePassword);
                 return uploadFile(encryptedPgpBytes, fileName, endpointUrl, client);
@@ -146,7 +159,7 @@ public class MutualAuthUploadUtility {
      * @param fileName The name of the file to be uploaded (will be suffixed with .pgp)
      * @param clientPrivateKey The client's private key for authentication
      * @param clientCert The client's X509 certificate
-     * @param serverTrustCert The server's trusted X509 certificate
+     * @param serverTrustCerts (Optional) A collection of server's trusted X509 certificates (can be a certificate chain). Can be null or empty if not required.
      * @return ApiResponse containing the upload response details
      * @throws KeyStoreException If keystore operations fail
      * @throws NoSuchAlgorithmException If required cryptographic algorithms are not available
@@ -155,7 +168,7 @@ public class MutualAuthUploadUtility {
      * @throws UnrecoverableKeyException If private key cannot be recovered
      * @throws KeyManagementException If SSL key management fails
      */
-    public static ApiResponse<String> handleUploadOperationUsingPrivateKeyAndCerts(byte[] encryptedPgpBytes, String endpointUrl, String fileName, PrivateKey clientPrivateKey,X509Certificate clientCert,X509Certificate serverTrustCert) throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException, UnrecoverableKeyException, KeyManagementException 
+    public static ApiResponse<String> handleUploadOperationUsingPrivateKeyAndCerts(byte[] encryptedPgpBytes, String endpointUrl, String fileName, PrivateKey clientPrivateKey, X509Certificate clientCert, Collection<X509Certificate> serverTrustCerts) throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException, UnrecoverableKeyException, KeyManagementException 
 	{
 		// Create a KeyStore containing the client private key and certificate
         KeyStore clientKeyStore = KeyStore.getInstance("PKCS12");
@@ -164,9 +177,16 @@ public class MutualAuthUploadUtility {
         clientKeyStore.setKeyEntry("client", clientPrivateKey, new char[] {}, new java.security.cert.Certificate[]{clientCert});
 
         // Create a KeyStore containing the server's trusted certificate
-        KeyStore serverTrustStore = KeyStore.getInstance("JKS");
-        serverTrustStore.load(null, null);
-        serverTrustStore.setCertificateEntry("server", serverTrustCert);
+        KeyStore serverTrustStore =null;
+        if(serverTrustCerts!=null && !serverTrustCerts.isEmpty()) {
+            serverTrustStore = KeyStore.getInstance("JKS");
+            serverTrustStore.load(null, null);
+            int i = 0;
+            for (X509Certificate cert : serverTrustCerts) {
+                serverTrustStore.setCertificateEntry("server-" + i, cert);
+                i++;
+            }
+        }
         
         try {
 			OkHttpClient client = getOkHttpClientForMutualAuth(clientKeyStore, serverTrustStore, new char[] {});
@@ -176,6 +196,19 @@ public class MutualAuthUploadUtility {
 			throw new IOException("Failed to perform upload operation with private/cert keys ", e);
 		}
 	}
+
+    /**
+     * Sets whether SSL verification should be disabled.
+     * @param disable true to disable SSL verification, false to enable
+     * By default, SSL verification is enabled.
+     */
+    public static void setDisableSslVerification(boolean disable) {
+        logger.warn("Setting disableSslVerification to: " + disable);
+        if (disable) {
+            logger.warn("SSL verification is DISABLED. This setting is NOT SAFE for production and should NOT be used in production environments!");
+        }
+        disableSslVerification = disable;
+    }
     
     /**
      * Creates an OkHttpClient configured for mutual TLS authentication.
@@ -192,22 +225,42 @@ public class MutualAuthUploadUtility {
     private static OkHttpClient getOkHttpClientForMutualAuth(KeyStore clientKeyStore, KeyStore serverTrustStore, 
         char[] keyPassword) throws NoSuchAlgorithmException, UnrecoverableKeyException, KeyStoreException, 
         KeyManagementException 
-	{
-	    // Set up KeyManager and TrustManager
-	    KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-	    kmf.init(clientKeyStore, keyPassword);  // Use the provided password
-	    TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-	    tmf.init(serverTrustStore);
-	
-	    // Create SSL context
-	    SSLContext sslContext = SSLContext.getInstance("TLS");
-	    sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), new SecureRandom());
-	
-	    // Build OkHttpClient with mutual TLS
-	    return new OkHttpClient.Builder()
-	            .sslSocketFactory(sslContext.getSocketFactory(), (X509TrustManager) tmf.getTrustManagers()[0])
-	            .build();
-	}
+    {
+        if (disableSslVerification) {
+        	logger.warn("SSL verification is DISABLED. This setting is NOT SAFE for production and should NOT be used in production environments!");
+            // Trust all certificates
+            X509TrustManager trustAllManager = new X509TrustManager() {
+                public void checkClientTrusted(X509Certificate[] chain, String authType) {}
+                public void checkServerTrusted(X509Certificate[] chain, String authType) {}
+                public X509Certificate[] getAcceptedIssuers() { return new X509Certificate[0]; }
+            };
+            KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+            kmf.init(clientKeyStore, keyPassword);
+
+            SSLContext sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(kmf.getKeyManagers(), new javax.net.ssl.TrustManager[]{trustAllManager}, new SecureRandom());
+
+            return new OkHttpClient.Builder()
+                .sslSocketFactory(sslContext.getSocketFactory(), trustAllManager)
+                .hostnameVerifier((hostname, session) -> true)
+                .build();
+        } else {
+            // Set up KeyManager and TrustManager
+            KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+            kmf.init(clientKeyStore, keyPassword);  // Use the provided password
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+            tmf.init(serverTrustStore);
+    
+            // Create SSL context
+            SSLContext sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), new SecureRandom());
+    
+            // Build OkHttpClient with mutual TLS
+            return new OkHttpClient.Builder()
+                    .sslSocketFactory(sslContext.getSocketFactory(), (X509TrustManager) tmf.getTrustManagers()[0])
+                    .build();
+        }
+    }
     
     /**
      * Uploads a file to the specified endpoint using the provided HTTP client.

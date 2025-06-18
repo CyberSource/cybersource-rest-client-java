@@ -12,7 +12,10 @@ import java.security.PrivateKey;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -33,21 +36,27 @@ public class BatchUploadUtility {
 	
 	private static final Logger logger = LogManager.getLogger(BatchUploadUtility.class);
 	private static final long MAX_FILE_SIZE_BYTES = 75 * 1024 * 1024;
-	
-	/**
-     * Loads an X509 certificate from a PEM file.
+    
+    /**
+     * Loads X509 certificates from a PEM file.
      *
      * @param certFilePath The file path to the PEM certificate file.
-     * @return The loaded X509Certificate object.
+     * @return The loaded X509Certificate(s) as a Collection.
      * @throws CertificateException If the certificate cannot be parsed or is invalid.
      * @throws IOException If the file cannot be read or does not exist.
      */
-    public static X509Certificate loadCertificateFromPemFile(String certFilePath) throws CertificateException, IOException {
-	    try (FileInputStream inStream = new FileInputStream(certFilePath)) {
-	        CertificateFactory cf = CertificateFactory.getInstance("X.509");
-	        return (X509Certificate) cf.generateCertificate(inStream);
-	    }
-	}
+    public static Collection<X509Certificate> loadCertificatesFromPemFile(String certFilePath) throws CertificateException, IOException {
+        try (FileInputStream inStream = new FileInputStream(certFilePath)) {
+            CertificateFactory cf = CertificateFactory.getInstance("X.509");
+            Collection<? extends java.security.cert.Certificate> certs = cf.generateCertificates(inStream);
+            // Cast to X509Certificate
+            List<X509Certificate> x509Certs = new ArrayList<>();
+            for (java.security.cert.Certificate cert : certs) {
+                x509Certs.add((X509Certificate) cert);
+            }
+            return x509Certs;
+        }
+    }
     
     /**
      * Reads a PGP public key from the specified file.
@@ -114,7 +123,8 @@ public class BatchUploadUtility {
     	}
     	validatePathAndFile(pgpEncryptionCertPath, "PGP Encryption Cert Path");
     	validatePathAndFile(keystorePath, "Keystore Path");
-    	validatePathAndFile(truststorePath, "Truststore Path");
+    	if (!StringUtils.isEmpty(truststorePath))
+    		validatePathAndFile(truststorePath, "Truststore Path");
     }
     
     /**
@@ -135,7 +145,8 @@ public class BatchUploadUtility {
     	}
     	validatePathAndFile(pgpEncryptionCertPath, "PGP Encryption Cert Path");
     	validatePathAndFile(clientCertP12FilePath, "Client Cert P12 File Path");
-    	validatePathAndFile(serverTrustCertPath, "Server Trust Cert Path");
+    	if (!StringUtils.isEmpty(serverTrustCertPath))
+    		validatePathAndFile(serverTrustCertPath, "Server Trust Cert Path");
     }
     
     /**
@@ -149,7 +160,7 @@ public class BatchUploadUtility {
      * @param serverTrustCert The server trust X509 certificate.
      * @throws Exception If any validation fails.
      */
-    public static void validateBatchApiKeysInputs(File inputFile, String environmentHostname, PGPPublicKey pgpPublicKey,  PrivateKey clientPrivateKey, X509Certificate clientCert , X509Certificate serverTrustCert) throws Exception{
+    public static void validateBatchApiKeysInputs(File inputFile, String environmentHostname, PGPPublicKey pgpPublicKey,  PrivateKey clientPrivateKey, X509Certificate clientCert , Collection<X509Certificate> serverTrustCert) throws Exception{
     	validateInputFile(inputFile);
     	if(StringUtils.isEmpty(environmentHostname)) {
     		logger.error("Environment Host Name for Batch Upload API cannot be null or empty.");
@@ -158,7 +169,7 @@ public class BatchUploadUtility {
     	if (pgpPublicKey == null) throw new IllegalArgumentException("PGP Public Key is null");
         if (clientPrivateKey == null) throw new IllegalArgumentException("Client Private Key is null");
         if (clientCert == null) throw new IllegalArgumentException("Client Certificate is null");
-        if (serverTrustCert == null) throw new IllegalArgumentException("Server Trust Certificate is null");
+        //if (serverTrustCert == null) throw new IllegalArgumentException("Server Trust Certificate is null"); serverTrustCert is optional so can be null
     }
     
     /**
